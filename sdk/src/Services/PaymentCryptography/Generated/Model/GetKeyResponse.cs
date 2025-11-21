@@ -39,7 +39,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key material, including the immutable and mutable data for the key.
+        /// Contains the key metadata, including both immutable and mutable attributes for the
+        /// key, but does not include actual cryptographic key material.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

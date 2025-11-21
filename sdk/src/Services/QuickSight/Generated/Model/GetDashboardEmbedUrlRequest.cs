@@ -32,7 +32,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the GetDashboardEmbedUrl operation.
     /// Generates a temporary session URL and authorization code(bearer token) that you can
-    /// use to embed an Amazon QuickSight read-only dashboard in your website or application.
+    /// use to embed an Amazon Quick Sight read-only dashboard in your website or application.
     /// Before you use this command, make sure that you have configured the dashboards and
     /// permissions. 
     /// 
@@ -55,7 +55,7 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You are charged only when the URL is used or there is interaction with Amazon QuickSight.
+    /// You are charged only when the URL is used or there is interaction with Quick Suite.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -66,13 +66,13 @@ namespace Amazon.QuickSight.Model
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding
-    /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about the high-level steps for embedding and for an interactive
     /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-    /// QuickSight Developer Portal</a>.
+    /// Quick Suite Developer Portal</a>.
     /// </para>
     /// </summary>
     public partial class GetDashboardEmbedUrlRequest : AmazonQuickSightRequest
@@ -93,7 +93,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A list of one or more dashboard IDs that you want anonymous users to have tempporary
         /// access to. Currently, the <c>IdentityType</c> parameter must be set to <c>ANONYMOUS</c>
-        /// because other identity types authenticate as Amazon QuickSight or IAM users. For example,
+        /// because other identity types authenticate as Quick Suite or IAM users. For example,
         /// if you set "<c>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
         /// ANONYMOUS</c>", the session can access all three dashboards.
         /// </para>
@@ -177,8 +177,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Amazon QuickSight namespace that contains the dashboard IDs in this request. If
-        /// you're not using a custom namespace, set <c>Namespace = default</c>.
+        /// The Amazon Quick Sight namespace that contains the dashboard IDs in this request.
+        /// If you're not using a custom namespace, set <c>Namespace = default</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -237,9 +237,9 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// Adds persistence of state for the user session in an embedded dashboard. Persistence
         /// applies to the sheet and the parameter settings. These are control settings that the
-        /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard.
+        /// dashboard subscriber (Amazon Quick Sight reader) chooses while viewing the dashboard.
         /// If this is set to <c>TRUE</c>, the settings are the same when the subscriber reopens
-        /// the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser
+        /// the same dashboard URL. The state is stored in Amazon Quick Sight, not in a browser
         /// cookie. If this is set to FALSE, the state of the user session is not persisted. The
         /// default is <c>FALSE</c>.
         /// </para>
@@ -278,8 +278,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UserArn. 
         /// <para>
-        /// The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <c>QUICKSIGHT</c>
-        /// identity type. You can use this for any Amazon QuickSight users in your account (readers,
+        /// The Amazon Quick Suite user's Amazon Resource Name (ARN), for use with <c>QUICKSIGHT</c>
+        /// identity type. You can use this for any Amazon Quick Suite users in your account (readers,
         /// authors, or admins) authenticated as one of the following:
         /// </para>
         ///  <ul> <li> 

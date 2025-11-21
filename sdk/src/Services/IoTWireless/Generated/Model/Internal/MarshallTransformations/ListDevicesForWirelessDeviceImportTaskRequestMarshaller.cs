@@ -62,6 +62,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-22";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.Id))
+                throw new AmazonIoTWirelessException("Request object does not have required field Id set");
             
             if (publicRequest.IsSetId())
                 request.Parameters.Add("id", StringUtils.FromString(publicRequest.Id));

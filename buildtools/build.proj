@@ -416,7 +416,7 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1 -PackageList &quot;$(ServiceList)&quot;"/>
     </Target>
 
-    <Target Name="package-extensions" DependsOnTargets="package-netcore-extensions;package-crt-extensions;package-cloudfront-extensions;package-ec2-extensions;package-meai-extensions;package-logging-extensions" />
+    <Target Name="package-extensions" DependsOnTargets="package-netcore-extensions;package-crt-extensions;package-cloudfront-extensions;package-ec2-extensions;package-meai-extensions;package-cborprotocol-extensions;package-logging-extensions" />
 
     <Target Name="build-extensions" >
         <!-- depends: restore-nuget;run-generator -->
@@ -454,6 +454,11 @@
     <Target Name="package-meai-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Bedrock.MEAI.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Bedrock.MEAI" />
+    </Target>
+
+    <Target Name="package-cborprotocol-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
+        <MakeDir Directories="../Deployment/nuget" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CborProtocol.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CborProtocol" />
     </Target>
 
     <Target Name="package-logging-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
@@ -540,7 +545,6 @@
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/CertificateManager/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk/test/Services/EC2/UnitTests/Custom/PasswordTest.cs" />
             <PrivateKeyException Include="sdk/test/NetStandard/UnitTests/sample.rsa.private.key.txt" />
-            <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/OpsWorksCM/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk/code-analysis/ServiceAnalysis/IoTManagedIntegrations/Generated/PropertyValueRules.xml" />
             <PrivateKeyException Include="extensions/test/CloudFront.SignersTests/EmbeddedResource/sample.rsa.private.key.txt"/>
             <PrivateKeyException Include="extensions/test/EC2.DecryptPasswordTests/PasswordTest.cs"/>

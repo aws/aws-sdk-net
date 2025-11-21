@@ -328,7 +328,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -364,7 +364,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
             
@@ -400,7 +400,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
         public virtual CreateApplicationVersionResponse CreateApplicationVersion(CreateApplicationVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationVersionResponseUnmarshaller.Instance;
 
@@ -435,7 +435,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplicationVersion">REST API Reference for CreateApplicationVersion Operation</seealso>
         public virtual Task<CreateApplicationVersionResponse> CreateApplicationVersionAsync(CreateApplicationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationVersionResponseUnmarshaller.Instance;
             
@@ -468,7 +468,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">REST API Reference for CreateCloudFormationChangeSet Operation</seealso>
         public virtual CreateCloudFormationChangeSetResponse CreateCloudFormationChangeSet(CreateCloudFormationChangeSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudFormationChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudFormationChangeSetResponseUnmarshaller.Instance;
 
@@ -500,7 +500,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">REST API Reference for CreateCloudFormationChangeSet Operation</seealso>
         public virtual Task<CreateCloudFormationChangeSetResponse> CreateCloudFormationChangeSetAsync(CreateCloudFormationChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudFormationChangeSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudFormationChangeSetResponseUnmarshaller.Instance;
             
@@ -537,7 +537,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationTemplate">REST API Reference for CreateCloudFormationTemplate Operation</seealso>
         public virtual CreateCloudFormationTemplateResponse CreateCloudFormationTemplate(CreateCloudFormationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudFormationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudFormationTemplateResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationTemplate">REST API Reference for CreateCloudFormationTemplate Operation</seealso>
         public virtual Task<CreateCloudFormationTemplateResponse> CreateCloudFormationTemplateAsync(CreateCloudFormationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudFormationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudFormationTemplateResponseUnmarshaller.Instance;
             
@@ -613,7 +613,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -652,7 +652,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
             
@@ -689,7 +689,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -725,7 +725,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
             
@@ -762,7 +762,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">REST API Reference for GetApplicationPolicy Operation</seealso>
         public virtual GetApplicationPolicyResponse GetApplicationPolicy(GetApplicationPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationPolicyResponseUnmarshaller.Instance;
 
@@ -798,7 +798,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">REST API Reference for GetApplicationPolicy Operation</seealso>
         public virtual Task<GetApplicationPolicyResponse> GetApplicationPolicyAsync(GetApplicationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationPolicyResponseUnmarshaller.Instance;
             
@@ -835,7 +835,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetCloudFormationTemplate">REST API Reference for GetCloudFormationTemplate Operation</seealso>
         public virtual GetCloudFormationTemplateResponse GetCloudFormationTemplate(GetCloudFormationTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudFormationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudFormationTemplateResponseUnmarshaller.Instance;
 
@@ -871,7 +871,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetCloudFormationTemplate">REST API Reference for GetCloudFormationTemplate Operation</seealso>
         public virtual Task<GetCloudFormationTemplateResponse> GetCloudFormationTemplateAsync(GetCloudFormationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudFormationTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudFormationTemplateResponseUnmarshaller.Instance;
             
@@ -908,7 +908,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">REST API Reference for ListApplicationDependencies Operation</seealso>
         public virtual ListApplicationDependenciesResponse ListApplicationDependencies(ListApplicationDependenciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationDependenciesResponseUnmarshaller.Instance;
 
@@ -944,7 +944,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">REST API Reference for ListApplicationDependencies Operation</seealso>
         public virtual Task<ListApplicationDependenciesResponse> ListApplicationDependenciesAsync(ListApplicationDependenciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationDependenciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationDependenciesResponseUnmarshaller.Instance;
             
@@ -978,7 +978,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1011,7 +1011,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
             
@@ -1048,7 +1048,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationVersions">REST API Reference for ListApplicationVersions Operation</seealso>
         public virtual ListApplicationVersionsResponse ListApplicationVersions(ListApplicationVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationVersionsResponseUnmarshaller.Instance;
 
@@ -1084,7 +1084,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationVersions">REST API Reference for ListApplicationVersions Operation</seealso>
         public virtual Task<ListApplicationVersionsResponse> ListApplicationVersionsAsync(ListApplicationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationVersionsResponseUnmarshaller.Instance;
             
@@ -1123,7 +1123,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">REST API Reference for PutApplicationPolicy Operation</seealso>
         public virtual PutApplicationPolicyResponse PutApplicationPolicy(PutApplicationPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationPolicyResponseUnmarshaller.Instance;
 
@@ -1161,7 +1161,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">REST API Reference for PutApplicationPolicy Operation</seealso>
         public virtual Task<PutApplicationPolicyResponse> PutApplicationPolicyAsync(PutApplicationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutApplicationPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutApplicationPolicyResponseUnmarshaller.Instance;
             
@@ -1203,7 +1203,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication">REST API Reference for UnshareApplication Operation</seealso>
         public virtual UnshareApplicationResponse UnshareApplication(UnshareApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnshareApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnshareApplicationResponseUnmarshaller.Instance;
 
@@ -1244,7 +1244,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication">REST API Reference for UnshareApplication Operation</seealso>
         public virtual Task<UnshareApplicationResponse> UnshareApplicationAsync(UnshareApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UnshareApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UnshareApplicationResponseUnmarshaller.Instance;
             
@@ -1284,7 +1284,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
 
@@ -1323,7 +1323,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual Task<UpdateApplicationResponse> UpdateApplicationAsync(UpdateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateApplicationResponseUnmarshaller.Instance;
             

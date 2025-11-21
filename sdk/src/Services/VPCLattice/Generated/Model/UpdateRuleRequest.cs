@@ -104,7 +104,7 @@ namespace Amazon.VPCLattice.Model
         /// The rule priority. A listener can't have multiple rules with the same priority.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=2000)]
         public int? Priority
         {
             get { return this._priority; }

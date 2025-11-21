@@ -36,6 +36,7 @@ namespace Amazon.B2bi.Model
     public partial class X12AdvancedOptions
     {
         private X12SplitOptions _splitOptions;
+        private X12ValidationOptions _validationOptions;
 
         /// <summary>
         /// Gets and sets the property SplitOptions. 
@@ -54,6 +55,26 @@ namespace Amazon.B2bi.Model
         internal bool IsSetSplitOptions()
         {
             return this._splitOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationOptions. 
+        /// <para>
+        /// Specifies validation options for X12 EDI processing. These options control how validation
+        /// rules are applied during EDI document processing, including custom validation rules
+        /// for element length constraints, code list validations, and element requirement checks.
+        /// </para>
+        /// </summary>
+        public X12ValidationOptions ValidationOptions
+        {
+            get { return this._validationOptions; }
+            set { this._validationOptions = value; }
+        }
+
+        // Check to see if ValidationOptions property is set
+        internal bool IsSetValidationOptions()
+        {
+            return this._validationOptions != null;
         }
 
     }

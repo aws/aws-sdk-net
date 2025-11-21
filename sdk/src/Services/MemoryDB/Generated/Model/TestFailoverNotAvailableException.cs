@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// Test failover is not available for this cluster configuration.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

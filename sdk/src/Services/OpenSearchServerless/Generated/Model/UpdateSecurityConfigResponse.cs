@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property SecurityConfigDetail. 
         /// <para>
-        /// Details about the updated security configuration.
+        /// Details about the updated security configuration. 
         /// </para>
         /// </summary>
         public SecurityConfigDetail SecurityConfigDetail

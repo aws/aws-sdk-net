@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateMonitoringSubscriptionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             if (!publicRequest.IsSetDistributionId())
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
@@ -112,5 +113,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateMonitoringSubscriptionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateMonitoringSubscriptionRequest publicRequest);
     }    
 }

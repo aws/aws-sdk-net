@@ -28,6 +28,46 @@ namespace Amazon.Bedrock.Model
     {
 
         /// <summary>
+        /// Paginator for ListAutomatedReasoningPolicies operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAutomatedReasoningPoliciesPaginator ListAutomatedReasoningPolicies(ListAutomatedReasoningPoliciesRequest request);
+
+        /// <summary>
+        /// Paginator for ListAutomatedReasoningPolicyBuildWorkflows operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAutomatedReasoningPolicyBuildWorkflowsPaginator ListAutomatedReasoningPolicyBuildWorkflows(ListAutomatedReasoningPolicyBuildWorkflowsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAutomatedReasoningPolicyTestCases operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAutomatedReasoningPolicyTestCasesPaginator ListAutomatedReasoningPolicyTestCases(ListAutomatedReasoningPolicyTestCasesRequest request);
+
+        /// <summary>
+        /// Paginator for ListAutomatedReasoningPolicyTestResults operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAutomatedReasoningPolicyTestResultsPaginator ListAutomatedReasoningPolicyTestResults(ListAutomatedReasoningPolicyTestResultsRequest request);
+
+        /// <summary>
         /// Paginator for ListCustomModelDeployments operation
         ///</summary>
         [AWSPaginator(

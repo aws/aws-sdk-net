@@ -56,6 +56,12 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("BillingViewArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BillingViewArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("BudgetedAndActualAmountsList", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<BudgetedAndActualAmounts, BudgetedAndActualAmountsUnmarshaller>(BudgetedAndActualAmountsUnmarshaller.Instance);

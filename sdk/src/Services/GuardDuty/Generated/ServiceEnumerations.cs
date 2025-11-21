@@ -691,6 +691,56 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type DetectionSource.
+    /// </summary>
+    public class DetectionSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMAZON for DetectionSource
+        /// </summary>
+        public static readonly DetectionSource AMAZON = new DetectionSource("AMAZON");
+        /// <summary>
+        /// Constant BITDEFENDER for DetectionSource
+        /// </summary>
+        public static readonly DetectionSource BITDEFENDER = new DetectionSource("BITDEFENDER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetectionSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetectionSource FindValue(string value)
+        {
+            return FindValue<DetectionSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetectionSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DetectorFeature.
     /// </summary>
     public class DetectorFeature : ConstantClass
@@ -1785,6 +1835,80 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type ListMalwareScansCriterionKey.
+    /// </summary>
+    public class ListMalwareScansCriterionKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for ListMalwareScansCriterionKey
+        /// </summary>
+        public static readonly ListMalwareScansCriterionKey ACCOUNT_ID = new ListMalwareScansCriterionKey("ACCOUNT_ID");
+        /// <summary>
+        /// Constant GUARDDUTY_FINDING_ID for ListMalwareScansCriterionKey
+        /// </summary>
+        public static readonly ListMalwareScansCriterionKey GUARDDUTY_FINDING_ID = new ListMalwareScansCriterionKey("GUARDDUTY_FINDING_ID");
+        /// <summary>
+        /// Constant RESOURCE_ARN for ListMalwareScansCriterionKey
+        /// </summary>
+        public static readonly ListMalwareScansCriterionKey RESOURCE_ARN = new ListMalwareScansCriterionKey("RESOURCE_ARN");
+        /// <summary>
+        /// Constant RESOURCE_TYPE for ListMalwareScansCriterionKey
+        /// </summary>
+        public static readonly ListMalwareScansCriterionKey RESOURCE_TYPE = new ListMalwareScansCriterionKey("RESOURCE_TYPE");
+        /// <summary>
+        /// Constant SCAN_ID for ListMalwareScansCriterionKey
+        /// </summary>
+        public static readonly ListMalwareScansCriterionKey SCAN_ID = new ListMalwareScansCriterionKey("SCAN_ID");
+        /// <summary>
+        /// Constant SCAN_START_TIME for ListMalwareScansCriterionKey
+        /// </summary>
+        public static readonly ListMalwareScansCriterionKey SCAN_START_TIME = new ListMalwareScansCriterionKey("SCAN_START_TIME");
+        /// <summary>
+        /// Constant SCAN_STATUS for ListMalwareScansCriterionKey
+        /// </summary>
+        public static readonly ListMalwareScansCriterionKey SCAN_STATUS = new ListMalwareScansCriterionKey("SCAN_STATUS");
+        /// <summary>
+        /// Constant SCAN_TYPE for ListMalwareScansCriterionKey
+        /// </summary>
+        public static readonly ListMalwareScansCriterionKey SCAN_TYPE = new ListMalwareScansCriterionKey("SCAN_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListMalwareScansCriterionKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListMalwareScansCriterionKey FindValue(string value)
+        {
+            return FindValue<ListMalwareScansCriterionKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListMalwareScansCriterionKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MalwareProtectionPlanStatus.
     /// </summary>
     public class MalwareProtectionPlanStatus : ConstantClass
@@ -1882,6 +2006,196 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MalwareProtectionPlanTaggingActionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MalwareProtectionResourceType.
+    /// </summary>
+    public class MalwareProtectionResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EBS_RECOVERY_POINT for MalwareProtectionResourceType
+        /// </summary>
+        public static readonly MalwareProtectionResourceType EBS_RECOVERY_POINT = new MalwareProtectionResourceType("EBS_RECOVERY_POINT");
+        /// <summary>
+        /// Constant EBS_SNAPSHOT for MalwareProtectionResourceType
+        /// </summary>
+        public static readonly MalwareProtectionResourceType EBS_SNAPSHOT = new MalwareProtectionResourceType("EBS_SNAPSHOT");
+        /// <summary>
+        /// Constant EBS_VOLUME for MalwareProtectionResourceType
+        /// </summary>
+        public static readonly MalwareProtectionResourceType EBS_VOLUME = new MalwareProtectionResourceType("EBS_VOLUME");
+        /// <summary>
+        /// Constant EC2_AMI for MalwareProtectionResourceType
+        /// </summary>
+        public static readonly MalwareProtectionResourceType EC2_AMI = new MalwareProtectionResourceType("EC2_AMI");
+        /// <summary>
+        /// Constant EC2_INSTANCE for MalwareProtectionResourceType
+        /// </summary>
+        public static readonly MalwareProtectionResourceType EC2_INSTANCE = new MalwareProtectionResourceType("EC2_INSTANCE");
+        /// <summary>
+        /// Constant EC2_RECOVERY_POINT for MalwareProtectionResourceType
+        /// </summary>
+        public static readonly MalwareProtectionResourceType EC2_RECOVERY_POINT = new MalwareProtectionResourceType("EC2_RECOVERY_POINT");
+        /// <summary>
+        /// Constant S3_BUCKET for MalwareProtectionResourceType
+        /// </summary>
+        public static readonly MalwareProtectionResourceType S3_BUCKET = new MalwareProtectionResourceType("S3_BUCKET");
+        /// <summary>
+        /// Constant S3_RECOVERY_POINT for MalwareProtectionResourceType
+        /// </summary>
+        public static readonly MalwareProtectionResourceType S3_RECOVERY_POINT = new MalwareProtectionResourceType("S3_RECOVERY_POINT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MalwareProtectionResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MalwareProtectionResourceType FindValue(string value)
+        {
+            return FindValue<MalwareProtectionResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MalwareProtectionResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MalwareProtectionScanStatus.
+    /// </summary>
+    public class MalwareProtectionScanStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for MalwareProtectionScanStatus
+        /// </summary>
+        public static readonly MalwareProtectionScanStatus COMPLETED = new MalwareProtectionScanStatus("COMPLETED");
+        /// <summary>
+        /// Constant COMPLETED_WITH_ISSUES for MalwareProtectionScanStatus
+        /// </summary>
+        public static readonly MalwareProtectionScanStatus COMPLETED_WITH_ISSUES = new MalwareProtectionScanStatus("COMPLETED_WITH_ISSUES");
+        /// <summary>
+        /// Constant FAILED for MalwareProtectionScanStatus
+        /// </summary>
+        public static readonly MalwareProtectionScanStatus FAILED = new MalwareProtectionScanStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for MalwareProtectionScanStatus
+        /// </summary>
+        public static readonly MalwareProtectionScanStatus RUNNING = new MalwareProtectionScanStatus("RUNNING");
+        /// <summary>
+        /// Constant SKIPPED for MalwareProtectionScanStatus
+        /// </summary>
+        public static readonly MalwareProtectionScanStatus SKIPPED = new MalwareProtectionScanStatus("SKIPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MalwareProtectionScanStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MalwareProtectionScanStatus FindValue(string value)
+        {
+            return FindValue<MalwareProtectionScanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MalwareProtectionScanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MalwareProtectionScanType.
+    /// </summary>
+    public class MalwareProtectionScanType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BACKUP_INITIATED for MalwareProtectionScanType
+        /// </summary>
+        public static readonly MalwareProtectionScanType BACKUP_INITIATED = new MalwareProtectionScanType("BACKUP_INITIATED");
+        /// <summary>
+        /// Constant GUARDDUTY_INITIATED for MalwareProtectionScanType
+        /// </summary>
+        public static readonly MalwareProtectionScanType GUARDDUTY_INITIATED = new MalwareProtectionScanType("GUARDDUTY_INITIATED");
+        /// <summary>
+        /// Constant ON_DEMAND for MalwareProtectionScanType
+        /// </summary>
+        public static readonly MalwareProtectionScanType ON_DEMAND = new MalwareProtectionScanType("ON_DEMAND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MalwareProtectionScanType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MalwareProtectionScanType FindValue(string value)
+        {
+            return FindValue<MalwareProtectionScanType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MalwareProtectionScanType(string value)
         {
             return FindValue(value);
         }
@@ -2637,6 +2951,56 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type ScanCategory.
+    /// </summary>
+    public class ScanCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FULL_SCAN for ScanCategory
+        /// </summary>
+        public static readonly ScanCategory FULL_SCAN = new ScanCategory("FULL_SCAN");
+        /// <summary>
+        /// Constant INCREMENTAL_SCAN for ScanCategory
+        /// </summary>
+        public static readonly ScanCategory INCREMENTAL_SCAN = new ScanCategory("INCREMENTAL_SCAN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanCategory FindValue(string value)
+        {
+            return FindValue<ScanCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScanCriterionKey.
     /// </summary>
     public class ScanCriterionKey : ConstantClass
@@ -2733,6 +3097,56 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type ScanResultStatus.
+    /// </summary>
+    public class ScanResultStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_THREATS_FOUND for ScanResultStatus
+        /// </summary>
+        public static readonly ScanResultStatus NO_THREATS_FOUND = new ScanResultStatus("NO_THREATS_FOUND");
+        /// <summary>
+        /// Constant THREATS_FOUND for ScanResultStatus
+        /// </summary>
+        public static readonly ScanResultStatus THREATS_FOUND = new ScanResultStatus("THREATS_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanResultStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanResultStatus FindValue(string value)
+        {
+            return FindValue<ScanResultStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanResultStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScanStatus.
     /// </summary>
     public class ScanStatus : ConstantClass
@@ -2784,6 +3198,112 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScanStatusReason.
+    /// </summary>
+    public class ScanStatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason ACCESS_DENIED = new ScanStatusReason("ACCESS_DENIED");
+        /// <summary>
+        /// Constant AMI_SNAPSHOT_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason AMI_SNAPSHOT_LIMIT_EXCEEDED = new ScanStatusReason("AMI_SNAPSHOT_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant BASE_CREATED_AFTER_TARGET for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason BASE_CREATED_AFTER_TARGET = new ScanStatusReason("BASE_CREATED_AFTER_TARGET");
+        /// <summary>
+        /// Constant BASE_RESOURCE_NOT_SCANNED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason BASE_RESOURCE_NOT_SCANNED = new ScanStatusReason("BASE_RESOURCE_NOT_SCANNED");
+        /// <summary>
+        /// Constant INCONSISTENT_SOURCE for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason INCONSISTENT_SOURCE = new ScanStatusReason("INCONSISTENT_SOURCE");
+        /// <summary>
+        /// Constant INCREMENTAL_NO_DIFFERENCE for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason INCREMENTAL_NO_DIFFERENCE = new ScanStatusReason("INCREMENTAL_NO_DIFFERENCE");
+        /// <summary>
+        /// Constant NO_EBS_VOLUMES_FOUND for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason NO_EBS_VOLUMES_FOUND = new ScanStatusReason("NO_EBS_VOLUMES_FOUND");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason RESOURCE_NOT_FOUND = new ScanStatusReason("RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant RESOURCE_UNAVAILABLE for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason RESOURCE_UNAVAILABLE = new ScanStatusReason("RESOURCE_UNAVAILABLE");
+        /// <summary>
+        /// Constant SNAPSHOT_SIZE_LIMIT_EXCEEDED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason SNAPSHOT_SIZE_LIMIT_EXCEEDED = new ScanStatusReason("SNAPSHOT_SIZE_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant UNRELATED_RESOURCES for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNRELATED_RESOURCES = new ScanStatusReason("UNRELATED_RESOURCES");
+        /// <summary>
+        /// Constant UNSUPPORTED_AMI for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNSUPPORTED_AMI = new ScanStatusReason("UNSUPPORTED_AMI");
+        /// <summary>
+        /// Constant UNSUPPORTED_COMPOSITE_RECOVERY_POINT for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNSUPPORTED_COMPOSITE_RECOVERY_POINT = new ScanStatusReason("UNSUPPORTED_COMPOSITE_RECOVERY_POINT");
+        /// <summary>
+        /// Constant UNSUPPORTED_FOR_INCREMENTAL for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNSUPPORTED_FOR_INCREMENTAL = new ScanStatusReason("UNSUPPORTED_FOR_INCREMENTAL");
+        /// <summary>
+        /// Constant UNSUPPORTED_PRODUCT_CODE_TYPE for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNSUPPORTED_PRODUCT_CODE_TYPE = new ScanStatusReason("UNSUPPORTED_PRODUCT_CODE_TYPE");
+        /// <summary>
+        /// Constant UNSUPPORTED_SNAPSHOT for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason UNSUPPORTED_SNAPSHOT = new ScanStatusReason("UNSUPPORTED_SNAPSHOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanStatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanStatusReason FindValue(string value)
+        {
+            return FindValue<ScanStatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanStatusReason(string value)
         {
             return FindValue(value);
         }
@@ -2904,6 +3424,142 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SignalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThreatEntitySetFormat.
+    /// </summary>
+    public class ThreatEntitySetFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALIEN_VAULT for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat ALIEN_VAULT = new ThreatEntitySetFormat("ALIEN_VAULT");
+        /// <summary>
+        /// Constant FIRE_EYE for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat FIRE_EYE = new ThreatEntitySetFormat("FIRE_EYE");
+        /// <summary>
+        /// Constant OTX_CSV for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat OTX_CSV = new ThreatEntitySetFormat("OTX_CSV");
+        /// <summary>
+        /// Constant PROOF_POINT for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat PROOF_POINT = new ThreatEntitySetFormat("PROOF_POINT");
+        /// <summary>
+        /// Constant STIX for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat STIX = new ThreatEntitySetFormat("STIX");
+        /// <summary>
+        /// Constant TXT for ThreatEntitySetFormat
+        /// </summary>
+        public static readonly ThreatEntitySetFormat TXT = new ThreatEntitySetFormat("TXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThreatEntitySetFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThreatEntitySetFormat FindValue(string value)
+        {
+            return FindValue<ThreatEntitySetFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThreatEntitySetFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThreatEntitySetStatus.
+    /// </summary>
+    public class ThreatEntitySetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus ACTIVATING = new ThreatEntitySetStatus("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus ACTIVE = new ThreatEntitySetStatus("ACTIVE");
+        /// <summary>
+        /// Constant DEACTIVATING for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus DEACTIVATING = new ThreatEntitySetStatus("DEACTIVATING");
+        /// <summary>
+        /// Constant DELETE_PENDING for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus DELETE_PENDING = new ThreatEntitySetStatus("DELETE_PENDING");
+        /// <summary>
+        /// Constant DELETED for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus DELETED = new ThreatEntitySetStatus("DELETED");
+        /// <summary>
+        /// Constant ERROR for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus ERROR = new ThreatEntitySetStatus("ERROR");
+        /// <summary>
+        /// Constant INACTIVE for ThreatEntitySetStatus
+        /// </summary>
+        public static readonly ThreatEntitySetStatus INACTIVE = new ThreatEntitySetStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThreatEntitySetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThreatEntitySetStatus FindValue(string value)
+        {
+            return FindValue<ThreatEntitySetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThreatEntitySetStatus(string value)
         {
             return FindValue(value);
         }
@@ -3040,6 +3696,192 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ThreatIntelSetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TriggerType.
+    /// </summary>
+    public class TriggerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BACKUP for TriggerType
+        /// </summary>
+        public static readonly TriggerType BACKUP = new TriggerType("BACKUP");
+        /// <summary>
+        /// Constant GUARDDUTY for TriggerType
+        /// </summary>
+        public static readonly TriggerType GUARDDUTY = new TriggerType("GUARDDUTY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TriggerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TriggerType FindValue(string value)
+        {
+            return FindValue<TriggerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TriggerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrustedEntitySetFormat.
+    /// </summary>
+    public class TrustedEntitySetFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALIEN_VAULT for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat ALIEN_VAULT = new TrustedEntitySetFormat("ALIEN_VAULT");
+        /// <summary>
+        /// Constant FIRE_EYE for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat FIRE_EYE = new TrustedEntitySetFormat("FIRE_EYE");
+        /// <summary>
+        /// Constant OTX_CSV for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat OTX_CSV = new TrustedEntitySetFormat("OTX_CSV");
+        /// <summary>
+        /// Constant PROOF_POINT for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat PROOF_POINT = new TrustedEntitySetFormat("PROOF_POINT");
+        /// <summary>
+        /// Constant STIX for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat STIX = new TrustedEntitySetFormat("STIX");
+        /// <summary>
+        /// Constant TXT for TrustedEntitySetFormat
+        /// </summary>
+        public static readonly TrustedEntitySetFormat TXT = new TrustedEntitySetFormat("TXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustedEntitySetFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustedEntitySetFormat FindValue(string value)
+        {
+            return FindValue<TrustedEntitySetFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustedEntitySetFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrustedEntitySetStatus.
+    /// </summary>
+    public class TrustedEntitySetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus ACTIVATING = new TrustedEntitySetStatus("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus ACTIVE = new TrustedEntitySetStatus("ACTIVE");
+        /// <summary>
+        /// Constant DEACTIVATING for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus DEACTIVATING = new TrustedEntitySetStatus("DEACTIVATING");
+        /// <summary>
+        /// Constant DELETE_PENDING for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus DELETE_PENDING = new TrustedEntitySetStatus("DELETE_PENDING");
+        /// <summary>
+        /// Constant DELETED for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus DELETED = new TrustedEntitySetStatus("DELETED");
+        /// <summary>
+        /// Constant ERROR for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus ERROR = new TrustedEntitySetStatus("ERROR");
+        /// <summary>
+        /// Constant INACTIVE for TrustedEntitySetStatus
+        /// </summary>
+        public static readonly TrustedEntitySetStatus INACTIVE = new TrustedEntitySetStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustedEntitySetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustedEntitySetStatus FindValue(string value)
+        {
+            return FindValue<TrustedEntitySetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustedEntitySetStatus(string value)
         {
             return FindValue(value);
         }

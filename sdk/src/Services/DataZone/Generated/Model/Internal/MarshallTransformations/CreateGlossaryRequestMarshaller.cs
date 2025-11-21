@@ -111,6 +111,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Status);
             }
 
+            if(publicRequest.IsSetUsageRestrictions())
+            {
+                context.Writer.WritePropertyName("usageRestrictions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUsageRestrictionsListValue in publicRequest.UsageRestrictions)
+                {
+                        context.Writer.WriteStringValue(publicRequestUsageRestrictionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

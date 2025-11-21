@@ -130,6 +130,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.MaxBitrate.Value);
             }
 
+            if(requestObject.IsSetMinBitrate())
+            {
+                context.Writer.WritePropertyName("minBitrate");
+                context.Writer.WriteNumberValue(requestObject.MinBitrate.Value);
+            }
+
             if(requestObject.IsSetMinIInterval())
             {
                 context.Writer.WritePropertyName("minIInterval");
@@ -164,6 +170,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("sceneChangeDetect");
                 context.Writer.WriteStringValue(requestObject.SceneChangeDetect);
+            }
+
+            if(requestObject.IsSetSpatialAq())
+            {
+                context.Writer.WritePropertyName("spatialAq");
+                context.Writer.WriteStringValue(requestObject.SpatialAq);
+            }
+
+            if(requestObject.IsSetTemporalAq())
+            {
+                context.Writer.WritePropertyName("temporalAq");
+                context.Writer.WriteStringValue(requestObject.TemporalAq);
             }
 
             if(requestObject.IsSetTimecodeBurninSettings())

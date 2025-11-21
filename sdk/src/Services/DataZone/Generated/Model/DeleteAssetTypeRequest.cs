@@ -32,6 +32,30 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the DeleteAssetType operation.
     /// Deletes an asset type in Amazon DataZone.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The asset type must exist in the domain. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You must have DeleteAssetType permission.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The asset type must not be in use (e.g., assigned to any asset). If used, deletion
+    /// will fail.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You should retrieve the asset type using get-asset-type to confirm its presence before
+    /// deletion.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteAssetTypeRequest : AmazonDataZoneRequest
     {

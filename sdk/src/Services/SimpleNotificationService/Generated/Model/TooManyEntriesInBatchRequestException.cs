@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The batch request contains more entries than permissible.
+    /// The batch request contains more entries than permissible (more than 10).
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

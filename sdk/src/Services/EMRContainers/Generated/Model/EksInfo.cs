@@ -35,6 +35,7 @@ namespace Amazon.EMRContainers.Model
     public partial class EksInfo
     {
         private string _awsNamespace;
+        private string _nodeLabel;
 
         /// <summary>
         /// Gets and sets the property Namespace. 
@@ -53,6 +54,26 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeLabel. 
+        /// <para>
+        /// The nodeLabel of the nodes where the resources of this virtual cluster can get scheduled.
+        /// It requires relevant scaling and policy engine addons.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string NodeLabel
+        {
+            get { return this._nodeLabel; }
+            set { this._nodeLabel = value; }
+        }
+
+        // Check to see if NodeLabel property is set
+        internal bool IsSetNodeLabel()
+        {
+            return this._nodeLabel != null;
         }
 
     }

@@ -322,6 +322,16 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CreateGlueIdentityCenterConfigurationRequest.InstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateGlueIdentityCenterConfigurationResponse.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationRequest.DataFilter</property>
     <min>1</min>
     <max>2048</max>
@@ -344,12 +354,12 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationRequest.SourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationRequest.TargetArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationResponse.DataFilter</property>
@@ -379,27 +389,32 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationResponse.SourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationResponse.TargetArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationResourcePropertyRequest.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationResourcePropertyResponse.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CreateIntegrationResourcePropertyResponse.ResourcePropertyArn</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationTablePropertiesRequest.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.CreateIntegrationTablePropertiesRequest.TableName</property>
@@ -883,17 +898,22 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteIntegrationResponse.SourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteIntegrationResponse.TargetArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteIntegrationResourcePropertyRequest.ResourceArn</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteIntegrationTablePropertiesRequest.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DeleteIntegrationTablePropertiesRequest.TableName</property>
@@ -1169,7 +1189,7 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.DescribeInboundIntegrationsRequest.TargetArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DescribeInboundIntegrationsResponse.Marker</property>
@@ -1559,19 +1579,34 @@
     <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.GetGlueIdentityCenterConfigurationResponse.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetGlueIdentityCenterConfigurationResponse.InstanceArn</property>
+    <min>10</min>
+    <max>1224</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.GetIntegrationResourcePropertyRequest.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetIntegrationResourcePropertyResponse.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.GetIntegrationResourcePropertyResponse.ResourcePropertyArn</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetIntegrationTablePropertiesRequest.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetIntegrationTablePropertiesRequest.TableName</property>
@@ -1581,7 +1616,7 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.GetIntegrationTablePropertiesResponse.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetIntegrationTablePropertiesResponse.TableName</property>
@@ -2364,6 +2399,16 @@
     <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.ListIntegrationResourcePropertiesRequest.Marker</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ListIntegrationResourcePropertiesResponse.Marker</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.ListJobsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -2532,12 +2577,12 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.ModifyIntegrationResponse.SourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ModifyIntegrationResponse.TargetArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.PutDataCatalogEncryptionSettingsRequest.CatalogId</property>
@@ -3208,17 +3253,22 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateIntegrationResourcePropertyRequest.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateIntegrationResourcePropertyResponse.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.UpdateIntegrationResourcePropertyResponse.ResourcePropertyArn</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateIntegrationTablePropertiesRequest.ResourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.UpdateIntegrationTablePropertiesRequest.TableName</property>
@@ -3600,6 +3650,10 @@
     <property>Amazon.Glue.Model.AuditContext.AdditionalAuditContext</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AuthenticationConfiguration.KmsKeyArn</property>
+    <pattern>arn:aws:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.AuthenticationConfiguration.SecretArn</property>
@@ -4466,6 +4520,31 @@
     <pattern>arn:aws:kms:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityGlueTable.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityGlueTable.ConnectionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityGlueTable.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityGlueTable.PreProcessingQuery</property>
+    <min>0</min>
+    <max>51200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityGlueTable.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityObservation.Description</property>
     <min>0</min>
     <max>2048</max>
@@ -5037,6 +5116,14 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergOptimizationProperties.RoleArn</property>
+    <pattern>^arn:aws(-(cn|us-gov|iso(-[bef])?))?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IcebergOptimizationPropertiesOutput.RoleArn</property>
+    <pattern>^arn:aws(-(cn|us-gov|iso(-[bef])?))?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.IcebergPartitionField.Name</property>
     <min>1</min>
     <max>1024</max>
@@ -5063,12 +5150,12 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.InboundIntegration.SourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.InboundIntegration.TargetArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Integration.DataFilter</property>
@@ -5098,12 +5185,12 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.Integration.SourceArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.Integration.TargetArn</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.IntegrationConfig.RefreshInterval</property>
@@ -5137,6 +5224,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.IntegrationPartition.FunctionSpec</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IntegrationResourceProperty.ResourceArn</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IntegrationResourceProperty.ResourcePropertyArn</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.IntegrationResourcePropertyFilter.Name</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>

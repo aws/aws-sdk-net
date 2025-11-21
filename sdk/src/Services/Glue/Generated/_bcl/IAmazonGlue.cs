@@ -888,7 +888,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Annotate datapoints over time for a specific data quality statistic.
+        /// Annotate datapoints over time for a specific data quality statistic. The API requires
+        /// both profileID and statisticID as part of the InclusionAnnotation input. The API only
+        /// works for a single statisticId across multiple profiles.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutDataQualityStatisticAnnotation service method.</param>
         /// 
@@ -911,7 +913,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Annotate datapoints over time for a specific data quality statistic.
+        /// Annotate datapoints over time for a specific data quality statistic. The API requires
+        /// both profileID and statisticID as part of the InclusionAnnotation input. The API only
+        /// works for a single statisticId across multiple profiles.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutDataQualityStatisticAnnotation service method.</param>
         /// <param name="cancellationToken">
@@ -2031,6 +2035,72 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDevEndpoint">REST API Reference for CreateDevEndpoint Operation</seealso>
         Task<CreateDevEndpointResponse> CreateDevEndpointAsync(CreateDevEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateGlueIdentityCenterConfiguration
+
+
+        /// <summary>
+        /// Creates a new Glue Identity Center configuration to enable integration between Glue
+        /// and Amazon Web Services IAM Identity Center for authentication and authorization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlueIdentityCenterConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGlueIdentityCenterConfiguration">REST API Reference for CreateGlueIdentityCenterConfiguration Operation</seealso>
+        CreateGlueIdentityCenterConfigurationResponse CreateGlueIdentityCenterConfiguration(CreateGlueIdentityCenterConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new Glue Identity Center configuration to enable integration between Glue
+        /// and Amazon Web Services IAM Identity Center for authentication and authorization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGlueIdentityCenterConfiguration">REST API Reference for CreateGlueIdentityCenterConfiguration Operation</seealso>
+        Task<CreateGlueIdentityCenterConfigurationResponse> CreateGlueIdentityCenterConfigurationAsync(CreateGlueIdentityCenterConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4154,6 +4224,72 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  DeleteGlueIdentityCenterConfiguration
+
+
+        /// <summary>
+        /// Deletes the existing Glue Identity Center configuration, removing the integration
+        /// between Glue and Amazon Web Services IAM Identity Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlueIdentityCenterConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteGlueIdentityCenterConfiguration">REST API Reference for DeleteGlueIdentityCenterConfiguration Operation</seealso>
+        DeleteGlueIdentityCenterConfigurationResponse DeleteGlueIdentityCenterConfiguration(DeleteGlueIdentityCenterConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the existing Glue Identity Center configuration, removing the integration
+        /// between Glue and Amazon Web Services IAM Identity Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteGlueIdentityCenterConfiguration">REST API Reference for DeleteGlueIdentityCenterConfiguration Operation</seealso>
+        Task<DeleteGlueIdentityCenterConfigurationResponse> DeleteGlueIdentityCenterConfigurationAsync(DeleteGlueIdentityCenterConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteIntegration
 
 
@@ -4245,6 +4381,78 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteIntegrationResourceProperty
+
+
+        /// <summary>
+        /// This API is used for deleting the <c>ResourceProperty</c> of the Glue connection (for
+        /// the source) or Glue database ARN (for the target).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResourceProperty service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIntegrationResourceProperty service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegrationResourceProperty">REST API Reference for DeleteIntegrationResourceProperty Operation</seealso>
+        DeleteIntegrationResourcePropertyResponse DeleteIntegrationResourceProperty(DeleteIntegrationResourcePropertyRequest request);
+
+
+
+        /// <summary>
+        /// This API is used for deleting the <c>ResourceProperty</c> of the Glue connection (for
+        /// the source) or Glue database ARN (for the target).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResourceProperty service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegrationResourceProperty service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegrationResourceProperty">REST API Reference for DeleteIntegrationResourceProperty Operation</seealso>
+        Task<DeleteIntegrationResourcePropertyResponse> DeleteIntegrationResourcePropertyAsync(DeleteIntegrationResourcePropertyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7379,6 +7587,72 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetEntityRecords">REST API Reference for GetEntityRecords Operation</seealso>
         Task<GetEntityRecordsResponse> GetEntityRecordsAsync(GetEntityRecordsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetGlueIdentityCenterConfiguration
+
+
+        /// <summary>
+        /// Retrieves the current Glue Identity Center configuration details, including the associated
+        /// Identity Center instance and application information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlueIdentityCenterConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetGlueIdentityCenterConfiguration">REST API Reference for GetGlueIdentityCenterConfiguration Operation</seealso>
+        GetGlueIdentityCenterConfigurationResponse GetGlueIdentityCenterConfiguration(GetGlueIdentityCenterConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the current Glue Identity Center configuration details, including the associated
+        /// Identity Center instance and application information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetGlueIdentityCenterConfiguration">REST API Reference for GetGlueIdentityCenterConfiguration Operation</seealso>
+        Task<GetGlueIdentityCenterConfigurationResponse> GetGlueIdentityCenterConfigurationAsync(GetGlueIdentityCenterConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10933,6 +11207,78 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListEntities">REST API Reference for ListEntities Operation</seealso>
         Task<ListEntitiesResponse> ListEntitiesAsync(ListEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListIntegrationResourceProperties
+
+
+        /// <summary>
+        /// List integration resource properties for a single customer. It supports the filters,
+        /// maxRecords and markers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrationResourceProperties service method.</param>
+        /// 
+        /// <returns>The response from the ListIntegrationResourceProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIntegrationResourceProperties">REST API Reference for ListIntegrationResourceProperties Operation</seealso>
+        ListIntegrationResourcePropertiesResponse ListIntegrationResourceProperties(ListIntegrationResourcePropertiesRequest request);
+
+
+
+        /// <summary>
+        /// List integration resource properties for a single customer. It supports the filters,
+        /// maxRecords and markers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrationResourceProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntegrationResourceProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIntegrationResourceProperties">REST API Reference for ListIntegrationResourceProperties Operation</seealso>
+        Task<ListIntegrationResourcePropertiesResponse> ListIntegrationResourcePropertiesAsync(ListIntegrationResourcePropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -14835,6 +15181,72 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDevEndpoint">REST API Reference for UpdateDevEndpoint Operation</seealso>
         Task<UpdateDevEndpointResponse> UpdateDevEndpointAsync(UpdateDevEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateGlueIdentityCenterConfiguration
+
+
+        /// <summary>
+        /// Updates the existing Glue Identity Center configuration, allowing modification of
+        /// scopes and permissions for the integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlueIdentityCenterConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateGlueIdentityCenterConfiguration">REST API Reference for UpdateGlueIdentityCenterConfiguration Operation</seealso>
+        UpdateGlueIdentityCenterConfigurationResponse UpdateGlueIdentityCenterConfiguration(UpdateGlueIdentityCenterConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Updates the existing Glue Identity Center configuration, allowing modification of
+        /// scopes and permissions for the integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateGlueIdentityCenterConfiguration">REST API Reference for UpdateGlueIdentityCenterConfiguration Operation</seealso>
+        Task<UpdateGlueIdentityCenterConfigurationResponse> UpdateGlueIdentityCenterConfigurationAsync(UpdateGlueIdentityCenterConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

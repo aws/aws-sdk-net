@@ -52,6 +52,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.State);
             }
 
+            if(requestObject.IsSetTypeConfiguration())
+            {
+                context.Writer.WritePropertyName("typeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AudioExtractionCategoryTypeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TypeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTypes())
             {
                 context.Writer.WritePropertyName("types");

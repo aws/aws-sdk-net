@@ -58,6 +58,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.Interconnects = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateBucketMetadataTableConfigurationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.AddSubResource("metadataTable");
         
@@ -101,8 +102,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                if (publicRequest.IsSetContentMD5())
-                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
@@ -137,5 +136,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateBucketMetadataTableConfigurationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateBucketMetadataTableConfigurationRequest publicRequest);
     }    
 }

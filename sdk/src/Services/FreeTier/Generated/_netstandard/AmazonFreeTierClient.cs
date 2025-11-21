@@ -288,7 +288,7 @@ namespace Amazon.FreeTier
 
         internal virtual GetAccountActivityResponse GetAccountActivity(GetAccountActivityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountActivityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountActivityResponseUnmarshaller.Instance;
 
@@ -321,7 +321,7 @@ namespace Amazon.FreeTier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountActivity">REST API Reference for GetAccountActivity Operation</seealso>
         public virtual Task<GetAccountActivityResponse> GetAccountActivityAsync(GetAccountActivityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountActivityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountActivityResponseUnmarshaller.Instance;
 
@@ -333,7 +333,7 @@ namespace Amazon.FreeTier
 
         internal virtual GetAccountPlanStateResponse GetAccountPlanState(GetAccountPlanStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountPlanStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountPlanStateResponseUnmarshaller.Instance;
 
@@ -370,7 +370,7 @@ namespace Amazon.FreeTier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetAccountPlanState">REST API Reference for GetAccountPlanState Operation</seealso>
         public virtual Task<GetAccountPlanStateResponse> GetAccountPlanStateAsync(GetAccountPlanStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountPlanStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountPlanStateResponseUnmarshaller.Instance;
 
@@ -382,7 +382,7 @@ namespace Amazon.FreeTier
 
         internal virtual GetFreeTierUsageResponse GetFreeTierUsage(GetFreeTierUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFreeTierUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFreeTierUsageResponseUnmarshaller.Instance;
 
@@ -412,7 +412,7 @@ namespace Amazon.FreeTier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/GetFreeTierUsage">REST API Reference for GetFreeTierUsage Operation</seealso>
         public virtual Task<GetFreeTierUsageResponse> GetFreeTierUsageAsync(GetFreeTierUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFreeTierUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFreeTierUsageResponseUnmarshaller.Instance;
 
@@ -424,7 +424,7 @@ namespace Amazon.FreeTier
 
         internal virtual ListAccountActivitiesResponse ListAccountActivities(ListAccountActivitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountActivitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountActivitiesResponseUnmarshaller.Instance;
 
@@ -455,7 +455,7 @@ namespace Amazon.FreeTier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/ListAccountActivities">REST API Reference for ListAccountActivities Operation</seealso>
         public virtual Task<ListAccountActivitiesResponse> ListAccountActivitiesAsync(ListAccountActivitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountActivitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountActivitiesResponseUnmarshaller.Instance;
 
@@ -467,7 +467,7 @@ namespace Amazon.FreeTier
 
         internal virtual UpgradeAccountPlanResponse UpgradeAccountPlan(UpgradeAccountPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeAccountPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeAccountPlanResponseUnmarshaller.Instance;
 
@@ -503,7 +503,7 @@ namespace Amazon.FreeTier
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/freetier-2023-09-07/UpgradeAccountPlan">REST API Reference for UpgradeAccountPlan Operation</seealso>
         public virtual Task<UpgradeAccountPlanResponse> UpgradeAccountPlanAsync(UpgradeAccountPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpgradeAccountPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpgradeAccountPlanResponseUnmarshaller.Instance;
 

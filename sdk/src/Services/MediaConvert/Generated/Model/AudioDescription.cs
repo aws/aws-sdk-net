@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
     {
         private AudioChannelTaggingSettings _audioChannelTaggingSettings;
         private AudioNormalizationSettings _audioNormalizationSettings;
+        private AudioPitchCorrectionSettings _audioPitchCorrectionSettings;
         private string _audioSourceName;
         private int? _audioType;
         private AudioTypeControl _audioTypeControl;
@@ -83,6 +84,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetAudioNormalizationSettings()
         {
             return this._audioNormalizationSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudioPitchCorrectionSettings. Settings for audio pitch
+        /// correction during framerate conversion.
+        /// </summary>
+        public AudioPitchCorrectionSettings AudioPitchCorrectionSettings
+        {
+            get { return this._audioPitchCorrectionSettings; }
+            set { this._audioPitchCorrectionSettings = value; }
+        }
+
+        // Check to see if AudioPitchCorrectionSettings property is set
+        internal bool IsSetAudioPitchCorrectionSettings()
+        {
+            return this._audioPitchCorrectionSettings != null;
         }
 
         /// <summary>
@@ -187,10 +204,14 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LanguageCode. Indicates the language of the audio output
-        /// track. The ISO 639 language specified in the 'Language Code' drop down will be used
-        /// when 'Follow Input Language Code' is not selected or when 'Follow Input Language Code'
-        /// is selected but there is no ISO 639 language code specified by the input.
+        /// Gets and sets the property LanguageCode. Specify the language for your output audio
+        /// track. To follow the input language: Leave blank. When you do, also set Language code
+        /// control to Follow input. If no input language is detected MediaConvert will not write
+        /// an output language code. To follow the input langauge, but fall back to a specified
+        /// language code if there is no input language to follow: Enter an ISO 639-2 three-letter
+        /// language code in all capital letters. When you do, also set Language code control
+        /// to Follow input. To specify the language code: Enter an ISO 639 three-letter language
+        /// code in all capital letters. When you do, also set Language code control to Use configured.
         /// </summary>
         public LanguageCode LanguageCode
         {

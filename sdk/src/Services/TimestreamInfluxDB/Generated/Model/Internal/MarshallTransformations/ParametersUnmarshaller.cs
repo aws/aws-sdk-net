@@ -62,6 +62,18 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     unmarshalledObject.InfluxDBv2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("InfluxDBv3Core", targetDepth))
+                {
+                    var unmarshaller = InfluxDBv3CoreParametersUnmarshaller.Instance;
+                    unmarshalledObject.InfluxDBv3Core = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("InfluxDBv3Enterprise", targetDepth))
+                {
+                    var unmarshaller = InfluxDBv3EnterpriseParametersUnmarshaller.Instance;
+                    unmarshalledObject.InfluxDBv3Enterprise = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

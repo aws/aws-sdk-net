@@ -25,6 +25,52 @@ namespace Amazon.IdentityStore
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessDeniedExceptionReason.
+    /// </summary>
+    public class AccessDeniedExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_ACCESS_DENIED for AccessDeniedExceptionReason
+        /// </summary>
+        public static readonly AccessDeniedExceptionReason KMS_ACCESS_DENIED = new AccessDeniedExceptionReason("KMS_ACCESS_DENIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessDeniedExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessDeniedExceptionReason FindValue(string value)
+        {
+            return FindValue<AccessDeniedExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessDeniedExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConflictExceptionReason.
     /// </summary>
     public class ConflictExceptionReason : ConstantClass
@@ -68,6 +114,52 @@ namespace Amazon.IdentityStore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConflictExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceNotFoundExceptionReason.
+    /// </summary>
+    public class ResourceNotFoundExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_KEY_NOT_FOUND for ResourceNotFoundExceptionReason
+        /// </summary>
+        public static readonly ResourceNotFoundExceptionReason KMS_KEY_NOT_FOUND = new ResourceNotFoundExceptionReason("KMS_KEY_NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceNotFoundExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceNotFoundExceptionReason FindValue(string value)
+        {
+            return FindValue<ResourceNotFoundExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceNotFoundExceptionReason(string value)
         {
             return FindValue(value);
         }
@@ -126,6 +218,160 @@ namespace Amazon.IdentityStore
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ThrottlingExceptionReason.
+    /// </summary>
+    public class ThrottlingExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_THROTTLING for ThrottlingExceptionReason
+        /// </summary>
+        public static readonly ThrottlingExceptionReason KMS_THROTTLING = new ThrottlingExceptionReason("KMS_THROTTLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ThrottlingExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThrottlingExceptionReason FindValue(string value)
+        {
+            return FindValue<ThrottlingExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThrottlingExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserStatus.
+    /// </summary>
+    public class UserStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for UserStatus
+        /// </summary>
+        public static readonly UserStatus DISABLED = new UserStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for UserStatus
+        /// </summary>
+        public static readonly UserStatus ENABLED = new UserStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserStatus FindValue(string value)
+        {
+            return FindValue<UserStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationExceptionReason.
+    /// </summary>
+    public class ValidationExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS_DISABLED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason KMS_DISABLED = new ValidationExceptionReason("KMS_DISABLED");
+        /// <summary>
+        /// Constant KMS_INVALID_ARN for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason KMS_INVALID_ARN = new ValidationExceptionReason("KMS_INVALID_ARN");
+        /// <summary>
+        /// Constant KMS_INVALID_KEY_USAGE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason KMS_INVALID_KEY_USAGE = new ValidationExceptionReason("KMS_INVALID_KEY_USAGE");
+        /// <summary>
+        /// Constant KMS_INVALID_STATE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason KMS_INVALID_STATE = new ValidationExceptionReason("KMS_INVALID_STATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<ValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionReason(string value)
         {
             return FindValue(value);
         }

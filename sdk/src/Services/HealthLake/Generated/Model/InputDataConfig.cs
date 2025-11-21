@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The input properties for an import job.
+    /// The import job input properties.
     /// </summary>
     public partial class InputDataConfig
     {
@@ -39,8 +39,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS
-        /// HealthLake. 
+        /// The <c>S3Uri</c> is the user-specified S3 location of the FHIR data to be imported
+        /// into AWS HealthLake.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

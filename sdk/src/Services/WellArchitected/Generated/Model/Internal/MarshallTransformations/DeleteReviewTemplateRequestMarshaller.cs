@@ -65,6 +65,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetTemplateArn())
                 throw new AmazonWellArchitectedException("Request object does not have required field TemplateArn set");
             request.AddPathResource("{TemplateArn}", StringUtils.FromString(publicRequest.TemplateArn));
+            if (string.IsNullOrEmpty(publicRequest.ClientRequestToken))
+                throw new AmazonWellArchitectedException("Request object does not have required field ClientRequestToken set");
             
             if (publicRequest.IsSetClientRequestToken())
                 request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));

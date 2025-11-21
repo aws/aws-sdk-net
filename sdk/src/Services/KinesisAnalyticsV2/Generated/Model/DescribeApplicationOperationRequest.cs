@@ -31,8 +31,15 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApplicationOperation operation.
-    /// Returns information about a specific operation performed on a Managed Service for
-    /// Apache Flink application
+    /// Provides a detailed description of a specified application operation. To see a list
+    /// of all the operations of an application, invoke the <a>ListApplicationOperations</a>
+    /// operation.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is supported only for Managed Service for Apache Flink.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeApplicationOperationRequest : AmazonKinesisAnalyticsV2Request
     {

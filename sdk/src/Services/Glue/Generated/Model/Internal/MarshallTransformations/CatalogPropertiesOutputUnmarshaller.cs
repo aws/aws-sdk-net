@@ -68,6 +68,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataLakeAccessProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IcebergOptimizationProperties", targetDepth))
+                {
+                    var unmarshaller = IcebergOptimizationPropertiesOutputUnmarshaller.Instance;
+                    unmarshalledObject.IcebergOptimizationProperties = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// A default user is required and must be specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

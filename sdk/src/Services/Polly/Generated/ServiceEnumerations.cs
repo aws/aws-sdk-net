@@ -357,6 +357,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly OutputFormat Mp3 = new OutputFormat("mp3");
         /// <summary>
+        /// Constant Ogg_opus for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Ogg_opus = new OutputFormat("ogg_opus");
+        /// <summary>
         /// Constant Ogg_vorbis for OutputFormat
         /// </summary>
         public static readonly OutputFormat Ogg_vorbis = new OutputFormat("ogg_vorbis");

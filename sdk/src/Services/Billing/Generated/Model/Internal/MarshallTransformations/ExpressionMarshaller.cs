@@ -68,6 +68,17 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetTimeRange())
+            {
+                context.Writer.WritePropertyName("timeRange");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeRangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeRange, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

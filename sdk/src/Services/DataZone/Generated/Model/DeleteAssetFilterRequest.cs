@@ -32,6 +32,24 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the DeleteAssetFilter operation.
     /// Deletes an asset filter.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The asset filter must exist. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The domain and asset must not have been deleted.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Ensure the --identifier refers to a valid filter ID.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DeleteAssetFilterRequest : AmazonDataZoneRequest
     {

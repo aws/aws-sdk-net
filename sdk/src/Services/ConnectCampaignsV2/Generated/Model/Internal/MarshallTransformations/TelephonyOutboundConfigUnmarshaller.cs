@@ -74,6 +74,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectSourcePhoneNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ringTimeout", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.RingTimeout = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

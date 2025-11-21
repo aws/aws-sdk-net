@@ -99,6 +99,7 @@ namespace Amazon.MediaStoreData.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-upload-availability"] = publicRequest.UploadAvailability;
             }
+            request.DisablePayloadSigning = true;
 
             return request;
         }

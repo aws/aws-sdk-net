@@ -2,45 +2,43 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Amazon;
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 using Xunit;
 
 namespace UnitTests.NetStandard.Core.Credentials
 {
-    public sealed class RefreshingAWSCredentialsTests : IDisposable
+    public sealed class RefreshingAWSCredentialsTests
     {
-        private readonly Func<DateTime> _resetUtcNowSource;
+        private readonly MockTimeProvider _mockProvider;
+        private readonly DateTime _baseTimeUtc = new DateTime(1970, 1, 1).ToUniversalTime();
+        private readonly TimeSpan _lifetime = TimeSpan.FromMinutes(60);
 
-        public RefreshingAWSCredentialsTests()
-        {
-            _resetUtcNowSource = AWSConfigs.utcNowSource;
-        }
+        public RefreshingAWSCredentialsTests() => _mockProvider = new MockTimeProvider();
 
-        [Fact]
-        public void ConcurrentCallsToGetExpiredCrendentialsOnlyGeneratesNewCredentialsOnce()
+        [Theory]
+        [InlineData(59.5)] // Credentials are not expired yet but just entered the expiration buffer
+        [InlineData(60)] // Credentials have just expired
+        [InlineData(75)] // Credentials are way past expiration
+        public void ConcurrentCallsToGetCredentialsOnlyGeneratesNewCredentialsOnce(double instantInMinutes)
         {
-            var baseTimeUtc = new DateTime(1970, 1, 1).ToUniversalTime();
-            var lifetime = TimeSpan.FromMinutes(60);
-            var mockCredentials = new MockRefreshingAWSCredentials(lifetime)
+            var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
             {
                 PreemptExpiryTime = TimeSpan.FromMinutes(15),
             };
 
-            AWSConfigs.utcNowSource = () => baseTimeUtc;
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc;
             var initialCreds = mockCredentials.GetCredentials();
-            
-            AWSConfigs.utcNowSource = () => baseTimeUtc + lifetime;
 
-            mockCredentials.CloseGenerateCredentialsGate(); // prevent GenerateNewCredentials from returning
-
+            // Prevent GenerateNewCredentials from returning.
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
+            mockCredentials.CloseGenerateCredentialsGate();
             var concurrentCredentialTasks = Task.WhenAll(
-                    Enumerable.Range(1, 5)
-                        .Select(i => Task.Run(() => mockCredentials.GetCredentials()))
-                    );
+                Enumerable.Range(1, 5).Select(i => Task.Run(() => mockCredentials.GetCredentials()))
+            );
 
-            mockCredentials.OpenGenerateCredentialsGate(); // allow GenerateNewCredentials to complete
-
+            // Allow GenerateNewCredentials to complete.
+            mockCredentials.OpenGenerateCredentialsGate(); 
             var allCreds = concurrentCredentialTasks.Result;
             Assert.NotEqual(initialCreds, allCreds[0]);
 
@@ -51,72 +49,32 @@ namespace UnitTests.NetStandard.Core.Credentials
             }
         }
 
-        [Fact]
-        public void CredentialsAreRefreshedInImmediatelyWhenExpired()
+        [Theory]
+        [InlineData(59.5)] // Credentials are not expired yet but just entered the expiration buffer
+        [InlineData(60)] // Credentials have just expired
+        [InlineData(75)] // Credentials are way past expiration
+        public async Task ConcurrentCallsToGetCredentialsOnlyGeneratesNewCredentialsOnceAsync(double instantInMinutes)
         {
-            var baseTimeUtc = new DateTime(1970, 1, 1).ToUniversalTime();
-            var lifetime = TimeSpan.FromMinutes(60);
-            var mockCredentials = new MockRefreshingAWSCredentials(lifetime)
+            var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
             {
                 PreemptExpiryTime = TimeSpan.FromMinutes(15),
             };
 
-            AWSConfigs.utcNowSource = () => baseTimeUtc;
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc;
             var initialCreds = mockCredentials.GetCredentials();
 
-            AWSConfigs.utcNowSource = () => baseTimeUtc + lifetime;
-            var credsAfterExpiration = mockCredentials.GetCredentials();
-            Assert.NotEqual(initialCreds, credsAfterExpiration);
-            Assert.Equal(2, mockCredentials.GeneratedTokenCount);
-        }
-
-        [Fact]
-        public async Task CredentialsAreRefreshedInImmediatelyWhenExpiredAsync()
-        {
-            var baseTimeUtc = new DateTime(1970, 1, 1).ToUniversalTime();
-            var lifetime = TimeSpan.FromMinutes(60);
-            var mockCredentials = new MockRefreshingAWSCredentials(lifetime)
-            {
-                PreemptExpiryTime = TimeSpan.FromMinutes(15),
-            };
-
-            AWSConfigs.utcNowSource = () => baseTimeUtc;
-            var initialCreds = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
-
-            AWSConfigs.utcNowSource = () => baseTimeUtc + lifetime;
-            var credsAfterExpiration = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
-            Assert.NotEqual(initialCreds, credsAfterExpiration);
-            Assert.Equal(2, mockCredentials.GeneratedTokenCount);
-        }
-
-        [Fact]
-        public async Task ConcurrentCallsToGetExpiredCrendentialsOnlyGeneratesNewCredentialsOnceAsync()
-        {
-            var baseTimeUtc = new DateTime(1970, 1, 1).ToUniversalTime();
-            var lifetime = TimeSpan.FromMinutes(60);
-            var mockCredentials = new MockRefreshingAWSCredentials(lifetime)
-            {
-                PreemptExpiryTime = TimeSpan.FromMinutes(15),
-            };
-
-            AWSConfigs.utcNowSource = () => baseTimeUtc;
-            var initialCreds = mockCredentials.GetCredentials();
-            
-            AWSConfigs.utcNowSource = () => baseTimeUtc + lifetime;
-
-            mockCredentials.CloseGenerateCredentialsGate(); // prevent GenerateNewCredentials from returning
-
+            // Prevent GenerateNewCredentials from returning.
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
+            mockCredentials.CloseGenerateCredentialsGate();
             var concurrentCredentialTasks = Task.WhenAll(
-                    Enumerable.Range(1, 5)
-                        .Select(i => mockCredentials.GetCredentialsAsync())
-                    );
+                Enumerable.Range(1, 5).Select(i => mockCredentials.GetCredentialsAsync())
+            );
 
-            mockCredentials.OpenGenerateCredentialsGate(); // allow GenerateNewCredentials to complete
-
+            // Allow GenerateNewCredentials to complete.
+            mockCredentials.OpenGenerateCredentialsGate();
             var allCreds = await concurrentCredentialTasks;
 
             Assert.NotEqual(initialCreds, allCreds[0]);
-
             Assert.Equal(2, mockCredentials.GeneratedTokenCount);
             for (var i = 1; i < allCreds.Length; i++)
             {
@@ -124,20 +82,61 @@ namespace UnitTests.NetStandard.Core.Credentials
             }
         }
 
-        [Fact]
-        public void CredentialsAreRefreshedInBackgroundDuringPreemptyExpiryPeriod()
+        [Theory]
+        [InlineData(15, 1, 60)] // Credentials have just expired.
+        [InlineData(5, 10, 51)] // Credentials have expired considering the expiration buffer.
+        public void CredentialsAreRefreshedImmediatelyWhenExpired(int preemptInMinutes, int bufferInMinutes, double instantInMinutes)
         {
-            var baseTimeUtc = new DateTime(1970, 1, 1).ToUniversalTime();
-            var lifetime = TimeSpan.FromMinutes(60);
-            var mockCredentials = new MockRefreshingAWSCredentials(lifetime)
+            var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
+            {
+                PreemptExpiryTime = TimeSpan.FromMinutes(preemptInMinutes),
+                ExpirationBuffer = TimeSpan.FromMinutes(bufferInMinutes),
+            };
+
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc;
+            var initialCreds = mockCredentials.GetCredentials();
+
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
+            var credsAfterExpiration = mockCredentials.GetCredentials();
+            Assert.NotEqual(initialCreds, credsAfterExpiration);
+            Assert.Equal(2, mockCredentials.GeneratedTokenCount);
+        }
+
+        [Theory]
+        [InlineData(15, 1, 60)] // Credentials have just expired.
+        [InlineData(5, 10, 51)] // Credentials have expired considering the expiration buffer.
+        public async Task CredentialsAreRefreshedImmediatelyWhenExpiredAsync(int preemptInMinutes, int bufferInMinutes, double instantInMinutes)
+        {
+            var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
+            {
+                PreemptExpiryTime = TimeSpan.FromMinutes(preemptInMinutes),
+                ExpirationBuffer = TimeSpan.FromMinutes(bufferInMinutes),
+            };
+
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc;
+            var initialCreds = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
+
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
+            var credsAfterExpiration = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
+            Assert.NotEqual(initialCreds, credsAfterExpiration);
+            Assert.Equal(2, mockCredentials.GeneratedTokenCount);
+        }
+
+        [Theory]
+        [InlineData(45.5)] // Credentials just entered the preempt expiry period
+        [InlineData(50)]
+        [InlineData(58.5)] // Credentials are still within the preempt expiry period but before the expiration buffer
+        public void CredentialsAreRefreshedInBackgroundDuringPreemptyExpiryPeriod(double instantInMinutes)
+        {
+            var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
             {
                 PreemptExpiryTime = TimeSpan.FromMinutes(15),
             };
 
-            AWSConfigs.utcNowSource = () => baseTimeUtc;
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc;
             var initialCreds = mockCredentials.GetCredentials();
 
-            AWSConfigs.utcNowSource = () => baseTimeUtc + TimeSpan.FromMinutes(50);
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
             var previousState = mockCredentials.CurrentState;
             var credsDuringPreemptExpiry = mockCredentials.GetCredentials();
             Assert.Equal(initialCreds, credsDuringPreemptExpiry);
@@ -147,24 +146,25 @@ namespace UnitTests.NetStandard.Core.Credentials
 
             var credsAfterRefresh = mockCredentials.GetCredentials();
             Assert.NotEqual(credsAfterRefresh, credsDuringPreemptExpiry);
-            Assert.Equal(AWSConfigs.utcNowSource() + lifetime - mockCredentials.PreemptExpiryTime, mockCredentials.CurrentState.Expiration);
+            Assert.Equal(_mockProvider.CorrectedUtcNow + _lifetime - mockCredentials.ExpirationBuffer, mockCredentials.CurrentState.Expiration);
             Assert.Equal(2, mockCredentials.GeneratedTokenCount);
         }
 
-        [Fact]
-        public async Task CredentialsAreRefreshedInBackgroundDuringPreemptyExpiryPeriodAsync()
+        [Theory]
+        [InlineData(45.5)] // Credentials just entered the preempt expiry period
+        [InlineData(50)]
+        [InlineData(58.5)] // Credentials are still within the preempt expiry period but before the expiration buffer
+        public async Task CredentialsAreRefreshedInBackgroundDuringPreemptyExpiryPeriodAsync(double instantInMinutes)
         {
-            var baseTimeUtc = new DateTime(1970, 1, 1).ToUniversalTime();
-            var lifetime = TimeSpan.FromMinutes(60);
-            var mockCredentials = new MockRefreshingAWSCredentials(lifetime)
+            var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
             {
                 PreemptExpiryTime = TimeSpan.FromMinutes(15),
             };
 
-            AWSConfigs.utcNowSource = () => baseTimeUtc;
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc;
             var initialCreds = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
 
-            AWSConfigs.utcNowSource = () => baseTimeUtc + TimeSpan.FromMinutes(50);
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(instantInMinutes);
             var previousState = mockCredentials.CurrentState;
             var credsDuringPreemptExpiry = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
             Assert.Equal(initialCreds, credsDuringPreemptExpiry);
@@ -174,13 +174,45 @@ namespace UnitTests.NetStandard.Core.Credentials
 
             var credsAfterRefresh = await mockCredentials.GetCredentialsAsync().ConfigureAwait(false);
             Assert.NotEqual(credsAfterRefresh, credsDuringPreemptExpiry);
-            Assert.Equal(AWSConfigs.utcNowSource() + lifetime - mockCredentials.PreemptExpiryTime, mockCredentials.CurrentState.Expiration);
+            Assert.Equal(_mockProvider.CorrectedUtcNow + _lifetime - mockCredentials.ExpirationBuffer, mockCredentials.CurrentState.Expiration);
             Assert.Equal(2, mockCredentials.GeneratedTokenCount);
         }
 
-        public void Dispose()
+        [Fact]
+        public void ConcurrentCallsDuringPreemptWindowOnlyGeneratesNewCredentialsOnce()
         {
-            AWSConfigs.utcNowSource = _resetUtcNowSource;
+            var mockCredentials = new MockRefreshingAWSCredentials(_lifetime, _mockProvider)
+            {
+                PreemptExpiryTime = TimeSpan.FromMinutes(15),
+            };
+
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc;
+            var initialCreds = mockCredentials.GetCredentials();
+            var previousState = mockCredentials.CurrentState;
+
+            // Move time into preempt expiry period (not expired, but within preempt window).
+            _mockProvider.CorrectedUtcNow = _baseTimeUtc + TimeSpan.FromMinutes(50);
+            mockCredentials.CloseGenerateCredentialsGate();
+
+            // Multiple parallel calls during preempt expiry.
+            var tasks = Enumerable.Range(1, 5)
+                .Select(_ => Task.Run(() => mockCredentials.GetCredentials()))
+                .ToArray();
+            mockCredentials.OpenGenerateCredentialsGate();
+            Task.WaitAll(tasks);
+
+            // Wait for background refresh to complete.
+            Assert.True(SpinWait.SpinUntil(() => !ReferenceEquals(mockCredentials.CurrentState, previousState), 1_000));
+
+            // Only one background refresh should have occurred.
+            var credsAfterRefresh = mockCredentials.GetCredentials();
+            Assert.Equal(2, mockCredentials.GeneratedTokenCount);
+            Assert.NotEqual(initialCreds, credsAfterRefresh);
+        }
+
+        private class MockTimeProvider : ITimeProvider
+        {
+            public DateTime CorrectedUtcNow { get; set; }
         }
 
         // using a hand-written mock in order to have access to the protected fields
@@ -190,7 +222,8 @@ namespace UnitTests.NetStandard.Core.Credentials
             private readonly ManualResetEventSlim _generateCredsEvent;
             private int _tokenCounter;
 
-            public MockRefreshingAWSCredentials(TimeSpan credentialsLifetime)
+            public MockRefreshingAWSCredentials(TimeSpan credentialsLifetime, ITimeProvider timeProvider) 
+                : base(timeProvider)
             {
                 _credentialsLifetime = credentialsLifetime;
                 _generateCredsEvent = new ManualResetEventSlim(initialState: true);
@@ -216,11 +249,10 @@ namespace UnitTests.NetStandard.Core.Credentials
             protected override CredentialsRefreshState GenerateNewCredentials()
             {
                 _generateCredsEvent.Wait();
-                return new CredentialsRefreshState
-                {
-                    Credentials = new ImmutableCredentials("access_key_id", "secret_access_key", $"token_{Interlocked.Increment(ref _tokenCounter)}"),
-                    Expiration = AWSConfigs.utcNowSource() + _credentialsLifetime,
-                };
+
+                var credentials = new ImmutableCredentials("access_key_id", "secret_access_key", $"token_{Interlocked.Increment(ref _tokenCounter)}");
+                var expiration = _timeProvider.CorrectedUtcNow + _credentialsLifetime;
+                return new CredentialsRefreshState(credentials, expiration, _timeProvider);
             }
 
             protected override Task<CredentialsRefreshState> GenerateNewCredentialsAsync()

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VpcOriginSummary Object
     /// </summary>  
-    public class VpcOriginSummaryUnmarshaller : IXmlUnmarshaller<VpcOriginSummary, XmlUnmarshallerContext>
+    public partial class VpcOriginSummaryUnmarshaller : IXmlUnmarshaller<VpcOriginSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,6 +56,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AccountId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Arn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +104,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -106,6 +114,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, VpcOriginSummary unmarshalledObject, int targetDepth);
+
         private static VpcOriginSummaryUnmarshaller _instance = new VpcOriginSummaryUnmarshaller();        
 
         /// <summary>

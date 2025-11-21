@@ -32,6 +32,34 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the CreateAssetType operation.
     /// Creates a custom asset type.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The <c>formsInput</c> field is required, however, can be passed as empty (e.g. <c>-forms-input
+    /// {})</c>. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You must have <c>CreateAssetType</c> permissions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The domain-identifier and owning-project-identifier must be valid and active.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The name of the asset type must be unique within the domain — duplicate names will
+    /// cause failure.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// JSON input must be valid — incorrect formatting causes Invalid JSON errors.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateAssetTypeRequest : AmazonDataZoneRequest
     {

@@ -1104,8 +1104,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// License models for RDS for Db2 require additional configuration. The Bring Your Own
-        /// License (BYOL) model requires a custom parameter group and an Amazon Web Services
+        /// License models for RDS for Db2 require additional configuration. The bring your own
+        /// license (BYOL) model requires a custom parameter group and an Amazon Web Services
         /// License Manager self-managed license. The Db2 license through Amazon Web Services
         /// Marketplace model requires an Amazon Web Services Marketplace subscription. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon
@@ -1528,6 +1528,7 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string TdeCredentialPassword
         {
             get { return this._tdeCredentialPassword; }

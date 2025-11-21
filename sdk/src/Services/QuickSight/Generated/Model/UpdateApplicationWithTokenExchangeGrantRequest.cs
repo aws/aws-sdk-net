@@ -31,9 +31,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplicationWithTokenExchangeGrant operation.
-    /// Updates an Amazon QuickSight application with a token exchange grant. This operation
-    /// only supports Amazon QuickSight applications that are registered with IAM Identity
-    /// Center.
+    /// Updates an Quick Suite application with a token exchange grant. This operation only
+    /// supports Quick Suite applications that are registered with IAM Identity Center.
     /// </summary>
     public partial class UpdateApplicationWithTokenExchangeGrantRequest : AmazonQuickSightRequest
     {
@@ -62,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the Amazon QuickSight application.
+        /// The namespace of the Quick Suite application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

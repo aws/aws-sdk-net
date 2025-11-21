@@ -36,6 +36,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     {
         private DateTime? _createdTimestamp;
         private bool? _deletionProtectionEnabled;
+        private bool? _internationalSendingEnabled;
         private string _isoCountryCode;
         private MessageType _messageType;
         private string _monthlyLeasingPrice;
@@ -90,6 +91,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetDeletionProtectionEnabled()
         {
             return this._deletionProtectionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InternationalSendingEnabled. 
+        /// <para>
+        /// By default this is set to false. When set to true the international sending of phone
+        /// number is Enabled. 
+        /// </para>
+        /// </summary>
+        public bool? InternationalSendingEnabled
+        {
+            get { return this._internationalSendingEnabled; }
+            set { this._internationalSendingEnabled = value; }
+        }
+
+        // Check to see if InternationalSendingEnabled property is set
+        internal bool IsSetInternationalSendingEnabled()
+        {
+            return this._internationalSendingEnabled.HasValue; 
         }
 
         /// <summary>
@@ -304,11 +324,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property SelfManagedOptOutsEnabled. 
         /// <para>
-        /// By default this is set to false. When an end recipient sends a message that begins
-        /// with HELP or STOP to one of your dedicated numbers, AWS End User Messaging SMS and
-        /// Voice automatically replies with a customizable message and adds the end recipient
-        /// to the OptOutList. When set to true you're responsible for responding to HELP and
-        /// STOP requests. You're also responsible for tracking and honoring opt-out requests.
+        /// By default this is set to false. When set to false and an end recipient sends a message
+        /// that begins with HELP or STOP to one of your dedicated numbers, End User MessagingSMS
+        /// automatically replies with a customizable message and adds the end recipient to the
+        /// OptOutList. When set to true you're responsible for responding to HELP and STOP requests.
+        /// You're also responsible for tracking and honoring opt-out requests.
         /// </para>
         /// </summary>
         public bool? SelfManagedOptOutsEnabled

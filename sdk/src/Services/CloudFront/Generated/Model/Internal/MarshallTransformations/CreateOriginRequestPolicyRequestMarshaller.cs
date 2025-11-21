@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateOriginRequestPolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/origin-request-policy";
 
@@ -186,5 +187,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateOriginRequestPolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateOriginRequestPolicyRequest publicRequest);
     }    
 }

@@ -35,6 +35,7 @@ namespace Amazon.CleanRooms.Model
     public partial class GlueTableReference
     {
         private string _databaseName;
+        private CommercialRegion _region;
         private string _tableName;
 
         /// <summary>
@@ -54,6 +55,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetDatabaseName()
         {
             return this._databaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The Amazon Web Services Region where the Glue table is located. This parameter is
+        /// required to uniquely identify and access tables across different Regions.
+        /// </para>
+        /// </summary>
+        public CommercialRegion Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
         /// <summary>

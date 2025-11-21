@@ -30,10 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// A structure that contains information about a stack set. A stack set enables you to
-    /// provision stacks into Amazon Web Services accounts and across Regions by using a single
-    /// CloudFormation template. In the stack set, you specify the template to use, in addition
-    /// to any parameters and capabilities that the template requires.
+    /// A structure that contains information about a StackSet. With StackSets, you can provision
+    /// stacks across Amazon Web Services accounts and Regions from a single CloudFormation
+    /// template. Each stack is based on the same CloudFormation template, but you can customize
+    /// individual stacks using parameters.
     /// </summary>
     public partial class StackSet
     {
@@ -64,7 +64,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Use customized administrator roles to control which users or groups can manage specific
-        /// stack sets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
+        /// StackSets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites
         /// for using CloudFormation StackSets</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -84,9 +84,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AutoDeployment. 
         /// <para>
-        /// [Service-managed permissions] Describes whether StackSets automatically deploys to
-        /// Organizations accounts that are added to a target organization or organizational unit
-        /// (OU).
+        /// Describes whether StackSets automatically deploys to Organizations accounts that are
+        /// added to a target organization or organizational unit (OU). Valid only if the StackSet
+        /// uses service-managed permissions.
         /// </para>
         /// </summary>
         public AutoDeployment AutoDeployment
@@ -104,9 +104,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// The capabilities that are allowed in the stack set. Some stack set templates might
-        /// include resources that can affect permissions in your Amazon Web Services account—for
-        /// example, by creating new Identity and Access Management (IAM) users. For more information,
+        /// The capabilities that are allowed in the StackSet. Some StackSet templates might include
+        /// resources that can affect permissions in your Amazon Web Services account—for example,
+        /// by creating new Identity and Access Management (IAM) users. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html#using-iam-capabilities">Acknowledging
         /// IAM resources in CloudFormation templates</a>.
         /// </para>
@@ -131,7 +131,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the stack set that you specify when the stack set is created or updated.
+        /// A description of the StackSet that you specify when the StackSet is created or updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -150,12 +150,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleName. 
         /// <para>
-        /// The name of the IAM execution role used to create or update the stack set.
+        /// The name of the IAM execution role used to create or update the StackSet.
         /// </para>
         ///  
         /// <para>
         /// Use customized execution roles to control which stack resources users and groups can
-        /// include in their stack sets.
+        /// include in their StackSets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -217,7 +217,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of input parameters for a stack set.
+        /// A list of input parameters for a StackSet.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -240,7 +240,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property PermissionModel. 
         /// <para>
-        /// Describes how the IAM roles required for stack set operations are created.
+        /// Describes how the IAM roles required for StackSet operations are created.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -253,7 +253,7 @@ namespace Amazon.CloudFormation.Model
         /// With <c>service-managed</c> permissions, StackSets automatically creates the IAM roles
         /// required to deploy to accounts managed by Organizations. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
-        /// trusted access for stack sets with Organizations</a>.
+        /// trusted access for StackSets with Organizations</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -296,7 +296,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the stack set.
+        /// The Amazon Resource Name (ARN) of the StackSet.
         /// </para>
         /// </summary>
         public string StackSetARN
@@ -314,12 +314,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetDriftDetectionDetails. 
         /// <para>
-        /// Detailed information about the drift status of the stack set.
+        /// Detailed information about the drift status of the StackSet.
         /// </para>
         ///  
         /// <para>
-        /// For stack sets, contains information about the last <i>completed</i> drift operation
-        /// performed on the stack set. Information about drift operations currently in progress
+        /// For StackSets, contains information about the last <i>completed</i> drift operation
+        /// performed on the StackSet. Information about drift operations currently in progress
         /// isn't included.
         /// </para>
         /// </summary>
@@ -338,7 +338,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetId. 
         /// <para>
-        /// The ID of the stack set.
+        /// The ID of the StackSet.
         /// </para>
         /// </summary>
         public string StackSetId
@@ -356,7 +356,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name that's associated with the stack set.
+        /// The name that's associated with the StackSet.
         /// </para>
         /// </summary>
         public string StackSetName
@@ -374,7 +374,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the stack set.
+        /// The status of the StackSet.
         /// </para>
         /// </summary>
         public StackSetStatus Status
@@ -392,7 +392,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags that specify information about the stack set. A maximum number of 50
+        /// A list of tags that specify information about the StackSet. A maximum number of 50
         /// tags can be specified.
         /// </para>
         /// <para />
@@ -418,7 +418,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateBody. 
         /// <para>
         /// The structure that contains the body of the template that was used to create or update
-        /// the stack set.
+        /// the StackSet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

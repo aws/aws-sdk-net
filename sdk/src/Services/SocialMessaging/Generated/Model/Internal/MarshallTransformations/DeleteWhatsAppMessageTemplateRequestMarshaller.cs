@@ -65,12 +65,16 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetDeleteAllLanguages())
                 request.Parameters.Add("deleteAllTemplates", StringUtils.FromBool(publicRequest.DeleteAllLanguages));
+            if (string.IsNullOrEmpty(publicRequest.Id))
+                throw new AmazonSocialMessagingException("Request object does not have required field Id set");
             
             if (publicRequest.IsSetId())
                 request.Parameters.Add("id", StringUtils.FromString(publicRequest.Id));
             
             if (publicRequest.IsSetMetaTemplateId())
                 request.Parameters.Add("metaTemplateId", StringUtils.FromString(publicRequest.MetaTemplateId));
+            if (string.IsNullOrEmpty(publicRequest.TemplateName))
+                throw new AmazonSocialMessagingException("Request object does not have required field TemplateName set");
             
             if (publicRequest.IsSetTemplateName())
                 request.Parameters.Add("templateName", StringUtils.FromString(publicRequest.TemplateName));

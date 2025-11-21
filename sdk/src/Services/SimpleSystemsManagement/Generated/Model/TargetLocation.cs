@@ -121,6 +121,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Indicates whether to include child organizational units (OUs) that are children of
         /// the targeted OUs. The default is <c>false</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported by State Manager.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool? IncludeChildOrganizationUnits
         {
@@ -177,7 +182,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetLocationMaxConcurrency. 
         /// <para>
         /// The maximum number of Amazon Web Services Regions and Amazon Web Services accounts
-        /// allowed to run the Automation concurrently.
+        /// allowed to run the Automation concurrently. <c>TargetLocationMaxConcurrency</c> has
+        /// a default value of 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -197,7 +203,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetLocationMaxErrors. 
         /// <para>
         /// The maximum number of errors allowed before the system stops queueing additional Automation
-        /// executions for the currently running Automation.
+        /// executions for the currently running Automation. <c>TargetLocationMaxErrors</c> has
+        /// a default value of 0.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]

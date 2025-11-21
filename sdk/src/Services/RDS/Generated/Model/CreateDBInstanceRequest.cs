@@ -90,6 +90,7 @@ namespace Amazon.RDS.Model
         private string _kmsKeyId;
         private string _licenseModel;
         private bool? _manageMasterUserPassword;
+        private MasterUserAuthenticationType _masterUserAuthenticationType;
         private string _masterUsername;
         private string _masterUserPassword;
         private string _masterUserSecretKmsKeyId;
@@ -1774,8 +1775,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// License models for RDS for Db2 require additional configuration. The Bring Your Own
-        /// License (BYOL) model requires a custom parameter group and an Amazon Web Services
+        /// License models for RDS for Db2 require additional configuration. The bring your own
+        /// license (BYOL) model requires a custom parameter group and an Amazon Web Services
         /// License Manager self-managed license. The Db2 license through Amazon Web Services
         /// Marketplace model requires an Amazon Web Services Marketplace subscription. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html">Amazon
@@ -1864,6 +1865,42 @@ namespace Amazon.RDS.Model
         internal bool IsSetManageMasterUserPassword()
         {
             return this._manageMasterUserPassword.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MasterUserAuthenticationType. 
+        /// <para>
+        /// Specifies the authentication type for the master user. With IAM master user authentication,
+        /// you can configure the master DB user with IAM database authentication when you create
+        /// a DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>password</c> - Use standard database authentication with a password.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>iam-db-auth</c> - Use IAM database authentication for the master user.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.
+        /// </para>
+        /// </summary>
+        public MasterUserAuthenticationType MasterUserAuthenticationType
+        {
+            get { return this._masterUserAuthenticationType; }
+            set { this._masterUserAuthenticationType = value; }
+        }
+
+        // Check to see if MasterUserAuthenticationType property is set
+        internal bool IsSetMasterUserAuthenticationType()
+        {
+            return this._masterUserAuthenticationType != null;
         }
 
         /// <summary>
@@ -1963,6 +2000,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -2580,11 +2618,10 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// When the DB instance is publicly accessible and you connect from outside of the DB
-        /// instance's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves
+        /// instance's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves
         /// to the public IP address. When you connect from within the same VPC as the DB instance,
-        /// the endpoint resolves to the private IP address. Access to the DB instance is ultimately
-        /// controlled by the security group it uses. That public access is not permitted if the
-        /// security group assigned to the DB instance doesn't permit it.
+        /// the endpoint resolves to the private IP address. Access to the DB instance is controlled
+        /// by its security group settings.
         /// </para>
         ///  
         /// <para>
@@ -2593,40 +2630,25 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: The default behavior varies depending on whether <c>DBSubnetGroupName</c>
-        /// is specified.
+        /// The default behavior when <c>PubliclyAccessible</c> is not specified depends on whether
+        /// a <c>DBSubnetGroup</c> is specified.
         /// </para>
         ///  
         /// <para>
-        /// If <c>DBSubnetGroupName</c> isn't specified, and <c>PubliclyAccessible</c> isn't specified,
-        /// the following applies:
+        /// If <c>DBSubnetGroup</c> isn't specified, <c>PubliclyAccessible</c> defaults to <c>false</c>
+        /// for Aurora instances and <c>true</c> for non-Aurora instances.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// If the default VPC in the target Region doesn’t have an internet gateway attached
-        /// to it, the DB instance is private.
+        /// If <c>DBSubnetGroup</c> is specified, <c>PubliclyAccessible</c> defaults to <c>false</c>
+        /// unless the value of <c>DBSubnetGroup</c> is <c>default</c>, in which case <c>PubliclyAccessible</c>
+        /// defaults to <c>true</c>.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
-        /// If the default VPC in the target Region has an internet gateway attached to it, the
-        /// DB instance is public.
+        /// If <c>PubliclyAccessible</c> is true and the VPC that the <c>DBSubnetGroup</c> is
+        /// in doesn't have an internet gateway attached to it, Amazon RDS returns an error.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If <c>DBSubnetGroupName</c> is specified, and <c>PubliclyAccessible</c> isn't specified,
-        /// the following applies:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// If the subnets are part of a VPC that doesn’t have an internet gateway attached to
-        /// it, the DB instance is private.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the subnets are part of a VPC that has an internet gateway attached to it, the
-        /// DB instance is public.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool? PubliclyAccessible
         {
@@ -2785,6 +2807,7 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string TdeCredentialPassword
         {
             get { return this._tdeCredentialPassword; }

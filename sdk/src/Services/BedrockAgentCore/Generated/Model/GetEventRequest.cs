@@ -31,11 +31,11 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEvent operation.
-    /// Retrieves information about a specific event in a memory store.
+    /// Retrieves information about a specific event in an AgentCore Memory resource.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>genesismemory:GetEvent</c> permission.
+    /// To use this operation, you must have the <c>bedrock-agentcore:GetEvent</c> permission.
     /// </para>
     /// </summary>
     public partial class GetEventRequest : AmazonBedrockAgentCoreRequest
@@ -86,7 +86,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store containing the event.
+        /// The identifier of the AgentCore Memory resource containing the event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]

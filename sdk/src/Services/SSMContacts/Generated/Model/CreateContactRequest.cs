@@ -150,8 +150,21 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// To create an escalation plan use <c>ESCALATION</c>. To create a contact use <c>PERSONAL</c>.
+        /// The type of contact to create.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PERSONAL</c>: A single, individual contact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ESCALATION</c>: An escalation plan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ONCALL_SCHEDULE</c>: An on-call schedule.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ContactType Type

@@ -39,6 +39,7 @@ namespace Amazon.Imagebuilder.Model
         private string _clientToken;
         private string _data;
         private string _description;
+        private bool? _dryRun;
         private string _kmsKeyId;
         private string _name;
         private string _semanticVersion;
@@ -128,9 +129,32 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Validates the required permissions for the operation and the request parameters, without
+        /// actually making the request, and provides an error response. Upon a successful request,
+        /// the error response is <c>DryRunOperationException</c>.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The ID of the KMS key that is used to encrypt this workflow resource.
+        /// The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt
+        /// this workflow resource. This can be either the Key ARN or the Alias ARN. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key
+        /// identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

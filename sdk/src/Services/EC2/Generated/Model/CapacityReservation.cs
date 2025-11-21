@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
         /// <para>
-        /// The Availability Zone ID of the Capacity Reservation.
+        /// The ID of the Availability Zone in which the capacity is reserved.
         /// </para>
         /// </summary>
         public string AvailabilityZoneId
@@ -235,7 +235,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
-        /// The date and time at which the Capacity Reservation was created.
+        /// The date and time the Capacity Reservation was created.
         /// </para>
         /// </summary>
         public DateTime? CreateDate
@@ -294,10 +294,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        /// The date and time at which the Capacity Reservation expires. When a Capacity Reservation
-        /// expires, the reserved capacity is released and you can no longer launch instances
-        /// into it. The Capacity Reservation's state changes to <c>expired</c> when it reaches
-        /// its end date and time.
+        /// The date and time the Capacity Reservation expires. When a Capacity Reservation expires,
+        /// the reserved capacity is released and you can no longer launch instances into it.
+        /// The Capacity Reservation's state changes to <c>expired</c> when it reaches its end
+        /// date and time.
         /// </para>
         /// </summary>
         public DateTime? EndDate
@@ -508,7 +508,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The date and time at which the Capacity Reservation was started.
+        /// The date and time the Capacity Reservation was started.
         /// </para>
         /// </summary>
         public DateTime? StartDate

@@ -37,7 +37,11 @@ namespace Amazon.VPCLattice.Model
         private bool? _allowAssociationToShareableServiceNetwork;
         private string _arn;
         private DateTime? _createdAt;
+        private string _customDomainName;
+        private string _domainVerificationArn;
+        private string _domainVerificationId;
         private string _failureReason;
+        private string _groupDomain;
         private string _id;
         private string _name;
         private List<string> _portRanges = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -105,6 +109,63 @@ namespace Amazon.VPCLattice.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomDomainName. 
+        /// <para>
+        ///  The custom domain name for your resource configuration. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=255)]
+        public string CustomDomainName
+        {
+            get { return this._customDomainName; }
+            set { this._customDomainName = value; }
+        }
+
+        // Check to see if CustomDomainName property is set
+        internal bool IsSetCustomDomainName()
+        {
+            return this._customDomainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainVerificationArn. 
+        /// <para>
+        ///  The verification ID ARN 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DomainVerificationArn
+        {
+            get { return this._domainVerificationArn; }
+            set { this._domainVerificationArn = value; }
+        }
+
+        // Check to see if DomainVerificationArn property is set
+        internal bool IsSetDomainVerificationArn()
+        {
+            return this._domainVerificationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainVerificationId. 
+        /// <para>
+        ///  The domain name verification ID. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=20)]
+        public string DomainVerificationId
+        {
+            get { return this._domainVerificationId; }
+            set { this._domainVerificationId = value; }
+        }
+
+        // Check to see if DomainVerificationId property is set
+        internal bool IsSetDomainVerificationId()
+        {
+            return this._domainVerificationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// The reason that the request failed.
@@ -120,6 +181,27 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupDomain. 
+        /// <para>
+        ///  (GROUP) The group domain for a group resource configuration. Any domains that you
+        /// create for the child resource are subdomains of the group domain. Child resources
+        /// inherit the verification status of the domain. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=255)]
+        public string GroupDomain
+        {
+            get { return this._groupDomain; }
+            set { this._groupDomain = value; }
+        }
+
+        // Check to see if GroupDomain property is set
+        internal bool IsSetGroupDomain()
+        {
+            return this._groupDomain != null;
         }
 
         /// <summary>
@@ -204,8 +286,23 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationDefinition. 
         /// <para>
-        /// The resource configuration.
+        /// Identifies the resource configuration in one of the following ways:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Amazon Resource Name (ARN)</b> - Supported resource-types that are provisioned
+        /// by Amazon Web Services services, such as RDS databases, can be identified by their
+        /// ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Domain name</b> - Any domain name that is publicly resolvable.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResourceConfigurationDefinition ResourceConfigurationDefinition
         {
@@ -222,7 +319,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationGroupId. 
         /// <para>
-        /// The ID of the parent resource configuration (type is GROUP).
+        /// The ID of the parent resource configuration of type <c>GROUP</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=22, Max=22)]
@@ -278,8 +375,27 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of resource configuration.
+        /// The type of resource configuration. A resource configuration can be one of the following
+        /// types:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>SINGLE</b> - A single resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>GROUP</b> - A group of resources. You must create a group resource configuration
+        /// before you create a child resource configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CHILD</b> - A single resource that is part of a group resource configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ARN</b> - An Amazon Web Services resource.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ResourceConfigurationType Type
         {

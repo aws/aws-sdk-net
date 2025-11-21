@@ -100,6 +100,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.TermRelations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("usageRestrictions", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.UsageRestrictions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

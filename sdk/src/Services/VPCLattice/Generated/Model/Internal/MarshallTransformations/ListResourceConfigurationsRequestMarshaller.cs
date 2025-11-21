@@ -63,6 +63,9 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetDomainVerificationIdentifier())
+                request.Parameters.Add("domainVerificationIdentifier", StringUtils.FromString(publicRequest.DomainVerificationIdentifier));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

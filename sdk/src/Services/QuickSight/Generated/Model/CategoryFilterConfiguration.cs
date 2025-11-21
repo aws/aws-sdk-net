@@ -66,8 +66,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CustomFilterListConfiguration. 
         /// <para>
-        /// A list of custom filter values. In the Amazon QuickSight console, this filter type
-        /// is called a custom filter list.
+        /// A list of custom filter values. In the Quick Sight console, this filter type is called
+        /// a custom filter list.
         /// </para>
         /// </summary>
         public CustomFilterListConfiguration CustomFilterListConfiguration
@@ -85,8 +85,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FilterListConfiguration. 
         /// <para>
-        /// A list of filter configurations. In the Amazon QuickSight console, this filter type
-        /// is called a filter list.
+        /// A list of filter configurations. In the Quick Sight console, this filter type is called
+        /// a filter list.
         /// </para>
         /// </summary>
         public FilterListConfiguration FilterListConfiguration

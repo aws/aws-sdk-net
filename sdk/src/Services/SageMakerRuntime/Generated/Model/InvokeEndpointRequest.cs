@@ -31,20 +31,20 @@ namespace Amazon.SageMakerRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeEndpoint operation.
-    /// After you deploy a model into production using Amazon SageMaker hosting services,
+    /// After you deploy a model into production using Amazon SageMaker AI hosting services,
     /// your client applications use this API to get inferences from the model hosted at the
     /// specified endpoint. 
     /// 
     ///  
     /// <para>
-    /// For an overview of Amazon SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
+    /// For an overview of Amazon SageMaker AI, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
     /// It Works</a>. 
     /// </para>
     ///  
     /// <para>
-    /// Amazon SageMaker strips all POST headers except those supported by the API. Amazon
-    /// SageMaker might add additional headers. You should not rely on the behavior of headers
-    /// outside those enumerated in the request syntax. 
+    /// Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon
+    /// SageMaker AI might add additional headers. You should not rely on the behavior of
+    /// headers outside those enumerated in the request syntax. 
     /// </para>
     ///  
     /// <para>
@@ -62,8 +62,8 @@ namespace Amazon.SageMakerRuntime.Model
     ///  <note> 
     /// <para>
     /// Endpoints are scoped to an individual account, and are not public. The URL does not
-    /// contain the account ID, but Amazon SageMaker determines the account ID from the authentication
-    /// token that is supplied by the caller.
+    /// contain the account ID, but Amazon SageMaker AI determines the account ID from the
+    /// authentication token that is supplied by the caller.
     /// </para>
     ///  </note>
     /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Gets and sets the property Body. 
         /// <para>
         /// Provides input data, in the format specified in the <c>ContentType</c> request header.
-        /// Amazon SageMaker passes all of the data in the body to the model. 
+        /// Amazon SageMaker AI passes all of the data in the body to the model. 
         /// </para>
         ///  
         /// <para>
@@ -149,10 +149,10 @@ namespace Amazon.SageMakerRuntime.Model
         /// Gets and sets the property CustomAttributes. 
         /// <para>
         /// Provides additional information about a request for an inference submitted to a model
-        /// hosted at an Amazon SageMaker endpoint. The information is an opaque value that is
-        /// forwarded verbatim. You could use this value, for example, to provide an ID that you
-        /// can use to track a request or to provide other metadata that a service endpoint was
-        /// programmed to process. The value must consist of no more than 1024 visible US-ASCII
+        /// hosted at an Amazon SageMaker AI endpoint. The information is an opaque value that
+        /// is forwarded verbatim. You could use this value, for example, to provide an ID that
+        /// you can use to track a request or to provide other metadata that a service endpoint
+        /// was programmed to process. The value must consist of no more than 1024 visible US-ASCII
         /// characters as specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
         /// 3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). 
         /// </para>
@@ -167,7 +167,7 @@ namespace Amazon.SageMakerRuntime.Model
         ///  
         /// <para>
         /// This feature is currently supported in the Amazon Web Services SDKs but not in the
-        /// Amazon SageMaker Python SDK. 
+        /// Amazon SageMaker AI Python SDK. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=1024)]
@@ -286,7 +286,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// set the expiration time. The model must also provide that information in the response
         /// to your request. You can get the ID and timestamp from the <c>NewSessionId</c> response
         /// parameter. For any subsequent request where you specify that session ID, SageMaker
-        /// routes the request to the same instance that supports the session.
+        /// AI routes the request to the same instance that supports the session.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

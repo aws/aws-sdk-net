@@ -110,6 +110,25 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EventTimestamp.Value)));
             }
 
+            if(publicRequest.IsSetMetadata())
+            {
+                context.Writer.WritePropertyName("metadata");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                {
+                    context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
+                    var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MetadataValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMetadataValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetPayload())
             {
                 context.Writer.WritePropertyName("payload");

@@ -39,6 +39,7 @@ namespace Amazon.Runtime.Internal
     {
         private bool _disposed;
         private IHttpRequestFactory<TRequestContent> _requestFactory;
+        private const string CachedChecksumKey = "ConsumedCachedChecksum";
 
         /// <summary>
         /// The sender parameter used in any events raised by this handler.
@@ -308,7 +309,17 @@ namespace Amazon.Runtime.Internal
                 }
                 else
                 {
-                    originalStream = wrappedRequest.ContentStream;
+                    // If the current position for the ContentStream is not at the beginning, we need to handle it
+                    // before wrapping it during GetInputStream.
+                    if (wrappedRequest.ContentStream.CanSeek && wrappedRequest.ContentStream.Position != 0)
+                    {
+                        var size = wrappedRequest.ContentStream.Length - wrappedRequest.ContentStream.Position;
+                        originalStream = new PartialReadOnlyWrapperStream(wrappedRequest.ContentStream, size);
+                    }
+                    else
+                    {
+                        originalStream = wrappedRequest.ContentStream;
+                    }
                 }
 
                 var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
@@ -355,7 +366,17 @@ namespace Amazon.Runtime.Internal
                 }
                 else
                 {
-                    originalStream = wrappedRequest.ContentStream;
+                    // If the current position for the ContentStream is not at the beginning, we need to handle it
+                    // before wrapping it during GetInputStream.
+                    if (wrappedRequest.ContentStream.CanSeek && wrappedRequest.ContentStream.Position != 0)
+                    {
+                        var size = wrappedRequest.ContentStream.Length - wrappedRequest.ContentStream.Position;
+                        originalStream = new PartialReadOnlyWrapperStream(wrappedRequest.ContentStream, size);
+                    }
+                    else
+                    {
+                        originalStream = wrappedRequest.ContentStream;
+                    }
                 }
 
                 var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
@@ -472,11 +493,21 @@ namespace Amazon.Runtime.Internal
                 {
                     if (hasTrailingHeaders)
                     {
+                        var cachedChecksum = new CachedChecksum
+                        {
+                            Value = requestContext.ContextAttributes.ContainsKey(CachedChecksumKey) ? (string)requestContext.ContextAttributes[CachedChecksumKey] : null,
+                            OnComplete = ((string value) =>
+                            {
+                                // Cache the checksum for future request retries in the ContextAttributes.
+                                requestContext.ContextAttributes.Add(CachedChecksumKey, value);
+                            })
+                        };
+
                         return new ChunkedUploadWrapperStream(originalStream,
                                                      requestContext.ClientConfig.BufferSize,
                                                      signingResult,
                                                      wrappedRequest.SelectedChecksum,
-                                                     wrappedRequest.TrailingHeaders);
+                                                     wrappedRequest.TrailingHeaders, cachedChecksum);
                     }
                     else // no trailing headers
                     {
@@ -490,7 +521,17 @@ namespace Amazon.Runtime.Internal
             {
                 if (wrappedRequest.SelectedChecksum != CoreChecksumAlgorithm.NONE)
                 {
-                    return new TrailingHeadersWrapperStream(originalStream, wrappedRequest.TrailingHeaders, wrappedRequest.SelectedChecksum);
+                    var cachedChecksum = new CachedChecksum
+                    {
+                        Value = requestContext.ContextAttributes.ContainsKey(CachedChecksumKey) ? (string)requestContext.ContextAttributes[CachedChecksumKey] : null,
+                        OnComplete = ((string value) =>
+                        {
+                            // Cache the checksum for future request retries in the ContextAttributes.
+                            requestContext.ContextAttributes.Add(CachedChecksumKey, value);
+                        })
+                    };
+
+                    return new TrailingHeadersWrapperStream(originalStream, wrappedRequest.TrailingHeaders, wrappedRequest.SelectedChecksum, cachedChecksum);
                 }
                 else
                 {
@@ -504,6 +545,14 @@ namespace Amazon.Runtime.Internal
         {
             if (requestContext.Request.SignatureVersion == SignatureVersion.SigV4a)
                 requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.SIGV4A_SIGNING);
+
+            var originalRequest = (IAmazonWebServiceRequest)requestContext.OriginalRequest;
+
+            requestContext.UserAgentDetails.AddUserAgentComponent(originalRequest.UserAgentDetails.GetCustomUserAgentComponents());
+            foreach (var featureId in originalRequest.UserAgentDetails.TrackedFeatureIds)
+            {
+                requestContext.UserAgentDetails.AddFeature(featureId);
+            }
 
             var metricsUserAgent = requestContext.UserAgentDetails.GenerateUserAgentWithMetrics();
             Logger.DebugFormat("User-Agent Header: {0}", metricsUserAgent);

@@ -156,6 +156,39 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetRootVolumeConfig())
+            {
+                context.Writer.WritePropertyName("RootVolumeConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VolumeConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RootVolumeConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSoftwaresToInstall())
+            {
+                context.Writer.WritePropertyName("SoftwaresToInstall");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSoftwaresToInstallListValue in publicRequest.SoftwaresToInstall)
+                {
+                        context.Writer.WriteStringValue(publicRequestSoftwaresToInstallListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSoftwaresToUninstall())
+            {
+                context.Writer.WritePropertyName("SoftwaresToUninstall");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSoftwaresToUninstallListValue in publicRequest.SoftwaresToUninstall)
+                {
+                        context.Writer.WriteStringValue(publicRequestSoftwaresToUninstallListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

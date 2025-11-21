@@ -68,6 +68,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.SecurityControlId))
+                throw new AmazonSecurityHubException("Request object does not have required field SecurityControlId set");
             
             if (publicRequest.IsSetSecurityControlId())
                 request.Parameters.Add("SecurityControlId", StringUtils.FromString(publicRequest.SecurityControlId));

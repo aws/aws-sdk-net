@@ -307,7 +307,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstance">REST API Reference for CreateAppInstance Operation</seealso>
         public virtual CreateAppInstanceResponse CreateAppInstance(CreateAppInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppInstanceResponseUnmarshaller.Instance;
 
@@ -359,7 +359,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstance">REST API Reference for CreateAppInstance Operation</seealso>
         public virtual Task<CreateAppInstanceResponse> CreateAppInstanceAsync(CreateAppInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppInstanceResponseUnmarshaller.Instance;
             
@@ -420,7 +420,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceAdmin">REST API Reference for CreateAppInstanceAdmin Operation</seealso>
         public virtual CreateAppInstanceAdminResponse CreateAppInstanceAdmin(CreateAppInstanceAdminRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppInstanceAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppInstanceAdminResponseUnmarshaller.Instance;
 
@@ -480,7 +480,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceAdmin">REST API Reference for CreateAppInstanceAdmin Operation</seealso>
         public virtual Task<CreateAppInstanceAdminResponse> CreateAppInstanceAdminAsync(CreateAppInstanceAdminRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppInstanceAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppInstanceAdminResponseUnmarshaller.Instance;
             
@@ -527,7 +527,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceBot">REST API Reference for CreateAppInstanceBot Operation</seealso>
         public virtual CreateAppInstanceBotResponse CreateAppInstanceBot(CreateAppInstanceBotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppInstanceBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppInstanceBotResponseUnmarshaller.Instance;
 
@@ -573,7 +573,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceBot">REST API Reference for CreateAppInstanceBot Operation</seealso>
         public virtual Task<CreateAppInstanceBotResponse> CreateAppInstanceBotAsync(CreateAppInstanceBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppInstanceBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppInstanceBotResponseUnmarshaller.Instance;
             
@@ -620,7 +620,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceUser">REST API Reference for CreateAppInstanceUser Operation</seealso>
         public virtual CreateAppInstanceUserResponse CreateAppInstanceUser(CreateAppInstanceUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -666,7 +666,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceUser">REST API Reference for CreateAppInstanceUser Operation</seealso>
         public virtual Task<CreateAppInstanceUserResponse> CreateAppInstanceUserAsync(CreateAppInstanceUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAppInstanceUserResponseUnmarshaller.Instance;
             
@@ -708,7 +708,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstance">REST API Reference for DeleteAppInstance Operation</seealso>
         public virtual DeleteAppInstanceResponse DeleteAppInstance(DeleteAppInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppInstanceResponseUnmarshaller.Instance;
 
@@ -749,7 +749,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstance">REST API Reference for DeleteAppInstance Operation</seealso>
         public virtual Task<DeleteAppInstanceResponse> DeleteAppInstanceAsync(DeleteAppInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppInstanceResponseUnmarshaller.Instance;
             
@@ -796,7 +796,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceAdmin">REST API Reference for DeleteAppInstanceAdmin Operation</seealso>
         public virtual DeleteAppInstanceAdminResponse DeleteAppInstanceAdmin(DeleteAppInstanceAdminRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppInstanceAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppInstanceAdminResponseUnmarshaller.Instance;
 
@@ -842,7 +842,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceAdmin">REST API Reference for DeleteAppInstanceAdmin Operation</seealso>
         public virtual Task<DeleteAppInstanceAdminResponse> DeleteAppInstanceAdminAsync(DeleteAppInstanceAdminRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppInstanceAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppInstanceAdminResponseUnmarshaller.Instance;
             
@@ -888,7 +888,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceBot">REST API Reference for DeleteAppInstanceBot Operation</seealso>
         public virtual DeleteAppInstanceBotResponse DeleteAppInstanceBot(DeleteAppInstanceBotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppInstanceBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppInstanceBotResponseUnmarshaller.Instance;
 
@@ -933,7 +933,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceBot">REST API Reference for DeleteAppInstanceBot Operation</seealso>
         public virtual Task<DeleteAppInstanceBotResponse> DeleteAppInstanceBotAsync(DeleteAppInstanceBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppInstanceBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppInstanceBotResponseUnmarshaller.Instance;
             
@@ -979,7 +979,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceUser">REST API Reference for DeleteAppInstanceUser Operation</seealso>
         public virtual DeleteAppInstanceUserResponse DeleteAppInstanceUser(DeleteAppInstanceUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -1024,7 +1024,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceUser">REST API Reference for DeleteAppInstanceUser Operation</seealso>
         public virtual Task<DeleteAppInstanceUserResponse> DeleteAppInstanceUserAsync(DeleteAppInstanceUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAppInstanceUserResponseUnmarshaller.Instance;
             
@@ -1063,7 +1063,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeregisterAppInstanceUserEndpoint">REST API Reference for DeregisterAppInstanceUserEndpoint Operation</seealso>
         public virtual DeregisterAppInstanceUserEndpointResponse DeregisterAppInstanceUserEndpoint(DeregisterAppInstanceUserEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterAppInstanceUserEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterAppInstanceUserEndpointResponseUnmarshaller.Instance;
 
@@ -1101,7 +1101,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeregisterAppInstanceUserEndpoint">REST API Reference for DeregisterAppInstanceUserEndpoint Operation</seealso>
         public virtual Task<DeregisterAppInstanceUserEndpointResponse> DeregisterAppInstanceUserEndpointAsync(DeregisterAppInstanceUserEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterAppInstanceUserEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterAppInstanceUserEndpointResponseUnmarshaller.Instance;
             
@@ -1140,7 +1140,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstance">REST API Reference for DescribeAppInstance Operation</seealso>
         public virtual DescribeAppInstanceResponse DescribeAppInstance(DescribeAppInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppInstanceResponseUnmarshaller.Instance;
 
@@ -1178,7 +1178,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstance">REST API Reference for DescribeAppInstance Operation</seealso>
         public virtual Task<DescribeAppInstanceResponse> DescribeAppInstanceAsync(DescribeAppInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppInstanceResponseUnmarshaller.Instance;
             
@@ -1217,7 +1217,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceAdmin">REST API Reference for DescribeAppInstanceAdmin Operation</seealso>
         public virtual DescribeAppInstanceAdminResponse DescribeAppInstanceAdmin(DescribeAppInstanceAdminRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppInstanceAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppInstanceAdminResponseUnmarshaller.Instance;
 
@@ -1255,7 +1255,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceAdmin">REST API Reference for DescribeAppInstanceAdmin Operation</seealso>
         public virtual Task<DescribeAppInstanceAdminResponse> DescribeAppInstanceAdminAsync(DescribeAppInstanceAdminRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppInstanceAdminRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppInstanceAdminResponseUnmarshaller.Instance;
             
@@ -1297,7 +1297,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceBot">REST API Reference for DescribeAppInstanceBot Operation</seealso>
         public virtual DescribeAppInstanceBotResponse DescribeAppInstanceBot(DescribeAppInstanceBotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppInstanceBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppInstanceBotResponseUnmarshaller.Instance;
 
@@ -1338,7 +1338,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceBot">REST API Reference for DescribeAppInstanceBot Operation</seealso>
         public virtual Task<DescribeAppInstanceBotResponse> DescribeAppInstanceBotAsync(DescribeAppInstanceBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppInstanceBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppInstanceBotResponseUnmarshaller.Instance;
             
@@ -1377,7 +1377,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceUser">REST API Reference for DescribeAppInstanceUser Operation</seealso>
         public virtual DescribeAppInstanceUserResponse DescribeAppInstanceUser(DescribeAppInstanceUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -1415,7 +1415,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceUser">REST API Reference for DescribeAppInstanceUser Operation</seealso>
         public virtual Task<DescribeAppInstanceUserResponse> DescribeAppInstanceUserAsync(DescribeAppInstanceUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppInstanceUserResponseUnmarshaller.Instance;
             
@@ -1454,7 +1454,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceUserEndpoint">REST API Reference for DescribeAppInstanceUserEndpoint Operation</seealso>
         public virtual DescribeAppInstanceUserEndpointResponse DescribeAppInstanceUserEndpoint(DescribeAppInstanceUserEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppInstanceUserEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppInstanceUserEndpointResponseUnmarshaller.Instance;
 
@@ -1492,7 +1492,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceUserEndpoint">REST API Reference for DescribeAppInstanceUserEndpoint Operation</seealso>
         public virtual Task<DescribeAppInstanceUserEndpointResponse> DescribeAppInstanceUserEndpointAsync(DescribeAppInstanceUserEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAppInstanceUserEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAppInstanceUserEndpointResponseUnmarshaller.Instance;
             
@@ -1531,7 +1531,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/GetAppInstanceRetentionSettings">REST API Reference for GetAppInstanceRetentionSettings Operation</seealso>
         public virtual GetAppInstanceRetentionSettingsResponse GetAppInstanceRetentionSettings(GetAppInstanceRetentionSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppInstanceRetentionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppInstanceRetentionSettingsResponseUnmarshaller.Instance;
 
@@ -1569,7 +1569,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/GetAppInstanceRetentionSettings">REST API Reference for GetAppInstanceRetentionSettings Operation</seealso>
         public virtual Task<GetAppInstanceRetentionSettingsResponse> GetAppInstanceRetentionSettingsAsync(GetAppInstanceRetentionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAppInstanceRetentionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAppInstanceRetentionSettingsResponseUnmarshaller.Instance;
             
@@ -1611,7 +1611,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceAdmins">REST API Reference for ListAppInstanceAdmins Operation</seealso>
         public virtual ListAppInstanceAdminsResponse ListAppInstanceAdmins(ListAppInstanceAdminsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInstanceAdminsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInstanceAdminsResponseUnmarshaller.Instance;
 
@@ -1652,7 +1652,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceAdmins">REST API Reference for ListAppInstanceAdmins Operation</seealso>
         public virtual Task<ListAppInstanceAdminsResponse> ListAppInstanceAdminsAsync(ListAppInstanceAdminsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInstanceAdminsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInstanceAdminsResponseUnmarshaller.Instance;
             
@@ -1694,7 +1694,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceBots">REST API Reference for ListAppInstanceBots Operation</seealso>
         public virtual ListAppInstanceBotsResponse ListAppInstanceBots(ListAppInstanceBotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInstanceBotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInstanceBotsResponseUnmarshaller.Instance;
 
@@ -1735,7 +1735,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceBots">REST API Reference for ListAppInstanceBots Operation</seealso>
         public virtual Task<ListAppInstanceBotsResponse> ListAppInstanceBotsAsync(ListAppInstanceBotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInstanceBotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInstanceBotsResponseUnmarshaller.Instance;
             
@@ -1774,7 +1774,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstances">REST API Reference for ListAppInstances Operation</seealso>
         public virtual ListAppInstancesResponse ListAppInstances(ListAppInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInstancesResponseUnmarshaller.Instance;
 
@@ -1812,7 +1812,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstances">REST API Reference for ListAppInstances Operation</seealso>
         public virtual Task<ListAppInstancesResponse> ListAppInstancesAsync(ListAppInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInstancesResponseUnmarshaller.Instance;
             
@@ -1851,7 +1851,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceUserEndpoints">REST API Reference for ListAppInstanceUserEndpoints Operation</seealso>
         public virtual ListAppInstanceUserEndpointsResponse ListAppInstanceUserEndpoints(ListAppInstanceUserEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInstanceUserEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInstanceUserEndpointsResponseUnmarshaller.Instance;
 
@@ -1889,7 +1889,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceUserEndpoints">REST API Reference for ListAppInstanceUserEndpoints Operation</seealso>
         public virtual Task<ListAppInstanceUserEndpointsResponse> ListAppInstanceUserEndpointsAsync(ListAppInstanceUserEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInstanceUserEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInstanceUserEndpointsResponseUnmarshaller.Instance;
             
@@ -1928,7 +1928,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceUsers">REST API Reference for ListAppInstanceUsers Operation</seealso>
         public virtual ListAppInstanceUsersResponse ListAppInstanceUsers(ListAppInstanceUsersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInstanceUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInstanceUsersResponseUnmarshaller.Instance;
 
@@ -1966,7 +1966,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceUsers">REST API Reference for ListAppInstanceUsers Operation</seealso>
         public virtual Task<ListAppInstanceUsersResponse> ListAppInstanceUsersAsync(ListAppInstanceUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAppInstanceUsersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAppInstanceUsersResponseUnmarshaller.Instance;
             
@@ -2005,7 +2005,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2043,7 +2043,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2082,7 +2082,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceRetentionSettings">REST API Reference for PutAppInstanceRetentionSettings Operation</seealso>
         public virtual PutAppInstanceRetentionSettingsResponse PutAppInstanceRetentionSettings(PutAppInstanceRetentionSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAppInstanceRetentionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAppInstanceRetentionSettingsResponseUnmarshaller.Instance;
 
@@ -2120,7 +2120,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceRetentionSettings">REST API Reference for PutAppInstanceRetentionSettings Operation</seealso>
         public virtual Task<PutAppInstanceRetentionSettingsResponse> PutAppInstanceRetentionSettingsAsync(PutAppInstanceRetentionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAppInstanceRetentionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAppInstanceRetentionSettingsResponseUnmarshaller.Instance;
             
@@ -2175,7 +2175,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceUserExpirationSettings">REST API Reference for PutAppInstanceUserExpirationSettings Operation</seealso>
         public virtual PutAppInstanceUserExpirationSettingsResponse PutAppInstanceUserExpirationSettings(PutAppInstanceUserExpirationSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAppInstanceUserExpirationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAppInstanceUserExpirationSettingsResponseUnmarshaller.Instance;
 
@@ -2229,7 +2229,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceUserExpirationSettings">REST API Reference for PutAppInstanceUserExpirationSettings Operation</seealso>
         public virtual Task<PutAppInstanceUserExpirationSettingsResponse> PutAppInstanceUserExpirationSettingsAsync(PutAppInstanceUserExpirationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAppInstanceUserExpirationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAppInstanceUserExpirationSettingsResponseUnmarshaller.Instance;
             
@@ -2277,7 +2277,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/RegisterAppInstanceUserEndpoint">REST API Reference for RegisterAppInstanceUserEndpoint Operation</seealso>
         public virtual RegisterAppInstanceUserEndpointResponse RegisterAppInstanceUserEndpoint(RegisterAppInstanceUserEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterAppInstanceUserEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterAppInstanceUserEndpointResponseUnmarshaller.Instance;
 
@@ -2324,7 +2324,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/RegisterAppInstanceUserEndpoint">REST API Reference for RegisterAppInstanceUserEndpoint Operation</seealso>
         public virtual Task<RegisterAppInstanceUserEndpointResponse> RegisterAppInstanceUserEndpointAsync(RegisterAppInstanceUserEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterAppInstanceUserEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterAppInstanceUserEndpointResponseUnmarshaller.Instance;
             
@@ -2366,7 +2366,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2407,7 +2407,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2446,7 +2446,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2484,7 +2484,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2527,7 +2527,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstance">REST API Reference for UpdateAppInstance Operation</seealso>
         public virtual UpdateAppInstanceResponse UpdateAppInstance(UpdateAppInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppInstanceResponseUnmarshaller.Instance;
 
@@ -2569,7 +2569,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstance">REST API Reference for UpdateAppInstance Operation</seealso>
         public virtual Task<UpdateAppInstanceResponse> UpdateAppInstanceAsync(UpdateAppInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppInstanceResponseUnmarshaller.Instance;
             
@@ -2615,7 +2615,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceBot">REST API Reference for UpdateAppInstanceBot Operation</seealso>
         public virtual UpdateAppInstanceBotResponse UpdateAppInstanceBot(UpdateAppInstanceBotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppInstanceBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppInstanceBotResponseUnmarshaller.Instance;
 
@@ -2660,7 +2660,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceBot">REST API Reference for UpdateAppInstanceBot Operation</seealso>
         public virtual Task<UpdateAppInstanceBotResponse> UpdateAppInstanceBotAsync(UpdateAppInstanceBotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppInstanceBotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppInstanceBotResponseUnmarshaller.Instance;
             
@@ -2706,7 +2706,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceUser">REST API Reference for UpdateAppInstanceUser Operation</seealso>
         public virtual UpdateAppInstanceUserResponse UpdateAppInstanceUser(UpdateAppInstanceUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -2751,7 +2751,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceUser">REST API Reference for UpdateAppInstanceUser Operation</seealso>
         public virtual Task<UpdateAppInstanceUserResponse> UpdateAppInstanceUserAsync(UpdateAppInstanceUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppInstanceUserResponseUnmarshaller.Instance;
             
@@ -2795,7 +2795,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceUserEndpoint">REST API Reference for UpdateAppInstanceUserEndpoint Operation</seealso>
         public virtual UpdateAppInstanceUserEndpointResponse UpdateAppInstanceUserEndpoint(UpdateAppInstanceUserEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppInstanceUserEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppInstanceUserEndpointResponseUnmarshaller.Instance;
 
@@ -2838,7 +2838,7 @@ namespace Amazon.ChimeSDKIdentity
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceUserEndpoint">REST API Reference for UpdateAppInstanceUserEndpoint Operation</seealso>
         public virtual Task<UpdateAppInstanceUserEndpointResponse> UpdateAppInstanceUserEndpointAsync(UpdateAppInstanceUserEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAppInstanceUserEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAppInstanceUserEndpointResponseUnmarshaller.Instance;
             

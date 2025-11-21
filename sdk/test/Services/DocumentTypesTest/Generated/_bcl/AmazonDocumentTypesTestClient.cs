@@ -253,7 +253,7 @@ namespace Amazon.DocumentTypesTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/document-types-test-2022-09-16/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
         public virtual ExecuteQueryResponse ExecuteQuery(ExecuteQueryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
 
@@ -273,7 +273,7 @@ namespace Amazon.DocumentTypesTest
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/document-types-test-2022-09-16/ExecuteQuery">REST API Reference for ExecuteQuery Operation</seealso>
         public virtual Task<ExecuteQueryResponse> ExecuteQueryAsync(ExecuteQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteQueryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteQueryResponseUnmarshaller.Instance;
             

@@ -92,6 +92,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.PayloadUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("pullRequestBuildPolicy", targetDepth))
+                {
+                    var unmarshaller = PullRequestBuildPolicyUnmarshaller.Instance;
+                    unmarshalledObject.PullRequestBuildPolicy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("scopeConfiguration", targetDepth))
                 {
                     var unmarshaller = ScopeConfigurationUnmarshaller.Instance;

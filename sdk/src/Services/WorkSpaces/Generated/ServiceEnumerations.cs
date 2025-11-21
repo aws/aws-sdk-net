@@ -1199,6 +1199,118 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type CustomImageProtocol.
+    /// </summary>
+    public class CustomImageProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYOP for CustomImageProtocol
+        /// </summary>
+        public static readonly CustomImageProtocol BYOP = new CustomImageProtocol("BYOP");
+        /// <summary>
+        /// Constant DCV for CustomImageProtocol
+        /// </summary>
+        public static readonly CustomImageProtocol DCV = new CustomImageProtocol("DCV");
+        /// <summary>
+        /// Constant PCOIP for CustomImageProtocol
+        /// </summary>
+        public static readonly CustomImageProtocol PCOIP = new CustomImageProtocol("PCOIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomImageProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomImageProtocol FindValue(string value)
+        {
+            return FindValue<CustomImageProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomImageProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomWorkspaceImageImportState.
+    /// </summary>
+    public class CustomWorkspaceImageImportState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState COMPLETED = new CustomWorkspaceImageImportState("COMPLETED");
+        /// <summary>
+        /// Constant ERROR for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState ERROR = new CustomWorkspaceImageImportState("ERROR");
+        /// <summary>
+        /// Constant IN_PROGRESS for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState IN_PROGRESS = new CustomWorkspaceImageImportState("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for CustomWorkspaceImageImportState
+        /// </summary>
+        public static readonly CustomWorkspaceImageImportState PENDING = new CustomWorkspaceImageImportState("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomWorkspaceImageImportState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomWorkspaceImageImportState FindValue(string value)
+        {
+            return FindValue<CustomWorkspaceImageImportState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomWorkspaceImageImportState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataReplication.
     /// </summary>
     public class DataReplication : ConstantClass
@@ -1795,6 +1907,56 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type ImageComputeType.
+    /// </summary>
+    public class ImageComputeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASE for ImageComputeType
+        /// </summary>
+        public static readonly ImageComputeType BASE = new ImageComputeType("BASE");
+        /// <summary>
+        /// Constant GRAPHICS_G4DN for ImageComputeType
+        /// </summary>
+        public static readonly ImageComputeType GRAPHICS_G4DN = new ImageComputeType("GRAPHICS_G4DN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageComputeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageComputeType FindValue(string value)
+        {
+            return FindValue<ImageComputeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageComputeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageType.
     /// </summary>
     public class ImageType : ConstantClass
@@ -2182,6 +2344,102 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OperatingSystemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OSVersion.
+    /// </summary>
+    public class OSVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Windows_10 for OSVersion
+        /// </summary>
+        public static readonly OSVersion Windows_10 = new OSVersion("Windows_10");
+        /// <summary>
+        /// Constant Windows_11 for OSVersion
+        /// </summary>
+        public static readonly OSVersion Windows_11 = new OSVersion("Windows_11");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OSVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OSVersion FindValue(string value)
+        {
+            return FindValue<OSVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OSVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Platform.
+    /// </summary>
+    public class Platform : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WINDOWS for Platform
+        /// </summary>
+        public static readonly Platform WINDOWS = new Platform("WINDOWS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Platform(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Platform FindValue(string value)
+        {
+            return FindValue<Platform>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Platform(string value)
         {
             return FindValue(value);
         }

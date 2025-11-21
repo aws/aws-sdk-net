@@ -152,7 +152,8 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property ARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the domain. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// identifiers </a> in the <i>AWS Identity and Access Management User Guide</i>.
+        /// identifiers </a> in the <i>Amazon Web Services Identity and Access Management User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

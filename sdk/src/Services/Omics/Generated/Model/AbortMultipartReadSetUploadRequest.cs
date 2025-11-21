@@ -31,7 +31,10 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the AbortMultipartReadSetUpload operation.
-    /// Stops a multipart upload.
+    /// Stops a multipart read set upload into a sequence store and returns a response with
+    /// no body if the operation is successful. To confirm that a multipart read set upload
+    /// has been stopped, use the <c>ListMultipartReadSetUploads</c> API operation to view
+    /// all active multipart read set uploads.
     /// </summary>
     public partial class AbortMultipartReadSetUploadRequest : AmazonOmicsRequest
     {

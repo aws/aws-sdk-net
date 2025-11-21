@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Specifies limits for how long an Amazon Braket job can run.
+    /// Specifies limits for how long an Amazon Braket hybrid job can run.
     /// </summary>
     public partial class JobStoppingCondition
     {
@@ -39,7 +39,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property MaxRuntimeInSeconds. 
         /// <para>
-        /// The maximum length of time, in seconds, that an Amazon Braket job can run.
+        /// The maximum length of time, in seconds, that an Amazon Braket hybrid job can run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=432000)]

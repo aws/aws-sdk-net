@@ -106,6 +106,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetContactArn())
+            {
+                context.Writer.WritePropertyName("contactArn");
+                context.Writer.WriteStringValue(publicRequest.ContactArn);
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

@@ -302,7 +302,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateAccessPolicy">REST API Reference for AssociateAccessPolicy Operation</seealso>
         public virtual AssociateAccessPolicyResponse AssociateAccessPolicy(AssociateAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAccessPolicyResponseUnmarshaller.Instance;
 
@@ -340,7 +340,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateAccessPolicy">REST API Reference for AssociateAccessPolicy Operation</seealso>
         public virtual Task<AssociateAccessPolicyResponse> AssociateAccessPolicyAsync(AssociateAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAccessPolicyResponseUnmarshaller.Instance;
             
@@ -395,7 +395,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">REST API Reference for AssociateEncryptionConfig Operation</seealso>
         public virtual AssociateEncryptionConfigResponse AssociateEncryptionConfig(AssociateEncryptionConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEncryptionConfigResponseUnmarshaller.Instance;
 
@@ -449,7 +449,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">REST API Reference for AssociateEncryptionConfig Operation</seealso>
         public virtual Task<AssociateEncryptionConfigResponse> AssociateEncryptionConfigAsync(AssociateEncryptionConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateEncryptionConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateEncryptionConfigResponseUnmarshaller.Instance;
             
@@ -508,7 +508,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateIdentityProviderConfig">REST API Reference for AssociateIdentityProviderConfig Operation</seealso>
         public virtual AssociateIdentityProviderConfigResponse AssociateIdentityProviderConfig(AssociateIdentityProviderConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIdentityProviderConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIdentityProviderConfigResponseUnmarshaller.Instance;
 
@@ -566,7 +566,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateIdentityProviderConfig">REST API Reference for AssociateIdentityProviderConfig Operation</seealso>
         public virtual Task<AssociateIdentityProviderConfigResponse> AssociateIdentityProviderConfigAsync(AssociateIdentityProviderConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIdentityProviderConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIdentityProviderConfigResponseUnmarshaller.Instance;
             
@@ -626,7 +626,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAccessEntry">REST API Reference for CreateAccessEntry Operation</seealso>
         public virtual CreateAccessEntryResponse CreateAccessEntry(CreateAccessEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessEntryResponseUnmarshaller.Instance;
 
@@ -685,7 +685,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAccessEntry">REST API Reference for CreateAccessEntry Operation</seealso>
         public virtual Task<CreateAccessEntryResponse> CreateAccessEntryAsync(CreateAccessEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessEntryResponseUnmarshaller.Instance;
             
@@ -737,7 +737,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">REST API Reference for CreateAddon Operation</seealso>
         public virtual CreateAddonResponse CreateAddon(CreateAddonRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAddonRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAddonResponseUnmarshaller.Instance;
 
@@ -788,7 +788,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon">REST API Reference for CreateAddon Operation</seealso>
         public virtual Task<CreateAddonResponse> CreateAddonAsync(CreateAddonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAddonRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAddonResponseUnmarshaller.Instance;
             
@@ -889,7 +889,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -989,7 +989,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
             
@@ -1031,7 +1031,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateEksAnywhereSubscription">REST API Reference for CreateEksAnywhereSubscription Operation</seealso>
         public virtual CreateEksAnywhereSubscriptionResponse CreateEksAnywhereSubscription(CreateEksAnywhereSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEksAnywhereSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEksAnywhereSubscriptionResponseUnmarshaller.Instance;
 
@@ -1072,7 +1072,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateEksAnywhereSubscription">REST API Reference for CreateEksAnywhereSubscription Operation</seealso>
         public virtual Task<CreateEksAnywhereSubscriptionResponse> CreateEksAnywhereSubscriptionAsync(CreateEksAnywhereSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEksAnywhereSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEksAnywhereSubscriptionResponseUnmarshaller.Instance;
             
@@ -1158,7 +1158,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">REST API Reference for CreateFargateProfile Operation</seealso>
         public virtual CreateFargateProfileResponse CreateFargateProfile(CreateFargateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFargateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFargateProfileResponseUnmarshaller.Instance;
 
@@ -1243,7 +1243,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">REST API Reference for CreateFargateProfile Operation</seealso>
         public virtual Task<CreateFargateProfileResponse> CreateFargateProfileAsync(CreateFargateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFargateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFargateProfileResponseUnmarshaller.Instance;
             
@@ -1319,7 +1319,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">REST API Reference for CreateNodegroup Operation</seealso>
         public virtual CreateNodegroupResponse CreateNodegroup(CreateNodegroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNodegroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNodegroupResponseUnmarshaller.Instance;
 
@@ -1394,7 +1394,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">REST API Reference for CreateNodegroup Operation</seealso>
         public virtual Task<CreateNodegroupResponse> CreateNodegroupAsync(CreateNodegroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNodegroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNodegroupResponseUnmarshaller.Instance;
             
@@ -1476,7 +1476,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreatePodIdentityAssociation">REST API Reference for CreatePodIdentityAssociation Operation</seealso>
         public virtual CreatePodIdentityAssociationResponse CreatePodIdentityAssociation(CreatePodIdentityAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePodIdentityAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePodIdentityAssociationResponseUnmarshaller.Instance;
 
@@ -1557,7 +1557,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreatePodIdentityAssociation">REST API Reference for CreatePodIdentityAssociation Operation</seealso>
         public virtual Task<CreatePodIdentityAssociationResponse> CreatePodIdentityAssociationAsync(CreatePodIdentityAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePodIdentityAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePodIdentityAssociationResponseUnmarshaller.Instance;
             
@@ -1596,7 +1596,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAccessEntry">REST API Reference for DeleteAccessEntry Operation</seealso>
         public virtual DeleteAccessEntryResponse DeleteAccessEntry(DeleteAccessEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessEntryResponseUnmarshaller.Instance;
 
@@ -1634,7 +1634,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAccessEntry">REST API Reference for DeleteAccessEntry Operation</seealso>
         public virtual Task<DeleteAccessEntryResponse> DeleteAccessEntryAsync(DeleteAccessEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessEntryResponseUnmarshaller.Instance;
             
@@ -1682,7 +1682,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon">REST API Reference for DeleteAddon Operation</seealso>
         public virtual DeleteAddonResponse DeleteAddon(DeleteAddonRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAddonRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAddonResponseUnmarshaller.Instance;
 
@@ -1729,7 +1729,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon">REST API Reference for DeleteAddon Operation</seealso>
         public virtual Task<DeleteAddonResponse> DeleteAddonAsync(DeleteAddonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAddonRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAddonResponseUnmarshaller.Instance;
             
@@ -1767,6 +1767,10 @@ namespace Amazon.EKS
         /// principal</a> that doesn't have permissions to use the action or resource or specifying
         /// an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -1784,7 +1788,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -1821,6 +1825,10 @@ namespace Amazon.EKS
         /// principal</a> that doesn't have permissions to use the action or resource or specifying
         /// an identifier that is not valid.
         /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
         /// The specified resource is in use.
         /// </exception>
@@ -1838,7 +1846,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
             
@@ -1880,7 +1888,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteEksAnywhereSubscription">REST API Reference for DeleteEksAnywhereSubscription Operation</seealso>
         public virtual DeleteEksAnywhereSubscriptionResponse DeleteEksAnywhereSubscription(DeleteEksAnywhereSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEksAnywhereSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEksAnywhereSubscriptionResponseUnmarshaller.Instance;
 
@@ -1921,7 +1929,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteEksAnywhereSubscription">REST API Reference for DeleteEksAnywhereSubscription Operation</seealso>
         public virtual Task<DeleteEksAnywhereSubscriptionResponse> DeleteEksAnywhereSubscriptionAsync(DeleteEksAnywhereSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEksAnywhereSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEksAnywhereSubscriptionResponseUnmarshaller.Instance;
             
@@ -1973,7 +1981,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile">REST API Reference for DeleteFargateProfile Operation</seealso>
         public virtual DeleteFargateProfileResponse DeleteFargateProfile(DeleteFargateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFargateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFargateProfileResponseUnmarshaller.Instance;
 
@@ -2024,7 +2032,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile">REST API Reference for DeleteFargateProfile Operation</seealso>
         public virtual Task<DeleteFargateProfileResponse> DeleteFargateProfileAsync(DeleteFargateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFargateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFargateProfileResponseUnmarshaller.Instance;
             
@@ -2068,7 +2076,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup">REST API Reference for DeleteNodegroup Operation</seealso>
         public virtual DeleteNodegroupResponse DeleteNodegroup(DeleteNodegroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNodegroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNodegroupResponseUnmarshaller.Instance;
 
@@ -2111,7 +2119,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup">REST API Reference for DeleteNodegroup Operation</seealso>
         public virtual Task<DeleteNodegroupResponse> DeleteNodegroupAsync(DeleteNodegroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNodegroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNodegroupResponseUnmarshaller.Instance;
             
@@ -2154,7 +2162,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeletePodIdentityAssociation">REST API Reference for DeletePodIdentityAssociation Operation</seealso>
         public virtual DeletePodIdentityAssociationResponse DeletePodIdentityAssociation(DeletePodIdentityAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePodIdentityAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePodIdentityAssociationResponseUnmarshaller.Instance;
 
@@ -2196,7 +2204,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeletePodIdentityAssociation">REST API Reference for DeletePodIdentityAssociation Operation</seealso>
         public virtual Task<DeletePodIdentityAssociationResponse> DeletePodIdentityAssociationAsync(DeletePodIdentityAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePodIdentityAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePodIdentityAssociationResponseUnmarshaller.Instance;
             
@@ -2250,7 +2258,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster">REST API Reference for DeregisterCluster Operation</seealso>
         public virtual DeregisterClusterResponse DeregisterCluster(DeregisterClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterClusterResponseUnmarshaller.Instance;
 
@@ -2303,7 +2311,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeregisterCluster">REST API Reference for DeregisterCluster Operation</seealso>
         public virtual Task<DeregisterClusterResponse> DeregisterClusterAsync(DeregisterClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterClusterResponseUnmarshaller.Instance;
             
@@ -2336,7 +2344,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAccessEntry">REST API Reference for DescribeAccessEntry Operation</seealso>
         public virtual DescribeAccessEntryResponse DescribeAccessEntry(DescribeAccessEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccessEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccessEntryResponseUnmarshaller.Instance;
 
@@ -2368,7 +2376,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAccessEntry">REST API Reference for DescribeAccessEntry Operation</seealso>
         public virtual Task<DescribeAccessEntryResponse> DescribeAccessEntryAsync(DescribeAccessEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccessEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccessEntryResponseUnmarshaller.Instance;
             
@@ -2410,7 +2418,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon">REST API Reference for DescribeAddon Operation</seealso>
         public virtual DescribeAddonResponse DescribeAddon(DescribeAddonRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddonRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddonResponseUnmarshaller.Instance;
 
@@ -2451,7 +2459,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon">REST API Reference for DescribeAddon Operation</seealso>
         public virtual Task<DescribeAddonResponse> DescribeAddonAsync(DescribeAddonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddonRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddonResponseUnmarshaller.Instance;
             
@@ -2483,7 +2491,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonConfiguration">REST API Reference for DescribeAddonConfiguration Operation</seealso>
         public virtual DescribeAddonConfigurationResponse DescribeAddonConfiguration(DescribeAddonConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddonConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddonConfigurationResponseUnmarshaller.Instance;
 
@@ -2514,7 +2522,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonConfiguration">REST API Reference for DescribeAddonConfiguration Operation</seealso>
         public virtual Task<DescribeAddonConfigurationResponse> DescribeAddonConfigurationAsync(DescribeAddonConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddonConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddonConfigurationResponseUnmarshaller.Instance;
             
@@ -2552,7 +2560,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions">REST API Reference for DescribeAddonVersions Operation</seealso>
         public virtual DescribeAddonVersionsResponse DescribeAddonVersions(DescribeAddonVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddonVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddonVersionsResponseUnmarshaller.Instance;
 
@@ -2589,7 +2597,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions">REST API Reference for DescribeAddonVersions Operation</seealso>
         public virtual Task<DescribeAddonVersionsResponse> DescribeAddonVersionsAsync(DescribeAddonVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAddonVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAddonVersionsResponseUnmarshaller.Instance;
             
@@ -2641,7 +2649,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
 
@@ -2692,7 +2700,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public virtual Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterResponseUnmarshaller.Instance;
             
@@ -2723,7 +2731,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
         public virtual DescribeClusterVersionsResponse DescribeClusterVersions(DescribeClusterVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
 
@@ -2753,7 +2761,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
         public virtual Task<DescribeClusterVersionsResponse> DescribeClusterVersionsAsync(DescribeClusterVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClusterVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
             
@@ -2791,7 +2799,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeEksAnywhereSubscription">REST API Reference for DescribeEksAnywhereSubscription Operation</seealso>
         public virtual DescribeEksAnywhereSubscriptionResponse DescribeEksAnywhereSubscription(DescribeEksAnywhereSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEksAnywhereSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEksAnywhereSubscriptionResponseUnmarshaller.Instance;
 
@@ -2828,7 +2836,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeEksAnywhereSubscription">REST API Reference for DescribeEksAnywhereSubscription Operation</seealso>
         public virtual Task<DescribeEksAnywhereSubscriptionResponse> DescribeEksAnywhereSubscriptionAsync(DescribeEksAnywhereSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEksAnywhereSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEksAnywhereSubscriptionResponseUnmarshaller.Instance;
             
@@ -2866,7 +2874,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">REST API Reference for DescribeFargateProfile Operation</seealso>
         public virtual DescribeFargateProfileResponse DescribeFargateProfile(DescribeFargateProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFargateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFargateProfileResponseUnmarshaller.Instance;
 
@@ -2903,7 +2911,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">REST API Reference for DescribeFargateProfile Operation</seealso>
         public virtual Task<DescribeFargateProfileResponse> DescribeFargateProfileAsync(DescribeFargateProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFargateProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFargateProfileResponseUnmarshaller.Instance;
             
@@ -2944,7 +2952,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeIdentityProviderConfig">REST API Reference for DescribeIdentityProviderConfig Operation</seealso>
         public virtual DescribeIdentityProviderConfigResponse DescribeIdentityProviderConfig(DescribeIdentityProviderConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdentityProviderConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdentityProviderConfigResponseUnmarshaller.Instance;
 
@@ -2984,7 +2992,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeIdentityProviderConfig">REST API Reference for DescribeIdentityProviderConfig Operation</seealso>
         public virtual Task<DescribeIdentityProviderConfigResponse> DescribeIdentityProviderConfigAsync(DescribeIdentityProviderConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIdentityProviderConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIdentityProviderConfigResponseUnmarshaller.Instance;
             
@@ -3020,7 +3028,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
         public virtual DescribeInsightResponse DescribeInsight(DescribeInsightRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInsightResponseUnmarshaller.Instance;
 
@@ -3055,11 +3063,82 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsight">REST API Reference for DescribeInsight Operation</seealso>
         public virtual Task<DescribeInsightResponse> DescribeInsightAsync(DescribeInsightRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInsightRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInsightResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeInsightResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInsightsRefresh
+
+
+        /// <summary>
+        /// Returns the status of the latest on-demand cluster insights refresh operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightsRefresh service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsightsRefresh">REST API Reference for DescribeInsightsRefresh Operation</seealso>
+        public virtual DescribeInsightsRefreshResponse DescribeInsightsRefresh(DescribeInsightsRefreshRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeInsightsRefreshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightsRefreshResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInsightsRefreshResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the status of the latest on-demand cluster insights refresh operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInsightsRefresh service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeInsightsRefresh">REST API Reference for DescribeInsightsRefresh Operation</seealso>
+        public virtual Task<DescribeInsightsRefreshResponse> DescribeInsightsRefreshAsync(DescribeInsightsRefreshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeInsightsRefreshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeInsightsRefreshResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeInsightsRefreshResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3096,7 +3175,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">REST API Reference for DescribeNodegroup Operation</seealso>
         public virtual DescribeNodegroupResponse DescribeNodegroup(DescribeNodegroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNodegroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNodegroupResponseUnmarshaller.Instance;
 
@@ -3136,7 +3215,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">REST API Reference for DescribeNodegroup Operation</seealso>
         public virtual Task<DescribeNodegroupResponse> DescribeNodegroupAsync(DescribeNodegroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeNodegroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeNodegroupResponseUnmarshaller.Instance;
             
@@ -3180,7 +3259,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribePodIdentityAssociation">REST API Reference for DescribePodIdentityAssociation Operation</seealso>
         public virtual DescribePodIdentityAssociationResponse DescribePodIdentityAssociation(DescribePodIdentityAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePodIdentityAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePodIdentityAssociationResponseUnmarshaller.Instance;
 
@@ -3223,7 +3302,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribePodIdentityAssociation">REST API Reference for DescribePodIdentityAssociation Operation</seealso>
         public virtual Task<DescribePodIdentityAssociationResponse> DescribePodIdentityAssociationAsync(DescribePodIdentityAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePodIdentityAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePodIdentityAssociationResponseUnmarshaller.Instance;
             
@@ -3268,7 +3347,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">REST API Reference for DescribeUpdate Operation</seealso>
         public virtual DescribeUpdateResponse DescribeUpdate(DescribeUpdateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUpdateResponseUnmarshaller.Instance;
 
@@ -3312,7 +3391,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">REST API Reference for DescribeUpdate Operation</seealso>
         public virtual Task<DescribeUpdateResponse> DescribeUpdateAsync(DescribeUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeUpdateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeUpdateResponseUnmarshaller.Instance;
             
@@ -3345,7 +3424,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateAccessPolicy">REST API Reference for DisassociateAccessPolicy Operation</seealso>
         public virtual DisassociateAccessPolicyResponse DisassociateAccessPolicy(DisassociateAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAccessPolicyResponseUnmarshaller.Instance;
 
@@ -3377,7 +3456,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateAccessPolicy">REST API Reference for DisassociateAccessPolicy Operation</seealso>
         public virtual Task<DisassociateAccessPolicyResponse> DisassociateAccessPolicyAsync(DisassociateAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAccessPolicyResponseUnmarshaller.Instance;
             
@@ -3432,7 +3511,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">REST API Reference for DisassociateIdentityProviderConfig Operation</seealso>
         public virtual DisassociateIdentityProviderConfigResponse DisassociateIdentityProviderConfig(DisassociateIdentityProviderConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIdentityProviderConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIdentityProviderConfigResponseUnmarshaller.Instance;
 
@@ -3486,7 +3565,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">REST API Reference for DisassociateIdentityProviderConfig Operation</seealso>
         public virtual Task<DisassociateIdentityProviderConfigResponse> DisassociateIdentityProviderConfigAsync(DisassociateIdentityProviderConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIdentityProviderConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIdentityProviderConfigResponseUnmarshaller.Instance;
             
@@ -3522,7 +3601,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessEntries">REST API Reference for ListAccessEntries Operation</seealso>
         public virtual ListAccessEntriesResponse ListAccessEntries(ListAccessEntriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessEntriesResponseUnmarshaller.Instance;
 
@@ -3557,7 +3636,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessEntries">REST API Reference for ListAccessEntries Operation</seealso>
         public virtual Task<ListAccessEntriesResponse> ListAccessEntriesAsync(ListAccessEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessEntriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessEntriesResponseUnmarshaller.Instance;
             
@@ -3581,7 +3660,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
         public virtual ListAccessPoliciesResponse ListAccessPolicies(ListAccessPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPoliciesResponseUnmarshaller.Instance;
 
@@ -3604,7 +3683,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
         public virtual Task<ListAccessPoliciesResponse> ListAccessPoliciesAsync(ListAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPoliciesResponseUnmarshaller.Instance;
             
@@ -3646,7 +3725,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons">REST API Reference for ListAddons Operation</seealso>
         public virtual ListAddonsResponse ListAddons(ListAddonsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAddonsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAddonsResponseUnmarshaller.Instance;
 
@@ -3687,7 +3766,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons">REST API Reference for ListAddons Operation</seealso>
         public virtual Task<ListAddonsResponse> ListAddonsAsync(ListAddonsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAddonsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAddonsResponseUnmarshaller.Instance;
             
@@ -3720,7 +3799,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAssociatedAccessPolicies">REST API Reference for ListAssociatedAccessPolicies Operation</seealso>
         public virtual ListAssociatedAccessPoliciesResponse ListAssociatedAccessPolicies(ListAssociatedAccessPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedAccessPoliciesResponseUnmarshaller.Instance;
 
@@ -3752,7 +3831,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAssociatedAccessPolicies">REST API Reference for ListAssociatedAccessPolicies Operation</seealso>
         public virtual Task<ListAssociatedAccessPoliciesResponse> ListAssociatedAccessPoliciesAsync(ListAssociatedAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAssociatedAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAssociatedAccessPoliciesResponseUnmarshaller.Instance;
             
@@ -3789,7 +3868,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -3825,7 +3904,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
             
@@ -3861,7 +3940,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListEksAnywhereSubscriptions">REST API Reference for ListEksAnywhereSubscriptions Operation</seealso>
         public virtual ListEksAnywhereSubscriptionsResponse ListEksAnywhereSubscriptions(ListEksAnywhereSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEksAnywhereSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEksAnywhereSubscriptionsResponseUnmarshaller.Instance;
 
@@ -3896,7 +3975,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListEksAnywhereSubscriptions">REST API Reference for ListEksAnywhereSubscriptions Operation</seealso>
         public virtual Task<ListEksAnywhereSubscriptionsResponse> ListEksAnywhereSubscriptionsAsync(ListEksAnywhereSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEksAnywhereSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEksAnywhereSubscriptionsResponseUnmarshaller.Instance;
             
@@ -3935,7 +4014,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">REST API Reference for ListFargateProfiles Operation</seealso>
         public virtual ListFargateProfilesResponse ListFargateProfiles(ListFargateProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFargateProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFargateProfilesResponseUnmarshaller.Instance;
 
@@ -3973,7 +4052,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">REST API Reference for ListFargateProfiles Operation</seealso>
         public virtual Task<ListFargateProfilesResponse> ListFargateProfilesAsync(ListFargateProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFargateProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFargateProfilesResponseUnmarshaller.Instance;
             
@@ -4014,7 +4093,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListIdentityProviderConfigs">REST API Reference for ListIdentityProviderConfigs Operation</seealso>
         public virtual ListIdentityProviderConfigsResponse ListIdentityProviderConfigs(ListIdentityProviderConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentityProviderConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentityProviderConfigsResponseUnmarshaller.Instance;
 
@@ -4054,7 +4133,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListIdentityProviderConfigs">REST API Reference for ListIdentityProviderConfigs Operation</seealso>
         public virtual Task<ListIdentityProviderConfigsResponse> ListIdentityProviderConfigsAsync(ListIdentityProviderConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdentityProviderConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdentityProviderConfigsResponseUnmarshaller.Instance;
             
@@ -4109,7 +4188,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
         public virtual ListInsightsResponse ListInsights(ListInsightsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
 
@@ -4163,7 +4242,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListInsights">REST API Reference for ListInsights Operation</seealso>
         public virtual Task<ListInsightsResponse> ListInsightsAsync(ListInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInsightsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInsightsResponseUnmarshaller.Instance;
             
@@ -4206,7 +4285,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">REST API Reference for ListNodegroups Operation</seealso>
         public virtual ListNodegroupsResponse ListNodegroups(ListNodegroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodegroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodegroupsResponseUnmarshaller.Instance;
 
@@ -4248,7 +4327,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">REST API Reference for ListNodegroups Operation</seealso>
         public virtual Task<ListNodegroupsResponse> ListNodegroupsAsync(ListNodegroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNodegroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNodegroupsResponseUnmarshaller.Instance;
             
@@ -4285,7 +4364,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListPodIdentityAssociations">REST API Reference for ListPodIdentityAssociations Operation</seealso>
         public virtual ListPodIdentityAssociationsResponse ListPodIdentityAssociations(ListPodIdentityAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPodIdentityAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPodIdentityAssociationsResponseUnmarshaller.Instance;
 
@@ -4321,7 +4400,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListPodIdentityAssociations">REST API Reference for ListPodIdentityAssociations Operation</seealso>
         public virtual Task<ListPodIdentityAssociationsResponse> ListPodIdentityAssociationsAsync(ListPodIdentityAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPodIdentityAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPodIdentityAssociationsResponseUnmarshaller.Instance;
             
@@ -4350,7 +4429,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4378,7 +4457,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -4417,7 +4496,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
         public virtual ListUpdatesResponse ListUpdates(ListUpdatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUpdatesResponseUnmarshaller.Instance;
 
@@ -4455,7 +4534,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
         public virtual Task<ListUpdatesResponse> ListUpdatesAsync(ListUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUpdatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUpdatesResponseUnmarshaller.Instance;
             
@@ -4530,7 +4609,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">REST API Reference for RegisterCluster Operation</seealso>
         public virtual RegisterClusterResponse RegisterCluster(RegisterClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterClusterResponseUnmarshaller.Instance;
 
@@ -4604,11 +4683,84 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/RegisterCluster">REST API Reference for RegisterCluster Operation</seealso>
         public virtual Task<RegisterClusterResponse> RegisterClusterAsync(RegisterClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterClusterResponseUnmarshaller.Instance;
             
             return InvokeAsync<RegisterClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartInsightsRefresh
+
+
+        /// <summary>
+        /// Initiates an on-demand refresh operation for cluster insights, getting the latest
+        /// analysis outside of the standard refresh schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInsightsRefresh service method.</param>
+        /// 
+        /// <returns>The response from the StartInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/StartInsightsRefresh">REST API Reference for StartInsightsRefresh Operation</seealso>
+        public virtual StartInsightsRefreshResponse StartInsightsRefresh(StartInsightsRefreshRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartInsightsRefreshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInsightsRefreshResponseUnmarshaller.Instance;
+
+            return Invoke<StartInsightsRefreshResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates an on-demand refresh operation for cluster insights, getting the latest
+        /// analysis outside of the standard refresh schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartInsightsRefresh service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartInsightsRefresh service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/StartInsightsRefresh">REST API Reference for StartInsightsRefresh Operation</seealso>
+        public virtual Task<StartInsightsRefreshResponse> StartInsightsRefreshAsync(StartInsightsRefreshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartInsightsRefreshRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartInsightsRefreshResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartInsightsRefreshResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4639,7 +4791,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -4673,7 +4825,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -4702,7 +4854,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -4730,7 +4882,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -4766,7 +4918,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAccessEntry">REST API Reference for UpdateAccessEntry Operation</seealso>
         public virtual UpdateAccessEntryResponse UpdateAccessEntry(UpdateAccessEntryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessEntryResponseUnmarshaller.Instance;
 
@@ -4801,7 +4953,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAccessEntry">REST API Reference for UpdateAccessEntry Operation</seealso>
         public virtual Task<UpdateAccessEntryResponse> UpdateAccessEntryAsync(UpdateAccessEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessEntryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessEntryResponseUnmarshaller.Instance;
             
@@ -4846,7 +4998,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon">REST API Reference for UpdateAddon Operation</seealso>
         public virtual UpdateAddonResponse UpdateAddon(UpdateAddonRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAddonRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAddonResponseUnmarshaller.Instance;
 
@@ -4890,7 +5042,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon">REST API Reference for UpdateAddon Operation</seealso>
         public virtual Task<UpdateAddonResponse> UpdateAddonAsync(UpdateAddonRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAddonRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAddonResponseUnmarshaller.Instance;
             
@@ -4994,7 +5146,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">REST API Reference for UpdateClusterConfig Operation</seealso>
         public virtual UpdateClusterConfigResponse UpdateClusterConfig(UpdateClusterConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterConfigResponseUnmarshaller.Instance;
 
@@ -5097,7 +5249,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">REST API Reference for UpdateClusterConfig Operation</seealso>
         public virtual Task<UpdateClusterConfigResponse> UpdateClusterConfigAsync(UpdateClusterConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterConfigResponseUnmarshaller.Instance;
             
@@ -5168,7 +5320,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">REST API Reference for UpdateClusterVersion Operation</seealso>
         public virtual UpdateClusterVersionResponse UpdateClusterVersion(UpdateClusterVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
 
@@ -5238,7 +5390,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">REST API Reference for UpdateClusterVersion Operation</seealso>
         public virtual Task<UpdateClusterVersionResponse> UpdateClusterVersionAsync(UpdateClusterVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
             
@@ -5281,7 +5433,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateEksAnywhereSubscription">REST API Reference for UpdateEksAnywhereSubscription Operation</seealso>
         public virtual UpdateEksAnywhereSubscriptionResponse UpdateEksAnywhereSubscription(UpdateEksAnywhereSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEksAnywhereSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEksAnywhereSubscriptionResponseUnmarshaller.Instance;
 
@@ -5323,7 +5475,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateEksAnywhereSubscription">REST API Reference for UpdateEksAnywhereSubscription Operation</seealso>
         public virtual Task<UpdateEksAnywhereSubscriptionResponse> UpdateEksAnywhereSubscriptionAsync(UpdateEksAnywhereSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEksAnywhereSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEksAnywhereSubscriptionResponseUnmarshaller.Instance;
             
@@ -5372,7 +5524,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">REST API Reference for UpdateNodegroupConfig Operation</seealso>
         public virtual UpdateNodegroupConfigResponse UpdateNodegroupConfig(UpdateNodegroupConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNodegroupConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNodegroupConfigResponseUnmarshaller.Instance;
 
@@ -5420,7 +5572,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">REST API Reference for UpdateNodegroupConfig Operation</seealso>
         public virtual Task<UpdateNodegroupConfigResponse> UpdateNodegroupConfigAsync(UpdateNodegroupConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNodegroupConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNodegroupConfigResponseUnmarshaller.Instance;
             
@@ -5502,7 +5654,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">REST API Reference for UpdateNodegroupVersion Operation</seealso>
         public virtual UpdateNodegroupVersionResponse UpdateNodegroupVersion(UpdateNodegroupVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNodegroupVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNodegroupVersionResponseUnmarshaller.Instance;
 
@@ -5583,7 +5735,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">REST API Reference for UpdateNodegroupVersion Operation</seealso>
         public virtual Task<UpdateNodegroupVersionResponse> UpdateNodegroupVersionAsync(UpdateNodegroupVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNodegroupVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNodegroupVersionResponseUnmarshaller.Instance;
             
@@ -5642,7 +5794,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdatePodIdentityAssociation">REST API Reference for UpdatePodIdentityAssociation Operation</seealso>
         public virtual UpdatePodIdentityAssociationResponse UpdatePodIdentityAssociation(UpdatePodIdentityAssociationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePodIdentityAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePodIdentityAssociationResponseUnmarshaller.Instance;
 
@@ -5700,7 +5852,7 @@ namespace Amazon.EKS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdatePodIdentityAssociation">REST API Reference for UpdatePodIdentityAssociation Operation</seealso>
         public virtual Task<UpdatePodIdentityAssociationResponse> UpdatePodIdentityAssociationAsync(UpdatePodIdentityAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePodIdentityAssociationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePodIdentityAssociationResponseUnmarshaller.Instance;
             

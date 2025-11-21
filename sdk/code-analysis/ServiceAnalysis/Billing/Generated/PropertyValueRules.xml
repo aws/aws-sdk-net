@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Billing.Model.AssociateSourceViewsRequest.Arn</property>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.AssociateSourceViewsResponse.Arn</property>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.CreateBillingViewRequest.ClientToken</property>
     <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
@@ -18,19 +26,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.CreateBillingViewResponse.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,59}[a-zA-Z0-9]</pattern>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.DeleteBillingViewRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,59}[a-zA-Z0-9]</pattern>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.DeleteBillingViewResponse.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,59}[a-zA-Z0-9]</pattern>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.DisassociateSourceViewsRequest.Arn</property>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.DisassociateSourceViewsResponse.Arn</property>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetBillingViewRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,59}[a-zA-Z0-9]</pattern>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetResourcePolicyRequest.ResourceArn</property>
@@ -55,13 +71,17 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewsRequest.SourceAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.ListBillingViewsResponse.NextToken</property>
     <min>1</min>
     <max>2047</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListSourceViewsForBillingViewRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,59}[a-zA-Z0-9]</pattern>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListSourceViewsForBillingViewRequest.MaxResults</property>
@@ -92,7 +112,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.UpdateBillingViewRequest.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,59}[a-zA-Z0-9]</pattern>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.UpdateBillingViewRequest.Description</property>
@@ -108,11 +128,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.UpdateBillingViewResponse.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,59}[a-zA-Z0-9]</pattern>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewElement.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,59}[a-zA-Z0-9]</pattern>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewElement.Description</property>
@@ -131,8 +151,12 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.BillingViewElement.SourceAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewListElement.Arn</property>
-    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,59}[a-zA-Z0-9]</pattern>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewListElement.Description</property>
@@ -148,6 +172,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewListElement.OwnerAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingViewListElement.SourceAccountId</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -199,6 +227,12 @@
     <property>Amazon.Billing.Model.ServiceQuotaExceededException.ServiceCode</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.StringSearch.SearchValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_\+=\.\-@ ]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.TagValues.Key</property>

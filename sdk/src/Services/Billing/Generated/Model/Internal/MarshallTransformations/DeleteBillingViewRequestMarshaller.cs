@@ -81,6 +81,12 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Arn);
             }
 
+            if(publicRequest.IsSetForce())
+            {
+                context.Writer.WritePropertyName("force");
+                context.Writer.WriteBooleanValue(publicRequest.Force.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

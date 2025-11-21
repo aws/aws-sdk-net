@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The VPC network is not in a valid state for the requested operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

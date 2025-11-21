@@ -41,8 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The ID of the Amazon Q Business application that is linked to the Amazon QuickSight
-        /// account.
+        /// The ID of the Amazon Q Business application that is linked to the Quick Sight account.
         /// </para>
         /// </summary>
         public string ApplicationId

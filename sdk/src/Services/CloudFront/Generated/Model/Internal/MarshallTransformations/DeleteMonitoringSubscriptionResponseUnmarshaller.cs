@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteMonitoringSubscription operation
     /// </summary>  
-    public class DeleteMonitoringSubscriptionResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteMonitoringSubscriptionResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             DeleteMonitoringSubscriptionResponse response = new DeleteMonitoringSubscriptionResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -88,6 +89,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteMonitoringSubscriptionResponse response);
 
         private static DeleteMonitoringSubscriptionResponseUnmarshaller _instance = new DeleteMonitoringSubscriptionResponseUnmarshaller();        
 

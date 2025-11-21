@@ -1418,6 +1418,10 @@ namespace Amazon.MediaTailor
         /// Constant RETRIEVAL_WINDOW for TrafficShapingType
         /// </summary>
         public static readonly TrafficShapingType RETRIEVAL_WINDOW = new TrafficShapingType("RETRIEVAL_WINDOW");
+        /// <summary>
+        /// Constant TPS for TrafficShapingType
+        /// </summary>
+        public static readonly TrafficShapingType TPS = new TrafficShapingType("TPS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

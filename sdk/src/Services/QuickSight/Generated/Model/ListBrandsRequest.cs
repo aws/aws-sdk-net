@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBrands operation.
-    /// Lists all brands in an Amazon QuickSight account.
+    /// Lists all brands in an Quick Sight account.
     /// </summary>
     public partial class ListBrandsRequest : AmazonQuickSightRequest
     {

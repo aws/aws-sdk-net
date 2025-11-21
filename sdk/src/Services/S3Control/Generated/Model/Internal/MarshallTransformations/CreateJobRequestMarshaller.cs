@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateJobRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
         
             if (publicRequest.IsSetAccountId()) 
@@ -174,6 +175,51 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                 }
                                 xmlWriter.WriteEndElement();
                             }
+                            var publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryption = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.MatchAnyObjectEncryption;
+                            if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryption != null && (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryption.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            {
+                                xmlWriter.WriteStartElement("MatchAnyObjectEncryption");
+                                foreach (var publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue in publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryption) 
+                                {
+                                if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue != null)
+                                {
+                                    xmlWriter.WriteStartElement("ObjectEncryption");
+                                    if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.DSSEKMS != null)
+                                    {
+                                        xmlWriter.WriteStartElement("DSSE-KMS");
+                                        if(publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.DSSEKMS.IsSetKmsKeyArn())
+                                            xmlWriter.WriteElementString("KmsKeyArn", StringUtils.FromString(publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.DSSEKMS.KmsKeyArn));
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.NOTSSE != null)
+                                    {
+                                        xmlWriter.WriteStartElement("NOT-SSE");
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.SSEC != null)
+                                    {
+                                        xmlWriter.WriteStartElement("SSE-C");
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.SSEKMS != null)
+                                    {
+                                        xmlWriter.WriteStartElement("SSE-KMS");
+                                        if(publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.SSEKMS.IsSetBucketKeyEnabled())
+                                            xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.SSEKMS.BucketKeyEnabled.Value));
+                                        if(publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.SSEKMS.IsSetKmsKeyArn())
+                                            xmlWriter.WriteElementString("KmsKeyArn", StringUtils.FromString(publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.SSEKMS.KmsKeyArn));
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyObjectEncryptionValue.SSES3 != null)
+                                    {
+                                        xmlWriter.WriteStartElement("SSE-S3");
+                                        xmlWriter.WriteEndElement();
+                                    }
+                                    xmlWriter.WriteEndElement();
+                                }
+                                }            
+                                xmlWriter.WriteEndElement();            
+                            }
                             var publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass = publicRequest.ManifestGenerator.S3JobManifestGenerator.Filter.MatchAnyStorageClass;
                             if (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass != null && (publicRequestManifestGeneratorS3JobManifestGeneratorFilterMatchAnyStorageClass.Count > 0 || !AWSConfigs.InitializeCollections)) 
                             {
@@ -263,6 +309,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }
                             xmlWriter.WriteEndElement();
                         }
+                        xmlWriter.WriteEndElement();
+                    }
+                    if (publicRequest.Operation.S3ComputeObjectChecksum != null)
+                    {
+                        xmlWriter.WriteStartElement("S3ComputeObjectChecksum");
+                        if(publicRequest.Operation.S3ComputeObjectChecksum.IsSetChecksumAlgorithm())
+                            xmlWriter.WriteElementString("ChecksumAlgorithm", StringUtils.FromString(publicRequest.Operation.S3ComputeObjectChecksum.ChecksumAlgorithm));
+                        if(publicRequest.Operation.S3ComputeObjectChecksum.IsSetChecksumType())
+                            xmlWriter.WriteElementString("ChecksumType", StringUtils.FromString(publicRequest.Operation.S3ComputeObjectChecksum.ChecksumType));
                         xmlWriter.WriteEndElement();
                     }
                     if (publicRequest.Operation.S3DeleteObjectTagging != null)
@@ -518,6 +573,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequest.Report.Bucket));
                     if(publicRequest.Report.IsSetEnabled())
                         xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.Report.Enabled.Value));
+                    if(publicRequest.Report.IsSetExpectedBucketOwner())
+                        xmlWriter.WriteElementString("ExpectedBucketOwner", StringUtils.FromString(publicRequest.Report.ExpectedBucketOwner));
                     if(publicRequest.Report.IsSetFormat())
                         xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequest.Report.Format));
                     if(publicRequest.Report.IsSetPrefix())
@@ -583,5 +640,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateJobRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateJobRequest publicRequest);
     }    
 }

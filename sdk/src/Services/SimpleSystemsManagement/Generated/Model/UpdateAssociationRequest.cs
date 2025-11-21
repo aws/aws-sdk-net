@@ -581,6 +581,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// accounts where you want to run the association. Use this action to update an association
         /// in multiple Regions and multiple accounts.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <c>IncludeChildOrganizationUnits</c> parameter is not supported by State Manager.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

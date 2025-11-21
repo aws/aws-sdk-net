@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Billing and Cost Management Dashboards enables users to create dashboards that combine multiple visualizations of cost and usage data. Users can create, manage, and share dashboards. Tags are also available for dashboards.",
+  "generate-client-constructors": true
+}

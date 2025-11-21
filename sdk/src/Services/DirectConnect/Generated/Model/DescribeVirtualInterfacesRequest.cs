@@ -42,10 +42,24 @@ namespace Amazon.DirectConnect.Model
     /// A virtual interface (VLAN) transmits the traffic between the Direct Connect location
     /// and the customer network.
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If you're using an <c>asn</c>, the response includes ASN value in both the <c>asn</c>
+    /// and <c>asnLong</c> fields.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you're using <c>asnLong</c>, the response returns a value of <c>0</c> (zero) for
+    /// the <c>asn</c> attribute because it exceeds the highest ASN value of 2,147,483,647
+    /// that it can support
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeVirtualInterfacesRequest : AmazonDirectConnectRequest
     {
         private string _connectionId;
+        private int? _maxResults;
+        private string _nextToken;
         private string _virtualInterfaceId;
 
         /// <summary>
@@ -64,6 +78,47 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetConnectionId()
         {
             return this._connectionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <c>nextToken</c> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>MaxResults</c> is given a value larger than 100, only 100 results are returned.
+        /// </para>
+        /// </summary>
+        public int? MaxResults
+        {
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next page of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

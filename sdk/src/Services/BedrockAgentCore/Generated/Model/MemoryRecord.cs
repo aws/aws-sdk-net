@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Contains information about a memory record in a memory store.
+    /// Contains information about a memory record in an AgentCore Memory resource.
     /// </summary>
     public partial class MemoryRecord
     {
@@ -84,7 +84,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The unique identifier of the memory record.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=40, Max=40)]
+        [AWSProperty(Required=true, Min=40, Max=50)]
         public string MemoryRecordId
         {
             get { return this._memoryRecordId; }
@@ -128,7 +128,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public List<string> Namespaces
         {
             get { return this._namespaces; }

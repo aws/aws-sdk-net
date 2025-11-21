@@ -32,6 +32,24 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the CancelMetadataGenerationRun operation.
     /// Cancels the metadata generation run.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The run must exist and be in a cancelable status (e.g., SUBMITTED, IN_PROGRESS). 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Runs in SUCCEEDED status cannot be cancelled.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User must have access to the run and cancel permissions.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CancelMetadataGenerationRunRequest : AmazonDataZoneRequest
     {

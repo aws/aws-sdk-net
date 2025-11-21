@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("attachmentLimitType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AttachmentLimitType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ebsOptimizedInfo", targetDepth))
                     {
                         var unmarshaller = EbsOptimizedInfoUnmarshaller.Instance;
@@ -71,6 +77,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.EncryptionSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("maximumEbsAttachments", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.MaximumEbsAttachments = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("nvmeSupport", targetDepth))

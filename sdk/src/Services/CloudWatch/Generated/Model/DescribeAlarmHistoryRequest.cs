@@ -49,6 +49,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DescribeAlarmHistoryRequest : AmazonCloudWatchRequest
     {
+        private string _alarmContributorId;
         private string _alarmName;
         private List<string> _alarmTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _endDate;
@@ -57,6 +58,26 @@ namespace Amazon.CloudWatch.Model
         private string _nextToken;
         private ScanBy _scanBy;
         private DateTime? _startDate;
+
+        /// <summary>
+        /// Gets and sets the property AlarmContributorId. 
+        /// <para>
+        /// The unique identifier of a specific alarm contributor to filter the alarm history
+        /// results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string AlarmContributorId
+        {
+            get { return this._alarmContributorId; }
+            set { this._alarmContributorId = value; }
+        }
+
+        // Check to see if AlarmContributorId property is set
+        internal bool IsSetAlarmContributorId()
+        {
+            return this._alarmContributorId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AlarmName. 

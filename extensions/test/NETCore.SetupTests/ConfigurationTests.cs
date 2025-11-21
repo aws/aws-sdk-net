@@ -107,6 +107,12 @@ namespace NETCore.SetupTests
             Assert.Equal(DefaultConfigurationMode.Standard, options.DefaultConfigurationMode);
             Assert.Equal(RequestRetryMode.Standard, options.DefaultClientConfig.RetryMode);
 
+            Assert.Equal(2, options.DefaultClientConfig.AuthSchemePreference.Count);
+            Assert.Equal("sigv4a", options.DefaultClientConfig.AuthSchemePreference[0]);
+            Assert.Equal("sigv4", options.DefaultClientConfig.AuthSchemePreference[1]);
+            Assert.Single(options.DefaultClientConfig.SigV4aSigningRegionSet);
+            Assert.Equal("*", options.DefaultClientConfig.SigV4aSigningRegionSet[0]);
+
             IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
             Assert.NotNull(client);
             Assert.Equal(RegionEndpoint.USWest2, client.Config.RegionEndpoint);
@@ -131,6 +137,9 @@ namespace NETCore.SetupTests
 #if NET8_0_OR_GREATER
             Assert.Equal(TimeSpan.FromMilliseconds(500), options.DefaultClientConfig.ConnectTimeout);
             Assert.Equal(TimeSpan.FromMilliseconds(500), clientConfig.ConnectTimeout);
+
+            Assert.Equal(5, options.DefaultClientConfig.MaxConnectionsPerServer);
+            Assert.Equal(5, clientConfig.MaxConnectionsPerServer);
 #endif
         }
 

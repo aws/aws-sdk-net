@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The customer-managed-key(CMK) used when creating a data store. If a customer owned
-    /// key is not specified, an AWS owned key will be used for encryption.
+    /// The customer-managed-key (CMK) used when creating a data store. If a customer-owned
+    /// key is not specified, an AWS-owned key is used for encryption.
     /// </summary>
     public partial class KmsEncryptionConfig
     {
@@ -41,8 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property CmkType. 
         /// <para>
-        ///  The type of customer-managed-key(CMK) used for encryption. The two types of supported
-        /// CMKs are customer owned CMKs and AWS owned CMKs. 
+        /// The type of customer-managed-key (CMK) used for encryption.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +60,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  The KMS encryption key id/alias used to encrypt the data store contents at rest.
-        /// 
+        /// The Key Management Service (KMS) encryption key id/alias used to encrypt the data
+        /// store contents at rest.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UpdateFunction operation
     /// </summary>  
-    public class UpdateFunctionResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class UpdateFunctionResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -50,6 +50,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("ETtag"))
                 response.ETag = context.ResponseData.GetHeaderValue("ETtag");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -77,7 +78,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -127,6 +127,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, UpdateFunctionResponse response);
 
         private static UpdateFunctionResponseUnmarshaller _instance = new UpdateFunctionResponseUnmarshaller();        
 

@@ -43,7 +43,6 @@ namespace Amazon.MediaLive.Model
         /// of the FEC protection matrix.  The number of transport stream packets per column error
         /// correction packet. Must be between 4 and 20, inclusive.
         /// </summary>
-        [AWSProperty(Min=4, Max=20)]
         public int? ColumnDepth
         {
             get { return this._columnDepth; }
@@ -80,7 +79,6 @@ namespace Amazon.MediaLive.Model
         /// must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec
         /// is column, this value must be 1 to 20, inclusive.
         /// </summary>
-        [AWSProperty(Min=1, Max=20)]
         public int? RowLength
         {
             get { return this._rowLength; }

@@ -122,6 +122,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.RequestTemplates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("responseTransferMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResponseTransferMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("timeoutInMillis", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

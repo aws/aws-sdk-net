@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(XmlBlobsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/XmlBlobs";
 
@@ -102,5 +103,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, XmlBlobsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, XmlBlobsRequest publicRequest);
     }    
 }

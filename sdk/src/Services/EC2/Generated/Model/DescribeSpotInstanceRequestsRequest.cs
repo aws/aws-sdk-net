@@ -179,6 +179,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>launched-availability-zone-id</c> - The ID of the Availability Zone in which the
+        /// request is launched.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>network-interface.addresses.primary</c> - Indicates whether the IP address is
         /// the primary private IP address.
         /// </para>

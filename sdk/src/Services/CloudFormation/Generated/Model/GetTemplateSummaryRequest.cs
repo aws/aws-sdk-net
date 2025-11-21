@@ -33,12 +33,12 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the GetTemplateSummary operation.
     /// Returns information about a new or existing template. The <c>GetTemplateSummary</c>
     /// action is useful for viewing parameter information, such as default parameter values
-    /// and parameter types, before you create or update a stack or stack set.
+    /// and parameter types, before you create or update a stack or StackSet.
     /// 
     ///  
     /// <para>
     /// You can use the <c>GetTemplateSummary</c> action when you submit a template, or you
-    /// can get template information for a stack set, or a running or deleted stack.
+    /// can get template information for a StackSet, or a running or deleted stack.
     /// </para>
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for StackSets with self-managed
         /// permissions.
         /// </para>
         ///  <ul> <li> 
@@ -125,7 +125,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set from which the stack was created.
+        /// The name or unique ID of the StackSet from which the stack was created.
         /// </para>
         ///  
         /// <para>

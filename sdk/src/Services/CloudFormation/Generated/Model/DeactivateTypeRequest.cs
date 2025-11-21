@@ -31,14 +31,24 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DeactivateType operation.
-    /// Deactivates a public extension that was previously activated in this account and Region.
+    /// Deactivates a public third-party extension, such as a resource or module, or a CloudFormation
+    /// Hook when you no longer use it.
     /// 
+    ///  
+    /// <para>
+    /// Deactivating an extension deletes the configuration details that are associated with
+    /// it. To temporarily disable a CloudFormation Hook instead, you can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
+    /// </para>
     ///  
     /// <para>
     /// Once deactivated, an extension can't be used in any CloudFormation operation. This
     /// includes stack update operations where the stack template includes the extension,
     /// even if no updates are being made to the extension. In addition, deactivated extensions
     /// aren't automatically updated if a new version of the extension is released.
+    /// </para>
+    ///  
+    /// <para>
+    /// To see which extensions are currently activated, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListTypes.html">ListTypes</a>.
     /// </para>
     /// </summary>
     public partial class DeactivateTypeRequest : AmazonCloudFormationRequest
@@ -50,7 +60,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the extension, in this account and Region.
+        /// The Amazon Resource Name (ARN) for the extension in this account and Region.
         /// </para>
         ///  
         /// <para>
@@ -95,7 +105,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The type name of the extension, in this account and Region. If you specified a type
+        /// The type name of the extension in this account and Region. If you specified a type
         /// name alias when enabling the extension, use the type name alias.
         /// </para>
         ///  

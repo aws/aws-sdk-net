@@ -74,6 +74,12 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("healthStatus", targetDepth))
+                {
+                    var unmarshaller = BillingViewHealthStatusUnmarshaller.Instance;
+                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -84,6 +90,12 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sourceAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

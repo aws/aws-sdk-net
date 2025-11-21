@@ -30,28 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A structure that contains the following account information elements:
+    /// A structure that contains the following account information elements: 
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Your Amazon QuickSight account name.
+    /// Your Quick Sight account name.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The edition of Amazon QuickSight that your account is using.
+    /// The edition of Quick Sight that your account is using.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The notification email address that is associated with the Amazon QuickSight account.
-    /// 
+    /// The notification email address that is associated with the Quick Sight account. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The authentication type of the Amazon QuickSight account.
+    /// The authentication type of the Quick Sight account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The status of the Amazon QuickSight account's subscription.
+    /// The status of the Quick Sight account's subscription.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -67,8 +66,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountName. 
         /// <para>
-        /// The account name that you provided for the Amazon QuickSight subscription in your
-        /// Amazon Web Services account. You create this name when you sign up for Amazon QuickSight.
+        /// The account name that you provided for the Amazon Quick Sight subscription in your
+        /// Amazon Web Services account. You create this name when you sign up for Quick Suite.
         /// It's unique over all of Amazon Web Services, and it appears only when users sign in.
         /// </para>
         /// </summary>
@@ -105,7 +104,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The way that your Amazon QuickSight account is authenticated.
+        /// The way that your Amazon Quick Sight account is authenticated.
         /// </para>
         /// </summary>
         public string AuthenticationType
@@ -123,7 +122,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Edition. 
         /// <para>
-        /// The edition of your Amazon QuickSight account.
+        /// The edition of your Quick Sight account.
         /// </para>
         /// </summary>
         public Edition Edition
@@ -159,8 +158,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NotificationEmail. 
         /// <para>
-        /// The email address that will be used for Amazon QuickSight to send notifications regarding
-        /// your Amazon Web Services account or Amazon QuickSight subscription.
+        /// The email address that will be used for Quick Sight to send notifications regarding
+        /// your Amazon Web Services account or Quick Sight subscription.
         /// </para>
         /// </summary>
         public string NotificationEmail

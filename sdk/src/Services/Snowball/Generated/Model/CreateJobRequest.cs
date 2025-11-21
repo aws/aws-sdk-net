@@ -276,7 +276,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property DeviceConfiguration. 
         /// <para>
-        /// Defines the device configuration for an Snowcone job.
+        /// Defines the device configuration for an Snowball Edge job.
         /// </para>
         ///  
         /// <para>

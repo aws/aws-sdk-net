@@ -65,6 +65,8 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetArn())
                 throw new AmazonCodeStarNotificationsException("Request object does not have required field Arn set");
             request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.Arn));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonCodeStarNotificationsException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

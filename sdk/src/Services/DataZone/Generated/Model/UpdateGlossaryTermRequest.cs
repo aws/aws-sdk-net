@@ -32,6 +32,28 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the UpdateGlossaryTerm operation.
     /// Updates a business glossary term in Amazon DataZone.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Glossary term must exist in the specified domain. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// New name must not conflict with existing terms in the same glossary.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User must have permissions on the term.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The term must not be in DELETED status.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateGlossaryTermRequest : AmazonDataZoneRequest
     {

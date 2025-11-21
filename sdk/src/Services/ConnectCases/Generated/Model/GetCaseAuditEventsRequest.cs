@@ -81,8 +81,8 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of audit events to return. The current maximum supported value
-        /// is 25. This is also the default when no other value is provided.
+        /// The maximum number of audit events to return. When no value is provided, 25 is the
+        /// default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]

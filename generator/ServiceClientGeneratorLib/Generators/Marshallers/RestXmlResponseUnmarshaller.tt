@@ -19,13 +19,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
      if (this.Config.ServiceId == "S3")
      {
 #>
-    public class <#=this.UnmarshallerBaseName#>ResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class <#=this.UnmarshallerBaseName#>ResponseUnmarshaller : S3ReponseUnmarshaller
 <#
      }
      else
      {
 #>
-    public class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class <#=this.UnmarshallerBaseName #>ResponseUnmarshaller : XmlResponseUnmarshaller
 <#
      }
 #>
@@ -96,6 +96,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	UnmarshallHeaders();
 	ProcessStatusCode();
 #>            
+            PostUnmarshallCustomization(context, response);
             return response;
 		}		
 <#
@@ -133,6 +134,14 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 				   targetDepth += 1;
 <#
         }
+        if (payload != null && this.Config.ServiceModel.Customizations.FlattenShapes(this.Structure.Name).Contains(payload.ModeledName))
+        {
+#>
+            // payload has been flattened so that members of the result object are directly unmarshalled instead of unmarshalled
+            // as part of the container class, so look one level deeper
+            targetDepth += 1;
+<#
+        }
     }
 #>
             if (context.IsEmptyResponse)
@@ -146,12 +155,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#    
         foreach (var member in this.Operation.ResponseBodyMembers)
         {
-            ProcessResponseBodyOrStructureMembers(member, false);
+            ProcessResponseBodyOrStructureMembers(member, false, this.Structure);
         }
 
         if (shouldMarshallPayload)
         {
-            ProcessResponseBodyOrStructureMembers(payload, false);
+            ProcessResponseBodyOrStructureMembers(payload, false, this.Structure);
         }
 #>
 				}
@@ -160,7 +169,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
 <#
@@ -225,6 +233,8 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     }
 #>
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, <#=this.Operation.Name #>Response response);
 
 <#
     this.AddResponseSingletonMethod();

@@ -65,6 +65,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetAccessPreviewId())
                 throw new AmazonAccessAnalyzerException("Request object does not have required field AccessPreviewId set");
             request.AddPathResource("{accessPreviewId}", StringUtils.FromString(publicRequest.AccessPreviewId));
+            if (string.IsNullOrEmpty(publicRequest.AnalyzerArn))
+                throw new AmazonAccessAnalyzerException("Request object does not have required field AnalyzerArn set");
             
             if (publicRequest.IsSetAnalyzerArn())
                 request.Parameters.Add("analyzerArn", StringUtils.FromString(publicRequest.AnalyzerArn));

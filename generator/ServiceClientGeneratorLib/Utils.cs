@@ -174,6 +174,13 @@ namespace ServiceClientGenerator
             return serviceDirectories;
         }
 
+        public static List<string> GetExtensionDirectories(GeneratorOptions options)
+        {
+            var extensionDirectories = new List<string>();
+            extensionDirectories.AddRange(Directory.GetDirectories(options.ExtensionsSrcFolder).OrderBy(d => d));
+            return extensionDirectories;
+        }
+
         /// <summary>
         /// Forces the path to use the AltDirectorySeparatorChar even on Windows.
         /// </summary>

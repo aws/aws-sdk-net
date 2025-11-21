@@ -30,6 +30,7 @@
     "DescribeFargateProfile": "<p>Describes an Fargate profile.</p>",
     "DescribeIdentityProviderConfig": "<p>Describes an identity provider configuration.</p>",
     "DescribeInsight": "<p>Returns details about an insight that you specify using its ID.</p>",
+    "DescribeInsightsRefresh": "<p>Returns the status of the latest on-demand cluster insights refresh operation.</p>",
     "DescribeNodegroup": "<p>Describes a managed node group.</p>",
     "DescribePodIdentityAssociation": "<p>Returns descriptive information about an EKS Pod Identity association.</p> <p>This action requires the ID of the association. You can get the ID from the response to the <code>CreatePodIdentityAssocation</code> for newly created associations. Or, you can list the IDs for associations with <code>ListPodIdentityAssociations</code> and filter the list by namespace or service account.</p>",
     "DescribeUpdate": "<p>Describes an update to an Amazon EKS resource.</p> <p>When the status of the update is <code>Successful</code>, the update is complete. If an update fails, the status is <code>Failed</code>, and an error detail explains the reason for the failure.</p>",
@@ -49,6 +50,7 @@
     "ListTagsForResource": "<p>List the tags for an Amazon EKS resource.</p>",
     "ListUpdates": "<p>Lists the updates associated with an Amazon EKS resource in your Amazon Web Services account, in the specified Amazon Web Services Region.</p>",
     "RegisterCluster": "<p>Connects a Kubernetes cluster to the Amazon EKS control plane. </p> <p>Any Kubernetes cluster can be connected to the Amazon EKS control plane to view current information about the cluster and its nodes. </p> <p>Cluster connection requires two steps. First, send a <a href=\"https://docs.aws.amazon.com/eks/latest/APIReference/API_RegisterClusterRequest.html\"> <code>RegisterClusterRequest</code> </a> to add it to the Amazon EKS control plane.</p> <p>Second, a <a href=\"https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml\">Manifest</a> containing the <code>activationID</code> and <code>activationCode</code> must be applied to the Kubernetes cluster through it's native provider to provide visibility.</p> <p>After the manifest is updated and applied, the connected cluster is visible to the Amazon EKS control plane. If the manifest isn't applied within three days, the connected cluster will no longer be visible and must be deregistered using <code>DeregisterCluster</code>.</p>",
+    "StartInsightsRefresh": "<p>Initiates an on-demand refresh operation for cluster insights, getting the latest analysis outside of the standard refresh schedule.</p>",
     "TagResource": "<p>Associates the specified tags to an Amazon EKS resource with the specified <code>resourceArn</code>. If existing tags on a resource are not specified in the request parameters, they aren't changed. When a resource is deleted, the tags associated with that resource are also deleted. Tags that you create for Amazon EKS resources don't propagate to any other resources associated with the cluster. For example, if you tag a cluster with this operation, that tag doesn't automatically propagate to the subnets and nodes associated with the cluster.</p>",
     "UntagResource": "<p>Deletes specified tags from an Amazon EKS resource.</p>",
     "UpdateAccessEntry": "<p>Updates an access entry.</p>",
@@ -165,6 +167,18 @@
       "base": null,
       "refs": {
         "AddonHealth$issues": "<p>An object representing the health issues for an add-on.</p>"
+      }
+    },
+    "AddonNamespaceConfigRequest": {
+      "base": "<p>The namespace configuration request object for specifying a custom namespace when creating an addon.</p>",
+      "refs": {
+        "CreateAddonRequest$namespaceConfig": "<p>The namespace configuration for the addon. If specified, this will override the default namespace for the addon.</p>"
+      }
+    },
+    "AddonNamespaceConfigResponse": {
+      "base": "<p>The namespace configuration response object containing information about the namespace where an addon is installed.</p>",
+      "refs": {
+        "Addon$namespaceConfig": "<p>The namespace configuration for the addon. This specifies the Kubernetes namespace where the addon is installed.</p>"
       }
     },
     "AddonPodIdentityAssociations": {
@@ -306,10 +320,12 @@
       "refs": {
         "AccessConfigResponse$bootstrapClusterCreatorAdminPermissions": "<p>Specifies whether or not the cluster creator IAM principal was set as a cluster admin access entry during cluster creation time.</p>",
         "BlockStorage$enabled": "<p>Indicates if the block storage capability is enabled on your EKS Auto Mode cluster. If the block storage capability is enabled, EKS Auto Mode will create and delete EBS volumes in your Amazon Web Services account.</p>",
+        "Cluster$deletionProtection": "<p>The current deletion protection setting for the cluster. When <code>true</code>, deletion protection is enabled and the cluster cannot be deleted until protection is disabled. When <code>false</code>, the cluster can be deleted normally. This setting only applies to clusters in an active state.</p>",
         "ComputeConfigRequest$enabled": "<p>Request to enable or disable the compute capability on your EKS Auto Mode cluster. If the compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon Web Services account.</p>",
         "ComputeConfigResponse$enabled": "<p>Indicates if the compute capability is enabled on your EKS Auto Mode cluster. If the compute capability is enabled, EKS Auto Mode will create and delete EC2 Managed Instances in your Amazon Web Services account.</p>",
         "CreateAccessConfigRequest$bootstrapClusterCreatorAdminPermissions": "<p>Specifies whether or not the cluster creator IAM principal was set as a cluster admin access entry during cluster creation time. The default value is <code>true</code>.</p>",
         "CreateClusterRequest$bootstrapSelfManagedAddons": "<p>If you set this value to <code>False</code> when creating a cluster, the default networking add-ons will not be installed.</p> <p>The default networking add-ons include <code>vpc-cni</code>, <code>coredns</code>, and <code>kube-proxy</code>.</p> <p>Use this option when you plan to install third-party alternative add-ons or self-manage the default networking add-ons.</p>",
+        "CreateClusterRequest$deletionProtection": "<p>Indicates whether to enable deletion protection for the cluster. When enabled, the cluster cannot be deleted unless deletion protection is first disabled. This helps prevent accidental cluster deletion. Default value is <code>false</code>.</p>",
         "CreatePodIdentityAssociationRequest$disableSessionTags": "<p>Disable the automatic sessions tags that are appended by EKS Pod Identity.</p> <p>EKS Pod Identity adds a pre-defined set of session tags when it assumes the role. You can use these tags to author a single role that can work across resources by allowing access to Amazon Web Services resources based on matching tags. By default, EKS Pod Identity attaches six tags, including tags for cluster name, namespace, and service account name. For the list of tags added by EKS Pod Identity, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags\">List of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p> <p>Amazon Web Services compresses inline session policies, managed policy ARNs, and session tags into a packed binary format that has a separate limit. If you receive a <code>PackedPolicyTooLarge</code> error indicating the packed binary format has exceeded the size limit, you can attempt to reduce the size by disabling the session tags added by EKS Pod Identity.</p>",
         "DescribeClusterVersionsRequest$defaultOnly": "<p>Filter to show only default versions.</p>",
         "DescribeClusterVersionsRequest$includeAll": "<p>Include all available versions in the response.</p>",
@@ -317,6 +333,7 @@
         "LogSetup$enabled": "<p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs . If a log type isn't enabled, that log type doesn't export its control plane logs. Each individual log type can be enabled or disabled independently.</p>",
         "NodeRepairConfig$enabled": "<p>Specifies whether to enable node auto repair for the node group. Node auto repair is disabled by default.</p>",
         "PodIdentityAssociation$disableSessionTags": "<p>The state of the automatic sessions tags. The value of <i>true</i> disables these tags.</p> <p>EKS Pod Identity adds a pre-defined set of session tags when it assumes the role. You can use these tags to author a single role that can work across resources by allowing access to Amazon Web Services resources based on matching tags. By default, EKS Pod Identity attaches six tags, including tags for cluster name, namespace, and service account name. For the list of tags added by EKS Pod Identity, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags\">List of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p>",
+        "UpdateClusterConfigRequest$deletionProtection": "<p>Specifies whether to enable or disable deletion protection for the cluster. When enabled (<code>true</code>), the cluster cannot be deleted until deletion protection is explicitly disabled. When disabled (<code>false</code>), the cluster can be deleted normally.</p>",
         "UpdatePodIdentityAssociationRequest$disableSessionTags": "<p>Disable the automatic sessions tags that are appended by EKS Pod Identity.</p> <p>EKS Pod Identity adds a pre-defined set of session tags when it assumes the role. You can use these tags to author a single role that can work across resources by allowing access to Amazon Web Services resources based on matching tags. By default, EKS Pod Identity attaches six tags, including tags for cluster name, namespace, and service account name. For the list of tags added by EKS Pod Identity, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/pod-id-abac.html#pod-id-abac-tags\">List of session tags added by EKS Pod Identity</a> in the <i>Amazon EKS User Guide</i>.</p> <p>Amazon Web Services compresses inline session policies, managed policy ARNs, and session tags into a packed binary format that has a separate limit. If you receive a <code>PackedPolicyTooLarge</code> error indicating the packed binary format has exceeded the size limit, you can attempt to reduce the size by disabling the session tags added by EKS Pod Identity.</p>",
         "VpcConfigRequest$endpointPublicAccess": "<p>Set this value to <code>false</code> to disable public access to your cluster's Kubernetes API server endpoint. If you disable public access, your cluster's Kubernetes API server can only receive requests from within the cluster VPC. The default value for this parameter is <code>true</code>, which enables public access for your Kubernetes API server. The endpoint domain name and IP address family depends on the value of the <code>ipFamily</code> for the cluster. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html\">Cluster API server endpoint</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>",
         "VpcConfigRequest$endpointPrivateAccess": "<p>Set this value to <code>true</code> to enable private access for your cluster's Kubernetes API server endpoint. If you enable private access, Kubernetes API requests from within your cluster's VPC use the private VPC endpoint. The default value for this parameter is <code>false</code>, which disables private access for your Kubernetes API server. If you disable private access and you have nodes or Fargate pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for communication with the nodes or Fargate pods. For more information, see <a href=\"https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html\">Cluster API server endpoint</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>",
@@ -737,6 +754,14 @@
       "base": null,
       "refs": {}
     },
+    "DescribeInsightsRefreshRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "DescribeInsightsRefreshResponse": {
+      "base": null,
+      "refs": {}
+    },
     "DescribeNodegroupRequest": {
       "base": null,
       "refs": {}
@@ -1026,6 +1051,13 @@
       "base": "<p>The criteria to use for the insights.</p>",
       "refs": {
         "ListInsightsRequest$filter": "<p>The criteria to filter your list of insights for your cluster. You can filter which insights are returned by category, associated Kubernetes version, and status.</p>"
+      }
+    },
+    "InsightsRefreshStatus": {
+      "base": null,
+      "refs": {
+        "DescribeInsightsRefreshResponse$status": "<p>The current status of the insights refresh operation.</p>",
+        "StartInsightsRefreshResponse$status": "<p>The current status of the insights refresh operation.</p>"
       }
     },
     "Integer": {
@@ -1318,6 +1350,18 @@
         "UpdateNodegroupConfigRequest$nodeRepairConfig": "<p>The node auto repair configuration for the node group.</p>"
       }
     },
+    "NodeRepairConfigOverrides": {
+      "base": "<p>Specify granular overrides for specific repair actions. These overrides control the repair action and the repair delay time before a node is considered eligible for repair. If you use this, you must specify all the values.</p>",
+      "refs": {
+        "NodeRepairConfigOverridesList$member": null
+      }
+    },
+    "NodeRepairConfigOverridesList": {
+      "base": null,
+      "refs": {
+        "NodeRepairConfig$nodeRepairConfigOverrides": "<p>Specify granular overrides for specific repair actions. These overrides control the repair action and the repair delay time before a node is considered eligible for repair. If you use this, you must specify all the values.</p>"
+      }
+    },
     "Nodegroup": {
       "base": "<p>An object representing an Amazon EKS managed node group.</p>",
       "refs": {
@@ -1375,6 +1419,9 @@
     "NonZeroInteger": {
       "base": null,
       "refs": {
+        "NodeRepairConfig$maxUnhealthyNodeThresholdCount": "<p>Specify a count threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdPercentage</code> at the same time.</p>",
+        "NodeRepairConfig$maxParallelNodesRepairedCount": "<p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a count of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedPercentage</code> at the same time.</p>",
+        "NodeRepairConfigOverrides$minRepairWaitTimeMins": "<p>Specify the minimum time in minutes to wait before attempting to repair a node with this specific <code>nodeMonitoringCondition</code> and <code>nodeUnhealthyReason</code>.</p>",
         "NodegroupUpdateConfig$maxUnavailable": "<p>The maximum number of nodes unavailable at once during a version update. Nodes are updated in parallel. This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number is 100.</p>"
       }
     },
@@ -1415,6 +1462,8 @@
     "PercentCapacity": {
       "base": null,
       "refs": {
+        "NodeRepairConfig$maxUnhealthyNodeThresholdPercentage": "<p>Specify a percentage threshold of unhealthy nodes, above which node auto repair actions will stop. When using this, you cannot also set <code>maxUnhealthyNodeThresholdCount</code> at the same time.</p>",
+        "NodeRepairConfig$maxParallelNodesRepairedPercentage": "<p>Specify the maximum number of nodes that can be repaired concurrently or in parallel, expressed as a percentage of unhealthy nodes. This gives you finer-grained control over the pace of node replacements. When using this, you cannot also set <code>maxParallelNodesRepairedCount</code> at the same time.</p>",
         "NodegroupUpdateConfig$maxUnavailablePercentage": "<p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes are updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>"
       }
     },
@@ -1499,6 +1548,12 @@
         "RemoteNetworkConfigResponse$remotePodNetworks": "<p>The list of network CIDRs that can contain pods that run Kubernetes webhooks on hybrid nodes.</p>"
       }
     },
+    "RepairAction": {
+      "base": null,
+      "refs": {
+        "NodeRepairConfigOverrides$repairAction": "<p>Specify the repair action to take for nodes when all of the specified conditions are met.</p>"
+      }
+    },
     "ResolveConflicts": {
       "base": null,
       "refs": {
@@ -1535,6 +1590,14 @@
     },
     "ServiceUnavailableException": {
       "base": "<p>The service is unavailable. Back off and retry the operation.</p>",
+      "refs": {}
+    },
+    "StartInsightsRefreshRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "StartInsightsRefreshResponse": {
+      "base": null,
       "refs": {}
     },
     "StorageConfigRequest": {
@@ -1575,6 +1638,7 @@
         "AddonInfo$type": "<p>The type of the add-on.</p>",
         "AddonInfo$publisher": "<p>The publisher of the add-on.</p>",
         "AddonInfo$owner": "<p>The owner of the add-on.</p>",
+        "AddonInfo$defaultNamespace": "<p>The default Kubernetes namespace where this addon is typically installed if no custom namespace is specified.</p>",
         "AddonIssue$message": "<p>A message that provides details about the issue and what might cause it.</p>",
         "AddonPodIdentityAssociations$serviceAccount": "<p>The name of a Kubernetes Service Account.</p>",
         "AddonPodIdentityAssociations$roleArn": "<p>The ARN of an IAM Role.</p>",
@@ -1689,6 +1753,8 @@
         "DescribeIdentityProviderConfigRequest$clusterName": "<p>The name of your cluster.</p>",
         "DescribeInsightRequest$clusterName": "<p>The name of the cluster to describe the insight for.</p>",
         "DescribeInsightRequest$id": "<p>The identity of the insight to describe.</p>",
+        "DescribeInsightsRefreshRequest$clusterName": "<p>The name of the cluster associated with the insights refresh operation.</p>",
+        "DescribeInsightsRefreshResponse$message": "<p>The message associated with the insights refresh operation.</p>",
         "DescribeNodegroupRequest$clusterName": "<p>The name of your cluster.</p>",
         "DescribeNodegroupRequest$nodegroupName": "<p>The name of the node group to describe.</p>",
         "DescribePodIdentityAssociationRequest$clusterName": "<p>The name of the cluster that the association is in.</p>",
@@ -1794,6 +1860,8 @@
         "ListUpdatesResponse$nextToken": "<p>The <code>nextToken</code> value returned from a previous paginated request, where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. This value is null when there are no more results to return.</p> <note> <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>",
         "MarketplaceInformation$productId": "<p>The product ID from the Amazon Web Services Marketplace.</p>",
         "MarketplaceInformation$productUrl": "<p>The product URL from the Amazon Web Services Marketplace.</p>",
+        "NodeRepairConfigOverrides$nodeMonitoringCondition": "<p>Specify an unhealthy condition reported by the node monitoring agent that this override would apply to.</p>",
+        "NodeRepairConfigOverrides$nodeUnhealthyReason": "<p>Specify a reason reported by the node monitoring agent that this override would apply to.</p>",
         "Nodegroup$nodegroupName": "<p>The name associated with an Amazon EKS managed node group.</p>",
         "Nodegroup$nodegroupArn": "<p>The Amazon Resource Name (ARN) associated with the managed node group.</p>",
         "Nodegroup$clusterName": "<p>The name of your cluster.</p>",
@@ -1860,6 +1928,8 @@
         "ServerException$subscriptionId": "<p>The Amazon EKS subscription ID with the exception.</p>",
         "ServerException$message": "<p>These errors are usually caused by a server-side issue.</p>",
         "ServiceUnavailableException$message": "<p>The request has failed due to a temporary failure of the server.</p>",
+        "StartInsightsRefreshRequest$clusterName": "<p>The name of the cluster for the refresh insights operation.</p>",
+        "StartInsightsRefreshResponse$message": "<p>The message associated with the insights refresh operation.</p>",
         "StringList$member": null,
         "TagResourceRequest$resourceArn": "<p>The Amazon Resource Name (ARN) of the resource to add tags to.</p>",
         "ThrottlingException$clusterName": "<p>The Amazon EKS cluster associated with the exception.</p>",
@@ -2046,6 +2116,8 @@
         "ClusterVersionInformation$endOfStandardSupportDate": "<p>Date when standard support ends for this version.</p>",
         "ClusterVersionInformation$endOfExtendedSupportDate": "<p>Date when extended support ends for this version.</p>",
         "ConnectorConfigResponse$activationExpiry": "<p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native provider.</p>",
+        "DescribeInsightsRefreshResponse$startedAt": "<p>The date and time when the insights refresh operation started.</p>",
+        "DescribeInsightsRefreshResponse$endedAt": "<p>The date and time when the insights refresh operation ended.</p>",
         "EksAnywhereSubscription$createdAt": "<p>The Unix timestamp in seconds for when the subscription was created.</p>",
         "EksAnywhereSubscription$effectiveDate": "<p>The Unix timestamp in seconds for when the subscription is effective.</p>",
         "EksAnywhereSubscription$expirationDate": "<p>The Unix timestamp in seconds for when the subscription will expire or auto renew, depending on the auto renew configuration of the subscription object.</p>",
@@ -2282,6 +2354,13 @@
         "CreateNodegroupRequest$labels": "<p>The Kubernetes <code>labels</code> to apply to the nodes in the node group when they are created.</p>",
         "Nodegroup$labels": "<p>The Kubernetes <code>labels</code> applied to the nodes in the node group.</p> <note> <p>Only <code>labels</code> that are applied with the Amazon EKS API are shown here. There may be other Kubernetes <code>labels</code> applied to the nodes in this group.</p> </note>",
         "UpdateLabelsPayload$addOrUpdateLabels": "<p>The Kubernetes <code>labels</code> to add or update.</p>"
+      }
+    },
+    "namespace": {
+      "base": null,
+      "refs": {
+        "AddonNamespaceConfigRequest$namespace": "<p>The name of the Kubernetes namespace to install the addon in. Must be a valid RFC 1123 DNS label.</p>",
+        "AddonNamespaceConfigResponse$namespace": "<p>The name of the Kubernetes namespace where the addon is installed.</p>"
       }
     },
     "requiredClaimsKey": {

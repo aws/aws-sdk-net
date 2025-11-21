@@ -49,6 +49,11 @@ namespace Amazon.S3Tables.Model
     /// If you use this operation with the optional <c>encryptionConfiguration</c> request
     /// parameter you must have the <c>s3tables:PutTableEncryption</c> permission. 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You must have the <c>s3tables:TagResource</c> permission in addition to <c>s3tables:CreateTable</c>
+    /// permission to create a table with tags.
+    /// </para>
     ///  </li> </ul> <note> 
     /// <para>
     /// Additionally, If you choose SSE-KMS encryption you must grant the S3 Tables maintenance
@@ -65,6 +70,7 @@ namespace Amazon.S3Tables.Model
         private string _name;
         private string _awsNamespace;
         private string _tableBucketARN;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
@@ -185,6 +191,39 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetTableBucketARN()
         {
             return this._tableBucketARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of user-defined tags that you would like to apply to the table that you are
+        /// creating. A tag is a key-value pair that you apply to your resources. Tags can help
+        /// you organize, track costs for, and control access to resources. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging
+        /// for cost allocation or attribute-based access control (ABAC)</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must have the <c>s3tables:TagResource</c> permission in addition to <c>s3tables:CreateTable</c>
+        /// permission to create a table with tags.
+        /// </para>
+        ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

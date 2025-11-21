@@ -36,9 +36,12 @@ namespace Amazon.ECS.Model
     {
         private AutoScalingGroupProvider _autoScalingGroupProvider;
         private string _capacityProviderArn;
+        private string _cluster;
+        private ManagedInstancesProvider _managedInstancesProvider;
         private string _name;
         private CapacityProviderStatus _status;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private CapacityProviderType _type;
         private CapacityProviderUpdateStatus _updateStatus;
         private string _updateStatusReason;
 
@@ -76,6 +79,49 @@ namespace Amazon.ECS.Model
         internal bool IsSetCapacityProviderArn()
         {
             return this._capacityProviderArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cluster. 
+        /// <para>
+        /// The cluster that this capacity provider is associated with. Managed instances capacity
+        /// providers are cluster-scoped, meaning they can only be used within their associated
+        /// cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is required for Managed instances.
+        /// </para>
+        /// </summary>
+        public string Cluster
+        {
+            get { return this._cluster; }
+            set { this._cluster = value; }
+        }
+
+        // Check to see if Cluster property is set
+        internal bool IsSetCluster()
+        {
+            return this._cluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedInstancesProvider. 
+        /// <para>
+        /// The configuration for the Amazon ECS Managed Instances provider. This includes the
+        /// infrastructure role, the launch template configuration, and tag propagation settings.
+        /// </para>
+        /// </summary>
+        public ManagedInstancesProvider ManagedInstancesProvider
+        {
+            get { return this._managedInstancesProvider; }
+            set { this._managedInstancesProvider = value; }
+        }
+
+        // Check to see if ManagedInstancesProvider property is set
+        internal bool IsSetManagedInstancesProvider()
+        {
+            return this._managedInstancesProvider != null;
         }
 
         /// <summary>
@@ -179,6 +225,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of capacity provider. For Amazon ECS Managed Instances, this value is <c>MANAGED_INSTANCES</c>,
+        /// indicating that Amazon ECS manages the underlying Amazon EC2 instances on your behalf.
+        /// </para>
+        /// </summary>
+        public CapacityProviderType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

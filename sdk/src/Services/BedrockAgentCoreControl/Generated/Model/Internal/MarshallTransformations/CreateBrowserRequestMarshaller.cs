@@ -73,6 +73,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBrowserSigning())
+            {
+                context.Writer.WritePropertyName("browserSigning");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BrowserSigningConfigInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BrowserSigning, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
@@ -121,6 +132,20 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 var marshaller = RecordingConfigMarshaller.Instance;
                 marshaller.Marshall(publicRequest.Recording, context);
 
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
                 context.Writer.WriteEndObject();
             }
 

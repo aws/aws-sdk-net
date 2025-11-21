@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectPart Object
     /// </summary>  
-    public class ObjectPartUnmarshaller : IXmlUnmarshaller<ObjectPart, XmlUnmarshallerContext>
+    public partial class ObjectPartUnmarshaller : IXmlUnmarshaller<ObjectPart, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -98,6 +98,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -106,6 +108,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ObjectPart unmarshalledObject, int targetDepth);
+
         private static ObjectPartUnmarshaller _instance = new ObjectPartUnmarshaller();        
 
         /// <summary>

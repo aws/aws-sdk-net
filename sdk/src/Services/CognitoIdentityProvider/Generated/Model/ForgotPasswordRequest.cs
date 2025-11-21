@@ -31,11 +31,14 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the ForgotPassword operation.
-    /// Sends a password-reset confirmation code for the currently signed-in user.
+    /// Sends a password-reset confirmation code to the email address or phone number of the
+    /// requested username. The message delivery method is determined by the user's available
+    /// attributes and the <c>AccountRecoverySetting</c> configuration of the user pool.
     /// 
     ///  
     /// <para>
-    /// For the <c>Username</c> parameter, you can use the username or user alias.
+    /// For the <c>Username</c> parameter, you can use the username or an email, phone, or
+    /// preferred username alias.
     /// </para>
     ///  
     /// <para>

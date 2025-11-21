@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ContentTypeParameters operation
     /// </summary>  
-    public class ContentTypeParametersResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ContentTypeParametersResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         {
             ContentTypeParametersResponse response = new ContentTypeParametersResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ContentTypeParametersResponse response);
 
         private static ContentTypeParametersResponseUnmarshaller _instance = new ContentTypeParametersResponseUnmarshaller();        
 

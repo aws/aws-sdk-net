@@ -34,11 +34,18 @@ namespace Amazon.EntityResolution.Model
     /// Creates an <c>IdMappingWorkflow</c> object which stores the configuration of the data
     /// processing job to be run. Each <c>IdMappingWorkflow</c> must have a unique workflow
     /// name. To modify an existing workflow, use the UpdateIdMappingWorkflow API.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Incremental processing is not supported for ID mapping workflows. 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateIdMappingWorkflowRequest : AmazonEntityResolutionRequest
     {
         private string _description;
         private IdMappingTechniques _idMappingTechniques;
+        private IdMappingIncrementalRunConfig _incrementalRunConfig;
         private List<IdMappingWorkflowInputSource> _inputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowInputSource>() : null;
         private List<IdMappingWorkflowOutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowOutputSource>() : null;
         private string _roleArn;
@@ -81,6 +88,24 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetIdMappingTechniques()
         {
             return this._idMappingTechniques != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncrementalRunConfig. 
+        /// <para>
+        ///  The incremental run configuration for the ID mapping workflow.
+        /// </para>
+        /// </summary>
+        public IdMappingIncrementalRunConfig IncrementalRunConfig
+        {
+            get { return this._incrementalRunConfig; }
+            set { this._incrementalRunConfig = value; }
+        }
+
+        // Check to see if IncrementalRunConfig property is set
+        internal bool IsSetIncrementalRunConfig()
+        {
+            return this._incrementalRunConfig != null;
         }
 
         /// <summary>

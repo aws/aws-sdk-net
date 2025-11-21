@@ -760,7 +760,8 @@
         {"shape":"InvalidRequestException"},
         {"shape":"InternalServerError"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ThrottlingException"},
+        {"shape":"InvalidTokenException"}
       ]
     },
     "UpdateFirewallDeleteProtection":{
@@ -1565,7 +1566,10 @@
         "Type":{"shape":"RuleGroupType"},
         "Capacity":{"shape":"RuleCapacity"},
         "StatefulRuleOptions":{"shape":"StatefulRuleOptions"},
-        "LastModifiedTime":{"shape":"LastUpdateTime"}
+        "LastModifiedTime":{"shape":"LastUpdateTime"},
+        "VendorName":{"shape":"VendorName"},
+        "ProductId":{"shape":"ProductId"},
+        "ListingName":{"shape":"ListingName"}
       }
     },
     "DescribeRuleGroupRequest":{
@@ -1709,6 +1713,7 @@
     },
     "Domain":{"type":"string"},
     "EnableMonitoringDashboard":{"type":"boolean"},
+    "EnableTLSSessionHolding":{"type":"boolean"},
     "EnabledAnalysisType":{
       "type":"string",
       "enum":[
@@ -1794,7 +1799,8 @@
         "StatefulDefaultActions":{"shape":"StatefulActions"},
         "StatefulEngineOptions":{"shape":"StatefulEngineOptions"},
         "TLSInspectionConfigurationArn":{"shape":"ResourceArn"},
-        "PolicyVariables":{"shape":"PolicyVariables"}
+        "PolicyVariables":{"shape":"PolicyVariables"},
+        "EnableTLSSessionHolding":{"shape":"EnableTLSSessionHolding"}
       }
     },
     "FirewallPolicyMetadata":{
@@ -1940,7 +1946,9 @@
       "type":"string",
       "enum":[
         "ALLOWLIST",
-        "DENYLIST"
+        "DENYLIST",
+        "REJECTLIST",
+        "ALERTLIST"
       ]
     },
     "GetAnalysisReportResultsRequest":{
@@ -2227,6 +2235,7 @@
         "MaxResults":{"shape":"PaginationMaxResults"},
         "Scope":{"shape":"ResourceManagedStatus"},
         "ManagedType":{"shape":"ResourceManagedType"},
+        "SubscriptionStatus":{"shape":"SubscriptionStatus"},
         "Type":{"shape":"RuleGroupType"}
       }
     },
@@ -2282,6 +2291,7 @@
         "VpcEndpointAssociations":{"shape":"VpcEndpointAssociations"}
       }
     },
+    "ListingName":{"type":"string"},
     "LogDestinationConfig":{
       "type":"structure",
       "required":[
@@ -2377,7 +2387,9 @@
       "enum":[
         "PENDING",
         "IN_SYNC",
-        "CAPACITY_CONSTRAINED"
+        "CAPACITY_CONSTRAINED",
+        "NOT_SUBSCRIBED",
+        "DEPRECATED"
       ]
     },
     "PolicyString":{
@@ -2434,6 +2446,7 @@
       "max":65535,
       "min":1
     },
+    "ProductId":{"type":"string"},
     "ProtocolNumber":{
       "type":"integer",
       "max":255,
@@ -2524,7 +2537,8 @@
       "enum":[
         "AWS_MANAGED_THREAT_SIGNATURES",
         "AWS_MANAGED_DOMAIN_LISTS",
-        "ACTIVE_THREAT_DEFENSE"
+        "ACTIVE_THREAT_DEFENSE",
+        "PARTNER_MANAGED"
       ]
     },
     "ResourceName":{
@@ -2589,7 +2603,8 @@
       "type":"structure",
       "members":{
         "Name":{"shape":"ResourceName"},
-        "Arn":{"shape":"ResourceArn"}
+        "Arn":{"shape":"ResourceArn"},
+        "VendorName":{"shape":"VendorName"}
       }
     },
     "RuleGroupResponse":{
@@ -3000,6 +3015,13 @@
     "SubnetMappings":{
       "type":"list",
       "member":{"shape":"SubnetMapping"}
+    },
+    "SubscriptionStatus":{
+      "type":"string",
+      "enum":[
+        "NOT_SUBSCRIBED",
+        "SUBSCRIBED"
+      ]
     },
     "Summary":{
       "type":"structure",
@@ -3501,6 +3523,7 @@
       "type":"list",
       "member":{"shape":"VariableDefinition"}
     },
+    "VendorName":{"type":"string"},
     "VpcEndpointAssociation":{
       "type":"structure",
       "required":[

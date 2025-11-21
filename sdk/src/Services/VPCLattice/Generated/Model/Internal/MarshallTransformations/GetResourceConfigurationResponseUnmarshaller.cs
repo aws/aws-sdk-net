@@ -82,10 +82,34 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.CustomDomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("domainVerificationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainVerificationArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("domainVerificationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainVerificationId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("domainVerificationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainVerificationStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("failureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.FailureReason = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("groupDomain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.GroupDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth))

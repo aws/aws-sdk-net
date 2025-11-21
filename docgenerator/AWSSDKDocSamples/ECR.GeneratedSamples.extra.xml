@@ -135,6 +135,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECR.IAmazonECR.DeregisterPullTimeUpdateExclusion(Amazon.ECR.Model.DeregisterPullTimeUpdateExclusionRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.DeregisterPullTimeUpdateExclusion(Amazon.ECR.Model.DeregisterPullTimeUpdateExclusionRequest)" />
+            <member name="T:Amazon.ECR.Model.DeregisterPullTimeUpdateExclusionRequest" />
+            <member name="T:Amazon.ECR.Model.DeregisterPullTimeUpdateExclusionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example removes an IAM role from the pull time update exclusion list. Amazon ECR will resume recording image pull timestamps for this principal.
+                </para>
+                <code
+                    title="To remove a principal from the pull time exclusion list"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="deregisterpulltimeupdateexclusion-example" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECR.IAmazonECR.DescribeRepositories(Amazon.ECR.Model.DescribeRepositoriesRequest)" />
             <member name="M:Amazon.ECR.AmazonECRClient.DescribeRepositories(Amazon.ECR.Model.DescribeRepositoriesRequest)" />
             <member name="T:Amazon.ECR.Model.DescribeRepositoriesRequest" />
@@ -211,6 +230,63 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ECR.IAmazonECR.ListImageReferrers(Amazon.ECR.Model.ListImageReferrersRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.ListImageReferrers(Amazon.ECR.Model.ListImageReferrersRequest)" />
+            <member name="T:Amazon.ECR.Model.ListImageReferrersRequest" />
+            <member name="T:Amazon.ECR.Model.ListImageReferrersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all artifacts (such as Sigstore signatures) that reference a specific container image in the sample-repo repository.
+                </para>
+                <code
+                    title="To list artifacts associated with a subject image"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="listimagereferrers-basic-example" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.ListImageReferrers(Amazon.ECR.Model.ListImageReferrersRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.ListImageReferrers(Amazon.ECR.Model.ListImageReferrersRequest)" />
+            <member name="T:Amazon.ECR.Model.ListImageReferrersRequest" />
+            <member name="T:Amazon.ECR.Model.ListImageReferrersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists only Sigstore bundle artifacts associated with a subject image by filtering on the artifact type.
+                </para>
+                <code
+                    title="To list artifacts of a specific type"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="listimagereferrers-filtered-example" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.ListImageReferrers(Amazon.ECR.Model.ListImageReferrersRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.ListImageReferrers(Amazon.ECR.Model.ListImageReferrersRequest)" />
+            <member name="T:Amazon.ECR.Model.ListImageReferrersRequest" />
+            <member name="T:Amazon.ECR.Model.ListImageReferrersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all artifacts including those that have been archived, by specifying the artifactStatus filter as ANY.
+                </para>
+                <code
+                    title="To list both active and archived artifacts"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="listimagereferrers-archived-example" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ECR.IAmazonECR.ListImages(Amazon.ECR.Model.ListImagesRequest)" />
             <member name="M:Amazon.ECR.AmazonECRClient.ListImages(Amazon.ECR.Model.ListImagesRequest)" />
             <member name="T:Amazon.ECR.Model.ListImagesRequest" />
@@ -225,6 +301,101 @@
                     title="To list all images in a repository"
                     source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
                     region="listimages-example-1470868161594" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.ListPullTimeUpdateExclusions(Amazon.ECR.Model.ListPullTimeUpdateExclusionsRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.ListPullTimeUpdateExclusions(Amazon.ECR.Model.ListPullTimeUpdateExclusionsRequest)" />
+            <member name="T:Amazon.ECR.Model.ListPullTimeUpdateExclusionsRequest" />
+            <member name="T:Amazon.ECR.Model.ListPullTimeUpdateExclusionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists all IAM principals that are excluded from having their image pull timestamps recorded in the registry.
+                </para>
+                <code
+                    title="To list all pull time update exclusions"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="listpulltimeupdateexclusions-basic-example" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.ListPullTimeUpdateExclusions(Amazon.ECR.Model.ListPullTimeUpdateExclusionsRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.ListPullTimeUpdateExclusions(Amazon.ECR.Model.ListPullTimeUpdateExclusionsRequest)" />
+            <member name="T:Amazon.ECR.Model.ListPullTimeUpdateExclusionsRequest" />
+            <member name="T:Amazon.ECR.Model.ListPullTimeUpdateExclusionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example lists pull time update exclusions with pagination, requesting a maximum of 2 results per page.
+                </para>
+                <code
+                    title="To list pull time update exclusions with pagination"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="listpulltimeupdateexclusions-paginated-example" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.RegisterPullTimeUpdateExclusion(Amazon.ECR.Model.RegisterPullTimeUpdateExclusionRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.RegisterPullTimeUpdateExclusion(Amazon.ECR.Model.RegisterPullTimeUpdateExclusionRequest)" />
+            <member name="T:Amazon.ECR.Model.RegisterPullTimeUpdateExclusionRequest" />
+            <member name="T:Amazon.ECR.Model.RegisterPullTimeUpdateExclusionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example adds an IAM role to the pull time update exclusion list so that Amazon ECR will not record image pull timestamps for this principal.
+                </para>
+                <code
+                    title="To exclude an IAM role from pull time tracking"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="registerpulltimeupdateexclusion-role-example" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.UpdateImageStorageClass(Amazon.ECR.Model.UpdateImageStorageClassRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.UpdateImageStorageClass(Amazon.ECR.Model.UpdateImageStorageClassRequest)" />
+            <member name="T:Amazon.ECR.Model.UpdateImageStorageClassRequest" />
+            <member name="T:Amazon.ECR.Model.UpdateImageStorageClassResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example transitions an image with a specific digest in the hello-repository repository to Amazon ECR Archive storage for long-term archival.
+                </para>
+                <code
+                    title="To transition an image to Amazon ECR Archive"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="updateimagestorageclass-archive-example" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ECR.IAmazonECR.UpdateImageStorageClass(Amazon.ECR.Model.UpdateImageStorageClassRequest)" />
+            <member name="M:Amazon.ECR.AmazonECRClient.UpdateImageStorageClass(Amazon.ECR.Model.UpdateImageStorageClassRequest)" />
+            <member name="T:Amazon.ECR.Model.UpdateImageStorageClassRequest" />
+            <member name="T:Amazon.ECR.Model.UpdateImageStorageClassResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example restores an archived image with a specific digest back to Amazon ECR Standard storage.
+                </para>
+                <code
+                    title="To restore an archived image to Amazon ECR Standard"
+                    source=".\AWSSDKDocSamples\ECR\ECR.GeneratedSamples.cs"
+                    region="updateimagestorageclass-restore-example" />
             </example>
         </value>
     </doc>

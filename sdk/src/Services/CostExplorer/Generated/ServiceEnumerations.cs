@@ -961,6 +961,10 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension OPERATION = new Dimension("OPERATION");
         /// <summary>
+        /// Constant PAYER_ACCOUNT for Dimension
+        /// </summary>
+        public static readonly Dimension PAYER_ACCOUNT = new Dimension("PAYER_ACCOUNT");
+        /// <summary>
         /// Constant PAYMENT_OPTION for Dimension
         /// </summary>
         public static readonly Dimension PAYMENT_OPTION = new Dimension("PAYMENT_OPTION");
@@ -1599,9 +1603,21 @@ namespace Amazon.CostExplorer
     {
 
         /// <summary>
+        /// Constant COST_CATEGORY for MonitorDimension
+        /// </summary>
+        public static readonly MonitorDimension COST_CATEGORY = new MonitorDimension("COST_CATEGORY");
+        /// <summary>
+        /// Constant LINKED_ACCOUNT for MonitorDimension
+        /// </summary>
+        public static readonly MonitorDimension LINKED_ACCOUNT = new MonitorDimension("LINKED_ACCOUNT");
+        /// <summary>
         /// Constant SERVICE for MonitorDimension
         /// </summary>
         public static readonly MonitorDimension SERVICE = new MonitorDimension("SERVICE");
+        /// <summary>
+        /// Constant TAG for MonitorDimension
+        /// </summary>
+        public static readonly MonitorDimension TAG = new MonitorDimension("TAG");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -41,18 +41,17 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AccountSettings. 
         /// <para>
-        /// The Amazon QuickSight settings for this Amazon Web Services account. This information
-        /// includes the edition of Amazon Amazon QuickSight that you subscribed to (Standard
-        /// or Enterprise) and the notification email for the Amazon QuickSight subscription.
-        /// 
+        /// The Amazon Quick Sight settings for this Amazon Web Services account. This information
+        /// includes the edition of Amazon Quick Sight that you subscribed to (Standard or Enterprise)
+        /// and the notification email for the Amazon Quick Sight subscription. 
         /// </para>
         ///  
         /// <para>
-        /// In the QuickSight console, the Amazon QuickSight subscription is sometimes referred
-        /// to as a QuickSight "account" even though it's technically not an account by itself.
-        /// Instead, it's a subscription to the Amazon QuickSight service for your Amazon Web
-        /// Services account. The edition that you subscribe to applies to Amazon QuickSight in
-        /// every Amazon Web Services Region where you use it.
+        /// In the Quick Sight console, the Amazon Quick Sight subscription is sometimes referred
+        /// to as a Quick Sight "account" even though it's technically not an account by itself.
+        /// Instead, it's a subscription to the Amazon Quick Sight service for your Amazon Web
+        /// Services account. The edition that you subscribe to applies to Quick Suite in every
+        /// Amazon Web Services Region where you use it.
         /// </para>
         /// </summary>
         public AccountSettings AccountSettings

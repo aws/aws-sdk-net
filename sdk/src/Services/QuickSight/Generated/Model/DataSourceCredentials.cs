@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private string _copySourceArn;
         private CredentialPair _credentialPair;
         private string _secretArn;
+        private WebProxyCredentials _webProxyCredentials;
 
         /// <summary>
         /// Gets and sets the property CopySourceArn. 
@@ -97,6 +98,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSecretArn()
         {
             return this._secretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebProxyCredentials. 
+        /// <para>
+        /// The credentials for connecting through a web proxy server.
+        /// </para>
+        /// </summary>
+        public WebProxyCredentials WebProxyCredentials
+        {
+            get { return this._webProxyCredentials; }
+            set { this._webProxyCredentials = value; }
+        }
+
+        // Check to see if WebProxyCredentials property is set
+        internal bool IsSetWebProxyCredentials()
+        {
+            return this._webProxyCredentials != null;
         }
 
     }

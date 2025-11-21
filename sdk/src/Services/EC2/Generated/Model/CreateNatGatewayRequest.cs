@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model
     public partial class CreateNatGatewayRequest : AmazonEC2Request
     {
         private string _allocationId;
+        private AvailabilityMode _availabilityMode;
+        private List<AvailabilityZoneAddress> _availabilityZoneAddresses = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneAddress>() : null;
         private string _clientToken;
         private ConnectivityType _connectivityType;
         private bool? _dryRun;
@@ -77,6 +79,7 @@ namespace Amazon.EC2.Model
         private List<string> _secondaryPrivateIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subnetId;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+        private string _vpcId;
 
         /// <summary>
         /// Gets and sets the property AllocationId. 
@@ -97,6 +100,76 @@ namespace Amazon.EC2.Model
         internal bool IsSetAllocationId()
         {
             return this._allocationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityMode. 
+        /// <para>
+        /// Specifies whether to create a zonal (single-AZ) or regional (multi-AZ) NAT gateway.
+        /// Defaults to <c>zonal</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A zonal NAT gateway is a NAT Gateway that provides redundancy and scalability within
+        /// a single availability zone. A regional NAT gateway is a single NAT Gateway that works
+        /// across multiple availability zones (AZs) in your VPC, providing redundancy, scalability
+        /// and availability across all the AZs in a Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+        /// NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        public AvailabilityMode AvailabilityMode
+        {
+            get { return this._availabilityMode; }
+            set { this._availabilityMode = value; }
+        }
+
+        // Check to see if AvailabilityMode property is set
+        internal bool IsSetAvailabilityMode()
+        {
+            return this._availabilityMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneAddresses. 
+        /// <para>
+        /// For regional NAT gateways only: Specifies which Availability Zones you want the NAT
+        /// gateway to support and the Elastic IP addresses (EIPs) to use in each AZ. The regional
+        /// NAT gateway uses these EIPs to handle outbound NAT traffic from their respective AZs.
+        /// If not specified, the NAT gateway will automatically expand to new AZs and associate
+        /// EIPs upon detection of an elastic network interface. If you specify this parameter,
+        /// auto-expansion is disabled and you must manually manage AZ coverage.
+        /// </para>
+        ///  
+        /// <para>
+        /// A regional NAT gateway is a single NAT Gateway that works across multiple availability
+        /// zones (AZs) in your VPC, providing redundancy, scalability and availability across
+        /// all the AZs in a Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateways-regional.html">Regional
+        /// NAT gateways for automatic multi-AZ expansion</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AvailabilityZoneAddress> AvailabilityZoneAddresses
+        {
+            get { return this._availabilityZoneAddresses; }
+            set { this._availabilityZoneAddresses = value; }
+        }
+
+        // Check to see if AvailabilityZoneAddresses property is set
+        internal bool IsSetAvailabilityZoneAddresses()
+        {
+            return this._availabilityZoneAddresses != null && (this._availabilityZoneAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -258,7 +331,6 @@ namespace Amazon.EC2.Model
         /// The ID of the subnet in which to create the NAT gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SubnetId
         {
             get { return this._subnetId; }
@@ -292,6 +364,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetTagSpecifications()
         {
             return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcId. 
+        /// <para>
+        /// The ID of the VPC where you want to create a regional NAT gateway.
+        /// </para>
+        /// </summary>
+        public string VpcId
+        {
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
+        }
+
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
+        {
+            return this._vpcId != null;
         }
 
     }

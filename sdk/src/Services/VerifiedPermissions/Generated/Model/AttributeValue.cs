@@ -40,7 +40,7 @@ namespace Amazon.VerifiedPermissions.Model
     ///  
     /// <para>
     /// This data type is used as a member of the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ContextDefinition.html">ContextDefinition</a>
-    /// structure which is uses as a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>,
+    /// structure which is used as a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>,
     /// <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_BatchIsAuthorized.html">BatchIsAuthorized</a>,
     /// and <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a>
     /// operations.
@@ -49,7 +49,9 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class AttributeValue
     {
         private bool? _boolean;
+        private string _datetime;
         private string _decimal;
+        private string _duration;
         private EntityIdentifier _entityIdentifier;
         private string _ipaddr;
         private long? _long;
@@ -60,7 +62,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Boolean. 
         /// <para>
-        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#boolean">Boolean</a>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-bool">Boolean</a>
         /// type.
         /// </para>
         ///  
@@ -79,6 +81,30 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetBoolean()
         {
             return this._boolean.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Datetime. 
+        /// <para>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-datetime">datetime</a>
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>{"datetime": "2024-10-15T11:35:00Z"}</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=10, Max=28)]
+        public string Datetime
+        {
+            get { return this._datetime; }
+            set { this._datetime = value; }
+        }
+
+        // Check to see if Datetime property is set
+        internal bool IsSetDatetime()
+        {
+            return this._datetime != null;
         }
 
         /// <summary>
@@ -106,14 +132,38 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Duration. 
+        /// <para>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-duration">duration</a>
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>{"duration": "1h30m"}</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=2, Max=100)]
+        public string Duration
+        {
+            get { return this._duration; }
+            set { this._duration = value; }
+        }
+
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
+        {
+            return this._duration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EntityIdentifier. 
         /// <para>
         /// An attribute value of type <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_EntityIdentifier.html">EntityIdentifier</a>.
         /// </para>
         ///  
         /// <para>
-        /// Example: <c>"entityIdentifier": { "entityId": "&lt;id&gt;", "entityType": "&lt;entity
-        /// type&gt;"}</c> 
+        /// Example: <c>{"entityIdentifier": { "entityId": "alice", "entityType": "User"} }</c>
+        /// 
         /// </para>
         /// </summary>
         public EntityIdentifier EntityIdentifier
@@ -155,7 +205,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Long. 
         /// <para>
-        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#long">Long</a>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-long">Long</a>
         /// type.
         /// </para>
         ///  
@@ -179,7 +229,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Record. 
         /// <para>
-        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#record">Record</a>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-record">Record</a>
         /// type.
         /// </para>
         ///  
@@ -207,7 +257,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Set. 
         /// <para>
-        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#set">Set</a>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-set">Set</a>
         /// type.
         /// </para>
         ///  
@@ -235,7 +285,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property String. 
         /// <para>
-        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#string">String</a>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-string">String</a>
         /// type.
         /// </para>
         ///  

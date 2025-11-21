@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UpdateRealtimeLogConfig operation
     /// </summary>  
-    public class UpdateRealtimeLogConfigResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class UpdateRealtimeLogConfigResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             UpdateRealtimeLogConfigResponse response = new UpdateRealtimeLogConfigResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -77,7 +78,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -115,6 +115,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, UpdateRealtimeLogConfigResponse response);
 
         private static UpdateRealtimeLogConfigResponseUnmarshaller _instance = new UpdateRealtimeLogConfigResponseUnmarshaller();        
 

@@ -39,6 +39,7 @@ namespace Amazon.GameLiftStreams.Model
         private DateTime? _createdAt;
         private DefaultApplication _defaultApplication;
         private string _description;
+        private DateTime? _expiresAt;
         private string _id;
         private DateTime? _lastUpdatedAt;
         private StreamGroupStatus _status;
@@ -124,6 +125,27 @@ namespace Amazon.GameLiftStreams.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpiresAt. 
+        /// <para>
+        /// The time at which this stream group expires. Timestamps are expressed using in ISO8601
+        /// format, such as: <c>2022-12-27T22:29:40+00:00</c> (UTC). After this time, you will
+        /// no longer be able to update this stream group or use it to start stream sessions.
+        /// Only Get and Delete operations will work on an expired stream group.
+        /// </para>
+        /// </summary>
+        public DateTime? ExpiresAt
+        {
+            get { return this._expiresAt; }
+            set { this._expiresAt = value; }
+        }
+
+        // Check to see if ExpiresAt property is set
+        internal bool IsSetExpiresAt()
+        {
+            return this._expiresAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// An ID that uniquely identifies the stream group resource. Example ID: <c>sg-1AB2C3De4</c>.
@@ -184,13 +206,20 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>DELETING</c>: Amazon GameLift Streams is in the process of deleting the stream
+        /// group. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>ERROR</c>: An error occurred when the stream group deployed. See <c>StatusReason</c>
+        /// (returned by <c>CreateStreamGroup</c>, <c>GetStreamGroup</c>, and <c>UpdateStreamGroup</c>)
         /// for more information. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DELETING</c>: Amazon GameLift Streams is in the process of deleting the stream
-        /// group. 
+        ///  <c>EXPIRED</c>: The stream group is expired and can no longer host streams. This
+        /// typically occurs when a stream group is 365 days old, as indicated by the value of
+        /// <c>ExpiresAt</c>. Create a new stream group to resume streaming capabilities. 
         /// </para>
         ///  </li> <li> 
         /// <para>

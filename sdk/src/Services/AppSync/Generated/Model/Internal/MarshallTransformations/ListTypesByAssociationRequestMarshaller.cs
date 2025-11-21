@@ -68,6 +68,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetMergedApiIdentifier())
                 throw new AmazonAppSyncException("Request object does not have required field MergedApiIdentifier set");
             request.AddPathResource("{mergedApiIdentifier}", StringUtils.FromString(publicRequest.MergedApiIdentifier));
+            if (string.IsNullOrEmpty(publicRequest.Format))
+                throw new AmazonAppSyncException("Request object does not have required field Format set");
             
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));

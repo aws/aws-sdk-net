@@ -132,6 +132,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property SourceDBClusterSnapshotIdentifier. 
         /// <para>
         /// The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
+        /// If the source DB cluster snapshot is in a different region or owned by another account,
+        /// specify the snapshot ARN.
         /// </para>
         ///  
         /// <para>

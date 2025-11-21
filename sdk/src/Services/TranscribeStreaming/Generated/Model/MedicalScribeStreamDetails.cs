@@ -39,6 +39,7 @@ namespace Amazon.TranscribeStreaming.Model
         private MedicalScribeLanguageCode _languageCode;
         private MedicalScribeMediaEncoding _mediaEncoding;
         private int? _mediaSampleRateHertz;
+        private bool? _medicalScribeContextProvided;
         private MedicalScribePostStreamAnalyticsResult _postStreamAnalyticsResult;
         private MedicalScribePostStreamAnalyticsSettings _postStreamAnalyticsSettings;
         private string _resourceAccessRoleArn;
@@ -145,6 +146,25 @@ namespace Amazon.TranscribeStreaming.Model
         internal bool IsSetMediaSampleRateHertz()
         {
             return this._mediaSampleRateHertz.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MedicalScribeContextProvided. 
+        /// <para>
+        /// Indicates whether the <c>MedicalScribeContext</c> object was provided when the stream
+        /// was started.
+        /// </para>
+        /// </summary>
+        public bool? MedicalScribeContextProvided
+        {
+            get { return this._medicalScribeContextProvided; }
+            set { this._medicalScribeContextProvided = value; }
+        }
+
+        // Check to see if MedicalScribeContextProvided property is set
+        internal bool IsSetMedicalScribeContextProvided()
+        {
+            return this._medicalScribeContextProvided.HasValue; 
         }
 
         /// <summary>

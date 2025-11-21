@@ -31,16 +31,19 @@ namespace Amazon.GameLiftStreams.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveStreamGroupLocations operation.
-    /// Removes a set of remote locations from this stream group. Amazon GameLift Streams
-    /// works to release allocated compute resources in these location. Thus, stream sessions
-    /// can no longer start from these locations by using this stream group. Amazon GameLift
-    /// Streams also deletes the content files of all associated applications that were in
-    /// Amazon GameLift Streams's internal S3 bucket at this location. 
+    /// Removes a set of remote locations from this stream group. To remove a location, the
+    /// stream group must be in <c>ACTIVE</c> status. When you remove a location, Amazon GameLift
+    /// Streams releases allocated compute resources in that location. Stream sessions can
+    /// no longer start from removed locations in a stream group. Amazon GameLift Streams
+    /// also deletes the content files of all associated applications that were in Amazon
+    /// GameLift Streams's internal Amazon S3 bucket at this location. 
     /// 
     ///  
     /// <para>
-    ///  You cannot remove the region where you initially created this stream group, known
-    /// as the primary location. However, you can set the stream capacity to zero. 
+    ///  You cannot remove the Amazon Web Services Region location where you initially created
+    /// this stream group, known as the primary location. However, you can set the stream
+    /// capacity to zero to avoid incurring costs for allocated compute resources in that
+    /// location. 
     /// </para>
     /// </summary>
     public partial class RemoveStreamGroupLocationsRequest : AmazonGameLiftStreamsRequest
@@ -77,12 +80,12 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Locations. 
         /// <para>
-        ///  A set of locations to remove this stream group. 
+        ///  A set of locations to remove this stream group. For example, <c>us-east-1</c>.
         /// </para>
         ///  
         /// <para>
-        ///  A set of location names. For example, <c>us-east-1</c>. For a complete list of locations
-        /// that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
+        ///  For a complete list of locations that Amazon GameLift Streams supports, refer to
+        /// <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
         /// quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.
         /// 
         /// </para>

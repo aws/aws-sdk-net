@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for XmlTimestamps operation
     /// </summary>  
-    public class XmlTimestampsResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class XmlTimestampsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             XmlTimestampsResponse response = new XmlTimestampsResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -113,7 +114,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -139,6 +139,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, XmlTimestampsResponse response);
 
         private static XmlTimestampsResponseUnmarshaller _instance = new XmlTimestampsResponseUnmarshaller();        
 

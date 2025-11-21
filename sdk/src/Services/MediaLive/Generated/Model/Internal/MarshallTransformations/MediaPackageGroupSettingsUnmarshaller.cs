@@ -62,6 +62,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("mediapackageV2GroupSettings", targetDepth))
+                {
+                    var unmarshaller = MediaPackageV2GroupSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MediapackageV2GroupSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

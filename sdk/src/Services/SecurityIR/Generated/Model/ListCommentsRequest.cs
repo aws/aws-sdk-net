@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the ListComments operation.
-    /// Grants permissions to list and view comments for a designated case.
+    /// Returns comments for a designated case.
     /// </summary>
     public partial class ListCommentsRequest : AmazonSecurityIRRequest
     {
@@ -80,7 +80,9 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Optional element.
+        /// An optional string that, if supplied, must be copied from the output of a previous
+        /// call to ListComments. When provided in this manner, the API fetches the next page
+        /// of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2000)]

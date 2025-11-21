@@ -2,6 +2,7 @@
 using Amazon.DynamoDBv2.DocumentModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -189,5 +190,153 @@ namespace AWSSDK_DotNet.UnitTests
 
             Assert.AreEqual(2, table.Attributes.Count);
         }
+
+        [TestMethod]
+        public void AddGlobalSecondaryIndex_Dictionary_NullOrEmptyIndexName_ThrowsArgumentNullException()
+        {
+            var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
+
+            var hash = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String) };
+
+            Assert.ThrowsException<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("", hash, null));
+        }
+
+        [TestMethod]
+        public void AddGlobalSecondaryIndex_Dictionary_NullHashkeyAttributes_ThrowsArgumentNullException()
+        {
+            var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
+
+            Assert.ThrowsException<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("GSI", null, null));
+        }
+
+        [TestMethod]
+        public void AddGlobalSecondaryIndex_Dictionary_EmptyHashAttributeName_ThrowsArgumentNullException()
+        {
+            var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
+
+            var hash = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("", DynamoDBEntryType.String) };
+
+            Assert.ThrowsException<ArgumentNullException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, null));
+        }
+
+        [TestMethod]
+        public void AddGlobalSecondaryIndex_Dictionary_HashKeyCountExceeded_ThrowsArgumentException()
+        {
+            var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
+
+            var hash = new List<KeyValuePair<string, DynamoDBEntryType>>
+            {
+                new KeyValuePair < string, DynamoDBEntryType >("H1", DynamoDBEntryType.String),
+                new KeyValuePair < string, DynamoDBEntryType >("H2", DynamoDBEntryType.String),
+                new KeyValuePair < string, DynamoDBEntryType >("H3", DynamoDBEntryType.String),
+                new KeyValuePair < string, DynamoDBEntryType >("H4", DynamoDBEntryType.String),
+                new KeyValuePair < string, DynamoDBEntryType >("H5", DynamoDBEntryType.String)
+            };
+
+            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, null));
+        }
+
+        [TestMethod]
+        public void AddGlobalSecondaryIndex_Dictionary_RangeKeyCountExceeded_ThrowsArgumentException()
+        {
+            var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
+
+            var hash = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("HashK", DynamoDBEntryType.String) };
+            var range = new List<KeyValuePair<string, DynamoDBEntryType>>
+            {
+                new KeyValuePair < string, DynamoDBEntryType >("R1", DynamoDBEntryType.String),
+                new KeyValuePair < string, DynamoDBEntryType >("R2", DynamoDBEntryType.String),
+                new KeyValuePair < string, DynamoDBEntryType >("R3", DynamoDBEntryType.String),
+                new KeyValuePair < string, DynamoDBEntryType >("R4", DynamoDBEntryType.String),
+                new KeyValuePair < string, DynamoDBEntryType >("R5", DynamoDBEntryType.String)
+            };
+
+            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, range));
+        }
+
+        [TestMethod]
+        public void AddGlobalSecondaryIndex_Dictionary_DuplicateName_ThrowsArgumentException()
+        {
+            var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
+
+            var hashA = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String) };
+            var rangeA = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Date", DynamoDBEntryType.String) };
+
+            builder.AddGlobalSecondaryIndex("GSI", hashA, rangeA);
+
+            var hashB = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String) };
+
+            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hashB, null));
+        }
+
+        [TestMethod]
+        public void AddGlobalSecondaryIndex_Dictionary_AttributeReuseWithLSI_OnlyStoredOnce()
+        {
+            var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
+            builder.AddHashKey("Id", DynamoDBEntryType.String);
+
+            // Add GSI via dictionary with two new attributes
+            var gsiHash = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Date", DynamoDBEntryType.String) };
+            builder.AddGlobalSecondaryIndex("GSI", gsiHash, null);
+
+            // Add a LSI that reuses OrderNumber
+            builder.AddLocalSecondaryIndex("LSI", "OrderNumber", DynamoDBEntryType.Numeric);
+
+            var table = builder.Build();
+
+            Assert.AreEqual(3, table.Attributes.Count);
+        }
+
+        [TestMethod]
+        public void AddGlobalSecondaryIndex_Dictionary_AttributesReusedAcrossGSIs_OnlyStoredOnce()
+        {
+            var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
+            builder.AddHashKey("Id", DynamoDBEntryType.String);
+            builder.AddRangeKey("Date", DynamoDBEntryType.String);
+
+            // GSI-1 uses Date (already used as table range key)
+            var gsi1 = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Date", DynamoDBEntryType.String) };
+            builder.AddGlobalSecondaryIndex("GSI-1", gsi1, null);
+
+            // GSI-2 uses Date and Id (both already known)
+            var gsi2Hash = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Date", DynamoDBEntryType.String) };
+            var gsi2Range = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String) };
+            builder.AddGlobalSecondaryIndex("GSI-2", gsi2Hash, gsi2Range);
+
+            var table = builder.Build();
+
+            Assert.AreEqual(2, table.Attributes.Count);
+        }
+
+        [TestMethod]
+        public void AddGlobalSecondaryIndex_DuplicateHashKey_ThrowsArgumentException()
+        {
+            var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
+            
+            var hash = new List<KeyValuePair<string, DynamoDBEntryType>> 
+            { 
+                new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String),
+                new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String)
+            };
+
+            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, null));
+        }
+
+        [TestMethod]
+        public void AddGlobalSecondaryIndex_DuplicateRangeKey_ThrowsArgumentException()
+        {
+            var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
+            
+            var hash = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String) };
+            var range = new List<KeyValuePair<string, DynamoDBEntryType>> 
+            { 
+                new KeyValuePair<string, DynamoDBEntryType>("Date", DynamoDBEntryType.String),
+                new KeyValuePair<string, DynamoDBEntryType>("Date", DynamoDBEntryType.String)
+            };
+
+            Assert.ThrowsException<ArgumentException>(() => builder.AddGlobalSecondaryIndex("GSI", hash, range));
+        }
+
+
     }
 }

@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListTrafficPolicyInstancesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetHostedZoneIdMarker())
@@ -95,5 +96,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPolicyInstancesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListTrafficPolicyInstancesRequest publicRequest);
     }    
 }

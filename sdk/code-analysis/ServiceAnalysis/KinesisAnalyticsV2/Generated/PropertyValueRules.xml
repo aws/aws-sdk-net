@@ -674,6 +674,21 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationEncryptionConfiguration.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationEncryptionConfigurationDescription.KeyId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KinesisAnalyticsV2.Model.ApplicationEncryptionConfigurationUpdate.KeyIdUpdate</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KinesisAnalyticsV2.Model.ApplicationMaintenanceConfigurationDescription.ApplicationMaintenanceWindowEndTime</property>
     <min>5</min>
     <max>5</max>

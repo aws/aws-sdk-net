@@ -43,6 +43,7 @@ namespace Amazon.FSx.Model
         private string _dailyAutomaticBackupStartTime;
         private WindowsDeploymentType _deploymentType;
         private DiskIopsConfiguration _diskIopsConfiguration;
+        private WindowsFsrmConfiguration _fsrmConfiguration;
         private string _preferredSubnetId;
         private SelfManagedActiveDirectoryConfiguration _selfManagedActiveDirectoryConfiguration;
         private int? _throughputCapacity;
@@ -77,14 +78,10 @@ namespace Amazon.FSx.Model
         /// at any time. You can associate additional DNS aliases after you create the file system
         /// using the AssociateFileSystemAliases operation. You can remove DNS aliases from the
         /// file system after it is created using the DisassociateFileSystemAliases operation.
-        /// You only need to specify the alias name in the request payload.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working
-        /// with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough
-        /// 5: Using DNS aliases to access your file system</a>, including additional steps you
-        /// must take to be able to access your file system using a DNS alias.
+        /// You only need to specify the alias name in the request payload. For more information,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Managing
+        /// DNS aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/dns-aliases.html">Accessing
+        /// data using DNS aliases</a>.
         /// </para>
         ///  
         /// <para>
@@ -275,6 +272,25 @@ namespace Amazon.FSx.Model
         internal bool IsSetDiskIopsConfiguration()
         {
             return this._diskIopsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FsrmConfiguration. 
+        /// <para>
+        /// The File Server Resource Manager (FSRM) configuration that Amazon FSx for Windows
+        /// File Server uses for the file system. FSRM is disabled by default.
+        /// </para>
+        /// </summary>
+        public WindowsFsrmConfiguration FsrmConfiguration
+        {
+            get { return this._fsrmConfiguration; }
+            set { this._fsrmConfiguration = value; }
+        }
+
+        // Check to see if FsrmConfiguration property is set
+        internal bool IsSetFsrmConfiguration()
+        {
+            return this._fsrmConfiguration != null;
         }
 
         /// <summary>

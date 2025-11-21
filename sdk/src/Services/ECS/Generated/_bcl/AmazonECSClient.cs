@@ -285,17 +285,10 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Creates a new capacity provider. Capacity providers are associated with an Amazon
-        /// ECS cluster and are used in capacity provider strategies to facilitate cluster auto
-        /// scaling.
-        /// 
-        ///  
-        /// <para>
-        /// Only capacity providers that use an Auto Scaling group can be created. Amazon ECS
-        /// tasks on Fargate use the <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
-        /// These providers are available to all accounts in the Amazon Web Services Regions that
-        /// Fargate supports.
-        /// </para>
+        /// Creates a capacity provider. Capacity providers are associated with a cluster and
+        /// are used in capacity provider strategies to facilitate cluster auto scaling. You can
+        /// create capacity providers for Amazon ECS Managed Instances and EC2 instances. Fargate
+        /// has the predefined <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
         /// 
@@ -304,6 +297,10 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -320,6 +317,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
         /// There's already a current Amazon ECS container agent update in progress on the container
         /// instance that's specified. If the container agent becomes disconnected while it's
@@ -330,7 +330,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
         public virtual CreateCapacityProviderResponse CreateCapacityProvider(CreateCapacityProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityProviderResponseUnmarshaller.Instance;
 
@@ -339,17 +339,10 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Creates a new capacity provider. Capacity providers are associated with an Amazon
-        /// ECS cluster and are used in capacity provider strategies to facilitate cluster auto
-        /// scaling.
-        /// 
-        ///  
-        /// <para>
-        /// Only capacity providers that use an Auto Scaling group can be created. Amazon ECS
-        /// tasks on Fargate use the <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
-        /// These providers are available to all accounts in the Amazon Web Services Regions that
-        /// Fargate supports.
-        /// </para>
+        /// Creates a capacity provider. Capacity providers are associated with a cluster and
+        /// are used in capacity provider strategies to facilitate cluster auto scaling. You can
+        /// create capacity providers for Amazon ECS Managed Instances and EC2 instances. Fargate
+        /// has the predefined <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -362,6 +355,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -377,6 +374,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
         /// There's already a current Amazon ECS container agent update in progress on the container
         /// instance that's specified. If the container agent becomes disconnected while it's
@@ -387,7 +387,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
         public virtual Task<CreateCapacityProviderResponse> CreateCapacityProviderAsync(CreateCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCapacityProviderResponseUnmarshaller.Instance;
             
@@ -443,7 +443,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
 
@@ -498,11 +498,150 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public virtual Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClusterResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateExpressGatewayService
+
+
+        /// <summary>
+        /// Creates an Express service that simplifies deploying containerized web applications
+        /// on Amazon ECS with managed Amazon Web Services infrastructure. This operation provisions
+        /// and configures Application Load Balancers, target groups, security groups, and auto-scaling
+        /// policies automatically.
+        /// 
+        ///  
+        /// <para>
+        /// Specify a primary container configuration with your application image and basic settings.
+        /// Amazon ECS creates the necessary Amazon Web Services resources for traffic distribution,
+        /// health monitoring, network access control, and capacity management.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide an execution role for task operations and an infrastructure role for managing
+        /// Amazon Web Services resources on your behalf.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the CreateExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
+        /// The specified platform version doesn't satisfy the required capabilities of the task
+        /// definition.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
+        /// The specified platform version doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateExpressGatewayService">REST API Reference for CreateExpressGatewayService Operation</seealso>
+        public virtual CreateExpressGatewayServiceResponse CreateExpressGatewayService(CreateExpressGatewayServiceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExpressGatewayServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExpressGatewayServiceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExpressGatewayServiceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an Express service that simplifies deploying containerized web applications
+        /// on Amazon ECS with managed Amazon Web Services infrastructure. This operation provisions
+        /// and configures Application Load Balancers, target groups, security groups, and auto-scaling
+        /// policies automatically.
+        /// 
+        ///  
+        /// <para>
+        /// Specify a primary container configuration with your application image and basic settings.
+        /// Amazon ECS creates the necessary Amazon Web Services resources for traffic distribution,
+        /// health monitoring, network access control, and capacity management.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide an execution role for task operations and an infrastructure role for managing
+        /// Amazon Web Services resources on your behalf.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExpressGatewayService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
+        /// The specified platform version doesn't satisfy the required capabilities of the task
+        /// definition.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
+        /// The specified platform version doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateExpressGatewayService">REST API Reference for CreateExpressGatewayService Operation</seealso>
+        public virtual Task<CreateExpressGatewayServiceResponse> CreateExpressGatewayServiceAsync(CreateExpressGatewayServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExpressGatewayServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExpressGatewayServiceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateExpressGatewayServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -679,6 +818,69 @@ namespace Amazon.ECS
         /// Load balancer requirement: When your service uses Application Load Balancer, Network
         /// Load Balancer, or Service Connect
         /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>LINEAR</c>: A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
+        /// traffic from the current production environment to a new environment in equal percentage
+        /// increments. With Amazon ECS linear deployments, you can control the pace of traffic
+        /// shifting and validate new service revisions with increasing amounts of production
+        /// traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Linear deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Gradual validation: When you want to gradually validate your new service version with
+        /// increasing traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Performance monitoring: When you need time to monitor metrics and performance during
+        /// the deployment
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Risk minimization: When you want to minimize risk by exposing the new version to production
+        /// traffic incrementally
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer or Service
+        /// Connect
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>CANARY</c>: A <i>canary</i> deployment strategy (<c>CANARY</c>) shifts a small
+        /// percentage of traffic to the new service revision first, then shifts the remaining
+        /// traffic all at once after a specified time period. This allows you to test the new
+        /// version with a subset of users before full deployment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Canary deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Feature testing: When you want to test new features with a small subset of users before
+        /// full rollout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Production validation: When you need to validate performance and functionality with
+        /// real production traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Blast radius control: When you want to minimize blast radius if issues are discovered
+        /// in the new version
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer or Service
+        /// Connect
+        /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
         /// External
@@ -758,7 +960,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual CreateServiceResponse CreateService(CreateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
@@ -935,6 +1137,69 @@ namespace Amazon.ECS
         /// Load balancer requirement: When your service uses Application Load Balancer, Network
         /// Load Balancer, or Service Connect
         /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>LINEAR</c>: A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
+        /// traffic from the current production environment to a new environment in equal percentage
+        /// increments. With Amazon ECS linear deployments, you can control the pace of traffic
+        /// shifting and validate new service revisions with increasing amounts of production
+        /// traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Linear deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Gradual validation: When you want to gradually validate your new service version with
+        /// increasing traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Performance monitoring: When you need time to monitor metrics and performance during
+        /// the deployment
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Risk minimization: When you want to minimize risk by exposing the new version to production
+        /// traffic incrementally
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer or Service
+        /// Connect
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>CANARY</c>: A <i>canary</i> deployment strategy (<c>CANARY</c>) shifts a small
+        /// percentage of traffic to the new service revision first, then shifts the remaining
+        /// traffic all at once after a specified time period. This allows you to test the new
+        /// version with a subset of users before full deployment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Canary deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Feature testing: When you want to test new features with a small subset of users before
+        /// full rollout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Production validation: When you need to validate performance and functionality with
+        /// real production traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Blast radius control: When you want to minimize blast radius if issues are discovered
+        /// in the new version
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer or Service
+        /// Connect
+        /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
         /// External
@@ -1017,7 +1282,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
             
@@ -1098,7 +1363,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">REST API Reference for CreateTaskSet Operation</seealso>
         public virtual CreateTaskSetResponse CreateTaskSet(CreateTaskSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTaskSetResponseUnmarshaller.Instance;
 
@@ -1178,7 +1443,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">REST API Reference for CreateTaskSet Operation</seealso>
         public virtual Task<CreateTaskSetResponse> CreateTaskSetAsync(CreateTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTaskSetResponseUnmarshaller.Instance;
             
@@ -1216,7 +1481,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting">REST API Reference for DeleteAccountSetting Operation</seealso>
         public virtual DeleteAccountSettingResponse DeleteAccountSetting(DeleteAccountSettingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountSettingResponseUnmarshaller.Instance;
 
@@ -1253,7 +1518,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting">REST API Reference for DeleteAccountSetting Operation</seealso>
         public virtual Task<DeleteAccountSettingResponse> DeleteAccountSettingAsync(DeleteAccountSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountSettingResponseUnmarshaller.Instance;
             
@@ -1292,7 +1557,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
 
@@ -1330,7 +1595,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
         public virtual Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttributesResponseUnmarshaller.Instance;
             
@@ -1372,6 +1637,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -1384,10 +1653,13 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
         public virtual DeleteCapacityProviderResponse DeleteCapacityProvider(DeleteCapacityProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapacityProviderResponseUnmarshaller.Instance;
 
@@ -1428,6 +1700,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -1440,10 +1716,13 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
         public virtual Task<DeleteCapacityProviderResponse> DeleteCapacityProviderAsync(DeleteCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCapacityProviderResponseUnmarshaller.Instance;
             
@@ -1475,6 +1754,12 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterContainsCapacityProviderException">
+        /// The cluster contains one or more capacity providers that prevent the requested operation.
+        /// This exception occurs when you try to delete a cluster that still has active capacity
+        /// providers, including Amazon ECS Managed Instances capacity providers. You must first
+        /// delete all capacity providers from the cluster before you can delete the cluster itself.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterContainsContainerInstancesException">
         /// You can't delete a cluster that has registered container instances. First, deregister
@@ -1516,7 +1801,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
 
@@ -1547,6 +1832,12 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterContainsCapacityProviderException">
+        /// The cluster contains one or more capacity providers that prevent the requested operation.
+        /// This exception occurs when you try to delete a cluster that still has active capacity
+        /// providers, including Amazon ECS Managed Instances capacity providers. You must first
+        /// delete all capacity providers from the cluster before you can delete the cluster itself.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterContainsContainerInstancesException">
         /// You can't delete a cluster that has registered container instances. First, deregister
@@ -1588,11 +1879,150 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClusterResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteClusterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteExpressGatewayService
+
+
+        /// <summary>
+        /// Deletes an Express service and removes all associated Amazon Web Services resources.
+        /// This operation stops service tasks, removes the Application Load Balancer, target
+        /// groups, security groups, auto-scaling policies, and other managed infrastructure components.
+        /// 
+        ///  
+        /// <para>
+        /// The service enters a <c>DRAINING</c> state where existing tasks complete current requests
+        /// without starting new tasks. After all tasks stop, the service and infrastructure are
+        /// permanently removed.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation cannot be reversed. Back up important data and verify the service is
+        /// no longer needed before deletion.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service isn't active. You can't update a service that's inactive. If
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteExpressGatewayService">REST API Reference for DeleteExpressGatewayService Operation</seealso>
+        public virtual DeleteExpressGatewayServiceResponse DeleteExpressGatewayService(DeleteExpressGatewayServiceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteExpressGatewayServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExpressGatewayServiceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExpressGatewayServiceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an Express service and removes all associated Amazon Web Services resources.
+        /// This operation stops service tasks, removes the Application Load Balancer, target
+        /// groups, security groups, auto-scaling policies, and other managed infrastructure components.
+        /// 
+        ///  
+        /// <para>
+        /// The service enters a <c>DRAINING</c> state where existing tasks complete current requests
+        /// without starting new tasks. After all tasks stop, the service and infrastructure are
+        /// permanently removed.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation cannot be reversed. Back up important data and verify the service is
+        /// no longer needed before deletion.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExpressGatewayService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service isn't active. You can't update a service that's inactive. If
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteExpressGatewayService">REST API Reference for DeleteExpressGatewayService Operation</seealso>
+        public virtual Task<DeleteExpressGatewayServiceResponse> DeleteExpressGatewayServiceAsync(DeleteExpressGatewayServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteExpressGatewayServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExpressGatewayServiceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteExpressGatewayServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1656,7 +2086,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
@@ -1723,7 +2153,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
             
@@ -1798,7 +2228,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskDefinitions">REST API Reference for DeleteTaskDefinitions Operation</seealso>
         public virtual DeleteTaskDefinitionsResponse DeleteTaskDefinitions(DeleteTaskDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskDefinitionsResponseUnmarshaller.Instance;
 
@@ -1872,7 +2302,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskDefinitions">REST API Reference for DeleteTaskDefinitions Operation</seealso>
         public virtual Task<DeleteTaskDefinitionsResponse> DeleteTaskDefinitionsAsync(DeleteTaskDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskDefinitionsResponseUnmarshaller.Instance;
             
@@ -1935,7 +2365,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">REST API Reference for DeleteTaskSet Operation</seealso>
         public virtual DeleteTaskSetResponse DeleteTaskSet(DeleteTaskSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskSetResponseUnmarshaller.Instance;
 
@@ -1997,7 +2427,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">REST API Reference for DeleteTaskSet Operation</seealso>
         public virtual Task<DeleteTaskSetResponse> DeleteTaskSetAsync(DeleteTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTaskSetResponseUnmarshaller.Instance;
             
@@ -2060,7 +2490,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         public virtual DeregisterContainerInstanceResponse DeregisterContainerInstance(DeregisterContainerInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterContainerInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterContainerInstanceResponseUnmarshaller.Instance;
 
@@ -2122,7 +2552,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         public virtual Task<DeregisterContainerInstanceResponse> DeregisterContainerInstanceAsync(DeregisterContainerInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterContainerInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterContainerInstanceResponseUnmarshaller.Instance;
             
@@ -2185,7 +2615,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         public virtual DeregisterTaskDefinitionResponse DeregisterTaskDefinition(DeregisterTaskDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTaskDefinitionResponseUnmarshaller.Instance;
 
@@ -2247,7 +2677,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         public virtual Task<DeregisterTaskDefinitionResponse> DeregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterTaskDefinitionResponseUnmarshaller.Instance;
             
@@ -2270,6 +2700,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -2282,10 +2716,13 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">REST API Reference for DescribeCapacityProviders Operation</seealso>
         public virtual DescribeCapacityProvidersResponse DescribeCapacityProviders(DescribeCapacityProvidersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityProvidersResponseUnmarshaller.Instance;
 
@@ -2307,6 +2744,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -2319,10 +2760,13 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">REST API Reference for DescribeCapacityProviders Operation</seealso>
         public virtual Task<DescribeCapacityProvidersResponse> DescribeCapacityProvidersAsync(DescribeCapacityProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCapacityProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCapacityProvidersResponseUnmarshaller.Instance;
             
@@ -2366,7 +2810,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual DescribeClustersResponse DescribeClusters(DescribeClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClustersResponseUnmarshaller.Instance;
 
@@ -2409,7 +2853,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         public virtual Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClustersResponseUnmarshaller.Instance;
             
@@ -2452,7 +2896,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         public virtual DescribeContainerInstancesResponse DescribeContainerInstances(DescribeContainerInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContainerInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
 
@@ -2494,11 +2938,138 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         public virtual Task<DescribeContainerInstancesResponse> DescribeContainerInstancesAsync(DescribeContainerInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeContainerInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeContainerInstancesResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeContainerInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeExpressGatewayService
+
+
+        /// <summary>
+        /// Retrieves detailed information about an Express service, including current status,
+        /// configuration, managed infrastructure, and service revisions.
+        /// 
+        ///  
+        /// <para>
+        /// Returns comprehensive service details, active service revisions, ingress paths with
+        /// endpoints, and managed Amazon Web Services resource status including load balancers
+        /// and auto-scaling policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>include</c> parameter to retrieve additional information such as resource
+        /// tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeExpressGatewayService">REST API Reference for DescribeExpressGatewayService Operation</seealso>
+        public virtual DescribeExpressGatewayServiceResponse DescribeExpressGatewayService(DescribeExpressGatewayServiceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeExpressGatewayServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExpressGatewayServiceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExpressGatewayServiceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about an Express service, including current status,
+        /// configuration, managed infrastructure, and service revisions.
+        /// 
+        ///  
+        /// <para>
+        /// Returns comprehensive service details, active service revisions, ingress paths with
+        /// endpoints, and managed Amazon Web Services resource status including load balancers
+        /// and auto-scaling policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>include</c> parameter to retrieve additional information such as resource
+        /// tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExpressGatewayService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeExpressGatewayService">REST API Reference for DescribeExpressGatewayService Operation</seealso>
+        public virtual Task<DescribeExpressGatewayServiceResponse> DescribeExpressGatewayServiceAsync(DescribeExpressGatewayServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeExpressGatewayServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExpressGatewayServiceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeExpressGatewayServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2553,7 +3124,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceDeployments">REST API Reference for DescribeServiceDeployments Operation</seealso>
         public virtual DescribeServiceDeploymentsResponse DescribeServiceDeployments(DescribeServiceDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceDeploymentsResponseUnmarshaller.Instance;
 
@@ -2611,7 +3182,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceDeployments">REST API Reference for DescribeServiceDeployments Operation</seealso>
         public virtual Task<DescribeServiceDeploymentsResponse> DescribeServiceDeploymentsAsync(DescribeServiceDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceDeploymentsResponseUnmarshaller.Instance;
             
@@ -2675,7 +3246,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceRevisions">REST API Reference for DescribeServiceRevisions Operation</seealso>
         public virtual DescribeServiceRevisionsResponse DescribeServiceRevisions(DescribeServiceRevisionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceRevisionsResponseUnmarshaller.Instance;
 
@@ -2738,7 +3309,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceRevisions">REST API Reference for DescribeServiceRevisions Operation</seealso>
         public virtual Task<DescribeServiceRevisionsResponse> DescribeServiceRevisionsAsync(DescribeServiceRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServiceRevisionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServiceRevisionsResponseUnmarshaller.Instance;
             
@@ -2780,7 +3351,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual DescribeServicesResponse DescribeServices(DescribeServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServicesResponseUnmarshaller.Instance;
 
@@ -2821,7 +3392,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         public virtual Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeServicesResponseUnmarshaller.Instance;
             
@@ -2868,7 +3439,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         public virtual DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskDefinitionResponseUnmarshaller.Instance;
 
@@ -2914,7 +3485,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         public virtual Task<DescribeTaskDefinitionResponse> DescribeTaskDefinitionAsync(DescribeTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskDefinitionResponseUnmarshaller.Instance;
             
@@ -2967,7 +3538,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         public virtual DescribeTasksResponse DescribeTasks(DescribeTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTasksResponseUnmarshaller.Instance;
 
@@ -3019,7 +3590,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         public virtual Task<DescribeTasksResponse> DescribeTasksAsync(DescribeTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTasksResponseUnmarshaller.Instance;
             
@@ -3078,7 +3649,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">REST API Reference for DescribeTaskSets Operation</seealso>
         public virtual DescribeTaskSetsResponse DescribeTaskSets(DescribeTaskSetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskSetsResponseUnmarshaller.Instance;
 
@@ -3136,7 +3707,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">REST API Reference for DescribeTaskSets Operation</seealso>
         public virtual Task<DescribeTaskSetsResponse> DescribeTaskSetsAsync(DescribeTaskSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTaskSetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTaskSetsResponseUnmarshaller.Instance;
             
@@ -3217,7 +3788,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">REST API Reference for ExecuteCommand Operation</seealso>
         public virtual ExecuteCommandResponse ExecuteCommand(ExecuteCommandRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteCommandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteCommandResponseUnmarshaller.Instance;
 
@@ -3297,7 +3868,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">REST API Reference for ExecuteCommand Operation</seealso>
         public virtual Task<ExecuteCommandResponse> ExecuteCommandAsync(ExecuteCommandRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ExecuteCommandRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ExecuteCommandResponseUnmarshaller.Instance;
             
@@ -3348,7 +3919,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection">REST API Reference for GetTaskProtection Operation</seealso>
         public virtual GetTaskProtectionResponse GetTaskProtection(GetTaskProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaskProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaskProtectionResponseUnmarshaller.Instance;
 
@@ -3398,7 +3969,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection">REST API Reference for GetTaskProtection Operation</seealso>
         public virtual Task<GetTaskProtectionResponse> GetTaskProtectionAsync(GetTaskProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTaskProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTaskProtectionResponseUnmarshaller.Instance;
             
@@ -3436,7 +4007,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">REST API Reference for ListAccountSettings Operation</seealso>
         public virtual ListAccountSettingsResponse ListAccountSettings(ListAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountSettingsResponseUnmarshaller.Instance;
 
@@ -3473,7 +4044,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">REST API Reference for ListAccountSettings Operation</seealso>
         public virtual Task<ListAccountSettingsResponse> ListAccountSettingsAsync(ListAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountSettingsResponseUnmarshaller.Instance;
             
@@ -3512,7 +4083,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
         public virtual ListAttributesResponse ListAttributes(ListAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttributesResponseUnmarshaller.Instance;
 
@@ -3550,7 +4121,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
         public virtual Task<ListAttributesResponse> ListAttributesAsync(ListAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttributesResponseUnmarshaller.Instance;
             
@@ -3588,7 +4159,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual ListClustersResponse ListClusters(ListClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
 
@@ -3625,7 +4196,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public virtual Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListClustersResponseUnmarshaller.Instance;
             
@@ -3670,7 +4241,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         public virtual ListContainerInstancesResponse ListContainerInstances(ListContainerInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
 
@@ -3714,7 +4285,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         public virtual Task<ListContainerInstancesResponse> ListContainerInstancesAsync(ListContainerInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListContainerInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
             
@@ -3773,7 +4344,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServiceDeployments">REST API Reference for ListServiceDeployments Operation</seealso>
         public virtual ListServiceDeploymentsResponse ListServiceDeployments(ListServiceDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceDeploymentsResponseUnmarshaller.Instance;
 
@@ -3831,7 +4402,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServiceDeployments">REST API Reference for ListServiceDeployments Operation</seealso>
         public virtual Task<ListServiceDeploymentsResponse> ListServiceDeploymentsAsync(ListServiceDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceDeploymentsResponseUnmarshaller.Instance;
             
@@ -3874,7 +4445,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -3916,7 +4487,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
             
@@ -3962,7 +4533,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">REST API Reference for ListServicesByNamespace Operation</seealso>
         public virtual ListServicesByNamespaceResponse ListServicesByNamespace(ListServicesByNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesByNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesByNamespaceResponseUnmarshaller.Instance;
 
@@ -4007,7 +4578,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace">REST API Reference for ListServicesByNamespace Operation</seealso>
         public virtual Task<ListServicesByNamespaceResponse> ListServicesByNamespaceAsync(ListServicesByNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesByNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesByNamespaceResponseUnmarshaller.Instance;
             
@@ -4049,7 +4620,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4090,7 +4661,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -4137,7 +4708,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         public virtual ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskDefinitionFamiliesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskDefinitionFamiliesResponseUnmarshaller.Instance;
 
@@ -4183,7 +4754,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         public virtual Task<ListTaskDefinitionFamiliesResponse> ListTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskDefinitionFamiliesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskDefinitionFamiliesResponseUnmarshaller.Instance;
             
@@ -4223,7 +4794,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         public virtual ListTaskDefinitionsResponse ListTaskDefinitions(ListTaskDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskDefinitionsResponseUnmarshaller.Instance;
 
@@ -4262,7 +4833,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         public virtual Task<ListTaskDefinitionsResponse> ListTaskDefinitionsAsync(ListTaskDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTaskDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTaskDefinitionsResponseUnmarshaller.Instance;
             
@@ -4315,7 +4886,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual ListTasksResponse ListTasks(ListTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
 
@@ -4367,7 +4938,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         public virtual Task<ListTasksResponse> ListTasksAsync(ListTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTasksResponseUnmarshaller.Instance;
             
@@ -4413,7 +4984,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
         public virtual PutAccountSettingResponse PutAccountSetting(PutAccountSettingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
 
@@ -4458,7 +5029,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">REST API Reference for PutAccountSetting Operation</seealso>
         public virtual Task<PutAccountSettingResponse> PutAccountSettingAsync(PutAccountSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingResponseUnmarshaller.Instance;
             
@@ -4497,7 +5068,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">REST API Reference for PutAccountSettingDefault Operation</seealso>
         public virtual PutAccountSettingDefaultResponse PutAccountSettingDefault(PutAccountSettingDefaultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingDefaultResponseUnmarshaller.Instance;
 
@@ -4535,7 +5106,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">REST API Reference for PutAccountSettingDefault Operation</seealso>
         public virtual Task<PutAccountSettingDefaultResponse> PutAccountSettingDefaultAsync(PutAccountSettingDefaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccountSettingDefaultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccountSettingDefaultResponseUnmarshaller.Instance;
             
@@ -4583,7 +5154,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual PutAttributesResponse PutAttributes(PutAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAttributesResponseUnmarshaller.Instance;
 
@@ -4630,7 +5201,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
         public virtual Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAttributesResponseUnmarshaller.Instance;
             
@@ -4663,6 +5234,12 @@ namespace Amazon.ECS
         /// used. We recommend that you define a default capacity provider strategy for your cluster.
         /// However, you must specify an empty array (<c>[]</c>) to bypass defining a default
         /// strategy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon ECS Managed Instances doesn't support this, because when you create a capacity
+        /// provider with Amazon ECS Managed Instances, it becomes available only within the specified
+        /// cluster.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutClusterCapacityProviders service method.</param>
@@ -4702,7 +5279,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders">REST API Reference for PutClusterCapacityProviders Operation</seealso>
         public virtual PutClusterCapacityProvidersResponse PutClusterCapacityProviders(PutClusterCapacityProvidersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutClusterCapacityProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutClusterCapacityProvidersResponseUnmarshaller.Instance;
 
@@ -4731,6 +5308,12 @@ namespace Amazon.ECS
         /// used. We recommend that you define a default capacity provider strategy for your cluster.
         /// However, you must specify an empty array (<c>[]</c>) to bypass defining a default
         /// strategy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon ECS Managed Instances doesn't support this, because when you create a capacity
+        /// provider with Amazon ECS Managed Instances, it becomes available only within the specified
+        /// cluster.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutClusterCapacityProviders service method.</param>
@@ -4773,7 +5356,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders">REST API Reference for PutClusterCapacityProviders Operation</seealso>
         public virtual Task<PutClusterCapacityProvidersResponse> PutClusterCapacityProvidersAsync(PutClusterCapacityProvidersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutClusterCapacityProvidersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutClusterCapacityProvidersResponseUnmarshaller.Instance;
             
@@ -4832,7 +5415,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         public virtual RegisterTaskDefinitionResponse RegisterTaskDefinition(RegisterTaskDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTaskDefinitionResponseUnmarshaller.Instance;
 
@@ -4890,7 +5473,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         public virtual Task<RegisterTaskDefinitionResponse> RegisterTaskDefinitionAsync(RegisterTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterTaskDefinitionResponseUnmarshaller.Instance;
             
@@ -4995,7 +5578,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-        /// Amazon Web ServicesSupport</a>.
+        /// Amazon Web Services Support</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
@@ -5035,7 +5618,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         public virtual RunTaskResponse RunTask(RunTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunTaskResponseUnmarshaller.Instance;
 
@@ -5139,7 +5722,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-        /// Amazon Web ServicesSupport</a>.
+        /// Amazon Web Services Support</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
@@ -5179,7 +5762,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         public virtual Task<RunTaskResponse> RunTaskAsync(RunTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunTaskResponseUnmarshaller.Instance;
             
@@ -5248,7 +5831,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         public virtual StartTaskResponse StartTask(StartTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTaskResponseUnmarshaller.Instance;
 
@@ -5316,7 +5899,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         public virtual Task<StartTaskResponse> StartTaskAsync(StartTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTaskResponseUnmarshaller.Instance;
             
@@ -5390,7 +5973,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopServiceDeployment">REST API Reference for StopServiceDeployment Operation</seealso>
         public virtual StopServiceDeploymentResponse StopServiceDeployment(StopServiceDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopServiceDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopServiceDeploymentResponseUnmarshaller.Instance;
 
@@ -5463,7 +6046,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopServiceDeployment">REST API Reference for StopServiceDeployment Operation</seealso>
         public virtual Task<StopServiceDeploymentResponse> StopServiceDeploymentAsync(StopServiceDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopServiceDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopServiceDeploymentResponseUnmarshaller.Instance;
             
@@ -5530,7 +6113,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         public virtual StopTaskResponse StopTask(StopTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTaskResponseUnmarshaller.Instance;
 
@@ -5596,7 +6179,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         public virtual Task<StopTaskResponse> StopTaskAsync(StopTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTaskResponseUnmarshaller.Instance;
             
@@ -5645,7 +6228,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">REST API Reference for SubmitAttachmentStateChanges Operation</seealso>
         public virtual SubmitAttachmentStateChangesResponse SubmitAttachmentStateChanges(SubmitAttachmentStateChangesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitAttachmentStateChangesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitAttachmentStateChangesResponseUnmarshaller.Instance;
 
@@ -5693,7 +6276,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges">REST API Reference for SubmitAttachmentStateChanges Operation</seealso>
         public virtual Task<SubmitAttachmentStateChangesResponse> SubmitAttachmentStateChangesAsync(SubmitAttachmentStateChangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitAttachmentStateChangesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitAttachmentStateChangesResponseUnmarshaller.Instance;
             
@@ -5741,7 +6324,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5788,7 +6371,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -5833,7 +6416,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -5877,7 +6460,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -5891,6 +6474,12 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Modifies the parameters for a capacity provider.
+        /// 
+        ///  
+        /// <para>
+        /// These changes only apply to new Amazon ECS Managed Instances, or EC2 instances, not
+        /// existing ones.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
         /// 
@@ -5899,6 +6488,10 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -5912,10 +6505,13 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
         public virtual UpdateCapacityProviderResponse UpdateCapacityProvider(UpdateCapacityProviderRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapacityProviderResponseUnmarshaller.Instance;
 
@@ -5925,6 +6521,12 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Modifies the parameters for a capacity provider.
+        /// 
+        ///  
+        /// <para>
+        /// These changes only apply to new Amazon ECS Managed Instances, or EC2 instances, not
+        /// existing ones.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -5937,6 +6539,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -5949,10 +6555,13 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
         public virtual Task<UpdateCapacityProviderResponse> UpdateCapacityProviderAsync(UpdateCapacityProviderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCapacityProviderRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCapacityProviderResponseUnmarshaller.Instance;
             
@@ -5997,7 +6606,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
 
@@ -6041,7 +6650,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public virtual Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterResponseUnmarshaller.Instance;
             
@@ -6083,7 +6692,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">REST API Reference for UpdateClusterSettings Operation</seealso>
         public virtual UpdateClusterSettingsResponse UpdateClusterSettings(UpdateClusterSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterSettingsResponseUnmarshaller.Instance;
 
@@ -6124,7 +6733,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">REST API Reference for UpdateClusterSettings Operation</seealso>
         public virtual Task<UpdateClusterSettingsResponse> UpdateClusterSettingsAsync(UpdateClusterSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClusterSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClusterSettingsResponseUnmarshaller.Instance;
             
@@ -6212,7 +6821,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         public virtual UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
 
@@ -6299,7 +6908,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         public virtual Task<UpdateContainerAgentResponse> UpdateContainerAgentAsync(UpdateContainerAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerAgentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerAgentResponseUnmarshaller.Instance;
             
@@ -6405,7 +7014,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
         public virtual UpdateContainerInstancesStateResponse UpdateContainerInstancesState(UpdateContainerInstancesStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerInstancesStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
 
@@ -6510,11 +7119,150 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
         public virtual Task<UpdateContainerInstancesStateResponse> UpdateContainerInstancesStateAsync(UpdateContainerInstancesStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateContainerInstancesStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateContainerInstancesStateResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateContainerInstancesStateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateExpressGatewayService
+
+
+        /// <summary>
+        /// Updates an existing Express service configuration. Modifies container settings, resource
+        /// allocation, auto-scaling configuration, and other service parameters without recreating
+        /// the service.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon ECS creates a new service revision with updated configuration and performs
+        /// a rolling deployment to replace existing tasks. The service remains available during
+        /// updates, ensuring zero-downtime deployments.
+        /// </para>
+        ///  
+        /// <para>
+        /// Some parameters like the infrastructure role cannot be modified after service creation
+        /// and require creating a new service.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service isn't active. You can't update a service that's inactive. If
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateExpressGatewayService">REST API Reference for UpdateExpressGatewayService Operation</seealso>
+        public virtual UpdateExpressGatewayServiceResponse UpdateExpressGatewayService(UpdateExpressGatewayServiceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExpressGatewayServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExpressGatewayServiceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExpressGatewayServiceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing Express service configuration. Modifies container settings, resource
+        /// allocation, auto-scaling configuration, and other service parameters without recreating
+        /// the service.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon ECS creates a new service revision with updated configuration and performs
+        /// a rolling deployment to replace existing tasks. The service remains available during
+        /// updates, ensuring zero-downtime deployments.
+        /// </para>
+        ///  
+        /// <para>
+        /// Some parameters like the infrastructure role cannot be modified after service creation
+        /// and require creating a new service.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExpressGatewayService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service isn't active. You can't update a service that's inactive. If
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateExpressGatewayService">REST API Reference for UpdateExpressGatewayService Operation</seealso>
+        public virtual Task<UpdateExpressGatewayServiceResponse> UpdateExpressGatewayServiceAsync(UpdateExpressGatewayServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExpressGatewayServiceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExpressGatewayServiceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateExpressGatewayServiceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6731,7 +7479,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual UpdateServiceResponse UpdateService(UpdateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
 
@@ -6951,7 +7699,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         public virtual Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServiceResponseUnmarshaller.Instance;
             
@@ -7016,7 +7764,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">REST API Reference for UpdateServicePrimaryTaskSet Operation</seealso>
         public virtual UpdateServicePrimaryTaskSetResponse UpdateServicePrimaryTaskSet(UpdateServicePrimaryTaskSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServicePrimaryTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServicePrimaryTaskSetResponseUnmarshaller.Instance;
 
@@ -7080,7 +7828,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">REST API Reference for UpdateServicePrimaryTaskSet Operation</seealso>
         public virtual Task<UpdateServicePrimaryTaskSetResponse> UpdateServicePrimaryTaskSetAsync(UpdateServicePrimaryTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateServicePrimaryTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateServicePrimaryTaskSetResponseUnmarshaller.Instance;
             
@@ -7169,7 +7917,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">REST API Reference for UpdateTaskProtection Operation</seealso>
         public virtual UpdateTaskProtectionResponse UpdateTaskProtection(UpdateTaskProtectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskProtectionResponseUnmarshaller.Instance;
 
@@ -7257,7 +8005,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection">REST API Reference for UpdateTaskProtection Operation</seealso>
         public virtual Task<UpdateTaskProtectionResponse> UpdateTaskProtectionAsync(UpdateTaskProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskProtectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskProtectionResponseUnmarshaller.Instance;
             
@@ -7320,7 +8068,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">REST API Reference for UpdateTaskSet Operation</seealso>
         public virtual UpdateTaskSetResponse UpdateTaskSet(UpdateTaskSetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskSetResponseUnmarshaller.Instance;
 
@@ -7382,7 +8130,7 @@ namespace Amazon.ECS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">REST API Reference for UpdateTaskSet Operation</seealso>
         public virtual Task<UpdateTaskSetResponse> UpdateTaskSetAsync(UpdateTaskSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTaskSetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTaskSetResponseUnmarshaller.Instance;
             

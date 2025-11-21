@@ -64,6 +64,18 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     response.AuthorizationUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("sessionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SessionStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sessionUri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SessionUri = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

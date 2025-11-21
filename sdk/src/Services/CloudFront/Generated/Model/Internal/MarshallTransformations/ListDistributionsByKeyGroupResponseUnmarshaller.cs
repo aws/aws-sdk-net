@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListDistributionsByKeyGroup operation
     /// </summary>  
-    public class ListDistributionsByKeyGroupResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListDistributionsByKeyGroupResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             ListDistributionsByKeyGroupResponse response = new ListDistributionsByKeyGroupResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -109,6 +109,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListDistributionsByKeyGroupResponse response);
 
         private static ListDistributionsByKeyGroupResponseUnmarshaller _instance = new ListDistributionsByKeyGroupResponseUnmarshaller();        
 

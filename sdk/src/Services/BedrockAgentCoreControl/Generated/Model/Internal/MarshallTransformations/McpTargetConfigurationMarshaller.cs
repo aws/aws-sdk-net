@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMcpServer())
+            {
+                context.Writer.WritePropertyName("mcpServer");
+                context.Writer.WriteStartObject();
+
+                var marshaller = McpServerTargetConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.McpServer, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOpenApiSchema())
             {
                 context.Writer.WritePropertyName("openApiSchema");

@@ -46,6 +46,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetId())
+            {
+                context.Writer.WritePropertyName("Id");
+                context.Writer.WriteStringValue(requestObject.Id);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

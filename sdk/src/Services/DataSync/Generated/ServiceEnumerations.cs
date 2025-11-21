@@ -335,6 +335,10 @@ namespace Amazon.DataSync
         /// </summary>
         public static readonly EndpointType FIPS = new EndpointType("FIPS");
         /// <summary>
+        /// Constant FIPS_PRIVATE_LINK for EndpointType
+        /// </summary>
+        public static readonly EndpointType FIPS_PRIVATE_LINK = new EndpointType("FIPS_PRIVATE_LINK");
+        /// <summary>
         /// Constant PRIVATE_LINK for EndpointType
         /// </summary>
         public static readonly EndpointType PRIVATE_LINK = new EndpointType("PRIVATE_LINK");

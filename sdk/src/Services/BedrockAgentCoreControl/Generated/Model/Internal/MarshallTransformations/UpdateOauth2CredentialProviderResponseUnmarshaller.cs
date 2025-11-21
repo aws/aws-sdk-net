@@ -52,6 +52,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("callbackUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CallbackUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("clientSecretArn", targetDepth))
                 {
                     var unmarshaller = SecretUnmarshaller.Instance;

@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetBucketTaggingRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
         
             if (publicRequest.IsSetAccountId()) 
@@ -90,5 +91,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketTaggingRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetBucketTaggingRequest publicRequest);
     }    
 }

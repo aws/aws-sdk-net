@@ -17,7 +17,7 @@
     "BatchGetTableOptimizer": "<p>Returns the configuration for the specified table optimizers.</p>",
     "BatchGetTriggers": "<p>Returns a list of resource metadata for a given list of trigger names. After calling the <code>ListTriggers</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>",
     "BatchGetWorkflows": "<p>Returns a list of resource metadata for a given list of workflow names. After calling the <code>ListWorkflows</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>",
-    "BatchPutDataQualityStatisticAnnotation": "<p>Annotate datapoints over time for a specific data quality statistic.</p>",
+    "BatchPutDataQualityStatisticAnnotation": "<p>Annotate datapoints over time for a specific data quality statistic. The API requires both profileID and statisticID as part of the InclusionAnnotation input. The API only works for a single statisticId across multiple profiles.</p>",
     "BatchStopJobRun": "<p>Stops one or more job runs for a specified job definition.</p>",
     "BatchUpdatePartition": "<p>Updates one or more partitions in a batch operation.</p>",
     "CancelDataQualityRuleRecommendationRun": "<p>Cancels the specified recommendation run that was being used to generate rules.</p>",
@@ -35,6 +35,7 @@
     "CreateDataQualityRuleset": "<p>Creates a data quality ruleset with DQDL rules applied to a specified Glue table.</p> <p>You create the ruleset using the Data Quality Definition Language (DQDL). For more information, see the Glue developer guide.</p>",
     "CreateDatabase": "<p>Creates a new database in a Data Catalog.</p>",
     "CreateDevEndpoint": "<p>Creates a new development endpoint.</p>",
+    "CreateGlueIdentityCenterConfiguration": "<p>Creates a new Glue Identity Center configuration to enable integration between Glue and Amazon Web Services IAM Identity Center for authentication and authorization.</p>",
     "CreateIntegration": "<p>Creates a Zero-ETL integration in the caller's account between two resources with Amazon Resource Names (ARNs): the <code>SourceArn</code> and <code>TargetArn</code>.</p>",
     "CreateIntegrationResourceProperty": "<p>This API can be used for setting up the <code>ResourceProperty</code> of the Glue connection (for the source) or Glue database ARN (for the target). These properties can include the role to access the connection or database. To set both source and target properties the same API needs to be invoked with the Glue connection ARN as <code>ResourceArn</code> with <code>SourceProcessingProperties</code> and the Glue database ARN as <code>ResourceArn</code> with <code>TargetProcessingProperties</code> respectively.</p>",
     "CreateIntegrationTableProperties": "<p>This API is used to provide optional override properties for the the tables that need to be replicated. These properties can include properties for filtering and partitioning for the source and target tables. To set both source and target properties the same API need to be invoked with the Glue connection ARN as <code>ResourceArn</code> with <code>SourceTableConfig</code>, and the Glue database ARN as <code>ResourceArn</code> with <code>TargetTableConfig</code> respectively.</p>",
@@ -65,7 +66,9 @@
     "DeleteDataQualityRuleset": "<p>Deletes a data quality ruleset.</p>",
     "DeleteDatabase": "<p>Removes a specified database from a Data Catalog.</p> <note> <p>After completing this operation, you no longer have access to the tables (and all table versions and partitions that might belong to the tables) and the user-defined functions in the deleted database. Glue deletes these \"orphaned\" resources asynchronously in a timely manner, at the discretion of the service.</p> <p>To ensure the immediate deletion of all related resources, before calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or <code>BatchDeletePartition</code>, <code>DeleteUserDefinedFunction</code>, and <code>DeleteTable</code> or <code>BatchDeleteTable</code>, to delete any resources that belong to the database.</p> </note>",
     "DeleteDevEndpoint": "<p>Deletes a specified development endpoint.</p>",
+    "DeleteGlueIdentityCenterConfiguration": "<p>Deletes the existing Glue Identity Center configuration, removing the integration between Glue and Amazon Web Services IAM Identity Center.</p>",
     "DeleteIntegration": "<p>Deletes the specified Zero-ETL integration.</p>",
+    "DeleteIntegrationResourceProperty": "<p>This API is used for deleting the <code>ResourceProperty</code> of the Glue connection (for the source) or Glue database ARN (for the target).</p>",
     "DeleteIntegrationTableProperties": "<p>Deletes the table properties that have been created for the tables that need to be replicated.</p>",
     "DeleteJob": "<p>Deletes a specified job definition. If the job definition is not found, no exception is thrown.</p>",
     "DeleteMLTransform": "<p>Deletes an Glue machine learning transform. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. If you no longer need a transform, you can delete it by calling <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted transform will no longer succeed.</p>",
@@ -120,6 +123,7 @@
     "GetDevEndpoint": "<p>Retrieves information about a specified development endpoint.</p> <note> <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address, and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address.</p> </note>",
     "GetDevEndpoints": "<p>Retrieves all the development endpoints in this Amazon Web Services account.</p> <note> <p>When you create a development endpoint in a virtual private cloud (VPC), Glue returns only a private IP address and the public IP address field is not populated. When you create a non-VPC development endpoint, Glue returns only a public IP address.</p> </note>",
     "GetEntityRecords": "<p>This API is used to query preview data from a given connection type or from a native Amazon S3 based Glue Data Catalog.</p> <p>Returns records as an array of JSON blobs. Each record is formatted using Jackson JsonNode based on the field type defined by the <code>DescribeEntity</code> API.</p> <p>Spark connectors generate schemas according to the same data type mapping as in the <code>DescribeEntity</code> API. Spark connectors convert data to the appropriate data types matching the schema when returning rows.</p>",
+    "GetGlueIdentityCenterConfiguration": "<p>Retrieves the current Glue Identity Center configuration details, including the associated Identity Center instance and application information.</p>",
     "GetIntegrationResourceProperty": "<p>This API is used for fetching the <code>ResourceProperty</code> of the Glue connection (for the source) or Glue database ARN (for the target)</p>",
     "GetIntegrationTableProperties": "<p>This API is used to retrieve optional override properties for the tables that need to be replicated. These properties can include properties for filtering and partition for source and target tables.</p>",
     "GetJob": "<p>Retrieves an existing job definition.</p>",
@@ -180,6 +184,7 @@
     "ListDataQualityStatistics": "<p>Retrieves a list of data quality statistics.</p>",
     "ListDevEndpoints": "<p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p> <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>",
     "ListEntities": "<p>Returns the available entities supported by the connection type. </p>",
+    "ListIntegrationResourceProperties": "<p>List integration resource properties for a single customer. It supports the filters, maxRecords and markers.</p>",
     "ListJobs": "<p>Retrieves the names of all job resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p> <p>This operation takes the optional <code>Tags</code> field, which you can use as a filter on the response so that tagged resources can be retrieved as a group. If you choose to use tags filtering, only resources with the tag are retrieved.</p>",
     "ListMLTransforms": "<p> Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account, or the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved. </p>",
     "ListRegistries": "<p>Returns a list of registries that you have created, with minimal registry information. Registries in the <code>Deleting</code> status will not be included in the results. Empty results will be returned if there are no registries available.</p>",
@@ -240,6 +245,7 @@
     "UpdateDataQualityRuleset": "<p>Updates the specified data quality ruleset.</p>",
     "UpdateDatabase": "<p>Updates an existing database definition in a Data Catalog.</p>",
     "UpdateDevEndpoint": "<p>Updates a specified development endpoint.</p>",
+    "UpdateGlueIdentityCenterConfiguration": "<p>Updates the existing Glue Identity Center configuration, allowing modification of scopes and permissions for the integration.</p>",
     "UpdateIntegrationResourceProperty": "<p>This API can be used for updating the <code>ResourceProperty</code> of the Glue connection (for the source) or Glue database ARN (for the target). These properties can include the role to access the connection or database. Since the same resource can be used across multiple integrations, updating resource properties will impact all the integrations using it.</p>",
     "UpdateIntegrationTableProperties": "<p>This API is used to provide optional override properties for the tables that need to be replicated. These properties can include properties for filtering and partitioning for the source and target tables. To set both source and target properties the same API need to be invoked with the Glue connection ARN as <code>ResourceArn</code> with <code>SourceTableConfig</code>, and the Glue database ARN as <code>ResourceArn</code> with <code>TargetTableConfig</code> respectively.</p> <p>The override will be reflected across all the integrations using same <code>ResourceArn</code> and source table.</p>",
     "UpdateJob": "<p>Updates an existing job definition. The previous job definition is completely overwritten by this information.</p>",
@@ -457,6 +463,13 @@
         "ListEntitiesRequest$DataStoreApiVersion": "<p>The API version of the SaaS connector.</p>"
       }
     },
+    "ApplicationArn": {
+      "base": null,
+      "refs": {
+        "CreateGlueIdentityCenterConfigurationResponse$ApplicationArn": "<p>The Amazon Resource Name (ARN) of the Identity Center application that was created for the Glue configuration.</p>",
+        "GetGlueIdentityCenterConfigurationResponse$ApplicationArn": "<p>The Amazon Resource Name (ARN) of the Identity Center application associated with the Glue configuration.</p>"
+      }
+    },
     "ApplyMapping": {
       "base": "<p>Specifies a transform that maps data property keys in the data source to data property keys in the data target. You can rename keys, modify the data types for keys, and choose which keys to drop from the dataset.</p>",
       "refs": {
@@ -496,6 +509,8 @@
     "AuditContext": {
       "base": "<p>A structure containing the Lake Formation audit context.</p>",
       "refs": {
+        "GetTableRequest$AuditContext": "<p>A structure containing the Lake Formation <a href=\"https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html\">audit context</a>.</p>",
+        "GetTablesRequest$AuditContext": "<p>A structure containing the Lake Formation <a href=\"https://docs.aws.amazon.com/glue/latest/webapi/API_AuditContext.html\">audit context</a>.</p>",
         "GetUnfilteredPartitionMetadataRequest$AuditContext": "<p>A structure containing Lake Formation audit context information.</p>",
         "GetUnfilteredPartitionsMetadataRequest$AuditContext": "<p>A structure containing Lake Formation audit context information.</p>",
         "GetUnfilteredTableMetadataRequest$AuditContext": "<p>A structure containing Lake Formation audit context information.</p>"
@@ -1874,6 +1889,12 @@
         "ConfigurationMap$value": null
       }
     },
+    "ConfigurationSource": {
+      "base": null,
+      "refs": {
+        "TableOptimizer$configurationSource": "<p> Specifies the source of the optimizer configuration. This indicates how the table optimizer was configured and which entity or service initiated the configuration. </p>"
+      }
+    },
     "ConflictException": {
       "base": "<p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>",
       "refs": {}
@@ -1931,7 +1952,7 @@
     "ConnectionProperties": {
       "base": null,
       "refs": {
-        "Connection$ConnectionProperties": "<p>These key-value pairs define parameters for the connection when using the version 1 Connection schema:</p> <ul> <li> <p> <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code> - The name under which to log in to the database. The value string for <code>USER_NAME</code> is \"<code>USERNAME</code>\".</p> </li> <li> <p> <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li> <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li> <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.</p> </li> <li> <p> <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p> </li> <li> <p> <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p> </li> <li> <p> <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p> </li> <li> <p> <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p> <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is \"true\".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p> </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is \"false\".</p> </li> <li> <p> <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p> </li> <li> <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p> </li> <li> <p> <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p> </li> <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p> </li> <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> - <code>\"SCRAM-SHA-512\"</code>, <code>\"GSSAPI\"</code>, <code>\"AWS_MSK_IAM\"</code>, or <code>\"PLAIN\"</code>. These are the supported <a href=\"https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml\">SASL Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_PLAIN_USERNAME</code> - A plaintext username used to authenticate with the \"PLAIN\" mechanism.</p> </li> <li> <p> <code>KAFKA_SASL_PLAIN_PASSWORD</code> - A plaintext password used to authenticate with the \"PLAIN\" mechanism.</p> </li> <li> <p> <code>ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD</code> - The encrypted version of the Kafka SASL PLAIN password (if the user has the Glue encrypt passwords setting selected).</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A plaintext username used to authenticate with the \"SCRAM-SHA-512\" mechanism.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password used to authenticate with the \"SCRAM-SHA-512\" mechanism.</p> </li> <li> <p> <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting selected).</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_SECRETS_ARN</code> - The Amazon Resource Name of a secret in Amazon Web Services Secrets Manager.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3 location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys for one or more principals. For more information, see <a href=\"https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html\">MIT Kerberos Documentation: Keytab</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration information, such as the location of the KDC server. For more information, see <a href=\"https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html\">MIT Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with <code>sasl.kerberos.service.name</code> in your <a href=\"https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name\">Kafka Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> - The name of the Kerberos princial used by Glue. For more information, see <a href=\"https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig\">Kafka Documentation: Configuring Kafka Brokers</a>.</p> </li> <li> <p> <code>ROLE_ARN</code> - The role to be used for running queries.</p> </li> <li> <p> <code>REGION</code> - The Amazon Web Services Region where queries will be run.</p> </li> <li> <p> <code>WORKGROUP_NAME</code> - The name of an Amazon Redshift serverless workgroup or Amazon Athena workgroup in which queries will run.</p> </li> <li> <p> <code>CLUSTER_IDENTIFIER</code> - The cluster identifier of an Amazon Redshift cluster in which queries will run.</p> </li> <li> <p> <code>DATABASE</code> - The Amazon Redshift database that you are connecting to.</p> </li> </ul>",
+        "Connection$ConnectionProperties": "<p>These key-value pairs define parameters for the connection when using the version 1 Connection schema:</p> <ul> <li> <p> <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code> - The name under which to log in to the database. The value string for <code>USER_NAME</code> is \"<code>USERNAME</code>\".</p> </li> <li> <p> <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li> <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li> <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A case-insensitive Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.</p> </li> <li> <p> <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p> </li> <li> <p> <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip Glue’s validation of the customer certificate.</p> </li> <li> <p> <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p> </li> <li> <p> <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p> <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is \"true\".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p> </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is \"false\".</p> </li> <li> <p> <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p> </li> <li> <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p> </li> <li> <p> <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p> </li> <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the Glue encrypt passwords setting selected).</p> </li> <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the Glue encrypt passwords setting selected).</p> </li> <li> <p> <code>KAFKA_SASL_MECHANISM</code> - <code>\"SCRAM-SHA-512\"</code>, <code>\"GSSAPI\"</code>, <code>\"AWS_MSK_IAM\"</code>, or <code>\"PLAIN\"</code>. These are the supported <a href=\"https://www.iana.org/assignments/sasl-mechanisms/sasl-mechanisms.xhtml\">SASL Mechanisms</a>.</p> </li> <li> <p> <code>KAFKA_SASL_PLAIN_USERNAME</code> - A plaintext username used to authenticate with the \"PLAIN\" mechanism.</p> </li> <li> <p> <code>KAFKA_SASL_PLAIN_PASSWORD</code> - A plaintext password used to authenticate with the \"PLAIN\" mechanism.</p> </li> <li> <p> <code>ENCRYPTED_KAFKA_SASL_PLAIN_PASSWORD</code> - The encrypted version of the Kafka SASL PLAIN password (if the user has the Glue encrypt passwords setting selected).</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_USERNAME</code> - A plaintext username used to authenticate with the \"SCRAM-SHA-512\" mechanism.</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_PASSWORD</code> - A plaintext password used to authenticate with the \"SCRAM-SHA-512\" mechanism.</p> </li> <li> <p> <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code> - The encrypted version of the Kafka SASL SCRAM password (if the user has the Glue encrypt passwords setting selected).</p> </li> <li> <p> <code>KAFKA_SASL_SCRAM_SECRETS_ARN</code> - The Amazon Resource Name of a secret in Amazon Web Services Secrets Manager.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KEYTAB</code> - The S3 location of a Kerberos <code>keytab</code> file. A keytab stores long-term keys for one or more principals. For more information, see <a href=\"https://web.mit.edu/kerberos/krb5-latest/doc/basic/keytab_def.html\">MIT Kerberos Documentation: Keytab</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code> - The S3 location of a Kerberos <code>krb5.conf</code> file. A krb5.conf stores Kerberos configuration information, such as the location of the KDC server. For more information, see <a href=\"https://web.mit.edu/kerberos/krb5-1.12/doc/admin/conf_files/krb5_conf.html\">MIT Kerberos Documentation: krb5.conf</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_SERVICE</code> - The Kerberos service name, as set with <code>sasl.kerberos.service.name</code> in your <a href=\"https://kafka.apache.org/documentation/#brokerconfigs_sasl.kerberos.service.name\">Kafka Configuration</a>.</p> </li> <li> <p> <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code> - The name of the Kerberos princial used by Glue. For more information, see <a href=\"https://kafka.apache.org/documentation/#security_sasl_kerberos_clientconfig\">Kafka Documentation: Configuring Kafka Brokers</a>.</p> </li> <li> <p> <code>ROLE_ARN</code> - The role to be used for running queries.</p> </li> <li> <p> <code>REGION</code> - The Amazon Web Services Region where queries will be run.</p> </li> <li> <p> <code>WORKGROUP_NAME</code> - The name of an Amazon Redshift serverless workgroup or Amazon Athena workgroup in which queries will run.</p> </li> <li> <p> <code>CLUSTER_IDENTIFIER</code> - The cluster identifier of an Amazon Redshift cluster in which queries will run.</p> </li> <li> <p> <code>DATABASE</code> - The Amazon Redshift database that you are connecting to.</p> </li> </ul>",
         "ConnectionInput$ConnectionProperties": "<p>These key-value pairs define parameters for the connection.</p>",
         "TestConnectionInput$ConnectionProperties": "<p>The key-value pairs that define parameters for the connection.</p> <p>JDBC connections use the following connection properties:</p> <ul> <li> <p>Required: All of (<code>HOST</code>, <code>PORT</code>, <code>JDBC_ENGINE</code>) or <code>JDBC_CONNECTION_URL</code>.</p> </li> <li> <p>Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.</p> </li> <li> <p>Optional: <code>JDBC_ENFORCE_SSL</code>, <code>CUSTOM_JDBC_CERT</code>, <code>CUSTOM_JDBC_CERT_STRING</code>, <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code>. These parameters are used to configure SSL with JDBC.</p> </li> </ul> <p>SALESFORCE connections require the <code>AuthenticationConfiguration</code> member to be configured.</p>"
       }
@@ -2049,6 +2070,12 @@
         "CreateCustomEntityTypeRequest$ContextWords": "<p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p> <p>If no context words are passed only a regular expression is checked.</p>",
         "CustomEntityType$ContextWords": "<p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p> <p>If no context words are passed only a regular expression is checked.</p>",
         "GetCustomEntityTypeResponse$ContextWords": "<p>A list of context words if specified when you created the custom pattern. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>"
+      }
+    },
+    "ContinuousSync": {
+      "base": null,
+      "refs": {
+        "IntegrationConfig$ContinuousSync": "<p>Enables continuous synchronization for on-demand data extractions from SaaS applications to Amazon Web Services data services like Amazon Redshift and Amazon S3.</p>"
       }
     },
     "Crawl": {
@@ -2281,6 +2308,14 @@
     },
     "CreateDevEndpointResponse": {
       "base": null,
+      "refs": {}
+    },
+    "CreateGlueIdentityCenterConfigurationRequest": {
+      "base": "<p>Request to create a new Glue Identity Center configuration.</p>",
+      "refs": {}
+    },
+    "CreateGlueIdentityCenterConfigurationResponse": {
+      "base": "<p>Response from creating a new Glue Identity Center configuration.</p>",
       "refs": {}
     },
     "CreateGrokClassifierRequest": {
@@ -2760,6 +2795,12 @@
         "StartDataQualityRulesetEvaluationRunRequest$AdditionalRunOptions": "<p>Additional run options you can specify for an evaluation run.</p>"
       }
     },
+    "DataQualityGlueTable": {
+      "base": "<p>The database and table in the Glue Data Catalog that is used for input or output data for Data Quality Operations.</p>",
+      "refs": {
+        "DataSource$DataQualityGlueTable": "<p>An Glue table for Data Quality Operations.</p>"
+      }
+    },
     "DataQualityMetricValues": {
       "base": "<p>Describes the data quality metric value according to the analysis of historical data.</p>",
       "refs": {
@@ -3169,7 +3210,23 @@
       "base": null,
       "refs": {}
     },
+    "DeleteGlueIdentityCenterConfigurationRequest": {
+      "base": "<p>Request to delete the existing Glue Identity Center configuration.</p>",
+      "refs": {}
+    },
+    "DeleteGlueIdentityCenterConfigurationResponse": {
+      "base": "<p>Response from deleting the Glue Identity Center configuration.</p>",
+      "refs": {}
+    },
     "DeleteIntegrationRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "DeleteIntegrationResourcePropertyRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "DeleteIntegrationResourcePropertyResponse": {
       "base": null,
       "refs": {}
     },
@@ -4231,6 +4288,14 @@
         "StorageDescriptor$OutputFormat": "<p>The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>, or a custom format.</p>"
       }
     },
+    "FunctionType": {
+      "base": null,
+      "refs": {
+        "GetUserDefinedFunctionsRequest$FunctionType": "<p>An optional function-type pattern string that filters the function definitions returned from Amazon Redshift Federated Permissions Catalog.</p> <p>Specify a value of <code>REGULAR_FUNCTION</code> or <code>STORED_PROCEDURE</code>. The <code>STORED_PROCEDURE</code> function type is only compatible with Amazon Redshift Federated Permissions Catalog. </p>",
+        "UserDefinedFunction$FunctionType": "<p>The type of the function.</p>",
+        "UserDefinedFunctionInput$FunctionType": "<p>The type of the function.</p>"
+      }
+    },
     "Generic512CharString": {
       "base": null,
       "refs": {
@@ -4680,6 +4745,14 @@
     },
     "GetEntityRecordsResponse": {
       "base": null,
+      "refs": {}
+    },
+    "GetGlueIdentityCenterConfigurationRequest": {
+      "base": "<p>Request to retrieve the Glue Identity Center configuration.</p>",
+      "refs": {}
+    },
+    "GetGlueIdentityCenterConfigurationResponse": {
+      "base": "<p>Response containing the Glue Identity Center configuration details.</p>",
       "refs": {}
     },
     "GetIntegrationResourcePropertyRequest": {
@@ -5193,6 +5266,7 @@
     "GlueTableAdditionalOptions": {
       "base": null,
       "refs": {
+        "DataQualityGlueTable$AdditionalOptions": "<p>Additional options for the table. Currently there are two keys supported:</p> <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li> <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li> </ul>",
         "GlueTable$AdditionalOptions": "<p>Additional options for the table. Currently there are two keys supported:</p> <ul> <li> <p> <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your dataset.</p> </li> <li> <p> <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue Data Catalog.</p> </li> </ul>"
       }
     },
@@ -5389,7 +5463,9 @@
       "refs": {
         "DataLakeAccessProperties$DataTransferRole": "<p>A role that will be assumed by Glue for transferring data into/out of the staging bucket during a query.</p>",
         "DataLakeAccessPropertiesOutput$DataTransferRole": "<p>A role that will be assumed by Glue for transferring data into/out of the staging bucket during a query.</p>",
-        "EncryptionAtRest$CatalogEncryptionServiceRole": "<p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.</p>"
+        "EncryptionAtRest$CatalogEncryptionServiceRole": "<p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.</p>",
+        "IcebergOptimizationProperties$RoleArn": "<p>The Amazon Resource Name (ARN) of the IAM role that will be assumed to perform Iceberg table optimization operations.</p>",
+        "IcebergOptimizationPropertiesOutput$RoleArn": "<p>The Amazon Resource Name (ARN) of the IAM role that is used to perform Iceberg table optimization operations.</p>"
       }
     },
     "IcebergCompactionConfiguration": {
@@ -5420,6 +5496,18 @@
       "base": null,
       "refs": {
         "IcebergSortField$NullOrder": "<p>The ordering behavior for null values in this field, specifying whether nulls should appear first or last in the sort order.</p>"
+      }
+    },
+    "IcebergOptimizationProperties": {
+      "base": "<p>A structure that specifies Iceberg table optimization properties for the catalog, including configurations for compaction, retention, and orphan file deletion operations.</p>",
+      "refs": {
+        "CatalogProperties$IcebergOptimizationProperties": "<p>A structure that specifies Iceberg table optimization properties for the catalog. This includes configuration for compaction, retention, and orphan file deletion operations that can be applied to Iceberg tables in this catalog.</p>"
+      }
+    },
+    "IcebergOptimizationPropertiesOutput": {
+      "base": "<p>A structure that contains the output properties of Iceberg table optimization configuration for your catalog resource in the Glue Data Catalog.</p>",
+      "refs": {
+        "CatalogPropertiesOutput$IcebergOptimizationProperties": "<p>An <code>IcebergOptimizationPropertiesOutput</code> object that specifies Iceberg table optimization settings for the catalog, including configurations for compaction, retention, and orphan file deletion operations.</p>"
       }
     },
     "IcebergOrphanFileDeletionConfiguration": {
@@ -5585,6 +5673,26 @@
       "base": "<p>The same unique identifier was associated with two different records.</p>",
       "refs": {}
     },
+    "IdentityCenterInstanceArn": {
+      "base": null,
+      "refs": {
+        "CreateGlueIdentityCenterConfigurationRequest$InstanceArn": "<p>The Amazon Resource Name (ARN) of the Identity Center instance to be associated with the Glue configuration.</p>",
+        "GetGlueIdentityCenterConfigurationResponse$InstanceArn": "<p>The Amazon Resource Name (ARN) of the Identity Center instance associated with the Glue configuration.</p>"
+      }
+    },
+    "IdentityCenterScope": {
+      "base": null,
+      "refs": {
+        "IdentityCenterScopesList$member": null
+      }
+    },
+    "IdentityCenterScopesList": {
+      "base": null,
+      "refs": {
+        "CreateGlueIdentityCenterConfigurationRequest$Scopes": "<p>A list of Identity Center scopes that define the permissions and access levels for the Glue configuration.</p>",
+        "UpdateGlueIdentityCenterConfigurationRequest$Scopes": "<p>A list of Identity Center scopes that define the updated permissions and access levels for the Glue configuration.</p>"
+      }
+    },
     "IdleTimeout": {
       "base": null,
       "refs": {
@@ -5632,7 +5740,7 @@
     "InclusionAnnotationList": {
       "base": null,
       "refs": {
-        "BatchPutDataQualityStatisticAnnotationRequest$InclusionAnnotations": "<p>A list of <code>DatapointInclusionAnnotation</code>'s.</p>"
+        "BatchPutDataQualityStatisticAnnotationRequest$InclusionAnnotations": "<p>A list of <code>DatapointInclusionAnnotation</code>'s. The InclusionAnnotations must contain a profileId and statisticId. If there are multiple InclusionAnnotations, the list must refer to a single statisticId across multiple profileIds.</p>"
       }
     },
     "InclusionAnnotationValue": {
@@ -5725,7 +5833,9 @@
         "CreateIntegrationRequest$IntegrationConfig": "<p>The configuration settings.</p>",
         "CreateIntegrationResponse$IntegrationConfig": "<p>The configuration settings.</p>",
         "InboundIntegration$IntegrationConfig": "<p>Properties associated with the integration.</p>",
-        "Integration$IntegrationConfig": "<p>Properties associated with the integration.</p>"
+        "Integration$IntegrationConfig": "<p>Properties associated with the integration.</p>",
+        "ModifyIntegrationRequest$IntegrationConfig": "<p>The configuration settings for the integration. Currently, only the RefreshInterval can be modified. </p>",
+        "ModifyIntegrationResponse$IntegrationConfig": "<p>The updated configuration settings for the integration.</p>"
       }
     },
     "IntegrationConflictOperationFault": {
@@ -5794,7 +5904,8 @@
       "base": null,
       "refs": {
         "DescribeInboundIntegrationsRequest$MaxRecords": "<p>The total number of items to return in the output.</p>",
-        "DescribeIntegrationsRequest$MaxRecords": "<p>The total number of items to return in the output.</p>"
+        "DescribeIntegrationsRequest$MaxRecords": "<p>The total number of items to return in the output.</p>",
+        "ListIntegrationResourcePropertiesRequest$MaxRecords": "<p>This is total number of items to be evaluated.</p>"
       }
     },
     "IntegrationNotFoundFault": {
@@ -5816,6 +5927,36 @@
     "IntegrationQuotaExceededFault": {
       "base": "<p>The data processed through your integration exceeded your quota.</p>",
       "refs": {}
+    },
+    "IntegrationResourceProperty": {
+      "base": "<p>A structure representing an integration resource property.</p>",
+      "refs": {
+        "IntegrationResourcePropertyList$member": null
+      }
+    },
+    "IntegrationResourcePropertyFilter": {
+      "base": "<p>A filter for integration resource properties.</p>",
+      "refs": {
+        "IntegrationResourcePropertyFilterList$member": null
+      }
+    },
+    "IntegrationResourcePropertyFilterList": {
+      "base": null,
+      "refs": {
+        "ListIntegrationResourcePropertiesRequest$Filters": "<p>A list of filters, supported filter Key is <code>SourceArn</code> and <code>TargetArn</code>.</p>"
+      }
+    },
+    "IntegrationResourcePropertyFilterValues": {
+      "base": null,
+      "refs": {
+        "IntegrationResourcePropertyFilter$Values": "<p>A list of filter values.</p>"
+      }
+    },
+    "IntegrationResourcePropertyList": {
+      "base": null,
+      "refs": {
+        "ListIntegrationResourcePropertiesResponse$IntegrationResourcePropertyList": "<p>A list of integration resource property meeting the filter criteria.</p>"
+      }
     },
     "IntegrationSourcePropertiesMap": {
       "base": null,
@@ -5846,6 +5987,7 @@
       "base": null,
       "refs": {
         "CreateIntegrationRequest$Tags": "<p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>",
+        "CreateIntegrationResourcePropertyRequest$Tags": "<p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>",
         "CreateIntegrationResponse$Tags": "<p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>",
         "DeleteIntegrationResponse$Tags": "<p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>",
         "Integration$Tags": "<p>Metadata assigned to the resource consisting of a list of key-value pairs.</p>",
@@ -6155,6 +6297,7 @@
     "KmsKeyArn": {
       "base": null,
       "refs": {
+        "AuthenticationConfiguration$KmsKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive authentication information. This key is used to protect credentials and other sensitive data stored within the authentication configuration.</p>",
         "AuthenticationConfigurationInput$KmsKeyArn": "<p>The ARN of the KMS key used to encrypt the connection. Only taken an as input in the request and stored in the Secret Manager.</p>",
         "CloudWatchEncryption$KmsKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>",
         "DataQualityEncryption$KmsKeyArn": "<p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>",
@@ -6173,6 +6316,12 @@
       "base": "<p>Specifies configuration properties for a labeling set generation task run.</p>",
       "refs": {
         "TaskRunProperties$LabelingSetGenerationTaskRunProperties": "<p>The configuration properties for a labeling set generation task run.</p>"
+      }
+    },
+    "Labels": {
+      "base": null,
+      "refs": {
+        "DataQualityRuleResult$Labels": "<p>A map containing labels assigned to the data quality rule. </p>"
       }
     },
     "LakeFormationConfiguration": {
@@ -6351,6 +6500,14 @@
       "refs": {}
     },
     "ListEntitiesResponse": {
+      "base": null,
+      "refs": {}
+    },
+    "ListIntegrationResourcePropertiesRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "ListIntegrationResourcePropertiesResponse": {
       "base": null,
       "refs": {}
     },
@@ -6935,6 +7092,10 @@
         "DataLakeAccessPropertiesOutput$StatusMessage": "<p>A message that gives more detailed information about the managed workgroup status.</p>",
         "DataLakeAccessPropertiesOutput$CatalogType": "<p>Specifies a federated catalog type for the native catalog resource. The currently supported type is <code>aws:redshift</code>.</p>",
         "DataQualityAnalyzerResult$Name": "<p>The name of the data quality analyzer.</p>",
+        "DataQualityGlueTable$DatabaseName": "<p>A database name in the Glue Data Catalog.</p>",
+        "DataQualityGlueTable$TableName": "<p>A table name in the Glue Data Catalog.</p>",
+        "DataQualityGlueTable$CatalogId": "<p>A unique identifier for the Glue Data Catalog.</p>",
+        "DataQualityGlueTable$ConnectionName": "<p>The name of the connection to the Glue Data Catalog.</p>",
         "DataQualityResult$RulesetName": "<p>The name of the ruleset associated with the data quality result.</p>",
         "DataQualityResult$JobName": "<p>The job name associated with the data quality result, if any.</p>",
         "DataQualityResultDescription$JobName": "<p>The job name associated with the data quality result.</p>",
@@ -7094,6 +7255,8 @@
         "JsonClassifier$Name": "<p>The name of the classifier.</p>",
         "KeyList$member": null,
         "KeySchemaElement$Name": "<p>The name of a partition key.</p>",
+        "Labels$key": null,
+        "Labels$value": null,
         "ListCrawlsRequest$CrawlerName": "<p>The name of the crawler whose runs you want to retrieve.</p>",
         "ListEntitiesRequest$ConnectionName": "<p>A name for the connection that has required credentials to query any connection type.</p>",
         "ListStatementsRequest$SessionId": "<p>The Session ID of the statements.</p>",
@@ -7494,6 +7657,7 @@
         "CreateCsvClassifierRequest$DisableValueTrimming": "<p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>",
         "CreateCsvClassifierRequest$AllowSingleColumn": "<p>Enables the processing of files that contain only one column.</p>",
         "CreateCsvClassifierRequest$CustomDatatypeConfigured": "<p>Enables the configuration of custom datatypes.</p>",
+        "CreateGlueIdentityCenterConfigurationRequest$UserBackgroundSessionsEnabled": "<p>Specifies whether users can run background sessions when using Identity Center authentication with Glue services.</p>",
         "CreateJobRequest$JobRunQueuingEnabled": "<p>Specifies whether job run queuing is enabled for the job runs for this job.</p> <p>A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.</p> <p>If this field does not match the value set in the job run, then the value from the job run field will be used.</p>",
         "CsvClassifier$DisableValueTrimming": "<p>Specifies not to trim values before identifying the type of column values. The default value is <code>true</code>.</p>",
         "CsvClassifier$AllowSingleColumn": "<p>Enables the processing of files that contain only one column.</p>",
@@ -7507,6 +7671,7 @@
         "GetBlueprintRequest$IncludeBlueprint": "<p>Specifies whether or not to include the blueprint in the response.</p>",
         "GetBlueprintRequest$IncludeParameterSpec": "<p>Specifies whether or not to include the parameter specification.</p>",
         "GetCatalogsRequest$IncludeRoot": "<p>Whether to list the default catalog in the account and region in the response. Defaults to <code>false</code>. When <code>true</code> and <code>ParentCatalogId = NULL | Amazon Web Services Account ID</code>, all catalogs and the default catalog are enumerated in the response.</p> <p>When the <code>ParentCatalogId</code> is not equal to null, and this attribute is passed as <code>false</code> or <code>true</code>, an <code>InvalidInputException</code> is thrown.</p>",
+        "GetGlueIdentityCenterConfigurationResponse$UserBackgroundSessionsEnabled": "<p>Indicates whether users can run background sessions when using Identity Center authentication with Glue services.</p>",
         "GetWorkflowRequest$IncludeGraph": "<p>Specifies whether to include a graph when returning the workflow resource metadata.</p>",
         "GetWorkflowRunRequest$IncludeGraph": "<p>Specifies whether to include the workflow graph in response or not.</p>",
         "GetWorkflowRunsRequest$IncludeGraph": "<p>Specifies whether to include the workflow graph in response or not.</p>",
@@ -7523,6 +7688,7 @@
         "UpdateCsvClassifierRequest$DisableValueTrimming": "<p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>",
         "UpdateCsvClassifierRequest$AllowSingleColumn": "<p>Enables the processing of files that contain only one column.</p>",
         "UpdateCsvClassifierRequest$CustomDatatypeConfigured": "<p>Specifies the configuration of custom datatypes.</p>",
+        "UpdateGlueIdentityCenterConfigurationRequest$UserBackgroundSessionsEnabled": "<p>Specifies whether users can run background sessions when using Identity Center authentication with Glue services.</p>",
         "ViewDefinition$IsProtected": "<p>You can set this flag as true to instruct the engine not to push user-provided operations into the logical plan of the view during query planning. However, setting this flag does not guarantee that the engine will comply. Refer to the engine's documentation to understand the guarantees provided, if any.</p>",
         "ViewDefinitionInput$IsProtected": "<p>You can set this flag as true to instruct the engine not to push user-provided operations into the logical plan of the view during query planning. However, setting this flag does not guarantee that the engine will comply. Refer to the engine's documentation to understand the guarantees provided, if any.</p>",
         "ViewRepresentation$IsStale": "<p>Dialects marked as stale are no longer valid and must be updated before they can be queried in their respective query engines.</p>"
@@ -7581,9 +7747,13 @@
         "GetMLTransformResponse$NumberOfWorkers": "<p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>",
         "GetMLTransformResponse$MaxRetries": "<p>The maximum number of times to retry a task for this transform after a task run fails.</p>",
         "HudiTarget$MaximumTraversalDepth": "<p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Hudi metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>",
+        "IcebergCompactionConfiguration$minInputFiles": "<p>The minimum number of data files that must be present in a partition before compaction will actually compact files. This parameter helps control when compaction is triggered, preventing unnecessary compaction operations on partitions with few files. If an input is not provided, the default value 100 will be used.</p>",
+        "IcebergCompactionConfiguration$deleteFileThreshold": "<p>The minimum number of deletes that must be present in a data file to make it eligible for compaction. This parameter helps optimize compaction by focusing on files that contain a significant number of delete operations, which can improve query performance by removing deleted records. If an input is not provided, the default value 1 will be used.</p>",
         "IcebergOrphanFileDeletionConfiguration$orphanFileRetentionPeriodInDays": "<p>The number of days that orphan files should be retained before file deletion. If an input is not provided, the default value 3 will be used.</p>",
+        "IcebergOrphanFileDeletionConfiguration$runRateInHours": "<p>The interval in hours between orphan file deletion job runs. This parameter controls how frequently the orphan file deletion optimizer will run to clean up orphan files. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>",
         "IcebergRetentionConfiguration$snapshotRetentionPeriodInDays": "<p>The number of days to retain the Iceberg snapshots. If an input is not provided, the corresponding Iceberg table configuration field will be used or if not present, the default value 5 will be used.</p>",
         "IcebergRetentionConfiguration$numberOfSnapshotsToRetain": "<p>The number of Iceberg snapshots to retain within the retention period. If an input is not provided, the corresponding Iceberg table configuration field will be used or if not present, the default value 1 will be used.</p>",
+        "IcebergRetentionConfiguration$runRateInHours": "<p>The interval in hours between retention job runs. This parameter controls how frequently the retention optimizer will run to clean up expired snapshots. The value must be between 3 and 168 hours (7 days). If an input is not provided, the default value 24 will be used.</p>",
         "IcebergTarget$MaximumTraversalDepth": "<p>The maximum depth of Amazon S3 paths that the crawler can traverse to discover the Iceberg metadata folder in your Amazon S3 path. Used to limit the crawler run time.</p>",
         "Job$NumberOfWorkers": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>",
         "JobRun$NumberOfWorkers": "<p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>",
@@ -7860,6 +8030,7 @@
     "OrchestrationStringList": {
       "base": null,
       "refs": {
+        "GetGlueIdentityCenterConfigurationResponse$Scopes": "<p>A list of Identity Center scopes that define the permissions and access levels for the Glue configuration.</p>",
         "StatementOutput$Traceback": "<p>The traceback of the output.</p>"
       }
     },
@@ -8012,6 +8183,12 @@
         "Column$Parameters": "<p>These key-value pairs define properties associated with the column.</p>",
         "Database$Parameters": "<p>These key-value pairs define parameters and properties of the database.</p>",
         "DatabaseInput$Parameters": "<p>These key-value pairs define parameters and properties of the database.</p> <p>These key-value pairs define parameters and properties of the database.</p>",
+        "IcebergOptimizationProperties$Compaction": "<p>A map of key-value pairs that specify configuration parameters for Iceberg table compaction operations, which optimize the layout of data files to improve query performance.</p>",
+        "IcebergOptimizationProperties$Retention": "<p>A map of key-value pairs that specify configuration parameters for Iceberg table retention operations, which manage the lifecycle of table snapshots to control storage costs.</p>",
+        "IcebergOptimizationProperties$OrphanFileDeletion": "<p>A map of key-value pairs that specify configuration parameters for Iceberg orphan file deletion operations, which identify and remove files that are no longer referenced by the table metadata.</p>",
+        "IcebergOptimizationPropertiesOutput$Compaction": "<p>A map of key-value pairs that specify configuration parameters for Iceberg table compaction operations, which optimize the layout of data files to improve query performance.</p>",
+        "IcebergOptimizationPropertiesOutput$Retention": "<p>A map of key-value pairs that specify configuration parameters for Iceberg table retention operations, which manage the lifecycle of table snapshots to control storage costs.</p>",
+        "IcebergOptimizationPropertiesOutput$OrphanFileDeletion": "<p>A map of key-value pairs that specify configuration parameters for Iceberg orphan file deletion operations, which identify and remove files that are no longer referenced by the table metadata.</p>",
         "Partition$Parameters": "<p>These key-value pairs define partition parameters.</p>",
         "PartitionInput$Parameters": "<p>These key-value pairs define partition parameters.</p>",
         "SerDeInfo$Parameters": "<p>These key-value pairs define initialization parameters for the SerDe.</p>",
@@ -8226,6 +8403,12 @@
       "base": "<p>Specifies a target that uses Postgres SQL.</p>",
       "refs": {
         "CodeGenConfigurationNode$PostgreSQLCatalogTarget": "<p>Specifies a target that uses Postgres SQL.</p>"
+      }
+    },
+    "PreProcessingQueryString": {
+      "base": "<p>SQL Query of SparkSQL format that can be used to pre-process data before running Data Quality Operations.</p>",
+      "refs": {
+        "DataQualityGlueTable$PreProcessingQuery": "<p>SQL Query of SparkSQL format that can be used to pre-process the data for the table in Glue Data Catalog, before running the Data Quality Operation.</p>"
       }
     },
     "Predecessor": {
@@ -9453,6 +9636,7 @@
         "CreateIntegrationResourcePropertyRequest$SourceProcessingProperties": "<p>The resource properties associated with the integration source.</p>",
         "CreateIntegrationResourcePropertyResponse$SourceProcessingProperties": "<p>The resource properties associated with the integration source.</p>",
         "GetIntegrationResourcePropertyResponse$SourceProcessingProperties": "<p>The resource properties associated with the integration source.</p>",
+        "IntegrationResourceProperty$SourceProcessingProperties": "<p>The resource properties associated with the integration source.</p>",
         "UpdateIntegrationResourcePropertyRequest$SourceProcessingProperties": "<p>The resource properties associated with the integration source.</p>",
         "UpdateIntegrationResourcePropertyResponse$SourceProcessingProperties": "<p>The resource properties associated with the integration source.</p>"
       }
@@ -9816,58 +10000,46 @@
         "Property$DefaultValue": "<p>The default value for the property.</p>"
       }
     },
+    "String1024": {
+      "base": null,
+      "refs": {
+        "ListIntegrationResourcePropertiesRequest$Marker": "<p>This is the pagination token for next page, initial value is <code>null</code>.</p>",
+        "ListIntegrationResourcePropertiesResponse$Marker": "<p>This is the pagination token for the next page.</p>"
+      }
+    },
     "String128": {
       "base": null,
       "refs": {
         "CreateIntegrationRequest$IntegrationName": "<p>A unique name for an integration in Glue.</p>",
-        "CreateIntegrationRequest$SourceArn": "<p>The ARN of the source resource for the integration.</p>",
-        "CreateIntegrationRequest$TargetArn": "<p>The ARN of the target resource for the integration.</p>",
-        "CreateIntegrationResourcePropertyRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
-        "CreateIntegrationResourcePropertyResponse$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
-        "CreateIntegrationResponse$SourceArn": "<p>The ARN of the source resource for the integration.</p>",
-        "CreateIntegrationResponse$TargetArn": "<p>The ARN of the target resource for the integration.</p>",
         "CreateIntegrationResponse$IntegrationName": "<p>A unique name for an integration in Glue.</p>",
         "CreateIntegrationResponse$IntegrationArn": "<p>The Amazon Resource Name (ARN) for the created integration.</p>",
-        "CreateIntegrationTablePropertiesRequest$ResourceArn": "<p>The Amazon Resource Name (ARN) of the target table for which to create integration table properties. Currently, this API only supports creating integration table properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for creating integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release. </p>",
         "CreateIntegrationTablePropertiesRequest$TableName": "<p>The name of the table to be replicated.</p>",
         "DeleteIntegrationRequest$IntegrationIdentifier": "<p>The Amazon Resource Name (ARN) for the integration.</p>",
-        "DeleteIntegrationResponse$SourceArn": "<p>The ARN of the source for the integration.</p>",
-        "DeleteIntegrationResponse$TargetArn": "<p>The ARN of the target for the integration.</p>",
         "DeleteIntegrationResponse$IntegrationName": "<p>A unique name for an integration in Glue.</p>",
         "DeleteIntegrationResponse$IntegrationArn": "<p>The Amazon Resource Name (ARN) for the integration.</p>",
-        "DeleteIntegrationTablePropertiesRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
         "DeleteIntegrationTablePropertiesRequest$TableName": "<p>The name of the table to be replicated.</p>",
         "DescribeInboundIntegrationsRequest$IntegrationArn": "<p>The Amazon Resource Name (ARN) of the integration.</p>",
         "DescribeInboundIntegrationsRequest$Marker": "<p>A token to specify where to start paginating. This is the marker from a previously truncated response.</p>",
-        "DescribeInboundIntegrationsRequest$TargetArn": "<p>The Amazon Resource Name (ARN) of the target resource in the integration.</p>",
         "DescribeInboundIntegrationsResponse$Marker": "<p>A value that indicates the starting point for the next set of response records in a subsequent request.</p>",
         "DescribeIntegrationsRequest$IntegrationIdentifier": "<p>The Amazon Resource Name (ARN) for the integration.</p>",
         "DescribeIntegrationsRequest$Marker": "<p>A value that indicates the starting point for the next set of response records in a subsequent request.</p>",
         "DescribeIntegrationsResponse$Marker": "<p>A value that indicates the starting point for the next set of response records in a subsequent request.</p>",
-        "GetIntegrationResourcePropertyRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
-        "GetIntegrationResourcePropertyResponse$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
-        "GetIntegrationTablePropertiesRequest$ResourceArn": "<p>The Amazon Resource Name (ARN) of the target table for which to retrieve integration table properties. Currently, this API only supports retrieving properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for retrieving integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release. </p>",
         "GetIntegrationTablePropertiesRequest$TableName": "<p>The name of the table to be replicated.</p>",
-        "GetIntegrationTablePropertiesResponse$ResourceArn": "<p>The Amazon Resource Name (ARN) of the target table for which to retrieve integration table properties. Currently, this API only supports retrieving properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for retrieving integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release. </p>",
         "GetIntegrationTablePropertiesResponse$TableName": "<p>The name of the table to be replicated.</p>",
-        "InboundIntegration$SourceArn": "<p>The ARN of the source resource for the integration.</p>",
-        "InboundIntegration$TargetArn": "<p>The ARN of the target resource for the integration.</p>",
         "InboundIntegration$IntegrationArn": "<p>The ARN of the zero-ETL integration.</p>",
-        "Integration$SourceArn": "<p>The ARN for the source of the integration.</p>",
-        "Integration$TargetArn": "<p>The ARN for the target of the integration.</p>",
         "Integration$IntegrationName": "<p>A unique name for the integration.</p>",
         "Integration$IntegrationArn": "<p>The Amazon Resource Name (ARN) for the integration.</p>",
-        "IntegrationConfig$RefreshInterval": "<p>Specifies the frequency at which CDC (Change Data Capture) pulls or incremental loads should occur. This parameter provides flexibility to align the refresh rate with your specific data update patterns, system load considerations, and performance optimization goals. Time increment can be set from 15 minutes to 8640 minutes (six days). Currently supports creation of <code>RefreshInterval</code> only.</p>",
+        "IntegrationConfig$RefreshInterval": "<p>Specifies the frequency at which CDC (Change Data Capture) pulls or incremental loads should occur. This parameter provides flexibility to align the refresh rate with your specific data update patterns, system load considerations, and performance optimization goals. Time increment can be set from 15 minutes to 8640 minutes (six days).</p>",
         "IntegrationError$ErrorCode": "<p>The code associated with this error.</p>",
         "IntegrationFilter$Name": "<p>The name of the filter.</p>",
         "IntegrationFilterValues$member": null,
         "IntegrationPartition$FieldName": "<p>The field name used to partition data on the target. Avoid using columns that have unique values for each row (for example, `LastModifiedTimestamp`, `SystemModTimeStamp`) as the partition column. These columns are not suitable for partitioning because they create a large number of small partitions, which can lead to performance issues.</p>",
-        "IntegrationPartition$FunctionSpec": "<p>Specifies the function used to partition data on the target. The only accepted value for this parameter is `'identity'` (string). The `'identity'` function ensures that the data partitioning on the target follows the same scheme as the source. In other words, the partitioning structure of the source data is preserved in the target destination.</p>",
+        "IntegrationPartition$FunctionSpec": "<p>Specifies the function used to partition data on the target. The accepted values for this parameter are:</p> <ul> <li> <p> <code>identity</code> - Uses source values directly without transformation</p> </li> <li> <p> <code>year</code> - Extracts the year from timestamp values (e.g., 2023)</p> </li> <li> <p> <code>month</code> - Extracts the month from timestamp values (e.g., 2023-01)</p> </li> <li> <p> <code>day</code> - Extracts the day from timestamp values (e.g., 2023-01-15)</p> </li> <li> <p> <code>hour</code> - Extracts the hour from timestamp values (e.g., 2023-01-15-14)</p> </li> </ul>",
         "IntegrationPartition$ConversionSpec": "<p>Specifies the timestamp format of the source data. Valid values are:</p> <ul> <li> <p> <code>epoch_sec</code> - Unix epoch timestamp in seconds</p> </li> <li> <p> <code>epoch_milli</code> - Unix epoch timestamp in milliseconds</p> </li> <li> <p> <code>iso</code> - ISO 8601 formatted timestamp</p> </li> </ul> <note> <p> Only specify <code>ConversionSpec</code> when using timestamp-based partition functions (year, month, day, or hour). Glue Zero-ETL uses this parameter to correctly transform source data into timestamp format before partitioning. </p> <p> Do not use high-cardinality columns with the <code>identity</code> partition function. High-cardinality columns include: </p> <ul> <li> <p>Primary keys</p> </li> <li> <p>Timestamp fields (such as <code>LastModifiedTimestamp</code>, <code>CreatedDate</code>)</p> </li> <li> <p>System-generated timestamps</p> </li> </ul> <p> Using high-cardinality columns with identity partitioning creates many small partitions, which can significantly degrade ingestion performance. </p> </note>",
+        "IntegrationResourcePropertyFilter$Name": "<p>The name of the filter. Supported filter keys are <code>SourceArn</code> and <code>TargetArn</code>.</p>",
+        "IntegrationResourcePropertyFilterValues$member": null,
         "ModifyIntegrationRequest$IntegrationIdentifier": "<p>The Amazon Resource Name (ARN) for the integration.</p>",
         "ModifyIntegrationRequest$IntegrationName": "<p>A unique name for an integration in Glue.</p>",
-        "ModifyIntegrationResponse$SourceArn": "<p>The ARN of the source for the integration.</p>",
-        "ModifyIntegrationResponse$TargetArn": "<p>The ARN of the target for the integration.</p>",
         "ModifyIntegrationResponse$IntegrationName": "<p>A unique name for an integration in Glue.</p>",
         "ModifyIntegrationResponse$IntegrationArn": "<p>The Amazon Resource Name (ARN) for the integration.</p>",
         "PrimaryKeyList$member": null,
@@ -9878,9 +10050,6 @@
         "TargetProcessingProperties$RoleArn": "<p>The IAM role to access the Glue database.</p>",
         "TargetProcessingProperties$ConnectionName": "<p>The Glue network connection to configure the Glue job running in the customer VPC.</p>",
         "TargetTableConfig$TargetTableName": "<p>The optional name of a target table.</p>",
-        "UpdateIntegrationResourcePropertyRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
-        "UpdateIntegrationResourcePropertyResponse$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
-        "UpdateIntegrationTablePropertiesRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
         "UpdateIntegrationTablePropertiesRequest$TableName": "<p>The name of the table to be replicated.</p>"
       }
     },
@@ -9901,6 +10070,41 @@
         "ModifyIntegrationResponse$DataFilter": "<p>Selects source tables for the integration using Maxwell filter syntax.</p>",
         "TargetProcessingProperties$KmsArn": "<p>The ARN of the KMS key used for encryption.</p>",
         "TargetProcessingProperties$EventBusArn": "<p>The ARN of an Eventbridge event bus to receive the integration status notification.</p>"
+      }
+    },
+    "String512": {
+      "base": null,
+      "refs": {
+        "CreateIntegrationRequest$SourceArn": "<p>The ARN of the source resource for the integration.</p>",
+        "CreateIntegrationRequest$TargetArn": "<p>The ARN of the target resource for the integration.</p>",
+        "CreateIntegrationResourcePropertyRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
+        "CreateIntegrationResourcePropertyResponse$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
+        "CreateIntegrationResourcePropertyResponse$ResourcePropertyArn": "<p>The resource ARN created through this create API. The format is something like arn:aws:glue:&lt;region&gt;:&lt;account_id&gt;:integrationresourceproperty/*</p>",
+        "CreateIntegrationResponse$SourceArn": "<p>The ARN of the source resource for the integration.</p>",
+        "CreateIntegrationResponse$TargetArn": "<p>The ARN of the target resource for the integration.</p>",
+        "CreateIntegrationTablePropertiesRequest$ResourceArn": "<p>The Amazon Resource Name (ARN) of the target table for which to create integration table properties. Currently, this API only supports creating integration table properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for creating integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release. </p>",
+        "DeleteIntegrationResourcePropertyRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
+        "DeleteIntegrationResponse$SourceArn": "<p>The ARN of the source for the integration.</p>",
+        "DeleteIntegrationResponse$TargetArn": "<p>The ARN of the target for the integration.</p>",
+        "DeleteIntegrationTablePropertiesRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
+        "DescribeInboundIntegrationsRequest$TargetArn": "<p>The Amazon Resource Name (ARN) of the target resource in the integration.</p>",
+        "GetIntegrationResourcePropertyRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
+        "GetIntegrationResourcePropertyResponse$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
+        "GetIntegrationResourcePropertyResponse$ResourcePropertyArn": "<p>The resource ARN created through this create API. The format is something like arn:aws:glue:&lt;region&gt;:&lt;account_id&gt;:integrationresourceproperty/*</p>",
+        "GetIntegrationTablePropertiesRequest$ResourceArn": "<p>The Amazon Resource Name (ARN) of the target table for which to retrieve integration table properties. Currently, this API only supports retrieving properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for retrieving integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release. </p>",
+        "GetIntegrationTablePropertiesResponse$ResourceArn": "<p>The Amazon Resource Name (ARN) of the target table for which to retrieve integration table properties. Currently, this API only supports retrieving properties for target tables, and the provided ARN should be the ARN of the target table in the Glue Data Catalog. Support for retrieving integration table properties for source connections (using the connection ARN) is not yet implemented and will be added in a future release. </p>",
+        "InboundIntegration$SourceArn": "<p>The ARN of the source resource for the integration.</p>",
+        "InboundIntegration$TargetArn": "<p>The ARN of the target resource for the integration.</p>",
+        "Integration$SourceArn": "<p>The ARN for the source of the integration.</p>",
+        "Integration$TargetArn": "<p>The ARN for the target of the integration.</p>",
+        "IntegrationResourceProperty$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
+        "IntegrationResourceProperty$ResourcePropertyArn": "<p>The resource ARN created through this create API. The format is something like arn:aws:glue:&lt;region&gt;:&lt;account_id&gt;:integrationresourceproperty/*</p>",
+        "ModifyIntegrationResponse$SourceArn": "<p>The ARN of the source for the integration.</p>",
+        "ModifyIntegrationResponse$TargetArn": "<p>The ARN of the target for the integration.</p>",
+        "UpdateIntegrationResourcePropertyRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
+        "UpdateIntegrationResourcePropertyResponse$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>",
+        "UpdateIntegrationResourcePropertyResponse$ResourcePropertyArn": "<p>The resource ARN created through this create API. The format is something like arn:aws:glue:&lt;region&gt;:&lt;account_id&gt;:integrationresourceproperty/*</p>",
+        "UpdateIntegrationTablePropertiesRequest$ResourceArn": "<p>The connection ARN of the source, or the database ARN of the target.</p>"
       }
     },
     "StringColumnStatisticsData": {
@@ -10187,6 +10391,7 @@
         "CreateIntegrationResourcePropertyRequest$TargetProcessingProperties": "<p>The resource properties associated with the integration target.</p>",
         "CreateIntegrationResourcePropertyResponse$TargetProcessingProperties": "<p>The resource properties associated with the integration target.</p>",
         "GetIntegrationResourcePropertyResponse$TargetProcessingProperties": "<p>The resource properties associated with the integration target.</p>",
+        "IntegrationResourceProperty$TargetProcessingProperties": "<p>The resource properties associated with the integration target.</p>",
         "UpdateIntegrationResourcePropertyRequest$TargetProcessingProperties": "<p>The resource properties associated with the integration target.</p>",
         "UpdateIntegrationResourcePropertyResponse$TargetProcessingProperties": "<p>The resource properties associated with the integration target.</p>"
       }
@@ -10374,6 +10579,7 @@
         "GluePolicy$UpdateTime": "<p>The date and time at which the policy was last updated.</p>",
         "GrokClassifier$CreationTime": "<p>The time that this classifier was registered.</p>",
         "GrokClassifier$LastUpdated": "<p>The time that this classifier was last updated.</p>",
+        "IcebergOptimizationPropertiesOutput$LastUpdatedTime": "<p>The timestamp when the Iceberg optimization properties were last updated.</p>",
         "JsonClassifier$CreationTime": "<p>The time that this classifier was registered.</p>",
         "JsonClassifier$LastUpdated": "<p>The time that this classifier was last updated.</p>",
         "LastCrawlInfo$StartTime": "<p>The time at which the crawl started.</p>",
@@ -10867,6 +11073,14 @@
       "base": null,
       "refs": {}
     },
+    "UpdateGlueIdentityCenterConfigurationRequest": {
+      "base": "<p>Request to update an existing Glue Identity Center configuration.</p>",
+      "refs": {}
+    },
+    "UpdateGlueIdentityCenterConfigurationResponse": {
+      "base": "<p>Response from updating an existing Glue Identity Center configuration.</p>",
+      "refs": {}
+    },
     "UpdateGrokClassifierRequest": {
       "base": "<p>Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>.</p>",
       "refs": {
@@ -10880,7 +11094,7 @@
       }
     },
     "UpdateIcebergTableInput": {
-      "base": "<p>Contains the update operations to be applied to an existing Iceberg table in AWS Glue Data Catalog, defining the new state of the table metadata. </p>",
+      "base": "<p>Contains the update operations to be applied to an existing Iceberg table inGlue Data Catalog, defining the new state of the table metadata. </p>",
       "refs": {
         "UpdateIcebergInput$UpdateIcebergTableInput": "<p>The specific update operations to be applied to the Iceberg table, containing a list of updates that define the new state of the table including schema, partitions, and properties.</p>"
       }
@@ -10934,7 +11148,7 @@
     "UpdateOpenTableFormatInput": {
       "base": "<p>Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.</p>",
       "refs": {
-        "UpdateTableRequest$UpdateOpenTableFormatInput": null
+        "UpdateTableRequest$UpdateOpenTableFormatInput": "<p>Input parameters for updating open table format tables in GlueData Catalog, serving as a wrapper for format-specific update operations such as Apache Iceberg.</p>"
       }
     },
     "UpdatePartitionRequest": {

@@ -168,7 +168,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetCampaignState":{
       "name":"GetCampaignState",
@@ -217,7 +218,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetInstanceCommunicationLimits":{
       "name":"GetInstanceCommunicationLimits",
@@ -233,7 +235,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetInstanceOnboardingJobStatus":{
       "name":"GetInstanceOnboardingJobStatus",
@@ -249,7 +252,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListCampaigns":{
       "name":"ListCampaigns",
@@ -264,7 +268,8 @@
         {"shape":"InternalServerException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListConnectInstanceIntegrations":{
       "name":"ListConnectInstanceIntegrations",
@@ -281,7 +286,8 @@
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ThrottlingException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -643,10 +649,17 @@
       },
       "exception":true
     },
+    "AgentAction":{
+      "type":"string",
+      "enum":["DISCARD"]
+    },
+    "AgentActions":{
+      "type":"list",
+      "member":{"shape":"AgentAction"}
+    },
     "AgentlessConfig":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "AnswerMachineDetectionConfig":{
       "type":"structure",
@@ -734,8 +747,8 @@
     "CampaignId":{
       "type":"string",
       "max":256,
-      "min":0,
-      "pattern":"[a-zA-Z0-9\\-:/]*"
+      "min":1,
+      "pattern":"[-:/a-zA-Z0-9]+"
     },
     "CampaignName":{
       "type":"string",
@@ -1119,8 +1132,8 @@
     "DialRequestId":{
       "type":"string",
       "max":256,
-      "min":0,
-      "pattern":"[a-zA-Z0-9_\\-.]*"
+      "min":1,
+      "pattern":"[-_.a-zA-Z0-9]+"
     },
     "EmailAddress":{
       "type":"string",
@@ -1380,8 +1393,8 @@
     "InstanceId":{
       "type":"string",
       "max":256,
-      "min":0,
-      "pattern":"[a-zA-Z0-9_\\-.]*"
+      "min":1,
+      "pattern":"[-_.a-zA-Z0-9]+"
     },
     "InstanceIdFilter":{
       "type":"structure",
@@ -1675,6 +1688,18 @@
         "bandwidthAllocation":{"shape":"BandwidthAllocation"}
       }
     },
+    "PreviewConfig":{
+      "type":"structure",
+      "required":[
+        "bandwidthAllocation",
+        "timeoutConfig"
+      ],
+      "members":{
+        "bandwidthAllocation":{"shape":"BandwidthAllocation"},
+        "timeoutConfig":{"shape":"TimeoutConfig"},
+        "agentActions":{"shape":"AgentActions"}
+      }
+    },
     "ProfileId":{
       "type":"string",
       "pattern":"[a-f0-9]{32}"
@@ -1875,6 +1900,12 @@
           "locationName":"id"
         }
       }
+    },
+    "RingTimeout":{
+      "type":"integer",
+      "box":true,
+      "max":60,
+      "min":15
     },
     "Schedule":{
       "type":"structure",
@@ -2109,7 +2140,8 @@
         "destinationPhoneNumber":{"shape":"DestinationPhoneNumber"},
         "attributes":{"shape":"Attributes"},
         "connectSourcePhoneNumber":{"shape":"SourcePhoneNumber"},
-        "answerMachineDetectionConfig":{"shape":"AnswerMachineDetectionConfig"}
+        "answerMachineDetectionConfig":{"shape":"AnswerMachineDetectionConfig"},
+        "ringTimeout":{"shape":"RingTimeout"}
       }
     },
     "TelephonyOutboundConfig":{
@@ -2118,7 +2150,8 @@
       "members":{
         "connectContactFlowId":{"shape":"ContactFlowId"},
         "connectSourcePhoneNumber":{"shape":"SourcePhoneNumber"},
-        "answerMachineDetectionConfig":{"shape":"AnswerMachineDetectionConfig"}
+        "answerMachineDetectionConfig":{"shape":"AnswerMachineDetectionConfig"},
+        "ringTimeout":{"shape":"RingTimeout"}
       }
     },
     "TelephonyOutboundMode":{
@@ -2126,7 +2159,8 @@
       "members":{
         "progressive":{"shape":"ProgressiveConfig"},
         "predictive":{"shape":"PredictiveConfig"},
-        "agentless":{"shape":"AgentlessConfig"}
+        "agentless":{"shape":"AgentlessConfig"},
+        "preview":{"shape":"PreviewConfig"}
       },
       "union":true
     },
@@ -2180,6 +2214,19 @@
       "max":50,
       "min":0,
       "pattern":"[a-zA-Z0-9_\\-/]*"
+    },
+    "TimeoutConfig":{
+      "type":"structure",
+      "required":["durationInSeconds"],
+      "members":{
+        "durationInSeconds":{"shape":"TimeoutDuration"}
+      }
+    },
+    "TimeoutDuration":{
+      "type":"integer",
+      "box":true,
+      "max":300,
+      "min":1
     },
     "UntagResourceRequest":{
       "type":"structure",

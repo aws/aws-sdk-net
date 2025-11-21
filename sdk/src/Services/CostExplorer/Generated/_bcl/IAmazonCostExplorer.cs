@@ -617,6 +617,10 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -662,6 +666,10 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -694,6 +702,10 @@ namespace Amazon.CostExplorer
         /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsageComparisons service method.</param>
         /// 
         /// <returns>The response from the GetCostAndUsageComparisons service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -722,6 +734,10 @@ namespace Amazon.CostExplorer
         /// </param>
         /// 
         /// <returns>The response from the GetCostAndUsageComparisons service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -769,6 +785,10 @@ namespace Amazon.CostExplorer
         /// <returns>The response from the GetCostAndUsageWithResources service method, as returned by CostExplorer.</returns>
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
@@ -822,6 +842,10 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -861,6 +885,10 @@ namespace Amazon.CostExplorer
         /// <returns>The response from the GetCostCategories service method, as returned by CostExplorer.</returns>
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
@@ -902,6 +930,10 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -935,6 +967,10 @@ namespace Amazon.CostExplorer
         /// <param name="request">Container for the necessary parameters to execute the GetCostComparisonDrivers service method.</param>
         /// 
         /// <returns>The response from the GetCostComparisonDrivers service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -964,6 +1000,10 @@ namespace Amazon.CostExplorer
         /// </param>
         /// 
         /// <returns>The response from the GetCostComparisonDrivers service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -991,6 +1031,10 @@ namespace Amazon.CostExplorer
         /// <param name="request">Container for the necessary parameters to execute the GetCostForecast service method.</param>
         /// 
         /// <returns>The response from the GetCostForecast service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -1015,6 +1059,10 @@ namespace Amazon.CostExplorer
         /// </param>
         /// 
         /// <returns>The response from the GetCostForecast service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -1041,6 +1089,10 @@ namespace Amazon.CostExplorer
         /// <returns>The response from the GetDimensionValues service method, as returned by CostExplorer.</returns>
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
@@ -1075,6 +1127,10 @@ namespace Amazon.CostExplorer
         /// <returns>The response from the GetDimensionValues service method, as returned by CostExplorer.</returns>
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
@@ -1786,6 +1842,10 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -1820,6 +1880,10 @@ namespace Amazon.CostExplorer
         /// <exception cref="Amazon.CostExplorer.Model.BillExpirationException">
         /// The requested report expired. Update the date interval and try again.
         /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -1851,6 +1915,10 @@ namespace Amazon.CostExplorer
         /// <param name="request">Container for the necessary parameters to execute the GetUsageForecast service method.</param>
         /// 
         /// <returns>The response from the GetUsageForecast service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>
@@ -1879,6 +1947,10 @@ namespace Amazon.CostExplorer
         /// </param>
         /// 
         /// <returns>The response from the GetUsageForecast service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.BillingViewHealthStatusException">
+        /// The billing view status must be <c>HEALTHY</c> to perform this action. Try again
+        /// when the status is <c>HEALTHY</c>.
+        /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
         /// The requested data is unavailable.
         /// </exception>

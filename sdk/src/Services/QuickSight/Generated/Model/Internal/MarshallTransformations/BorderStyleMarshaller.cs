@@ -46,10 +46,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetColor())
+            {
+                context.Writer.WritePropertyName("Color");
+                context.Writer.WriteStringValue(requestObject.Color);
+            }
+
             if(requestObject.IsSetShow())
             {
                 context.Writer.WritePropertyName("Show");
                 context.Writer.WriteBooleanValue(requestObject.Show.Value);
+            }
+
+            if(requestObject.IsSetWidth())
+            {
+                context.Writer.WritePropertyName("Width");
+                context.Writer.WriteStringValue(requestObject.Width);
             }
 
         }

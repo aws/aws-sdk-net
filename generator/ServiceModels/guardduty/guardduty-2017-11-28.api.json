@@ -159,6 +159,20 @@
         {"shape":"InternalServerErrorException"}
       ]
     },
+    "CreateThreatEntitySet":{
+      "name":"CreateThreatEntitySet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/detector/{detectorId}/threatentityset",
+        "responseCode":200
+      },
+      "input":{"shape":"CreateThreatEntitySetRequest"},
+      "output":{"shape":"CreateThreatEntitySetResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
     "CreateThreatIntelSet":{
       "name":"CreateThreatIntelSet",
       "http":{
@@ -172,6 +186,20 @@
         {"shape":"BadRequestException"},
         {"shape":"InternalServerErrorException"},
         {"shape":"AccessDeniedException"}
+      ]
+    },
+    "CreateTrustedEntitySet":{
+      "name":"CreateTrustedEntitySet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/detector/{detectorId}/trustedentityset",
+        "responseCode":200
+      },
+      "input":{"shape":"CreateTrustedEntitySetRequest"},
+      "output":{"shape":"CreateTrustedEntitySetResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
       ]
     },
     "DeclineInvitations":{
@@ -287,6 +315,20 @@
         {"shape":"InternalServerErrorException"}
       ]
     },
+    "DeleteThreatEntitySet":{
+      "name":"DeleteThreatEntitySet",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/detector/{detectorId}/threatentityset/{threatEntitySetId}",
+        "responseCode":200
+      },
+      "input":{"shape":"DeleteThreatEntitySetRequest"},
+      "output":{"shape":"DeleteThreatEntitySetResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
     "DeleteThreatIntelSet":{
       "name":"DeleteThreatIntelSet",
       "http":{
@@ -296,6 +338,20 @@
       },
       "input":{"shape":"DeleteThreatIntelSetRequest"},
       "output":{"shape":"DeleteThreatIntelSetResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
+    "DeleteTrustedEntitySet":{
+      "name":"DeleteTrustedEntitySet",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/detector/{detectorId}/trustedentityset/{trustedEntitySetId}",
+        "responseCode":200
+      },
+      "input":{"shape":"DeleteTrustedEntitySetRequest"},
+      "output":{"shape":"DeleteTrustedEntitySetResponse"},
       "errors":[
         {"shape":"BadRequestException"},
         {"shape":"InternalServerErrorException"}
@@ -543,6 +599,21 @@
         {"shape":"ResourceNotFoundException"}
       ]
     },
+    "GetMalwareScan":{
+      "name":"GetMalwareScan",
+      "http":{
+        "method":"GET",
+        "requestUri":"/malware-scan/{scanId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetMalwareScanRequest"},
+      "output":{"shape":"GetMalwareScanResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"ResourceNotFoundException"}
+      ]
+    },
     "GetMalwareScanSettings":{
       "name":"GetMalwareScanSettings",
       "http":{
@@ -628,6 +699,20 @@
         {"shape":"InternalServerErrorException"}
       ]
     },
+    "GetThreatEntitySet":{
+      "name":"GetThreatEntitySet",
+      "http":{
+        "method":"GET",
+        "requestUri":"/detector/{detectorId}/threatentityset/{threatEntitySetId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetThreatEntitySetRequest"},
+      "output":{"shape":"GetThreatEntitySetResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
     "GetThreatIntelSet":{
       "name":"GetThreatIntelSet",
       "http":{
@@ -637,6 +722,20 @@
       },
       "input":{"shape":"GetThreatIntelSetRequest"},
       "output":{"shape":"GetThreatIntelSetResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
+    "GetTrustedEntitySet":{
+      "name":"GetTrustedEntitySet",
+      "http":{
+        "method":"GET",
+        "requestUri":"/detector/{detectorId}/trustedentityset/{trustedEntitySetId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetTrustedEntitySetRequest"},
+      "output":{"shape":"GetTrustedEntitySetResponse"},
       "errors":[
         {"shape":"BadRequestException"},
         {"shape":"InternalServerErrorException"}
@@ -769,6 +868,20 @@
         {"shape":"InternalServerErrorException"}
       ]
     },
+    "ListMalwareScans":{
+      "name":"ListMalwareScans",
+      "http":{
+        "method":"POST",
+        "requestUri":"/malware-scan",
+        "responseCode":200
+      },
+      "input":{"shape":"ListMalwareScansRequest"},
+      "output":{"shape":"ListMalwareScansResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
     "ListMembers":{
       "name":"ListMembers",
       "http":{
@@ -826,6 +939,20 @@
         {"shape":"InternalServerErrorException"}
       ]
     },
+    "ListThreatEntitySets":{
+      "name":"ListThreatEntitySets",
+      "http":{
+        "method":"GET",
+        "requestUri":"/detector/{detectorId}/threatentityset",
+        "responseCode":200
+      },
+      "input":{"shape":"ListThreatEntitySetsRequest"},
+      "output":{"shape":"ListThreatEntitySetsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
     "ListThreatIntelSets":{
       "name":"ListThreatIntelSets",
       "http":{
@@ -837,6 +964,35 @@
       "output":{"shape":"ListThreatIntelSetsResponse"},
       "errors":[
         {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
+    "ListTrustedEntitySets":{
+      "name":"ListTrustedEntitySets",
+      "http":{
+        "method":"GET",
+        "requestUri":"/detector/{detectorId}/trustedentityset",
+        "responseCode":200
+      },
+      "input":{"shape":"ListTrustedEntitySetsRequest"},
+      "output":{"shape":"ListTrustedEntitySetsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
+    "SendObjectMalwareScan":{
+      "name":"SendObjectMalwareScan",
+      "http":{
+        "method":"POST",
+        "requestUri":"/object-malware-scan/send",
+        "responseCode":200
+      },
+      "input":{"shape":"SendObjectMalwareScanRequest"},
+      "output":{"shape":"SendObjectMalwareScanResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerErrorException"}
       ]
     },
@@ -1055,6 +1211,20 @@
         {"shape":"InternalServerErrorException"}
       ]
     },
+    "UpdateThreatEntitySet":{
+      "name":"UpdateThreatEntitySet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/detector/{detectorId}/threatentityset/{threatEntitySetId}",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateThreatEntitySetRequest"},
+      "output":{"shape":"UpdateThreatEntitySetResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
     "UpdateThreatIntelSet":{
       "name":"UpdateThreatIntelSet",
       "http":{
@@ -1068,6 +1238,20 @@
         {"shape":"BadRequestException"},
         {"shape":"InternalServerErrorException"},
         {"shape":"AccessDeniedException"}
+      ]
+    },
+    "UpdateTrustedEntitySet":{
+      "name":"UpdateTrustedEntitySet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/detector/{detectorId}/trustedentityset/{trustedEntitySetId}",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateTrustedEntitySetRequest"},
+      "output":{"shape":"UpdateTrustedEntitySetResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
       ]
     }
   },
@@ -1390,6 +1574,19 @@
       "type":"list",
       "member":{"shape":"Actor"},
       "max":400
+    },
+    "AdditionalInfo":{
+      "type":"structure",
+      "members":{
+        "VersionId":{
+          "shape":"NonEmptyString",
+          "locationName":"versionId"
+        },
+        "DeviceName":{
+          "shape":"NonEmptyString",
+          "locationName":"deviceName"
+        }
+      }
     },
     "AdditionalSequenceTypes":{
       "type":"list",
@@ -2401,6 +2598,10 @@
           "shape":"ClientToken",
           "idempotencyToken":true,
           "locationName":"clientToken"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "locationName":"tags"
         }
       }
     },
@@ -2445,6 +2646,62 @@
     "CreateSampleFindingsResponse":{
       "type":"structure",
       "members":{}
+    },
+    "CreateThreatEntitySetRequest":{
+      "type":"structure",
+      "required":[
+        "DetectorId",
+        "Name",
+        "Format",
+        "Location",
+        "Activate"
+      ],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"detectorId"
+        },
+        "Name":{
+          "shape":"Name",
+          "locationName":"name"
+        },
+        "Format":{
+          "shape":"ThreatEntitySetFormat",
+          "locationName":"format"
+        },
+        "Location":{
+          "shape":"Location",
+          "locationName":"location"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"ExpectedBucketOwner",
+          "locationName":"expectedBucketOwner"
+        },
+        "Activate":{
+          "shape":"Boolean",
+          "locationName":"activate"
+        },
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "locationName":"clientToken"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "locationName":"tags"
+        }
+      }
+    },
+    "CreateThreatEntitySetResponse":{
+      "type":"structure",
+      "required":["ThreatEntitySetId"],
+      "members":{
+        "ThreatEntitySetId":{
+          "shape":"String",
+          "locationName":"threatEntitySetId"
+        }
+      }
     },
     "CreateThreatIntelSetRequest":{
       "type":"structure",
@@ -2499,6 +2756,62 @@
         "ThreatIntelSetId":{
           "shape":"String",
           "locationName":"threatIntelSetId"
+        }
+      }
+    },
+    "CreateTrustedEntitySetRequest":{
+      "type":"structure",
+      "required":[
+        "DetectorId",
+        "Name",
+        "Format",
+        "Location",
+        "Activate"
+      ],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"detectorId"
+        },
+        "Name":{
+          "shape":"Name",
+          "locationName":"name"
+        },
+        "Format":{
+          "shape":"TrustedEntitySetFormat",
+          "locationName":"format"
+        },
+        "Location":{
+          "shape":"Location",
+          "locationName":"location"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"ExpectedBucketOwner",
+          "locationName":"expectedBucketOwner"
+        },
+        "Activate":{
+          "shape":"Boolean",
+          "locationName":"activate"
+        },
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "locationName":"clientToken"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "locationName":"tags"
+        }
+      }
+    },
+    "CreateTrustedEntitySetResponse":{
+      "type":"structure",
+      "required":["TrustedEntitySetId"],
+      "members":{
+        "TrustedEntitySetId":{
+          "shape":"String",
+          "locationName":"trustedEntitySetId"
         }
       }
     },
@@ -2840,6 +3153,29 @@
       "type":"structure",
       "members":{}
     },
+    "DeleteThreatEntitySetRequest":{
+      "type":"structure",
+      "required":[
+        "DetectorId",
+        "ThreatEntitySetId"
+      ],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"detectorId"
+        },
+        "ThreatEntitySetId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"threatEntitySetId"
+        }
+      }
+    },
+    "DeleteThreatEntitySetResponse":{
+      "type":"structure",
+      "members":{}
+    },
     "DeleteThreatIntelSetRequest":{
       "type":"structure",
       "required":[
@@ -2860,6 +3196,29 @@
       }
     },
     "DeleteThreatIntelSetResponse":{
+      "type":"structure",
+      "members":{}
+    },
+    "DeleteTrustedEntitySetRequest":{
+      "type":"structure",
+      "required":[
+        "DetectorId",
+        "TrustedEntitySetId"
+      ],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"detectorId"
+        },
+        "TrustedEntitySetId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"trustedEntitySetId"
+        }
+      }
+    },
+    "DeleteTrustedEntitySetResponse":{
       "type":"structure",
       "members":{}
     },
@@ -3007,6 +3366,10 @@
         "DestinationProperties":{
           "shape":"DestinationProperties",
           "locationName":"destinationProperties"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "locationName":"tags"
         }
       }
     },
@@ -3067,6 +3430,13 @@
           "locationName":"sequence"
         }
       }
+    },
+    "DetectionSource":{
+      "type":"string",
+      "enum":[
+        "AMAZON",
+        "BITDEFENDER"
+      ]
     },
     "DetectorAdditionalConfiguration":{
       "type":"structure",
@@ -3293,6 +3663,10 @@
         "DomainWithSuffix":{
           "shape":"String",
           "locationName":"domainWithSuffix"
+        },
+        "VpcOwnerAccountId":{
+          "shape":"AccountId",
+          "locationName":"vpcOwnerAccountId"
         }
       }
     },
@@ -3306,6 +3680,24 @@
       }
     },
     "Double":{"type":"double"},
+    "EbsSnapshot":{
+      "type":"structure",
+      "members":{
+        "DeviceName":{
+          "shape":"NonEmptyString",
+          "locationName":"deviceName"
+        }
+      }
+    },
+    "EbsSnapshotDetails":{
+      "type":"structure",
+      "members":{
+        "SnapshotArn":{
+          "shape":"String",
+          "locationName":"snapshotArn"
+        }
+      }
+    },
     "EbsSnapshotPreservation":{
       "type":"string",
       "enum":[
@@ -3369,6 +3761,15 @@
         "Reason":{
           "shape":"String",
           "locationName":"reason"
+        }
+      }
+    },
+    "Ec2ImageDetails":{
+      "type":"structure",
+      "members":{
+        "ImageArn":{
+          "shape":"String",
+          "locationName":"imageArn"
         }
       }
     },
@@ -3598,7 +3999,6 @@
       "type":"string",
       "max":64,
       "min":6,
-      "pattern":"See rules in parameter description",
       "sensitive":true
     },
     "EnableOrganizationAdminAccountRequest":{
@@ -3636,6 +4036,12 @@
           "locationName":"threatIntelligenceDetails"
         }
       }
+    },
+    "ExpectedBucketOwner":{
+      "type":"string",
+      "max":12,
+      "min":12,
+      "pattern":"^[0-9]+$"
     },
     "FargateDetails":{
       "type":"structure",
@@ -4361,6 +4767,127 @@
         }
       }
     },
+    "GetMalwareScanRequest":{
+      "type":"structure",
+      "required":["ScanId"],
+      "members":{
+        "ScanId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"scanId"
+        }
+      }
+    },
+    "GetMalwareScanResponse":{
+      "type":"structure",
+      "members":{
+        "ScanId":{
+          "shape":"NonEmptyString",
+          "locationName":"scanId"
+        },
+        "DetectorId":{
+          "shape":"DetectorId",
+          "locationName":"detectorId"
+        },
+        "AdminDetectorId":{
+          "shape":"DetectorId",
+          "locationName":"adminDetectorId"
+        },
+        "ResourceArn":{
+          "shape":"NonEmptyString",
+          "locationName":"resourceArn"
+        },
+        "ResourceType":{
+          "shape":"MalwareProtectionResourceType",
+          "locationName":"resourceType"
+        },
+        "ScannedResourcesCount":{
+          "shape":"NonNegativeInteger",
+          "locationName":"scannedResourcesCount"
+        },
+        "SkippedResourcesCount":{
+          "shape":"NonNegativeInteger",
+          "locationName":"skippedResourcesCount"
+        },
+        "FailedResourcesCount":{
+          "shape":"NonNegativeInteger",
+          "locationName":"failedResourcesCount"
+        },
+        "ScannedResources":{
+          "shape":"ScannedResources",
+          "locationName":"scannedResources"
+        },
+        "ScanConfiguration":{
+          "shape":"ScanConfiguration",
+          "locationName":"scanConfiguration"
+        },
+        "ScanCategory":{
+          "shape":"ScanCategory",
+          "locationName":"scanCategory"
+        },
+        "ScanStatus":{
+          "shape":"MalwareProtectionScanStatus",
+          "locationName":"scanStatus"
+        },
+        "ScanStatusReason":{
+          "shape":"ScanStatusReason",
+          "locationName":"scanStatusReason"
+        },
+        "ScanType":{
+          "shape":"MalwareProtectionScanType",
+          "locationName":"scanType"
+        },
+        "ScanStartedAt":{
+          "shape":"Timestamp",
+          "locationName":"scanStartedAt"
+        },
+        "ScanCompletedAt":{
+          "shape":"Timestamp",
+          "locationName":"scanCompletedAt"
+        },
+        "ScanResultDetails":{
+          "shape":"GetMalwareScanResultDetails",
+          "locationName":"scanResultDetails"
+        }
+      }
+    },
+    "GetMalwareScanResultDetails":{
+      "type":"structure",
+      "members":{
+        "ScanResultStatus":{
+          "shape":"ScanResultStatus",
+          "locationName":"scanResultStatus"
+        },
+        "SkippedFileCount":{
+          "shape":"PositiveLong",
+          "locationName":"skippedFileCount"
+        },
+        "FailedFileCount":{
+          "shape":"PositiveLong",
+          "locationName":"failedFileCount"
+        },
+        "ThreatFoundFileCount":{
+          "shape":"PositiveLong",
+          "locationName":"threatFoundFileCount"
+        },
+        "TotalFileCount":{
+          "shape":"PositiveLong",
+          "locationName":"totalFileCount"
+        },
+        "TotalBytes":{
+          "shape":"PositiveLong",
+          "locationName":"totalBytes"
+        },
+        "UniqueThreatCount":{
+          "shape":"PositiveLong",
+          "locationName":"uniqueThreatCount"
+        },
+        "Threats":{
+          "shape":"ScanResultThreats",
+          "locationName":"threats"
+        }
+      }
+    },
     "GetMalwareScanSettingsRequest":{
       "type":"structure",
       "required":["DetectorId"],
@@ -4517,6 +5044,72 @@
         }
       }
     },
+    "GetThreatEntitySetRequest":{
+      "type":"structure",
+      "required":[
+        "DetectorId",
+        "ThreatEntitySetId"
+      ],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"detectorId"
+        },
+        "ThreatEntitySetId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"threatEntitySetId"
+        }
+      }
+    },
+    "GetThreatEntitySetResponse":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Format",
+        "Location",
+        "Status"
+      ],
+      "members":{
+        "Name":{
+          "shape":"Name",
+          "locationName":"name"
+        },
+        "Format":{
+          "shape":"ThreatEntitySetFormat",
+          "locationName":"format"
+        },
+        "Location":{
+          "shape":"Location",
+          "locationName":"location"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"ExpectedBucketOwner",
+          "locationName":"expectedBucketOwner"
+        },
+        "Status":{
+          "shape":"ThreatEntitySetStatus",
+          "locationName":"status"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "locationName":"tags"
+        },
+        "CreatedAt":{
+          "shape":"Timestamp",
+          "locationName":"createdAt"
+        },
+        "UpdatedAt":{
+          "shape":"Timestamp",
+          "locationName":"updatedAt"
+        },
+        "ErrorDetails":{
+          "shape":"String",
+          "locationName":"errorDetails"
+        }
+      }
+    },
     "GetThreatIntelSetRequest":{
       "type":"structure",
       "required":[
@@ -4568,6 +5161,72 @@
         "ExpectedBucketOwner":{
           "shape":"AccountId",
           "locationName":"expectedBucketOwner"
+        }
+      }
+    },
+    "GetTrustedEntitySetRequest":{
+      "type":"structure",
+      "required":[
+        "DetectorId",
+        "TrustedEntitySetId"
+      ],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"detectorId"
+        },
+        "TrustedEntitySetId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"trustedEntitySetId"
+        }
+      }
+    },
+    "GetTrustedEntitySetResponse":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Format",
+        "Location",
+        "Status"
+      ],
+      "members":{
+        "Name":{
+          "shape":"Name",
+          "locationName":"name"
+        },
+        "Format":{
+          "shape":"TrustedEntitySetFormat",
+          "locationName":"format"
+        },
+        "Location":{
+          "shape":"Location",
+          "locationName":"location"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"ExpectedBucketOwner",
+          "locationName":"expectedBucketOwner"
+        },
+        "Status":{
+          "shape":"TrustedEntitySetStatus",
+          "locationName":"status"
+        },
+        "Tags":{
+          "shape":"TagMap",
+          "locationName":"tags"
+        },
+        "CreatedAt":{
+          "shape":"Timestamp",
+          "locationName":"createdAt"
+        },
+        "UpdatedAt":{
+          "shape":"Timestamp",
+          "locationName":"updatedAt"
+        },
+        "ErrorDetails":{
+          "shape":"String",
+          "locationName":"errorDetails"
         }
       }
     },
@@ -4706,6 +5365,16 @@
         "Groups":{
           "shape":"Groups",
           "locationName":"groups"
+        }
+      }
+    },
+    "IncrementalScanDetails":{
+      "type":"structure",
+      "required":["BaselineResourceArn"],
+      "members":{
+        "BaselineResourceArn":{
+          "shape":"NonEmptyString",
+          "locationName":"baselineResourceArn"
         }
       }
     },
@@ -4956,6 +5625,31 @@
       "member":{"shape":"String"},
       "max":50,
       "min":0
+    },
+    "ItemDetails":{
+      "type":"structure",
+      "members":{
+        "ResourceArn":{
+          "shape":"NonEmptyString",
+          "locationName":"resourceArn"
+        },
+        "ItemPath":{
+          "shape":"NonEmptyString",
+          "locationName":"itemPath"
+        },
+        "Hash":{
+          "shape":"String",
+          "locationName":"hash"
+        },
+        "AdditionalInfo":{
+          "shape":"AdditionalInfo",
+          "locationName":"additionalInfo"
+        }
+      }
+    },
+    "ItemDetailsList":{
+      "type":"list",
+      "member":{"shape":"ItemDetails"}
     },
     "ItemPath":{
       "type":"structure",
@@ -5566,6 +6260,84 @@
         }
       }
     },
+    "ListMalwareScansCriterionKey":{
+      "type":"string",
+      "enum":[
+        "RESOURCE_ARN",
+        "SCAN_ID",
+        "ACCOUNT_ID",
+        "GUARDDUTY_FINDING_ID",
+        "RESOURCE_TYPE",
+        "SCAN_START_TIME",
+        "SCAN_STATUS",
+        "SCAN_TYPE"
+      ]
+    },
+    "ListMalwareScansFilterCriteria":{
+      "type":"structure",
+      "members":{
+        "ListMalwareScansFilterCriterion":{
+          "shape":"ListMalwareScansFilterCriterionList",
+          "locationName":"filterCriterion"
+        }
+      }
+    },
+    "ListMalwareScansFilterCriterion":{
+      "type":"structure",
+      "members":{
+        "ListMalwareScansCriterionKey":{
+          "shape":"ListMalwareScansCriterionKey",
+          "locationName":"criterionKey"
+        },
+        "FilterCondition":{
+          "shape":"FilterCondition",
+          "locationName":"filterCondition"
+        }
+      }
+    },
+    "ListMalwareScansFilterCriterionList":{
+      "type":"list",
+      "member":{"shape":"ListMalwareScansFilterCriterion"},
+      "max":1,
+      "min":0
+    },
+    "ListMalwareScansRequest":{
+      "type":"structure",
+      "members":{
+        "MaxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"String",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "FilterCriteria":{
+          "shape":"ListMalwareScansFilterCriteria",
+          "locationName":"filterCriteria"
+        },
+        "SortCriteria":{
+          "shape":"SortCriteria",
+          "locationName":"sortCriteria"
+        }
+      }
+    },
+    "ListMalwareScansResponse":{
+      "type":"structure",
+      "required":["Scans"],
+      "members":{
+        "Scans":{
+          "shape":"MalwareScans",
+          "locationName":"scans"
+        },
+        "NextToken":{
+          "shape":"String",
+          "locationName":"nextToken"
+        }
+      }
+    },
     "ListMembersRequest":{
       "type":"structure",
       "required":["DetectorId"],
@@ -5688,6 +6460,41 @@
         }
       }
     },
+    "ListThreatEntitySetsRequest":{
+      "type":"structure",
+      "required":["DetectorId"],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"detectorId"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"String",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListThreatEntitySetsResponse":{
+      "type":"structure",
+      "required":["ThreatEntitySetIds"],
+      "members":{
+        "ThreatEntitySetIds":{
+          "shape":"ThreatEntitySetIds",
+          "locationName":"threatEntitySetIds"
+        },
+        "NextToken":{
+          "shape":"String",
+          "locationName":"nextToken"
+        }
+      }
+    },
     "ListThreatIntelSetsRequest":{
       "type":"structure",
       "required":["DetectorId"],
@@ -5716,6 +6523,41 @@
         "ThreatIntelSetIds":{
           "shape":"ThreatIntelSetIds",
           "locationName":"threatIntelSetIds"
+        },
+        "NextToken":{
+          "shape":"String",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListTrustedEntitySetsRequest":{
+      "type":"structure",
+      "required":["DetectorId"],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"detectorId"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"String",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListTrustedEntitySetsResponse":{
+      "type":"structure",
+      "required":["TrustedEntitySetIds"],
+      "members":{
+        "TrustedEntitySetIds":{
+          "shape":"TrustedEntitySetIds",
+          "locationName":"trustedEntitySetIds"
         },
         "NextToken":{
           "shape":"String",
@@ -5812,6 +6654,19 @@
         }
       }
     },
+    "MalwareProtectionFindingsScanConfiguration":{
+      "type":"structure",
+      "members":{
+        "TriggerType":{
+          "shape":"TriggerType",
+          "locationName":"triggerType"
+        },
+        "IncrementalScanDetails":{
+          "shape":"IncrementalScanDetails",
+          "locationName":"incrementalScanDetails"
+        }
+      }
+    },
     "MalwareProtectionPlanActions":{
       "type":"structure",
       "members":{
@@ -5883,14 +6738,106 @@
       "type":"list",
       "member":{"shape":"MalwareProtectionPlanSummary"}
     },
+    "MalwareProtectionResourceType":{
+      "type":"string",
+      "enum":[
+        "EBS_RECOVERY_POINT",
+        "EBS_SNAPSHOT",
+        "EBS_VOLUME",
+        "EC2_AMI",
+        "EC2_INSTANCE",
+        "EC2_RECOVERY_POINT",
+        "S3_RECOVERY_POINT",
+        "S3_BUCKET"
+      ]
+    },
+    "MalwareProtectionScanStatus":{
+      "type":"string",
+      "enum":[
+        "RUNNING",
+        "COMPLETED",
+        "COMPLETED_WITH_ISSUES",
+        "FAILED",
+        "SKIPPED"
+      ]
+    },
+    "MalwareProtectionScanType":{
+      "type":"string",
+      "enum":[
+        "BACKUP_INITIATED",
+        "ON_DEMAND",
+        "GUARDDUTY_INITIATED"
+      ]
+    },
+    "MalwareScan":{
+      "type":"structure",
+      "members":{
+        "ResourceArn":{
+          "shape":"NonEmptyString",
+          "locationName":"resourceArn"
+        },
+        "ResourceType":{
+          "shape":"MalwareProtectionResourceType",
+          "locationName":"resourceType"
+        },
+        "ScanId":{
+          "shape":"NonEmptyString",
+          "locationName":"scanId"
+        },
+        "ScanStatus":{
+          "shape":"MalwareProtectionScanStatus",
+          "locationName":"scanStatus"
+        },
+        "ScanResultStatus":{
+          "shape":"ScanResultStatus",
+          "locationName":"scanResultStatus"
+        },
+        "ScanType":{
+          "shape":"MalwareProtectionScanType",
+          "locationName":"scanType"
+        },
+        "ScanStartedAt":{
+          "shape":"Timestamp",
+          "locationName":"scanStartedAt"
+        },
+        "ScanCompletedAt":{
+          "shape":"Timestamp",
+          "locationName":"scanCompletedAt"
+        }
+      }
+    },
     "MalwareScanDetails":{
       "type":"structure",
       "members":{
         "Threats":{
           "shape":"Threats",
           "locationName":"threats"
+        },
+        "ScanId":{
+          "shape":"String",
+          "locationName":"scanId"
+        },
+        "ScanType":{
+          "shape":"MalwareProtectionScanType",
+          "locationName":"scanType"
+        },
+        "ScanCategory":{
+          "shape":"ScanCategory",
+          "locationName":"scanCategory"
+        },
+        "ScanConfiguration":{
+          "shape":"MalwareProtectionFindingsScanConfiguration",
+          "locationName":"scanConfiguration"
+        },
+        "UniqueThreatCount":{
+          "shape":"Integer",
+          "locationName":"uniqueThreatCount"
         }
       }
+    },
+    "MalwareScans":{
+      "type":"list",
+      "member":{"shape":"MalwareScan"}
     },
     "ManagementType":{
       "type":"string",
@@ -6288,6 +7235,10 @@
       "type":"string",
       "max":200,
       "min":1
+    },
+    "NonNegativeInteger":{
+      "type":"integer",
+      "min":0
     },
     "NotEquals":{
       "type":"list",
@@ -7005,6 +7956,29 @@
         "LoginAttributes":{"shape":"LoginAttributes"}
       }
     },
+    "RecoveryPoint":{
+      "type":"structure",
+      "required":["BackupVaultName"],
+      "members":{
+        "BackupVaultName":{
+          "shape":"String",
+          "locationName":"backupVaultName"
+        }
+      }
+    },
+    "RecoveryPointDetails":{
+      "type":"structure",
+      "members":{
+        "RecoveryPointArn":{
+          "shape":"String",
+          "locationName":"recoveryPointArn"
+        },
+        "BackupVaultName":{
+          "shape":"String",
+          "locationName":"backupVaultName"
+        }
+      }
+    },
     "RemoteAccountDetails":{
       "type":"structure",
       "members":{
@@ -7114,12 +8088,24 @@
         "LambdaDetails":{
           "shape":"LambdaDetails",
           "locationName":"lambdaDetails"
+        },
+        "EbsSnapshotDetails":{
+          "shape":"EbsSnapshotDetails",
+          "locationName":"ebsSnapshotDetails"
+        },
+        "Ec2ImageDetails":{
+          "shape":"Ec2ImageDetails",
+          "locationName":"ec2ImageDetails"
+        },
+        "RecoveryPointDetails":{
+          "shape":"RecoveryPointDetails",
+          "locationName":"recoveryPointDetails"
         }
       }
     },
     "ResourceArn":{
       "type":"string",
-      "pattern":"^arn:[A-Za-z-]+:[A-Za-z0-9]+:[A-Za-z0-9-]+:\\d+:(([A-Za-z0-9-]+)[:\\/])?[A-Za-z0-9-]*$"
+      "pattern":"^arn:[A-Za-z-]+:[A-Za-z0-9]+:[A-Za-z0-9-]+:\\d+:(([A-Za-z0-9-]+)[:\\/])?[A-Za-z0-9:-]*$"
     },
     "ResourceData":{
       "type":"structure",
@@ -7548,6 +8534,23 @@
       "type":"list",
       "member":{"shape":"S3ObjectDetail"}
     },
+    "S3ObjectForSendObjectMalwareScan":{
+      "type":"structure",
+      "members":{
+        "Bucket":{
+          "shape":"String",
+          "locationName":"bucket"
+        },
+        "Key":{
+          "shape":"String",
+          "locationName":"key"
+        },
+        "VersionId":{
+          "shape":"String",
+          "locationName":"versionId"
+        }
+      }
+    },
     "S3ObjectUids":{
       "type":"list",
       "member":{"shape":"String"}
@@ -7617,6 +8620,13 @@
         }
       }
     },
+    "ScanCategory":{
+      "type":"string",
+      "enum":[
+        "FULL_SCAN",
+        "INCREMENTAL_SCAN"
+      ]
+    },
     "ScanCondition":{
       "type":"structure",
       "required":["MapEquals"],
@@ -7638,6 +8648,36 @@
         "Value":{
           "shape":"TagValue",
           "locationName":"value"
+        }
+      }
+    },
+    "ScanConfiguration":{
+      "type":"structure",
+      "members":{
+        "Role":{
+          "shape":"NonEmptyString",
+          "locationName":"role"
+        },
+        "TriggerDetails":{
+          "shape":"TriggerDetails",
+          "locationName":"triggerDetails"
+        },
+        "IncrementalScanDetails":{
+          "shape":"IncrementalScanDetails",
+          "locationName":"incrementalScanDetails"
+        },
+        "RecoveryPoint":{
+          "shape":"ScanConfigurationRecoveryPoint",
+          "locationName":"recoveryPoint"
+        }
+      }
+    },
+    "ScanConfigurationRecoveryPoint":{
+      "type":"structure",
+      "members":{
+        "BackupVaultName":{
+          "shape":"NonEmptyString",
+          "locationName":"backupVaultName"
         }
       }
     },
@@ -7739,6 +8779,42 @@
         }
       }
     },
+    "ScanResultStatus":{
+      "type":"string",
+      "enum":[
+        "NO_THREATS_FOUND",
+        "THREATS_FOUND"
+      ]
+    },
+    "ScanResultThreat":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"NonEmptyString",
+          "locationName":"name"
+        },
+        "Source":{
+          "shape":"DetectionSource",
+          "locationName":"source"
+        },
+        "Count":{
+          "shape":"PositiveLong",
+          "locationName":"count"
+        },
+        "Hash":{
+          "shape":"NonEmptyString",
+          "locationName":"hash"
+        },
+        "ItemDetails":{
+          "shape":"ItemDetailsList",
+          "locationName":"itemDetails"
+        }
+      }
+    },
+    "ScanResultThreats":{
+      "type":"list",
+      "member":{"shape":"ScanResultThreat"}
+    },
     "ScanStatus":{
       "type":"string",
       "enum":[
@@ -7746,6 +8822,27 @@
         "COMPLETED",
         "FAILED",
         "SKIPPED"
+      ]
+    },
+    "ScanStatusReason":{
+      "type":"string",
+      "enum":[
+        "ACCESS_DENIED",
+        "RESOURCE_NOT_FOUND",
+        "SNAPSHOT_SIZE_LIMIT_EXCEEDED",
+        "RESOURCE_UNAVAILABLE",
+        "INCONSISTENT_SOURCE",
+        "INCREMENTAL_NO_DIFFERENCE",
+        "NO_EBS_VOLUMES_FOUND",
+        "UNSUPPORTED_PRODUCT_CODE_TYPE",
+        "AMI_SNAPSHOT_LIMIT_EXCEEDED",
+        "UNRELATED_RESOURCES",
+        "BASE_RESOURCE_NOT_SCANNED",
+        "BASE_CREATED_AFTER_TARGET",
+        "UNSUPPORTED_FOR_INCREMENTAL",
+        "UNSUPPORTED_AMI",
+        "UNSUPPORTED_SNAPSHOT",
+        "UNSUPPORTED_COMPOSITE_RECOVERY_POINT"
       ]
     },
     "ScanThreatName":{
@@ -7797,6 +8894,48 @@
         }
       }
     },
+    "ScannedResource":{
+      "type":"structure",
+      "members":{
+        "ScannedResourceArn":{
+          "shape":"NonEmptyString",
+          "locationName":"scannedResourceArn"
+        },
+        "ScannedResourceType":{
+          "shape":"MalwareProtectionResourceType",
+          "locationName":"scannedResourceType"
+        },
+        "ScannedResourceStatus":{
+          "shape":"MalwareProtectionScanStatus",
+          "locationName":"scannedResourceStatus"
+        },
+        "ScanStatusReason":{
+          "shape":"ScanStatusReason",
+          "locationName":"scanStatusReason"
+        },
+        "ResourceDetails":{
+          "shape":"ScannedResourceDetails",
+          "locationName":"resourceDetails"
+        }
+      }
+    },
+    "ScannedResourceDetails":{
+      "type":"structure",
+      "members":{
+        "EbsVolume":{
+          "shape":"VolumeDetail",
+          "locationName":"ebsVolume"
+        },
+        "EbsSnapshot":{
+          "shape":"EbsSnapshot",
+          "locationName":"ebsSnapshot"
+        }
+      }
+    },
+    "ScannedResources":{
+      "type":"list",
+      "member":{"shape":"ScannedResource"}
+    },
     "Scans":{
       "type":"list",
       "member":{"shape":"Scan"}
@@ -7830,6 +8969,19 @@
     "SecurityGroups":{
       "type":"list",
       "member":{"shape":"SecurityGroup"}
+    },
+    "SendObjectMalwareScanRequest":{
+      "type":"structure",
+      "members":{
+        "S3Object":{
+          "shape":"S3ObjectForSendObjectMalwareScan",
+          "locationName":"s3Object"
+        }
+      }
+    },
+    "SendObjectMalwareScanResponse":{
+      "type":"structure",
+      "members":{}
     },
     "SensitiveString":{
       "type":"string",
@@ -8119,6 +9271,24 @@
       "type":"list",
       "member":{"shape":"String"}
     },
+    "StartMalwareScanConfiguration":{
+      "type":"structure",
+      "required":["Role"],
+      "members":{
+        "Role":{
+          "shape":"NonEmptyString",
+          "locationName":"role"
+        },
+        "IncrementalScanDetails":{
+          "shape":"IncrementalScanDetails",
+          "locationName":"incrementalScanDetails"
+        },
+        "RecoveryPoint":{
+          "shape":"RecoveryPoint",
+          "locationName":"recoveryPoint"
+        }
+      }
+    },
     "StartMalwareScanRequest":{
       "type":"structure",
       "required":["ResourceArn"],
@@ -8126,6 +9296,15 @@
         "ResourceArn":{
           "shape":"ResourceArn",
           "locationName":"resourceArn"
+        },
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "locationName":"clientToken"
+        },
+        "ScanConfiguration":{
+          "shape":"StartMalwareScanConfiguration",
+          "locationName":"scanConfiguration"
         }
       }
     },
@@ -8275,6 +9454,18 @@
         "ItemPaths":{
           "shape":"ItemPaths",
           "locationName":"itemPaths"
+        },
+        "Count":{
+          "shape":"Long",
+          "locationName":"count"
+        },
+        "Hash":{
+          "shape":"String",
+          "locationName":"hash"
+        },
+        "ItemDetails":{
+          "shape":"ItemDetailsList",
+          "locationName":"itemDetails"
         }
       }
     },
@@ -8298,6 +9489,39 @@
           "locationName":"threatNames"
         }
       }
+    },
+    "ThreatEntitySetFormat":{
+      "type":"string",
+      "enum":[
+        "TXT",
+        "STIX",
+        "OTX_CSV",
+        "ALIEN_VAULT",
+        "PROOF_POINT",
+        "FIRE_EYE"
+      ],
+      "max":300,
+      "min":1
+    },
+    "ThreatEntitySetIds":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "max":50,
+      "min":0
+    },
+    "ThreatEntitySetStatus":{
+      "type":"string",
+      "enum":[
+        "INACTIVE",
+        "ACTIVATING",
+        "ACTIVE",
+        "DEACTIVATING",
+        "ERROR",
+        "DELETE_PENDING",
+        "DELETED"
+      ],
+      "max":300,
+      "min":1
     },
     "ThreatIntelSetFormat":{
       "type":"string",
@@ -8394,8 +9618,52 @@
         "Description":{
           "shape":"NonEmptyString",
           "locationName":"description"
+        },
+        "TriggerType":{
+          "shape":"TriggerType",
+          "locationName":"triggerType"
         }
       }
+    },
+    "TriggerType":{
+      "type":"string",
+      "enum":[
+        "BACKUP",
+        "GUARDDUTY"
+      ]
+    },
+    "TrustedEntitySetFormat":{
+      "type":"string",
+      "enum":[
+        "TXT",
+        "STIX",
+        "OTX_CSV",
+        "ALIEN_VAULT",
+        "PROOF_POINT",
+        "FIRE_EYE"
+      ],
+      "max":300,
+      "min":1
+    },
+    "TrustedEntitySetIds":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "max":50,
+      "min":0
+    },
+    "TrustedEntitySetStatus":{
+      "type":"string",
+      "enum":[
+        "INACTIVE",
+        "ACTIVATING",
+        "ACTIVE",
+        "DEACTIVATING",
+        "ERROR",
+        "DELETE_PENDING",
+        "DELETED"
+      ],
+      "max":300,
+      "min":1
     },
     "UnarchiveFindingsRequest":{
       "type":"structure",
@@ -8574,7 +9842,7 @@
           "locationName":"feedback"
         },
         "Comments":{
-          "shape":"String",
+          "shape":"SensitiveString",
           "locationName":"comments"
         }
       }
@@ -8786,6 +10054,45 @@
         }
       }
     },
+    "UpdateThreatEntitySetRequest":{
+      "type":"structure",
+      "required":[
+        "DetectorId",
+        "ThreatEntitySetId"
+      ],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"detectorId"
+        },
+        "ThreatEntitySetId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"threatEntitySetId"
+        },
+        "Name":{
+          "shape":"Name",
+          "locationName":"name"
+        },
+        "Location":{
+          "shape":"Location",
+          "locationName":"location"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"ExpectedBucketOwner",
+          "locationName":"expectedBucketOwner"
+        },
+        "Activate":{
+          "shape":"Boolean",
+          "locationName":"activate"
+        }
+      }
+    },
+    "UpdateThreatEntitySetResponse":{
+      "type":"structure",
+      "members":{}
+    },
     "UpdateThreatIntelSetRequest":{
       "type":"structure",
       "required":[
@@ -8822,6 +10129,45 @@
       }
     },
     "UpdateThreatIntelSetResponse":{
+      "type":"structure",
+      "members":{}
+    },
+    "UpdateTrustedEntitySetRequest":{
+      "type":"structure",
+      "required":[
+        "DetectorId",
+        "TrustedEntitySetId"
+      ],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"detectorId"
+        },
+        "TrustedEntitySetId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"trustedEntitySetId"
+        },
+        "Name":{
+          "shape":"Name",
+          "locationName":"name"
+        },
+        "Location":{
+          "shape":"Location",
+          "locationName":"location"
+        },
+        "ExpectedBucketOwner":{
+          "shape":"ExpectedBucketOwner",
+          "locationName":"expectedBucketOwner"
+        },
+        "Activate":{
+          "shape":"Boolean",
+          "locationName":"activate"
+        }
+      }
+    },
+    "UpdateTrustedEntitySetResponse":{
       "type":"structure",
       "members":{}
     },

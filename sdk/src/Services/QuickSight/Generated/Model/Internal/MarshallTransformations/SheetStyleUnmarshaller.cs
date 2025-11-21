@@ -56,6 +56,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("Background", targetDepth))
+                {
+                    var unmarshaller = SheetBackgroundStyleUnmarshaller.Instance;
+                    unmarshalledObject.Background = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Tile", targetDepth))
                 {
                     var unmarshaller = TileStyleUnmarshaller.Instance;

@@ -100,6 +100,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.LastExecutionDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ScheduledRunsPreview", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ScheduledPlanExecutionMember, ScheduledPlanExecutionMemberUnmarshaller>(ScheduledPlanExecutionMemberUnmarshaller.Instance);
+                    response.ScheduledRunsPreview = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("VersionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

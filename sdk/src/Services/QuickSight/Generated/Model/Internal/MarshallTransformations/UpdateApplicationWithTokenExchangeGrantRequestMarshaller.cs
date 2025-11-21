@@ -65,6 +65,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetAwsAccountId())
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
+            if (string.IsNullOrEmpty(publicRequest.Namespace))
+                throw new AmazonQuickSightException("Request object does not have required field Namespace set");
             
             if (publicRequest.IsSetNamespace())
                 request.Parameters.Add("namespace", StringUtils.FromString(publicRequest.Namespace));

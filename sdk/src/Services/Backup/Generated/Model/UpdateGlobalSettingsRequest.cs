@@ -42,8 +42,24 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property GlobalSettings. 
         /// <para>
+        /// Inputs can include:
+        /// </para>
+        ///  
+        /// <para>
         /// A value for <c>isCrossAccountBackupEnabled</c> and a Region. Example: <c>update-global-settings
         /// --global-settings isCrossAccountBackupEnabled=false --region us-west-2</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A value for Multi-party approval, styled as "Mpa": <c>isMpaEnabled</c>. Values can
+        /// be true or false. Example: <c>update-global-settings --global-settings isMpaEnabled=false
+        /// --region us-west-2</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A value for Backup Service-Linked Role creation, styled as<c>isDelegatedAdministratorEnabled</c>.
+        /// Values can be true or false. Example: <c>update-global-settings --global-settings
+        /// isDelegatedAdministratorEnabled=false --region us-west-2</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

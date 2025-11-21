@@ -6,7 +6,6 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="ServiceClientGenerator.DefaultConfiguration" #>
 <#@ import namespace="System.Text.RegularExpressions" #>
-
 <#+	
     // An object that contains all the information about a service
 	public ServiceConfiguration Config { get; set; }
@@ -606,6 +605,32 @@ foreach (var member in docMembers)
 
 <#+
             }
+        }
+    }
+#>
+<#+
+	protected void WriteInjectXmlUnmarshallCode(Member member, int level)
+	{
+		if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var modifier))
+		{
+			foreach (var code in modifier.InjectXmlUnmarshallCode)
+			{
+#>
+<#=new string(' ', level * 4)#><#=code#>
+<#+
+			}
+		}
+	}
+#>
+<#+
+    // writes injected xml code. Call this when you know that the property modifier exists.
+    protected void WriteInjectXmlCode(HashSet<string> codeArray, int level)
+    {
+        foreach (var code in codeArray)
+        {
+#>
+<#=new string(' ', level * 4)#><#=code#>
+<#+      
         }
     }
 #>

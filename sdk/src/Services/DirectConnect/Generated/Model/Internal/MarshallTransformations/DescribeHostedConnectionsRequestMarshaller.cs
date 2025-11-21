@@ -81,6 +81,18 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ConnectionId);
             }
 
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

@@ -35,6 +35,9 @@ namespace Amazon.QConnect.Model
     public partial class AIAgentConfiguration
     {
         private AnswerRecommendationAIAgentConfiguration _answerRecommendationAIAgentConfiguration;
+        private EmailGenerativeAnswerAIAgentConfiguration _emailGenerativeAnswerAIAgentConfiguration;
+        private EmailOverviewAIAgentConfiguration _emailOverviewAIAgentConfiguration;
+        private EmailResponseAIAgentConfiguration _emailResponseAIAgentConfiguration;
         private ManualSearchAIAgentConfiguration _manualSearchAIAgentConfiguration;
         private SelfServiceAIAgentConfiguration _selfServiceAIAgentConfiguration;
 
@@ -54,6 +57,63 @@ namespace Amazon.QConnect.Model
         internal bool IsSetAnswerRecommendationAIAgentConfiguration()
         {
             return this._answerRecommendationAIAgentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailGenerativeAnswerAIAgentConfiguration. 
+        /// <para>
+        /// Configuration for the EMAIL_GENERATIVE_ANSWER AI agent that provides comprehensive
+        /// knowledge-based answers for customer queries.
+        /// </para>
+        /// </summary>
+        public EmailGenerativeAnswerAIAgentConfiguration EmailGenerativeAnswerAIAgentConfiguration
+        {
+            get { return this._emailGenerativeAnswerAIAgentConfiguration; }
+            set { this._emailGenerativeAnswerAIAgentConfiguration = value; }
+        }
+
+        // Check to see if EmailGenerativeAnswerAIAgentConfiguration property is set
+        internal bool IsSetEmailGenerativeAnswerAIAgentConfiguration()
+        {
+            return this._emailGenerativeAnswerAIAgentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailOverviewAIAgentConfiguration. 
+        /// <para>
+        /// Configuration for the EMAIL_OVERVIEW AI agent that generates structured overview of
+        /// email conversations.
+        /// </para>
+        /// </summary>
+        public EmailOverviewAIAgentConfiguration EmailOverviewAIAgentConfiguration
+        {
+            get { return this._emailOverviewAIAgentConfiguration; }
+            set { this._emailOverviewAIAgentConfiguration = value; }
+        }
+
+        // Check to see if EmailOverviewAIAgentConfiguration property is set
+        internal bool IsSetEmailOverviewAIAgentConfiguration()
+        {
+            return this._emailOverviewAIAgentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailResponseAIAgentConfiguration. 
+        /// <para>
+        /// Configuration for the EMAIL_RESPONSE AI agent that generates professional email responses
+        /// using knowledge base content.
+        /// </para>
+        /// </summary>
+        public EmailResponseAIAgentConfiguration EmailResponseAIAgentConfiguration
+        {
+            get { return this._emailResponseAIAgentConfiguration; }
+            set { this._emailResponseAIAgentConfiguration = value; }
+        }
+
+        // Check to see if EmailResponseAIAgentConfiguration property is set
+        internal bool IsSetEmailResponseAIAgentConfiguration()
+        {
+            return this._emailResponseAIAgentConfiguration != null;
         }
 
         /// <summary>

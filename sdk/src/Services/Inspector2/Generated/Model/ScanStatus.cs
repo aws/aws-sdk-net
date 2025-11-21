@@ -107,7 +107,7 @@ namespace Amazon.Inspector2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>NO INVENTORY</c> - Amazon Inspector couldn't find software application inventory
+        ///  <c>NO_INVENTORY</c> - Amazon Inspector couldn't find software application inventory
         /// to scan for vulnerabilities. This might be caused due to required Amazon Inspector
         /// associations being deleted or failing to run on your resource. Please verify the status
         /// of <c>InspectorInventoryCollection-do-not-delete</c> association in the SSM console
@@ -197,6 +197,11 @@ namespace Amazon.Inspector2.Model
         /// <para>
         ///  <c>UNSUPPORTED_RUNTIME</c> - The function was not scanned because it has an unsupported
         /// runtime. To see a complete list of supported runtimes see: <a href=" https://docs.aws.amazon.com/inspector/latest/user/supported.html">https://docs.aws.amazon.com/inspector/latest/user/supported.html</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>IMAGE_ARCHIVED</c> - This image has been archived in Amazon ECR and is no longer
+        /// available for scanning in Amazon Inspector. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

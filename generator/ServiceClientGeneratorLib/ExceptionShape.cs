@@ -83,6 +83,20 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Returns the original shape name of the exception specified in the json model.
+        /// This is used to find the exception type for CBOR as the exception response contains
+        /// the Shape ID rather than the error code.
+        /// https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2.html#operation-error-serialization
+        /// </summary>
+        public string ShapeOriginalName
+        {
+            get
+            {
+                return base.Name;
+            }
+        }
+
+        /// <summary>
         /// Determines if the exception is marked retryable
         /// </summary>
         public bool IsRetryable

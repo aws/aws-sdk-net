@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidationList Object
     /// </summary>  
-    public class InvalidationListUnmarshaller : IXmlUnmarshaller<InvalidationList, XmlUnmarshallerContext>
+    public partial class InvalidationListUnmarshaller : IXmlUnmarshaller<InvalidationList, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -96,6 +96,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -104,6 +106,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, InvalidationList unmarshalledObject, int targetDepth);
+
         private static InvalidationListUnmarshaller _instance = new InvalidationListUnmarshaller();        
 
         /// <summary>

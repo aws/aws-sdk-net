@@ -278,8 +278,9 @@ namespace Amazon.OpenSearchServerless
 
 
         /// <summary>
-        /// Returns attributes for one or more collections, including the collection endpoint
-        /// and the OpenSearch Dashboards endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+        /// Returns attributes for one or more collections, including the collection endpoint,
+        /// the OpenSearch Dashboards endpoint, and FIPS-compliant endpoints. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
         /// and managing Amazon OpenSearch Serverless collections</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetCollection service method.</param>
@@ -294,7 +295,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetCollection">REST API Reference for BatchGetCollection Operation</seealso>
         public virtual BatchGetCollectionResponse BatchGetCollection(BatchGetCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCollectionResponseUnmarshaller.Instance;
 
@@ -303,8 +304,9 @@ namespace Amazon.OpenSearchServerless
 
 
         /// <summary>
-        /// Returns attributes for one or more collections, including the collection endpoint
-        /// and the OpenSearch Dashboards endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
+        /// Returns attributes for one or more collections, including the collection endpoint,
+        /// the OpenSearch Dashboards endpoint, and FIPS-compliant endpoints. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating
         /// and managing Amazon OpenSearch Serverless collections</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetCollection service method.</param>
@@ -322,7 +324,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetCollection">REST API Reference for BatchGetCollection Operation</seealso>
         public virtual Task<BatchGetCollectionResponse> BatchGetCollectionAsync(BatchGetCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCollectionResponseUnmarshaller.Instance;
             
@@ -351,7 +353,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy">REST API Reference for BatchGetEffectiveLifecyclePolicy Operation</seealso>
         public virtual BatchGetEffectiveLifecyclePolicyResponse BatchGetEffectiveLifecyclePolicy(BatchGetEffectiveLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetEffectiveLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetEffectiveLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -379,7 +381,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetEffectiveLifecyclePolicy">REST API Reference for BatchGetEffectiveLifecyclePolicy Operation</seealso>
         public virtual Task<BatchGetEffectiveLifecyclePolicyResponse> BatchGetEffectiveLifecyclePolicyAsync(BatchGetEffectiveLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetEffectiveLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetEffectiveLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -408,7 +410,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy">REST API Reference for BatchGetLifecyclePolicy Operation</seealso>
         public virtual BatchGetLifecyclePolicyResponse BatchGetLifecyclePolicy(BatchGetLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -436,7 +438,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetLifecyclePolicy">REST API Reference for BatchGetLifecyclePolicy Operation</seealso>
         public virtual Task<BatchGetLifecyclePolicyResponse> BatchGetLifecyclePolicyAsync(BatchGetLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -465,7 +467,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetVpcEndpoint">REST API Reference for BatchGetVpcEndpoint Operation</seealso>
         public virtual BatchGetVpcEndpointResponse BatchGetVpcEndpoint(BatchGetVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetVpcEndpointResponseUnmarshaller.Instance;
 
@@ -493,7 +495,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/BatchGetVpcEndpoint">REST API Reference for BatchGetVpcEndpoint Operation</seealso>
         public virtual Task<BatchGetVpcEndpointResponse> BatchGetVpcEndpointAsync(BatchGetVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetVpcEndpointResponseUnmarshaller.Instance;
             
@@ -533,7 +535,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateAccessPolicy">REST API Reference for CreateAccessPolicy Operation</seealso>
         public virtual CreateAccessPolicyResponse CreateAccessPolicy(CreateAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPolicyResponseUnmarshaller.Instance;
 
@@ -572,7 +574,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateAccessPolicy">REST API Reference for CreateAccessPolicy Operation</seealso>
         public virtual Task<CreateAccessPolicyResponse> CreateAccessPolicyAsync(CreateAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPolicyResponseUnmarshaller.Instance;
             
@@ -613,7 +615,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         public virtual CreateCollectionResponse CreateCollection(CreateCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCollectionResponseUnmarshaller.Instance;
 
@@ -653,11 +655,86 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateCollection">REST API Reference for CreateCollection Operation</seealso>
         public virtual Task<CreateCollectionResponse> CreateCollectionAsync(CreateCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCollectionResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateCollectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateIndex
+
+
+        /// <summary>
+        /// Creates an index within an OpenSearch Serverless collection. Unlike other OpenSearch
+        /// indexes, indexes created by this API are automatically configured to conduct automatic
+        /// semantic enrichment ingestion and search. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a> in the <i>OpenSearch User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
+        /// 
+        /// <returns>The response from the CreateIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE or FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        public virtual CreateIndexResponse CreateIndex(CreateIndexRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIndexResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIndexResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an index within an OpenSearch Serverless collection. Unlike other OpenSearch
+        /// indexes, indexes created by this API are automatically configured to conduct automatic
+        /// semantic enrichment ingestion and search. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a> in the <i>OpenSearch User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ConflictException">
+        /// When creating a resource, thrown when a resource with the same name already exists
+        /// or is being created. When deleting a resource, thrown when the resource is not in
+        /// the ACTIVE or FAILED state.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        public virtual Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIndexResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateIndexResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -692,7 +769,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
         public virtual CreateLifecyclePolicyResponse CreateLifecyclePolicy(CreateLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -730,7 +807,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateLifecyclePolicy">REST API Reference for CreateLifecyclePolicy Operation</seealso>
         public virtual Task<CreateLifecyclePolicyResponse> CreateLifecyclePolicyAsync(CreateLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -768,7 +845,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateSecurityConfig">REST API Reference for CreateSecurityConfig Operation</seealso>
         public virtual CreateSecurityConfigResponse CreateSecurityConfig(CreateSecurityConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityConfigResponseUnmarshaller.Instance;
 
@@ -805,7 +882,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateSecurityConfig">REST API Reference for CreateSecurityConfig Operation</seealso>
         public virtual Task<CreateSecurityConfigResponse> CreateSecurityConfigAsync(CreateSecurityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityConfigResponseUnmarshaller.Instance;
             
@@ -846,7 +923,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateSecurityPolicy">REST API Reference for CreateSecurityPolicy Operation</seealso>
         public virtual CreateSecurityPolicyResponse CreateSecurityPolicy(CreateSecurityPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityPolicyResponseUnmarshaller.Instance;
 
@@ -886,7 +963,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateSecurityPolicy">REST API Reference for CreateSecurityPolicy Operation</seealso>
         public virtual Task<CreateSecurityPolicyResponse> CreateSecurityPolicyAsync(CreateSecurityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityPolicyResponseUnmarshaller.Instance;
             
@@ -924,7 +1001,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public virtual CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
 
@@ -961,7 +1038,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public virtual Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVpcEndpointResponseUnmarshaller.Instance;
             
@@ -997,7 +1074,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteAccessPolicy">REST API Reference for DeleteAccessPolicy Operation</seealso>
         public virtual DeleteAccessPolicyResponse DeleteAccessPolicy(DeleteAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1032,7 +1109,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteAccessPolicy">REST API Reference for DeleteAccessPolicy Operation</seealso>
         public virtual Task<DeleteAccessPolicyResponse> DeleteAccessPolicyAsync(DeleteAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPolicyResponseUnmarshaller.Instance;
             
@@ -1068,7 +1145,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         public virtual DeleteCollectionResponse DeleteCollection(DeleteCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
 
@@ -1103,11 +1180,76 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteCollection">REST API Reference for DeleteCollection Operation</seealso>
         public virtual Task<DeleteCollectionResponse> DeleteCollectionAsync(DeleteCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCollectionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteCollectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIndex
+
+
+        /// <summary>
+        /// Deletes an index from an OpenSearch Serverless collection. Be aware that the index
+        /// might be configured to conduct automatic semantic enrichment ingestion and search.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        public virtual DeleteIndexResponse DeleteIndex(DeleteIndexRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIndexResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIndexResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an index from an OpenSearch Serverless collection. Be aware that the index
+        /// might be configured to conduct automatic semantic enrichment ingestion and search.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        public virtual Task<DeleteIndexResponse> DeleteIndexAsync(DeleteIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIndexResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteIndexResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1139,7 +1281,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -1174,7 +1316,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
         public virtual Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -1211,7 +1353,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteSecurityConfig">REST API Reference for DeleteSecurityConfig Operation</seealso>
         public virtual DeleteSecurityConfigResponse DeleteSecurityConfig(DeleteSecurityConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityConfigResponseUnmarshaller.Instance;
 
@@ -1247,7 +1389,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteSecurityConfig">REST API Reference for DeleteSecurityConfig Operation</seealso>
         public virtual Task<DeleteSecurityConfigResponse> DeleteSecurityConfigAsync(DeleteSecurityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityConfigResponseUnmarshaller.Instance;
             
@@ -1282,7 +1424,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteSecurityPolicy">REST API Reference for DeleteSecurityPolicy Operation</seealso>
         public virtual DeleteSecurityPolicyResponse DeleteSecurityPolicy(DeleteSecurityPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityPolicyResponseUnmarshaller.Instance;
 
@@ -1316,7 +1458,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteSecurityPolicy">REST API Reference for DeleteSecurityPolicy Operation</seealso>
         public virtual Task<DeleteSecurityPolicyResponse> DeleteSecurityPolicyAsync(DeleteSecurityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityPolicyResponseUnmarshaller.Instance;
             
@@ -1353,7 +1495,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
         public virtual DeleteVpcEndpointResponse DeleteVpcEndpoint(DeleteVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointResponseUnmarshaller.Instance;
 
@@ -1389,7 +1531,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
         public virtual Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(DeleteVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVpcEndpointResponseUnmarshaller.Instance;
             
@@ -1420,7 +1562,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetAccessPolicy">REST API Reference for GetAccessPolicy Operation</seealso>
         public virtual GetAccessPolicyResponse GetAccessPolicy(GetAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPolicyResponseUnmarshaller.Instance;
 
@@ -1450,7 +1592,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetAccessPolicy">REST API Reference for GetAccessPolicy Operation</seealso>
         public virtual Task<GetAccessPolicyResponse> GetAccessPolicyAsync(GetAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPolicyResponseUnmarshaller.Instance;
             
@@ -1477,7 +1619,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
 
@@ -1503,11 +1645,76 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public virtual Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetAccountSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIndex
+
+
+        /// <summary>
+        /// Retrieves information about an index in an OpenSearch Serverless collection, including
+        /// its schema definition. The index might be configured to conduct automatic semantic
+        /// enrichment ingestion and search. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndex service method.</param>
+        /// 
+        /// <returns>The response from the GetIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        public virtual GetIndexResponse GetIndex(GetIndexRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIndexResponseUnmarshaller.Instance;
+
+            return Invoke<GetIndexResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about an index in an OpenSearch Serverless collection, including
+        /// its schema definition. The index might be configured to conduct automatic semantic
+        /// enrichment ingestion and search. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        public virtual Task<GetIndexResponse> GetIndexAsync(GetIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIndexResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetIndexResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1528,7 +1735,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetPoliciesStats">REST API Reference for GetPoliciesStats Operation</seealso>
         public virtual GetPoliciesStatsResponse GetPoliciesStats(GetPoliciesStatsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPoliciesStatsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPoliciesStatsResponseUnmarshaller.Instance;
 
@@ -1552,7 +1759,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetPoliciesStats">REST API Reference for GetPoliciesStats Operation</seealso>
         public virtual Task<GetPoliciesStatsResponse> GetPoliciesStatsAsync(GetPoliciesStatsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPoliciesStatsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPoliciesStatsResponseUnmarshaller.Instance;
             
@@ -1584,7 +1791,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetSecurityConfig">REST API Reference for GetSecurityConfig Operation</seealso>
         public virtual GetSecurityConfigResponse GetSecurityConfig(GetSecurityConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityConfigResponseUnmarshaller.Instance;
 
@@ -1615,7 +1822,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetSecurityConfig">REST API Reference for GetSecurityConfig Operation</seealso>
         public virtual Task<GetSecurityConfigResponse> GetSecurityConfigAsync(GetSecurityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityConfigResponseUnmarshaller.Instance;
             
@@ -1648,7 +1855,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetSecurityPolicy">REST API Reference for GetSecurityPolicy Operation</seealso>
         public virtual GetSecurityPolicyResponse GetSecurityPolicy(GetSecurityPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityPolicyResponseUnmarshaller.Instance;
 
@@ -1680,7 +1887,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetSecurityPolicy">REST API Reference for GetSecurityPolicy Operation</seealso>
         public virtual Task<GetSecurityPolicyResponse> GetSecurityPolicyAsync(GetSecurityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityPolicyResponseUnmarshaller.Instance;
             
@@ -1707,7 +1914,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
         public virtual ListAccessPoliciesResponse ListAccessPolicies(ListAccessPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPoliciesResponseUnmarshaller.Instance;
 
@@ -1733,7 +1940,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListAccessPolicies">REST API Reference for ListAccessPolicies Operation</seealso>
         public virtual Task<ListAccessPoliciesResponse> ListAccessPoliciesAsync(ListAccessPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPoliciesResponseUnmarshaller.Instance;
             
@@ -1768,7 +1975,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListCollections">REST API Reference for ListCollections Operation</seealso>
         public virtual ListCollectionsResponse ListCollections(ListCollectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollectionsResponseUnmarshaller.Instance;
 
@@ -1802,7 +2009,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListCollections">REST API Reference for ListCollections Operation</seealso>
         public virtual Task<ListCollectionsResponse> ListCollectionsAsync(ListCollectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCollectionsResponseUnmarshaller.Instance;
             
@@ -1831,7 +2038,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies">REST API Reference for ListLifecyclePolicies Operation</seealso>
         public virtual ListLifecyclePoliciesResponse ListLifecyclePolicies(ListLifecyclePoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLifecyclePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLifecyclePoliciesResponseUnmarshaller.Instance;
 
@@ -1859,7 +2066,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListLifecyclePolicies">REST API Reference for ListLifecyclePolicies Operation</seealso>
         public virtual Task<ListLifecyclePoliciesResponse> ListLifecyclePoliciesAsync(ListLifecyclePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLifecyclePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLifecyclePoliciesResponseUnmarshaller.Instance;
             
@@ -1888,7 +2095,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListSecurityConfigs">REST API Reference for ListSecurityConfigs Operation</seealso>
         public virtual ListSecurityConfigsResponse ListSecurityConfigs(ListSecurityConfigsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityConfigsResponseUnmarshaller.Instance;
 
@@ -1916,7 +2123,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListSecurityConfigs">REST API Reference for ListSecurityConfigs Operation</seealso>
         public virtual Task<ListSecurityConfigsResponse> ListSecurityConfigsAsync(ListSecurityConfigsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityConfigsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityConfigsResponseUnmarshaller.Instance;
             
@@ -1943,7 +2150,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListSecurityPolicies">REST API Reference for ListSecurityPolicies Operation</seealso>
         public virtual ListSecurityPoliciesResponse ListSecurityPolicies(ListSecurityPoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityPoliciesResponseUnmarshaller.Instance;
 
@@ -1969,7 +2176,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListSecurityPolicies">REST API Reference for ListSecurityPolicies Operation</seealso>
         public virtual Task<ListSecurityPoliciesResponse> ListSecurityPoliciesAsync(ListSecurityPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSecurityPoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSecurityPoliciesResponseUnmarshaller.Instance;
             
@@ -2001,7 +2208,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2032,7 +2239,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2061,7 +2268,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
         public virtual ListVpcEndpointsResponse ListVpcEndpoints(ListVpcEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointsResponseUnmarshaller.Instance;
 
@@ -2089,7 +2296,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListVpcEndpoints">REST API Reference for ListVpcEndpoints Operation</seealso>
         public virtual Task<ListVpcEndpointsResponse> ListVpcEndpointsAsync(ListVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVpcEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVpcEndpointsResponseUnmarshaller.Instance;
             
@@ -2130,7 +2337,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2170,7 +2377,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2207,7 +2414,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2243,7 +2450,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2279,7 +2486,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateAccessPolicy">REST API Reference for UpdateAccessPolicy Operation</seealso>
         public virtual UpdateAccessPolicyResponse UpdateAccessPolicy(UpdateAccessPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessPolicyResponseUnmarshaller.Instance;
 
@@ -2314,7 +2521,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateAccessPolicy">REST API Reference for UpdateAccessPolicy Operation</seealso>
         public virtual Task<UpdateAccessPolicyResponse> UpdateAccessPolicyAsync(UpdateAccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessPolicyResponseUnmarshaller.Instance;
             
@@ -2343,7 +2550,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual UpdateAccountSettingsResponse UpdateAccountSettings(UpdateAccountSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
 
@@ -2371,7 +2578,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         public virtual Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccountSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccountSettingsResponseUnmarshaller.Instance;
             
@@ -2403,7 +2610,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateCollection">REST API Reference for UpdateCollection Operation</seealso>
         public virtual UpdateCollectionResponse UpdateCollection(UpdateCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCollectionResponseUnmarshaller.Instance;
 
@@ -2434,11 +2641,78 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateCollection">REST API Reference for UpdateCollection Operation</seealso>
         public virtual Task<UpdateCollectionResponse> UpdateCollectionAsync(UpdateCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCollectionResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateCollectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIndex
+
+
+        /// <summary>
+        /// Updates an existing index in an OpenSearch Serverless collection. This operation allows
+        /// you to modify the index schema, including adding new fields or changing field mappings.
+        /// You can also enable automatic semantic enrichment ingestion and search. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndex service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        public virtual UpdateIndexResponse UpdateIndex(UpdateIndexRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIndexResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIndexResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing index in an OpenSearch Serverless collection. This operation allows
+        /// you to modify the index schema, including adding new fields or changing field mappings.
+        /// You can also enable automatic semantic enrichment ingestion and search. For more information,
+        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html#serverless-semantic-enrichment">About
+        /// automatic semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIndex service method, as returned by OpenSearchServerless.</returns>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
+        /// Thrown when an error internal to the service occurs while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ResourceNotFoundException">
+        /// Thrown when accessing or deleting a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
+        /// Thrown when the HTTP request contains invalid input or is missing required input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        public virtual Task<UpdateIndexResponse> UpdateIndexAsync(UpdateIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateIndexRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIndexResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateIndexResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2474,7 +2748,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
         public virtual UpdateLifecyclePolicyResponse UpdateLifecyclePolicy(UpdateLifecyclePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
 
@@ -2513,7 +2787,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateLifecyclePolicy">REST API Reference for UpdateLifecyclePolicy Operation</seealso>
         public virtual Task<UpdateLifecyclePolicyResponse> UpdateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLifecyclePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLifecyclePolicyResponseUnmarshaller.Instance;
             
@@ -2550,7 +2824,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateSecurityConfig">REST API Reference for UpdateSecurityConfig Operation</seealso>
         public virtual UpdateSecurityConfigResponse UpdateSecurityConfig(UpdateSecurityConfigRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityConfigResponseUnmarshaller.Instance;
 
@@ -2586,7 +2860,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateSecurityConfig">REST API Reference for UpdateSecurityConfig Operation</seealso>
         public virtual Task<UpdateSecurityConfigResponse> UpdateSecurityConfigAsync(UpdateSecurityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityConfigRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityConfigResponseUnmarshaller.Instance;
             
@@ -2627,7 +2901,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateSecurityPolicy">REST API Reference for UpdateSecurityPolicy Operation</seealso>
         public virtual UpdateSecurityPolicyResponse UpdateSecurityPolicy(UpdateSecurityPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityPolicyResponseUnmarshaller.Instance;
 
@@ -2667,7 +2941,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateSecurityPolicy">REST API Reference for UpdateSecurityPolicy Operation</seealso>
         public virtual Task<UpdateSecurityPolicyResponse> UpdateSecurityPolicyAsync(UpdateSecurityPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSecurityPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSecurityPolicyResponseUnmarshaller.Instance;
             
@@ -2701,7 +2975,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
         public virtual UpdateVpcEndpointResponse UpdateVpcEndpoint(UpdateVpcEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcEndpointResponseUnmarshaller.Instance;
 
@@ -2734,7 +3008,7 @@ namespace Amazon.OpenSearchServerless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateVpcEndpoint">REST API Reference for UpdateVpcEndpoint Operation</seealso>
         public virtual Task<UpdateVpcEndpointResponse> UpdateVpcEndpointAsync(UpdateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVpcEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVpcEndpointResponseUnmarshaller.Instance;
             

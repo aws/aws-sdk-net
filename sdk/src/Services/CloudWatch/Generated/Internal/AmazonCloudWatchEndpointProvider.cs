@@ -47,10 +47,10 @@ namespace Amazon.CloudWatch.Internal
 
             var refs = new Dictionary<string, object>()
             {
-                ["Region"] = parameters["Region"],
                 ["UseDualStack"] = parameters["UseDualStack"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["Region"] = parameters["Region"],
             };
             if (IsSet(refs["Endpoint"]))
             {
@@ -68,6 +68,14 @@ namespace Amazon.CloudWatch.Internal
             {
                 if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
                 {
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
+                    {
+                        return new Endpoint(Interpolate(@"https://monitoring.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://monitoring.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
@@ -76,19 +84,15 @@ namespace Amazon.CloudWatch.Internal
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
                     }
-                    if (Equals(refs["UseFIPS"], true))
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
-                            if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
-                            {
-                                return new Endpoint(Interpolate(@"https://monitoring.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                            }
                             return new Endpoint(Interpolate(@"https://monitoring-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                     }
-                    if (Equals(refs["UseDualStack"], true))
+                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {

@@ -267,7 +267,7 @@ namespace Amazon.LocationService
 
         internal virtual AssociateTrackerConsumerResponse AssociateTrackerConsumer(AssociateTrackerConsumerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTrackerConsumerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTrackerConsumerResponseUnmarshaller.Instance;
 
@@ -325,7 +325,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/AssociateTrackerConsumer">REST API Reference for AssociateTrackerConsumer Operation</seealso>
         public virtual Task<AssociateTrackerConsumerResponse> AssociateTrackerConsumerAsync(AssociateTrackerConsumerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateTrackerConsumerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateTrackerConsumerResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.LocationService
 
         internal virtual BatchDeleteDevicePositionHistoryResponse BatchDeleteDevicePositionHistory(BatchDeleteDevicePositionHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteDevicePositionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteDevicePositionHistoryResponseUnmarshaller.Instance;
 
@@ -375,7 +375,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchDeleteDevicePositionHistory">REST API Reference for BatchDeleteDevicePositionHistory Operation</seealso>
         public virtual Task<BatchDeleteDevicePositionHistoryResponse> BatchDeleteDevicePositionHistoryAsync(BatchDeleteDevicePositionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteDevicePositionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteDevicePositionHistoryResponseUnmarshaller.Instance;
 
@@ -387,7 +387,7 @@ namespace Amazon.LocationService
 
         internal virtual BatchDeleteGeofenceResponse BatchDeleteGeofence(BatchDeleteGeofenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteGeofenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteGeofenceResponseUnmarshaller.Instance;
 
@@ -431,7 +431,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchDeleteGeofence">REST API Reference for BatchDeleteGeofence Operation</seealso>
         public virtual Task<BatchDeleteGeofenceResponse> BatchDeleteGeofenceAsync(BatchDeleteGeofenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteGeofenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteGeofenceResponseUnmarshaller.Instance;
 
@@ -443,7 +443,7 @@ namespace Amazon.LocationService
 
         internal virtual BatchEvaluateGeofencesResponse BatchEvaluateGeofences(BatchEvaluateGeofencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchEvaluateGeofencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchEvaluateGeofencesResponseUnmarshaller.Instance;
 
@@ -514,7 +514,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchEvaluateGeofences">REST API Reference for BatchEvaluateGeofences Operation</seealso>
         public virtual Task<BatchEvaluateGeofencesResponse> BatchEvaluateGeofencesAsync(BatchEvaluateGeofencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchEvaluateGeofencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchEvaluateGeofencesResponseUnmarshaller.Instance;
 
@@ -526,7 +526,7 @@ namespace Amazon.LocationService
 
         internal virtual BatchGetDevicePositionResponse BatchGetDevicePosition(BatchGetDevicePositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetDevicePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetDevicePositionResponseUnmarshaller.Instance;
 
@@ -564,7 +564,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchGetDevicePosition">REST API Reference for BatchGetDevicePosition Operation</seealso>
         public virtual Task<BatchGetDevicePositionResponse> BatchGetDevicePositionAsync(BatchGetDevicePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetDevicePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetDevicePositionResponseUnmarshaller.Instance;
 
@@ -576,7 +576,7 @@ namespace Amazon.LocationService
 
         internal virtual BatchPutGeofenceResponse BatchPutGeofence(BatchPutGeofenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutGeofenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutGeofenceResponseUnmarshaller.Instance;
 
@@ -616,7 +616,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchPutGeofence">REST API Reference for BatchPutGeofence Operation</seealso>
         public virtual Task<BatchPutGeofenceResponse> BatchPutGeofenceAsync(BatchPutGeofenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutGeofenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutGeofenceResponseUnmarshaller.Instance;
 
@@ -628,7 +628,7 @@ namespace Amazon.LocationService
 
         internal virtual BatchUpdateDevicePositionResponse BatchUpdateDevicePosition(BatchUpdateDevicePositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateDevicePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateDevicePositionResponseUnmarshaller.Instance;
 
@@ -695,7 +695,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchUpdateDevicePosition">REST API Reference for BatchUpdateDevicePosition Operation</seealso>
         public virtual Task<BatchUpdateDevicePositionResponse> BatchUpdateDevicePositionAsync(BatchUpdateDevicePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateDevicePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateDevicePositionResponseUnmarshaller.Instance;
 
@@ -707,7 +707,7 @@ namespace Amazon.LocationService
 
         internal virtual CalculateRouteResponse CalculateRoute(CalculateRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CalculateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CalculateRouteResponseUnmarshaller.Instance;
 
@@ -717,11 +717,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_CalculateRoutes.html"> <c>CalculateRoutes</c>
+        /// </a> or <a href="/location/latest/APIReference/API_CalculateIsolines.html"> <c>CalculateIsolines</c>
+        /// </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CalculateRoute</c> is part of a previous Amazon Location Service Routes API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>CalculateRoutes</c> operation gives better results for point-to-point
+        /// routing, while the version 2 <c>CalculateIsolines</c> operation adds support for calculating
+        /// service areas and travel time envelopes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route.html">Calculates
         /// a route</a> given the following required parameters: <c>DeparturePosition</c> and
         /// <c>DestinationPosition</c>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
         /// a route calculator resource</a>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// By default, a request that doesn't specify a departure time uses the best time of
@@ -755,6 +787,7 @@ namespace Amazon.LocationService
         /// the start and destination must be within 40km.
         /// </para>
         ///  </note> </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRoute service method.</param>
         /// <param name="cancellationToken">
@@ -782,7 +815,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRoute">REST API Reference for CalculateRoute Operation</seealso>
         public virtual Task<CalculateRouteResponse> CalculateRouteAsync(CalculateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CalculateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CalculateRouteResponseUnmarshaller.Instance;
 
@@ -794,7 +827,7 @@ namespace Amazon.LocationService
 
         internal virtual CalculateRouteMatrixResponse CalculateRouteMatrix(CalculateRouteMatrixRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CalculateRouteMatrixRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CalculateRouteMatrixResponseUnmarshaller.Instance;
 
@@ -804,7 +837,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html">
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the <a href="/location/latest/APIReference/API_CalculateRouteMatrix.html">V2
+        /// <c>CalculateRouteMatrix</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// This version of <c>CalculateRouteMatrix</c> is part of a previous Amazon Location
+        /// Service Routes API (version 1) which has been superseded by a more intuitive, powerful,
+        /// and complete API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>CalculateRouteMatrix</c> operation gives better results for matrix
+        /// routing calculations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/previous/developerguide/calculate-route-matrix.html">
         /// Calculates a route matrix</a> given the following required parameters: <c>DeparturePositions</c>
         /// and <c>DestinationPositions</c>. <c>CalculateRouteMatrix</c> calculates routes and
         /// returns the travel time and travel distance from each departure position to each destination
@@ -813,7 +882,7 @@ namespace Amazon.LocationService
         /// from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned
         /// (and routes calculated) will be the number of <c>DeparturePositions</c> times the
         /// number of <c>DestinationPositions</c>.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// Your account is charged for each route calculated, not the number of requests.
@@ -851,6 +920,7 @@ namespace Amazon.LocationService
         /// if traveling by <c>Car</c>, or <c>TruckModeOptions</c> if traveling by <c>Truck</c>.
         /// </para>
         ///  </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRouteMatrix service method.</param>
         /// <param name="cancellationToken">
@@ -878,7 +948,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRouteMatrix">REST API Reference for CalculateRouteMatrix Operation</seealso>
         public virtual Task<CalculateRouteMatrixResponse> CalculateRouteMatrixAsync(CalculateRouteMatrixRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CalculateRouteMatrixRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CalculateRouteMatrixResponseUnmarshaller.Instance;
 
@@ -890,7 +960,7 @@ namespace Amazon.LocationService
 
         internal virtual CreateGeofenceCollectionResponse CreateGeofenceCollection(CreateGeofenceCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGeofenceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGeofenceCollectionResponseUnmarshaller.Instance;
 
@@ -932,7 +1002,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateGeofenceCollection">REST API Reference for CreateGeofenceCollection Operation</seealso>
         public virtual Task<CreateGeofenceCollectionResponse> CreateGeofenceCollectionAsync(CreateGeofenceCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGeofenceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGeofenceCollectionResponseUnmarshaller.Instance;
 
@@ -944,7 +1014,7 @@ namespace Amazon.LocationService
 
         internal virtual CreateKeyResponse CreateKey(CreateKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyResponseUnmarshaller.Instance;
 
@@ -957,12 +1027,11 @@ namespace Amazon.LocationService
         /// Creates an API key resource in your Amazon Web Services account, which lets you grant
         /// actions for Amazon Location resources to the API key bearer.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">Using
-        /// API keys</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKey service method.</param>
         /// <param name="cancellationToken">
@@ -994,7 +1063,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public virtual Task<CreateKeyResponse> CreateKeyAsync(CreateKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateKeyResponseUnmarshaller.Instance;
 
@@ -1006,7 +1075,7 @@ namespace Amazon.LocationService
 
         internal virtual CreateMapResponse CreateMap(CreateMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMapResponseUnmarshaller.Instance;
 
@@ -1016,9 +1085,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Creates a map resource in your Amazon Web Services account, which provides map tiles
         /// of different styles sourced from global location data providers.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
@@ -1027,6 +1130,7 @@ namespace Amazon.LocationService
         /// service terms</a> for more details.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMap service method.</param>
         /// <param name="cancellationToken">
@@ -1058,7 +1162,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateMap">REST API Reference for CreateMap Operation</seealso>
         public virtual Task<CreateMapResponse> CreateMapAsync(CreateMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMapResponseUnmarshaller.Instance;
 
@@ -1070,7 +1174,7 @@ namespace Amazon.LocationService
 
         internal virtual CreatePlaceIndexResponse CreatePlaceIndex(CreatePlaceIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlaceIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlaceIndexResponseUnmarshaller.Instance;
 
@@ -1080,12 +1184,47 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreatePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Creates a place index resource in your Amazon Web Services account. Use a place index
         /// resource to geocode addresses and other text queries by using the <c>SearchPlaceIndexForText</c>
         /// operation, and reverse geocode coordinates by using the <c>SearchPlaceIndexForPosition</c>
         /// operation, and enable autosuggestions by using the <c>SearchPlaceIndexForSuggestions</c>
         /// operation.
-        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
@@ -1094,6 +1233,7 @@ namespace Amazon.LocationService
         /// service terms</a> for more details.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePlaceIndex service method.</param>
         /// <param name="cancellationToken">
@@ -1125,7 +1265,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreatePlaceIndex">REST API Reference for CreatePlaceIndex Operation</seealso>
         public virtual Task<CreatePlaceIndexResponse> CreatePlaceIndexAsync(CreatePlaceIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePlaceIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePlaceIndexResponseUnmarshaller.Instance;
 
@@ -1137,7 +1277,7 @@ namespace Amazon.LocationService
 
         internal virtual CreateRouteCalculatorResponse CreateRouteCalculator(CreateRouteCalculatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteCalculatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteCalculatorResponseUnmarshaller.Instance;
 
@@ -1147,8 +1287,43 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Creates a route calculator resource in your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CreateRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Creates a route calculator resource in your Amazon Web Services account.
+        /// </para>
         ///  
         /// <para>
         /// You can send requests to a route calculator resource to estimate travel time, distance,
@@ -1163,6 +1338,7 @@ namespace Amazon.LocationService
         /// service terms</a> for more details.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRouteCalculator service method.</param>
         /// <param name="cancellationToken">
@@ -1194,7 +1370,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateRouteCalculator">REST API Reference for CreateRouteCalculator Operation</seealso>
         public virtual Task<CreateRouteCalculatorResponse> CreateRouteCalculatorAsync(CreateRouteCalculatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteCalculatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteCalculatorResponseUnmarshaller.Instance;
 
@@ -1206,7 +1382,7 @@ namespace Amazon.LocationService
 
         internal virtual CreateTrackerResponse CreateTracker(CreateTrackerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrackerResponseUnmarshaller.Instance;
 
@@ -1249,7 +1425,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateTracker">REST API Reference for CreateTracker Operation</seealso>
         public virtual Task<CreateTrackerResponse> CreateTrackerAsync(CreateTrackerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTrackerResponseUnmarshaller.Instance;
 
@@ -1261,7 +1437,7 @@ namespace Amazon.LocationService
 
         internal virtual DeleteGeofenceCollectionResponse DeleteGeofenceCollection(DeleteGeofenceCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGeofenceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGeofenceCollectionResponseUnmarshaller.Instance;
 
@@ -1306,7 +1482,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteGeofenceCollection">REST API Reference for DeleteGeofenceCollection Operation</seealso>
         public virtual Task<DeleteGeofenceCollectionResponse> DeleteGeofenceCollectionAsync(DeleteGeofenceCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGeofenceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGeofenceCollectionResponseUnmarshaller.Instance;
 
@@ -1318,7 +1494,7 @@ namespace Amazon.LocationService
 
         internal virtual DeleteKeyResponse DeleteKey(DeleteKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyResponseUnmarshaller.Instance;
 
@@ -1330,6 +1506,12 @@ namespace Amazon.LocationService
         /// <summary>
         /// Deletes the specified API key. The API key must have been deactivated more than 90
         /// days previously.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKey service method.</param>
         /// <param name="cancellationToken">
@@ -1357,7 +1539,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteKey">REST API Reference for DeleteKey Operation</seealso>
         public virtual Task<DeleteKeyResponse> DeleteKeyAsync(DeleteKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteKeyResponseUnmarshaller.Instance;
 
@@ -1369,7 +1551,7 @@ namespace Amazon.LocationService
 
         internal virtual DeleteMapResponse DeleteMap(DeleteMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMapResponseUnmarshaller.Instance;
 
@@ -1379,14 +1561,49 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a map resource from your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DeleteMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Deletes a map resource from your Amazon Web Services account.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation deletes the resource permanently. If the map is being used in an application,
         /// the map may not render.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMap service method.</param>
         /// <param name="cancellationToken">
@@ -1414,7 +1631,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteMap">REST API Reference for DeleteMap Operation</seealso>
         public virtual Task<DeleteMapResponse> DeleteMapAsync(DeleteMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMapResponseUnmarshaller.Instance;
 
@@ -1426,7 +1643,7 @@ namespace Amazon.LocationService
 
         internal virtual DeletePlaceIndexResponse DeletePlaceIndex(DeletePlaceIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlaceIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlaceIndexResponseUnmarshaller.Instance;
 
@@ -1436,13 +1653,49 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a place index resource from your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DeletePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Deletes a place index resource from your Amazon Web Services account.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation deletes the resource permanently.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlaceIndex service method.</param>
         /// <param name="cancellationToken">
@@ -1470,7 +1723,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeletePlaceIndex">REST API Reference for DeletePlaceIndex Operation</seealso>
         public virtual Task<DeletePlaceIndexResponse> DeletePlaceIndexAsync(DeletePlaceIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePlaceIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePlaceIndexResponseUnmarshaller.Instance;
 
@@ -1482,7 +1735,7 @@ namespace Amazon.LocationService
 
         internal virtual DeleteRouteCalculatorResponse DeleteRouteCalculator(DeleteRouteCalculatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteCalculatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteCalculatorResponseUnmarshaller.Instance;
 
@@ -1492,13 +1745,49 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a route calculator resource from your Amazon Web Services account.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DeleteRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Deletes a route calculator resource from your Amazon Web Services account.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This operation deletes the resource permanently.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRouteCalculator service method.</param>
         /// <param name="cancellationToken">
@@ -1526,7 +1815,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteRouteCalculator">REST API Reference for DeleteRouteCalculator Operation</seealso>
         public virtual Task<DeleteRouteCalculatorResponse> DeleteRouteCalculatorAsync(DeleteRouteCalculatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteCalculatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteCalculatorResponseUnmarshaller.Instance;
 
@@ -1538,7 +1827,7 @@ namespace Amazon.LocationService
 
         internal virtual DeleteTrackerResponse DeleteTracker(DeleteTrackerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrackerResponseUnmarshaller.Instance;
 
@@ -1584,7 +1873,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteTracker">REST API Reference for DeleteTracker Operation</seealso>
         public virtual Task<DeleteTrackerResponse> DeleteTrackerAsync(DeleteTrackerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTrackerResponseUnmarshaller.Instance;
 
@@ -1596,7 +1885,7 @@ namespace Amazon.LocationService
 
         internal virtual DescribeGeofenceCollectionResponse DescribeGeofenceCollection(DescribeGeofenceCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGeofenceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGeofenceCollectionResponseUnmarshaller.Instance;
 
@@ -1634,7 +1923,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeGeofenceCollection">REST API Reference for DescribeGeofenceCollection Operation</seealso>
         public virtual Task<DescribeGeofenceCollectionResponse> DescribeGeofenceCollectionAsync(DescribeGeofenceCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGeofenceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGeofenceCollectionResponseUnmarshaller.Instance;
 
@@ -1646,7 +1935,7 @@ namespace Amazon.LocationService
 
         internal virtual DescribeKeyResponse DescribeKey(DescribeKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyResponseUnmarshaller.Instance;
 
@@ -1657,6 +1946,12 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Retrieves the API key resource details.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKey service method.</param>
         /// <param name="cancellationToken">
@@ -1684,7 +1979,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public virtual Task<DescribeKeyResponse> DescribeKeyAsync(DescribeKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeKeyResponseUnmarshaller.Instance;
 
@@ -1696,7 +1991,7 @@ namespace Amazon.LocationService
 
         internal virtual DescribeMapResponse DescribeMap(DescribeMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMapResponseUnmarshaller.Instance;
 
@@ -1706,7 +2001,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the map resource details.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMap service method.</param>
         /// <param name="cancellationToken">
@@ -1734,7 +2066,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeMap">REST API Reference for DescribeMap Operation</seealso>
         public virtual Task<DescribeMapResponse> DescribeMapAsync(DescribeMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMapResponseUnmarshaller.Instance;
 
@@ -1746,7 +2078,7 @@ namespace Amazon.LocationService
 
         internal virtual DescribePlaceIndexResponse DescribePlaceIndex(DescribePlaceIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePlaceIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePlaceIndexResponseUnmarshaller.Instance;
 
@@ -1756,7 +2088,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the place index resource details.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlaceIndex service method.</param>
         /// <param name="cancellationToken">
@@ -1784,7 +2154,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribePlaceIndex">REST API Reference for DescribePlaceIndex Operation</seealso>
         public virtual Task<DescribePlaceIndexResponse> DescribePlaceIndexAsync(DescribePlaceIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePlaceIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePlaceIndexResponseUnmarshaller.Instance;
 
@@ -1796,7 +2166,7 @@ namespace Amazon.LocationService
 
         internal virtual DescribeRouteCalculatorResponse DescribeRouteCalculator(DescribeRouteCalculatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteCalculatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteCalculatorResponseUnmarshaller.Instance;
 
@@ -1806,7 +2176,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DescribeRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the route calculator resource details.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRouteCalculator service method.</param>
         /// <param name="cancellationToken">
@@ -1834,7 +2242,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeRouteCalculator">REST API Reference for DescribeRouteCalculator Operation</seealso>
         public virtual Task<DescribeRouteCalculatorResponse> DescribeRouteCalculatorAsync(DescribeRouteCalculatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteCalculatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteCalculatorResponseUnmarshaller.Instance;
 
@@ -1846,7 +2254,7 @@ namespace Amazon.LocationService
 
         internal virtual DescribeTrackerResponse DescribeTracker(DescribeTrackerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrackerResponseUnmarshaller.Instance;
 
@@ -1884,7 +2292,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeTracker">REST API Reference for DescribeTracker Operation</seealso>
         public virtual Task<DescribeTrackerResponse> DescribeTrackerAsync(DescribeTrackerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTrackerResponseUnmarshaller.Instance;
 
@@ -1896,7 +2304,7 @@ namespace Amazon.LocationService
 
         internal virtual DisassociateTrackerConsumerResponse DisassociateTrackerConsumer(DisassociateTrackerConsumerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTrackerConsumerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTrackerConsumerResponseUnmarshaller.Instance;
 
@@ -1941,7 +2349,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DisassociateTrackerConsumer">REST API Reference for DisassociateTrackerConsumer Operation</seealso>
         public virtual Task<DisassociateTrackerConsumerResponse> DisassociateTrackerConsumerAsync(DisassociateTrackerConsumerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateTrackerConsumerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateTrackerConsumerResponseUnmarshaller.Instance;
 
@@ -1953,7 +2361,7 @@ namespace Amazon.LocationService
 
         internal virtual ForecastGeofenceEventsResponse ForecastGeofenceEvents(ForecastGeofenceEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ForecastGeofenceEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ForecastGeofenceEventsResponseUnmarshaller.Instance;
 
@@ -2018,7 +2426,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ForecastGeofenceEvents">REST API Reference for ForecastGeofenceEvents Operation</seealso>
         public virtual Task<ForecastGeofenceEventsResponse> ForecastGeofenceEventsAsync(ForecastGeofenceEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ForecastGeofenceEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ForecastGeofenceEventsResponseUnmarshaller.Instance;
 
@@ -2030,7 +2438,7 @@ namespace Amazon.LocationService
 
         internal virtual GetDevicePositionResponse GetDevicePosition(GetDevicePositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevicePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevicePositionResponseUnmarshaller.Instance;
 
@@ -2074,7 +2482,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetDevicePosition">REST API Reference for GetDevicePosition Operation</seealso>
         public virtual Task<GetDevicePositionResponse> GetDevicePositionAsync(GetDevicePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevicePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevicePositionResponseUnmarshaller.Instance;
 
@@ -2086,7 +2494,7 @@ namespace Amazon.LocationService
 
         internal virtual GetDevicePositionHistoryResponse GetDevicePositionHistory(GetDevicePositionHistoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevicePositionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevicePositionHistoryResponseUnmarshaller.Instance;
 
@@ -2131,7 +2539,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetDevicePositionHistory">REST API Reference for GetDevicePositionHistory Operation</seealso>
         public virtual Task<GetDevicePositionHistoryResponse> GetDevicePositionHistoryAsync(GetDevicePositionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevicePositionHistoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevicePositionHistoryResponseUnmarshaller.Instance;
 
@@ -2143,7 +2551,7 @@ namespace Amazon.LocationService
 
         internal virtual GetGeofenceResponse GetGeofence(GetGeofenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGeofenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGeofenceResponseUnmarshaller.Instance;
 
@@ -2188,7 +2596,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetGeofence">REST API Reference for GetGeofence Operation</seealso>
         public virtual Task<GetGeofenceResponse> GetGeofenceAsync(GetGeofenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGeofenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGeofenceResponseUnmarshaller.Instance;
 
@@ -2200,7 +2608,7 @@ namespace Amazon.LocationService
 
         internal virtual GetMapGlyphsResponse GetMapGlyphs(GetMapGlyphsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMapGlyphsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMapGlyphsResponseUnmarshaller.Instance;
 
@@ -2210,7 +2618,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetGlyphs.html">
+        /// <c>GetGlyphs</c> </a> unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapGlyphs</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetGlyphs</c> operation gives a better user experience and is compatible
+        /// with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves glyphs used to display labels on a map.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapGlyphs service method.</param>
         /// <param name="cancellationToken">
@@ -2238,7 +2684,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetMapGlyphs">REST API Reference for GetMapGlyphs Operation</seealso>
         public virtual Task<GetMapGlyphsResponse> GetMapGlyphsAsync(GetMapGlyphsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMapGlyphsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMapGlyphsResponseUnmarshaller.Instance;
 
@@ -2250,7 +2696,7 @@ namespace Amazon.LocationService
 
         internal virtual GetMapSpritesResponse GetMapSprites(GetMapSpritesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMapSpritesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMapSpritesResponseUnmarshaller.Instance;
 
@@ -2260,9 +2706,47 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetSprites.html">
+        /// <c>GetSprites</c> </a> unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapSprites</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetSprites</c> operation gives a better user experience and is compatible
+        /// with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves the sprite sheet corresponding to a map resource. The sprite sheet is a
         /// PNG image paired with a JSON document describing the offsets of individual icons that
         /// will be displayed on a rendered map.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapSprites service method.</param>
         /// <param name="cancellationToken">
@@ -2290,7 +2774,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetMapSprites">REST API Reference for GetMapSprites Operation</seealso>
         public virtual Task<GetMapSpritesResponse> GetMapSpritesAsync(GetMapSpritesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMapSpritesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMapSpritesResponseUnmarshaller.Instance;
 
@@ -2302,7 +2786,7 @@ namespace Amazon.LocationService
 
         internal virtual GetMapStyleDescriptorResponse GetMapStyleDescriptor(GetMapStyleDescriptorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMapStyleDescriptorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMapStyleDescriptorResponseUnmarshaller.Instance;
 
@@ -2312,13 +2796,50 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Retrieves the map style descriptor from a map resource. 
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStyleDescriptor.html">
+        /// <c>GetStyleDescriptor</c> </a> unless you require <c>Grab</c> data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapStyleDescriptor</c> is part of a previous Amazon Location Service Maps API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetStyleDescriptor</c> operation gives a better user experience and
+        /// is compatible with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Retrieves the map style descriptor from a map resource. 
+        /// </para>
         ///  
         /// <para>
         /// The style descriptor contains speciﬁcations on how features render on a map. For example,
         /// what data to display, what order to display the data in, and the style for the data.
         /// Style descriptors follow the Mapbox Style Specification.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapStyleDescriptor service method.</param>
@@ -2347,7 +2868,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetMapStyleDescriptor">REST API Reference for GetMapStyleDescriptor Operation</seealso>
         public virtual Task<GetMapStyleDescriptorResponse> GetMapStyleDescriptorAsync(GetMapStyleDescriptorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMapStyleDescriptorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMapStyleDescriptorResponseUnmarshaller.Instance;
 
@@ -2359,7 +2880,7 @@ namespace Amazon.LocationService
 
         internal virtual GetMapTileResponse GetMapTile(GetMapTileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMapTileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMapTileResponseUnmarshaller.Instance;
 
@@ -2369,15 +2890,52 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetTile.html">
+        /// <c>GetTile</c> </a> unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GetMapTile</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>GetTile</c> operation gives a better user experience and is compatible
+        /// with the remainder of the V2 Maps API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Retrieves a vector data tile from the map resource. Map tiles are used by clients
         /// to render a map. they're addressed using a grid arrangement with an X coordinate,
         /// Y coordinate, and Z (zoom) level. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The origin (0, 0) is the top left of the map. Increasing the zoom level by 1 doubles
         /// both the X and Y dimensions, so a tile containing data for the entire world at (0/0/0)
         /// will be split into 4 tiles at zoom 1 (1/0/0, 1/0/1, 1/1/0, 1/1/1).
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMapTile service method.</param>
@@ -2406,7 +2964,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetMapTile">REST API Reference for GetMapTile Operation</seealso>
         public virtual Task<GetMapTileResponse> GetMapTileAsync(GetMapTileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMapTileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMapTileResponseUnmarshaller.Instance;
 
@@ -2418,7 +2976,7 @@ namespace Amazon.LocationService
 
         internal virtual GetPlaceResponse GetPlace(GetPlaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlaceResponseUnmarshaller.Instance;
 
@@ -2428,8 +2986,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Finds a place by its unique ID. A <c>PlaceId</c> is returned by other search operations.
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the <a href="/location/latest/APIReference/API_geoplaces_GetPlace.html">V2
+        /// <c>GetPlace</c> </a> operation unless you require Grab data.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// This version of <c>GetPlace</c> is part of a previous Amazon Location Service Places
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Version 2 of the <c>GetPlace</c> operation interoperates with the rest of the Places
+        /// V2 API, while this version does not.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
+        /// Finds a place by its unique ID. A <c>PlaceId</c> is returned by other search operations.
+        /// </para>
         ///  <note> 
         /// <para>
         /// A PlaceId is valid only if all of the following are the same in the original search
@@ -2454,6 +3048,7 @@ namespace Amazon.LocationService
         /// see <a href="http://aws.amazon.com/service-terms">AWS service terms</a>.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlace service method.</param>
         /// <param name="cancellationToken">
@@ -2481,7 +3076,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/GetPlace">REST API Reference for GetPlace Operation</seealso>
         public virtual Task<GetPlaceResponse> GetPlaceAsync(GetPlaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlaceResponseUnmarshaller.Instance;
 
@@ -2493,7 +3088,7 @@ namespace Amazon.LocationService
 
         internal virtual ListDevicePositionsResponse ListDevicePositions(ListDevicePositionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicePositionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicePositionsResponseUnmarshaller.Instance;
 
@@ -2528,7 +3123,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions">REST API Reference for ListDevicePositions Operation</seealso>
         public virtual Task<ListDevicePositionsResponse> ListDevicePositionsAsync(ListDevicePositionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicePositionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicePositionsResponseUnmarshaller.Instance;
 
@@ -2540,7 +3135,7 @@ namespace Amazon.LocationService
 
         internal virtual ListGeofenceCollectionsResponse ListGeofenceCollections(ListGeofenceCollectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGeofenceCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGeofenceCollectionsResponseUnmarshaller.Instance;
 
@@ -2575,7 +3170,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListGeofenceCollections">REST API Reference for ListGeofenceCollections Operation</seealso>
         public virtual Task<ListGeofenceCollectionsResponse> ListGeofenceCollectionsAsync(ListGeofenceCollectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGeofenceCollectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGeofenceCollectionsResponseUnmarshaller.Instance;
 
@@ -2587,7 +3182,7 @@ namespace Amazon.LocationService
 
         internal virtual ListGeofencesResponse ListGeofences(ListGeofencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGeofencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGeofencesResponseUnmarshaller.Instance;
 
@@ -2625,7 +3220,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListGeofences">REST API Reference for ListGeofences Operation</seealso>
         public virtual Task<ListGeofencesResponse> ListGeofencesAsync(ListGeofencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGeofencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGeofencesResponseUnmarshaller.Instance;
 
@@ -2637,7 +3232,7 @@ namespace Amazon.LocationService
 
         internal virtual ListKeysResponse ListKeys(ListKeysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeysResponseUnmarshaller.Instance;
 
@@ -2648,6 +3243,12 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Lists API key resources in your Amazon Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+        /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
         /// <param name="cancellationToken">
@@ -2672,7 +3273,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public virtual Task<ListKeysResponse> ListKeysAsync(ListKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListKeysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListKeysResponseUnmarshaller.Instance;
 
@@ -2684,7 +3285,7 @@ namespace Amazon.LocationService
 
         internal virtual ListMapsResponse ListMaps(ListMapsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMapsResponseUnmarshaller.Instance;
 
@@ -2694,7 +3295,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListMaps</c> is part of a previous Amazon Location Service Maps API (version 1)
+        /// which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Lists map resources in your Amazon Web Services account.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMaps service method.</param>
         /// <param name="cancellationToken">
@@ -2719,7 +3357,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListMaps">REST API Reference for ListMaps Operation</seealso>
         public virtual Task<ListMapsResponse> ListMapsAsync(ListMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMapsResponseUnmarshaller.Instance;
 
@@ -2731,7 +3369,7 @@ namespace Amazon.LocationService
 
         internal virtual ListPlaceIndexesResponse ListPlaceIndexes(ListPlaceIndexesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlaceIndexesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlaceIndexesResponseUnmarshaller.Instance;
 
@@ -2741,7 +3379,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListPlaceIndexes</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Lists place index resources in your Amazon Web Services account.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlaceIndexes service method.</param>
         /// <param name="cancellationToken">
@@ -2766,7 +3442,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListPlaceIndexes">REST API Reference for ListPlaceIndexes Operation</seealso>
         public virtual Task<ListPlaceIndexesResponse> ListPlaceIndexesAsync(ListPlaceIndexesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPlaceIndexesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPlaceIndexesResponseUnmarshaller.Instance;
 
@@ -2778,7 +3454,7 @@ namespace Amazon.LocationService
 
         internal virtual ListRouteCalculatorsResponse ListRouteCalculators(ListRouteCalculatorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRouteCalculatorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRouteCalculatorsResponseUnmarshaller.Instance;
 
@@ -2788,7 +3464,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ListRouteCalculators</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Lists route calculator resources in your Amazon Web Services account.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRouteCalculators service method.</param>
         /// <param name="cancellationToken">
@@ -2813,7 +3527,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculators">REST API Reference for ListRouteCalculators Operation</seealso>
         public virtual Task<ListRouteCalculatorsResponse> ListRouteCalculatorsAsync(ListRouteCalculatorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRouteCalculatorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRouteCalculatorsResponseUnmarshaller.Instance;
 
@@ -2825,7 +3539,7 @@ namespace Amazon.LocationService
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2863,7 +3577,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2875,7 +3589,7 @@ namespace Amazon.LocationService
 
         internal virtual ListTrackerConsumersResponse ListTrackerConsumers(ListTrackerConsumersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrackerConsumersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrackerConsumersResponseUnmarshaller.Instance;
 
@@ -2913,7 +3627,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTrackerConsumers">REST API Reference for ListTrackerConsumers Operation</seealso>
         public virtual Task<ListTrackerConsumersResponse> ListTrackerConsumersAsync(ListTrackerConsumersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrackerConsumersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrackerConsumersResponseUnmarshaller.Instance;
 
@@ -2925,7 +3639,7 @@ namespace Amazon.LocationService
 
         internal virtual ListTrackersResponse ListTrackers(ListTrackersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrackersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrackersResponseUnmarshaller.Instance;
 
@@ -2960,7 +3674,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTrackers">REST API Reference for ListTrackers Operation</seealso>
         public virtual Task<ListTrackersResponse> ListTrackersAsync(ListTrackersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTrackersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTrackersResponseUnmarshaller.Instance;
 
@@ -2972,7 +3686,7 @@ namespace Amazon.LocationService
 
         internal virtual PutGeofenceResponse PutGeofence(PutGeofenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutGeofenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutGeofenceResponseUnmarshaller.Instance;
 
@@ -3014,7 +3728,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/PutGeofence">REST API Reference for PutGeofence Operation</seealso>
         public virtual Task<PutGeofenceResponse> PutGeofenceAsync(PutGeofenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutGeofenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutGeofenceResponseUnmarshaller.Instance;
 
@@ -3026,7 +3740,7 @@ namespace Amazon.LocationService
 
         internal virtual SearchPlaceIndexForPositionResponse SearchPlaceIndexForPosition(SearchPlaceIndexForPositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchPlaceIndexForPositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchPlaceIndexForPositionResponseUnmarshaller.Instance;
 
@@ -3036,8 +3750,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_ReverseGeocode.html">
+        /// <c>ReverseGeocode</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_SearchNearby.html">
+        /// <c>SearchNearby</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SearchPlaceIndexForPosition</c> is part of a previous Amazon Location Service
+        /// Places API (version 1) which has been superseded by a more intuitive, powerful, and
+        /// complete API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>ReverseGeocode</c> operation gives better results in the address
+        /// reverse-geocoding use case, while the version 2 <c>SearchNearby</c> operation gives
+        /// better results when searching for businesses and points of interest near a specific
+        /// location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Reverse geocodes a given coordinate and returns a legible address. Allows you to search
         /// for Places or points of interest near a given position.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForPosition service method.</param>
         /// <param name="cancellationToken">
@@ -3065,7 +3815,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForPosition">REST API Reference for SearchPlaceIndexForPosition Operation</seealso>
         public virtual Task<SearchPlaceIndexForPositionResponse> SearchPlaceIndexForPositionAsync(SearchPlaceIndexForPositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchPlaceIndexForPositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchPlaceIndexForPositionResponseUnmarshaller.Instance;
 
@@ -3077,7 +3827,7 @@ namespace Amazon.LocationService
 
         internal virtual SearchPlaceIndexForSuggestionsResponse SearchPlaceIndexForSuggestions(SearchPlaceIndexForSuggestionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchPlaceIndexForSuggestionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchPlaceIndexForSuggestionsResponseUnmarshaller.Instance;
 
@@ -3087,10 +3837,42 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_Suggest.html">
+        /// <c>Suggest</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_Autocomplete.html">
+        /// <c>Autocomplete</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SearchPlaceIndexForSuggestions</c> is part of a previous Amazon Location Service
+        /// Places API (version 1) which has been superseded by a more intuitive, powerful, and
+        /// complete API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>Suggest</c> operation gives better results for typeahead place search
+        /// suggestions with fuzzy matching, while the version 2 <c>Autocomplete</c> operation
+        /// gives better results for address completion based on partial input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Generates suggestions for addresses and points of interest based on partial or misspelled
         /// free-form text. This operation is also known as autocomplete, autosuggest, or fuzzy
         /// matching.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Optional parameters let you narrow your search results by bounding box or country,
@@ -3104,6 +3886,7 @@ namespace Amazon.LocationService
         /// same command returns an error.
         /// </para>
         ///  </note>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForSuggestions service method.</param>
         /// <param name="cancellationToken">
@@ -3131,7 +3914,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForSuggestions">REST API Reference for SearchPlaceIndexForSuggestions Operation</seealso>
         public virtual Task<SearchPlaceIndexForSuggestionsResponse> SearchPlaceIndexForSuggestionsAsync(SearchPlaceIndexForSuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchPlaceIndexForSuggestionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchPlaceIndexForSuggestionsResponseUnmarshaller.Instance;
 
@@ -3143,7 +3926,7 @@ namespace Amazon.LocationService
 
         internal virtual SearchPlaceIndexForTextResponse SearchPlaceIndexForText(SearchPlaceIndexForTextRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchPlaceIndexForTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchPlaceIndexForTextResponseUnmarshaller.Instance;
 
@@ -3153,9 +3936,41 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to <a href="/location/latest/APIReference/API_geoplaces_Geocode.html">
+        /// <c>Geocode</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_SearchText.html">
+        /// <c>SearchText</c> </a> unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SearchPlaceIndexForText</c> is part of a previous Amazon Location Service Places
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The version 2 <c>Geocode</c> operation gives better results in the address geocoding
+        /// use case, while the version 2 <c>SearchText</c> operation gives better results when
+        /// searching for businesses and points of interest.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Geocodes free-form text, such as an address, name, city, or region to allow you to
         /// search for Places or points of interest. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Optional parameters let you narrow your search results by bounding box or country,
@@ -3170,6 +3985,8 @@ namespace Amazon.LocationService
         ///  </note> 
         /// <para>
         /// Search results are returned in order of highest to lowest relevance.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPlaceIndexForText service method.</param>
@@ -3198,7 +4015,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchPlaceIndexForText">REST API Reference for SearchPlaceIndexForText Operation</seealso>
         public virtual Task<SearchPlaceIndexForTextResponse> SearchPlaceIndexForTextAsync(SearchPlaceIndexForTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchPlaceIndexForTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchPlaceIndexForTextResponseUnmarshaller.Instance;
 
@@ -3210,7 +4027,7 @@ namespace Amazon.LocationService
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3268,7 +4085,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3280,7 +4097,7 @@ namespace Amazon.LocationService
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3318,7 +4135,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3330,7 +4147,7 @@ namespace Amazon.LocationService
 
         internal virtual UpdateGeofenceCollectionResponse UpdateGeofenceCollection(UpdateGeofenceCollectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGeofenceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGeofenceCollectionResponseUnmarshaller.Instance;
 
@@ -3368,7 +4185,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateGeofenceCollection">REST API Reference for UpdateGeofenceCollection Operation</seealso>
         public virtual Task<UpdateGeofenceCollectionResponse> UpdateGeofenceCollectionAsync(UpdateGeofenceCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGeofenceCollectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGeofenceCollectionResponseUnmarshaller.Instance;
 
@@ -3380,7 +4197,7 @@ namespace Amazon.LocationService
 
         internal virtual UpdateKeyResponse UpdateKey(UpdateKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyResponseUnmarshaller.Instance;
 
@@ -3418,7 +4235,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateKey">REST API Reference for UpdateKey Operation</seealso>
         public virtual Task<UpdateKeyResponse> UpdateKeyAsync(UpdateKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateKeyResponseUnmarshaller.Instance;
 
@@ -3430,7 +4247,7 @@ namespace Amazon.LocationService
 
         internal virtual UpdateMapResponse UpdateMap(UpdateMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMapResponseUnmarshaller.Instance;
 
@@ -3440,7 +4257,44 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// upgrading to the Maps API V2 unless you require <c>Grab</c> data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UpdateMap</c> is part of a previous Amazon Location Service Maps API (version
+        /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+        /// 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Maps API version 2 has a simplified interface that can be used without creating
+        /// or managing map resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an AWS SDK or the AWS CLI, note that the Maps API version 2 is found
+        /// under <c>geo-maps</c> or <c>geo_maps</c>, not under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since <c>Grab</c> is not yet fully supported in Maps API version 2, we recommend you
+        /// continue using API version 1 when using <c>Grab</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_Operations_Amazon_Location_Service_Maps_V2.html">Maps
+        /// V2 API Reference</a> or the <a href="https://docs.aws.amazon.com/location/latest/developerguide/maps.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Updates the specified properties of a given map resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMap service method.</param>
         /// <param name="cancellationToken">
@@ -3468,7 +4322,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateMap">REST API Reference for UpdateMap Operation</seealso>
         public virtual Task<UpdateMapResponse> UpdateMapAsync(UpdateMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMapResponseUnmarshaller.Instance;
 
@@ -3480,7 +4334,7 @@ namespace Amazon.LocationService
 
         internal virtual UpdatePlaceIndexResponse UpdatePlaceIndex(UpdatePlaceIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePlaceIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePlaceIndexResponseUnmarshaller.Instance;
 
@@ -3490,7 +4344,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Places API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UpdatePlaceIndex</c> is part of a previous Amazon Location Service Places API
+        /// (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Places API version 2 has a simplified interface that can be used without creating
+        /// or managing place index resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Places API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Places V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Updates the specified properties of a given place index resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePlaceIndex service method.</param>
         /// <param name="cancellationToken">
@@ -3518,7 +4410,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdatePlaceIndex">REST API Reference for UpdatePlaceIndex Operation</seealso>
         public virtual Task<UpdatePlaceIndexResponse> UpdatePlaceIndexAsync(UpdatePlaceIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePlaceIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePlaceIndexResponseUnmarshaller.Instance;
 
@@ -3530,7 +4422,7 @@ namespace Amazon.LocationService
 
         internal virtual UpdateRouteCalculatorResponse UpdateRouteCalculator(UpdateRouteCalculatorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRouteCalculatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRouteCalculatorResponseUnmarshaller.Instance;
 
@@ -3540,7 +4432,45 @@ namespace Amazon.LocationService
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// This operation is no longer current and may be deprecated in the future. We recommend
+        /// you upgrade to the Routes API V2 unless you require Grab data.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>UpdateRouteCalculator</c> is part of a previous Amazon Location Service Routes
+        /// API (version 1) which has been superseded by a more intuitive, powerful, and complete
+        /// API (version 2).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Routes API version 2 has a simplified interface that can be used without creating
+        /// or managing route calculator resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using an Amazon Web Services SDK or the Amazon Web Services CLI, note that
+        /// the Routes API version 2 is found under <c>geo-routes</c> or <c>geo_routes</c>, not
+        /// under <c>location</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Since Grab is not yet fully supported in Routes API version 2, we recommend you continue
+        /// using API version 1 when using Grab.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Start your version 2 API journey with the Routes V2 <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Routes_V2.html">API
+        /// Reference</a> or the <a href="/location/latest/developerguide/routes.html">Developer
+        /// Guide</a>.
+        /// </para>
+        ///  </li> </ul> </important> 
+        /// <para>
         /// Updates the specified properties for a given route calculator resource.
+        /// </para>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRouteCalculator service method.</param>
         /// <param name="cancellationToken">
@@ -3568,7 +4498,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateRouteCalculator">REST API Reference for UpdateRouteCalculator Operation</seealso>
         public virtual Task<UpdateRouteCalculatorResponse> UpdateRouteCalculatorAsync(UpdateRouteCalculatorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRouteCalculatorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRouteCalculatorResponseUnmarshaller.Instance;
 
@@ -3580,7 +4510,7 @@ namespace Amazon.LocationService
 
         internal virtual UpdateTrackerResponse UpdateTracker(UpdateTrackerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrackerResponseUnmarshaller.Instance;
 
@@ -3618,7 +4548,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateTracker">REST API Reference for UpdateTracker Operation</seealso>
         public virtual Task<UpdateTrackerResponse> UpdateTrackerAsync(UpdateTrackerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTrackerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTrackerResponseUnmarshaller.Instance;
 
@@ -3630,7 +4560,7 @@ namespace Amazon.LocationService
 
         internal virtual VerifyDevicePositionResponse VerifyDevicePosition(VerifyDevicePositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyDevicePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyDevicePositionResponseUnmarshaller.Instance;
 
@@ -3678,7 +4608,7 @@ namespace Amazon.LocationService
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/VerifyDevicePosition">REST API Reference for VerifyDevicePosition Operation</seealso>
         public virtual Task<VerifyDevicePositionResponse> VerifyDevicePositionAsync(VerifyDevicePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyDevicePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyDevicePositionResponseUnmarshaller.Instance;
 

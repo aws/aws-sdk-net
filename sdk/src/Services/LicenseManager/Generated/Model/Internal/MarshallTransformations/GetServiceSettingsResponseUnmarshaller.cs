@@ -52,6 +52,18 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("CrossRegionDiscoveryHomeRegion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CrossRegionDiscoveryHomeRegion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("CrossRegionDiscoverySourceRegions", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.CrossRegionDiscoverySourceRegions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("EnableCrossAccountsDiscovery", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
@@ -74,6 +86,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.S3BucketArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ServiceStatus", targetDepth))
+                {
+                    var unmarshaller = ServiceStatusUnmarshaller.Instance;
+                    response.ServiceStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnsTopicArn", targetDepth))

@@ -41,7 +41,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property DetailsUri. URI associated with a signal map's monitor
         /// deployment.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true)]
         public string DetailsUri
         {
             get { return this._detailsUri; }

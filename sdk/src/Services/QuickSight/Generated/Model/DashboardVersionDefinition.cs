@@ -70,7 +70,7 @@ namespace Amazon.QuickSight.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=500)]
+        [AWSProperty(Max=2000)]
         public List<CalculatedField> CalculatedFields
         {
             get { return this._calculatedFields; }
@@ -142,7 +142,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/adding-a-filter.html">Filtering
-        /// Data in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// Data in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -190,7 +190,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-        /// in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

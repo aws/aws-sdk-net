@@ -34,8 +34,28 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class IntegrationConfig
     {
+        private bool? _continuousSync;
         private string _refreshInterval;
         private Dictionary<string, string> _sourceProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ContinuousSync. 
+        /// <para>
+        /// Enables continuous synchronization for on-demand data extractions from SaaS applications
+        /// to Amazon Web Services data services like Amazon Redshift and Amazon S3.
+        /// </para>
+        /// </summary>
+        public bool? ContinuousSync
+        {
+            get { return this._continuousSync; }
+            set { this._continuousSync = value; }
+        }
+
+        // Check to see if ContinuousSync property is set
+        internal bool IsSetContinuousSync()
+        {
+            return this._continuousSync.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RefreshInterval. 
@@ -43,8 +63,7 @@ namespace Amazon.Glue.Model
         /// Specifies the frequency at which CDC (Change Data Capture) pulls or incremental loads
         /// should occur. This parameter provides flexibility to align the refresh rate with your
         /// specific data update patterns, system load considerations, and performance optimization
-        /// goals. Time increment can be set from 15 minutes to 8640 minutes (six days). Currently
-        /// supports creation of <c>RefreshInterval</c> only.
+        /// goals. Time increment can be set from 15 minutes to 8640 minutes (six days).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

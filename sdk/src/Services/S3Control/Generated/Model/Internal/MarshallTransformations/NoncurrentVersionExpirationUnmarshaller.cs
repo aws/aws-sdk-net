@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoncurrentVersionExpiration Object
     /// </summary>  
-    public class NoncurrentVersionExpirationUnmarshaller : IXmlUnmarshaller<NoncurrentVersionExpiration, XmlUnmarshallerContext>
+    public partial class NoncurrentVersionExpirationUnmarshaller : IXmlUnmarshaller<NoncurrentVersionExpiration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.NoncurrentDays = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, NoncurrentVersionExpiration unmarshalledObject, int targetDepth);
+
         private static NoncurrentVersionExpirationUnmarshaller _instance = new NoncurrentVersionExpirationUnmarshaller();        
 
         /// <summary>

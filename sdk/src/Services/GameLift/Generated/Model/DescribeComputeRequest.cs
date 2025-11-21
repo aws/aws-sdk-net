@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCompute operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves properties for a specific compute resource in an Amazon GameLift Servers
     /// fleet. You can list all computes in a fleet by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListCompute.html">ListCompute</a>.
     /// 
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 

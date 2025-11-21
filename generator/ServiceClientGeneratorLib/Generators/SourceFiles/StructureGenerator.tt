@@ -25,6 +25,12 @@ bool structureIsEvent = this.Structure != null && this.Structure.IsEvent;
 <#
 if(structureIsEvent || structureIsEventStream)
 {
+if (this.Config.ServiceModel.Type == ServiceType.Cbor) 
+{
+#>
+ using Amazon.Extensions.CborProtocol.Internal.Transform; 
+<#
+}
 #>
 using Amazon.Runtime.EventStreams;
 using Amazon.Runtime.EventStreams.Internal;
@@ -128,9 +134,18 @@ namespace <#=this.Config.Namespace#>.Model
 <#
             if(structureIsEvent)
             {
+             if(this.StructureType == StructureType.Response)
+             {
+#>
+        , IEventStreamEvent
+<#
+             }
+             else 
+             {
 #>
         : IEventStreamEvent
 <#
+             }
             }
 #>
     {
@@ -165,6 +180,9 @@ namespace <#=this.Config.Namespace#>.Model
                     if (member.IsExcluded || (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream))
                         continue;
 
+                    if (this.Config.ServiceModel.Customizations.FlattenShapes(this.Structure.Name).Contains(member.ModeledName))
+                        continue;
+                    
                     // If the shape is an exception then skip adding RequestId and ErrorCode because those properties comes from the base class.
                     if (this.Structure is ExceptionShape && (member.PropertyName == "RequestId" || member.PropertyName == "ErrorCode"))
                         continue;
@@ -177,6 +195,15 @@ namespace <#=this.Config.Namespace#>.Model
                         List<string> excludeMembersList = this.Config.ServiceModel.Customizations.ExcludeMembers(this.Structure.Name);
                         if (excludeMembersList.Contains(member.ModeledName))
                             continue;
+                    }
+                    if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlPrivateMemberAssignment.Count > 0)
+                    {
+
+#>
+<#WriteInjectXmlCode(injectModifier.InjectXmlPrivateMemberAssignment, 2);#>
+<#
+
+                        continue;
                     }
 #>
         private <#=member.DetermineType()#> <#=member.VariableName#><#= member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"#>
@@ -214,6 +241,9 @@ namespace <#=this.Config.Namespace#>.Model
                 foreach(var member in this.Structure.Members)
                 {
                     if (member.IsExcluded)
+                        continue;
+
+                    if (this.Config.ServiceModel.Customizations.FlattenShapes(this.Structure.Name).Contains(member.ModeledName))
                         continue;
 
                     // If the shape is an exception then skip adding RequestId and ErrorCode because those properties come from the base class.
@@ -295,8 +325,44 @@ namespace <#=this.Config.Namespace#>.Model
 #>
         <#=member.AccessModifier#> <#=memberModifier#><#=member.DetermineType()#> <#=member.PropertyName#>
         {
+<#
+                    if (this.Structure != null && this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(this.Structure.Name, out var modifier) && modifier.NewObjectIfNullProperties.Contains(member.ModeledName))
+                    {
+#>
+            get 
+            {
+                if (this.<#=member.VariableName#> == null)
+                    this.<#=member.VariableName#> = new <#=member.DetermineType()#>();
+
+                return this.<#=member.VariableName#>; 
+            }
+<#
+                    }
+                    else if (this.Structure != null && this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlPropertyGetter.Count > 0)
+                    {
+#>
+<#WriteInjectXmlCode(injectModifier.InjectXmlPropertyGetter, 3);#>
+<#
+                    }
+                    else
+                    {
+#>
             get { return this.<#=member.VariableName#>; }
+<#
+                    }
+                    if (this.Structure != null && this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectSetterModifier) && injectSetterModifier.InjectXmlPropertySetter.Count > 0)
+                    {
+#>
+<#WriteInjectXmlCode(injectSetterModifier.InjectXmlPropertySetter, 3);#>
+<#
+                    }
+                    else if (this.Structure != null && (!this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name,member.ModeledName,out var skipSetterModifier) || !skipSetterModifier.SkipSetter))
+                    {
+#>
             set { this.<#=member.VariableName#> = value; }
+<#
+                    }
+#>
         }
 
 <#
@@ -360,7 +426,8 @@ namespace <#=this.Config.Namespace#>.Model
                     // restxml and restjson is the only protocol where we send empty lists in headers. See following protocol tests.
                     // https://github.com/smithy-lang/smithy/blob/de486fa42c7bce4afc802bef95990795eeeed25a/smithy-aws-protocol-tests/model/restJson1/http-headers.smithy#L427
                     // https://github.com/smithy-lang/smithy/blob/de486fa42c7bce4afc802bef95990795eeeed25a/smithy-aws-protocol-tests/model/restXml/http-headers.smithy#L370
-                        if (this.Config.ServiceModel.Type == ServiceType.Rest_Xml || this.Config.ServiceModel.Type == ServiceType.Rest_Json)
+                    // S3 is the exception to this rule. We do not want to send empty header lists for S3.
+                        if (this.Config.ServiceId != "S3" && this.Config.ServiceModel.Type == ServiceType.Rest_Xml || this.Config.ServiceModel.Type == ServiceType.Rest_Json)
                         {
 
 #>
@@ -370,11 +437,11 @@ namespace <#=this.Config.Namespace#>.Model
                         else
                         {
 #>
-            return this.<#=member.VariableName#> != null && this.<#=member.VariableName#>.Count > 0;
+            return this.<#=member.VariableName#> != null && (this.<#=member.VariableName#>.Count > 0 || !AWSConfigs.InitializeCollections);
 <#
                         }
                     }
-                    else if (member.IsMap || member.IsList)
+                    else if (member.IsMap || member.IsList || ( (this.Config.ServiceModel.Customizations.OverrideDataType(this.Structure.Name, member.ModeledName) != null) && (this.Config.ServiceModel.Customizations.OverrideDataType(this.Structure.Name, member.ModeledName).DataType.Contains("List") || this.Config.ServiceModel.Customizations.OverrideDataType(this.Structure.Name, member.ModeledName).DataType.Contains("Dictionary"))))
                     {
 #>
             return this.<#=member.VariableName#> != null && (this.<#=member.VariableName#>.Count > 0 || !AWSConfigs.InitializeCollections); 
@@ -388,10 +455,18 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     else
                     {
-
+                        if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlIsSetCode.Count > 0)
+                        {
+#>
+<#WriteInjectXmlCode(injectModifier.InjectXmlIsSetCode, 3);#>
+<#
+                        }
+                        else
+                        {
 #>
             return this.<#=member.VariableName#> != null;
 <#
+                        }
                     }
 #>
         }

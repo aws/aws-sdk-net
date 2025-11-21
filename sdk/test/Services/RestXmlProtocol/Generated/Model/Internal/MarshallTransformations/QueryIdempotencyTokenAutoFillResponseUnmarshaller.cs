@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryIdempotencyTokenAutoFill operation
     /// </summary>  
-    public class QueryIdempotencyTokenAutoFillResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class QueryIdempotencyTokenAutoFillResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         {
             QueryIdempotencyTokenAutoFillResponse response = new QueryIdempotencyTokenAutoFillResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, QueryIdempotencyTokenAutoFillResponse response);
 
         private static QueryIdempotencyTokenAutoFillResponseUnmarshaller _instance = new QueryIdempotencyTokenAutoFillResponseUnmarshaller();        
 

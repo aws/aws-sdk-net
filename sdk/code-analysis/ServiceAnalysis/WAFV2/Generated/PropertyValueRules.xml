@@ -910,6 +910,18 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.DisallowedFeature.Feature</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.DisallowedFeature.RequiredPricingPlan</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.EmailField.Identifier</property>
     <min>1</min>
     <max>512</max>

@@ -771,6 +771,98 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  CreateIndex
+
+
+        /// <summary>
+        /// Creates an OpenSearch index with optional automatic semantic enrichment for specified
+        /// text fields. Automatic semantic enrichment enables semantic search capabilities without
+        /// requiring machine learning expertise, improving search relevance by up to 20% by understanding
+        /// search intent and contextual meaning beyond keyword matching. The semantic enrichment
+        /// process has zero impact on search latency as sparse encodings are stored directly
+        /// within the index during indexing. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-semantic-enrichment.html">Automatic
+        /// semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
+        /// 
+        /// <returns>The response from the CreateIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        CreateIndexResponse CreateIndex(CreateIndexRequest request);
+
+
+
+        /// <summary>
+        /// Creates an OpenSearch index with optional automatic semantic enrichment for specified
+        /// text fields. Automatic semantic enrichment enables semantic search capabilities without
+        /// requiring machine learning expertise, improving search relevance by up to 20% by understanding
+        /// search intent and contextual meaning beyond keyword matching. The semantic enrichment
+        /// process has zero impact on search latency as sparse encodings are stored directly
+        /// within the index during indexing. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-semantic-enrichment.html">Automatic
+        /// semantic enrichment</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceAlreadyExistsException">
+        /// An exception for creating a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CreateIndex">REST API Reference for CreateIndex Operation</seealso>
+        Task<CreateIndexResponse> CreateIndexAsync(CreateIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateOutboundConnection
 
 
@@ -1262,6 +1354,82 @@ namespace Amazon.OpenSearchService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteInboundConnection">REST API Reference for DeleteInboundConnection Operation</seealso>
         Task<DeleteInboundConnectionResponse> DeleteInboundConnectionAsync(DeleteInboundConnectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteIndex
+
+
+        /// <summary>
+        /// Deletes an OpenSearch index. This operation permanently removes the index and cannot
+        /// be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        DeleteIndexResponse DeleteIndex(DeleteIndexRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an OpenSearch index. This operation permanently removes the index and cannot
+        /// be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteIndex">REST API Reference for DeleteIndex Operation</seealso>
+        Task<DeleteIndexResponse> DeleteIndexAsync(DeleteIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2345,7 +2513,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Dissociates multiple packages from a domain simulatneously.
+        /// Dissociates multiple packages from a domain simultaneously.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DissociatePackages service method.</param>
         /// 
@@ -2375,7 +2543,7 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Dissociates multiple packages from a domain simulatneously.
+        /// Dissociates multiple packages from a domain simultaneously.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DissociatePackages service method.</param>
         /// <param name="cancellationToken">
@@ -2597,6 +2765,70 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  GetDefaultApplicationSetting
+
+
+        /// <summary>
+        /// Gets the ARN of the current default application.
+        /// 
+        ///  
+        /// <para>
+        ///  If the default application isn't set, the operation returns a resource not found
+        /// error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultApplicationSetting service method.</param>
+        /// 
+        /// <returns>The response from the GetDefaultApplicationSetting service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDefaultApplicationSetting">REST API Reference for GetDefaultApplicationSetting Operation</seealso>
+        GetDefaultApplicationSettingResponse GetDefaultApplicationSetting(GetDefaultApplicationSettingRequest request);
+
+
+
+        /// <summary>
+        /// Gets the ARN of the current default application.
+        /// 
+        ///  
+        /// <para>
+        ///  If the default application isn't set, the operation returns a resource not found
+        /// error.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultApplicationSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDefaultApplicationSetting service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDefaultApplicationSetting">REST API Reference for GetDefaultApplicationSetting Operation</seealso>
+        Task<GetDefaultApplicationSettingResponse> GetDefaultApplicationSettingAsync(GetDefaultApplicationSettingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetDirectQueryDataSource
 
 
@@ -2712,6 +2944,84 @@ namespace Amazon.OpenSearchService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDomainMaintenanceStatus">REST API Reference for GetDomainMaintenanceStatus Operation</seealso>
         Task<GetDomainMaintenanceStatusResponse> GetDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetIndex
+
+
+        /// <summary>
+        /// Retrieves information about an OpenSearch index including its schema and semantic
+        /// enrichment configuration. Use this operation to view the current index structure and
+        /// semantic search settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndex service method.</param>
+        /// 
+        /// <returns>The response from the GetIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        GetIndexResponse GetIndex(GetIndexRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about an OpenSearch index including its schema and semantic
+        /// enrichment configuration. Use this operation to view the current index structure and
+        /// semantic search settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetIndex">REST API Reference for GetIndex Operation</seealso>
+        Task<GetIndexResponse> GetIndexAsync(GetIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3767,6 +4077,72 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  PutDefaultApplicationSetting
+
+
+        /// <summary>
+        /// Sets the default application to the application with the specified ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  To remove the default application, use the <c>GetDefaultApplicationSetting</c> operation
+        /// to get the current default and then call the <c>PutDefaultApplicationSetting</c> with
+        /// the current applications ARN and the <c>setAsDefault</c> parameter set to <c>false</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDefaultApplicationSetting service method.</param>
+        /// 
+        /// <returns>The response from the PutDefaultApplicationSetting service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PutDefaultApplicationSetting">REST API Reference for PutDefaultApplicationSetting Operation</seealso>
+        PutDefaultApplicationSettingResponse PutDefaultApplicationSetting(PutDefaultApplicationSettingRequest request);
+
+
+
+        /// <summary>
+        /// Sets the default application to the application with the specified ARN.
+        /// 
+        ///  
+        /// <para>
+        ///  To remove the default application, use the <c>GetDefaultApplicationSetting</c> operation
+        /// to get the current default and then call the <c>PutDefaultApplicationSetting</c> with
+        /// the current applications ARN and the <c>setAsDefault</c> parameter set to <c>false</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDefaultApplicationSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDefaultApplicationSetting service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/PutDefaultApplicationSetting">REST API Reference for PutDefaultApplicationSetting Operation</seealso>
+        Task<PutDefaultApplicationSettingResponse> PutDefaultApplicationSettingAsync(PutDefaultApplicationSettingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RejectInboundConnection
 
 
@@ -4300,6 +4676,86 @@ namespace Amazon.OpenSearchService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">REST API Reference for UpdateDomainConfig Operation</seealso>
         Task<UpdateDomainConfigResponse> UpdateDomainConfigAsync(UpdateDomainConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateIndex
+
+
+        /// <summary>
+        /// Updates an existing OpenSearch index schema and semantic enrichment configuration.
+        /// This operation allows modification of field mappings and semantic search settings
+        /// for text fields. Changes to semantic enrichment configuration will apply to newly
+        /// ingested documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndex service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        UpdateIndexResponse UpdateIndex(UpdateIndexRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing OpenSearch index schema and semantic enrichment configuration.
+        /// This operation allows modification of field mappings and semantic search settings
+        /// for text fields. Changes to semantic enrichment configuration will apply to newly
+        /// ingested documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndex service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIndex service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Reduce the frequency of your requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateIndex">REST API Reference for UpdateIndex Operation</seealso>
+        Task<UpdateIndexResponse> UpdateIndexAsync(UpdateIndexRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

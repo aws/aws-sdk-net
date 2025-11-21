@@ -92,6 +92,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("errorMessageConfiguration", targetDepth))
+                {
+                    var unmarshaller = ErrorMessageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessageConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("format", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

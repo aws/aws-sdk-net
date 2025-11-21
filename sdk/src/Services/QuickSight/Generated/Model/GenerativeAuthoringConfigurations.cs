@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The generative BI authoring settings of an embedded Amazon QuickSight console.
+    /// The generative BI authoring settings of an embedded Quick Sight console.
     /// </summary>
     public partial class GenerativeAuthoringConfigurations
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// The generative BI authoring settings of an embedded Amazon QuickSight console.
+        /// The generative BI authoring settings of an embedded Quick Sight console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

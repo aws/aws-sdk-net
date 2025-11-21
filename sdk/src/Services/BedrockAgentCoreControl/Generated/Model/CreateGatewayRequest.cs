@@ -36,8 +36,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// 
     ///  
     /// <para>
-    /// To create a gateway, you must specify a name, protocol type, and IAM role. The role
-    /// grants the gateway permission to access Amazon Web Services services and resources.
+    /// If you specify <c>CUSTOM_JWT</c> as the <c>authorizerType</c>, you must provide an
+    /// <c>authorizerConfiguration</c>.
     /// </para>
     /// </summary>
     public partial class CreateGatewayRequest : AmazonBedrockAgentCoreControlRequest
@@ -52,14 +52,15 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private GatewayProtocolConfiguration _protocolConfiguration;
         private GatewayProtocolType _protocolType;
         private string _roleArn;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
-        /// The authorizer configuration for the Gateway.
+        /// The authorizer configuration for the gateway. Required if <c>authorizerType</c> is
+        /// <c>CUSTOM_JWT</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AuthorizerConfiguration AuthorizerConfiguration
         {
             get { return this._authorizerConfiguration; }
@@ -77,6 +78,15 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <para>
         /// The type of authorizer to use for the gateway.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOM_JWT</c> - Authorize with a bearer token.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS_IAM</c> - Authorize with your Amazon Web Services IAM credentials.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public AuthorizerType AuthorizerType
@@ -94,9 +104,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier to ensure that the operation completes no more
-        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
-        /// request but does not return an error.
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If you don't specify this field, a value is randomly generated for
+        /// you. If this token matches a previous request, the service ignores the request, but
+        /// doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
@@ -134,10 +146,18 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ExceptionLevel. 
         /// <para>
-        /// The verbosity of exception messages. Use DEBUG mode to see granular exception messages
-        /// from a Gateway. If this parameter is not set, exception messages are by default sanitized
-        /// for presentation to end users.
+        /// The level of detail in error messages returned when invoking the gateway.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the value is <c>DEBUG</c>, granular exception messages are returned to help a user
+        /// debug the gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value is omitted, a generic error message is returned to the end user.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ExceptionLevel ExceptionLevel
         {
@@ -193,7 +213,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ProtocolConfiguration. 
         /// <para>
-        /// The configuration settings for the protocol specified in the protocolType parameter.
+        /// The configuration settings for the protocol specified in the <c>protocolType</c> parameter.
         /// </para>
         /// </summary>
         public GatewayProtocolConfiguration ProtocolConfiguration
@@ -211,7 +231,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ProtocolType. 
         /// <para>
-        /// The protocol type for the gateway. Currently supports MCP (Model Context Protocol).
+        /// The protocol type for the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -245,6 +265,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of key-value pairs to associate with the gateway as metadata tags.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

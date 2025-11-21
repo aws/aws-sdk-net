@@ -77,9 +77,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Components. 
         /// <para>
-        /// Components for build and test that are included in the container recipe. Recipes require
-        /// a minimum of one build component, and can have a maximum of 20 build and test components
-        /// in any combination.
+        /// The components included in the container recipe.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -87,7 +85,7 @@ namespace Amazon.Imagebuilder.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public List<ComponentConfiguration> Components
         {
             get { return this._components; }
@@ -216,7 +214,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Identifies which KMS key is used to encrypt the Dockerfile template.
+        /// The Amazon Resource Name (ARN) that uniquely identifies which KMS key is used to encrypt
+        /// the Dockerfile template. This can be either the Key ARN or the Alias ARN. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key
+        /// identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

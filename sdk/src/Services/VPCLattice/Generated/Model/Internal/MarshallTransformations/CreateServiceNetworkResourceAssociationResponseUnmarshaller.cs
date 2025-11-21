@@ -70,6 +70,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("privateDnsEnabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.PrivateDnsEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

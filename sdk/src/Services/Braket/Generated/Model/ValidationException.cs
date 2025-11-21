@@ -30,13 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// The input fails to satisfy the constraints specified by an AWS service.
+    /// The input request failed to satisfy constraints expected by Amazon Braket.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ValidationException : AmazonBraketException
     {
+        private List<ProgramSetValidationFailure> _programSetValidationFailures = AWSConfigs.InitializeCollections ? new List<ProgramSetValidationFailure>() : null;
+        private ValidationExceptionReason _reason;
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error
@@ -98,6 +100,8 @@ namespace Amazon.Braket.Model
         protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ProgramSetValidationFailures = (List<ProgramSetValidationFailure>)info.GetValue("ProgramSetValidationFailures", typeof(List<ProgramSetValidationFailure>));
+            this.Reason = (ValidationExceptionReason)info.GetValue("Reason", typeof(ValidationExceptionReason));
         }
 
         /// <summary>
@@ -113,8 +117,51 @@ namespace Amazon.Braket.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ProgramSetValidationFailures", this.ProgramSetValidationFailures);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ProgramSetValidationFailures. 
+        /// <para>
+        /// The validation failures in the program set submitted in the request.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ProgramSetValidationFailure> ProgramSetValidationFailures
+        {
+            get { return this._programSetValidationFailures; }
+            set { this._programSetValidationFailures = value; }
+        }
+
+        // Check to see if ProgramSetValidationFailures property is set
+        internal bool IsSetProgramSetValidationFailures()
+        {
+            return this._programSetValidationFailures != null && (this._programSetValidationFailures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason for validation failure.
+        /// </para>
+        /// </summary>
+        public ValidationExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

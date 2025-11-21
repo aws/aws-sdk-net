@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The log stream name, or a log stream name prefix that matches mutltiple log streams
+    /// The log stream name, or a log stream name prefix that matches multiple log streams
     /// </para>
     ///  </li> </ul> 
     /// <para>

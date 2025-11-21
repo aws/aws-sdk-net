@@ -61,6 +61,42 @@
     <pattern>[A-Za-z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CarrierLookupRequest.PhoneNumber</property>
+    <min>1</min>
+    <max>40</max>
+    <pattern>\+[({\s\[]?[1-9][0-9(){}\s\[\],.-]{1,38}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CarrierLookupResponse.DialingCountryCode</property>
+    <min>1</min>
+    <max>3</max>
+    <pattern>[\d]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CarrierLookupResponse.E164PhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+[1-9][0-9]{1,18}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CarrierLookupResponse.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CarrierLookupResponse.MCC</property>
+    <min>3</min>
+    <max>3</max>
+    <pattern>[\d]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CarrierLookupResponse.MNC</property>
+    <min>2</min>
+    <max>3</max>
+    <pattern>[\d]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.CreateConfigurationSetRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>

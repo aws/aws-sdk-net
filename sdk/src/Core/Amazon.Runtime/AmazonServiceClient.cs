@@ -30,6 +30,7 @@ using Amazon.Util.Internal;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Metrics;
 using ExecutionContext = Amazon.Runtime.Internal.ExecutionContext;
+using Amazon.Runtime.Credentials.Internal;
 
 namespace Amazon.Runtime
 {
@@ -45,6 +46,12 @@ namespace Amazon.Runtime
         protected RuntimePipeline RuntimePipeline { get; set; }
         public IClientConfig Config => _config;
         private readonly ClientConfig _config;
+
+        /// <summary>
+        /// Credentials explicitly specified when constructing the client.
+        /// </summary>
+        protected internal AWSCredentials ExplicitAWSCredentials { get; private set; }
+
         protected virtual IServiceMetadata ServiceMetadata { get; } = new ServiceMetadata();
         protected virtual bool SupportResponseLogging
         {
@@ -158,12 +165,11 @@ namespace Amazon.Runtime
             else
                 _logger = Logger.GetLogger(this.GetType());
 
+            AttemptServiceBearerTokenCustomization(config);
             config.Validate();
-
-            if(credentials != null)
-                config.DefaultAWSCredentials = credentials;
-
             _config = config;
+
+            ExplicitAWSCredentials = credentials;
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();
             UpdateSecurityProtocol();
@@ -205,6 +211,7 @@ namespace Amazon.Runtime
                 new RequestContext(this.Config.LogMetrics)
                 {
                     ClientConfig = this.Config,
+                    ExplicitAWSCredentials = this.ExplicitAWSCredentials,
                     Marshaller = options.RequestMarshaller,
                     OriginalRequest = request,
                     Unmarshaller = options.ResponseUnmarshaller,
@@ -234,6 +241,7 @@ namespace Amazon.Runtime
                 new RequestContext(this.Config.LogMetrics)
                 {
                     ClientConfig = this.Config,
+                    ExplicitAWSCredentials = this.ExplicitAWSCredentials,
                     Marshaller = options.RequestMarshaller,
                     OriginalRequest = request,
                     Unmarshaller = options.ResponseUnmarshaller,
@@ -618,6 +626,40 @@ namespace Amazon.Runtime
             {
                 requestContext.CSMCallEvent = new MonitoringAPICallEvent(requestContext);
             }
+        }
+
+        private static void AttemptServiceBearerTokenCustomization(ClientConfig config)
+        {
+            if (config == null || config.AWSTokenProvider != null || config.AuthenticationServiceName != "bedrock")
+            {
+                return;
+            }
+
+            // Check if the service-specific Bearer token environment variable is set
+            var tokenValue = BearerTokenServiceEnvVarValue(config.AuthenticationServiceName);
+            if (string.IsNullOrEmpty(tokenValue))
+            {
+                return;
+            }
+
+            // Create a token provider chain with the service specific provider first
+            var tokenProviderChain = new AWSTokenProviderChain(
+                new ServiceBearerStaticTokenProvider(tokenValue)
+            );
+
+            config.AWSTokenProvider = tokenProviderChain;
+            var authSchemeOption = new AuthSchemeOption { SchemeId = AuthSchemeOption.Bearer };
+            if(config.AuthSchemePreference == null)
+            {
+                config.AuthSchemePreference = new List<string>();
+            }
+            config.AuthSchemePreference.Insert(0, authSchemeOption.ShortName);            
+        }
+       
+        private static string BearerTokenServiceEnvVarValue(string authenticationServiceName)
+        {
+            var envVar = $"{EnvironmentVariables.SERVICE_SPECIFIC_BEARER_TOKEN_PREFIX}{authenticationServiceName.ToUpperInvariant().Replace("-", "_")}";
+            return Environment.GetEnvironmentVariable(envVar);
         }
     }
 }

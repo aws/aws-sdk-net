@@ -31,10 +31,10 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateEmbedUrlForRegisteredUser operation.
-    /// Generates an embed URL that you can use to embed an Amazon QuickSight experience in
-    /// your website. This action can be used for any type of user registered in an Amazon
-    /// QuickSight account. Before you use this action, make sure that you have configured
-    /// the relevant Amazon QuickSight resource and permissions.
+    /// Generates an embed URL that you can use to embed an Amazon Quick Suite experience
+    /// in your website. This action can be used for any type of user registered in an Amazon
+    /// Quick Suite account. Before you use this action, make sure that you have configured
+    /// the relevant Amazon Quick Suite resource and permissions.
     /// 
     ///  
     /// <para>
@@ -58,18 +58,19 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You are charged only when the URL is used or there is interaction with Amazon QuickSight.
+    /// You are charged only when the URL is used or there is interaction with Amazon Quick
+    /// Suite.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-    /// Analytics</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// Analytics</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about the high-level steps for embedding and for an interactive
     /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-    /// QuickSight Developer Portal</a>.
+    /// Quick Suite Developer Portal</a>.
     /// </para>
     /// </summary>
     public partial class GenerateEmbedUrlForRegisteredUserRequest : AmazonQuickSightRequest
@@ -85,7 +86,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The domains that you want to add to the allow list for access to the generated URL
         /// that is then embedded. This optional parameter overrides the static domains that are
-        /// configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead,
+        /// configured in the Manage Quick Sight menu in the Amazon Quick Sight console. Instead,
         /// it allows only the domains that you include in this parameter. You can list up to
         /// three domains or subdomains in each API call.
         /// </para>
@@ -135,10 +136,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ExperienceConfiguration. 
         /// <para>
-        /// The experience that you want to embed. For registered users, you can embed Amazon
-        /// QuickSight dashboards, Amazon QuickSight visuals, the Amazon QuickSight Q search bar,
-        /// the Amazon QuickSight Generative Q&amp;A experience, or the entire Amazon QuickSight
-        /// console.
+        /// The experience that you want to embed. For registered users, you can embed Quick Suite
+        /// dashboards, Amazon Quick Sight visuals, the Amazon Quick Sight Q search bar, the Amazon
+        /// Quick Sight Generative Q&amp;A experience, or the entire Amazon Quick Sight console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

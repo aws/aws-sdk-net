@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListCidrBlocks operation
     /// </summary>  
-    public class ListCidrBlocksResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListCidrBlocksResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             ListCidrBlocksResponse response = new ListCidrBlocksResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -87,7 +88,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -125,6 +125,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListCidrBlocksResponse response);
 
         private static ListCidrBlocksResponseUnmarshaller _instance = new ListCidrBlocksResponseUnmarshaller();        
 

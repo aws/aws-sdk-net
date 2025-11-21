@@ -71,6 +71,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             else            
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
+            if (string.IsNullOrEmpty(publicRequest.FunctionArn))
+                throw new AmazonConnectException("Request object does not have required field FunctionArn set");
             
             if (publicRequest.IsSetFunctionArn())
                 request.Parameters.Add("functionArn", StringUtils.FromString(publicRequest.FunctionArn));

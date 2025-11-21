@@ -34,7 +34,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class MicrosoftOauth2ProviderConfigOutput
     {
+        private string _clientId;
         private Oauth2Discovery _oauthDiscovery;
+
+        /// <summary>
+        /// Gets and sets the property ClientId. 
+        /// <para>
+        /// The client ID for the Microsoft OAuth2 provider.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ClientId
+        {
+            get { return this._clientId; }
+            set { this._clientId = value; }
+        }
+
+        // Check to see if ClientId property is set
+        internal bool IsSetClientId()
+        {
+            return this._clientId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OauthDiscovery. 

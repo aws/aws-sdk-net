@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutObjectRetentionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.AddSubResource("retention");
         
@@ -114,8 +115,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                if (publicRequest.IsSetContentMD5())
-                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
@@ -151,5 +150,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutObjectRetentionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutObjectRetentionRequest publicRequest);
     }    
 }

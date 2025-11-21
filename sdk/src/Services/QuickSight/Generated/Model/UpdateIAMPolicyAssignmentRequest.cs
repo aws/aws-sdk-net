@@ -120,7 +120,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Identities. 
         /// <para>
-        /// The Amazon QuickSight users, groups, or both that you want to assign the policy to.
+        /// The Amazon Quick Sight users, groups, or both that you want to assign the policy to.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -162,7 +162,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The ARN for the IAM policy to apply to the Amazon QuickSight users and groups specified
+        /// The ARN for the IAM policy to apply to the Amazon Quick Sight users and groups specified
         /// in this assignment.
         /// </para>
         /// </summary>

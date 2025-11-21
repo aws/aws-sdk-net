@@ -180,6 +180,7 @@ namespace Amazon.RDS.Model
         /// The master credentials for the DB cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }

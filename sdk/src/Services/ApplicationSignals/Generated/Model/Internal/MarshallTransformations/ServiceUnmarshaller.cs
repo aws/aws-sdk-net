@@ -80,6 +80,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     unmarshalledObject.MetricReferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ServiceGroups", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ServiceGroup, ServiceGroupUnmarshaller>(ServiceGroupUnmarshaller.Instance);
+                    unmarshalledObject.ServiceGroups = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -142,7 +142,7 @@ namespace Amazon.VPCLattice.Model
         /// The priority assigned to the rule. The lower the priority number the higher the priority.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=2000)]
         public int? Priority
         {
             get { return this._priority; }

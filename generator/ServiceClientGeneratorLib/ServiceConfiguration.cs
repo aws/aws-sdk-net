@@ -1,4 +1,5 @@
-﻿using ServiceClientGenerator.Endpoints;
+﻿using Json.LitJson;
+using ServiceClientGenerator.Endpoints;
 using ServiceClientGenerator.Endpoints.Tests;
 using System;
 using System.Collections.Generic;
@@ -230,7 +231,7 @@ namespace ServiceClientGenerator
             
             var postamble =
                 includePostamble 
-                    ? $"{ (!string.IsNullOrEmpty(Synopsis) ? Synopsis : ServiceId) }"
+                    ? $"{ (!string.IsNullOrEmpty(Synopsis) ? Synopsis.Replace("\"", "\\\"") : ServiceId) }"
                     : "";
             return $"{preamble}{body}{postamble}";
         }
@@ -292,7 +293,7 @@ namespace ServiceClientGenerator
         public bool GenerateConstructors { get; set; }
         public string LockedApiVersion { get; set; }
         public string Synopsis { get; set; }
-        public Dictionary<string, string> ServiceDependencies { get; set; }
+        public Dictionary<string, string> SdkDependencies { get; set; }
         public string LicenseUrl { get; set; }
         public bool RequireLicenseAcceptance { get; set; }
         public Dictionary<string, List<Dependency>> ReferenceDependencies { get; set; }
@@ -378,15 +379,34 @@ namespace ServiceClientGenerator
         public string Name { get; set; }
         public string Version { get; set; }
         public string HintPath { get; set; }
+        /// <summary>
+        /// Represents the target TFM (Target Framework Monikor) list for which dependency needs to be added.
+        /// </summary>
+        public List<string> Targets { get; set; }
 
         public static Dependency ParseJson(Json.LitJson.JsonData data)
         {
-            return new Dependency
+            var dependency = new Dependency
             {
                 Name = data.SafeGetString("name"),
                 Version = data.SafeGetString("version"),
                 HintPath = data.SafeGetString("hintPath"),
             };
+            JsonData targetsData = data["targets"]; // TFM (Target Framework Monikor) list
+
+            if (targetsData?.Count > 0)
+            {
+                dependency.Targets = new List<string>();
+
+                for (int i = 0; i < targetsData.Count; i++)
+                {
+                    dependency.Targets.Add((string)targetsData[i]);
+                }
+
+                dependency.Targets.Sort();
+            }
+
+            return dependency;
         }
     }
 }

@@ -23,6 +23,12 @@
     <pattern>(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:(([0-9]{12}:custom-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}/[a-z0-9]{12})|(:foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|([0-9]{12}:imported-model/[a-z0-9]{12})|([0-9]{12}:provisioned-model/[a-z0-9]{12})|([0-9]{12}:custom-model-deployment/[a-z0-9]{12})|([0-9]{12}:(inference-profile|application-inference-profile)/[a-zA-Z0-9-:.]+)))|([a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([.:]?[a-z0-9-]{1,63}))|(([0-9a-zA-Z][_-]?)+)|([a-zA-Z0-9-:.]+)|(^(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:prompt/[0-9a-zA-Z]{10}(?::[0-9]{1,5})?))$|(^arn:aws:sagemaker:[a-z0-9-]+:[0-9]{12}:endpoint/[a-zA-Z0-9-]+$)|(^arn:aws(-[^:]+)?:bedrock:([0-9a-z-]{1,20}):([0-9]{12}):(default-)?prompt-router/[a-zA-Z0-9-:.]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.CountTokensRequest.ModelId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z_\.\-/0-9:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.GetAsyncInvokeRequest.InvocationArn</property>
     <min>1</min>
     <max>2048</max>
@@ -246,6 +252,38 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailAutomatedReasoningInputTextReference.Text</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailAutomatedReasoningRule.Identifier</property>
+    <min>0</min>
+    <max>12</max>
+    <pattern>[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailAutomatedReasoningRule.PolicyVersionArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:automated-reasoning-policy/[a-z0-9]{12}(:([1-9][0-9]{0,11}))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailAutomatedReasoningStatement.Logic</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailAutomatedReasoningStatement.NaturalLanguage</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.GuardrailAutomatedReasoningTranslation.Confidence</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.GuardrailConfiguration.GuardrailIdentifier</property>
     <min>0</min>
     <max>2048</max>
@@ -302,6 +340,11 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.InvokeModelTokensRequest.Body</property>
+    <min>0</min>
+    <max>25000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ModelErrorException.OriginalStatusCode</property>
     <min>100</min>
     <max>599</max>
@@ -339,6 +382,18 @@
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.SearchResultLocation.End</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.SearchResultLocation.SearchResultIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.SearchResultLocation.Start</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.SpecificToolChoice.Name</property>
     <min>1</min>
     <max>64</max>
@@ -347,6 +402,12 @@
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.SystemContentBlock.Text</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.SystemTool.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.Tag.Key</property>
@@ -382,6 +443,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ToolResultBlock.ToolUseId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.ToolResultBlockStart.ToolUseId</property>
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>

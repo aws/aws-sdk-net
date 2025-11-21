@@ -367,6 +367,78 @@ namespace Amazon.CleanRooms
 
         #endregion
         
+        #region  CreateCollaborationChangeRequest
+
+
+        /// <summary>
+        /// Creates a new change request to modify an existing collaboration. This enables post-creation
+        /// modifications to collaborations through a structured API-driven approach.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCollaborationChangeRequest service method.</param>
+        /// 
+        /// <returns>The response from the CreateCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateCollaborationChangeRequest">REST API Reference for CreateCollaborationChangeRequest Operation</seealso>
+        CreateCollaborationChangeRequestResponse CreateCollaborationChangeRequest(CreateCollaborationChangeRequestRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new change request to modify an existing collaboration. This enables post-creation
+        /// modifications to collaborations through a structured API-driven approach.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCollaborationChangeRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateCollaborationChangeRequest">REST API Reference for CreateCollaborationChangeRequest Operation</seealso>
+        Task<CreateCollaborationChangeRequestResponse> CreateCollaborationChangeRequestAsync(CreateCollaborationChangeRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateConfiguredAudienceModelAssociation
 
 
@@ -948,6 +1020,9 @@ namespace Amazon.CleanRooms
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
@@ -981,6 +1056,9 @@ namespace Amazon.CleanRooms
         /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
@@ -1888,6 +1966,64 @@ namespace Amazon.CleanRooms
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate">REST API Reference for GetCollaborationAnalysisTemplate Operation</seealso>
         Task<GetCollaborationAnalysisTemplateResponse> GetCollaborationAnalysisTemplateAsync(GetCollaborationAnalysisTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCollaborationChangeRequest
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific collaboration change request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationChangeRequest service method.</param>
+        /// 
+        /// <returns>The response from the GetCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationChangeRequest">REST API Reference for GetCollaborationChangeRequest Operation</seealso>
+        GetCollaborationChangeRequestResponse GetCollaborationChangeRequest(GetCollaborationChangeRequestRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific collaboration change request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationChangeRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCollaborationChangeRequest service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationChangeRequest">REST API Reference for GetCollaborationChangeRequest Operation</seealso>
+        Task<GetCollaborationChangeRequestResponse> GetCollaborationChangeRequestAsync(GetCollaborationChangeRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2932,6 +3068,66 @@ namespace Amazon.CleanRooms
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates">REST API Reference for ListCollaborationAnalysisTemplates Operation</seealso>
         Task<ListCollaborationAnalysisTemplatesResponse> ListCollaborationAnalysisTemplatesAsync(ListCollaborationAnalysisTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCollaborationChangeRequests
+
+
+        /// <summary>
+        /// Lists all change requests for a collaboration with pagination support. Returns change
+        /// requests sorted by creation time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationChangeRequests service method.</param>
+        /// 
+        /// <returns>The response from the ListCollaborationChangeRequests service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationChangeRequests">REST API Reference for ListCollaborationChangeRequests Operation</seealso>
+        ListCollaborationChangeRequestsResponse ListCollaborationChangeRequests(ListCollaborationChangeRequestsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all change requests for a collaboration with pagination support. Returns change
+        /// requests sorted by creation time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationChangeRequests service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCollaborationChangeRequests service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationChangeRequests">REST API Reference for ListCollaborationChangeRequests Operation</seealso>
+        Task<ListCollaborationChangeRequestsResponse> ListCollaborationChangeRequestsAsync(ListCollaborationChangeRequestsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -42,6 +42,7 @@ namespace Amazon.DirectConnect.Model
     public partial class DeleteBGPPeerRequest : AmazonDirectConnectRequest
     {
         private int? _asn;
+        private long? _asnLong;
         private string _bgpPeerId;
         private string _customerAddress;
         private string _virtualInterfaceId;
@@ -49,8 +50,25 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Asn. 
         /// <para>
-        /// The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+        /// The autonomous system number (ASN). The valid range is from 1 to 2147483646 for Border
+        /// Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum,
+        /// an error is returned. Use <c>asnLong</c> instead.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use <c>asnLong</c> or <c>asn</c>, but not both. We recommend using <c>asnLong</c>
+        /// as it supports a greater pool of numbers. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>asnLong</c> attribute accepts both ASN and long ASN ranges.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you provide a value in the same API call for both <c>asn</c> and <c>asnLong</c>,
+        /// the API will only accept the value for <c>asnLong</c>.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         public int? Asn
         {
@@ -62,6 +80,40 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAsn()
         {
             return this._asn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AsnLong. 
+        /// <para>
+        /// The long ASN for the BGP peer to be deleted from a Direct Connect virtual interface.
+        /// The valid range is from 1 to 4294967294 for BGP configuration. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can use <c>asnLong</c> or <c>asn</c>, but not both. We recommend using <c>asnLong</c>
+        /// as it supports a greater pool of numbers. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>asnLong</c> attribute accepts both ASN and long ASN ranges.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you provide a value in the same API call for both <c>asn</c> and <c>asnLong</c>,
+        /// the API will only accept the value for <c>asnLong</c>.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        public long? AsnLong
+        {
+            get { return this._asnLong; }
+            set { this._asnLong = value; }
+        }
+
+        // Check to see if AsnLong property is set
+        internal bool IsSetAsnLong()
+        {
+            return this._asnLong.HasValue; 
         }
 
         /// <summary>

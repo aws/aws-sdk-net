@@ -102,6 +102,7 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-Progress"] = StringUtils.FromInt(publicRequest.Progress);
             }
+            request.DisablePayloadSigning = true;
 
             return request;
         }

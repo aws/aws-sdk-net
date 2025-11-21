@@ -96,7 +96,31 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For Amazon Bedrock, the valid value is <c>APPLICATION_LOGS</c> and <c>TRACES</c>.
+        /// For Amazon Bedrock Agents, the valid values are <c>APPLICATION_LOGS</c> and <c>EVENT_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock Knowledge Bases, the valid value is <c>APPLICATION_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock AgentCore Runtime, the valid values are <c>APPLICATION_LOGS</c>,
+        /// <c>USAGE_LOGS</c> and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock AgentCore Tools, the valid values are <c>APPLICATION_LOGS</c>,
+        /// <c>USAGE_LOGS</c> and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock AgentCore Identity, the valid values are <c>APPLICATION_LOGS</c>
+        /// and <c>TRACES</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon Bedrock AgentCore Gateway, the valid values are <c>APPLICATION_LOGS</c>
+        /// and <c>TRACES</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -125,15 +149,23 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// For Network Load Balancer, the valid value is <c>NLB_ACCESS_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For PCS, the valid values are <c>PCS_SCHEDULER_LOGS</c> and <c>PCS_JOBCOMP_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Q, the valid value is <c>EVENT_LOGS</c>.
+        /// For Amazon Web Services RTB Fabric, the valid values is <c>APPLICATION_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon SES mail manager, the valid values are <c>APPLICATION_LOG</c> and <c>TRAFFIC_POLICY_DEBUG_LOGS</c>.
+        /// For Amazon Q, the valid values are <c>EVENT_LOGS</c> and <c>SYNC_JOB_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon SES mail manager, the valid values are <c>APPLICATION_LOGS</c> and <c>TRAFFIC_POLICY_DEBUG_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

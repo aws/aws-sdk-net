@@ -13,6 +13,7 @@ using Amazon.DynamoDBv2.DataModel;
 using System.Threading.Tasks;
 
 
+
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
     public partial class DynamoDBTests : TestBase<AmazonDynamoDBClient>
@@ -31,6 +32,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Cleanup existing data
                 CleanupTables();
 
+                TestCompositeHashRangeTable();
                 // Recreate context
                 bool isEmptyStringEnabled = true;
                 CreateContext(conversion, isEmptyStringEnabled);
@@ -53,7 +55,215 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TestMultiTableTransactionOperations();
 
                 TestStoreAsEpoch();
+
             }
+        }
+
+        private void TestCompositeHashRangeTable()
+        {
+            var entity1 = new CompositeHashRangeEntity
+            {
+                Id = 1,
+                Status = "active",
+                UserName = "alice",
+                Timestamp = 1000,
+                OrderId = "order-1",
+                Region = "us-west-2",
+                Category = "electronics",
+                Amount = 100,
+                Priority = 4
+            };
+            var entity11 = new CompositeHashRangeEntity
+            {
+                Id = 1,
+                Status = "pending",
+                UserName = "alice",
+                Timestamp = 1001,
+                OrderId = "order-1",
+                Region = "us-west-2",
+                Category = "electronics",
+                Amount = 100,
+                Priority = 1
+            };
+            var entity21 = new CompositeHashRangeEntity
+            {
+                Id = 21,
+                Status = "active",
+                UserName = "alice",
+                Timestamp = 1002,
+                OrderId = "order-1",
+                Region = "us-west-1",
+                Category = "electronics",
+                Amount = 100,
+                Priority = 2
+            };
+            var entity22 = new CompositeHashRangeEntity
+            {
+                Id = 21,
+                Status = "pending",
+                UserName = "alice",
+                Timestamp = 1003,
+                OrderId = "order-1",
+                Region = "us-west-2",
+                Category = "electronics",
+                Amount = 100,
+                Priority = 3
+            };
+            var entity31 = new CompositeHashRangeEntity
+            {
+                Id = 31,
+                Status = "shipped",
+                UserName = "bob",
+                Timestamp = 1004,
+                OrderId = "order-2",
+                Region = "us-east-1",
+                Category = "books",
+                Amount = 150,
+                Priority = 1
+            };
+            var entity32 = new CompositeHashRangeEntity
+            {
+                Id = 31,
+                Status = "delivered",
+                UserName = "bob",
+                Timestamp = 1005,
+                OrderId = "order-2",
+                Region = "us-east-1",
+                Category = "books",
+                Amount = 150,
+                Priority = 2
+            };
+            var entity41 = new CompositeHashRangeEntity
+            {
+                Id = 41,
+                Status = "active",
+                UserName = "charlie",
+                Timestamp = 1006,
+                OrderId = "order-3",
+                Region = "us-central",
+                Category = "clothing",
+                Amount = 75,
+                Priority = 3
+            };
+            var entity42 = new CompositeHashRangeEntity
+            {
+                Id = 41,
+                Status = "completed",
+                UserName = "charlie",
+                Timestamp = 1007,
+                OrderId = "order-3",
+                Region = "us-central",
+                Category = "clothing",
+                Amount = 75,
+                Priority = 4
+            };
+
+            Context.Save(entity1);
+            Context.Save(entity11);
+            Context.Save(entity21);
+            Context.Save(entity22);
+            Context.Save(entity31);
+            Context.Save(entity32);
+            Context.Save(entity41);
+            Context.Save(entity42);
+
+            // Query GSI1 with single hash key
+            var queryConditional1 = QueryConditional.HashKeyEqualTo("UserName", "bob");
+            var results1 = Context.Query<CompositeHashRangeEntity>(queryConditional1, new QueryConfig
+            {
+                IndexName = "GSI1",
+                QueryFilter = new List<ScanCondition>
+                {
+                    new ScanCondition("OrderId", ScanOperator.Equal, "order-2")
+                }
+            }).ToList();
+            Assert.AreEqual(2, results1.Count);
+            Assert.IsTrue(results1.All(r => r.UserName == "bob"));
+
+            // Query GSI1: composite-range behavior — Timestamp > 1000 (should return 1001,1002,1003)
+            var queryGsi1Range = QueryConditional.HashKeyEqualTo("UserName", "alice")
+                .AndRangeKeyGreaterThan("Timestamp", 1000);
+            var gsi1RangeResults = Context.Query<CompositeHashRangeEntity>(queryGsi1Range, new QueryConfig { IndexName = "GSI1" }).ToList();
+            Assert.AreEqual(3, gsi1RangeResults.Count);
+            CollectionAssert.AreEqual(new[] { 1001, 1002, 1003 }, gsi1RangeResults.Select(r => r.Timestamp).ToArray());
+
+            // Query GSI1 with descending order
+            var gsi1DescResults = Context.Query<CompositeHashRangeEntity>(queryGsi1Range, new QueryConfig { IndexName = "GSI1" , BackwardQuery = true}).ToList();
+            Assert.AreEqual(3, gsi1DescResults.Count);
+            Assert.AreEqual(1003, gsi1DescResults.First().Timestamp);
+
+
+            // Query GSI2 with all hash keys (UserName + OrderId)
+            var queryConditional2 = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("OrderId", "order-2");
+            var results2 = Context.Query<CompositeHashRangeEntity>(queryConditional2,
+                new QueryConfig
+                {
+                    IndexName = "GSI2"
+                }).ToList();
+            Assert.AreEqual(2, results2.Count);
+            Assert.IsTrue(results2.All(r => r.UserName == "bob" && r.OrderId == "order-2"));
+
+            // Query GSI2 with all hash keys (UserName + OrderId) and QueryFilter
+            var results21 = Context.Query<CompositeHashRangeEntity>(queryConditional2,
+                new QueryConfig
+                {
+                    IndexName = "GSI2",
+                    QueryFilter = new List<ScanCondition>
+                    {
+                        new ScanCondition("Timestamp", ScanOperator.GreaterThan, 1004)
+                    }
+                }).ToList();
+            Assert.AreEqual(1, results21.Count);
+            Assert.IsTrue(results21.All(r => r.UserName == "bob" && r.OrderId == "order-2"));
+
+
+            // Query GSI2 with all hash keys and first range key
+            var queryConditional2Range = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("OrderId", "order-2").AndRangeKeyGreaterThan("Timestamp", 1004);
+            var results2Range = Context.Query<CompositeHashRangeEntity>(queryConditional2Range, new QueryConfig { IndexName = "GSI2" }).ToList();
+            Assert.AreEqual(1, results2Range.Count);
+            Assert.IsTrue(results2Range.All(r => r.UserName == "bob" && r.OrderId == "order-2" && r.Timestamp > 1004));
+
+            // Query GSI2 with hash keys and Timestamp < 1003 (for alice/order-1 -> should return 1000,1001,1002)
+            var queryGsi2Alice = QueryConditional.HashKeyEqualTo("UserName", "alice").AndHashKeyEqualTo("OrderId", "order-1").AndRangeKeyLessThan("Timestamp", 1003);
+            var gsi2AliceResults = Context.Query<CompositeHashRangeEntity>(queryGsi2Alice, new QueryConfig { IndexName = "GSI2" }).ToList();
+            Assert.AreEqual(3, gsi2AliceResults.Count);
+            CollectionAssert.AreEqual(new[] { 1000, 1001, 1002 }, gsi2AliceResults.Select(r => r.Timestamp).ToArray());
+
+            // Query GSI3 with all hash keys
+            var queryConditional3 = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("Region", "us-east-1");
+            var results3 = Context.Query<CompositeHashRangeEntity>(queryConditional3, new QueryConfig { IndexName = "GSI3" }).ToList();
+            Assert.AreEqual(2, results3.Count);
+            Assert.IsTrue(results3.All(r => r.UserName == "bob" && r.Region == "us-east-1"));
+
+            // Query GSI3 with all hash keys and first range key (Status equal)
+            var queryConditional3Range = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("Region", "us-east-1").AndRangeKeyEqualTo("Status", "shipped");
+            var results3Range = Context.Query<CompositeHashRangeEntity>(queryConditional3Range, new QueryConfig { IndexName = "GSI3" }).ToList();
+            Assert.AreEqual(1, results3Range.Count);
+            Assert.IsTrue(results3Range.All(r => r.UserName == "bob" && r.Region == "us-east-1" && r.Status == "shipped"));
+
+            // Query GSI4 with all hash keys
+            var queryConditional4 = QueryConditional.HashKeyEqualTo("Id", 41).AndHashKeyEqualTo("UserName", "charlie").AndHashKeyEqualTo("OrderId", "order-3").AndHashKeyEqualTo("Region", "us-central");
+            var results4 = Context.Query<CompositeHashRangeEntity>(queryConditional4, new QueryConfig { IndexName = "GSI4" }).ToList();
+            Assert.AreEqual(2, results4.Count);
+            Assert.IsTrue(results4.All(r => r.Id == 41 && r.UserName == "charlie" && r.OrderId == "order-3" && r.Region == "us-central"));
+
+            // Query GSI4 with all hash keys and first range key (Status equal)
+            var queryConditional4Range = QueryConditional.HashKeyEqualTo("Id", 41).AndHashKeyEqualTo("UserName", "charlie").AndHashKeyEqualTo("OrderId", "order-3")
+                .AndHashKeyEqualTo("Region", "us-central").AndRangeKeyEqualTo("Status", "active");
+            var results4Range = Context.Query<CompositeHashRangeEntity>(queryConditional4Range, new QueryConfig { IndexName = "GSI4" }).ToList();
+            Assert.AreEqual(1, results4Range.Count);
+            Assert.IsTrue(results4Range.All(r => r.Id == 41 && r.UserName == "charlie" && r.OrderId == "order-3" && r.Region == "us-central" && r.Status == "active"));
+
+            // Additional composite-range check on GSI4: Priority > 2 should return both items for Id=41/charlie/order-3/region
+            var queryGsi4Priority = QueryConditional.HashKeyEqualTo("Id", 41)
+                .AndHashKeyEqualTo("UserName", "charlie")
+                .AndHashKeyEqualTo("OrderId", "order-3")
+                .AndHashKeyEqualTo("Region", "us-central")
+                .AndRangeKeyEqualTo("Status", "active")
+                .AndRangeKeyEqualTo("Category", "clothing")
+                .AndRangeKeyGreaterThan("Amount", 200);
+            var gsi4PriorityResults = Context.Query<CompositeHashRangeEntity>(queryGsi4Priority, new QueryConfig { IndexName = "GSI4" }).ToList();
+            Assert.AreEqual(0, gsi4PriorityResults.Count);
         }
 
         [TestMethod]
@@ -1340,6 +1550,60 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(1, storedUpdatedEmployee.CountDefault);
             Assert.AreEqual(12, storedUpdatedEmployee.CountAtomic);
 
+            // --- Flatten scenario with atomic counter and version ---
+            var product = new ProductFlatWithAtomicCounter
+            {
+                Id = 500,
+                Name = "FlatAtomic",
+                Details = new ProductDetailsWithAtomicCounter
+                {
+                    Description = "Flat details",
+                    Name = "FlatName"
+                }
+            };
+
+            await Context.SaveAsync(product);
+            var loadedProduct = await Context.LoadAsync<ProductFlatWithAtomicCounter>(product.Id);
+            Assert.IsNotNull(loadedProduct);
+            Assert.IsNotNull(loadedProduct.Details);
+            Assert.AreEqual(0, loadedProduct.Details.CountDefault);
+            Assert.AreEqual(10, loadedProduct.Details.CountAtomic);
+            Assert.AreEqual(0, loadedProduct.Details.Version);
+
+            // Increment counters via null assignment
+            loadedProduct.Details.CountDefault = null;
+            loadedProduct.Details.CountAtomic = null;
+            await Context.SaveAsync(loadedProduct);
+
+            var loadedProductAfterIncrement = await Context.LoadAsync<ProductFlatWithAtomicCounter>(product.Id);
+            Assert.AreEqual(1, loadedProductAfterIncrement.Details.CountDefault);
+            Assert.AreEqual(12, loadedProductAfterIncrement.Details.CountAtomic);
+            Assert.AreEqual(1, loadedProductAfterIncrement.Details.Version);
+
+            // Simulate a stale POCO for flattened details
+            var staleFlat = new ProductFlatWithAtomicCounter
+            {
+                Id = 500,
+                Name = "FlatAtomic",
+                Details = new ProductDetailsWithAtomicCounter
+                {
+                    Description = "Flat details",
+                    Name = "FlatName",
+                    CountDefault = 0,
+                    CountAtomic = 10,
+                    Version = 1
+                }
+            };
+            await Context.SaveAsync(staleFlat);
+
+            Assert.AreEqual(2, staleFlat.Details.CountDefault);
+            Assert.AreEqual(14, staleFlat.Details.CountAtomic);
+            Assert.AreEqual(2, staleFlat.Details.Version);
+
+            var loadedFlatLatest = await Context.LoadAsync<ProductFlatWithAtomicCounter>(product.Id);
+            Assert.AreEqual(2, loadedFlatLatest.Details.CountDefault);
+            Assert.AreEqual(14, loadedFlatLatest.Details.CountAtomic);
+            Assert.AreEqual(2, loadedFlatLatest.Details.Version);
         }
 
         [TestMethod]
@@ -1545,6 +1809,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     .AddRangeKey("Name", DynamoDBEntryType.String)
                     .Build());
 
+                Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-CompositeHashRangeTable")
+                    .AddHashKey("Id", DynamoDBEntryType.Numeric)
+                    .AddRangeKey("Status", DynamoDBEntryType.String)
+                    .AddGlobalSecondaryIndex("GSI1", "UserName", DynamoDBEntryType.String, "Timestamp", DynamoDBEntryType.Numeric)
+                    .AddGlobalSecondaryIndex("GSI2",
+                        new List<KeyValuePair<string, DynamoDBEntryType>> {
+                            new KeyValuePair<string, DynamoDBEntryType>("UserName", DynamoDBEntryType.String),
+                            new KeyValuePair<string, DynamoDBEntryType>( "OrderId", DynamoDBEntryType.String ) },
+                        new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Timestamp", DynamoDBEntryType.Numeric) })
+                    .AddGlobalSecondaryIndex("GSI3",
+                        new List<KeyValuePair<string, DynamoDBEntryType>> {
+                            new KeyValuePair<string, DynamoDBEntryType>( "UserName", DynamoDBEntryType.String ),
+                            new KeyValuePair<string, DynamoDBEntryType>( "Region", DynamoDBEntryType.String ) },
+                        new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Status", DynamoDBEntryType.String),
+                            new KeyValuePair<string, DynamoDBEntryType>( "Category", DynamoDBEntryType.String ) })
+                    .AddGlobalSecondaryIndex("GSI4",
+                        new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType> ("Id", DynamoDBEntryType.Numeric ),
+                            new KeyValuePair<string, DynamoDBEntryType>( "UserName", DynamoDBEntryType.String ),
+                            new KeyValuePair<string, DynamoDBEntryType>("OrderId", DynamoDBEntryType.String),
+                            new KeyValuePair<string, DynamoDBEntryType>("Region", DynamoDBEntryType.String ) },
+                        new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>( "Status", DynamoDBEntryType.String ),
+                            new KeyValuePair<string, DynamoDBEntryType>( "Category", DynamoDBEntryType.String ),
+                            new KeyValuePair<string, DynamoDBEntryType>(  "Amount", DynamoDBEntryType.Numeric ),
+                            new KeyValuePair<string, DynamoDBEntryType>(  "Priority", DynamoDBEntryType.Numeric )})
+                    .Build());
+
                 TestEmptyStringsWithFeatureEnabled();
 
                 TestEnumHashKeyObjects();
@@ -1609,6 +1899,92 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TestStoreAsAnnotatedEpoch();
             }
         }
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_IndexOrder()
+        {
+            Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashTable")
+                .AddHashKey("Id", DynamoDBEntryType.Numeric)
+                .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Price",
+                    DynamoDBEntryType.Numeric)
+                .Build());
+            var order = new OrderIndex()
+            {
+                Id = 6,
+                CompanyName = "TestCompany",
+                Price = 1000
+            };
+
+            await Context.SaveAsync(order);
+            var savedOrders = Context.Query<OrderIndex>(
+                order.CompanyName,
+                QueryOperator.Equal,
+                new object[] { 1000 },
+                new QueryConfig 
+            {
+                IndexName = "GlobalIndex",
+            });
+            Assert.IsNotNull(savedOrders);
+            var savedOrder = savedOrders.FirstOrDefault();
+            Assert.IsNotNull(savedOrder);
+        }
+
+        [DynamoDBTable("HashTable")]
+        public class OrderIndex
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            [DynamoDBProperty("Company")]
+            public string CompanyName { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex")]
+            public string CompanyInfo { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
+            public int Price { get; set; }
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_IndexStructure()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashTable")
+                .AddHashKey("Id", DynamoDBEntryType.Numeric)
+                .AddGlobalSecondaryIndex("GlobalIndex", "CompanyInfo", DynamoDBEntryType.String, "Price",
+                    DynamoDBEntryType.Numeric)
+                .Build());
+
+            var order = new Order()
+            {
+                Id = 6,
+                Payment = new PaymentInfo()
+                {
+                    CompanyName = "TestCompany",
+                    Price = 1000
+                }
+            };
+
+            await Context.SaveAsync(order);
+            var savedOrders = Context.Query<Order>(
+                order.Payment.CompanyName, // Hash-key for the index is Company
+                QueryOperator.Equal, // Range-key for the index is Price, so the
+                new object[] { 1000 }, // condition is against a numerical value
+                new QueryConfig // Configure the index to use
+                {
+                    IndexName = "GlobalIndex",
+                });
+            Assert.IsNotNull(savedOrders);
+            var savedOrder = savedOrders.FirstOrDefault();
+            Assert.IsNotNull(savedOrder);
+            Assert.AreEqual(order.Id, savedOrder.Id);
+            Assert.IsNotNull(savedOrder.Payment);
+            Assert.AreEqual(order.Payment.Price, savedOrder.Payment.Price);
+            Assert.AreEqual(order.Payment.CompanyName, savedOrder.Payment.CompanyName);
+        }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
@@ -1636,7 +2012,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNotNull(savedProductFlat.Details);
             Assert.AreEqual(product.Details.Description, savedProductFlat.Details.Description);
             Assert.AreEqual(0, savedProductFlat.Details.Version);
-            Assert.AreEqual("TestProduct",savedProductFlat.Name);
+            Assert.AreEqual("TestProduct", savedProductFlat.Name);
             Assert.AreEqual("TestProductDetails", savedProductFlat.Details.Name);
 
             // flattened property, which itself contains another flattened property.
@@ -1685,7 +2061,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     CompanyName = "TestCompany",
                     Price = 1000
-
                 }
             };
 
@@ -1708,6 +2083,224 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_AutoGeneratedTimestampAttribute_CreateMode_Simple()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            var product = new ProductWithCreateTimestamp
+            {
+                Id = 999,
+                Name = "SimpleCreate"
+            };
+
+            await Context.SaveAsync(product);
+            var loaded = await Context.LoadAsync<ProductWithCreateTimestamp>(product.Id);
+
+            Assert.IsNotNull(loaded);
+            Assert.AreEqual(product.Id, loaded.Id);
+            Assert.AreEqual("SimpleCreate", loaded.Name);
+            Assert.IsNotNull(loaded.CreatedAt);
+            Assert.IsTrue(loaded.CreatedAt > DateTime.MinValue);
+            Assert.AreEqual(product.CreatedAt, loaded.CreatedAt);
+
+            // Save again and verify CreatedAt does not change
+            var createdAt = loaded.CreatedAt;
+            await Task.Delay(1000);
+            loaded.Name = "UpdatedName";
+            await Context.SaveAsync(loaded);
+            var loadedAfterUpdate = await Context.LoadAsync<ProductWithCreateTimestamp>(product.Id);
+            ApproximatelyEqual(createdAt.Value, loadedAfterUpdate.CreatedAt.Value);
+
+            // Test: StoreAsEpoch with AutoGeneratedTimestamp
+            var now = DateTime.UtcNow;
+            var epochEntity = new AutoGenTimestampEpochEntity
+            {
+                Id = 1,
+                Name = "EpochTest"
+            };
+
+            await Context.SaveAsync(epochEntity);
+            var loadedEpochEntity = await Context.LoadAsync<AutoGenTimestampEpochEntity>(epochEntity.Id);
+
+            Assert.IsNotNull(loadedEpochEntity);
+            Assert.IsTrue(loadedEpochEntity.CreatedAt > DateTime.MinValue);
+            ApproximatelyEqual(epochEntity.CreatedAt.Value, loadedEpochEntity.CreatedAt.Value);
+
+            // Test: StoreAsEpochLong with AutoGeneratedTimestamp
+            var longEpochEntity = new AutoGenTimestampEpochLongEntity
+            {
+                Id = 2,
+                Name = "LongEpochTest",
+            };
+
+            await Context.SaveAsync(longEpochEntity);
+            var loadedLongEpochEntity = await Context.LoadAsync<AutoGenTimestampEpochLongEntity>(longEpochEntity.Id);
+
+            Assert.IsNotNull(loadedLongEpochEntity);
+            Assert.IsTrue(loadedLongEpochEntity.CreatedAt > DateTime.MinValue);
+            ApproximatelyEqual(longEpochEntity.CreatedAt.Value, loadedLongEpochEntity.CreatedAt.Value);
+
+
+            // Test: StoreAsEpoch with AutoGeneratedTimestamp (Create)
+            var epochCreateEntity = new AutoGenTimestampEpochEntity
+            {
+                Id = 3,
+                Name = "EpochCreateTest"
+            };
+
+            await Context.SaveAsync(epochCreateEntity);
+            var loadedEpochCreateEntity = await Context.LoadAsync<AutoGenTimestampEpochEntity>(epochCreateEntity.Id);
+
+            Assert.IsNotNull(loadedEpochCreateEntity);
+            Assert.IsTrue(loadedEpochCreateEntity.CreatedAt > DateTime.MinValue);
+            ApproximatelyEqual(epochCreateEntity.CreatedAt.Value, loadedEpochCreateEntity.CreatedAt.Value);
+
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_AutoGeneratedTimestampAttribute_TransactWrite_Simple()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            var product = new ProductWithCreateTimestamp
+            {
+                Id = 1001,
+                Name = "TransactCreate"
+            };
+
+            // Save using TransactWrite
+            var transactWrite = Context.CreateTransactWrite<ProductWithCreateTimestamp>();
+            transactWrite.AddSaveItem(product);
+            await transactWrite.ExecuteAsync();
+
+            var loaded = await Context.LoadAsync<ProductWithCreateTimestamp>(product.Id);
+
+            Assert.IsNotNull(loaded);
+            Assert.AreEqual(product.Id, loaded.Id);
+            Assert.AreEqual("TransactCreate", loaded.Name);
+            Assert.IsNotNull(loaded.CreatedAt);
+            Assert.IsTrue(loaded.CreatedAt > DateTime.MinValue);
+            Assert.AreEqual(product.CreatedAt, loaded.CreatedAt);
+
+            // Save again using TransactWrite and verify CreatedAt does not change
+            var createdAt = loaded.CreatedAt;
+            await Task.Delay(1000);
+            loaded.Name = "TransactUpdated";
+            var transactWrite2 = Context.CreateTransactWrite<ProductWithCreateTimestamp>();
+            transactWrite2.AddSaveItem(loaded);
+            await transactWrite2.ExecuteAsync();
+            var loadedAfterUpdate = await Context.LoadAsync<ProductWithCreateTimestamp>(product.Id);
+            ApproximatelyEqual(createdAt.Value, loadedAfterUpdate.CreatedAt.Value);
+
+            // Test: StoreAsEpoch with AutoGeneratedTimestamp (Always) using TransactWrite
+            var epochEntity = new AutoGenTimestampEpochEntity
+            {
+                Id = 1002,
+                Name = "TransactEpoch"
+            };
+
+            var transactWrite3 = Context.CreateTransactWrite<AutoGenTimestampEpochEntity>();
+            transactWrite3.AddSaveItem(epochEntity);
+            await transactWrite3.ExecuteAsync();
+            var loadedEpochEntity = await Context.LoadAsync<AutoGenTimestampEpochEntity>(epochEntity.Id);
+
+            Assert.IsNotNull(loadedEpochEntity);
+            Assert.IsTrue(loadedEpochEntity.CreatedAt > DateTime.MinValue);
+            ApproximatelyEqual(epochEntity.CreatedAt.Value, loadedEpochEntity.CreatedAt.Value);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_AutoGeneratedTimestampAttribute_With_Annotations()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            // 1. Test: AutoGeneratedTimestamp combined with Version and Flatten
+            var now = DateTime.UtcNow;
+            var product = new ProductFlatWithTimestamp
+            {
+                Id = 100,
+                Name = "TimestampedProduct",
+                Details = new ProductDetailsWithTimestamp
+                {
+                    Description = "Timestamped details",
+                    Name = "DetailsName",
+                }
+            };
+
+            await Context.SaveAsync(product);
+            var savedProduct = await Context.LoadAsync<ProductFlatWithTimestamp>(product.Id);
+            Assert.IsNotNull(savedProduct);
+            Assert.IsNotNull(savedProduct.Details);
+            Assert.IsTrue(savedProduct.Details.CreatedAt > DateTime.MinValue);
+            Assert.AreEqual(0, savedProduct.Details.Version);
+
+            // 2. Test: AutoGeneratedTimestamp combined with AtomicCounter and GSI
+            var employee = new EmployeeWithTimestampAndCounter
+            {
+                Name = "Alice",
+                Age = 25,
+                CompanyName = "TestCompany",
+                Score = 10,
+                ManagerName = "Bob"
+            };
+            await Context.SaveAsync(employee);
+            var loadedEmployee = await Context.LoadAsync<EmployeeWithTimestampAndCounter>(employee.Name, employee.Age);
+            Assert.IsNotNull(loadedEmployee);
+            Assert.IsTrue(loadedEmployee.LastUpdated > DateTime.MinValue);
+            Assert.AreEqual(0, loadedEmployee.CountDefault);
+
+            // 3. Test: AutoGeneratedTimestamp with TimestampMode.Create
+            var productCreateOnly = new ProductWithCreateTimestamp
+            {
+                Id = 200,
+                Name = "CreateOnly"
+            };
+            await Context.SaveAsync(productCreateOnly);
+            var loadedCreateOnly = await Context.LoadAsync<ProductWithCreateTimestamp>(productCreateOnly.Id);
+            Assert.IsNotNull(loadedCreateOnly);
+            var createdAt = loadedCreateOnly.CreatedAt;
+            Assert.IsTrue(createdAt > DateTime.MinValue);
+
+            // Update and verify CreatedAt does not change
+            await Task.Delay(1000);
+            loadedCreateOnly.Name = "UpdatedName";
+            await Context.SaveAsync(loadedCreateOnly);
+            var loadedAfterUpdate = await Context.LoadAsync<ProductWithCreateTimestamp>(productCreateOnly.Id);
+            ApproximatelyEqual(createdAt.Value, loadedAfterUpdate.CreatedAt.Value);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_AutoGeneratedTimestampAttribute_With_Annotations_BatchWrite()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            var entity = new EmployeeWithTimestampAndCounter
+            {
+                Name = "Alice",
+                Age = 25,
+                CompanyName = "TestCompany",
+                Score = 10,
+                ManagerName = "Bob"
+            };
+
+            var batch = Context.CreateBatchWrite<EmployeeWithTimestampAndCounter>();
+            batch.AddPutItem(entity);
+            await batch.ExecuteAsync();
+
+            var loaded = await Context.LoadAsync<EmployeeWithTimestampAndCounter>(entity.Name, entity.Age);
+
+            Assert.IsNotNull(loaded.LastUpdated, "LastUpdated should be set by AutoGeneratedTimestampAttribute");
+            Assert.IsTrue((DateTime.UtcNow - loaded.LastUpdated.Value).TotalMinutes < 1, "LastUpdated should be recent");
+        }
 
         private static void TestEmptyStringsWithFeatureEnabled()
         {
@@ -2132,7 +2725,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         private void TestHashObjects()
         {
             string bucketName = "aws-sdk-net-s3link-" + DateTime.UtcNow.Ticks;
-            var s3Client = new Amazon.S3.AmazonS3Client(Amazon.RegionEndpoint.USEast1);
+            var s3Client = new Amazon.S3.AmazonS3Client();
             s3Client.PutBucket(bucketName);
             try
             {
@@ -3466,6 +4059,68 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         #region OPM definitions
 
+        // Helper classes for the integration test
+
+        [DynamoDBTable("HashTable")]
+        public class ProductFlatWithTimestamp
+        {
+            [DynamoDBHashKey] public int Id { get; set; }
+            [DynamoDBFlatten] public ProductDetailsWithTimestamp Details { get; set; }
+            public string Name { get; set; }
+        }
+
+        public class ProductDetailsWithTimestamp
+        {
+            [DynamoDBVersion] public int? Version { get; set; }
+            [DynamoDBAutoGeneratedTimestamp] public DateTime? CreatedAt { get; set; }
+            public string Description { get; set; }
+            [DynamoDBProperty("DetailsName")] public string Name { get; set; }
+        }
+
+        [DynamoDBTable("HashRangeTable")]
+        public class EmployeeWithTimestampAndCounter : AnnotatedEmployee
+        {
+            [DynamoDBAutoGeneratedTimestamp] public DateTime? LastUpdated { get; set; }
+            [DynamoDBAtomicCounter] public int? CountDefault { get; set; }
+        }
+
+        [DynamoDBTable("HashTable")]
+        public class ProductWithCreateTimestamp
+        {
+            [DynamoDBHashKey] public int Id { get; set; }
+            public string Name { get; set; }
+            [DynamoDBAutoGeneratedTimestamp]
+            public DateTime? CreatedAt { get; set; }
+        }
+
+        [DynamoDBTable("HashTable")]
+        public class AutoGenTimestampEpochEntity
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            public string Name { get; set; }
+
+#pragma warning disable CS0618
+            [DynamoDBAutoGeneratedTimestamp]
+            [DynamoDBProperty(StoreAsEpoch = true)]
+            public DateTime? CreatedAt { get; set; }
+#pragma warning restore CS0618
+        }
+
+        [DynamoDBTable("HashTable")]
+        public class AutoGenTimestampEpochLongEntity
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            public string Name { get; set; }
+
+            [DynamoDBAutoGeneratedTimestamp]
+            [DynamoDBProperty(StoreAsEpochLong = true)]
+            public DateTime? CreatedAt { get; set; }
+        }
+
         public enum Status : long
         {
             Active = 256,
@@ -3578,6 +4233,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             [DynamoDBVersion] public int? Version { get; set; }
         }
+
+        // Flattened scenario classes
+        [DynamoDBTable("HashTable")]
+        public class ProductFlatWithAtomicCounter
+        {
+            [DynamoDBHashKey] public int Id { get; set; }
+            [DynamoDBFlatten] public ProductDetailsWithAtomicCounter Details { get; set; }
+            public string Name { get; set; }
+        }
+
+        public class ProductDetailsWithAtomicCounter
+        {
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+            [DynamoDBAtomicCounter]
+            public int? CountDefault { get; set; }
+            [DynamoDBAtomicCounter(delta: 2, startValue: 10)] 
+            public int? CountAtomic { get; set; }
+            public string Description { get; set; }
+            [DynamoDBProperty("DetailsName")] 
+            public string Name { get; set; }
+        }
+
 
 
         /// <summary>
@@ -3761,6 +4439,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         /// </summary>
         public class EpochEmployee : Employee
         {
+#pragma warning disable CS0618
             [DynamoDBProperty(StoreAsEpoch = true)]
             public virtual DateTime CreationTime { get; set; }
 
@@ -3789,6 +4468,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBProperty(StoreAsEpochLong = true)]
             public DateTime? NullableLongEpochDate2 { get; set; }
+#pragma warning restore CS0618
         }
 
         /// <summary>
@@ -3802,6 +4482,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             public int Age { get; set; }
 
+#pragma warning disable CS0618
             // Hash key
             [DynamoDBHashKey(StoreAsEpoch = true)] public virtual DateTime CreationTime { get; set; }
 
@@ -3812,6 +4493,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public DateTime NonEpochDate1 { get; set; }
 
             public DateTime NonEpochDate2 { get; set; }
+#pragma warning restore CS0618
         }
 
         /// <summary>
@@ -3838,8 +4520,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("BadEmployeeHashRangeTable")]
         public class BadNumericEpochEmployee : NumericEpochEmployee
         {
+#pragma warning disable CS0618
             [DynamoDBProperty(StoreAsEpoch = true, StoreAsEpochLong = true)]
             public DateTime BadLongEpochDate { get; set; }
+#pragma warning restore CS0618
         }
 
         /// <summary>
@@ -3848,7 +4532,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("NumericHashRangeTable")]
         public class AnnotatedNumericEpochEmployee : EpochEmployee
         {
+#pragma warning disable CS0618
             [DynamoDBHashKey(StoreAsEpoch = true)] public override DateTime CreationTime { get; set; }
+#pragma warning restore CS0618
 
             [DynamoDBRangeKey] public override string Name { get; set; }
         }
@@ -3859,7 +4545,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         [DynamoDBTable("NumericHashRangeTable")]
         public class PropertyConverterEmployee
         {
+#pragma warning disable CS0618
             [DynamoDBHashKey(StoreAsEpoch = true)] public DateTime CreationTime { get; set; }
+#pragma warning restore CS0618
 
             [DynamoDBRangeKey]
             [DynamoDBProperty(Converter = typeof(EnumAsStringConverter<Status>))]
@@ -3985,6 +4673,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBFlatten]
             public PaymentInfo Payment { get; set; }
+
+            public string CompanyInfo { get; set; }
         }
 
         public class PaymentInfo
@@ -4108,6 +4798,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         #endregion
+
+        [DynamoDBTable("CompositeHashRangeTable")]
+        public class CompositeHashRangeEntity
+        {
+            [DynamoDBHashKey]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI4", Order = 1)]
+            public int Id { get; set; }
+
+            [DynamoDBRangeKey]
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI3", Order = 1)]
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI4", Order = 1)]
+            public string Status { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI1")]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI3", Order = 1)]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI2", Order = 2)]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI4", Order = 2)]
+            public string UserName { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI1")]
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI2")]
+            public int Timestamp { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI2", Order = 1)]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI4", Order = 3)]
+            public string OrderId { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI3", Order = 2)]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI4", Order = 4)]
+            public string Region { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI3", Order = 2)]
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI4", Order = 2)]
+            public string Category { get; set; }
+
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI4", Order = 3)]
+            public int Amount { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI4", Order = 4)]
+            public int Priority { get; set; }
+        }
 
         #endregion
     }

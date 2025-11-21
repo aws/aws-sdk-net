@@ -40,7 +40,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             var destinationKey = copyObjectRequest.DestinationKey;
             
-            IRequest request = new DefaultRequest(copyObjectRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(copyObjectRequest, "Amazon.S3");
 
             request.HttpMethod = "PUT";
 
@@ -137,6 +137,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (copyObjectRequest.IsSetChecksumAlgorithm())
                 request.Headers.Add(S3Constants.AmzHeaderChecksumAlgorithm ,S3Transforms.ToStringValue(copyObjectRequest.ChecksumAlgorithm));
+
+            if (copyObjectRequest.IsSetIfNoneMatch())
+                request.Headers.Add(HeaderKeys.IfNoneMatchHeader, copyObjectRequest.IfNoneMatch);
+
+            if (copyObjectRequest.IsSetIfMatch())
+                request.Headers.Add(HeaderKeys.IfMatchHeader, copyObjectRequest.IfMatch);
 
             AmazonS3Util.SetMetadataHeaders(request, copyObjectRequest.Metadata);
 

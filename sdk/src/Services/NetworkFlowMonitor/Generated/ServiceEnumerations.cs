@@ -43,6 +43,10 @@ namespace Amazon.NetworkFlowMonitor
         /// </summary>
         public static readonly DestinationCategory INTER_AZ = new DestinationCategory("INTER_AZ");
         /// <summary>
+        /// Constant INTER_REGION for DestinationCategory
+        /// </summary>
+        public static readonly DestinationCategory INTER_REGION = new DestinationCategory("INTER_REGION");
+        /// <summary>
         /// Constant INTER_VPC for DestinationCategory
         /// </summary>
         public static readonly DestinationCategory INTER_VPC = new DestinationCategory("INTER_VPC");
@@ -258,6 +262,14 @@ namespace Amazon.NetworkFlowMonitor
         /// Constant AWSEC2VPC for MonitorLocalResourceType
         /// </summary>
         public static readonly MonitorLocalResourceType AWSEC2VPC = new MonitorLocalResourceType("AWS::EC2::VPC");
+        /// <summary>
+        /// Constant AWSEKSCluster for MonitorLocalResourceType
+        /// </summary>
+        public static readonly MonitorLocalResourceType AWSEKSCluster = new MonitorLocalResourceType("AWS::EKS::Cluster");
+        /// <summary>
+        /// Constant AWSRegion for MonitorLocalResourceType
+        /// </summary>
+        public static readonly MonitorLocalResourceType AWSRegion = new MonitorLocalResourceType("AWS::Region");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -374,6 +386,10 @@ namespace Amazon.NetworkFlowMonitor
         /// Constant AWSEC2VPC for MonitorRemoteResourceType
         /// </summary>
         public static readonly MonitorRemoteResourceType AWSEC2VPC = new MonitorRemoteResourceType("AWS::EC2::VPC");
+        /// <summary>
+        /// Constant AWSRegion for MonitorRemoteResourceType
+        /// </summary>
+        public static readonly MonitorRemoteResourceType AWSRegion = new MonitorRemoteResourceType("AWS::Region");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

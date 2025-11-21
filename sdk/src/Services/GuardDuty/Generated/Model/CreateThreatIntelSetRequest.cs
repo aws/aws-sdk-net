@@ -88,7 +88,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. 
         /// <para>
         /// The unique ID of the detector of the GuardDuty account for which you want to create
-        /// a <c>ThreatIntelSet</c>.
+        /// a <c>threatIntelSet</c>.
         /// </para>
         ///  
         /// <para>

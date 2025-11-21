@@ -11,6 +11,25 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
 {
     class BillingSamples : ISample
     {
+        public void BillingAssociateSourceViews()
+        {
+            #region example-1
+
+            var client = new AmazonBillingClient();
+            var response = client.AssociateSourceViews(new AssociateSourceViewsRequest 
+            {
+                Arn = "arn:aws:billing::123456789012:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899",
+                SourceViews = new List<string> {
+                    "arn:aws:billing::123456789012:billingview/primary",
+                    "arn:aws:billing::123456789012:billingview/custom-d3f9c7e4-8b2f-4a6e-9d3b-2f7c8a1e5f6d"
+                }
+            });
+
+            string arn = response.Arn;
+
+            #endregion
+        }
+
         public void BillingCreateBillingView()
         {
             #region example-1
@@ -45,6 +64,25 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
             var response = client.DeleteBillingView(new DeleteBillingViewRequest 
             {
                 Arn = "arn:aws:billing::123456789101:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899"
+            });
+
+            string arn = response.Arn;
+
+            #endregion
+        }
+
+        public void BillingDisassociateSourceViews()
+        {
+            #region example-1
+
+            var client = new AmazonBillingClient();
+            var response = client.DisassociateSourceViews(new DisassociateSourceViewsRequest 
+            {
+                Arn = "arn:aws:billing::123456789012:billingview/custom-46f47cb2-a11d-43f3-983d-470b5708a899",
+                SourceViews = new List<string> {
+                    "arn:aws:billing::123456789012:billingview/primary",
+                    "arn:aws:billing::123456789012:billingview/custom-d3f9c7e4-8b2f-4a6e-9d3b-2f7c8a1e5f6d"
+                }
             });
 
             string arn = response.Arn;

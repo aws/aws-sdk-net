@@ -46,6 +46,8 @@ namespace Amazon.MediaConvert.Model
         private int? _programNumber;
         private InputRotate _rotate;
         private InputSampleRange _sampleRange;
+        private VideoSelectorType _selectorType;
+        private List<int> _streams = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Gets and sets the property AlphaBehavior. Ignore this setting unless this input is
@@ -277,6 +279,52 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSampleRange()
         {
             return this._sampleRange != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectorType. Choose the video selector type for your HLS
+        /// input. Use to specify which video rendition MediaConvert uses from your HLS input.
+        /// To have MediaConvert automatically use the highest bitrate rendition from your HLS
+        /// input: Keep the default value, Auto. To manually specify a rendition: Choose Stream.
+        /// Then enter the unique stream number in the Streams array, starting at 1, corresponding
+        /// to the stream order in the manifest.
+        /// </summary>
+        public VideoSelectorType SelectorType
+        {
+            get { return this._selectorType; }
+            set { this._selectorType = value; }
+        }
+
+        // Check to see if SelectorType property is set
+        internal bool IsSetSelectorType()
+        {
+            return this._selectorType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Streams. Specify one or more video streams for MediaConvert
+        /// to use from your HLS input. Enter an integer corresponding to the stream number, with
+        /// the first stream in your HLS multivariant playlist starting at 1.For re-encoding workflows,
+        /// MediaConvert uses the video stream that you select with the highest bitrate as the
+        /// input.For video passthrough workflows, you specify whether to passthrough a single
+        /// video stream or multiple video streams under Video selector source in the output video
+        /// encoding settings.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<int> Streams
+        {
+            get { return this._streams; }
+            set { this._streams = value; }
+        }
+
+        // Check to see if Streams property is set
+        internal bool IsSetStreams()
+        {
+            return this._streams != null && (this._streams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

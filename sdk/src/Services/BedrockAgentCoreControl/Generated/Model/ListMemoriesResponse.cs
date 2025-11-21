@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Memories. 
         /// <para>
-        /// The list of memory summaries.
+        /// The list of AgentCore Memory resource summaries.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

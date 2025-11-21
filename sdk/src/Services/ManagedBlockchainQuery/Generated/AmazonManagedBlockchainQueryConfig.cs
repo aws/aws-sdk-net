@@ -33,7 +33,7 @@ namespace Amazon.ManagedBlockchainQuery
     public partial class AmazonManagedBlockchainQueryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain Query", "4.0.0.15");
+            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain Query", "4.0.2.5");
 
         private static readonly AmazonManagedBlockchainQueryEndpointResolver EndpointResolver =
             new AmazonManagedBlockchainQueryEndpointResolver();

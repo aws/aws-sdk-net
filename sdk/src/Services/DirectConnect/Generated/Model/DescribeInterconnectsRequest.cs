@@ -37,6 +37,8 @@ namespace Amazon.DirectConnect.Model
     public partial class DescribeInterconnectsRequest : AmazonDirectConnectRequest
     {
         private string _interconnectId;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property InterconnectId. 
@@ -54,6 +56,47 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetInterconnectId()
         {
             return this._interconnectId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return with a single call. To retrieve the remaining
+        /// results, make another call with the returned <c>nextToken</c> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>MaxResults</c> is given a value larger than 100, only 100 results are returned.
+        /// </para>
+        /// </summary>
+        public int? MaxResults
+        {
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next page of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

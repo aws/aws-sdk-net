@@ -34,16 +34,38 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeClusterResponse : AmazonWebServiceResponse
     {
+        private ClusterAutoScalingConfigOutput _autoScaling;
         private string _clusterArn;
         private string _clusterName;
+        private string _clusterRole;
         private ClusterStatus _clusterStatus;
         private DateTime? _creationTime;
         private string _failureMessage;
         private List<ClusterInstanceGroupDetails> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupDetails>() : null;
+        private ClusterNodeProvisioningMode _nodeProvisioningMode;
         private ClusterNodeRecovery _nodeRecovery;
         private ClusterOrchestrator _orchestrator;
         private List<ClusterRestrictedInstanceGroupDetails> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupDetails>() : null;
+        private ClusterTieredStorageConfig _tieredStorageConfig;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AutoScaling. 
+        /// <para>
+        /// The current autoscaling configuration and status for the autoscaler.
+        /// </para>
+        /// </summary>
+        public ClusterAutoScalingConfigOutput AutoScaling
+        {
+            get { return this._autoScaling; }
+            set { this._autoScaling = value; }
+        }
+
+        // Check to see if AutoScaling property is set
+        internal bool IsSetAutoScaling()
+        {
+            return this._autoScaling != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
@@ -81,6 +103,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterRole. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that HyperPod uses for cluster autoscaling
+        /// operations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ClusterRole
+        {
+            get { return this._clusterRole; }
+            set { this._clusterRole = value; }
+        }
+
+        // Check to see if ClusterRole property is set
+        internal bool IsSetClusterRole()
+        {
+            return this._clusterRole != null;
         }
 
         /// <summary>
@@ -163,6 +205,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NodeProvisioningMode. 
+        /// <para>
+        /// The mode used for provisioning nodes in the cluster.
+        /// </para>
+        /// </summary>
+        public ClusterNodeProvisioningMode NodeProvisioningMode
+        {
+            get { return this._nodeProvisioningMode; }
+            set { this._nodeProvisioningMode = value; }
+        }
+
+        // Check to see if NodeProvisioningMode property is set
+        internal bool IsSetNodeProvisioningMode()
+        {
+            return this._nodeProvisioningMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NodeRecovery. 
         /// <para>
         /// The node recovery mode configured for the SageMaker HyperPod cluster.
@@ -220,6 +280,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRestrictedInstanceGroups()
         {
             return this._restrictedInstanceGroups != null && (this._restrictedInstanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TieredStorageConfig. 
+        /// <para>
+        /// The current configuration for managed tier checkpointing on the HyperPod cluster.
+        /// For example, this shows whether the feature is enabled and the percentage of cluster
+        /// memory allocated for checkpoint storage.
+        /// </para>
+        /// </summary>
+        public ClusterTieredStorageConfig TieredStorageConfig
+        {
+            get { return this._tieredStorageConfig; }
+            set { this._tieredStorageConfig = value; }
+        }
+
+        // Check to see if TieredStorageConfig property is set
+        internal bool IsSetTieredStorageConfig()
+        {
+            return this._tieredStorageConfig != null;
         }
 
         /// <summary>

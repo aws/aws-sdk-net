@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetObjectLegalHoldRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.AddSubResource("legal-hold");
         
@@ -101,5 +102,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetObjectLegalHoldRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetObjectLegalHoldRequest publicRequest);
     }    
 }

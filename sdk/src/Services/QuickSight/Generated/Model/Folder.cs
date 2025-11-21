@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A folder in Amazon QuickSight.
+    /// A folder in Quick Sight.
     /// </summary>
     public partial class Folder
     {

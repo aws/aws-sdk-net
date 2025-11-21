@@ -68,6 +68,8 @@ namespace Amazon.BedrockAgentCore.Model
         private string _codeInterpreterIdentifier;
         private string _name;
         private int? _sessionTimeoutSeconds;
+        private string _traceId;
+        private string _traceParent;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -135,8 +137,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// Gets and sets the property SessionTimeoutSeconds. 
         /// <para>
         /// The time in seconds after which the session automatically terminates if there is no
-        /// activity. The default value is 3600 seconds (1 hour). The minimum allowed value is
-        /// 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).
+        /// activity. The default value is 900 seconds (15 minutes). The minimum allowed value
+        /// is 60 seconds, and the maximum allowed value is 28800 seconds (8 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=28800)]
@@ -150,6 +152,44 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetSessionTimeoutSeconds()
         {
             return this._sessionTimeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The trace identifier for request tracking.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceId
+        {
+            get { return this._traceId; }
+            set { this._traceId = value; }
+        }
+
+        // Check to see if TraceId property is set
+        internal bool IsSetTraceId()
+        {
+            return this._traceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceParent. 
+        /// <para>
+        /// The parent trace information for distributed tracing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceParent
+        {
+            get { return this._traceParent; }
+            set { this._traceParent = value; }
+        }
+
+        // Check to see if TraceParent property is set
+        internal bool IsSetTraceParent()
+        {
+            return this._traceParent != null;
         }
 
     }

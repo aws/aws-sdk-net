@@ -80,6 +80,7 @@ namespace Amazon.GeoRoutes.Model
         /// Avoid car-shuttle-trains while calculating the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? CarShuttleTrains
         {
             get { return this._carShuttleTrains; }
@@ -98,6 +99,7 @@ namespace Amazon.GeoRoutes.Model
         /// Avoid controlled access highways while calculating the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? ControlledAccessHighways
         {
             get { return this._controlledAccessHighways; }
@@ -116,6 +118,7 @@ namespace Amazon.GeoRoutes.Model
         /// Avoid dirt roads while calculating the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? DirtRoads
         {
             get { return this._dirtRoads; }
@@ -134,6 +137,7 @@ namespace Amazon.GeoRoutes.Model
         /// Avoid ferries while calculating the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? Ferries
         {
             get { return this._ferries; }
@@ -152,6 +156,7 @@ namespace Amazon.GeoRoutes.Model
         /// Avoids roads where the specified toll transponders are the only mode of payment.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? TollRoads
         {
             get { return this._tollRoads; }
@@ -170,6 +175,7 @@ namespace Amazon.GeoRoutes.Model
         /// Avoids roads where the specified toll transponders are the only mode of payment.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? TollTransponders
         {
             get { return this._tollTransponders; }
@@ -218,6 +224,7 @@ namespace Amazon.GeoRoutes.Model
         /// Avoid tunnels while calculating the route.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? Tunnels
         {
             get { return this._tunnels; }
@@ -236,6 +243,7 @@ namespace Amazon.GeoRoutes.Model
         /// Avoid U-turns for calculation on highways and motorways.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? UTurns
         {
             get { return this._uTurns; }

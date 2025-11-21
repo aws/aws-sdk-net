@@ -45,7 +45,6 @@ namespace Amazon.MediaLive.Model
         /// will continue indefinitely and there is an expectation that you will enter a return_to_network
         /// to end the splice_insert at the appropriate time.
         /// </summary>
-        [AWSProperty(Min=0, Max=8589934591)]
         public long? Duration
         {
             get { return this._duration; }
@@ -62,7 +61,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SpliceEventId. The splice_event_id for the SCTE-35 splice_insert,
         /// as defined in SCTE-35.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true)]
         public long? SpliceEventId
         {
             get { return this._spliceEventId; }

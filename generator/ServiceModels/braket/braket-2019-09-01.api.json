@@ -2,9 +2,10 @@
   "version":"2.0",
   "metadata":{
     "apiVersion":"2019-09-01",
+    "auth":["aws.auth#sigv4"],
     "endpointPrefix":"braket",
-    "jsonVersion":"1.1",
     "protocol":"rest-json",
+    "protocols":["rest-json"],
     "serviceFullName":"Braket",
     "serviceId":"Braket",
     "signatureVersion":"v4",
@@ -65,8 +66,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"DeviceOfflineException"},
         {"shape":"DeviceRetiredException"},
-        {"shape":"InternalServiceException"},
         {"shape":"ServiceQuotaExceededException"},
+        {"shape":"InternalServiceException"},
         {"shape":"ValidationException"}
       ]
     },
@@ -81,13 +82,48 @@
       "output":{"shape":"CreateQuantumTaskResponse"},
       "errors":[
         {"shape":"AccessDeniedException"},
-        {"shape":"ThrottlingException"},
         {"shape":"DeviceOfflineException"},
+        {"shape":"ThrottlingException"},
         {"shape":"DeviceRetiredException"},
-        {"shape":"InternalServiceException"},
         {"shape":"ServiceQuotaExceededException"},
+        {"shape":"InternalServiceException"},
         {"shape":"ValidationException"}
       ]
+    },
+    "CreateSpendingLimit":{
+      "name":"CreateSpendingLimit",
+      "http":{
+        "method":"POST",
+        "requestUri":"/spending-limit",
+        "responseCode":201
+      },
+      "input":{"shape":"CreateSpendingLimitRequest"},
+      "output":{"shape":"CreateSpendingLimitResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"DeviceRetiredException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"ValidationException"}
+      ]
+    },
+    "DeleteSpendingLimit":{
+      "name":"DeleteSpendingLimit",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/spending-limit/{spendingLimitArn}/delete",
+        "responseCode":200
+      },
+      "input":{"shape":"DeleteSpendingLimitRequest"},
+      "output":{"shape":"DeleteSpendingLimitResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"ValidationException"}
+      ],
+      "idempotent":true
     },
     "GetDevice":{
       "name":"GetDevice",
@@ -104,7 +140,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServiceException"},
         {"shape":"ValidationException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetJob":{
       "name":"GetJob",
@@ -121,7 +158,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServiceException"},
         {"shape":"ValidationException"}
-      ]
+      ],
+      "readonly":true
     },
     "GetQuantumTask":{
       "name":"GetQuantumTask",
@@ -138,7 +176,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServiceException"},
         {"shape":"ValidationException"}
-      ]
+      ],
+      "readonly":true
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -153,7 +192,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServiceException"},
         {"shape":"ValidationException"}
-      ]
+      ],
+      "readonly":true
     },
     "SearchDevices":{
       "name":"SearchDevices",
@@ -169,7 +209,8 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServiceException"},
         {"shape":"ValidationException"}
-      ]
+      ],
+      "readonly":true
     },
     "SearchJobs":{
       "name":"SearchJobs",
@@ -201,7 +242,25 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServiceException"},
         {"shape":"ValidationException"}
-      ]
+      ],
+      "readonly":true
+    },
+    "SearchSpendingLimits":{
+      "name":"SearchSpendingLimits",
+      "http":{
+        "method":"POST",
+        "requestUri":"/spending-limits",
+        "responseCode":200
+      },
+      "input":{"shape":"SearchSpendingLimitsRequest"},
+      "output":{"shape":"SearchSpendingLimitsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"ValidationException"}
+      ],
+      "readonly":true
     },
     "TagResource":{
       "name":"TagResource",
@@ -233,6 +292,24 @@
         {"shape":"ValidationException"}
       ],
       "idempotent":true
+    },
+    "UpdateSpendingLimit":{
+      "name":"UpdateSpendingLimit",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/spending-limit/{spendingLimitArn}/update",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateSpendingLimitRequest"},
+      "output":{"shape":"UpdateSpendingLimitResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"ValidationException"}
+      ],
+      "idempotent":true
     }
   },
   "shapes":{
@@ -247,11 +324,20 @@
       },
       "exception":true
     },
+    "ActionMetadata":{
+      "type":"structure",
+      "required":["actionType"],
+      "members":{
+        "actionType":{"shape":"String"},
+        "programCount":{"shape":"Long"},
+        "executableCount":{"shape":"Long"}
+      }
+    },
     "AlgorithmSpecification":{
       "type":"structure",
       "members":{
-        "containerImage":{"shape":"ContainerImage"},
-        "scriptModeConfig":{"shape":"ScriptModeConfig"}
+        "scriptModeConfig":{"shape":"ScriptModeConfig"},
+        "containerImage":{"shape":"ContainerImage"}
       }
     },
     "Association":{
@@ -275,7 +361,7 @@
     },
     "BraketResourceArn":{
       "type":"string",
-      "pattern":"^arn:aws[a-z\\-]*:braket:[a-z0-9\\-]*:[0-9]{12}:.*$"
+      "pattern":"arn:aws[a-z\\-]*:braket:[a-z0-9\\-]*:[0-9]{12}:.*"
     },
     "CancelJobRequest":{
       "type":"structure",
@@ -291,41 +377,41 @@
     "CancelJobResponse":{
       "type":"structure",
       "required":[
-        "cancellationStatus",
-        "jobArn"
+        "jobArn",
+        "cancellationStatus"
       ],
       "members":{
-        "cancellationStatus":{"shape":"CancellationStatus"},
-        "jobArn":{"shape":"JobArn"}
+        "jobArn":{"shape":"JobArn"},
+        "cancellationStatus":{"shape":"CancellationStatus"}
       }
     },
     "CancelQuantumTaskRequest":{
       "type":"structure",
       "required":[
-        "clientToken",
-        "quantumTaskArn"
+        "quantumTaskArn",
+        "clientToken"
       ],
       "members":{
-        "clientToken":{
-          "shape":"String64",
-          "idempotencyToken":true
-        },
         "quantumTaskArn":{
           "shape":"QuantumTaskArn",
           "location":"uri",
           "locationName":"quantumTaskArn"
+        },
+        "clientToken":{
+          "shape":"String64",
+          "idempotencyToken":true
         }
       }
     },
     "CancelQuantumTaskResponse":{
       "type":"structure",
       "required":[
-        "cancellationStatus",
-        "quantumTaskArn"
+        "quantumTaskArn",
+        "cancellationStatus"
       ],
       "members":{
-        "cancellationStatus":{"shape":"CancellationStatus"},
-        "quantumTaskArn":{"shape":"QuantumTaskArn"}
+        "quantumTaskArn":{"shape":"QuantumTaskArn"},
+        "cancellationStatus":{"shape":"CancellationStatus"}
       }
     },
     "CancellationStatus":{
@@ -363,31 +449,31 @@
     "CreateJobRequest":{
       "type":"structure",
       "required":[
-        "algorithmSpecification",
         "clientToken",
-        "deviceConfig",
-        "instanceConfig",
-        "jobName",
+        "algorithmSpecification",
         "outputDataConfig",
-        "roleArn"
+        "jobName",
+        "roleArn",
+        "instanceConfig",
+        "deviceConfig"
       ],
       "members":{
-        "algorithmSpecification":{"shape":"AlgorithmSpecification"},
-        "associations":{"shape":"CreateJobRequestAssociationsList"},
-        "checkpointConfig":{"shape":"JobCheckpointConfig"},
         "clientToken":{
           "shape":"String64",
           "idempotencyToken":true
         },
-        "deviceConfig":{"shape":"DeviceConfig"},
-        "hyperParameters":{"shape":"HyperParameters"},
+        "algorithmSpecification":{"shape":"AlgorithmSpecification"},
         "inputDataConfig":{"shape":"CreateJobRequestInputDataConfigList"},
-        "instanceConfig":{"shape":"InstanceConfig"},
-        "jobName":{"shape":"CreateJobRequestJobNameString"},
         "outputDataConfig":{"shape":"JobOutputDataConfig"},
+        "checkpointConfig":{"shape":"JobCheckpointConfig"},
+        "jobName":{"shape":"CreateJobRequestJobNameString"},
         "roleArn":{"shape":"RoleArn"},
         "stoppingCondition":{"shape":"JobStoppingCondition"},
-        "tags":{"shape":"TagsMap"}
+        "instanceConfig":{"shape":"InstanceConfig"},
+        "hyperParameters":{"shape":"HyperParameters"},
+        "deviceConfig":{"shape":"DeviceConfig"},
+        "tags":{"shape":"TagsMap"},
+        "associations":{"shape":"CreateJobRequestAssociationsList"}
       }
     },
     "CreateJobRequestAssociationsList":{
@@ -406,7 +492,7 @@
       "type":"string",
       "max":50,
       "min":1,
-      "pattern":"^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$"
+      "pattern":"[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}"
     },
     "CreateJobResponse":{
       "type":"structure",
@@ -418,19 +504,14 @@
     "CreateQuantumTaskRequest":{
       "type":"structure",
       "required":[
-        "action",
         "clientToken",
         "deviceArn",
+        "shots",
         "outputS3Bucket",
         "outputS3KeyPrefix",
-        "shots"
+        "action"
       ],
       "members":{
-        "action":{
-          "shape":"JsonValue",
-          "jsonvalue":true
-        },
-        "associations":{"shape":"CreateQuantumTaskRequestAssociationsList"},
         "clientToken":{
           "shape":"String64",
           "idempotencyToken":true
@@ -440,11 +521,17 @@
           "shape":"CreateQuantumTaskRequestDeviceParametersString",
           "jsonvalue":true
         },
-        "jobToken":{"shape":"JobToken"},
+        "shots":{"shape":"CreateQuantumTaskRequestShotsLong"},
         "outputS3Bucket":{"shape":"CreateQuantumTaskRequestOutputS3BucketString"},
         "outputS3KeyPrefix":{"shape":"CreateQuantumTaskRequestOutputS3KeyPrefixString"},
-        "shots":{"shape":"CreateQuantumTaskRequestShotsLong"},
-        "tags":{"shape":"TagsMap"}
+        "action":{
+          "shape":"JsonValue",
+          "jsonvalue":true
+        },
+        "tags":{"shape":"TagsMap"},
+        "jobToken":{"shape":"JobToken"},
+        "associations":{"shape":"CreateQuantumTaskRequestAssociationsList"},
+        "experimentalCapabilities":{"shape":"ExperimentalCapabilities"}
       }
     },
     "CreateQuantumTaskRequestAssociationsList":{
@@ -480,12 +567,57 @@
         "quantumTaskArn":{"shape":"QuantumTaskArn"}
       }
     },
+    "CreateSpendingLimitRequest":{
+      "type":"structure",
+      "required":[
+        "clientToken",
+        "deviceArn",
+        "spendingLimit"
+      ],
+      "members":{
+        "clientToken":{
+          "shape":"String64",
+          "idempotencyToken":true
+        },
+        "deviceArn":{"shape":"DeviceArn"},
+        "spendingLimit":{"shape":"CreateSpendingLimitRequestSpendingLimitString"},
+        "timePeriod":{"shape":"TimePeriod"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "CreateSpendingLimitRequestSpendingLimitString":{
+      "type":"string",
+      "min":1,
+      "pattern":"\\d+(\\.\\d{1,2})?"
+    },
+    "CreateSpendingLimitResponse":{
+      "type":"structure",
+      "required":["spendingLimitArn"],
+      "members":{
+        "spendingLimitArn":{"shape":"SpendingLimitArn"}
+      }
+    },
     "DataSource":{
       "type":"structure",
       "required":["s3DataSource"],
       "members":{
         "s3DataSource":{"shape":"S3DataSource"}
       }
+    },
+    "DeleteSpendingLimitRequest":{
+      "type":"structure",
+      "required":["spendingLimitArn"],
+      "members":{
+        "spendingLimitArn":{
+          "shape":"SpendingLimitArn",
+          "location":"uri",
+          "locationName":"spendingLimitArn"
+        }
+      }
+    },
+    "DeleteSpendingLimitResponse":{
+      "type":"structure",
+      "members":{}
     },
     "DeviceArn":{
       "type":"string",
@@ -518,8 +650,8 @@
       ],
       "members":{
         "queue":{"shape":"QueueName"},
-        "queuePriority":{"shape":"QueuePriority"},
-        "queueSize":{"shape":"String"}
+        "queueSize":{"shape":"String"},
+        "queuePriority":{"shape":"QueuePriority"}
       }
     },
     "DeviceQueueInfoList":{
@@ -550,16 +682,16 @@
       "required":[
         "deviceArn",
         "deviceName",
-        "deviceStatus",
+        "providerName",
         "deviceType",
-        "providerName"
+        "deviceStatus"
       ],
       "members":{
         "deviceArn":{"shape":"DeviceArn"},
         "deviceName":{"shape":"String"},
-        "deviceStatus":{"shape":"DeviceStatus"},
+        "providerName":{"shape":"String"},
         "deviceType":{"shape":"DeviceType"},
-        "providerName":{"shape":"String"}
+        "deviceStatus":{"shape":"DeviceStatus"}
       }
     },
     "DeviceSummaryList":{
@@ -571,6 +703,20 @@
       "enum":[
         "QPU",
         "SIMULATOR"
+      ]
+    },
+    "ExperimentalCapabilities":{
+      "type":"structure",
+      "members":{
+        "enabled":{"shape":"ExperimentalCapabilitiesEnablementType"}
+      },
+      "union":true
+    },
+    "ExperimentalCapabilitiesEnablementType":{
+      "type":"string",
+      "enum":[
+        "ALL",
+        "NONE"
       ]
     },
     "GetDeviceRequest":{
@@ -588,129 +734,132 @@
       "type":"structure",
       "required":[
         "deviceArn",
-        "deviceCapabilities",
         "deviceName",
-        "deviceStatus",
+        "providerName",
         "deviceType",
-        "providerName"
+        "deviceStatus",
+        "deviceCapabilities"
       ],
       "members":{
         "deviceArn":{"shape":"DeviceArn"},
+        "deviceName":{"shape":"String"},
+        "providerName":{"shape":"String"},
+        "deviceType":{"shape":"DeviceType"},
+        "deviceStatus":{"shape":"DeviceStatus"},
         "deviceCapabilities":{
           "shape":"JsonValue",
           "jsonvalue":true
         },
-        "deviceName":{"shape":"String"},
-        "deviceQueueInfo":{"shape":"DeviceQueueInfoList"},
-        "deviceStatus":{"shape":"DeviceStatus"},
-        "deviceType":{"shape":"DeviceType"},
-        "providerName":{"shape":"String"}
+        "deviceQueueInfo":{"shape":"DeviceQueueInfoList"}
       }
     },
     "GetJobRequest":{
       "type":"structure",
       "required":["jobArn"],
       "members":{
-        "additionalAttributeNames":{
-          "shape":"HybridJobAdditionalAttributeNamesList",
-          "location":"querystring",
-          "locationName":"additionalAttributeNames"
-        },
         "jobArn":{
           "shape":"JobArn",
           "location":"uri",
           "locationName":"jobArn"
+        },
+        "additionalAttributeNames":{
+          "shape":"HybridJobAdditionalAttributeNamesList",
+          "location":"querystring",
+          "locationName":"additionalAttributeNames"
         }
       }
     },
     "GetJobResponse":{
       "type":"structure",
       "required":[
-        "algorithmSpecification",
-        "createdAt",
-        "instanceConfig",
+        "status",
         "jobArn",
+        "roleArn",
         "jobName",
         "outputDataConfig",
-        "roleArn",
-        "status"
+        "algorithmSpecification",
+        "instanceConfig",
+        "createdAt"
       ],
       "members":{
-        "algorithmSpecification":{"shape":"AlgorithmSpecification"},
-        "associations":{"shape":"Associations"},
-        "billableDuration":{"shape":"Integer"},
-        "checkpointConfig":{"shape":"JobCheckpointConfig"},
-        "createdAt":{"shape":"SyntheticTimestamp_date_time"},
-        "deviceConfig":{"shape":"DeviceConfig"},
-        "endedAt":{"shape":"SyntheticTimestamp_date_time"},
-        "events":{"shape":"JobEvents"},
+        "status":{"shape":"JobPrimaryStatus"},
+        "jobArn":{"shape":"JobArn"},
+        "roleArn":{"shape":"RoleArn"},
         "failureReason":{"shape":"String1024"},
+        "jobName":{"shape":"GetJobResponseJobNameString"},
         "hyperParameters":{"shape":"HyperParameters"},
         "inputDataConfig":{"shape":"InputConfigList"},
-        "instanceConfig":{"shape":"InstanceConfig"},
-        "jobArn":{"shape":"JobArn"},
-        "jobName":{"shape":"GetJobResponseJobNameString"},
         "outputDataConfig":{"shape":"JobOutputDataConfig"},
-        "queueInfo":{"shape":"HybridJobQueueInfo"},
-        "roleArn":{"shape":"RoleArn"},
-        "startedAt":{"shape":"SyntheticTimestamp_date_time"},
-        "status":{"shape":"JobPrimaryStatus"},
         "stoppingCondition":{"shape":"JobStoppingCondition"},
-        "tags":{"shape":"TagsMap"}
+        "checkpointConfig":{"shape":"JobCheckpointConfig"},
+        "algorithmSpecification":{"shape":"AlgorithmSpecification"},
+        "instanceConfig":{"shape":"InstanceConfig"},
+        "createdAt":{"shape":"SyntheticTimestamp_date_time"},
+        "startedAt":{"shape":"SyntheticTimestamp_date_time"},
+        "endedAt":{"shape":"SyntheticTimestamp_date_time"},
+        "billableDuration":{"shape":"Integer"},
+        "deviceConfig":{"shape":"DeviceConfig"},
+        "events":{"shape":"JobEvents"},
+        "tags":{"shape":"TagsMap"},
+        "queueInfo":{"shape":"HybridJobQueueInfo"},
+        "associations":{"shape":"Associations"}
       }
     },
     "GetJobResponseJobNameString":{
       "type":"string",
       "max":50,
       "min":1,
-      "pattern":"^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$"
+      "pattern":"[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}"
     },
     "GetQuantumTaskRequest":{
       "type":"structure",
       "required":["quantumTaskArn"],
       "members":{
-        "additionalAttributeNames":{
-          "shape":"QuantumTaskAdditionalAttributeNamesList",
-          "location":"querystring",
-          "locationName":"additionalAttributeNames"
-        },
         "quantumTaskArn":{
           "shape":"QuantumTaskArn",
           "location":"uri",
           "locationName":"quantumTaskArn"
+        },
+        "additionalAttributeNames":{
+          "shape":"QuantumTaskAdditionalAttributeNamesList",
+          "location":"querystring",
+          "locationName":"additionalAttributeNames"
         }
       }
     },
     "GetQuantumTaskResponse":{
       "type":"structure",
       "required":[
-        "createdAt",
+        "quantumTaskArn",
+        "status",
         "deviceArn",
         "deviceParameters",
+        "shots",
         "outputS3Bucket",
         "outputS3Directory",
-        "quantumTaskArn",
-        "shots",
-        "status"
+        "createdAt"
       ],
       "members":{
-        "associations":{"shape":"Associations"},
-        "createdAt":{"shape":"SyntheticTimestamp_date_time"},
+        "quantumTaskArn":{"shape":"QuantumTaskArn"},
+        "status":{"shape":"QuantumTaskStatus"},
+        "failureReason":{"shape":"String"},
         "deviceArn":{"shape":"DeviceArn"},
         "deviceParameters":{
           "shape":"JsonValue",
           "jsonvalue":true
         },
-        "endedAt":{"shape":"SyntheticTimestamp_date_time"},
-        "failureReason":{"shape":"String"},
-        "jobArn":{"shape":"JobArn"},
+        "shots":{"shape":"Long"},
         "outputS3Bucket":{"shape":"String"},
         "outputS3Directory":{"shape":"String"},
-        "quantumTaskArn":{"shape":"QuantumTaskArn"},
+        "createdAt":{"shape":"SyntheticTimestamp_date_time"},
+        "endedAt":{"shape":"SyntheticTimestamp_date_time"},
+        "tags":{"shape":"TagsMap"},
+        "jobArn":{"shape":"JobArn"},
         "queueInfo":{"shape":"QuantumTaskQueueInfo"},
-        "shots":{"shape":"Long"},
-        "status":{"shape":"QuantumTaskStatus"},
-        "tags":{"shape":"TagsMap"}
+        "associations":{"shape":"Associations"},
+        "numSuccessfulShots":{"shape":"Long"},
+        "actionMetadata":{"shape":"ActionMetadata"},
+        "experimentalCapabilities":{"shape":"ExperimentalCapabilities"}
       }
     },
     "HybridJobAdditionalAttributeName":{
@@ -724,13 +873,13 @@
     "HybridJobQueueInfo":{
       "type":"structure",
       "required":[
-        "position",
-        "queue"
+        "queue",
+        "position"
       ],
       "members":{
-        "message":{"shape":"String"},
+        "queue":{"shape":"QueueName"},
         "position":{"shape":"String"},
-        "queue":{"shape":"QueueName"}
+        "message":{"shape":"String"}
       }
     },
     "HyperParameters":{
@@ -744,7 +893,7 @@
       "type":"string",
       "max":2500,
       "min":1,
-      "pattern":"^.*$"
+      "pattern":".*"
     },
     "InputConfigList":{
       "type":"list",
@@ -766,7 +915,7 @@
       "type":"string",
       "max":64,
       "min":1,
-      "pattern":"^[A-Za-z0-9\\.\\-_]+$"
+      "pattern":"[A-Za-z0-9\\.\\-_]+"
     },
     "InstanceConfig":{
       "type":"structure",
@@ -775,9 +924,9 @@
         "volumeSizeInGb"
       ],
       "members":{
-        "instanceCount":{"shape":"InstanceConfigInstanceCountInteger"},
         "instanceType":{"shape":"InstanceType"},
-        "volumeSizeInGb":{"shape":"InstanceConfigVolumeSizeInGbInteger"}
+        "volumeSizeInGb":{"shape":"InstanceConfigVolumeSizeInGbInteger"},
+        "instanceCount":{"shape":"InstanceConfigInstanceCountInteger"}
       }
     },
     "InstanceConfigInstanceCountInteger":{
@@ -849,7 +998,7 @@
     },
     "JobArn":{
       "type":"string",
-      "pattern":"^arn:aws[a-z\\-]*:braket:[a-z0-9\\-]+:[0-9]{12}:job/.*$"
+      "pattern":"arn:aws[a-z\\-]*:braket:[a-z0-9\\-]+:[0-9]{12}:job/.*"
     },
     "JobCheckpointConfig":{
       "type":"structure",
@@ -863,8 +1012,8 @@
       "type":"structure",
       "members":{
         "eventType":{"shape":"JobEventType"},
-        "message":{"shape":"JobEventDetailsMessageString"},
-        "timeOfEvent":{"shape":"SyntheticTimestamp_date_time"}
+        "timeOfEvent":{"shape":"SyntheticTimestamp_date_time"},
+        "message":{"shape":"JobEventDetailsMessageString"}
       }
     },
     "JobEventDetailsMessageString":{
@@ -928,20 +1077,20 @@
     "JobSummary":{
       "type":"structure",
       "required":[
-        "createdAt",
-        "device",
+        "status",
         "jobArn",
         "jobName",
-        "status"
+        "device",
+        "createdAt"
       ],
       "members":{
-        "createdAt":{"shape":"SyntheticTimestamp_date_time"},
-        "device":{"shape":"String256"},
-        "endedAt":{"shape":"SyntheticTimestamp_date_time"},
+        "status":{"shape":"JobPrimaryStatus"},
         "jobArn":{"shape":"JobArn"},
         "jobName":{"shape":"String"},
+        "device":{"shape":"String256"},
+        "createdAt":{"shape":"SyntheticTimestamp_date_time"},
         "startedAt":{"shape":"SyntheticTimestamp_date_time"},
-        "status":{"shape":"JobPrimaryStatus"},
+        "endedAt":{"shape":"SyntheticTimestamp_date_time"},
         "tags":{"shape":"TagsMap"}
       }
     },
@@ -976,6 +1125,23 @@
       "type":"long",
       "box":true
     },
+    "ProgramSetValidationFailure":{
+      "type":"structure",
+      "required":["programIndex"],
+      "members":{
+        "programIndex":{"shape":"Long"},
+        "inputsIndex":{"shape":"Long"},
+        "errors":{"shape":"ProgramValidationFailuresList"}
+      }
+    },
+    "ProgramSetValidationFailuresList":{
+      "type":"list",
+      "member":{"shape":"ProgramSetValidationFailure"}
+    },
+    "ProgramValidationFailuresList":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
     "QuantumTaskAdditionalAttributeName":{
       "type":"string",
       "enum":["QueueInfo"]
@@ -992,14 +1158,14 @@
     "QuantumTaskQueueInfo":{
       "type":"structure",
       "required":[
-        "position",
-        "queue"
+        "queue",
+        "position"
       ],
       "members":{
-        "message":{"shape":"String"},
-        "position":{"shape":"String"},
         "queue":{"shape":"QueueName"},
-        "queuePriority":{"shape":"QueuePriority"}
+        "position":{"shape":"String"},
+        "queuePriority":{"shape":"QueuePriority"},
+        "message":{"shape":"String"}
       }
     },
     "QuantumTaskStatus":{
@@ -1017,23 +1183,23 @@
     "QuantumTaskSummary":{
       "type":"structure",
       "required":[
-        "createdAt",
+        "quantumTaskArn",
+        "status",
         "deviceArn",
+        "shots",
         "outputS3Bucket",
         "outputS3Directory",
-        "quantumTaskArn",
-        "shots",
-        "status"
+        "createdAt"
       ],
       "members":{
-        "createdAt":{"shape":"SyntheticTimestamp_date_time"},
+        "quantumTaskArn":{"shape":"QuantumTaskArn"},
+        "status":{"shape":"QuantumTaskStatus"},
         "deviceArn":{"shape":"DeviceArn"},
-        "endedAt":{"shape":"SyntheticTimestamp_date_time"},
+        "shots":{"shape":"Long"},
         "outputS3Bucket":{"shape":"String"},
         "outputS3Directory":{"shape":"String"},
-        "quantumTaskArn":{"shape":"QuantumTaskArn"},
-        "shots":{"shape":"Long"},
-        "status":{"shape":"QuantumTaskStatus"},
+        "createdAt":{"shape":"SyntheticTimestamp_date_time"},
+        "endedAt":{"shape":"SyntheticTimestamp_date_time"},
         "tags":{"shape":"TagsMap"}
       }
     },
@@ -1068,7 +1234,7 @@
     },
     "RoleArn":{
       "type":"string",
-      "pattern":"^arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+$"
+      "pattern":"arn:aws[a-z\\-]*:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+"
     },
     "S3DataSource":{
       "type":"structure",
@@ -1081,7 +1247,7 @@
       "type":"string",
       "max":1024,
       "min":0,
-      "pattern":"^(https|s3)://([^/]+)/?(.*)$"
+      "pattern":"(https|s3)://([^/]+)/?(.*)"
     },
     "ScriptModeConfig":{
       "type":"structure",
@@ -1090,9 +1256,9 @@
         "s3Uri"
       ],
       "members":{
-        "compressionType":{"shape":"CompressionType"},
         "entryPoint":{"shape":"String"},
-        "s3Uri":{"shape":"S3Path"}
+        "s3Uri":{"shape":"S3Path"},
+        "compressionType":{"shape":"CompressionType"}
       }
     },
     "SearchDevicesFilter":{
@@ -1121,9 +1287,9 @@
       "type":"structure",
       "required":["filters"],
       "members":{
-        "filters":{"shape":"SearchDevicesRequestFiltersList"},
+        "nextToken":{"shape":"String"},
         "maxResults":{"shape":"SearchDevicesRequestMaxResultsInteger"},
-        "nextToken":{"shape":"String"}
+        "filters":{"shape":"SearchDevicesRequestFiltersList"}
       }
     },
     "SearchDevicesRequestFiltersList":{
@@ -1150,13 +1316,13 @@
       "type":"structure",
       "required":[
         "name",
-        "operator",
-        "values"
+        "values",
+        "operator"
       ],
       "members":{
         "name":{"shape":"String64"},
-        "operator":{"shape":"SearchJobsFilterOperator"},
-        "values":{"shape":"SearchJobsFilterValuesList"}
+        "values":{"shape":"SearchJobsFilterValuesList"},
+        "operator":{"shape":"SearchJobsFilterOperator"}
       }
     },
     "SearchJobsFilterOperator":{
@@ -1181,9 +1347,9 @@
       "type":"structure",
       "required":["filters"],
       "members":{
-        "filters":{"shape":"SearchJobsRequestFiltersList"},
+        "nextToken":{"shape":"String"},
         "maxResults":{"shape":"SearchJobsRequestMaxResultsInteger"},
-        "nextToken":{"shape":"String"}
+        "filters":{"shape":"SearchJobsRequestFiltersList"}
       }
     },
     "SearchJobsRequestFiltersList":{
@@ -1210,13 +1376,13 @@
       "type":"structure",
       "required":[
         "name",
-        "operator",
-        "values"
+        "values",
+        "operator"
       ],
       "members":{
         "name":{"shape":"String64"},
-        "operator":{"shape":"SearchQuantumTasksFilterOperator"},
-        "values":{"shape":"SearchQuantumTasksFilterValuesList"}
+        "values":{"shape":"SearchQuantumTasksFilterValuesList"},
+        "operator":{"shape":"SearchQuantumTasksFilterOperator"}
       }
     },
     "SearchQuantumTasksFilterOperator":{
@@ -1240,9 +1406,9 @@
       "type":"structure",
       "required":["filters"],
       "members":{
-        "filters":{"shape":"SearchQuantumTasksRequestFiltersList"},
+        "nextToken":{"shape":"String"},
         "maxResults":{"shape":"SearchQuantumTasksRequestMaxResultsInteger"},
-        "nextToken":{"shape":"String"}
+        "filters":{"shape":"SearchQuantumTasksRequestFiltersList"}
       }
     },
     "SearchQuantumTasksRequestFiltersList":{
@@ -1261,8 +1427,59 @@
       "type":"structure",
       "required":["quantumTasks"],
       "members":{
+        "quantumTasks":{"shape":"QuantumTaskSummaryList"},
+        "nextToken":{"shape":"String"}
+      }
+    },
+    "SearchSpendingLimitsFilter":{
+      "type":"structure",
+      "required":[
+        "name",
+        "values",
+        "operator"
+      ],
+      "members":{
+        "name":{"shape":"String64"},
+        "values":{"shape":"SearchSpendingLimitsFilterValuesList"},
+        "operator":{"shape":"SearchSpendingLimitsFilterOperator"}
+      }
+    },
+    "SearchSpendingLimitsFilterOperator":{
+      "type":"string",
+      "enum":["EQUAL"]
+    },
+    "SearchSpendingLimitsFilterValuesList":{
+      "type":"list",
+      "member":{"shape":"String256"},
+      "max":10,
+      "min":1
+    },
+    "SearchSpendingLimitsRequest":{
+      "type":"structure",
+      "members":{
         "nextToken":{"shape":"String"},
-        "quantumTasks":{"shape":"QuantumTaskSummaryList"}
+        "maxResults":{"shape":"SearchSpendingLimitsRequestMaxResultsInteger"},
+        "filters":{"shape":"SearchSpendingLimitsRequestFiltersList"}
+      }
+    },
+    "SearchSpendingLimitsRequestFiltersList":{
+      "type":"list",
+      "member":{"shape":"SearchSpendingLimitsFilter"},
+      "max":10,
+      "min":0
+    },
+    "SearchSpendingLimitsRequestMaxResultsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "SearchSpendingLimitsResponse":{
+      "type":"structure",
+      "required":["spendingLimits"],
+      "members":{
+        "spendingLimits":{"shape":"SpendingLimitSummaryList"},
+        "nextToken":{"shape":"String"}
       }
     },
     "ServiceQuotaExceededException":{
@@ -1275,6 +1492,40 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "SpendingLimitArn":{
+      "type":"string",
+      "max":256,
+      "min":0,
+      "pattern":"arn:aws[a-z\\-]*:braket:[a-z0-9\\-]+:[0-9]{12}:spending-limit/.*"
+    },
+    "SpendingLimitSummary":{
+      "type":"structure",
+      "required":[
+        "spendingLimitArn",
+        "deviceArn",
+        "timePeriod",
+        "spendingLimit",
+        "queuedSpend",
+        "totalSpend",
+        "createdAt",
+        "updatedAt"
+      ],
+      "members":{
+        "spendingLimitArn":{"shape":"SpendingLimitArn"},
+        "deviceArn":{"shape":"DeviceArn"},
+        "timePeriod":{"shape":"TimePeriod"},
+        "spendingLimit":{"shape":"String"},
+        "queuedSpend":{"shape":"String"},
+        "totalSpend":{"shape":"String"},
+        "createdAt":{"shape":"SyntheticTimestamp_date_time"},
+        "updatedAt":{"shape":"SyntheticTimestamp_date_time"},
+        "tags":{"shape":"TagsMap"}
+      }
+    },
+    "SpendingLimitSummaryList":{
+      "type":"list",
+      "member":{"shape":"SpendingLimitSummary"}
     },
     "String":{"type":"string"},
     "String1024":{
@@ -1306,6 +1557,10 @@
       "type":"timestamp",
       "timestampFormat":"iso8601"
     },
+    "SyntheticTimestamp_epoch_seconds":{
+      "type":"timestamp",
+      "timestampFormat":"unixTimestamp"
+    },
     "TagKeys":{
       "type":"list",
       "member":{"shape":"String"}
@@ -1327,8 +1582,7 @@
     },
     "TagResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "TagsMap":{
       "type":"map",
@@ -1345,6 +1599,17 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "TimePeriod":{
+      "type":"structure",
+      "required":[
+        "startAt",
+        "endAt"
+      ],
+      "members":{
+        "startAt":{"shape":"SyntheticTimestamp_epoch_seconds"},
+        "endAt":{"shape":"SyntheticTimestamp_epoch_seconds"}
+      }
     },
     "UntagResourceRequest":{
       "type":"structure",
@@ -1367,8 +1632,36 @@
     },
     "UntagResourceResponse":{
       "type":"structure",
+      "members":{}
+    },
+    "UpdateSpendingLimitRequest":{
+      "type":"structure",
+      "required":[
+        "spendingLimitArn",
+        "clientToken"
+      ],
       "members":{
+        "spendingLimitArn":{
+          "shape":"SpendingLimitArn",
+          "location":"uri",
+          "locationName":"spendingLimitArn"
+        },
+        "clientToken":{
+          "shape":"String64",
+          "idempotencyToken":true
+        },
+        "spendingLimit":{"shape":"UpdateSpendingLimitRequestSpendingLimitString"},
+        "timePeriod":{"shape":"TimePeriod"}
       }
+    },
+    "UpdateSpendingLimitRequestSpendingLimitString":{
+      "type":"string",
+      "min":1,
+      "pattern":"\\d+(\\.\\d{1,2})?"
+    },
+    "UpdateSpendingLimitResponse":{
+      "type":"structure",
+      "members":{}
     },
     "Uri":{
       "type":"string",
@@ -1379,13 +1672,19 @@
     "ValidationException":{
       "type":"structure",
       "members":{
-        "message":{"shape":"String"}
+        "message":{"shape":"String"},
+        "reason":{"shape":"ValidationExceptionReason"},
+        "programSetValidationFailures":{"shape":"ProgramSetValidationFailuresList"}
       },
       "error":{
         "httpStatusCode":400,
         "senderFault":true
       },
       "exception":true
+    },
+    "ValidationExceptionReason":{
+      "type":"string",
+      "enum":["ProgramSetValidationFailed"]
     }
   }
 }

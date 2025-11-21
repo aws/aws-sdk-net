@@ -101,6 +101,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Options" + "." + "TransportTransitGatewayAttachmentId", StringUtils.FromString(publicRequest.Options.TransportTransitGatewayAttachmentId));
                     }
+                    if(publicRequest.Options.IsSetTunnelBandwidth())
+                    {
+                        request.Parameters.Add("Options" + "." + "TunnelBandwidth", StringUtils.FromString(publicRequest.Options.TunnelBandwidth));
+                    }
                     if(publicRequest.Options.IsSetTunnelInsideIpVersion())
                     {
                         request.Parameters.Add("Options" + "." + "TunnelInsideIpVersion", StringUtils.FromString(publicRequest.Options.TunnelInsideIpVersion));
@@ -147,6 +151,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     if(publicRequestOptionslistValue.LogOptions.IsSetCloudWatchLogOptions())
                                     {
+                                        if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetBgpLogEnabled())
+                                        {
+                                            request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "BgpLogEnabled", StringUtils.FromBool(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.BgpLogEnabled));
+                                        }
+                                        if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetBgpLogGroupArn())
+                                        {
+                                            request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "BgpLogGroupArn", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.BgpLogGroupArn));
+                                        }
+                                        if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetBgpLogOutputFormat())
+                                        {
+                                            request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "BgpLogOutputFormat", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.BgpLogOutputFormat));
+                                        }
                                         if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogEnabled())
                                         {
                                             request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogEnabled", StringUtils.FromBool(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogEnabled));
@@ -353,6 +369,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetType())
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
+                }
+                if(publicRequest.IsSetVpnConcentratorId())
+                {
+                    request.Parameters.Add("VpnConcentratorId", StringUtils.FromString(publicRequest.VpnConcentratorId));
                 }
                 if(publicRequest.IsSetVpnGatewayId())
                 {

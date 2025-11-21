@@ -62,6 +62,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
+            if (publicRequest.EndDate == null)
+                throw new AmazonCodeGuruSecurityException("Request object does not have required field EndDate set");
             
             if (publicRequest.IsSetEndDate())
                 request.Parameters.Add("endDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
@@ -71,6 +73,8 @@ namespace Amazon.CodeGuruSecurity.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (publicRequest.StartDate == null)
+                throw new AmazonCodeGuruSecurityException("Request object does not have required field StartDate set");
             
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("startDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));

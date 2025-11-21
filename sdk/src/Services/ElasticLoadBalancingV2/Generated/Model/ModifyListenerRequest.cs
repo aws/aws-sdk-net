@@ -178,7 +178,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property MutualAuthentication. 
         /// <para>
-        /// The mutual authentication configuration information.
+        /// [HTTPS listeners] The mutual authentication configuration information.
         /// </para>
         /// </summary>
         public MutualAuthenticationAttributes MutualAuthentication
@@ -218,8 +218,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The protocol for connections from clients to the load balancer. Application Load Balancers
         /// support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS,
-        /// UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack
-        /// mode is enabled. You can't specify a protocol for a Gateway Load Balancer.
+        /// UDP, TCP_UDP, QUIC, and TCP_QUIC protocols. You can’t change the protocol to UDP,
+        /// TCP_UDP, QUIC, or TCP_QUIC if dual-stack mode is enabled. You can't specify a protocol
+        /// for a Gateway Load Balancer.
         /// </para>
         /// </summary>
         public ProtocolEnum Protocol

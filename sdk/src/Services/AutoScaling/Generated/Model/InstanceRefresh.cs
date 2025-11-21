@@ -46,6 +46,7 @@ namespace Amazon.AutoScaling.Model
         private DateTime? _startTime;
         private InstanceRefreshStatus _status;
         private string _statusReason;
+        private RefreshStrategy _strategy;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -326,6 +327,35 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetStatusReason()
         {
             return this._statusReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Strategy. 
+        /// <para>
+        ///  The strategy to use for the instance refresh. This determines how instances in the
+        /// Auto Scaling group are updated. Default is Rolling. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Rolling</c> – Terminates instances and launches replacements in batches
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ReplaceRootVolume</c> – Updates instances by replacing only the root volume without
+        /// terminating the instance
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public RefreshStrategy Strategy
+        {
+            get { return this._strategy; }
+            set { this._strategy = value; }
+        }
+
+        // Check to see if Strategy property is set
+        internal bool IsSetStrategy()
+        {
+            return this._strategy != null;
         }
 
     }

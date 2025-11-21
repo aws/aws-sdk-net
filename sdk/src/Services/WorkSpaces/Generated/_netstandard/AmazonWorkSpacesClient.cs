@@ -293,7 +293,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual AcceptAccountLinkInvitationResponse AcceptAccountLinkInvitation(AcceptAccountLinkInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptAccountLinkInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptAccountLinkInvitationResponseUnmarshaller.Instance;
 
@@ -336,7 +336,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AcceptAccountLinkInvitation">REST API Reference for AcceptAccountLinkInvitation Operation</seealso>
         public virtual Task<AcceptAccountLinkInvitationResponse> AcceptAccountLinkInvitationAsync(AcceptAccountLinkInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptAccountLinkInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptAccountLinkInvitationResponseUnmarshaller.Instance;
 
@@ -348,7 +348,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual AssociateConnectionAliasResponse AssociateConnectionAlias(AssociateConnectionAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateConnectionAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateConnectionAliasResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateConnectionAlias">REST API Reference for AssociateConnectionAlias Operation</seealso>
         public virtual Task<AssociateConnectionAliasResponse> AssociateConnectionAliasAsync(AssociateConnectionAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateConnectionAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateConnectionAliasResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual AssociateIpGroupsResponse AssociateIpGroups(AssociateIpGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIpGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIpGroupsResponseUnmarshaller.Instance;
 
@@ -448,7 +448,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups">REST API Reference for AssociateIpGroups Operation</seealso>
         public virtual Task<AssociateIpGroupsResponse> AssociateIpGroupsAsync(AssociateIpGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateIpGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateIpGroupsResponseUnmarshaller.Instance;
 
@@ -460,7 +460,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual AssociateWorkspaceApplicationResponse AssociateWorkspaceApplication(AssociateWorkspaceApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWorkspaceApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWorkspaceApplicationResponseUnmarshaller.Instance;
 
@@ -511,7 +511,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateWorkspaceApplication">REST API Reference for AssociateWorkspaceApplication Operation</seealso>
         public virtual Task<AssociateWorkspaceApplicationResponse> AssociateWorkspaceApplicationAsync(AssociateWorkspaceApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWorkspaceApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWorkspaceApplicationResponseUnmarshaller.Instance;
 
@@ -523,7 +523,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual AuthorizeIpRulesResponse AuthorizeIpRules(AuthorizeIpRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeIpRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeIpRulesResponseUnmarshaller.Instance;
 
@@ -565,7 +565,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules">REST API Reference for AuthorizeIpRules Operation</seealso>
         public virtual Task<AuthorizeIpRulesResponse> AuthorizeIpRulesAsync(AuthorizeIpRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeIpRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeIpRulesResponseUnmarshaller.Instance;
 
@@ -577,7 +577,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CopyWorkspaceImageResponse CopyWorkspaceImage(CopyWorkspaceImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyWorkspaceImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyWorkspaceImageResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CopyWorkspaceImage">REST API Reference for CopyWorkspaceImage Operation</seealso>
         public virtual Task<CopyWorkspaceImageResponse> CopyWorkspaceImageAsync(CopyWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyWorkspaceImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyWorkspaceImageResponseUnmarshaller.Instance;
 
@@ -652,7 +652,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateAccountLinkInvitationResponse CreateAccountLinkInvitation(CreateAccountLinkInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccountLinkInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccountLinkInvitationResponseUnmarshaller.Instance;
 
@@ -686,7 +686,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateAccountLinkInvitation">REST API Reference for CreateAccountLinkInvitation Operation</seealso>
         public virtual Task<CreateAccountLinkInvitationResponse> CreateAccountLinkInvitationAsync(CreateAccountLinkInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccountLinkInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccountLinkInvitationResponseUnmarshaller.Instance;
 
@@ -698,7 +698,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateConnectClientAddInResponse CreateConnectClientAddIn(CreateConnectClientAddInRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectClientAddInRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectClientAddInResponseUnmarshaller.Instance;
 
@@ -740,7 +740,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectClientAddIn">REST API Reference for CreateConnectClientAddIn Operation</seealso>
         public virtual Task<CreateConnectClientAddInResponse> CreateConnectClientAddInAsync(CreateConnectClientAddInRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectClientAddInRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectClientAddInResponseUnmarshaller.Instance;
 
@@ -752,7 +752,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateConnectionAliasResponse CreateConnectionAlias(CreateConnectionAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionAliasResponseUnmarshaller.Instance;
 
@@ -793,7 +793,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateConnectionAlias">REST API Reference for CreateConnectionAlias Operation</seealso>
         public virtual Task<CreateConnectionAliasResponse> CreateConnectionAliasAsync(CreateConnectionAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionAliasResponseUnmarshaller.Instance;
 
@@ -805,7 +805,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateIpGroupResponse CreateIpGroup(CreateIpGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpGroupResponseUnmarshaller.Instance;
 
@@ -857,7 +857,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup">REST API Reference for CreateIpGroup Operation</seealso>
         public virtual Task<CreateIpGroupResponse> CreateIpGroupAsync(CreateIpGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIpGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIpGroupResponseUnmarshaller.Instance;
 
@@ -869,7 +869,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateStandbyWorkspacesResponse CreateStandbyWorkspaces(CreateStandbyWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStandbyWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStandbyWorkspacesResponseUnmarshaller.Instance;
 
@@ -905,7 +905,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateStandbyWorkspaces">REST API Reference for CreateStandbyWorkspaces Operation</seealso>
         public virtual Task<CreateStandbyWorkspacesResponse> CreateStandbyWorkspacesAsync(CreateStandbyWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStandbyWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStandbyWorkspacesResponseUnmarshaller.Instance;
 
@@ -917,7 +917,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -947,7 +947,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTagsResponseUnmarshaller.Instance;
 
@@ -959,7 +959,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateUpdatedWorkspaceImageResponse CreateUpdatedWorkspaceImage(CreateUpdatedWorkspaceImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUpdatedWorkspaceImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUpdatedWorkspaceImageResponseUnmarshaller.Instance;
 
@@ -1026,7 +1026,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateUpdatedWorkspaceImage">REST API Reference for CreateUpdatedWorkspaceImage Operation</seealso>
         public virtual Task<CreateUpdatedWorkspaceImageResponse> CreateUpdatedWorkspaceImageAsync(CreateUpdatedWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUpdatedWorkspaceImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUpdatedWorkspaceImageResponseUnmarshaller.Instance;
 
@@ -1038,7 +1038,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateWorkspaceBundleResponse CreateWorkspaceBundle(CreateWorkspaceBundleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceBundleResponseUnmarshaller.Instance;
 
@@ -1079,7 +1079,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceBundle">REST API Reference for CreateWorkspaceBundle Operation</seealso>
         public virtual Task<CreateWorkspaceBundleResponse> CreateWorkspaceBundleAsync(CreateWorkspaceBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceBundleResponseUnmarshaller.Instance;
 
@@ -1091,7 +1091,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateWorkspaceImageResponse CreateWorkspaceImage(CreateWorkspaceImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceImageResponseUnmarshaller.Instance;
 
@@ -1133,7 +1133,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceImage">REST API Reference for CreateWorkspaceImage Operation</seealso>
         public virtual Task<CreateWorkspaceImageResponse> CreateWorkspaceImageAsync(CreateWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspaceImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspaceImageResponseUnmarshaller.Instance;
 
@@ -1145,7 +1145,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateWorkspacesResponse CreateWorkspaces(CreateWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspacesResponseUnmarshaller.Instance;
 
@@ -1199,7 +1199,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">REST API Reference for CreateWorkspaces Operation</seealso>
         public virtual Task<CreateWorkspacesResponse> CreateWorkspacesAsync(CreateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspacesResponseUnmarshaller.Instance;
 
@@ -1211,7 +1211,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual CreateWorkspacesPoolResponse CreateWorkspacesPool(CreateWorkspacesPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspacesPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspacesPoolResponseUnmarshaller.Instance;
 
@@ -1250,7 +1250,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspacesPool">REST API Reference for CreateWorkspacesPool Operation</seealso>
         public virtual Task<CreateWorkspacesPoolResponse> CreateWorkspacesPoolAsync(CreateWorkspacesPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkspacesPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkspacesPoolResponseUnmarshaller.Instance;
 
@@ -1262,7 +1262,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DeleteAccountLinkInvitationResponse DeleteAccountLinkInvitation(DeleteAccountLinkInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountLinkInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountLinkInvitationResponseUnmarshaller.Instance;
 
@@ -1299,7 +1299,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteAccountLinkInvitation">REST API Reference for DeleteAccountLinkInvitation Operation</seealso>
         public virtual Task<DeleteAccountLinkInvitationResponse> DeleteAccountLinkInvitationAsync(DeleteAccountLinkInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccountLinkInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccountLinkInvitationResponseUnmarshaller.Instance;
 
@@ -1311,7 +1311,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DeleteClientBrandingResponse DeleteClientBranding(DeleteClientBrandingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientBrandingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientBrandingResponseUnmarshaller.Instance;
 
@@ -1350,7 +1350,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteClientBranding">REST API Reference for DeleteClientBranding Operation</seealso>
         public virtual Task<DeleteClientBrandingResponse> DeleteClientBrandingAsync(DeleteClientBrandingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClientBrandingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClientBrandingResponseUnmarshaller.Instance;
 
@@ -1362,7 +1362,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DeleteConnectClientAddInResponse DeleteConnectClientAddIn(DeleteConnectClientAddInRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectClientAddInRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectClientAddInResponseUnmarshaller.Instance;
 
@@ -1392,7 +1392,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectClientAddIn">REST API Reference for DeleteConnectClientAddIn Operation</seealso>
         public virtual Task<DeleteConnectClientAddInResponse> DeleteConnectClientAddInAsync(DeleteConnectClientAddInRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectClientAddInRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectClientAddInResponseUnmarshaller.Instance;
 
@@ -1404,7 +1404,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DeleteConnectionAliasResponse DeleteConnectionAlias(DeleteConnectionAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionAliasResponseUnmarshaller.Instance;
 
@@ -1461,7 +1461,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteConnectionAlias">REST API Reference for DeleteConnectionAlias Operation</seealso>
         public virtual Task<DeleteConnectionAliasResponse> DeleteConnectionAliasAsync(DeleteConnectionAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionAliasResponseUnmarshaller.Instance;
 
@@ -1473,7 +1473,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DeleteIpGroupResponse DeleteIpGroup(DeleteIpGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpGroupResponseUnmarshaller.Instance;
 
@@ -1511,7 +1511,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup">REST API Reference for DeleteIpGroup Operation</seealso>
         public virtual Task<DeleteIpGroupResponse> DeleteIpGroupAsync(DeleteIpGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIpGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIpGroupResponseUnmarshaller.Instance;
 
@@ -1523,7 +1523,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -1550,7 +1550,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
@@ -1562,7 +1562,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DeleteWorkspaceBundleResponse DeleteWorkspaceBundle(DeleteWorkspaceBundleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceBundleResponseUnmarshaller.Instance;
 
@@ -1597,7 +1597,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceBundle">REST API Reference for DeleteWorkspaceBundle Operation</seealso>
         public virtual Task<DeleteWorkspaceBundleResponse> DeleteWorkspaceBundleAsync(DeleteWorkspaceBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceBundleResponseUnmarshaller.Instance;
 
@@ -1609,7 +1609,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DeleteWorkspaceImageResponse DeleteWorkspaceImage(DeleteWorkspaceImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceImageResponseUnmarshaller.Instance;
 
@@ -1641,7 +1641,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">REST API Reference for DeleteWorkspaceImage Operation</seealso>
         public virtual Task<DeleteWorkspaceImageResponse> DeleteWorkspaceImageAsync(DeleteWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkspaceImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkspaceImageResponseUnmarshaller.Instance;
 
@@ -1653,7 +1653,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DeployWorkspaceApplicationsResponse DeployWorkspaceApplications(DeployWorkspaceApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeployWorkspaceApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeployWorkspaceApplicationsResponseUnmarshaller.Instance;
 
@@ -1692,7 +1692,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeployWorkspaceApplications">REST API Reference for DeployWorkspaceApplications Operation</seealso>
         public virtual Task<DeployWorkspaceApplicationsResponse> DeployWorkspaceApplicationsAsync(DeployWorkspaceApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeployWorkspaceApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeployWorkspaceApplicationsResponseUnmarshaller.Instance;
 
@@ -1704,7 +1704,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DeregisterWorkspaceDirectoryResponse DeregisterWorkspaceDirectory(DeregisterWorkspaceDirectoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterWorkspaceDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterWorkspaceDirectoryResponseUnmarshaller.Instance;
 
@@ -1759,7 +1759,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeregisterWorkspaceDirectory">REST API Reference for DeregisterWorkspaceDirectory Operation</seealso>
         public virtual Task<DeregisterWorkspaceDirectoryResponse> DeregisterWorkspaceDirectoryAsync(DeregisterWorkspaceDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterWorkspaceDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterWorkspaceDirectoryResponseUnmarshaller.Instance;
 
@@ -1771,7 +1771,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeAccountResponse DescribeAccount(DescribeAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountResponseUnmarshaller.Instance;
 
@@ -1796,7 +1796,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
         public virtual Task<DescribeAccountResponse> DescribeAccountAsync(DescribeAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountResponseUnmarshaller.Instance;
 
@@ -1808,7 +1808,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeAccountModificationsResponse DescribeAccountModifications(DescribeAccountModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountModificationsResponseUnmarshaller.Instance;
 
@@ -1833,7 +1833,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">REST API Reference for DescribeAccountModifications Operation</seealso>
         public virtual Task<DescribeAccountModificationsResponse> DescribeAccountModificationsAsync(DescribeAccountModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountModificationsResponseUnmarshaller.Instance;
 
@@ -1845,7 +1845,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeApplicationAssociationsResponse DescribeApplicationAssociations(DescribeApplicationAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationAssociationsResponseUnmarshaller.Instance;
 
@@ -1878,7 +1878,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplicationAssociations">REST API Reference for DescribeApplicationAssociations Operation</seealso>
         public virtual Task<DescribeApplicationAssociationsResponse> DescribeApplicationAssociationsAsync(DescribeApplicationAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationAssociationsResponseUnmarshaller.Instance;
 
@@ -1890,7 +1890,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeApplicationsResponse DescribeApplications(DescribeApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
 
@@ -1924,7 +1924,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeApplications">REST API Reference for DescribeApplications Operation</seealso>
         public virtual Task<DescribeApplicationsResponse> DescribeApplicationsAsync(DescribeApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeApplicationsResponseUnmarshaller.Instance;
 
@@ -1936,7 +1936,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeBundleAssociationsResponse DescribeBundleAssociations(DescribeBundleAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBundleAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBundleAssociationsResponseUnmarshaller.Instance;
 
@@ -1969,7 +1969,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeBundleAssociations">REST API Reference for DescribeBundleAssociations Operation</seealso>
         public virtual Task<DescribeBundleAssociationsResponse> DescribeBundleAssociationsAsync(DescribeBundleAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBundleAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBundleAssociationsResponseUnmarshaller.Instance;
 
@@ -1981,7 +1981,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeClientBrandingResponse DescribeClientBranding(DescribeClientBrandingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientBrandingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientBrandingResponseUnmarshaller.Instance;
 
@@ -2020,7 +2020,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientBranding">REST API Reference for DescribeClientBranding Operation</seealso>
         public virtual Task<DescribeClientBrandingResponse> DescribeClientBrandingAsync(DescribeClientBrandingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientBrandingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientBrandingResponseUnmarshaller.Instance;
 
@@ -2032,7 +2032,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeClientPropertiesResponse DescribeClientProperties(DescribeClientPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientPropertiesResponseUnmarshaller.Instance;
 
@@ -2062,7 +2062,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">REST API Reference for DescribeClientProperties Operation</seealso>
         public virtual Task<DescribeClientPropertiesResponse> DescribeClientPropertiesAsync(DescribeClientPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeClientPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeClientPropertiesResponseUnmarshaller.Instance;
 
@@ -2074,7 +2074,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeConnectClientAddInsResponse DescribeConnectClientAddIns(DescribeConnectClientAddInsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectClientAddInsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectClientAddInsResponseUnmarshaller.Instance;
 
@@ -2104,7 +2104,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectClientAddIns">REST API Reference for DescribeConnectClientAddIns Operation</seealso>
         public virtual Task<DescribeConnectClientAddInsResponse> DescribeConnectClientAddInsAsync(DescribeConnectClientAddInsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectClientAddInsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectClientAddInsResponseUnmarshaller.Instance;
 
@@ -2116,7 +2116,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeConnectionAliasesResponse DescribeConnectionAliases(DescribeConnectionAliasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionAliasesResponseUnmarshaller.Instance;
 
@@ -2148,7 +2148,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliases">REST API Reference for DescribeConnectionAliases Operation</seealso>
         public virtual Task<DescribeConnectionAliasesResponse> DescribeConnectionAliasesAsync(DescribeConnectionAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionAliasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionAliasesResponseUnmarshaller.Instance;
 
@@ -2160,7 +2160,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeConnectionAliasPermissionsResponse DescribeConnectionAliasPermissions(DescribeConnectionAliasPermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionAliasPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionAliasPermissionsResponseUnmarshaller.Instance;
 
@@ -2196,7 +2196,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeConnectionAliasPermissions">REST API Reference for DescribeConnectionAliasPermissions Operation</seealso>
         public virtual Task<DescribeConnectionAliasPermissionsResponse> DescribeConnectionAliasPermissionsAsync(DescribeConnectionAliasPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionAliasPermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionAliasPermissionsResponseUnmarshaller.Instance;
 
@@ -2204,11 +2204,50 @@ namespace Amazon.WorkSpaces
         }
         #endregion
         
+        #region  DescribeCustomWorkspaceImageImport
+
+        internal virtual DescribeCustomWorkspaceImageImportResponse DescribeCustomWorkspaceImageImport(DescribeCustomWorkspaceImageImportRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCustomWorkspaceImageImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomWorkspaceImageImportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCustomWorkspaceImageImportResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a WorkSpace BYOL image being imported via ImportCustomWorkspaceImage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomWorkspaceImageImport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCustomWorkspaceImageImport service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeCustomWorkspaceImageImport">REST API Reference for DescribeCustomWorkspaceImageImport Operation</seealso>
+        public virtual Task<DescribeCustomWorkspaceImageImportResponse> DescribeCustomWorkspaceImageImportAsync(DescribeCustomWorkspaceImageImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCustomWorkspaceImageImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomWorkspaceImageImportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCustomWorkspaceImageImportResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeImageAssociations
 
         internal virtual DescribeImageAssociationsResponse DescribeImageAssociations(DescribeImageAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageAssociationsResponseUnmarshaller.Instance;
 
@@ -2241,7 +2280,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeImageAssociations">REST API Reference for DescribeImageAssociations Operation</seealso>
         public virtual Task<DescribeImageAssociationsResponse> DescribeImageAssociationsAsync(DescribeImageAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeImageAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeImageAssociationsResponseUnmarshaller.Instance;
 
@@ -2253,7 +2292,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeIpGroupsResponse DescribeIpGroups(DescribeIpGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpGroupsResponseUnmarshaller.Instance;
 
@@ -2280,7 +2319,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">REST API Reference for DescribeIpGroups Operation</seealso>
         public virtual Task<DescribeIpGroupsResponse> DescribeIpGroupsAsync(DescribeIpGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIpGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIpGroupsResponseUnmarshaller.Instance;
 
@@ -2292,7 +2331,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -2316,7 +2355,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public virtual Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTagsResponseUnmarshaller.Instance;
 
@@ -2328,7 +2367,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeWorkspaceAssociationsResponse DescribeWorkspaceAssociations(DescribeWorkspaceAssociationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceAssociationsResponseUnmarshaller.Instance;
 
@@ -2361,7 +2400,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceAssociations">REST API Reference for DescribeWorkspaceAssociations Operation</seealso>
         public virtual Task<DescribeWorkspaceAssociationsResponse> DescribeWorkspaceAssociationsAsync(DescribeWorkspaceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceAssociationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceAssociationsResponseUnmarshaller.Instance;
 
@@ -2373,7 +2412,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles(DescribeWorkspaceBundlesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceBundlesResponseUnmarshaller.Instance;
 
@@ -2426,7 +2465,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">REST API Reference for DescribeWorkspaceBundles Operation</seealso>
         public virtual Task<DescribeWorkspaceBundlesResponse> DescribeWorkspaceBundlesAsync(DescribeWorkspaceBundlesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceBundlesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceBundlesResponseUnmarshaller.Instance;
 
@@ -2438,7 +2477,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeWorkspaceDirectoriesResponse DescribeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceDirectoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceDirectoriesResponseUnmarshaller.Instance;
 
@@ -2481,7 +2520,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">REST API Reference for DescribeWorkspaceDirectories Operation</seealso>
         public virtual Task<DescribeWorkspaceDirectoriesResponse> DescribeWorkspaceDirectoriesAsync(DescribeWorkspaceDirectoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceDirectoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceDirectoriesResponseUnmarshaller.Instance;
 
@@ -2493,7 +2532,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeWorkspaceImagePermissionsResponse DescribeWorkspaceImagePermissions(DescribeWorkspaceImagePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceImagePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceImagePermissionsResponseUnmarshaller.Instance;
 
@@ -2524,7 +2563,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions">REST API Reference for DescribeWorkspaceImagePermissions Operation</seealso>
         public virtual Task<DescribeWorkspaceImagePermissionsResponse> DescribeWorkspaceImagePermissionsAsync(DescribeWorkspaceImagePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceImagePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceImagePermissionsResponseUnmarshaller.Instance;
 
@@ -2536,7 +2575,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeWorkspaceImagesResponse DescribeWorkspaceImages(DescribeWorkspaceImagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceImagesResponseUnmarshaller.Instance;
 
@@ -2561,7 +2600,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImages">REST API Reference for DescribeWorkspaceImages Operation</seealso>
         public virtual Task<DescribeWorkspaceImagesResponse> DescribeWorkspaceImagesAsync(DescribeWorkspaceImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceImagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceImagesResponseUnmarshaller.Instance;
 
@@ -2573,7 +2612,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeWorkspacesResponse DescribeWorkspaces(DescribeWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspacesResponseUnmarshaller.Instance;
 
@@ -2634,7 +2673,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaces">REST API Reference for DescribeWorkspaces Operation</seealso>
         public virtual Task<DescribeWorkspacesResponse> DescribeWorkspacesAsync(DescribeWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspacesResponseUnmarshaller.Instance;
 
@@ -2646,7 +2685,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeWorkspacesConnectionStatusResponse DescribeWorkspacesConnectionStatus(DescribeWorkspacesConnectionStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspacesConnectionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspacesConnectionStatusResponseUnmarshaller.Instance;
 
@@ -2670,7 +2709,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesConnectionStatus">REST API Reference for DescribeWorkspacesConnectionStatus Operation</seealso>
         public virtual Task<DescribeWorkspacesConnectionStatusResponse> DescribeWorkspacesConnectionStatusAsync(DescribeWorkspacesConnectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspacesConnectionStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspacesConnectionStatusResponseUnmarshaller.Instance;
 
@@ -2682,7 +2721,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeWorkspaceSnapshotsResponse DescribeWorkspaceSnapshots(DescribeWorkspaceSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceSnapshotsResponseUnmarshaller.Instance;
 
@@ -2712,7 +2751,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceSnapshots">REST API Reference for DescribeWorkspaceSnapshots Operation</seealso>
         public virtual Task<DescribeWorkspaceSnapshotsResponse> DescribeWorkspaceSnapshotsAsync(DescribeWorkspaceSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspaceSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspaceSnapshotsResponseUnmarshaller.Instance;
 
@@ -2724,7 +2763,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeWorkspacesPoolsResponse DescribeWorkspacesPools(DescribeWorkspacesPoolsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspacesPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspacesPoolsResponseUnmarshaller.Instance;
 
@@ -2754,7 +2793,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesPools">REST API Reference for DescribeWorkspacesPools Operation</seealso>
         public virtual Task<DescribeWorkspacesPoolsResponse> DescribeWorkspacesPoolsAsync(DescribeWorkspacesPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspacesPoolsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspacesPoolsResponseUnmarshaller.Instance;
 
@@ -2766,7 +2805,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DescribeWorkspacesPoolSessionsResponse DescribeWorkspacesPoolSessions(DescribeWorkspacesPoolSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspacesPoolSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspacesPoolSessionsResponseUnmarshaller.Instance;
 
@@ -2796,7 +2835,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspacesPoolSessions">REST API Reference for DescribeWorkspacesPoolSessions Operation</seealso>
         public virtual Task<DescribeWorkspacesPoolSessionsResponse> DescribeWorkspacesPoolSessionsAsync(DescribeWorkspacesPoolSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeWorkspacesPoolSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeWorkspacesPoolSessionsResponseUnmarshaller.Instance;
 
@@ -2808,7 +2847,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DisassociateConnectionAliasResponse DisassociateConnectionAlias(DisassociateConnectionAliasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateConnectionAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateConnectionAliasResponseUnmarshaller.Instance;
 
@@ -2855,7 +2894,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateConnectionAlias">REST API Reference for DisassociateConnectionAlias Operation</seealso>
         public virtual Task<DisassociateConnectionAliasResponse> DisassociateConnectionAliasAsync(DisassociateConnectionAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateConnectionAliasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateConnectionAliasResponseUnmarshaller.Instance;
 
@@ -2867,7 +2906,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DisassociateIpGroupsResponse DisassociateIpGroups(DisassociateIpGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIpGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
 
@@ -2903,7 +2942,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups">REST API Reference for DisassociateIpGroups Operation</seealso>
         public virtual Task<DisassociateIpGroupsResponse> DisassociateIpGroupsAsync(DisassociateIpGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateIpGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
 
@@ -2915,7 +2954,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual DisassociateWorkspaceApplicationResponse DisassociateWorkspaceApplication(DisassociateWorkspaceApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWorkspaceApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWorkspaceApplicationResponseUnmarshaller.Instance;
 
@@ -2951,7 +2990,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateWorkspaceApplication">REST API Reference for DisassociateWorkspaceApplication Operation</seealso>
         public virtual Task<DisassociateWorkspaceApplicationResponse> DisassociateWorkspaceApplicationAsync(DisassociateWorkspaceApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWorkspaceApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWorkspaceApplicationResponseUnmarshaller.Instance;
 
@@ -2963,7 +3002,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual GetAccountLinkResponse GetAccountLink(GetAccountLinkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountLinkResponseUnmarshaller.Instance;
 
@@ -2997,7 +3036,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/GetAccountLink">REST API Reference for GetAccountLink Operation</seealso>
         public virtual Task<GetAccountLinkResponse> GetAccountLinkAsync(GetAccountLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccountLinkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccountLinkResponseUnmarshaller.Instance;
 
@@ -3009,7 +3048,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ImportClientBrandingResponse ImportClientBranding(ImportClientBrandingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportClientBrandingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportClientBrandingResponseUnmarshaller.Instance;
 
@@ -3072,7 +3111,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportClientBranding">REST API Reference for ImportClientBranding Operation</seealso>
         public virtual Task<ImportClientBrandingResponse> ImportClientBrandingAsync(ImportClientBrandingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportClientBrandingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportClientBrandingResponseUnmarshaller.Instance;
 
@@ -3080,11 +3119,66 @@ namespace Amazon.WorkSpaces
         }
         #endregion
         
+        #region  ImportCustomWorkspaceImage
+
+        internal virtual ImportCustomWorkspaceImageResponse ImportCustomWorkspaceImage(ImportCustomWorkspaceImageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ImportCustomWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCustomWorkspaceImageResponseUnmarshaller.Instance;
+
+            return Invoke<ImportCustomWorkspaceImageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon
+        /// WorkSpaces using EC2 Image Builder. The image must be an already licensed image that
+        /// is in your Amazon Web Services account, and you must own the image. For more information
+        /// about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+        /// Bring Your Own Windows Desktop Licenses</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCustomWorkspaceImage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportCustomWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportCustomWorkspaceImage">REST API Reference for ImportCustomWorkspaceImage Operation</seealso>
+        public virtual Task<ImportCustomWorkspaceImageResponse> ImportCustomWorkspaceImageAsync(ImportCustomWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ImportCustomWorkspaceImageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportCustomWorkspaceImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportCustomWorkspaceImageResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ImportWorkspaceImage
 
         internal virtual ImportWorkspaceImageResponse ImportWorkspaceImage(ImportWorkspaceImageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportWorkspaceImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportWorkspaceImageResponseUnmarshaller.Instance;
 
@@ -3127,7 +3221,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">REST API Reference for ImportWorkspaceImage Operation</seealso>
         public virtual Task<ImportWorkspaceImageResponse> ImportWorkspaceImageAsync(ImportWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportWorkspaceImageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportWorkspaceImageResponseUnmarshaller.Instance;
 
@@ -3139,7 +3233,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ListAccountLinksResponse ListAccountLinks(ListAccountLinksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountLinksResponseUnmarshaller.Instance;
 
@@ -3170,7 +3264,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAccountLinks">REST API Reference for ListAccountLinks Operation</seealso>
         public virtual Task<ListAccountLinksResponse> ListAccountLinksAsync(ListAccountLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccountLinksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccountLinksResponseUnmarshaller.Instance;
 
@@ -3182,7 +3276,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ListAvailableManagementCidrRangesResponse ListAvailableManagementCidrRanges(ListAvailableManagementCidrRangesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableManagementCidrRangesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableManagementCidrRangesResponseUnmarshaller.Instance;
 
@@ -3224,7 +3318,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">REST API Reference for ListAvailableManagementCidrRanges Operation</seealso>
         public virtual Task<ListAvailableManagementCidrRangesResponse> ListAvailableManagementCidrRangesAsync(ListAvailableManagementCidrRangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAvailableManagementCidrRangesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAvailableManagementCidrRangesResponseUnmarshaller.Instance;
 
@@ -3236,7 +3330,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual MigrateWorkspaceResponse MigrateWorkspace(MigrateWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MigrateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MigrateWorkspaceResponseUnmarshaller.Instance;
 
@@ -3292,7 +3386,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/MigrateWorkspace">REST API Reference for MigrateWorkspace Operation</seealso>
         public virtual Task<MigrateWorkspaceResponse> MigrateWorkspaceAsync(MigrateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MigrateWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MigrateWorkspaceResponseUnmarshaller.Instance;
 
@@ -3304,7 +3398,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifyAccountResponse ModifyAccount(ModifyAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyAccountResponseUnmarshaller.Instance;
 
@@ -3340,7 +3434,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">REST API Reference for ModifyAccount Operation</seealso>
         public virtual Task<ModifyAccountResponse> ModifyAccountAsync(ModifyAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyAccountResponseUnmarshaller.Instance;
 
@@ -3352,7 +3446,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifyCertificateBasedAuthPropertiesResponse ModifyCertificateBasedAuthProperties(ModifyCertificateBasedAuthPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCertificateBasedAuthPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCertificateBasedAuthPropertiesResponseUnmarshaller.Instance;
 
@@ -3386,7 +3480,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyCertificateBasedAuthProperties">REST API Reference for ModifyCertificateBasedAuthProperties Operation</seealso>
         public virtual Task<ModifyCertificateBasedAuthPropertiesResponse> ModifyCertificateBasedAuthPropertiesAsync(ModifyCertificateBasedAuthPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCertificateBasedAuthPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCertificateBasedAuthPropertiesResponseUnmarshaller.Instance;
 
@@ -3398,7 +3492,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifyClientPropertiesResponse ModifyClientProperties(ModifyClientPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyClientPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyClientPropertiesResponseUnmarshaller.Instance;
 
@@ -3431,7 +3525,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">REST API Reference for ModifyClientProperties Operation</seealso>
         public virtual Task<ModifyClientPropertiesResponse> ModifyClientPropertiesAsync(ModifyClientPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyClientPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyClientPropertiesResponseUnmarshaller.Instance;
 
@@ -3443,7 +3537,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifyEndpointEncryptionModeResponse ModifyEndpointEncryptionMode(ModifyEndpointEncryptionModeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEndpointEncryptionModeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEndpointEncryptionModeResponseUnmarshaller.Instance;
 
@@ -3474,7 +3568,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyEndpointEncryptionMode">REST API Reference for ModifyEndpointEncryptionMode Operation</seealso>
         public virtual Task<ModifyEndpointEncryptionModeResponse> ModifyEndpointEncryptionModeAsync(ModifyEndpointEncryptionModeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEndpointEncryptionModeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEndpointEncryptionModeResponseUnmarshaller.Instance;
 
@@ -3486,7 +3580,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifySamlPropertiesResponse ModifySamlProperties(ModifySamlPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySamlPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySamlPropertiesResponseUnmarshaller.Instance;
 
@@ -3521,7 +3615,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySamlProperties">REST API Reference for ModifySamlProperties Operation</seealso>
         public virtual Task<ModifySamlPropertiesResponse> ModifySamlPropertiesAsync(ModifySamlPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySamlPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySamlPropertiesResponseUnmarshaller.Instance;
 
@@ -3533,7 +3627,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifySelfservicePermissionsResponse ModifySelfservicePermissions(ModifySelfservicePermissionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySelfservicePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySelfservicePermissionsResponseUnmarshaller.Instance;
 
@@ -3568,7 +3662,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySelfservicePermissions">REST API Reference for ModifySelfservicePermissions Operation</seealso>
         public virtual Task<ModifySelfservicePermissionsResponse> ModifySelfservicePermissionsAsync(ModifySelfservicePermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifySelfservicePermissionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifySelfservicePermissionsResponseUnmarshaller.Instance;
 
@@ -3580,7 +3674,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifyStreamingPropertiesResponse ModifyStreamingProperties(ModifyStreamingPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyStreamingPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyStreamingPropertiesResponseUnmarshaller.Instance;
 
@@ -3613,7 +3707,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyStreamingProperties">REST API Reference for ModifyStreamingProperties Operation</seealso>
         public virtual Task<ModifyStreamingPropertiesResponse> ModifyStreamingPropertiesAsync(ModifyStreamingPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyStreamingPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyStreamingPropertiesResponseUnmarshaller.Instance;
 
@@ -3625,7 +3719,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifyWorkspaceAccessPropertiesResponse ModifyWorkspaceAccessProperties(ModifyWorkspaceAccessPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyWorkspaceAccessPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyWorkspaceAccessPropertiesResponseUnmarshaller.Instance;
 
@@ -3663,7 +3757,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">REST API Reference for ModifyWorkspaceAccessProperties Operation</seealso>
         public virtual Task<ModifyWorkspaceAccessPropertiesResponse> ModifyWorkspaceAccessPropertiesAsync(ModifyWorkspaceAccessPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyWorkspaceAccessPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyWorkspaceAccessPropertiesResponseUnmarshaller.Instance;
 
@@ -3675,7 +3769,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifyWorkspaceCreationPropertiesResponse ModifyWorkspaceCreationProperties(ModifyWorkspaceCreationPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyWorkspaceCreationPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyWorkspaceCreationPropertiesResponseUnmarshaller.Instance;
 
@@ -3708,7 +3802,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceCreationProperties">REST API Reference for ModifyWorkspaceCreationProperties Operation</seealso>
         public virtual Task<ModifyWorkspaceCreationPropertiesResponse> ModifyWorkspaceCreationPropertiesAsync(ModifyWorkspaceCreationPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyWorkspaceCreationPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyWorkspaceCreationPropertiesResponseUnmarshaller.Instance;
 
@@ -3720,7 +3814,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifyWorkspacePropertiesResponse ModifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyWorkspacePropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
 
@@ -3774,7 +3868,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">REST API Reference for ModifyWorkspaceProperties Operation</seealso>
         public virtual Task<ModifyWorkspacePropertiesResponse> ModifyWorkspacePropertiesAsync(ModifyWorkspacePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyWorkspacePropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyWorkspacePropertiesResponseUnmarshaller.Instance;
 
@@ -3786,7 +3880,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual ModifyWorkspaceStateResponse ModifyWorkspaceState(ModifyWorkspaceStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyWorkspaceStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyWorkspaceStateResponseUnmarshaller.Instance;
 
@@ -3827,7 +3921,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState">REST API Reference for ModifyWorkspaceState Operation</seealso>
         public virtual Task<ModifyWorkspaceStateResponse> ModifyWorkspaceStateAsync(ModifyWorkspaceStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyWorkspaceStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyWorkspaceStateResponseUnmarshaller.Instance;
 
@@ -3839,7 +3933,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual RebootWorkspacesResponse RebootWorkspaces(RebootWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootWorkspacesResponseUnmarshaller.Instance;
 
@@ -3874,7 +3968,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootWorkspaces">REST API Reference for RebootWorkspaces Operation</seealso>
         public virtual Task<RebootWorkspacesResponse> RebootWorkspacesAsync(RebootWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootWorkspacesResponseUnmarshaller.Instance;
 
@@ -3886,7 +3980,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual RebuildWorkspacesResponse RebuildWorkspaces(RebuildWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebuildWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
 
@@ -3927,7 +4021,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces">REST API Reference for RebuildWorkspaces Operation</seealso>
         public virtual Task<RebuildWorkspacesResponse> RebuildWorkspacesAsync(RebuildWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebuildWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebuildWorkspacesResponseUnmarshaller.Instance;
 
@@ -3939,7 +4033,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual RegisterWorkspaceDirectoryResponse RegisterWorkspaceDirectory(RegisterWorkspaceDirectoryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterWorkspaceDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterWorkspaceDirectoryResponseUnmarshaller.Instance;
 
@@ -3997,7 +4091,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">REST API Reference for RegisterWorkspaceDirectory Operation</seealso>
         public virtual Task<RegisterWorkspaceDirectoryResponse> RegisterWorkspaceDirectoryAsync(RegisterWorkspaceDirectoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterWorkspaceDirectoryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterWorkspaceDirectoryResponseUnmarshaller.Instance;
 
@@ -4009,7 +4103,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual RejectAccountLinkInvitationResponse RejectAccountLinkInvitation(RejectAccountLinkInvitationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectAccountLinkInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectAccountLinkInvitationResponseUnmarshaller.Instance;
 
@@ -4046,7 +4140,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RejectAccountLinkInvitation">REST API Reference for RejectAccountLinkInvitation Operation</seealso>
         public virtual Task<RejectAccountLinkInvitationResponse> RejectAccountLinkInvitationAsync(RejectAccountLinkInvitationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RejectAccountLinkInvitationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RejectAccountLinkInvitationResponseUnmarshaller.Instance;
 
@@ -4058,7 +4152,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual RestoreWorkspaceResponse RestoreWorkspace(RestoreWorkspaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreWorkspaceResponseUnmarshaller.Instance;
 
@@ -4107,7 +4201,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RestoreWorkspace">REST API Reference for RestoreWorkspace Operation</seealso>
         public virtual Task<RestoreWorkspaceResponse> RestoreWorkspaceAsync(RestoreWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreWorkspaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreWorkspaceResponseUnmarshaller.Instance;
 
@@ -4119,7 +4213,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual RevokeIpRulesResponse RevokeIpRules(RevokeIpRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeIpRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeIpRulesResponseUnmarshaller.Instance;
 
@@ -4152,7 +4246,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules">REST API Reference for RevokeIpRules Operation</seealso>
         public virtual Task<RevokeIpRulesResponse> RevokeIpRulesAsync(RevokeIpRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeIpRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeIpRulesResponseUnmarshaller.Instance;
 
@@ -4164,7 +4258,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual StartWorkspacesResponse StartWorkspaces(StartWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkspacesResponseUnmarshaller.Instance;
 
@@ -4191,7 +4285,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspaces">REST API Reference for StartWorkspaces Operation</seealso>
         public virtual Task<StartWorkspacesResponse> StartWorkspacesAsync(StartWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkspacesResponseUnmarshaller.Instance;
 
@@ -4203,7 +4297,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual StartWorkspacesPoolResponse StartWorkspacesPool(StartWorkspacesPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkspacesPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkspacesPoolResponseUnmarshaller.Instance;
 
@@ -4251,7 +4345,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StartWorkspacesPool">REST API Reference for StartWorkspacesPool Operation</seealso>
         public virtual Task<StartWorkspacesPoolResponse> StartWorkspacesPoolAsync(StartWorkspacesPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkspacesPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkspacesPoolResponseUnmarshaller.Instance;
 
@@ -4263,7 +4357,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual StopWorkspacesResponse StopWorkspaces(StopWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopWorkspacesResponseUnmarshaller.Instance;
 
@@ -4290,7 +4384,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspaces">REST API Reference for StopWorkspaces Operation</seealso>
         public virtual Task<StopWorkspacesResponse> StopWorkspacesAsync(StopWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopWorkspacesResponseUnmarshaller.Instance;
 
@@ -4302,7 +4396,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual StopWorkspacesPoolResponse StopWorkspacesPool(StopWorkspacesPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopWorkspacesPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopWorkspacesPoolResponseUnmarshaller.Instance;
 
@@ -4344,7 +4438,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/StopWorkspacesPool">REST API Reference for StopWorkspacesPool Operation</seealso>
         public virtual Task<StopWorkspacesPoolResponse> StopWorkspacesPoolAsync(StopWorkspacesPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopWorkspacesPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopWorkspacesPoolResponseUnmarshaller.Instance;
 
@@ -4356,7 +4450,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual TerminateWorkspacesResponse TerminateWorkspaces(TerminateWorkspacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateWorkspacesResponseUnmarshaller.Instance;
 
@@ -4414,7 +4508,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspaces">REST API Reference for TerminateWorkspaces Operation</seealso>
         public virtual Task<TerminateWorkspacesResponse> TerminateWorkspacesAsync(TerminateWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateWorkspacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateWorkspacesResponseUnmarshaller.Instance;
 
@@ -4426,7 +4520,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual TerminateWorkspacesPoolResponse TerminateWorkspacesPool(TerminateWorkspacesPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateWorkspacesPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateWorkspacesPoolResponseUnmarshaller.Instance;
 
@@ -4462,7 +4556,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspacesPool">REST API Reference for TerminateWorkspacesPool Operation</seealso>
         public virtual Task<TerminateWorkspacesPoolResponse> TerminateWorkspacesPoolAsync(TerminateWorkspacesPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateWorkspacesPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateWorkspacesPoolResponseUnmarshaller.Instance;
 
@@ -4474,7 +4568,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual TerminateWorkspacesPoolSessionResponse TerminateWorkspacesPoolSession(TerminateWorkspacesPoolSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateWorkspacesPoolSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateWorkspacesPoolSessionResponseUnmarshaller.Instance;
 
@@ -4510,7 +4604,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/TerminateWorkspacesPoolSession">REST API Reference for TerminateWorkspacesPoolSession Operation</seealso>
         public virtual Task<TerminateWorkspacesPoolSessionResponse> TerminateWorkspacesPoolSessionAsync(TerminateWorkspacesPoolSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TerminateWorkspacesPoolSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TerminateWorkspacesPoolSessionResponseUnmarshaller.Instance;
 
@@ -4522,7 +4616,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual UpdateConnectClientAddInResponse UpdateConnectClientAddIn(UpdateConnectClientAddInRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectClientAddInRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectClientAddInResponseUnmarshaller.Instance;
 
@@ -4553,7 +4647,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectClientAddIn">REST API Reference for UpdateConnectClientAddIn Operation</seealso>
         public virtual Task<UpdateConnectClientAddInResponse> UpdateConnectClientAddInAsync(UpdateConnectClientAddInRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectClientAddInRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectClientAddInResponseUnmarshaller.Instance;
 
@@ -4565,7 +4659,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual UpdateConnectionAliasPermissionResponse UpdateConnectionAliasPermission(UpdateConnectionAliasPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionAliasPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionAliasPermissionResponseUnmarshaller.Instance;
 
@@ -4628,7 +4722,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateConnectionAliasPermission">REST API Reference for UpdateConnectionAliasPermission Operation</seealso>
         public virtual Task<UpdateConnectionAliasPermissionResponse> UpdateConnectionAliasPermissionAsync(UpdateConnectionAliasPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionAliasPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionAliasPermissionResponseUnmarshaller.Instance;
 
@@ -4640,7 +4734,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual UpdateRulesOfIpGroupResponse UpdateRulesOfIpGroup(UpdateRulesOfIpGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRulesOfIpGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
 
@@ -4677,7 +4771,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup">REST API Reference for UpdateRulesOfIpGroup Operation</seealso>
         public virtual Task<UpdateRulesOfIpGroupResponse> UpdateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRulesOfIpGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRulesOfIpGroupResponseUnmarshaller.Instance;
 
@@ -4689,7 +4783,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual UpdateWorkspaceBundleResponse UpdateWorkspaceBundle(UpdateWorkspaceBundleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceBundleResponseUnmarshaller.Instance;
 
@@ -4735,7 +4829,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceBundle">REST API Reference for UpdateWorkspaceBundle Operation</seealso>
         public virtual Task<UpdateWorkspaceBundleResponse> UpdateWorkspaceBundleAsync(UpdateWorkspaceBundleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceBundleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceBundleResponseUnmarshaller.Instance;
 
@@ -4747,7 +4841,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual UpdateWorkspaceImagePermissionResponse UpdateWorkspaceImagePermission(UpdateWorkspaceImagePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceImagePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceImagePermissionResponseUnmarshaller.Instance;
 
@@ -4818,7 +4912,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission">REST API Reference for UpdateWorkspaceImagePermission Operation</seealso>
         public virtual Task<UpdateWorkspaceImagePermissionResponse> UpdateWorkspaceImagePermissionAsync(UpdateWorkspaceImagePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspaceImagePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspaceImagePermissionResponseUnmarshaller.Instance;
 
@@ -4830,7 +4924,7 @@ namespace Amazon.WorkSpaces
 
         internal virtual UpdateWorkspacesPoolResponse UpdateWorkspacesPool(UpdateWorkspacesPoolRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspacesPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspacesPoolResponseUnmarshaller.Instance;
 
@@ -4872,7 +4966,7 @@ namespace Amazon.WorkSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspacesPool">REST API Reference for UpdateWorkspacesPool Operation</seealso>
         public virtual Task<UpdateWorkspacesPoolResponse> UpdateWorkspacesPoolAsync(UpdateWorkspacesPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkspacesPoolRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkspacesPoolResponseUnmarshaller.Instance;
 

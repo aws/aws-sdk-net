@@ -31,7 +31,8 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// The filters that you can use with the ListEntities operation to filter machine learning
-    /// products. You can filter by EntityId, LastModifiedDate, ProductTitle, and Visibility.
+    /// products. You can filter by <c>EntityId</c>, <c>astModifiedDate</c>, <c>ProductTitle</c>,
+    /// and <c>Visibility</c>.
     /// </summary>
     public partial class MachineLearningProductFilters
     {

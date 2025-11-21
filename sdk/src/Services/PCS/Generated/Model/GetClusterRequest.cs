@@ -42,7 +42,7 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        /// The name or ID of the cluster of the queue.
+        /// The name or ID of the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

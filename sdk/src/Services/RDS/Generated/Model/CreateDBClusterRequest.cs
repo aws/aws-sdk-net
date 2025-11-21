@@ -91,6 +91,7 @@ namespace Amazon.RDS.Model
         private int? _iops;
         private string _kmsKeyId;
         private bool? _manageMasterUserPassword;
+        private MasterUserAuthenticationType _masterUserAuthenticationType;
         private string _masterUsername;
         private string _masterUserPassword;
         private string _masterUserSecretKmsKeyId;
@@ -177,8 +178,18 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For information on AZs, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
-        /// Zones</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For the first three DB instances that you create, RDS distributes each DB instance
+        /// to a different AZ that you specify. For additional DB instances that you create, RDS
+        /// randomly distributes them to the AZs that you specified. For example, if you create
+        /// a DB cluster with one writer instance and three reader instances, RDS might distribute
+        /// the writer instance to AZ 1, the first reader instance to AZ 2, the second reader
+        /// instance to AZ 3, and the third reader instance to either AZ 1, AZ 2, or AZ 3. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones">Availability
+        /// Zones</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Concepts.AuroraHighAvailability.Instances">High
+        /// availability for Aurora DB instances</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1164,6 +1175,7 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Aurora DB clusters only
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string GlobalClusterIdentifier
         {
             get { return this._globalClusterIdentifier; }
@@ -1314,6 +1326,46 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MasterUserAuthenticationType. 
+        /// <para>
+        /// Specifies the authentication type for the master user. With IAM master user authentication,
+        /// you can configure the master DB user with IAM database authentication when you create
+        /// a DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>password</c> - Use standard database authentication with a password.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>iam-db-auth</c> - Use IAM database authentication for the master user.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+        /// </para>
+        ///  
+        /// <para>
+        /// This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.
+        /// </para>
+        /// </summary>
+        public MasterUserAuthenticationType MasterUserAuthenticationType
+        {
+            get { return this._masterUserAuthenticationType; }
+            set { this._masterUserAuthenticationType = value; }
+        }
+
+        // Check to see if MasterUserAuthenticationType property is set
+        internal bool IsSetMasterUserAuthenticationType()
+        {
+            return this._masterUserAuthenticationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
         /// The name of the master user for the DB cluster.
@@ -1379,6 +1431,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -1844,6 +1897,7 @@ namespace Amazon.RDS.Model
         /// Valid for Cluster Type: Aurora DB clusters only
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreSignedUrl
         {
             get { return this._preSignedUrl; }
@@ -1863,12 +1917,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// </para>
+        ///  
+        /// <para>
         /// When the DB cluster is publicly accessible and you connect from outside of the DB
-        /// cluster's virtual private cloud (VPC), its Domain Name System (DNS) endpoint resolves
+        /// cluster's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves
         /// to the public IP address. When you connect from within the same VPC as the DB cluster,
-        /// the endpoint resolves to the private IP address. Access to the DB cluster is ultimately
-        /// controlled by the security group it uses. That public access isn't permitted if the
-        /// security group assigned to the DB cluster doesn't permit it.
+        /// the endpoint resolves to the private IP address. Access to the DB cluster is controlled
+        /// by its security group settings.
         /// </para>
         ///  
         /// <para>
@@ -1877,44 +1934,24 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Multi-AZ DB clusters only
+        /// The default behavior when <c>PubliclyAccessible</c> is not specified depends on whether
+        /// a <c>DBSubnetGroup</c> is specified.
         /// </para>
         ///  
         /// <para>
-        /// Default: The default behavior varies depending on whether <c>DBSubnetGroupName</c>
-        /// is specified.
+        /// If <c>DBSubnetGroup</c> isn't specified, <c>PubliclyAccessible</c> defaults to <c>true</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <c>DBSubnetGroupName</c> isn't specified, and <c>PubliclyAccessible</c> isn't specified,
-        /// the following applies:
+        /// If <c>DBSubnetGroup</c> is specified, <c>PubliclyAccessible</c> defaults to <c>false</c>
+        /// unless the value of <c>DBSubnetGroup</c> is <c>default</c>, in which case <c>PubliclyAccessible</c>
+        /// defaults to <c>true</c>.
         /// </para>
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// If the default VPC in the target Region doesn’t have an internet gateway attached
-        /// to it, the DB cluster is private.
+        /// If <c>PubliclyAccessible</c> is true and the VPC that the <c>DBSubnetGroup</c> is
+        /// in doesn't have an internet gateway attached to it, Amazon RDS returns an error.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the default VPC in the target Region has an internet gateway attached to it, the
-        /// DB cluster is public.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If <c>DBSubnetGroupName</c> is specified, and <c>PubliclyAccessible</c> isn't specified,
-        /// the following applies:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// If the subnets are part of a VPC that doesn’t have an internet gateway attached to
-        /// it, the DB cluster is private.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the subnets are part of a VPC that has an internet gateway attached to it, the
-        /// DB cluster is public.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool? PubliclyAccessible
         {

@@ -46,10 +46,13 @@ namespace Amazon.MediaConnect.Model
         private int? _minLatency;
         private string _name;
         private Protocol _protocol;
+        private State _routerIntegrationState;
+        private FlowTransitEncryption _routerIntegrationTransitDecryption;
         private int? _senderControlPort;
         private string _senderIpAddress;
         private string _sourceListenerAddress;
         private int? _sourceListenerPort;
+        private Dictionary<string, string> _sourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _streamId;
         private string _vpcInterfaceName;
         private string _whitelistCidr;
@@ -292,6 +295,43 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RouterIntegrationState. 
+        /// <para>
+        /// Indicates whether to enable or disable router integration when setting a flow source.
+        /// </para>
+        /// </summary>
+        public State RouterIntegrationState
+        {
+            get { return this._routerIntegrationState; }
+            set { this._routerIntegrationState = value; }
+        }
+
+        // Check to see if RouterIntegrationState property is set
+        internal bool IsSetRouterIntegrationState()
+        {
+            return this._routerIntegrationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationTransitDecryption. 
+        /// <para>
+        /// The decryption configuration for the flow source when router integration is enabled.
+        /// Specifies how the source content should be decrypted when router integration is used.
+        /// </para>
+        /// </summary>
+        public FlowTransitEncryption RouterIntegrationTransitDecryption
+        {
+            get { return this._routerIntegrationTransitDecryption; }
+            set { this._routerIntegrationTransitDecryption = value; }
+        }
+
+        // Check to see if RouterIntegrationTransitDecryption property is set
+        internal bool IsSetRouterIntegrationTransitDecryption()
+        {
+            return this._routerIntegrationTransitDecryption != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SenderControlPort. 
         /// <para>
         ///  The port that the flow uses to send outbound requests to initiate connection with
@@ -362,6 +402,29 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSourceListenerPort()
         {
             return this._sourceListenerPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceTags. 
+        /// <para>
+        ///  The key-value pairs that can be used to tag and organize the source. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> SourceTags
+        {
+            get { return this._sourceTags; }
+            set { this._sourceTags = value; }
+        }
+
+        // Check to see if SourceTags property is set
+        internal bool IsSetSourceTags()
+        {
+            return this._sourceTags != null && (this._sourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

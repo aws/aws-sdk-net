@@ -84,9 +84,20 @@ namespace Microsoft.Extensions.Configuration
 
             foreach(var element in section.GetChildren())
             {
-                if (string.IsNullOrEmpty(element.Value))
-                    continue;
+                // These two properties are lists, and their "Value" is empty so we need to handle them separately.
+                if (string.Equals(element.Key, nameof(DefaultClientConfig.AuthSchemePreference), StringComparison.OrdinalIgnoreCase))
+                {
+                    options.DefaultClientConfig.AuthSchemePreference = element.GetChildren().Select(x => x.Value).ToList();
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.SigV4aSigningRegionSet), StringComparison.OrdinalIgnoreCase))
+                {
+                    options.DefaultClientConfig.SigV4aSigningRegionSet = element.GetChildren().Select(x => x.Value).ToList();
+                }
 
+                if (string.IsNullOrEmpty(element.Value))
+                {
+                    continue;
+                }
 
                 // Logging is handled outside of this loop
                 if (string.Equals(element.Key, LoggingKey, StringComparison.OrdinalIgnoreCase))
@@ -322,6 +333,15 @@ namespace Microsoft.Extensions.Configuration
                     }
 
                     options.DefaultClientConfig.ConnectTimeout = TimeSpan.FromMilliseconds(connectTimeout);
+                }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.MaxConnectionsPerServer), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var maxConnectionsPerServer))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.MaxConnectionsPerServer)}.");
+                    }
+
+                    options.DefaultClientConfig.MaxConnectionsPerServer = maxConnectionsPerServer;
                 }
 #endif
                 else if (string.Equals(element.Key, nameof(DefaultClientConfig.UseAlternateUserAgentHeader), StringComparison.OrdinalIgnoreCase))

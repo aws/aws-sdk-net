@@ -94,6 +94,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>ebs-info.attachment-limit-type</c> - The type of Amazon EBS volume attachment
+        /// limit (<c>shared</c> | <c>dedicated</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ebs-info.maximum-ebs-attachments</c> - The maximum number of Amazon EBS volumes
+        /// that can be attached to the instance type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</c> - The baseline bandwidth
         /// performance for an EBS-optimized instance type, in Mbps.
         /// </para>

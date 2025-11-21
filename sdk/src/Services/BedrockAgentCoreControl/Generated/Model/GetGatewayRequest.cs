@@ -40,8 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayIdentifier. 
         /// <para>
-        /// The identifier of the gateway to retrieve. This can be either the gateway ID or the
-        /// gateway ARN.
+        /// The identifier of the gateway to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

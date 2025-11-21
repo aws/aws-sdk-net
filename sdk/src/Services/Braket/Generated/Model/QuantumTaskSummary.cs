@@ -47,7 +47,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time at which the task was created.
+        /// The time at which the quantum task was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,7 +66,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property DeviceArn. 
         /// <para>
-        /// The ARN of the device the task ran on.
+        /// The ARN of the device the quantum task ran on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -85,7 +85,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property EndedAt. 
         /// <para>
-        /// The time at which the task finished.
+        /// The time at which the quantum task finished.
         /// </para>
         /// </summary>
         public DateTime? EndedAt
@@ -103,7 +103,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property OutputS3Bucket. 
         /// <para>
-        /// The S3 bucket where the task result file is stored..
+        /// The S3 bucket where the quantum task result file is stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,7 +122,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property OutputS3Directory. 
         /// <para>
-        /// The folder in the S3 bucket where the task result file is stored.
+        /// The folder in the S3 bucket where the quantum task result file is stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,7 +141,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QuantumTaskArn. 
         /// <para>
-        /// The ARN of the task.
+        /// The ARN of the quantum task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -160,7 +160,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Shots. 
         /// <para>
-        /// The shots used for the task.
+        /// The shots used for the quantum task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -179,7 +179,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the task.
+        /// The status of the quantum task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

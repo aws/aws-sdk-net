@@ -411,8 +411,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// <summary>
         /// <important> 
         /// <para>
-        ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation. Use <c>CustomerAWSAccountID</c>
-        /// instead.
+        ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation on March 31,
+        /// 2026. Use <c>CustomerAWSAccountID</c> instead.
         /// </para>
         ///  
         /// <para>
@@ -498,7 +498,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
         public virtual BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchMeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
 
@@ -509,8 +509,8 @@ namespace Amazon.AWSMarketplaceMetering
         /// <summary>
         /// <important> 
         /// <para>
-        ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation. Use <c>CustomerAWSAccountID</c>
-        /// instead.
+        ///  The <c>CustomerIdentifier</c> parameter is scheduled for deprecation on March 31,
+        /// 2026. Use <c>CustomerAWSAccountID</c> instead.
         /// </para>
         ///  
         /// <para>
@@ -599,7 +599,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/BatchMeterUsage">REST API Reference for BatchMeterUsage Operation</seealso>
         public virtual Task<BatchMeterUsageResponse> BatchMeterUsageAsync(BatchMeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchMeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
             
@@ -629,8 +629,14 @@ namespace Amazon.AWSMarketplaceMetering
         /// </para>
         ///  
         /// <para>
-        /// Usage records are expected to be submitted as quickly as possible after the event
-        /// that is being recorded, and are not accepted more than 6 hours after the event.
+        /// Submit usage records to report events from the previous hour. If you submit records
+        /// that are greater than six hours after events occur, the records won’t be accepted.
+        /// The timestamp in your request determines when an event is recorded. You can only report
+        /// usage once per hour for each dimension. For AMI-based products, this is per dimension
+        /// and per EC2 instance. For container products, this is per dimension and per ECS task
+        /// or EKS pod. You can’t modify values after they’re recorded. If you report usage before
+        /// the current hour ends, you will be unable to report additional usage until the next
+        /// hour begins.
         /// </para>
         ///  
         /// <para>
@@ -648,6 +654,9 @@ namespace Amazon.AWSMarketplaceMetering
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.DuplicateRequestException">
         /// A metering record has already been emitted by the same EC2 instance, ECS task, or
         /// EKS pod for the given {<c>usageDimension</c>, <c>timestamp</c>} with a different <c>usageQuantity</c>.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.IdempotencyConflictException">
+        /// The <c>ClientToken</c> is being used for multiple requests.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
@@ -686,7 +695,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
         public virtual MeterUsageResponse MeterUsage(MeterUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MeterUsageResponseUnmarshaller.Instance;
 
@@ -712,8 +721,14 @@ namespace Amazon.AWSMarketplaceMetering
         /// </para>
         ///  
         /// <para>
-        /// Usage records are expected to be submitted as quickly as possible after the event
-        /// that is being recorded, and are not accepted more than 6 hours after the event.
+        /// Submit usage records to report events from the previous hour. If you submit records
+        /// that are greater than six hours after events occur, the records won’t be accepted.
+        /// The timestamp in your request determines when an event is recorded. You can only report
+        /// usage once per hour for each dimension. For AMI-based products, this is per dimension
+        /// and per EC2 instance. For container products, this is per dimension and per ECS task
+        /// or EKS pod. You can’t modify values after they’re recorded. If you report usage before
+        /// the current hour ends, you will be unable to report additional usage until the next
+        /// hour begins.
         /// </para>
         ///  
         /// <para>
@@ -734,6 +749,9 @@ namespace Amazon.AWSMarketplaceMetering
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.DuplicateRequestException">
         /// A metering record has already been emitted by the same EC2 instance, ECS task, or
         /// EKS pod for the given {<c>usageDimension</c>, <c>timestamp</c>} with a different <c>usageQuantity</c>.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.IdempotencyConflictException">
+        /// The <c>ClientToken</c> is being used for multiple requests.
         /// </exception>
         /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
         /// An internal error has occurred. Retry your request. If the problem persists, post
@@ -772,7 +790,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">REST API Reference for MeterUsage Operation</seealso>
         public virtual Task<MeterUsageResponse> MeterUsageAsync(MeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = MeterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = MeterUsageResponseUnmarshaller.Instance;
             
@@ -865,7 +883,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/RegisterUsage">REST API Reference for RegisterUsage Operation</seealso>
         public virtual RegisterUsageResponse RegisterUsage(RegisterUsageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterUsageResponseUnmarshaller.Instance;
 
@@ -957,7 +975,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/RegisterUsage">REST API Reference for RegisterUsage Operation</seealso>
         public virtual Task<RegisterUsageResponse> RegisterUsageAsync(RegisterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterUsageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterUsageResponseUnmarshaller.Instance;
             
@@ -1024,7 +1042,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
         public virtual ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveCustomerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
 
@@ -1090,7 +1108,7 @@ namespace Amazon.AWSMarketplaceMetering
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/ResolveCustomer">REST API Reference for ResolveCustomer Operation</seealso>
         public virtual Task<ResolveCustomerResponse> ResolveCustomerAsync(ResolveCustomerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResolveCustomerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
             

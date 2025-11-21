@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private List<VolumeAttachment> _attachments = AWSConfigs.InitializeCollections ? new List<VolumeAttachment>() : null;
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private DateTime? _createTime;
         private bool? _encrypted;
         private bool? _fastRestored;
@@ -46,6 +47,7 @@ namespace Amazon.EC2.Model
         private string _outpostArn;
         private int? _size;
         private string _snapshotId;
+        private string _sourceVolumeId;
         private SSEType _sseType;
         private VolumeState _state;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -97,6 +99,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone for the volume.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>
@@ -285,6 +305,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetSnapshotId()
         {
             return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceVolumeId. 
+        /// <para>
+        /// The ID of the source volume from which the volume copy was created. Only for volume
+        /// copies.
+        /// </para>
+        /// </summary>
+        public string SourceVolumeId
+        {
+            get { return this._sourceVolumeId; }
+            set { this._sourceVolumeId = value; }
+        }
+
+        // Check to see if SourceVolumeId property is set
+        internal bool IsSetSourceVolumeId()
+        {
+            return this._sourceVolumeId != null;
         }
 
         /// <summary>

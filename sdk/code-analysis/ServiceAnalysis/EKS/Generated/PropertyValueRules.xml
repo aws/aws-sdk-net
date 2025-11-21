@@ -135,6 +135,16 @@
     <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EKS.Model.AddonNamespaceConfigRequest.Namespace</property>
+    <min>1</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.AddonNamespaceConfigResponse.Namespace</property>
+    <min>1</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EKS.Model.NodegroupScalingConfig.DesiredSize</property>
     <min>0</min>
   </property-value-rule>
@@ -154,6 +164,28 @@
     <property>Amazon.EKS.Model.NodegroupUpdateConfig.MaxUnavailablePercentage</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodeRepairConfig.MaxParallelNodesRepairedCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodeRepairConfig.MaxParallelNodesRepairedPercentage</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodeRepairConfig.MaxUnhealthyNodeThresholdCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodeRepairConfig.MaxUnhealthyNodeThresholdPercentage</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodeRepairConfigOverrides.MinRepairWaitTimeMins</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.Taint.Key</property>

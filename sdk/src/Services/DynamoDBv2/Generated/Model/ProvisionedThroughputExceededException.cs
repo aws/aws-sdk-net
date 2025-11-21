@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Your request rate is too high. The Amazon Web Services SDKs for DynamoDB automatically
+    /// The request was denied due to request throttling. For detailed information about why
+    /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+    /// field in the returned exception. The Amazon Web Services SDKs for DynamoDB automatically
     /// retry requests that receive this exception. Your request is eventually successful,
     /// unless your retry queue is too large to finish. Reduce the frequency of requests and
     /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
@@ -41,6 +43,7 @@ namespace Amazon.DynamoDBv2.Model
     #endif
     public partial class ProvisionedThroughputExceededException : AmazonDynamoDBException
     {
+        private List<ThrottlingReason> _throttlingReasons = AWSConfigs.InitializeCollections ? new List<ThrottlingReason>() : null;
 
         /// <summary>
         /// Constructs a new ProvisionedThroughputExceededException with the specified error
@@ -102,6 +105,7 @@ namespace Amazon.DynamoDBv2.Model
         protected ProvisionedThroughputExceededException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ThrottlingReasons = (List<ThrottlingReason>)info.GetValue("ThrottlingReasons", typeof(List<ThrottlingReason>));
         }
 
         /// <summary>
@@ -117,8 +121,34 @@ namespace Amazon.DynamoDBv2.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ThrottlingReasons", this.ThrottlingReasons);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ThrottlingReasons. 
+        /// <para>
+        /// A list of <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// that provide detailed diagnostic information about why the request was throttled.
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ThrottlingReason> ThrottlingReasons
+        {
+            get { return this._throttlingReasons; }
+            set { this._throttlingReasons = value; }
+        }
+
+        // Check to see if ThrottlingReasons property is set
+        internal bool IsSetThrottlingReasons()
+        {
+            return this._throttlingReasons != null && (this._throttlingReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
     }
 }

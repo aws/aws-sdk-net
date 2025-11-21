@@ -101,6 +101,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetDataStoriesSharingOption())
+            {
+                context.Writer.WritePropertyName("DataStoriesSharingOption");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataStoriesSharingOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataStoriesSharingOption, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetExecutiveSummaryOption())
+            {
+                context.Writer.WritePropertyName("ExecutiveSummaryOption");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExecutiveSummaryOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExecutiveSummaryOption, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetExportToCSVOption())
             {
                 context.Writer.WritePropertyName("ExportToCSVOption");
@@ -119,6 +141,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = ExportWithHiddenFieldsOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExportWithHiddenFieldsOption, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetQuickSuiteActionsOption())
+            {
+                context.Writer.WritePropertyName("QuickSuiteActionsOption");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QuickSuiteActionsOptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.QuickSuiteActionsOption, context);
 
                 context.Writer.WriteEndObject();
             }

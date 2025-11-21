@@ -76,6 +76,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetComputeConfiguration())
+            {
+                context.Writer.WritePropertyName("computeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProtectedJobComputeConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ComputeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetJobParameters())
             {
                 context.Writer.WritePropertyName("jobParameters");

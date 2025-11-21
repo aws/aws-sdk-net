@@ -57,6 +57,7 @@ namespace Amazon.GeoRoutes.Model
         /// Features that are allowed while calculating a route.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public RouteMatrixAllowOptions Allow
         {
             get { return this._allow; }
@@ -95,6 +96,7 @@ namespace Amazon.GeoRoutes.Model
         /// Uses the current time as the time of departure.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool? DepartNow
         {
             get { return this._departNow; }
@@ -129,6 +131,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <c>2020-04-22T17:57:24+02:00</c> 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DepartureTime
         {
             get { return this._departureTime; }

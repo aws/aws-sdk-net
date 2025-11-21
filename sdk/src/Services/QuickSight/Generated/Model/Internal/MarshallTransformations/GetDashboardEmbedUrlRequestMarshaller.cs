@@ -71,6 +71,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetAdditionalDashboardIds())
                 request.ParameterCollection.Add("additional-dashboard-ids", publicRequest.AdditionalDashboardIds);
+            if (string.IsNullOrEmpty(publicRequest.IdentityType))
+                throw new AmazonQuickSightException("Request object does not have required field IdentityType set");
             
             if (publicRequest.IsSetIdentityType())
                 request.Parameters.Add("creds-type", StringUtils.FromString(publicRequest.IdentityType));

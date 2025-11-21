@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListBucketsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetBucketRegion())
@@ -94,5 +95,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListBucketsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListBucketsRequest publicRequest);
     }    
 }

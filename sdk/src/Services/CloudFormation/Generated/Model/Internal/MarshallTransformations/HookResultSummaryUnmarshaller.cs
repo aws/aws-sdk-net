@@ -61,6 +61,18 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.FailureMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("HookExecutionTarget", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HookExecutionTarget = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HookResultId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HookResultId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HookStatusReason", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -73,10 +85,34 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.InvocationPoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("InvokedAt", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.InvokedAt = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TargetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TargetType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TypeArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TypeArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("TypeConfigurationVersionId", targetDepth))

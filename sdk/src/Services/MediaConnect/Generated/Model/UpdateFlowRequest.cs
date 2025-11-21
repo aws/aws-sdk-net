@@ -36,6 +36,7 @@ namespace Amazon.MediaConnect.Model
     public partial class UpdateFlowRequest : AmazonMediaConnectRequest
     {
         private string _flowArn;
+        private FlowSize _flowSize;
         private UpdateMaintenance _maintenance;
         private NdiConfig _ndiConfig;
         private UpdateFailoverConfig _sourceFailoverConfig;
@@ -58,6 +59,24 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetFlowArn()
         {
             return this._flowArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlowSize. 
+        /// <para>
+        ///  Determines the processing capacity and feature set of the flow. 
+        /// </para>
+        /// </summary>
+        public FlowSize FlowSize
+        {
+            get { return this._flowSize; }
+            set { this._flowSize = value; }
+        }
+
+        // Check to see if FlowSize property is set
+        internal bool IsSetFlowSize()
+        {
+            return this._flowSize != null;
         }
 
         /// <summary>

@@ -31,28 +31,31 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAgentRuntime operation.
-    /// Creates an Amazon Secure Agent.
+    /// Creates an Amazon Bedrock AgentCore Runtime.
     /// </summary>
     public partial class CreateAgentRuntimeRequest : AmazonBedrockAgentCoreControlRequest
     {
-        private AgentArtifact _agentRuntimeArtifact;
+        private AgentRuntimeArtifact _agentRuntimeArtifact;
         private string _agentRuntimeName;
         private AuthorizerConfiguration _authorizerConfiguration;
         private string _clientToken;
         private string _description;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private LifecycleConfiguration _lifecycleConfiguration;
         private NetworkConfiguration _networkConfiguration;
         private ProtocolConfiguration _protocolConfiguration;
+        private RequestHeaderConfiguration _requestHeaderConfiguration;
         private string _roleArn;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentRuntimeArtifact. 
         /// <para>
-        /// The artifact of the agent.
+        /// The artifact of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public AgentArtifact AgentRuntimeArtifact
+        public AgentRuntimeArtifact AgentRuntimeArtifact
         {
             get { return this._agentRuntimeArtifact; }
             set { this._agentRuntimeArtifact = value; }
@@ -67,7 +70,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AgentRuntimeName. 
         /// <para>
-        /// The name of the secure agent.
+        /// The name of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,7 +89,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
-        /// The authorizer configuration for the agent runtime.
+        /// The authorizer configuration for the AgentCore Runtime.
         /// </para>
         /// </summary>
         public AuthorizerConfiguration AuthorizerConfiguration
@@ -123,7 +126,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the agent runtime.
+        /// The description of the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
@@ -142,7 +145,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
-        /// Environment variables to set in the agent runtime environment.
+        /// Environment variables to set in the AgentCore Runtime environment.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -164,9 +167,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LifecycleConfiguration. 
+        /// <para>
+        /// The life cycle configuration for the AgentCore Runtime.
+        /// </para>
+        /// </summary>
+        public LifecycleConfiguration LifecycleConfiguration
+        {
+            get { return this._lifecycleConfiguration; }
+            set { this._lifecycleConfiguration = value; }
+        }
+
+        // Check to see if LifecycleConfiguration property is set
+        internal bool IsSetLifecycleConfiguration()
+        {
+            return this._lifecycleConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// The network configuration for the agent runtime.
+        /// The network configuration for the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -198,9 +219,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequestHeaderConfiguration. 
+        /// <para>
+        /// Configuration for HTTP request headers that will be passed through to the runtime.
+        /// </para>
+        /// </summary>
+        public RequestHeaderConfiguration RequestHeaderConfiguration
+        {
+            get { return this._requestHeaderConfiguration; }
+            set { this._requestHeaderConfiguration = value; }
+        }
+
+        // Check to see if RequestHeaderConfiguration property is set
+        internal bool IsSetRequestHeaderConfiguration()
+        {
+            return this._requestHeaderConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role ARN that provides permissions for the agent runtime.
+        /// The IAM role ARN that provides permissions for the AgentCore Runtime.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -214,6 +253,31 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize
+        /// your resources in different ways, for example, by purpose, owner, or environment.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

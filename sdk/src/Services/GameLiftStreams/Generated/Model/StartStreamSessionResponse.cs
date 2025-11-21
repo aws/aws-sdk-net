@@ -131,7 +131,11 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
         /// <para>
-        /// An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+        /// The application streaming in this session.
+        /// </para>
+        ///  
+        /// <para>
+        /// This value is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
         /// Resource Name (ARN)</a> that uniquely identifies the application resource. Example
         /// ARN: <c>arn:aws:gameliftstreams:us-west-2:111122223333:application/a-9ZY8X7Wv6</c>.
         /// 
@@ -177,9 +181,11 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property ConnectionTimeoutSeconds. 
         /// <para>
-        /// The maximum length of time (in seconds) that Amazon GameLift Streams keeps the stream
-        /// session open. At this point, Amazon GameLift Streams ends the stream session regardless
-        /// of any existing client connections.
+        /// The length of time that Amazon GameLift Streams should wait for a client to connect
+        /// or reconnect to the stream session. This time span starts when the stream session
+        /// reaches <c>ACTIVE</c> or <c>PENDING_CLIENT_RECONNECTION</c> state. If no client connects
+        /// (or reconnects) before the timeout, Amazon GameLift Streams terminates the stream
+        /// session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3600)]
@@ -273,12 +279,9 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        ///  The location where Amazon GameLift Streams is streaming your application from. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  A location's name. For example, <c>us-east-1</c>. For a complete list of locations
-        /// that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
+        /// The location where Amazon GameLift Streams hosts and streams your application. For
+        /// example, <c>us-east-1</c>. For a complete list of locations that Amazon GameLift Streams
+        /// supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions,
         /// quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.
         /// 
         /// </para>
@@ -337,7 +340,9 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property SessionLengthSeconds. 
         /// <para>
-        /// The length of time that Amazon GameLift Streams keeps the game session open.
+        /// The maximum duration of a session. Amazon GameLift Streams will automatically terminate
+        /// a session after this amount of time has elapsed, regardless of any existing client
+        /// connections.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=86400)]
@@ -395,9 +400,53 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the stream session. A stream session can host clients when in
-        /// <c>ACTIVE</c> status.
+        /// The current status of the stream session. A stream session is ready for a client to
+        /// connect when in <c>ACTIVE</c> status.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ACTIVATING</c>: The stream session is starting and preparing to stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ACTIVE</c>: The stream session is ready and waiting for a client connection. A
+        /// client has <c>ConnectionTimeoutSeconds</c> (specified in <c>StartStreamSession</c>)
+        /// from when the session reaches <c>ACTIVE</c> state to establish a connection. If no
+        /// client connects within this timeframe, the session automatically terminates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CONNECTED</c>: The stream session has a connected client. A session will automatically
+        /// terminate if there is no user input for 60 minutes, or if the maximum length of a
+        /// session specified by <c>SessionLengthSeconds</c> in <c>StartStreamSession</c> is exceeded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ERROR</c>: The stream session failed to activate. See <c>StatusReason</c> (returned
+        /// by <c>GetStreamSession</c> and <c>StartStreamSession</c>) for more information.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PENDING_CLIENT_RECONNECTION</c>: A client has recently disconnected and the stream
+        /// session is waiting for the client to reconnect. A client has <c>ConnectionTimeoutSeconds</c>
+        /// (specified in <c>StartStreamSession</c>) from when the session reaches <c>PENDING_CLIENT_RECONNECTION</c>
+        /// state to re-establish a connection. If no client connects within this timeframe, the
+        /// session automatically terminates.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RECONNECTING</c>: A client has initiated a reconnect to a session that was in
+        /// <c>PENDING_CLIENT_RECONNECTION</c> state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TERMINATING</c>: The stream session is ending.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TERMINATED</c>: The stream session has ended.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public StreamSessionStatus Status
         {
@@ -414,8 +463,71 @@ namespace Amazon.GameLiftStreams.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// A short description of the reason the stream session is in <c>ERROR</c> status.
+        /// A short description of the reason the stream session is in <c>ERROR</c> status or
+        /// <c>TERMINATED</c> status.
         /// </para>
+        ///  
+        /// <para>
+        ///  <c>ERROR</c> status reasons:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>applicationLogS3DestinationError</c>: Could not write the application log to the
+        /// Amazon S3 bucket that is configured for the streaming application. Make sure the bucket
+        /// still exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>internalError</c>: An internal service error occurred. Start a new stream session
+        /// to continue streaming.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>invalidSignalRequest</c>: The WebRTC signal request that was sent is not valid.
+        /// When starting or reconnecting to a stream session, use <c>generateSignalRequest</c>
+        /// in the Amazon GameLift Streams Web SDK to generate a new signal request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>placementTimeout</c>: Amazon GameLift Streams could not find available stream
+        /// capacity to start a stream session. Increase the stream capacity in the stream group
+        /// or wait until capacity becomes available.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>TERMINATED</c> status reasons:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>apiTerminated</c>: The stream session was terminated by an API call to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_TerminateStreamSession.html">TerminateStreamSession</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>applicationExit</c>: The streaming application exited or crashed. The stream session
+        /// was terminated because the application is no longer running.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>connectionTimeout</c>: The stream session was terminated because the client failed
+        /// to connect within the connection timeout period specified by <c>ConnectionTimeoutSeconds</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>idleTimeout</c>: The stream session was terminated because it exceeded the idle
+        /// timeout period of 60 minutes with no user input activity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>maxSessionLengthTimeout</c>: The stream session was terminated because it exceeded
+        /// the maximum session length timeout period specified by <c>SessionLengthSeconds</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>reconnectionTimeout</c>: The stream session was terminated because the client
+        /// failed to reconnect within the reconnection timeout period specified by <c>ConnectionTimeoutSeconds</c>
+        /// after losing connection.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public StreamSessionStatusReason StatusReason
         {

@@ -38,10 +38,15 @@ namespace Amazon.Billing.Model
         private BillingViewType _billingViewType;
         private DateTime? _createdAt;
         private Expression _dataFilterExpression;
+        private int? _derivedViewCount;
         private string _description;
+        private BillingViewHealthStatus _healthStatus;
         private string _name;
         private string _ownerAccountId;
+        private string _sourceAccountId;
+        private int? _sourceViewCount;
         private DateTime? _updatedAt;
+        private DateTime? _viewDefinitionLastUpdatedAt;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -101,7 +106,7 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property DataFilterExpression. 
         /// <para>
-        ///  See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+        ///  See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>.
         /// Billing view only supports <c>LINKED_ACCOUNT</c> and <c>Tags</c>. 
         /// </para>
         /// </summary>
@@ -115,6 +120,24 @@ namespace Amazon.Billing.Model
         internal bool IsSetDataFilterExpression()
         {
             return this._dataFilterExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DerivedViewCount. 
+        /// <para>
+        ///  The number of billing views that use this billing view as a source. 
+        /// </para>
+        /// </summary>
+        public int? DerivedViewCount
+        {
+            get { return this._derivedViewCount; }
+            set { this._derivedViewCount = value; }
+        }
+
+        // Check to see if DerivedViewCount property is set
+        internal bool IsSetDerivedViewCount()
+        {
+            return this._derivedViewCount.HasValue; 
         }
 
         /// <summary>
@@ -137,9 +160,27 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HealthStatus. 
+        /// <para>
+        ///  The current health status of the billing view. 
+        /// </para>
+        /// </summary>
+        public BillingViewHealthStatus HealthStatus
+        {
+            get { return this._healthStatus; }
+            set { this._healthStatus = value; }
+        }
+
+        // Check to see if HealthStatus property is set
+        internal bool IsSetHealthStatus()
+        {
+            return this._healthStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  A list of names of the billing view. 
+        ///  The account name of the billing view. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -158,7 +199,7 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property OwnerAccountId. 
         /// <para>
-        ///  The list of owners of the billing view. 
+        /// The account owner of the billing view. 
         /// </para>
         /// </summary>
         public string OwnerAccountId
@@ -171,6 +212,43 @@ namespace Amazon.Billing.Model
         internal bool IsSetOwnerAccountId()
         {
             return this._ownerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAccountId. 
+        /// <para>
+        ///  The Amazon Web Services account ID that owns the source billing view, if this is
+        /// a derived billing view. 
+        /// </para>
+        /// </summary>
+        public string SourceAccountId
+        {
+            get { return this._sourceAccountId; }
+            set { this._sourceAccountId = value; }
+        }
+
+        // Check to see if SourceAccountId property is set
+        internal bool IsSetSourceAccountId()
+        {
+            return this._sourceAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceViewCount. 
+        /// <para>
+        ///  The number of source views associated with this billing view. 
+        /// </para>
+        /// </summary>
+        public int? SourceViewCount
+        {
+            get { return this._sourceViewCount; }
+            set { this._sourceViewCount = value; }
+        }
+
+        // Check to see if SourceViewCount property is set
+        internal bool IsSetSourceViewCount()
+        {
+            return this._sourceViewCount.HasValue; 
         }
 
         /// <summary>
@@ -189,6 +267,24 @@ namespace Amazon.Billing.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewDefinitionLastUpdatedAt. 
+        /// <para>
+        ///  The timestamp of when the billing view definition was last updated. 
+        /// </para>
+        /// </summary>
+        public DateTime? ViewDefinitionLastUpdatedAt
+        {
+            get { return this._viewDefinitionLastUpdatedAt; }
+            set { this._viewDefinitionLastUpdatedAt = value; }
+        }
+
+        // Check to see if ViewDefinitionLastUpdatedAt property is set
+        internal bool IsSetViewDefinitionLastUpdatedAt()
+        {
+            return this._viewDefinitionLastUpdatedAt.HasValue; 
         }
 
     }

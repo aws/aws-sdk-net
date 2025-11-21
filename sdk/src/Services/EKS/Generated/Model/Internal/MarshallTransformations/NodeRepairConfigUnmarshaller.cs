@@ -62,6 +62,36 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("maxParallelNodesRepairedCount", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxParallelNodesRepairedCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("maxParallelNodesRepairedPercentage", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxParallelNodesRepairedPercentage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("maxUnhealthyNodeThresholdCount", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxUnhealthyNodeThresholdCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("maxUnhealthyNodeThresholdPercentage", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxUnhealthyNodeThresholdPercentage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("nodeRepairConfigOverrides", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<NodeRepairConfigOverrides, NodeRepairConfigOverridesUnmarshaller>(NodeRepairConfigOverridesUnmarshaller.Instance);
+                    unmarshalledObject.NodeRepairConfigOverrides = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

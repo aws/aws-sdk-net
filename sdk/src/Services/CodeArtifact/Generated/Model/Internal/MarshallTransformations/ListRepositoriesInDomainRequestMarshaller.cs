@@ -65,6 +65,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetAdministratorAccount())
                 request.Parameters.Add("administrator-account", StringUtils.FromString(publicRequest.AdministratorAccount));
+            if (string.IsNullOrEmpty(publicRequest.Domain))
+                throw new AmazonCodeArtifactException("Request object does not have required field Domain set");
             
             if (publicRequest.IsSetDomain())
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));

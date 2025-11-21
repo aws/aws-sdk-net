@@ -262,6 +262,10 @@ namespace Amazon.PaymentCryptography
         /// Constant HMAC for KeyCheckValueAlgorithm
         /// </summary>
         public static readonly KeyCheckValueAlgorithm HMAC = new KeyCheckValueAlgorithm("HMAC");
+        /// <summary>
+        /// Constant SHA_1 for KeyCheckValueAlgorithm
+        /// </summary>
+        public static readonly KeyCheckValueAlgorithm SHA_1 = new KeyCheckValueAlgorithm("SHA_1");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -627,6 +631,64 @@ namespace Amazon.PaymentCryptography
 
 
     /// <summary>
+    /// Constants used for properties of type KeyReplicationState.
+    /// </summary>
+    public class KeyReplicationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for KeyReplicationState
+        /// </summary>
+        public static readonly KeyReplicationState DELETE_IN_PROGRESS = new KeyReplicationState("DELETE_IN_PROGRESS");
+        /// <summary>
+        /// Constant FAILED for KeyReplicationState
+        /// </summary>
+        public static readonly KeyReplicationState FAILED = new KeyReplicationState("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for KeyReplicationState
+        /// </summary>
+        public static readonly KeyReplicationState IN_PROGRESS = new KeyReplicationState("IN_PROGRESS");
+        /// <summary>
+        /// Constant SYNCHRONIZED for KeyReplicationState
+        /// </summary>
+        public static readonly KeyReplicationState SYNCHRONIZED = new KeyReplicationState("SYNCHRONIZED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyReplicationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyReplicationState FindValue(string value)
+        {
+            return FindValue<KeyReplicationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyReplicationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KeyState.
     /// </summary>
     public class KeyState : ConstantClass
@@ -812,6 +874,114 @@ namespace Amazon.PaymentCryptography
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyUsage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MultiRegionKeyType.
+    /// </summary>
+    public class MultiRegionKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIMARY for MultiRegionKeyType
+        /// </summary>
+        public static readonly MultiRegionKeyType PRIMARY = new MultiRegionKeyType("PRIMARY");
+        /// <summary>
+        /// Constant REPLICA for MultiRegionKeyType
+        /// </summary>
+        public static readonly MultiRegionKeyType REPLICA = new MultiRegionKeyType("REPLICA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MultiRegionKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiRegionKeyType FindValue(string value)
+        {
+            return FindValue<MultiRegionKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiRegionKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SigningAlgorithmType.
+    /// </summary>
+    public class SigningAlgorithmType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHA224 for SigningAlgorithmType
+        /// </summary>
+        public static readonly SigningAlgorithmType SHA224 = new SigningAlgorithmType("SHA224");
+        /// <summary>
+        /// Constant SHA256 for SigningAlgorithmType
+        /// </summary>
+        public static readonly SigningAlgorithmType SHA256 = new SigningAlgorithmType("SHA256");
+        /// <summary>
+        /// Constant SHA384 for SigningAlgorithmType
+        /// </summary>
+        public static readonly SigningAlgorithmType SHA384 = new SigningAlgorithmType("SHA384");
+        /// <summary>
+        /// Constant SHA512 for SigningAlgorithmType
+        /// </summary>
+        public static readonly SigningAlgorithmType SHA512 = new SigningAlgorithmType("SHA512");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SigningAlgorithmType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SigningAlgorithmType FindValue(string value)
+        {
+            return FindValue<SigningAlgorithmType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SigningAlgorithmType(string value)
         {
             return FindValue(value);
         }

@@ -65,9 +65,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetTrafficDistributionGroupId())
                 throw new AmazonConnectException("Request object does not have required field TrafficDistributionGroupId set");
             request.AddPathResource("{TrafficDistributionGroupId}", StringUtils.FromString(publicRequest.TrafficDistributionGroupId));
+            if (string.IsNullOrEmpty(publicRequest.InstanceId))
+                throw new AmazonConnectException("Request object does not have required field InstanceId set");
             
             if (publicRequest.IsSetInstanceId())
                 request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+            if (string.IsNullOrEmpty(publicRequest.UserId))
+                throw new AmazonConnectException("Request object does not have required field UserId set");
             
             if (publicRequest.IsSetUserId())
                 request.Parameters.Add("UserId", StringUtils.FromString(publicRequest.UserId));

@@ -77,6 +77,10 @@ namespace Amazon.EC2.Model
         ///  <c>provisioned-rate</c> - Volume initialized using an Amazon EBS Provisioned Rate
         /// for Volume Initialization.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>volume-copy</c> - Volume copy initialized at the rate for volume copies.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public InitializationType InitializationType

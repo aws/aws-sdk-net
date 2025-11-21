@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutBucketPolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.AddSubResource("policy");
         
@@ -84,8 +85,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.Content = Encoding.UTF8.GetBytes(StringUtils.FromString(publicRequest.Policy));
             request.Headers["Content-Type"] = "text/plain";
             PostMarshallCustomization(request, publicRequest);
-                if (publicRequest.IsSetContentMD5())
-                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
@@ -114,5 +113,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketPolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketPolicyRequest publicRequest);
     }    
 }

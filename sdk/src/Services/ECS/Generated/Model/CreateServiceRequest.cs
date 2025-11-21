@@ -199,6 +199,69 @@ namespace Amazon.ECS.Model
     /// Load balancer requirement: When your service uses Application Load Balancer, Network
     /// Load Balancer, or Service Connect
     /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <c>LINEAR</c>: A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
+    /// traffic from the current production environment to a new environment in equal percentage
+    /// increments. With Amazon ECS linear deployments, you can control the pace of traffic
+    /// shifting and validate new service revisions with increasing amounts of production
+    /// traffic.
+    /// </para>
+    ///  
+    /// <para>
+    /// Linear deployments are best suited for the following scenarios:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Gradual validation: When you want to gradually validate your new service version with
+    /// increasing traffic
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Performance monitoring: When you need time to monitor metrics and performance during
+    /// the deployment
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Risk minimization: When you want to minimize risk by exposing the new version to production
+    /// traffic incrementally
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Load balancer requirement: When your service uses Application Load Balancer or Service
+    /// Connect
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <c>CANARY</c>: A <i>canary</i> deployment strategy (<c>CANARY</c>) shifts a small
+    /// percentage of traffic to the new service revision first, then shifts the remaining
+    /// traffic all at once after a specified time period. This allows you to test the new
+    /// version with a subset of users before full deployment.
+    /// </para>
+    ///  
+    /// <para>
+    /// Canary deployments are best suited for the following scenarios:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Feature testing: When you want to test new features with a small subset of users before
+    /// full rollout
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Production validation: When you need to validate performance and functionality with
+    /// real production traffic
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Blast radius control: When you want to minimize blast radius if issues are discovered
+    /// in the new version
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Load balancer requirement: When your service uses Application Load Balancer or Service
+    /// Connect
+    /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
     /// <para>
     /// External
@@ -275,6 +338,24 @@ namespace Amazon.ECS.Model
         /// an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container
         /// Service Developer Guide</i> </i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The default behavior of <c>AvailabilityZoneRebalancing</c> differs between create
+        /// and update requests:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For create service requests, when no value is specified for <c>AvailabilityZoneRebalancing</c>,
+        /// Amazon ECS defaults the value to <c>ENABLED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For update service requests, when no value is specified for <c>AvailabilityZoneRebalancing</c>,
+        /// Amazon ECS defaults to the existing service’s <c>AvailabilityZoneRebalancing</c> value.
+        /// If the service never had an <c>AvailabilityZoneRebalancing</c> value set, Amazon ECS
+        /// treats this as <c>DISABLED</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
         {
@@ -293,7 +374,12 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The capacity provider strategy to use for the service.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you want to use Amazon ECS Managed Instances, you must use the <c>capacityProviderStrategy</c>
+        /// request parameter and omit the <c>launchType</c> request parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If a <c>capacityProviderStrategy</c> is specified, the <c>launchType</c> parameter
         /// must be omitted. If no <c>capacityProviderStrategy</c> or <c>launchType</c> is specified,
@@ -473,17 +559,14 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
         /// Elastic Load Balancing, VPC Lattice, and container health checks after a task has
-        /// first started. If you don't specify a health check grace period value, the default
-        /// value of <c>0</c> is used. If you don't use any of the health checks, then <c>healthCheckGracePeriodSeconds</c>
+        /// first started. If you do not specify a health check grace period value, the default
+        /// value of 0 is used. If you do not use any of the health checks, then <c>healthCheckGracePeriodSeconds</c>
         /// is unused.
         /// </para>
         ///  
         /// <para>
-        /// If your service's tasks take a while to start and respond to health checks, you can
-        /// specify a health check grace period of up to 2,147,483,647 seconds (about 69 years).
-        /// During that time, the Amazon ECS service scheduler ignores health check status. This
-        /// grace period can prevent the service scheduler from marking tasks as unhealthy and
-        /// stopping them before they have time to come up.
+        /// If your service has more running tasks than desired, unhealthy tasks in the grace
+        /// period might be stopped to reach the desired count.
         /// </para>
         /// </summary>
         public int? HealthCheckGracePeriodSeconds
@@ -504,7 +587,12 @@ namespace Amazon.ECS.Model
         /// The infrastructure that you run your service on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
         /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you want to use Amazon ECS Managed Instances, you must use the <c>capacityProviderStrategy</c>
+        /// request parameter and omit the <c>launchType</c> request parameter.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The <c>FARGATE</c> launch type runs your tasks on Fargate On-Demand infrastructure.
         /// </para>
@@ -551,10 +639,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the service uses the rolling update (<c>ECS</c>) deployment controller and using
-        /// either an Application Load Balancer or Network Load Balancer, you must specify one
-        /// or more target group ARNs to attach to the service. The service-linked role is required
-        /// for services that use multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// If the service uses the <c>ECS</c> deployment controller and using either an Application
+        /// Load Balancer or Network Load Balancer, you must specify one or more target group
+        /// ARNs to attach to the service. The service-linked role is required for services that
+        /// use multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>

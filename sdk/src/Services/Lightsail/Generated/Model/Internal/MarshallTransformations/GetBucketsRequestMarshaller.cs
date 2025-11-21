@@ -87,6 +87,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.IncludeConnectedResources.Value);
             }
 
+            if(publicRequest.IsSetIncludeCors())
+            {
+                context.Writer.WritePropertyName("includeCors");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeCors.Value);
+            }
+
             if(publicRequest.IsSetPageToken())
             {
                 context.Writer.WritePropertyName("pageToken");

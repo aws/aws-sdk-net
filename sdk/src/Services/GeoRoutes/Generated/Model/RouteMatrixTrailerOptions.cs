@@ -46,7 +46,7 @@ namespace Amazon.GeoRoutes.Model
         /// Default Value: <c>0</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public int? TrailerCount
         {
             get { return this._trailerCount; }

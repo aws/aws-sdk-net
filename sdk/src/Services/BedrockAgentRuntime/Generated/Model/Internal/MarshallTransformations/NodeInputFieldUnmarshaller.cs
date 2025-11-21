@@ -56,16 +56,40 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("category", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("content", targetDepth))
                 {
                     var unmarshaller = NodeExecutionContentUnmarshaller.Instance;
                     unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("executionChain", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<NodeInputExecutionChainItem, NodeInputExecutionChainItemUnmarshaller>(NodeInputExecutionChainItemUnmarshaller.Instance);
+                    unmarshalledObject.ExecutionChain = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("source", targetDepth))
+                {
+                    var unmarshaller = NodeInputSourceUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

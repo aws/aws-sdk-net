@@ -30,14 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the Amazon GameLift Servers FleetIQ and game server
-    /// groups.</b> 
-    /// 
-    ///  
-    /// <para>
     /// Properties that describe a game server group resource. A game server group manages
     /// certain properties related to a corresponding Amazon EC2 Auto Scaling group. 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// A game server group is created by a successful call to <c>CreateGameServerGroup</c>

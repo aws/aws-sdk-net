@@ -68,6 +68,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetVoiceToneAnalysisTaskId())
                 throw new AmazonChimeSDKVoiceException("Request object does not have required field VoiceToneAnalysisTaskId set");
             request.AddPathResource("{VoiceToneAnalysisTaskId}", StringUtils.FromString(publicRequest.VoiceToneAnalysisTaskId));
+            if (publicRequest.IsCaller == null)
+                throw new AmazonChimeSDKVoiceException("Request object does not have required field IsCaller set");
             
             if (publicRequest.IsSetIsCaller())
                 request.Parameters.Add("isCaller", StringUtils.FromBool(publicRequest.IsCaller));

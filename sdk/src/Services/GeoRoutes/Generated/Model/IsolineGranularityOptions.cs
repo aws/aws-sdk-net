@@ -66,7 +66,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>meters</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? MaxResolution
         {
             get { return this._maxResolution; }

@@ -323,6 +323,10 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>EnableVgwRoutePropagation</c> - The route was propagated by route propagation.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Advertisement</c> - The route was created dynamically by Amazon VPC Route Server.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public RouteOrigin Origin

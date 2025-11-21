@@ -119,6 +119,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.PeriodicSessionDuration.Value);
             }
 
+            if(publicRequest.IsSetSessionInactivityDuration())
+            {
+                context.Writer.WritePropertyName("SessionInactivityDuration");
+                context.Writer.WriteNumberValue(publicRequest.SessionInactivityDuration.Value);
+            }
+
+            if(publicRequest.IsSetSessionInactivityHandlingEnabled())
+            {
+                context.Writer.WritePropertyName("SessionInactivityHandlingEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.SessionInactivityHandlingEnabled.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

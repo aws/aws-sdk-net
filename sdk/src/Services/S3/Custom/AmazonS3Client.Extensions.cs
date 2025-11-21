@@ -103,7 +103,10 @@ namespace Amazon.S3
         /// <exception cref="T:System.ArgumentNullException" />
         internal string GetPreSignedURLInternal(GetPreSignedUrlRequest request)
         {
-            var credentials = Config.DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials = 
+                ExplicitAWSCredentials ??
+                Config.DefaultAWSCredentials ?? 
+                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
 
             if(credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
@@ -171,7 +174,10 @@ namespace Amazon.S3
         [SuppressMessage("AWSSDKRules", "CR1004")]
         internal async Task<string> GetPreSignedURLInternalAsync(GetPreSignedUrlRequest request)
         {
-            var credentials = Config.DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials = 
+                ExplicitAWSCredentials ??
+                Config.DefaultAWSCredentials ?? 
+                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
 
             if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
@@ -228,7 +234,7 @@ namespace Amazon.S3
                                          string token,
                                          SignatureVersion signatureVersion)
         {
-            IRequest request = new DefaultRequest(getPreSignedUrlRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(getPreSignedUrlRequest, "Amazon.S3");
             request.HttpMethod = getPreSignedUrlRequest.Verb.ToString();
 
             var headers = getPreSignedUrlRequest.Headers;
@@ -670,8 +676,22 @@ namespace Amazon.S3
             // Build the policy document
             var policyDocument = BuildPolicyDocument(request);
 
+            string region;
+            if (!string.IsNullOrEmpty(this.Config.AuthenticationRegion))
+            {
+                region = this.Config.AuthenticationRegion;
+            }
+            else if (!string.IsNullOrEmpty(this.Config.ServiceURL))
+            {
+                region = AWSSDKUtils.DetermineRegion(this.Config.ServiceURL);
+            }
+            else
+            {
+                region = this.Config.RegionEndpoint.SystemName;
+            }
+
             // Use S3PostUploadSignedPolicy to sign the policy
-            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policyDocument, credentials, Config.RegionEndpoint);
+            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policyDocument, credentials, region);
 
             // Build the response
             var response = new CreatePresignedPostResponse();
@@ -709,7 +729,11 @@ namespace Amazon.S3
         {
             ValidateCreatePresignedPostRequest(request);
 
-            var credentials = Config.DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials =
+                ExplicitAWSCredentials ??
+                Config.DefaultAWSCredentials ??
+                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            
             if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
 
@@ -730,7 +754,11 @@ namespace Amazon.S3
         {
             ValidateCreatePresignedPostRequest(request);
 
-            var credentials = Config.DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials =
+                ExplicitAWSCredentials ??
+                Config.DefaultAWSCredentials ??
+                DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+
             if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
 
@@ -748,7 +776,7 @@ namespace Amazon.S3
         /// <returns>Internal request object</returns>
         private static IRequest MarshallCreatePresignedPost(CreatePresignedPostRequest createPresignedPostRequest)
         {
-            IRequest request = new DefaultRequest(createPresignedPostRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(createPresignedPostRequest, "Amazon.S3");
             request.HttpMethod = "POST";
 
             // Post uses root resource path

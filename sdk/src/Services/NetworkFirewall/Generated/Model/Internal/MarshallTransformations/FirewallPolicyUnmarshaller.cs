@@ -56,6 +56,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("EnableTLSSessionHolding", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableTLSSessionHolding = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PolicyVariables", targetDepth))
                 {
                     var unmarshaller = PolicyVariablesUnmarshaller.Instance;

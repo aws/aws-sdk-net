@@ -40,8 +40,7 @@ namespace Amazon.SecurityIR
     /// <summary>
     /// <para>Implementation for accessing SecurityIR</para>
     ///
-    /// This guide provides documents the action and response elements for customer use of
-    /// the service.
+    /// This guide documents the action and response elements for use of the service.
     /// </summary>
     public partial class AmazonSecurityIRClient : AmazonServiceClient, IAmazonSecurityIR
     {
@@ -264,7 +263,15 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to view an existing membership.
+        /// Provides information on whether the supplied account IDs are associated with a membership.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  AWS account ID's may appear less than 12 characters and need to be zero-prepended.
+        /// An example would be <c>123123123</c> which is nine digits, and with zero-prepend would
+        /// be <c>000123123123</c>. Not zero-prepending to 12 digits could result in errors. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetMemberAccountDetails service method.</param>
         /// 
@@ -299,7 +306,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/BatchGetMemberAccountDetails">REST API Reference for BatchGetMemberAccountDetails Operation</seealso>
         public virtual BatchGetMemberAccountDetailsResponse BatchGetMemberAccountDetails(BatchGetMemberAccountDetailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetMemberAccountDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetMemberAccountDetailsResponseUnmarshaller.Instance;
 
@@ -308,7 +315,15 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to view an existing membership.
+        /// Provides information on whether the supplied account IDs are associated with a membership.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  AWS account ID's may appear less than 12 characters and need to be zero-prepended.
+        /// An example would be <c>123123123</c> which is nine digits, and with zero-prepend would
+        /// be <c>000123123123</c>. Not zero-prepending to 12 digits could result in errors. 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetMemberAccountDetails service method.</param>
         /// <param name="cancellationToken">
@@ -346,7 +361,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/BatchGetMemberAccountDetails">REST API Reference for BatchGetMemberAccountDetails Operation</seealso>
         public virtual Task<BatchGetMemberAccountDetailsResponse> BatchGetMemberAccountDetailsAsync(BatchGetMemberAccountDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetMemberAccountDetailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetMemberAccountDetailsResponseUnmarshaller.Instance;
             
@@ -359,7 +374,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to cancel an existing membership.
+        /// Cancels an existing membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelMembership service method.</param>
         /// 
@@ -394,7 +409,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CancelMembership">REST API Reference for CancelMembership Operation</seealso>
         public virtual CancelMembershipResponse CancelMembership(CancelMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMembershipResponseUnmarshaller.Instance;
 
@@ -403,7 +418,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to cancel an existing membership.
+        /// Cancels an existing membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelMembership service method.</param>
         /// <param name="cancellationToken">
@@ -441,7 +456,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CancelMembership">REST API Reference for CancelMembership Operation</seealso>
         public virtual Task<CancelMembershipResponse> CancelMembershipAsync(CancelMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMembershipResponseUnmarshaller.Instance;
             
@@ -454,7 +469,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to close an existing case.
+        /// Closes an existing case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CloseCase service method.</param>
         /// 
@@ -489,7 +504,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CloseCase">REST API Reference for CloseCase Operation</seealso>
         public virtual CloseCaseResponse CloseCase(CloseCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloseCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloseCaseResponseUnmarshaller.Instance;
 
@@ -498,7 +513,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to close an existing case.
+        /// Closes an existing case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CloseCase service method.</param>
         /// <param name="cancellationToken">
@@ -536,7 +551,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CloseCase">REST API Reference for CloseCase Operation</seealso>
         public virtual Task<CloseCaseResponse> CloseCaseAsync(CloseCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CloseCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CloseCaseResponseUnmarshaller.Instance;
             
@@ -549,7 +564,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to create a new case.
+        /// Creates a new case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
         /// 
@@ -584,7 +599,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateCase">REST API Reference for CreateCase Operation</seealso>
         public virtual CreateCaseResponse CreateCase(CreateCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseResponseUnmarshaller.Instance;
 
@@ -593,7 +608,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to create a new case.
+        /// Creates a new case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
         /// <param name="cancellationToken">
@@ -631,7 +646,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateCase">REST API Reference for CreateCase Operation</seealso>
         public virtual Task<CreateCaseResponse> CreateCaseAsync(CreateCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseResponseUnmarshaller.Instance;
             
@@ -644,7 +659,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to add a comment to an existing case.
+        /// Adds a comment to an existing case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCaseComment service method.</param>
         /// 
@@ -679,7 +694,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateCaseComment">REST API Reference for CreateCaseComment Operation</seealso>
         public virtual CreateCaseCommentResponse CreateCaseComment(CreateCaseCommentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseCommentResponseUnmarshaller.Instance;
 
@@ -688,7 +703,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to add a comment to an existing case.
+        /// Adds a comment to an existing case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCaseComment service method.</param>
         /// <param name="cancellationToken">
@@ -726,7 +741,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateCaseComment">REST API Reference for CreateCaseComment Operation</seealso>
         public virtual Task<CreateCaseCommentResponse> CreateCaseCommentAsync(CreateCaseCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseCommentResponseUnmarshaller.Instance;
             
@@ -739,7 +754,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to create a new membership.
+        /// Creates a new membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembership service method.</param>
         /// 
@@ -774,7 +789,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateMembership">REST API Reference for CreateMembership Operation</seealso>
         public virtual CreateMembershipResponse CreateMembership(CreateMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMembershipResponseUnmarshaller.Instance;
 
@@ -783,7 +798,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to create a new membership.
+        /// Creates a new membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembership service method.</param>
         /// <param name="cancellationToken">
@@ -821,7 +836,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/CreateMembership">REST API Reference for CreateMembership Operation</seealso>
         public virtual Task<CreateMembershipResponse> CreateMembershipAsync(CreateMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMembershipResponseUnmarshaller.Instance;
             
@@ -834,7 +849,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grant permission to view a designated case.
+        /// Returns the attributes of a case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCase service method.</param>
         /// 
@@ -869,7 +884,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCase">REST API Reference for GetCase Operation</seealso>
         public virtual GetCaseResponse GetCase(GetCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseResponseUnmarshaller.Instance;
 
@@ -878,7 +893,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grant permission to view a designated case.
+        /// Returns the attributes of a case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCase service method.</param>
         /// <param name="cancellationToken">
@@ -916,7 +931,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCase">REST API Reference for GetCase Operation</seealso>
         public virtual Task<GetCaseResponse> GetCaseAsync(GetCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseResponseUnmarshaller.Instance;
             
@@ -929,7 +944,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to obtain an Amazon S3 presigned URL to download an attachment.
+        /// Returns a Pre-Signed URL for uploading attachments into a case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCaseAttachmentDownloadUrl service method.</param>
         /// 
@@ -964,7 +979,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCaseAttachmentDownloadUrl">REST API Reference for GetCaseAttachmentDownloadUrl Operation</seealso>
         public virtual GetCaseAttachmentDownloadUrlResponse GetCaseAttachmentDownloadUrl(GetCaseAttachmentDownloadUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseAttachmentDownloadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseAttachmentDownloadUrlResponseUnmarshaller.Instance;
 
@@ -973,7 +988,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to obtain an Amazon S3 presigned URL to download an attachment.
+        /// Returns a Pre-Signed URL for uploading attachments into a case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCaseAttachmentDownloadUrl service method.</param>
         /// <param name="cancellationToken">
@@ -1011,7 +1026,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCaseAttachmentDownloadUrl">REST API Reference for GetCaseAttachmentDownloadUrl Operation</seealso>
         public virtual Task<GetCaseAttachmentDownloadUrlResponse> GetCaseAttachmentDownloadUrlAsync(GetCaseAttachmentDownloadUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseAttachmentDownloadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseAttachmentDownloadUrlResponseUnmarshaller.Instance;
             
@@ -1024,7 +1039,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to upload an attachment to a case.
+        /// Uploads an attachment to a case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCaseAttachmentUploadUrl service method.</param>
         /// 
@@ -1059,7 +1074,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCaseAttachmentUploadUrl">REST API Reference for GetCaseAttachmentUploadUrl Operation</seealso>
         public virtual GetCaseAttachmentUploadUrlResponse GetCaseAttachmentUploadUrl(GetCaseAttachmentUploadUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseAttachmentUploadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseAttachmentUploadUrlResponseUnmarshaller.Instance;
 
@@ -1068,7 +1083,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to upload an attachment to a case.
+        /// Uploads an attachment to a case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCaseAttachmentUploadUrl service method.</param>
         /// <param name="cancellationToken">
@@ -1106,7 +1121,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetCaseAttachmentUploadUrl">REST API Reference for GetCaseAttachmentUploadUrl Operation</seealso>
         public virtual Task<GetCaseAttachmentUploadUrlResponse> GetCaseAttachmentUploadUrlAsync(GetCaseAttachmentUploadUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseAttachmentUploadUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseAttachmentUploadUrlResponseUnmarshaller.Instance;
             
@@ -1119,7 +1134,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to get details of a designated service membership.
+        /// Returns the attributes of a membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembership service method.</param>
         /// 
@@ -1154,7 +1169,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetMembership">REST API Reference for GetMembership Operation</seealso>
         public virtual GetMembershipResponse GetMembership(GetMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMembershipResponseUnmarshaller.Instance;
 
@@ -1163,7 +1178,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to get details of a designated service membership.
+        /// Returns the attributes of a membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembership service method.</param>
         /// <param name="cancellationToken">
@@ -1201,7 +1216,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetMembership">REST API Reference for GetMembership Operation</seealso>
         public virtual Task<GetMembershipResponse> GetMembershipAsync(GetMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMembershipResponseUnmarshaller.Instance;
             
@@ -1214,7 +1229,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to view the aidt log for edits made to a designated case.
+        /// Views the case history for edits made to a designated case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCaseEdits service method.</param>
         /// 
@@ -1249,7 +1264,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListCaseEdits">REST API Reference for ListCaseEdits Operation</seealso>
         public virtual ListCaseEditsResponse ListCaseEdits(ListCaseEditsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCaseEditsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCaseEditsResponseUnmarshaller.Instance;
 
@@ -1258,7 +1273,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to view the aidt log for edits made to a designated case.
+        /// Views the case history for edits made to a designated case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCaseEdits service method.</param>
         /// <param name="cancellationToken">
@@ -1296,7 +1311,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListCaseEdits">REST API Reference for ListCaseEdits Operation</seealso>
         public virtual Task<ListCaseEditsResponse> ListCaseEditsAsync(ListCaseEditsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCaseEditsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCaseEditsResponseUnmarshaller.Instance;
             
@@ -1309,7 +1324,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to list all cases the requester has access to.
+        /// Lists all cases the requester has access to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCases service method.</param>
         /// 
@@ -1344,7 +1359,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListCases">REST API Reference for ListCases Operation</seealso>
         public virtual ListCasesResponse ListCases(ListCasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCasesResponseUnmarshaller.Instance;
 
@@ -1353,7 +1368,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to list all cases the requester has access to.
+        /// Lists all cases the requester has access to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCases service method.</param>
         /// <param name="cancellationToken">
@@ -1391,7 +1406,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListCases">REST API Reference for ListCases Operation</seealso>
         public virtual Task<ListCasesResponse> ListCasesAsync(ListCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCasesResponseUnmarshaller.Instance;
             
@@ -1404,7 +1419,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to list and view comments for a designated case.
+        /// Returns comments for a designated case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComments service method.</param>
         /// 
@@ -1439,7 +1454,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListComments">REST API Reference for ListComments Operation</seealso>
         public virtual ListCommentsResponse ListComments(ListCommentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCommentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCommentsResponseUnmarshaller.Instance;
 
@@ -1448,7 +1463,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permissions to list and view comments for a designated case.
+        /// Returns comments for a designated case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComments service method.</param>
         /// <param name="cancellationToken">
@@ -1486,7 +1501,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListComments">REST API Reference for ListComments Operation</seealso>
         public virtual Task<ListCommentsResponse> ListCommentsAsync(ListCommentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCommentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCommentsResponseUnmarshaller.Instance;
             
@@ -1499,7 +1514,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to query the memberships a principal has access to.
+        /// Returns the memberships that the calling principal can access.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemberships service method.</param>
         /// 
@@ -1534,7 +1549,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListMemberships">REST API Reference for ListMemberships Operation</seealso>
         public virtual ListMembershipsResponse ListMemberships(ListMembershipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembershipsResponseUnmarshaller.Instance;
 
@@ -1543,7 +1558,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to query the memberships a principal has access to.
+        /// Returns the memberships that the calling principal can access.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemberships service method.</param>
         /// <param name="cancellationToken">
@@ -1581,7 +1596,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListMemberships">REST API Reference for ListMemberships Operation</seealso>
         public virtual Task<ListMembershipsResponse> ListMembershipsAsync(ListMembershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMembershipsResponseUnmarshaller.Instance;
             
@@ -1594,7 +1609,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to view currently configured tags on a resource.
+        /// Returns currently configured tags on a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1629,7 +1644,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1638,7 +1653,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to view currently configured tags on a resource.
+        /// Returns currently configured tags on a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1676,7 +1691,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1689,7 +1704,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to add a tag(s) to a designated resource.
+        /// Adds a tag(s) to a designated resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1724,7 +1739,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1733,7 +1748,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to add a tag(s) to a designated resource.
+        /// Adds a tag(s) to a designated resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1771,7 +1786,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1784,7 +1799,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to remove a tag(s) from a designate resource.
+        /// Removes a tag(s) from a designate resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1819,7 +1834,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1828,7 +1843,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to remove a tag(s) from a designate resource.
+        /// Removes a tag(s) from a designate resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1866,7 +1881,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1879,7 +1894,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update an existing case.
+        /// Updates an existing case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCase service method.</param>
         /// 
@@ -1914,7 +1929,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCase">REST API Reference for UpdateCase Operation</seealso>
         public virtual UpdateCaseResponse UpdateCase(UpdateCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseResponseUnmarshaller.Instance;
 
@@ -1923,7 +1938,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update an existing case.
+        /// Updates an existing case.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCase service method.</param>
         /// <param name="cancellationToken">
@@ -1961,7 +1976,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCase">REST API Reference for UpdateCase Operation</seealso>
         public virtual Task<UpdateCaseResponse> UpdateCaseAsync(UpdateCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseResponseUnmarshaller.Instance;
             
@@ -1974,7 +1989,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update an existing case comment.
+        /// Updates an existing case comment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCaseComment service method.</param>
         /// 
@@ -2009,7 +2024,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCaseComment">REST API Reference for UpdateCaseComment Operation</seealso>
         public virtual UpdateCaseCommentResponse UpdateCaseComment(UpdateCaseCommentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseCommentResponseUnmarshaller.Instance;
 
@@ -2018,7 +2033,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update an existing case comment.
+        /// Updates an existing case comment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCaseComment service method.</param>
         /// <param name="cancellationToken">
@@ -2056,7 +2071,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCaseComment">REST API Reference for UpdateCaseComment Operation</seealso>
         public virtual Task<UpdateCaseCommentResponse> UpdateCaseCommentAsync(UpdateCaseCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseCommentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseCommentResponseUnmarshaller.Instance;
             
@@ -2069,9 +2084,48 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update the status for a designated cases. Options include <c>Submitted
-        /// | Detection and Analysis | Eradication, Containment and Recovery | Post-Incident Activities
-        /// | Closed</c>.
+        /// Updates the state transitions for a designated cases.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Self-managed</b>: the following states are available for self-managed cases. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Submitted → Detection and Analysis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detection and Analysis → Containment, Eradication, and Recovery
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detection and Analysis → Post-incident Activities
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Containment, Eradication, and Recovery → Detection and Analysis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Containment, Eradication, and Recovery → Post-incident Activities
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Post-incident Activities → Containment, Eradication, and Recovery
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Post-incident Activities → Detection and Analysis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any → Closed
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>AWS supported</b>: You must use the <c>CloseCase</c> API to close. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCaseStatus service method.</param>
         /// 
@@ -2106,7 +2160,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCaseStatus">REST API Reference for UpdateCaseStatus Operation</seealso>
         public virtual UpdateCaseStatusResponse UpdateCaseStatus(UpdateCaseStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseStatusResponseUnmarshaller.Instance;
 
@@ -2115,9 +2169,48 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update the status for a designated cases. Options include <c>Submitted
-        /// | Detection and Analysis | Eradication, Containment and Recovery | Post-Incident Activities
-        /// | Closed</c>.
+        /// Updates the state transitions for a designated cases.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Self-managed</b>: the following states are available for self-managed cases. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Submitted → Detection and Analysis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detection and Analysis → Containment, Eradication, and Recovery
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detection and Analysis → Post-incident Activities
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Containment, Eradication, and Recovery → Detection and Analysis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Containment, Eradication, and Recovery → Post-incident Activities
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Post-incident Activities → Containment, Eradication, and Recovery
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Post-incident Activities → Detection and Analysis
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Any → Closed
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>AWS supported</b>: You must use the <c>CloseCase</c> API to close. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCaseStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2155,7 +2248,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateCaseStatus">REST API Reference for UpdateCaseStatus Operation</seealso>
         public virtual Task<UpdateCaseStatusResponse> UpdateCaseStatusAsync(UpdateCaseStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseStatusResponseUnmarshaller.Instance;
             
@@ -2168,7 +2261,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants access to UpdateMembership to change membership configuration.
+        /// Updates membership configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMembership service method.</param>
         /// 
@@ -2203,7 +2296,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateMembership">REST API Reference for UpdateMembership Operation</seealso>
         public virtual UpdateMembershipResponse UpdateMembership(UpdateMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMembershipResponseUnmarshaller.Instance;
 
@@ -2212,7 +2305,7 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants access to UpdateMembership to change membership configuration.
+        /// Updates membership configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMembership service method.</param>
         /// <param name="cancellationToken">
@@ -2250,7 +2343,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateMembership">REST API Reference for UpdateMembership Operation</seealso>
         public virtual Task<UpdateMembershipResponse> UpdateMembershipAsync(UpdateMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMembershipResponseUnmarshaller.Instance;
             
@@ -2263,16 +2356,13 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update the resolver type for a case.
+        /// Updates the resolver type for a case.
         /// 
         ///  <important> 
         /// <para>
         /// This is a one-way action and cannot be reversed.
         /// </para>
-        ///  </important> 
-        /// <para>
-        /// Options include self-supported &gt; AWS-supported.
-        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResolverType service method.</param>
         /// 
@@ -2307,7 +2397,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateResolverType">REST API Reference for UpdateResolverType Operation</seealso>
         public virtual UpdateResolverTypeResponse UpdateResolverType(UpdateResolverTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResolverTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResolverTypeResponseUnmarshaller.Instance;
 
@@ -2316,16 +2406,13 @@ namespace Amazon.SecurityIR
 
 
         /// <summary>
-        /// Grants permission to update the resolver type for a case.
+        /// Updates the resolver type for a case.
         /// 
         ///  <important> 
         /// <para>
         /// This is a one-way action and cannot be reversed.
         /// </para>
-        ///  </important> 
-        /// <para>
-        /// Options include self-supported &gt; AWS-supported.
-        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResolverType service method.</param>
         /// <param name="cancellationToken">
@@ -2363,7 +2450,7 @@ namespace Amazon.SecurityIR
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/UpdateResolverType">REST API Reference for UpdateResolverType Operation</seealso>
         public virtual Task<UpdateResolverTypeResponse> UpdateResolverTypeAsync(UpdateResolverTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResolverTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResolverTypeResponseUnmarshaller.Instance;
             

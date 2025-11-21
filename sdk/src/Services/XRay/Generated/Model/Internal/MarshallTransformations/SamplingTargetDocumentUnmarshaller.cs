@@ -86,6 +86,12 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     unmarshalledObject.RuleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SamplingBoost", targetDepth))
+                {
+                    var unmarshaller = SamplingBoostUnmarshaller.Instance;
+                    unmarshalledObject.SamplingBoost = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

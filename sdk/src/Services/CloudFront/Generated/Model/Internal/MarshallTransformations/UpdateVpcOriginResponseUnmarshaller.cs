@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UpdateVpcOrigin operation
     /// </summary>  
-    public class UpdateVpcOriginResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class UpdateVpcOriginResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -50,6 +50,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("ETag"))
                 response.ETag = context.ResponseData.GetHeaderValue("ETag");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -77,7 +78,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -147,6 +147,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, UpdateVpcOriginResponse response);
 
         private static UpdateVpcOriginResponseUnmarshaller _instance = new UpdateVpcOriginResponseUnmarshaller();        
 

@@ -100,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IpAddressType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IpAddressType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -524,6 +524,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
                         }
+                        if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetRequireEncryptionInTransit())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "RequireEncryptionInTransit", StringUtils.FromBool(publicRequest.LaunchTemplateData.InstanceRequirements.RequireEncryptionInTransit));
+                        }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetRequireHibernateSupport())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequest.LaunchTemplateData.InstanceRequirements.RequireHibernateSupport));
@@ -836,6 +840,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         if(publicRequest.LaunchTemplateData.Placement.IsSetAvailabilityZone())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "AvailabilityZone", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.AvailabilityZone));
+                        }
+                        if(publicRequest.LaunchTemplateData.Placement.IsSetAvailabilityZoneId())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "Placement" + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequest.LaunchTemplateData.Placement.AvailabilityZoneId));
                         }
                         if(publicRequest.LaunchTemplateData.Placement.IsSetGroupId())
                         {

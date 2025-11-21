@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomErrorResponses Object
     /// </summary>  
-    public class CustomErrorResponsesUnmarshaller : IXmlUnmarshaller<CustomErrorResponses, XmlUnmarshallerContext>
+    public partial class CustomErrorResponsesUnmarshaller : IXmlUnmarshaller<CustomErrorResponses, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -72,6 +72,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -80,6 +82,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, CustomErrorResponses unmarshalledObject, int targetDepth);
+
         private static CustomErrorResponsesUnmarshaller _instance = new CustomErrorResponsesUnmarshaller();        
 
         /// <summary>

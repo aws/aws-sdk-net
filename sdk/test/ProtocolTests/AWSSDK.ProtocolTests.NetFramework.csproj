@@ -32,15 +32,18 @@
       <ProjectReference Include="../Common/AWSSDK.CommonTest.csproj" />
       <ProjectReference Include="../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
       <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
-	  <ProjectReference Include="../Services/RestJsonProtocol/AWSSDK.RestJsonProtocol.NetFramework.csproj" />
-	  <ProjectReference Include="../Services/JSONRPC10/AWSSDK.JSONRPC10.NetFramework.csproj" />
-	  <ProjectReference Include="../Services/JsonProtocol/AWSSDK.JsonProtocol.NetFramework.csproj" />
-	  <ProjectReference Include="../Services/QueryProtocol/AWSSDK.QueryProtocol.NetFramework.csproj" />
-	  <ProjectReference Include="../Services/EC2Protocol/AWSSDK.EC2Protocol.NetFramework.csproj" />
-	  <ProjectReference Include="../Services/RestXmlProtocol/AWSSDK.RestXmlProtocol.NetFramework.csproj" />
-	  <ProjectReference Include="../Services/RestXmlProtocolNamespace/AWSSDK.RestXmlProtocolNamespace.NetFramework.csproj" />
+      <ProjectReference Include="../Services/RestJsonProtocol/AWSSDK.RestJsonProtocol.NetFramework.csproj" />
+      <ProjectReference Include="../Services/JSONRPC10/AWSSDK.JSONRPC10.NetFramework.csproj" />
+      <ProjectReference Include="../Services/JsonProtocol/AWSSDK.JsonProtocol.NetFramework.csproj" />
+      <ProjectReference Include="../Services/QueryProtocol/AWSSDK.QueryProtocol.NetFramework.csproj" />
+      <ProjectReference Include="../Services/EC2Protocol/AWSSDK.EC2Protocol.NetFramework.csproj" />
+      <ProjectReference Include="../Services/RestXmlProtocol/AWSSDK.RestXmlProtocol.NetFramework.csproj" />
+      <ProjectReference Include="../Services/RestXmlProtocolNamespace/AWSSDK.RestXmlProtocolNamespace.NetFramework.csproj" />
+      <ProjectReference Include="../Services/RpcV2Protocol/AWSSDK.RpcV2Protocol.NetFramework.csproj" />
       <ProjectReference Include="../UnitTests/Custom/AWSSDK.UnitTestUtilities.NetFramework.csproj" />
-      <ProjectReference Include="..\Services\QueryCompatibleJSONRPC10\AWSSDK.QueryCompatibleJSONRPC10.NetFramework.csproj" />
+      <ProjectReference Include="../Services/NonQueryCompatibleRpcV2Protocol/AWSSDK.NonQueryCompatibleRpcV2Protocol.NetFramework.csproj" />
+      <ProjectReference Include="../Services/QueryCompatibleJSONRPC10/AWSSDK.QueryCompatibleJSONRPC10.NetFramework.csproj" />
+      <ProjectReference Include="../Services/QueryCompatibleRpcV2Protocol/AWSSDK.QueryCompatibleRpcV2Protocol.NetFramework.csproj" />
     </ItemGroup>
     <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
     </ItemGroup>
@@ -54,6 +57,6 @@
           <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Generated\QueryCompatibleJSONRPC10\dotnet-protocol-test-codegen\" />
+      <Folder Include="Generated/QueryCompatibleJSONRPC10/dotnet-protocol-test-codegen/" />
     </ItemGroup>
   </Project>

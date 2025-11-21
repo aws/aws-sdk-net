@@ -37,7 +37,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(GetBucketIntelligentTieringConfigurationRequest getBucketIntelligentTieringConfigurationRequest)
         {
-            IRequest request = new DefaultRequest(getBucketIntelligentTieringConfigurationRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(getBucketIntelligentTieringConfigurationRequest, "Amazon.S3");
 
             request.Suppress404Exceptions = true;
             request.HttpMethod = "GET";

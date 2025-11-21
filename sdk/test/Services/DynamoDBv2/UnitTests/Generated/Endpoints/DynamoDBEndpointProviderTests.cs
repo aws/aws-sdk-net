@@ -677,21 +677,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
-        [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
@@ -701,21 +686,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dynamodb-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
-        [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -737,21 +707,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
-        [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
-        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
         [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
         public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
@@ -761,21 +716,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dynamodb-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("DynamoDBv2")]
-        [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
-        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new DynamoDBEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -3487,7 +3427,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dynamodb.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://111111111111.ddb.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -3685,7 +3625,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dynamodb.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://222222222222.ddb.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -3804,7 +3744,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://dynamodb.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://333333333333.ddb.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -3897,7 +3837,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -3907,6 +3846,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://111111111111.ddb.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -4095,7 +4035,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4105,6 +4044,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://222222222222.ddb.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -4214,7 +4154,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regionuseast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4224,6 +4163,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "required";
             parameters["Region"] = "us-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://333333333333.ddb.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -4316,7 +4256,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4514,7 +4454,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -4633,7 +4573,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required and DualStack is enabled, but DualStack account endpoints are not supported")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModerequired_Regioncnnorth1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -5539,7 +5479,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
         public void UseFIPStrue_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -5549,6 +5488,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -5573,7 +5513,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
         public void UseFIPSfalse_UseDualStacktrue_AccountId111111111111_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -5583,6 +5522,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dynamodb.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -5737,7 +5677,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -5747,6 +5686,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -5771,7 +5711,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnarnawsdynamodbuseast1222222222222tabletable_name_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -5781,6 +5720,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dynamodb.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -5856,7 +5796,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
         public void UseFIPStrue_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -5866,6 +5805,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -5890,7 +5830,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("Endpoints")]
         [TestCategory("DynamoDBv2")]
         [Description("{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}")]
-        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
         public void UseFIPSfalse_UseDualStacktrue_ResourceArnListarnawsdynamodbuseast1333333333333tabletable_name_AccountIdEndpointModepreferred_Regionusisoeast1_Test()
         {
             var parameters = new DynamoDBEndpointParameters();
@@ -5900,6 +5839,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "preferred";
             parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://dynamodb.us-iso-east-1.api.aws.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -6370,6 +6310,104 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://dynamodb.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DynamoDBv2")]
+        [Description("{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}")]
+        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
+        public void Endpointhttpsdynamodbuseast1apiaws_Regionuseast1_Test()
+        {
+            var parameters = new DynamoDBEndpointParameters();
+            parameters["Endpoint"] = "https://dynamodb.us-east-1.api.aws";
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DynamoDBv2")]
+        [Description("{Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1}")]
+        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
+        public void Endpointhttpsdynamodbusgoveast1apiaws_Regionusgoveast1_Test()
+        {
+            var parameters = new DynamoDBEndpointParameters();
+            parameters["Endpoint"] = "https://dynamodb.us-gov-east-1.api.aws";
+            parameters["Region"] = "us-gov-east-1";
+            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DynamoDBv2")]
+        [Description("{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}")]
+        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
+        public void Endpointhttpsdynamodbcnnorth1apiamazonwebservicescomcn_Regioncnnorth1_Test()
+        {
+            var parameters = new DynamoDBEndpointParameters();
+            parameters["Endpoint"] = "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn";
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DynamoDBv2")]
+        [Description("{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}")]
+        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
+        public void Endpointhttpsdynamodbuswest2apiaws_Regionuswest2_Test()
+        {
+            var parameters = new DynamoDBEndpointParameters();
+            parameters["Endpoint"] = "https://dynamodb.us-west-2.api.aws";
+            parameters["Region"] = "us-west-2";
+            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DynamoDBv2")]
+        [Description("{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}")]
+        [ExpectedException(typeof(AmazonClientException), @"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html")]
+        public void Endpointhttpsdynamodbeuwest1apiaws_Regioneuwest1_Test()
+        {
+            var parameters = new DynamoDBEndpointParameters();
+            parameters["Endpoint"] = "https://dynamodb.eu-west-1.api.aws";
+            parameters["Region"] = "eu-west-1";
+            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DynamoDBv2")]
+        [Description("{Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1}")]
+        public void Endpointhttpsvpce1a2b3c4d5e6fdynamodbuseast1vpceapiaws_Regionuseast1_Test()
+        {
+            var parameters = new DynamoDBEndpointParameters();
+            parameters["Endpoint"] = "https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws";
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("DynamoDBv2")]
+        [Description("{Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1}")]
+        public void Endpointhttps111111111111ddbuseast1apiaws_Regionuseast1_Test()
+        {
+            var parameters = new DynamoDBEndpointParameters();
+            parameters["Endpoint"] = "https://111111111111.ddb.us-east-1.api.aws";
+            parameters["Region"] = "us-east-1";
+            var endpoint = new AmazonDynamoDBEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://111111111111.ddb.us-east-1.api.aws", endpoint.URL);
         }
 
     }

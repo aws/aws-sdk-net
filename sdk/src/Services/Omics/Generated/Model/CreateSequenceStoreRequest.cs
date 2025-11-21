@@ -31,7 +31,44 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSequenceStore operation.
-    /// Creates a sequence store.
+    /// Creates a sequence store and returns its metadata. Sequence stores are used to store
+    /// sequence data files called read sets that are saved in FASTQ, BAM, uBAM, or CRAM formats.
+    /// For aligned formats (BAM and CRAM), a sequence store can only use one reference genome.
+    /// For unaligned formats (FASTQ and uBAM), a reference genome is not required. You can
+    /// create multiple sequence stores per region per account. 
+    /// 
+    ///  
+    /// <para>
+    /// The following are optional parameters you can specify for your sequence store:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Use <c>s3AccessConfig</c> to configure your sequence store with S3 access logs (recommended).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <c>sseConfig</c> to define your own KMS key for encryption.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <c>eTagAlgorithmFamily</c> to define which algorithm to use for the HealthOmics
+    /// eTag on objects.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <c>fallbackLocation</c> to define a backup location for storing files that have
+    /// failed a direct upload.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <c>propagatedSetLevelTags</c> to configure tags that propagate to all objects
+    /// in your store.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html">Creating
+    /// a HealthOmics sequence store</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateSequenceStoreRequest : AmazonOmicsRequest
     {
@@ -48,8 +85,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// To ensure that requests don't run multiple times, specify a unique token for each
-        /// request.
+        /// An idempotency token used to dedupe retry requests so that duplicate runs are not
+        /// created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -87,7 +124,9 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ETagAlgorithmFamily. 
         /// <para>
-        /// The ETag algorithm family to use for ingested read sets.
+        /// The ETag algorithm family to use for ingested read sets. The default value is MD5up.
+        /// For more information on ETags, see <a href="https://docs.aws.amazon.com/omics/latest/dev/etags-and-provenance.html">ETags
+        /// and data provenance</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         public ETagAlgorithmFamily ETagAlgorithmFamily
@@ -105,7 +144,9 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property FallbackLocation. 
         /// <para>
-        /// An S3 location that is used to store files that have failed a direct upload.
+        /// An S3 location that is used to store files that have failed a direct upload. You can
+        /// add or change the <c>fallbackLocation</c> after creating a sequence store. This is
+        /// not required if you are uploading files from a different S3 bucket.
         /// </para>
         /// </summary>
         public string FallbackLocation
@@ -143,7 +184,7 @@ namespace Amazon.Omics.Model
         /// Gets and sets the property PropagatedSetLevelTags. 
         /// <para>
         /// The tags keys to propagate to the S3 objects associated with read sets in the sequence
-        /// store.
+        /// store. These tags can be used as input to add metadata to your read sets.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -167,7 +208,9 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property S3AccessConfig. 
         /// <para>
-        /// S3 access configuration parameters
+        /// S3 access configuration parameters. This specifies the parameters needed to access
+        /// logs stored in S3 buckets. The S3 bucket must be in the same region and account as
+        /// the sequence store. 
         /// </para>
         /// </summary>
         public S3AccessConfig S3AccessConfig
@@ -203,7 +246,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags for the store.
+        /// Tags for the store. You can configure up to 50 tags.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

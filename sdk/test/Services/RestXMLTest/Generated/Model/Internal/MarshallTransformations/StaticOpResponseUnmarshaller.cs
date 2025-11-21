@@ -36,7 +36,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StaticOp operation
     /// </summary>  
-    public class StaticOpResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class StaticOpResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
         {
             StaticOpResponse response = new StaticOpResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.RestXMLTest.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXMLTestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, StaticOpResponse response);
 
         private static StaticOpResponseUnmarshaller _instance = new StaticOpResponseUnmarshaller();        
 

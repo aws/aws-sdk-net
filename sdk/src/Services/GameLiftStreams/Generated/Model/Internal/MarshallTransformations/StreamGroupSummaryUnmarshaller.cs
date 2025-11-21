@@ -80,6 +80,12 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ExpiresAt", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ExpiresAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

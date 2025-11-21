@@ -122,7 +122,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/filter-controls.html">Adding
-        /// filter controls to analysis sheets</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// filter controls to analysis sheets</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -175,7 +175,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types
-        /// of layout</a> in the <i>Amazon QuickSight User Guide</i>.
+        /// of layout</a> in the <i>Amazon Quick Suite User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -199,7 +199,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the sheet. This name is displayed on the sheet's tab in the Amazon QuickSight
+        /// The name of the sheet. This name is displayed on the sheet's tab in the Quick Suite
         /// console.
         /// </para>
         /// </summary>
@@ -224,8 +224,8 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-controls.html">Using
-        /// a Control with a Parameter in Amazon QuickSight</a> in the <i>Amazon QuickSight User
-        /// Guide</i>.
+        /// a Control with a Parameter in Amazon Quick Sight</a> in the <i>Amazon Quick Suite
+        /// User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

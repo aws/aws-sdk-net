@@ -68,6 +68,18 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     unmarshalledObject.FilterPattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("logRedactionConfiguration", targetDepth))
+                {
+                    var unmarshaller = LogRedactionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LogRedactionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("logType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

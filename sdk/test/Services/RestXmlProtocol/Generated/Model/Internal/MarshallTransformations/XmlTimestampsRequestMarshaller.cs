@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(XmlTimestampsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/XmlTimestamps";
 
@@ -120,5 +121,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, XmlTimestampsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, XmlTimestampsRequest publicRequest);
     }    
 }

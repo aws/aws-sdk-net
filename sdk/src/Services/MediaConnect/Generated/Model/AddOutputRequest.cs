@@ -45,9 +45,12 @@ namespace Amazon.MediaConnect.Model
         private string _ndiProgramName;
         private int? _ndiSpeedHqQuality;
         private OutputStatus _outputStatus;
+        private Dictionary<string, string> _outputTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _port;
         private Protocol _protocol;
         private string _remoteId;
+        private State _routerIntegrationState;
+        private FlowTransitEncryption _routerIntegrationTransitEncryption;
         private int? _senderControlPort;
         private int? _smoothingLatency;
         private string _streamId;
@@ -275,6 +278,29 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputTags. 
+        /// <para>
+        ///  The key-value pairs that can be used to tag and organize the output. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> OutputTags
+        {
+            get { return this._outputTags; }
+            set { this._outputTags = value; }
+        }
+
+        // Check to see if OutputTags property is set
+        internal bool IsSetOutputTags()
+        {
+            return this._outputTags != null && (this._outputTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         ///  The port to use when content is distributed to this output.
@@ -304,7 +330,6 @@ namespace Amazon.MediaConnect.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Protocol Protocol
         {
             get { return this._protocol; }
@@ -333,6 +358,40 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetRemoteId()
         {
             return this._remoteId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationState. 
+        /// <para>
+        /// Indicates whether to enable or disable router integration when creating a new flow
+        /// output.
+        /// </para>
+        /// </summary>
+        public State RouterIntegrationState
+        {
+            get { return this._routerIntegrationState; }
+            set { this._routerIntegrationState = value; }
+        }
+
+        // Check to see if RouterIntegrationState property is set
+        internal bool IsSetRouterIntegrationState()
+        {
+            return this._routerIntegrationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationTransitEncryption.
+        /// </summary>
+        public FlowTransitEncryption RouterIntegrationTransitEncryption
+        {
+            get { return this._routerIntegrationTransitEncryption; }
+            set { this._routerIntegrationTransitEncryption = value; }
+        }
+
+        // Check to see if RouterIntegrationTransitEncryption property is set
+        internal bool IsSetRouterIntegrationTransitEncryption()
+        {
+            return this._routerIntegrationTransitEncryption != null;
         }
 
         /// <summary>

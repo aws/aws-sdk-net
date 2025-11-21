@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LinkedService Object
     /// </summary>  
-    public class LinkedServiceUnmarshaller : IXmlUnmarshaller<LinkedService, XmlUnmarshallerContext>
+    public partial class LinkedServiceUnmarshaller : IXmlUnmarshaller<LinkedService, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, LinkedService unmarshalledObject, int targetDepth);
+
         private static LinkedServiceUnmarshaller _instance = new LinkedServiceUnmarshaller();        
 
         /// <summary>

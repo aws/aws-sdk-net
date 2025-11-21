@@ -56,8 +56,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomLanguageCode. Specify the language for this captions
-        /// channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+        /// Gets and sets the property CustomLanguageCode. Specify the language, using an ISO
+        /// 639-2 three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
         /// </summary>
         [AWSProperty(Min=3, Max=3)]
         public string CustomLanguageCode
@@ -73,8 +73,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LanguageCode. Specify the language, using the ISO 639-2
-        /// three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
+        /// Gets and sets the property LanguageCode. Specify the language, using an ISO 639-2
+        /// three-letter code in all capital letters. You can find a list of codes at: https://www.loc.gov/standards/iso639-2/php/code_list.php
         /// </summary>
         public LanguageCode LanguageCode
         {

@@ -87,6 +87,10 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RegionSetupInProgressException"))
+                {
+                    return RegionSetupInProgressExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
                 {
                     return ServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

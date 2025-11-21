@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Provides a description of the operation failure error
+    /// A description of the error that caused an operation to fail.
     /// </summary>
     public partial class ErrorInfo
     {

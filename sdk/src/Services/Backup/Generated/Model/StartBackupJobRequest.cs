@@ -42,6 +42,7 @@ namespace Amazon.Backup.Model
         private string _idempotencyToken;
         private Index _index;
         private Lifecycle _lifecycle;
+        private string _logicallyAirGappedBackupVaultArn;
         private Dictionary<string, string> _recoveryPointTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceArn;
         private long? _startWindowMinutes;
@@ -242,6 +243,28 @@ namespace Amazon.Backup.Model
         internal bool IsSetLifecycle()
         {
             return this._lifecycle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogicallyAirGappedBackupVaultArn. 
+        /// <para>
+        /// The ARN of a logically air-gapped vault. ARN must be in the same account and Region.
+        /// If provided, supported fully managed resources back up directly to logically air-gapped
+        /// vault, while other supported resources create a temporary (billable) snapshot in backup
+        /// vault, then copy it to logically air-gapped vault. Unsupported resources only back
+        /// up to the specified backup vault.
+        /// </para>
+        /// </summary>
+        public string LogicallyAirGappedBackupVaultArn
+        {
+            get { return this._logicallyAirGappedBackupVaultArn; }
+            set { this._logicallyAirGappedBackupVaultArn = value; }
+        }
+
+        // Check to see if LogicallyAirGappedBackupVaultArn property is set
+        internal bool IsSetLogicallyAirGappedBackupVaultArn()
+        {
+            return this._logicallyAirGappedBackupVaultArn != null;
         }
 
         /// <summary>

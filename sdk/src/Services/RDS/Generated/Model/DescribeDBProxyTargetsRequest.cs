@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
         /// The identifier of the <c>DBProxyTarget</c> to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string DBProxyName
         {
             get { return this._dbProxyName; }
@@ -138,6 +138,7 @@ namespace Amazon.RDS.Model
         /// The identifier of the <c>DBProxyTargetGroup</c> to describe.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string TargetGroupName
         {
             get { return this._targetGroupName; }

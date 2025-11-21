@@ -265,6 +265,10 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.AuthenticationRegion = defaultConfig.AuthenticationRegion;
             }
+            if (defaultConfig.AuthSchemePreference != null)
+            {
+                config.AuthSchemePreference = defaultConfig.AuthSchemePreference;
+            }
             if (defaultConfig.BufferSize.HasValue)
             {
                 config.BufferSize = defaultConfig.BufferSize.Value;
@@ -329,6 +333,10 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.RetryMode = defaultConfig.RetryMode.Value;
             }
+            if (defaultConfig.SigV4aSigningRegionSet != null)
+            {
+                config.SigV4aSigningRegionSet = defaultConfig.SigV4aSigningRegionSet;
+            }
             if (defaultConfig.ThrottleRetries.HasValue)
             {
                 config.ThrottleRetries = defaultConfig.ThrottleRetries.Value;
@@ -341,6 +349,10 @@ namespace Amazon.Extensions.NETCore.Setup
             if (defaultConfig.ConnectTimeout.HasValue)
             {
                 config.ConnectTimeout = defaultConfig.ConnectTimeout.Value;
+            }
+            if (defaultConfig.MaxConnectionsPerServer.HasValue)
+            {
+                config.MaxConnectionsPerServer = defaultConfig.MaxConnectionsPerServer.Value;
             }
 #endif
             if (defaultConfig.UseAlternateUserAgentHeader.HasValue)

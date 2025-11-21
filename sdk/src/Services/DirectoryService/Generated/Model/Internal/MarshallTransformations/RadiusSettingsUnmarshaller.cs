@@ -86,6 +86,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.RadiusServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RadiusServersIpv6", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RadiusServersIpv6 = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RadiusTimeout", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

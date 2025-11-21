@@ -110,22 +110,40 @@ namespace Amazon.Runtime.Internal
         /// Sets the X-Amzn-Trace-Id header for recursion detection within Lambda workloads.
         /// </summary>
         /// <param name="headers">Current request headers before marshalling.</param>
-        private static void SetRecursionDetectionHeader(IDictionary<string, string> headers)
+        internal static void SetRecursionDetectionHeader(IDictionary<string, string> headers)
         {
             if (!headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader))
             {
                 var lambdaFunctionName = Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_FUNCTION_NAME);
-                var amznTraceId = Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
-
-                if (!string.IsNullOrEmpty(lambdaFunctionName) && !string.IsNullOrEmpty(amznTraceId))
+                if (!string.IsNullOrEmpty(lambdaFunctionName))
                 {
-                    headers[HeaderKeys.XAmznTraceIdHeader] = AWSSDKUtils.EncodeTraceIdHeaderValue(amznTraceId);
+                    string amznTraceId;
+                    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(EnvironmentVariables.AWS_LAMBDA_MAX_CONCURRENCY)))
+                    {
+                        amznTraceId = SDKTaskContext.Default.Get(EnvironmentVariables._X_AMZN_TRACE_ID)?.ToString() ??
+                                            Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
+                    }
+                    else
+                    {
+                        amznTraceId = Environment.GetEnvironmentVariable(EnvironmentVariables._X_AMZN_TRACE_ID);
+                    }
+
+                    if (!string.IsNullOrEmpty(amznTraceId))
+                    {
+                        headers[HeaderKeys.XAmznTraceIdHeader] = AWSSDKUtils.EncodeTraceIdHeaderValue(amznTraceId);
+                    }
                 }
             }
         }
 
         private static void UpdateUserAgentDetails(IRequestContext requestContext)
         {
+            if (requestContext.Request.Headers.TryGetValue("smithy-protocol", out var smithyProtocol)
+                && smithyProtocol == "rpc-v2-cbor")
+            {
+                requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.PROTOCOL_RPC_V2_CBOR);
+            }
+
             var accountIdMode = requestContext.ClientConfig.AccountIdEndpointMode;
             if (accountIdMode == AccountIdEndpointMode.DISABLED)
                 requestContext.UserAgentDetails.AddFeature(UserAgentFeatureId.ACCOUNT_ID_MODE_DISABLED);

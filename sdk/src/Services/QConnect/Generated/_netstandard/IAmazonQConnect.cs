@@ -842,6 +842,10 @@ namespace Amazon.QConnect
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.DependencyFailedException">
+        /// An error occurred while calling a dependency. For example, calling <c>connect:DecribeContact</c>
+        /// as part of <c>CreateSession</c> with a contactArn.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>

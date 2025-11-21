@@ -39,7 +39,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  Returns a list of tags associated with a data store. 
+        /// Returns a list of tags associated with a data store. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

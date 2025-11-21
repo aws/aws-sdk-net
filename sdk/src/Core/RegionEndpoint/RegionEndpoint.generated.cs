@@ -93,6 +93,11 @@ namespace Amazon
         public static readonly RegionEndpoint APSoutheast5 = GetRegionEndpoint("ap-southeast-5", "Asia Pacific (Malaysia)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
+        /// The Asia Pacific (New Zealand) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint APSoutheast6 = GetRegionEndpoint("ap-southeast-6", "Asia Pacific (New Zealand)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
         /// The Asia Pacific (Thailand) endpoint.
         /// </summary>
         public static readonly RegionEndpoint APSoutheast7 = GetRegionEndpoint("ap-southeast-7", "Asia Pacific (Thailand)", "aws", "amazonaws.com", @"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
@@ -209,14 +214,9 @@ namespace Amazon
         public static readonly RegionEndpoint CNNorthWest1 = GetRegionEndpoint("cn-northwest-1", "China (Ningxia)", "aws-cn", "amazonaws.com.cn", @"^cn\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
-        /// The AWS GovCloud (US-East) endpoint.
+        /// The EU (Germany) endpoint.
         /// </summary>
-        public static readonly RegionEndpoint USGovCloudEast1 = GetRegionEndpoint("us-gov-east-1", "AWS GovCloud (US-East)", "aws-us-gov", "amazonaws.com", @"^us\-gov\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
-
-        /// <summary>
-        /// The AWS GovCloud (US-West) endpoint.
-        /// </summary>
-        public static readonly RegionEndpoint USGovCloudWest1 = GetRegionEndpoint("us-gov-west-1", "AWS GovCloud (US-West)", "aws-us-gov", "amazonaws.com", @"^us\-gov\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+        public static readonly RegionEndpoint EUSCDeEast1 = GetRegionEndpoint("eusc-de-east-1", "EU (Germany)", "aws-eusc", "amazonaws.eu", @"^eusc\-(de)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
         /// The US ISO East endpoint.
@@ -234,6 +234,11 @@ namespace Amazon
         public static readonly RegionEndpoint USIsobEast1 = GetRegionEndpoint("us-isob-east-1", "US ISOB East (Ohio)", "aws-iso-b", "sc2s.sgov.gov", @"^us\-isob\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
+        /// The US ISOB West endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USIsobWest1 = GetRegionEndpoint("us-isob-west-1", "US ISOB West", "aws-iso-b", "sc2s.sgov.gov", @"^us\-isob\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
         /// The EU ISOE West endpoint.
         /// </summary>
         public static readonly RegionEndpoint EUIsoeWest1 = GetRegionEndpoint("eu-isoe-west-1", "EU ISOE West", "aws-iso-e", "cloud.adc-e.uk", @"^eu\-isoe\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
@@ -249,8 +254,13 @@ namespace Amazon
         public static readonly RegionEndpoint USIsofSouth1 = GetRegionEndpoint("us-isof-south-1", "US ISOF SOUTH", "aws-iso-f", "csp.hci.ic.gov", @"^us\-isof\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
 
         /// <summary>
-        /// The EU (Germany) endpoint.
+        /// The AWS GovCloud (US-East) endpoint.
         /// </summary>
-        public static readonly RegionEndpoint EUSCDeEast1 = GetRegionEndpoint("eusc-de-east-1", "EU (Germany)", "aws-eusc", "amazonaws.eu", @"^eusc\-(de)\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+        public static readonly RegionEndpoint USGovCloudEast1 = GetRegionEndpoint("us-gov-east-1", "AWS GovCloud (US-East)", "aws-us-gov", "amazonaws.com", @"^us\-gov\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
+
+        /// <summary>
+        /// The AWS GovCloud (US-West) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USGovCloudWest1 = GetRegionEndpoint("us-gov-west-1", "AWS GovCloud (US-West)", "aws-us-gov", "amazonaws.com", @"^us\-gov\-\w+\-\d+$", "{service}.{region}.{dnsSuffix}");
     }
 }

@@ -69,6 +69,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                 context.Writer.WriteStringValue(requestObject.DirectoryId);
             }
 
+            if(requestObject.IsSetIsSharedActiveDirectory())
+            {
+                context.Writer.WritePropertyName("IsSharedActiveDirectory");
+                context.Writer.WriteBooleanValue(requestObject.IsSharedActiveDirectory.Value);
+            }
+
         }
 
         /// <summary>

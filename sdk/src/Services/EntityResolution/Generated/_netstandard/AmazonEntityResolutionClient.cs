@@ -288,7 +288,7 @@ namespace Amazon.EntityResolution
 
         internal virtual AddPolicyStatementResponse AddPolicyStatement(AddPolicyStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPolicyStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPolicyStatementResponseUnmarshaller.Instance;
 
@@ -311,7 +311,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -319,7 +319,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -330,7 +330,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/AddPolicyStatement">REST API Reference for AddPolicyStatement Operation</seealso>
         public virtual Task<AddPolicyStatementResponse> AddPolicyStatementAsync(AddPolicyStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPolicyStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPolicyStatementResponseUnmarshaller.Instance;
 
@@ -342,7 +342,7 @@ namespace Amazon.EntityResolution
 
         internal virtual BatchDeleteUniqueIdResponse BatchDeleteUniqueId(BatchDeleteUniqueIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteUniqueIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteUniqueIdResponseUnmarshaller.Instance;
 
@@ -364,7 +364,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by Entity Resolution.
@@ -372,7 +372,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/BatchDeleteUniqueId">REST API Reference for BatchDeleteUniqueId Operation</seealso>
         public virtual Task<BatchDeleteUniqueIdResponse> BatchDeleteUniqueIdAsync(BatchDeleteUniqueIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteUniqueIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteUniqueIdResponseUnmarshaller.Instance;
 
@@ -384,7 +384,7 @@ namespace Amazon.EntityResolution
 
         internal virtual CreateIdMappingWorkflowResponse CreateIdMappingWorkflow(CreateIdMappingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -397,6 +397,12 @@ namespace Amazon.EntityResolution
         /// Creates an <c>IdMappingWorkflow</c> object which stores the configuration of the data
         /// processing job to be run. Each <c>IdMappingWorkflow</c> must have a unique workflow
         /// name. To modify an existing workflow, use the UpdateIdMappingWorkflow API.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Incremental processing is not supported for ID mapping workflows. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIdMappingWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -408,7 +414,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -428,7 +434,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdMappingWorkflow">REST API Reference for CreateIdMappingWorkflow Operation</seealso>
         public virtual Task<CreateIdMappingWorkflowResponse> CreateIdMappingWorkflowAsync(CreateIdMappingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -440,7 +446,7 @@ namespace Amazon.EntityResolution
 
         internal virtual CreateIdNamespaceResponse CreateIdNamespace(CreateIdNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdNamespaceResponseUnmarshaller.Instance;
 
@@ -464,7 +470,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -484,7 +490,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateIdNamespace">REST API Reference for CreateIdNamespace Operation</seealso>
         public virtual Task<CreateIdNamespaceResponse> CreateIdNamespaceAsync(CreateIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIdNamespaceResponseUnmarshaller.Instance;
 
@@ -496,7 +502,7 @@ namespace Amazon.EntityResolution
 
         internal virtual CreateMatchingWorkflowResponse CreateMatchingWorkflow(CreateMatchingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -512,8 +518,8 @@ namespace Amazon.EntityResolution
         /// 
         ///  <important> 
         /// <para>
-        /// For workflows where <c>resolutionType</c> is ML_MATCHING, incremental processing is
-        /// not supported. 
+        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
+        /// incremental processing is not supported. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -527,7 +533,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -547,7 +553,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateMatchingWorkflow">REST API Reference for CreateMatchingWorkflow Operation</seealso>
         public virtual Task<CreateMatchingWorkflowResponse> CreateMatchingWorkflowAsync(CreateMatchingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -559,7 +565,7 @@ namespace Amazon.EntityResolution
 
         internal virtual CreateSchemaMappingResponse CreateSchemaMapping(CreateSchemaMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaMappingResponseUnmarshaller.Instance;
 
@@ -583,7 +589,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -603,7 +609,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/CreateSchemaMapping">REST API Reference for CreateSchemaMapping Operation</seealso>
         public virtual Task<CreateSchemaMappingResponse> CreateSchemaMappingAsync(CreateSchemaMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaMappingResponseUnmarshaller.Instance;
 
@@ -615,7 +621,7 @@ namespace Amazon.EntityResolution
 
         internal virtual DeleteIdMappingWorkflowResponse DeleteIdMappingWorkflow(DeleteIdMappingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -638,7 +644,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -654,7 +660,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdMappingWorkflow">REST API Reference for DeleteIdMappingWorkflow Operation</seealso>
         public virtual Task<DeleteIdMappingWorkflowResponse> DeleteIdMappingWorkflowAsync(DeleteIdMappingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -666,7 +672,7 @@ namespace Amazon.EntityResolution
 
         internal virtual DeleteIdNamespaceResponse DeleteIdNamespace(DeleteIdNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdNamespaceResponseUnmarshaller.Instance;
 
@@ -699,7 +705,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteIdNamespace">REST API Reference for DeleteIdNamespace Operation</seealso>
         public virtual Task<DeleteIdNamespaceResponse> DeleteIdNamespaceAsync(DeleteIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIdNamespaceResponseUnmarshaller.Instance;
 
@@ -711,7 +717,7 @@ namespace Amazon.EntityResolution
 
         internal virtual DeleteMatchingWorkflowResponse DeleteMatchingWorkflow(DeleteMatchingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -734,7 +740,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -750,7 +756,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteMatchingWorkflow">REST API Reference for DeleteMatchingWorkflow Operation</seealso>
         public virtual Task<DeleteMatchingWorkflowResponse> DeleteMatchingWorkflowAsync(DeleteMatchingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -762,7 +768,7 @@ namespace Amazon.EntityResolution
 
         internal virtual DeletePolicyStatementResponse DeletePolicyStatement(DeletePolicyStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyStatementResponseUnmarshaller.Instance;
 
@@ -784,7 +790,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -792,7 +798,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -803,7 +809,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeletePolicyStatement">REST API Reference for DeletePolicyStatement Operation</seealso>
         public virtual Task<DeletePolicyStatementResponse> DeletePolicyStatementAsync(DeletePolicyStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePolicyStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePolicyStatementResponseUnmarshaller.Instance;
 
@@ -815,7 +821,7 @@ namespace Amazon.EntityResolution
 
         internal virtual DeleteSchemaMappingResponse DeleteSchemaMapping(DeleteSchemaMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaMappingResponseUnmarshaller.Instance;
 
@@ -840,7 +846,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -856,7 +862,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/DeleteSchemaMapping">REST API Reference for DeleteSchemaMapping Operation</seealso>
         public virtual Task<DeleteSchemaMappingResponse> DeleteSchemaMappingAsync(DeleteSchemaMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaMappingResponseUnmarshaller.Instance;
 
@@ -868,7 +874,7 @@ namespace Amazon.EntityResolution
 
         internal virtual GenerateMatchIdResponse GenerateMatchId(GenerateMatchIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMatchIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMatchIdResponseUnmarshaller.Instance;
 
@@ -905,7 +911,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -916,7 +922,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GenerateMatchId">REST API Reference for GenerateMatchId Operation</seealso>
         public virtual Task<GenerateMatchIdResponse> GenerateMatchIdAsync(GenerateMatchIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMatchIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMatchIdResponseUnmarshaller.Instance;
 
@@ -928,7 +934,7 @@ namespace Amazon.EntityResolution
 
         internal virtual GetIdMappingJobResponse GetIdMappingJob(GetIdMappingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdMappingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdMappingJobResponseUnmarshaller.Instance;
 
@@ -954,7 +960,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -965,7 +971,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingJob">REST API Reference for GetIdMappingJob Operation</seealso>
         public virtual Task<GetIdMappingJobResponse> GetIdMappingJobAsync(GetIdMappingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdMappingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdMappingJobResponseUnmarshaller.Instance;
 
@@ -977,7 +983,7 @@ namespace Amazon.EntityResolution
 
         internal virtual GetIdMappingWorkflowResponse GetIdMappingWorkflow(GetIdMappingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -1002,7 +1008,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1013,7 +1019,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdMappingWorkflow">REST API Reference for GetIdMappingWorkflow Operation</seealso>
         public virtual Task<GetIdMappingWorkflowResponse> GetIdMappingWorkflowAsync(GetIdMappingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -1025,7 +1031,7 @@ namespace Amazon.EntityResolution
 
         internal virtual GetIdNamespaceResponse GetIdNamespace(GetIdNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdNamespaceResponseUnmarshaller.Instance;
 
@@ -1050,7 +1056,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1061,7 +1067,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetIdNamespace">REST API Reference for GetIdNamespace Operation</seealso>
         public virtual Task<GetIdNamespaceResponse> GetIdNamespaceAsync(GetIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIdNamespaceResponseUnmarshaller.Instance;
 
@@ -1073,7 +1079,7 @@ namespace Amazon.EntityResolution
 
         internal virtual GetMatchIdResponse GetMatchId(GetMatchIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchIdResponseUnmarshaller.Instance;
 
@@ -1084,7 +1090,7 @@ namespace Amazon.EntityResolution
 
         /// <summary>
         /// Returns the corresponding Match ID of a customer record if the record has been processed
-        /// in a rule-based matching workflow or ML matching workflow.
+        /// in a rule-based matching workflow.
         /// 
         ///  
         /// <para>
@@ -1105,7 +1111,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1116,7 +1122,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchId">REST API Reference for GetMatchId Operation</seealso>
         public virtual Task<GetMatchIdResponse> GetMatchIdAsync(GetMatchIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchIdResponseUnmarshaller.Instance;
 
@@ -1128,7 +1134,7 @@ namespace Amazon.EntityResolution
 
         internal virtual GetMatchingJobResponse GetMatchingJob(GetMatchingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchingJobResponseUnmarshaller.Instance;
 
@@ -1154,7 +1160,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1165,7 +1171,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingJob">REST API Reference for GetMatchingJob Operation</seealso>
         public virtual Task<GetMatchingJobResponse> GetMatchingJobAsync(GetMatchingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchingJobResponseUnmarshaller.Instance;
 
@@ -1177,7 +1183,7 @@ namespace Amazon.EntityResolution
 
         internal virtual GetMatchingWorkflowResponse GetMatchingWorkflow(GetMatchingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -1202,7 +1208,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1213,7 +1219,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetMatchingWorkflow">REST API Reference for GetMatchingWorkflow Operation</seealso>
         public virtual Task<GetMatchingWorkflowResponse> GetMatchingWorkflowAsync(GetMatchingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -1225,7 +1231,7 @@ namespace Amazon.EntityResolution
 
         internal virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -1250,7 +1256,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1261,7 +1267,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public virtual Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
 
@@ -1273,7 +1279,7 @@ namespace Amazon.EntityResolution
 
         internal virtual GetProviderServiceResponse GetProviderService(GetProviderServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProviderServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProviderServiceResponseUnmarshaller.Instance;
 
@@ -1298,7 +1304,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1309,7 +1315,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetProviderService">REST API Reference for GetProviderService Operation</seealso>
         public virtual Task<GetProviderServiceResponse> GetProviderServiceAsync(GetProviderServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProviderServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProviderServiceResponseUnmarshaller.Instance;
 
@@ -1321,7 +1327,7 @@ namespace Amazon.EntityResolution
 
         internal virtual GetSchemaMappingResponse GetSchemaMapping(GetSchemaMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaMappingResponseUnmarshaller.Instance;
 
@@ -1346,7 +1352,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1357,7 +1363,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/GetSchemaMapping">REST API Reference for GetSchemaMapping Operation</seealso>
         public virtual Task<GetSchemaMappingResponse> GetSchemaMappingAsync(GetSchemaMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaMappingResponseUnmarshaller.Instance;
 
@@ -1369,7 +1375,7 @@ namespace Amazon.EntityResolution
 
         internal virtual ListIdMappingJobsResponse ListIdMappingJobs(ListIdMappingJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdMappingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdMappingJobsResponseUnmarshaller.Instance;
 
@@ -1394,7 +1400,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1405,7 +1411,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingJobs">REST API Reference for ListIdMappingJobs Operation</seealso>
         public virtual Task<ListIdMappingJobsResponse> ListIdMappingJobsAsync(ListIdMappingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdMappingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdMappingJobsResponseUnmarshaller.Instance;
 
@@ -1417,7 +1423,7 @@ namespace Amazon.EntityResolution
 
         internal virtual ListIdMappingWorkflowsResponse ListIdMappingWorkflows(ListIdMappingWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdMappingWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdMappingWorkflowsResponseUnmarshaller.Instance;
 
@@ -1451,7 +1457,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdMappingWorkflows">REST API Reference for ListIdMappingWorkflows Operation</seealso>
         public virtual Task<ListIdMappingWorkflowsResponse> ListIdMappingWorkflowsAsync(ListIdMappingWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdMappingWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdMappingWorkflowsResponseUnmarshaller.Instance;
 
@@ -1463,7 +1469,7 @@ namespace Amazon.EntityResolution
 
         internal virtual ListIdNamespacesResponse ListIdNamespaces(ListIdNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdNamespacesResponseUnmarshaller.Instance;
 
@@ -1496,7 +1502,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListIdNamespaces">REST API Reference for ListIdNamespaces Operation</seealso>
         public virtual Task<ListIdNamespacesResponse> ListIdNamespacesAsync(ListIdNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListIdNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListIdNamespacesResponseUnmarshaller.Instance;
 
@@ -1508,7 +1514,7 @@ namespace Amazon.EntityResolution
 
         internal virtual ListMatchingJobsResponse ListMatchingJobs(ListMatchingJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMatchingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMatchingJobsResponseUnmarshaller.Instance;
 
@@ -1533,7 +1539,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1544,7 +1550,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingJobs">REST API Reference for ListMatchingJobs Operation</seealso>
         public virtual Task<ListMatchingJobsResponse> ListMatchingJobsAsync(ListMatchingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMatchingJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMatchingJobsResponseUnmarshaller.Instance;
 
@@ -1556,7 +1562,7 @@ namespace Amazon.EntityResolution
 
         internal virtual ListMatchingWorkflowsResponse ListMatchingWorkflows(ListMatchingWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMatchingWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMatchingWorkflowsResponseUnmarshaller.Instance;
 
@@ -1590,7 +1596,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListMatchingWorkflows">REST API Reference for ListMatchingWorkflows Operation</seealso>
         public virtual Task<ListMatchingWorkflowsResponse> ListMatchingWorkflowsAsync(ListMatchingWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMatchingWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMatchingWorkflowsResponseUnmarshaller.Instance;
 
@@ -1602,7 +1608,7 @@ namespace Amazon.EntityResolution
 
         internal virtual ListProviderServicesResponse ListProviderServices(ListProviderServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProviderServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProviderServicesResponseUnmarshaller.Instance;
 
@@ -1636,7 +1642,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListProviderServices">REST API Reference for ListProviderServices Operation</seealso>
         public virtual Task<ListProviderServicesResponse> ListProviderServicesAsync(ListProviderServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProviderServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProviderServicesResponseUnmarshaller.Instance;
 
@@ -1648,7 +1654,7 @@ namespace Amazon.EntityResolution
 
         internal virtual ListSchemaMappingsResponse ListSchemaMappings(ListSchemaMappingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaMappingsResponseUnmarshaller.Instance;
 
@@ -1682,7 +1688,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListSchemaMappings">REST API Reference for ListSchemaMappings Operation</seealso>
         public virtual Task<ListSchemaMappingsResponse> ListSchemaMappingsAsync(ListSchemaMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaMappingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaMappingsResponseUnmarshaller.Instance;
 
@@ -1694,7 +1700,7 @@ namespace Amazon.EntityResolution
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1717,7 +1723,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by Entity Resolution.
@@ -1725,7 +1731,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1737,7 +1743,7 @@ namespace Amazon.EntityResolution
 
         internal virtual PutPolicyResponse PutPolicy(PutPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
 
@@ -1759,7 +1765,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -1767,7 +1773,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1778,7 +1784,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/PutPolicy">REST API Reference for PutPolicy Operation</seealso>
         public virtual Task<PutPolicyResponse> PutPolicyAsync(PutPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPolicyResponseUnmarshaller.Instance;
 
@@ -1790,7 +1796,7 @@ namespace Amazon.EntityResolution
 
         internal virtual StartIdMappingJobResponse StartIdMappingJob(StartIdMappingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartIdMappingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartIdMappingJobResponseUnmarshaller.Instance;
 
@@ -1813,7 +1819,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -1825,7 +1831,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1836,7 +1842,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartIdMappingJob">REST API Reference for StartIdMappingJob Operation</seealso>
         public virtual Task<StartIdMappingJobResponse> StartIdMappingJobAsync(StartIdMappingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartIdMappingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartIdMappingJobResponseUnmarshaller.Instance;
 
@@ -1848,7 +1854,7 @@ namespace Amazon.EntityResolution
 
         internal virtual StartMatchingJobResponse StartMatchingJob(StartMatchingJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMatchingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMatchingJobResponseUnmarshaller.Instance;
 
@@ -1871,7 +1877,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -1883,7 +1889,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1894,7 +1900,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/StartMatchingJob">REST API Reference for StartMatchingJob Operation</seealso>
         public virtual Task<StartMatchingJobResponse> StartMatchingJobAsync(StartMatchingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMatchingJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMatchingJobResponseUnmarshaller.Instance;
 
@@ -1906,7 +1912,7 @@ namespace Amazon.EntityResolution
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1937,7 +1943,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by Entity Resolution.
@@ -1945,7 +1951,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1957,7 +1963,7 @@ namespace Amazon.EntityResolution
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1980,12 +1986,12 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1997,7 +2003,7 @@ namespace Amazon.EntityResolution
 
         internal virtual UpdateIdMappingWorkflowResponse UpdateIdMappingWorkflow(UpdateIdMappingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -2010,6 +2016,12 @@ namespace Amazon.EntityResolution
         /// Updates an existing <c>IdMappingWorkflow</c>. This method is identical to CreateIdMappingWorkflow,
         /// except it uses an HTTP <c>PUT</c> request instead of a <c>POST</c> request, and the
         /// <c>IdMappingWorkflow</c> must already exist for the method to succeed.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Incremental processing is not supported for ID mapping workflows. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIdMappingWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -2024,7 +2036,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2035,7 +2047,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdMappingWorkflow">REST API Reference for UpdateIdMappingWorkflow Operation</seealso>
         public virtual Task<UpdateIdMappingWorkflowResponse> UpdateIdMappingWorkflowAsync(UpdateIdMappingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdMappingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdMappingWorkflowResponseUnmarshaller.Instance;
 
@@ -2047,7 +2059,7 @@ namespace Amazon.EntityResolution
 
         internal virtual UpdateIdNamespaceResponse UpdateIdNamespace(UpdateIdNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdNamespaceResponseUnmarshaller.Instance;
 
@@ -2072,7 +2084,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2083,7 +2095,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateIdNamespace">REST API Reference for UpdateIdNamespace Operation</seealso>
         public virtual Task<UpdateIdNamespaceResponse> UpdateIdNamespaceAsync(UpdateIdNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIdNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIdNamespaceResponseUnmarshaller.Instance;
 
@@ -2095,7 +2107,7 @@ namespace Amazon.EntityResolution
 
         internal virtual UpdateMatchingWorkflowResponse UpdateMatchingWorkflow(UpdateMatchingWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -2110,8 +2122,8 @@ namespace Amazon.EntityResolution
         /// 
         ///  <important> 
         /// <para>
-        /// For workflows where <c>resolutionType</c> is ML_MATCHING, incremental processing is
-        /// not supported. 
+        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
+        /// incremental processing is not supported. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -2128,7 +2140,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2139,7 +2151,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateMatchingWorkflow">REST API Reference for UpdateMatchingWorkflow Operation</seealso>
         public virtual Task<UpdateMatchingWorkflowResponse> UpdateMatchingWorkflowAsync(UpdateMatchingWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMatchingWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMatchingWorkflowResponseUnmarshaller.Instance;
 
@@ -2151,7 +2163,7 @@ namespace Amazon.EntityResolution
 
         internal virtual UpdateSchemaMappingResponse UpdateSchemaMapping(UpdateSchemaMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchemaMappingResponseUnmarshaller.Instance;
 
@@ -2180,7 +2192,7 @@ namespace Amazon.EntityResolution
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ConflictException">
-        /// The request could not be processed because of conflict in the current state of the
+        /// The request couldn't be processed because of conflict in the current state of the
         /// resource. Example: Workflow already exists, Schema already exists, Workflow is currently
         /// running, etc.
         /// </exception>
@@ -2188,7 +2200,7 @@ namespace Amazon.EntityResolution
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
-        /// The resource could not be found.
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -2199,7 +2211,7 @@ namespace Amazon.EntityResolution
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/entityresolution-2018-05-10/UpdateSchemaMapping">REST API Reference for UpdateSchemaMapping Operation</seealso>
         public virtual Task<UpdateSchemaMappingResponse> UpdateSchemaMappingAsync(UpdateSchemaMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchemaMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchemaMappingResponseUnmarshaller.Instance;
 

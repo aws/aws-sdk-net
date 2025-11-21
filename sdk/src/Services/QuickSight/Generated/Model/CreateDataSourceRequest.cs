@@ -69,7 +69,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Credentials. 
         /// <para>
-        /// The credentials Amazon QuickSight that uses to connect to your underlying source.
+        /// The credentials Amazon Quick Sight that uses to connect to your underlying source.
         /// Currently, only credentials based on user name and password are supported.
         /// </para>
         /// </summary>
@@ -109,7 +109,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceParameters. 
         /// <para>
-        /// The parameters that Amazon QuickSight uses to connect to your underlying source.
+        /// The parameters that Amazon Quick Sight uses to connect to your underlying source.
         /// </para>
         /// </summary>
         public DataSourceParameters DataSourceParameters
@@ -127,7 +127,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FolderArns. 
         /// <para>
-        /// When you create the data source, Amazon QuickSight adds the data source to these folders.
+        /// When you create the data source, Amazon Quick Sight adds the data source to these
+        /// folders.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -194,7 +195,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SslProperties. 
         /// <para>
-        /// Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to
+        /// Secure Socket Layer (SSL) properties that apply when Amazon Quick Sight connects to
         /// your underlying source.
         /// </para>
         /// </summary>
@@ -261,7 +262,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VpcConnectionProperties. 
         /// <para>
-        /// Use this parameter only when you want Amazon QuickSight to use a VPC connection when
+        /// Use this parameter only when you want Amazon Quick Sight to use a VPC connection when
         /// connecting to your underlying source.
         /// </para>
         /// </summary>

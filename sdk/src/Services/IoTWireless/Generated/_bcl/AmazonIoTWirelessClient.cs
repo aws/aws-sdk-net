@@ -317,7 +317,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateAwsAccountWithPartnerAccount">REST API Reference for AssociateAwsAccountWithPartnerAccount Operation</seealso>
         public virtual AssociateAwsAccountWithPartnerAccountResponse AssociateAwsAccountWithPartnerAccount(AssociateAwsAccountWithPartnerAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAwsAccountWithPartnerAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAwsAccountWithPartnerAccountResponseUnmarshaller.Instance;
 
@@ -355,7 +355,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateAwsAccountWithPartnerAccount">REST API Reference for AssociateAwsAccountWithPartnerAccount Operation</seealso>
         public virtual Task<AssociateAwsAccountWithPartnerAccountResponse> AssociateAwsAccountWithPartnerAccountAsync(AssociateAwsAccountWithPartnerAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAwsAccountWithPartnerAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAwsAccountWithPartnerAccountResponseUnmarshaller.Instance;
             
@@ -394,7 +394,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateMulticastGroupWithFuotaTask">REST API Reference for AssociateMulticastGroupWithFuotaTask Operation</seealso>
         public virtual AssociateMulticastGroupWithFuotaTaskResponse AssociateMulticastGroupWithFuotaTask(AssociateMulticastGroupWithFuotaTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMulticastGroupWithFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMulticastGroupWithFuotaTaskResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateMulticastGroupWithFuotaTask">REST API Reference for AssociateMulticastGroupWithFuotaTask Operation</seealso>
         public virtual Task<AssociateMulticastGroupWithFuotaTaskResponse> AssociateMulticastGroupWithFuotaTaskAsync(AssociateMulticastGroupWithFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateMulticastGroupWithFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateMulticastGroupWithFuotaTaskResponseUnmarshaller.Instance;
             
@@ -471,7 +471,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithFuotaTask">REST API Reference for AssociateWirelessDeviceWithFuotaTask Operation</seealso>
         public virtual AssociateWirelessDeviceWithFuotaTaskResponse AssociateWirelessDeviceWithFuotaTask(AssociateWirelessDeviceWithFuotaTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWirelessDeviceWithFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWirelessDeviceWithFuotaTaskResponseUnmarshaller.Instance;
 
@@ -509,7 +509,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithFuotaTask">REST API Reference for AssociateWirelessDeviceWithFuotaTask Operation</seealso>
         public virtual Task<AssociateWirelessDeviceWithFuotaTaskResponse> AssociateWirelessDeviceWithFuotaTaskAsync(AssociateWirelessDeviceWithFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWirelessDeviceWithFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWirelessDeviceWithFuotaTaskResponseUnmarshaller.Instance;
             
@@ -548,7 +548,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithMulticastGroup">REST API Reference for AssociateWirelessDeviceWithMulticastGroup Operation</seealso>
         public virtual AssociateWirelessDeviceWithMulticastGroupResponse AssociateWirelessDeviceWithMulticastGroup(AssociateWirelessDeviceWithMulticastGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
 
@@ -586,7 +586,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithMulticastGroup">REST API Reference for AssociateWirelessDeviceWithMulticastGroup Operation</seealso>
         public virtual Task<AssociateWirelessDeviceWithMulticastGroupResponse> AssociateWirelessDeviceWithMulticastGroupAsync(AssociateWirelessDeviceWithMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
             
@@ -625,7 +625,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithThing">REST API Reference for AssociateWirelessDeviceWithThing Operation</seealso>
         public virtual AssociateWirelessDeviceWithThingResponse AssociateWirelessDeviceWithThing(AssociateWirelessDeviceWithThingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWirelessDeviceWithThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWirelessDeviceWithThingResponseUnmarshaller.Instance;
 
@@ -663,7 +663,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessDeviceWithThing">REST API Reference for AssociateWirelessDeviceWithThing Operation</seealso>
         public virtual Task<AssociateWirelessDeviceWithThingResponse> AssociateWirelessDeviceWithThingAsync(AssociateWirelessDeviceWithThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWirelessDeviceWithThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWirelessDeviceWithThingResponseUnmarshaller.Instance;
             
@@ -702,7 +702,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessGatewayWithCertificate">REST API Reference for AssociateWirelessGatewayWithCertificate Operation</seealso>
         public virtual AssociateWirelessGatewayWithCertificateResponse AssociateWirelessGatewayWithCertificate(AssociateWirelessGatewayWithCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWirelessGatewayWithCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWirelessGatewayWithCertificateResponseUnmarshaller.Instance;
 
@@ -740,7 +740,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessGatewayWithCertificate">REST API Reference for AssociateWirelessGatewayWithCertificate Operation</seealso>
         public virtual Task<AssociateWirelessGatewayWithCertificateResponse> AssociateWirelessGatewayWithCertificateAsync(AssociateWirelessGatewayWithCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWirelessGatewayWithCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWirelessGatewayWithCertificateResponseUnmarshaller.Instance;
             
@@ -779,7 +779,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessGatewayWithThing">REST API Reference for AssociateWirelessGatewayWithThing Operation</seealso>
         public virtual AssociateWirelessGatewayWithThingResponse AssociateWirelessGatewayWithThing(AssociateWirelessGatewayWithThingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWirelessGatewayWithThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWirelessGatewayWithThingResponseUnmarshaller.Instance;
 
@@ -817,7 +817,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/AssociateWirelessGatewayWithThing">REST API Reference for AssociateWirelessGatewayWithThing Operation</seealso>
         public virtual Task<AssociateWirelessGatewayWithThingResponse> AssociateWirelessGatewayWithThingAsync(AssociateWirelessGatewayWithThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateWirelessGatewayWithThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateWirelessGatewayWithThingResponseUnmarshaller.Instance;
             
@@ -856,7 +856,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CancelMulticastGroupSession">REST API Reference for CancelMulticastGroupSession Operation</seealso>
         public virtual CancelMulticastGroupSessionResponse CancelMulticastGroupSession(CancelMulticastGroupSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMulticastGroupSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMulticastGroupSessionResponseUnmarshaller.Instance;
 
@@ -894,7 +894,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CancelMulticastGroupSession">REST API Reference for CancelMulticastGroupSession Operation</seealso>
         public virtual Task<CancelMulticastGroupSessionResponse> CancelMulticastGroupSessionAsync(CancelMulticastGroupSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMulticastGroupSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMulticastGroupSessionResponseUnmarshaller.Instance;
             
@@ -933,7 +933,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateDestination">REST API Reference for CreateDestination Operation</seealso>
         public virtual CreateDestinationResponse CreateDestination(CreateDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDestinationResponseUnmarshaller.Instance;
 
@@ -971,7 +971,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateDestination">REST API Reference for CreateDestination Operation</seealso>
         public virtual Task<CreateDestinationResponse> CreateDestinationAsync(CreateDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDestinationResponseUnmarshaller.Instance;
             
@@ -1007,7 +1007,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateDeviceProfile">REST API Reference for CreateDeviceProfile Operation</seealso>
         public virtual CreateDeviceProfileResponse CreateDeviceProfile(CreateDeviceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeviceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeviceProfileResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateDeviceProfile">REST API Reference for CreateDeviceProfile Operation</seealso>
         public virtual Task<CreateDeviceProfileResponse> CreateDeviceProfileAsync(CreateDeviceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDeviceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDeviceProfileResponseUnmarshaller.Instance;
             
@@ -1081,7 +1081,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateFuotaTask">REST API Reference for CreateFuotaTask Operation</seealso>
         public virtual CreateFuotaTaskResponse CreateFuotaTask(CreateFuotaTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFuotaTaskResponseUnmarshaller.Instance;
 
@@ -1119,7 +1119,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateFuotaTask">REST API Reference for CreateFuotaTask Operation</seealso>
         public virtual Task<CreateFuotaTaskResponse> CreateFuotaTaskAsync(CreateFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFuotaTaskResponseUnmarshaller.Instance;
             
@@ -1158,7 +1158,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateMulticastGroup">REST API Reference for CreateMulticastGroup Operation</seealso>
         public virtual CreateMulticastGroupResponse CreateMulticastGroup(CreateMulticastGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMulticastGroupResponseUnmarshaller.Instance;
 
@@ -1196,7 +1196,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateMulticastGroup">REST API Reference for CreateMulticastGroup Operation</seealso>
         public virtual Task<CreateMulticastGroupResponse> CreateMulticastGroupAsync(CreateMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMulticastGroupResponseUnmarshaller.Instance;
             
@@ -1235,7 +1235,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateNetworkAnalyzerConfiguration">REST API Reference for CreateNetworkAnalyzerConfiguration Operation</seealso>
         public virtual CreateNetworkAnalyzerConfigurationResponse CreateNetworkAnalyzerConfiguration(CreateNetworkAnalyzerConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkAnalyzerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkAnalyzerConfigurationResponseUnmarshaller.Instance;
 
@@ -1273,7 +1273,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateNetworkAnalyzerConfiguration">REST API Reference for CreateNetworkAnalyzerConfiguration Operation</seealso>
         public virtual Task<CreateNetworkAnalyzerConfigurationResponse> CreateNetworkAnalyzerConfigurationAsync(CreateNetworkAnalyzerConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateNetworkAnalyzerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateNetworkAnalyzerConfigurationResponseUnmarshaller.Instance;
             
@@ -1309,7 +1309,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateServiceProfile">REST API Reference for CreateServiceProfile Operation</seealso>
         public virtual CreateServiceProfileResponse CreateServiceProfile(CreateServiceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceProfileResponseUnmarshaller.Instance;
 
@@ -1344,7 +1344,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateServiceProfile">REST API Reference for CreateServiceProfile Operation</seealso>
         public virtual Task<CreateServiceProfileResponse> CreateServiceProfileAsync(CreateServiceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceProfileResponseUnmarshaller.Instance;
             
@@ -1383,7 +1383,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateWirelessDevice">REST API Reference for CreateWirelessDevice Operation</seealso>
         public virtual CreateWirelessDeviceResponse CreateWirelessDevice(CreateWirelessDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWirelessDeviceResponseUnmarshaller.Instance;
 
@@ -1421,7 +1421,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateWirelessDevice">REST API Reference for CreateWirelessDevice Operation</seealso>
         public virtual Task<CreateWirelessDeviceResponse> CreateWirelessDeviceAsync(CreateWirelessDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWirelessDeviceResponseUnmarshaller.Instance;
             
@@ -1478,7 +1478,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateWirelessGateway">REST API Reference for CreateWirelessGateway Operation</seealso>
         public virtual CreateWirelessGatewayResponse CreateWirelessGateway(CreateWirelessGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWirelessGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWirelessGatewayResponseUnmarshaller.Instance;
 
@@ -1534,7 +1534,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateWirelessGateway">REST API Reference for CreateWirelessGateway Operation</seealso>
         public virtual Task<CreateWirelessGatewayResponse> CreateWirelessGatewayAsync(CreateWirelessGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWirelessGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWirelessGatewayResponseUnmarshaller.Instance;
             
@@ -1573,7 +1573,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateWirelessGatewayTask">REST API Reference for CreateWirelessGatewayTask Operation</seealso>
         public virtual CreateWirelessGatewayTaskResponse CreateWirelessGatewayTask(CreateWirelessGatewayTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWirelessGatewayTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWirelessGatewayTaskResponseUnmarshaller.Instance;
 
@@ -1611,7 +1611,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateWirelessGatewayTask">REST API Reference for CreateWirelessGatewayTask Operation</seealso>
         public virtual Task<CreateWirelessGatewayTaskResponse> CreateWirelessGatewayTaskAsync(CreateWirelessGatewayTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWirelessGatewayTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWirelessGatewayTaskResponseUnmarshaller.Instance;
             
@@ -1650,7 +1650,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateWirelessGatewayTaskDefinition">REST API Reference for CreateWirelessGatewayTaskDefinition Operation</seealso>
         public virtual CreateWirelessGatewayTaskDefinitionResponse CreateWirelessGatewayTaskDefinition(CreateWirelessGatewayTaskDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWirelessGatewayTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWirelessGatewayTaskDefinitionResponseUnmarshaller.Instance;
 
@@ -1688,7 +1688,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/CreateWirelessGatewayTaskDefinition">REST API Reference for CreateWirelessGatewayTaskDefinition Operation</seealso>
         public virtual Task<CreateWirelessGatewayTaskDefinitionResponse> CreateWirelessGatewayTaskDefinitionAsync(CreateWirelessGatewayTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWirelessGatewayTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWirelessGatewayTaskDefinitionResponseUnmarshaller.Instance;
             
@@ -1727,7 +1727,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
         public virtual DeleteDestinationResponse DeleteDestination(DeleteDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDestinationResponseUnmarshaller.Instance;
 
@@ -1765,7 +1765,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
         public virtual Task<DeleteDestinationResponse> DeleteDestinationAsync(DeleteDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDestinationResponseUnmarshaller.Instance;
             
@@ -1804,7 +1804,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteDeviceProfile">REST API Reference for DeleteDeviceProfile Operation</seealso>
         public virtual DeleteDeviceProfileResponse DeleteDeviceProfile(DeleteDeviceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeviceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeviceProfileResponseUnmarshaller.Instance;
 
@@ -1842,7 +1842,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteDeviceProfile">REST API Reference for DeleteDeviceProfile Operation</seealso>
         public virtual Task<DeleteDeviceProfileResponse> DeleteDeviceProfileAsync(DeleteDeviceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDeviceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDeviceProfileResponseUnmarshaller.Instance;
             
@@ -1878,7 +1878,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteFuotaTask">REST API Reference for DeleteFuotaTask Operation</seealso>
         public virtual DeleteFuotaTaskResponse DeleteFuotaTask(DeleteFuotaTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFuotaTaskResponseUnmarshaller.Instance;
 
@@ -1913,7 +1913,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteFuotaTask">REST API Reference for DeleteFuotaTask Operation</seealso>
         public virtual Task<DeleteFuotaTaskResponse> DeleteFuotaTaskAsync(DeleteFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFuotaTaskResponseUnmarshaller.Instance;
             
@@ -1952,7 +1952,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup">REST API Reference for DeleteMulticastGroup Operation</seealso>
         public virtual DeleteMulticastGroupResponse DeleteMulticastGroup(DeleteMulticastGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMulticastGroupResponseUnmarshaller.Instance;
 
@@ -1990,7 +1990,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteMulticastGroup">REST API Reference for DeleteMulticastGroup Operation</seealso>
         public virtual Task<DeleteMulticastGroupResponse> DeleteMulticastGroupAsync(DeleteMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMulticastGroupResponseUnmarshaller.Instance;
             
@@ -2029,7 +2029,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteNetworkAnalyzerConfiguration">REST API Reference for DeleteNetworkAnalyzerConfiguration Operation</seealso>
         public virtual DeleteNetworkAnalyzerConfigurationResponse DeleteNetworkAnalyzerConfiguration(DeleteNetworkAnalyzerConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkAnalyzerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkAnalyzerConfigurationResponseUnmarshaller.Instance;
 
@@ -2067,7 +2067,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteNetworkAnalyzerConfiguration">REST API Reference for DeleteNetworkAnalyzerConfiguration Operation</seealso>
         public virtual Task<DeleteNetworkAnalyzerConfigurationResponse> DeleteNetworkAnalyzerConfigurationAsync(DeleteNetworkAnalyzerConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteNetworkAnalyzerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteNetworkAnalyzerConfigurationResponseUnmarshaller.Instance;
             
@@ -2103,7 +2103,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteQueuedMessages">REST API Reference for DeleteQueuedMessages Operation</seealso>
         public virtual DeleteQueuedMessagesResponse DeleteQueuedMessages(DeleteQueuedMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueuedMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueuedMessagesResponseUnmarshaller.Instance;
 
@@ -2138,7 +2138,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteQueuedMessages">REST API Reference for DeleteQueuedMessages Operation</seealso>
         public virtual Task<DeleteQueuedMessagesResponse> DeleteQueuedMessagesAsync(DeleteQueuedMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueuedMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueuedMessagesResponseUnmarshaller.Instance;
             
@@ -2177,7 +2177,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteServiceProfile">REST API Reference for DeleteServiceProfile Operation</seealso>
         public virtual DeleteServiceProfileResponse DeleteServiceProfile(DeleteServiceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceProfileResponseUnmarshaller.Instance;
 
@@ -2215,7 +2215,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteServiceProfile">REST API Reference for DeleteServiceProfile Operation</seealso>
         public virtual Task<DeleteServiceProfileResponse> DeleteServiceProfileAsync(DeleteServiceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceProfileResponseUnmarshaller.Instance;
             
@@ -2251,7 +2251,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDevice">REST API Reference for DeleteWirelessDevice Operation</seealso>
         public virtual DeleteWirelessDeviceResponse DeleteWirelessDevice(DeleteWirelessDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWirelessDeviceResponseUnmarshaller.Instance;
 
@@ -2286,7 +2286,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDevice">REST API Reference for DeleteWirelessDevice Operation</seealso>
         public virtual Task<DeleteWirelessDeviceResponse> DeleteWirelessDeviceAsync(DeleteWirelessDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWirelessDeviceResponseUnmarshaller.Instance;
             
@@ -2325,7 +2325,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask">REST API Reference for DeleteWirelessDeviceImportTask Operation</seealso>
         public virtual DeleteWirelessDeviceImportTaskResponse DeleteWirelessDeviceImportTask(DeleteWirelessDeviceImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWirelessDeviceImportTaskResponseUnmarshaller.Instance;
 
@@ -2363,7 +2363,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask">REST API Reference for DeleteWirelessDeviceImportTask Operation</seealso>
         public virtual Task<DeleteWirelessDeviceImportTaskResponse> DeleteWirelessDeviceImportTaskAsync(DeleteWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWirelessDeviceImportTaskResponseUnmarshaller.Instance;
             
@@ -2420,7 +2420,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessGateway">REST API Reference for DeleteWirelessGateway Operation</seealso>
         public virtual DeleteWirelessGatewayResponse DeleteWirelessGateway(DeleteWirelessGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWirelessGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWirelessGatewayResponseUnmarshaller.Instance;
 
@@ -2476,7 +2476,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessGateway">REST API Reference for DeleteWirelessGateway Operation</seealso>
         public virtual Task<DeleteWirelessGatewayResponse> DeleteWirelessGatewayAsync(DeleteWirelessGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWirelessGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWirelessGatewayResponseUnmarshaller.Instance;
             
@@ -2512,7 +2512,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessGatewayTask">REST API Reference for DeleteWirelessGatewayTask Operation</seealso>
         public virtual DeleteWirelessGatewayTaskResponse DeleteWirelessGatewayTask(DeleteWirelessGatewayTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWirelessGatewayTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWirelessGatewayTaskResponseUnmarshaller.Instance;
 
@@ -2547,7 +2547,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessGatewayTask">REST API Reference for DeleteWirelessGatewayTask Operation</seealso>
         public virtual Task<DeleteWirelessGatewayTaskResponse> DeleteWirelessGatewayTaskAsync(DeleteWirelessGatewayTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWirelessGatewayTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWirelessGatewayTaskResponseUnmarshaller.Instance;
             
@@ -2584,7 +2584,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessGatewayTaskDefinition">REST API Reference for DeleteWirelessGatewayTaskDefinition Operation</seealso>
         public virtual DeleteWirelessGatewayTaskDefinitionResponse DeleteWirelessGatewayTaskDefinition(DeleteWirelessGatewayTaskDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWirelessGatewayTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWirelessGatewayTaskDefinitionResponseUnmarshaller.Instance;
 
@@ -2620,7 +2620,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessGatewayTaskDefinition">REST API Reference for DeleteWirelessGatewayTaskDefinition Operation</seealso>
         public virtual Task<DeleteWirelessGatewayTaskDefinitionResponse> DeleteWirelessGatewayTaskDefinitionAsync(DeleteWirelessGatewayTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWirelessGatewayTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWirelessGatewayTaskDefinitionResponseUnmarshaller.Instance;
             
@@ -2653,7 +2653,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice">REST API Reference for DeregisterWirelessDevice Operation</seealso>
         public virtual DeregisterWirelessDeviceResponse DeregisterWirelessDevice(DeregisterWirelessDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterWirelessDeviceResponseUnmarshaller.Instance;
 
@@ -2685,7 +2685,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice">REST API Reference for DeregisterWirelessDevice Operation</seealso>
         public virtual Task<DeregisterWirelessDeviceResponse> DeregisterWirelessDeviceAsync(DeregisterWirelessDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterWirelessDeviceResponseUnmarshaller.Instance;
             
@@ -2720,7 +2720,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateAwsAccountFromPartnerAccount">REST API Reference for DisassociateAwsAccountFromPartnerAccount Operation</seealso>
         public virtual DisassociateAwsAccountFromPartnerAccountResponse DisassociateAwsAccountFromPartnerAccount(DisassociateAwsAccountFromPartnerAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAwsAccountFromPartnerAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAwsAccountFromPartnerAccountResponseUnmarshaller.Instance;
 
@@ -2754,7 +2754,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateAwsAccountFromPartnerAccount">REST API Reference for DisassociateAwsAccountFromPartnerAccount Operation</seealso>
         public virtual Task<DisassociateAwsAccountFromPartnerAccountResponse> DisassociateAwsAccountFromPartnerAccountAsync(DisassociateAwsAccountFromPartnerAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateAwsAccountFromPartnerAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateAwsAccountFromPartnerAccountResponseUnmarshaller.Instance;
             
@@ -2790,7 +2790,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask">REST API Reference for DisassociateMulticastGroupFromFuotaTask Operation</seealso>
         public virtual DisassociateMulticastGroupFromFuotaTaskResponse DisassociateMulticastGroupFromFuotaTask(DisassociateMulticastGroupFromFuotaTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMulticastGroupFromFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMulticastGroupFromFuotaTaskResponseUnmarshaller.Instance;
 
@@ -2825,7 +2825,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateMulticastGroupFromFuotaTask">REST API Reference for DisassociateMulticastGroupFromFuotaTask Operation</seealso>
         public virtual Task<DisassociateMulticastGroupFromFuotaTaskResponse> DisassociateMulticastGroupFromFuotaTaskAsync(DisassociateMulticastGroupFromFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateMulticastGroupFromFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateMulticastGroupFromFuotaTaskResponseUnmarshaller.Instance;
             
@@ -2864,7 +2864,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromFuotaTask">REST API Reference for DisassociateWirelessDeviceFromFuotaTask Operation</seealso>
         public virtual DisassociateWirelessDeviceFromFuotaTaskResponse DisassociateWirelessDeviceFromFuotaTask(DisassociateWirelessDeviceFromFuotaTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWirelessDeviceFromFuotaTaskResponseUnmarshaller.Instance;
 
@@ -2902,7 +2902,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromFuotaTask">REST API Reference for DisassociateWirelessDeviceFromFuotaTask Operation</seealso>
         public virtual Task<DisassociateWirelessDeviceFromFuotaTaskResponse> DisassociateWirelessDeviceFromFuotaTaskAsync(DisassociateWirelessDeviceFromFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWirelessDeviceFromFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWirelessDeviceFromFuotaTaskResponseUnmarshaller.Instance;
             
@@ -2938,7 +2938,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromMulticastGroup">REST API Reference for DisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
         public virtual DisassociateWirelessDeviceFromMulticastGroupResponse DisassociateWirelessDeviceFromMulticastGroup(DisassociateWirelessDeviceFromMulticastGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
 
@@ -2973,7 +2973,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromMulticastGroup">REST API Reference for DisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
         public virtual Task<DisassociateWirelessDeviceFromMulticastGroupResponse> DisassociateWirelessDeviceFromMulticastGroupAsync(DisassociateWirelessDeviceFromMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
             
@@ -3012,7 +3012,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromThing">REST API Reference for DisassociateWirelessDeviceFromThing Operation</seealso>
         public virtual DisassociateWirelessDeviceFromThingResponse DisassociateWirelessDeviceFromThing(DisassociateWirelessDeviceFromThingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWirelessDeviceFromThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWirelessDeviceFromThingResponseUnmarshaller.Instance;
 
@@ -3050,7 +3050,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessDeviceFromThing">REST API Reference for DisassociateWirelessDeviceFromThing Operation</seealso>
         public virtual Task<DisassociateWirelessDeviceFromThingResponse> DisassociateWirelessDeviceFromThingAsync(DisassociateWirelessDeviceFromThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWirelessDeviceFromThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWirelessDeviceFromThingResponseUnmarshaller.Instance;
             
@@ -3086,7 +3086,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessGatewayFromCertificate">REST API Reference for DisassociateWirelessGatewayFromCertificate Operation</seealso>
         public virtual DisassociateWirelessGatewayFromCertificateResponse DisassociateWirelessGatewayFromCertificate(DisassociateWirelessGatewayFromCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWirelessGatewayFromCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWirelessGatewayFromCertificateResponseUnmarshaller.Instance;
 
@@ -3121,7 +3121,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessGatewayFromCertificate">REST API Reference for DisassociateWirelessGatewayFromCertificate Operation</seealso>
         public virtual Task<DisassociateWirelessGatewayFromCertificateResponse> DisassociateWirelessGatewayFromCertificateAsync(DisassociateWirelessGatewayFromCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWirelessGatewayFromCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWirelessGatewayFromCertificateResponseUnmarshaller.Instance;
             
@@ -3160,7 +3160,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessGatewayFromThing">REST API Reference for DisassociateWirelessGatewayFromThing Operation</seealso>
         public virtual DisassociateWirelessGatewayFromThingResponse DisassociateWirelessGatewayFromThing(DisassociateWirelessGatewayFromThingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWirelessGatewayFromThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWirelessGatewayFromThingResponseUnmarshaller.Instance;
 
@@ -3198,7 +3198,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DisassociateWirelessGatewayFromThing">REST API Reference for DisassociateWirelessGatewayFromThing Operation</seealso>
         public virtual Task<DisassociateWirelessGatewayFromThingResponse> DisassociateWirelessGatewayFromThingAsync(DisassociateWirelessGatewayFromThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateWirelessGatewayFromThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateWirelessGatewayFromThingResponseUnmarshaller.Instance;
             
@@ -3234,7 +3234,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetDestination">REST API Reference for GetDestination Operation</seealso>
         public virtual GetDestinationResponse GetDestination(GetDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDestinationResponseUnmarshaller.Instance;
 
@@ -3269,7 +3269,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetDestination">REST API Reference for GetDestination Operation</seealso>
         public virtual Task<GetDestinationResponse> GetDestinationAsync(GetDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDestinationResponseUnmarshaller.Instance;
             
@@ -3305,7 +3305,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetDeviceProfile">REST API Reference for GetDeviceProfile Operation</seealso>
         public virtual GetDeviceProfileResponse GetDeviceProfile(GetDeviceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceProfileResponseUnmarshaller.Instance;
 
@@ -3340,7 +3340,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetDeviceProfile">REST API Reference for GetDeviceProfile Operation</seealso>
         public virtual Task<GetDeviceProfileResponse> GetDeviceProfileAsync(GetDeviceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDeviceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDeviceProfileResponseUnmarshaller.Instance;
             
@@ -3370,7 +3370,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetEventConfigurationByResourceTypes">REST API Reference for GetEventConfigurationByResourceTypes Operation</seealso>
         public virtual GetEventConfigurationByResourceTypesResponse GetEventConfigurationByResourceTypes(GetEventConfigurationByResourceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventConfigurationByResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventConfigurationByResourceTypesResponseUnmarshaller.Instance;
 
@@ -3399,7 +3399,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetEventConfigurationByResourceTypes">REST API Reference for GetEventConfigurationByResourceTypes Operation</seealso>
         public virtual Task<GetEventConfigurationByResourceTypesResponse> GetEventConfigurationByResourceTypesAsync(GetEventConfigurationByResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventConfigurationByResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventConfigurationByResourceTypesResponseUnmarshaller.Instance;
             
@@ -3435,7 +3435,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetFuotaTask">REST API Reference for GetFuotaTask Operation</seealso>
         public virtual GetFuotaTaskResponse GetFuotaTask(GetFuotaTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFuotaTaskResponseUnmarshaller.Instance;
 
@@ -3470,7 +3470,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetFuotaTask">REST API Reference for GetFuotaTask Operation</seealso>
         public virtual Task<GetFuotaTaskResponse> GetFuotaTaskAsync(GetFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFuotaTaskResponseUnmarshaller.Instance;
             
@@ -3508,7 +3508,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">REST API Reference for GetLogLevelsByResourceTypes Operation</seealso>
         public virtual GetLogLevelsByResourceTypesResponse GetLogLevelsByResourceTypes(GetLogLevelsByResourceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLogLevelsByResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLogLevelsByResourceTypesResponseUnmarshaller.Instance;
 
@@ -3545,7 +3545,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">REST API Reference for GetLogLevelsByResourceTypes Operation</seealso>
         public virtual Task<GetLogLevelsByResourceTypesResponse> GetLogLevelsByResourceTypesAsync(GetLogLevelsByResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLogLevelsByResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLogLevelsByResourceTypesResponseUnmarshaller.Instance;
             
@@ -3584,7 +3584,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration">REST API Reference for GetMetricConfiguration Operation</seealso>
         public virtual GetMetricConfigurationResponse GetMetricConfiguration(GetMetricConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricConfigurationResponseUnmarshaller.Instance;
 
@@ -3622,7 +3622,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration">REST API Reference for GetMetricConfiguration Operation</seealso>
         public virtual Task<GetMetricConfigurationResponse> GetMetricConfigurationAsync(GetMetricConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricConfigurationResponseUnmarshaller.Instance;
             
@@ -3661,7 +3661,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics">REST API Reference for GetMetrics Operation</seealso>
         public virtual GetMetricsResponse GetMetrics(GetMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricsResponseUnmarshaller.Instance;
 
@@ -3699,7 +3699,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics">REST API Reference for GetMetrics Operation</seealso>
         public virtual Task<GetMetricsResponse> GetMetricsAsync(GetMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMetricsResponseUnmarshaller.Instance;
             
@@ -3735,7 +3735,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroup">REST API Reference for GetMulticastGroup Operation</seealso>
         public virtual GetMulticastGroupResponse GetMulticastGroup(GetMulticastGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMulticastGroupResponseUnmarshaller.Instance;
 
@@ -3770,7 +3770,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroup">REST API Reference for GetMulticastGroup Operation</seealso>
         public virtual Task<GetMulticastGroupResponse> GetMulticastGroupAsync(GetMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMulticastGroupResponseUnmarshaller.Instance;
             
@@ -3806,7 +3806,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroupSession">REST API Reference for GetMulticastGroupSession Operation</seealso>
         public virtual GetMulticastGroupSessionResponse GetMulticastGroupSession(GetMulticastGroupSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMulticastGroupSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMulticastGroupSessionResponseUnmarshaller.Instance;
 
@@ -3841,7 +3841,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMulticastGroupSession">REST API Reference for GetMulticastGroupSession Operation</seealso>
         public virtual Task<GetMulticastGroupSessionResponse> GetMulticastGroupSessionAsync(GetMulticastGroupSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMulticastGroupSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMulticastGroupSessionResponseUnmarshaller.Instance;
             
@@ -3877,7 +3877,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetNetworkAnalyzerConfiguration">REST API Reference for GetNetworkAnalyzerConfiguration Operation</seealso>
         public virtual GetNetworkAnalyzerConfigurationResponse GetNetworkAnalyzerConfiguration(GetNetworkAnalyzerConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkAnalyzerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkAnalyzerConfigurationResponseUnmarshaller.Instance;
 
@@ -3912,7 +3912,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetNetworkAnalyzerConfiguration">REST API Reference for GetNetworkAnalyzerConfiguration Operation</seealso>
         public virtual Task<GetNetworkAnalyzerConfigurationResponse> GetNetworkAnalyzerConfigurationAsync(GetNetworkAnalyzerConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetNetworkAnalyzerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetNetworkAnalyzerConfigurationResponseUnmarshaller.Instance;
             
@@ -3946,7 +3946,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPartnerAccount">REST API Reference for GetPartnerAccount Operation</seealso>
         public virtual GetPartnerAccountResponse GetPartnerAccount(GetPartnerAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartnerAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartnerAccountResponseUnmarshaller.Instance;
 
@@ -3979,7 +3979,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPartnerAccount">REST API Reference for GetPartnerAccount Operation</seealso>
         public virtual Task<GetPartnerAccountResponse> GetPartnerAccountAsync(GetPartnerAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartnerAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartnerAccountResponseUnmarshaller.Instance;
             
@@ -3997,7 +3997,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve the position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -4024,7 +4024,7 @@ namespace Amazon.IoTWireless
         [Obsolete("This operation is no longer supported.")]
         public virtual GetPositionResponse GetPosition(GetPositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPositionResponseUnmarshaller.Instance;
 
@@ -4038,7 +4038,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve the position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -4068,7 +4068,7 @@ namespace Amazon.IoTWireless
         [Obsolete("This operation is no longer supported.")]
         public virtual Task<GetPositionResponse> GetPositionAsync(GetPositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPositionResponseUnmarshaller.Instance;
             
@@ -4086,7 +4086,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve the position configuration should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -4113,7 +4113,7 @@ namespace Amazon.IoTWireless
         [Obsolete("This operation is no longer supported.")]
         public virtual GetPositionConfigurationResponse GetPositionConfiguration(GetPositionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPositionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPositionConfigurationResponseUnmarshaller.Instance;
 
@@ -4127,7 +4127,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve the position configuration should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -4157,7 +4157,7 @@ namespace Amazon.IoTWireless
         [Obsolete("This operation is no longer supported.")]
         public virtual Task<GetPositionConfigurationResponse> GetPositionConfigurationAsync(GetPositionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPositionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPositionConfigurationResponseUnmarshaller.Instance;
             
@@ -4194,7 +4194,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate">REST API Reference for GetPositionEstimate Operation</seealso>
         public virtual GetPositionEstimateResponse GetPositionEstimate(GetPositionEstimateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPositionEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPositionEstimateResponseUnmarshaller.Instance;
 
@@ -4230,7 +4230,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate">REST API Reference for GetPositionEstimate Operation</seealso>
         public virtual Task<GetPositionEstimateResponse> GetPositionEstimateAsync(GetPositionEstimateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPositionEstimateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPositionEstimateResponseUnmarshaller.Instance;
             
@@ -4266,7 +4266,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceEventConfiguration">REST API Reference for GetResourceEventConfiguration Operation</seealso>
         public virtual GetResourceEventConfigurationResponse GetResourceEventConfiguration(GetResourceEventConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceEventConfigurationResponseUnmarshaller.Instance;
 
@@ -4301,7 +4301,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceEventConfiguration">REST API Reference for GetResourceEventConfiguration Operation</seealso>
         public virtual Task<GetResourceEventConfigurationResponse> GetResourceEventConfigurationAsync(GetResourceEventConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceEventConfigurationResponseUnmarshaller.Instance;
             
@@ -4337,7 +4337,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">REST API Reference for GetResourceLogLevel Operation</seealso>
         public virtual GetResourceLogLevelResponse GetResourceLogLevel(GetResourceLogLevelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceLogLevelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceLogLevelResponseUnmarshaller.Instance;
 
@@ -4372,7 +4372,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">REST API Reference for GetResourceLogLevel Operation</seealso>
         public virtual Task<GetResourceLogLevelResponse> GetResourceLogLevelAsync(GetResourceLogLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceLogLevelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceLogLevelResponseUnmarshaller.Instance;
             
@@ -4410,7 +4410,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition">REST API Reference for GetResourcePosition Operation</seealso>
         public virtual GetResourcePositionResponse GetResourcePosition(GetResourcePositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePositionResponseUnmarshaller.Instance;
 
@@ -4447,7 +4447,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition">REST API Reference for GetResourcePosition Operation</seealso>
         public virtual Task<GetResourcePositionResponse> GetResourcePositionAsync(GetResourcePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePositionResponseUnmarshaller.Instance;
             
@@ -4481,7 +4481,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetServiceEndpoint">REST API Reference for GetServiceEndpoint Operation</seealso>
         public virtual GetServiceEndpointResponse GetServiceEndpoint(GetServiceEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceEndpointResponseUnmarshaller.Instance;
 
@@ -4514,7 +4514,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetServiceEndpoint">REST API Reference for GetServiceEndpoint Operation</seealso>
         public virtual Task<GetServiceEndpointResponse> GetServiceEndpointAsync(GetServiceEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceEndpointResponseUnmarshaller.Instance;
             
@@ -4550,7 +4550,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetServiceProfile">REST API Reference for GetServiceProfile Operation</seealso>
         public virtual GetServiceProfileResponse GetServiceProfile(GetServiceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceProfileResponseUnmarshaller.Instance;
 
@@ -4585,7 +4585,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetServiceProfile">REST API Reference for GetServiceProfile Operation</seealso>
         public virtual Task<GetServiceProfileResponse> GetServiceProfileAsync(GetServiceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceProfileResponseUnmarshaller.Instance;
             
@@ -4621,7 +4621,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDevice">REST API Reference for GetWirelessDevice Operation</seealso>
         public virtual GetWirelessDeviceResponse GetWirelessDevice(GetWirelessDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessDeviceResponseUnmarshaller.Instance;
 
@@ -4656,7 +4656,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDevice">REST API Reference for GetWirelessDevice Operation</seealso>
         public virtual Task<GetWirelessDeviceResponse> GetWirelessDeviceAsync(GetWirelessDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessDeviceResponseUnmarshaller.Instance;
             
@@ -4696,7 +4696,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask">REST API Reference for GetWirelessDeviceImportTask Operation</seealso>
         public virtual GetWirelessDeviceImportTaskResponse GetWirelessDeviceImportTask(GetWirelessDeviceImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessDeviceImportTaskResponseUnmarshaller.Instance;
 
@@ -4735,7 +4735,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask">REST API Reference for GetWirelessDeviceImportTask Operation</seealso>
         public virtual Task<GetWirelessDeviceImportTaskResponse> GetWirelessDeviceImportTaskAsync(GetWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessDeviceImportTaskResponseUnmarshaller.Instance;
             
@@ -4771,7 +4771,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceStatistics">REST API Reference for GetWirelessDeviceStatistics Operation</seealso>
         public virtual GetWirelessDeviceStatisticsResponse GetWirelessDeviceStatistics(GetWirelessDeviceStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessDeviceStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessDeviceStatisticsResponseUnmarshaller.Instance;
 
@@ -4806,7 +4806,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceStatistics">REST API Reference for GetWirelessDeviceStatistics Operation</seealso>
         public virtual Task<GetWirelessDeviceStatisticsResponse> GetWirelessDeviceStatisticsAsync(GetWirelessDeviceStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessDeviceStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessDeviceStatisticsResponseUnmarshaller.Instance;
             
@@ -4842,7 +4842,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGateway">REST API Reference for GetWirelessGateway Operation</seealso>
         public virtual GetWirelessGatewayResponse GetWirelessGateway(GetWirelessGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayResponseUnmarshaller.Instance;
 
@@ -4877,7 +4877,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGateway">REST API Reference for GetWirelessGateway Operation</seealso>
         public virtual Task<GetWirelessGatewayResponse> GetWirelessGatewayAsync(GetWirelessGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayResponseUnmarshaller.Instance;
             
@@ -4913,7 +4913,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGatewayCertificate">REST API Reference for GetWirelessGatewayCertificate Operation</seealso>
         public virtual GetWirelessGatewayCertificateResponse GetWirelessGatewayCertificate(GetWirelessGatewayCertificateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayCertificateResponseUnmarshaller.Instance;
 
@@ -4948,7 +4948,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGatewayCertificate">REST API Reference for GetWirelessGatewayCertificate Operation</seealso>
         public virtual Task<GetWirelessGatewayCertificateResponse> GetWirelessGatewayCertificateAsync(GetWirelessGatewayCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayCertificateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayCertificateResponseUnmarshaller.Instance;
             
@@ -4984,7 +4984,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGatewayFirmwareInformation">REST API Reference for GetWirelessGatewayFirmwareInformation Operation</seealso>
         public virtual GetWirelessGatewayFirmwareInformationResponse GetWirelessGatewayFirmwareInformation(GetWirelessGatewayFirmwareInformationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayFirmwareInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayFirmwareInformationResponseUnmarshaller.Instance;
 
@@ -5019,7 +5019,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGatewayFirmwareInformation">REST API Reference for GetWirelessGatewayFirmwareInformation Operation</seealso>
         public virtual Task<GetWirelessGatewayFirmwareInformationResponse> GetWirelessGatewayFirmwareInformationAsync(GetWirelessGatewayFirmwareInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayFirmwareInformationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayFirmwareInformationResponseUnmarshaller.Instance;
             
@@ -5055,7 +5055,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGatewayStatistics">REST API Reference for GetWirelessGatewayStatistics Operation</seealso>
         public virtual GetWirelessGatewayStatisticsResponse GetWirelessGatewayStatistics(GetWirelessGatewayStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayStatisticsResponseUnmarshaller.Instance;
 
@@ -5090,7 +5090,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGatewayStatistics">REST API Reference for GetWirelessGatewayStatistics Operation</seealso>
         public virtual Task<GetWirelessGatewayStatisticsResponse> GetWirelessGatewayStatisticsAsync(GetWirelessGatewayStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayStatisticsResponseUnmarshaller.Instance;
             
@@ -5126,7 +5126,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGatewayTask">REST API Reference for GetWirelessGatewayTask Operation</seealso>
         public virtual GetWirelessGatewayTaskResponse GetWirelessGatewayTask(GetWirelessGatewayTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayTaskResponseUnmarshaller.Instance;
 
@@ -5161,7 +5161,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGatewayTask">REST API Reference for GetWirelessGatewayTask Operation</seealso>
         public virtual Task<GetWirelessGatewayTaskResponse> GetWirelessGatewayTaskAsync(GetWirelessGatewayTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayTaskResponseUnmarshaller.Instance;
             
@@ -5197,7 +5197,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGatewayTaskDefinition">REST API Reference for GetWirelessGatewayTaskDefinition Operation</seealso>
         public virtual GetWirelessGatewayTaskDefinitionResponse GetWirelessGatewayTaskDefinition(GetWirelessGatewayTaskDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayTaskDefinitionResponseUnmarshaller.Instance;
 
@@ -5232,7 +5232,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessGatewayTaskDefinition">REST API Reference for GetWirelessGatewayTaskDefinition Operation</seealso>
         public virtual Task<GetWirelessGatewayTaskDefinitionResponse> GetWirelessGatewayTaskDefinitionAsync(GetWirelessGatewayTaskDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWirelessGatewayTaskDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWirelessGatewayTaskDefinitionResponseUnmarshaller.Instance;
             
@@ -5265,7 +5265,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDestinations">REST API Reference for ListDestinations Operation</seealso>
         public virtual ListDestinationsResponse ListDestinations(ListDestinationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDestinationsResponseUnmarshaller.Instance;
 
@@ -5297,7 +5297,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDestinations">REST API Reference for ListDestinations Operation</seealso>
         public virtual Task<ListDestinationsResponse> ListDestinationsAsync(ListDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDestinationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDestinationsResponseUnmarshaller.Instance;
             
@@ -5330,7 +5330,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDeviceProfiles">REST API Reference for ListDeviceProfiles Operation</seealso>
         public virtual ListDeviceProfilesResponse ListDeviceProfiles(ListDeviceProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeviceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeviceProfilesResponseUnmarshaller.Instance;
 
@@ -5362,7 +5362,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDeviceProfiles">REST API Reference for ListDeviceProfiles Operation</seealso>
         public virtual Task<ListDeviceProfilesResponse> ListDeviceProfilesAsync(ListDeviceProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeviceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeviceProfilesResponseUnmarshaller.Instance;
             
@@ -5401,7 +5401,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask">REST API Reference for ListDevicesForWirelessDeviceImportTask Operation</seealso>
         public virtual ListDevicesForWirelessDeviceImportTaskResponse ListDevicesForWirelessDeviceImportTask(ListDevicesForWirelessDeviceImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesForWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesForWirelessDeviceImportTaskResponseUnmarshaller.Instance;
 
@@ -5439,7 +5439,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask">REST API Reference for ListDevicesForWirelessDeviceImportTask Operation</seealso>
         public virtual Task<ListDevicesForWirelessDeviceImportTaskResponse> ListDevicesForWirelessDeviceImportTaskAsync(ListDevicesForWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevicesForWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevicesForWirelessDeviceImportTaskResponseUnmarshaller.Instance;
             
@@ -5472,7 +5472,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListEventConfigurations">REST API Reference for ListEventConfigurations Operation</seealso>
         public virtual ListEventConfigurationsResponse ListEventConfigurations(ListEventConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventConfigurationsResponseUnmarshaller.Instance;
 
@@ -5504,7 +5504,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListEventConfigurations">REST API Reference for ListEventConfigurations Operation</seealso>
         public virtual Task<ListEventConfigurationsResponse> ListEventConfigurationsAsync(ListEventConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventConfigurationsResponseUnmarshaller.Instance;
             
@@ -5537,7 +5537,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListFuotaTasks">REST API Reference for ListFuotaTasks Operation</seealso>
         public virtual ListFuotaTasksResponse ListFuotaTasks(ListFuotaTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFuotaTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFuotaTasksResponseUnmarshaller.Instance;
 
@@ -5569,7 +5569,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListFuotaTasks">REST API Reference for ListFuotaTasks Operation</seealso>
         public virtual Task<ListFuotaTasksResponse> ListFuotaTasksAsync(ListFuotaTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFuotaTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFuotaTasksResponseUnmarshaller.Instance;
             
@@ -5602,7 +5602,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroups">REST API Reference for ListMulticastGroups Operation</seealso>
         public virtual ListMulticastGroupsResponse ListMulticastGroups(ListMulticastGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMulticastGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMulticastGroupsResponseUnmarshaller.Instance;
 
@@ -5634,7 +5634,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroups">REST API Reference for ListMulticastGroups Operation</seealso>
         public virtual Task<ListMulticastGroupsResponse> ListMulticastGroupsAsync(ListMulticastGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMulticastGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMulticastGroupsResponseUnmarshaller.Instance;
             
@@ -5670,7 +5670,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask">REST API Reference for ListMulticastGroupsByFuotaTask Operation</seealso>
         public virtual ListMulticastGroupsByFuotaTaskResponse ListMulticastGroupsByFuotaTask(ListMulticastGroupsByFuotaTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMulticastGroupsByFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMulticastGroupsByFuotaTaskResponseUnmarshaller.Instance;
 
@@ -5705,7 +5705,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListMulticastGroupsByFuotaTask">REST API Reference for ListMulticastGroupsByFuotaTask Operation</seealso>
         public virtual Task<ListMulticastGroupsByFuotaTaskResponse> ListMulticastGroupsByFuotaTaskAsync(ListMulticastGroupsByFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMulticastGroupsByFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMulticastGroupsByFuotaTaskResponseUnmarshaller.Instance;
             
@@ -5738,7 +5738,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListNetworkAnalyzerConfigurations">REST API Reference for ListNetworkAnalyzerConfigurations Operation</seealso>
         public virtual ListNetworkAnalyzerConfigurationsResponse ListNetworkAnalyzerConfigurations(ListNetworkAnalyzerConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNetworkAnalyzerConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNetworkAnalyzerConfigurationsResponseUnmarshaller.Instance;
 
@@ -5770,7 +5770,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListNetworkAnalyzerConfigurations">REST API Reference for ListNetworkAnalyzerConfigurations Operation</seealso>
         public virtual Task<ListNetworkAnalyzerConfigurationsResponse> ListNetworkAnalyzerConfigurationsAsync(ListNetworkAnalyzerConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNetworkAnalyzerConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNetworkAnalyzerConfigurationsResponseUnmarshaller.Instance;
             
@@ -5803,7 +5803,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPartnerAccounts">REST API Reference for ListPartnerAccounts Operation</seealso>
         public virtual ListPartnerAccountsResponse ListPartnerAccounts(ListPartnerAccountsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnerAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnerAccountsResponseUnmarshaller.Instance;
 
@@ -5835,7 +5835,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPartnerAccounts">REST API Reference for ListPartnerAccounts Operation</seealso>
         public virtual Task<ListPartnerAccountsResponse> ListPartnerAccountsAsync(ListPartnerAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPartnerAccountsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPartnerAccountsResponseUnmarshaller.Instance;
             
@@ -5853,7 +5853,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -5877,7 +5877,7 @@ namespace Amazon.IoTWireless
         [Obsolete("This operation is no longer supported.")]
         public virtual ListPositionConfigurationsResponse ListPositionConfigurations(ListPositionConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPositionConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPositionConfigurationsResponseUnmarshaller.Instance;
 
@@ -5891,7 +5891,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to retrieve position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_GetResourcePosition.html">GetResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -5918,7 +5918,7 @@ namespace Amazon.IoTWireless
         [Obsolete("This operation is no longer supported.")]
         public virtual Task<ListPositionConfigurationsResponse> ListPositionConfigurationsAsync(ListPositionConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPositionConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPositionConfigurationsResponseUnmarshaller.Instance;
             
@@ -5954,7 +5954,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListQueuedMessages">REST API Reference for ListQueuedMessages Operation</seealso>
         public virtual ListQueuedMessagesResponse ListQueuedMessages(ListQueuedMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuedMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuedMessagesResponseUnmarshaller.Instance;
 
@@ -5989,7 +5989,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListQueuedMessages">REST API Reference for ListQueuedMessages Operation</seealso>
         public virtual Task<ListQueuedMessagesResponse> ListQueuedMessagesAsync(ListQueuedMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuedMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuedMessagesResponseUnmarshaller.Instance;
             
@@ -6022,7 +6022,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListServiceProfiles">REST API Reference for ListServiceProfiles Operation</seealso>
         public virtual ListServiceProfilesResponse ListServiceProfiles(ListServiceProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceProfilesResponseUnmarshaller.Instance;
 
@@ -6054,7 +6054,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListServiceProfiles">REST API Reference for ListServiceProfiles Operation</seealso>
         public virtual Task<ListServiceProfilesResponse> ListServiceProfilesAsync(ListServiceProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServiceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServiceProfilesResponseUnmarshaller.Instance;
             
@@ -6090,7 +6090,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6125,7 +6125,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -6138,7 +6138,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// List wireless devices that have been added to an import task.
+        /// List of import tasks and summary information of onboarding status of devices in each
+        /// import task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWirelessDeviceImportTasks service method.</param>
         /// 
@@ -6164,7 +6165,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks">REST API Reference for ListWirelessDeviceImportTasks Operation</seealso>
         public virtual ListWirelessDeviceImportTasksResponse ListWirelessDeviceImportTasks(ListWirelessDeviceImportTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWirelessDeviceImportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWirelessDeviceImportTasksResponseUnmarshaller.Instance;
 
@@ -6173,7 +6174,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// List wireless devices that have been added to an import task.
+        /// List of import tasks and summary information of onboarding status of devices in each
+        /// import task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWirelessDeviceImportTasks service method.</param>
         /// <param name="cancellationToken">
@@ -6202,7 +6204,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks">REST API Reference for ListWirelessDeviceImportTasks Operation</seealso>
         public virtual Task<ListWirelessDeviceImportTasksResponse> ListWirelessDeviceImportTasksAsync(ListWirelessDeviceImportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWirelessDeviceImportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWirelessDeviceImportTasksResponseUnmarshaller.Instance;
             
@@ -6235,7 +6237,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDevices">REST API Reference for ListWirelessDevices Operation</seealso>
         public virtual ListWirelessDevicesResponse ListWirelessDevices(ListWirelessDevicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWirelessDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWirelessDevicesResponseUnmarshaller.Instance;
 
@@ -6267,7 +6269,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDevices">REST API Reference for ListWirelessDevices Operation</seealso>
         public virtual Task<ListWirelessDevicesResponse> ListWirelessDevicesAsync(ListWirelessDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWirelessDevicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWirelessDevicesResponseUnmarshaller.Instance;
             
@@ -6300,7 +6302,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessGateways">REST API Reference for ListWirelessGateways Operation</seealso>
         public virtual ListWirelessGatewaysResponse ListWirelessGateways(ListWirelessGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWirelessGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWirelessGatewaysResponseUnmarshaller.Instance;
 
@@ -6332,7 +6334,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessGateways">REST API Reference for ListWirelessGateways Operation</seealso>
         public virtual Task<ListWirelessGatewaysResponse> ListWirelessGatewaysAsync(ListWirelessGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWirelessGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWirelessGatewaysResponseUnmarshaller.Instance;
             
@@ -6365,7 +6367,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessGatewayTaskDefinitions">REST API Reference for ListWirelessGatewayTaskDefinitions Operation</seealso>
         public virtual ListWirelessGatewayTaskDefinitionsResponse ListWirelessGatewayTaskDefinitions(ListWirelessGatewayTaskDefinitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWirelessGatewayTaskDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWirelessGatewayTaskDefinitionsResponseUnmarshaller.Instance;
 
@@ -6397,7 +6399,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessGatewayTaskDefinitions">REST API Reference for ListWirelessGatewayTaskDefinitions Operation</seealso>
         public virtual Task<ListWirelessGatewayTaskDefinitionsResponse> ListWirelessGatewayTaskDefinitionsAsync(ListWirelessGatewayTaskDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWirelessGatewayTaskDefinitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWirelessGatewayTaskDefinitionsResponseUnmarshaller.Instance;
             
@@ -6415,7 +6417,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to update the position configuration should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -6442,7 +6444,7 @@ namespace Amazon.IoTWireless
         [Obsolete("This operation is no longer supported.")]
         public virtual PutPositionConfigurationResponse PutPositionConfiguration(PutPositionConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPositionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPositionConfigurationResponseUnmarshaller.Instance;
 
@@ -6456,7 +6458,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to update the position configuration should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -6486,7 +6488,7 @@ namespace Amazon.IoTWireless
         [Obsolete("This operation is no longer supported.")]
         public virtual Task<PutPositionConfigurationResponse> PutPositionConfigurationAsync(PutPositionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPositionConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPositionConfigurationResponseUnmarshaller.Instance;
             
@@ -6523,7 +6525,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">REST API Reference for PutResourceLogLevel Operation</seealso>
         public virtual PutResourceLogLevelResponse PutResourceLogLevel(PutResourceLogLevelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourceLogLevelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourceLogLevelResponseUnmarshaller.Instance;
 
@@ -6559,7 +6561,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">REST API Reference for PutResourceLogLevel Operation</seealso>
         public virtual Task<PutResourceLogLevelResponse> PutResourceLogLevelAsync(PutResourceLogLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourceLogLevelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourceLogLevelResponseUnmarshaller.Instance;
             
@@ -6596,7 +6598,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">REST API Reference for ResetAllResourceLogLevels Operation</seealso>
         public virtual ResetAllResourceLogLevelsResponse ResetAllResourceLogLevels(ResetAllResourceLogLevelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetAllResourceLogLevelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetAllResourceLogLevelsResponseUnmarshaller.Instance;
 
@@ -6632,7 +6634,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">REST API Reference for ResetAllResourceLogLevels Operation</seealso>
         public virtual Task<ResetAllResourceLogLevelsResponse> ResetAllResourceLogLevelsAsync(ResetAllResourceLogLevelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetAllResourceLogLevelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetAllResourceLogLevelsResponseUnmarshaller.Instance;
             
@@ -6669,7 +6671,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">REST API Reference for ResetResourceLogLevel Operation</seealso>
         public virtual ResetResourceLogLevelResponse ResetResourceLogLevel(ResetResourceLogLevelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetResourceLogLevelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetResourceLogLevelResponseUnmarshaller.Instance;
 
@@ -6705,7 +6707,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">REST API Reference for ResetResourceLogLevel Operation</seealso>
         public virtual Task<ResetResourceLogLevelResponse> ResetResourceLogLevelAsync(ResetResourceLogLevelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetResourceLogLevelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetResourceLogLevelResponseUnmarshaller.Instance;
             
@@ -6744,7 +6746,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToMulticastGroup">REST API Reference for SendDataToMulticastGroup Operation</seealso>
         public virtual SendDataToMulticastGroupResponse SendDataToMulticastGroup(SendDataToMulticastGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDataToMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDataToMulticastGroupResponseUnmarshaller.Instance;
 
@@ -6782,7 +6784,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToMulticastGroup">REST API Reference for SendDataToMulticastGroup Operation</seealso>
         public virtual Task<SendDataToMulticastGroupResponse> SendDataToMulticastGroupAsync(SendDataToMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDataToMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDataToMulticastGroupResponseUnmarshaller.Instance;
             
@@ -6815,7 +6817,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToWirelessDevice">REST API Reference for SendDataToWirelessDevice Operation</seealso>
         public virtual SendDataToWirelessDeviceResponse SendDataToWirelessDevice(SendDataToWirelessDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDataToWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDataToWirelessDeviceResponseUnmarshaller.Instance;
 
@@ -6847,7 +6849,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToWirelessDevice">REST API Reference for SendDataToWirelessDevice Operation</seealso>
         public virtual Task<SendDataToWirelessDeviceResponse> SendDataToWirelessDeviceAsync(SendDataToWirelessDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendDataToWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendDataToWirelessDeviceResponseUnmarshaller.Instance;
             
@@ -6883,7 +6885,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkAssociateWirelessDeviceWithMulticastGroup">REST API Reference for StartBulkAssociateWirelessDeviceWithMulticastGroup Operation</seealso>
         public virtual StartBulkAssociateWirelessDeviceWithMulticastGroupResponse StartBulkAssociateWirelessDeviceWithMulticastGroup(StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
 
@@ -6918,7 +6920,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkAssociateWirelessDeviceWithMulticastGroup">REST API Reference for StartBulkAssociateWirelessDeviceWithMulticastGroup Operation</seealso>
         public virtual Task<StartBulkAssociateWirelessDeviceWithMulticastGroupResponse> StartBulkAssociateWirelessDeviceWithMulticastGroupAsync(StartBulkAssociateWirelessDeviceWithMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBulkAssociateWirelessDeviceWithMulticastGroupResponseUnmarshaller.Instance;
             
@@ -6954,7 +6956,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkDisassociateWirelessDeviceFromMulticastGroup">REST API Reference for StartBulkDisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
         public virtual StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse StartBulkDisassociateWirelessDeviceFromMulticastGroup(StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
 
@@ -6989,7 +6991,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartBulkDisassociateWirelessDeviceFromMulticastGroup">REST API Reference for StartBulkDisassociateWirelessDeviceFromMulticastGroup Operation</seealso>
         public virtual Task<StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse> StartBulkDisassociateWirelessDeviceFromMulticastGroupAsync(StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBulkDisassociateWirelessDeviceFromMulticastGroupResponseUnmarshaller.Instance;
             
@@ -7028,7 +7030,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartFuotaTask">REST API Reference for StartFuotaTask Operation</seealso>
         public virtual StartFuotaTaskResponse StartFuotaTask(StartFuotaTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFuotaTaskResponseUnmarshaller.Instance;
 
@@ -7066,7 +7068,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartFuotaTask">REST API Reference for StartFuotaTask Operation</seealso>
         public virtual Task<StartFuotaTaskResponse> StartFuotaTaskAsync(StartFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFuotaTaskResponseUnmarshaller.Instance;
             
@@ -7105,7 +7107,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession">REST API Reference for StartMulticastGroupSession Operation</seealso>
         public virtual StartMulticastGroupSessionResponse StartMulticastGroupSession(StartMulticastGroupSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMulticastGroupSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMulticastGroupSessionResponseUnmarshaller.Instance;
 
@@ -7143,7 +7145,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartMulticastGroupSession">REST API Reference for StartMulticastGroupSession Operation</seealso>
         public virtual Task<StartMulticastGroupSessionResponse> StartMulticastGroupSessionAsync(StartMulticastGroupSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMulticastGroupSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMulticastGroupSessionResponseUnmarshaller.Instance;
             
@@ -7182,7 +7184,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask">REST API Reference for StartSingleWirelessDeviceImportTask Operation</seealso>
         public virtual StartSingleWirelessDeviceImportTaskResponse StartSingleWirelessDeviceImportTask(StartSingleWirelessDeviceImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSingleWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSingleWirelessDeviceImportTaskResponseUnmarshaller.Instance;
 
@@ -7220,7 +7222,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask">REST API Reference for StartSingleWirelessDeviceImportTask Operation</seealso>
         public virtual Task<StartSingleWirelessDeviceImportTaskResponse> StartSingleWirelessDeviceImportTaskAsync(StartSingleWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartSingleWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartSingleWirelessDeviceImportTaskResponseUnmarshaller.Instance;
             
@@ -7259,7 +7261,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask">REST API Reference for StartWirelessDeviceImportTask Operation</seealso>
         public virtual StartWirelessDeviceImportTaskResponse StartWirelessDeviceImportTask(StartWirelessDeviceImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWirelessDeviceImportTaskResponseUnmarshaller.Instance;
 
@@ -7297,7 +7299,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask">REST API Reference for StartWirelessDeviceImportTask Operation</seealso>
         public virtual Task<StartWirelessDeviceImportTaskResponse> StartWirelessDeviceImportTaskAsync(StartWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWirelessDeviceImportTaskResponseUnmarshaller.Instance;
             
@@ -7336,7 +7338,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -7374,7 +7376,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -7407,7 +7409,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/TestWirelessDevice">REST API Reference for TestWirelessDevice Operation</seealso>
         public virtual TestWirelessDeviceResponse TestWirelessDevice(TestWirelessDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestWirelessDeviceResponseUnmarshaller.Instance;
 
@@ -7439,7 +7441,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/TestWirelessDevice">REST API Reference for TestWirelessDevice Operation</seealso>
         public virtual Task<TestWirelessDeviceResponse> TestWirelessDeviceAsync(TestWirelessDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestWirelessDeviceResponseUnmarshaller.Instance;
             
@@ -7475,7 +7477,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -7510,7 +7512,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -7546,7 +7548,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         public virtual UpdateDestinationResponse UpdateDestination(UpdateDestinationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDestinationResponseUnmarshaller.Instance;
 
@@ -7581,7 +7583,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         public virtual Task<UpdateDestinationResponse> UpdateDestinationAsync(UpdateDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDestinationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDestinationResponseUnmarshaller.Instance;
             
@@ -7614,7 +7616,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateEventConfigurationByResourceTypes">REST API Reference for UpdateEventConfigurationByResourceTypes Operation</seealso>
         public virtual UpdateEventConfigurationByResourceTypesResponse UpdateEventConfigurationByResourceTypes(UpdateEventConfigurationByResourceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventConfigurationByResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventConfigurationByResourceTypesResponseUnmarshaller.Instance;
 
@@ -7646,7 +7648,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateEventConfigurationByResourceTypes">REST API Reference for UpdateEventConfigurationByResourceTypes Operation</seealso>
         public virtual Task<UpdateEventConfigurationByResourceTypesResponse> UpdateEventConfigurationByResourceTypesAsync(UpdateEventConfigurationByResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateEventConfigurationByResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateEventConfigurationByResourceTypesResponseUnmarshaller.Instance;
             
@@ -7685,7 +7687,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFuotaTask">REST API Reference for UpdateFuotaTask Operation</seealso>
         public virtual UpdateFuotaTaskResponse UpdateFuotaTask(UpdateFuotaTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFuotaTaskResponseUnmarshaller.Instance;
 
@@ -7723,7 +7725,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateFuotaTask">REST API Reference for UpdateFuotaTask Operation</seealso>
         public virtual Task<UpdateFuotaTaskResponse> UpdateFuotaTaskAsync(UpdateFuotaTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFuotaTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFuotaTaskResponseUnmarshaller.Instance;
             
@@ -7764,7 +7766,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">REST API Reference for UpdateLogLevelsByResourceTypes Operation</seealso>
         public virtual UpdateLogLevelsByResourceTypesResponse UpdateLogLevelsByResourceTypes(UpdateLogLevelsByResourceTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLogLevelsByResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLogLevelsByResourceTypesResponseUnmarshaller.Instance;
 
@@ -7804,7 +7806,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">REST API Reference for UpdateLogLevelsByResourceTypes Operation</seealso>
         public virtual Task<UpdateLogLevelsByResourceTypesResponse> UpdateLogLevelsByResourceTypesAsync(UpdateLogLevelsByResourceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLogLevelsByResourceTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLogLevelsByResourceTypesResponseUnmarshaller.Instance;
             
@@ -7843,7 +7845,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration">REST API Reference for UpdateMetricConfiguration Operation</seealso>
         public virtual UpdateMetricConfigurationResponse UpdateMetricConfiguration(UpdateMetricConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMetricConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMetricConfigurationResponseUnmarshaller.Instance;
 
@@ -7881,7 +7883,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration">REST API Reference for UpdateMetricConfiguration Operation</seealso>
         public virtual Task<UpdateMetricConfigurationResponse> UpdateMetricConfigurationAsync(UpdateMetricConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMetricConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMetricConfigurationResponseUnmarshaller.Instance;
             
@@ -7920,7 +7922,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMulticastGroup">REST API Reference for UpdateMulticastGroup Operation</seealso>
         public virtual UpdateMulticastGroupResponse UpdateMulticastGroup(UpdateMulticastGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMulticastGroupResponseUnmarshaller.Instance;
 
@@ -7958,7 +7960,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMulticastGroup">REST API Reference for UpdateMulticastGroup Operation</seealso>
         public virtual Task<UpdateMulticastGroupResponse> UpdateMulticastGroupAsync(UpdateMulticastGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMulticastGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMulticastGroupResponseUnmarshaller.Instance;
             
@@ -7994,7 +7996,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateNetworkAnalyzerConfiguration">REST API Reference for UpdateNetworkAnalyzerConfiguration Operation</seealso>
         public virtual UpdateNetworkAnalyzerConfigurationResponse UpdateNetworkAnalyzerConfiguration(UpdateNetworkAnalyzerConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNetworkAnalyzerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNetworkAnalyzerConfigurationResponseUnmarshaller.Instance;
 
@@ -8029,7 +8031,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateNetworkAnalyzerConfiguration">REST API Reference for UpdateNetworkAnalyzerConfiguration Operation</seealso>
         public virtual Task<UpdateNetworkAnalyzerConfigurationResponse> UpdateNetworkAnalyzerConfigurationAsync(UpdateNetworkAnalyzerConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateNetworkAnalyzerConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateNetworkAnalyzerConfigurationResponseUnmarshaller.Instance;
             
@@ -8062,7 +8064,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePartnerAccount">REST API Reference for UpdatePartnerAccount Operation</seealso>
         public virtual UpdatePartnerAccountResponse UpdatePartnerAccount(UpdatePartnerAccountRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePartnerAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePartnerAccountResponseUnmarshaller.Instance;
 
@@ -8094,7 +8096,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePartnerAccount">REST API Reference for UpdatePartnerAccount Operation</seealso>
         public virtual Task<UpdatePartnerAccountResponse> UpdatePartnerAccountAsync(UpdatePartnerAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePartnerAccountRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePartnerAccountResponseUnmarshaller.Instance;
             
@@ -8112,7 +8114,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to update the position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -8139,7 +8141,7 @@ namespace Amazon.IoTWireless
         [Obsolete("This operation is no longer supported.")]
         public virtual UpdatePositionResponse UpdatePosition(UpdatePositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePositionResponseUnmarshaller.Instance;
 
@@ -8153,7 +8155,7 @@ namespace Amazon.IoTWireless
         ///  <important> 
         /// <para>
         /// This action is no longer supported. Calls to update the position information should
-        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
+        /// use the <a href="https://docs.aws.amazon.com/iot-wireless/latest/apireference/API_UpdateResourcePosition.html">UpdateResourcePosition</a>
         /// API operation instead.
         /// </para>
         ///  </important>
@@ -8183,7 +8185,7 @@ namespace Amazon.IoTWireless
         [Obsolete("This operation is no longer supported.")]
         public virtual Task<UpdatePositionResponse> UpdatePositionAsync(UpdatePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePositionResponseUnmarshaller.Instance;
             
@@ -8222,7 +8224,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration">REST API Reference for UpdateResourceEventConfiguration Operation</seealso>
         public virtual UpdateResourceEventConfigurationResponse UpdateResourceEventConfiguration(UpdateResourceEventConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceEventConfigurationResponseUnmarshaller.Instance;
 
@@ -8260,7 +8262,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourceEventConfiguration">REST API Reference for UpdateResourceEventConfiguration Operation</seealso>
         public virtual Task<UpdateResourceEventConfigurationResponse> UpdateResourceEventConfigurationAsync(UpdateResourceEventConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourceEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourceEventConfigurationResponseUnmarshaller.Instance;
             
@@ -8298,7 +8300,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition">REST API Reference for UpdateResourcePosition Operation</seealso>
         public virtual UpdateResourcePositionResponse UpdateResourcePosition(UpdateResourcePositionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourcePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourcePositionResponseUnmarshaller.Instance;
 
@@ -8335,7 +8337,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition">REST API Reference for UpdateResourcePosition Operation</seealso>
         public virtual Task<UpdateResourcePositionResponse> UpdateResourcePositionAsync(UpdateResourcePositionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateResourcePositionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateResourcePositionResponseUnmarshaller.Instance;
             
@@ -8371,7 +8373,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDevice">REST API Reference for UpdateWirelessDevice Operation</seealso>
         public virtual UpdateWirelessDeviceResponse UpdateWirelessDevice(UpdateWirelessDeviceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWirelessDeviceResponseUnmarshaller.Instance;
 
@@ -8406,7 +8408,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDevice">REST API Reference for UpdateWirelessDevice Operation</seealso>
         public virtual Task<UpdateWirelessDeviceResponse> UpdateWirelessDeviceAsync(UpdateWirelessDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWirelessDeviceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWirelessDeviceResponseUnmarshaller.Instance;
             
@@ -8445,7 +8447,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask">REST API Reference for UpdateWirelessDeviceImportTask Operation</seealso>
         public virtual UpdateWirelessDeviceImportTaskResponse UpdateWirelessDeviceImportTask(UpdateWirelessDeviceImportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWirelessDeviceImportTaskResponseUnmarshaller.Instance;
 
@@ -8483,7 +8485,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask">REST API Reference for UpdateWirelessDeviceImportTask Operation</seealso>
         public virtual Task<UpdateWirelessDeviceImportTaskResponse> UpdateWirelessDeviceImportTaskAsync(UpdateWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWirelessDeviceImportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWirelessDeviceImportTaskResponseUnmarshaller.Instance;
             
@@ -8519,7 +8521,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessGateway">REST API Reference for UpdateWirelessGateway Operation</seealso>
         public virtual UpdateWirelessGatewayResponse UpdateWirelessGateway(UpdateWirelessGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWirelessGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWirelessGatewayResponseUnmarshaller.Instance;
 
@@ -8554,7 +8556,7 @@ namespace Amazon.IoTWireless
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessGateway">REST API Reference for UpdateWirelessGateway Operation</seealso>
         public virtual Task<UpdateWirelessGatewayResponse> UpdateWirelessGatewayAsync(UpdateWirelessGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWirelessGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWirelessGatewayResponseUnmarshaller.Instance;
             

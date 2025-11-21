@@ -39,8 +39,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// Instance topology is supported for specific instance types only. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">
-    /// Prerequisites for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology-prerequisites.html">Prerequisites
+    /// for Amazon EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
     ///  </note> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon
-    /// EC2 instance topology</a> in the <i>Amazon EC2 User Guide</i>.
+    /// EC2 topology</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeInstanceTopologyRequest : AmazonEC2Request

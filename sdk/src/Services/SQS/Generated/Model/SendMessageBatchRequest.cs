@@ -47,8 +47,8 @@ namespace Amazon.SQS.Model
     ///  
     /// <para>
     /// The maximum allowed individual message size and the maximum total payload size (the
-    /// sum of the individual lengths of all of the batched messages) are both 256 KiB (262,144
-    /// bytes).
+    /// sum of the individual lengths of all of the batched messages) are both 1 MiB 1,048,576
+    /// bytes.
     /// </para>
     ///  <important> 
     /// <para>
@@ -63,10 +63,9 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon SQS does not throw an exception or completely reject the message if it contains
-    /// invalid characters. Instead, it replaces those invalid characters with U+FFFD before
-    /// storing the message in the queue, as long as the message body contains at least one
-    /// valid character.
+    /// If a message contains characters outside the allowed set, Amazon SQS rejects the message
+    /// and returns an InvalidMessageContents error. Ensure that your message body includes
+    /// only valid characters to avoid this exception.
     /// </para>
     ///  </important> 
     /// <para>

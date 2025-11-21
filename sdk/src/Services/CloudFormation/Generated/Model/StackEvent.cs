@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The StackEvent data type.
+    /// The <c>StackEvent</c> data type.
     /// </summary>
     public partial class StackEvent
     {
@@ -38,11 +38,13 @@ namespace Amazon.CloudFormation.Model
         private DetailedStatus _detailedStatus;
         private string _eventId;
         private HookFailureMode _hookFailureMode;
+        private string _hookInvocationId;
         private HookInvocationPoint _hookInvocationPoint;
         private HookStatus _hookStatus;
         private string _hookStatusReason;
         private string _hookType;
         private string _logicalResourceId;
+        private string _operationId;
         private string _physicalResourceId;
         private string _resourceProperties;
         private ResourceStatus _resourceStatus;
@@ -121,7 +123,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The unique ID of this event.
+        /// The unique identifier of this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,7 +142,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookFailureMode. 
         /// <para>
-        /// Specify the hook failure mode for non-compliant resources in the followings ways.
+        /// Specify the Hook failure mode for non-compliant resources in the followings ways.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -165,9 +167,28 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HookInvocationId. 
+        /// <para>
+        /// The unique identifier of the Hook invocation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string HookInvocationId
+        {
+            get { return this._hookInvocationId; }
+            set { this._hookInvocationId = value; }
+        }
+
+        // Check to see if HookInvocationId property is set
+        internal bool IsSetHookInvocationId()
+        {
+            return this._hookInvocationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HookInvocationPoint. 
         /// <para>
-        /// Invocation points are points in provisioning logic where Hooks are initiated.
+        /// The specific point in the provisioning process where the Hook is invoked.
         /// </para>
         /// </summary>
         public HookInvocationPoint HookInvocationPoint
@@ -185,7 +206,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookStatus. 
         /// <para>
-        /// Provides the status of the change set hook.
+        /// Provides the status of the change set Hook.
         /// </para>
         /// </summary>
         public HookStatus HookStatus
@@ -203,7 +224,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookStatusReason. 
         /// <para>
-        /// Provides the reason for the hook status.
+        /// Provides the reason for the Hook status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -222,7 +243,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookType. 
         /// <para>
-        /// The name of the hook.
+        /// The name of the Hook.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -254,6 +275,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetLogicalResourceId()
         {
             return this._logicalResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The unique identifier of the operation that generated this stack event.
+        /// </para>
+        /// </summary>
+        public string OperationId
+        {
+            get { return this._operationId; }
+            set { this._operationId = value; }
+        }
+
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
+        {
+            return this._operationId != null;
         }
 
         /// <summary>

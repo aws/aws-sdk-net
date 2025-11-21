@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StreamingDistributionConfig Object
     /// </summary>  
-    public class StreamingDistributionConfigUnmarshaller : IXmlUnmarshaller<StreamingDistributionConfig, XmlUnmarshallerContext>
+    public partial class StreamingDistributionConfigUnmarshaller : IXmlUnmarshaller<StreamingDistributionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -104,6 +104,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.TrustedSigners = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -112,6 +114,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StreamingDistributionConfig unmarshalledObject, int targetDepth);
+
         private static StreamingDistributionConfigUnmarshaller _instance = new StreamingDistributionConfigUnmarshaller();        
 
         /// <summary>

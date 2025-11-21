@@ -107,6 +107,12 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ExternalMeetingId);
             }
 
+            if(publicRequest.IsSetMediaPlacementNetworkType())
+            {
+                context.Writer.WritePropertyName("MediaPlacementNetworkType");
+                context.Writer.WriteStringValue(publicRequest.MediaPlacementNetworkType);
+            }
+
             if(publicRequest.IsSetMediaRegion())
             {
                 context.Writer.WritePropertyName("MediaRegion");

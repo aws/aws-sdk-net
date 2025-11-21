@@ -88,6 +88,12 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("subtype", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Subtype = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

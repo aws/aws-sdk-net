@@ -35,6 +35,7 @@ namespace Amazon.AppStream.Model
     public partial class NetworkAccessConfiguration
     {
         private string _eniId;
+        private List<string> _eniIpv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _eniPrivateIpAddress;
 
         /// <summary>
@@ -55,6 +56,30 @@ namespace Amazon.AppStream.Model
         internal bool IsSetEniId()
         {
             return this._eniId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EniIpv6Addresses. 
+        /// <para>
+        /// The IPv6 addresses assigned to the elastic network interface. This field supports
+        /// IPv6 connectivity for WorkSpaces Applications instances.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> EniIpv6Addresses
+        {
+            get { return this._eniIpv6Addresses; }
+            set { this._eniIpv6Addresses = value; }
+        }
+
+        // Check to see if EniIpv6Addresses property is set
+        internal bool IsSetEniIpv6Addresses()
+        {
+            return this._eniIpv6Addresses != null && (this._eniIpv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -316,7 +316,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/Autocomplete">REST API Reference for Autocomplete Operation</seealso>
         public virtual AutocompleteResponse Autocomplete(AutocompleteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AutocompleteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AutocompleteResponseUnmarshaller.Instance;
 
@@ -353,7 +353,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/Autocomplete">REST API Reference for Autocomplete Operation</seealso>
         public virtual Task<AutocompleteResponse> AutocompleteAsync(AutocompleteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AutocompleteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AutocompleteResponseUnmarshaller.Instance;
             
@@ -391,7 +391,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/Geocode">REST API Reference for Geocode Operation</seealso>
         public virtual GeocodeResponse Geocode(GeocodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GeocodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GeocodeResponseUnmarshaller.Instance;
 
@@ -428,7 +428,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/Geocode">REST API Reference for Geocode Operation</seealso>
         public virtual Task<GeocodeResponse> GeocodeAsync(GeocodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GeocodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GeocodeResponseUnmarshaller.Instance;
             
@@ -462,7 +462,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/GetPlace">REST API Reference for GetPlace Operation</seealso>
         public virtual GetPlaceResponse GetPlace(GetPlaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlaceResponseUnmarshaller.Instance;
 
@@ -495,7 +495,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/GetPlace">REST API Reference for GetPlace Operation</seealso>
         public virtual Task<GetPlaceResponse> GetPlaceAsync(GetPlaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlaceResponseUnmarshaller.Instance;
             
@@ -533,7 +533,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/ReverseGeocode">REST API Reference for ReverseGeocode Operation</seealso>
         public virtual ReverseGeocodeResponse ReverseGeocode(ReverseGeocodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReverseGeocodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReverseGeocodeResponseUnmarshaller.Instance;
 
@@ -570,7 +570,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/ReverseGeocode">REST API Reference for ReverseGeocode Operation</seealso>
         public virtual Task<ReverseGeocodeResponse> ReverseGeocodeAsync(ReverseGeocodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReverseGeocodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReverseGeocodeResponseUnmarshaller.Instance;
             
@@ -607,7 +607,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/SearchNearby">REST API Reference for SearchNearby Operation</seealso>
         public virtual SearchNearbyResponse SearchNearby(SearchNearbyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchNearbyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchNearbyResponseUnmarshaller.Instance;
 
@@ -643,7 +643,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/SearchNearby">REST API Reference for SearchNearby Operation</seealso>
         public virtual Task<SearchNearbyResponse> SearchNearbyAsync(SearchNearbyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchNearbyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchNearbyResponseUnmarshaller.Instance;
             
@@ -677,7 +677,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/SearchText">REST API Reference for SearchText Operation</seealso>
         public virtual SearchTextResponse SearchText(SearchTextRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTextResponseUnmarshaller.Instance;
 
@@ -710,7 +710,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/SearchText">REST API Reference for SearchText Operation</seealso>
         public virtual Task<SearchTextResponse> SearchTextAsync(SearchTextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTextRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTextResponseUnmarshaller.Instance;
             
@@ -751,7 +751,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/Suggest">REST API Reference for Suggest Operation</seealso>
         public virtual SuggestResponse Suggest(SuggestRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SuggestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SuggestResponseUnmarshaller.Instance;
 
@@ -791,7 +791,7 @@ namespace Amazon.GeoPlaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/geo-places-2020-11-19/Suggest">REST API Reference for Suggest Operation</seealso>
         public virtual Task<SuggestResponse> SuggestAsync(SuggestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SuggestRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SuggestResponseUnmarshaller.Instance;
             

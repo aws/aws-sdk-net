@@ -37,8 +37,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private string _operationId;
 
         /// <summary>
-        /// Gets and sets the property OperationId. Operation ID for tracking StartApplication
-        /// request
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The operation ID that can be used to track the request.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string OperationId

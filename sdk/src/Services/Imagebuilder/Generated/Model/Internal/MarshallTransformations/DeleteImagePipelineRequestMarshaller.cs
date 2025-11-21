@@ -62,6 +62,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.ImagePipelineArn))
+                throw new AmazonImagebuilderException("Request object does not have required field ImagePipelineArn set");
             
             if (publicRequest.IsSetImagePipelineArn())
                 request.Parameters.Add("imagePipelineArn", StringUtils.FromString(publicRequest.ImagePipelineArn));

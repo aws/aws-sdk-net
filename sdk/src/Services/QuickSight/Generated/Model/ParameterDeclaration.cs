@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/parameters-in-quicksight.html">Parameters
-    /// in Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// in Amazon Quick Sight</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     ///  
     /// <para>

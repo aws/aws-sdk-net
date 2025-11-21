@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CmafIngestGroupSettings
     {
+        private List<AdditionalDestinations> _additionalDestinations = AWSConfigs.InitializeCollections ? new List<AdditionalDestinations>() : null;
         private List<CmafIngestCaptionLanguageMapping> _captionLanguageMappings = AWSConfigs.InitializeCollections ? new List<CmafIngestCaptionLanguageMapping>() : null;
         private OutputLocationRef _destination;
         private CmafId3Behavior _id3Behavior;
@@ -50,6 +51,27 @@ namespace Amazon.MediaLive.Model
         private CmafTimedMetadataId3Frame _timedMetadataId3Frame;
         private int? _timedMetadataId3Period;
         private CmafTimedMetadataPassthrough _timedMetadataPassthrough;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalDestinations. Optional an array of additional
+        /// destinational HTTP destinations for the OutputGroup outputs
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AdditionalDestinations> AdditionalDestinations
+        {
+            get { return this._additionalDestinations; }
+            set { this._additionalDestinations = value; }
+        }
+
+        // Check to see if AdditionalDestinations property is set
+        internal bool IsSetAdditionalDestinations()
+        {
+            return this._additionalDestinations != null && (this._additionalDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CaptionLanguageMappings. An array that identifies the languages
@@ -112,7 +134,6 @@ namespace Amazon.MediaLive.Model
         /// the "id3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus
         /// (-), underscore (_) and period (.) and has a maximum length of 100 characters.
         /// </summary>
-        [AWSProperty(Max=100)]
         public string Id3NameModifier
         {
             get { return this._id3NameModifier; }
@@ -148,7 +169,6 @@ namespace Amazon.MediaLive.Model
         /// the "klv" string.\nThe modifier can only contain: numbers, letters, plus (+), minus
         /// (-), underscore (_) and period (.) and has a maximum length of 100 characters.
         /// </summary>
-        [AWSProperty(Max=100)]
         public string KlvNameModifier
         {
             get { return this._klvNameModifier; }
@@ -186,7 +206,6 @@ namespace Amazon.MediaLive.Model
         /// letters, plus (+), minus (-), underscore (_) and period (.) and has a maximum length
         /// of 100 characters.
         /// </summary>
-        [AWSProperty(Max=100)]
         public string NielsenId3NameModifier
         {
             get { return this._nielsenId3NameModifier; }
@@ -207,7 +226,6 @@ namespace Amazon.MediaLive.Model
         /// plus (+), minus (-), underscore (_) and period (.) and has a maximum length of 100
         /// characters.
         /// </summary>
-        [AWSProperty(Max=100)]
         public string Scte35NameModifier
         {
             get { return this._scte35NameModifier; }
@@ -241,7 +259,6 @@ namespace Amazon.MediaLive.Model
         /// the specified duration, so the actual segment length might be longer, and it might
         /// be a fraction of the units.
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? SegmentLength
         {
             get { return this._segmentLength; }
@@ -273,7 +290,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property SendDelayMs. Number of milliseconds to delay the output
         /// from the second pipeline.
         /// </summary>
-        [AWSProperty(Min=0, Max=2000)]
         public int? SendDelayMs
         {
             get { return this._sendDelayMs; }
@@ -306,7 +322,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TimedMetadataId3Period. If you set up to insert a timecode
         /// in the output, specify the frequency for the frame, in seconds.
         /// </summary>
-        [AWSProperty(Min=0, Max=10000)]
         public int? TimedMetadataId3Period
         {
             get { return this._timedMetadataId3Period; }

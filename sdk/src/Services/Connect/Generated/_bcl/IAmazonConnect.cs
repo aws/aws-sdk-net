@@ -358,6 +358,178 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateContactWithUser
+
+
+        /// <summary>
+        /// Associates a queued contact with an agent.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Programmatically assign queued contacts to available users.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Leverage the IAM context key <c>connect:PreferredUserArn</c> to restrict contact association
+        /// to specific preferred user.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use this API with chat, email, and task contacts. It does not support voice contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use it to associate contacts with users regardless of their current state, including
+        /// custom states. Ensure your application logic accounts for user availability before
+        /// making associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It honors the IAM context key <c>connect:PreferredUserArn</c> to prevent unauthorized
+        /// contact associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It respects the IAM context key <c>connect:PreferredUserArn</c> to enforce authorization
+        /// controls and prevent unauthorized contact associations. Verify that your IAM policies
+        /// are properly configured to support your intended use cases.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The service quota <i>Queues per routing profile per instance</i> applies to manually
+        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithUser service method.</param>
+        /// 
+        /// <returns>The response from the AssociateContactWithUser service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateContactWithUser">REST API Reference for AssociateContactWithUser Operation</seealso>
+        AssociateContactWithUserResponse AssociateContactWithUser(AssociateContactWithUserRequest request);
+
+
+
+        /// <summary>
+        /// Associates a queued contact with an agent.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Programmatically assign queued contacts to available users.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Leverage the IAM context key <c>connect:PreferredUserArn</c> to restrict contact association
+        /// to specific preferred user.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use this API with chat, email, and task contacts. It does not support voice contacts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use it to associate contacts with users regardless of their current state, including
+        /// custom states. Ensure your application logic accounts for user availability before
+        /// making associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It honors the IAM context key <c>connect:PreferredUserArn</c> to prevent unauthorized
+        /// contact associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// It respects the IAM context key <c>connect:PreferredUserArn</c> to enforce authorization
+        /// controls and prevent unauthorized contact associations. Verify that your IAM policies
+        /// are properly configured to support your intended use cases.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The service quota <i>Queues per routing profile per instance</i> applies to manually
+        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateContactWithUser service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateContactWithUser service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateContactWithUser">REST API Reference for AssociateContactWithUser Operation</seealso>
+        Task<AssociateContactWithUserResponse> AssociateContactWithUserAsync(AssociateContactWithUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateDefaultVocabulary
 
 
@@ -415,6 +587,288 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateDefaultVocabulary">REST API Reference for AssociateDefaultVocabulary Operation</seealso>
         Task<AssociateDefaultVocabularyResponse> AssociateDefaultVocabularyAsync(AssociateDefaultVocabularyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssociateEmailAddressAlias
+
+
+        /// <summary>
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance. This creates a forwarding relationship where emails sent to the alias email
+        /// address are automatically forwarded to the primary email address. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Unified customer support</b>: Create multiple entry points (for example, support@example.com,
+        /// help@example.com, customercare@example.com) that all forward to a single agent queue
+        /// for streamlined management.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Department consolidation</b>: Forward emails from legacy department addresses
+        /// (for example, sales@example.com, info@example.com) to a centralized customer service
+        /// email during organizational restructuring.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Brand management</b>: Enable you to use familiar brand-specific email addresses
+        /// that forward to the appropriate Amazon Connect instance email address.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each email address can have a maximum of one alias. You cannot create multiple aliases
+        /// for the same email address. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the alias email address already receives direct emails, it continues to receive
+        /// direct emails plus forwarded emails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot chain email aliases together (that is, create an alias of an alias).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>AssociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A confirmation of the alias relationship details (you must call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>
+        /// to verify).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the association occurred.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The status of the forwarding configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEmailAddressAlias service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateEmailAddressAlias">REST API Reference for AssociateEmailAddressAlias Operation</seealso>
+        AssociateEmailAddressAliasResponse AssociateEmailAddressAlias(AssociateEmailAddressAliasRequest request);
+
+
+
+        /// <summary>
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance. This creates a forwarding relationship where emails sent to the alias email
+        /// address are automatically forwarded to the primary email address. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Unified customer support</b>: Create multiple entry points (for example, support@example.com,
+        /// help@example.com, customercare@example.com) that all forward to a single agent queue
+        /// for streamlined management.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Department consolidation</b>: Forward emails from legacy department addresses
+        /// (for example, sales@example.com, info@example.com) to a centralized customer service
+        /// email during organizational restructuring.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Brand management</b>: Enable you to use familiar brand-specific email addresses
+        /// that forward to the appropriate Amazon Connect instance email address.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each email address can have a maximum of one alias. You cannot create multiple aliases
+        /// for the same email address. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the alias email address already receives direct emails, it continues to receive
+        /// direct emails plus forwarded emails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot chain email aliases together (that is, create an alias of an alias).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>AssociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A confirmation of the alias relationship details (you must call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>
+        /// to verify).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the association occurred.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The status of the forwarding configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEmailAddressAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateEmailAddressAlias">REST API Reference for AssociateEmailAddressAlias Operation</seealso>
+        Task<AssociateEmailAddressAliasResponse> AssociateEmailAddressAliasAsync(AssociateEmailAddressAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -822,12 +1276,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Associates a set of quick connects with a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateQueueQuickConnects service method.</param>
         /// 
@@ -856,12 +1305,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Associates a set of quick connects with a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateQueueQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -1692,12 +2136,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates an agent status for the specified Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentStatus service method.</param>
         /// 
@@ -1729,12 +2168,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates an agent status for the specified Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2330,12 +2764,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
-        /// Creates hours of operation. 
-        /// </para>
+        /// Creates hours of operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperation service method.</param>
         /// 
@@ -2367,12 +2796,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
-        /// Creates hours of operation. 
-        /// </para>
+        /// Creates hours of operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -2410,7 +2834,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an hours of operation override in an Amazon Connect hours of operation resource
+        /// Creates an hours of operation override in an Amazon Connect hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride service method.</param>
         /// 
@@ -2442,7 +2866,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates an hours of operation override in an Amazon Connect hours of operation resource
+        /// Creates an hours of operation override in an Amazon Connect hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride service method.</param>
         /// <param name="cancellationToken">
@@ -2638,13 +3062,18 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Adds a new participant into an on-going chat contact. For more information, see <a
-        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
-        /// chat flow experiences by integrating custom participants</a>.
+        /// Adds a new participant into an on-going chat contact or webRTC call. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
+        /// chat flow experiences by integrating custom participants</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-multiuser-inapp.html">Enable
+        /// multi-user web, in-app, and video calling</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateParticipant service method.</param>
         /// 
         /// <returns>The response from the CreateParticipant service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
@@ -2666,9 +3095,10 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Adds a new participant into an on-going chat contact. For more information, see <a
-        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
-        /// chat flow experiences by integrating custom participants</a>.
+        /// Adds a new participant into an on-going chat contact or webRTC call. For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
+        /// chat flow experiences by integrating custom participants</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-multiuser-inapp.html">Enable
+        /// multi-user web, in-app, and video calling</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateParticipant service method.</param>
         /// <param name="cancellationToken">
@@ -2676,6 +3106,10 @@ namespace Amazon.Connect
         /// </param>
         /// 
         /// <returns>The response from the CreateParticipant service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
@@ -2768,11 +3202,41 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Creates a new predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value.
+        /// 
+        ///  
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Create an attribute for routing proficiency (for example, agent certification) that
+        /// has predefined values (for example, a list of possible certifications). For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create an attribute for business unit name that has a list of predefined business
+        /// unit names used in your organization. This is a use case where information for a contact
+        /// varies between transfers or conferences. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePredefinedAttribute service method.</param>
         /// 
@@ -2804,11 +3268,41 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Creates a new predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value.
+        /// 
+        ///  
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Create an attribute for routing proficiency (for example, agent certification) that
+        /// has predefined values (for example, a list of possible certifications). For more information,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Create an attribute for business unit name that has a list of predefined business
+        /// unit names used in your organization. This is a use case where information for a contact
+        /// varies between transfers or conferences. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePredefinedAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -3649,9 +4143,9 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
-        /// parameters are required in some situations. For example, <c>Email</c> is required
-        /// if you are using SAML for identity management. <c>FirstName</c> and <c>LastName</c>
-        /// are required if you are using Amazon Connect or SAML for identity management.
+        /// parameters are required in some situations. For example, <c>Email</c>, <c>FirstName</c>
+        /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
+        /// management.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3695,9 +4189,9 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
-        /// parameters are required in some situations. For example, <c>Email</c> is required
-        /// if you are using SAML for identity management. <c>FirstName</c> and <c>LastName</c>
-        /// are required if you are using Amazon Connect or SAML for identity management.
+        /// parameters are required in some situations. For example, <c>Email</c>, <c>FirstName</c>
+        /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
+        /// management.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3846,7 +4340,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3900,7 +4397,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3949,7 +4449,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -3998,7 +4501,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4626,12 +5132,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Deletes an hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperation service method.</param>
         /// 
@@ -4657,12 +5158,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Deletes an hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -4694,7 +5190,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource
+        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride service method.</param>
         /// 
@@ -4720,7 +5216,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource
+        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride service method.</param>
         /// <param name="cancellationToken">
@@ -4895,7 +5391,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -4927,7 +5426,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5075,7 +5577,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5107,7 +5612,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5241,7 +5749,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5273,7 +5784,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5366,7 +5880,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5401,7 +5918,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5498,7 +6018,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
@@ -5534,7 +6057,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.
@@ -5730,7 +6256,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5763,7 +6292,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5799,7 +6331,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5835,7 +6370,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5870,7 +6408,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5905,7 +6446,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5937,7 +6481,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5969,7 +6516,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -5986,12 +6536,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes an agent status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAgentStatus service method.</param>
         /// 
@@ -6017,12 +6562,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes an agent status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAgentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -6055,7 +6595,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -6087,7 +6627,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -6130,7 +6670,36 @@ namespace Amazon.Connect
         /// <para>
         /// Describes the specified contact. 
         /// </para>
-        ///  <important> <ul> <li> 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve contact information such as the caller's phone number and the specific number
+        /// the caller dialed to integrate into custom monitoring or custom agent experience solutions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detect when a customer chat session disconnects due to a network issue on the agent's
+        /// end. Use the DisconnectReason field in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// to detect this event and then re-queue the chat for followup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Identify after contact work (ACW) duration and call recordings information when a
+        /// COMPLETED event is received by using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-events.html">contact
+        /// event stream</a>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <c>SystemEndpoint</c> is not populated for contacts with initiation method of MONITOR,
         /// QUEUE_TRANSFER, or CALLBACK
@@ -6141,7 +6710,11 @@ namespace Amazon.Connect
         /// and then it is deleted. Only contact information that is available in Amazon Connect
         /// is returned by this API.
         /// </para>
-        ///  </li> </ul> </important>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
         /// 
@@ -6173,7 +6746,36 @@ namespace Amazon.Connect
         /// <para>
         /// Describes the specified contact. 
         /// </para>
-        ///  <important> <ul> <li> 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve contact information such as the caller's phone number and the specific number
+        /// the caller dialed to integrate into custom monitoring or custom agent experience solutions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detect when a customer chat session disconnects due to a network issue on the agent's
+        /// end. Use the DisconnectReason field in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// to detect this event and then re-queue the chat for followup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Identify after contact work (ACW) duration and call recordings information when a
+        /// COMPLETED event is received by using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-events.html">contact
+        /// event stream</a>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <c>SystemEndpoint</c> is not populated for contacts with initiation method of MONITOR,
         /// QUEUE_TRANSFER, or CALLBACK
@@ -6184,7 +6786,11 @@ namespace Amazon.Connect
         /// and then it is deleted. Only contact information that is available in Amazon Connect
         /// is returned by this API.
         /// </para>
-        ///  </li> </ul> </important>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
         /// <param name="cancellationToken">
@@ -6580,12 +7186,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes the hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperation service method.</param>
         /// 
@@ -6611,12 +7212,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes the hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -6998,11 +7594,32 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Describes a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value. You can use predefined attributes
+        /// for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePredefinedAttribute service method.</param>
         /// 
@@ -7028,11 +7645,32 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes a predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Describes a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value. You can use predefined attributes
+        /// for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePredefinedAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -7122,12 +7760,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes the specified queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQueue service method.</param>
         /// 
@@ -7153,12 +7786,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Describes the specified queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQueue service method.</param>
         /// <param name="cancellationToken">
@@ -8036,6 +8664,294 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateEmailAddressAlias
+
+
+        /// <summary>
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// After disassociation, emails sent to the former alias email address are no longer
+        /// forwarded to the primary email address. Both email addresses continue to exist independently
+        /// and can receive emails directly.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Department separation</b>: Remove alias relationships when splitting a consolidated
+        /// support queue back into separate department-specific queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Email address retirement</b>: Cleanly remove forwarding relationships before decommissioning
+        /// old email addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Organizational restructuring</b>: Reconfigure email routing when business processes
+        /// change and aliases are no longer needed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Concurrent operations: This API uses distributed locking, so concurrent operations
+        /// on the same email addresses may be temporarily blocked.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Emails sent to the former alias address are still delivered directly to that address
+        /// if it exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to delete the email addresses after disassociation. Both addresses
+        /// remain active independently.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a successful disassociation, you can immediately create a new alias relationship
+        /// with the same addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 200 status means alias was successfully disassociated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>DisassociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Details in the response about the email that was disassociated. The response returns
+        /// an empty body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the disassociation occurred.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEmailAddressAlias service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateEmailAddressAlias">REST API Reference for DisassociateEmailAddressAlias Operation</seealso>
+        DisassociateEmailAddressAliasResponse DisassociateEmailAddressAlias(DisassociateEmailAddressAliasRequest request);
+
+
+
+        /// <summary>
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// After disassociation, emails sent to the former alias email address are no longer
+        /// forwarded to the primary email address. Both email addresses continue to exist independently
+        /// and can receive emails directly.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Department separation</b>: Remove alias relationships when splitting a consolidated
+        /// support queue back into separate department-specific queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Email address retirement</b>: Cleanly remove forwarding relationships before decommissioning
+        /// old email addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Organizational restructuring</b>: Reconfigure email routing when business processes
+        /// change and aliases are no longer needed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Concurrent operations: This API uses distributed locking, so concurrent operations
+        /// on the same email addresses may be temporarily blocked.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Emails sent to the former alias address are still delivered directly to that address
+        /// if it exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to delete the email addresses after disassociation. Both addresses
+        /// remain active independently.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a successful disassociation, you can immediately create a new alias relationship
+        /// with the same addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 200 status means alias was successfully disassociated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>DisassociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Details in the response about the email that was disassociated. The response returns
+        /// an empty body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the disassociation occurred.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEmailAddressAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateEmailAddressAlias">REST API Reference for DisassociateEmailAddressAlias Operation</seealso>
+        Task<DisassociateEmailAddressAliasResponse> DisassociateEmailAddressAliasAsync(DisassociateEmailAddressAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateFlow
 
 
@@ -8398,12 +9314,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Disassociates a set of quick connects from a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueQuickConnects service method.</param>
         /// 
@@ -8429,12 +9340,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Disassociates a set of quick connects from a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -8467,6 +9373,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Disassociates a set of queues from a routing profile.
+        /// 
+        ///  
+        /// <para>
+        /// Up to 10 queue references can be disassociated in a single API call. More than 10
+        /// queue references results in a single call results in an InvalidParameterException.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateRoutingProfileQueues service method.</param>
         /// 
@@ -8493,6 +9405,12 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Disassociates a set of queues from a routing profile.
+        /// 
+        ///  
+        /// <para>
+        /// Up to 10 queue references can be disassociated in a single API call. More than 10
+        /// queue references results in a single call results in an InvalidParameterException.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateRoutingProfileQueues service method.</param>
         /// <param name="cancellationToken">
@@ -8892,6 +9810,158 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetContactMetrics
+
+
+        /// <summary>
+        /// Retrieves the position of the contact in the queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for position in queue:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Understand the expected wait experience of a contact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Inform customers of their position in queue and potentially offer a callback.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Make data-driven routing decisions between primary and alternative queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enhance queue visibility and leverage agent proficiencies to streamline contact routing.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The only way to retrieve the position of the contact in queue is by using this API.
+        /// You can't retrieve the position by using flows and attributes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For more information, see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Position
+        /// in queue</a> metric in the <i>Amazon Connect Administrator Guide</i>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetContactMetrics service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactMetrics">REST API Reference for GetContactMetrics Operation</seealso>
+        GetContactMetricsResponse GetContactMetrics(GetContactMetricsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the position of the contact in the queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for position in queue:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Understand the expected wait experience of a contact.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Inform customers of their position in queue and potentially offer a callback.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Make data-driven routing decisions between primary and alternative queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enhance queue visibility and leverage agent proficiencies to streamline contact routing.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The only way to retrieve the position of the contact in queue is by using this API.
+        /// You can't retrieve the position by using flows and attributes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For more information, see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Position
+        /// in queue</a> metric in the <i>Amazon Connect Administrator Guide</i>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetContactMetrics service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactMetrics">REST API Reference for GetContactMetrics Operation</seealso>
+        Task<GetContactMetricsResponse> GetContactMetricsAsync(GetContactMetricsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCurrentMetricData
 
 
@@ -8903,6 +9973,46 @@ namespace Amazon.Connect
         /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
         /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you make a successful API request, you can expect the following metric values
+        /// in the response:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>Metric value is null</b>: The calculation cannot be performed due to divide by
+        /// zero or insufficient data
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Metric value is a number (including 0) of defined type</b>: The number provided
+        /// is the calculation result
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MetricResult list is empty</b>: The request cannot find any data in the system
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// The following guidelines can help you work with the API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each dimension in the metric response must contain a value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each item in MetricResult must include all requested metrics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the response is slow due to large result sets, try these approaches:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Add filters to reduce the amount of data returned
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCurrentMetricData service method.</param>
         /// 
@@ -8935,6 +10045,46 @@ namespace Amazon.Connect
         /// For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
         /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you make a successful API request, you can expect the following metric values
+        /// in the response:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>Metric value is null</b>: The calculation cannot be performed due to divide by
+        /// zero or insufficient data
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Metric value is a number (including 0) of defined type</b>: The number provided
+        /// is the calculation result
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MetricResult list is empty</b>: The request cannot find any data in the system
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// The following guidelines can help you work with the API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each dimension in the metric response must contain a value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each item in MetricResult must include all requested metrics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the response is slow due to large result sets, try these approaches:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Add filters to reduce the amount of data returned
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCurrentMetricData service method.</param>
         /// <param name="cancellationToken">
@@ -9358,6 +10508,50 @@ namespace Amazon.Connect
         /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
         /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you make a successful API request, you can expect the following metric values
+        /// in the response:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>Metric value is null</b>: The calculation cannot be performed due to divide by
+        /// zero or insufficient data
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Metric value is a number (including 0) of defined type</b>: The number provided
+        /// is the calculation result
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MetricResult list is empty</b>: The request cannot find any data in the system
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// The following guidelines can help you work with the API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each dimension in the metric response must contain a value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each item in MetricResult must include all requested metrics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the response is slow due to large result sets, try these approaches:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Narrow the time range of your request
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Add filters to reduce the amount of data returned
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>
         /// 
@@ -9399,6 +10593,50 @@ namespace Amazon.Connect
         /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
         /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you make a successful API request, you can expect the following metric values
+        /// in the response:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>Metric value is null</b>: The calculation cannot be performed due to divide by
+        /// zero or insufficient data
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Metric value is a number (including 0) of defined type</b>: The number provided
+        /// is the calculation result
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MetricResult list is empty</b>: The request cannot find any data in the system
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// The following guidelines can help you work with the API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each dimension in the metric response must contain a value
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each item in MetricResult must include all requested metrics
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the response is slow due to large result sets, try these approaches:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Narrow the time range of your request
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Add filters to reduce the amount of data returned
+        /// </para>
+        ///  </li> </ul> </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>
         /// <param name="cancellationToken">
@@ -9633,7 +10871,7 @@ namespace Amazon.Connect
         /// For example, if you already have 99 claimed or imported numbers and a service level
         /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
         /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
-        /// from claiming any more numbers until you open an Amazon Web ServicesSupport ticket.
+        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
         /// 
         /// </para>
         /// </summary>
@@ -9693,7 +10931,7 @@ namespace Amazon.Connect
         /// For example, if you already have 99 claimed or imported numbers and a service level
         /// quota of 99 phone numbers, and in any 180 day period you release 99, claim 99, and
         /// then release 99, you will have exceeded the 200% limit. At that point you are blocked
-        /// from claiming any more numbers until you open an Amazon Web ServicesSupport ticket.
+        /// from claiming any more numbers until you open an Amazon Web Services Support ticket.
         /// 
         /// </para>
         /// </summary>
@@ -9730,12 +10968,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists agent statuses.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentStatuses service method.</param>
         /// 
@@ -9761,12 +10994,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists agent statuses.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentStatuses service method.</param>
         /// <param name="cancellationToken">
@@ -10045,7 +11273,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -10078,7 +11306,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -11462,11 +12690,32 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists predefined attributes for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Lists predefined attributes for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value. You can use predefined attributes
+        /// for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPredefinedAttributes service method.</param>
         /// 
@@ -11492,11 +12741,32 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Lists predefined attributes for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Lists predefined attributes for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value. You can use predefined attributes
+        /// for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPredefinedAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -11586,12 +12856,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the quick connects associated with a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueueQuickConnects service method.</param>
         /// 
@@ -11617,12 +12882,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the quick connects associated with a queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueueQuickConnects service method.</param>
         /// <param name="cancellationToken">
@@ -11871,6 +13131,140 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRealtimeContactAnalysisSegmentsV2">REST API Reference for ListRealtimeContactAnalysisSegmentsV2 Operation</seealso>
         Task<ListRealtimeContactAnalysisSegmentsV2Response> ListRealtimeContactAnalysisSegmentsV2Async(ListRealtimeContactAnalysisSegmentsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListRoutingProfileManualAssignmentQueues
+
+
+        /// <summary>
+        /// Lists the manual assignment queues associated with a routing profile.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API returns list of queues where contacts can be manually assigned or picked
+        /// by an agent who has access to the Worklist app. The user can additionally filter on
+        /// queues, if they have access to those queues (otherwise a invalid request exception
+        /// will be thrown).
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how manual contact assignment works in the agent workspace,
+        /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
+        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API only returns the manual assignment queues associated with a routing profile.
+        /// Use the ListRoutingProfileQueues API to list the auto assignment queues for the routing
+        /// profile.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfileManualAssignmentQueues service method.</param>
+        /// 
+        /// <returns>The response from the ListRoutingProfileManualAssignmentQueues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileManualAssignmentQueues">REST API Reference for ListRoutingProfileManualAssignmentQueues Operation</seealso>
+        ListRoutingProfileManualAssignmentQueuesResponse ListRoutingProfileManualAssignmentQueues(ListRoutingProfileManualAssignmentQueuesRequest request);
+
+
+
+        /// <summary>
+        /// Lists the manual assignment queues associated with a routing profile.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API returns list of queues where contacts can be manually assigned or picked
+        /// by an agent who has access to the Worklist app. The user can additionally filter on
+        /// queues, if they have access to those queues (otherwise a invalid request exception
+        /// will be thrown).
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about how manual contact assignment works in the agent workspace,
+        /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
+        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API only returns the manual assignment queues associated with a routing profile.
+        /// Use the ListRoutingProfileQueues API to list the auto assignment queues for the routing
+        /// profile.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRoutingProfileManualAssignmentQueues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRoutingProfileManualAssignmentQueues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRoutingProfileManualAssignmentQueues">REST API Reference for ListRoutingProfileManualAssignmentQueues Operation</seealso>
+        Task<ListRoutingProfileManualAssignmentQueuesResponse> ListRoutingProfileManualAssignmentQueuesAsync(ListRoutingProfileManualAssignmentQueuesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -13217,7 +14611,7 @@ namespace Amazon.Connect
         /// <para>
         /// After releasing a phone number, the phone number enters into a cooldown period for
         /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
-        /// If you accidentally release a phone number, contact Amazon Web ServicesSupport.
+        /// If you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
         ///  </important> 
         /// <para>
@@ -13257,7 +14651,10 @@ namespace Amazon.Connect
         /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -13284,7 +14681,7 @@ namespace Amazon.Connect
         /// <para>
         /// After releasing a phone number, the phone number enters into a cooldown period for
         /// up to 180 days. It cannot be searched for or claimed again until the period has ended.
-        /// If you accidentally release a phone number, contact Amazon Web ServicesSupport.
+        /// If you accidentally release a phone number, contact Amazon Web Services Support.
         /// </para>
         ///  </important> 
         /// <para>
@@ -13327,7 +14724,10 @@ namespace Amazon.Connect
         /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -13684,6 +15084,134 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchContactEvaluations
+
+
+        /// <summary>
+        /// Searches contact evaluations in an Amazon Connect instance, with optional filtering.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Find contact evaluations by using specific search criteria.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find contact evaluations that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds. Contact Evaluations
+        /// may not be fully backfilled with historical data in all regions yet, however all recently
+        /// created Contact Evaluations should be available for search.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactEvaluations service method.</param>
+        /// 
+        /// <returns>The response from the SearchContactEvaluations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactEvaluations">REST API Reference for SearchContactEvaluations Operation</seealso>
+        SearchContactEvaluationsResponse SearchContactEvaluations(SearchContactEvaluationsRequest request);
+
+
+
+        /// <summary>
+        /// Searches contact evaluations in an Amazon Connect instance, with optional filtering.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Find contact evaluations by using specific search criteria.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find contact evaluations that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds. Contact Evaluations
+        /// may not be fully backfilled with historical data in all regions yet, however all recently
+        /// created Contact Evaluations should be available for search.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactEvaluations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchContactEvaluations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactEvaluations">REST API Reference for SearchContactEvaluations Operation</seealso>
+        Task<SearchContactEvaluationsResponse> SearchContactEvaluationsAsync(SearchContactEvaluationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SearchContactFlowModules
 
 
@@ -13922,6 +15450,138 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchEvaluationForms
+
+
+        /// <summary>
+        /// Searches evaluation forms in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List all evaluation forms in an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that meet specific criteria, such as Title, Description,
+        /// Status, and more.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchEvaluationForms service method.</param>
+        /// 
+        /// <returns>The response from the SearchEvaluationForms service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEvaluationForms">REST API Reference for SearchEvaluationForms Operation</seealso>
+        SearchEvaluationFormsResponse SearchEvaluationForms(SearchEvaluationFormsRequest request);
+
+
+
+        /// <summary>
+        /// Searches evaluation forms in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List all evaluation forms in an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that meet specific criteria, such as Title, Description,
+        /// Status, and more.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchEvaluationForms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchEvaluationForms service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEvaluationForms">REST API Reference for SearchEvaluationForms Operation</seealso>
+        Task<SearchEvaluationFormsResponse> SearchEvaluationFormsAsync(SearchEvaluationFormsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SearchHoursOfOperationOverrides
 
 
@@ -14042,10 +15702,31 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches predefined attributes that meet certain criteria. <i>Predefined attributes</i>
-        /// are attributes in an Amazon Connect instance that can be used to route contacts to
-        /// an agent or pools of agents within a queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Searches predefined attributes that meet certain criteria. A <i>predefined attribute</i>
+        /// is made up of a name and a value. You can use predefined attributes for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPredefinedAttributes service method.</param>
         /// 
@@ -14071,10 +15752,31 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches predefined attributes that meet certain criteria. <i>Predefined attributes</i>
-        /// are attributes in an Amazon Connect instance that can be used to route contacts to
-        /// an agent or pools of agents within a queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
+        /// Searches predefined attributes that meet certain criteria. A <i>predefined attribute</i>
+        /// is made up of a name and a value. You can use predefined attributes for:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Routing proficiency (for example, agent certification) that has predefined values
+        /// (for example, a list of possible certifications). For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Contact information that varies between transfers or conferences, such as the name
+        /// of the business unit handling the contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchPredefinedAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -14992,7 +16694,7 @@ namespace Amazon.Connect
         /// <para>
         /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
         /// account may not support the ability to configure custom chat durations. For more information,
-        /// contact Amazon Web ServicesSupport. 
+        /// contact Amazon Web Services Support. 
         /// </para>
         ///  
         /// <para>
@@ -15063,7 +16765,7 @@ namespace Amazon.Connect
         /// <para>
         /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
         /// account may not support the ability to configure custom chat durations. For more information,
-        /// contact Amazon Web ServicesSupport. 
+        /// contact Amazon Web Services Support. 
         /// </para>
         ///  
         /// <para>
@@ -15693,8 +17395,9 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// There is a 60-second dialing timeout for this operation. If the call is not connected
-        /// after 60 seconds, it fails.
+        /// Dialing timeout for this operation can be configured with the “RingTimeoutInSeconds”
+        /// parameter. If not specified, the default dialing timeout will be 60 seconds which
+        /// means if the call is not connected within 60 seconds, it fails.
         /// </para>
         ///  <note> 
         /// <para>
@@ -15709,6 +17412,12 @@ namespace Amazon.Connect
         /// = <c>CAMPAIGN</c>, you must submit a service quota increase request to the quota <a
         /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
         /// Connect campaigns</a>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For Preview dialing mode, only the Amazon Connect outbound campaigns service principal
+        /// is allowed to assume a role in your account and call this API with OutboundStrategy.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -15753,8 +17462,9 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// There is a 60-second dialing timeout for this operation. If the call is not connected
-        /// after 60 seconds, it fails.
+        /// Dialing timeout for this operation can be configured with the “RingTimeoutInSeconds”
+        /// parameter. If not specified, the default dialing timeout will be 60 seconds which
+        /// means if the call is not connected within 60 seconds, it fails.
         /// </para>
         ///  <note> 
         /// <para>
@@ -15769,6 +17479,12 @@ namespace Amazon.Connect
         /// = <c>CAMPAIGN</c>, you must submit a service quota increase request to the quota <a
         /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
         /// Connect campaigns</a>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For Preview dialing mode, only the Amazon Connect outbound campaigns service principal
+        /// is allowed to assume a role in your account and call this API with OutboundStrategy.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -16148,8 +17864,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
-        /// The contact with the specified ID is not active or does not exist. Applies to Voice
-        /// calls only, not to Chat or Task contacts.
+        /// The contact with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -16204,8 +17919,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
-        /// The contact with the specified ID is not active or does not exist. Applies to Voice
-        /// calls only, not to Chat or Task contacts.
+        /// The contact with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -16904,12 +18618,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates agent status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
         /// 
@@ -16941,12 +18650,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates agent status.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
         /// <param name="cancellationToken">
@@ -16985,7 +18689,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -17017,7 +18721,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// This API is in preview release for Amazon Connect and is subject to change. To request
-        /// access to this API, contact Amazon Web ServicesSupport.
+        /// access to this API, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
@@ -17996,12 +19700,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperation service method.</param>
         /// 
@@ -18030,12 +19729,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the hours of operation.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -18525,7 +20219,10 @@ namespace Amazon.Connect
         /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -18577,7 +20274,10 @@ namespace Amazon.Connect
         /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -18623,7 +20323,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -18669,7 +20372,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -18686,11 +20392,41 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates a predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
+        /// Updates a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value.
+        /// 
+        ///  
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Update routing proficiency (for example, agent certification) that has predefined
+        /// values (for example, a list of possible certifications). For more information, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update an attribute for business unit name that has a list of predefined business
+        /// unit names used in your organization. This is a use case where information for a contact
+        /// varies between transfers or conferences. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePredefinedAttribute service method.</param>
         /// 
@@ -18716,11 +20452,41 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates a predefined attribute for the specified Amazon Connect instance. <i>Predefined
-        /// attributes</i> are attributes in an Amazon Connect instance that can be used to route
-        /// contacts to an agent or pools of agents within a queue. For more information, see
+        /// Updates a predefined attribute for the specified Amazon Connect instance. A <i>predefined
+        /// attribute</i> is made up of a name and a value.
+        /// 
+        ///  
+        /// <para>
+        /// For the predefined attributes per instance quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Update routing proficiency (for example, agent certification) that has predefined
+        /// values (for example, a list of possible certifications). For more information, see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/predefined-attributes.html">Create
         /// predefined attributes for routing contacts to agents</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update an attribute for business unit name that has a list of predefined business
+        /// unit names used in your organization. This is a use case where information for a contact
+        /// varies between transfers or conferences. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-contact-segment-attributes.html">Use
+        /// contact segment attributes</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePredefinedAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -18810,12 +20576,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the hours of operation for the specified queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueHoursOfOperation service method.</param>
         /// 
@@ -18841,12 +20602,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the hours of operation for the specified queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueHoursOfOperation service method.</param>
         /// <param name="cancellationToken">
@@ -18878,13 +20634,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the maximum number of contacts allowed in a queue before it is considered
         /// full.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueMaxContacts service method.</param>
         /// 
@@ -18910,13 +20661,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the maximum number of contacts allowed in a queue before it is considered
         /// full.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueMaxContacts service method.</param>
         /// <param name="cancellationToken">
@@ -18948,13 +20694,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the name and description of a queue. At least <c>Name</c> or <c>Description</c>
         /// must be provided.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueName service method.</param>
         /// 
@@ -18983,13 +20724,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the name and description of a queue. At least <c>Name</c> or <c>Description</c>
         /// must be provided.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueName service method.</param>
         /// <param name="cancellationToken">
@@ -19024,13 +20760,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the outbound caller ID name, number, and outbound whisper flow for a specified
         /// queue.
-        /// </para>
+        /// 
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
@@ -19081,13 +20813,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the outbound caller ID name, number, and outbound whisper flow for a specified
         /// queue.
-        /// </para>
+        /// 
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
@@ -19214,12 +20942,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the status of the queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueStatus service method.</param>
         /// 
@@ -19245,12 +20968,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Updates the status of the queue.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueStatus service method.</param>
         /// <param name="cancellationToken">
@@ -20165,7 +21883,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -20197,7 +21918,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -20553,7 +22277,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -20597,7 +22324,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -20636,7 +22366,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -20675,7 +22408,10 @@ namespace Amazon.Connect
         /// The request is not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
-        /// That resource is already in use. Please try another.
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.

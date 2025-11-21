@@ -64,10 +64,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.AgentRuntimeEndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("agentRuntimeId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AgentRuntimeId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("endpointName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EndpointName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

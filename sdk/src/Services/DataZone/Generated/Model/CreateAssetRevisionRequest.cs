@@ -32,6 +32,41 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the CreateAssetRevision operation.
     /// Creates a revision of the asset.
+    /// 
+    ///  
+    /// <para>
+    /// Asset revisions represent new versions of existing assets, capturing changes to either
+    /// the underlying data or its metadata. They maintain a historical record of how assets
+    /// evolve over time, who made changes, and when those changes occurred. This versioning
+    /// capability is crucial for governance and compliance, allowing organizations to track
+    /// changes, understand their impact, and roll back if necessary.
+    /// </para>
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Asset must already exist in the domain with identifier. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>formsInput</c> is required when asset has the form type. <c>typeRevision</c> should
+    /// be the latest version of form type. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The form content must include all required fields (e.g., <c>bucketArn</c> for <c>S3ObjectCollectionForm</c>).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The owning project of the original asset must still exist and be active.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User must have write access to the project and domain.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateAssetRevisionRequest : AmazonDataZoneRequest
     {

@@ -52,9 +52,28 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class DescribeCanariesLastRunRequest : AmazonSyntheticsRequest
     {
+        private BrowserType _browserType;
         private int? _maxResults;
         private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property BrowserType. 
+        /// <para>
+        /// The type of browser to use for the canary run.
+        /// </para>
+        /// </summary>
+        public BrowserType BrowserType
+        {
+            get { return this._browserType; }
+            set { this._browserType = value; }
+        }
+
+        // Check to see if BrowserType property is set
+        internal bool IsSetBrowserType()
+        {
+            return this._browserType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

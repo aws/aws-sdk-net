@@ -33,7 +33,7 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the ListExports operation.
     /// Lists all exported output values in the account and Region in which you call this
     /// action. Use this action to see the exported output values that you can import into
-    /// other stacks. To import values, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+    /// other stacks. To import values, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-importvalue.html">
     /// Fn::ImportValue</a> function.
     /// 
     ///  
@@ -49,8 +49,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A string (provided by the <a>ListExports</a> response output) that identifies the
-        /// next page of exported output values that you asked to retrieve.
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

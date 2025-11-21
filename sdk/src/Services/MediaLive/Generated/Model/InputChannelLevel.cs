@@ -41,7 +41,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Gain. Remixing value. Units are in dB and acceptable values
         /// are within the range from -60 (mute) and 6 dB.
         /// </summary>
-        [AWSProperty(Required=true, Min=-60, Max=6)]
+        [AWSProperty(Required=true)]
         public int? Gain
         {
             get { return this._gain; }
@@ -58,7 +58,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property InputChannel. The index of the input channel used as a
         /// source.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=15)]
+        [AWSProperty(Required=true)]
         public int? InputChannel
         {
             get { return this._inputChannel; }

@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpRequestWithFloatLabels operation
     /// </summary>  
-    public class HttpRequestWithFloatLabelsResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class HttpRequestWithFloatLabelsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         {
             HttpRequestWithFloatLabelsResponse response = new HttpRequestWithFloatLabelsResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, HttpRequestWithFloatLabelsResponse response);
 
         private static HttpRequestWithFloatLabelsResponseUnmarshaller _instance = new HttpRequestWithFloatLabelsResponseUnmarshaller();        
 

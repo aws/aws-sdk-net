@@ -166,7 +166,7 @@ namespace Amazon.SSOAdmin.Model
         /// The application name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

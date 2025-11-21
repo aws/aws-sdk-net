@@ -31,8 +31,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFieldIndexes operation.
-    /// Returns a list of field indexes listed in the field index policies of one or more
-    /// log groups. For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
+    /// Returns a list of custom and default field indexes which are discovered in log data.
+    /// For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
     /// </summary>
     public partial class DescribeFieldIndexesRequest : AmazonCloudWatchLogsRequest
     {

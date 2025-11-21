@@ -61,6 +61,21 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateContactWithUserRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateContactWithUserRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateContactWithUserRequest.UserId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AssociateDefaultVocabularyRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -69,6 +84,20 @@
     <property>Amazon.Connect.Model.AssociateDefaultVocabularyRequest.VocabularyId</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateEmailAddressAliasRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateEmailAddressAliasRequest.EmailAddressId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AssociateEmailAddressAliasRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AssociateFlowRequest.InstanceId</property>
@@ -542,7 +571,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.CreatePredefinedAttributeRequest.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreatePromptRequest.Description</property>
@@ -980,7 +1009,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DeletePredefinedAttributeRequest.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeletePromptRequest.InstanceId</property>
@@ -1258,7 +1287,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribePredefinedAttributeRequest.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribePromptRequest.InstanceId</property>
@@ -1368,6 +1397,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DisassociateBotRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateEmailAddressAliasRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateEmailAddressAliasRequest.EmailAddressId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DisassociateEmailAddressAliasRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -1513,6 +1556,23 @@
     <property>Amazon.Connect.Model.GetContactAttributesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetContactMetricsRequest.ContactId</property>
+    <min>1</min>
+    <max>250</max>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:instance/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetContactMetricsRequest.InstanceId</property>
+    <min>1</min>
+    <max>250</max>
+    <pattern>^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:instance/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetContactMetricsResponse.Id</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetCurrentMetricDataRequest.InstanceId</property>
@@ -2056,6 +2116,20 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ListRoutingProfileManualAssignmentQueuesRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListRoutingProfileManualAssignmentQueuesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListRoutingProfileManualAssignmentQueuesResponse.LastModifiedRegion</property>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ListRoutingProfileQueuesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -2418,6 +2492,16 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SearchContactEvaluationsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchContactEvaluationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.SearchContactFlowModulesRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -2491,6 +2575,16 @@
     <property>Amazon.Connect.Model.SearchEmailAddressesRequest.NextToken</property>
     <min>1</min>
     <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchEvaluationFormsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.SearchEvaluationFormsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SearchHoursOfOperationOverridesRequest.InstanceId</property>
@@ -3029,6 +3123,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.RingTimeoutInSeconds</property>
+    <min>15</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartOutboundVoiceContactRequest.SourcePhoneNumber</property>
     <pattern>\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
@@ -3294,6 +3393,11 @@
     <property>Amazon.Connect.Model.UpdateAuthenticationProfileRequest.PeriodicSessionDuration</property>
     <min>10</min>
     <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateAuthenticationProfileRequest.SessionInactivityDuration</property>
+    <min>15</min>
+    <max>720</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactRequest.ContactId</property>
@@ -3641,7 +3745,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePredefinedAttributeRequest.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdatePromptRequest.Description</property>
@@ -3991,6 +4095,11 @@
     <max>127</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AliasConfiguration.EmailAddressId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AnalyticsDataAssociationResult.DataSetId</property>
     <min>1</min>
     <max>255</max>
@@ -4074,7 +4183,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.AttributeCondition.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AttributeCondition.ProficiencyLevel</property>
@@ -4116,6 +4225,11 @@
     <max>60</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AuthenticationProfile.SessionInactivityDuration</property>
+    <min>15</min>
+    <max>720</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AuthenticationProfileSummary.Id</property>
     <min>1</min>
     <max>100</max>
@@ -4128,6 +4242,11 @@
     <property>Amazon.Connect.Model.AuthenticationProfileSummary.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AutomaticFailConfiguration.TargetSection</property>
+    <min>1</min>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AvailableNumberSummary.PhoneNumber</property>
@@ -4353,6 +4472,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ContactSearchSummary.Name</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ContactSearchSummary.PreviousContactId</property>
     <min>1</min>
     <max>256</max>
@@ -4385,6 +4509,14 @@
     <property>Amazon.Connect.Model.DateReference.Value</property>
     <min>0</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DateTimeCondition.MaxValue</property>
+    <pattern>^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DateTimeCondition.MinValue</property>
+    <pattern>^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DefaultVocabulary.InstanceId</property>
@@ -4552,9 +4684,24 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationAcknowledgement.AcknowledgerComment</property>
+    <min>0</min>
+    <max>3072</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationAcknowledgementSummary.AcknowledgerComment</property>
+    <min>0</min>
+    <max>3072</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationAnswerData.StringValue</property>
     <min>0</min>
-    <max>128</max>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationAutomationRuleCategory.Category</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationForm.Description</property>
@@ -4595,6 +4742,16 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormItemEnablementSource.RefId</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormItemEnablementSourceValue.RefId</property>
+    <min>1</min>
+    <max>40</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormNumericQuestionOption.Score</property>
     <min>0</min>
     <max>10</max>
@@ -4618,6 +4775,29 @@
     <property>Amazon.Connect.Model.EvaluationFormQuestion.Weight</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormSearchSummary.ActiveVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormSearchSummary.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormSearchSummary.EvaluationFormId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormSearchSummary.LatestVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormSearchSummary.Title</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormSection.Instructions</property>
@@ -4687,6 +4867,15 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationGenAIAnswerAnalysisDetails.Justification</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationMetadata.CalibrationSessionId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationMetadata.ContactAgentId</property>
     <min>1</min>
     <max>500</max>
@@ -4705,6 +4894,54 @@
     <property>Amazon.Connect.Model.EvaluationScore.Percentage</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationSearchMetadata.AcknowledgerComment</property>
+    <min>0</min>
+    <max>3072</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationSearchMetadata.CalibrationSessionId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationSearchMetadata.ContactAgentId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationSearchMetadata.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationSearchMetadata.ScorePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationSearchSummary.EvaluationFormId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationSearchSummary.EvaluationFormVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationSearchSummary.EvaluationId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationSuggestedAnswerTranscriptMillisecondOffsets.BeginOffsetMillis</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationSummary.CalibrationSessionId</property>
+    <min>1</min>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationSummary.EvaluationFormId</property>
@@ -5039,13 +5276,17 @@
     <pattern>\\+[1-9]\\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.PostAcceptTimeoutConfig.DurationInSeconds</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttribute.LastModifiedRegion</property>
     <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttribute.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttributeSummary.LastModifiedRegion</property>
@@ -5054,7 +5295,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.PredefinedAttributeSummary.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ProblemDetail.Message</property>
@@ -5334,6 +5575,11 @@
     <max>127</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.RoutingProfileManualAssignmentQueueConfigSummary.QueueName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.RoutingProfileQueueConfig.Delay</property>
     <min>0</min>
     <max>9999</max>
@@ -5451,6 +5697,11 @@
     <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.SegmentAttributeValue.ValueArn</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.SegmentAttributeValue.ValueString</property>
     <min>0</min>
     <max>1024</max>
@@ -5559,6 +5810,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.TaskTemplateFieldIdentifier.Name</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.TaskTemplateInfoV2.Name</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -5713,12 +5969,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiency.AttributeName</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiency.AttributeValue</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiency.Level</property>
@@ -5728,12 +5984,12 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiencyDisassociate.AttributeName</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserProficiencyDisassociate.AttributeValue</property>
     <min>1</min>
-    <max>64</max>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UserQuickConnectConfig.ContactFlowId</property>

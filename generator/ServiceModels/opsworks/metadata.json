@@ -1,5 +1,0 @@
-{
-  "active": true,
-  "synopsis": "AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage.",
-  "legacy-service-id": "OpsWorks"
-}

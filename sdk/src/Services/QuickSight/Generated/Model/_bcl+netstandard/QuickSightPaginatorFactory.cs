@@ -53,6 +53,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListActionConnectors operation
+        ///</summary>
+        public IListActionConnectorsPaginator ListActionConnectors(ListActionConnectorsRequest request) 
+        {
+            return new ListActionConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAnalyses operation
         ///</summary>
         public IListAnalysesPaginator ListAnalyses(ListAnalysesRequest request) 
@@ -122,6 +130,14 @@ namespace Amazon.QuickSight.Model
         public IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request) 
         {
             return new ListDataSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFlows operation
+        ///</summary>
+        public IListFlowsPaginator ListFlows(ListFlowsRequest request) 
+        {
+            return new ListFlowsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -277,6 +293,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for SearchActionConnectors operation
+        ///</summary>
+        public ISearchActionConnectorsPaginator SearchActionConnectors(SearchActionConnectorsRequest request) 
+        {
+            return new SearchActionConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchAnalyses operation
         ///</summary>
         public ISearchAnalysesPaginator SearchAnalyses(SearchAnalysesRequest request) 
@@ -306,6 +330,14 @@ namespace Amazon.QuickSight.Model
         public ISearchDataSourcesPaginator SearchDataSources(SearchDataSourcesRequest request) 
         {
             return new SearchDataSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchFlows operation
+        ///</summary>
+        public ISearchFlowsPaginator SearchFlows(SearchFlowsRequest request) 
+        {
+            return new SearchFlowsPaginator(this.client, request);
         }
 
         /// <summary>

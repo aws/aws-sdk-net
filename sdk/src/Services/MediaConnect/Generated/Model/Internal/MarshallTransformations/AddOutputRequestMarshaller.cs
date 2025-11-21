@@ -132,6 +132,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.OutputStatus);
             }
 
+            if(requestObject.IsSetOutputTags())
+            {
+                context.Writer.WritePropertyName("outputTags");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectOutputTagsKvp in requestObject.OutputTags)
+                {
+                    context.Writer.WritePropertyName(requestObjectOutputTagsKvp.Key);
+                    var requestObjectOutputTagsValue = requestObjectOutputTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectOutputTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
@@ -148,6 +162,23 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("remoteId");
                 context.Writer.WriteStringValue(requestObject.RemoteId);
+            }
+
+            if(requestObject.IsSetRouterIntegrationState())
+            {
+                context.Writer.WritePropertyName("routerIntegrationState");
+                context.Writer.WriteStringValue(requestObject.RouterIntegrationState);
+            }
+
+            if(requestObject.IsSetRouterIntegrationTransitEncryption())
+            {
+                context.Writer.WritePropertyName("routerIntegrationTransitEncryption");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FlowTransitEncryptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.RouterIntegrationTransitEncryption, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSenderControlPort())

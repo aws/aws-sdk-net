@@ -59,6 +59,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAlarmContributorId())
+                {
+                    request.Parameters.Add("AlarmContributorId", StringUtils.FromString(publicRequest.AlarmContributorId));
+                }
                 if(publicRequest.IsSetAlarmName())
                 {
                     request.Parameters.Add("AlarmName", StringUtils.FromString(publicRequest.AlarmName));

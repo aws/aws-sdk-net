@@ -109,6 +109,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCapacityManagerDataExports operation
+        ///</summary>
+        public IDescribeCapacityManagerDataExportsPaginator DescribeCapacityManagerDataExports(DescribeCapacityManagerDataExportsRequest request) 
+        {
+            return new DescribeCapacityManagerDataExportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationBillingRequests operation
         ///</summary>
         public IDescribeCapacityReservationBillingRequestsPaginator DescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request) 
@@ -293,11 +301,35 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeImageReferences operation
+        ///</summary>
+        public IDescribeImageReferencesPaginator DescribeImageReferences(DescribeImageReferencesRequest request) 
+        {
+            return new DescribeImageReferencesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeImages operation
         ///</summary>
         public IDescribeImagesPaginator DescribeImages(DescribeImagesRequest request) 
         {
             return new DescribeImagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeImageUsageReportEntries operation
+        ///</summary>
+        public IDescribeImageUsageReportEntriesPaginator DescribeImageUsageReportEntries(DescribeImageUsageReportEntriesRequest request) 
+        {
+            return new DescribeImageUsageReportEntriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeImageUsageReports operation
+        ///</summary>
+        public IDescribeImageUsageReportsPaginator DescribeImageUsageReports(DescribeImageUsageReportsRequest request) 
+        {
+            return new DescribeImageUsageReportsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -402,6 +434,22 @@ namespace Amazon.EC2.Model
         public IDescribeIpamPoolsPaginator DescribeIpamPools(DescribeIpamPoolsRequest request) 
         {
             return new DescribeIpamPoolsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeIpamPrefixListResolvers operation
+        ///</summary>
+        public IDescribeIpamPrefixListResolversPaginator DescribeIpamPrefixListResolvers(DescribeIpamPrefixListResolversRequest request) 
+        {
+            return new DescribeIpamPrefixListResolversPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeIpamPrefixListResolverTargets operation
+        ///</summary>
+        public IDescribeIpamPrefixListResolverTargetsPaginator DescribeIpamPrefixListResolverTargets(DescribeIpamPrefixListResolverTargetsRequest request) 
+        {
+            return new DescribeIpamPrefixListResolverTargetsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -1037,6 +1085,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeVpnConcentrators operation
+        ///</summary>
+        public IDescribeVpnConcentratorsPaginator DescribeVpnConcentrators(DescribeVpnConcentratorsRequest request) 
+        {
+            return new DescribeVpnConcentratorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetAssociatedIpv6PoolCidrs operation
         ///</summary>
         public IGetAssociatedIpv6PoolCidrsPaginator GetAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request) 
@@ -1050,6 +1106,22 @@ namespace Amazon.EC2.Model
         public IGetAwsNetworkPerformanceDataPaginator GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request) 
         {
             return new GetAwsNetworkPerformanceDataPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetCapacityManagerMetricData operation
+        ///</summary>
+        public IGetCapacityManagerMetricDataPaginator GetCapacityManagerMetricData(GetCapacityManagerMetricDataRequest request) 
+        {
+            return new GetCapacityManagerMetricDataPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetCapacityManagerMetricDimensions operation
+        ///</summary>
+        public IGetCapacityManagerMetricDimensionsPaginator GetCapacityManagerMetricDimensions(GetCapacityManagerMetricDimensionsRequest request) 
+        {
+            return new GetCapacityManagerMetricDimensionsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -1106,6 +1178,30 @@ namespace Amazon.EC2.Model
         public IGetIpamPoolCidrsPaginator GetIpamPoolCidrs(GetIpamPoolCidrsRequest request) 
         {
             return new GetIpamPoolCidrsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverRules operation
+        ///</summary>
+        public IGetIpamPrefixListResolverRulesPaginator GetIpamPrefixListResolverRules(GetIpamPrefixListResolverRulesRequest request) 
+        {
+            return new GetIpamPrefixListResolverRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverVersionEntries operation
+        ///</summary>
+        public IGetIpamPrefixListResolverVersionEntriesPaginator GetIpamPrefixListResolverVersionEntries(GetIpamPrefixListResolverVersionEntriesRequest request) 
+        {
+            return new GetIpamPrefixListResolverVersionEntriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverVersions operation
+        ///</summary>
+        public IGetIpamPrefixListResolverVersionsPaginator GetIpamPrefixListResolverVersions(GetIpamPrefixListResolverVersionsRequest request) 
+        {
+            return new GetIpamPrefixListResolverVersionsPaginator(this.client, request);
         }
 
         /// <summary>

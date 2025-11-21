@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(EndpointWithHostLabelHeaderOperationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
         
             if (publicRequest.IsSetAccountId()) 
@@ -97,5 +98,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, EndpointWithHostLabelHeaderOperationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, EndpointWithHostLabelHeaderOperationRequest publicRequest);
     }    
 }

@@ -2,7 +2,6 @@
   "type": "object",
 
   "properties": {
-
     "AWS": {
       "description": "Settings for configuring the AWS SDK for .NET",
       "type": "object",
@@ -15,6 +14,13 @@
           "type": "string",
           "description": "Overrides the region used when computing AWS signature."
         },
+        "AuthSchemePreference": {
+          "type": "array",
+          "description": "List of preferred authentication schemes in priority order.",
+          "items": {
+            "type": "string"
+          }
+        },
         "BufferSize": {
           "type": "integer",
           "description": "The BufferSize controls the buffer used to read in from input streams and write out to the request."
@@ -22,6 +28,10 @@
         "ClientAppId": {
           "type": "string",
           "description": "ClientAppId is an optional application specific identifier that can be set. When set it will be appended to the User-Agent header of every request in the form of app/{ClientAppId}."
+        },
+        "ConnectTimeout": {
+          "type": "integer",
+          "description": "The ConnectTimeout property controls the timeout when establishing a connection. The units for the property is milliseconds"
         },
         "DefaultsMode": {
           "enum": [
@@ -73,6 +83,10 @@
           "type": "boolean",
           "description": "If this property is set to true, the service response is logged."
         },
+        "MaxConnectionsPerServer": {
+          "type": "integer",
+          "description": "This property is used to set the MaxConnectionsPerServer on the matching property on the underlying HttpClient to make service calls."
+        },
         "MaxErrorRetry": {
           "type": "integer",
           "description": "How many retry HTTP requests an SDK should make for a single SDK operation invocation before giving up."
@@ -120,8 +134,15 @@
           "type": "string",
           "description": "If set this role will be assumed using the resolved AWS credentials."
         },
+        "SigV4aSigningRegionSet": {
+          "type": "array",
+          "description": "List of AWS regions for SigV4a multi-region signing.",
+          "items": {
+            "type": "string"
+          }
+        },
         "ThrottleRetries": {
-          "type": "bool",
+          "type": "boolean",
           "description": "Enables the SDK to use intelligent throttle retry logic."
         },
         "Timeout": {

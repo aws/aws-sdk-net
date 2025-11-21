@@ -64,6 +64,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     response.ParsedSplitFileContents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("validationMessages", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ValidationMessages = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

@@ -65,10 +65,12 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ServiceId. 
         /// <para>
-        /// The ID of the service that you want to update.
+        /// The ID or Amazon Resource Name (ARN) of the service that you want to update. For services
+        /// created in a namespace shared with your Amazon Web Services account, specify the service
+        /// ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
+        [AWSProperty(Required=true, Max=255)]
         public string ServiceId
         {
             get { return this._serviceId; }

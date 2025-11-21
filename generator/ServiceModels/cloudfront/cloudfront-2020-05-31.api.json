@@ -1035,6 +1035,27 @@
         {"shape":"RealtimeLogConfigInUse"}
       ]
     },
+    "DeleteResourcePolicy":{
+      "name":"DeleteResourcePolicy2020_05_31",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2020-05-31/delete-resource-policy",
+        "responseCode":200
+      },
+      "input":{
+        "shape":"DeleteResourcePolicyRequest",
+        "locationName":"DeleteResourcePolicyRequest",
+        "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+      },
+      "errors":[
+        {"shape":"PreconditionFailed"},
+        {"shape":"AccessDenied"},
+        {"shape":"EntityNotFound"},
+        {"shape":"IllegalDelete"},
+        {"shape":"UnsupportedOperation"},
+        {"shape":"InvalidArgument"}
+      ]
+    },
     "DeleteResponseHeadersPolicy":{
       "name":"DeleteResponseHeadersPolicy2020_05_31",
       "http":{
@@ -1595,6 +1616,26 @@
         {"shape":"NoSuchRealtimeLogConfig"}
       ]
     },
+    "GetResourcePolicy":{
+      "name":"GetResourcePolicy2020_05_31",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2020-05-31/get-resource-policy",
+        "responseCode":200
+      },
+      "input":{
+        "shape":"GetResourcePolicyRequest",
+        "locationName":"GetResourcePolicyRequest",
+        "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+      },
+      "output":{"shape":"GetResourcePolicyResult"},
+      "errors":[
+        {"shape":"AccessDenied"},
+        {"shape":"EntityNotFound"},
+        {"shape":"UnsupportedOperation"},
+        {"shape":"InvalidArgument"}
+      ]
+    },
     "GetResponseHeadersPolicy":{
       "name":"GetResponseHeadersPolicy2020_05_31",
       "http":{
@@ -1881,6 +1922,22 @@
       "errors":[
         {"shape":"AccessDenied"},
         {"shape":"NoSuchOriginRequestPolicy"},
+        {"shape":"InvalidArgument"}
+      ]
+    },
+    "ListDistributionsByOwnedResource":{
+      "name":"ListDistributionsByOwnedResource2020_05_31",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2020-05-31/distributionsByOwnedResource/{ResourceArn}",
+        "responseCode":200
+      },
+      "input":{"shape":"ListDistributionsByOwnedResourceRequest"},
+      "output":{"shape":"ListDistributionsByOwnedResourceResult"},
+      "errors":[
+        {"shape":"AccessDenied"},
+        {"shape":"EntityNotFound"},
+        {"shape":"UnsupportedOperation"},
         {"shape":"InvalidArgument"}
       ]
     },
@@ -2196,6 +2253,28 @@
         {"shape":"InvalidIfMatchVersion"}
       ]
     },
+    "PutResourcePolicy":{
+      "name":"PutResourcePolicy2020_05_31",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2020-05-31/put-resource-policy",
+        "responseCode":200
+      },
+      "input":{
+        "shape":"PutResourcePolicyRequest",
+        "locationName":"PutResourcePolicyRequest",
+        "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+      },
+      "output":{"shape":"PutResourcePolicyResult"},
+      "errors":[
+        {"shape":"PreconditionFailed"},
+        {"shape":"AccessDenied"},
+        {"shape":"EntityNotFound"},
+        {"shape":"UnsupportedOperation"},
+        {"shape":"InvalidArgument"},
+        {"shape":"IllegalUpdate"}
+      ]
+    },
     "TagResource":{
       "name":"TagResource2020_05_31",
       "http":{
@@ -2245,6 +2324,28 @@
         {"shape":"InvalidTagging"},
         {"shape":"InvalidArgument"},
         {"shape":"NoSuchResource"}
+      ]
+    },
+    "UpdateAnycastIpList":{
+      "name":"UpdateAnycastIpList2020_05_31",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/2020-05-31/anycast-ip-list/{Id}",
+        "responseCode":200
+      },
+      "input":{
+        "shape":"UpdateAnycastIpListRequest",
+        "locationName":"UpdateAnycastIpListRequest",
+        "xmlNamespace":{"uri":"http://cloudfront.amazonaws.com/doc/2020-05-31/"}
+      },
+      "output":{"shape":"UpdateAnycastIpListResult"},
+      "errors":[
+        {"shape":"PreconditionFailed"},
+        {"shape":"AccessDenied"},
+        {"shape":"EntityNotFound"},
+        {"shape":"UnsupportedOperation"},
+        {"shape":"InvalidArgument"},
+        {"shape":"InvalidIfMatchVersion"}
       ]
     },
     "UpdateCachePolicy":{
@@ -2936,6 +3037,8 @@
         "Name":{"shape":"AnycastIpListName"},
         "Status":{"shape":"string"},
         "Arn":{"shape":"string"},
+        "IpAddressType":{"shape":"IpAddressType"},
+        "IpamConfig":{"shape":"IpamConfig"},
         "AnycastIps":{"shape":"AnycastIps"},
         "IpCount":{"shape":"integer"},
         "LastModifiedTime":{"shape":"timestamp"}
@@ -2987,7 +3090,10 @@
         "Status":{"shape":"string"},
         "Arn":{"shape":"string"},
         "IpCount":{"shape":"integer"},
-        "LastModifiedTime":{"shape":"timestamp"}
+        "LastModifiedTime":{"shape":"timestamp"},
+        "IpAddressType":{"shape":"IpAddressType"},
+        "ETag":{"shape":"string"},
+        "IpamConfig":{"shape":"IpamConfig"}
       }
     },
     "AnycastIps":{
@@ -3751,7 +3857,9 @@
       "members":{
         "Name":{"shape":"AnycastIpListName"},
         "IpCount":{"shape":"integer"},
-        "Tags":{"shape":"Tags"}
+        "Tags":{"shape":"Tags"},
+        "IpAddressType":{"shape":"IpAddressType"},
+        "IpamCidrConfigs":{"shape":"IpamCidrConfigList"}
       }
     },
     "CreateAnycastIpListResult":{
@@ -4469,7 +4577,8 @@
         "OriginProtocolPolicy":{"shape":"OriginProtocolPolicy"},
         "OriginSslProtocols":{"shape":"OriginSslProtocols"},
         "OriginReadTimeout":{"shape":"integer"},
-        "OriginKeepaliveTimeout":{"shape":"integer"}
+        "OriginKeepaliveTimeout":{"shape":"integer"},
+        "IpAddressType":{"shape":"IpAddressType"}
       }
     },
     "CustomizationActionType":{
@@ -4804,6 +4913,13 @@
         "ARN":{"shape":"string"}
       }
     },
+    "DeleteResourcePolicyRequest":{
+      "type":"structure",
+      "required":["ResourceArn"],
+      "members":{
+        "ResourceArn":{"shape":"string"}
+      }
+    },
     "DeleteResponseHeadersPolicyRequest":{
       "type":"structure",
       "required":["Id"],
@@ -5074,6 +5190,41 @@
       "member":{
         "shape":"string",
         "locationName":"DistributionId"
+      }
+    },
+    "DistributionIdOwner":{
+      "type":"structure",
+      "required":[
+        "DistributionId",
+        "OwnerAccountId"
+      ],
+      "members":{
+        "DistributionId":{"shape":"string"},
+        "OwnerAccountId":{"shape":"string"}
+      }
+    },
+    "DistributionIdOwnerItemList":{
+      "type":"list",
+      "member":{
+        "shape":"DistributionIdOwner",
+        "locationName":"DistributionIdOwner"
+      }
+    },
+    "DistributionIdOwnerList":{
+      "type":"structure",
+      "required":[
+        "Marker",
+        "MaxItems",
+        "IsTruncated",
+        "Quantity"
+      ],
+      "members":{
+        "Marker":{"shape":"string"},
+        "NextMarker":{"shape":"string"},
+        "MaxItems":{"shape":"integer"},
+        "IsTruncated":{"shape":"boolean"},
+        "Quantity":{"shape":"integer"},
+        "Items":{"shape":"DistributionIdOwnerItemList"}
       }
     },
     "DistributionList":{
@@ -6525,6 +6676,20 @@
         "RealtimeLogConfig":{"shape":"RealtimeLogConfig"}
       }
     },
+    "GetResourcePolicyRequest":{
+      "type":"structure",
+      "required":["ResourceArn"],
+      "members":{
+        "ResourceArn":{"shape":"string"}
+      }
+    },
+    "GetResourcePolicyResult":{
+      "type":"structure",
+      "members":{
+        "ResourceArn":{"shape":"string"},
+        "PolicyDocument":{"shape":"string"}
+      }
+    },
     "GetResponseHeadersPolicyConfigRequest":{
       "type":"structure",
       "required":["Id"],
@@ -7109,6 +7274,62 @@
         "locationName":"InvalidationSummary"
       }
     },
+    "IpAddressType":{
+      "type":"string",
+      "enum":[
+        "ipv4",
+        "ipv6",
+        "dualstack"
+      ]
+    },
+    "IpamCidrConfig":{
+      "type":"structure",
+      "required":[
+        "Cidr",
+        "IpamPoolArn"
+      ],
+      "members":{
+        "Cidr":{"shape":"string"},
+        "IpamPoolArn":{"shape":"string"},
+        "AnycastIp":{"shape":"string"},
+        "Status":{"shape":"IpamCidrStatus"}
+      }
+    },
+    "IpamCidrConfigList":{
+      "type":"list",
+      "member":{
+        "shape":"IpamCidrConfig",
+        "locationName":"IpamCidrConfig"
+      }
+    },
+    "IpamCidrStatus":{
+      "type":"string",
+      "enum":[
+        "provisioned",
+        "failed-provision",
+        "provisioning",
+        "deprovisioned",
+        "failed-deprovision",
+        "deprovisioning",
+        "advertised",
+        "failed-advertise",
+        "advertising",
+        "withdrawn",
+        "failed-withdraw",
+        "withdrawing"
+      ]
+    },
+    "IpamConfig":{
+      "type":"structure",
+      "required":[
+        "Quantity",
+        "IpamCidrConfigs"
+      ],
+      "members":{
+        "Quantity":{"shape":"integer"},
+        "IpamCidrConfigs":{"shape":"IpamCidrConfigList"}
+      }
+    },
     "ItemSelection":{
       "type":"string",
       "enum":[
@@ -7642,6 +7863,34 @@
         "DistributionIdList":{"shape":"DistributionIdList"}
       },
       "payload":"DistributionIdList"
+    },
+    "ListDistributionsByOwnedResourceRequest":{
+      "type":"structure",
+      "required":["ResourceArn"],
+      "members":{
+        "ResourceArn":{
+          "shape":"string",
+          "location":"uri",
+          "locationName":"ResourceArn"
+        },
+        "Marker":{
+          "shape":"string",
+          "location":"querystring",
+          "locationName":"Marker"
+        },
+        "MaxItems":{
+          "shape":"string",
+          "location":"querystring",
+          "locationName":"MaxItems"
+        }
+      }
+    },
+    "ListDistributionsByOwnedResourceResult":{
+      "type":"structure",
+      "members":{
+        "DistributionList":{"shape":"DistributionIdOwnerList"}
+      },
+      "payload":"DistributionList"
     },
     "ListDistributionsByRealtimeLogConfigRequest":{
       "type":"structure",
@@ -8224,7 +8473,9 @@
         "TLSv1.1_2016",
         "TLSv1.2_2018",
         "TLSv1.2_2019",
-        "TLSv1.2_2021"
+        "TLSv1.2_2021",
+        "TLSv1.3_2025",
+        "TLSv1.2_2025"
       ]
     },
     "MissingBody":{
@@ -9069,6 +9320,23 @@
         "FunctionSummary":{"shape":"FunctionSummary"}
       },
       "payload":"FunctionSummary"
+    },
+    "PutResourcePolicyRequest":{
+      "type":"structure",
+      "required":[
+        "ResourceArn",
+        "PolicyDocument"
+      ],
+      "members":{
+        "ResourceArn":{"shape":"string"},
+        "PolicyDocument":{"shape":"string"}
+      }
+    },
+    "PutResourcePolicyResult":{
+      "type":"structure",
+      "members":{
+        "ResourceArn":{"shape":"string"}
+      }
     },
     "QueryArgProfile":{
       "type":"structure",
@@ -10625,6 +10893,38 @@
       },
       "payload":"TagKeys"
     },
+    "UpdateAnycastIpListRequest":{
+      "type":"structure",
+      "required":[
+        "Id",
+        "IfMatch"
+      ],
+      "members":{
+        "Id":{
+          "shape":"string",
+          "location":"uri",
+          "locationName":"Id"
+        },
+        "IpAddressType":{"shape":"IpAddressType"},
+        "IfMatch":{
+          "shape":"string",
+          "location":"header",
+          "locationName":"If-Match"
+        }
+      }
+    },
+    "UpdateAnycastIpListResult":{
+      "type":"structure",
+      "members":{
+        "AnycastIpList":{"shape":"AnycastIpList"},
+        "ETag":{
+          "shape":"string",
+          "location":"header",
+          "locationName":"ETag"
+        }
+      },
+      "payload":"AnycastIpList"
+    },
     "UpdateCachePolicyRequest":{
       "type":"structure",
       "required":[
@@ -11397,6 +11697,7 @@
       "members":{
         "Id":{"shape":"string"},
         "Arn":{"shape":"string"},
+        "AccountId":{"shape":"string"},
         "Status":{"shape":"string"},
         "CreatedTime":{"shape":"timestamp"},
         "LastModifiedTime":{"shape":"timestamp"},
@@ -11408,6 +11709,7 @@
       "required":["VpcOriginId"],
       "members":{
         "VpcOriginId":{"shape":"string"},
+        "OwnerAccountId":{"shape":"string"},
         "OriginReadTimeout":{"shape":"integer"},
         "OriginKeepaliveTimeout":{"shape":"integer"}
       }
@@ -11465,6 +11767,7 @@
         "CreatedTime":{"shape":"timestamp"},
         "LastModifiedTime":{"shape":"timestamp"},
         "Arn":{"shape":"string"},
+        "AccountId":{"shape":"string"},
         "OriginEndpointArn":{"shape":"string"}
       }
     },

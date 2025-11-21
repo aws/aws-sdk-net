@@ -31,9 +31,10 @@ namespace Amazon.GameLiftStreams.Model
 {
     /// <summary>
     /// Container for the parameters to the AddStreamGroupLocations operation.
-    /// Add locations that can host stream sessions. You configure locations and their corresponding
-    /// capacity for each stream group. Creating a stream group in a location that's nearest
-    /// to your end users can help minimize latency and improve quality. 
+    /// Add locations that can host stream sessions. To add a location, the stream group
+    /// must be in <c>ACTIVE</c> status. You configure locations and their corresponding capacity
+    /// for each stream group. Creating a stream group in a location that's nearest to your
+    /// end users can help minimize latency and improve quality. 
     /// 
     ///  
     /// <para>

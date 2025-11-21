@@ -46,10 +46,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAction())
+            {
+                context.Writer.WritePropertyName("Action");
+                context.Writer.WriteStringValue(requestObject.Action);
+            }
+
             if(requestObject.IsSetAddOrRunAnomalyDetectionForAnalyses())
             {
                 context.Writer.WritePropertyName("AddOrRunAnomalyDetectionForAnalyses");
                 context.Writer.WriteStringValue(requestObject.AddOrRunAnomalyDetectionForAnalyses);
+            }
+
+            if(requestObject.IsSetAnalysis())
+            {
+                context.Writer.WritePropertyName("Analysis");
+                context.Writer.WriteStringValue(requestObject.Analysis);
+            }
+
+            if(requestObject.IsSetAutomate())
+            {
+                context.Writer.WritePropertyName("Automate");
+                context.Writer.WriteStringValue(requestObject.Automate);
+            }
+
+            if(requestObject.IsSetChatAgent())
+            {
+                context.Writer.WritePropertyName("ChatAgent");
+                context.Writer.WriteStringValue(requestObject.ChatAgent);
             }
 
             if(requestObject.IsSetCreateAndUpdateDashboardEmailReports())
@@ -82,6 +106,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateThresholdAlerts);
             }
 
+            if(requestObject.IsSetCreateChatAgents())
+            {
+                context.Writer.WritePropertyName("CreateChatAgents");
+                context.Writer.WriteStringValue(requestObject.CreateChatAgents);
+            }
+
             if(requestObject.IsSetCreateSharedFolders())
             {
                 context.Writer.WritePropertyName("CreateSharedFolders");
@@ -92,6 +122,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CreateSPICEDataset");
                 context.Writer.WriteStringValue(requestObject.CreateSPICEDataset);
+            }
+
+            if(requestObject.IsSetDashboard())
+            {
+                context.Writer.WritePropertyName("Dashboard");
+                context.Writer.WriteStringValue(requestObject.Dashboard);
             }
 
             if(requestObject.IsSetExportToCsv())
@@ -130,10 +166,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ExportToPdfInScheduledReports);
             }
 
+            if(requestObject.IsSetFlow())
+            {
+                context.Writer.WritePropertyName("Flow");
+                context.Writer.WriteStringValue(requestObject.Flow);
+            }
+
             if(requestObject.IsSetIncludeContentInScheduledReportsEmail())
             {
                 context.Writer.WritePropertyName("IncludeContentInScheduledReportsEmail");
                 context.Writer.WriteStringValue(requestObject.IncludeContentInScheduledReportsEmail);
+            }
+
+            if(requestObject.IsSetKnowledgeBase())
+            {
+                context.Writer.WritePropertyName("KnowledgeBase");
+                context.Writer.WriteStringValue(requestObject.KnowledgeBase);
+            }
+
+            if(requestObject.IsSetPerformFlowUiTask())
+            {
+                context.Writer.WritePropertyName("PerformFlowUiTask");
+                context.Writer.WriteStringValue(requestObject.PerformFlowUiTask);
             }
 
             if(requestObject.IsSetPrintReports())
@@ -142,10 +196,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.PrintReports);
             }
 
+            if(requestObject.IsSetPublishWithoutApproval())
+            {
+                context.Writer.WritePropertyName("PublishWithoutApproval");
+                context.Writer.WriteStringValue(requestObject.PublishWithoutApproval);
+            }
+
             if(requestObject.IsSetRenameSharedFolders())
             {
                 context.Writer.WritePropertyName("RenameSharedFolders");
                 context.Writer.WriteStringValue(requestObject.RenameSharedFolders);
+            }
+
+            if(requestObject.IsSetResearch())
+            {
+                context.Writer.WritePropertyName("Research");
+                context.Writer.WriteStringValue(requestObject.Research);
             }
 
             if(requestObject.IsSetShareAnalyses())
@@ -172,10 +238,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareDataSources);
             }
 
+            if(requestObject.IsSetSpace())
+            {
+                context.Writer.WritePropertyName("Space");
+                context.Writer.WriteStringValue(requestObject.Space);
+            }
+
             if(requestObject.IsSetSubscribeDashboardEmailReports())
             {
                 context.Writer.WritePropertyName("SubscribeDashboardEmailReports");
                 context.Writer.WriteStringValue(requestObject.SubscribeDashboardEmailReports);
+            }
+
+            if(requestObject.IsSetUseAgentWebSearch())
+            {
+                context.Writer.WritePropertyName("UseAgentWebSearch");
+                context.Writer.WriteStringValue(requestObject.UseAgentWebSearch);
+            }
+
+            if(requestObject.IsSetUseBedrockModels())
+            {
+                context.Writer.WritePropertyName("UseBedrockModels");
+                context.Writer.WriteStringValue(requestObject.UseBedrockModels);
             }
 
             if(requestObject.IsSetViewAccountSPICECapacity())

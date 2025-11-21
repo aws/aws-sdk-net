@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EndpointWithHostLabelOperation operation
     /// </summary>  
-    public class EndpointWithHostLabelOperationResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class EndpointWithHostLabelOperationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         {
             EndpointWithHostLabelOperationResponse response = new EndpointWithHostLabelOperationResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, EndpointWithHostLabelOperationResponse response);
 
         private static EndpointWithHostLabelOperationResponseUnmarshaller _instance = new EndpointWithHostLabelOperationResponseUnmarshaller();        
 

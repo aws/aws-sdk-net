@@ -35,6 +35,7 @@ namespace Amazon.Synthetics.Model
     public partial class CanaryRun
     {
         private string _artifactS3Location;
+        private BrowserType _browserType;
         private CanaryDryRunConfigOutput _dryRunConfig;
         private string _id;
         private string _name;
@@ -61,6 +62,24 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetArtifactS3Location()
         {
             return this._artifactS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrowserType. 
+        /// <para>
+        /// The browser type associated with this canary run.
+        /// </para>
+        /// </summary>
+        public BrowserType BrowserType
+        {
+            get { return this._browserType; }
+            set { this._browserType = value; }
+        }
+
+        // Check to see if BrowserType property is set
+        internal bool IsSetBrowserType()
+        {
+            return this._browserType != null;
         }
 
         /// <summary>

@@ -52,6 +52,7 @@ namespace Amazon.TranscribeStreaming.Model
     {
         private List<MedicalScribeChannelDefinition> _channelDefinitions = AWSConfigs.InitializeCollections ? new List<MedicalScribeChannelDefinition>() : null;
         private MedicalScribeEncryptionSettings _encryptionSettings;
+        private MedicalScribeContext _medicalScribeContext;
         private MedicalScribePostStreamAnalyticsSettings _postStreamAnalyticsSettings;
         private string _resourceAccessRoleArn;
         private MedicalScribeVocabularyFilterMethod _vocabularyFilterMethod;
@@ -98,6 +99,25 @@ namespace Amazon.TranscribeStreaming.Model
         internal bool IsSetEncryptionSettings()
         {
             return this._encryptionSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MedicalScribeContext. 
+        /// <para>
+        /// The <c>MedicalScribeContext</c> object that contains contextual information used to
+        /// generate customized clinical notes.
+        /// </para>
+        /// </summary>
+        public MedicalScribeContext MedicalScribeContext
+        {
+            get { return this._medicalScribeContext; }
+            set { this._medicalScribeContext = value; }
+        }
+
+        // Check to see if MedicalScribeContext property is set
+        internal bool IsSetMedicalScribeContext()
+        {
+            return this._medicalScribeContext != null;
         }
 
         /// <summary>

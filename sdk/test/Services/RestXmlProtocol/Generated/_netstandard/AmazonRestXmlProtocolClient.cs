@@ -247,7 +247,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual AllQueryStringTypesResponse AllQueryStringTypes(AllQueryStringTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllQueryStringTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllQueryStringTypesResponseUnmarshaller.Instance;
 
@@ -268,7 +268,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/AllQueryStringTypes">REST API Reference for AllQueryStringTypes Operation</seealso>
         public virtual Task<AllQueryStringTypesResponse> AllQueryStringTypesAsync(AllQueryStringTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AllQueryStringTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AllQueryStringTypesResponseUnmarshaller.Instance;
 
@@ -280,7 +280,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual BodyWithXmlNameResponse BodyWithXmlName(BodyWithXmlNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BodyWithXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BodyWithXmlNameResponseUnmarshaller.Instance;
 
@@ -302,7 +302,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/BodyWithXmlName">REST API Reference for BodyWithXmlName Operation</seealso>
         public virtual Task<BodyWithXmlNameResponse> BodyWithXmlNameAsync(BodyWithXmlNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BodyWithXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BodyWithXmlNameResponseUnmarshaller.Instance;
 
@@ -314,7 +314,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual ConstantAndVariableQueryStringResponse ConstantAndVariableQueryString(ConstantAndVariableQueryStringRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConstantAndVariableQueryStringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConstantAndVariableQueryStringResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/ConstantAndVariableQueryString">REST API Reference for ConstantAndVariableQueryString Operation</seealso>
         public virtual Task<ConstantAndVariableQueryStringResponse> ConstantAndVariableQueryStringAsync(ConstantAndVariableQueryStringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConstantAndVariableQueryStringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConstantAndVariableQueryStringResponseUnmarshaller.Instance;
 
@@ -349,7 +349,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual ConstantQueryStringResponse ConstantQueryString(ConstantQueryStringRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConstantQueryStringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConstantQueryStringResponseUnmarshaller.Instance;
 
@@ -372,7 +372,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/ConstantQueryString">REST API Reference for ConstantQueryString Operation</seealso>
         public virtual Task<ConstantQueryStringResponse> ConstantQueryStringAsync(ConstantQueryStringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ConstantQueryStringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ConstantQueryStringResponseUnmarshaller.Instance;
 
@@ -384,7 +384,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual ContentTypeParametersResponse ContentTypeParameters(ContentTypeParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
 
@@ -406,7 +406,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/ContentTypeParameters">REST API Reference for ContentTypeParameters Operation</seealso>
         public virtual Task<ContentTypeParametersResponse> ContentTypeParametersAsync(ContentTypeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ContentTypeParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ContentTypeParametersResponseUnmarshaller.Instance;
 
@@ -418,7 +418,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual DatetimeOffsetsResponse DatetimeOffsets(DatetimeOffsetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DatetimeOffsetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DatetimeOffsetsResponseUnmarshaller.Instance;
 
@@ -439,7 +439,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/DatetimeOffsets">REST API Reference for DatetimeOffsets Operation</seealso>
         public virtual Task<DatetimeOffsetsResponse> DatetimeOffsetsAsync(DatetimeOffsetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DatetimeOffsetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DatetimeOffsetsResponseUnmarshaller.Instance;
 
@@ -451,7 +451,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual EmptyInputAndEmptyOutputResponse EmptyInputAndEmptyOutput(EmptyInputAndEmptyOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyInputAndEmptyOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyInputAndEmptyOutputResponseUnmarshaller.Instance;
 
@@ -475,7 +475,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/EmptyInputAndEmptyOutput">REST API Reference for EmptyInputAndEmptyOutput Operation</seealso>
         public virtual Task<EmptyInputAndEmptyOutputResponse> EmptyInputAndEmptyOutputAsync(EmptyInputAndEmptyOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EmptyInputAndEmptyOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EmptyInputAndEmptyOutputResponseUnmarshaller.Instance;
 
@@ -487,7 +487,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual EndpointOperationResponse EndpointOperation(EndpointOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointOperationResponseUnmarshaller.Instance;
 
@@ -508,7 +508,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/EndpointOperation">REST API Reference for EndpointOperation Operation</seealso>
         public virtual Task<EndpointOperationResponse> EndpointOperationAsync(EndpointOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointOperationResponseUnmarshaller.Instance;
 
@@ -520,7 +520,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual EndpointWithHostLabelHeaderOperationResponse EndpointWithHostLabelHeaderOperation(EndpointWithHostLabelHeaderOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelHeaderOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelHeaderOperationResponseUnmarshaller.Instance;
 
@@ -541,7 +541,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/EndpointWithHostLabelHeaderOperation">REST API Reference for EndpointWithHostLabelHeaderOperation Operation</seealso>
         public virtual Task<EndpointWithHostLabelHeaderOperationResponse> EndpointWithHostLabelHeaderOperationAsync(EndpointWithHostLabelHeaderOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelHeaderOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelHeaderOperationResponseUnmarshaller.Instance;
 
@@ -553,7 +553,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual EndpointWithHostLabelOperationResponse EndpointWithHostLabelOperation(EndpointWithHostLabelOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelOperationResponseUnmarshaller.Instance;
 
@@ -574,7 +574,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/EndpointWithHostLabelOperation">REST API Reference for EndpointWithHostLabelOperation Operation</seealso>
         public virtual Task<EndpointWithHostLabelOperationResponse> EndpointWithHostLabelOperationAsync(EndpointWithHostLabelOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EndpointWithHostLabelOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EndpointWithHostLabelOperationResponseUnmarshaller.Instance;
 
@@ -586,7 +586,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual FlattenedXmlMapResponse FlattenedXmlMap(FlattenedXmlMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapResponseUnmarshaller.Instance;
 
@@ -607,7 +607,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/FlattenedXmlMap">REST API Reference for FlattenedXmlMap Operation</seealso>
         public virtual Task<FlattenedXmlMapResponse> FlattenedXmlMapAsync(FlattenedXmlMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapResponseUnmarshaller.Instance;
 
@@ -619,7 +619,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual FlattenedXmlMapWithXmlNameResponse FlattenedXmlMapWithXmlName(FlattenedXmlMapWithXmlNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapWithXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapWithXmlNameResponseUnmarshaller.Instance;
 
@@ -640,7 +640,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/FlattenedXmlMapWithXmlName">REST API Reference for FlattenedXmlMapWithXmlName Operation</seealso>
         public virtual Task<FlattenedXmlMapWithXmlNameResponse> FlattenedXmlMapWithXmlNameAsync(FlattenedXmlMapWithXmlNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapWithXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapWithXmlNameResponseUnmarshaller.Instance;
 
@@ -652,7 +652,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual FlattenedXmlMapWithXmlNamespaceResponse FlattenedXmlMapWithXmlNamespace(FlattenedXmlMapWithXmlNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapWithXmlNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapWithXmlNamespaceResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/FlattenedXmlMapWithXmlNamespace">REST API Reference for FlattenedXmlMapWithXmlNamespace Operation</seealso>
         public virtual Task<FlattenedXmlMapWithXmlNamespaceResponse> FlattenedXmlMapWithXmlNamespaceAsync(FlattenedXmlMapWithXmlNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FlattenedXmlMapWithXmlNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FlattenedXmlMapWithXmlNamespaceResponseUnmarshaller.Instance;
 
@@ -685,7 +685,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual FractionalSecondsResponse FractionalSeconds(FractionalSecondsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FractionalSecondsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FractionalSecondsResponseUnmarshaller.Instance;
 
@@ -706,7 +706,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/FractionalSeconds">REST API Reference for FractionalSeconds Operation</seealso>
         public virtual Task<FractionalSecondsResponse> FractionalSecondsAsync(FractionalSecondsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FractionalSecondsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FractionalSecondsResponseUnmarshaller.Instance;
 
@@ -718,7 +718,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual GreetingWithErrorsResponse GreetingWithErrors(GreetingWithErrorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
 
@@ -752,7 +752,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/GreetingWithErrors">REST API Reference for GreetingWithErrors Operation</seealso>
         public virtual Task<GreetingWithErrorsResponse> GreetingWithErrorsAsync(GreetingWithErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GreetingWithErrorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GreetingWithErrorsResponseUnmarshaller.Instance;
 
@@ -764,7 +764,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpEmptyPrefixHeadersResponse HttpEmptyPrefixHeaders(HttpEmptyPrefixHeadersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpEmptyPrefixHeadersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpEmptyPrefixHeadersResponseUnmarshaller.Instance;
 
@@ -785,7 +785,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEmptyPrefixHeaders">REST API Reference for HttpEmptyPrefixHeaders Operation</seealso>
         public virtual Task<HttpEmptyPrefixHeadersResponse> HttpEmptyPrefixHeadersAsync(HttpEmptyPrefixHeadersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpEmptyPrefixHeadersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpEmptyPrefixHeadersResponseUnmarshaller.Instance;
 
@@ -797,7 +797,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpEnumPayloadResponse HttpEnumPayload(HttpEnumPayloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpEnumPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpEnumPayloadResponseUnmarshaller.Instance;
 
@@ -818,7 +818,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEnumPayload">REST API Reference for HttpEnumPayload Operation</seealso>
         public virtual Task<HttpEnumPayloadResponse> HttpEnumPayloadAsync(HttpEnumPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpEnumPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpEnumPayloadResponseUnmarshaller.Instance;
 
@@ -830,7 +830,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpPayloadTraitsResponse HttpPayloadTraits(HttpPayloadTraitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadTraitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadTraitsResponseUnmarshaller.Instance;
 
@@ -857,7 +857,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadTraits">REST API Reference for HttpPayloadTraits Operation</seealso>
         public virtual Task<HttpPayloadTraitsResponse> HttpPayloadTraitsAsync(HttpPayloadTraitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadTraitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadTraitsResponseUnmarshaller.Instance;
 
@@ -869,7 +869,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpPayloadWithMemberXmlNameResponse HttpPayloadWithMemberXmlName(HttpPayloadWithMemberXmlNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithMemberXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithMemberXmlNameResponseUnmarshaller.Instance;
 
@@ -891,7 +891,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadWithMemberXmlName">REST API Reference for HttpPayloadWithMemberXmlName Operation</seealso>
         public virtual Task<HttpPayloadWithMemberXmlNameResponse> HttpPayloadWithMemberXmlNameAsync(HttpPayloadWithMemberXmlNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithMemberXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithMemberXmlNameResponseUnmarshaller.Instance;
 
@@ -903,7 +903,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpPayloadWithStructureResponse HttpPayloadWithStructure(HttpPayloadWithStructureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithStructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithStructureResponseUnmarshaller.Instance;
 
@@ -930,7 +930,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadWithStructure">REST API Reference for HttpPayloadWithStructure Operation</seealso>
         public virtual Task<HttpPayloadWithStructureResponse> HttpPayloadWithStructureAsync(HttpPayloadWithStructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithStructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithStructureResponseUnmarshaller.Instance;
 
@@ -942,7 +942,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpPayloadWithUnionResponse HttpPayloadWithUnion(HttpPayloadWithUnionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithUnionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithUnionResponseUnmarshaller.Instance;
 
@@ -963,7 +963,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadWithUnion">REST API Reference for HttpPayloadWithUnion Operation</seealso>
         public virtual Task<HttpPayloadWithUnionResponse> HttpPayloadWithUnionAsync(HttpPayloadWithUnionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithUnionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithUnionResponseUnmarshaller.Instance;
 
@@ -975,7 +975,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpPayloadWithXmlNameResponse HttpPayloadWithXmlName(HttpPayloadWithXmlNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithXmlNameResponseUnmarshaller.Instance;
 
@@ -997,7 +997,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadWithXmlName">REST API Reference for HttpPayloadWithXmlName Operation</seealso>
         public virtual Task<HttpPayloadWithXmlNameResponse> HttpPayloadWithXmlNameAsync(HttpPayloadWithXmlNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithXmlNameResponseUnmarshaller.Instance;
 
@@ -1009,7 +1009,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpPayloadWithXmlNamespaceResponse HttpPayloadWithXmlNamespace(HttpPayloadWithXmlNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithXmlNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithXmlNamespaceResponseUnmarshaller.Instance;
 
@@ -1030,7 +1030,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadWithXmlNamespace">REST API Reference for HttpPayloadWithXmlNamespace Operation</seealso>
         public virtual Task<HttpPayloadWithXmlNamespaceResponse> HttpPayloadWithXmlNamespaceAsync(HttpPayloadWithXmlNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithXmlNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithXmlNamespaceResponseUnmarshaller.Instance;
 
@@ -1042,7 +1042,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpPayloadWithXmlNamespaceAndPrefixResponse HttpPayloadWithXmlNamespaceAndPrefix(HttpPayloadWithXmlNamespaceAndPrefixRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithXmlNamespaceAndPrefixRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithXmlNamespaceAndPrefixResponseUnmarshaller.Instance;
 
@@ -1063,7 +1063,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPayloadWithXmlNamespaceAndPrefix">REST API Reference for HttpPayloadWithXmlNamespaceAndPrefix Operation</seealso>
         public virtual Task<HttpPayloadWithXmlNamespaceAndPrefixResponse> HttpPayloadWithXmlNamespaceAndPrefixAsync(HttpPayloadWithXmlNamespaceAndPrefixRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPayloadWithXmlNamespaceAndPrefixRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPayloadWithXmlNamespaceAndPrefixResponseUnmarshaller.Instance;
 
@@ -1075,7 +1075,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpPrefixHeadersResponse HttpPrefixHeaders(HttpPrefixHeadersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPrefixHeadersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPrefixHeadersResponseUnmarshaller.Instance;
 
@@ -1096,7 +1096,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpPrefixHeaders">REST API Reference for HttpPrefixHeaders Operation</seealso>
         public virtual Task<HttpPrefixHeadersResponse> HttpPrefixHeadersAsync(HttpPrefixHeadersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpPrefixHeadersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpPrefixHeadersResponseUnmarshaller.Instance;
 
@@ -1108,7 +1108,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpRequestWithFloatLabelsResponse HttpRequestWithFloatLabels(HttpRequestWithFloatLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpRequestWithFloatLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpRequestWithFloatLabelsResponseUnmarshaller.Instance;
 
@@ -1129,7 +1129,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpRequestWithFloatLabels">REST API Reference for HttpRequestWithFloatLabels Operation</seealso>
         public virtual Task<HttpRequestWithFloatLabelsResponse> HttpRequestWithFloatLabelsAsync(HttpRequestWithFloatLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpRequestWithFloatLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpRequestWithFloatLabelsResponseUnmarshaller.Instance;
 
@@ -1141,7 +1141,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpRequestWithGreedyLabelInPathResponse HttpRequestWithGreedyLabelInPath(HttpRequestWithGreedyLabelInPathRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpRequestWithGreedyLabelInPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpRequestWithGreedyLabelInPathResponseUnmarshaller.Instance;
 
@@ -1162,7 +1162,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpRequestWithGreedyLabelInPath">REST API Reference for HttpRequestWithGreedyLabelInPath Operation</seealso>
         public virtual Task<HttpRequestWithGreedyLabelInPathResponse> HttpRequestWithGreedyLabelInPathAsync(HttpRequestWithGreedyLabelInPathRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpRequestWithGreedyLabelInPathRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpRequestWithGreedyLabelInPathResponseUnmarshaller.Instance;
 
@@ -1174,7 +1174,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpRequestWithLabelsResponse HttpRequestWithLabels(HttpRequestWithLabelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpRequestWithLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpRequestWithLabelsResponseUnmarshaller.Instance;
 
@@ -1196,7 +1196,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpRequestWithLabels">REST API Reference for HttpRequestWithLabels Operation</seealso>
         public virtual Task<HttpRequestWithLabelsResponse> HttpRequestWithLabelsAsync(HttpRequestWithLabelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpRequestWithLabelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpRequestWithLabelsResponseUnmarshaller.Instance;
 
@@ -1208,7 +1208,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpRequestWithLabelsAndTimestampFormatResponse HttpRequestWithLabelsAndTimestampFormat(HttpRequestWithLabelsAndTimestampFormatRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpRequestWithLabelsAndTimestampFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpRequestWithLabelsAndTimestampFormatResponseUnmarshaller.Instance;
 
@@ -1229,7 +1229,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpRequestWithLabelsAndTimestampFormat">REST API Reference for HttpRequestWithLabelsAndTimestampFormat Operation</seealso>
         public virtual Task<HttpRequestWithLabelsAndTimestampFormatResponse> HttpRequestWithLabelsAndTimestampFormatAsync(HttpRequestWithLabelsAndTimestampFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpRequestWithLabelsAndTimestampFormatRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpRequestWithLabelsAndTimestampFormatResponseUnmarshaller.Instance;
 
@@ -1241,7 +1241,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpResponseCodeResponse HttpResponseCode(HttpResponseCodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpResponseCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpResponseCodeResponseUnmarshaller.Instance;
 
@@ -1262,7 +1262,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpResponseCode">REST API Reference for HttpResponseCode Operation</seealso>
         public virtual Task<HttpResponseCodeResponse> HttpResponseCodeAsync(HttpResponseCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpResponseCodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpResponseCodeResponseUnmarshaller.Instance;
 
@@ -1274,7 +1274,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual HttpStringPayloadResponse HttpStringPayload(HttpStringPayloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpStringPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpStringPayloadResponseUnmarshaller.Instance;
 
@@ -1295,7 +1295,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpStringPayload">REST API Reference for HttpStringPayload Operation</seealso>
         public virtual Task<HttpStringPayloadResponse> HttpStringPayloadAsync(HttpStringPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = HttpStringPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = HttpStringPayloadResponseUnmarshaller.Instance;
 
@@ -1307,7 +1307,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual IgnoreQueryParamsInResponseResponse IgnoreQueryParamsInResponse(IgnoreQueryParamsInResponseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IgnoreQueryParamsInResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IgnoreQueryParamsInResponseResponseUnmarshaller.Instance;
 
@@ -1329,7 +1329,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/IgnoreQueryParamsInResponse">REST API Reference for IgnoreQueryParamsInResponse Operation</seealso>
         public virtual Task<IgnoreQueryParamsInResponseResponse> IgnoreQueryParamsInResponseAsync(IgnoreQueryParamsInResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = IgnoreQueryParamsInResponseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = IgnoreQueryParamsInResponseResponseUnmarshaller.Instance;
 
@@ -1341,7 +1341,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual InputAndOutputWithHeadersResponse InputAndOutputWithHeaders(InputAndOutputWithHeadersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InputAndOutputWithHeadersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InputAndOutputWithHeadersResponseUnmarshaller.Instance;
 
@@ -1363,7 +1363,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/InputAndOutputWithHeaders">REST API Reference for InputAndOutputWithHeaders Operation</seealso>
         public virtual Task<InputAndOutputWithHeadersResponse> InputAndOutputWithHeadersAsync(InputAndOutputWithHeadersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InputAndOutputWithHeadersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InputAndOutputWithHeadersResponseUnmarshaller.Instance;
 
@@ -1375,7 +1375,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual NestedXmlMapsResponse NestedXmlMaps(NestedXmlMapsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NestedXmlMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NestedXmlMapsResponseUnmarshaller.Instance;
 
@@ -1396,7 +1396,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NestedXmlMaps">REST API Reference for NestedXmlMaps Operation</seealso>
         public virtual Task<NestedXmlMapsResponse> NestedXmlMapsAsync(NestedXmlMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NestedXmlMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NestedXmlMapsResponseUnmarshaller.Instance;
 
@@ -1408,7 +1408,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual NestedXmlMapWithXmlNameResponse NestedXmlMapWithXmlName(NestedXmlMapWithXmlNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NestedXmlMapWithXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NestedXmlMapWithXmlNameResponseUnmarshaller.Instance;
 
@@ -1429,7 +1429,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NestedXmlMapWithXmlName">REST API Reference for NestedXmlMapWithXmlName Operation</seealso>
         public virtual Task<NestedXmlMapWithXmlNameResponse> NestedXmlMapWithXmlNameAsync(NestedXmlMapWithXmlNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NestedXmlMapWithXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NestedXmlMapWithXmlNameResponseUnmarshaller.Instance;
 
@@ -1441,7 +1441,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual NoInputAndNoOutputResponse NoInputAndNoOutput(NoInputAndNoOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndNoOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndNoOutputResponseUnmarshaller.Instance;
 
@@ -1464,7 +1464,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NoInputAndNoOutput">REST API Reference for NoInputAndNoOutput Operation</seealso>
         public virtual Task<NoInputAndNoOutputResponse> NoInputAndNoOutputAsync(NoInputAndNoOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndNoOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndNoOutputResponseUnmarshaller.Instance;
 
@@ -1476,7 +1476,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual NoInputAndOutputResponse NoInputAndOutput(NoInputAndOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndOutputResponseUnmarshaller.Instance;
 
@@ -1499,7 +1499,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NoInputAndOutput">REST API Reference for NoInputAndOutput Operation</seealso>
         public virtual Task<NoInputAndOutputResponse> NoInputAndOutputAsync(NoInputAndOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NoInputAndOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NoInputAndOutputResponseUnmarshaller.Instance;
 
@@ -1511,7 +1511,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual NullAndEmptyHeadersClientResponse NullAndEmptyHeadersClient(NullAndEmptyHeadersClientRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NullAndEmptyHeadersClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NullAndEmptyHeadersClientResponseUnmarshaller.Instance;
 
@@ -1532,7 +1532,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NullAndEmptyHeadersClient">REST API Reference for NullAndEmptyHeadersClient Operation</seealso>
         public virtual Task<NullAndEmptyHeadersClientResponse> NullAndEmptyHeadersClientAsync(NullAndEmptyHeadersClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NullAndEmptyHeadersClientRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NullAndEmptyHeadersClientResponseUnmarshaller.Instance;
 
@@ -1544,7 +1544,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual NullAndEmptyHeadersServerResponse NullAndEmptyHeadersServer(NullAndEmptyHeadersServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NullAndEmptyHeadersServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NullAndEmptyHeadersServerResponseUnmarshaller.Instance;
 
@@ -1565,7 +1565,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/NullAndEmptyHeadersServer">REST API Reference for NullAndEmptyHeadersServer Operation</seealso>
         public virtual Task<NullAndEmptyHeadersServerResponse> NullAndEmptyHeadersServerAsync(NullAndEmptyHeadersServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = NullAndEmptyHeadersServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = NullAndEmptyHeadersServerResponseUnmarshaller.Instance;
 
@@ -1577,7 +1577,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual OmitsNullSerializesEmptyStringResponse OmitsNullSerializesEmptyString(OmitsNullSerializesEmptyStringRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OmitsNullSerializesEmptyStringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OmitsNullSerializesEmptyStringResponseUnmarshaller.Instance;
 
@@ -1598,7 +1598,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/OmitsNullSerializesEmptyString">REST API Reference for OmitsNullSerializesEmptyString Operation</seealso>
         public virtual Task<OmitsNullSerializesEmptyStringResponse> OmitsNullSerializesEmptyStringAsync(OmitsNullSerializesEmptyStringRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = OmitsNullSerializesEmptyStringRequestMarshaller.Instance;
             options.ResponseUnmarshaller = OmitsNullSerializesEmptyStringResponseUnmarshaller.Instance;
 
@@ -1610,7 +1610,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual PutWithContentEncodingResponse PutWithContentEncoding(PutWithContentEncodingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWithContentEncodingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWithContentEncodingResponseUnmarshaller.Instance;
 
@@ -1631,7 +1631,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/PutWithContentEncoding">REST API Reference for PutWithContentEncoding Operation</seealso>
         public virtual Task<PutWithContentEncodingResponse> PutWithContentEncodingAsync(PutWithContentEncodingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWithContentEncodingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWithContentEncodingResponseUnmarshaller.Instance;
 
@@ -1643,7 +1643,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual QueryIdempotencyTokenAutoFillResponse QueryIdempotencyTokenAutoFill(QueryIdempotencyTokenAutoFillRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIdempotencyTokenAutoFillRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIdempotencyTokenAutoFillResponseUnmarshaller.Instance;
 
@@ -1664,7 +1664,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/QueryIdempotencyTokenAutoFill">REST API Reference for QueryIdempotencyTokenAutoFill Operation</seealso>
         public virtual Task<QueryIdempotencyTokenAutoFillResponse> QueryIdempotencyTokenAutoFillAsync(QueryIdempotencyTokenAutoFillRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryIdempotencyTokenAutoFillRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryIdempotencyTokenAutoFillResponseUnmarshaller.Instance;
 
@@ -1676,7 +1676,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual QueryParamsAsStringListMapResponse QueryParamsAsStringListMap(QueryParamsAsStringListMapRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryParamsAsStringListMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryParamsAsStringListMapResponseUnmarshaller.Instance;
 
@@ -1697,7 +1697,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/QueryParamsAsStringListMap">REST API Reference for QueryParamsAsStringListMap Operation</seealso>
         public virtual Task<QueryParamsAsStringListMapResponse> QueryParamsAsStringListMapAsync(QueryParamsAsStringListMapRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryParamsAsStringListMapRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryParamsAsStringListMapResponseUnmarshaller.Instance;
 
@@ -1709,7 +1709,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual QueryPrecedenceResponse QueryPrecedence(QueryPrecedenceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryPrecedenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryPrecedenceResponseUnmarshaller.Instance;
 
@@ -1730,7 +1730,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/QueryPrecedence">REST API Reference for QueryPrecedence Operation</seealso>
         public virtual Task<QueryPrecedenceResponse> QueryPrecedenceAsync(QueryPrecedenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QueryPrecedenceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QueryPrecedenceResponseUnmarshaller.Instance;
 
@@ -1742,7 +1742,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual SimpleScalarPropertiesResponse SimpleScalarProperties(SimpleScalarPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 
@@ -1763,7 +1763,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/SimpleScalarProperties">REST API Reference for SimpleScalarProperties Operation</seealso>
         public virtual Task<SimpleScalarPropertiesResponse> SimpleScalarPropertiesAsync(SimpleScalarPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SimpleScalarPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SimpleScalarPropertiesResponseUnmarshaller.Instance;
 
@@ -1775,7 +1775,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual TimestampFormatHeadersResponse TimestampFormatHeaders(TimestampFormatHeadersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TimestampFormatHeadersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TimestampFormatHeadersResponseUnmarshaller.Instance;
 
@@ -1796,7 +1796,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/TimestampFormatHeaders">REST API Reference for TimestampFormatHeaders Operation</seealso>
         public virtual Task<TimestampFormatHeadersResponse> TimestampFormatHeadersAsync(TimestampFormatHeadersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TimestampFormatHeadersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TimestampFormatHeadersResponseUnmarshaller.Instance;
 
@@ -1808,7 +1808,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlAttributesResponse XmlAttributes(XmlAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlAttributesResponseUnmarshaller.Instance;
 
@@ -1829,7 +1829,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlAttributes">REST API Reference for XmlAttributes Operation</seealso>
         public virtual Task<XmlAttributesResponse> XmlAttributesAsync(XmlAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlAttributesResponseUnmarshaller.Instance;
 
@@ -1841,7 +1841,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlAttributesOnPayloadResponse XmlAttributesOnPayload(XmlAttributesOnPayloadRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlAttributesOnPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlAttributesOnPayloadResponseUnmarshaller.Instance;
 
@@ -1862,7 +1862,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlAttributesOnPayload">REST API Reference for XmlAttributesOnPayload Operation</seealso>
         public virtual Task<XmlAttributesOnPayloadResponse> XmlAttributesOnPayloadAsync(XmlAttributesOnPayloadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlAttributesOnPayloadRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlAttributesOnPayloadResponseUnmarshaller.Instance;
 
@@ -1874,7 +1874,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlBlobsResponse XmlBlobs(XmlBlobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlBlobsResponseUnmarshaller.Instance;
 
@@ -1895,7 +1895,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlBlobs">REST API Reference for XmlBlobs Operation</seealso>
         public virtual Task<XmlBlobsResponse> XmlBlobsAsync(XmlBlobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlBlobsResponseUnmarshaller.Instance;
 
@@ -1907,7 +1907,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlEmptyBlobsResponse XmlEmptyBlobs(XmlEmptyBlobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyBlobsResponseUnmarshaller.Instance;
 
@@ -1928,7 +1928,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlEmptyBlobs">REST API Reference for XmlEmptyBlobs Operation</seealso>
         public virtual Task<XmlEmptyBlobsResponse> XmlEmptyBlobsAsync(XmlEmptyBlobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyBlobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyBlobsResponseUnmarshaller.Instance;
 
@@ -1940,7 +1940,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlEmptyListsResponse XmlEmptyLists(XmlEmptyListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyListsResponseUnmarshaller.Instance;
 
@@ -1961,7 +1961,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlEmptyLists">REST API Reference for XmlEmptyLists Operation</seealso>
         public virtual Task<XmlEmptyListsResponse> XmlEmptyListsAsync(XmlEmptyListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyListsResponseUnmarshaller.Instance;
 
@@ -1973,7 +1973,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlEmptyMapsResponse XmlEmptyMaps(XmlEmptyMapsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyMapsResponseUnmarshaller.Instance;
 
@@ -1994,7 +1994,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlEmptyMaps">REST API Reference for XmlEmptyMaps Operation</seealso>
         public virtual Task<XmlEmptyMapsResponse> XmlEmptyMapsAsync(XmlEmptyMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyMapsResponseUnmarshaller.Instance;
 
@@ -2006,7 +2006,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlEmptyStringsResponse XmlEmptyStrings(XmlEmptyStringsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyStringsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyStringsResponseUnmarshaller.Instance;
 
@@ -2027,7 +2027,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlEmptyStrings">REST API Reference for XmlEmptyStrings Operation</seealso>
         public virtual Task<XmlEmptyStringsResponse> XmlEmptyStringsAsync(XmlEmptyStringsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEmptyStringsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEmptyStringsResponseUnmarshaller.Instance;
 
@@ -2039,7 +2039,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlEnumsResponse XmlEnums(XmlEnumsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEnumsResponseUnmarshaller.Instance;
 
@@ -2060,7 +2060,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlEnums">REST API Reference for XmlEnums Operation</seealso>
         public virtual Task<XmlEnumsResponse> XmlEnumsAsync(XmlEnumsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlEnumsResponseUnmarshaller.Instance;
 
@@ -2072,7 +2072,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlIntEnumsResponse XmlIntEnums(XmlIntEnumsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlIntEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlIntEnumsResponseUnmarshaller.Instance;
 
@@ -2093,7 +2093,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlIntEnums">REST API Reference for XmlIntEnums Operation</seealso>
         public virtual Task<XmlIntEnumsResponse> XmlIntEnumsAsync(XmlIntEnumsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlIntEnumsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlIntEnumsResponseUnmarshaller.Instance;
 
@@ -2105,7 +2105,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlListsResponse XmlLists(XmlListsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlListsResponseUnmarshaller.Instance;
 
@@ -2131,7 +2131,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlLists">REST API Reference for XmlLists Operation</seealso>
         public virtual Task<XmlListsResponse> XmlListsAsync(XmlListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlListsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlListsResponseUnmarshaller.Instance;
 
@@ -2143,7 +2143,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlMapsResponse XmlMaps(XmlMapsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlMapsResponseUnmarshaller.Instance;
 
@@ -2164,7 +2164,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlMaps">REST API Reference for XmlMaps Operation</seealso>
         public virtual Task<XmlMapsResponse> XmlMapsAsync(XmlMapsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlMapsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlMapsResponseUnmarshaller.Instance;
 
@@ -2176,7 +2176,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlMapsXmlNameResponse XmlMapsXmlName(XmlMapsXmlNameRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlMapsXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlMapsXmlNameResponseUnmarshaller.Instance;
 
@@ -2197,7 +2197,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlMapsXmlName">REST API Reference for XmlMapsXmlName Operation</seealso>
         public virtual Task<XmlMapsXmlNameResponse> XmlMapsXmlNameAsync(XmlMapsXmlNameRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlMapsXmlNameRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlMapsXmlNameResponseUnmarshaller.Instance;
 
@@ -2209,7 +2209,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlMapWithXmlNamespaceResponse XmlMapWithXmlNamespace(XmlMapWithXmlNamespaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlMapWithXmlNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlMapWithXmlNamespaceResponseUnmarshaller.Instance;
 
@@ -2230,7 +2230,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlMapWithXmlNamespace">REST API Reference for XmlMapWithXmlNamespace Operation</seealso>
         public virtual Task<XmlMapWithXmlNamespaceResponse> XmlMapWithXmlNamespaceAsync(XmlMapWithXmlNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlMapWithXmlNamespaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlMapWithXmlNamespaceResponseUnmarshaller.Instance;
 
@@ -2242,7 +2242,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlNamespacesResponse XmlNamespaces(XmlNamespacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlNamespacesResponseUnmarshaller.Instance;
 
@@ -2263,7 +2263,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlNamespaces">REST API Reference for XmlNamespaces Operation</seealso>
         public virtual Task<XmlNamespacesResponse> XmlNamespacesAsync(XmlNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlNamespacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlNamespacesResponseUnmarshaller.Instance;
 
@@ -2275,7 +2275,7 @@ namespace Amazon.RestXmlProtocol
 
         internal virtual XmlTimestampsResponse XmlTimestamps(XmlTimestampsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlTimestampsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlTimestampsResponseUnmarshaller.Instance;
 
@@ -2297,7 +2297,7 @@ namespace Amazon.RestXmlProtocol
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlTimestamps">REST API Reference for XmlTimestamps Operation</seealso>
         public virtual Task<XmlTimestampsResponse> XmlTimestampsAsync(XmlTimestampsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = XmlTimestampsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = XmlTimestampsResponseUnmarshaller.Instance;
 

@@ -62,6 +62,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";
             request.HttpMethod = "GET";
 
+            if (publicRequest.BlacklistItemNames == null)
+                throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field BlacklistItemNames set");
             
             if (publicRequest.IsSetBlacklistItemNames())
                 request.ParameterCollection.Add("BlacklistItemNames", publicRequest.BlacklistItemNames);

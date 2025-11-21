@@ -237,6 +237,14 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListInterfaceRelationships operation
+        ///</summary>
+        public IListInterfaceRelationshipsPaginator ListInterfaceRelationships(ListInterfaceRelationshipsRequest request) 
+        {
+            return new ListInterfaceRelationshipsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPortals operation
         ///</summary>
         public IListPortalsPaginator ListPortals(ListPortalsRequest request) 

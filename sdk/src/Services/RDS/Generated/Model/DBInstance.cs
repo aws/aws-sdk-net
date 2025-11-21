@@ -1761,7 +1761,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The open mode of a Db2 or an Oracle read replica. The default is <c>open-read-only</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working
-        /// with read replicas for Amazon RDS for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+        /// with replicas for Amazon RDS for Db2</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
         /// with read replicas for Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
         /// 
         /// </para>

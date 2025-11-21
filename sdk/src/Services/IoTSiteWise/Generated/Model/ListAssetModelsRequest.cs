@@ -57,6 +57,11 @@ namespace Amazon.IoTSiteWise.Model
         /// models of other asset models. You can't create assets directly from this type of asset
         /// model. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>INTERFACE</b> – An interface is a type of model that defines a standard structure
+        /// that can be applied to different asset models.
+        /// </para>
         ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -81,7 +81,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=6)]
+        [AWSProperty(Min=1)]
         public List<string> AddSubnetIds
         {
             get { return this._addSubnetIds; }
@@ -167,7 +167,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=6)]
+        [AWSProperty(Min=1)]
         public List<string> RemoveSubnetIds
         {
             get { return this._removeSubnetIds; }

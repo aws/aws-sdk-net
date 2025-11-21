@@ -6,6 +6,14 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.CreateResourceExplorerSetupRequest.ViewName</property>
+    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.CreateResourceExplorerSetupResponse.TaskId</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.CreateViewRequest.ClientToken</property>
     <min>1</min>
     <max>2048</max>
@@ -17,7 +25,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.CreateViewRequest.ViewName</property>
-    <pattern>^[a-zA-Z0-9\-]{1,64}$</pattern>
+    <pattern>[a-zA-Z0-9\-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.DeleteResourceExplorerSetupResponse.TaskId</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.DeleteViewRequest.ViewArn</property>
@@ -26,6 +38,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.GetManagedViewRequest.ManagedViewArn</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.GetResourceExplorerSetupRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.GetResourceExplorerSetupRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.GetResourceExplorerSetupRequest.TaskId</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.GetResourceExplorerSetupResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.GetServiceViewRequest.ServiceViewArn</property>
     <min>1</min>
     <max>1011</max>
   </property-value-rule>
@@ -95,6 +131,26 @@
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListServiceIndexesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListServiceIndexesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListServiceViewsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.ListStreamingAccessForServicesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.ListSupportedResourceTypesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -143,6 +199,10 @@
     <property>Amazon.ResourceExplorer2.Model.IncludedProperty.Name</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceExplorer2.Model.RegionStatus.Region</property>
+    <pattern>[a-z-]+-[a-z]+-[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.SearchFilter.FilterString</property>

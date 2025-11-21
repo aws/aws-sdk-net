@@ -34,12 +34,32 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class GuardrailAssessment
     {
+        private GuardrailAutomatedReasoningPolicyAssessment _automatedReasoningPolicy;
         private GuardrailContentPolicyAssessment _contentPolicy;
         private GuardrailContextualGroundingPolicyAssessment _contextualGroundingPolicy;
         private GuardrailInvocationMetrics _invocationMetrics;
         private GuardrailSensitiveInformationPolicyAssessment _sensitiveInformationPolicy;
         private GuardrailTopicPolicyAssessment _topicPolicy;
         private GuardrailWordPolicyAssessment _wordPolicy;
+
+        /// <summary>
+        /// Gets and sets the property AutomatedReasoningPolicy. 
+        /// <para>
+        /// The automated reasoning policy assessment results, including logical validation findings
+        /// for the input content.
+        /// </para>
+        /// </summary>
+        public GuardrailAutomatedReasoningPolicyAssessment AutomatedReasoningPolicy
+        {
+            get { return this._automatedReasoningPolicy; }
+            set { this._automatedReasoningPolicy = value; }
+        }
+
+        // Check to see if AutomatedReasoningPolicy property is set
+        internal bool IsSetAutomatedReasoningPolicy()
+        {
+            return this._automatedReasoningPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContentPolicy. 

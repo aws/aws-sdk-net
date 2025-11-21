@@ -62,9 +62,13 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-11-01";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.AnalyzerArn))
+                throw new AmazonAccessAnalyzerException("Request object does not have required field AnalyzerArn set");
             
             if (publicRequest.IsSetAnalyzerArn())
                 request.Parameters.Add("analyzerArn", StringUtils.FromString(publicRequest.AnalyzerArn));
+            if (string.IsNullOrEmpty(publicRequest.ResourceArn))
+                throw new AmazonAccessAnalyzerException("Request object does not have required field ResourceArn set");
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));

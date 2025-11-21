@@ -175,6 +175,18 @@ namespace Amazon.MedicalImaging
         /// </summary>
         public static readonly ImageSetWorkflowStatus DELETING = new ImageSetWorkflowStatus("DELETING");
         /// <summary>
+        /// Constant IMPORT_FAILED for ImageSetWorkflowStatus
+        /// </summary>
+        public static readonly ImageSetWorkflowStatus IMPORT_FAILED = new ImageSetWorkflowStatus("IMPORT_FAILED");
+        /// <summary>
+        /// Constant IMPORTED for ImageSetWorkflowStatus
+        /// </summary>
+        public static readonly ImageSetWorkflowStatus IMPORTED = new ImageSetWorkflowStatus("IMPORTED");
+        /// <summary>
+        /// Constant IMPORTING for ImageSetWorkflowStatus
+        /// </summary>
+        public static readonly ImageSetWorkflowStatus IMPORTING = new ImageSetWorkflowStatus("IMPORTING");
+        /// <summary>
         /// Constant UPDATE_FAILED for ImageSetWorkflowStatus
         /// </summary>
         public static readonly ImageSetWorkflowStatus UPDATE_FAILED = new ImageSetWorkflowStatus("UPDATE_FAILED");
@@ -274,6 +286,56 @@ namespace Amazon.MedicalImaging
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator JobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LosslessStorageFormat.
+    /// </summary>
+    public class LosslessStorageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTJ2K for LosslessStorageFormat
+        /// </summary>
+        public static readonly LosslessStorageFormat HTJ2K = new LosslessStorageFormat("HTJ2K");
+        /// <summary>
+        /// Constant JPEG_2000_LOSSLESS for LosslessStorageFormat
+        /// </summary>
+        public static readonly LosslessStorageFormat JPEG_2000_LOSSLESS = new LosslessStorageFormat("JPEG_2000_LOSSLESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LosslessStorageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LosslessStorageFormat FindValue(string value)
+        {
+            return FindValue<LosslessStorageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LosslessStorageFormat(string value)
         {
             return FindValue(value);
         }
@@ -428,6 +490,56 @@ namespace Amazon.MedicalImaging
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageTier.
+    /// </summary>
+    public class StorageTier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARCHIVE_INSTANT_ACCESS for StorageTier
+        /// </summary>
+        public static readonly StorageTier ARCHIVE_INSTANT_ACCESS = new StorageTier("ARCHIVE_INSTANT_ACCESS");
+        /// <summary>
+        /// Constant FREQUENT_ACCESS for StorageTier
+        /// </summary>
+        public static readonly StorageTier FREQUENT_ACCESS = new StorageTier("FREQUENT_ACCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageTier FindValue(string value)
+        {
+            return FindValue<StorageTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageTier(string value)
         {
             return FindValue(value);
         }

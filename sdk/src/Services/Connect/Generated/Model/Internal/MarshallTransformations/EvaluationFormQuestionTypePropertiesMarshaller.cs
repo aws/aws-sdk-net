@@ -68,6 +68,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetText())
+            {
+                context.Writer.WritePropertyName("Text");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormTextQuestionPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Text, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

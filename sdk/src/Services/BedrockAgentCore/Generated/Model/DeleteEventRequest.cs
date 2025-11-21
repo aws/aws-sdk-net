@@ -31,12 +31,12 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEvent operation.
-    /// Deletes an event from a memory store. When you delete an event, it is permanently
-    /// removed.
+    /// Deletes an event from an AgentCore Memory resource. When you delete an event, it is
+    /// permanently removed.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>genesismemory:DeleteEvent</c> permission.
+    /// To use this operation, you must have the <c>bedrock-agentcore:DeleteEvent</c> permission.
     /// </para>
     /// </summary>
     public partial class DeleteEventRequest : AmazonBedrockAgentCoreRequest
@@ -87,7 +87,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store from which to delete the event.
+        /// The identifier of the AgentCore Memory resource from which to delete the event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]

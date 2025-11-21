@@ -140,8 +140,8 @@ namespace Amazon.SQS.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>MaximumMessageSize</c> – The limit of how many bytes a message can contain before
-        /// Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 262,144
-        /// bytes (256 KiB). Default: 262,144 (256 KiB). 
+        /// Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to 1,048,576
+        /// bytes (1 MiB). Default: 1,048,576 bytes (1 MiB). 
         /// </para>
         ///  </li> <li> 
         /// <para>

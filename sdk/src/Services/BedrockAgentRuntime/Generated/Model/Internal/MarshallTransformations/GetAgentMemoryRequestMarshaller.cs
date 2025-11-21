@@ -71,9 +71,13 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxItems())
                 request.Parameters.Add("maxItems", StringUtils.FromInt(publicRequest.MaxItems));
+            if (string.IsNullOrEmpty(publicRequest.MemoryId))
+                throw new AmazonBedrockAgentRuntimeException("Request object does not have required field MemoryId set");
             
             if (publicRequest.IsSetMemoryId())
                 request.Parameters.Add("memoryId", StringUtils.FromString(publicRequest.MemoryId));
+            if (string.IsNullOrEmpty(publicRequest.MemoryType))
+                throw new AmazonBedrockAgentRuntimeException("Request object does not have required field MemoryType set");
             
             if (publicRequest.IsSetMemoryType())
                 request.Parameters.Add("memoryType", StringUtils.FromString(publicRequest.MemoryType));

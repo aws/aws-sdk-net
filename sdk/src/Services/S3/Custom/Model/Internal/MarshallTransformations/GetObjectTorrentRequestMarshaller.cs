@@ -34,7 +34,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(GetObjectTorrentRequest getObjectTorrentRequest)
         {
-            IRequest request = new DefaultRequest(getObjectTorrentRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(getObjectTorrentRequest, "Amazon.S3");
 
             request.HttpMethod = "GET";
 

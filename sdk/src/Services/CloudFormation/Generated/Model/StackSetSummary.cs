@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The structures that contain summary information about the specified stack set.
+    /// The structures that contain summary information about the specified StackSet.
     /// </summary>
     public partial class StackSetSummary
     {
@@ -66,7 +66,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the stack set that you specify when the stack set is created or updated.
+        /// A description of the StackSet that you specify when the StackSet is created or updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -85,25 +85,23 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DriftStatus. 
         /// <para>
-        /// Status of the stack set's actual configuration compared to its expected template and
-        /// parameter configuration. A stack set is considered to have drifted if one or more
-        /// of its stack instances have drifted from their expected template and parameter configuration.
+        /// Status of the StackSet's actual configuration compared to its expected template and
+        /// parameter configuration.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>DRIFTED</c>: One or more of the stack instances belonging to the stack set stack
-        /// differs from the expected template and parameter configuration. A stack instance is
-        /// considered to have drifted if one or more of the resources in the associated stack
-        /// have drifted.
+        ///  <c>DRIFTED</c>: One or more of the stack instances belonging to the StackSet differs
+        /// from the expected template and parameter configuration. A stack instance is considered
+        /// to have drifted if one or more of the resources in the associated stack have drifted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NOT_CHECKED</c>: CloudFormation hasn't checked the stack set for drift.
+        ///  <c>NOT_CHECKED</c>: CloudFormation hasn't checked the StackSet for drift.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>IN_SYNC</c>: All the stack instances belonging to the stack set stack match from
-        /// the expected template and parameter configuration.
+        ///  <c>IN_SYNC</c>: All the stack instances belonging to the StackSet match the expected
+        /// template and parameter configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -127,8 +125,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property LastDriftCheckTimestamp. 
         /// <para>
         /// Most recent time when CloudFormation performed a drift detection operation on the
-        /// stack set. This value will be <c>NULL</c> for any stack set on which drift detection
-        /// hasn't yet been performed.
+        /// StackSet. This value will be <c>NULL</c> for any StackSet that drift detection hasn't
+        /// yet been performed on.
         /// </para>
         /// </summary>
         public DateTime? LastDriftCheckTimestamp
@@ -165,7 +163,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property PermissionModel. 
         /// <para>
-        /// Describes how the IAM roles required for stack set operations are created.
+        /// Describes how the IAM roles required for StackSet operations are created.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -178,7 +176,7 @@ namespace Amazon.CloudFormation.Model
         /// With <c>service-managed</c> permissions, StackSets automatically creates the IAM roles
         /// required to deploy to accounts managed by Organizations. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
-        /// trusted access for stack sets with Organizations</a>.
+        /// trusted access for StackSets with Organizations</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -197,7 +195,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetId. 
         /// <para>
-        /// The ID of the stack set.
+        /// The ID of the StackSet.
         /// </para>
         /// </summary>
         public string StackSetId
@@ -215,7 +213,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name of the stack set.
+        /// The name of the StackSet.
         /// </para>
         /// </summary>
         public string StackSetName
@@ -233,7 +231,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the stack set.
+        /// The status of the StackSet.
         /// </para>
         /// </summary>
         public StackSetStatus Status

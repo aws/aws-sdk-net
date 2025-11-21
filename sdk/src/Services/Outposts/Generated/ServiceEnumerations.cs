@@ -241,6 +241,76 @@ namespace Amazon.Outposts
 
 
     /// <summary>
+    /// Constants used for properties of type BlockingResourceType.
+    /// </summary>
+    public class BlockingResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2_INSTANCE for BlockingResourceType
+        /// </summary>
+        public static readonly BlockingResourceType EC2_INSTANCE = new BlockingResourceType("EC2_INSTANCE");
+        /// <summary>
+        /// Constant LGW_ROUTE_TABLE for BlockingResourceType
+        /// </summary>
+        public static readonly BlockingResourceType LGW_ROUTE_TABLE = new BlockingResourceType("LGW_ROUTE_TABLE");
+        /// <summary>
+        /// Constant LGW_ROUTING_DOMAIN for BlockingResourceType
+        /// </summary>
+        public static readonly BlockingResourceType LGW_ROUTING_DOMAIN = new BlockingResourceType("LGW_ROUTING_DOMAIN");
+        /// <summary>
+        /// Constant LGW_VIRTUAL_INTERFACE_GROUP for BlockingResourceType
+        /// </summary>
+        public static readonly BlockingResourceType LGW_VIRTUAL_INTERFACE_GROUP = new BlockingResourceType("LGW_VIRTUAL_INTERFACE_GROUP");
+        /// <summary>
+        /// Constant OUTPOST_ORDER_CANCELLABLE for BlockingResourceType
+        /// </summary>
+        public static readonly BlockingResourceType OUTPOST_ORDER_CANCELLABLE = new BlockingResourceType("OUTPOST_ORDER_CANCELLABLE");
+        /// <summary>
+        /// Constant OUTPOST_ORDER_INTERVENTION_REQUIRED for BlockingResourceType
+        /// </summary>
+        public static readonly BlockingResourceType OUTPOST_ORDER_INTERVENTION_REQUIRED = new BlockingResourceType("OUTPOST_ORDER_INTERVENTION_REQUIRED");
+        /// <summary>
+        /// Constant OUTPOST_RAM_SHARE for BlockingResourceType
+        /// </summary>
+        public static readonly BlockingResourceType OUTPOST_RAM_SHARE = new BlockingResourceType("OUTPOST_RAM_SHARE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlockingResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlockingResourceType FindValue(string value)
+        {
+            return FindValue<BlockingResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlockingResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacityTaskFailureType.
     /// </summary>
     public class CapacityTaskFailureType : ConstantClass
@@ -520,6 +590,60 @@ namespace Amazon.Outposts
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComputeAssetState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DecommissionRequestStatus.
+    /// </summary>
+    public class DecommissionRequestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCKED for DecommissionRequestStatus
+        /// </summary>
+        public static readonly DecommissionRequestStatus BLOCKED = new DecommissionRequestStatus("BLOCKED");
+        /// <summary>
+        /// Constant REQUESTED for DecommissionRequestStatus
+        /// </summary>
+        public static readonly DecommissionRequestStatus REQUESTED = new DecommissionRequestStatus("REQUESTED");
+        /// <summary>
+        /// Constant SKIPPED for DecommissionRequestStatus
+        /// </summary>
+        public static readonly DecommissionRequestStatus SKIPPED = new DecommissionRequestStatus("SKIPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DecommissionRequestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DecommissionRequestStatus FindValue(string value)
+        {
+            return FindValue<DecommissionRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DecommissionRequestStatus(string value)
         {
             return FindValue(value);
         }

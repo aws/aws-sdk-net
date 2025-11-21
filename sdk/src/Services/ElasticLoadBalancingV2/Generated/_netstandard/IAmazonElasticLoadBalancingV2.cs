@@ -57,7 +57,7 @@ namespace Amazon.ElasticLoadBalancingV2
     ///  </li> <li> 
     /// <para>
     /// Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
-    /// TLS, and UDP.
+    /// TLS, UDP, and QUIC.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -400,11 +400,11 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// Each rule consists of a priority, one or more actions, and one or more conditions.
-        /// Rules are evaluated in priority order, from the lowest value to the highest value.
-        /// When the conditions for a rule are met, its actions are performed. If the conditions
-        /// for no rules are met, the actions for the default rule are performed. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+        /// Each rule consists of a priority, one or more actions, one or more conditions, and
+        /// up to two optional transforms. Rules are evaluated in priority order, from the lowest
+        /// value to the highest value. When the conditions for a rule are met, its actions are
+        /// performed. If the conditions for no rules are met, the actions for the default rule
+        /// are performed. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
         /// rules</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         /// </summary>
@@ -1019,7 +1019,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Describes the specified rules or the rules for the specified listener. You must specify
-        /// either a listener or one or more rules.
+        /// either a listener or rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRules service method.</param>
         /// <param name="cancellationToken">
@@ -1957,13 +1957,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// Enables the Availability Zones for the specified public subnets for the specified
         /// Application Load Balancer, Network Load Balancer or Gateway Load Balancer. The specified
         /// subnets replace the previously enabled subnets.
-        /// 
-        ///  
-        /// <para>
-        /// When you specify subnets for a Network Load Balancer, or Gateway Load Balancer you
-        /// must include all subnets that were enabled previously, with their existing configurations,
-        /// plus any additional subnets.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSubnets service method.</param>
         /// <param name="cancellationToken">

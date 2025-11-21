@@ -83,6 +83,7 @@ internal sealed partial class BedrockChatClient : IChatClient
 
         ChatMessage result = new()
         {
+            CreatedAt = DateTimeOffset.UtcNow,
             RawRepresentation = response.Output?.Message,
             Role = ChatRole.Assistant,
             MessageId = Guid.NewGuid().ToString("N"),
@@ -97,13 +98,30 @@ internal sealed partial class BedrockChatClient : IChatClient
                     result.Contents.Add(new TextContent(text) { RawRepresentation = content });
                 }
 
+                if (content.CitationsContent is { } citations &&
+                    citations.Citations is { Count: > 0 } &&
+                    citations.Content is { Count: > 0 })
+                {
+                    int count = Math.Min(citations.Citations.Count, citations.Content.Count);
+                    for (int i = 0; i < count; i++)
+                    {
+                        TextContent tc = new(citations.Content[i]?.Text) { RawRepresentation = citations.Content[i] };
+                        tc.Annotations = [new CitationAnnotation()
+                        {
+                            Title = citations.Citations[i].Title,
+                            Snippet = citations.Citations[i].SourceContent?.Select(c => c.Text).FirstOrDefault(),
+                        }];
+                        result.Contents.Add(tc);
+                    }
+                }
+
                 if (content.ReasoningContent is { ReasoningText.Text: not null } reasoningContent)
                 {
                     TextReasoningContent trc = new(reasoningContent.ReasoningText.Text) { RawRepresentation = content };
 
                     if (reasoningContent.ReasoningText.Signature is string signature)
                     {
-                        (trc.AdditionalProperties ??= [])[nameof(reasoningContent.ReasoningText.Signature)] = signature;
+                        trc.ProtectedData = signature;
                     }
 
                     if (reasoningContent.RedactedContent is { } redactedContent)
@@ -126,7 +144,11 @@ internal sealed partial class BedrockChatClient : IChatClient
 
                 if (content.Document is { Source.Bytes: { } documentBytes, Format: { } documentFormat })
                 {
-                    result.Contents.Add(new DataContent(documentBytes.ToArray(), GetMimeType(documentFormat)) { RawRepresentation = content });
+                    result.Contents.Add(new DataContent(documentBytes.ToArray(), GetMimeType(documentFormat)) 
+                    {
+                        RawRepresentation = content,
+                        Name = content.Document.Name 
+                    });
                 }
 
                 if (content.ToolUse is { } toolUse)
@@ -143,7 +165,7 @@ internal sealed partial class BedrockChatClient : IChatClient
 
         return new(result)
         {
-            CreatedAt = DateTimeOffset.UtcNow,
+            CreatedAt = result.CreatedAt,
             FinishReason = response.StopReason is not null ? GetChatFinishReason(response.StopReason) : null,
             RawRepresentation = response,
             ResponseId = Guid.NewGuid().ToString("N"),
@@ -205,7 +227,7 @@ internal sealed partial class BedrockChatClient : IChatClient
 
                     if (contentBlockDelta.Delta.Text is string text)
                     {
-                        yield return new(ChatRole.Assistant, text)
+                        ChatResponseUpdate textUpdate = new(ChatRole.Assistant, text)
                         {
                             CreatedAt = DateTimeOffset.UtcNow,
                             MessageId = messageId,
@@ -213,15 +235,27 @@ internal sealed partial class BedrockChatClient : IChatClient
                             FinishReason = finishReason,
                             ResponseId = responseId,
                         };
+
+                        if (contentBlockDelta.Delta.Citation is { } citation &&
+                            (citation.Title is not null || citation.SourceContent is { Count: > 0 }))
+                        {
+                            textUpdate.Contents[0].Annotations = [new CitationAnnotation()
+                            {
+                                Title = citation.Title,
+                                Snippet = citation.SourceContent?.Select(c => c.Text).FirstOrDefault(),
+                            }];
+                        }
+
+                        yield return textUpdate;
                     }
 
-                    if (contentBlockDelta.Delta.ReasoningContent is { Text: not null } reasoningContent)
+                    if (contentBlockDelta.Delta.ReasoningContent is { } reasoningContent)
                     {
                         TextReasoningContent trc = new(reasoningContent.Text);
 
                         if (reasoningContent.Signature is not null)
                         {
-                            (trc.AdditionalProperties ??= [])[nameof(reasoningContent.Signature)] = reasoningContent.Signature;
+                            trc.ProtectedData = reasoningContent.Signature;
                         }
 
                         if (reasoningContent.RedactedContent is { } redactedContent)
@@ -358,12 +392,31 @@ internal sealed partial class BedrockChatClient : IChatClient
 
         if (options?.Instructions is { } instructions)
         {
-            system.Add(new SystemContentBlock() { Text = instructions });
+            system.Add(new SystemContentBlock()
+            {
+                Text = instructions,
+            });
         }
 
-        system.AddRange(messages
-            .Where(m => m.Role == ChatRole.System && m.Contents.Any(c => c is TextContent))
-            .Select(m => new SystemContentBlock() { Text = string.Concat(m.Contents.OfType<TextContent>()) }));
+        foreach (var message in messages
+                     .Where(m => m.Role == ChatRole.System && m.Contents.Any(c => c is TextContent)))
+        {
+            system.Add(new SystemContentBlock()
+            {
+                Text = string.Concat(message.Contents.OfType<TextContent>()),
+            });
+
+            if (message.AdditionalProperties?.TryGetValue(nameof(ContentBlock.CachePoint), out var maybeCachePoint) == true)
+            {
+                if (maybeCachePoint is CachePointBlock cachePointBlock)
+                {
+                    system.Add(new SystemContentBlock()
+                    {
+                        CachePoint = cachePointBlock,
+                    });
+                }
+            }
+        }
 
         return system;
     }
@@ -394,15 +447,44 @@ internal sealed partial class BedrockChatClient : IChatClient
 
         foreach (ChatMessage chatMessage in chatMessages)
         {
-            if (chatMessage.Role == ChatRole.System)
+            if (chatMessage.Role != ChatRole.System &&
+                CreateContents(chatMessage) is { Count: > 0 } contents)
             {
-                continue;
-            }
+                foreach (ContentBlock c in contents)
+                {
+                    // Avoid empty/blank text blocks; they trigger the service to fail.
+                    if (c.Text is { } s && string.IsNullOrWhiteSpace(s))
+                    {
+                        c.Text = "\u200b"; // zero-width space
+                    }
+                }
 
+                if (chatMessage.AdditionalProperties?.TryGetValue(nameof(ContentBlock.CachePoint), out var maybeCachePoint) == true)
+                {
+                    if (maybeCachePoint is CachePointBlock cachePointBlock)
+                    {
+                        contents.Add(new()
+                        {
+                            CachePoint = cachePointBlock
+                        });
+                    }
+                }
+
+                messages.Add(new()
+                {
+                    Role = chatMessage.Role == ChatRole.Assistant ? ConversationRole.Assistant : ConversationRole.User,
+                    Content = contents,
+                });
+            }
+        }
+
+        // Ensure there's at least one message with content; zero content triggers the service to fail.
+        if (messages.Count == 0)
+        {
             messages.Add(new()
             {
-                Role = chatMessage.Role == ChatRole.Assistant ? ConversationRole.Assistant : ConversationRole.User,
-                Content = CreateContents(chatMessage),
+                Role = ConversationRole.User,
+                Content = [new() { Text = "\u200B" }], // zero-width space
             });
         }
 
@@ -419,10 +501,23 @@ internal sealed partial class BedrockChatClient : IChatClient
             switch (content)
             {
                 case TextContent tc:
-                    contents.Add(new() { Text = tc.Text });
+                    if (message.Role == ChatRole.Assistant)
+                    {
+                        string text = tc.Text.TrimEnd();
+                        if (text.Length != 0)
+                        {
+                            contents.Add(new() { Text = text });
+                        }
+                    }
+                    else
+                    {
+                        contents.Add(new() { Text = tc.Text });
+                    }
                     break;
 
                 case TextReasoningContent trc:
+                    object? redactedContent = null;
+                    trc.AdditionalProperties?.TryGetValue(nameof(ReasoningContentBlock.RedactedContent), out redactedContent);
                     contents.Add(new()
                     {
                         ReasoningContent = new()
@@ -430,9 +525,9 @@ internal sealed partial class BedrockChatClient : IChatClient
                             ReasoningText = new()
                             {
                                 Text = trc.Text,
-                                Signature = trc.AdditionalProperties?[nameof(ReasoningContentBlock.ReasoningText.Signature)] as string,
+                                Signature = trc.ProtectedData,
                             },
-                            RedactedContent = trc.AdditionalProperties?[nameof(ReasoningContentBlock.RedactedContent)] is byte[] array ? new(array) : null,
+                            RedactedContent = redactedContent is byte[] array ? new(array) : null,
                         }
                     });
                     break;
@@ -468,6 +563,7 @@ internal sealed partial class BedrockChatClient : IChatClient
                             {
                                 Source = new() { Bytes = new(dc.Data.ToArray()) },
                                 Format = docFormat,
+                                Name = dc.Name ?? "file",
                             }
                         });
                     }
@@ -508,6 +604,18 @@ internal sealed partial class BedrockChatClient : IChatClient
                         },
                     });
                     break;
+            }
+
+
+            if (content.AdditionalProperties?.TryGetValue(nameof(ContentBlock.CachePoint), out var maybeCachePoint) == true)
+            {
+                if (maybeCachePoint is CachePointBlock cachePointBlock)
+                {
+                    contents.Add(new()
+                    {
+                        CachePoint = cachePointBlock
+                    });
+                }
             }
         }
 
@@ -693,7 +801,7 @@ internal sealed partial class BedrockChatClient : IChatClient
         {
             foreach (AITool tool in tools)
             {
-                if (tool is not AIFunction f)
+                if (tool is not AIFunctionDeclaration f)
                 {
                     continue;
                 }

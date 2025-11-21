@@ -351,7 +351,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/DecryptData">REST API Reference for DecryptData Operation</seealso>
         public virtual DecryptDataResponse DecryptData(DecryptDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecryptDataResponseUnmarshaller.Instance;
 
@@ -454,7 +454,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/DecryptData">REST API Reference for DecryptData Operation</seealso>
         public virtual Task<DecryptDataResponse> DecryptDataAsync(DecryptDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DecryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DecryptDataResponseUnmarshaller.Instance;
             
@@ -574,7 +574,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/EncryptData">REST API Reference for EncryptData Operation</seealso>
         public virtual EncryptDataResponse EncryptData(EncryptDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EncryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EncryptDataResponseUnmarshaller.Instance;
 
@@ -693,7 +693,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/EncryptData">REST API Reference for EncryptData Operation</seealso>
         public virtual Task<EncryptDataResponse> EncryptDataAsync(EncryptDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EncryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EncryptDataResponseUnmarshaller.Instance;
             
@@ -770,7 +770,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateCardValidationData">REST API Reference for GenerateCardValidationData Operation</seealso>
         public virtual GenerateCardValidationDataResponse GenerateCardValidationData(GenerateCardValidationDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateCardValidationDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateCardValidationDataResponseUnmarshaller.Instance;
 
@@ -846,7 +846,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateCardValidationData">REST API Reference for GenerateCardValidationData Operation</seealso>
         public virtual Task<GenerateCardValidationDataResponse> GenerateCardValidationDataAsync(GenerateCardValidationDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateCardValidationDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateCardValidationDataResponseUnmarshaller.Instance;
             
@@ -876,7 +876,7 @@ namespace Amazon.PaymentCryptographyData
         /// You can use this operation to generate a DUPKT, CMAC, HMAC or EMV MAC by setting generation
         /// attributes and algorithm to the associated values. The MAC generation encryption key
         /// must have valid values for <c>KeyUsage</c> such as <c>TR31_M7_HMAC_KEY</c> for HMAC
-        /// generation, and they key must have <c>KeyModesOfUse</c> set to <c>Generate</c> and
+        /// generation, and the key must have <c>KeyModesOfUse</c> set to <c>Generate</c> and
         /// <c>Verify</c>.
         /// </para>
         ///  
@@ -922,7 +922,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateMac">REST API Reference for GenerateMac Operation</seealso>
         public virtual GenerateMacResponse GenerateMac(GenerateMacRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMacResponseUnmarshaller.Instance;
 
@@ -948,7 +948,7 @@ namespace Amazon.PaymentCryptographyData
         /// You can use this operation to generate a DUPKT, CMAC, HMAC or EMV MAC by setting generation
         /// attributes and algorithm to the associated values. The MAC generation encryption key
         /// must have valid values for <c>KeyUsage</c> such as <c>TR31_M7_HMAC_KEY</c> for HMAC
-        /// generation, and they key must have <c>KeyModesOfUse</c> set to <c>Generate</c> and
+        /// generation, and the key must have <c>KeyModesOfUse</c> set to <c>Generate</c> and
         /// <c>Verify</c>.
         /// </para>
         ///  
@@ -997,7 +997,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateMac">REST API Reference for GenerateMac Operation</seealso>
         public virtual Task<GenerateMacResponse> GenerateMacAsync(GenerateMacRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMacResponseUnmarshaller.Instance;
             
@@ -1088,7 +1088,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateMacEmvPinChange">REST API Reference for GenerateMacEmvPinChange Operation</seealso>
         public virtual GenerateMacEmvPinChangeResponse GenerateMacEmvPinChange(GenerateMacEmvPinChangeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMacEmvPinChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMacEmvPinChangeResponseUnmarshaller.Instance;
 
@@ -1178,7 +1178,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GenerateMacEmvPinChange">REST API Reference for GenerateMacEmvPinChange Operation</seealso>
         public virtual Task<GenerateMacEmvPinChangeResponse> GenerateMacEmvPinChangeAsync(GenerateMacEmvPinChangeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GenerateMacEmvPinChangeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GenerateMacEmvPinChangeResponseUnmarshaller.Instance;
             
@@ -1263,7 +1263,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GeneratePinData">REST API Reference for GeneratePinData Operation</seealso>
         public virtual GeneratePinDataResponse GeneratePinData(GeneratePinDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GeneratePinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GeneratePinDataResponseUnmarshaller.Instance;
 
@@ -1347,7 +1347,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/GeneratePinData">REST API Reference for GeneratePinData Operation</seealso>
         public virtual Task<GeneratePinDataResponse> GeneratePinDataAsync(GeneratePinDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GeneratePinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GeneratePinDataResponseUnmarshaller.Instance;
             
@@ -1445,7 +1445,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/ReEncryptData">REST API Reference for ReEncryptData Operation</seealso>
         public virtual ReEncryptDataResponse ReEncryptData(ReEncryptDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReEncryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReEncryptDataResponseUnmarshaller.Instance;
 
@@ -1542,11 +1542,192 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/ReEncryptData">REST API Reference for ReEncryptData Operation</seealso>
         public virtual Task<ReEncryptDataResponse> ReEncryptDataAsync(ReEncryptDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReEncryptDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReEncryptDataResponseUnmarshaller.Instance;
             
             return InvokeAsync<ReEncryptDataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TranslateKeyMaterial
+
+
+        /// <summary>
+        /// Translates an encryption key between different wrapping keys without importing the
+        /// key into Amazon Web Services Payment Cryptography.
+        /// 
+        ///  
+        /// <para>
+        /// This operation can be used when key material is frequently rotated, such as during
+        /// every card transaction, and there is a need to avoid importing short-lived keys into
+        /// Amazon Web Services Payment Cryptography. It translates short-lived transaction keys
+        /// such as Pin Encryption Key (PEK) generated for each transaction and wrapped with an
+        /// ECDH (Elliptic Curve Diffie-Hellman) derived wrapping key to another KEK (Key Encryption
+        /// Key) wrapping key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Before using this operation, you must first request the public key certificate of
+        /// the ECC key pair generated within Amazon Web Services Payment Cryptography to establish
+        /// an ECDH key agreement. In <c>TranslateKeyData</c>, the service uses its own ECC key
+        /// pair, public certificate of receiving ECC key pair, and the key derivation parameters
+        /// to generate a derived key. The service uses this derived key to unwrap the incoming
+        /// transaction key received as a TR31WrappedKeyBlock and re-wrap using a user provided
+        /// KEK to generate an outgoing Tr31WrappedKeyBlock. For more information on establishing
+        /// ECDH derived keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Creating
+        /// keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
+        /// key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
+        /// types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography
+        /// User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TranslateKeyMaterial service method.</param>
+        /// 
+        /// <returns>The response from the TranslateKeyMaterial service method, as returned by PaymentCryptographyData.</returns>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ResourceNotFoundException">
+        /// The request was denied due to an invalid resource error.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslateKeyMaterial">REST API Reference for TranslateKeyMaterial Operation</seealso>
+        public virtual TranslateKeyMaterialResponse TranslateKeyMaterial(TranslateKeyMaterialRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TranslateKeyMaterialRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TranslateKeyMaterialResponseUnmarshaller.Instance;
+
+            return Invoke<TranslateKeyMaterialResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Translates an encryption key between different wrapping keys without importing the
+        /// key into Amazon Web Services Payment Cryptography.
+        /// 
+        ///  
+        /// <para>
+        /// This operation can be used when key material is frequently rotated, such as during
+        /// every card transaction, and there is a need to avoid importing short-lived keys into
+        /// Amazon Web Services Payment Cryptography. It translates short-lived transaction keys
+        /// such as Pin Encryption Key (PEK) generated for each transaction and wrapped with an
+        /// ECDH (Elliptic Curve Diffie-Hellman) derived wrapping key to another KEK (Key Encryption
+        /// Key) wrapping key. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Before using this operation, you must first request the public key certificate of
+        /// the ECC key pair generated within Amazon Web Services Payment Cryptography to establish
+        /// an ECDH key agreement. In <c>TranslateKeyData</c>, the service uses its own ECC key
+        /// pair, public certificate of receiving ECC key pair, and the key derivation parameters
+        /// to generate a derived key. The service uses this derived key to unwrap the incoming
+        /// transaction key received as a TR31WrappedKeyBlock and re-wrap using a user provided
+        /// KEK to generate an outgoing Tr31WrappedKeyBlock. For more information on establishing
+        /// ECDH derived keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Creating
+        /// keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
+        /// key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
+        /// types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography
+        /// User Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Cross-account use</b>: This operation can't be used across different Amazon Web
+        /// Services accounts.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetPublicKeyCertificate.html">GetPublicCertificate</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TranslateKeyMaterial service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TranslateKeyMaterial service method, as returned by PaymentCryptographyData.</returns>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ResourceNotFoundException">
+        /// The request was denied due to an invalid resource error.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.PaymentCryptographyData.Model.ValidationException">
+        /// The request was denied due to an invalid request error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslateKeyMaterial">REST API Reference for TranslateKeyMaterial Operation</seealso>
+        public virtual Task<TranslateKeyMaterialResponse> TranslateKeyMaterialAsync(TranslateKeyMaterialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TranslateKeyMaterialRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TranslateKeyMaterialResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TranslateKeyMaterialResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1590,7 +1771,7 @@ namespace Amazon.PaymentCryptographyData
         /// which is translated to a PEK encrypted PIN block for use within the service. You can
         /// also use ECDH for reveal PIN, wherein the service translates the PIN block from PEK
         /// to a ECDH derived encryption key. For more information on establishing ECDH derived
-        /// keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Generating
+        /// keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Creating
         /// keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
         /// </para>
         ///  
@@ -1654,7 +1835,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslatePinData">REST API Reference for TranslatePinData Operation</seealso>
         public virtual TranslatePinDataResponse TranslatePinData(TranslatePinDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TranslatePinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TranslatePinDataResponseUnmarshaller.Instance;
 
@@ -1698,7 +1879,7 @@ namespace Amazon.PaymentCryptographyData
         /// which is translated to a PEK encrypted PIN block for use within the service. You can
         /// also use ECDH for reveal PIN, wherein the service translates the PIN block from PEK
         /// to a ECDH derived encryption key. For more information on establishing ECDH derived
-        /// keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Generating
+        /// keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Creating
         /// keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
         /// </para>
         ///  
@@ -1765,7 +1946,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/TranslatePinData">REST API Reference for TranslatePinData Operation</seealso>
         public virtual Task<TranslatePinDataResponse> TranslatePinDataAsync(TranslatePinDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TranslatePinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TranslatePinDataResponseUnmarshaller.Instance;
             
@@ -1847,7 +2028,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyAuthRequestCryptogram">REST API Reference for VerifyAuthRequestCryptogram Operation</seealso>
         public virtual VerifyAuthRequestCryptogramResponse VerifyAuthRequestCryptogram(VerifyAuthRequestCryptogramRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyAuthRequestCryptogramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyAuthRequestCryptogramResponseUnmarshaller.Instance;
 
@@ -1928,7 +2109,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyAuthRequestCryptogram">REST API Reference for VerifyAuthRequestCryptogram Operation</seealso>
         public virtual Task<VerifyAuthRequestCryptogramResponse> VerifyAuthRequestCryptogramAsync(VerifyAuthRequestCryptogramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyAuthRequestCryptogramRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyAuthRequestCryptogramResponseUnmarshaller.Instance;
             
@@ -2010,7 +2191,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyCardValidationData">REST API Reference for VerifyCardValidationData Operation</seealso>
         public virtual VerifyCardValidationDataResponse VerifyCardValidationData(VerifyCardValidationDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyCardValidationDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyCardValidationDataResponseUnmarshaller.Instance;
 
@@ -2091,7 +2272,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyCardValidationData">REST API Reference for VerifyCardValidationData Operation</seealso>
         public virtual Task<VerifyCardValidationDataResponse> VerifyCardValidationDataAsync(VerifyCardValidationDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyCardValidationDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyCardValidationDataResponseUnmarshaller.Instance;
             
@@ -2160,7 +2341,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyMac">REST API Reference for VerifyMac Operation</seealso>
         public virtual VerifyMacResponse VerifyMac(VerifyMacRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyMacResponseUnmarshaller.Instance;
 
@@ -2228,7 +2409,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyMac">REST API Reference for VerifyMac Operation</seealso>
         public virtual Task<VerifyMacResponse> VerifyMacAsync(VerifyMacRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyMacRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyMacResponseUnmarshaller.Instance;
             
@@ -2303,7 +2484,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyPinData">REST API Reference for VerifyPinData Operation</seealso>
         public virtual VerifyPinDataResponse VerifyPinData(VerifyPinDataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyPinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyPinDataResponseUnmarshaller.Instance;
 
@@ -2377,7 +2558,7 @@ namespace Amazon.PaymentCryptographyData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/payment-cryptography-data-2022-02-03/VerifyPinData">REST API Reference for VerifyPinData Operation</seealso>
         public virtual Task<VerifyPinDataResponse> VerifyPinDataAsync(VerifyPinDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = VerifyPinDataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = VerifyPinDataResponseUnmarshaller.Instance;
             

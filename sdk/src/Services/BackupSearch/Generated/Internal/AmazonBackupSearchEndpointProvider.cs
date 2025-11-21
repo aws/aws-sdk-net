@@ -63,9 +63,9 @@ namespace Amazon.BackupSearch.Internal
                 {
                     if (Equals(refs["UseFIPS"], true))
                     {
-                        return new Endpoint(Interpolate(@"https://backup-search-fips.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""{PartitionResult#implicitGlobalRegion}""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://backup-search-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
-                    return new Endpoint(Interpolate(@"https://backup-search.{PartitionResult#implicitGlobalRegion}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""{PartitionResult#implicitGlobalRegion}""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint(Interpolate(@"https://backup-search.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
             }
             throw new AmazonClientException("Invalid Configuration: Missing Region");

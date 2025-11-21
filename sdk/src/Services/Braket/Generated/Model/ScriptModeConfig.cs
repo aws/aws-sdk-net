@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Contains information about the Python scripts used for entry and by an Amazon Braket
-    /// job.
+    /// Contains information about algorithm scripts used for the Amazon Braket hybrid job.
     /// </summary>
     public partial class ScriptModeConfig
     {
@@ -42,7 +41,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property CompressionType. 
         /// <para>
-        /// The type of compression used by the Python scripts for an Amazon Braket job.
+        /// The type of compression used to store the algorithm scripts in Amazon S3 storage.
         /// </para>
         /// </summary>
         public CompressionType CompressionType
@@ -60,7 +59,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property EntryPoint. 
         /// <para>
-        /// The path to the Python script that serves as the entry point for an Amazon Braket
+        /// The entry point in the algorithm scripts from where the execution begins in the hybrid
         /// job.
         /// </para>
         /// </summary>
@@ -80,8 +79,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The URI that specifies the S3 path to the Python script module that contains the training
-        /// script used by an Amazon Braket job.
+        /// The URI that specifies the S3 path to the algorithm scripts used by an Amazon Braket
+        /// hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

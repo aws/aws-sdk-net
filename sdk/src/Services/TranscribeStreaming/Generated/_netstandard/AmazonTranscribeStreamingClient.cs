@@ -275,7 +275,7 @@ namespace Amazon.TranscribeStreaming
 
         internal virtual GetMedicalScribeStreamResponse GetMedicalScribeStream(GetMedicalScribeStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMedicalScribeStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMedicalScribeStreamResponseUnmarshaller.Instance;
 
@@ -316,7 +316,7 @@ namespace Amazon.TranscribeStreaming
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/GetMedicalScribeStream">REST API Reference for GetMedicalScribeStream Operation</seealso>
         public virtual Task<GetMedicalScribeStreamResponse> GetMedicalScribeStreamAsync(GetMedicalScribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMedicalScribeStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMedicalScribeStreamResponseUnmarshaller.Instance;
 
@@ -329,7 +329,7 @@ namespace Amazon.TranscribeStreaming
 #if NET8_0_OR_GREATER
         internal virtual StartCallAnalyticsStreamTranscriptionResponse StartCallAnalyticsStreamTranscription(StartCallAnalyticsStreamTranscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCallAnalyticsStreamTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCallAnalyticsStreamTranscriptionResponseUnmarshaller.Instance;
 
@@ -350,7 +350,7 @@ namespace Amazon.TranscribeStreaming
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>language-code</c> 
+        ///  <c>language-code</c> or <c>identify-language</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -395,7 +395,7 @@ namespace Amazon.TranscribeStreaming
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartCallAnalyticsStreamTranscription">REST API Reference for StartCallAnalyticsStreamTranscription Operation</seealso>
         public virtual Task<StartCallAnalyticsStreamTranscriptionResponse> StartCallAnalyticsStreamTranscriptionAsync(StartCallAnalyticsStreamTranscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCallAnalyticsStreamTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCallAnalyticsStreamTranscriptionResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.TranscribeStreaming
 #if NET8_0_OR_GREATER
         internal virtual StartMedicalScribeStreamResponse StartMedicalScribeStream(StartMedicalScribeStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMedicalScribeStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMedicalScribeStreamResponseUnmarshaller.Instance;
 
@@ -425,11 +425,11 @@ namespace Amazon.TranscribeStreaming
         ///  
         /// <para>
         /// When you start a stream, you first specify the stream configuration in a <c>MedicalScribeConfigurationEvent</c>.
-        /// This event includes channel definitions, encryption settings, and post-stream analytics
-        /// settings, such as the output configuration for aggregated transcript and clinical
-        /// note generation. These are additional streaming session configurations beyond those
-        /// provided in your initial start request headers. Whether you are starting a new session
-        /// or resuming an existing session, your first event must be a <c>MedicalScribeConfigurationEvent</c>.
+        /// This event includes channel definitions, encryption settings, medical scribe context,
+        /// and post-stream analytics settings, such as the output configuration for aggregated
+        /// transcript and clinical note generation. These are additional streaming session configurations
+        /// beyond those provided in your initial start request headers. Whether you are starting
+        /// a new session or resuming an existing session, your first event must be a <c>MedicalScribeConfigurationEvent</c>.
         /// 
         /// </para>
         ///  
@@ -498,7 +498,7 @@ namespace Amazon.TranscribeStreaming
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartMedicalScribeStream">REST API Reference for StartMedicalScribeStream Operation</seealso>
         public virtual Task<StartMedicalScribeStreamResponse> StartMedicalScribeStreamAsync(StartMedicalScribeStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMedicalScribeStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMedicalScribeStreamResponseUnmarshaller.Instance;
 
@@ -512,7 +512,7 @@ namespace Amazon.TranscribeStreaming
 #if NET8_0_OR_GREATER
         internal virtual StartMedicalStreamTranscriptionResponse StartMedicalStreamTranscription(StartMedicalStreamTranscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMedicalStreamTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMedicalStreamTranscriptionResponseUnmarshaller.Instance;
 
@@ -576,7 +576,7 @@ namespace Amazon.TranscribeStreaming
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartMedicalStreamTranscription">REST API Reference for StartMedicalStreamTranscription Operation</seealso>
         public virtual Task<StartMedicalStreamTranscriptionResponse> StartMedicalStreamTranscriptionAsync(StartMedicalStreamTranscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMedicalStreamTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMedicalStreamTranscriptionResponseUnmarshaller.Instance;
 
@@ -590,7 +590,7 @@ namespace Amazon.TranscribeStreaming
 #if NET8_0_OR_GREATER
         internal virtual StartStreamTranscriptionResponse StartStreamTranscription(StartStreamTranscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartStreamTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartStreamTranscriptionResponseUnmarshaller.Instance;
 
@@ -655,7 +655,7 @@ namespace Amazon.TranscribeStreaming
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/StartStreamTranscription">REST API Reference for StartStreamTranscription Operation</seealso>
         public virtual Task<StartStreamTranscriptionResponse> StartStreamTranscriptionAsync(StartStreamTranscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartStreamTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartStreamTranscriptionResponseUnmarshaller.Instance;
 

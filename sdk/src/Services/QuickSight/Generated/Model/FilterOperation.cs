@@ -35,6 +35,9 @@ namespace Amazon.QuickSight.Model
     public partial class FilterOperation
     {
         private string _conditionExpression;
+        private DataSetDateFilterCondition _dateFilterCondition;
+        private DataSetNumericFilterCondition _numericFilterCondition;
+        private DataSetStringFilterCondition _stringFilterCondition;
 
         /// <summary>
         /// Gets and sets the property ConditionExpression. 
@@ -43,7 +46,7 @@ namespace Amazon.QuickSight.Model
         /// evaluates to true are kept in the dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string ConditionExpression
         {
             get { return this._conditionExpression; }
@@ -54,6 +57,60 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetConditionExpression()
         {
             return this._conditionExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DateFilterCondition. 
+        /// <para>
+        /// A date-based filter condition within a filter operation.
+        /// </para>
+        /// </summary>
+        public DataSetDateFilterCondition DateFilterCondition
+        {
+            get { return this._dateFilterCondition; }
+            set { this._dateFilterCondition = value; }
+        }
+
+        // Check to see if DateFilterCondition property is set
+        internal bool IsSetDateFilterCondition()
+        {
+            return this._dateFilterCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumericFilterCondition. 
+        /// <para>
+        /// A numeric-based filter condition within a filter operation.
+        /// </para>
+        /// </summary>
+        public DataSetNumericFilterCondition NumericFilterCondition
+        {
+            get { return this._numericFilterCondition; }
+            set { this._numericFilterCondition = value; }
+        }
+
+        // Check to see if NumericFilterCondition property is set
+        internal bool IsSetNumericFilterCondition()
+        {
+            return this._numericFilterCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StringFilterCondition. 
+        /// <para>
+        /// A string-based filter condition within a filter operation.
+        /// </para>
+        /// </summary>
+        public DataSetStringFilterCondition StringFilterCondition
+        {
+            get { return this._stringFilterCondition; }
+            set { this._stringFilterCondition = value; }
+        }
+
+        // Check to see if StringFilterCondition property is set
+        internal bool IsSetStringFilterCondition()
+        {
+            return this._stringFilterCondition != null;
         }
 
     }

@@ -38,6 +38,7 @@ namespace Amazon.CloudFront.Model
     {
         private int? _httpPort;
         private int? _httpsPort;
+        private IpAddressType _ipAddressType;
         private int? _originKeepaliveTimeout;
         private OriginProtocolPolicy _originProtocolPolicy;
         private int? _originReadTimeout;
@@ -81,6 +82,26 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetHTTPSPort()
         {
             return this._httpsPort.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// Specifies which IP protocol CloudFront uses when connecting to your origin. If your
+        /// origin uses both IPv4 and IPv6 protocols, you can choose <c>dualstack</c> to help
+        /// optimize reliability.
+        /// </para>
+        /// </summary>
+        public IpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
         }
 
         /// <summary>

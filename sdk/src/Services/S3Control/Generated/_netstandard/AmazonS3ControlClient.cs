@@ -269,7 +269,7 @@ namespace Amazon.S3Control
 
         internal virtual AssociateAccessGrantsIdentityCenterResponse AssociateAccessGrantsIdentityCenter(AssociateAccessGrantsIdentityCenterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
 
@@ -295,7 +295,13 @@ namespace Amazon.S3Control
         /// You must also have the following permissions: <c>sso:CreateApplication</c>, <c>sso:PutApplicationGrant</c>,
         /// and <c>sso:PutApplicationAuthenticationMethod</c>. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAccessGrantsIdentityCenter service method.</param>
         /// <param name="cancellationToken">
@@ -306,7 +312,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/AssociateAccessGrantsIdentityCenter">REST API Reference for AssociateAccessGrantsIdentityCenter Operation</seealso>
         public virtual Task<AssociateAccessGrantsIdentityCenterResponse> AssociateAccessGrantsIdentityCenterAsync(AssociateAccessGrantsIdentityCenterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
 
@@ -318,7 +324,7 @@ namespace Amazon.S3Control
 
         internal virtual CreateAccessGrantResponse CreateAccessGrant(CreateAccessGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantResponseUnmarshaller.Instance;
 
@@ -353,7 +359,13 @@ namespace Amazon.S3Control
         /// <para>
         /// For directory groups - <c>identitystore:DescribeGroup</c> 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrant service method.</param>
         /// <param name="cancellationToken">
@@ -364,7 +376,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrant">REST API Reference for CreateAccessGrant Operation</seealso>
         public virtual Task<CreateAccessGrantResponse> CreateAccessGrantAsync(CreateAccessGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantResponseUnmarshaller.Instance;
 
@@ -376,7 +388,7 @@ namespace Amazon.S3Control
 
         internal virtual CreateAccessGrantsInstanceResponse CreateAccessGrantsInstance(CreateAccessGrantsInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -401,7 +413,13 @@ namespace Amazon.S3Control
         /// <c>sso:PutApplicationGrant</c>, and <c>sso:PutApplicationAuthenticationMethod</c>
         /// permissions. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrantsInstance service method.</param>
         /// <param name="cancellationToken">
@@ -412,7 +430,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsInstance">REST API Reference for CreateAccessGrantsInstance Operation</seealso>
         public virtual Task<CreateAccessGrantsInstanceResponse> CreateAccessGrantsInstanceAsync(CreateAccessGrantsInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -424,7 +442,7 @@ namespace Amazon.S3Control
 
         internal virtual CreateAccessGrantsLocationResponse CreateAccessGrantsLocation(CreateAccessGrantsLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -468,7 +486,13 @@ namespace Amazon.S3Control
         /// You must also have the following permission for the specified IAM role: <c>iam:PassRole</c>
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessGrantsLocation service method.</param>
         /// <param name="cancellationToken">
@@ -479,7 +503,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessGrantsLocation">REST API Reference for CreateAccessGrantsLocation Operation</seealso>
         public virtual Task<CreateAccessGrantsLocationResponse> CreateAccessGrantsLocationAsync(CreateAccessGrantsLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -491,7 +515,7 @@ namespace Amazon.S3Control
 
         internal virtual CreateAccessPointResponse CreateAccessPoint(CreateAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
 
@@ -557,7 +581,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForDirectoryBuckets.html">ListAccessPointsForDirectoryBuckets</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPoint service method.</param>
         /// <param name="cancellationToken">
@@ -568,7 +598,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">REST API Reference for CreateAccessPoint Operation</seealso>
         public virtual Task<CreateAccessPointResponse> CreateAccessPointAsync(CreateAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPointResponseUnmarshaller.Instance;
 
@@ -580,7 +610,7 @@ namespace Amazon.S3Control
 
         internal virtual CreateAccessPointForObjectLambdaResponse CreateAccessPointForObjectLambda(CreateAccessPointForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -618,7 +648,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessPointForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -629,7 +665,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda">REST API Reference for CreateAccessPointForObjectLambda Operation</seealso>
         public virtual Task<CreateAccessPointForObjectLambdaResponse> CreateAccessPointForObjectLambdaAsync(CreateAccessPointForObjectLambdaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -641,7 +677,7 @@ namespace Amazon.S3Control
 
         internal virtual CreateBucketResponse CreateBucket(CreateBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketResponseUnmarshaller.Instance;
 
@@ -742,7 +778,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateBucket">REST API Reference for CreateBucket Operation</seealso>
         public virtual Task<CreateBucketResponse> CreateBucketAsync(CreateBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBucketResponseUnmarshaller.Instance;
 
@@ -754,7 +790,7 @@ namespace Amazon.S3Control
 
         internal virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -807,7 +843,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_JobOperation.html">JobOperation</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
@@ -830,7 +872,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -842,7 +884,7 @@ namespace Amazon.S3Control
 
         internal virtual CreateMultiRegionAccessPointResponse CreateMultiRegionAccessPoint(CreateMultiRegionAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -898,7 +940,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionAccessPoint service method.</param>
         /// <param name="cancellationToken">
@@ -909,7 +957,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateMultiRegionAccessPoint">REST API Reference for CreateMultiRegionAccessPoint Operation</seealso>
         public virtual Task<CreateMultiRegionAccessPointResponse> CreateMultiRegionAccessPointAsync(CreateMultiRegionAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -921,7 +969,7 @@ namespace Amazon.S3Control
 
         internal virtual CreateStorageLensGroupResponse CreateStorageLensGroup(CreateStorageLensGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -952,6 +1000,13 @@ namespace Amazon.S3Control
         /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
         /// of Amazon S3 Storage Lens error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStorageLensGroup service method.</param>
         /// <param name="cancellationToken">
@@ -962,7 +1017,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateStorageLensGroup">REST API Reference for CreateStorageLensGroup Operation</seealso>
         public virtual Task<CreateStorageLensGroupResponse> CreateStorageLensGroupAsync(CreateStorageLensGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -974,7 +1029,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteAccessGrantResponse DeleteAccessGrant(DeleteAccessGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantResponseUnmarshaller.Instance;
 
@@ -991,7 +1046,13 @@ namespace Amazon.S3Control
         /// <para>
         /// You must have the <c>s3:DeleteAccessGrant</c> permission to use this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrant service method.</param>
         /// <param name="cancellationToken">
@@ -1002,7 +1063,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrant">REST API Reference for DeleteAccessGrant Operation</seealso>
         public virtual Task<DeleteAccessGrantResponse> DeleteAccessGrantAsync(DeleteAccessGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantResponseUnmarshaller.Instance;
 
@@ -1014,7 +1075,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteAccessGrantsInstanceResponse DeleteAccessGrantsInstance(DeleteAccessGrantsInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -1037,7 +1098,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:DeleteAccessGrantsInstance</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsInstance service method.</param>
         /// <param name="cancellationToken">
@@ -1048,7 +1115,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstance">REST API Reference for DeleteAccessGrantsInstance Operation</seealso>
         public virtual Task<DeleteAccessGrantsInstanceResponse> DeleteAccessGrantsInstanceAsync(DeleteAccessGrantsInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -1060,7 +1127,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteAccessGrantsInstanceResourcePolicyResponse DeleteAccessGrantsInstanceResourcePolicy(DeleteAccessGrantsInstanceResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1080,7 +1147,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:DeleteAccessGrantsInstanceResourcePolicy</c> permission to
         /// use this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsInstanceResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1091,7 +1164,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsInstanceResourcePolicy">REST API Reference for DeleteAccessGrantsInstanceResourcePolicy Operation</seealso>
         public virtual Task<DeleteAccessGrantsInstanceResourcePolicyResponse> DeleteAccessGrantsInstanceResourcePolicyAsync(DeleteAccessGrantsInstanceResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1103,7 +1176,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteAccessGrantsLocationResponse DeleteAccessGrantsLocation(DeleteAccessGrantsLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -1125,7 +1198,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:DeleteAccessGrantsLocation</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessGrantsLocation service method.</param>
         /// <param name="cancellationToken">
@@ -1136,7 +1215,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessGrantsLocation">REST API Reference for DeleteAccessGrantsLocation Operation</seealso>
         public virtual Task<DeleteAccessGrantsLocationResponse> DeleteAccessGrantsLocationAsync(DeleteAccessGrantsLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -1148,7 +1227,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteAccessPointResponse DeleteAccessPoint(DeleteAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointResponseUnmarshaller.Instance;
 
@@ -1189,7 +1268,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPoint service method.</param>
         /// <param name="cancellationToken">
@@ -1200,7 +1285,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">REST API Reference for DeleteAccessPoint Operation</seealso>
         public virtual Task<DeleteAccessPointResponse> DeleteAccessPointAsync(DeleteAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointResponseUnmarshaller.Instance;
 
@@ -1212,7 +1297,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteAccessPointForObjectLambdaResponse DeleteAccessPointForObjectLambda(DeleteAccessPointForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -1249,7 +1334,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -1260,7 +1351,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda">REST API Reference for DeleteAccessPointForObjectLambda Operation</seealso>
         public virtual Task<DeleteAccessPointForObjectLambdaResponse> DeleteAccessPointForObjectLambdaAsync(DeleteAccessPointForObjectLambdaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -1272,7 +1363,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteAccessPointPolicyResponse DeleteAccessPointPolicy(DeleteAccessPointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -1308,7 +1399,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html">GetAccessPointPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1319,7 +1416,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">REST API Reference for DeleteAccessPointPolicy Operation</seealso>
         public virtual Task<DeleteAccessPointPolicyResponse> DeleteAccessPointPolicyAsync(DeleteAccessPointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -1331,7 +1428,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteAccessPointPolicyForObjectLambdaResponse DeleteAccessPointPolicyForObjectLambda(DeleteAccessPointPolicyForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -1363,7 +1460,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointPolicyForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -1374,7 +1477,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda">REST API Reference for DeleteAccessPointPolicyForObjectLambda Operation</seealso>
         public virtual Task<DeleteAccessPointPolicyForObjectLambdaResponse> DeleteAccessPointPolicyForObjectLambdaAsync(DeleteAccessPointPolicyForObjectLambdaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -1386,7 +1489,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteAccessPointScopeResponse DeleteAccessPointScope(DeleteAccessPointScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -1412,6 +1515,13 @@ namespace Amazon.S3Control
         /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
         /// error responses</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessPointScope service method.</param>
         /// <param name="cancellationToken">
@@ -1422,7 +1532,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointScope">REST API Reference for DeleteAccessPointScope Operation</seealso>
         public virtual Task<DeleteAccessPointScopeResponse> DeleteAccessPointScopeAsync(DeleteAccessPointScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -1434,7 +1544,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteBucketResponse DeleteBucket(DeleteBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
@@ -1497,7 +1607,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
         public virtual Task<DeleteBucketResponse> DeleteBucketAsync(DeleteBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketResponseUnmarshaller.Instance;
 
@@ -1509,7 +1619,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteBucketLifecycleConfigurationResponse DeleteBucketLifecycleConfiguration(DeleteBucketLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -1569,7 +1679,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketLifecycleConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1580,7 +1696,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketLifecycleConfiguration">REST API Reference for DeleteBucketLifecycleConfiguration Operation</seealso>
         public virtual Task<DeleteBucketLifecycleConfigurationResponse> DeleteBucketLifecycleConfigurationAsync(DeleteBucketLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -1592,7 +1708,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteBucketPolicyResponse DeleteBucketPolicy(DeleteBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
@@ -1660,7 +1776,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html">PutBucketPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1671,7 +1793,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
         public virtual Task<DeleteBucketPolicyResponse> DeleteBucketPolicyAsync(DeleteBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketPolicyResponseUnmarshaller.Instance;
 
@@ -1683,7 +1805,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteBucketReplicationResponse DeleteBucketReplication(DeleteBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
@@ -1748,7 +1870,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketReplication.html">GetBucketReplication</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketReplication service method.</param>
         /// <param name="cancellationToken">
@@ -1759,7 +1887,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketReplication">REST API Reference for DeleteBucketReplication Operation</seealso>
         public virtual Task<DeleteBucketReplicationResponse> DeleteBucketReplicationAsync(DeleteBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketReplicationResponseUnmarshaller.Instance;
 
@@ -1771,7 +1899,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteBucketTaggingResponse DeleteBucketTagging(DeleteBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
@@ -1822,7 +1950,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html">PutBucketTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBucketTagging service method.</param>
         /// <param name="cancellationToken">
@@ -1833,7 +1967,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketTagging">REST API Reference for DeleteBucketTagging Operation</seealso>
         public virtual Task<DeleteBucketTaggingResponse> DeleteBucketTaggingAsync(DeleteBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBucketTaggingResponseUnmarshaller.Instance;
 
@@ -1845,7 +1979,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteJobTaggingResponse DeleteJobTagging(DeleteJobTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
 
@@ -1882,7 +2016,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutJobTagging.html">PutJobTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJobTagging service method.</param>
         /// <param name="cancellationToken">
@@ -1902,7 +2042,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">REST API Reference for DeleteJobTagging Operation</seealso>
         public virtual Task<DeleteJobTaggingResponse> DeleteJobTaggingAsync(DeleteJobTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobTaggingResponseUnmarshaller.Instance;
 
@@ -1914,7 +2054,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteMultiRegionAccessPointResponse DeleteMultiRegionAccessPoint(DeleteMultiRegionAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -1969,7 +2109,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionAccessPoint service method.</param>
         /// <param name="cancellationToken">
@@ -1980,7 +2126,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteMultiRegionAccessPoint">REST API Reference for DeleteMultiRegionAccessPoint Operation</seealso>
         public virtual Task<DeleteMultiRegionAccessPointResponse> DeleteMultiRegionAccessPointAsync(DeleteMultiRegionAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -1992,7 +2138,7 @@ namespace Amazon.S3Control
 
         internal virtual DeletePublicAccessBlockResponse DeletePublicAccessBlock(DeletePublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -2026,7 +2172,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
@@ -2037,7 +2189,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">REST API Reference for DeletePublicAccessBlock Operation</seealso>
         public virtual Task<DeletePublicAccessBlockResponse> DeletePublicAccessBlockAsync(DeletePublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -2049,7 +2201,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteStorageLensConfigurationResponse DeleteStorageLensConfiguration(DeleteStorageLensConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -2076,7 +2228,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2087,7 +2245,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfiguration">REST API Reference for DeleteStorageLensConfiguration Operation</seealso>
         public virtual Task<DeleteStorageLensConfigurationResponse> DeleteStorageLensConfigurationAsync(DeleteStorageLensConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -2099,7 +2257,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteStorageLensConfigurationTaggingResponse DeleteStorageLensConfigurationTagging(DeleteStorageLensConfigurationTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -2126,7 +2284,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensConfigurationTagging service method.</param>
         /// <param name="cancellationToken">
@@ -2137,7 +2301,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensConfigurationTagging">REST API Reference for DeleteStorageLensConfigurationTagging Operation</seealso>
         public virtual Task<DeleteStorageLensConfigurationTaggingResponse> DeleteStorageLensConfigurationTaggingAsync(DeleteStorageLensConfigurationTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -2149,7 +2313,7 @@ namespace Amazon.S3Control
 
         internal virtual DeleteStorageLensGroupResponse DeleteStorageLensGroup(DeleteStorageLensGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -2173,6 +2337,13 @@ namespace Amazon.S3Control
         /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
         /// of Amazon S3 Storage Lens error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStorageLensGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2183,7 +2354,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteStorageLensGroup">REST API Reference for DeleteStorageLensGroup Operation</seealso>
         public virtual Task<DeleteStorageLensGroupResponse> DeleteStorageLensGroupAsync(DeleteStorageLensGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -2195,7 +2366,7 @@ namespace Amazon.S3Control
 
         internal virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
@@ -2238,7 +2409,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// <param name="cancellationToken">
@@ -2261,7 +2438,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
@@ -2273,7 +2450,7 @@ namespace Amazon.S3Control
 
         internal virtual DescribeMultiRegionAccessPointOperationResponse DescribeMultiRegionAccessPointOperation(DescribeMultiRegionAccessPointOperationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMultiRegionAccessPointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMultiRegionAccessPointOperationResponseUnmarshaller.Instance;
 
@@ -2318,7 +2495,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMultiRegionAccessPointOperation service method.</param>
         /// <param name="cancellationToken">
@@ -2329,7 +2512,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeMultiRegionAccessPointOperation">REST API Reference for DescribeMultiRegionAccessPointOperation Operation</seealso>
         public virtual Task<DescribeMultiRegionAccessPointOperationResponse> DescribeMultiRegionAccessPointOperationAsync(DescribeMultiRegionAccessPointOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMultiRegionAccessPointOperationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMultiRegionAccessPointOperationResponseUnmarshaller.Instance;
 
@@ -2341,7 +2524,7 @@ namespace Amazon.S3Control
 
         internal virtual DissociateAccessGrantsIdentityCenterResponse DissociateAccessGrantsIdentityCenter(DissociateAccessGrantsIdentityCenterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
 
@@ -2363,7 +2546,13 @@ namespace Amazon.S3Control
         /// <para>
         /// You must have the <c>sso:DeleteApplication</c> permission to use this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DissociateAccessGrantsIdentityCenter service method.</param>
         /// <param name="cancellationToken">
@@ -2374,7 +2563,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DissociateAccessGrantsIdentityCenter">REST API Reference for DissociateAccessGrantsIdentityCenter Operation</seealso>
         public virtual Task<DissociateAccessGrantsIdentityCenterResponse> DissociateAccessGrantsIdentityCenterAsync(DissociateAccessGrantsIdentityCenterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DissociateAccessGrantsIdentityCenterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DissociateAccessGrantsIdentityCenterResponseUnmarshaller.Instance;
 
@@ -2386,7 +2575,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessGrantResponse GetAccessGrant(GetAccessGrantRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantResponseUnmarshaller.Instance;
 
@@ -2402,7 +2591,13 @@ namespace Amazon.S3Control
         /// <para>
         /// You must have the <c>s3:GetAccessGrant</c> permission to use this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrant service method.</param>
         /// <param name="cancellationToken">
@@ -2413,7 +2608,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrant">REST API Reference for GetAccessGrant Operation</seealso>
         public virtual Task<GetAccessGrantResponse> GetAccessGrantAsync(GetAccessGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantResponseUnmarshaller.Instance;
 
@@ -2425,7 +2620,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessGrantsInstanceResponse GetAccessGrantsInstance(GetAccessGrantsInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -2447,7 +2642,13 @@ namespace Amazon.S3Control
         ///  <c>GetAccessGrantsInstance</c> is not supported for cross-account access. You can
         /// only call the API from the account that owns the S3 Access Grants instance.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstance service method.</param>
         /// <param name="cancellationToken">
@@ -2458,7 +2659,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstance">REST API Reference for GetAccessGrantsInstance Operation</seealso>
         public virtual Task<GetAccessGrantsInstanceResponse> GetAccessGrantsInstanceAsync(GetAccessGrantsInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceResponseUnmarshaller.Instance;
 
@@ -2470,7 +2671,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessGrantsInstanceForPrefixResponse GetAccessGrantsInstanceForPrefix(GetAccessGrantsInstanceForPrefixRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceForPrefixRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceForPrefixResponseUnmarshaller.Instance;
 
@@ -2492,7 +2693,13 @@ namespace Amazon.S3Control
         /// The prefix owner account must grant you the following permissions to their S3 Access
         /// Grants instance: <c>s3:GetAccessGrantsInstanceForPrefix</c>. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstanceForPrefix service method.</param>
         /// <param name="cancellationToken">
@@ -2503,7 +2710,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceForPrefix">REST API Reference for GetAccessGrantsInstanceForPrefix Operation</seealso>
         public virtual Task<GetAccessGrantsInstanceForPrefixResponse> GetAccessGrantsInstanceForPrefixAsync(GetAccessGrantsInstanceForPrefixRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceForPrefixRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceForPrefixResponseUnmarshaller.Instance;
 
@@ -2515,7 +2722,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessGrantsInstanceResourcePolicyResponse GetAccessGrantsInstanceResourcePolicy(GetAccessGrantsInstanceResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2532,7 +2739,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:GetAccessGrantsInstanceResourcePolicy</c> permission to use
         /// this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstanceResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2543,7 +2756,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsInstanceResourcePolicy">REST API Reference for GetAccessGrantsInstanceResourcePolicy Operation</seealso>
         public virtual Task<GetAccessGrantsInstanceResourcePolicyResponse> GetAccessGrantsInstanceResourcePolicyAsync(GetAccessGrantsInstanceResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2555,7 +2768,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessGrantsLocationResponse GetAccessGrantsLocation(GetAccessGrantsLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -2573,7 +2786,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:GetAccessGrantsLocation</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsLocation service method.</param>
         /// <param name="cancellationToken">
@@ -2584,7 +2803,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessGrantsLocation">REST API Reference for GetAccessGrantsLocation Operation</seealso>
         public virtual Task<GetAccessGrantsLocationResponse> GetAccessGrantsLocationAsync(GetAccessGrantsLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -2596,7 +2815,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessPointResponse GetAccessPoint(GetAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointResponseUnmarshaller.Instance;
 
@@ -2637,7 +2856,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPoint service method.</param>
         /// <param name="cancellationToken">
@@ -2648,7 +2873,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">REST API Reference for GetAccessPoint Operation</seealso>
         public virtual Task<GetAccessPointResponse> GetAccessPointAsync(GetAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointResponseUnmarshaller.Instance;
 
@@ -2660,7 +2885,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessPointConfigurationForObjectLambdaResponse GetAccessPointConfigurationForObjectLambda(GetAccessPointConfigurationForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointConfigurationForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointConfigurationForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -2687,7 +2912,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html">PutAccessPointConfigurationForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointConfigurationForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -2698,7 +2929,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda">REST API Reference for GetAccessPointConfigurationForObjectLambda Operation</seealso>
         public virtual Task<GetAccessPointConfigurationForObjectLambdaResponse> GetAccessPointConfigurationForObjectLambdaAsync(GetAccessPointConfigurationForObjectLambdaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointConfigurationForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointConfigurationForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -2710,7 +2941,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessPointForObjectLambdaResponse GetAccessPointForObjectLambda(GetAccessPointForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -2747,7 +2978,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">ListAccessPointsForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -2758,7 +2995,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda">REST API Reference for GetAccessPointForObjectLambda Operation</seealso>
         public virtual Task<GetAccessPointForObjectLambdaResponse> GetAccessPointForObjectLambdaAsync(GetAccessPointForObjectLambdaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -2770,7 +3007,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessPointPolicyResponse GetAccessPointPolicy(GetAccessPointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -2796,7 +3033,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html">DeleteAccessPointPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2807,7 +3050,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">REST API Reference for GetAccessPointPolicy Operation</seealso>
         public virtual Task<GetAccessPointPolicyResponse> GetAccessPointPolicyAsync(GetAccessPointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -2819,7 +3062,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessPointPolicyForObjectLambdaResponse GetAccessPointPolicyForObjectLambda(GetAccessPointPolicyForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -2851,7 +3094,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">PutAccessPointPolicyForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -2862,7 +3111,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda">REST API Reference for GetAccessPointPolicyForObjectLambda Operation</seealso>
         public virtual Task<GetAccessPointPolicyForObjectLambdaResponse> GetAccessPointPolicyForObjectLambdaAsync(GetAccessPointPolicyForObjectLambdaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -2874,7 +3123,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessPointPolicyStatusResponse GetAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
 
@@ -2894,6 +3143,13 @@ namespace Amazon.S3Control
         /// access. For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
         /// Data Access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2904,7 +3160,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">REST API Reference for GetAccessPointPolicyStatus Operation</seealso>
         public virtual Task<GetAccessPointPolicyStatusResponse> GetAccessPointPolicyStatusAsync(GetAccessPointPolicyStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyStatusResponseUnmarshaller.Instance;
 
@@ -2916,7 +3172,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessPointPolicyStatusForObjectLambdaResponse GetAccessPointPolicyStatusForObjectLambda(GetAccessPointPolicyStatusForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyStatusForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyStatusForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -2935,6 +3191,13 @@ namespace Amazon.S3Control
         /// Returns the status of the resource policy associated with an Object Lambda Access
         /// Point.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointPolicyStatusForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -2945,7 +3208,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda">REST API Reference for GetAccessPointPolicyStatusForObjectLambda Operation</seealso>
         public virtual Task<GetAccessPointPolicyStatusForObjectLambdaResponse> GetAccessPointPolicyStatusForObjectLambdaAsync(GetAccessPointPolicyStatusForObjectLambdaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointPolicyStatusForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointPolicyStatusForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -2957,7 +3220,7 @@ namespace Amazon.S3Control
 
         internal virtual GetAccessPointScopeResponse GetAccessPointScope(GetAccessPointScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -2979,6 +3242,13 @@ namespace Amazon.S3Control
         /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
         /// error responses</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessPointScope service method.</param>
         /// <param name="cancellationToken">
@@ -2989,7 +3259,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointScope">REST API Reference for GetAccessPointScope Operation</seealso>
         public virtual Task<GetAccessPointScopeResponse> GetAccessPointScopeAsync(GetAccessPointScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -3001,7 +3271,7 @@ namespace Amazon.S3Control
 
         internal virtual GetBucketResponse GetBucket(GetBucketRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketResponseUnmarshaller.Instance;
 
@@ -3057,7 +3327,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucket.html">DeleteBucket</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucket service method.</param>
         /// <param name="cancellationToken">
@@ -3068,7 +3344,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucket">REST API Reference for GetBucket Operation</seealso>
         public virtual Task<GetBucketResponse> GetBucketAsync(GetBucketRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketResponseUnmarshaller.Instance;
 
@@ -3080,7 +3356,7 @@ namespace Amazon.S3Control
 
         internal virtual GetBucketLifecycleConfigurationResponse GetBucketLifecycleConfiguration(GetBucketLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -3157,7 +3433,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html">DeleteBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketLifecycleConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -3168,7 +3450,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketLifecycleConfiguration">REST API Reference for GetBucketLifecycleConfiguration Operation</seealso>
         public virtual Task<GetBucketLifecycleConfigurationResponse> GetBucketLifecycleConfigurationAsync(GetBucketLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -3180,7 +3462,7 @@ namespace Amazon.S3Control
 
         internal virtual GetBucketPolicyResponse GetBucketPolicy(GetBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
@@ -3255,7 +3537,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html">DeleteBucketPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBucketPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -3266,7 +3554,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
         public virtual Task<GetBucketPolicyResponse> GetBucketPolicyAsync(GetBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
 
@@ -3278,7 +3566,7 @@ namespace Amazon.S3Control
 
         internal virtual GetBucketReplicationResponse GetBucketReplication(GetBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
@@ -3364,7 +3652,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketReplication">REST API Reference for GetBucketReplication Operation</seealso>
         public virtual Task<GetBucketReplicationResponse> GetBucketReplicationAsync(GetBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
 
@@ -3376,7 +3664,7 @@ namespace Amazon.S3Control
 
         internal virtual GetBucketTaggingResponse GetBucketTagging(GetBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
@@ -3451,7 +3739,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketTagging">REST API Reference for GetBucketTagging Operation</seealso>
         public virtual Task<GetBucketTaggingResponse> GetBucketTaggingAsync(GetBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketTaggingResponseUnmarshaller.Instance;
 
@@ -3463,7 +3751,7 @@ namespace Amazon.S3Control
 
         internal virtual GetBucketVersioningResponse GetBucketVersioning(GetBucketVersioningRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
@@ -3535,7 +3823,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketVersioning">REST API Reference for GetBucketVersioning Operation</seealso>
         public virtual Task<GetBucketVersioningResponse> GetBucketVersioningAsync(GetBucketVersioningRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBucketVersioningResponseUnmarshaller.Instance;
 
@@ -3547,7 +3835,7 @@ namespace Amazon.S3Control
 
         internal virtual GetDataAccessResponse GetDataAccess(GetDataAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataAccessResponseUnmarshaller.Instance;
 
@@ -3573,7 +3861,13 @@ namespace Amazon.S3Control
         /// users or groups <c>sts:SetContext</c>, and for IAM users or roles <c>sts:SetSourceIdentity</c>.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataAccess service method.</param>
         /// <param name="cancellationToken">
@@ -3584,7 +3878,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetDataAccess">REST API Reference for GetDataAccess Operation</seealso>
         public virtual Task<GetDataAccessResponse> GetDataAccessAsync(GetDataAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataAccessResponseUnmarshaller.Instance;
 
@@ -3596,7 +3890,7 @@ namespace Amazon.S3Control
 
         internal virtual GetJobTaggingResponse GetJobTagging(GetJobTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
 
@@ -3633,7 +3927,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html">DeleteJobTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobTagging service method.</param>
         /// <param name="cancellationToken">
@@ -3653,7 +3953,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">REST API Reference for GetJobTagging Operation</seealso>
         public virtual Task<GetJobTaggingResponse> GetJobTaggingAsync(GetJobTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobTaggingResponseUnmarshaller.Instance;
 
@@ -3665,7 +3965,7 @@ namespace Amazon.S3Control
 
         internal virtual GetMultiRegionAccessPointResponse GetMultiRegionAccessPoint(GetMultiRegionAccessPointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -3713,7 +4013,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListMultiRegionAccessPoints.html">ListMultiRegionAccessPoints</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPoint service method.</param>
         /// <param name="cancellationToken">
@@ -3724,7 +4030,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPoint">REST API Reference for GetMultiRegionAccessPoint Operation</seealso>
         public virtual Task<GetMultiRegionAccessPointResponse> GetMultiRegionAccessPointAsync(GetMultiRegionAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointResponseUnmarshaller.Instance;
 
@@ -3736,7 +4042,7 @@ namespace Amazon.S3Control
 
         internal virtual GetMultiRegionAccessPointPolicyResponse GetMultiRegionAccessPointPolicy(GetMultiRegionAccessPointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -3774,7 +4080,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -3785,7 +4097,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicy">REST API Reference for GetMultiRegionAccessPointPolicy Operation</seealso>
         public virtual Task<GetMultiRegionAccessPointPolicyResponse> GetMultiRegionAccessPointPolicyAsync(GetMultiRegionAccessPointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -3797,7 +4109,7 @@ namespace Amazon.S3Control
 
         internal virtual GetMultiRegionAccessPointPolicyStatusResponse GetMultiRegionAccessPointPolicyStatus(GetMultiRegionAccessPointPolicyStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyStatusResponseUnmarshaller.Instance;
 
@@ -3836,7 +4148,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPointPolicy.html">PutMultiRegionAccessPointPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointPolicyStatus service method.</param>
         /// <param name="cancellationToken">
@@ -3847,7 +4165,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointPolicyStatus">REST API Reference for GetMultiRegionAccessPointPolicyStatus Operation</seealso>
         public virtual Task<GetMultiRegionAccessPointPolicyStatusResponse> GetMultiRegionAccessPointPolicyStatusAsync(GetMultiRegionAccessPointPolicyStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointPolicyStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointPolicyStatusResponseUnmarshaller.Instance;
 
@@ -3859,7 +4177,7 @@ namespace Amazon.S3Control
 
         internal virtual GetMultiRegionAccessPointRoutesResponse GetMultiRegionAccessPointRoutes(GetMultiRegionAccessPointRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointRoutesResponseUnmarshaller.Instance;
 
@@ -3903,7 +4221,13 @@ namespace Amazon.S3Control
         /// <para>
         ///  <c>eu-west-1</c> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionAccessPointRoutes service method.</param>
         /// <param name="cancellationToken">
@@ -3914,7 +4238,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes">REST API Reference for GetMultiRegionAccessPointRoutes Operation</seealso>
         public virtual Task<GetMultiRegionAccessPointRoutesResponse> GetMultiRegionAccessPointRoutesAsync(GetMultiRegionAccessPointRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMultiRegionAccessPointRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMultiRegionAccessPointRoutesResponseUnmarshaller.Instance;
 
@@ -3926,7 +4250,7 @@ namespace Amazon.S3Control
 
         internal virtual GetPublicAccessBlockResponse GetPublicAccessBlock(GetPublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -3960,7 +4284,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
@@ -3975,7 +4305,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">REST API Reference for GetPublicAccessBlock Operation</seealso>
         public virtual Task<GetPublicAccessBlockResponse> GetPublicAccessBlockAsync(GetPublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -3987,7 +4317,7 @@ namespace Amazon.S3Control
 
         internal virtual GetStorageLensConfigurationResponse GetStorageLensConfiguration(GetStorageLensConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -4014,7 +4344,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStorageLensConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4025,7 +4361,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfiguration">REST API Reference for GetStorageLensConfiguration Operation</seealso>
         public virtual Task<GetStorageLensConfigurationResponse> GetStorageLensConfigurationAsync(GetStorageLensConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -4037,7 +4373,7 @@ namespace Amazon.S3Control
 
         internal virtual GetStorageLensConfigurationTaggingResponse GetStorageLensConfigurationTagging(GetStorageLensConfigurationTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -4064,7 +4400,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStorageLensConfigurationTagging service method.</param>
         /// <param name="cancellationToken">
@@ -4075,7 +4417,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensConfigurationTagging">REST API Reference for GetStorageLensConfigurationTagging Operation</seealso>
         public virtual Task<GetStorageLensConfigurationTaggingResponse> GetStorageLensConfigurationTaggingAsync(GetStorageLensConfigurationTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -4087,7 +4429,7 @@ namespace Amazon.S3Control
 
         internal virtual GetStorageLensGroupResponse GetStorageLensGroup(GetStorageLensGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -4111,6 +4453,13 @@ namespace Amazon.S3Control
         /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
         /// of Amazon S3 Storage Lens error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStorageLensGroup service method.</param>
         /// <param name="cancellationToken">
@@ -4121,7 +4470,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetStorageLensGroup">REST API Reference for GetStorageLensGroup Operation</seealso>
         public virtual Task<GetStorageLensGroupResponse> GetStorageLensGroupAsync(GetStorageLensGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -4133,7 +4482,7 @@ namespace Amazon.S3Control
 
         internal virtual ListAccessGrantsResponse ListAccessGrants(ListAccessGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsResponseUnmarshaller.Instance;
 
@@ -4149,7 +4498,13 @@ namespace Amazon.S3Control
         /// <para>
         /// You must have the <c>s3:ListAccessGrants</c> permission to use this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessGrants service method.</param>
         /// <param name="cancellationToken">
@@ -4160,7 +4515,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrants">REST API Reference for ListAccessGrants Operation</seealso>
         public virtual Task<ListAccessGrantsResponse> ListAccessGrantsAsync(ListAccessGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsResponseUnmarshaller.Instance;
 
@@ -4172,7 +4527,7 @@ namespace Amazon.S3Control
 
         internal virtual ListAccessGrantsInstancesResponse ListAccessGrantsInstances(ListAccessGrantsInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsInstancesResponseUnmarshaller.Instance;
 
@@ -4191,7 +4546,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:ListAccessGrantsInstances</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessGrantsInstances service method.</param>
         /// <param name="cancellationToken">
@@ -4202,7 +4563,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsInstances">REST API Reference for ListAccessGrantsInstances Operation</seealso>
         public virtual Task<ListAccessGrantsInstancesResponse> ListAccessGrantsInstancesAsync(ListAccessGrantsInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsInstancesResponseUnmarshaller.Instance;
 
@@ -4214,7 +4575,7 @@ namespace Amazon.S3Control
 
         internal virtual ListAccessGrantsLocationsResponse ListAccessGrantsLocations(ListAccessGrantsLocationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsLocationsResponseUnmarshaller.Instance;
 
@@ -4231,7 +4592,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:ListAccessGrantsLocations</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessGrantsLocations service method.</param>
         /// <param name="cancellationToken">
@@ -4242,7 +4609,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessGrantsLocations">REST API Reference for ListAccessGrantsLocations Operation</seealso>
         public virtual Task<ListAccessGrantsLocationsResponse> ListAccessGrantsLocationsAsync(ListAccessGrantsLocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessGrantsLocationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessGrantsLocationsResponseUnmarshaller.Instance;
 
@@ -4254,7 +4621,7 @@ namespace Amazon.S3Control
 
         internal virtual ListAccessPointsResponse ListAccessPoints(ListAccessPointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
 
@@ -4309,7 +4676,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html">GetAccessPoint</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPoints service method.</param>
         /// <param name="cancellationToken">
@@ -4320,7 +4693,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">REST API Reference for ListAccessPoints Operation</seealso>
         public virtual Task<ListAccessPointsResponse> ListAccessPointsAsync(ListAccessPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsResponseUnmarshaller.Instance;
 
@@ -4332,7 +4705,7 @@ namespace Amazon.S3Control
 
         internal virtual ListAccessPointsForDirectoryBucketsResponse ListAccessPointsForDirectoryBuckets(ListAccessPointsForDirectoryBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsForDirectoryBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsForDirectoryBucketsResponseUnmarshaller.Instance;
 
@@ -4359,6 +4732,13 @@ namespace Amazon.S3Control
         /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
         /// error responses</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPointsForDirectoryBuckets service method.</param>
         /// <param name="cancellationToken">
@@ -4369,7 +4749,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForDirectoryBuckets">REST API Reference for ListAccessPointsForDirectoryBuckets Operation</seealso>
         public virtual Task<ListAccessPointsForDirectoryBucketsResponse> ListAccessPointsForDirectoryBucketsAsync(ListAccessPointsForDirectoryBucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsForDirectoryBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsForDirectoryBucketsResponseUnmarshaller.Instance;
 
@@ -4381,7 +4761,7 @@ namespace Amazon.S3Control
 
         internal virtual ListAccessPointsForObjectLambdaResponse ListAccessPointsForObjectLambda(ListAccessPointsForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -4421,7 +4801,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">GetAccessPointForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessPointsForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -4432,7 +4818,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda">REST API Reference for ListAccessPointsForObjectLambda Operation</seealso>
         public virtual Task<ListAccessPointsForObjectLambdaResponse> ListAccessPointsForObjectLambdaAsync(ListAccessPointsForObjectLambdaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAccessPointsForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAccessPointsForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -4444,7 +4830,7 @@ namespace Amazon.S3Control
 
         internal virtual ListCallerAccessGrantsResponse ListCallerAccessGrants(ListCallerAccessGrantsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCallerAccessGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCallerAccessGrantsResponseUnmarshaller.Instance;
 
@@ -4471,7 +4857,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:ListCallerAccessGrants</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCallerAccessGrants service method.</param>
         /// <param name="cancellationToken">
@@ -4482,7 +4874,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListCallerAccessGrants">REST API Reference for ListCallerAccessGrants Operation</seealso>
         public virtual Task<ListCallerAccessGrantsResponse> ListCallerAccessGrantsAsync(ListCallerAccessGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCallerAccessGrantsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCallerAccessGrantsResponseUnmarshaller.Instance;
 
@@ -4494,7 +4886,7 @@ namespace Amazon.S3Control
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -4538,7 +4930,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// <param name="cancellationToken">
@@ -4558,7 +4956,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -4570,7 +4968,7 @@ namespace Amazon.S3Control
 
         internal virtual ListMultiRegionAccessPointsResponse ListMultiRegionAccessPoints(ListMultiRegionAccessPointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultiRegionAccessPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultiRegionAccessPointsResponseUnmarshaller.Instance;
 
@@ -4621,7 +5019,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPoint.html">GetMultiRegionAccessPoint</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMultiRegionAccessPoints service method.</param>
         /// <param name="cancellationToken">
@@ -4632,7 +5036,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListMultiRegionAccessPoints">REST API Reference for ListMultiRegionAccessPoints Operation</seealso>
         public virtual Task<ListMultiRegionAccessPointsResponse> ListMultiRegionAccessPointsAsync(ListMultiRegionAccessPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMultiRegionAccessPointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMultiRegionAccessPointsResponseUnmarshaller.Instance;
 
@@ -4644,7 +5048,7 @@ namespace Amazon.S3Control
 
         internal virtual ListRegionalBucketsResponse ListRegionalBuckets(ListRegionalBucketsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegionalBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegionalBucketsResponseUnmarshaller.Instance;
 
@@ -4671,6 +5075,13 @@ namespace Amazon.S3Control
         /// the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListRegionalBuckets.html#API_control_ListRegionalBuckets_Examples">Examples</a>
         /// section.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRegionalBuckets service method.</param>
         /// <param name="cancellationToken">
@@ -4681,7 +5092,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListRegionalBuckets">REST API Reference for ListRegionalBuckets Operation</seealso>
         public virtual Task<ListRegionalBucketsResponse> ListRegionalBucketsAsync(ListRegionalBucketsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegionalBucketsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegionalBucketsResponseUnmarshaller.Instance;
 
@@ -4693,7 +5104,7 @@ namespace Amazon.S3Control
 
         internal virtual ListStorageLensConfigurationsResponse ListStorageLensConfigurations(ListStorageLensConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageLensConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageLensConfigurationsResponseUnmarshaller.Instance;
 
@@ -4720,7 +5131,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStorageLensConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -4731,7 +5148,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensConfigurations">REST API Reference for ListStorageLensConfigurations Operation</seealso>
         public virtual Task<ListStorageLensConfigurationsResponse> ListStorageLensConfigurationsAsync(ListStorageLensConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageLensConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageLensConfigurationsResponseUnmarshaller.Instance;
 
@@ -4743,7 +5160,7 @@ namespace Amazon.S3Control
 
         internal virtual ListStorageLensGroupsResponse ListStorageLensGroups(ListStorageLensGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageLensGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageLensGroupsResponseUnmarshaller.Instance;
 
@@ -4767,6 +5184,13 @@ namespace Amazon.S3Control
         /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
         /// of Amazon S3 Storage Lens error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStorageLensGroups service method.</param>
         /// <param name="cancellationToken">
@@ -4777,7 +5201,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListStorageLensGroups">REST API Reference for ListStorageLensGroups Operation</seealso>
         public virtual Task<ListStorageLensGroupsResponse> ListStorageLensGroupsAsync(ListStorageLensGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStorageLensGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStorageLensGroupsResponseUnmarshaller.Instance;
 
@@ -4789,7 +5213,7 @@ namespace Amazon.S3Control
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4808,6 +5232,16 @@ namespace Amazon.S3Control
         /// This operation is only supported for the following Amazon S3 resources:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
@@ -4834,9 +5268,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
-        /// For directory buckets, you must have the <c>s3express:ListTagsForResource</c> permission
-        /// to use this operation. For more information about directory buckets policies and permissions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// For directory buckets and access points for directory buckets, you must have the <c>s3express:ListTagsForResource</c>
+        /// permission to use this operation. For more information about directory buckets policies
+        /// and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
         /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
@@ -4848,6 +5282,13 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -4858,7 +5299,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -4870,7 +5311,7 @@ namespace Amazon.S3Control
 
         internal virtual PutAccessGrantsInstanceResourcePolicyResponse PutAccessGrantsInstanceResourcePolicy(PutAccessGrantsInstanceResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -4887,7 +5328,13 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:PutAccessGrantsInstanceResourcePolicy</c> permission to use
         /// this operation. 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessGrantsInstanceResourcePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -4898,7 +5345,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessGrantsInstanceResourcePolicy">REST API Reference for PutAccessGrantsInstanceResourcePolicy Operation</seealso>
         public virtual Task<PutAccessGrantsInstanceResourcePolicyResponse> PutAccessGrantsInstanceResourcePolicyAsync(PutAccessGrantsInstanceResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessGrantsInstanceResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessGrantsInstanceResourcePolicyResponseUnmarshaller.Instance;
 
@@ -4910,7 +5357,7 @@ namespace Amazon.S3Control
 
         internal virtual PutAccessPointConfigurationForObjectLambdaResponse PutAccessPointConfigurationForObjectLambda(PutAccessPointConfigurationForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointConfigurationForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointConfigurationForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -4937,7 +5384,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html">GetAccessPointConfigurationForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointConfigurationForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -4948,7 +5401,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda">REST API Reference for PutAccessPointConfigurationForObjectLambda Operation</seealso>
         public virtual Task<PutAccessPointConfigurationForObjectLambdaResponse> PutAccessPointConfigurationForObjectLambdaAsync(PutAccessPointConfigurationForObjectLambdaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointConfigurationForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointConfigurationForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -4960,7 +5413,7 @@ namespace Amazon.S3Control
 
         internal virtual PutAccessPointPolicyResponse PutAccessPointPolicy(PutAccessPointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -4998,7 +5451,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html">DeleteAccessPointPolicy</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5009,7 +5468,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">REST API Reference for PutAccessPointPolicy Operation</seealso>
         public virtual Task<PutAccessPointPolicyResponse> PutAccessPointPolicyAsync(PutAccessPointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -5021,7 +5480,7 @@ namespace Amazon.S3Control
 
         internal virtual PutAccessPointPolicyForObjectLambdaResponse PutAccessPointPolicyForObjectLambda(PutAccessPointPolicyForObjectLambdaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -5055,7 +5514,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">GetAccessPointPolicyForObjectLambda</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointPolicyForObjectLambda service method.</param>
         /// <param name="cancellationToken">
@@ -5066,7 +5531,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda">REST API Reference for PutAccessPointPolicyForObjectLambda Operation</seealso>
         public virtual Task<PutAccessPointPolicyForObjectLambdaResponse> PutAccessPointPolicyForObjectLambdaAsync(PutAccessPointPolicyForObjectLambdaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointPolicyForObjectLambdaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointPolicyForObjectLambdaResponseUnmarshaller.Instance;
 
@@ -5078,7 +5543,7 @@ namespace Amazon.S3Control
 
         internal virtual PutAccessPointScopeResponse PutAccessPointScope(PutAccessPointScopeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -5107,6 +5572,13 @@ namespace Amazon.S3Control
         /// For information about REST API errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#RESTErrorResponses">REST
         /// error responses</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccessPointScope service method.</param>
         /// <param name="cancellationToken">
@@ -5117,7 +5589,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointScope">REST API Reference for PutAccessPointScope Operation</seealso>
         public virtual Task<PutAccessPointScopeResponse> PutAccessPointScopeAsync(PutAccessPointScopeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutAccessPointScopeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutAccessPointScopeResponseUnmarshaller.Instance;
 
@@ -5129,7 +5601,7 @@ namespace Amazon.S3Control
 
         internal virtual PutBucketLifecycleConfigurationResponse PutBucketLifecycleConfiguration(PutBucketLifecycleConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -5187,7 +5659,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketLifecycleConfiguration">REST API Reference for PutBucketLifecycleConfiguration Operation</seealso>
         public virtual Task<PutBucketLifecycleConfigurationResponse> PutBucketLifecycleConfigurationAsync(PutBucketLifecycleConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketLifecycleConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketLifecycleConfigurationResponseUnmarshaller.Instance;
 
@@ -5199,7 +5671,7 @@ namespace Amazon.S3Control
 
         internal virtual PutBucketPolicyResponse PutBucketPolicy(PutBucketPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
@@ -5281,7 +5753,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketPolicy">REST API Reference for PutBucketPolicy Operation</seealso>
         public virtual Task<PutBucketPolicyResponse> PutBucketPolicyAsync(PutBucketPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketPolicyResponseUnmarshaller.Instance;
 
@@ -5293,7 +5765,7 @@ namespace Amazon.S3Control
 
         internal virtual PutBucketReplicationResponse PutBucketReplication(PutBucketReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
@@ -5433,7 +5905,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketReplication">REST API Reference for PutBucketReplication Operation</seealso>
         public virtual Task<PutBucketReplicationResponse> PutBucketReplicationAsync(PutBucketReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketReplicationResponseUnmarshaller.Instance;
 
@@ -5445,7 +5917,7 @@ namespace Amazon.S3Control
 
         internal virtual PutBucketTaggingResponse PutBucketTagging(PutBucketTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
@@ -5566,7 +6038,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketTagging">REST API Reference for PutBucketTagging Operation</seealso>
         public virtual Task<PutBucketTaggingResponse> PutBucketTaggingAsync(PutBucketTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketTaggingResponseUnmarshaller.Instance;
 
@@ -5578,7 +6050,7 @@ namespace Amazon.S3Control
 
         internal virtual PutBucketVersioningResponse PutBucketVersioning(PutBucketVersioningRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
@@ -5667,7 +6139,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBucketVersioning service method.</param>
         /// <param name="cancellationToken">
@@ -5678,7 +6156,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketVersioning">REST API Reference for PutBucketVersioning Operation</seealso>
         public virtual Task<PutBucketVersioningResponse> PutBucketVersioningAsync(PutBucketVersioningRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutBucketVersioningRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutBucketVersioningResponseUnmarshaller.Instance;
 
@@ -5690,7 +6168,7 @@ namespace Amazon.S3Control
 
         internal virtual PutJobTaggingResponse PutJobTagging(PutJobTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
 
@@ -5775,7 +6253,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html">DeleteJobTagging</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutJobTagging service method.</param>
         /// <param name="cancellationToken">
@@ -5798,7 +6282,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">REST API Reference for PutJobTagging Operation</seealso>
         public virtual Task<PutJobTaggingResponse> PutJobTaggingAsync(PutJobTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutJobTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutJobTaggingResponseUnmarshaller.Instance;
 
@@ -5810,7 +6294,7 @@ namespace Amazon.S3Control
 
         internal virtual PutMultiRegionAccessPointPolicyResponse PutMultiRegionAccessPointPolicy(PutMultiRegionAccessPointPolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMultiRegionAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -5851,7 +6335,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetMultiRegionAccessPointPolicyStatus.html">GetMultiRegionAccessPointPolicyStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMultiRegionAccessPointPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5862,7 +6352,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutMultiRegionAccessPointPolicy">REST API Reference for PutMultiRegionAccessPointPolicy Operation</seealso>
         public virtual Task<PutMultiRegionAccessPointPolicyResponse> PutMultiRegionAccessPointPolicyAsync(PutMultiRegionAccessPointPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMultiRegionAccessPointPolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMultiRegionAccessPointPolicyResponseUnmarshaller.Instance;
 
@@ -5874,7 +6364,7 @@ namespace Amazon.S3Control
 
         internal virtual PutPublicAccessBlockResponse PutPublicAccessBlock(PutPublicAccessBlockRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -5909,7 +6399,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// <param name="cancellationToken">
@@ -5920,7 +6416,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">REST API Reference for PutPublicAccessBlock Operation</seealso>
         public virtual Task<PutPublicAccessBlockResponse> PutPublicAccessBlockAsync(PutPublicAccessBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutPublicAccessBlockRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutPublicAccessBlockResponseUnmarshaller.Instance;
 
@@ -5932,7 +6428,7 @@ namespace Amazon.S3Control
 
         internal virtual PutStorageLensConfigurationResponse PutStorageLensConfiguration(PutStorageLensConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -5960,7 +6456,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStorageLensConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -5971,7 +6473,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfiguration">REST API Reference for PutStorageLensConfiguration Operation</seealso>
         public virtual Task<PutStorageLensConfigurationResponse> PutStorageLensConfigurationAsync(PutStorageLensConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageLensConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageLensConfigurationResponseUnmarshaller.Instance;
 
@@ -5983,7 +6485,7 @@ namespace Amazon.S3Control
 
         internal virtual PutStorageLensConfigurationTaggingResponse PutStorageLensConfigurationTagging(PutStorageLensConfigurationTaggingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -6010,7 +6512,13 @@ namespace Amazon.S3Control
         /// action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting
         /// permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStorageLensConfigurationTagging service method.</param>
         /// <param name="cancellationToken">
@@ -6021,7 +6529,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutStorageLensConfigurationTagging">REST API Reference for PutStorageLensConfigurationTagging Operation</seealso>
         public virtual Task<PutStorageLensConfigurationTaggingResponse> PutStorageLensConfigurationTaggingAsync(PutStorageLensConfigurationTaggingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutStorageLensConfigurationTaggingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutStorageLensConfigurationTaggingResponseUnmarshaller.Instance;
 
@@ -6033,7 +6541,7 @@ namespace Amazon.S3Control
 
         internal virtual SubmitMultiRegionAccessPointRoutesResponse SubmitMultiRegionAccessPointRoutes(SubmitMultiRegionAccessPointRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitMultiRegionAccessPointRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitMultiRegionAccessPointRoutesResponseUnmarshaller.Instance;
 
@@ -6093,7 +6601,13 @@ namespace Amazon.S3Control
         /// <para>
         ///  <c>eu-west-1</c> 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubmitMultiRegionAccessPointRoutes service method.</param>
         /// <param name="cancellationToken">
@@ -6104,7 +6618,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes">REST API Reference for SubmitMultiRegionAccessPointRoutes Operation</seealso>
         public virtual Task<SubmitMultiRegionAccessPointRoutesResponse> SubmitMultiRegionAccessPointRoutesAsync(SubmitMultiRegionAccessPointRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SubmitMultiRegionAccessPointRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SubmitMultiRegionAccessPointRoutesResponseUnmarshaller.Instance;
 
@@ -6116,7 +6630,7 @@ namespace Amazon.S3Control
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6132,6 +6646,35 @@ namespace Amazon.S3Control
         /// resource tags for each S3 resource. 
         /// 
         ///  <note> 
+        /// <para>
+        /// This operation is only supported for the following Amazon S3 resource:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
+        /// buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+        /// Storage Lens groups</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-grants-tagging.html">S3
+        /// Access Grants instances, registered locations, or grants</a>.
+        /// </para>
+        ///  </li> </ul> </note> <note> 
         /// <para>
         /// This operation is only supported for the following Amazon S3 resource:
         /// </para>
@@ -6162,9 +6705,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
-        /// For directory buckets, you must have the <c>s3express:TagResource</c> permission to
-        /// use this operation. For more information about directory buckets policies and permissions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// For directory buckets and access points for directory buckets, you must have the <c>s3express:TagResource</c>
+        /// permission to use this operation. For more information about directory buckets policies
+        /// and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
         /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
@@ -6176,6 +6719,13 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -6186,7 +6736,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -6198,7 +6748,7 @@ namespace Amazon.S3Control
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6216,6 +6766,16 @@ namespace Amazon.S3Control
         /// This operation is only supported for the following Amazon S3 resources:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
+        /// Points for directory buckets</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-tagging.html">Access
+        /// Points for general purpose buckets</a> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Directory
         /// buckets</a> 
@@ -6242,9 +6802,9 @@ namespace Amazon.S3Control
         /// </para>
         ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
         /// <para>
-        /// For directory buckets, you must have the <c>s3express:UntagResource</c> permission
-        /// to use this operation. For more information about directory buckets policies and permissions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+        /// For directory buckets and access points for directory buckets, you must have the <c>s3express:UntagResource</c>
+        /// permission to use this operation. For more information about directory buckets policies
+        /// and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
         /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
@@ -6256,6 +6816,13 @@ namespace Amazon.S3Control
         /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
         /// of Amazon S3 Tagging error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -6266,7 +6833,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6278,7 +6845,7 @@ namespace Amazon.S3Control
 
         internal virtual UpdateAccessGrantsLocationResponse UpdateAccessGrantsLocation(UpdateAccessGrantsLocationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -6299,7 +6866,13 @@ namespace Amazon.S3Control
         /// <para>
         /// You must also have the following permission: <c>iam:PassRole</c> 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessGrantsLocation service method.</param>
         /// <param name="cancellationToken">
@@ -6310,7 +6883,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateAccessGrantsLocation">REST API Reference for UpdateAccessGrantsLocation Operation</seealso>
         public virtual Task<UpdateAccessGrantsLocationResponse> UpdateAccessGrantsLocationAsync(UpdateAccessGrantsLocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAccessGrantsLocationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAccessGrantsLocationResponseUnmarshaller.Instance;
 
@@ -6322,7 +6895,7 @@ namespace Amazon.S3Control
 
         internal virtual UpdateJobPriorityResponse UpdateJobPriority(UpdateJobPriorityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobPriorityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobPriorityResponseUnmarshaller.Instance;
 
@@ -6365,7 +6938,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobPriority service method.</param>
         /// <param name="cancellationToken">
@@ -6388,7 +6967,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">REST API Reference for UpdateJobPriority Operation</seealso>
         public virtual Task<UpdateJobPriorityResponse> UpdateJobPriorityAsync(UpdateJobPriorityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobPriorityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobPriorityResponseUnmarshaller.Instance;
 
@@ -6400,7 +6979,7 @@ namespace Amazon.S3Control
 
         internal virtual UpdateJobStatusResponse UpdateJobStatus(UpdateJobStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobStatusResponseUnmarshaller.Instance;
 
@@ -6443,7 +7022,13 @@ namespace Amazon.S3Control
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateJobStatus service method.</param>
         /// <param name="cancellationToken">
@@ -6469,7 +7054,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">REST API Reference for UpdateJobStatus Operation</seealso>
         public virtual Task<UpdateJobStatusResponse> UpdateJobStatusAsync(UpdateJobStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobStatusResponseUnmarshaller.Instance;
 
@@ -6481,7 +7066,7 @@ namespace Amazon.S3Control
 
         internal virtual UpdateStorageLensGroupResponse UpdateStorageLensGroup(UpdateStorageLensGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageLensGroupResponseUnmarshaller.Instance;
 
@@ -6505,6 +7090,13 @@ namespace Amazon.S3Control
         /// For information about Storage Lens groups errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3LensErrorCodeList">List
         /// of Amazon S3 Storage Lens error codes</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must URL encode any signed header values that contain spaces. For example, if
+        /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+        /// must URL encode this value to <c>my%20%20file.txt</c>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStorageLensGroup service method.</param>
         /// <param name="cancellationToken">
@@ -6515,7 +7107,7 @@ namespace Amazon.S3Control
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateStorageLensGroup">REST API Reference for UpdateStorageLensGroup Operation</seealso>
         public virtual Task<UpdateStorageLensGroupResponse> UpdateStorageLensGroupAsync(UpdateStorageLensGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateStorageLensGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateStorageLensGroupResponseUnmarshaller.Instance;
 

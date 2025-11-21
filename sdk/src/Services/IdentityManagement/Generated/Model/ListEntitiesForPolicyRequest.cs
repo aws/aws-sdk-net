@@ -188,8 +188,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// To list only permissions policies, set <c>PolicyUsageFilter</c> to <c>PermissionsPolicy</c>.
-        /// To list only the policies used to set permissions boundaries, set the value to <c>PermissionsBoundary</c>.
+        /// To list only permissions policies, set <c>PolicyUsageFilter</c> to <c>PermissionsPolicy</c>.
+        /// To list only the policies used to set permissions boundaries, set the value to <c>PermissionsBoundary</c>.
         /// </para>
         ///  
         /// <para>

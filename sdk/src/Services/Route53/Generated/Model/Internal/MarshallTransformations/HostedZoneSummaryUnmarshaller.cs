@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HostedZoneSummary Object
     /// </summary>  
-    public class HostedZoneSummaryUnmarshaller : IXmlUnmarshaller<HostedZoneSummary, XmlUnmarshallerContext>
+    public partial class HostedZoneSummaryUnmarshaller : IXmlUnmarshaller<HostedZoneSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, HostedZoneSummary unmarshalledObject, int targetDepth);
+
         private static HostedZoneSummaryUnmarshaller _instance = new HostedZoneSummaryUnmarshaller();        
 
         /// <summary>

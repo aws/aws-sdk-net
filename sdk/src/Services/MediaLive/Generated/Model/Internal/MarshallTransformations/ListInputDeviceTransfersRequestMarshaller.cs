@@ -68,6 +68,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.TransferType))
+                throw new AmazonMediaLiveException("Request object does not have required field TransferType set");
             
             if (publicRequest.IsSetTransferType())
                 request.Parameters.Add("transferType", StringUtils.FromString(publicRequest.TransferType));

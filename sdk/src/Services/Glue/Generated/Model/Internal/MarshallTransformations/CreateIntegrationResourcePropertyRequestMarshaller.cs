@@ -92,6 +92,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetTargetProcessingProperties())
             {
                 context.Writer.WritePropertyName("TargetProcessingProperties");

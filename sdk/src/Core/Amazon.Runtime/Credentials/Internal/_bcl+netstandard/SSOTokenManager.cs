@@ -592,7 +592,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 try
                 {
                     // create a new sso client using the region from the cached file.
-                    var _ssoClient = CreateSSOLogoutClient(options.Region);
+                    var _ssoClient = CreateSSOLogoutClient(options.Region, options.ProxySettings);
                     await _ssoClient.LogoutAsync(ssoToken.AccessToken, cancellationToken).ConfigureAwait(false);
                 }
                 catch (Exception ex)
@@ -630,7 +630,7 @@ namespace Amazon.Runtime.Credentials.Internal
             // ICoreAmazonSSOOIDC_V2 was created to allow cancellations, but it will only be available if customers update both their
             // Core and service packages.
             GetSsoTokenResponse response;
-            var ssooidc_V2Client = CreateSSOOIDC_V2Client(options.Region);
+            var ssooidc_V2Client = CreateSSOOIDC_V2Client(options.Region, options.ProxySettings);
 
             // If only Core was updated, trying to retrieve ICoreAmazonSSOOIDC_V2 will fail and we must fallback to the
             // original client (which still works, but will not allow the GetSsoTokenAsync operation to be cancelled).

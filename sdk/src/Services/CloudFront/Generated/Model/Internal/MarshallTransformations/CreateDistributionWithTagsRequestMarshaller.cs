@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateDistributionWithTagsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.AddSubResource("WithTags");
             request.ResourcePath = "/2020-05-31/distribution";
@@ -764,6 +765,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteElementString("HTTPPort", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPPort.Value));
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetHTTPSPort())
                                             xmlWriter.WriteElementString("HTTPSPort", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.HTTPSPort.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetIpAddressType())
+                                            xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IpAddressType));
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginKeepaliveTimeout())
                                             xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.OriginKeepaliveTimeout.Value));
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.CustomOriginConfig.IsSetOriginProtocolPolicy())
@@ -826,6 +829,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                             xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginKeepaliveTimeout.Value));
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOriginReadTimeout())
                                             xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginReadTimeout.Value));
+                                        if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOwnerAccountId())
+                                            xmlWriter.WriteElementString("OwnerAccountId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.OwnerAccountId));
                                         if(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetVpcOriginId())
                                             xmlWriter.WriteElementString("VpcOriginId", StringUtils.FromString(publicRequestDistributionConfigWithTagsDistributionConfigOriginsItemsValue.VpcOriginConfig.VpcOriginId));
                                         xmlWriter.WriteEndElement();
@@ -989,5 +994,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateDistributionWithTagsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateDistributionWithTagsRequest publicRequest);
     }    
 }

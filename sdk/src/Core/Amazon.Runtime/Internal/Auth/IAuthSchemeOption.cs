@@ -25,5 +25,11 @@ namespace Amazon.Runtime.Internal.Auth
         /// The ID of the scheme to use. This value matches the one returned by <see cref="IAuthScheme{T}.SchemeId"/>.
         /// </summary>
         string SchemeId { get; set; }
+
+        /// <summary>
+        /// The unqualified / short name of this scheme.
+        /// For example, "sigv4" is the short name for "aws.auth#sigv4".
+        /// </summary>
+        string ShortName { get; }
     }
 }

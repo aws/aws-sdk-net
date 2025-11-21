@@ -58,6 +58,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.AvailableInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AvailableSpareInstanceCount", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.AvailableSpareInstanceCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CurrencyCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.TotalInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TotalUltraServerCount", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.TotalUltraServerCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TrainingPlanArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +146,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.TrainingPlanName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("UnhealthyInstanceCount", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    response.UnhealthyInstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpfrontFee", targetDepth))

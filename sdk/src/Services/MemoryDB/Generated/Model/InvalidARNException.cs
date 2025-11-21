@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The specified Amazon Resource Name (ARN) is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

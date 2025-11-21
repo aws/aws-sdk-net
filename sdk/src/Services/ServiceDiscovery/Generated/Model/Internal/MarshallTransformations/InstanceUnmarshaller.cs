@@ -62,6 +62,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("CreatedByAccount", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreatedByAccount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CreatorRequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

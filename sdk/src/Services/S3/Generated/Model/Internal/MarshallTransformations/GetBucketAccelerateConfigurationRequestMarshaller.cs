@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetBucketAccelerateConfigurationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.AddSubResource("accelerate");
         
@@ -94,5 +95,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketAccelerateConfigurationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetBucketAccelerateConfigurationRequest publicRequest);
     }    
 }

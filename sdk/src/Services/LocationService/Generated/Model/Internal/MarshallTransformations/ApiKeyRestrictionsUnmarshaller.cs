@@ -62,6 +62,18 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllowActions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AllowAndroidApps", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AndroidApp, AndroidAppUnmarshaller>(AndroidAppUnmarshaller.Instance);
+                    unmarshalledObject.AllowAndroidApps = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("AllowAppleApps", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AppleApp, AppleAppUnmarshaller>(AppleAppUnmarshaller.Instance);
+                    unmarshalledObject.AllowAppleApps = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AllowReferers", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

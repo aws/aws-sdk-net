@@ -41,6 +41,7 @@ namespace Amazon.AIOps.Model
         /// Gets and sets the property Identifier. 
         /// <para>
         /// Specify either the name or the ARN of the investigation group that you want to view.
+        /// This is used to set the name of the investigation group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

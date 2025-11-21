@@ -49,6 +49,13 @@ namespace Amazon.Extensions.NETCore.Setup
         public string AuthenticationRegion { get; set; }
 
         /// <summary>
+        /// List of preferred authentication schemes in priority order. 
+        /// When a service supports multiple authentication schemes, the SDK attempts to use schemes from this list in 
+        /// the specified order, falling back to default behavior if none of the preferred schemes are available.
+        /// </summary>
+        public List<string> AuthSchemePreference { get; set; }
+
+        /// <summary>
         /// Gets and Sets the BufferSize property.
         /// The BufferSize controls the buffer used to read in from input streams and write 
         /// out to the request.
@@ -183,6 +190,12 @@ namespace Amazon.Extensions.NETCore.Setup
         public RequestRetryMode? RetryMode { get; set; }
 
         /// <summary>
+        /// List of AWS regions for SigV4a multi-region signing.
+        /// This is used as the default region set for the request if SigV4a is the selected authentication scheme.
+        /// </summary>
+        public List<string> SigV4aSigningRegionSet { get; set; }
+
+        /// <summary>
         /// <para>
         /// Gets and sets of the ServiceURL property.
         /// This is an optional property; change it
@@ -221,6 +234,11 @@ namespace Amazon.Extensions.NETCore.Setup
         /// connection timeout for the HttpClient infinite waiting period.
         /// </summary>
         public TimeSpan? ConnectTimeout { get; set; }
+
+        /// <summary>
+        /// This property is used to set the MaxConnectionsPerServer on the matching property on the underlying HttpClient to make service calls.
+        /// </summary>
+        public int? MaxConnectionsPerServer { get; set; }
 #endif
 
         /// <summary>

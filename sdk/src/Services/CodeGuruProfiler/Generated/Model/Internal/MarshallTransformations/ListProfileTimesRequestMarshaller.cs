@@ -65,6 +65,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetProfilingGroupName())
                 throw new AmazonCodeGuruProfilerException("Request object does not have required field ProfilingGroupName set");
             request.AddPathResource("{profilingGroupName}", StringUtils.FromString(publicRequest.ProfilingGroupName));
+            if (publicRequest.EndTime == null)
+                throw new AmazonCodeGuruProfilerException("Request object does not have required field EndTime set");
             
             if (publicRequest.IsSetEndTime())
                 request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
@@ -77,9 +79,13 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetOrderBy())
                 request.Parameters.Add("orderBy", StringUtils.FromString(publicRequest.OrderBy));
+            if (string.IsNullOrEmpty(publicRequest.Period))
+                throw new AmazonCodeGuruProfilerException("Request object does not have required field Period set");
             
             if (publicRequest.IsSetPeriod())
                 request.Parameters.Add("period", StringUtils.FromString(publicRequest.Period));
+            if (publicRequest.StartTime == null)
+                throw new AmazonCodeGuruProfilerException("Request object does not have required field StartTime set");
             
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));

@@ -31,8 +31,31 @@ namespace Amazon.NetworkFlowMonitor.Model
 {
     /// <summary>
     /// A remote resource is the other endpoint in a network flow. That is, one endpoint is
-    /// the local resource and the other is the remote resource. Remote resources can be a
-    /// a subnet, a VPC, an Availability Zone, or an Amazon Web Services service.
+    /// the local resource and the other is the remote resource. The values you can specify
+    /// are the following:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// For a VPC or subnet, this identifier is the VPC Amazon Resource Name (ARN) or subnet
+    /// ARN.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a service, this identifier is one of the following strings: <c>S3</c> or <c>DynamoDB</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For an Availability Zone, this identifier is the AZ name, for example, us-west-2b.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For a Region, this identifier is the Region name, for example, us-west-2.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// When a remote resource is an Amazon Web Services Region, Network Flow Monitor provides
+    /// network performance measurements up to the edge of the Region that you specify.
+    /// </para>
     /// </summary>
     public partial class MonitorRemoteResource
     {
@@ -42,7 +65,10 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The identifier of the remote resource, such as an ARN.
+        /// The identifier of the remote resource. For a VPC or subnet, this identifier is the
+        /// VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this identifier
+        /// is the AZ name, for example, us-west-2b. For an Amazon Web Services Region , this
+        /// identifier is the Region name, for example, us-west-2. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +88,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of the remote resource. Valid values are <c>AWS::EC2::VPC</c> <c>AWS::AvailabilityZone</c>,
-        /// <c>AWS::EC2::Subnet</c>, or <c>AWS::AWSService</c>.
+        /// <c>AWS::EC2::Subnet</c>, <c>AWS::AWSService</c>, or <c>AWS::Region</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

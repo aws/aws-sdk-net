@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStackSet operation.
-    /// Deletes a stack set. Before you can delete a stack set, all its member stack instances
+    /// Deletes a StackSet. Before you can delete a StackSet, all its member stack instances
     /// must be deleted. For more information about how to complete this, see <a>DeleteStackInstances</a>.
     /// </summary>
     public partial class DeleteStackSetRequest : AmazonCloudFormationRequest
@@ -48,7 +48,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for StackSets with self-managed
         /// permissions.
         /// </para>
         ///  <ul> <li> 
@@ -82,7 +82,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set that you're deleting. You can obtain this value
+        /// The name or unique ID of the StackSet that you're deleting. You can obtain this value
         /// by running <a>ListStackSets</a>.
         /// </para>
         /// </summary>

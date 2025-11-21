@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3DeleteObjectTaggingOperation Object
     /// </summary>  
-    public class S3DeleteObjectTaggingOperationUnmarshaller : IXmlUnmarshaller<S3DeleteObjectTaggingOperation, XmlUnmarshallerContext>
+    public partial class S3DeleteObjectTaggingOperationUnmarshaller : IXmlUnmarshaller<S3DeleteObjectTaggingOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -56,6 +56,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -64,6 +66,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3DeleteObjectTaggingOperation unmarshalledObject, int targetDepth);
+
         private static S3DeleteObjectTaggingOperationUnmarshaller _instance = new S3DeleteObjectTaggingOperationUnmarshaller();        
 
         /// <summary>

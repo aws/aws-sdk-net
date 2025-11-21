@@ -508,7 +508,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
 
@@ -694,7 +694,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public virtual Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddPermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddPermissionResponseUnmarshaller.Instance;
             
@@ -758,7 +758,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CancelMessageMoveTask">REST API Reference for CancelMessageMoveTask Operation</seealso>
         public virtual CancelMessageMoveTaskResponse CancelMessageMoveTask(CancelMessageMoveTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMessageMoveTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMessageMoveTaskResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CancelMessageMoveTask">REST API Reference for CancelMessageMoveTask Operation</seealso>
         public virtual Task<CancelMessageMoveTaskResponse> CancelMessageMoveTaskAsync(CancelMessageMoveTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMessageMoveTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMessageMoveTaskResponseUnmarshaller.Instance;
             
@@ -1077,7 +1077,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         public virtual ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeMessageVisibilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
 
@@ -1335,7 +1335,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         public virtual Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(ChangeMessageVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeMessageVisibilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeMessageVisibilityResponseUnmarshaller.Instance;
             
@@ -1481,7 +1481,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         public virtual ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeMessageVisibilityBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
 
@@ -1629,7 +1629,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         public virtual Task<ChangeMessageVisibilityBatchResponse> ChangeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChangeMessageVisibilityBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance;
             
@@ -1877,7 +1877,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
 
@@ -2127,7 +2127,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public virtual Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateQueueResponseUnmarshaller.Instance;
             
@@ -2281,7 +2281,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public virtual DeleteMessageResponse DeleteMessage(DeleteMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessageResponseUnmarshaller.Instance;
 
@@ -2437,7 +2437,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public virtual Task<DeleteMessageResponse> DeleteMessageAsync(DeleteMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessageResponseUnmarshaller.Instance;
             
@@ -2581,7 +2581,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         public virtual DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessageBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
 
@@ -2727,7 +2727,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         public virtual Task<DeleteMessageBatchResponse> DeleteMessageBatchAsync(DeleteMessageBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessageBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessageBatchResponseUnmarshaller.Instance;
             
@@ -2877,7 +2877,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
 
@@ -3029,7 +3029,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public virtual Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteQueueResponseUnmarshaller.Instance;
             
@@ -3141,7 +3141,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         public virtual GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
 
@@ -3255,7 +3255,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         public virtual Task<GetQueueAttributesResponse> GetQueueAttributesAsync(GetQueueAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueAttributesResponseUnmarshaller.Instance;
             
@@ -3367,7 +3367,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         public virtual GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
 
@@ -3481,7 +3481,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         public virtual Task<GetQueueUrlResponse> GetQueueUrlAsync(GetQueueUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetQueueUrlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetQueueUrlResponseUnmarshaller.Instance;
             
@@ -3546,7 +3546,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         public virtual ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeadLetterSourceQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
 
@@ -3610,7 +3610,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         public virtual Task<ListDeadLetterSourceQueuesResponse> ListDeadLetterSourceQueuesAsync(ListDeadLetterSourceQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDeadLetterSourceQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance;
             
@@ -3671,7 +3671,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListMessageMoveTasks">REST API Reference for ListMessageMoveTasks Operation</seealso>
         public virtual ListMessageMoveTasksResponse ListMessageMoveTasks(ListMessageMoveTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMessageMoveTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMessageMoveTasksResponseUnmarshaller.Instance;
 
@@ -3731,7 +3731,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListMessageMoveTasks">REST API Reference for ListMessageMoveTasks Operation</seealso>
         public virtual Task<ListMessageMoveTasksResponse> ListMessageMoveTasksAsync(ListMessageMoveTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMessageMoveTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMessageMoveTasksResponseUnmarshaller.Instance;
             
@@ -3855,7 +3855,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
 
@@ -3981,7 +3981,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public virtual Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueuesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueuesResponseUnmarshaller.Instance;
             
@@ -4040,7 +4040,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">REST API Reference for ListQueueTags Operation</seealso>
         public virtual ListQueueTagsResponse ListQueueTags(ListQueueTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueTagsResponseUnmarshaller.Instance;
 
@@ -4098,7 +4098,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">REST API Reference for ListQueueTags Operation</seealso>
         public virtual Task<ListQueueTagsResponse> ListQueueTagsAsync(ListQueueTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListQueueTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListQueueTagsResponseUnmarshaller.Instance;
             
@@ -4240,7 +4240,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         public virtual PurgeQueueResponse PurgeQueue(PurgeQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurgeQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurgeQueueResponseUnmarshaller.Instance;
 
@@ -4384,7 +4384,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         public virtual Task<PurgeQueueResponse> PurgeQueueAsync(PurgeQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurgeQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurgeQueueResponseUnmarshaller.Instance;
             
@@ -4672,7 +4672,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         public virtual ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReceiveMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
 
@@ -4962,7 +4962,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         public virtual Task<ReceiveMessageResponse> ReceiveMessageAsync(ReceiveMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ReceiveMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ReceiveMessageResponseUnmarshaller.Instance;
             
@@ -5094,7 +5094,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
 
@@ -5228,7 +5228,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public virtual Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemovePermissionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemovePermissionResponseUnmarshaller.Instance;
             
@@ -5256,15 +5256,14 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Amazon SQS does not throw an exception or completely reject the message if it contains
-        /// invalid characters. Instead, it replaces those invalid characters with U+FFFD before
-        /// storing the message in the queue, as long as the message body contains at least one
-        /// valid character.
+        /// If a message contains characters outside the allowed set, Amazon SQS rejects the message
+        /// and returns an InvalidMessageContents error. Ensure that your message body includes
+        /// only valid characters to avoid this exception.
         /// </para>
         ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs and names are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c> to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c>  Amazon SQS does not throw an exception or completely reject the message if it contains invalid characters. Instead, it replaces those invalid characters with U+FFFD before storing the message in the queue, as long as the message body contains at least one valid character. </important></param>
+        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 1 MiB or 1,048,576 bytes <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c> to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c>  If a message contains characters outside the allowed set, Amazon SQS rejects the message and returns an InvalidMessageContents error. Ensure that your message body includes only valid characters to avoid this exception. </important></param>
         /// 
         /// <returns>The response from the SendMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
@@ -5357,10 +5356,9 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Amazon SQS does not throw an exception or completely reject the message if it contains
-        /// invalid characters. Instead, it replaces those invalid characters with U+FFFD before
-        /// storing the message in the queue, as long as the message body contains at least one
-        /// valid character.
+        /// If a message contains characters outside the allowed set, Amazon SQS rejects the message
+        /// and returns an InvalidMessageContents error. Ensure that your message body includes
+        /// only valid characters to avoid this exception.
         /// </para>
         ///  </important>
         /// </summary>
@@ -5434,7 +5432,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public virtual SendMessageResponse SendMessage(SendMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
 
@@ -5458,15 +5456,14 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Amazon SQS does not throw an exception or completely reject the message if it contains
-        /// invalid characters. Instead, it replaces those invalid characters with U+FFFD before
-        /// storing the message in the queue, as long as the message body contains at least one
-        /// valid character.
+        /// If a message contains characters outside the allowed set, Amazon SQS rejects the message
+        /// and returns an InvalidMessageContents error. Ensure that your message body includes
+        /// only valid characters to avoid this exception.
         /// </para>
         ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs and names are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c> to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c>  Amazon SQS does not throw an exception or completely reject the message if it contains invalid characters. Instead, it replaces those invalid characters with U+FFFD before storing the message in the queue, as long as the message body contains at least one valid character. </important></param>
+        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 1 MiB or 1,048,576 bytes <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c> to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c>  If a message contains characters outside the allowed set, Amazon SQS rejects the message and returns an InvalidMessageContents error. Ensure that your message body includes only valid characters to avoid this exception. </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5562,10 +5559,9 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Amazon SQS does not throw an exception or completely reject the message if it contains
-        /// invalid characters. Instead, it replaces those invalid characters with U+FFFD before
-        /// storing the message in the queue, as long as the message body contains at least one
-        /// valid character.
+        /// If a message contains characters outside the allowed set, Amazon SQS rejects the message
+        /// and returns an InvalidMessageContents error. Ensure that your message body includes
+        /// only valid characters to avoid this exception.
         /// </para>
         ///  </important>
         /// </summary>
@@ -5642,7 +5638,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public virtual Task<SendMessageResponse> SendMessageAsync(SendMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMessageResponseUnmarshaller.Instance;
             
@@ -5671,8 +5667,8 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// The maximum allowed individual message size and the maximum total payload size (the
-        /// sum of the individual lengths of all of the batched messages) are both 256 KiB (262,144
-        /// bytes).
+        /// sum of the individual lengths of all of the batched messages) are both 1 MiB 1,048,576
+        /// bytes.
         /// </para>
         ///  <important> 
         /// <para>
@@ -5687,10 +5683,9 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Amazon SQS does not throw an exception or completely reject the message if it contains
-        /// invalid characters. Instead, it replaces those invalid characters with U+FFFD before
-        /// storing the message in the queue, as long as the message body contains at least one
-        /// valid character.
+        /// If a message contains characters outside the allowed set, Amazon SQS rejects the message
+        /// and returns an InvalidMessageContents error. Ensure that your message body includes
+        /// only valid characters to avoid this exception.
         /// </para>
         ///  </important> 
         /// <para>
@@ -5809,8 +5804,8 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// The maximum allowed individual message size and the maximum total payload size (the
-        /// sum of the individual lengths of all of the batched messages) are both 256 KiB (262,144
-        /// bytes).
+        /// sum of the individual lengths of all of the batched messages) are both 1 MiB 1,048,576
+        /// bytes.
         /// </para>
         ///  <important> 
         /// <para>
@@ -5825,10 +5820,9 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Amazon SQS does not throw an exception or completely reject the message if it contains
-        /// invalid characters. Instead, it replaces those invalid characters with U+FFFD before
-        /// storing the message in the queue, as long as the message body contains at least one
-        /// valid character.
+        /// If a message contains characters outside the allowed set, Amazon SQS rejects the message
+        /// and returns an InvalidMessageContents error. Ensure that your message body includes
+        /// only valid characters to avoid this exception.
         /// </para>
         ///  </important> 
         /// <para>
@@ -5922,7 +5916,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         public virtual SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMessageBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
 
@@ -5947,8 +5941,8 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// The maximum allowed individual message size and the maximum total payload size (the
-        /// sum of the individual lengths of all of the batched messages) are both 256 KiB (262,144
-        /// bytes).
+        /// sum of the individual lengths of all of the batched messages) are both 1 MiB 1,048,576
+        /// bytes.
         /// </para>
         ///  <important> 
         /// <para>
@@ -5963,10 +5957,9 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Amazon SQS does not throw an exception or completely reject the message if it contains
-        /// invalid characters. Instead, it replaces those invalid characters with U+FFFD before
-        /// storing the message in the queue, as long as the message body contains at least one
-        /// valid character.
+        /// If a message contains characters outside the allowed set, Amazon SQS rejects the message
+        /// and returns an InvalidMessageContents error. Ensure that your message body includes
+        /// only valid characters to avoid this exception.
         /// </para>
         ///  </important> 
         /// <para>
@@ -6088,8 +6081,8 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// The maximum allowed individual message size and the maximum total payload size (the
-        /// sum of the individual lengths of all of the batched messages) are both 256 KiB (262,144
-        /// bytes).
+        /// sum of the individual lengths of all of the batched messages) are both 1 MiB 1,048,576
+        /// bytes.
         /// </para>
         ///  <important> 
         /// <para>
@@ -6104,10 +6097,9 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// Amazon SQS does not throw an exception or completely reject the message if it contains
-        /// invalid characters. Instead, it replaces those invalid characters with U+FFFD before
-        /// storing the message in the queue, as long as the message body contains at least one
-        /// valid character.
+        /// If a message contains characters outside the allowed set, Amazon SQS rejects the message
+        /// and returns an InvalidMessageContents error. Ensure that your message body includes
+        /// only valid characters to avoid this exception.
         /// </para>
         ///  </important> 
         /// <para>
@@ -6204,7 +6196,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         public virtual Task<SendMessageBatchResponse> SendMessageBatchAsync(SendMessageBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendMessageBatchRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendMessageBatchResponseUnmarshaller.Instance;
             
@@ -6245,7 +6237,7 @@ namespace Amazon.SQS
         ///  </li> </ul> </note>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose attributes are set. Queue URLs and names are case-sensitive.</param>
-        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <c>SetQueueAttributes</c> action uses: <ul> <li>  <c>DelaySeconds</c> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.  </li> <li>  <c>MaximumMessageSize</c> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).  </li> <li>  <c>MessageRetentionPeriod</c> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days). When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute can take up to 15 minutes and will impact existing messages in the queue potentially causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced below the age of existing messages. </li> <li>  <c>Policy</c> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>.  </li> <li>  <c>ReceiveMessageWaitTimeSeconds</c> – The length of time, in seconds, for which a <c> <a>ReceiveMessage</a> </c> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.  </li> <li>  <c>VisibilityTimeout</c> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>  <ul> <li>  <c>RedrivePolicy</c> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. The parameters are as follows: <ul> <li>  <c>deadLetterTargetArn</c> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <c>maxReceiveCount</c> is exceeded. </li> <li>  <c>maxReceiveCount</c> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. Default: 10. When the <c>ReceiveCount</c> for a message exceeds the <c>maxReceiveCount</c> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <c>RedriveAllowPolicy</c> – The string that includes the parameters for the permissions for the dead-letter queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows: <ul> <li>  <c>redrivePermission</c> – The permission type that defines which source queues can specify the current queue as the dead-letter queue. Valid values are: <ul> <li>  <c>allowAll</c> – (Default) Any source queues in this Amazon Web Services account in the same Region can specify this queue as the dead-letter queue. </li> <li>  <c>denyAll</c> – No source queues can specify this queue as the dead-letter queue. </li> <li>  <c>byQueue</c> – Only queues specified by the <c>sourceQueueArns</c> parameter can specify this queue as the dead-letter queue. </li> </ul> </li> <li>  <c>sourceQueueArns</c> – The Amazon Resource Names (ARN)s of the source queues that can specify this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the <c>redrivePermission</c> parameter is set to <c>byQueue</c>. You can specify up to 10 source queue ARNs. To allow more than 10 source queues to specify dead-letter queues, set the <c>redrivePermission</c> parameter to <c>allowAll</c>. </li> </ul> </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <c>KmsMasterKeyId</c> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <c>alias/aws/sqs</c>, the alias of a custom CMK can, for example, be <c>alias/<i>MyAlias</i> </c>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <c>KmsDataKeyReusePeriodSeconds</c> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <c>SqsManagedSseEnabled</c> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <c>ContentBasedDeduplication</c> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following:  <ul> <li> Every message must have a unique <c>MessageDeduplicationId</c>. <ul> <li> You may provide a <c>MessageDeduplicationId</c> explicitly. </li> <li> If you aren't able to provide a <c>MessageDeduplicationId</c> and you enable <c>ContentBasedDeduplication</c> for your queue, Amazon SQS uses a SHA-256 hash to generate the <c>MessageDeduplicationId</c> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <c>MessageDeduplicationId</c> and the queue doesn't have <c>ContentBasedDeduplication</c> set, the action fails with an error. </li> <li> If the queue has <c>ContentBasedDeduplication</c> set, your <c>MessageDeduplicationId</c> overrides the generated one. </li> </ul> </li> <li> When <c>ContentBasedDeduplication</c> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> If you send one message with <c>ContentBasedDeduplication</c> enabled and then another message with a <c>MessageDeduplicationId</c> that is the same as the one generated for the first <c>MessageDeduplicationId</c>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <c>DeduplicationScope</c> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <c>messageGroup</c> and <c>queue</c>. </li> <li>  <c>FifoThroughputLimit</c> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <c>perQueue</c> and <c>perMessageGroupId</c>. The <c>perMessageGroupId</c> value is allowed only when the value for <c>DeduplicationScope</c> is <c>messageGroup</c>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <c>DeduplicationScope</c> to <c>messageGroup</c>. </li> <li> Set <c>FifoThroughputLimit</c> to <c>perMessageGroupId</c>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
+        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <c>SetQueueAttributes</c> action uses: <ul> <li>  <c>DelaySeconds</c> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.  </li> <li>  <c>MaximumMessageSize</c> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 1,048,576 bytes (1 MiB). Default: 1,048,576 bytes (1 MiB).  </li> <li>  <c>MessageRetentionPeriod</c> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days). When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute can take up to 15 minutes and will impact existing messages in the queue potentially causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced below the age of existing messages. </li> <li>  <c>Policy</c> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>.  </li> <li>  <c>ReceiveMessageWaitTimeSeconds</c> – The length of time, in seconds, for which a <c> <a>ReceiveMessage</a> </c> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.  </li> <li>  <c>VisibilityTimeout</c> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>  <ul> <li>  <c>RedrivePolicy</c> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. The parameters are as follows: <ul> <li>  <c>deadLetterTargetArn</c> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <c>maxReceiveCount</c> is exceeded. </li> <li>  <c>maxReceiveCount</c> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. Default: 10. When the <c>ReceiveCount</c> for a message exceeds the <c>maxReceiveCount</c> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <c>RedriveAllowPolicy</c> – The string that includes the parameters for the permissions for the dead-letter queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows: <ul> <li>  <c>redrivePermission</c> – The permission type that defines which source queues can specify the current queue as the dead-letter queue. Valid values are: <ul> <li>  <c>allowAll</c> – (Default) Any source queues in this Amazon Web Services account in the same Region can specify this queue as the dead-letter queue. </li> <li>  <c>denyAll</c> – No source queues can specify this queue as the dead-letter queue. </li> <li>  <c>byQueue</c> – Only queues specified by the <c>sourceQueueArns</c> parameter can specify this queue as the dead-letter queue. </li> </ul> </li> <li>  <c>sourceQueueArns</c> – The Amazon Resource Names (ARN)s of the source queues that can specify this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the <c>redrivePermission</c> parameter is set to <c>byQueue</c>. You can specify up to 10 source queue ARNs. To allow more than 10 source queues to specify dead-letter queues, set the <c>redrivePermission</c> parameter to <c>allowAll</c>. </li> </ul> </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <c>KmsMasterKeyId</c> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <c>alias/aws/sqs</c>, the alias of a custom CMK can, for example, be <c>alias/<i>MyAlias</i> </c>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <c>KmsDataKeyReusePeriodSeconds</c> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <c>SqsManagedSseEnabled</c> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <c>ContentBasedDeduplication</c> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following:  <ul> <li> Every message must have a unique <c>MessageDeduplicationId</c>. <ul> <li> You may provide a <c>MessageDeduplicationId</c> explicitly. </li> <li> If you aren't able to provide a <c>MessageDeduplicationId</c> and you enable <c>ContentBasedDeduplication</c> for your queue, Amazon SQS uses a SHA-256 hash to generate the <c>MessageDeduplicationId</c> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <c>MessageDeduplicationId</c> and the queue doesn't have <c>ContentBasedDeduplication</c> set, the action fails with an error. </li> <li> If the queue has <c>ContentBasedDeduplication</c> set, your <c>MessageDeduplicationId</c> overrides the generated one. </li> </ul> </li> <li> When <c>ContentBasedDeduplication</c> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> If you send one message with <c>ContentBasedDeduplication</c> enabled and then another message with a <c>MessageDeduplicationId</c> that is the same as the one generated for the first <c>MessageDeduplicationId</c>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <c>DeduplicationScope</c> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <c>messageGroup</c> and <c>queue</c>. </li> <li>  <c>FifoThroughputLimit</c> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <c>perQueue</c> and <c>perMessageGroupId</c>. The <c>perMessageGroupId</c> value is allowed only when the value for <c>DeduplicationScope</c> is <c>messageGroup</c>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <c>DeduplicationScope</c> to <c>messageGroup</c>. </li> <li> Set <c>FifoThroughputLimit</c> to <c>perMessageGroupId</c>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
@@ -6368,7 +6360,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         public virtual SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetQueueAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
 
@@ -6405,7 +6397,7 @@ namespace Amazon.SQS
         ///  </li> </ul> </note>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose attributes are set. Queue URLs and names are case-sensitive.</param>
-        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <c>SetQueueAttributes</c> action uses: <ul> <li>  <c>DelaySeconds</c> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.  </li> <li>  <c>MaximumMessageSize</c> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).  </li> <li>  <c>MessageRetentionPeriod</c> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days). When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute can take up to 15 minutes and will impact existing messages in the queue potentially causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced below the age of existing messages. </li> <li>  <c>Policy</c> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>.  </li> <li>  <c>ReceiveMessageWaitTimeSeconds</c> – The length of time, in seconds, for which a <c> <a>ReceiveMessage</a> </c> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.  </li> <li>  <c>VisibilityTimeout</c> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>  <ul> <li>  <c>RedrivePolicy</c> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. The parameters are as follows: <ul> <li>  <c>deadLetterTargetArn</c> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <c>maxReceiveCount</c> is exceeded. </li> <li>  <c>maxReceiveCount</c> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. Default: 10. When the <c>ReceiveCount</c> for a message exceeds the <c>maxReceiveCount</c> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <c>RedriveAllowPolicy</c> – The string that includes the parameters for the permissions for the dead-letter queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows: <ul> <li>  <c>redrivePermission</c> – The permission type that defines which source queues can specify the current queue as the dead-letter queue. Valid values are: <ul> <li>  <c>allowAll</c> – (Default) Any source queues in this Amazon Web Services account in the same Region can specify this queue as the dead-letter queue. </li> <li>  <c>denyAll</c> – No source queues can specify this queue as the dead-letter queue. </li> <li>  <c>byQueue</c> – Only queues specified by the <c>sourceQueueArns</c> parameter can specify this queue as the dead-letter queue. </li> </ul> </li> <li>  <c>sourceQueueArns</c> – The Amazon Resource Names (ARN)s of the source queues that can specify this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the <c>redrivePermission</c> parameter is set to <c>byQueue</c>. You can specify up to 10 source queue ARNs. To allow more than 10 source queues to specify dead-letter queues, set the <c>redrivePermission</c> parameter to <c>allowAll</c>. </li> </ul> </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <c>KmsMasterKeyId</c> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <c>alias/aws/sqs</c>, the alias of a custom CMK can, for example, be <c>alias/<i>MyAlias</i> </c>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <c>KmsDataKeyReusePeriodSeconds</c> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <c>SqsManagedSseEnabled</c> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <c>ContentBasedDeduplication</c> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following:  <ul> <li> Every message must have a unique <c>MessageDeduplicationId</c>. <ul> <li> You may provide a <c>MessageDeduplicationId</c> explicitly. </li> <li> If you aren't able to provide a <c>MessageDeduplicationId</c> and you enable <c>ContentBasedDeduplication</c> for your queue, Amazon SQS uses a SHA-256 hash to generate the <c>MessageDeduplicationId</c> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <c>MessageDeduplicationId</c> and the queue doesn't have <c>ContentBasedDeduplication</c> set, the action fails with an error. </li> <li> If the queue has <c>ContentBasedDeduplication</c> set, your <c>MessageDeduplicationId</c> overrides the generated one. </li> </ul> </li> <li> When <c>ContentBasedDeduplication</c> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> If you send one message with <c>ContentBasedDeduplication</c> enabled and then another message with a <c>MessageDeduplicationId</c> that is the same as the one generated for the first <c>MessageDeduplicationId</c>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <c>DeduplicationScope</c> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <c>messageGroup</c> and <c>queue</c>. </li> <li>  <c>FifoThroughputLimit</c> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <c>perQueue</c> and <c>perMessageGroupId</c>. The <c>perMessageGroupId</c> value is allowed only when the value for <c>DeduplicationScope</c> is <c>messageGroup</c>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <c>DeduplicationScope</c> to <c>messageGroup</c>. </li> <li> Set <c>FifoThroughputLimit</c> to <c>perMessageGroupId</c>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
+        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <c>SetQueueAttributes</c> action uses: <ul> <li>  <c>DelaySeconds</c> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.  </li> <li>  <c>MaximumMessageSize</c> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 1,048,576 bytes (1 MiB). Default: 1,048,576 bytes (1 MiB).  </li> <li>  <c>MessageRetentionPeriod</c> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days). When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute can take up to 15 minutes and will impact existing messages in the queue potentially causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced below the age of existing messages. </li> <li>  <c>Policy</c> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>.  </li> <li>  <c>ReceiveMessageWaitTimeSeconds</c> – The length of time, in seconds, for which a <c> <a>ReceiveMessage</a> </c> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.  </li> <li>  <c>VisibilityTimeout</c> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>  <ul> <li>  <c>RedrivePolicy</c> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. The parameters are as follows: <ul> <li>  <c>deadLetterTargetArn</c> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <c>maxReceiveCount</c> is exceeded. </li> <li>  <c>maxReceiveCount</c> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. Default: 10. When the <c>ReceiveCount</c> for a message exceeds the <c>maxReceiveCount</c> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <c>RedriveAllowPolicy</c> – The string that includes the parameters for the permissions for the dead-letter queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows: <ul> <li>  <c>redrivePermission</c> – The permission type that defines which source queues can specify the current queue as the dead-letter queue. Valid values are: <ul> <li>  <c>allowAll</c> – (Default) Any source queues in this Amazon Web Services account in the same Region can specify this queue as the dead-letter queue. </li> <li>  <c>denyAll</c> – No source queues can specify this queue as the dead-letter queue. </li> <li>  <c>byQueue</c> – Only queues specified by the <c>sourceQueueArns</c> parameter can specify this queue as the dead-letter queue. </li> </ul> </li> <li>  <c>sourceQueueArns</c> – The Amazon Resource Names (ARN)s of the source queues that can specify this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the <c>redrivePermission</c> parameter is set to <c>byQueue</c>. You can specify up to 10 source queue ARNs. To allow more than 10 source queues to specify dead-letter queues, set the <c>redrivePermission</c> parameter to <c>allowAll</c>. </li> </ul> </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <c>KmsMasterKeyId</c> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <c>alias/aws/sqs</c>, the alias of a custom CMK can, for example, be <c>alias/<i>MyAlias</i> </c>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <c>KmsDataKeyReusePeriodSeconds</c> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <c>SqsManagedSseEnabled</c> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <c>ContentBasedDeduplication</c> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following:  <ul> <li> Every message must have a unique <c>MessageDeduplicationId</c>. <ul> <li> You may provide a <c>MessageDeduplicationId</c> explicitly. </li> <li> If you aren't able to provide a <c>MessageDeduplicationId</c> and you enable <c>ContentBasedDeduplication</c> for your queue, Amazon SQS uses a SHA-256 hash to generate the <c>MessageDeduplicationId</c> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <c>MessageDeduplicationId</c> and the queue doesn't have <c>ContentBasedDeduplication</c> set, the action fails with an error. </li> <li> If the queue has <c>ContentBasedDeduplication</c> set, your <c>MessageDeduplicationId</c> overrides the generated one. </li> </ul> </li> <li> When <c>ContentBasedDeduplication</c> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> If you send one message with <c>ContentBasedDeduplication</c> enabled and then another message with a <c>MessageDeduplicationId</c> that is the same as the one generated for the first <c>MessageDeduplicationId</c>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <c>DeduplicationScope</c> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <c>messageGroup</c> and <c>queue</c>. </li> <li>  <c>FifoThroughputLimit</c> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <c>perQueue</c> and <c>perMessageGroupId</c>. The <c>perMessageGroupId</c> value is allowed only when the value for <c>DeduplicationScope</c> is <c>messageGroup</c>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <c>DeduplicationScope</c> to <c>messageGroup</c>. </li> <li> Set <c>FifoThroughputLimit</c> to <c>perMessageGroupId</c>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -6534,7 +6526,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         public virtual Task<SetQueueAttributesResponse> SetQueueAttributesAsync(SetQueueAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SetQueueAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SetQueueAttributesResponseUnmarshaller.Instance;
             
@@ -6603,7 +6595,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/StartMessageMoveTask">REST API Reference for StartMessageMoveTask Operation</seealso>
         public virtual StartMessageMoveTaskResponse StartMessageMoveTask(StartMessageMoveTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMessageMoveTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMessageMoveTaskResponseUnmarshaller.Instance;
 
@@ -6671,7 +6663,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/StartMessageMoveTask">REST API Reference for StartMessageMoveTask Operation</seealso>
         public virtual Task<StartMessageMoveTaskResponse> StartMessageMoveTaskAsync(StartMessageMoveTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMessageMoveTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMessageMoveTaskResponseUnmarshaller.Instance;
             
@@ -6756,7 +6748,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">REST API Reference for TagQueue Operation</seealso>
         public virtual TagQueueResponse TagQueue(TagQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagQueueResponseUnmarshaller.Instance;
 
@@ -6840,7 +6832,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">REST API Reference for TagQueue Operation</seealso>
         public virtual Task<TagQueueResponse> TagQueueAsync(TagQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagQueueResponseUnmarshaller.Instance;
             
@@ -6899,7 +6891,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">REST API Reference for UntagQueue Operation</seealso>
         public virtual UntagQueueResponse UntagQueue(UntagQueueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagQueueResponseUnmarshaller.Instance;
 
@@ -6957,7 +6949,7 @@ namespace Amazon.SQS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">REST API Reference for UntagQueue Operation</seealso>
         public virtual Task<UntagQueueResponse> UntagQueueAsync(UntagQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagQueueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagQueueResponseUnmarshaller.Instance;
             

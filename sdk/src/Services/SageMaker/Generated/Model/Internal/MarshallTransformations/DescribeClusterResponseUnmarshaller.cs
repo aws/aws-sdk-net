@@ -52,6 +52,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AutoScaling", targetDepth))
+                {
+                    var unmarshaller = ClusterAutoScalingConfigOutputUnmarshaller.Instance;
+                    response.AutoScaling = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ClusterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -62,6 +68,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ClusterName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ClusterRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ClusterRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClusterStatus", targetDepth))
@@ -88,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.InstanceGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("NodeProvisioningMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NodeProvisioningMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("NodeRecovery", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +122,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonListUnmarshaller<ClusterRestrictedInstanceGroupDetails, ClusterRestrictedInstanceGroupDetailsUnmarshaller>(ClusterRestrictedInstanceGroupDetailsUnmarshaller.Instance);
                     response.RestrictedInstanceGroups = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TieredStorageConfig", targetDepth))
+                {
+                    var unmarshaller = ClusterTieredStorageConfigUnmarshaller.Instance;
+                    response.TieredStorageConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcConfig", targetDepth))

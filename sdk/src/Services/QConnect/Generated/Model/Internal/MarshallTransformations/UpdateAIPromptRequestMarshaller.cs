@@ -96,6 +96,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetModelId())
+            {
+                context.Writer.WritePropertyName("modelId");
+                context.Writer.WriteStringValue(publicRequest.ModelId);
+            }
+
             if(publicRequest.IsSetTemplateConfiguration())
             {
                 context.Writer.WritePropertyName("templateConfiguration");

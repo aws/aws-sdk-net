@@ -108,6 +108,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             {
                 request.Headers["x-amz-lex-session-state"] = publicRequest.SessionStateValue;
             }
+            request.DisablePayloadSigning = true;
 
             return request;
         }

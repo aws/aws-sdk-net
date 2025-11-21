@@ -4,7 +4,6 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-
 <#+
 	protected void GenerateAWSQueryCompatibleBlock()
 	{
@@ -149,6 +148,8 @@ using Amazon.Runtime.Internal.Util;
 		{
 			foreach (var member in this.Operation.ResponseHeaderMembers)
 			{
+				if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(member.OwningShape.Name, out var modifier) && modifier.ExcludedUnmarshallingProperties.Contains(member.ModeledName))
+					continue;
 				if (member.Shape.IsMap)
 				{
 #>
@@ -427,95 +428,210 @@ using Amazon.Runtime.Internal.Util;
 
 <#+
 /// Only to be used by rest-xml response unmarshallers
-	protected void ProcessResponseBodyOrStructureMembers(Member member, bool isStructure)
+	protected void ProcessResponseBodyOrStructureMembers(Member member, bool isStructure, Shape topLevelShape)
 	{
+		bool skipXmlTestExpression = false, isDataTypeSwapList = false, dataTypeSwapIsFlattened = false, skipXmlTestExpressionInnerLogic = false;
+
+		if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(topLevelShape.Name, out var modifier) && modifier.SkipXmlTestExpressionProperties.Contains(member.ModeledName))
+			skipXmlTestExpression = true;
+
+		if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier) && propModifier.SkipContextTestExpressionUnmarshallingLogic)
+			skipXmlTestExpressionInnerLogic = true;
+		if (this.Config.ServiceModel.Customizations.OverrideDataType(topLevelShape.Name, member.ModeledName) != null)
+		{
+			var dataTypeOverride = this.Config.ServiceModel.Customizations.OverrideDataType(topLevelShape.Name, member.ModeledName);
+			if (dataTypeOverride.DataType.Contains("List<"))
+				isDataTypeSwapList = true;
+			if (dataTypeOverride.IsFlattened)
+				dataTypeSwapIsFlattened = true;
+		}
+		if (this.Config.ServiceModel.Customizations.FlattenShapes(member.OwningShape.Name).Contains(member.ModeledName))
+			return;
 		string unmarshalledVariable = isStructure ? "unmarshalledObject" : "response";
-		if (member.Shape.IsList)
+		if (member.Shape.IsList || isDataTypeSwapList)
 		{
 			var listMarshallName = member.Shape.ListMarshallName ?? "member";
-
-			if (member.IsFlattened || member.Shape.IsFlattened)
+			if (member.IsFlattened || member.Shape.IsFlattened || dataTypeSwapIsFlattened)
 			{
+				if (!skipXmlTestExpression)
+				{
 #>
 					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
 					{
+<#+
+				}
+				if (!skipXmlTestExpressionInnerLogic)
+				{
+#>
                         if (<#=unmarshalledVariable#>.<#=member.PropertyName#> == null)
                         {
                             <#=unmarshalledVariable#>.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
                         }
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						<#=unmarshalledVariable#>.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+<#+
+				}
+#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 						continue;
+<#+
+				if (!skipXmlTestExpression)
+				{
+#>
 					}
 <#+
+				}
 			}
 			else
             {
+				if (!skipXmlTestExpression)
+				{
 #>
 				    if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>/<#=listMarshallName#>", targetDepth))
 				    {
+<#+
+				}
+				if (!skipXmlTestExpressionInnerLogic)
+				{				
+#>
                         if (<#=unmarshalledVariable#>.<#=member.PropertyName#> == null)
                         {
                             <#=unmarshalledVariable#>.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
                         }
 					    var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 					    <#=unmarshalledVariable#>.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+<#+
+				}
+#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 					    continue;
+<#+
+				if (!skipXmlTestExpression)
+				{
+#>
 				    }
 <#+
+				}
 			}
 		}
 		else if(member.Shape.IsMap)
 		{
 			if(member.IsFlattened)
             {
+				if (!skipXmlTestExpression)
+				{
 #>
 					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
 					{
+<#+
+				}
+				if (!skipXmlTestExpressionInnerLogic)
+				{
+#>
                         if (response.<#=member.PropertyName#> == null)
                         {
                             response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
                         }
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						<#=unmarshalledVariable#>.<#=member.PropertyName#>.Add(unmarshaller.Unmarshall(context));
+<#+
+				}
+#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 						continue;
+<#+
+				if (!skipXmlTestExpression)
+				{
+#>
 					}
 <#+
+				}
 			}
 			else
 			{
+				if (!skipXmlTestExpression)
+				{
 #>
 					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
 					{
+<#+
+				}
+				if (!skipXmlTestExpressionInnerLogic)
+				{
+#>
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						<#=unmarshalledVariable#>.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+<#+
+				}
+#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 						continue;
+<#+
+				if (!skipXmlTestExpression)
+				{
+#>
 					}
 <#+
+				}
 			}
 		}
 		else
 		{
-			if (!member.IsXmlAttribute)
+			if (!member.IsXmlAttribute && !skipXmlTestExpression)
 			{
 #>
 					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
-<#+		
+					{
+<#+					
 			}
 			else
 			{
+				if (!skipXmlTestExpression)
+				{
 #>
                     if (context.TestExpression("@<#=DetermineXmlMarshallName(member, false)#>", targetDepth - 1))
-
-<#+
-			}
-#>
 					{
+<#+
+				}
+			}
+			if (!member.HasPredicateListUnmarshaller)
+			{
+				if (!skipXmlTestExpressionInnerLogic)
+				{
+#>
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						<#=unmarshalledVariable#>.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+<#+
+				}
+#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
 						continue;
+<#+
+			}
+			if (member.HasPredicateListUnmarshaller)
+			{
+				var predicateData = this.Config.ServiceModel.Customizations.GetShapeModifier(member.OwningShape.Name).PredicateListUnmarshallers[member.ModeledName];
+				var predicateListUnmarshallerName = (string)predicateData["predicateListUnmarshallerName"];
+				var filterPredicateName = (string)predicateData["filterPredicateName"];
+				if (!skipXmlTestExpressionInnerLogic)
+				{
+#>
+						var predicateList = <#=predicateListUnmarshallerName#>.Instance.Unmarshall(context);
+						<#=unmarshalledVariable#>.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
+						<#=unmarshalledVariable#>.<#=member.PropertyName#>.<#=filterPredicateName#> = predicateList[0];
+<#+
+				}
+#>
+<#+WriteInjectXmlUnmarshallCode(member, 6);#>
+						continue;
+<#+
+			}
+				if (!skipXmlTestExpression)
+				{
+#>
 					}
 <#+
+				}
 		}
 	}
 #>

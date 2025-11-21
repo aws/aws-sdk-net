@@ -471,7 +471,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If no value is specified, the default is a private namespace for each container.
+        /// If no value is specified, the The default is a private namespace for each container.
         /// </para>
         ///  
         /// <para>
@@ -584,8 +584,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RuntimePlatform. 
         /// <para>
-        /// The operating system that your tasks definitions run on. A platform family is specified
-        /// only for tasks using the Fargate launch type. 
+        /// The operating system that your tasks definitions run on.
         /// </para>
         /// </summary>
         public RuntimePlatform RuntimePlatform

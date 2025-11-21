@@ -299,7 +299,7 @@ namespace Amazon.RDS
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.RDS.Internal.PreSignedUrlRequestHandler(this.Config.DefaultAWSCredentials));
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.RDS.Internal.PreSignedUrlRequestHandler(this.ExplicitAWSCredentials ?? this.Config.DefaultAWSCredentials));
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRDSEndpointResolver());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRDSAuthSchemeHandler());
@@ -335,7 +335,7 @@ namespace Amazon.RDS
 
         internal virtual AddRoleToDBClusterResponse AddRoleToDBCluster(AddRoleToDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddRoleToDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
 
@@ -370,7 +370,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBCluster">REST API Reference for AddRoleToDBCluster Operation</seealso>
         public virtual Task<AddRoleToDBClusterResponse> AddRoleToDBClusterAsync(AddRoleToDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddRoleToDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
 
@@ -382,7 +382,7 @@ namespace Amazon.RDS
 
         internal virtual AddRoleToDBInstanceResponse AddRoleToDBInstance(AddRoleToDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddRoleToDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddRoleToDBInstanceResponseUnmarshaller.Instance;
 
@@ -427,7 +427,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance">REST API Reference for AddRoleToDBInstance Operation</seealso>
         public virtual Task<AddRoleToDBInstanceResponse> AddRoleToDBInstanceAsync(AddRoleToDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddRoleToDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddRoleToDBInstanceResponseUnmarshaller.Instance;
 
@@ -439,7 +439,7 @@ namespace Amazon.RDS
 
         internal virtual AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddSourceIdentifierToSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance;
 
@@ -466,7 +466,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddSourceIdentifierToSubscription">REST API Reference for AddSourceIdentifierToSubscription Operation</seealso>
         public virtual Task<AddSourceIdentifierToSubscriptionResponse> AddSourceIdentifierToSubscriptionAsync(AddSourceIdentifierToSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddSourceIdentifierToSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddSourceIdentifierToSubscriptionResponseUnmarshaller.Instance;
 
@@ -478,7 +478,7 @@ namespace Amazon.RDS
 
         internal virtual AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -514,6 +514,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -521,6 +524,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -531,13 +537,23 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation can't be performed on the endpoint while the endpoint is in
+        /// this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
         /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public virtual Task<AddTagsToResourceResponse> AddTagsToResourceAsync(AddTagsToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddTagsToResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddTagsToResourceResponseUnmarshaller.Instance;
 
@@ -549,7 +565,7 @@ namespace Amazon.RDS
 
         internal virtual ApplyPendingMaintenanceActionResponse ApplyPendingMaintenanceAction(ApplyPendingMaintenanceActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
 
@@ -579,7 +595,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
         public virtual Task<ApplyPendingMaintenanceActionResponse> ApplyPendingMaintenanceActionAsync(ApplyPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ApplyPendingMaintenanceActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ApplyPendingMaintenanceActionResponseUnmarshaller.Instance;
 
@@ -591,7 +607,7 @@ namespace Amazon.RDS
 
         internal virtual AuthorizeDBSecurityGroupIngressResponse AuthorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeDBSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -652,7 +668,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress">REST API Reference for AuthorizeDBSecurityGroupIngress Operation</seealso>
         public virtual Task<AuthorizeDBSecurityGroupIngressResponse> AuthorizeDBSecurityGroupIngressAsync(AuthorizeDBSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AuthorizeDBSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AuthorizeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -664,7 +680,7 @@ namespace Amazon.RDS
 
         internal virtual BacktrackDBClusterResponse BacktrackDBCluster(BacktrackDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BacktrackDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BacktrackDBClusterResponseUnmarshaller.Instance;
 
@@ -702,7 +718,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BacktrackDBCluster">REST API Reference for BacktrackDBCluster Operation</seealso>
         public virtual Task<BacktrackDBClusterResponse> BacktrackDBClusterAsync(BacktrackDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BacktrackDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BacktrackDBClusterResponseUnmarshaller.Instance;
 
@@ -714,7 +730,7 @@ namespace Amazon.RDS
 
         internal virtual CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
 
@@ -742,7 +758,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public virtual Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelExportTaskResponseUnmarshaller.Instance;
 
@@ -754,7 +770,7 @@ namespace Amazon.RDS
 
         internal virtual CopyDBClusterParameterGroupResponse CopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -793,7 +809,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">REST API Reference for CopyDBClusterParameterGroup Operation</seealso>
         public virtual Task<CopyDBClusterParameterGroupResponse> CopyDBClusterParameterGroupAsync(CopyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -805,7 +821,7 @@ namespace Amazon.RDS
 
         internal virtual CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -898,7 +914,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot">REST API Reference for CopyDBClusterSnapshot Operation</seealso>
         public virtual Task<CopyDBClusterSnapshotResponse> CopyDBClusterSnapshotAsync(CopyDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -910,7 +926,7 @@ namespace Amazon.RDS
 
         internal virtual CopyDBParameterGroupResponse CopyDBParameterGroup(CopyDBParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -949,7 +965,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup">REST API Reference for CopyDBParameterGroup Operation</seealso>
         public virtual Task<CopyDBParameterGroupResponse> CopyDBParameterGroupAsync(CopyDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -961,7 +977,7 @@ namespace Amazon.RDS
 
         internal virtual CopyDBSnapshotResponse CopyDBSnapshot(CopyDBSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBSnapshotResponseUnmarshaller.Instance;
 
@@ -1018,7 +1034,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">REST API Reference for CopyDBSnapshot Operation</seealso>
         public virtual Task<CopyDBSnapshotResponse> CopyDBSnapshotAsync(CopyDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyDBSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyDBSnapshotResponseUnmarshaller.Instance;
 
@@ -1030,7 +1046,7 @@ namespace Amazon.RDS
 
         internal virtual CopyOptionGroupResponse CopyOptionGroup(CopyOptionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyOptionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyOptionGroupResponseUnmarshaller.Instance;
 
@@ -1060,7 +1076,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyOptionGroup">REST API Reference for CopyOptionGroup Operation</seealso>
         public virtual Task<CopyOptionGroupResponse> CopyOptionGroupAsync(CopyOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CopyOptionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CopyOptionGroupResponseUnmarshaller.Instance;
 
@@ -1072,7 +1088,7 @@ namespace Amazon.RDS
 
         internal virtual CreateBlueGreenDeploymentResponse CreateBlueGreenDeployment(CreateBlueGreenDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBlueGreenDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBlueGreenDeploymentResponseUnmarshaller.Instance;
 
@@ -1150,10 +1166,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SourceDatabaseNotSupportedException">
         /// The source DB instance isn't supported for a blue/green deployment.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// The request would result in the user exceeding the allowed amount of storage available
+        /// across all DB instances.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateBlueGreenDeployment">REST API Reference for CreateBlueGreenDeployment Operation</seealso>
         public virtual Task<CreateBlueGreenDeploymentResponse> CreateBlueGreenDeploymentAsync(CreateBlueGreenDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBlueGreenDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBlueGreenDeploymentResponseUnmarshaller.Instance;
 
@@ -1165,7 +1185,7 @@ namespace Amazon.RDS
 
         internal virtual CreateCustomDBEngineVersionResponse CreateCustomDBEngineVersion(CreateCustomDBEngineVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomDBEngineVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomDBEngineVersionResponseUnmarshaller.Instance;
 
@@ -1189,11 +1209,17 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionAlreadyExistsException">
         /// A CEV with the specified name already exists.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionNotFoundException">
+        /// The specified CEV was not found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionQuotaExceededException">
         /// You have exceeded your CEV quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.Ec2ImagePropertiesNotSupportedException">
         /// The AMI configuration prerequisite has not been met.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidCustomDBEngineVersionStateException">
+        /// You can't delete the CEV.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
@@ -1201,7 +1227,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateCustomDBEngineVersion">REST API Reference for CreateCustomDBEngineVersion Operation</seealso>
         public virtual Task<CreateCustomDBEngineVersionResponse> CreateCustomDBEngineVersionAsync(CreateCustomDBEngineVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomDBEngineVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomDBEngineVersionResponseUnmarshaller.Instance;
 
@@ -1213,7 +1239,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBClusterResponse CreateDBCluster(CreateDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterResponseUnmarshaller.Instance;
 
@@ -1318,6 +1344,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -1325,10 +1355,18 @@ namespace Amazon.RDS
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         public virtual Task<CreateDBClusterResponse> CreateDBClusterAsync(CreateDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterResponseUnmarshaller.Instance;
 
@@ -1340,7 +1378,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBClusterEndpointResponse CreateDBClusterEndpoint(CreateDBClusterEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -1385,7 +1423,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterEndpoint">REST API Reference for CreateDBClusterEndpoint Operation</seealso>
         public virtual Task<CreateDBClusterEndpointResponse> CreateDBClusterEndpointAsync(CreateDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -1397,7 +1435,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBClusterParameterGroupResponse CreateDBClusterParameterGroup(CreateDBClusterParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -1473,7 +1511,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterParameterGroup">REST API Reference for CreateDBClusterParameterGroup Operation</seealso>
         public virtual Task<CreateDBClusterParameterGroupResponse> CreateDBClusterParameterGroupAsync(CreateDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -1485,7 +1523,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBClusterSnapshotResponse CreateDBClusterSnapshot(CreateDBClusterSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -1532,7 +1570,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot">REST API Reference for CreateDBClusterSnapshot Operation</seealso>
         public virtual Task<CreateDBClusterSnapshotResponse> CreateDBClusterSnapshotAsync(CreateDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -1544,7 +1582,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBInstanceResponseUnmarshaller.Instance;
 
@@ -1658,10 +1696,15 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBInstanceResponseUnmarshaller.Instance;
 
@@ -1673,7 +1716,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBInstanceReadReplicaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance;
 
@@ -1684,18 +1727,13 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB instance that acts as a read replica for an existing source DB instance
-        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running MariaDB,
-        /// MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ
-        /// DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running Db2,
+        /// MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for
+        /// a Multi-AZ DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
         /// with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
         /// from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon
         /// RDS User Guide</i>.
         /// 
-        ///  
-        /// <para>
-        /// Amazon RDS for Db2 supports this operation for standby replicas. To create a standby
-        /// replica for a DB instance running Db2, you must set <c>ReplicaMode</c> to <c>mounted</c>.
-        /// </para>
         ///  
         /// <para>
         /// Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora
@@ -1799,10 +1837,15 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         public virtual Task<CreateDBInstanceReadReplicaResponse> CreateDBInstanceReadReplicaAsync(CreateDBInstanceReadReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBInstanceReadReplicaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance;
 
@@ -1814,7 +1857,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBParameterGroupResponse CreateDBParameterGroup(CreateDBParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -1857,7 +1900,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBParameterGroup">REST API Reference for CreateDBParameterGroup Operation</seealso>
         public virtual Task<CreateDBParameterGroupResponse> CreateDBParameterGroupAsync(CreateDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -1869,7 +1912,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBProxyResponse CreateDBProxy(CreateDBProxyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBProxyResponseUnmarshaller.Instance;
 
@@ -1902,7 +1945,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxy">REST API Reference for CreateDBProxy Operation</seealso>
         public virtual Task<CreateDBProxyResponse> CreateDBProxyAsync(CreateDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBProxyResponseUnmarshaller.Instance;
 
@@ -1914,7 +1957,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBProxyEndpointResponse CreateDBProxyEndpoint(CreateDBProxyEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBProxyEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBProxyEndpointResponseUnmarshaller.Instance;
 
@@ -1956,7 +1999,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxyEndpoint">REST API Reference for CreateDBProxyEndpoint Operation</seealso>
         public virtual Task<CreateDBProxyEndpointResponse> CreateDBProxyEndpointAsync(CreateDBProxyEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBProxyEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBProxyEndpointResponseUnmarshaller.Instance;
 
@@ -1968,7 +2011,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBSecurityGroupResponse CreateDBSecurityGroup(CreateDBSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBSecurityGroupResponseUnmarshaller.Instance;
 
@@ -2015,7 +2058,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup">REST API Reference for CreateDBSecurityGroup Operation</seealso>
         public virtual Task<CreateDBSecurityGroupResponse> CreateDBSecurityGroupAsync(CreateDBSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBSecurityGroupResponseUnmarshaller.Instance;
 
@@ -2027,7 +2070,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBShardGroupResponse CreateDBShardGroup(CreateDBShardGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBShardGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBShardGroupResponseUnmarshaller.Instance;
 
@@ -2079,7 +2122,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBShardGroup">REST API Reference for CreateDBShardGroup Operation</seealso>
         public virtual Task<CreateDBShardGroupResponse> CreateDBShardGroupAsync(CreateDBShardGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBShardGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBShardGroupResponseUnmarshaller.Instance;
 
@@ -2091,7 +2134,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBSnapshotResponse CreateDBSnapshot(CreateDBSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBSnapshotResponseUnmarshaller.Instance;
 
@@ -2125,7 +2168,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot">REST API Reference for CreateDBSnapshot Operation</seealso>
         public virtual Task<CreateDBSnapshotResponse> CreateDBSnapshotAsync(CreateDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBSnapshotResponseUnmarshaller.Instance;
 
@@ -2137,7 +2180,7 @@ namespace Amazon.RDS
 
         internal virtual CreateDBSubnetGroupResponse CreateDBSubnetGroup(CreateDBSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -2177,7 +2220,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSubnetGroup">REST API Reference for CreateDBSubnetGroup Operation</seealso>
         public virtual Task<CreateDBSubnetGroupResponse> CreateDBSubnetGroupAsync(CreateDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -2189,7 +2232,7 @@ namespace Amazon.RDS
 
         internal virtual CreateEventSubscriptionResponse CreateEventSubscription(CreateEventSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -2264,7 +2307,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">REST API Reference for CreateEventSubscription Operation</seealso>
         public virtual Task<CreateEventSubscriptionResponse> CreateEventSubscriptionAsync(CreateEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -2276,7 +2319,7 @@ namespace Amazon.RDS
 
         internal virtual CreateGlobalClusterResponse CreateGlobalCluster(CreateGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlobalClusterResponseUnmarshaller.Instance;
 
@@ -2324,10 +2367,16 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
+        /// The DB shard group must be in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">REST API Reference for CreateGlobalCluster Operation</seealso>
         public virtual Task<CreateGlobalClusterResponse> CreateGlobalClusterAsync(CreateGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGlobalClusterResponseUnmarshaller.Instance;
 
@@ -2339,7 +2388,7 @@ namespace Amazon.RDS
 
         internal virtual CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
 
@@ -2380,7 +2429,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
         public virtual Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
 
@@ -2392,7 +2441,7 @@ namespace Amazon.RDS
 
         internal virtual CreateOptionGroupResponse CreateOptionGroup(CreateOptionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOptionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOptionGroupResponseUnmarshaller.Instance;
 
@@ -2424,7 +2473,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateOptionGroup">REST API Reference for CreateOptionGroup Operation</seealso>
         public virtual Task<CreateOptionGroupResponse> CreateOptionGroupAsync(CreateOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOptionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOptionGroupResponseUnmarshaller.Instance;
 
@@ -2436,7 +2485,7 @@ namespace Amazon.RDS
 
         internal virtual CreateTenantDatabaseResponse CreateTenantDatabase(CreateTenantDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTenantDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTenantDatabaseResponseUnmarshaller.Instance;
 
@@ -2475,7 +2524,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateTenantDatabase">REST API Reference for CreateTenantDatabase Operation</seealso>
         public virtual Task<CreateTenantDatabaseResponse> CreateTenantDatabaseAsync(CreateTenantDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTenantDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTenantDatabaseResponseUnmarshaller.Instance;
 
@@ -2487,7 +2536,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteBlueGreenDeploymentResponse DeleteBlueGreenDeployment(DeleteBlueGreenDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBlueGreenDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBlueGreenDeploymentResponseUnmarshaller.Instance;
 
@@ -2524,7 +2573,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteBlueGreenDeployment">REST API Reference for DeleteBlueGreenDeployment Operation</seealso>
         public virtual Task<DeleteBlueGreenDeploymentResponse> DeleteBlueGreenDeploymentAsync(DeleteBlueGreenDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBlueGreenDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBlueGreenDeploymentResponseUnmarshaller.Instance;
 
@@ -2536,7 +2585,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteCustomDBEngineVersionResponse DeleteCustomDBEngineVersion(DeleteCustomDBEngineVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomDBEngineVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomDBEngineVersionResponseUnmarshaller.Instance;
 
@@ -2593,7 +2642,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteCustomDBEngineVersion">REST API Reference for DeleteCustomDBEngineVersion Operation</seealso>
         public virtual Task<DeleteCustomDBEngineVersionResponse> DeleteCustomDBEngineVersionAsync(DeleteCustomDBEngineVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomDBEngineVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomDBEngineVersionResponseUnmarshaller.Instance;
 
@@ -2605,7 +2654,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBClusterResponse DeleteDBCluster(DeleteDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterResponseUnmarshaller.Instance;
 
@@ -2658,13 +2707,19 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster">REST API Reference for DeleteDBCluster Operation</seealso>
         public virtual Task<DeleteDBClusterResponse> DeleteDBClusterAsync(DeleteDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterResponseUnmarshaller.Instance;
 
@@ -2676,7 +2731,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBClusterAutomatedBackupResponse DeleteDBClusterAutomatedBackup(DeleteDBClusterAutomatedBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterAutomatedBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterAutomatedBackupResponseUnmarshaller.Instance;
 
@@ -2705,7 +2760,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup">REST API Reference for DeleteDBClusterAutomatedBackup Operation</seealso>
         public virtual Task<DeleteDBClusterAutomatedBackupResponse> DeleteDBClusterAutomatedBackupAsync(DeleteDBClusterAutomatedBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterAutomatedBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterAutomatedBackupResponseUnmarshaller.Instance;
 
@@ -2717,7 +2772,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBClusterEndpointResponse DeleteDBClusterEndpoint(DeleteDBClusterEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -2754,7 +2809,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterEndpoint">REST API Reference for DeleteDBClusterEndpoint Operation</seealso>
         public virtual Task<DeleteDBClusterEndpointResponse> DeleteDBClusterEndpointAsync(DeleteDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -2766,7 +2821,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBClusterParameterGroupResponse DeleteDBClusterParameterGroup(DeleteDBClusterParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -2807,7 +2862,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup">REST API Reference for DeleteDBClusterParameterGroup Operation</seealso>
         public virtual Task<DeleteDBClusterParameterGroupResponse> DeleteDBClusterParameterGroupAsync(DeleteDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -2819,7 +2874,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBClusterSnapshotResponse DeleteDBClusterSnapshot(DeleteDBClusterSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -2862,7 +2917,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot">REST API Reference for DeleteDBClusterSnapshot Operation</seealso>
         public virtual Task<DeleteDBClusterSnapshotResponse> DeleteDBClusterSnapshotAsync(DeleteDBClusterSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBClusterSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBClusterSnapshotResponseUnmarshaller.Instance;
 
@@ -2874,7 +2929,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBInstanceResponse DeleteDBInstance(DeleteDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBInstanceResponseUnmarshaller.Instance;
 
@@ -2952,13 +3007,16 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">REST API Reference for DeleteDBInstance Operation</seealso>
         public virtual Task<DeleteDBInstanceResponse> DeleteDBInstanceAsync(DeleteDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBInstanceResponseUnmarshaller.Instance;
 
@@ -2970,7 +3028,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBInstanceAutomatedBackupResponse DeleteDBInstanceAutomatedBackup(DeleteDBInstanceAutomatedBackupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBInstanceAutomatedBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBInstanceAutomatedBackupResponseUnmarshaller.Instance;
 
@@ -2999,7 +3057,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup">REST API Reference for DeleteDBInstanceAutomatedBackup Operation</seealso>
         public virtual Task<DeleteDBInstanceAutomatedBackupResponse> DeleteDBInstanceAutomatedBackupAsync(DeleteDBInstanceAutomatedBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBInstanceAutomatedBackupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBInstanceAutomatedBackupResponseUnmarshaller.Instance;
 
@@ -3011,7 +3069,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBParameterGroupResponse DeleteDBParameterGroup(DeleteDBParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -3041,7 +3099,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">REST API Reference for DeleteDBParameterGroup Operation</seealso>
         public virtual Task<DeleteDBParameterGroupResponse> DeleteDBParameterGroupAsync(DeleteDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -3053,7 +3111,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBProxyResponse DeleteDBProxy(DeleteDBProxyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBProxyResponseUnmarshaller.Instance;
 
@@ -3081,7 +3139,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxy">REST API Reference for DeleteDBProxy Operation</seealso>
         public virtual Task<DeleteDBProxyResponse> DeleteDBProxyAsync(DeleteDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBProxyResponseUnmarshaller.Instance;
 
@@ -3093,7 +3151,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBProxyEndpointResponse DeleteDBProxyEndpoint(DeleteDBProxyEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBProxyEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBProxyEndpointResponseUnmarshaller.Instance;
 
@@ -3123,7 +3181,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxyEndpoint">REST API Reference for DeleteDBProxyEndpoint Operation</seealso>
         public virtual Task<DeleteDBProxyEndpointResponse> DeleteDBProxyEndpointAsync(DeleteDBProxyEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBProxyEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBProxyEndpointResponseUnmarshaller.Instance;
 
@@ -3135,7 +3193,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBSecurityGroupResponse DeleteDBSecurityGroup(DeleteDBSecurityGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBSecurityGroupResponseUnmarshaller.Instance;
 
@@ -3177,7 +3235,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup">REST API Reference for DeleteDBSecurityGroup Operation</seealso>
         public virtual Task<DeleteDBSecurityGroupResponse> DeleteDBSecurityGroupAsync(DeleteDBSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBSecurityGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBSecurityGroupResponseUnmarshaller.Instance;
 
@@ -3189,7 +3247,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBShardGroupResponse DeleteDBShardGroup(DeleteDBShardGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBShardGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBShardGroupResponseUnmarshaller.Instance;
 
@@ -3219,7 +3277,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBShardGroup">REST API Reference for DeleteDBShardGroup Operation</seealso>
         public virtual Task<DeleteDBShardGroupResponse> DeleteDBShardGroupAsync(DeleteDBShardGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBShardGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBShardGroupResponseUnmarshaller.Instance;
 
@@ -3231,7 +3289,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBSnapshotResponse DeleteDBSnapshot(DeleteDBSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBSnapshotResponseUnmarshaller.Instance;
 
@@ -3264,7 +3322,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">REST API Reference for DeleteDBSnapshot Operation</seealso>
         public virtual Task<DeleteDBSnapshotResponse> DeleteDBSnapshotAsync(DeleteDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBSnapshotResponseUnmarshaller.Instance;
 
@@ -3276,7 +3334,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteDBSubnetGroupResponse DeleteDBSubnetGroup(DeleteDBSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -3312,7 +3370,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup">REST API Reference for DeleteDBSubnetGroup Operation</seealso>
         public virtual Task<DeleteDBSubnetGroupResponse> DeleteDBSubnetGroupAsync(DeleteDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -3324,7 +3382,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteEventSubscriptionResponse DeleteEventSubscription(DeleteEventSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -3352,7 +3410,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteEventSubscription">REST API Reference for DeleteEventSubscription Operation</seealso>
         public virtual Task<DeleteEventSubscriptionResponse> DeleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -3364,7 +3422,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteGlobalClusterResponse DeleteGlobalCluster(DeleteGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlobalClusterResponseUnmarshaller.Instance;
 
@@ -3398,7 +3456,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteGlobalCluster">REST API Reference for DeleteGlobalCluster Operation</seealso>
         public virtual Task<DeleteGlobalClusterResponse> DeleteGlobalClusterAsync(DeleteGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGlobalClusterResponseUnmarshaller.Instance;
 
@@ -3410,7 +3468,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -3442,7 +3500,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -3454,7 +3512,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteOptionGroupResponse DeleteOptionGroup(DeleteOptionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOptionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOptionGroupResponseUnmarshaller.Instance;
 
@@ -3481,7 +3539,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup">REST API Reference for DeleteOptionGroup Operation</seealso>
         public virtual Task<DeleteOptionGroupResponse> DeleteOptionGroupAsync(DeleteOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOptionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOptionGroupResponseUnmarshaller.Instance;
 
@@ -3493,7 +3551,7 @@ namespace Amazon.RDS
 
         internal virtual DeleteTenantDatabaseResponse DeleteTenantDatabase(DeleteTenantDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTenantDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTenantDatabaseResponseUnmarshaller.Instance;
 
@@ -3520,6 +3578,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
+        /// <c>DBSnapshotIdentifier</c> is already used by an existing snapshot.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
@@ -3529,7 +3590,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteTenantDatabase">REST API Reference for DeleteTenantDatabase Operation</seealso>
         public virtual Task<DeleteTenantDatabaseResponse> DeleteTenantDatabaseAsync(DeleteTenantDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTenantDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTenantDatabaseResponseUnmarshaller.Instance;
 
@@ -3541,7 +3602,7 @@ namespace Amazon.RDS
 
         internal virtual DeregisterDBProxyTargetsResponse DeregisterDBProxyTargets(DeregisterDBProxyTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterDBProxyTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterDBProxyTargetsResponseUnmarshaller.Instance;
 
@@ -3578,7 +3639,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeregisterDBProxyTargets">REST API Reference for DeregisterDBProxyTargets Operation</seealso>
         public virtual Task<DeregisterDBProxyTargetsResponse> DeregisterDBProxyTargetsAsync(DeregisterDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterDBProxyTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterDBProxyTargetsResponseUnmarshaller.Instance;
 
@@ -3594,7 +3655,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
@@ -3646,7 +3707,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeAccountAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeAccountAttributesResponseUnmarshaller.Instance;
 
@@ -3658,7 +3719,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeBlueGreenDeploymentsResponse DescribeBlueGreenDeployments(DescribeBlueGreenDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBlueGreenDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBlueGreenDeploymentsResponseUnmarshaller.Instance;
 
@@ -3691,7 +3752,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeBlueGreenDeployments">REST API Reference for DescribeBlueGreenDeployments Operation</seealso>
         public virtual Task<DescribeBlueGreenDeploymentsResponse> DescribeBlueGreenDeploymentsAsync(DescribeBlueGreenDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBlueGreenDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBlueGreenDeploymentsResponseUnmarshaller.Instance;
 
@@ -3703,7 +3764,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeCertificatesResponse DescribeCertificates(DescribeCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
 
@@ -3737,7 +3798,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates">REST API Reference for DescribeCertificates Operation</seealso>
         public virtual Task<DescribeCertificatesResponse> DescribeCertificatesAsync(DescribeCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeCertificatesResponseUnmarshaller.Instance;
 
@@ -3749,7 +3810,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBClusterAutomatedBackupsResponse DescribeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterAutomatedBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterAutomatedBackupsResponseUnmarshaller.Instance;
 
@@ -3781,7 +3842,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups">REST API Reference for DescribeDBClusterAutomatedBackups Operation</seealso>
         public virtual Task<DescribeDBClusterAutomatedBackupsResponse> DescribeDBClusterAutomatedBackupsAsync(DescribeDBClusterAutomatedBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterAutomatedBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterAutomatedBackupsResponseUnmarshaller.Instance;
 
@@ -3793,7 +3854,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBClusterBacktracksResponse DescribeDBClusterBacktracks(DescribeDBClusterBacktracksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterBacktracksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterBacktracksResponseUnmarshaller.Instance;
 
@@ -3831,7 +3892,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterBacktracks">REST API Reference for DescribeDBClusterBacktracks Operation</seealso>
         public virtual Task<DescribeDBClusterBacktracksResponse> DescribeDBClusterBacktracksAsync(DescribeDBClusterBacktracksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterBacktracksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterBacktracksResponseUnmarshaller.Instance;
 
@@ -3843,7 +3904,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBClusterEndpointsResponse DescribeDBClusterEndpoints(DescribeDBClusterEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterEndpointsResponseUnmarshaller.Instance;
 
@@ -3873,7 +3934,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterEndpoints">REST API Reference for DescribeDBClusterEndpoints Operation</seealso>
         public virtual Task<DescribeDBClusterEndpointsResponse> DescribeDBClusterEndpointsAsync(DescribeDBClusterEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterEndpointsResponseUnmarshaller.Instance;
 
@@ -3885,7 +3946,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBClusterParameterGroupsResponse DescribeDBClusterParameterGroups(DescribeDBClusterParameterGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterParameterGroupsResponseUnmarshaller.Instance;
 
@@ -3922,7 +3983,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups">REST API Reference for DescribeDBClusterParameterGroups Operation</seealso>
         public virtual Task<DescribeDBClusterParameterGroupsResponse> DescribeDBClusterParameterGroupsAsync(DescribeDBClusterParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterParameterGroupsResponseUnmarshaller.Instance;
 
@@ -3934,7 +3995,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBClusterParametersResponse DescribeDBClusterParameters(DescribeDBClusterParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterParametersResponseUnmarshaller.Instance;
 
@@ -3969,7 +4030,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters">REST API Reference for DescribeDBClusterParameters Operation</seealso>
         public virtual Task<DescribeDBClusterParametersResponse> DescribeDBClusterParametersAsync(DescribeDBClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterParametersResponseUnmarshaller.Instance;
 
@@ -3981,7 +4042,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBClustersResponse DescribeDBClusters(DescribeDBClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClustersResponseUnmarshaller.Instance;
 
@@ -4022,7 +4083,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">REST API Reference for DescribeDBClusters Operation</seealso>
         public virtual Task<DescribeDBClustersResponse> DescribeDBClustersAsync(DescribeDBClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClustersResponseUnmarshaller.Instance;
 
@@ -4034,7 +4095,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBClusterSnapshotAttributesResponse DescribeDBClusterSnapshotAttributes(DescribeDBClusterSnapshotAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterSnapshotAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterSnapshotAttributesResponseUnmarshaller.Instance;
 
@@ -4075,7 +4136,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes">REST API Reference for DescribeDBClusterSnapshotAttributes Operation</seealso>
         public virtual Task<DescribeDBClusterSnapshotAttributesResponse> DescribeDBClusterSnapshotAttributesAsync(DescribeDBClusterSnapshotAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterSnapshotAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterSnapshotAttributesResponseUnmarshaller.Instance;
 
@@ -4087,7 +4148,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBClusterSnapshotsResponse DescribeDBClusterSnapshots(DescribeDBClusterSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterSnapshotsResponseUnmarshaller.Instance;
 
@@ -4122,7 +4183,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots">REST API Reference for DescribeDBClusterSnapshots Operation</seealso>
         public virtual Task<DescribeDBClusterSnapshotsResponse> DescribeDBClusterSnapshotsAsync(DescribeDBClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBClusterSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBClusterSnapshotsResponseUnmarshaller.Instance;
 
@@ -4138,7 +4199,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeDBEngineVersionsResponse DescribeDBEngineVersions(DescribeDBEngineVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.Instance;
 
@@ -4174,7 +4235,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         public virtual Task<DescribeDBEngineVersionsResponse> DescribeDBEngineVersionsAsync(DescribeDBEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBEngineVersionsResponseUnmarshaller.Instance;
 
@@ -4186,7 +4247,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBInstanceAutomatedBackupsResponse DescribeDBInstanceAutomatedBackups(DescribeDBInstanceAutomatedBackupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBInstanceAutomatedBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBInstanceAutomatedBackupsResponseUnmarshaller.Instance;
 
@@ -4218,7 +4279,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstanceAutomatedBackups">REST API Reference for DescribeDBInstanceAutomatedBackups Operation</seealso>
         public virtual Task<DescribeDBInstanceAutomatedBackupsResponse> DescribeDBInstanceAutomatedBackupsAsync(DescribeDBInstanceAutomatedBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBInstanceAutomatedBackupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBInstanceAutomatedBackupsResponseUnmarshaller.Instance;
 
@@ -4234,7 +4295,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeDBInstancesResponse DescribeDBInstances(DescribeDBInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBInstancesResponseUnmarshaller.Instance;
 
@@ -4290,7 +4351,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">REST API Reference for DescribeDBInstances Operation</seealso>
         public virtual Task<DescribeDBInstancesResponse> DescribeDBInstancesAsync(DescribeDBInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBInstancesResponseUnmarshaller.Instance;
 
@@ -4302,7 +4363,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBLogFilesResponse DescribeDBLogFiles(DescribeDBLogFilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBLogFilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBLogFilesResponseUnmarshaller.Instance;
 
@@ -4335,7 +4396,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">REST API Reference for DescribeDBLogFiles Operation</seealso>
         public virtual Task<DescribeDBLogFilesResponse> DescribeDBLogFilesAsync(DescribeDBLogFilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBLogFilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBLogFilesResponseUnmarshaller.Instance;
 
@@ -4347,7 +4408,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBMajorEngineVersionsResponse DescribeDBMajorEngineVersions(DescribeDBMajorEngineVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBMajorEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBMajorEngineVersionsResponseUnmarshaller.Instance;
 
@@ -4368,7 +4429,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBMajorEngineVersions">REST API Reference for DescribeDBMajorEngineVersions Operation</seealso>
         public virtual Task<DescribeDBMajorEngineVersionsResponse> DescribeDBMajorEngineVersionsAsync(DescribeDBMajorEngineVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBMajorEngineVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBMajorEngineVersionsResponseUnmarshaller.Instance;
 
@@ -4384,7 +4445,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeDBParameterGroupsResponse DescribeDBParameterGroups(DescribeDBParameterGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.Instance;
 
@@ -4430,7 +4491,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups">REST API Reference for DescribeDBParameterGroups Operation</seealso>
         public virtual Task<DescribeDBParameterGroupsResponse> DescribeDBParameterGroupsAsync(DescribeDBParameterGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBParameterGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBParameterGroupsResponseUnmarshaller.Instance;
 
@@ -4442,7 +4503,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBParametersResponse DescribeDBParameters(DescribeDBParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBParametersResponseUnmarshaller.Instance;
 
@@ -4466,7 +4527,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters">REST API Reference for DescribeDBParameters Operation</seealso>
         public virtual Task<DescribeDBParametersResponse> DescribeDBParametersAsync(DescribeDBParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBParametersResponseUnmarshaller.Instance;
 
@@ -4478,7 +4539,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBProxiesResponse DescribeDBProxies(DescribeDBProxiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBProxiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBProxiesResponseUnmarshaller.Instance;
 
@@ -4503,7 +4564,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies">REST API Reference for DescribeDBProxies Operation</seealso>
         public virtual Task<DescribeDBProxiesResponse> DescribeDBProxiesAsync(DescribeDBProxiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBProxiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBProxiesResponseUnmarshaller.Instance;
 
@@ -4515,7 +4576,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBProxyEndpointsResponse DescribeDBProxyEndpoints(DescribeDBProxyEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBProxyEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBProxyEndpointsResponseUnmarshaller.Instance;
 
@@ -4543,7 +4604,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints">REST API Reference for DescribeDBProxyEndpoints Operation</seealso>
         public virtual Task<DescribeDBProxyEndpointsResponse> DescribeDBProxyEndpointsAsync(DescribeDBProxyEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBProxyEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBProxyEndpointsResponseUnmarshaller.Instance;
 
@@ -4555,7 +4616,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBProxyTargetGroupsResponse DescribeDBProxyTargetGroups(DescribeDBProxyTargetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBProxyTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBProxyTargetGroupsResponseUnmarshaller.Instance;
 
@@ -4588,7 +4649,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargetGroups">REST API Reference for DescribeDBProxyTargetGroups Operation</seealso>
         public virtual Task<DescribeDBProxyTargetGroupsResponse> DescribeDBProxyTargetGroupsAsync(DescribeDBProxyTargetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBProxyTargetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBProxyTargetGroupsResponseUnmarshaller.Instance;
 
@@ -4600,7 +4661,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBProxyTargetsResponse DescribeDBProxyTargets(DescribeDBProxyTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBProxyTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBProxyTargetsResponseUnmarshaller.Instance;
 
@@ -4636,7 +4697,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyTargets">REST API Reference for DescribeDBProxyTargets Operation</seealso>
         public virtual Task<DescribeDBProxyTargetsResponse> DescribeDBProxyTargetsAsync(DescribeDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBProxyTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBProxyTargetsResponseUnmarshaller.Instance;
 
@@ -4648,7 +4709,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBRecommendationsResponse DescribeDBRecommendations(DescribeDBRecommendationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBRecommendationsResponseUnmarshaller.Instance;
 
@@ -4670,7 +4731,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBRecommendations">REST API Reference for DescribeDBRecommendations Operation</seealso>
         public virtual Task<DescribeDBRecommendationsResponse> DescribeDBRecommendationsAsync(DescribeDBRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBRecommendationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBRecommendationsResponseUnmarshaller.Instance;
 
@@ -4686,7 +4747,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeDBSecurityGroupsResponse DescribeDBSecurityGroups(DescribeDBSecurityGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -4754,7 +4815,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups">REST API Reference for DescribeDBSecurityGroups Operation</seealso>
         public virtual Task<DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsAsync(DescribeDBSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSecurityGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSecurityGroupsResponseUnmarshaller.Instance;
 
@@ -4766,7 +4827,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBShardGroupsResponse DescribeDBShardGroups(DescribeDBShardGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBShardGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBShardGroupsResponseUnmarshaller.Instance;
 
@@ -4793,7 +4854,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBShardGroups">REST API Reference for DescribeDBShardGroups Operation</seealso>
         public virtual Task<DescribeDBShardGroupsResponse> DescribeDBShardGroupsAsync(DescribeDBShardGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBShardGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBShardGroupsResponseUnmarshaller.Instance;
 
@@ -4805,7 +4866,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBSnapshotAttributesResponse DescribeDBSnapshotAttributes(DescribeDBSnapshotAttributesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSnapshotAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSnapshotAttributesResponseUnmarshaller.Instance;
 
@@ -4844,7 +4905,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes">REST API Reference for DescribeDBSnapshotAttributes Operation</seealso>
         public virtual Task<DescribeDBSnapshotAttributesResponse> DescribeDBSnapshotAttributesAsync(DescribeDBSnapshotAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSnapshotAttributesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSnapshotAttributesResponseUnmarshaller.Instance;
 
@@ -4860,7 +4921,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeDBSnapshotsResponse DescribeDBSnapshots(DescribeDBSnapshotsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSnapshotsResponseUnmarshaller.Instance;
 
@@ -4902,7 +4963,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">REST API Reference for DescribeDBSnapshots Operation</seealso>
         public virtual Task<DescribeDBSnapshotsResponse> DescribeDBSnapshotsAsync(DescribeDBSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSnapshotsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSnapshotsResponseUnmarshaller.Instance;
 
@@ -4914,7 +4975,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeDBSnapshotTenantDatabasesResponse DescribeDBSnapshotTenantDatabases(DescribeDBSnapshotTenantDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSnapshotTenantDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSnapshotTenantDatabasesResponseUnmarshaller.Instance;
 
@@ -4947,7 +5008,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotTenantDatabases">REST API Reference for DescribeDBSnapshotTenantDatabases Operation</seealso>
         public virtual Task<DescribeDBSnapshotTenantDatabasesResponse> DescribeDBSnapshotTenantDatabasesAsync(DescribeDBSnapshotTenantDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSnapshotTenantDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSnapshotTenantDatabasesResponseUnmarshaller.Instance;
 
@@ -4963,7 +5024,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeDBSubnetGroupsResponse DescribeDBSubnetGroups(DescribeDBSubnetGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSubnetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.Instance;
 
@@ -5019,7 +5080,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups">REST API Reference for DescribeDBSubnetGroups Operation</seealso>
         public virtual Task<DescribeDBSubnetGroupsResponse> DescribeDBSubnetGroupsAsync(DescribeDBSubnetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDBSubnetGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDBSubnetGroupsResponseUnmarshaller.Instance;
 
@@ -5031,7 +5092,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeEngineDefaultClusterParametersResponse DescribeEngineDefaultClusterParameters(DescribeEngineDefaultClusterParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineDefaultClusterParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineDefaultClusterParametersResponseUnmarshaller.Instance;
 
@@ -5059,7 +5120,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultClusterParameters">REST API Reference for DescribeEngineDefaultClusterParameters Operation</seealso>
         public virtual Task<DescribeEngineDefaultClusterParametersResponse> DescribeEngineDefaultClusterParametersAsync(DescribeEngineDefaultClusterParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineDefaultClusterParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineDefaultClusterParametersResponseUnmarshaller.Instance;
 
@@ -5071,7 +5132,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeEngineDefaultParametersResponse DescribeEngineDefaultParameters(DescribeEngineDefaultParametersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineDefaultParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
 
@@ -5093,7 +5154,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEngineDefaultParameters">REST API Reference for DescribeEngineDefaultParameters Operation</seealso>
         public virtual Task<DescribeEngineDefaultParametersResponse> DescribeEngineDefaultParametersAsync(DescribeEngineDefaultParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEngineDefaultParametersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEngineDefaultParametersResponseUnmarshaller.Instance;
 
@@ -5109,7 +5170,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeEventCategoriesResponse DescribeEventCategories(DescribeEventCategoriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventCategoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
@@ -5153,7 +5214,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventCategories">REST API Reference for DescribeEventCategories Operation</seealso>
         public virtual Task<DescribeEventCategoriesResponse> DescribeEventCategoriesAsync(DescribeEventCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventCategoriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventCategoriesResponseUnmarshaller.Instance;
 
@@ -5169,7 +5230,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -5237,7 +5298,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
 
@@ -5253,7 +5314,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeEventSubscriptionsResponse DescribeEventSubscriptions(DescribeEventSubscriptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
@@ -5309,7 +5370,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeEventSubscriptions">REST API Reference for DescribeEventSubscriptions Operation</seealso>
         public virtual Task<DescribeEventSubscriptionsResponse> DescribeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEventSubscriptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEventSubscriptionsResponseUnmarshaller.Instance;
 
@@ -5321,7 +5382,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
@@ -5346,7 +5407,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public virtual Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeExportTasksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeExportTasksResponseUnmarshaller.Instance;
 
@@ -5358,7 +5419,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeGlobalClustersResponse DescribeGlobalClusters(DescribeGlobalClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalClustersResponseUnmarshaller.Instance;
 
@@ -5393,7 +5454,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeGlobalClusters">REST API Reference for DescribeGlobalClusters Operation</seealso>
         public virtual Task<DescribeGlobalClustersResponse> DescribeGlobalClustersAsync(DescribeGlobalClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGlobalClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGlobalClustersResponseUnmarshaller.Instance;
 
@@ -5405,7 +5466,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeIntegrationsResponse DescribeIntegrations(DescribeIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIntegrationsResponseUnmarshaller.Instance;
 
@@ -5429,7 +5490,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
         public virtual Task<DescribeIntegrationsResponse> DescribeIntegrationsAsync(DescribeIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIntegrationsResponseUnmarshaller.Instance;
 
@@ -5441,7 +5502,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeOptionGroupOptionsResponse DescribeOptionGroupOptions(DescribeOptionGroupOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOptionGroupOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOptionGroupOptionsResponseUnmarshaller.Instance;
 
@@ -5462,7 +5523,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroupOptions">REST API Reference for DescribeOptionGroupOptions Operation</seealso>
         public virtual Task<DescribeOptionGroupOptionsResponse> DescribeOptionGroupOptionsAsync(DescribeOptionGroupOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOptionGroupOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOptionGroupOptionsResponseUnmarshaller.Instance;
 
@@ -5478,7 +5539,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeOptionGroupsResponse DescribeOptionGroups(DescribeOptionGroupsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOptionGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOptionGroupsResponseUnmarshaller.Instance;
 
@@ -5520,7 +5581,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOptionGroups">REST API Reference for DescribeOptionGroups Operation</seealso>
         public virtual Task<DescribeOptionGroupsResponse> DescribeOptionGroupsAsync(DescribeOptionGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOptionGroupsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOptionGroupsResponseUnmarshaller.Instance;
 
@@ -5532,7 +5593,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeOrderableDBInstanceOptionsResponse DescribeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrderableDBInstanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.Instance;
 
@@ -5553,7 +5614,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeOrderableDBInstanceOptions">REST API Reference for DescribeOrderableDBInstanceOptions Operation</seealso>
         public virtual Task<DescribeOrderableDBInstanceOptionsResponse> DescribeOrderableDBInstanceOptionsAsync(DescribeOrderableDBInstanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOrderableDBInstanceOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOrderableDBInstanceOptionsResponseUnmarshaller.Instance;
 
@@ -5565,7 +5626,7 @@ namespace Amazon.RDS
 
         internal virtual DescribePendingMaintenanceActionsResponse DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
 
@@ -5598,7 +5659,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribePendingMaintenanceActions">REST API Reference for DescribePendingMaintenanceActions Operation</seealso>
         public virtual Task<DescribePendingMaintenanceActionsResponse> DescribePendingMaintenanceActionsAsync(DescribePendingMaintenanceActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribePendingMaintenanceActionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribePendingMaintenanceActionsResponseUnmarshaller.Instance;
 
@@ -5614,7 +5675,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeReservedDBInstancesResponse DescribeReservedDBInstances(DescribeReservedDBInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedDBInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedDBInstancesResponseUnmarshaller.Instance;
 
@@ -5658,7 +5719,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstances">REST API Reference for DescribeReservedDBInstances Operation</seealso>
         public virtual Task<DescribeReservedDBInstancesResponse> DescribeReservedDBInstancesAsync(DescribeReservedDBInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedDBInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedDBInstancesResponseUnmarshaller.Instance;
 
@@ -5674,7 +5735,7 @@ namespace Amazon.RDS
         }
         internal virtual DescribeReservedDBInstancesOfferingsResponse DescribeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedDBInstancesOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.Instance;
 
@@ -5716,7 +5777,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeReservedDBInstancesOfferings">REST API Reference for DescribeReservedDBInstancesOfferings Operation</seealso>
         public virtual Task<DescribeReservedDBInstancesOfferingsResponse> DescribeReservedDBInstancesOfferingsAsync(DescribeReservedDBInstancesOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservedDBInstancesOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservedDBInstancesOfferingsResponseUnmarshaller.Instance;
 
@@ -5728,7 +5789,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeSourceRegionsResponse DescribeSourceRegions(DescribeSourceRegionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSourceRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSourceRegionsResponseUnmarshaller.Instance;
 
@@ -5764,7 +5825,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">REST API Reference for DescribeSourceRegions Operation</seealso>
         public virtual Task<DescribeSourceRegionsResponse> DescribeSourceRegionsAsync(DescribeSourceRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeSourceRegionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeSourceRegionsResponseUnmarshaller.Instance;
 
@@ -5776,7 +5837,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeTenantDatabasesResponse DescribeTenantDatabases(DescribeTenantDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTenantDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTenantDatabasesResponseUnmarshaller.Instance;
 
@@ -5801,7 +5862,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeTenantDatabases">REST API Reference for DescribeTenantDatabases Operation</seealso>
         public virtual Task<DescribeTenantDatabasesResponse> DescribeTenantDatabasesAsync(DescribeTenantDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeTenantDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeTenantDatabasesResponseUnmarshaller.Instance;
 
@@ -5813,7 +5874,7 @@ namespace Amazon.RDS
 
         internal virtual DescribeValidDBInstanceModificationsResponse DescribeValidDBInstanceModifications(DescribeValidDBInstanceModificationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeValidDBInstanceModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeValidDBInstanceModificationsResponseUnmarshaller.Instance;
 
@@ -5846,7 +5907,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications">REST API Reference for DescribeValidDBInstanceModifications Operation</seealso>
         public virtual Task<DescribeValidDBInstanceModificationsResponse> DescribeValidDBInstanceModificationsAsync(DescribeValidDBInstanceModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeValidDBInstanceModificationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeValidDBInstanceModificationsResponseUnmarshaller.Instance;
 
@@ -5858,7 +5919,7 @@ namespace Amazon.RDS
 
         internal virtual DisableHttpEndpointResponse DisableHttpEndpoint(DisableHttpEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableHttpEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableHttpEndpointResponseUnmarshaller.Instance;
 
@@ -5899,7 +5960,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DisableHttpEndpoint">REST API Reference for DisableHttpEndpoint Operation</seealso>
         public virtual Task<DisableHttpEndpointResponse> DisableHttpEndpointAsync(DisableHttpEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisableHttpEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisableHttpEndpointResponseUnmarshaller.Instance;
 
@@ -5911,7 +5972,7 @@ namespace Amazon.RDS
 
         internal virtual DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DownloadDBLogFilePortionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.Instance;
 
@@ -5955,7 +6016,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion">REST API Reference for DownloadDBLogFilePortion Operation</seealso>
         public virtual Task<DownloadDBLogFilePortionResponse> DownloadDBLogFilePortionAsync(DownloadDBLogFilePortionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DownloadDBLogFilePortionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DownloadDBLogFilePortionResponseUnmarshaller.Instance;
 
@@ -5967,7 +6028,7 @@ namespace Amazon.RDS
 
         internal virtual EnableHttpEndpointResponse EnableHttpEndpoint(EnableHttpEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableHttpEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableHttpEndpointResponseUnmarshaller.Instance;
 
@@ -6014,7 +6075,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/EnableHttpEndpoint">REST API Reference for EnableHttpEndpoint Operation</seealso>
         public virtual Task<EnableHttpEndpointResponse> EnableHttpEndpointAsync(EnableHttpEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = EnableHttpEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = EnableHttpEndpointResponseUnmarshaller.Instance;
 
@@ -6026,7 +6087,7 @@ namespace Amazon.RDS
 
         internal virtual FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverDBClusterResponseUnmarshaller.Instance;
 
@@ -6093,7 +6154,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster">REST API Reference for FailoverDBCluster Operation</seealso>
         public virtual Task<FailoverDBClusterResponse> FailoverDBClusterAsync(FailoverDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverDBClusterResponseUnmarshaller.Instance;
 
@@ -6105,7 +6166,7 @@ namespace Amazon.RDS
 
         internal virtual FailoverGlobalClusterResponse FailoverGlobalCluster(FailoverGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverGlobalClusterResponseUnmarshaller.Instance;
 
@@ -6199,7 +6260,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster">REST API Reference for FailoverGlobalCluster Operation</seealso>
         public virtual Task<FailoverGlobalClusterResponse> FailoverGlobalClusterAsync(FailoverGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = FailoverGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = FailoverGlobalClusterResponseUnmarshaller.Instance;
 
@@ -6211,7 +6272,7 @@ namespace Amazon.RDS
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6245,6 +6306,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -6252,6 +6316,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -6268,7 +6335,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -6280,7 +6347,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyActivityStreamResponse ModifyActivityStream(ModifyActivityStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyActivityStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyActivityStreamResponseUnmarshaller.Instance;
 
@@ -6320,7 +6387,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyActivityStream">REST API Reference for ModifyActivityStream Operation</seealso>
         public virtual Task<ModifyActivityStreamResponse> ModifyActivityStreamAsync(ModifyActivityStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyActivityStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyActivityStreamResponseUnmarshaller.Instance;
 
@@ -6332,7 +6399,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyCertificatesResponse ModifyCertificates(ModifyCertificatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCertificatesResponseUnmarshaller.Instance;
 
@@ -6393,7 +6460,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCertificates">REST API Reference for ModifyCertificates Operation</seealso>
         public virtual Task<ModifyCertificatesResponse> ModifyCertificatesAsync(ModifyCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCertificatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCertificatesResponseUnmarshaller.Instance;
 
@@ -6405,7 +6472,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyCurrentDBClusterCapacityResponse ModifyCurrentDBClusterCapacity(ModifyCurrentDBClusterCapacityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCurrentDBClusterCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCurrentDBClusterCapacityResponseUnmarshaller.Instance;
 
@@ -6468,7 +6535,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCurrentDBClusterCapacity">REST API Reference for ModifyCurrentDBClusterCapacity Operation</seealso>
         public virtual Task<ModifyCurrentDBClusterCapacityResponse> ModifyCurrentDBClusterCapacityAsync(ModifyCurrentDBClusterCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCurrentDBClusterCapacityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCurrentDBClusterCapacityResponseUnmarshaller.Instance;
 
@@ -6480,7 +6547,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyCustomDBEngineVersionResponse ModifyCustomDBEngineVersion(ModifyCustomDBEngineVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCustomDBEngineVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCustomDBEngineVersionResponseUnmarshaller.Instance;
 
@@ -6523,7 +6590,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCustomDBEngineVersion">REST API Reference for ModifyCustomDBEngineVersion Operation</seealso>
         public virtual Task<ModifyCustomDBEngineVersionResponse> ModifyCustomDBEngineVersionAsync(ModifyCustomDBEngineVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyCustomDBEngineVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyCustomDBEngineVersionResponseUnmarshaller.Instance;
 
@@ -6535,7 +6602,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterResponseUnmarshaller.Instance;
 
@@ -6579,6 +6646,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <c>DBParameterGroupName</c> doesn't refer to an existing DB parameter group.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <c>DBSubnetGroupName</c> doesn't refer to an existing DB subnet group.
         /// </exception>
@@ -6597,6 +6667,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it's in use.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
         /// in a common VPC.
@@ -6604,6 +6677,13 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -6616,10 +6696,18 @@ namespace Amazon.RDS
         /// The <c>aurora-iopt1</c> storage type isn't available, because you modified the DB
         /// cluster to use this storage type less than one month ago.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual Task<ModifyDBClusterResponse> ModifyDBClusterAsync(ModifyDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterResponseUnmarshaller.Instance;
 
@@ -6631,7 +6719,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBClusterEndpointResponse ModifyDBClusterEndpoint(ModifyDBClusterEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -6674,7 +6762,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterEndpoint">REST API Reference for ModifyDBClusterEndpoint Operation</seealso>
         public virtual Task<ModifyDBClusterEndpointResponse> ModifyDBClusterEndpointAsync(ModifyDBClusterEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterEndpointResponseUnmarshaller.Instance;
 
@@ -6686,7 +6774,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBClusterParameterGroupResponse ModifyDBClusterParameterGroup(ModifyDBClusterParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -6702,22 +6790,13 @@ namespace Amazon.RDS
         /// 
         ///  <important> 
         /// <para>
-        /// After you create a DB cluster parameter group, you should wait at least 5 minutes
-        /// before creating your first DB cluster that uses that DB cluster parameter group as
-        /// the default parameter group. This allows Amazon RDS to fully complete the create operation
-        /// before the parameter group is used as the default for a new DB cluster. This is especially
-        /// important for parameters that are critical when creating the default database for
-        /// a DB cluster, such as the character set for the default database defined by the <c>character_set_database</c>
-        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// RDS console</a> or the <c>DescribeDBClusterParameters</c> operation to verify that
-        /// your DB cluster parameter group has been created or modified.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the modified DB cluster parameter group is used by an Aurora Serverless v1 cluster,
-        /// Aurora applies the update immediately. The cluster restart might interrupt your workload.
-        /// In that case, your application must reopen any connections and retry any transactions
-        /// that were active when the parameter changes took effect.
+        /// There are two types of parameters - dynamic parameters and static parameters. Changes
+        /// to dynamic parameters are applied to the DB cluster immediately without a reboot.
+        /// Changes to static parameters are applied only after the DB cluster is rebooted, which
+        /// can be done using <c>RebootDBCluster</c> operation. You can use the <i>Parameter Groups</i>
+        /// option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS console</a>
+        /// or the <c>DescribeDBClusterParameters</c> operation to verify that your DB cluster
+        /// parameter group has been created or modified.
         /// </para>
         ///  </important> 
         /// <para>
@@ -6747,7 +6826,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup">REST API Reference for ModifyDBClusterParameterGroup Operation</seealso>
         public virtual Task<ModifyDBClusterParameterGroupResponse> ModifyDBClusterParameterGroupAsync(ModifyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -6759,7 +6838,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBClusterSnapshotAttributeResponse ModifyDBClusterSnapshotAttribute(ModifyDBClusterSnapshotAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -6819,7 +6898,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterSnapshotAttribute">REST API Reference for ModifyDBClusterSnapshotAttribute Operation</seealso>
         public virtual Task<ModifyDBClusterSnapshotAttributeResponse> ModifyDBClusterSnapshotAttributeAsync(ModifyDBClusterSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBClusterSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBClusterSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -6831,7 +6910,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBInstanceResponseUnmarshaller.Instance;
 
@@ -6925,10 +7004,15 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBInstanceResponseUnmarshaller.Instance;
 
@@ -6940,7 +7024,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBParameterGroupResponse ModifyDBParameterGroup(ModifyDBParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -6985,7 +7069,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">REST API Reference for ModifyDBParameterGroup Operation</seealso>
         public virtual Task<ModifyDBParameterGroupResponse> ModifyDBParameterGroupAsync(ModifyDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -6997,7 +7081,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBProxyResponse ModifyDBProxy(ModifyDBProxyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBProxyResponseUnmarshaller.Instance;
 
@@ -7029,7 +7113,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxy">REST API Reference for ModifyDBProxy Operation</seealso>
         public virtual Task<ModifyDBProxyResponse> ModifyDBProxyAsync(ModifyDBProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBProxyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBProxyResponseUnmarshaller.Instance;
 
@@ -7041,7 +7125,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBProxyEndpointResponse ModifyDBProxyEndpoint(ModifyDBProxyEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBProxyEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBProxyEndpointResponseUnmarshaller.Instance;
 
@@ -7075,7 +7159,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyEndpoint">REST API Reference for ModifyDBProxyEndpoint Operation</seealso>
         public virtual Task<ModifyDBProxyEndpointResponse> ModifyDBProxyEndpointAsync(ModifyDBProxyEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBProxyEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBProxyEndpointResponseUnmarshaller.Instance;
 
@@ -7087,7 +7171,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBProxyTargetGroupResponse ModifyDBProxyTargetGroup(ModifyDBProxyTargetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBProxyTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBProxyTargetGroupResponseUnmarshaller.Instance;
 
@@ -7119,7 +7203,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyTargetGroup">REST API Reference for ModifyDBProxyTargetGroup Operation</seealso>
         public virtual Task<ModifyDBProxyTargetGroupResponse> ModifyDBProxyTargetGroupAsync(ModifyDBProxyTargetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBProxyTargetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBProxyTargetGroupResponseUnmarshaller.Instance;
 
@@ -7131,7 +7215,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBRecommendationResponse ModifyDBRecommendation(ModifyDBRecommendationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBRecommendationResponseUnmarshaller.Instance;
 
@@ -7153,7 +7237,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBRecommendation">REST API Reference for ModifyDBRecommendation Operation</seealso>
         public virtual Task<ModifyDBRecommendationResponse> ModifyDBRecommendationAsync(ModifyDBRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBRecommendationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBRecommendationResponseUnmarshaller.Instance;
 
@@ -7165,7 +7249,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBShardGroupResponse ModifyDBShardGroup(ModifyDBShardGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBShardGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBShardGroupResponseUnmarshaller.Instance;
 
@@ -7197,7 +7281,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">REST API Reference for ModifyDBShardGroup Operation</seealso>
         public virtual Task<ModifyDBShardGroupResponse> ModifyDBShardGroupAsync(ModifyDBShardGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBShardGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBShardGroupResponseUnmarshaller.Instance;
 
@@ -7209,7 +7293,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBSnapshotResponse ModifyDBSnapshot(ModifyDBSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBSnapshotResponseUnmarshaller.Instance;
 
@@ -7224,8 +7308,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
-        /// operation doesn't apply to RDS Custom or RDS for Db2.
+        /// Amazon RDS supports upgrading DB snapshots for MariaDB, MySQL, PostgreSQL, and Oracle.
+        /// This operation doesn't apply to RDS Custom or RDS for Db2.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
@@ -7237,10 +7321,16 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
+        /// The state of the DB snapshot doesn't allow deletion.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">REST API Reference for ModifyDBSnapshot Operation</seealso>
         public virtual Task<ModifyDBSnapshotResponse> ModifyDBSnapshotAsync(ModifyDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBSnapshotResponseUnmarshaller.Instance;
 
@@ -7252,7 +7342,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBSnapshotAttributeResponse ModifyDBSnapshotAttribute(ModifyDBSnapshotAttributeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -7310,7 +7400,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshotAttribute">REST API Reference for ModifyDBSnapshotAttribute Operation</seealso>
         public virtual Task<ModifyDBSnapshotAttributeResponse> ModifyDBSnapshotAttributeAsync(ModifyDBSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBSnapshotAttributeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBSnapshotAttributeResponseUnmarshaller.Instance;
 
@@ -7322,7 +7412,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyDBSubnetGroupResponse ModifyDBSubnetGroup(ModifyDBSubnetGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -7352,6 +7442,9 @@ namespace Amazon.RDS
         /// The request would result in the user exceeding the allowed number of subnets in a
         /// DB subnet groups.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
+        /// The DB subnet group cannot be deleted because it's in use.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
         /// in a common VPC.
@@ -7362,7 +7455,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup">REST API Reference for ModifyDBSubnetGroup Operation</seealso>
         public virtual Task<ModifyDBSubnetGroupResponse> ModifyDBSubnetGroupAsync(ModifyDBSubnetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyDBSubnetGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyDBSubnetGroupResponseUnmarshaller.Instance;
 
@@ -7374,7 +7467,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyEventSubscriptionResponse ModifyEventSubscription(ModifyEventSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -7424,7 +7517,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyEventSubscription">REST API Reference for ModifyEventSubscription Operation</seealso>
         public virtual Task<ModifyEventSubscriptionResponse> ModifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyEventSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyEventSubscriptionResponseUnmarshaller.Instance;
 
@@ -7436,7 +7529,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyGlobalClusterResponse ModifyGlobalCluster(ModifyGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyGlobalClusterResponseUnmarshaller.Instance;
 
@@ -7482,7 +7575,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyGlobalCluster">REST API Reference for ModifyGlobalCluster Operation</seealso>
         public virtual Task<ModifyGlobalClusterResponse> ModifyGlobalClusterAsync(ModifyGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyGlobalClusterResponseUnmarshaller.Instance;
 
@@ -7494,7 +7587,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyIntegrationResponse ModifyIntegration(ModifyIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
 
@@ -7526,7 +7619,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
         public virtual Task<ModifyIntegrationResponse> ModifyIntegrationAsync(ModifyIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
 
@@ -7538,7 +7631,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyOptionGroupResponse ModifyOptionGroup(ModifyOptionGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyOptionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyOptionGroupResponseUnmarshaller.Instance;
 
@@ -7565,7 +7658,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup">REST API Reference for ModifyOptionGroup Operation</seealso>
         public virtual Task<ModifyOptionGroupResponse> ModifyOptionGroupAsync(ModifyOptionGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyOptionGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyOptionGroupResponseUnmarshaller.Instance;
 
@@ -7577,7 +7670,7 @@ namespace Amazon.RDS
 
         internal virtual ModifyTenantDatabaseResponse ModifyTenantDatabase(ModifyTenantDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTenantDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTenantDatabaseResponseUnmarshaller.Instance;
 
@@ -7616,7 +7709,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyTenantDatabase">REST API Reference for ModifyTenantDatabase Operation</seealso>
         public virtual Task<ModifyTenantDatabaseResponse> ModifyTenantDatabaseAsync(ModifyTenantDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyTenantDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyTenantDatabaseResponseUnmarshaller.Instance;
 
@@ -7628,7 +7721,7 @@ namespace Amazon.RDS
 
         internal virtual PromoteReadReplicaResponse PromoteReadReplica(PromoteReadReplicaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PromoteReadReplicaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PromoteReadReplicaResponseUnmarshaller.Instance;
 
@@ -7670,7 +7763,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">REST API Reference for PromoteReadReplica Operation</seealso>
         public virtual Task<PromoteReadReplicaResponse> PromoteReadReplicaAsync(PromoteReadReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PromoteReadReplicaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PromoteReadReplicaResponseUnmarshaller.Instance;
 
@@ -7682,7 +7775,7 @@ namespace Amazon.RDS
 
         internal virtual PromoteReadReplicaDBClusterResponse PromoteReadReplicaDBCluster(PromoteReadReplicaDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PromoteReadReplicaDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PromoteReadReplicaDBClusterResponseUnmarshaller.Instance;
 
@@ -7709,7 +7802,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">REST API Reference for PromoteReadReplicaDBCluster Operation</seealso>
         public virtual Task<PromoteReadReplicaDBClusterResponse> PromoteReadReplicaDBClusterAsync(PromoteReadReplicaDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PromoteReadReplicaDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PromoteReadReplicaDBClusterResponseUnmarshaller.Instance;
 
@@ -7721,7 +7814,7 @@ namespace Amazon.RDS
 
         internal virtual PurchaseReservedDBInstancesOfferingResponse PurchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedDBInstancesOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedDBInstancesOfferingResponseUnmarshaller.Instance;
 
@@ -7751,7 +7844,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PurchaseReservedDBInstancesOffering">REST API Reference for PurchaseReservedDBInstancesOffering Operation</seealso>
         public virtual Task<PurchaseReservedDBInstancesOfferingResponse> PurchaseReservedDBInstancesOfferingAsync(PurchaseReservedDBInstancesOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseReservedDBInstancesOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseReservedDBInstancesOfferingResponseUnmarshaller.Instance;
 
@@ -7763,7 +7856,7 @@ namespace Amazon.RDS
 
         internal virtual RebootDBClusterResponse RebootDBCluster(RebootDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootDBClusterResponseUnmarshaller.Instance;
 
@@ -7810,7 +7903,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBCluster">REST API Reference for RebootDBCluster Operation</seealso>
         public virtual Task<RebootDBClusterResponse> RebootDBClusterAsync(RebootDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootDBClusterResponseUnmarshaller.Instance;
 
@@ -7822,7 +7915,7 @@ namespace Amazon.RDS
 
         internal virtual RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
@@ -7868,10 +7961,13 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         public virtual Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
@@ -7883,7 +7979,7 @@ namespace Amazon.RDS
 
         internal virtual RebootDBShardGroupResponse RebootDBShardGroup(RebootDBShardGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootDBShardGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootDBShardGroupResponseUnmarshaller.Instance;
 
@@ -7917,7 +8013,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBShardGroup">REST API Reference for RebootDBShardGroup Operation</seealso>
         public virtual Task<RebootDBShardGroupResponse> RebootDBShardGroupAsync(RebootDBShardGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootDBShardGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootDBShardGroupResponseUnmarshaller.Instance;
 
@@ -7929,7 +8025,7 @@ namespace Amazon.RDS
 
         internal virtual RegisterDBProxyTargetsResponse RegisterDBProxyTargets(RegisterDBProxyTargetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterDBProxyTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterDBProxyTargetsResponseUnmarshaller.Instance;
 
@@ -7981,7 +8077,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets">REST API Reference for RegisterDBProxyTargets Operation</seealso>
         public virtual Task<RegisterDBProxyTargetsResponse> RegisterDBProxyTargetsAsync(RegisterDBProxyTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterDBProxyTargetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterDBProxyTargetsResponseUnmarshaller.Instance;
 
@@ -7993,7 +8089,7 @@ namespace Amazon.RDS
 
         internal virtual RemoveFromGlobalClusterResponse RemoveFromGlobalCluster(RemoveFromGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFromGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFromGlobalClusterResponseUnmarshaller.Instance;
 
@@ -8025,13 +8121,16 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveFromGlobalCluster">REST API Reference for RemoveFromGlobalCluster Operation</seealso>
         public virtual Task<RemoveFromGlobalClusterResponse> RemoveFromGlobalClusterAsync(RemoveFromGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFromGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFromGlobalClusterResponseUnmarshaller.Instance;
 
@@ -8043,7 +8142,7 @@ namespace Amazon.RDS
 
         internal virtual RemoveRoleFromDBClusterResponse RemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveRoleFromDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
 
@@ -8086,7 +8185,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster">REST API Reference for RemoveRoleFromDBCluster Operation</seealso>
         public virtual Task<RemoveRoleFromDBClusterResponse> RemoveRoleFromDBClusterAsync(RemoveRoleFromDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveRoleFromDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
 
@@ -8098,7 +8197,7 @@ namespace Amazon.RDS
 
         internal virtual RemoveRoleFromDBInstanceResponse RemoveRoleFromDBInstance(RemoveRoleFromDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveRoleFromDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveRoleFromDBInstanceResponseUnmarshaller.Instance;
 
@@ -8130,7 +8229,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance">REST API Reference for RemoveRoleFromDBInstance Operation</seealso>
         public virtual Task<RemoveRoleFromDBInstanceResponse> RemoveRoleFromDBInstanceAsync(RemoveRoleFromDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveRoleFromDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveRoleFromDBInstanceResponseUnmarshaller.Instance;
 
@@ -8142,7 +8241,7 @@ namespace Amazon.RDS
 
         internal virtual RemoveSourceIdentifierFromSubscriptionResponse RemoveSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveSourceIdentifierFromSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance;
 
@@ -8169,7 +8268,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveSourceIdentifierFromSubscription">REST API Reference for RemoveSourceIdentifierFromSubscription Operation</seealso>
         public virtual Task<RemoveSourceIdentifierFromSubscriptionResponse> RemoveSourceIdentifierFromSubscriptionAsync(RemoveSourceIdentifierFromSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveSourceIdentifierFromSubscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveSourceIdentifierFromSubscriptionResponseUnmarshaller.Instance;
 
@@ -8181,7 +8280,7 @@ namespace Amazon.RDS
 
         internal virtual RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -8215,6 +8314,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -8222,6 +8324,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -8232,13 +8337,23 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation can't be performed on the endpoint while the endpoint is in
+        /// this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
         /// The specified tenant database wasn't found in the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public virtual Task<RemoveTagsFromResourceResponse> RemoveTagsFromResourceAsync(RemoveTagsFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveTagsFromResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveTagsFromResourceResponseUnmarshaller.Instance;
 
@@ -8250,7 +8365,7 @@ namespace Amazon.RDS
 
         internal virtual ResetDBClusterParameterGroupResponse ResetDBClusterParameterGroup(ResetDBClusterParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -8301,7 +8416,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup">REST API Reference for ResetDBClusterParameterGroup Operation</seealso>
         public virtual Task<ResetDBClusterParameterGroupResponse> ResetDBClusterParameterGroupAsync(ResetDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDBClusterParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDBClusterParameterGroupResponseUnmarshaller.Instance;
 
@@ -8313,7 +8428,7 @@ namespace Amazon.RDS
 
         internal virtual ResetDBParameterGroupResponse ResetDBParameterGroup(ResetDBParameterGroupRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -8347,7 +8462,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup">REST API Reference for ResetDBParameterGroup Operation</seealso>
         public virtual Task<ResetDBParameterGroupResponse> ResetDBParameterGroupAsync(ResetDBParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetDBParameterGroupRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
 
@@ -8359,7 +8474,7 @@ namespace Amazon.RDS
 
         internal virtual RestoreDBClusterFromS3Response RestoreDBClusterFromS3(RestoreDBClusterFromS3Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBClusterFromS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBClusterFromS3ResponseUnmarshaller.Instance;
 
@@ -8447,6 +8562,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
@@ -8457,7 +8576,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">REST API Reference for RestoreDBClusterFromS3 Operation</seealso>
         public virtual Task<RestoreDBClusterFromS3Response> RestoreDBClusterFromS3Async(RestoreDBClusterFromS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBClusterFromS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBClusterFromS3ResponseUnmarshaller.Instance;
 
@@ -8469,7 +8588,7 @@ namespace Amazon.RDS
 
         internal virtual RestoreDBClusterFromSnapshotResponse RestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBClusterFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBClusterFromSnapshotResponseUnmarshaller.Instance;
 
@@ -8573,6 +8692,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -8580,10 +8703,18 @@ namespace Amazon.RDS
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public virtual Task<RestoreDBClusterFromSnapshotResponse> RestoreDBClusterFromSnapshotAsync(RestoreDBClusterFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBClusterFromSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBClusterFromSnapshotResponseUnmarshaller.Instance;
 
@@ -8595,7 +8726,7 @@ namespace Amazon.RDS
 
         internal virtual RestoreDBClusterToPointInTimeResponse RestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBClusterToPointInTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBClusterToPointInTimeResponseUnmarshaller.Instance;
 
@@ -8700,6 +8831,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
@@ -8707,10 +8842,18 @@ namespace Amazon.RDS
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         public virtual Task<RestoreDBClusterToPointInTimeResponse> RestoreDBClusterToPointInTimeAsync(RestoreDBClusterToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBClusterToPointInTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBClusterToPointInTimeResponseUnmarshaller.Instance;
 
@@ -8722,7 +8865,7 @@ namespace Amazon.RDS
 
         internal virtual RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBInstanceFromDBSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance;
 
@@ -8860,10 +9003,15 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         public virtual Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBInstanceFromDBSnapshotRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance;
 
@@ -8875,7 +9023,7 @@ namespace Amazon.RDS
 
         internal virtual RestoreDBInstanceFromS3Response RestoreDBInstanceFromS3(RestoreDBInstanceFromS3Request request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBInstanceFromS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBInstanceFromS3ResponseUnmarshaller.Instance;
 
@@ -8888,8 +9036,8 @@ namespace Amazon.RDS
         /// Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases
         /// by using backup files. You can create a backup of your on-premises database, store
         /// it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file
-        /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
-        /// Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i>
+        /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Restoring
+        /// a backup into an Amazon RDS for MySQL DB instance</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// 
         ///  
@@ -8973,10 +9121,15 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
         public virtual Task<RestoreDBInstanceFromS3Response> RestoreDBInstanceFromS3Async(RestoreDBInstanceFromS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBInstanceFromS3RequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBInstanceFromS3ResponseUnmarshaller.Instance;
 
@@ -8988,7 +9141,7 @@ namespace Amazon.RDS
 
         internal virtual RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBInstanceToPointInTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance;
 
@@ -9113,10 +9266,15 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         public virtual Task<RestoreDBInstanceToPointInTimeResponse> RestoreDBInstanceToPointInTimeAsync(RestoreDBInstanceToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RestoreDBInstanceToPointInTimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance;
 
@@ -9128,7 +9286,7 @@ namespace Amazon.RDS
 
         internal virtual RevokeDBSecurityGroupIngressResponse RevokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeDBSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -9177,7 +9335,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress">REST API Reference for RevokeDBSecurityGroupIngress Operation</seealso>
         public virtual Task<RevokeDBSecurityGroupIngressResponse> RevokeDBSecurityGroupIngressAsync(RevokeDBSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeDBSecurityGroupIngressRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeDBSecurityGroupIngressResponseUnmarshaller.Instance;
 
@@ -9189,7 +9347,7 @@ namespace Amazon.RDS
 
         internal virtual StartActivityStreamResponse StartActivityStream(StartActivityStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartActivityStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartActivityStreamResponseUnmarshaller.Instance;
 
@@ -9233,7 +9391,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartActivityStream">REST API Reference for StartActivityStream Operation</seealso>
         public virtual Task<StartActivityStreamResponse> StartActivityStreamAsync(StartActivityStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartActivityStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartActivityStreamResponseUnmarshaller.Instance;
 
@@ -9245,7 +9403,7 @@ namespace Amazon.RDS
 
         internal virtual StartDBClusterResponse StartDBCluster(StartDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDBClusterResponseUnmarshaller.Instance;
 
@@ -9287,10 +9445,18 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
         /// The DB shard group must be in the available state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
         public virtual Task<StartDBClusterResponse> StartDBClusterAsync(StartDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDBClusterResponseUnmarshaller.Instance;
 
@@ -9302,7 +9468,7 @@ namespace Amazon.RDS
 
         internal virtual StartDBInstanceResponse StartDBInstance(StartDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDBInstanceResponseUnmarshaller.Instance;
 
@@ -9376,10 +9542,15 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
         public virtual Task<StartDBInstanceResponse> StartDBInstanceAsync(StartDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDBInstanceResponseUnmarshaller.Instance;
 
@@ -9391,7 +9562,7 @@ namespace Amazon.RDS
 
         internal virtual StartDBInstanceAutomatedBackupsReplicationResponse StartDBInstanceAutomatedBackupsReplication(StartDBInstanceAutomatedBackupsReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDBInstanceAutomatedBackupsReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance;
 
@@ -9428,6 +9599,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceAutomatedBackupStateException">
+        /// The automated backup is in an invalid state. For example, this automated backup is
+        /// associated with an active instance.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
@@ -9440,7 +9615,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstanceAutomatedBackupsReplication">REST API Reference for StartDBInstanceAutomatedBackupsReplication Operation</seealso>
         public virtual Task<StartDBInstanceAutomatedBackupsReplicationResponse> StartDBInstanceAutomatedBackupsReplicationAsync(StartDBInstanceAutomatedBackupsReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDBInstanceAutomatedBackupsReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance;
 
@@ -9452,7 +9627,7 @@ namespace Amazon.RDS
 
         internal virtual StartExportTaskResponse StartExportTask(StartExportTaskRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExportTaskResponseUnmarshaller.Instance;
 
@@ -9524,7 +9699,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">REST API Reference for StartExportTask Operation</seealso>
         public virtual Task<StartExportTaskResponse> StartExportTaskAsync(StartExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExportTaskRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExportTaskResponseUnmarshaller.Instance;
 
@@ -9536,7 +9711,7 @@ namespace Amazon.RDS
 
         internal virtual StopActivityStreamResponse StopActivityStream(StopActivityStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopActivityStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopActivityStreamResponseUnmarshaller.Instance;
 
@@ -9582,7 +9757,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopActivityStream">REST API Reference for StopActivityStream Operation</seealso>
         public virtual Task<StopActivityStreamResponse> StopActivityStreamAsync(StopActivityStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopActivityStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopActivityStreamResponseUnmarshaller.Instance;
 
@@ -9594,7 +9769,7 @@ namespace Amazon.RDS
 
         internal virtual StopDBClusterResponse StopDBCluster(StopDBClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDBClusterResponseUnmarshaller.Instance;
 
@@ -9640,7 +9815,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBCluster">REST API Reference for StopDBCluster Operation</seealso>
         public virtual Task<StopDBClusterResponse> StopDBClusterAsync(StopDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDBClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDBClusterResponseUnmarshaller.Instance;
 
@@ -9652,7 +9827,7 @@ namespace Amazon.RDS
 
         internal virtual StopDBInstanceResponse StopDBInstance(StopDBInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDBInstanceResponseUnmarshaller.Instance;
 
@@ -9705,7 +9880,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance">REST API Reference for StopDBInstance Operation</seealso>
         public virtual Task<StopDBInstanceResponse> StopDBInstanceAsync(StopDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDBInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDBInstanceResponseUnmarshaller.Instance;
 
@@ -9717,7 +9892,7 @@ namespace Amazon.RDS
 
         internal virtual StopDBInstanceAutomatedBackupsReplicationResponse StopDBInstanceAutomatedBackupsReplication(StopDBInstanceAutomatedBackupsReplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDBInstanceAutomatedBackupsReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance;
 
@@ -9755,7 +9930,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstanceAutomatedBackupsReplication">REST API Reference for StopDBInstanceAutomatedBackupsReplication Operation</seealso>
         public virtual Task<StopDBInstanceAutomatedBackupsReplicationResponse> StopDBInstanceAutomatedBackupsReplicationAsync(StopDBInstanceAutomatedBackupsReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDBInstanceAutomatedBackupsReplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDBInstanceAutomatedBackupsReplicationResponseUnmarshaller.Instance;
 
@@ -9767,7 +9942,7 @@ namespace Amazon.RDS
 
         internal virtual SwitchoverBlueGreenDeploymentResponse SwitchoverBlueGreenDeployment(SwitchoverBlueGreenDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SwitchoverBlueGreenDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SwitchoverBlueGreenDeploymentResponseUnmarshaller.Instance;
 
@@ -9810,7 +9985,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverBlueGreenDeployment">REST API Reference for SwitchoverBlueGreenDeployment Operation</seealso>
         public virtual Task<SwitchoverBlueGreenDeploymentResponse> SwitchoverBlueGreenDeploymentAsync(SwitchoverBlueGreenDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SwitchoverBlueGreenDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SwitchoverBlueGreenDeploymentResponseUnmarshaller.Instance;
 
@@ -9822,7 +9997,7 @@ namespace Amazon.RDS
 
         internal virtual SwitchoverGlobalClusterResponse SwitchoverGlobalCluster(SwitchoverGlobalClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SwitchoverGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SwitchoverGlobalClusterResponseUnmarshaller.Instance;
 
@@ -9876,7 +10051,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverGlobalCluster">REST API Reference for SwitchoverGlobalCluster Operation</seealso>
         public virtual Task<SwitchoverGlobalClusterResponse> SwitchoverGlobalClusterAsync(SwitchoverGlobalClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SwitchoverGlobalClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SwitchoverGlobalClusterResponseUnmarshaller.Instance;
 
@@ -9888,7 +10063,7 @@ namespace Amazon.RDS
 
         internal virtual SwitchoverReadReplicaResponse SwitchoverReadReplica(SwitchoverReadReplicaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SwitchoverReadReplicaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SwitchoverReadReplicaResponseUnmarshaller.Instance;
 
@@ -9917,7 +10092,7 @@ namespace Amazon.RDS
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverReadReplica">REST API Reference for SwitchoverReadReplica Operation</seealso>
         public virtual Task<SwitchoverReadReplicaResponse> SwitchoverReadReplicaAsync(SwitchoverReadReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SwitchoverReadReplicaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SwitchoverReadReplicaResponseUnmarshaller.Instance;
 

@@ -36,6 +36,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class DescribeComputationModelRequest : AmazonIoTSiteWiseRequest
     {
         private string _computationModelId;
+        private string _computationModelVersion;
 
         /// <summary>
         /// Gets and sets the property ComputationModelId. 
@@ -54,6 +55,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetComputationModelId()
         {
             return this._computationModelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputationModelVersion. 
+        /// <para>
+        /// The version of the computation model.
+        /// </para>
+        /// </summary>
+        public string ComputationModelVersion
+        {
+            get { return this._computationModelVersion; }
+            set { this._computationModelVersion = value; }
+        }
+
+        // Check to see if ComputationModelVersion property is set
+        internal bool IsSetComputationModelVersion()
+        {
+            return this._computationModelVersion != null;
         }
 
     }

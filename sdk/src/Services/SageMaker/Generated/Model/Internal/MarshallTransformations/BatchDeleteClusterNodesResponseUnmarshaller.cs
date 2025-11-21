@@ -58,10 +58,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.Failed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("FailedNodeLogicalIds", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<BatchDeleteClusterNodeLogicalIdsError, BatchDeleteClusterNodeLogicalIdsErrorUnmarshaller>(BatchDeleteClusterNodeLogicalIdsErrorUnmarshaller.Instance);
+                    response.FailedNodeLogicalIds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Successful", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     response.Successful = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SuccessfulNodeLogicalIds", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.SuccessfulNodeLogicalIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

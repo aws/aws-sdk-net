@@ -25,35 +25,27 @@ namespace Amazon.BedrockAgentCoreControl
 {
 
     /// <summary>
-    /// Constants used for properties of type AgentEndpointStatus.
+    /// Constants used for properties of type AgentManagedRuntimeType.
     /// </summary>
-    public class AgentEndpointStatus : ConstantClass
+    public class AgentManagedRuntimeType : ConstantClass
     {
 
         /// <summary>
-        /// Constant CREATE_FAILED for AgentEndpointStatus
+        /// Constant PYTHON_3_10 for AgentManagedRuntimeType
         /// </summary>
-        public static readonly AgentEndpointStatus CREATE_FAILED = new AgentEndpointStatus("CREATE_FAILED");
+        public static readonly AgentManagedRuntimeType PYTHON_3_10 = new AgentManagedRuntimeType("PYTHON_3_10");
         /// <summary>
-        /// Constant CREATING for AgentEndpointStatus
+        /// Constant PYTHON_3_11 for AgentManagedRuntimeType
         /// </summary>
-        public static readonly AgentEndpointStatus CREATING = new AgentEndpointStatus("CREATING");
+        public static readonly AgentManagedRuntimeType PYTHON_3_11 = new AgentManagedRuntimeType("PYTHON_3_11");
         /// <summary>
-        /// Constant DELETING for AgentEndpointStatus
+        /// Constant PYTHON_3_12 for AgentManagedRuntimeType
         /// </summary>
-        public static readonly AgentEndpointStatus DELETING = new AgentEndpointStatus("DELETING");
+        public static readonly AgentManagedRuntimeType PYTHON_3_12 = new AgentManagedRuntimeType("PYTHON_3_12");
         /// <summary>
-        /// Constant READY for AgentEndpointStatus
+        /// Constant PYTHON_3_13 for AgentManagedRuntimeType
         /// </summary>
-        public static readonly AgentEndpointStatus READY = new AgentEndpointStatus("READY");
-        /// <summary>
-        /// Constant UPDATE_FAILED for AgentEndpointStatus
-        /// </summary>
-        public static readonly AgentEndpointStatus UPDATE_FAILED = new AgentEndpointStatus("UPDATE_FAILED");
-        /// <summary>
-        /// Constant UPDATING for AgentEndpointStatus
-        /// </summary>
-        public static readonly AgentEndpointStatus UPDATING = new AgentEndpointStatus("UPDATING");
+        public static readonly AgentManagedRuntimeType PYTHON_3_13 = new AgentManagedRuntimeType("PYTHON_3_13");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -63,7 +55,7 @@ namespace Amazon.BedrockAgentCoreControl
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public AgentEndpointStatus(string value)
+        public AgentManagedRuntimeType(string value)
             : base(value)
         {
         }
@@ -73,9 +65,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static AgentEndpointStatus FindValue(string value)
+        public static AgentManagedRuntimeType FindValue(string value)
         {
-            return FindValue<AgentEndpointStatus>(value);
+            return FindValue<AgentManagedRuntimeType>(value);
         }
 
         /// <summary>
@@ -83,7 +75,7 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator AgentEndpointStatus(string value)
+        public static implicit operator AgentManagedRuntimeType(string value)
         {
             return FindValue(value);
         }
@@ -91,35 +83,35 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
-    /// Constants used for properties of type AgentStatus.
+    /// Constants used for properties of type AgentRuntimeEndpointStatus.
     /// </summary>
-    public class AgentStatus : ConstantClass
+    public class AgentRuntimeEndpointStatus : ConstantClass
     {
 
         /// <summary>
-        /// Constant CREATE_FAILED for AgentStatus
+        /// Constant CREATE_FAILED for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentStatus CREATE_FAILED = new AgentStatus("CREATE_FAILED");
+        public static readonly AgentRuntimeEndpointStatus CREATE_FAILED = new AgentRuntimeEndpointStatus("CREATE_FAILED");
         /// <summary>
-        /// Constant CREATING for AgentStatus
+        /// Constant CREATING for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentStatus CREATING = new AgentStatus("CREATING");
+        public static readonly AgentRuntimeEndpointStatus CREATING = new AgentRuntimeEndpointStatus("CREATING");
         /// <summary>
-        /// Constant DELETING for AgentStatus
+        /// Constant DELETING for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentStatus DELETING = new AgentStatus("DELETING");
+        public static readonly AgentRuntimeEndpointStatus DELETING = new AgentRuntimeEndpointStatus("DELETING");
         /// <summary>
-        /// Constant READY for AgentStatus
+        /// Constant READY for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentStatus READY = new AgentStatus("READY");
+        public static readonly AgentRuntimeEndpointStatus READY = new AgentRuntimeEndpointStatus("READY");
         /// <summary>
-        /// Constant UPDATE_FAILED for AgentStatus
+        /// Constant UPDATE_FAILED for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentStatus UPDATE_FAILED = new AgentStatus("UPDATE_FAILED");
+        public static readonly AgentRuntimeEndpointStatus UPDATE_FAILED = new AgentRuntimeEndpointStatus("UPDATE_FAILED");
         /// <summary>
-        /// Constant UPDATING for AgentStatus
+        /// Constant UPDATING for AgentRuntimeEndpointStatus
         /// </summary>
-        public static readonly AgentStatus UPDATING = new AgentStatus("UPDATING");
+        public static readonly AgentRuntimeEndpointStatus UPDATING = new AgentRuntimeEndpointStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -129,7 +121,7 @@ namespace Amazon.BedrockAgentCoreControl
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public AgentStatus(string value)
+        public AgentRuntimeEndpointStatus(string value)
             : base(value)
         {
         }
@@ -139,9 +131,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static AgentStatus FindValue(string value)
+        public static AgentRuntimeEndpointStatus FindValue(string value)
         {
-            return FindValue<AgentStatus>(value);
+            return FindValue<AgentRuntimeEndpointStatus>(value);
         }
 
         /// <summary>
@@ -149,7 +141,73 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator AgentStatus(string value)
+        public static implicit operator AgentRuntimeEndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgentRuntimeStatus.
+    /// </summary>
+    public class AgentRuntimeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for AgentRuntimeStatus
+        /// </summary>
+        public static readonly AgentRuntimeStatus CREATE_FAILED = new AgentRuntimeStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for AgentRuntimeStatus
+        /// </summary>
+        public static readonly AgentRuntimeStatus CREATING = new AgentRuntimeStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for AgentRuntimeStatus
+        /// </summary>
+        public static readonly AgentRuntimeStatus DELETING = new AgentRuntimeStatus("DELETING");
+        /// <summary>
+        /// Constant READY for AgentRuntimeStatus
+        /// </summary>
+        public static readonly AgentRuntimeStatus READY = new AgentRuntimeStatus("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for AgentRuntimeStatus
+        /// </summary>
+        public static readonly AgentRuntimeStatus UPDATE_FAILED = new AgentRuntimeStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for AgentRuntimeStatus
+        /// </summary>
+        public static readonly AgentRuntimeStatus UPDATING = new AgentRuntimeStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentRuntimeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentRuntimeStatus FindValue(string value)
+        {
+            return FindValue<AgentRuntimeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentRuntimeStatus(string value)
         {
             return FindValue(value);
         }
@@ -213,6 +271,10 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant AWS_IAM for AuthorizerType
+        /// </summary>
+        public static readonly AuthorizerType AWS_IAM = new AuthorizerType("AWS_IAM");
+        /// <summary>
         /// Constant CUSTOM_JWT for AuthorizerType
         /// </summary>
         public static readonly AuthorizerType CUSTOM_JWT = new AuthorizerType("CUSTOM_JWT");
@@ -262,6 +324,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant PUBLIC for BrowserNetworkMode
         /// </summary>
         public static readonly BrowserNetworkMode PUBLIC = new BrowserNetworkMode("PUBLIC");
+        /// <summary>
+        /// Constant VPC for BrowserNetworkMode
+        /// </summary>
+        public static readonly BrowserNetworkMode VPC = new BrowserNetworkMode("VPC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -378,6 +444,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant SANDBOX for CodeInterpreterNetworkMode
         /// </summary>
         public static readonly CodeInterpreterNetworkMode SANDBOX = new CodeInterpreterNetworkMode("SANDBOX");
+        /// <summary>
+        /// Constant VPC for CodeInterpreterNetworkMode
+        /// </summary>
+        public static readonly CodeInterpreterNetworkMode VPC = new CodeInterpreterNetworkMode("VPC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -541,9 +611,37 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant AtlassianOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType AtlassianOauth2 = new CredentialProviderVendorType("AtlassianOauth2");
+        /// <summary>
+        /// Constant Auth0Oauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType Auth0Oauth2 = new CredentialProviderVendorType("Auth0Oauth2");
+        /// <summary>
+        /// Constant CognitoOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType CognitoOauth2 = new CredentialProviderVendorType("CognitoOauth2");
+        /// <summary>
         /// Constant CustomOauth2 for CredentialProviderVendorType
         /// </summary>
         public static readonly CredentialProviderVendorType CustomOauth2 = new CredentialProviderVendorType("CustomOauth2");
+        /// <summary>
+        /// Constant CyberArkOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType CyberArkOauth2 = new CredentialProviderVendorType("CyberArkOauth2");
+        /// <summary>
+        /// Constant DropboxOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType DropboxOauth2 = new CredentialProviderVendorType("DropboxOauth2");
+        /// <summary>
+        /// Constant FacebookOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType FacebookOauth2 = new CredentialProviderVendorType("FacebookOauth2");
+        /// <summary>
+        /// Constant FusionAuthOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType FusionAuthOauth2 = new CredentialProviderVendorType("FusionAuthOauth2");
         /// <summary>
         /// Constant GithubOauth2 for CredentialProviderVendorType
         /// </summary>
@@ -553,9 +651,37 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         public static readonly CredentialProviderVendorType GoogleOauth2 = new CredentialProviderVendorType("GoogleOauth2");
         /// <summary>
+        /// Constant HubspotOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType HubspotOauth2 = new CredentialProviderVendorType("HubspotOauth2");
+        /// <summary>
+        /// Constant LinkedinOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType LinkedinOauth2 = new CredentialProviderVendorType("LinkedinOauth2");
+        /// <summary>
         /// Constant MicrosoftOauth2 for CredentialProviderVendorType
         /// </summary>
         public static readonly CredentialProviderVendorType MicrosoftOauth2 = new CredentialProviderVendorType("MicrosoftOauth2");
+        /// <summary>
+        /// Constant NotionOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType NotionOauth2 = new CredentialProviderVendorType("NotionOauth2");
+        /// <summary>
+        /// Constant OktaOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType OktaOauth2 = new CredentialProviderVendorType("OktaOauth2");
+        /// <summary>
+        /// Constant OneLoginOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType OneLoginOauth2 = new CredentialProviderVendorType("OneLoginOauth2");
+        /// <summary>
+        /// Constant PingOneOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType PingOneOauth2 = new CredentialProviderVendorType("PingOneOauth2");
+        /// <summary>
+        /// Constant RedditOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType RedditOauth2 = new CredentialProviderVendorType("RedditOauth2");
         /// <summary>
         /// Constant SalesforceOauth2 for CredentialProviderVendorType
         /// </summary>
@@ -564,6 +690,26 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant SlackOauth2 for CredentialProviderVendorType
         /// </summary>
         public static readonly CredentialProviderVendorType SlackOauth2 = new CredentialProviderVendorType("SlackOauth2");
+        /// <summary>
+        /// Constant SpotifyOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType SpotifyOauth2 = new CredentialProviderVendorType("SpotifyOauth2");
+        /// <summary>
+        /// Constant TwitchOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType TwitchOauth2 = new CredentialProviderVendorType("TwitchOauth2");
+        /// <summary>
+        /// Constant XOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType XOauth2 = new CredentialProviderVendorType("XOauth2");
+        /// <summary>
+        /// Constant YandexOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType YandexOauth2 = new CredentialProviderVendorType("YandexOauth2");
+        /// <summary>
+        /// Constant ZoomOauth2 for CredentialProviderVendorType
+        /// </summary>
+        public static readonly CredentialProviderVendorType ZoomOauth2 = new CredentialProviderVendorType("ZoomOauth2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -992,6 +1138,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant PUBLIC for NetworkMode
         /// </summary>
         public static readonly NetworkMode PUBLIC = new NetworkMode("PUBLIC");
+        /// <summary>
+        /// Constant VPC for NetworkMode
+        /// </summary>
+        public static readonly NetworkMode VPC = new NetworkMode("VPC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1034,6 +1184,10 @@ namespace Amazon.BedrockAgentCoreControl
     public class OverrideType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant SELF_MANAGED for OverrideType
+        /// </summary>
+        public static readonly OverrideType SELF_MANAGED = new OverrideType("SELF_MANAGED");
         /// <summary>
         /// Constant SEMANTIC_OVERRIDE for OverrideType
         /// </summary>
@@ -1251,6 +1405,10 @@ namespace Amazon.BedrockAgentCoreControl
     {
 
         /// <summary>
+        /// Constant A2A for ServerProtocol
+        /// </summary>
+        public static readonly ServerProtocol A2A = new ServerProtocol("A2A");
+        /// <summary>
         /// Constant HTTP for ServerProtocol
         /// </summary>
         public static readonly ServerProtocol HTTP = new ServerProtocol("HTTP");
@@ -1316,6 +1474,14 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant READY for TargetStatus
         /// </summary>
         public static readonly TargetStatus READY = new TargetStatus("READY");
+        /// <summary>
+        /// Constant SYNCHRONIZE_UNSUCCESSFUL for TargetStatus
+        /// </summary>
+        public static readonly TargetStatus SYNCHRONIZE_UNSUCCESSFUL = new TargetStatus("SYNCHRONIZE_UNSUCCESSFUL");
+        /// <summary>
+        /// Constant SYNCHRONIZING for TargetStatus
+        /// </summary>
+        public static readonly TargetStatus SYNCHRONIZING = new TargetStatus("SYNCHRONIZING");
         /// <summary>
         /// Constant UPDATE_UNSUCCESSFUL for TargetStatus
         /// </summary>

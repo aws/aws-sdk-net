@@ -33,7 +33,7 @@ namespace Amazon.Textract
     public partial class AmazonTextractConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Textract", "4.0.1.4");
+            InternalSDKUtils.BuildUserAgentString("Textract", "4.0.3.4");
 
         private static readonly AmazonTextractEndpointResolver EndpointResolver =
             new AmazonTextractEndpointResolver();

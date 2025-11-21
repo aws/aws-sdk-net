@@ -121,7 +121,7 @@
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.CpuCoreCount</property>
     <min>0</min>
-    <max>368</max>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudVmClusterRequest.DisplayName</property>
@@ -570,6 +570,18 @@
     <property>Amazon.Odb.Model.UpdateOdbNetworkRequest.S3PolicyDocument</property>
     <min>3</min>
     <max>20480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateOdbPeeringConnectionRequest.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateOdbPeeringConnectionRequest.OdbPeeringConnectionId</property>
+    <min>6</min>
+    <max>2048</max>
+    <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.AutonomousVirtualMachineSummary.AutonomousVirtualMachineId</property>

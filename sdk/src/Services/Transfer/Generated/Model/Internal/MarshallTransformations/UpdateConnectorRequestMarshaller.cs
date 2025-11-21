@@ -98,6 +98,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ConnectorId);
             }
 
+            if(publicRequest.IsSetEgressConfig())
+            {
+                context.Writer.WritePropertyName("EgressConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateConnectorEgressConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EgressConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetLoggingRole())
             {
                 context.Writer.WritePropertyName("LoggingRole");

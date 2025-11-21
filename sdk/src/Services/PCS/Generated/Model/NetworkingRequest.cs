@@ -34,8 +34,27 @@ namespace Amazon.PCS.Model
     /// </summary>
     public partial class NetworkingRequest
     {
+        private NetworkType _networkType;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The IP address version the cluster uses. The default is <c>IPV4</c>.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
@@ -64,9 +83,9 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The list of subnet IDs where Amazon Web Services PCS creates an Elastic Network Interface
-        /// (ENI) to enable communication between managed controllers and Amazon Web Services
-        /// PCS resources. Subnet IDs have the form <c>subnet-0123456789abcdef0</c>.
+        /// The list of subnet IDs where PCS creates an Elastic Network Interface (ENI) to enable
+        /// communication between managed controllers and PCS resources. Subnet IDs have the form
+        /// <c>subnet-0123456789abcdef0</c>.
         /// </para>
         ///  
         /// <para>
@@ -74,7 +93,7 @@ namespace Amazon.PCS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Web Services PCS currently supports only 1 subnet in this list.
+        /// PCS currently supports only 1 subnet in this list.
         /// </para>
         ///  </note>
         /// <para />

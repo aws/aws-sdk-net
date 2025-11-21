@@ -40,6 +40,7 @@ namespace Amazon.PCS.Model
         private string _clusterIdentifier;
         private List<ComputeNodeGroupConfiguration> _computeNodeGroupConfigurations = AWSConfigs.InitializeCollections ? new List<ComputeNodeGroupConfiguration>() : null;
         private string _queueIdentifier;
+        private UpdateQueueSlurmConfigurationRequest _slurmConfiguration;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -125,6 +126,24 @@ namespace Amazon.PCS.Model
         internal bool IsSetQueueIdentifier()
         {
             return this._queueIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlurmConfiguration. 
+        /// <para>
+        /// Additional options related to the Slurm scheduler.
+        /// </para>
+        /// </summary>
+        public UpdateQueueSlurmConfigurationRequest SlurmConfiguration
+        {
+            get { return this._slurmConfiguration; }
+            set { this._slurmConfiguration = value; }
+        }
+
+        // Check to see if SlurmConfiguration property is set
+        internal bool IsSetSlurmConfiguration()
+        {
+            return this._slurmConfiguration != null;
         }
 
     }

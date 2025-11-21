@@ -58,6 +58,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
                     response.ConnectionCredentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("WebRTCConnection", targetDepth))
+                {
+                    var unmarshaller = WebRTCConnectionUnmarshaller.Instance;
+                    response.WebRTCConnection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Websocket", targetDepth))
                 {
                     var unmarshaller = WebsocketUnmarshaller.Instance;

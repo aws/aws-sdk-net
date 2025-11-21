@@ -56,6 +56,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("deleteRecordsProcessed", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.DeleteRecordsProcessed = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("inputRecords", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

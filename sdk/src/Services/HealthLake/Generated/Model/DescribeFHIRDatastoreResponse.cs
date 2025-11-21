@@ -39,9 +39,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreProperties. 
         /// <para>
-        /// All properties associated with a data store, including the data store ID, data store
-        /// ARN, data store name, data store status, when the data store was created, data store
-        /// type version, and the data store's endpoint.
+        /// The data store properties.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

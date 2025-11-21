@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateDistributionTenantRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -201,5 +202,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateDistributionTenantRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateDistributionTenantRequest publicRequest);
     }    
 }

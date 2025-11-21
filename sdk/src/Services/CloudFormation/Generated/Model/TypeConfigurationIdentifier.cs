@@ -61,7 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the extension, in this account and Region.
+        /// The ARN for the extension, in this account and Region.
         /// </para>
         ///  
         /// <para>
@@ -107,7 +107,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the configuration, in this account and Region.
+        /// The ARN for the configuration, in this account and Region.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

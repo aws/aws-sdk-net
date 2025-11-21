@@ -56,6 +56,18 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("automatedReasoningPolicies", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedReasoningPolicies = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("automatedReasoningPolicyUnits", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.AutomatedReasoningPolicyUnits = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("contentPolicyImageUnits", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

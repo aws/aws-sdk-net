@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListAccessGrantsLocations operation
     /// </summary>  
-    public class ListAccessGrantsLocationsResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListAccessGrantsLocationsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             ListAccessGrantsLocationsResponse response = new ListAccessGrantsLocationsResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -87,7 +88,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -113,6 +113,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListAccessGrantsLocationsResponse response);
 
         private static ListAccessGrantsLocationsResponseUnmarshaller _instance = new ListAccessGrantsLocationsResponseUnmarshaller();        
 

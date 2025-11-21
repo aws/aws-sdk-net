@@ -284,7 +284,7 @@ namespace Amazon.ConnectCases
 
         internal virtual BatchGetCaseRuleResponse BatchGetCaseRule(BatchGetCaseRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCaseRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCaseRuleResponseUnmarshaller.Instance;
 
@@ -325,7 +325,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchGetCaseRule">REST API Reference for BatchGetCaseRule Operation</seealso>
         public virtual Task<BatchGetCaseRuleResponse> BatchGetCaseRuleAsync(BatchGetCaseRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCaseRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCaseRuleResponseUnmarshaller.Instance;
 
@@ -337,7 +337,7 @@ namespace Amazon.ConnectCases
 
         internal virtual BatchGetFieldResponse BatchGetField(BatchGetFieldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFieldResponseUnmarshaller.Instance;
 
@@ -375,7 +375,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchGetField">REST API Reference for BatchGetField Operation</seealso>
         public virtual Task<BatchGetFieldResponse> BatchGetFieldAsync(BatchGetFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetFieldResponseUnmarshaller.Instance;
 
@@ -387,7 +387,7 @@ namespace Amazon.ConnectCases
 
         internal virtual BatchPutFieldOptionsResponse BatchPutFieldOptions(BatchPutFieldOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutFieldOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutFieldOptionsResponseUnmarshaller.Instance;
 
@@ -429,7 +429,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchPutFieldOptions">REST API Reference for BatchPutFieldOptions Operation</seealso>
         public virtual Task<BatchPutFieldOptionsResponse> BatchPutFieldOptionsAsync(BatchPutFieldOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutFieldOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutFieldOptionsResponseUnmarshaller.Instance;
 
@@ -441,7 +441,7 @@ namespace Amazon.ConnectCases
 
         internal virtual CreateCaseResponse CreateCase(CreateCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseResponseUnmarshaller.Instance;
 
@@ -509,7 +509,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateCase">REST API Reference for CreateCase Operation</seealso>
         public virtual Task<CreateCaseResponse> CreateCaseAsync(CreateCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseResponseUnmarshaller.Instance;
 
@@ -521,7 +521,7 @@ namespace Amazon.ConnectCases
 
         internal virtual CreateCaseRuleResponse CreateCaseRule(CreateCaseRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseRuleResponseUnmarshaller.Instance;
 
@@ -571,7 +571,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateCaseRule">REST API Reference for CreateCaseRule Operation</seealso>
         public virtual Task<CreateCaseRuleResponse> CreateCaseRuleAsync(CreateCaseRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCaseRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCaseRuleResponseUnmarshaller.Instance;
 
@@ -583,7 +583,7 @@ namespace Amazon.ConnectCases
 
         internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -636,7 +636,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         public virtual Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDomainResponseUnmarshaller.Instance;
 
@@ -648,7 +648,7 @@ namespace Amazon.ConnectCases
 
         internal virtual CreateFieldResponse CreateField(CreateFieldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFieldResponseUnmarshaller.Instance;
 
@@ -696,7 +696,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateField">REST API Reference for CreateField Operation</seealso>
         public virtual Task<CreateFieldResponse> CreateFieldAsync(CreateFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFieldResponseUnmarshaller.Instance;
 
@@ -708,7 +708,7 @@ namespace Amazon.ConnectCases
 
         internal virtual CreateLayoutResponse CreateLayout(CreateLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLayoutResponseUnmarshaller.Instance;
 
@@ -770,7 +770,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateLayout">REST API Reference for CreateLayout Operation</seealso>
         public virtual Task<CreateLayoutResponse> CreateLayoutAsync(CreateLayoutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateLayoutResponseUnmarshaller.Instance;
 
@@ -782,7 +782,7 @@ namespace Amazon.ConnectCases
 
         internal virtual CreateRelatedItemResponse CreateRelatedItem(CreateRelatedItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRelatedItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRelatedItemResponseUnmarshaller.Instance;
 
@@ -794,7 +794,56 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Creates a related item (comments, tasks, and contacts) and associates it with a case.
         /// 
-        ///  <note> <ul> <li> 
+        ///  
+        /// <para>
+        /// There's a quota for the number of fields allowed in a Custom type related item. See
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
+        /// Connect Cases quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are examples of related items that you may want to associate with a case:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Related contacts, such as calls, chats, emails tasks
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Comments, for agent notes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SLAs, to capture target resolution goals
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cases, to capture related Amazon Connect Cases
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Files, such as policy documentation or customer-provided attachments
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom related items, which provide flexibility for you to define related items that
+        /// such as bookings, orders, products, notices, and more
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are associating a contact to a case by passing in <c>Contact</c> for a <c>type</c>,
+        /// you must have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContact.html">DescribeContact</a>
+        /// permission on the ARN of the contact that you provide in <c>content.contact.contactArn</c>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// A Related Item is a resource that is associated with a case. It may or may not have
         /// an external identifier linking it to an external resource (for example, a <c>contactArn</c>).
@@ -810,7 +859,11 @@ namespace Amazon.ConnectCases
         /// <para>
         /// The <c>type</c> field is reserved for internal use only.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -842,7 +895,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateRelatedItem">REST API Reference for CreateRelatedItem Operation</seealso>
         public virtual Task<CreateRelatedItemResponse> CreateRelatedItemAsync(CreateRelatedItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRelatedItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRelatedItemResponseUnmarshaller.Instance;
 
@@ -854,7 +907,7 @@ namespace Amazon.ConnectCases
 
         internal virtual CreateTemplateResponse CreateTemplate(CreateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
@@ -932,7 +985,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateTemplate">REST API Reference for CreateTemplate Operation</seealso>
         public virtual Task<CreateTemplateResponse> CreateTemplateAsync(CreateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTemplateResponseUnmarshaller.Instance;
 
@@ -944,7 +997,7 @@ namespace Amazon.ConnectCases
 
         internal virtual DeleteCaseResponse DeleteCase(DeleteCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCaseResponseUnmarshaller.Instance;
 
@@ -971,7 +1024,7 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// This action is irreversible. Once you delete a case, you cannot recover its data.
+        /// This action is irreversible. After you delete a case, you cannot recover its data.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1001,7 +1054,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteCase">REST API Reference for DeleteCase Operation</seealso>
         public virtual Task<DeleteCaseResponse> DeleteCaseAsync(DeleteCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCaseResponseUnmarshaller.Instance;
 
@@ -1013,7 +1066,7 @@ namespace Amazon.ConnectCases
 
         internal virtual DeleteCaseRuleResponse DeleteCaseRule(DeleteCaseRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCaseRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCaseRuleResponseUnmarshaller.Instance;
 
@@ -1056,7 +1109,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteCaseRule">REST API Reference for DeleteCaseRule Operation</seealso>
         public virtual Task<DeleteCaseRuleResponse> DeleteCaseRuleAsync(DeleteCaseRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCaseRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCaseRuleResponseUnmarshaller.Instance;
 
@@ -1068,7 +1121,7 @@ namespace Amazon.ConnectCases
 
         internal virtual DeleteDomainResponse DeleteDomain(DeleteDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -1119,7 +1172,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         public virtual Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
@@ -1131,7 +1184,7 @@ namespace Amazon.ConnectCases
 
         internal virtual DeleteFieldResponse DeleteField(DeleteFieldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFieldResponseUnmarshaller.Instance;
 
@@ -1162,12 +1215,12 @@ namespace Amazon.ConnectCases
         ///  </li> <li> 
         /// <para>
         /// Calling <c>CreateCase</c> with a deleted field throws a <c>ValidationException</c>
-        /// denoting which field IDs in the request have been deleted.
+        /// denoting which field identifiers in the request have been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Calling <c>GetCase</c> with a deleted field ID returns the deleted field's value if
-        /// one exists.
+        /// Calling <c>GetCase</c> with a deleted field identifier returns the deleted field's
+        /// value if one exists.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1239,7 +1292,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteField">REST API Reference for DeleteField Operation</seealso>
         public virtual Task<DeleteFieldResponse> DeleteFieldAsync(DeleteFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFieldResponseUnmarshaller.Instance;
 
@@ -1251,7 +1304,7 @@ namespace Amazon.ConnectCases
 
         internal virtual DeleteLayoutResponse DeleteLayout(DeleteLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLayoutResponseUnmarshaller.Instance;
 
@@ -1312,7 +1365,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteLayout">REST API Reference for DeleteLayout Operation</seealso>
         public virtual Task<DeleteLayoutResponse> DeleteLayoutAsync(DeleteLayoutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteLayoutResponseUnmarshaller.Instance;
 
@@ -1324,7 +1377,7 @@ namespace Amazon.ConnectCases
 
         internal virtual DeleteRelatedItemResponse DeleteRelatedItem(DeleteRelatedItemRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRelatedItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRelatedItemResponseUnmarshaller.Instance;
 
@@ -1370,7 +1423,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteRelatedItem">REST API Reference for DeleteRelatedItem Operation</seealso>
         public virtual Task<DeleteRelatedItemResponse> DeleteRelatedItemAsync(DeleteRelatedItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRelatedItemRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRelatedItemResponseUnmarshaller.Instance;
 
@@ -1382,7 +1435,7 @@ namespace Amazon.ConnectCases
 
         internal virtual DeleteTemplateResponse DeleteTemplate(DeleteTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
@@ -1447,7 +1500,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteTemplate">REST API Reference for DeleteTemplate Operation</seealso>
         public virtual Task<DeleteTemplateResponse> DeleteTemplateAsync(DeleteTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTemplateResponseUnmarshaller.Instance;
 
@@ -1459,7 +1512,7 @@ namespace Amazon.ConnectCases
 
         internal virtual GetCaseResponse GetCase(GetCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseResponseUnmarshaller.Instance;
 
@@ -1497,7 +1550,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCase">REST API Reference for GetCase Operation</seealso>
         public virtual Task<GetCaseResponse> GetCaseAsync(GetCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseResponseUnmarshaller.Instance;
 
@@ -1509,7 +1562,7 @@ namespace Amazon.ConnectCases
 
         internal virtual GetCaseAuditEventsResponse GetCaseAuditEvents(GetCaseAuditEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseAuditEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseAuditEventsResponseUnmarshaller.Instance;
 
@@ -1547,7 +1600,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCaseAuditEvents">REST API Reference for GetCaseAuditEvents Operation</seealso>
         public virtual Task<GetCaseAuditEventsResponse> GetCaseAuditEventsAsync(GetCaseAuditEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseAuditEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseAuditEventsResponseUnmarshaller.Instance;
 
@@ -1559,7 +1612,7 @@ namespace Amazon.ConnectCases
 
         internal virtual GetCaseEventConfigurationResponse GetCaseEventConfiguration(GetCaseEventConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseEventConfigurationResponseUnmarshaller.Instance;
 
@@ -1597,7 +1650,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCaseEventConfiguration">REST API Reference for GetCaseEventConfiguration Operation</seealso>
         public virtual Task<GetCaseEventConfigurationResponse> GetCaseEventConfigurationAsync(GetCaseEventConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCaseEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCaseEventConfigurationResponseUnmarshaller.Instance;
 
@@ -1609,7 +1662,7 @@ namespace Amazon.ConnectCases
 
         internal virtual GetDomainResponse GetDomain(GetDomainRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
@@ -1647,7 +1700,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetDomain">REST API Reference for GetDomain Operation</seealso>
         public virtual Task<GetDomainResponse> GetDomainAsync(GetDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDomainRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
@@ -1659,7 +1712,7 @@ namespace Amazon.ConnectCases
 
         internal virtual GetLayoutResponse GetLayout(GetLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayoutResponseUnmarshaller.Instance;
 
@@ -1697,7 +1750,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetLayout">REST API Reference for GetLayout Operation</seealso>
         public virtual Task<GetLayoutResponse> GetLayoutAsync(GetLayoutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetLayoutResponseUnmarshaller.Instance;
 
@@ -1709,7 +1762,7 @@ namespace Amazon.ConnectCases
 
         internal virtual GetTemplateResponse GetTemplate(GetTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
@@ -1769,7 +1822,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         public virtual Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTemplateResponseUnmarshaller.Instance;
 
@@ -1781,7 +1834,7 @@ namespace Amazon.ConnectCases
 
         internal virtual ListCaseRulesResponse ListCaseRules(ListCaseRulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCaseRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCaseRulesResponseUnmarshaller.Instance;
 
@@ -1822,7 +1875,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListCaseRules">REST API Reference for ListCaseRules Operation</seealso>
         public virtual Task<ListCaseRulesResponse> ListCaseRulesAsync(ListCaseRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCaseRulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCaseRulesResponseUnmarshaller.Instance;
 
@@ -1834,7 +1887,7 @@ namespace Amazon.ConnectCases
 
         internal virtual ListCasesForContactResponse ListCasesForContact(ListCasesForContactRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCasesForContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCasesForContactResponseUnmarshaller.Instance;
 
@@ -1872,7 +1925,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListCasesForContact">REST API Reference for ListCasesForContact Operation</seealso>
         public virtual Task<ListCasesForContactResponse> ListCasesForContactAsync(ListCasesForContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCasesForContactRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCasesForContactResponseUnmarshaller.Instance;
 
@@ -1884,7 +1937,7 @@ namespace Amazon.ConnectCases
 
         internal virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -1918,7 +1971,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListDomains">REST API Reference for ListDomains Operation</seealso>
         public virtual Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDomainsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
@@ -1930,7 +1983,7 @@ namespace Amazon.ConnectCases
 
         internal virtual ListFieldOptionsResponse ListFieldOptions(ListFieldOptionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFieldOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFieldOptionsResponseUnmarshaller.Instance;
 
@@ -1968,7 +2021,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListFieldOptions">REST API Reference for ListFieldOptions Operation</seealso>
         public virtual Task<ListFieldOptionsResponse> ListFieldOptionsAsync(ListFieldOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFieldOptionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFieldOptionsResponseUnmarshaller.Instance;
 
@@ -1980,7 +2033,7 @@ namespace Amazon.ConnectCases
 
         internal virtual ListFieldsResponse ListFields(ListFieldsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFieldsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFieldsResponseUnmarshaller.Instance;
 
@@ -2018,7 +2071,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListFields">REST API Reference for ListFields Operation</seealso>
         public virtual Task<ListFieldsResponse> ListFieldsAsync(ListFieldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFieldsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFieldsResponseUnmarshaller.Instance;
 
@@ -2030,7 +2083,7 @@ namespace Amazon.ConnectCases
 
         internal virtual ListLayoutsResponse ListLayouts(ListLayoutsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLayoutsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLayoutsResponseUnmarshaller.Instance;
 
@@ -2069,7 +2122,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListLayouts">REST API Reference for ListLayouts Operation</seealso>
         public virtual Task<ListLayoutsResponse> ListLayoutsAsync(ListLayoutsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListLayoutsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListLayoutsResponseUnmarshaller.Instance;
 
@@ -2081,7 +2134,7 @@ namespace Amazon.ConnectCases
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2119,7 +2172,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2131,7 +2184,7 @@ namespace Amazon.ConnectCases
 
         internal virtual ListTemplatesResponse ListTemplates(ListTemplatesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
@@ -2196,7 +2249,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListTemplates">REST API Reference for ListTemplates Operation</seealso>
         public virtual Task<ListTemplatesResponse> ListTemplatesAsync(ListTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTemplatesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTemplatesResponseUnmarshaller.Instance;
 
@@ -2208,7 +2261,7 @@ namespace Amazon.ConnectCases
 
         internal virtual PutCaseEventConfigurationResponse PutCaseEventConfiguration(PutCaseEventConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCaseEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCaseEventConfigurationResponseUnmarshaller.Instance;
 
@@ -2253,7 +2306,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/PutCaseEventConfiguration">REST API Reference for PutCaseEventConfiguration Operation</seealso>
         public virtual Task<PutCaseEventConfigurationResponse> PutCaseEventConfigurationAsync(PutCaseEventConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutCaseEventConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutCaseEventConfigurationResponseUnmarshaller.Instance;
 
@@ -2261,11 +2314,108 @@ namespace Amazon.ConnectCases
         }
         #endregion
         
+        #region  SearchAllRelatedItems
+
+        internal virtual SearchAllRelatedItemsResponse SearchAllRelatedItems(SearchAllRelatedItemsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchAllRelatedItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchAllRelatedItemsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchAllRelatedItemsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for related items across all cases within a domain. This is a global search
+        /// operation that returns related items from multiple cases, unlike the case-specific
+        /// <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_SearchRelatedItems.html">SearchRelatedItems</a>
+        /// API.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Find cases with similar issues across the domain. For example, search for all cases
+        /// containing comments about "product defect" to identify patterns and existing solutions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Locate all cases associated with specific contacts or orders. For example, find all
+        /// cases linked to a contactArn to understand the complete customer journey. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Monitor SLA compliance across cases. For example, search for all cases with "Active"
+        /// SLA status to prioritize remediation efforts.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// This API returns case identifiers, not complete case objects. To retrieve full case
+        /// details, you must make additional calls to the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCase.html">GetCase</a>
+        /// API for each returned case ID. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This API searches across related items content, not case fields. Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_SearchCases.html">SearchCases</a>
+        /// API to search within case field values.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchAllRelatedItems service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchAllRelatedItems service method, as returned by ConnectCases.</returns>
+        /// <exception cref="Amazon.ConnectCases.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.InternalServerException">
+        /// We couldn't process your request because of an issue with the server. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ResourceNotFoundException">
+        /// We couldn't find the requested resource. Check that your resources exists and were
+        /// created in the same Amazon Web Services Region as your request, and try your request
+        /// again.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
+        /// The rate has been exceeded for this API. Please try again after a few minutes.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ValidationException">
+        /// The request isn't valid. Check the syntax and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/SearchAllRelatedItems">REST API Reference for SearchAllRelatedItems Operation</seealso>
+        public virtual Task<SearchAllRelatedItemsResponse> SearchAllRelatedItemsAsync(SearchAllRelatedItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchAllRelatedItemsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchAllRelatedItemsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchAllRelatedItemsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SearchCases
 
         internal virtual SearchCasesResponse SearchCases(SearchCasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchCasesResponseUnmarshaller.Instance;
 
@@ -2312,7 +2462,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/SearchCases">REST API Reference for SearchCases Operation</seealso>
         public virtual Task<SearchCasesResponse> SearchCasesAsync(SearchCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchCasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchCasesResponseUnmarshaller.Instance;
 
@@ -2324,7 +2474,7 @@ namespace Amazon.ConnectCases
 
         internal virtual SearchRelatedItemsResponse SearchRelatedItems(SearchRelatedItemsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRelatedItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchRelatedItemsResponseUnmarshaller.Instance;
 
@@ -2368,7 +2518,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/SearchRelatedItems">REST API Reference for SearchRelatedItems Operation</seealso>
         public virtual Task<SearchRelatedItemsResponse> SearchRelatedItemsAsync(SearchRelatedItemsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchRelatedItemsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchRelatedItemsResponseUnmarshaller.Instance;
 
@@ -2380,7 +2530,7 @@ namespace Amazon.ConnectCases
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2418,7 +2568,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2430,7 +2580,7 @@ namespace Amazon.ConnectCases
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2468,7 +2618,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2480,7 +2630,7 @@ namespace Amazon.ConnectCases
 
         internal virtual UpdateCaseResponse UpdateCase(UpdateCaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseResponseUnmarshaller.Instance;
 
@@ -2534,7 +2684,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateCase">REST API Reference for UpdateCase Operation</seealso>
         public virtual Task<UpdateCaseResponse> UpdateCaseAsync(UpdateCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseResponseUnmarshaller.Instance;
 
@@ -2546,7 +2696,7 @@ namespace Amazon.ConnectCases
 
         internal virtual UpdateCaseRuleResponse UpdateCaseRule(UpdateCaseRuleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseRuleResponseUnmarshaller.Instance;
 
@@ -2583,6 +2733,10 @@ namespace Amazon.ConnectCases
         /// created in the same Amazon Web Services Region as your request, and try your request
         /// again.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
         /// </exception>
@@ -2592,7 +2746,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateCaseRule">REST API Reference for UpdateCaseRule Operation</seealso>
         public virtual Task<UpdateCaseRuleResponse> UpdateCaseRuleAsync(UpdateCaseRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCaseRuleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCaseRuleResponseUnmarshaller.Instance;
 
@@ -2604,7 +2758,7 @@ namespace Amazon.ConnectCases
 
         internal virtual UpdateFieldResponse UpdateField(UpdateFieldRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFieldResponseUnmarshaller.Instance;
 
@@ -2647,7 +2801,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateField">REST API Reference for UpdateField Operation</seealso>
         public virtual Task<UpdateFieldResponse> UpdateFieldAsync(UpdateFieldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFieldRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFieldResponseUnmarshaller.Instance;
 
@@ -2659,7 +2813,7 @@ namespace Amazon.ConnectCases
 
         internal virtual UpdateLayoutResponse UpdateLayout(UpdateLayoutRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLayoutResponseUnmarshaller.Instance;
 
@@ -2722,7 +2876,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateLayout">REST API Reference for UpdateLayout Operation</seealso>
         public virtual Task<UpdateLayoutResponse> UpdateLayoutAsync(UpdateLayoutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateLayoutRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateLayoutResponseUnmarshaller.Instance;
 
@@ -2734,7 +2888,7 @@ namespace Amazon.ConnectCases
 
         internal virtual UpdateTemplateResponse UpdateTemplate(UpdateTemplateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 
@@ -2798,6 +2952,10 @@ namespace Amazon.ConnectCases
         /// created in the same Amazon Web Services Region as your request, and try your request
         /// again.
         /// </exception>
+        /// <exception cref="Amazon.ConnectCases.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded. For a list of service quotas, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// Connect Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.ConnectCases.Model.ThrottlingException">
         /// The rate has been exceeded for this API. Please try again after a few minutes.
         /// </exception>
@@ -2807,7 +2965,7 @@ namespace Amazon.ConnectCases
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateTemplate">REST API Reference for UpdateTemplate Operation</seealso>
         public virtual Task<UpdateTemplateResponse> UpdateTemplateAsync(UpdateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTemplateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTemplateResponseUnmarshaller.Instance;
 

@@ -47,6 +47,50 @@ namespace Amazon.Connect.Model
     /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html">Metrics
     /// definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// When you make a successful API request, you can expect the following metric values
+    /// in the response:
+    /// </para>
+    ///  <ol> <li> 
+    /// <para>
+    ///  <b>Metric value is null</b>: The calculation cannot be performed due to divide by
+    /// zero or insufficient data
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Metric value is a number (including 0) of defined type</b>: The number provided
+    /// is the calculation result
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>MetricResult list is empty</b>: The request cannot find any data in the system
+    /// </para>
+    ///  </li> </ol> 
+    /// <para>
+    /// The following guidelines can help you work with the API:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Each dimension in the metric response must contain a value
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Each item in MetricResult must include all requested metrics
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If the response is slow due to large result sets, try these approaches:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Narrow the time range of your request
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Add filters to reduce the amount of data returned
+    /// </para>
+    ///  </li> </ul> </li> </ul> </note>
     /// </summary>
     public partial class GetMetricDataV2Request : AmazonConnectRequest
     {
@@ -147,8 +191,8 @@ namespace Amazon.Connect.Model
         /// | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c> | <c>CAMPAIGN_EXCLUDED_EVENT_TYPE </c> | <c>CASE_TEMPLATE_ARN</c>
         /// | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
         /// | <c>DISCONNECT_REASON</c> | <c>EVALUATION_FORM</c> | <c>EVALUATION_SECTION</c> |
-        /// <c>EVALUATION_QUESTION</c> | <c>EVALUATION_SOURCE</c> | <c>FEATURE</c> | <c>FLOW_ACTION_ID</c>
-        /// | <c>FLOW_TYPE</c> | <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_ID</c>
+        /// <c>EVALUATION_QUESTION</c> | <c>EVALUATION_SOURCE</c> | <c>EVALUATOR_ID</c> | <c>FEATURE</c>
+        /// | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOWS_NEXT_RESOURCE_ID</c>
         /// | <c>FLOWS_NEXT_RESOURCE_QUEUE_ID</c> | <c>FLOWS_OUTCOME_TYPE</c> | <c>FLOWS_RESOURCE_ID</c>
         /// | <c>FORM_VERSION</c> | <c>INITIATION_METHOD</c> | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c>
         /// | <c>INVOKING_RESOURCE_TYPE</c> | <c>PARENT_FLOWS_RESOURCE_ID</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c>
@@ -244,8 +288,8 @@ namespace Amazon.Connect.Model
         /// | <c>CAMPAIGN_EXCLUDED_EVENT_TYPE</c> | <c>CAMPAIGN_EXECUTION_TIMESTAMP</c> | <c>CASE_TEMPLATE_ARN</c>
         /// | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
         /// | <c>DISCONNECT_REASON</c> | <c>EVALUATION_FORM</c> | <c>EVALUATION_SECTION</c> |
-        /// <c>EVALUATION_QUESTION</c> | <c>EVALUATION_SOURCE</c> | <c>FLOWS_RESOURCE_ID</c> |
-        /// <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_OUTCOME_TYPE</c>
+        /// <c>EVALUATION_QUESTION</c> | <c>EVALUATION_SOURCE</c> | <c>EVALUATOR_ID</c> | <c>FLOWS_RESOURCE_ID</c>
+        /// | <c>FLOWS_MODULE_RESOURCE_ID</c> | <c>FLOW_ACTION_ID</c> | <c>FLOW_TYPE</c> | <c>FLOWS_OUTCOME_TYPE</c>
         /// | <c>FORM_VERSION</c> | <c>INITIATION_METHOD</c> | <c>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</c>
         /// | <c>INVOKING_RESOURCE_TYPE</c> | <c>PARENT_FLOWS_RESOURCE_ID</c> | <c>Q_CONNECT_ENABLED</c>
         /// | <c>QUEUE</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c>
@@ -530,6 +574,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
+        /// Valid metric filter key: <c>INITIATION_METHOD</c> 
+        /// </para>
+        ///  
+        /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-abandon-time">Average
         /// queue abandon time</a> 
         /// </para>
@@ -569,7 +617,21 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Feature is a valid filter but not a valid grouping.
         /// </para>
-        ///  </note> </dd> <dt>AVG_AGENT_CONNECTING_TIME</dt> <dd> 
+        ///  </note> </dd> <dt>AVG_AGENT_CONCURRENCY</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy,
+        /// Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-concurrency">Average
+        /// agent concurrency</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_AGENT_CONNECTING_TIME</dt> <dd> 
         /// <para>
         /// Unit: Seconds
         /// </para>
@@ -690,7 +752,37 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Feature is a valid filter but not a valid grouping.
         /// </para>
-        ///  </note> </dd> <dt>AVG_CONVERSATION_DURATION</dt> <dd> 
+        ///  </note> </dd> <dt>AVG_CONTACT_FIRST_RESPONSE_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-average-contact-first-response-wait-time">Agent
+        /// average contact first response wait time</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_CONVERSATION_CLOSE_TIME</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-conversation-close-time">Average
+        /// conversation close time</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_CONVERSATION_DURATION</dt> <dd> 
         /// <para>
         /// Unit: Seconds
         /// </para>
@@ -736,6 +828,21 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score">Average
         /// evaluation score</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_FIRST_RESPONSE_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-first-response-time">Average
+        /// agent first response time</a> 
         /// </para>
         ///  </dd> <dt>AVG_FLOW_TIME</dt> <dd> 
         /// <para>
@@ -913,6 +1020,96 @@ namespace Amazon.Connect.Model
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interruption-time">Average
         /// agent interruption time</a> 
         /// </para>
+        ///  </dd> <dt>AVG_MESSAGE_LENGTH_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-message-length">Average
+        /// agent message length</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_MESSAGE_LENGTH_CUSTOMER</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-message-length">Average
+        /// customer message length</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_MESSAGES</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-messages">Average
+        /// messages</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_MESSAGES_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-messages">Average
+        /// agent messages</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_MESSAGES_BOT</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-bot-messages">Average
+        /// bot messages</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_MESSAGES_CUSTOMER</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-messages">Average
+        /// customer messages</a> 
+        /// </para>
         ///  </dd> <dt>AVG_NON_TALK_TIME</dt> <dd> 
         /// <para>
         /// This metric is available only for contacts analyzed by Contact Lens conversational
@@ -946,11 +1143,60 @@ namespace Amazon.Connect.Model
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time">Average
         /// queue answer time</a> 
         /// </para>
+        ///  
+        /// <para>
+        /// Valid metric level filters: <c>INITIATION_METHOD</c>, <c>FEATURE</c>, <c>DISCONNECT_REASON</c>
+        /// 
+        /// </para>
         ///  <note> 
         /// <para>
         /// Feature is a valid filter but not a valid grouping.
         /// </para>
-        ///  </note> </dd> <dt>AVG_RESOLUTION_TIME</dt> <dd> 
+        ///  </note> </dd> <dt>AVG_QUEUE_ANSWER_TIME_CUSTOMER_FIRST_CALLBACK</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect, Agent Hierarchy
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time-customer-first-callback">Avg.
+        /// queue answer time - customer first callback</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_RESPONSE_TIME_AGENT</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-response-time-agent">Average
+        /// agent response time</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_RESPONSE_TIME_CUSTOMER</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-time-agent">Average
+        /// customer response time</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_RESOLUTION_TIME</dt> <dd> 
         /// <para>
         /// Unit: Seconds
         /// </para>
@@ -1038,6 +1284,20 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection">Average
         /// wait time after customer connection</a> 
+        /// </para>
+        ///  </dd> <dt>AVG_WAIT_TIME_AFTER_CUSTOMER_FIRST_CALLBACK_CONNECTION</dt> <dd> 
+        /// <para>
+        /// Unit: Seconds
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype,
+        /// Q in Connect, Agent Hierarchy
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection-customer-first-callback">Avg.
+        /// wait time after customer connection - customer first callback</a> 
         /// </para>
         ///  </dd> <dt>AVG_WEIGHTED_EVALUATION_SCORE</dt> <dd> 
         /// <para>
@@ -1266,8 +1526,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#api-contacts-handled">API
-        /// contacts handled</a> 
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled">Contacts
+        /// handled</a> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1503,6 +1763,21 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#current-cases">Current
         /// cases</a> 
+        /// </para>
+        ///  </dd> <dt>CONVERSATIONS_ABANDONED</dt> <dd> 
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype,
+        /// Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile,
+        /// Queue, Q in Connect
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#conversations-abandoned">Conversations
+        /// abandoned</a> 
         /// </para>
         ///  </dd> <dt>DELIVERY_ATTEMPTS</dt> <dd> 
         /// <para>
@@ -2014,7 +2289,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid metric filter key: <c>INITIATION_METHOD</c>. This metric only supports the following
         /// filter keys as <c>INITIATION_METHOD</c>: <c>INBOUND</c> | <c>OUTBOUND</c> | <c>CALLBACK</c>
-        /// | <c>API</c> 
+        /// | <c>API</c> | <c>CALLBACK_CUSTOMER_FIRST_DIALED</c> 
         /// </para>
         ///  
         /// <para>
@@ -2039,8 +2314,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Valid values: <c>API</c>| <c>Incoming</c> | <c>Outbound</c> | <c>Transfer</c> | <c>Callback</c>
-        /// | <c>Queue_Transfer</c>| <c>Disconnect</c> 
+        /// Valid values: <c>API</c>| <c>INCOMING</c> | <c>OUTBOUND</c> | <c>TRANSFER</c> | <c>CALLBACK</c>
+        /// | <c>QUEUE_TRANSFER</c>| <c>Disconnect</c> | <c>CALLBACK_CUSTOMER_FIRST_DIALED</c>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>

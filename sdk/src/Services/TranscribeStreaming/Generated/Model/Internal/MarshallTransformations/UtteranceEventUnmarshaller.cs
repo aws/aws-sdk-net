@@ -92,6 +92,18 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                     unmarshalledObject.Items = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LanguageCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("LanguageIdentification", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CallAnalyticsLanguageWithScore, CallAnalyticsLanguageWithScoreUnmarshaller>(CallAnalyticsLanguageWithScoreUnmarshaller.Instance);
+                    unmarshalledObject.LanguageIdentification = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ParticipantRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

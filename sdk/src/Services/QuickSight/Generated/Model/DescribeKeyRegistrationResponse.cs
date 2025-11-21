@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _awsAccountId;
         private List<RegisteredCustomerManagedKey> _keyRegistration = AWSConfigs.InitializeCollections ? new List<RegisteredCustomerManagedKey>() : null;
+        private QDataKey _qDataKey;
         private string _requestId;
         private int? _status;
 
@@ -62,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property KeyRegistration. 
         /// <para>
-        /// A list of <c>RegisteredCustomerManagedKey</c> objects in a Amazon QuickSight account.
+        /// A list of <c>RegisteredCustomerManagedKey</c> objects in a Quick Sight account.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -80,6 +81,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetKeyRegistration()
         {
             return this._keyRegistration != null && (this._keyRegistration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QDataKey. 
+        /// <para>
+        /// A list of <c>QDataKey</c> objects in a Quick Sight account.
+        /// </para>
+        /// </summary>
+        public QDataKey QDataKey
+        {
+            get { return this._qDataKey; }
+            set { this._qDataKey = value; }
+        }
+
+        // Check to see if QDataKey property is set
+        internal bool IsSetQDataKey()
+        {
+            return this._qDataKey != null;
         }
 
         /// <summary>

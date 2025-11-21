@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteMultiRegionAccessPointInput Object
     /// </summary>  
-    public class DeleteMultiRegionAccessPointInputUnmarshaller : IXmlUnmarshaller<DeleteMultiRegionAccessPointInput, XmlUnmarshallerContext>
+    public partial class DeleteMultiRegionAccessPointInputUnmarshaller : IXmlUnmarshaller<DeleteMultiRegionAccessPointInput, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, DeleteMultiRegionAccessPointInput unmarshalledObject, int targetDepth);
+
         private static DeleteMultiRegionAccessPointInputUnmarshaller _instance = new DeleteMultiRegionAccessPointInputUnmarshaller();        
 
         /// <summary>

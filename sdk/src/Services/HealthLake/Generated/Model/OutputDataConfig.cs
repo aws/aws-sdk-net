@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The output data configuration that was supplied when the export job was created.
+    /// The output data configuration supplied when the export job was created.
     /// </summary>
     public partial class OutputDataConfig
     {
@@ -39,8 +39,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        ///  The output data configuration that was supplied when the export job was created.
-        /// 
+        /// The output data configuration supplied when the export job was created. 
         /// </para>
         /// </summary>
         public S3Configuration S3Configuration

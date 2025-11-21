@@ -59,6 +59,8 @@ namespace Amazon.SageMaker.Model
         private ReservedCapacityInstanceType _instanceType;
         private DateTime? _startTimeAfter;
         private List<string> _targetResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private int? _ultraServerCount;
+        private string _ultraServerType;
 
         /// <summary>
         /// Gets and sets the property DurationHours. 
@@ -164,8 +166,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TargetResources. 
         /// <para>
-        /// The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod) to search
-        /// for in the offerings.
+        /// The target resources (e.g., SageMaker Training Jobs, SageMaker HyperPod, SageMaker
+        /// Endpoints) to search for in the offerings.
         /// </para>
         ///  
         /// <para>
@@ -180,6 +182,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A training plan for HyperPod clusters can be used exclusively to provide compute resources
         /// to a cluster's instance group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A training plan for SageMaker endpoints can be used exclusively to provide compute
+        /// resources to SageMaker endpoints for model deployment.
         /// </para>
         ///  </li> </ul>
         /// <para />
@@ -199,6 +206,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTargetResources()
         {
             return this._targetResources != null && (this._targetResources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraServerCount. 
+        /// <para>
+        /// The number of UltraServers to search for.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? UltraServerCount
+        {
+            get { return this._ultraServerCount; }
+            set { this._ultraServerCount = value; }
+        }
+
+        // Check to see if UltraServerCount property is set
+        internal bool IsSetUltraServerCount()
+        {
+            return this._ultraServerCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraServerType. 
+        /// <para>
+        /// The type of UltraServer to search for, such as ml.u-p6e-gb200x72.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string UltraServerType
+        {
+            get { return this._ultraServerType; }
+            set { this._ultraServerType = value; }
+        }
+
+        // Check to see if UltraServerType property is set
+        internal bool IsSetUltraServerType()
+        {
+            return this._ultraServerType != null;
         }
 
     }

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -665,6 +665,15 @@ namespace Amazon.DynamoDBv2.DataModel
         IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig);
 
         /// <summary>
+        /// Configures an async Query operation against DynamoDB using a query conditional.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="queryConditional">The query conditional specifying hash and range key conditions.</param>
+        /// <param name="queryConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryConditional queryConditional, QueryConfig queryConfig);
+
+        /// <summary>
         /// Configures an async Query operation against DynamoDB using a mid-level document model 
         /// query configuration, finding items that match the specified conditions. 
         /// </summary>
@@ -693,6 +702,16 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="fromQueryConfig">Config object that can be used to override properties on the table's context for this request.</param>
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryOperationConfig queryConfig, FromQueryConfig fromQueryConfig);
+
+        /// <summary>
+        /// Configures an async Query operation against DynamoDB using a mid-level document model 
+        /// query configration, finding items that match the specified conditions. 
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="queryOperationRequest">Mid-level, document model query request object.</param>
+        /// <param name="fromQueryConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
+        IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryDocumentOperationRequest queryOperationRequest, FromQueryConfig fromQueryConfig);
 
         #endregion
     }

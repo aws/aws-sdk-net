@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// You can't yet delete this stack set, because it still contains one or more stack instances.
-    /// Delete all stack instances from the stack set before deleting the stack set.
+    /// You can't yet delete this StackSet, because it still contains one or more stack instances.
+    /// Delete all stack instances from the StackSet before deleting the StackSet.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

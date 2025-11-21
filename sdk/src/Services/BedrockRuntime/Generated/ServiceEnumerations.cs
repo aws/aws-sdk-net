@@ -303,6 +303,56 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailAutomatedReasoningLogicWarningType.
+    /// </summary>
+    public class GuardrailAutomatedReasoningLogicWarningType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALWAYS_FALSE for GuardrailAutomatedReasoningLogicWarningType
+        /// </summary>
+        public static readonly GuardrailAutomatedReasoningLogicWarningType ALWAYS_FALSE = new GuardrailAutomatedReasoningLogicWarningType("ALWAYS_FALSE");
+        /// <summary>
+        /// Constant ALWAYS_TRUE for GuardrailAutomatedReasoningLogicWarningType
+        /// </summary>
+        public static readonly GuardrailAutomatedReasoningLogicWarningType ALWAYS_TRUE = new GuardrailAutomatedReasoningLogicWarningType("ALWAYS_TRUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailAutomatedReasoningLogicWarningType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailAutomatedReasoningLogicWarningType FindValue(string value)
+        {
+            return FindValue<GuardrailAutomatedReasoningLogicWarningType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailAutomatedReasoningLogicWarningType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailContentFilterConfidence.
     /// </summary>
     public class GuardrailContentFilterConfidence : ConstantClass
@@ -1567,6 +1617,60 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type ServiceTierType.
+    /// </summary>
+    public class ServiceTierType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for ServiceTierType
+        /// </summary>
+        public static readonly ServiceTierType Default = new ServiceTierType("default");
+        /// <summary>
+        /// Constant Flex for ServiceTierType
+        /// </summary>
+        public static readonly ServiceTierType Flex = new ServiceTierType("flex");
+        /// <summary>
+        /// Constant Priority for ServiceTierType
+        /// </summary>
+        public static readonly ServiceTierType Priority = new ServiceTierType("priority");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceTierType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceTierType FindValue(string value)
+        {
+            return FindValue<ServiceTierType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceTierType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortAsyncInvocationBy.
     /// </summary>
     public class SortAsyncInvocationBy : ConstantClass
@@ -1685,6 +1789,10 @@ namespace Amazon.BedrockRuntime
         /// </summary>
         public static readonly StopReason Max_tokens = new StopReason("max_tokens");
         /// <summary>
+        /// Constant Model_context_window_exceeded for StopReason
+        /// </summary>
+        public static readonly StopReason Model_context_window_exceeded = new StopReason("model_context_window_exceeded");
+        /// <summary>
         /// Constant Stop_sequence for StopReason
         /// </summary>
         public static readonly StopReason Stop_sequence = new StopReason("stop_sequence");
@@ -1772,6 +1880,52 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ToolResultStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ToolUseType.
+    /// </summary>
+    public class ToolUseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Server_tool_use for ToolUseType
+        /// </summary>
+        public static readonly ToolUseType Server_tool_use = new ToolUseType("server_tool_use");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ToolUseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ToolUseType FindValue(string value)
+        {
+            return FindValue<ToolUseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ToolUseType(string value)
         {
             return FindValue(value);
         }

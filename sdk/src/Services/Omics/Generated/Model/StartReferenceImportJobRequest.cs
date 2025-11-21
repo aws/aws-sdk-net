@@ -31,7 +31,10 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the StartReferenceImportJob operation.
-    /// Starts a reference import job.
+    /// Imports a reference genome from Amazon S3 into a specified reference store. You can
+    /// have multiple reference genomes in a reference store. You can only import reference
+    /// genomes one at a time into each reference store. Monitor the status of your reference
+    /// import job by using the <c>GetReferenceImportJob</c> API operation.
     /// </summary>
     public partial class StartReferenceImportJobRequest : AmazonOmicsRequest
     {

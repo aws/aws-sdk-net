@@ -96,6 +96,18 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.KmsKeyArn);
             }
 
+            if(publicRequest.IsSetLambdaAuthorizerArn())
+            {
+                context.Writer.WritePropertyName("lambdaAuthorizerArn");
+                context.Writer.WriteStringValue(publicRequest.LambdaAuthorizerArn);
+            }
+
+            if(publicRequest.IsSetLosslessStorageFormat())
+            {
+                context.Writer.WritePropertyName("losslessStorageFormat");
+                context.Writer.WriteStringValue(publicRequest.LosslessStorageFormat);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

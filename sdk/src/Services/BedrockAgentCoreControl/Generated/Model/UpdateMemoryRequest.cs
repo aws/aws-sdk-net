@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMemory operation.
-    /// Update memory.
+    /// Update an Amazon Bedrock AgentCore Memory resource memory.
     /// </summary>
     public partial class UpdateMemoryRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The updated description of the memory.
+        /// The updated description of the AgentCore Memory resource.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
@@ -103,7 +103,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property MemoryExecutionRoleArn. 
         /// <para>
-        /// The ARN of the IAM role that provides permissions for the memory.
+        /// The ARN of the IAM role that provides permissions for the AgentCore Memory resource.
         /// </para>
         /// </summary>
         public string MemoryExecutionRoleArn

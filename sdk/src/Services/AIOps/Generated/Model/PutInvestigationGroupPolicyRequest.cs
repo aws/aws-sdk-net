@@ -41,11 +41,11 @@ namespace Amazon.AIOps.Model
     /// </para>
     ///  
     /// <para>
-    ///  <c>{ "Version": "2008-10-17", "Statement": [{ "Effect": "Allow", "Principal": { "Service":
-    /// "aiops.alarms.cloudwatch.amazonaws.com" }, "Action": ["aiops:CreateInvestigation",
-    /// "aiops:CreateInvestigationEvent"], "Resource": "*", "Condition": { "StringEquals":
-    /// { "aws:SourceAccount": "<i>account-id</i>" }, "ArnLike": { "aws:SourceArn": "arn:aws:cloudwatch:<i>region</i>:<i>account-id</i>:alarm:*"
-    /// } } }] }</c> 
+    ///  <c> { "Version": "2008-10-17", "Statement": [ { "Effect": "Allow", "Principal": {
+    /// "Service": "aiops.alarms.cloudwatch.amazonaws.com" }, "Action": [ "aiops:CreateInvestigation",
+    /// "aiops:CreateInvestigationEvent" ], "Resource": "*", "Condition": { "StringEquals":
+    /// { "aws:SourceAccount": "account-id" }, "ArnLike": { "aws:SourceArn": "arn:aws:cloudwatch:region:account-id:alarm:*"
+    /// } } } ] } </c> 
     /// </para>
     /// </summary>
     public partial class PutInvestigationGroupPolicyRequest : AmazonAIOpsRequest

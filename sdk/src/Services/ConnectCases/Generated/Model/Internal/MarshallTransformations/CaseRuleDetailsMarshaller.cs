@@ -46,6 +46,28 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFieldOptions())
+            {
+                context.Writer.WritePropertyName("fieldOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FieldOptionsCaseRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.FieldOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetHidden())
+            {
+                context.Writer.WritePropertyName("hidden");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HiddenCaseRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Hidden, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRequired())
             {
                 context.Writer.WritePropertyName("required");

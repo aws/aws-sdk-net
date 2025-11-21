@@ -39,6 +39,8 @@ namespace Amazon.ECS.Model
         private string _clusterArn;
         private DateTime? _createdAt;
         private string _createdBy;
+        private string _currentServiceDeployment;
+        private List<ServiceCurrentRevisionSummary> _currentServiceRevisions = AWSConfigs.InitializeCollections ? new List<ServiceCurrentRevisionSummary>() : null;
         private DeploymentConfiguration _deploymentConfiguration;
         private DeploymentController _deploymentController;
         private List<Deployment> _deployments = AWSConfigs.InitializeCollections ? new List<Deployment>() : null;
@@ -56,6 +58,7 @@ namespace Amazon.ECS.Model
         private string _platformFamily;
         private string _platformVersion;
         private PropagateTags _propagateTags;
+        private ResourceManagementType _resourceManagementType;
         private string _roleArn;
         private int? _runningCount;
         private SchedulingStrategy _schedulingStrategy;
@@ -78,6 +81,24 @@ namespace Amazon.ECS.Model
         /// an Amazon ECS service across Availability Zones</a> in the <i> <i>Amazon Elastic Container
         /// Service Developer Guide</i> </i>.
         /// </para>
+        ///  
+        /// <para>
+        /// The default behavior of <c>AvailabilityZoneRebalancing</c> differs between create
+        /// and update requests:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For create service requests, when no value is specified for <c>AvailabilityZoneRebalancing</c>,
+        /// Amazon ECS defaults the value to <c>ENABLED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For update service requests, when no value is specified for <c>AvailabilityZoneRebalancing</c>,
+        /// Amazon ECS defaults to the existing service’s <c>AvailabilityZoneRebalancing</c> value.
+        /// If the service never had an <c>AvailabilityZoneRebalancing</c> value set, Amazon ECS
+        /// treats this as <c>DISABLED</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
         {
@@ -167,6 +188,47 @@ namespace Amazon.ECS.Model
         internal bool IsSetCreatedBy()
         {
             return this._createdBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentServiceDeployment. 
+        /// <para>
+        /// The ARN of the current service deployment.
+        /// </para>
+        /// </summary>
+        public string CurrentServiceDeployment
+        {
+            get { return this._currentServiceDeployment; }
+            set { this._currentServiceDeployment = value; }
+        }
+
+        // Check to see if CurrentServiceDeployment property is set
+        internal bool IsSetCurrentServiceDeployment()
+        {
+            return this._currentServiceDeployment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentServiceRevisions. 
+        /// <para>
+        /// The list of the service revisions.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ServiceCurrentRevisionSummary> CurrentServiceRevisions
+        {
+            get { return this._currentServiceRevisions; }
+            set { this._currentServiceRevisions = value; }
+        }
+
+        // Check to see if CurrentServiceRevisions property is set
+        internal bool IsSetCurrentServiceRevisions()
+        {
+            return this._currentServiceRevisions != null && (this._currentServiceRevisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -317,7 +379,13 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property HealthCheckGracePeriodSeconds. 
         /// <para>
         /// The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy
-        /// Elastic Load Balancing target health checks after a task has first started.
+        /// Elastic Load Balancing, VPC Lattice, and container health checks after a task has
+        /// first started.
+        /// </para>
+        ///  
+        /// <para>
+        /// If your service has more running tasks than desired, unhealthy tasks in the grace
+        /// period might be stopped to reach the desired count.
         /// </para>
         /// </summary>
         public int? HealthCheckGracePeriodSeconds
@@ -521,6 +589,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetPropagateTags()
         {
             return this._propagateTags != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceManagementType. 
+        /// <para>
+        /// Identifies whether an ECS Service is an Express Service managed by ECS, or managed
+        /// by the customer. The valid values are <c>ECS</c> and <c>CUSTOMER</c> 
+        /// </para>
+        /// </summary>
+        public ResourceManagementType ResourceManagementType
+        {
+            get { return this._resourceManagementType; }
+            set { this._resourceManagementType = value; }
+        }
+
+        // Check to see if ResourceManagementType property is set
+        internal bool IsSetResourceManagementType()
+        {
+            return this._resourceManagementType != null;
         }
 
         /// <summary>

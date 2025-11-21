@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private InstanceMetadataServiceConfiguration _instanceMetadataServiceConfiguration;
         private InstanceType _instanceType;
+        private IPAddressType _ipAddressType;
         private string _kmsKeyId;
         private DateTime? _lastModifiedTime;
         private string _networkInterfaceId;
@@ -240,6 +241,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type configured for the notebook instance. Returns <c>ipv4</c> for
+        /// IPv4-only connectivity or <c>dualstack</c> for both IPv4 and IPv6 connectivity.
+        /// </para>
+        /// </summary>
+        public IPAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Web Services KMS key ID SageMaker AI uses to encrypt data when storing
@@ -383,7 +403,7 @@ namespace Amazon.SageMaker.Model
         /// The platform identifier of the notebook instance runtime environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=15)]
+        [AWSProperty(Min=0, Max=20)]
         public string PlatformIdentifier
         {
             get { return this._platformIdentifier; }

@@ -39,7 +39,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(PutObjectRequest putObjectRequest)
         {
-            IRequest request = new DefaultRequest(putObjectRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(putObjectRequest, "Amazon.S3");
 
             request.HttpMethod = "PUT";
 

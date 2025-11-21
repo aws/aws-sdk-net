@@ -1037,8 +1037,7 @@
     },
     "AllRowsWildcard":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "AlreadyExistsException":{
       "type":"structure",
@@ -1160,8 +1159,7 @@
     },
     "CancelTransactionResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "CatalogIdString":{
       "type":"string",
@@ -1257,8 +1255,7 @@
     },
     "CreateDataCellsFilterResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "CreateLFTagExpressionRequest":{
       "type":"structure",
@@ -1275,8 +1272,7 @@
     },
     "CreateLFTagExpressionResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "CreateLFTagRequest":{
       "type":"structure",
@@ -1292,8 +1288,7 @@
     },
     "CreateLFTagResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "CreateLakeFormationIdentityCenterConfigurationRequest":{
       "type":"structure",
@@ -1301,7 +1296,8 @@
         "CatalogId":{"shape":"CatalogIdString"},
         "InstanceArn":{"shape":"IdentityCenterInstanceArn"},
         "ExternalFiltering":{"shape":"ExternalFilteringConfiguration"},
-        "ShareRecipients":{"shape":"DataLakePrincipalList"}
+        "ShareRecipients":{"shape":"DataLakePrincipalList"},
+        "ServiceIntegrations":{"shape":"ServiceIntegrationList"}
       }
     },
     "CreateLakeFormationIdentityCenterConfigurationResponse":{
@@ -1324,8 +1320,7 @@
     },
     "CreateLakeFormationOptInResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "CredentialTimeoutDurationSecondInteger":{
       "type":"integer",
@@ -1446,8 +1441,7 @@
     },
     "DeleteDataCellsFilterResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteLFTagExpressionRequest":{
       "type":"structure",
@@ -1459,8 +1453,7 @@
     },
     "DeleteLFTagExpressionResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteLFTagRequest":{
       "type":"structure",
@@ -1472,8 +1465,7 @@
     },
     "DeleteLFTagResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteLakeFormationIdentityCenterConfigurationRequest":{
       "type":"structure",
@@ -1483,8 +1475,7 @@
     },
     "DeleteLakeFormationIdentityCenterConfigurationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteLakeFormationOptInRequest":{
       "type":"structure",
@@ -1500,8 +1491,7 @@
     },
     "DeleteLakeFormationOptInResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeleteObjectInput":{
       "type":"structure",
@@ -1530,8 +1520,7 @@
     },
     "DeleteObjectsOnCancelResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DeregisterResourceRequest":{
       "type":"structure",
@@ -1542,8 +1531,7 @@
     },
     "DeregisterResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "DescribeLakeFormationIdentityCenterConfigurationRequest":{
       "type":"structure",
@@ -1559,6 +1547,7 @@
         "ApplicationArn":{"shape":"ApplicationArn"},
         "ExternalFiltering":{"shape":"ExternalFilteringConfiguration"},
         "ShareRecipients":{"shape":"DataLakePrincipalList"},
+        "ServiceIntegrations":{"shape":"ServiceIntegrationList"},
         "ResourceShare":{"shape":"RAMResourceShareArn"}
       }
     },
@@ -1664,8 +1653,7 @@
     },
     "ExtendTransactionResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "ExternalFilteringConfiguration":{
       "type":"structure",
@@ -1723,8 +1711,7 @@
     },
     "GetDataLakePrincipalRequest":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "GetDataLakePrincipalResponse":{
       "type":"structure",
@@ -2002,8 +1989,7 @@
     },
     "GrantPermissionsResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "HashString":{
       "type":"string",
@@ -2482,8 +2468,7 @@
     },
     "PutDataLakeSettingsResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "QueryIdString":{"type":"string"},
     "QueryParameterMap":{
@@ -2528,6 +2513,24 @@
       ]
     },
     "RAMResourceShareArn":{"type":"string"},
+    "RedshiftConnect":{
+      "type":"structure",
+      "required":["Authorization"],
+      "members":{
+        "Authorization":{"shape":"ServiceAuthorization"}
+      }
+    },
+    "RedshiftScopeUnion":{
+      "type":"structure",
+      "members":{
+        "RedshiftConnect":{"shape":"RedshiftConnect"}
+      },
+      "union":true
+    },
+    "RedshiftServiceIntegrations":{
+      "type":"list",
+      "member":{"shape":"RedshiftScopeUnion"}
+    },
     "RegisterResourceRequest":{
       "type":"structure",
       "required":["ResourceArn"],
@@ -2542,8 +2545,7 @@
     },
     "RegisterResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "RemoveLFTagsFromResourceRequest":{
       "type":"structure",
@@ -2649,8 +2651,7 @@
     },
     "RevokePermissionsResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "RowFilter":{
       "type":"structure",
@@ -2710,6 +2711,24 @@
       }
     },
     "SecretAccessKeyString":{"type":"string"},
+    "ServiceAuthorization":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
+    "ServiceIntegrationList":{
+      "type":"list",
+      "member":{"shape":"ServiceIntegrationUnion"}
+    },
+    "ServiceIntegrationUnion":{
+      "type":"structure",
+      "members":{
+        "Redshift":{"shape":"RedshiftServiceIntegrations"}
+      },
+      "union":true
+    },
     "SessionTokenString":{"type":"string"},
     "StartQueryPlanningRequest":{
       "type":"structure",
@@ -2822,8 +2841,7 @@
     },
     "TableWildcard":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "TableWithColumnsResource":{
       "type":"structure",
@@ -2973,8 +2991,7 @@
     },
     "UpdateDataCellsFilterResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateLFTagExpressionRequest":{
       "type":"structure",
@@ -2991,8 +3008,7 @@
     },
     "UpdateLFTagExpressionResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateLFTagRequest":{
       "type":"structure",
@@ -3006,22 +3022,21 @@
     },
     "UpdateLFTagResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateLakeFormationIdentityCenterConfigurationRequest":{
       "type":"structure",
       "members":{
         "CatalogId":{"shape":"CatalogIdString"},
         "ShareRecipients":{"shape":"DataLakePrincipalList"},
+        "ServiceIntegrations":{"shape":"ServiceIntegrationList"},
         "ApplicationStatus":{"shape":"ApplicationStatus"},
         "ExternalFiltering":{"shape":"ExternalFilteringConfiguration"}
       }
     },
     "UpdateLakeFormationIdentityCenterConfigurationResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateResourceRequest":{
       "type":"structure",
@@ -3038,8 +3053,7 @@
     },
     "UpdateResourceResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateTableObjectsRequest":{
       "type":"structure",
@@ -3058,8 +3072,7 @@
     },
     "UpdateTableObjectsResponse":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "UpdateTableStorageOptimizerRequest":{
       "type":"structure",

@@ -53,6 +53,22 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
+        /// Paginator for ListConfigurationCheckDefinitions operation
+        ///</summary>
+        public IListConfigurationCheckDefinitionsPaginator ListConfigurationCheckDefinitions(ListConfigurationCheckDefinitionsRequest request) 
+        {
+            return new ListConfigurationCheckDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfigurationCheckOperations operation
+        ///</summary>
+        public IListConfigurationCheckOperationsPaginator ListConfigurationCheckOperations(ListConfigurationCheckOperationsRequest request) 
+        {
+            return new ListConfigurationCheckOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
         public IListDatabasesPaginator ListDatabases(ListDatabasesRequest request) 
@@ -74,6 +90,22 @@ namespace Amazon.SsmSap.Model
         public IListOperationsPaginator ListOperations(ListOperationsRequest request) 
         {
             return new ListOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSubCheckResults operation
+        ///</summary>
+        public IListSubCheckResultsPaginator ListSubCheckResults(ListSubCheckResultsRequest request) 
+        {
+            return new ListSubCheckResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSubCheckRuleResults operation
+        ///</summary>
+        public IListSubCheckRuleResultsPaginator ListSubCheckRuleResults(ListSubCheckRuleResultsRequest request) 
+        {
+            return new ListSubCheckRuleResultsPaginator(this.client, request);
         }
     }
 }

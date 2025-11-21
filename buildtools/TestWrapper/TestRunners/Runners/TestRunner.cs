@@ -398,7 +398,7 @@ namespace TestWrapper.TestRunners
             } 
             else if (CategoriesToIgnore != null && CategoriesToIgnore.Length > 0)
             {
-                filter = string.Join("|", CategoriesToIgnore.Select(GetCategoryToIgnoreArg));
+                filter = string.Join("&", CategoriesToIgnore.Select(GetCategoryToIgnoreArg));
             }
 
             if (!string.IsNullOrEmpty(filter))

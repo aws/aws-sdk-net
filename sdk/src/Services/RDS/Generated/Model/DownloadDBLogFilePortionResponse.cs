@@ -62,6 +62,7 @@ namespace Amazon.RDS.Model
         /// Entries from the specified log file.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string LogFileData
         {
             get { return this._logFileData; }

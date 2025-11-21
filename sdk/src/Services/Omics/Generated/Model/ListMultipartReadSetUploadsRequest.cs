@@ -31,8 +31,9 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMultipartReadSetUploads operation.
-    /// Lists multipart read set uploads and for in progress uploads. Once the upload is completed,
-    /// a read set is created and the upload will no longer be returned in the response.
+    /// Lists in-progress multipart read set uploads for a sequence store and returns it in
+    /// a JSON formatted output. Multipart read set uploads are initiated by the <c>CreateMultipartReadSetUploads</c>
+    /// API operation. This operation returns a response with no body when the upload is complete.
     /// </summary>
     public partial class ListMultipartReadSetUploadsRequest : AmazonOmicsRequest
     {

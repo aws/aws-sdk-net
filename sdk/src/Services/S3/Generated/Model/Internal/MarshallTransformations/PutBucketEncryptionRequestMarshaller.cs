@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutBucketEncryptionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.AddSubResource("encryption");
         
@@ -90,6 +91,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue != null)
                         {
                             xmlWriter.WriteStartElement("Rule");
+                            if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BlockedEncryptionTypes != null)
+                            {
+                                xmlWriter.WriteStartElement("BlockedEncryptionTypes");
+                                var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType = publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BlockedEncryptionTypes.EncryptionType;
+                                if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType != null && (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                {
+                                    foreach (var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionTypeValue in publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType) 
+                                    {
+                                        xmlWriter.WriteStartElement("EncryptionType");
+                                        xmlWriter.WriteValue(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionTypeValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
                             if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.IsSetBucketKeyEnabled())
                                 xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BucketKeyEnabled.Value));
                             if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault != null)
@@ -115,8 +131,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                if (publicRequest.IsSetContentMD5())
-                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
@@ -151,5 +165,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketEncryptionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketEncryptionRequest publicRequest);
     }    
 }

@@ -32,6 +32,51 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the Search operation.
     /// Searches for assets in Amazon DataZone.
+    /// 
+    ///  
+    /// <para>
+    /// Search in Amazon DataZone is a powerful capability that enables users to discover
+    /// and explore data assets, glossary terms, and data products across their organization.
+    /// It provides both basic and advanced search functionality, allowing users to find resources
+    /// based on names, descriptions, metadata, and other attributes. Search can be scoped
+    /// to specific types of resources (like assets, glossary terms, or data products) and
+    /// can be filtered using various criteria such as creation date, owner, or status. The
+    /// search functionality is essential for making the wealth of data resources in an organization
+    /// discoverable and usable, helping users find the right data for their needs quickly
+    /// and efficiently.
+    /// </para>
+    ///  
+    /// <para>
+    /// Many search commands in Amazon DataZone are paginated, including <c>search</c> and
+    /// <c>search-types</c>. When the result set is large, Amazon DataZone returns a <c>nextToken</c>
+    /// in the response. This token can be used to retrieve the next page of results. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The --domain-identifier must refer to an existing Amazon DataZone domain. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// --search-scope must be one of: ASSET, GLOSSARY_TERM, DATA_PRODUCT, or GLOSSARY.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The user must have search permissions in the specified domain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If using --filters, ensure that the JSON is well-formed and that each filter includes
+    /// valid attribute and value keys. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For paginated results, be prepared to use --next-token to fetch additional pages.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class SearchRequest : AmazonDataZoneRequest
     {

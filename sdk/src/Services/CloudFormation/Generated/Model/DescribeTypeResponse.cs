@@ -111,9 +111,6 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// To set the configuration data for an extension, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
-        /// configuration data for extensions in your account</a> in the <i>CloudFormation User
-        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60000)]
@@ -563,8 +560,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about extension schemas, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
-        /// type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
+        /// type schema</a> in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>
+        /// and the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html">CloudFormation
+        /// Hooks User Guide</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16777216)]

@@ -39,8 +39,8 @@ namespace Amazon.MediaLive.Model
         private string _nameModifier;
 
         /// <summary>
-        /// Gets and sets the property ContainerSettings. Settings specific to the container type
-        /// of the file.
+        /// Gets and sets the property ContainerSettings. Container for this output. Can be auto-detected
+        /// from extension field.
         /// </summary>
         [AWSProperty(Required=true)]
         public ArchiveContainerSettings ContainerSettings

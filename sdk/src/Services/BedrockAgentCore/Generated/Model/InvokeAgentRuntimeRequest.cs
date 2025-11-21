@@ -31,15 +31,14 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeAgentRuntime operation.
-    /// Sends a request to an agent runtime in Amazon Bedrock and receives responses in real-time.
-    /// The agent processes the request using the configured foundation model and any associated
-    /// knowledge bases or action groups.
+    /// Sends a request to an agent or tool hosted in an Amazon Bedrock AgentCore Runtime
+    /// and receives responses in real-time. 
     /// 
     ///  
     /// <para>
-    /// To invoke an agent runtime, you must specify the agent runtime ARN and provide a payload
+    /// To invoke an agent you must specify the AgentCore Runtime ARN and provide a payload
     /// containing your request. You can optionally specify a qualifier to target a specific
-    /// version or alias of the agent.
+    /// version or endpoint of the agent.
     /// </para>
     ///  
     /// <para>
@@ -47,10 +46,31 @@ namespace Amazon.BedrockAgentCore.Model
     /// as they become available. We recommend using pagination to ensure that the operation
     /// returns quickly and successfully when processing large responses.
     /// </para>
+    ///  
+    /// <para>
+    /// For example code, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-invoke-agent.html">Invoke
+    /// an AgentCore Runtime agent</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// If you're integrating your agent with OAuth, you can't use the Amazon Web Services
+    /// SDK to call <c>InvokeAgentRuntime</c>. Instead, make a HTTPS request to <c>InvokeAgentRuntime</c>.
+    /// For an example, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-oauth.html">Authenticate
+    /// and authorize with Inbound Auth and Outbound Auth</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To use this operation, you must have the <c>bedrock-agentcore:InvokeAgentRuntime</c>
+    /// permission. If you are making a call to <c>InvokeAgentRuntime</c> on behalf of a user
+    /// ID with the <c>X-Amzn-Bedrock-AgentCore-Runtime-User-Id</c> header, You require permissions
+    /// to both actions (<c>bedrock-agentcore:InvokeAgentRuntime</c> and <c>bedrock-agentcore:InvokeAgentRuntimeForUser</c>).
+    /// 
+    /// </para>
     /// </summary>
     public partial class InvokeAgentRuntimeRequest : AmazonBedrockAgentCoreRequest
     {
         private string _accept;
+        private string _accountId;
         private string _agentRuntimeArn;
         private string _baggage;
         private string _contentType;
@@ -83,6 +103,24 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetAccept()
         {
             return this._accept != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The identifier of the Amazon Web Services account for the agent runtime resource.
+        /// </para>
+        /// </summary>
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
         }
 
         /// <summary>
@@ -206,7 +244,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// The qualifier to use for the agent runtime. This can be a version number or an alias
+        /// The qualifier to use for the agent runtime. This can be a version number or an endpoint
         /// name that points to a specific version. If not specified, Amazon Bedrock uses the
         /// default version of the agent runtime.
         /// </para>

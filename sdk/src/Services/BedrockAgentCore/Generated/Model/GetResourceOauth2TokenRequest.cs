@@ -31,24 +31,26 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceOauth2Token operation.
-    /// Reaturns the Oauth2Token of the provided resource
+    /// Returns the OAuth 2.0 token of the provided resource.
     /// </summary>
     public partial class GetResourceOauth2TokenRequest : AmazonBedrockAgentCoreRequest
     {
         private Dictionary<string, string> _customParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _customState;
         private bool? _forceAuthentication;
         private Oauth2FlowType _oauth2Flow;
         private string _resourceCredentialProviderName;
         private string _resourceOauth2ReturnUrl;
         private List<string> _scopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _userId;
+        private string _sessionUri;
         private string _workloadIdentityToken;
 
         /// <summary>
         /// Gets and sets the property CustomParameters. 
         /// <para>
-        /// Gives the ability to send extra/custom parameters to the resource credentials provider
-        /// during the authorization process. Standard OAuth2 flow parameters will not be overriden.
+        /// A map of custom parameters to include in the authorization request to the resource
+        /// credential provider. These parameters are in addition to the standard OAuth 2.0 flow
+        /// parameters, and will not override them.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -69,9 +71,31 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomState. 
+        /// <para>
+        /// An opaque string that will be sent back to the callback URL provided in resourceOauth2ReturnUrl.
+        /// This state should be used to protect the callback URL of your application against
+        /// CSRF attacks by ensuring the response corresponds to the original request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
+        public string CustomState
+        {
+            get { return this._customState; }
+            set { this._customState = value; }
+        }
+
+        // Check to see if CustomState property is set
+        internal bool IsSetCustomState()
+        {
+            return this._customState != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ForceAuthentication. 
         /// <para>
-        /// If true, always initiate a new 3LO flow
+        /// Indicates whether to always initiate a new three-legged OAuth (3LO) flow, regardless
+        /// of any existing session.
         /// </para>
         /// </summary>
         public bool? ForceAuthentication
@@ -89,7 +113,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Oauth2Flow. 
         /// <para>
-        /// The type of flow to be performed
+        /// The type of flow to be performed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,7 +132,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ResourceCredentialProviderName. 
         /// <para>
-        /// Reference to the credential provider
+        /// The name of the resource's credential provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -127,8 +151,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property ResourceOauth2ReturnUrl. 
         /// <para>
-        /// Callback url to redirect after token retrieval completes. Should be one of the provideded
-        /// urls during WorkloadIdentity creation
+        /// The callback URL to redirect to after the OAuth 2.0 token retrieval is complete. This
+        /// URL must be one of the provided URLs configured for the workload identity.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -147,7 +171,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Scopes. 
         /// <para>
-        /// The OAuth scopes requested
+        /// The OAuth scopes being requested.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -169,28 +193,30 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserId. 
+        /// Gets and sets the property SessionUri. 
         /// <para>
-        /// The user ID of the user you're retrieving the token on behalf of.
+        /// Unique identifier for the user's authentication session for retrieving OAuth2 tokens.
+        /// This ID tracks the authorization flow state across multiple requests and responses
+        /// during the OAuth2 authentication process.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string UserId
+        [AWSProperty(Min=1, Max=1024)]
+        public string SessionUri
         {
-            get { return this._userId; }
-            set { this._userId = value; }
+            get { return this._sessionUri; }
+            set { this._sessionUri = value; }
         }
 
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
+        // Check to see if SessionUri property is set
+        internal bool IsSetSessionUri()
         {
-            return this._userId != null;
+            return this._sessionUri != null;
         }
 
         /// <summary>
         /// Gets and sets the property WorkloadIdentityToken. 
         /// <para>
-        /// The identity token of the workload you want to retrive the Oauth2 Token of.
+        /// The identity token of the workload from which you want to retrieve the OAuth2 token.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=131072)]

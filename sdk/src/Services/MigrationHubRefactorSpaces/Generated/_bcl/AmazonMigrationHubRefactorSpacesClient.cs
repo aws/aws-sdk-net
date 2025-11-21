@@ -323,7 +323,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual CreateApplicationResponse CreateApplication(CreateApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
 
@@ -378,7 +378,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateApplicationResponseUnmarshaller.Instance;
             
@@ -434,7 +434,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual CreateEnvironmentResponse CreateEnvironment(CreateEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
 
@@ -489,7 +489,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateEnvironment">REST API Reference for CreateEnvironment Operation</seealso>
         public virtual Task<CreateEnvironmentResponse> CreateEnvironmentAsync(CreateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEnvironmentResponseUnmarshaller.Instance;
             
@@ -631,7 +631,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual CreateRouteResponse CreateRoute(CreateRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
@@ -772,7 +772,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
             
@@ -826,7 +826,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual CreateServiceResponse CreateService(CreateServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
 
@@ -879,7 +879,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateService">REST API Reference for CreateService Operation</seealso>
         public virtual Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateServiceResponseUnmarshaller.Instance;
             
@@ -920,7 +920,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
 
@@ -960,7 +960,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual Task<DeleteApplicationResponse> DeleteApplicationAsync(DeleteApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteApplicationResponseUnmarshaller.Instance;
             
@@ -1001,7 +1001,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual DeleteEnvironmentResponse DeleteEnvironment(DeleteEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
 
@@ -1041,7 +1041,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DeleteEnvironment">REST API Reference for DeleteEnvironment Operation</seealso>
         public virtual Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(DeleteEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEnvironmentResponseUnmarshaller.Instance;
             
@@ -1077,7 +1077,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
             
@@ -1151,7 +1151,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
@@ -1189,7 +1189,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
             
@@ -1228,7 +1228,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual DeleteServiceResponse DeleteService(DeleteServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
@@ -1266,7 +1266,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/DeleteService">REST API Reference for DeleteService Operation</seealso>
         public virtual Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
             
@@ -1302,7 +1302,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual GetApplicationResponse GetApplication(GetApplicationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
 
@@ -1337,7 +1337,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/GetApplication">REST API Reference for GetApplication Operation</seealso>
         public virtual Task<GetApplicationResponse> GetApplicationAsync(GetApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetApplicationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetApplicationResponseUnmarshaller.Instance;
             
@@ -1373,7 +1373,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         public virtual GetEnvironmentResponse GetEnvironment(GetEnvironmentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
 
@@ -1408,7 +1408,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         public virtual Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEnvironmentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEnvironmentResponseUnmarshaller.Instance;
             
@@ -1444,7 +1444,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -1479,7 +1479,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
             
@@ -1515,7 +1515,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/GetRoute">REST API Reference for GetRoute Operation</seealso>
         public virtual GetRouteResponse GetRoute(GetRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteResponseUnmarshaller.Instance;
 
@@ -1550,7 +1550,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/GetRoute">REST API Reference for GetRoute Operation</seealso>
         public virtual Task<GetRouteResponse> GetRouteAsync(GetRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRouteResponseUnmarshaller.Instance;
             
@@ -1586,7 +1586,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/GetService">REST API Reference for GetService Operation</seealso>
         public virtual GetServiceResponse GetService(GetServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
 
@@ -1621,7 +1621,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/GetService">REST API Reference for GetService Operation</seealso>
         public virtual Task<GetServiceResponse> GetServiceAsync(GetServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetServiceResponseUnmarshaller.Instance;
             
@@ -1664,7 +1664,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
 
@@ -1706,7 +1706,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListApplications">REST API Reference for ListApplications Operation</seealso>
         public virtual Task<ListApplicationsResponse> ListApplicationsAsync(ListApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListApplicationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
             
@@ -1743,7 +1743,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual ListEnvironmentsResponse ListEnvironments(ListEnvironmentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
 
@@ -1779,7 +1779,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListEnvironments">REST API Reference for ListEnvironments Operation</seealso>
         public virtual Task<ListEnvironmentsResponse> ListEnvironmentsAsync(ListEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentsResponseUnmarshaller.Instance;
             
@@ -1816,7 +1816,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListEnvironmentVpcs">REST API Reference for ListEnvironmentVpcs Operation</seealso>
         public virtual ListEnvironmentVpcsResponse ListEnvironmentVpcs(ListEnvironmentVpcsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentVpcsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentVpcsResponseUnmarshaller.Instance;
 
@@ -1852,7 +1852,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListEnvironmentVpcs">REST API Reference for ListEnvironmentVpcs Operation</seealso>
         public virtual Task<ListEnvironmentVpcsResponse> ListEnvironmentVpcsAsync(ListEnvironmentVpcsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEnvironmentVpcsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEnvironmentVpcsResponseUnmarshaller.Instance;
             
@@ -1894,7 +1894,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListRoutes">REST API Reference for ListRoutes Operation</seealso>
         public virtual ListRoutesResponse ListRoutes(ListRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutesResponseUnmarshaller.Instance;
 
@@ -1935,7 +1935,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListRoutes">REST API Reference for ListRoutes Operation</seealso>
         public virtual Task<ListRoutesResponse> ListRoutesAsync(ListRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutesResponseUnmarshaller.Instance;
             
@@ -1978,7 +1978,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
 
@@ -2020,7 +2020,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListServicesResponseUnmarshaller.Instance;
             
@@ -2051,7 +2051,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2081,7 +2081,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2124,7 +2124,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -2166,7 +2166,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
             
@@ -2205,7 +2205,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2243,7 +2243,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -2276,7 +2276,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2308,7 +2308,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -2344,7 +2344,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual UpdateRouteResponse UpdateRoute(UpdateRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
 
@@ -2379,7 +2379,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual Task<UpdateRouteResponse> UpdateRouteAsync(UpdateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
             

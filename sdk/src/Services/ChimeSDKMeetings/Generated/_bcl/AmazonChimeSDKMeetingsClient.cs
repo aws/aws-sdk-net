@@ -43,7 +43,7 @@ namespace Amazon.ChimeSDKMeetings
     /// The Amazon Chime SDK meetings APIs in this section allow software developers to create
     /// Amazon Chime SDK meetings, set the Amazon Web Services Regions for meetings, create
     /// and manage users, and send and receive meeting notifications. For more information
-    /// about the meeting APIs, see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html">Amazon
+    /// about the meeting APIs, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_Operations_Amazon_Chime_SDK_Meetings.html">Amazon
     /// Chime SDK meetings</a>.
     /// </summary>
     public partial class AmazonChimeSDKMeetingsClient : AmazonServiceClient, IAmazonChimeSDKMeetings
@@ -268,7 +268,7 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateAttendee service method.</param>
@@ -304,7 +304,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchCreateAttendee">REST API Reference for BatchCreateAttendee Operation</seealso>
         public virtual BatchCreateAttendeeResponse BatchCreateAttendee(BatchCreateAttendeeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateAttendeeResponseUnmarshaller.Instance;
 
@@ -314,7 +314,7 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateAttendee service method.</param>
@@ -353,7 +353,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchCreateAttendee">REST API Reference for BatchCreateAttendee Operation</seealso>
         public virtual Task<BatchCreateAttendeeResponse> BatchCreateAttendeeAsync(BatchCreateAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateAttendeeResponseUnmarshaller.Instance;
             
@@ -401,6 +401,14 @@ namespace Amazon.ChimeSDKMeetings
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// If meeting features is defined as <c>Video:MaxResolution:None</c> but <c>Content:MaxResolution</c>
+        /// is defined as something other than <c>None</c> and attendee capabilities are not defined
+        /// in the API request, then the default attendee video capability is set to <c>Receive</c>
+        /// and attendee content capability is set to <c>SendReceive</c>. This is because content
+        /// <c>SendReceive</c> requires video to be at least <c>Receive</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// When you change an <c>audio</c> capability from <c>None</c> or <c>Receive</c> to <c>Send</c>
         /// or <c>SendReceive</c> , and if the attendee left their microphone unmuted, audio will
         /// flow from the attendee to the other meeting participants.
@@ -444,7 +452,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">REST API Reference for BatchUpdateAttendeeCapabilitiesExcept Operation</seealso>
         public virtual BatchUpdateAttendeeCapabilitiesExceptResponse BatchUpdateAttendeeCapabilitiesExcept(BatchUpdateAttendeeCapabilitiesExceptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateAttendeeCapabilitiesExceptResponseUnmarshaller.Instance;
 
@@ -485,6 +493,14 @@ namespace Amazon.ChimeSDKMeetings
         /// If you don't set the <c>video</c> capability to receive, the response will contain
         /// an HTTP 400 Bad Request status code. However, you can set your <c>video</c> capability
         /// to receive and you set your <c>content</c> capability to not receive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If meeting features is defined as <c>Video:MaxResolution:None</c> but <c>Content:MaxResolution</c>
+        /// is defined as something other than <c>None</c> and attendee capabilities are not defined
+        /// in the API request, then the default attendee video capability is set to <c>Receive</c>
+        /// and attendee content capability is set to <c>SendReceive</c>. This is because content
+        /// <c>SendReceive</c> requires video to be at least <c>Receive</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -534,7 +550,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">REST API Reference for BatchUpdateAttendeeCapabilitiesExcept Operation</seealso>
         public virtual Task<BatchUpdateAttendeeCapabilitiesExceptResponse> BatchUpdateAttendeeCapabilitiesExceptAsync(BatchUpdateAttendeeCapabilitiesExceptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdateAttendeeCapabilitiesExceptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdateAttendeeCapabilitiesExceptResponseUnmarshaller.Instance;
             
@@ -548,7 +564,7 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Creates a new attendee for an active Amazon Chime SDK meeting. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAttendee service method.</param>
@@ -584,7 +600,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateAttendee">REST API Reference for CreateAttendee Operation</seealso>
         public virtual CreateAttendeeResponse CreateAttendee(CreateAttendeeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAttendeeResponseUnmarshaller.Instance;
 
@@ -594,7 +610,7 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Creates a new attendee for an active Amazon Chime SDK meeting. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAttendee service method.</param>
@@ -633,7 +649,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateAttendee">REST API Reference for CreateAttendee Operation</seealso>
         public virtual Task<CreateAttendeeResponse> CreateAttendeeAsync(CreateAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateAttendeeResponseUnmarshaller.Instance;
             
@@ -647,10 +663,27 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Creates a new Amazon Chime SDK meeting in the specified media Region with no initial
-        /// attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-        /// Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+        /// attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions">Available
+        /// Regions</a> and <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Using
+        /// meeting Regions</a>, both in the <i>Amazon Chime SDK Developer Guide</i>. For more
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you use this API in conjuction with the and APIs, and you don't specify the <c>MeetingFeatures.Content.MaxResolution</c>
+        /// or <c>MeetingFeatures.Video.MaxResolution</c> parameters, the following defaults are
+        /// used:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Content.MaxResolution: FHD
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Video.MaxResolution: HD
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMeeting service method.</param>
         /// 
@@ -682,7 +715,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateMeeting">REST API Reference for CreateMeeting Operation</seealso>
         public virtual CreateMeetingResponse CreateMeeting(CreateMeetingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMeetingResponseUnmarshaller.Instance;
 
@@ -692,10 +725,27 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Creates a new Amazon Chime SDK meeting in the specified media Region with no initial
-        /// attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-        /// Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+        /// attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions">Available
+        /// Regions</a> and <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Using
+        /// meeting Regions</a>, both in the <i>Amazon Chime SDK Developer Guide</i>. For more
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you use this API in conjuction with the and APIs, and you don't specify the <c>MeetingFeatures.Content.MaxResolution</c>
+        /// or <c>MeetingFeatures.Video.MaxResolution</c> parameters, the following defaults are
+        /// used:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Content.MaxResolution: FHD
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Video.MaxResolution: HD
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMeeting service method.</param>
         /// <param name="cancellationToken">
@@ -730,7 +780,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateMeeting">REST API Reference for CreateMeeting Operation</seealso>
         public virtual Task<CreateMeetingResponse> CreateMeetingAsync(CreateMeetingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMeetingResponseUnmarshaller.Instance;
             
@@ -744,10 +794,27 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees.
-        /// For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-        /// Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+        /// For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions">Available
+        /// Regions</a> and <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Using
+        /// meeting Regions</a>, both in the <i>Amazon Chime SDK Developer Guide</i>. For more
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you use this API in conjuction with the and APIs, and you don't specify the <c>MeetingFeatures.Content.MaxResolution</c>
+        /// or <c>MeetingFeatures.Video.MaxResolution</c> parameters, the following defaults are
+        /// used:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Content.MaxResolution: FHD
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Video.MaxResolution: HD
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMeetingWithAttendees service method.</param>
         /// 
@@ -779,7 +846,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateMeetingWithAttendees">REST API Reference for CreateMeetingWithAttendees Operation</seealso>
         public virtual CreateMeetingWithAttendeesResponse CreateMeetingWithAttendees(CreateMeetingWithAttendeesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMeetingWithAttendeesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMeetingWithAttendeesResponseUnmarshaller.Instance;
 
@@ -789,10 +856,27 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees.
-        /// For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-        /// Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i>. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-        /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+        /// For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/sdk-available-regions">Available
+        /// Regions</a> and <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Using
+        /// meeting Regions</a>, both in the <i>Amazon Chime SDK Developer Guide</i>. For more
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you use this API in conjuction with the and APIs, and you don't specify the <c>MeetingFeatures.Content.MaxResolution</c>
+        /// or <c>MeetingFeatures.Video.MaxResolution</c> parameters, the following defaults are
+        /// used:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Content.MaxResolution: FHD
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Video.MaxResolution: HD
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMeetingWithAttendees service method.</param>
         /// <param name="cancellationToken">
@@ -827,7 +911,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/CreateMeetingWithAttendees">REST API Reference for CreateMeetingWithAttendees Operation</seealso>
         public virtual Task<CreateMeetingWithAttendeesResponse> CreateMeetingWithAttendeesAsync(CreateMeetingWithAttendeesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMeetingWithAttendeesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMeetingWithAttendeesResponseUnmarshaller.Instance;
             
@@ -842,7 +926,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <summary>
         /// Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their
         /// <c>JoinToken</c>. Attendees are automatically deleted when a Amazon Chime SDK meeting
-        /// is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttendee service method.</param>
@@ -872,7 +956,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteAttendee">REST API Reference for DeleteAttendee Operation</seealso>
         public virtual DeleteAttendeeResponse DeleteAttendee(DeleteAttendeeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttendeeResponseUnmarshaller.Instance;
 
@@ -883,7 +967,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <summary>
         /// Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their
         /// <c>JoinToken</c>. Attendees are automatically deleted when a Amazon Chime SDK meeting
-        /// is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttendee service method.</param>
@@ -916,7 +1000,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteAttendee">REST API Reference for DeleteAttendee Operation</seealso>
         public virtual Task<DeleteAttendeeResponse> DeleteAttendeeAsync(DeleteAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteAttendeeResponseUnmarshaller.Instance;
             
@@ -931,7 +1015,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <summary>
         /// Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees,
         /// disconnects all clients, and prevents new clients from joining the meeting. For more
-        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMeeting service method.</param>
@@ -961,7 +1045,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteMeeting">REST API Reference for DeleteMeeting Operation</seealso>
         public virtual DeleteMeetingResponse DeleteMeeting(DeleteMeetingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMeetingResponseUnmarshaller.Instance;
 
@@ -972,7 +1056,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <summary>
         /// Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees,
         /// disconnects all clients, and prevents new clients from joining the meeting. For more
-        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMeeting service method.</param>
@@ -1005,7 +1089,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/DeleteMeeting">REST API Reference for DeleteMeeting Operation</seealso>
         public virtual Task<DeleteMeetingResponse> DeleteMeetingAsync(DeleteMeetingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMeetingResponseUnmarshaller.Instance;
             
@@ -1019,7 +1103,7 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee
-        /// ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAttendee service method.</param>
@@ -1049,7 +1133,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetAttendee">REST API Reference for GetAttendee Operation</seealso>
         public virtual GetAttendeeResponse GetAttendee(GetAttendeeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttendeeResponseUnmarshaller.Instance;
 
@@ -1059,7 +1143,7 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee
-        /// ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAttendee service method.</param>
@@ -1092,7 +1176,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetAttendee">REST API Reference for GetAttendee Operation</seealso>
         public virtual Task<GetAttendeeResponse> GetAttendeeAsync(GetAttendeeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetAttendeeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetAttendeeResponseUnmarshaller.Instance;
             
@@ -1106,7 +1190,7 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMeeting service method.</param>
@@ -1136,7 +1220,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetMeeting">REST API Reference for GetMeeting Operation</seealso>
         public virtual GetMeetingResponse GetMeeting(GetMeetingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMeetingResponseUnmarshaller.Instance;
 
@@ -1146,7 +1230,7 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMeeting service method.</param>
@@ -1179,7 +1263,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/GetMeeting">REST API Reference for GetMeeting Operation</seealso>
         public virtual Task<GetMeetingResponse> GetMeetingAsync(GetMeetingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMeetingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMeetingResponseUnmarshaller.Instance;
             
@@ -1193,7 +1277,7 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Lists the attendees for the specified Amazon Chime SDK meeting. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttendees service method.</param>
@@ -1223,7 +1307,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListAttendees">REST API Reference for ListAttendees Operation</seealso>
         public virtual ListAttendeesResponse ListAttendees(ListAttendeesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttendeesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttendeesResponseUnmarshaller.Instance;
 
@@ -1233,7 +1317,7 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Lists the attendees for the specified Amazon Chime SDK meeting. For more information
-        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttendees service method.</param>
@@ -1266,7 +1350,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListAttendees">REST API Reference for ListAttendees Operation</seealso>
         public virtual Task<ListAttendeesResponse> ListAttendeesAsync(ListAttendeesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAttendeesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAttendeesResponseUnmarshaller.Instance;
             
@@ -1311,7 +1395,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1355,7 +1439,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -1430,7 +1514,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StartMeetingTranscription">REST API Reference for StartMeetingTranscription Operation</seealso>
         public virtual StartMeetingTranscriptionResponse StartMeetingTranscription(StartMeetingTranscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMeetingTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMeetingTranscriptionResponseUnmarshaller.Instance;
 
@@ -1504,7 +1588,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StartMeetingTranscription">REST API Reference for StartMeetingTranscription Operation</seealso>
         public virtual Task<StartMeetingTranscriptionResponse> StartMeetingTranscriptionAsync(StartMeetingTranscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMeetingTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMeetingTranscriptionResponseUnmarshaller.Instance;
             
@@ -1568,7 +1652,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StopMeetingTranscription">REST API Reference for StopMeetingTranscription Operation</seealso>
         public virtual StopMeetingTranscriptionResponse StopMeetingTranscription(StopMeetingTranscriptionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMeetingTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMeetingTranscriptionResponseUnmarshaller.Instance;
 
@@ -1631,7 +1715,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StopMeetingTranscription">REST API Reference for StopMeetingTranscription Operation</seealso>
         public virtual Task<StopMeetingTranscriptionResponse> StopMeetingTranscriptionAsync(StopMeetingTranscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopMeetingTranscriptionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopMeetingTranscriptionResponseUnmarshaller.Instance;
             
@@ -1679,7 +1763,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1726,7 +1810,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -1805,7 +1889,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1883,7 +1967,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -1930,6 +2014,14 @@ namespace Amazon.ChimeSDKMeetings
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// If meeting features is defined as <c>Video:MaxResolution:None</c> but <c>Content:MaxResolution</c>
+        /// is defined as something other than <c>None</c> and attendee capabilities are not defined
+        /// in the API request, then the default attendee video capability is set to <c>Receive</c>
+        /// and attendee content capability is set to <c>SendReceive</c>. This is because content
+        /// <c>SendReceive</c> requires video to be at least <c>Receive</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// When you change an <c>audio</c> capability from <c>None</c> or <c>Receive</c> to <c>Send</c>
         /// or <c>SendReceive</c> , and if the attendee left their microphone unmuted, audio will
         /// flow from the attendee to the other meeting participants.
@@ -1973,7 +2065,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">REST API Reference for UpdateAttendeeCapabilities Operation</seealso>
         public virtual UpdateAttendeeCapabilitiesResponse UpdateAttendeeCapabilities(UpdateAttendeeCapabilitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAttendeeCapabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAttendeeCapabilitiesResponseUnmarshaller.Instance;
 
@@ -2013,6 +2105,14 @@ namespace Amazon.ChimeSDKMeetings
         /// If you don't set the <c>video</c> capability to receive, the response will contain
         /// an HTTP 400 Bad Request status code. However, you can set your <c>video</c> capability
         /// to receive and you set your <c>content</c> capability to not receive.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If meeting features is defined as <c>Video:MaxResolution:None</c> but <c>Content:MaxResolution</c>
+        /// is defined as something other than <c>None</c> and attendee capabilities are not defined
+        /// in the API request, then the default attendee video capability is set to <c>Receive</c>
+        /// and attendee content capability is set to <c>SendReceive</c>. This is because content
+        /// <c>SendReceive</c> requires video to be at least <c>Receive</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2062,7 +2162,7 @@ namespace Amazon.ChimeSDKMeetings
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">REST API Reference for UpdateAttendeeCapabilities Operation</seealso>
         public virtual Task<UpdateAttendeeCapabilitiesResponse> UpdateAttendeeCapabilitiesAsync(UpdateAttendeeCapabilitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateAttendeeCapabilitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateAttendeeCapabilitiesResponseUnmarshaller.Instance;
             

@@ -64,6 +64,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("containerRegistryMap", targetDepth))
+                {
+                    var unmarshaller = ContainerRegistryMapUnmarshaller.Instance;
+                    response.ContainerRegistryMap = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

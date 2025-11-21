@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DistributionTenant Object
     /// </summary>  
-    public class DistributionTenantUnmarshaller : IXmlUnmarshaller<DistributionTenant, XmlUnmarshallerContext>
+    public partial class DistributionTenantUnmarshaller : IXmlUnmarshaller<DistributionTenant, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -142,6 +142,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -150,6 +152,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, DistributionTenant unmarshalledObject, int targetDepth);
+
         private static DistributionTenantUnmarshaller _instance = new DistributionTenantUnmarshaller();        
 
         /// <summary>

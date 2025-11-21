@@ -25,6 +25,256 @@ namespace Amazon.ObservabilityAdmin
 {
 
     /// <summary>
+    /// Constants used for properties of type CentralizationFailureReason.
+    /// </summary>
+    public class CentralizationFailureReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DESTINATION_ACCOUNT_NOT_IN_ORGANIZATION for CentralizationFailureReason
+        /// </summary>
+        public static readonly CentralizationFailureReason DESTINATION_ACCOUNT_NOT_IN_ORGANIZATION = new CentralizationFailureReason("DESTINATION_ACCOUNT_NOT_IN_ORGANIZATION");
+        /// <summary>
+        /// Constant INTERNAL_SERVER_ERROR for CentralizationFailureReason
+        /// </summary>
+        public static readonly CentralizationFailureReason INTERNAL_SERVER_ERROR = new CentralizationFailureReason("INTERNAL_SERVER_ERROR");
+        /// <summary>
+        /// Constant TRUSTED_ACCESS_NOT_ENABLED for CentralizationFailureReason
+        /// </summary>
+        public static readonly CentralizationFailureReason TRUSTED_ACCESS_NOT_ENABLED = new CentralizationFailureReason("TRUSTED_ACCESS_NOT_ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CentralizationFailureReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CentralizationFailureReason FindValue(string value)
+        {
+            return FindValue<CentralizationFailureReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CentralizationFailureReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DestinationType.
+    /// </summary>
+    public class DestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudWatchLogs for DestinationType
+        /// </summary>
+        public static readonly DestinationType CloudWatchLogs = new DestinationType("cloud-watch-logs");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DestinationType FindValue(string value)
+        {
+            return FindValue<DestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptedLogGroupStrategy.
+    /// </summary>
+    public class EncryptedLogGroupStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for EncryptedLogGroupStrategy
+        /// </summary>
+        public static readonly EncryptedLogGroupStrategy ALLOW = new EncryptedLogGroupStrategy("ALLOW");
+        /// <summary>
+        /// Constant SKIP for EncryptedLogGroupStrategy
+        /// </summary>
+        public static readonly EncryptedLogGroupStrategy SKIP = new EncryptedLogGroupStrategy("SKIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptedLogGroupStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptedLogGroupStrategy FindValue(string value)
+        {
+            return FindValue<EncryptedLogGroupStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptedLogGroupStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionConflictResolutionStrategy.
+    /// </summary>
+    public class EncryptionConflictResolutionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for EncryptionConflictResolutionStrategy
+        /// </summary>
+        public static readonly EncryptionConflictResolutionStrategy ALLOW = new EncryptionConflictResolutionStrategy("ALLOW");
+        /// <summary>
+        /// Constant SKIP for EncryptionConflictResolutionStrategy
+        /// </summary>
+        public static readonly EncryptionConflictResolutionStrategy SKIP = new EncryptionConflictResolutionStrategy("SKIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionConflictResolutionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionConflictResolutionStrategy FindValue(string value)
+        {
+            return FindValue<EncryptionConflictResolutionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionConflictResolutionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EncryptionStrategy.
+    /// </summary>
+    public class EncryptionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_OWNED for EncryptionStrategy
+        /// </summary>
+        public static readonly EncryptionStrategy AWS_OWNED = new EncryptionStrategy("AWS_OWNED");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for EncryptionStrategy
+        /// </summary>
+        public static readonly EncryptionStrategy CUSTOMER_MANAGED = new EncryptionStrategy("CUSTOMER_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionStrategy FindValue(string value)
+        {
+            return FindValue<EncryptionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -72,6 +322,60 @@ namespace Amazon.ObservabilityAdmin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleHealth.
+    /// </summary>
+    public class RuleHealth : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Healthy for RuleHealth
+        /// </summary>
+        public static readonly RuleHealth Healthy = new RuleHealth("Healthy");
+        /// <summary>
+        /// Constant Provisioning for RuleHealth
+        /// </summary>
+        public static readonly RuleHealth Provisioning = new RuleHealth("Provisioning");
+        /// <summary>
+        /// Constant Unhealthy for RuleHealth
+        /// </summary>
+        public static readonly RuleHealth Unhealthy = new RuleHealth("Unhealthy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleHealth(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleHealth FindValue(string value)
+        {
+            return FindValue<RuleHealth>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleHealth(string value)
         {
             return FindValue(value);
         }
@@ -142,6 +446,60 @@ namespace Amazon.ObservabilityAdmin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TelemetryEnrichmentStatus.
+    /// </summary>
+    public class TelemetryEnrichmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Impaired for TelemetryEnrichmentStatus
+        /// </summary>
+        public static readonly TelemetryEnrichmentStatus Impaired = new TelemetryEnrichmentStatus("Impaired");
+        /// <summary>
+        /// Constant Running for TelemetryEnrichmentStatus
+        /// </summary>
+        public static readonly TelemetryEnrichmentStatus Running = new TelemetryEnrichmentStatus("Running");
+        /// <summary>
+        /// Constant Stopped for TelemetryEnrichmentStatus
+        /// </summary>
+        public static readonly TelemetryEnrichmentStatus Stopped = new TelemetryEnrichmentStatus("Stopped");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TelemetryEnrichmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TelemetryEnrichmentStatus FindValue(string value)
+        {
+            return FindValue<TelemetryEnrichmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TelemetryEnrichmentStatus(string value)
         {
             return FindValue(value);
         }

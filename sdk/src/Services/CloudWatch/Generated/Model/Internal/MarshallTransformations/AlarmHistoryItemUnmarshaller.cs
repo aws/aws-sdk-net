@@ -55,6 +55,23 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AlarmContributorAttributes/entry", targetDepth))
+                    {
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance, "key", "value");
+                        if (unmarshalledObject.AlarmContributorAttributes == null)
+                        {
+                            unmarshalledObject.AlarmContributorAttributes = new Dictionary<string, string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AlarmContributorAttributes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("AlarmContributorId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AlarmContributorId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AlarmName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

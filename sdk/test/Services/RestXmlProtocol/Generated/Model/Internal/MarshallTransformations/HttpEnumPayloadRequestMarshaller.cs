@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(HttpEnumPayloadRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/EnumPayload";
 
@@ -83,5 +84,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, HttpEnumPayloadRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, HttpEnumPayloadRequest publicRequest);
     }    
 }

@@ -46,6 +46,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAutoDisablePolicy())
+            {
+                context.Writer.WritePropertyName("autoDisablePolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoDisablePolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoDisablePolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPipelineExecutionStartCondition())
             {
                 context.Writer.WritePropertyName("pipelineExecutionStartCondition");

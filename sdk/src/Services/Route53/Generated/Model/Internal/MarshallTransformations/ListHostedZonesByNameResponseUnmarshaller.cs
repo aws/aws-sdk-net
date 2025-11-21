@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListHostedZonesByName operation
     /// </summary>  
-    public class ListHostedZonesByNameResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListHostedZonesByNameResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             ListHostedZonesByNameResponse response = new ListHostedZonesByNameResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -117,7 +118,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -151,6 +151,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListHostedZonesByNameResponse response);
 
         private static ListHostedZonesByNameResponseUnmarshaller _instance = new ListHostedZonesByNameResponseUnmarshaller();        
 

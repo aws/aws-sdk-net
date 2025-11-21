@@ -13,6 +13,12 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionRequest.LanguageOptions</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[a-zA-Z-,]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionRequest.MediaSampleRateHertz</property>
     <min>8000</min>
     <max>48000</max>
@@ -36,16 +42,34 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionRequest.VocabularyFilterNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionRequest.VocabularyName</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionRequest.VocabularyNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionResponse.LanguageModelName</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionResponse.LanguageOptions</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[a-zA-Z-,]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionResponse.MediaSampleRateHertz</property>
@@ -71,10 +95,22 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionResponse.VocabularyFilterNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionResponse.VocabularyName</property>
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeStreaming.Model.StartCallAnalyticsStreamTranscriptionResponse.VocabularyNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeStreaming.Model.StartMedicalScribeStreamRequest.MediaSampleRateHertz</property>

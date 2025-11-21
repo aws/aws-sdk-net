@@ -34,7 +34,10 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterInstanceGroupDetails
     {
+        private DeploymentConfiguration _activeSoftwareUpdateConfig;
         private int? _currentCount;
+        private string _currentImageId;
+        private string _desiredImageId;
         private string _executionRole;
         private string _instanceGroupName;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
@@ -43,11 +46,28 @@ namespace Amazon.SageMaker.Model
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private ScheduledUpdateConfig _scheduledUpdateConfig;
+        private SoftwareUpdateStatus _softwareUpdateStatus;
         private InstanceGroupStatus _status;
         private int? _targetCount;
+        private int? _targetStateCount;
         private int? _threadsPerCore;
         private string _trainingPlanArn;
         private string _trainingPlanStatus;
+
+        /// <summary>
+        /// Gets and sets the property ActiveSoftwareUpdateConfig.
+        /// </summary>
+        public DeploymentConfiguration ActiveSoftwareUpdateConfig
+        {
+            get { return this._activeSoftwareUpdateConfig; }
+            set { this._activeSoftwareUpdateConfig = value; }
+        }
+
+        // Check to see if ActiveSoftwareUpdateConfig property is set
+        internal bool IsSetActiveSoftwareUpdateConfig()
+        {
+            return this._activeSoftwareUpdateConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CurrentCount. 
@@ -67,6 +87,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCurrentCount()
         {
             return this._currentCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentImageId. 
+        /// <para>
+        /// The ID of the Amazon Machine Image (AMI) currently in use by the instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=21)]
+        public string CurrentImageId
+        {
+            get { return this._currentImageId; }
+            set { this._currentImageId = value; }
+        }
+
+        // Check to see if CurrentImageId property is set
+        internal bool IsSetCurrentImageId()
+        {
+            return this._currentImageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredImageId. 
+        /// <para>
+        /// The ID of the Amazon Machine Image (AMI) desired for the instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=7, Max=21)]
+        public string DesiredImageId
+        {
+            get { return this._desiredImageId; }
+            set { this._desiredImageId = value; }
+        }
+
+        // Check to see if DesiredImageId property is set
+        internal bool IsSetDesiredImageId()
+        {
+            return this._desiredImageId != null;
         }
 
         /// <summary>
@@ -232,6 +290,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SoftwareUpdateStatus. 
+        /// <para>
+        /// Status of the last software udpate request.
+        /// </para>
+        /// </summary>
+        public SoftwareUpdateStatus SoftwareUpdateStatus
+        {
+            get { return this._softwareUpdateStatus; }
+            set { this._softwareUpdateStatus = value; }
+        }
+
+        // Check to see if SoftwareUpdateStatus property is set
+        internal bool IsSetSoftwareUpdateStatus()
+        {
+            return this._softwareUpdateStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the cluster instance group.
@@ -293,6 +369,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTargetCount()
         {
             return this._targetCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetStateCount. 
+        /// <para>
+        /// The number of nodes running a specific image ID since the last software update request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=6758)]
+        public int? TargetStateCount
+        {
+            get { return this._targetStateCount; }
+            set { this._targetStateCount = value; }
+        }
+
+        // Check to see if TargetStateCount property is set
+        internal bool IsSetTargetStateCount()
+        {
+            return this._targetStateCount.HasValue; 
         }
 
         /// <summary>

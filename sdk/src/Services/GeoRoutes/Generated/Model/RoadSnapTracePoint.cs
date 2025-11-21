@@ -45,7 +45,7 @@ namespace Amazon.GeoRoutes.Model
         /// GPS Heading at the position.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=360)]
+        [AWSProperty(Sensitive=true, Min=0, Max=360)]
         public double? Heading
         {
             get { return this._heading; }
@@ -92,7 +92,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>KilometersPerHour</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Sensitive=true, Min=0)]
         public double? Speed
         {
             get { return this._speed; }
@@ -111,6 +111,7 @@ namespace Amazon.GeoRoutes.Model
         /// Timestamp of the event.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Timestamp
         {
             get { return this._timestamp; }

@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFlowMonitor.Model
 {
     /// <summary>
-    /// A target identifier is a pair of identifying information for a resource that is included
-    /// in a target. A target identifier includes the target ID and the target type.
+    /// A target identifier is a pair of identifying information for a scope that is included
+    /// in a target. A target identifier is made up of a target ID and a target type. Currently
+    /// the target ID is always an account ID and the target type is always ACCOUNT.
     /// </summary>
     public partial class TargetIdentifier
     {
@@ -41,7 +42,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The identifier for a target.
+        /// The identifier for a target, which is currently always an account ID .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +61,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
-        /// The type of a target. A target type is currently always <c>ACCOUNT</c> because a target
-        /// is currently a single Amazon Web Services account.
+        /// The type of a target. A target type is currently always <c>ACCOUNT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

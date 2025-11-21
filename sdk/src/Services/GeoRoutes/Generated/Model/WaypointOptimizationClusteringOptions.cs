@@ -46,7 +46,7 @@ namespace Amazon.GeoRoutes.Model
         /// cluster. A Topology segment is a linear stretch of road between two junctions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public WaypointOptimizationClusteringAlgorithm Algorithm
         {
             get { return this._algorithm; }

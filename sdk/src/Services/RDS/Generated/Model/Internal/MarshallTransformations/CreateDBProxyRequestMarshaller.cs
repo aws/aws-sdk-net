@@ -104,6 +104,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DebugLogging", StringUtils.FromBool(publicRequest.DebugLogging));
                 }
+                if(publicRequest.IsSetDefaultAuthScheme())
+                {
+                    request.Parameters.Add("DefaultAuthScheme", StringUtils.FromString(publicRequest.DefaultAuthScheme));
+                }
+                if(publicRequest.IsSetEndpointNetworkType())
+                {
+                    request.Parameters.Add("EndpointNetworkType", StringUtils.FromString(publicRequest.EndpointNetworkType));
+                }
                 if(publicRequest.IsSetEngineFamily())
                 {
                     request.Parameters.Add("EngineFamily", StringUtils.FromString(publicRequest.EngineFamily));
@@ -140,6 +148,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                              publicRequestlistValueIndex++;
                          }
                     }
+                }
+                if(publicRequest.IsSetTargetConnectionNetworkType())
+                {
+                    request.Parameters.Add("TargetConnectionNetworkType", StringUtils.FromString(publicRequest.TargetConnectionNetworkType));
                 }
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {

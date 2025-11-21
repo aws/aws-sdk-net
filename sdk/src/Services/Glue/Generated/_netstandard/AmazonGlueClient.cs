@@ -270,7 +270,7 @@ namespace Amazon.Glue
 
         internal virtual BatchCreatePartitionResponse BatchCreatePartition(BatchCreatePartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreatePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreatePartitionResponseUnmarshaller.Instance;
 
@@ -312,7 +312,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchCreatePartition">REST API Reference for BatchCreatePartition Operation</seealso>
         public virtual Task<BatchCreatePartitionResponse> BatchCreatePartitionAsync(BatchCreatePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreatePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreatePartitionResponseUnmarshaller.Instance;
 
@@ -324,7 +324,7 @@ namespace Amazon.Glue
 
         internal virtual BatchDeleteConnectionResponse BatchDeleteConnection(BatchDeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteConnectionResponseUnmarshaller.Instance;
 
@@ -351,7 +351,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteConnection">REST API Reference for BatchDeleteConnection Operation</seealso>
         public virtual Task<BatchDeleteConnectionResponse> BatchDeleteConnectionAsync(BatchDeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteConnectionResponseUnmarshaller.Instance;
 
@@ -363,7 +363,7 @@ namespace Amazon.Glue
 
         internal virtual BatchDeletePartitionResponse BatchDeletePartition(BatchDeletePartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeletePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeletePartitionResponseUnmarshaller.Instance;
 
@@ -396,7 +396,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeletePartition">REST API Reference for BatchDeletePartition Operation</seealso>
         public virtual Task<BatchDeletePartitionResponse> BatchDeletePartitionAsync(BatchDeletePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeletePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeletePartitionResponseUnmarshaller.Instance;
 
@@ -408,7 +408,7 @@ namespace Amazon.Glue
 
         internal virtual BatchDeleteTableResponse BatchDeleteTable(BatchDeleteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteTableResponseUnmarshaller.Instance;
 
@@ -461,7 +461,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTable">REST API Reference for BatchDeleteTable Operation</seealso>
         public virtual Task<BatchDeleteTableResponse> BatchDeleteTableAsync(BatchDeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteTableResponseUnmarshaller.Instance;
 
@@ -473,7 +473,7 @@ namespace Amazon.Glue
 
         internal virtual BatchDeleteTableVersionResponse BatchDeleteTableVersion(BatchDeleteTableVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteTableVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteTableVersionResponseUnmarshaller.Instance;
 
@@ -506,7 +506,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion">REST API Reference for BatchDeleteTableVersion Operation</seealso>
         public virtual Task<BatchDeleteTableVersionResponse> BatchDeleteTableVersionAsync(BatchDeleteTableVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteTableVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteTableVersionResponseUnmarshaller.Instance;
 
@@ -518,7 +518,7 @@ namespace Amazon.Glue
 
         internal virtual BatchGetBlueprintsResponse BatchGetBlueprints(BatchGetBlueprintsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetBlueprintsResponseUnmarshaller.Instance;
 
@@ -548,7 +548,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetBlueprints">REST API Reference for BatchGetBlueprints Operation</seealso>
         public virtual Task<BatchGetBlueprintsResponse> BatchGetBlueprintsAsync(BatchGetBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetBlueprintsResponseUnmarshaller.Instance;
 
@@ -560,7 +560,7 @@ namespace Amazon.Glue
 
         internal virtual BatchGetCrawlersResponse BatchGetCrawlers(BatchGetCrawlersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCrawlersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCrawlersResponseUnmarshaller.Instance;
 
@@ -590,7 +590,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCrawlers">REST API Reference for BatchGetCrawlers Operation</seealso>
         public virtual Task<BatchGetCrawlersResponse> BatchGetCrawlersAsync(BatchGetCrawlersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCrawlersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCrawlersResponseUnmarshaller.Instance;
 
@@ -602,7 +602,7 @@ namespace Amazon.Glue
 
         internal virtual BatchGetCustomEntityTypesResponse BatchGetCustomEntityTypes(BatchGetCustomEntityTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCustomEntityTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCustomEntityTypesResponseUnmarshaller.Instance;
 
@@ -632,7 +632,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetCustomEntityTypes">REST API Reference for BatchGetCustomEntityTypes Operation</seealso>
         public virtual Task<BatchGetCustomEntityTypesResponse> BatchGetCustomEntityTypesAsync(BatchGetCustomEntityTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetCustomEntityTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetCustomEntityTypesResponseUnmarshaller.Instance;
 
@@ -644,7 +644,7 @@ namespace Amazon.Glue
 
         internal virtual BatchGetDataQualityResultResponse BatchGetDataQualityResult(BatchGetDataQualityResultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetDataQualityResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetDataQualityResultResponseUnmarshaller.Instance;
 
@@ -674,7 +674,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityResult">REST API Reference for BatchGetDataQualityResult Operation</seealso>
         public virtual Task<BatchGetDataQualityResultResponse> BatchGetDataQualityResultAsync(BatchGetDataQualityResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetDataQualityResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetDataQualityResultResponseUnmarshaller.Instance;
 
@@ -686,7 +686,7 @@ namespace Amazon.Glue
 
         internal virtual BatchGetDevEndpointsResponse BatchGetDevEndpoints(BatchGetDevEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetDevEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetDevEndpointsResponseUnmarshaller.Instance;
 
@@ -722,7 +722,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDevEndpoints">REST API Reference for BatchGetDevEndpoints Operation</seealso>
         public virtual Task<BatchGetDevEndpointsResponse> BatchGetDevEndpointsAsync(BatchGetDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetDevEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetDevEndpointsResponseUnmarshaller.Instance;
 
@@ -734,7 +734,7 @@ namespace Amazon.Glue
 
         internal virtual BatchGetJobsResponse BatchGetJobs(BatchGetJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetJobsResponseUnmarshaller.Instance;
 
@@ -767,7 +767,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetJobs">REST API Reference for BatchGetJobs Operation</seealso>
         public virtual Task<BatchGetJobsResponse> BatchGetJobsAsync(BatchGetJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetJobsResponseUnmarshaller.Instance;
 
@@ -779,7 +779,7 @@ namespace Amazon.Glue
 
         internal virtual BatchGetPartitionResponse BatchGetPartition(BatchGetPartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetPartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetPartitionResponseUnmarshaller.Instance;
 
@@ -824,7 +824,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetPartition">REST API Reference for BatchGetPartition Operation</seealso>
         public virtual Task<BatchGetPartitionResponse> BatchGetPartitionAsync(BatchGetPartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetPartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetPartitionResponseUnmarshaller.Instance;
 
@@ -836,7 +836,7 @@ namespace Amazon.Glue
 
         internal virtual BatchGetTableOptimizerResponse BatchGetTableOptimizer(BatchGetTableOptimizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTableOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTableOptimizerResponseUnmarshaller.Instance;
 
@@ -872,7 +872,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTableOptimizer">REST API Reference for BatchGetTableOptimizer Operation</seealso>
         public virtual Task<BatchGetTableOptimizerResponse> BatchGetTableOptimizerAsync(BatchGetTableOptimizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTableOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTableOptimizerResponseUnmarshaller.Instance;
 
@@ -884,7 +884,7 @@ namespace Amazon.Glue
 
         internal virtual BatchGetTriggersResponse BatchGetTriggers(BatchGetTriggersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTriggersResponseUnmarshaller.Instance;
 
@@ -917,7 +917,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetTriggers">REST API Reference for BatchGetTriggers Operation</seealso>
         public virtual Task<BatchGetTriggersResponse> BatchGetTriggersAsync(BatchGetTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetTriggersResponseUnmarshaller.Instance;
 
@@ -929,7 +929,7 @@ namespace Amazon.Glue
 
         internal virtual BatchGetWorkflowsResponse BatchGetWorkflows(BatchGetWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetWorkflowsResponseUnmarshaller.Instance;
 
@@ -962,7 +962,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetWorkflows">REST API Reference for BatchGetWorkflows Operation</seealso>
         public virtual Task<BatchGetWorkflowsResponse> BatchGetWorkflowsAsync(BatchGetWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetWorkflowsResponseUnmarshaller.Instance;
 
@@ -974,7 +974,7 @@ namespace Amazon.Glue
 
         internal virtual BatchPutDataQualityStatisticAnnotationResponse BatchPutDataQualityStatisticAnnotation(BatchPutDataQualityStatisticAnnotationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutDataQualityStatisticAnnotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutDataQualityStatisticAnnotationResponseUnmarshaller.Instance;
 
@@ -984,7 +984,9 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Annotate datapoints over time for a specific data quality statistic.
+        /// Annotate datapoints over time for a specific data quality statistic. The API requires
+        /// both profileID and statisticID as part of the InclusionAnnotation input. The API only
+        /// works for a single statisticId across multiple profiles.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutDataQualityStatisticAnnotation service method.</param>
         /// <param name="cancellationToken">
@@ -1007,7 +1009,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchPutDataQualityStatisticAnnotation">REST API Reference for BatchPutDataQualityStatisticAnnotation Operation</seealso>
         public virtual Task<BatchPutDataQualityStatisticAnnotationResponse> BatchPutDataQualityStatisticAnnotationAsync(BatchPutDataQualityStatisticAnnotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchPutDataQualityStatisticAnnotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchPutDataQualityStatisticAnnotationResponseUnmarshaller.Instance;
 
@@ -1019,7 +1021,7 @@ namespace Amazon.Glue
 
         internal virtual BatchStopJobRunResponse BatchStopJobRun(BatchStopJobRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStopJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStopJobRunResponseUnmarshaller.Instance;
 
@@ -1049,7 +1051,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun">REST API Reference for BatchStopJobRun Operation</seealso>
         public virtual Task<BatchStopJobRunResponse> BatchStopJobRunAsync(BatchStopJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchStopJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchStopJobRunResponseUnmarshaller.Instance;
 
@@ -1061,7 +1063,7 @@ namespace Amazon.Glue
 
         internal virtual BatchUpdatePartitionResponse BatchUpdatePartition(BatchUpdatePartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdatePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdatePartitionResponseUnmarshaller.Instance;
 
@@ -1097,7 +1099,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchUpdatePartition">REST API Reference for BatchUpdatePartition Operation</seealso>
         public virtual Task<BatchUpdatePartitionResponse> BatchUpdatePartitionAsync(BatchUpdatePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchUpdatePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchUpdatePartitionResponseUnmarshaller.Instance;
 
@@ -1109,7 +1111,7 @@ namespace Amazon.Glue
 
         internal virtual CancelDataQualityRuleRecommendationRunResponse CancelDataQualityRuleRecommendationRun(CancelDataQualityRuleRecommendationRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDataQualityRuleRecommendationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
 
@@ -1142,7 +1144,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRuleRecommendationRun">REST API Reference for CancelDataQualityRuleRecommendationRun Operation</seealso>
         public virtual Task<CancelDataQualityRuleRecommendationRunResponse> CancelDataQualityRuleRecommendationRunAsync(CancelDataQualityRuleRecommendationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDataQualityRuleRecommendationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
 
@@ -1154,7 +1156,7 @@ namespace Amazon.Glue
 
         internal virtual CancelDataQualityRulesetEvaluationRunResponse CancelDataQualityRulesetEvaluationRun(CancelDataQualityRulesetEvaluationRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
 
@@ -1187,7 +1189,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRulesetEvaluationRun">REST API Reference for CancelDataQualityRulesetEvaluationRun Operation</seealso>
         public virtual Task<CancelDataQualityRulesetEvaluationRunResponse> CancelDataQualityRulesetEvaluationRunAsync(CancelDataQualityRulesetEvaluationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
 
@@ -1199,7 +1201,7 @@ namespace Amazon.Glue
 
         internal virtual CancelMLTaskRunResponse CancelMLTaskRun(CancelMLTaskRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMLTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMLTaskRunResponseUnmarshaller.Instance;
 
@@ -1235,7 +1237,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelMLTaskRun">REST API Reference for CancelMLTaskRun Operation</seealso>
         public virtual Task<CancelMLTaskRunResponse> CancelMLTaskRunAsync(CancelMLTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelMLTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelMLTaskRunResponseUnmarshaller.Instance;
 
@@ -1247,7 +1249,7 @@ namespace Amazon.Glue
 
         internal virtual CancelStatementResponse CancelStatement(CancelStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelStatementResponseUnmarshaller.Instance;
 
@@ -1286,7 +1288,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelStatement">REST API Reference for CancelStatement Operation</seealso>
         public virtual Task<CancelStatementResponse> CancelStatementAsync(CancelStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CancelStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CancelStatementResponseUnmarshaller.Instance;
 
@@ -1298,7 +1300,7 @@ namespace Amazon.Glue
 
         internal virtual CheckSchemaVersionValidityResponse CheckSchemaVersionValidity(CheckSchemaVersionValidityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckSchemaVersionValidityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckSchemaVersionValidityResponseUnmarshaller.Instance;
 
@@ -1330,7 +1332,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CheckSchemaVersionValidity">REST API Reference for CheckSchemaVersionValidity Operation</seealso>
         public virtual Task<CheckSchemaVersionValidityResponse> CheckSchemaVersionValidityAsync(CheckSchemaVersionValidityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CheckSchemaVersionValidityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CheckSchemaVersionValidityResponseUnmarshaller.Instance;
 
@@ -1342,7 +1344,7 @@ namespace Amazon.Glue
 
         internal virtual CreateBlueprintResponse CreateBlueprint(CreateBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
 
@@ -1378,7 +1380,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateBlueprint">REST API Reference for CreateBlueprint Operation</seealso>
         public virtual Task<CreateBlueprintResponse> CreateBlueprintAsync(CreateBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBlueprintResponseUnmarshaller.Instance;
 
@@ -1390,7 +1392,7 @@ namespace Amazon.Glue
 
         internal virtual CreateCatalogResponse CreateCatalog(CreateCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCatalogResponseUnmarshaller.Instance;
 
@@ -1444,7 +1446,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCatalog">REST API Reference for CreateCatalog Operation</seealso>
         public virtual Task<CreateCatalogResponse> CreateCatalogAsync(CreateCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCatalogResponseUnmarshaller.Instance;
 
@@ -1456,7 +1458,7 @@ namespace Amazon.Glue
 
         internal virtual CreateClassifierResponse CreateClassifier(CreateClassifierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClassifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClassifierResponseUnmarshaller.Instance;
 
@@ -1488,7 +1490,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateClassifier">REST API Reference for CreateClassifier Operation</seealso>
         public virtual Task<CreateClassifierResponse> CreateClassifierAsync(CreateClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateClassifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateClassifierResponseUnmarshaller.Instance;
 
@@ -1500,7 +1502,7 @@ namespace Amazon.Glue
 
         internal virtual CreateColumnStatisticsTaskSettingsResponse CreateColumnStatisticsTaskSettings(CreateColumnStatisticsTaskSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateColumnStatisticsTaskSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateColumnStatisticsTaskSettingsResponseUnmarshaller.Instance;
 
@@ -1543,7 +1545,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateColumnStatisticsTaskSettings">REST API Reference for CreateColumnStatisticsTaskSettings Operation</seealso>
         public virtual Task<CreateColumnStatisticsTaskSettingsResponse> CreateColumnStatisticsTaskSettingsAsync(CreateColumnStatisticsTaskSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateColumnStatisticsTaskSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateColumnStatisticsTaskSettingsResponseUnmarshaller.Instance;
 
@@ -1555,7 +1557,7 @@ namespace Amazon.Glue
 
         internal virtual CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -1597,7 +1599,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection">REST API Reference for CreateConnection Operation</seealso>
         public virtual Task<CreateConnectionResponse> CreateConnectionAsync(CreateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateConnectionResponseUnmarshaller.Instance;
 
@@ -1609,7 +1611,7 @@ namespace Amazon.Glue
 
         internal virtual CreateCrawlerResponse CreateCrawler(CreateCrawlerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCrawlerResponseUnmarshaller.Instance;
 
@@ -1644,7 +1646,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCrawler">REST API Reference for CreateCrawler Operation</seealso>
         public virtual Task<CreateCrawlerResponse> CreateCrawlerAsync(CreateCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCrawlerResponseUnmarshaller.Instance;
 
@@ -1656,7 +1658,7 @@ namespace Amazon.Glue
 
         internal virtual CreateCustomEntityTypeResponse CreateCustomEntityType(CreateCustomEntityTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomEntityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomEntityTypeResponseUnmarshaller.Instance;
 
@@ -1705,7 +1707,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateCustomEntityType">REST API Reference for CreateCustomEntityType Operation</seealso>
         public virtual Task<CreateCustomEntityTypeResponse> CreateCustomEntityTypeAsync(CreateCustomEntityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomEntityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomEntityTypeResponseUnmarshaller.Instance;
 
@@ -1717,7 +1719,7 @@ namespace Amazon.Glue
 
         internal virtual CreateDatabaseResponse CreateDatabase(CreateDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatabaseResponseUnmarshaller.Instance;
 
@@ -1768,7 +1770,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDatabase">REST API Reference for CreateDatabase Operation</seealso>
         public virtual Task<CreateDatabaseResponse> CreateDatabaseAsync(CreateDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatabaseResponseUnmarshaller.Instance;
 
@@ -1780,7 +1782,7 @@ namespace Amazon.Glue
 
         internal virtual CreateDataQualityRulesetResponse CreateDataQualityRuleset(CreateDataQualityRulesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataQualityRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataQualityRulesetResponseUnmarshaller.Instance;
 
@@ -1822,7 +1824,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDataQualityRuleset">REST API Reference for CreateDataQualityRuleset Operation</seealso>
         public virtual Task<CreateDataQualityRulesetResponse> CreateDataQualityRulesetAsync(CreateDataQualityRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDataQualityRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDataQualityRulesetResponseUnmarshaller.Instance;
 
@@ -1834,7 +1836,7 @@ namespace Amazon.Glue
 
         internal virtual CreateDevEndpointResponse CreateDevEndpoint(CreateDevEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDevEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDevEndpointResponseUnmarshaller.Instance;
 
@@ -1879,7 +1881,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDevEndpoint">REST API Reference for CreateDevEndpoint Operation</seealso>
         public virtual Task<CreateDevEndpointResponse> CreateDevEndpointAsync(CreateDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDevEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDevEndpointResponseUnmarshaller.Instance;
 
@@ -1887,11 +1889,63 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  CreateGlueIdentityCenterConfiguration
+
+        internal virtual CreateGlueIdentityCenterConfigurationResponse CreateGlueIdentityCenterConfiguration(CreateGlueIdentityCenterConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGlueIdentityCenterConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new Glue Identity Center configuration to enable integration between Glue
+        /// and Amazon Web Services IAM Identity Center for authentication and authorization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateGlueIdentityCenterConfiguration">REST API Reference for CreateGlueIdentityCenterConfiguration Operation</seealso>
+        public virtual Task<CreateGlueIdentityCenterConfigurationResponse> CreateGlueIdentityCenterConfigurationAsync(CreateGlueIdentityCenterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGlueIdentityCenterConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateIntegration
 
         internal virtual CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
 
@@ -1949,7 +2003,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
         public virtual Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
 
@@ -1961,7 +2015,7 @@ namespace Amazon.Glue
 
         internal virtual CreateIntegrationResourcePropertyResponse CreateIntegrationResourceProperty(CreateIntegrationResourcePropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationResourcePropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationResourcePropertyResponseUnmarshaller.Instance;
 
@@ -2011,7 +2065,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateIntegrationResourceProperty">REST API Reference for CreateIntegrationResourceProperty Operation</seealso>
         public virtual Task<CreateIntegrationResourcePropertyResponse> CreateIntegrationResourcePropertyAsync(CreateIntegrationResourcePropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationResourcePropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationResourcePropertyResponseUnmarshaller.Instance;
 
@@ -2023,7 +2077,7 @@ namespace Amazon.Glue
 
         internal virtual CreateIntegrationTablePropertiesResponse CreateIntegrationTableProperties(CreateIntegrationTablePropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationTablePropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationTablePropertiesResponseUnmarshaller.Instance;
 
@@ -2069,7 +2123,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateIntegrationTableProperties">REST API Reference for CreateIntegrationTableProperties Operation</seealso>
         public virtual Task<CreateIntegrationTablePropertiesResponse> CreateIntegrationTablePropertiesAsync(CreateIntegrationTablePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateIntegrationTablePropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateIntegrationTablePropertiesResponseUnmarshaller.Instance;
 
@@ -2081,7 +2135,7 @@ namespace Amazon.Glue
 
         internal virtual CreateJobResponse CreateJob(CreateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -2123,7 +2177,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public virtual Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateJobResponseUnmarshaller.Instance;
 
@@ -2135,7 +2189,7 @@ namespace Amazon.Glue
 
         internal virtual CreateMLTransformResponse CreateMLTransform(CreateMLTransformRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMLTransformRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMLTransformResponseUnmarshaller.Instance;
 
@@ -2193,7 +2247,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateMLTransform">REST API Reference for CreateMLTransform Operation</seealso>
         public virtual Task<CreateMLTransformResponse> CreateMLTransformAsync(CreateMLTransformRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMLTransformRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMLTransformResponseUnmarshaller.Instance;
 
@@ -2205,7 +2259,7 @@ namespace Amazon.Glue
 
         internal virtual CreatePartitionResponse CreatePartition(CreatePartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartitionResponseUnmarshaller.Instance;
 
@@ -2247,7 +2301,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartition">REST API Reference for CreatePartition Operation</seealso>
         public virtual Task<CreatePartitionResponse> CreatePartitionAsync(CreatePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartitionResponseUnmarshaller.Instance;
 
@@ -2259,7 +2313,7 @@ namespace Amazon.Glue
 
         internal virtual CreatePartitionIndexResponse CreatePartitionIndex(CreatePartitionIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartitionIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartitionIndexResponseUnmarshaller.Instance;
 
@@ -2301,7 +2355,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreatePartitionIndex">REST API Reference for CreatePartitionIndex Operation</seealso>
         public virtual Task<CreatePartitionIndexResponse> CreatePartitionIndexAsync(CreatePartitionIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePartitionIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePartitionIndexResponseUnmarshaller.Instance;
 
@@ -2313,7 +2367,7 @@ namespace Amazon.Glue
 
         internal virtual CreateRegistryResponse CreateRegistry(CreateRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
 
@@ -2352,7 +2406,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateRegistry">REST API Reference for CreateRegistry Operation</seealso>
         public virtual Task<CreateRegistryResponse> CreateRegistryAsync(CreateRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRegistryResponseUnmarshaller.Instance;
 
@@ -2364,7 +2418,7 @@ namespace Amazon.Glue
 
         internal virtual CreateSchemaResponse CreateSchema(CreateSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
@@ -2421,7 +2475,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSchema">REST API Reference for CreateSchema Operation</seealso>
         public virtual Task<CreateSchemaResponse> CreateSchemaAsync(CreateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSchemaResponseUnmarshaller.Instance;
 
@@ -2433,7 +2487,7 @@ namespace Amazon.Glue
 
         internal virtual CreateScriptResponse CreateScript(CreateScriptRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScriptResponseUnmarshaller.Instance;
 
@@ -2463,7 +2517,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateScript">REST API Reference for CreateScript Operation</seealso>
         public virtual Task<CreateScriptResponse> CreateScriptAsync(CreateScriptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScriptRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScriptResponseUnmarshaller.Instance;
 
@@ -2475,7 +2529,7 @@ namespace Amazon.Glue
 
         internal virtual CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
 
@@ -2515,7 +2569,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSecurityConfiguration">REST API Reference for CreateSecurityConfiguration Operation</seealso>
         public virtual Task<CreateSecurityConfigurationResponse> CreateSecurityConfigurationAsync(CreateSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSecurityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
 
@@ -2527,7 +2581,7 @@ namespace Amazon.Glue
 
         internal virtual CreateSessionResponse CreateSession(CreateSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
 
@@ -2572,7 +2626,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateSession">REST API Reference for CreateSession Operation</seealso>
         public virtual Task<CreateSessionResponse> CreateSessionAsync(CreateSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateSessionResponseUnmarshaller.Instance;
 
@@ -2584,7 +2638,7 @@ namespace Amazon.Glue
 
         internal virtual CreateTableResponse CreateTable(CreateTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableResponseUnmarshaller.Instance;
 
@@ -2638,7 +2692,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTable">REST API Reference for CreateTable Operation</seealso>
         public virtual Task<CreateTableResponse> CreateTableAsync(CreateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableResponseUnmarshaller.Instance;
 
@@ -2650,7 +2704,7 @@ namespace Amazon.Glue
 
         internal virtual CreateTableOptimizerResponse CreateTableOptimizer(CreateTableOptimizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableOptimizerResponseUnmarshaller.Instance;
 
@@ -2692,7 +2746,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTableOptimizer">REST API Reference for CreateTableOptimizer Operation</seealso>
         public virtual Task<CreateTableOptimizerResponse> CreateTableOptimizerAsync(CreateTableOptimizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTableOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTableOptimizerResponseUnmarshaller.Instance;
 
@@ -2704,7 +2758,7 @@ namespace Amazon.Glue
 
         internal virtual CreateTriggerResponse CreateTrigger(CreateTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTriggerResponseUnmarshaller.Instance;
 
@@ -2756,7 +2810,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateTrigger">REST API Reference for CreateTrigger Operation</seealso>
         public virtual Task<CreateTriggerResponse> CreateTriggerAsync(CreateTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateTriggerResponseUnmarshaller.Instance;
 
@@ -2768,7 +2822,7 @@ namespace Amazon.Glue
 
         internal virtual CreateUsageProfileResponse CreateUsageProfile(CreateUsageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUsageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUsageProfileResponseUnmarshaller.Instance;
 
@@ -2807,7 +2861,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUsageProfile">REST API Reference for CreateUsageProfile Operation</seealso>
         public virtual Task<CreateUsageProfileResponse> CreateUsageProfileAsync(CreateUsageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUsageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUsageProfileResponseUnmarshaller.Instance;
 
@@ -2819,7 +2873,7 @@ namespace Amazon.Glue
 
         internal virtual CreateUserDefinedFunctionResponse CreateUserDefinedFunction(CreateUserDefinedFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserDefinedFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserDefinedFunctionResponseUnmarshaller.Instance;
 
@@ -2861,7 +2915,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUserDefinedFunction">REST API Reference for CreateUserDefinedFunction Operation</seealso>
         public virtual Task<CreateUserDefinedFunctionResponse> CreateUserDefinedFunctionAsync(CreateUserDefinedFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateUserDefinedFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateUserDefinedFunctionResponseUnmarshaller.Instance;
 
@@ -2873,7 +2927,7 @@ namespace Amazon.Glue
 
         internal virtual CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
 
@@ -2912,7 +2966,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         public virtual Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateWorkflowResponseUnmarshaller.Instance;
 
@@ -2924,7 +2978,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteBlueprintResponse DeleteBlueprint(DeleteBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
 
@@ -2954,7 +3008,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteBlueprint">REST API Reference for DeleteBlueprint Operation</seealso>
         public virtual Task<DeleteBlueprintResponse> DeleteBlueprintAsync(DeleteBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBlueprintResponseUnmarshaller.Instance;
 
@@ -2966,7 +3020,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteCatalogResponse DeleteCatalog(DeleteCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCatalogResponseUnmarshaller.Instance;
 
@@ -3027,7 +3081,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCatalog">REST API Reference for DeleteCatalog Operation</seealso>
         public virtual Task<DeleteCatalogResponse> DeleteCatalogAsync(DeleteCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCatalogResponseUnmarshaller.Instance;
 
@@ -3039,7 +3093,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteClassifierResponse DeleteClassifier(DeleteClassifierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClassifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClassifierResponseUnmarshaller.Instance;
 
@@ -3066,7 +3120,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteClassifier">REST API Reference for DeleteClassifier Operation</seealso>
         public virtual Task<DeleteClassifierResponse> DeleteClassifierAsync(DeleteClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteClassifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteClassifierResponseUnmarshaller.Instance;
 
@@ -3078,7 +3132,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteColumnStatisticsForPartitionResponse DeleteColumnStatisticsForPartition(DeleteColumnStatisticsForPartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteColumnStatisticsForPartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteColumnStatisticsForPartitionResponseUnmarshaller.Instance;
 
@@ -3120,7 +3174,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForPartition">REST API Reference for DeleteColumnStatisticsForPartition Operation</seealso>
         public virtual Task<DeleteColumnStatisticsForPartitionResponse> DeleteColumnStatisticsForPartitionAsync(DeleteColumnStatisticsForPartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteColumnStatisticsForPartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteColumnStatisticsForPartitionResponseUnmarshaller.Instance;
 
@@ -3132,7 +3186,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteColumnStatisticsForTableResponse DeleteColumnStatisticsForTable(DeleteColumnStatisticsForTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteColumnStatisticsForTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteColumnStatisticsForTableResponseUnmarshaller.Instance;
 
@@ -3174,7 +3228,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable">REST API Reference for DeleteColumnStatisticsForTable Operation</seealso>
         public virtual Task<DeleteColumnStatisticsForTableResponse> DeleteColumnStatisticsForTableAsync(DeleteColumnStatisticsForTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteColumnStatisticsForTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteColumnStatisticsForTableResponseUnmarshaller.Instance;
 
@@ -3186,7 +3240,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteColumnStatisticsTaskSettingsResponse DeleteColumnStatisticsTaskSettings(DeleteColumnStatisticsTaskSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteColumnStatisticsTaskSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteColumnStatisticsTaskSettingsResponseUnmarshaller.Instance;
 
@@ -3216,7 +3270,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsTaskSettings">REST API Reference for DeleteColumnStatisticsTaskSettings Operation</seealso>
         public virtual Task<DeleteColumnStatisticsTaskSettingsResponse> DeleteColumnStatisticsTaskSettingsAsync(DeleteColumnStatisticsTaskSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteColumnStatisticsTaskSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteColumnStatisticsTaskSettingsResponseUnmarshaller.Instance;
 
@@ -3228,7 +3282,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -3255,7 +3309,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
         public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
 
@@ -3267,7 +3321,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteCrawlerResponse DeleteCrawler(DeleteCrawlerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCrawlerResponseUnmarshaller.Instance;
 
@@ -3301,7 +3355,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">REST API Reference for DeleteCrawler Operation</seealso>
         public virtual Task<DeleteCrawlerResponse> DeleteCrawlerAsync(DeleteCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCrawlerResponseUnmarshaller.Instance;
 
@@ -3313,7 +3367,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteCustomEntityTypeResponse DeleteCustomEntityType(DeleteCustomEntityTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomEntityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomEntityTypeResponseUnmarshaller.Instance;
 
@@ -3349,7 +3403,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCustomEntityType">REST API Reference for DeleteCustomEntityType Operation</seealso>
         public virtual Task<DeleteCustomEntityTypeResponse> DeleteCustomEntityTypeAsync(DeleteCustomEntityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomEntityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomEntityTypeResponseUnmarshaller.Instance;
 
@@ -3361,7 +3415,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteDatabaseResponse DeleteDatabase(DeleteDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatabaseResponseUnmarshaller.Instance;
 
@@ -3419,7 +3473,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDatabase">REST API Reference for DeleteDatabase Operation</seealso>
         public virtual Task<DeleteDatabaseResponse> DeleteDatabaseAsync(DeleteDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatabaseResponseUnmarshaller.Instance;
 
@@ -3431,7 +3485,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteDataQualityRulesetResponse DeleteDataQualityRuleset(DeleteDataQualityRulesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataQualityRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataQualityRulesetResponseUnmarshaller.Instance;
 
@@ -3464,7 +3518,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDataQualityRuleset">REST API Reference for DeleteDataQualityRuleset Operation</seealso>
         public virtual Task<DeleteDataQualityRulesetResponse> DeleteDataQualityRulesetAsync(DeleteDataQualityRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDataQualityRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDataQualityRulesetResponseUnmarshaller.Instance;
 
@@ -3476,7 +3530,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteDevEndpointResponse DeleteDevEndpoint(DeleteDevEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDevEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDevEndpointResponseUnmarshaller.Instance;
 
@@ -3509,7 +3563,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDevEndpoint">REST API Reference for DeleteDevEndpoint Operation</seealso>
         public virtual Task<DeleteDevEndpointResponse> DeleteDevEndpointAsync(DeleteDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDevEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDevEndpointResponseUnmarshaller.Instance;
 
@@ -3517,11 +3571,63 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  DeleteGlueIdentityCenterConfiguration
+
+        internal virtual DeleteGlueIdentityCenterConfigurationResponse DeleteGlueIdentityCenterConfiguration(DeleteGlueIdentityCenterConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGlueIdentityCenterConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the existing Glue Identity Center configuration, removing the integration
+        /// between Glue and Amazon Web Services IAM Identity Center.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteGlueIdentityCenterConfiguration">REST API Reference for DeleteGlueIdentityCenterConfiguration Operation</seealso>
+        public virtual Task<DeleteGlueIdentityCenterConfigurationResponse> DeleteGlueIdentityCenterConfigurationAsync(DeleteGlueIdentityCenterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGlueIdentityCenterConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteIntegration
 
         internal virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -3575,7 +3681,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
         public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
 
@@ -3583,11 +3689,66 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  DeleteIntegrationResourceProperty
+
+        internal virtual DeleteIntegrationResourcePropertyResponse DeleteIntegrationResourceProperty(DeleteIntegrationResourcePropertyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationResourcePropertyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResourcePropertyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntegrationResourcePropertyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is used for deleting the <c>ResourceProperty</c> of the Glue connection (for
+        /// the source) or Glue database ARN (for the target).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResourceProperty service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegrationResourceProperty service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegrationResourceProperty">REST API Reference for DeleteIntegrationResourceProperty Operation</seealso>
+        public virtual Task<DeleteIntegrationResourcePropertyResponse> DeleteIntegrationResourcePropertyAsync(DeleteIntegrationResourcePropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationResourcePropertyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResourcePropertyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIntegrationResourcePropertyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteIntegrationTableProperties
 
         internal virtual DeleteIntegrationTablePropertiesResponse DeleteIntegrationTableProperties(DeleteIntegrationTablePropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationTablePropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationTablePropertiesResponseUnmarshaller.Instance;
 
@@ -3630,7 +3791,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegrationTableProperties">REST API Reference for DeleteIntegrationTableProperties Operation</seealso>
         public virtual Task<DeleteIntegrationTablePropertiesResponse> DeleteIntegrationTablePropertiesAsync(DeleteIntegrationTablePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteIntegrationTablePropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteIntegrationTablePropertiesResponseUnmarshaller.Instance;
 
@@ -3642,7 +3803,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
 
@@ -3673,7 +3834,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
 
@@ -3685,7 +3846,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteMLTransformResponse DeleteMLTransform(DeleteMLTransformRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMLTransformRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMLTransformResponseUnmarshaller.Instance;
 
@@ -3723,7 +3884,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteMLTransform">REST API Reference for DeleteMLTransform Operation</seealso>
         public virtual Task<DeleteMLTransformResponse> DeleteMLTransformAsync(DeleteMLTransformRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMLTransformRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMLTransformResponseUnmarshaller.Instance;
 
@@ -3735,7 +3896,7 @@ namespace Amazon.Glue
 
         internal virtual DeletePartitionResponse DeletePartition(DeletePartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartitionResponseUnmarshaller.Instance;
 
@@ -3768,7 +3929,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartition">REST API Reference for DeletePartition Operation</seealso>
         public virtual Task<DeletePartitionResponse> DeletePartitionAsync(DeletePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartitionResponseUnmarshaller.Instance;
 
@@ -3780,7 +3941,7 @@ namespace Amazon.Glue
 
         internal virtual DeletePartitionIndexResponse DeletePartitionIndex(DeletePartitionIndexRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartitionIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartitionIndexResponseUnmarshaller.Instance;
 
@@ -3819,7 +3980,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeletePartitionIndex">REST API Reference for DeletePartitionIndex Operation</seealso>
         public virtual Task<DeletePartitionIndexResponse> DeletePartitionIndexAsync(DeletePartitionIndexRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePartitionIndexRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePartitionIndexResponseUnmarshaller.Instance;
 
@@ -3831,7 +3992,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteRegistryResponse DeleteRegistry(DeleteRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
 
@@ -3868,7 +4029,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteRegistry">REST API Reference for DeleteRegistry Operation</seealso>
         public virtual Task<DeleteRegistryResponse> DeleteRegistryAsync(DeleteRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRegistryResponseUnmarshaller.Instance;
 
@@ -3880,7 +4041,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3916,7 +4077,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
 
@@ -3928,7 +4089,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteSchemaResponse DeleteSchema(DeleteSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
@@ -3965,7 +4126,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchema">REST API Reference for DeleteSchema Operation</seealso>
         public virtual Task<DeleteSchemaResponse> DeleteSchemaAsync(DeleteSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaResponseUnmarshaller.Instance;
 
@@ -3977,7 +4138,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteSchemaVersionsResponse DeleteSchemaVersions(DeleteSchemaVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaVersionsResponseUnmarshaller.Instance;
 
@@ -4032,7 +4193,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchemaVersions">REST API Reference for DeleteSchemaVersions Operation</seealso>
         public virtual Task<DeleteSchemaVersionsResponse> DeleteSchemaVersionsAsync(DeleteSchemaVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSchemaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSchemaVersionsResponseUnmarshaller.Instance;
 
@@ -4044,7 +4205,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
 
@@ -4077,7 +4238,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
         public virtual Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
 
@@ -4089,7 +4250,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteSessionResponse DeleteSession(DeleteSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSessionResponseUnmarshaller.Instance;
 
@@ -4128,7 +4289,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSession">REST API Reference for DeleteSession Operation</seealso>
         public virtual Task<DeleteSessionResponse> DeleteSessionAsync(DeleteSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteSessionResponseUnmarshaller.Instance;
 
@@ -4140,7 +4301,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteTableResponse DeleteTable(DeleteTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
@@ -4199,7 +4360,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         public virtual Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableResponseUnmarshaller.Instance;
 
@@ -4211,7 +4372,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteTableOptimizerResponse DeleteTableOptimizer(DeleteTableOptimizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableOptimizerResponseUnmarshaller.Instance;
 
@@ -4248,7 +4409,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableOptimizer">REST API Reference for DeleteTableOptimizer Operation</seealso>
         public virtual Task<DeleteTableOptimizerResponse> DeleteTableOptimizerAsync(DeleteTableOptimizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableOptimizerResponseUnmarshaller.Instance;
 
@@ -4260,7 +4421,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteTableVersionResponse DeleteTableVersion(DeleteTableVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableVersionResponseUnmarshaller.Instance;
 
@@ -4293,7 +4454,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion">REST API Reference for DeleteTableVersion Operation</seealso>
         public virtual Task<DeleteTableVersionResponse> DeleteTableVersionAsync(DeleteTableVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTableVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTableVersionResponseUnmarshaller.Instance;
 
@@ -4305,7 +4466,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteTriggerResponse DeleteTrigger(DeleteTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTriggerResponseUnmarshaller.Instance;
 
@@ -4338,7 +4499,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTrigger">REST API Reference for DeleteTrigger Operation</seealso>
         public virtual Task<DeleteTriggerResponse> DeleteTriggerAsync(DeleteTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteTriggerResponseUnmarshaller.Instance;
 
@@ -4350,7 +4511,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteUsageProfileResponse DeleteUsageProfile(DeleteUsageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUsageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUsageProfileResponseUnmarshaller.Instance;
 
@@ -4383,7 +4544,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUsageProfile">REST API Reference for DeleteUsageProfile Operation</seealso>
         public virtual Task<DeleteUsageProfileResponse> DeleteUsageProfileAsync(DeleteUsageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUsageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUsageProfileResponseUnmarshaller.Instance;
 
@@ -4395,7 +4556,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteUserDefinedFunctionResponse DeleteUserDefinedFunction(DeleteUserDefinedFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserDefinedFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserDefinedFunctionResponseUnmarshaller.Instance;
 
@@ -4428,7 +4589,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteUserDefinedFunction">REST API Reference for DeleteUserDefinedFunction Operation</seealso>
         public virtual Task<DeleteUserDefinedFunctionResponse> DeleteUserDefinedFunctionAsync(DeleteUserDefinedFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteUserDefinedFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteUserDefinedFunctionResponseUnmarshaller.Instance;
 
@@ -4440,7 +4601,7 @@ namespace Amazon.Glue
 
         internal virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -4473,7 +4634,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual Task<DeleteWorkflowResponse> DeleteWorkflowAsync(DeleteWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteWorkflowResponseUnmarshaller.Instance;
 
@@ -4485,7 +4646,7 @@ namespace Amazon.Glue
 
         internal virtual DescribeConnectionTypeResponse DescribeConnectionType(DescribeConnectionTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionTypeResponseUnmarshaller.Instance;
 
@@ -4519,7 +4680,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeConnectionType">REST API Reference for DescribeConnectionType Operation</seealso>
         public virtual Task<DescribeConnectionTypeResponse> DescribeConnectionTypeAsync(DescribeConnectionTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeConnectionTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeConnectionTypeResponseUnmarshaller.Instance;
 
@@ -4531,7 +4692,7 @@ namespace Amazon.Glue
 
         internal virtual DescribeEntityResponse DescribeEntity(DescribeEntityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEntityResponseUnmarshaller.Instance;
 
@@ -4579,7 +4740,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeEntity">REST API Reference for DescribeEntity Operation</seealso>
         public virtual Task<DescribeEntityResponse> DescribeEntityAsync(DescribeEntityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeEntityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeEntityResponseUnmarshaller.Instance;
 
@@ -4591,7 +4752,7 @@ namespace Amazon.Glue
 
         internal virtual DescribeInboundIntegrationsResponse DescribeInboundIntegrations(DescribeInboundIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInboundIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInboundIntegrationsResponseUnmarshaller.Instance;
 
@@ -4639,7 +4800,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeInboundIntegrations">REST API Reference for DescribeInboundIntegrations Operation</seealso>
         public virtual Task<DescribeInboundIntegrationsResponse> DescribeInboundIntegrationsAsync(DescribeInboundIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeInboundIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeInboundIntegrationsResponseUnmarshaller.Instance;
 
@@ -4651,7 +4812,7 @@ namespace Amazon.Glue
 
         internal virtual DescribeIntegrationsResponse DescribeIntegrations(DescribeIntegrationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIntegrationsResponseUnmarshaller.Instance;
 
@@ -4693,7 +4854,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
         public virtual Task<DescribeIntegrationsResponse> DescribeIntegrationsAsync(DescribeIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeIntegrationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeIntegrationsResponseUnmarshaller.Instance;
 
@@ -4705,7 +4866,7 @@ namespace Amazon.Glue
 
         internal virtual GetBlueprintResponse GetBlueprint(GetBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
 
@@ -4738,7 +4899,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprint">REST API Reference for GetBlueprint Operation</seealso>
         public virtual Task<GetBlueprintResponse> GetBlueprintAsync(GetBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlueprintResponseUnmarshaller.Instance;
 
@@ -4750,7 +4911,7 @@ namespace Amazon.Glue
 
         internal virtual GetBlueprintRunResponse GetBlueprintRun(GetBlueprintRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlueprintRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlueprintRunResponseUnmarshaller.Instance;
 
@@ -4780,7 +4941,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRun">REST API Reference for GetBlueprintRun Operation</seealso>
         public virtual Task<GetBlueprintRunResponse> GetBlueprintRunAsync(GetBlueprintRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlueprintRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlueprintRunResponseUnmarshaller.Instance;
 
@@ -4792,7 +4953,7 @@ namespace Amazon.Glue
 
         internal virtual GetBlueprintRunsResponse GetBlueprintRuns(GetBlueprintRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlueprintRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlueprintRunsResponseUnmarshaller.Instance;
 
@@ -4825,7 +4986,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetBlueprintRuns">REST API Reference for GetBlueprintRuns Operation</seealso>
         public virtual Task<GetBlueprintRunsResponse> GetBlueprintRunsAsync(GetBlueprintRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBlueprintRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBlueprintRunsResponseUnmarshaller.Instance;
 
@@ -4837,7 +4998,7 @@ namespace Amazon.Glue
 
         internal virtual GetCatalogResponse GetCatalog(GetCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCatalogResponseUnmarshaller.Instance;
 
@@ -4882,7 +5043,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalog">REST API Reference for GetCatalog Operation</seealso>
         public virtual Task<GetCatalogResponse> GetCatalogAsync(GetCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCatalogResponseUnmarshaller.Instance;
 
@@ -4894,7 +5055,7 @@ namespace Amazon.Glue
 
         internal virtual GetCatalogImportStatusResponse GetCatalogImportStatus(GetCatalogImportStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCatalogImportStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCatalogImportStatusResponseUnmarshaller.Instance;
 
@@ -4921,7 +5082,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogImportStatus">REST API Reference for GetCatalogImportStatus Operation</seealso>
         public virtual Task<GetCatalogImportStatusResponse> GetCatalogImportStatusAsync(GetCatalogImportStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCatalogImportStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCatalogImportStatusResponseUnmarshaller.Instance;
 
@@ -4933,7 +5094,7 @@ namespace Amazon.Glue
 
         internal virtual GetCatalogsResponse GetCatalogs(GetCatalogsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCatalogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCatalogsResponseUnmarshaller.Instance;
 
@@ -4980,7 +5141,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCatalogs">REST API Reference for GetCatalogs Operation</seealso>
         public virtual Task<GetCatalogsResponse> GetCatalogsAsync(GetCatalogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCatalogsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCatalogsResponseUnmarshaller.Instance;
 
@@ -4992,7 +5153,7 @@ namespace Amazon.Glue
 
         internal virtual GetClassifierResponse GetClassifier(GetClassifierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClassifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClassifierResponseUnmarshaller.Instance;
 
@@ -5019,7 +5180,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifier">REST API Reference for GetClassifier Operation</seealso>
         public virtual Task<GetClassifierResponse> GetClassifierAsync(GetClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClassifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClassifierResponseUnmarshaller.Instance;
 
@@ -5031,7 +5192,7 @@ namespace Amazon.Glue
 
         internal virtual GetClassifiersResponse GetClassifiers(GetClassifiersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClassifiersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClassifiersResponseUnmarshaller.Instance;
 
@@ -5055,7 +5216,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifiers">REST API Reference for GetClassifiers Operation</seealso>
         public virtual Task<GetClassifiersResponse> GetClassifiersAsync(GetClassifiersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetClassifiersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetClassifiersResponseUnmarshaller.Instance;
 
@@ -5067,7 +5228,7 @@ namespace Amazon.Glue
 
         internal virtual GetColumnStatisticsForPartitionResponse GetColumnStatisticsForPartition(GetColumnStatisticsForPartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetColumnStatisticsForPartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetColumnStatisticsForPartitionResponseUnmarshaller.Instance;
 
@@ -5109,7 +5270,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForPartition">REST API Reference for GetColumnStatisticsForPartition Operation</seealso>
         public virtual Task<GetColumnStatisticsForPartitionResponse> GetColumnStatisticsForPartitionAsync(GetColumnStatisticsForPartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetColumnStatisticsForPartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetColumnStatisticsForPartitionResponseUnmarshaller.Instance;
 
@@ -5121,7 +5282,7 @@ namespace Amazon.Glue
 
         internal virtual GetColumnStatisticsForTableResponse GetColumnStatisticsForTable(GetColumnStatisticsForTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetColumnStatisticsForTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetColumnStatisticsForTableResponseUnmarshaller.Instance;
 
@@ -5163,7 +5324,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsForTable">REST API Reference for GetColumnStatisticsForTable Operation</seealso>
         public virtual Task<GetColumnStatisticsForTableResponse> GetColumnStatisticsForTableAsync(GetColumnStatisticsForTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetColumnStatisticsForTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetColumnStatisticsForTableResponseUnmarshaller.Instance;
 
@@ -5175,7 +5336,7 @@ namespace Amazon.Glue
 
         internal virtual GetColumnStatisticsTaskRunResponse GetColumnStatisticsTaskRun(GetColumnStatisticsTaskRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetColumnStatisticsTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetColumnStatisticsTaskRunResponseUnmarshaller.Instance;
 
@@ -5205,7 +5366,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRun">REST API Reference for GetColumnStatisticsTaskRun Operation</seealso>
         public virtual Task<GetColumnStatisticsTaskRunResponse> GetColumnStatisticsTaskRunAsync(GetColumnStatisticsTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetColumnStatisticsTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetColumnStatisticsTaskRunResponseUnmarshaller.Instance;
 
@@ -5217,7 +5378,7 @@ namespace Amazon.Glue
 
         internal virtual GetColumnStatisticsTaskRunsResponse GetColumnStatisticsTaskRuns(GetColumnStatisticsTaskRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetColumnStatisticsTaskRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetColumnStatisticsTaskRunsResponseUnmarshaller.Instance;
 
@@ -5241,7 +5402,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRuns">REST API Reference for GetColumnStatisticsTaskRuns Operation</seealso>
         public virtual Task<GetColumnStatisticsTaskRunsResponse> GetColumnStatisticsTaskRunsAsync(GetColumnStatisticsTaskRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetColumnStatisticsTaskRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetColumnStatisticsTaskRunsResponseUnmarshaller.Instance;
 
@@ -5253,7 +5414,7 @@ namespace Amazon.Glue
 
         internal virtual GetColumnStatisticsTaskSettingsResponse GetColumnStatisticsTaskSettings(GetColumnStatisticsTaskSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetColumnStatisticsTaskSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetColumnStatisticsTaskSettingsResponseUnmarshaller.Instance;
 
@@ -5283,7 +5444,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskSettings">REST API Reference for GetColumnStatisticsTaskSettings Operation</seealso>
         public virtual Task<GetColumnStatisticsTaskSettingsResponse> GetColumnStatisticsTaskSettingsAsync(GetColumnStatisticsTaskSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetColumnStatisticsTaskSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetColumnStatisticsTaskSettingsResponseUnmarshaller.Instance;
 
@@ -5295,7 +5456,7 @@ namespace Amazon.Glue
 
         internal virtual GetConnectionResponse GetConnection(GetConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
 
@@ -5328,7 +5489,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnection">REST API Reference for GetConnection Operation</seealso>
         public virtual Task<GetConnectionResponse> GetConnectionAsync(GetConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionResponseUnmarshaller.Instance;
 
@@ -5340,7 +5501,7 @@ namespace Amazon.Glue
 
         internal virtual GetConnectionsResponse GetConnections(GetConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionsResponseUnmarshaller.Instance;
 
@@ -5373,7 +5534,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnections">REST API Reference for GetConnections Operation</seealso>
         public virtual Task<GetConnectionsResponse> GetConnectionsAsync(GetConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetConnectionsResponseUnmarshaller.Instance;
 
@@ -5385,7 +5546,7 @@ namespace Amazon.Glue
 
         internal virtual GetCrawlerResponse GetCrawler(GetCrawlerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCrawlerResponseUnmarshaller.Instance;
 
@@ -5412,7 +5573,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawler">REST API Reference for GetCrawler Operation</seealso>
         public virtual Task<GetCrawlerResponse> GetCrawlerAsync(GetCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCrawlerResponseUnmarshaller.Instance;
 
@@ -5424,7 +5585,7 @@ namespace Amazon.Glue
 
         internal virtual GetCrawlerMetricsResponse GetCrawlerMetrics(GetCrawlerMetricsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCrawlerMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCrawlerMetricsResponseUnmarshaller.Instance;
 
@@ -5448,7 +5609,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlerMetrics">REST API Reference for GetCrawlerMetrics Operation</seealso>
         public virtual Task<GetCrawlerMetricsResponse> GetCrawlerMetricsAsync(GetCrawlerMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCrawlerMetricsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCrawlerMetricsResponseUnmarshaller.Instance;
 
@@ -5460,7 +5621,7 @@ namespace Amazon.Glue
 
         internal virtual GetCrawlersResponse GetCrawlers(GetCrawlersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCrawlersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCrawlersResponseUnmarshaller.Instance;
 
@@ -5484,7 +5645,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlers">REST API Reference for GetCrawlers Operation</seealso>
         public virtual Task<GetCrawlersResponse> GetCrawlersAsync(GetCrawlersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCrawlersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCrawlersResponseUnmarshaller.Instance;
 
@@ -5496,7 +5657,7 @@ namespace Amazon.Glue
 
         internal virtual GetCustomEntityTypeResponse GetCustomEntityType(GetCustomEntityTypeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomEntityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomEntityTypeResponseUnmarshaller.Instance;
 
@@ -5532,7 +5693,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCustomEntityType">REST API Reference for GetCustomEntityType Operation</seealso>
         public virtual Task<GetCustomEntityTypeResponse> GetCustomEntityTypeAsync(GetCustomEntityTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomEntityTypeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomEntityTypeResponseUnmarshaller.Instance;
 
@@ -5544,7 +5705,7 @@ namespace Amazon.Glue
 
         internal virtual GetDatabaseResponse GetDatabase(GetDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
 
@@ -5586,7 +5747,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabase">REST API Reference for GetDatabase Operation</seealso>
         public virtual Task<GetDatabaseResponse> GetDatabaseAsync(GetDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatabaseResponseUnmarshaller.Instance;
 
@@ -5598,7 +5759,7 @@ namespace Amazon.Glue
 
         internal virtual GetDatabasesResponse GetDatabases(GetDatabasesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatabasesResponseUnmarshaller.Instance;
 
@@ -5640,7 +5801,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabases">REST API Reference for GetDatabases Operation</seealso>
         public virtual Task<GetDatabasesResponse> GetDatabasesAsync(GetDatabasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDatabasesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDatabasesResponseUnmarshaller.Instance;
 
@@ -5652,7 +5813,7 @@ namespace Amazon.Glue
 
         internal virtual GetDataCatalogEncryptionSettingsResponse GetDataCatalogEncryptionSettings(GetDataCatalogEncryptionSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataCatalogEncryptionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
 
@@ -5682,7 +5843,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">REST API Reference for GetDataCatalogEncryptionSettings Operation</seealso>
         public virtual Task<GetDataCatalogEncryptionSettingsResponse> GetDataCatalogEncryptionSettingsAsync(GetDataCatalogEncryptionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataCatalogEncryptionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
 
@@ -5694,7 +5855,7 @@ namespace Amazon.Glue
 
         internal virtual GetDataflowGraphResponse GetDataflowGraph(GetDataflowGraphRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataflowGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataflowGraphResponseUnmarshaller.Instance;
 
@@ -5724,7 +5885,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataflowGraph">REST API Reference for GetDataflowGraph Operation</seealso>
         public virtual Task<GetDataflowGraphResponse> GetDataflowGraphAsync(GetDataflowGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataflowGraphRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataflowGraphResponseUnmarshaller.Instance;
 
@@ -5736,7 +5897,7 @@ namespace Amazon.Glue
 
         internal virtual GetDataQualityModelResponse GetDataQualityModel(GetDataQualityModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityModelResponseUnmarshaller.Instance;
 
@@ -5770,7 +5931,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModel">REST API Reference for GetDataQualityModel Operation</seealso>
         public virtual Task<GetDataQualityModelResponse> GetDataQualityModelAsync(GetDataQualityModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityModelResponseUnmarshaller.Instance;
 
@@ -5782,7 +5943,7 @@ namespace Amazon.Glue
 
         internal virtual GetDataQualityModelResultResponse GetDataQualityModelResult(GetDataQualityModelResultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityModelResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityModelResultResponseUnmarshaller.Instance;
 
@@ -5815,7 +5976,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityModelResult">REST API Reference for GetDataQualityModelResult Operation</seealso>
         public virtual Task<GetDataQualityModelResultResponse> GetDataQualityModelResultAsync(GetDataQualityModelResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityModelResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityModelResultResponseUnmarshaller.Instance;
 
@@ -5827,7 +5988,7 @@ namespace Amazon.Glue
 
         internal virtual GetDataQualityResultResponse GetDataQualityResult(GetDataQualityResultRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityResultResponseUnmarshaller.Instance;
 
@@ -5860,7 +6021,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityResult">REST API Reference for GetDataQualityResult Operation</seealso>
         public virtual Task<GetDataQualityResultResponse> GetDataQualityResultAsync(GetDataQualityResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityResultRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityResultResponseUnmarshaller.Instance;
 
@@ -5872,7 +6033,7 @@ namespace Amazon.Glue
 
         internal virtual GetDataQualityRuleRecommendationRunResponse GetDataQualityRuleRecommendationRun(GetDataQualityRuleRecommendationRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityRuleRecommendationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
 
@@ -5905,7 +6066,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleRecommendationRun">REST API Reference for GetDataQualityRuleRecommendationRun Operation</seealso>
         public virtual Task<GetDataQualityRuleRecommendationRunResponse> GetDataQualityRuleRecommendationRunAsync(GetDataQualityRuleRecommendationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityRuleRecommendationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
 
@@ -5917,7 +6078,7 @@ namespace Amazon.Glue
 
         internal virtual GetDataQualityRulesetResponse GetDataQualityRuleset(GetDataQualityRulesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityRulesetResponseUnmarshaller.Instance;
 
@@ -5950,7 +6111,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleset">REST API Reference for GetDataQualityRuleset Operation</seealso>
         public virtual Task<GetDataQualityRulesetResponse> GetDataQualityRulesetAsync(GetDataQualityRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityRulesetResponseUnmarshaller.Instance;
 
@@ -5962,7 +6123,7 @@ namespace Amazon.Glue
 
         internal virtual GetDataQualityRulesetEvaluationRunResponse GetDataQualityRulesetEvaluationRun(GetDataQualityRulesetEvaluationRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
 
@@ -5995,7 +6156,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRulesetEvaluationRun">REST API Reference for GetDataQualityRulesetEvaluationRun Operation</seealso>
         public virtual Task<GetDataQualityRulesetEvaluationRunResponse> GetDataQualityRulesetEvaluationRunAsync(GetDataQualityRulesetEvaluationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
 
@@ -6007,7 +6168,7 @@ namespace Amazon.Glue
 
         internal virtual GetDevEndpointResponse GetDevEndpoint(GetDevEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevEndpointResponseUnmarshaller.Instance;
 
@@ -6048,7 +6209,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">REST API Reference for GetDevEndpoint Operation</seealso>
         public virtual Task<GetDevEndpointResponse> GetDevEndpointAsync(GetDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevEndpointResponseUnmarshaller.Instance;
 
@@ -6060,7 +6221,7 @@ namespace Amazon.Glue
 
         internal virtual GetDevEndpointsResponse GetDevEndpoints(GetDevEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevEndpointsResponseUnmarshaller.Instance;
 
@@ -6101,7 +6262,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">REST API Reference for GetDevEndpoints Operation</seealso>
         public virtual Task<GetDevEndpointsResponse> GetDevEndpointsAsync(GetDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDevEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDevEndpointsResponseUnmarshaller.Instance;
 
@@ -6113,7 +6274,7 @@ namespace Amazon.Glue
 
         internal virtual GetEntityRecordsResponse GetEntityRecords(GetEntityRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEntityRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEntityRecordsResponseUnmarshaller.Instance;
 
@@ -6168,7 +6329,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetEntityRecords">REST API Reference for GetEntityRecords Operation</seealso>
         public virtual Task<GetEntityRecordsResponse> GetEntityRecordsAsync(GetEntityRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEntityRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEntityRecordsResponseUnmarshaller.Instance;
 
@@ -6176,11 +6337,63 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  GetGlueIdentityCenterConfiguration
+
+        internal virtual GetGlueIdentityCenterConfigurationResponse GetGlueIdentityCenterConfiguration(GetGlueIdentityCenterConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetGlueIdentityCenterConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the current Glue Identity Center configuration details, including the associated
+        /// Identity Center instance and application information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetGlueIdentityCenterConfiguration">REST API Reference for GetGlueIdentityCenterConfiguration Operation</seealso>
+        public virtual Task<GetGlueIdentityCenterConfigurationResponse> GetGlueIdentityCenterConfigurationAsync(GetGlueIdentityCenterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGlueIdentityCenterConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetIntegrationResourceProperty
 
         internal virtual GetIntegrationResourcePropertyResponse GetIntegrationResourceProperty(GetIntegrationResourcePropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationResourcePropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResourcePropertyResponseUnmarshaller.Instance;
 
@@ -6223,7 +6436,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetIntegrationResourceProperty">REST API Reference for GetIntegrationResourceProperty Operation</seealso>
         public virtual Task<GetIntegrationResourcePropertyResponse> GetIntegrationResourcePropertyAsync(GetIntegrationResourcePropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationResourcePropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationResourcePropertyResponseUnmarshaller.Instance;
 
@@ -6235,7 +6448,7 @@ namespace Amazon.Glue
 
         internal virtual GetIntegrationTablePropertiesResponse GetIntegrationTableProperties(GetIntegrationTablePropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationTablePropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationTablePropertiesResponseUnmarshaller.Instance;
 
@@ -6279,7 +6492,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetIntegrationTableProperties">REST API Reference for GetIntegrationTableProperties Operation</seealso>
         public virtual Task<GetIntegrationTablePropertiesResponse> GetIntegrationTablePropertiesAsync(GetIntegrationTablePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetIntegrationTablePropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetIntegrationTablePropertiesResponseUnmarshaller.Instance;
 
@@ -6291,7 +6504,7 @@ namespace Amazon.Glue
 
         internal virtual GetJobResponse GetJob(GetJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
 
@@ -6324,7 +6537,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJob">REST API Reference for GetJob Operation</seealso>
         public virtual Task<GetJobResponse> GetJobAsync(GetJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobResponseUnmarshaller.Instance;
 
@@ -6336,7 +6549,7 @@ namespace Amazon.Glue
 
         internal virtual GetJobBookmarkResponse GetJobBookmark(GetJobBookmarkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobBookmarkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobBookmarkResponseUnmarshaller.Instance;
 
@@ -6393,7 +6606,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmark">REST API Reference for GetJobBookmark Operation</seealso>
         public virtual Task<GetJobBookmarkResponse> GetJobBookmarkAsync(GetJobBookmarkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobBookmarkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobBookmarkResponseUnmarshaller.Instance;
 
@@ -6405,7 +6618,7 @@ namespace Amazon.Glue
 
         internal virtual GetJobRunResponse GetJobRun(GetJobRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobRunResponseUnmarshaller.Instance;
 
@@ -6439,7 +6652,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRun">REST API Reference for GetJobRun Operation</seealso>
         public virtual Task<GetJobRunResponse> GetJobRunAsync(GetJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobRunResponseUnmarshaller.Instance;
 
@@ -6451,7 +6664,7 @@ namespace Amazon.Glue
 
         internal virtual GetJobRunsResponse GetJobRuns(GetJobRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobRunsResponseUnmarshaller.Instance;
 
@@ -6490,7 +6703,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobRuns">REST API Reference for GetJobRuns Operation</seealso>
         public virtual Task<GetJobRunsResponse> GetJobRunsAsync(GetJobRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobRunsResponseUnmarshaller.Instance;
 
@@ -6502,7 +6715,7 @@ namespace Amazon.Glue
 
         internal virtual GetJobsResponse GetJobs(GetJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobsResponseUnmarshaller.Instance;
 
@@ -6535,7 +6748,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobs">REST API Reference for GetJobs Operation</seealso>
         public virtual Task<GetJobsResponse> GetJobsAsync(GetJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetJobsResponseUnmarshaller.Instance;
 
@@ -6547,7 +6760,7 @@ namespace Amazon.Glue
 
         internal virtual GetMappingResponse GetMapping(GetMappingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMappingResponseUnmarshaller.Instance;
 
@@ -6580,7 +6793,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMapping">REST API Reference for GetMapping Operation</seealso>
         public virtual Task<GetMappingResponse> GetMappingAsync(GetMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMappingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMappingResponseUnmarshaller.Instance;
 
@@ -6592,7 +6805,7 @@ namespace Amazon.Glue
 
         internal virtual GetMLTaskRunResponse GetMLTaskRun(GetMLTaskRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLTaskRunResponseUnmarshaller.Instance;
 
@@ -6628,7 +6841,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRun">REST API Reference for GetMLTaskRun Operation</seealso>
         public virtual Task<GetMLTaskRunResponse> GetMLTaskRunAsync(GetMLTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLTaskRunResponseUnmarshaller.Instance;
 
@@ -6640,7 +6853,7 @@ namespace Amazon.Glue
 
         internal virtual GetMLTaskRunsResponse GetMLTaskRuns(GetMLTaskRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLTaskRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLTaskRunsResponseUnmarshaller.Instance;
 
@@ -6682,7 +6895,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRuns">REST API Reference for GetMLTaskRuns Operation</seealso>
         public virtual Task<GetMLTaskRunsResponse> GetMLTaskRunsAsync(GetMLTaskRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLTaskRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLTaskRunsResponseUnmarshaller.Instance;
 
@@ -6694,7 +6907,7 @@ namespace Amazon.Glue
 
         internal virtual GetMLTransformResponse GetMLTransform(GetMLTransformRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLTransformRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLTransformResponseUnmarshaller.Instance;
 
@@ -6731,7 +6944,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransform">REST API Reference for GetMLTransform Operation</seealso>
         public virtual Task<GetMLTransformResponse> GetMLTransformAsync(GetMLTransformRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLTransformRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLTransformResponseUnmarshaller.Instance;
 
@@ -6743,7 +6956,7 @@ namespace Amazon.Glue
 
         internal virtual GetMLTransformsResponse GetMLTransforms(GetMLTransformsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLTransformsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLTransformsResponseUnmarshaller.Instance;
 
@@ -6780,7 +6993,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">REST API Reference for GetMLTransforms Operation</seealso>
         public virtual Task<GetMLTransformsResponse> GetMLTransformsAsync(GetMLTransformsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMLTransformsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMLTransformsResponseUnmarshaller.Instance;
 
@@ -6792,7 +7005,7 @@ namespace Amazon.Glue
 
         internal virtual GetPartitionResponse GetPartition(GetPartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartitionResponseUnmarshaller.Instance;
 
@@ -6834,7 +7047,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartition">REST API Reference for GetPartition Operation</seealso>
         public virtual Task<GetPartitionResponse> GetPartitionAsync(GetPartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartitionResponseUnmarshaller.Instance;
 
@@ -6846,7 +7059,7 @@ namespace Amazon.Glue
 
         internal virtual GetPartitionIndexesResponse GetPartitionIndexes(GetPartitionIndexesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartitionIndexesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartitionIndexesResponseUnmarshaller.Instance;
 
@@ -6882,7 +7095,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitionIndexes">REST API Reference for GetPartitionIndexes Operation</seealso>
         public virtual Task<GetPartitionIndexesResponse> GetPartitionIndexesAsync(GetPartitionIndexesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartitionIndexesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartitionIndexesResponseUnmarshaller.Instance;
 
@@ -6894,7 +7107,7 @@ namespace Amazon.Glue
 
         internal virtual GetPartitionsResponse GetPartitions(GetPartitionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartitionsResponseUnmarshaller.Instance;
 
@@ -6942,7 +7155,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitions">REST API Reference for GetPartitions Operation</seealso>
         public virtual Task<GetPartitionsResponse> GetPartitionsAsync(GetPartitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPartitionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPartitionsResponseUnmarshaller.Instance;
 
@@ -6954,7 +7167,7 @@ namespace Amazon.Glue
 
         internal virtual GetPlanResponse GetPlan(GetPlanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlanResponseUnmarshaller.Instance;
 
@@ -6984,7 +7197,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPlan">REST API Reference for GetPlan Operation</seealso>
         public virtual Task<GetPlanResponse> GetPlanAsync(GetPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPlanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPlanResponseUnmarshaller.Instance;
 
@@ -6996,7 +7209,7 @@ namespace Amazon.Glue
 
         internal virtual GetRegistryResponse GetRegistry(GetRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegistryResponseUnmarshaller.Instance;
 
@@ -7029,7 +7242,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetRegistry">REST API Reference for GetRegistry Operation</seealso>
         public virtual Task<GetRegistryResponse> GetRegistryAsync(GetRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRegistryResponseUnmarshaller.Instance;
 
@@ -7041,7 +7254,7 @@ namespace Amazon.Glue
 
         internal virtual GetResourcePoliciesResponse GetResourcePolicies(GetResourcePoliciesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
 
@@ -7081,7 +7294,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
         public virtual Task<GetResourcePoliciesResponse> GetResourcePoliciesAsync(GetResourcePoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePoliciesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePoliciesResponseUnmarshaller.Instance;
 
@@ -7093,7 +7306,7 @@ namespace Amazon.Glue
 
         internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -7126,7 +7339,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
 
@@ -7138,7 +7351,7 @@ namespace Amazon.Glue
 
         internal virtual GetSchemaResponse GetSchema(GetSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaResponseUnmarshaller.Instance;
 
@@ -7171,7 +7384,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchema">REST API Reference for GetSchema Operation</seealso>
         public virtual Task<GetSchemaResponse> GetSchemaAsync(GetSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaResponseUnmarshaller.Instance;
 
@@ -7183,7 +7396,7 @@ namespace Amazon.Glue
 
         internal virtual GetSchemaByDefinitionResponse GetSchemaByDefinition(GetSchemaByDefinitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaByDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaByDefinitionResponseUnmarshaller.Instance;
 
@@ -7220,7 +7433,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaByDefinition">REST API Reference for GetSchemaByDefinition Operation</seealso>
         public virtual Task<GetSchemaByDefinitionResponse> GetSchemaByDefinitionAsync(GetSchemaByDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaByDefinitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaByDefinitionResponseUnmarshaller.Instance;
 
@@ -7232,7 +7445,7 @@ namespace Amazon.Glue
 
         internal virtual GetSchemaVersionResponse GetSchemaVersion(GetSchemaVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaVersionResponseUnmarshaller.Instance;
 
@@ -7267,7 +7480,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersion">REST API Reference for GetSchemaVersion Operation</seealso>
         public virtual Task<GetSchemaVersionResponse> GetSchemaVersionAsync(GetSchemaVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaVersionResponseUnmarshaller.Instance;
 
@@ -7279,7 +7492,7 @@ namespace Amazon.Glue
 
         internal virtual GetSchemaVersionsDiffResponse GetSchemaVersionsDiff(GetSchemaVersionsDiffRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaVersionsDiffRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaVersionsDiffResponseUnmarshaller.Instance;
 
@@ -7319,7 +7532,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSchemaVersionsDiff">REST API Reference for GetSchemaVersionsDiff Operation</seealso>
         public virtual Task<GetSchemaVersionsDiffResponse> GetSchemaVersionsDiffAsync(GetSchemaVersionsDiffRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSchemaVersionsDiffRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSchemaVersionsDiffResponseUnmarshaller.Instance;
 
@@ -7331,7 +7544,7 @@ namespace Amazon.Glue
 
         internal virtual GetSecurityConfigurationResponse GetSecurityConfiguration(GetSecurityConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityConfigurationResponseUnmarshaller.Instance;
 
@@ -7364,7 +7577,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfiguration">REST API Reference for GetSecurityConfiguration Operation</seealso>
         public virtual Task<GetSecurityConfigurationResponse> GetSecurityConfigurationAsync(GetSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityConfigurationResponseUnmarshaller.Instance;
 
@@ -7376,7 +7589,7 @@ namespace Amazon.Glue
 
         internal virtual GetSecurityConfigurationsResponse GetSecurityConfigurations(GetSecurityConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityConfigurationsResponseUnmarshaller.Instance;
 
@@ -7409,7 +7622,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSecurityConfigurations">REST API Reference for GetSecurityConfigurations Operation</seealso>
         public virtual Task<GetSecurityConfigurationsResponse> GetSecurityConfigurationsAsync(GetSecurityConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSecurityConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSecurityConfigurationsResponseUnmarshaller.Instance;
 
@@ -7421,7 +7634,7 @@ namespace Amazon.Glue
 
         internal virtual GetSessionResponse GetSession(GetSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -7457,7 +7670,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSession">REST API Reference for GetSession Operation</seealso>
         public virtual Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetSessionResponseUnmarshaller.Instance;
 
@@ -7469,7 +7682,7 @@ namespace Amazon.Glue
 
         internal virtual GetStatementResponse GetStatement(GetStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStatementResponseUnmarshaller.Instance;
 
@@ -7508,7 +7721,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetStatement">REST API Reference for GetStatement Operation</seealso>
         public virtual Task<GetStatementResponse> GetStatementAsync(GetStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetStatementResponseUnmarshaller.Instance;
 
@@ -7520,7 +7733,7 @@ namespace Amazon.Glue
 
         internal virtual GetTableResponse GetTable(GetTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableResponseUnmarshaller.Instance;
 
@@ -7565,7 +7778,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTable">REST API Reference for GetTable Operation</seealso>
         public virtual Task<GetTableResponse> GetTableAsync(GetTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableResponseUnmarshaller.Instance;
 
@@ -7577,7 +7790,7 @@ namespace Amazon.Glue
 
         internal virtual GetTableOptimizerResponse GetTableOptimizer(GetTableOptimizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableOptimizerResponseUnmarshaller.Instance;
 
@@ -7613,7 +7826,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableOptimizer">REST API Reference for GetTableOptimizer Operation</seealso>
         public virtual Task<GetTableOptimizerResponse> GetTableOptimizerAsync(GetTableOptimizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableOptimizerResponseUnmarshaller.Instance;
 
@@ -7625,7 +7838,7 @@ namespace Amazon.Glue
 
         internal virtual GetTablesResponse GetTables(GetTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTablesResponseUnmarshaller.Instance;
 
@@ -7667,7 +7880,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTables">REST API Reference for GetTables Operation</seealso>
         public virtual Task<GetTablesResponse> GetTablesAsync(GetTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTablesResponseUnmarshaller.Instance;
 
@@ -7679,7 +7892,7 @@ namespace Amazon.Glue
 
         internal virtual GetTableVersionResponse GetTableVersion(GetTableVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableVersionResponseUnmarshaller.Instance;
 
@@ -7715,7 +7928,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion">REST API Reference for GetTableVersion Operation</seealso>
         public virtual Task<GetTableVersionResponse> GetTableVersionAsync(GetTableVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableVersionResponseUnmarshaller.Instance;
 
@@ -7727,7 +7940,7 @@ namespace Amazon.Glue
 
         internal virtual GetTableVersionsResponse GetTableVersions(GetTableVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableVersionsResponseUnmarshaller.Instance;
 
@@ -7763,7 +7976,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersions">REST API Reference for GetTableVersions Operation</seealso>
         public virtual Task<GetTableVersionsResponse> GetTableVersionsAsync(GetTableVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTableVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTableVersionsResponseUnmarshaller.Instance;
 
@@ -7775,7 +7988,7 @@ namespace Amazon.Glue
 
         internal virtual GetTagsResponse GetTags(GetTagsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
 
@@ -7808,7 +8021,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTags">REST API Reference for GetTags Operation</seealso>
         public virtual Task<GetTagsResponse> GetTagsAsync(GetTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTagsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTagsResponseUnmarshaller.Instance;
 
@@ -7820,7 +8033,7 @@ namespace Amazon.Glue
 
         internal virtual GetTriggerResponse GetTrigger(GetTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTriggerResponseUnmarshaller.Instance;
 
@@ -7853,7 +8066,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTrigger">REST API Reference for GetTrigger Operation</seealso>
         public virtual Task<GetTriggerResponse> GetTriggerAsync(GetTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTriggerResponseUnmarshaller.Instance;
 
@@ -7865,7 +8078,7 @@ namespace Amazon.Glue
 
         internal virtual GetTriggersResponse GetTriggers(GetTriggersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTriggersResponseUnmarshaller.Instance;
 
@@ -7898,7 +8111,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTriggers">REST API Reference for GetTriggers Operation</seealso>
         public virtual Task<GetTriggersResponse> GetTriggersAsync(GetTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetTriggersResponseUnmarshaller.Instance;
 
@@ -7910,7 +8123,7 @@ namespace Amazon.Glue
 
         internal virtual GetUnfilteredPartitionMetadataResponse GetUnfilteredPartitionMetadata(GetUnfilteredPartitionMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUnfilteredPartitionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUnfilteredPartitionMetadataResponseUnmarshaller.Instance;
 
@@ -7960,7 +8173,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredPartitionMetadata">REST API Reference for GetUnfilteredPartitionMetadata Operation</seealso>
         public virtual Task<GetUnfilteredPartitionMetadataResponse> GetUnfilteredPartitionMetadataAsync(GetUnfilteredPartitionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUnfilteredPartitionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUnfilteredPartitionMetadataResponseUnmarshaller.Instance;
 
@@ -7972,7 +8185,7 @@ namespace Amazon.Glue
 
         internal virtual GetUnfilteredPartitionsMetadataResponse GetUnfilteredPartitionsMetadata(GetUnfilteredPartitionsMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUnfilteredPartitionsMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUnfilteredPartitionsMetadataResponseUnmarshaller.Instance;
 
@@ -8022,7 +8235,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredPartitionsMetadata">REST API Reference for GetUnfilteredPartitionsMetadata Operation</seealso>
         public virtual Task<GetUnfilteredPartitionsMetadataResponse> GetUnfilteredPartitionsMetadataAsync(GetUnfilteredPartitionsMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUnfilteredPartitionsMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUnfilteredPartitionsMetadataResponseUnmarshaller.Instance;
 
@@ -8034,7 +8247,7 @@ namespace Amazon.Glue
 
         internal virtual GetUnfilteredTableMetadataResponse GetUnfilteredTableMetadata(GetUnfilteredTableMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUnfilteredTableMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUnfilteredTableMetadataResponseUnmarshaller.Instance;
 
@@ -8085,7 +8298,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredTableMetadata">REST API Reference for GetUnfilteredTableMetadata Operation</seealso>
         public virtual Task<GetUnfilteredTableMetadataResponse> GetUnfilteredTableMetadataAsync(GetUnfilteredTableMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUnfilteredTableMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUnfilteredTableMetadataResponseUnmarshaller.Instance;
 
@@ -8097,7 +8310,7 @@ namespace Amazon.Glue
 
         internal virtual GetUsageProfileResponse GetUsageProfile(GetUsageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsageProfileResponseUnmarshaller.Instance;
 
@@ -8133,7 +8346,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUsageProfile">REST API Reference for GetUsageProfile Operation</seealso>
         public virtual Task<GetUsageProfileResponse> GetUsageProfileAsync(GetUsageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUsageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUsageProfileResponseUnmarshaller.Instance;
 
@@ -8145,7 +8358,7 @@ namespace Amazon.Glue
 
         internal virtual GetUserDefinedFunctionResponse GetUserDefinedFunction(GetUserDefinedFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserDefinedFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserDefinedFunctionResponseUnmarshaller.Instance;
 
@@ -8181,7 +8394,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunction">REST API Reference for GetUserDefinedFunction Operation</seealso>
         public virtual Task<GetUserDefinedFunctionResponse> GetUserDefinedFunctionAsync(GetUserDefinedFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserDefinedFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserDefinedFunctionResponseUnmarshaller.Instance;
 
@@ -8193,7 +8406,7 @@ namespace Amazon.Glue
 
         internal virtual GetUserDefinedFunctionsResponse GetUserDefinedFunctions(GetUserDefinedFunctionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserDefinedFunctionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserDefinedFunctionsResponseUnmarshaller.Instance;
 
@@ -8229,7 +8442,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUserDefinedFunctions">REST API Reference for GetUserDefinedFunctions Operation</seealso>
         public virtual Task<GetUserDefinedFunctionsResponse> GetUserDefinedFunctionsAsync(GetUserDefinedFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUserDefinedFunctionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUserDefinedFunctionsResponseUnmarshaller.Instance;
 
@@ -8241,7 +8454,7 @@ namespace Amazon.Glue
 
         internal virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -8274,7 +8487,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual Task<GetWorkflowResponse> GetWorkflowAsync(GetWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowResponseUnmarshaller.Instance;
 
@@ -8286,7 +8499,7 @@ namespace Amazon.Glue
 
         internal virtual GetWorkflowRunResponse GetWorkflowRun(GetWorkflowRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowRunResponseUnmarshaller.Instance;
 
@@ -8320,7 +8533,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRun">REST API Reference for GetWorkflowRun Operation</seealso>
         public virtual Task<GetWorkflowRunResponse> GetWorkflowRunAsync(GetWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowRunResponseUnmarshaller.Instance;
 
@@ -8332,7 +8545,7 @@ namespace Amazon.Glue
 
         internal virtual GetWorkflowRunPropertiesResponse GetWorkflowRunProperties(GetWorkflowRunPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRunPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowRunPropertiesResponseUnmarshaller.Instance;
 
@@ -8365,7 +8578,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRunProperties">REST API Reference for GetWorkflowRunProperties Operation</seealso>
         public virtual Task<GetWorkflowRunPropertiesResponse> GetWorkflowRunPropertiesAsync(GetWorkflowRunPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRunPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowRunPropertiesResponseUnmarshaller.Instance;
 
@@ -8377,7 +8590,7 @@ namespace Amazon.Glue
 
         internal virtual GetWorkflowRunsResponse GetWorkflowRuns(GetWorkflowRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowRunsResponseUnmarshaller.Instance;
 
@@ -8410,7 +8623,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetWorkflowRuns">REST API Reference for GetWorkflowRuns Operation</seealso>
         public virtual Task<GetWorkflowRunsResponse> GetWorkflowRunsAsync(GetWorkflowRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkflowRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkflowRunsResponseUnmarshaller.Instance;
 
@@ -8422,7 +8635,7 @@ namespace Amazon.Glue
 
         internal virtual ImportCatalogToGlueResponse ImportCatalogToGlue(ImportCatalogToGlueRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportCatalogToGlueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportCatalogToGlueResponseUnmarshaller.Instance;
 
@@ -8449,7 +8662,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">REST API Reference for ImportCatalogToGlue Operation</seealso>
         public virtual Task<ImportCatalogToGlueResponse> ImportCatalogToGlueAsync(ImportCatalogToGlueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ImportCatalogToGlueRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ImportCatalogToGlueResponseUnmarshaller.Instance;
 
@@ -8461,7 +8674,7 @@ namespace Amazon.Glue
 
         internal virtual ListBlueprintsResponse ListBlueprints(ListBlueprintsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
 
@@ -8491,7 +8704,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListBlueprints">REST API Reference for ListBlueprints Operation</seealso>
         public virtual Task<ListBlueprintsResponse> ListBlueprintsAsync(ListBlueprintsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBlueprintsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBlueprintsResponseUnmarshaller.Instance;
 
@@ -8503,7 +8716,7 @@ namespace Amazon.Glue
 
         internal virtual ListColumnStatisticsTaskRunsResponse ListColumnStatisticsTaskRuns(ListColumnStatisticsTaskRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListColumnStatisticsTaskRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListColumnStatisticsTaskRunsResponseUnmarshaller.Instance;
 
@@ -8527,7 +8740,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListColumnStatisticsTaskRuns">REST API Reference for ListColumnStatisticsTaskRuns Operation</seealso>
         public virtual Task<ListColumnStatisticsTaskRunsResponse> ListColumnStatisticsTaskRunsAsync(ListColumnStatisticsTaskRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListColumnStatisticsTaskRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListColumnStatisticsTaskRunsResponseUnmarshaller.Instance;
 
@@ -8539,7 +8752,7 @@ namespace Amazon.Glue
 
         internal virtual ListConnectionTypesResponse ListConnectionTypes(ListConnectionTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionTypesResponseUnmarshaller.Instance;
 
@@ -8570,7 +8783,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListConnectionTypes">REST API Reference for ListConnectionTypes Operation</seealso>
         public virtual Task<ListConnectionTypesResponse> ListConnectionTypesAsync(ListConnectionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListConnectionTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListConnectionTypesResponseUnmarshaller.Instance;
 
@@ -8582,7 +8795,7 @@ namespace Amazon.Glue
 
         internal virtual ListCrawlersResponse ListCrawlers(ListCrawlersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrawlersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrawlersResponseUnmarshaller.Instance;
 
@@ -8615,7 +8828,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">REST API Reference for ListCrawlers Operation</seealso>
         public virtual Task<ListCrawlersResponse> ListCrawlersAsync(ListCrawlersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrawlersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrawlersResponseUnmarshaller.Instance;
 
@@ -8627,7 +8840,7 @@ namespace Amazon.Glue
 
         internal virtual ListCrawlsResponse ListCrawls(ListCrawlsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrawlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrawlsResponseUnmarshaller.Instance;
 
@@ -8682,7 +8895,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawls">REST API Reference for ListCrawls Operation</seealso>
         public virtual Task<ListCrawlsResponse> ListCrawlsAsync(ListCrawlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCrawlsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCrawlsResponseUnmarshaller.Instance;
 
@@ -8694,7 +8907,7 @@ namespace Amazon.Glue
 
         internal virtual ListCustomEntityTypesResponse ListCustomEntityTypes(ListCustomEntityTypesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomEntityTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomEntityTypesResponseUnmarshaller.Instance;
 
@@ -8724,7 +8937,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCustomEntityTypes">REST API Reference for ListCustomEntityTypes Operation</seealso>
         public virtual Task<ListCustomEntityTypesResponse> ListCustomEntityTypesAsync(ListCustomEntityTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomEntityTypesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomEntityTypesResponseUnmarshaller.Instance;
 
@@ -8736,7 +8949,7 @@ namespace Amazon.Glue
 
         internal virtual ListDataQualityResultsResponse ListDataQualityResults(ListDataQualityResultsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityResultsResponseUnmarshaller.Instance;
 
@@ -8766,7 +8979,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityResults">REST API Reference for ListDataQualityResults Operation</seealso>
         public virtual Task<ListDataQualityResultsResponse> ListDataQualityResultsAsync(ListDataQualityResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityResultsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityResultsResponseUnmarshaller.Instance;
 
@@ -8778,7 +8991,7 @@ namespace Amazon.Glue
 
         internal virtual ListDataQualityRuleRecommendationRunsResponse ListDataQualityRuleRecommendationRuns(ListDataQualityRuleRecommendationRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityRuleRecommendationRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityRuleRecommendationRunsResponseUnmarshaller.Instance;
 
@@ -8808,7 +9021,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRuleRecommendationRuns">REST API Reference for ListDataQualityRuleRecommendationRuns Operation</seealso>
         public virtual Task<ListDataQualityRuleRecommendationRunsResponse> ListDataQualityRuleRecommendationRunsAsync(ListDataQualityRuleRecommendationRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityRuleRecommendationRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityRuleRecommendationRunsResponseUnmarshaller.Instance;
 
@@ -8820,7 +9033,7 @@ namespace Amazon.Glue
 
         internal virtual ListDataQualityRulesetEvaluationRunsResponse ListDataQualityRulesetEvaluationRuns(ListDataQualityRulesetEvaluationRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityRulesetEvaluationRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityRulesetEvaluationRunsResponseUnmarshaller.Instance;
 
@@ -8851,7 +9064,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesetEvaluationRuns">REST API Reference for ListDataQualityRulesetEvaluationRuns Operation</seealso>
         public virtual Task<ListDataQualityRulesetEvaluationRunsResponse> ListDataQualityRulesetEvaluationRunsAsync(ListDataQualityRulesetEvaluationRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityRulesetEvaluationRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityRulesetEvaluationRunsResponseUnmarshaller.Instance;
 
@@ -8863,7 +9076,7 @@ namespace Amazon.Glue
 
         internal virtual ListDataQualityRulesetsResponse ListDataQualityRulesets(ListDataQualityRulesetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityRulesetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityRulesetsResponseUnmarshaller.Instance;
 
@@ -8896,7 +9109,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesets">REST API Reference for ListDataQualityRulesets Operation</seealso>
         public virtual Task<ListDataQualityRulesetsResponse> ListDataQualityRulesetsAsync(ListDataQualityRulesetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityRulesetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityRulesetsResponseUnmarshaller.Instance;
 
@@ -8908,7 +9121,7 @@ namespace Amazon.Glue
 
         internal virtual ListDataQualityStatisticAnnotationsResponse ListDataQualityStatisticAnnotations(ListDataQualityStatisticAnnotationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityStatisticAnnotationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityStatisticAnnotationsResponseUnmarshaller.Instance;
 
@@ -8935,7 +9148,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatisticAnnotations">REST API Reference for ListDataQualityStatisticAnnotations Operation</seealso>
         public virtual Task<ListDataQualityStatisticAnnotationsResponse> ListDataQualityStatisticAnnotationsAsync(ListDataQualityStatisticAnnotationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityStatisticAnnotationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityStatisticAnnotationsResponseUnmarshaller.Instance;
 
@@ -8947,7 +9160,7 @@ namespace Amazon.Glue
 
         internal virtual ListDataQualityStatisticsResponse ListDataQualityStatistics(ListDataQualityStatisticsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityStatisticsResponseUnmarshaller.Instance;
 
@@ -8977,7 +9190,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityStatistics">REST API Reference for ListDataQualityStatistics Operation</seealso>
         public virtual Task<ListDataQualityStatisticsResponse> ListDataQualityStatisticsAsync(ListDataQualityStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDataQualityStatisticsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDataQualityStatisticsResponseUnmarshaller.Instance;
 
@@ -8989,7 +9202,7 @@ namespace Amazon.Glue
 
         internal virtual ListDevEndpointsResponse ListDevEndpoints(ListDevEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevEndpointsResponseUnmarshaller.Instance;
 
@@ -9031,7 +9244,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">REST API Reference for ListDevEndpoints Operation</seealso>
         public virtual Task<ListDevEndpointsResponse> ListDevEndpointsAsync(ListDevEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDevEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDevEndpointsResponseUnmarshaller.Instance;
 
@@ -9043,7 +9256,7 @@ namespace Amazon.Glue
 
         internal virtual ListEntitiesResponse ListEntities(ListEntitiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntitiesResponseUnmarshaller.Instance;
 
@@ -9085,7 +9298,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListEntities">REST API Reference for ListEntities Operation</seealso>
         public virtual Task<ListEntitiesResponse> ListEntitiesAsync(ListEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntitiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntitiesResponseUnmarshaller.Instance;
 
@@ -9093,11 +9306,66 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  ListIntegrationResourceProperties
+
+        internal virtual ListIntegrationResourcePropertiesResponse ListIntegrationResourceProperties(ListIntegrationResourcePropertiesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIntegrationResourcePropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationResourcePropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntegrationResourcePropertiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List integration resource properties for a single customer. It supports the filters,
+        /// maxRecords and markers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrationResourceProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntegrationResourceProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIntegrationResourceProperties">REST API Reference for ListIntegrationResourceProperties Operation</seealso>
+        public virtual Task<ListIntegrationResourcePropertiesResponse> ListIntegrationResourcePropertiesAsync(ListIntegrationResourcePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIntegrationResourcePropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationResourcePropertiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIntegrationResourcePropertiesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListJobs
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -9139,7 +9407,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -9151,7 +9419,7 @@ namespace Amazon.Glue
 
         internal virtual ListMLTransformsResponse ListMLTransforms(ListMLTransformsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLTransformsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLTransformsResponseUnmarshaller.Instance;
 
@@ -9188,7 +9456,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">REST API Reference for ListMLTransforms Operation</seealso>
         public virtual Task<ListMLTransformsResponse> ListMLTransformsAsync(ListMLTransformsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMLTransformsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMLTransformsResponseUnmarshaller.Instance;
 
@@ -9200,7 +9468,7 @@ namespace Amazon.Glue
 
         internal virtual ListRegistriesResponse ListRegistries(ListRegistriesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
 
@@ -9232,7 +9500,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListRegistries">REST API Reference for ListRegistries Operation</seealso>
         public virtual Task<ListRegistriesResponse> ListRegistriesAsync(ListRegistriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRegistriesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRegistriesResponseUnmarshaller.Instance;
 
@@ -9244,7 +9512,7 @@ namespace Amazon.Glue
 
         internal virtual ListSchemasResponse ListSchemas(ListSchemasRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
 
@@ -9285,7 +9553,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemas">REST API Reference for ListSchemas Operation</seealso>
         public virtual Task<ListSchemasResponse> ListSchemasAsync(ListSchemasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemasRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
 
@@ -9297,7 +9565,7 @@ namespace Amazon.Glue
 
         internal virtual ListSchemaVersionsResponse ListSchemaVersions(ListSchemaVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaVersionsResponseUnmarshaller.Instance;
 
@@ -9332,7 +9600,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSchemaVersions">REST API Reference for ListSchemaVersions Operation</seealso>
         public virtual Task<ListSchemaVersionsResponse> ListSchemaVersionsAsync(ListSchemaVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchemaVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchemaVersionsResponseUnmarshaller.Instance;
 
@@ -9344,7 +9612,7 @@ namespace Amazon.Glue
 
         internal virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -9377,7 +9645,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -9389,7 +9657,7 @@ namespace Amazon.Glue
 
         internal virtual ListStatementsResponse ListStatements(ListStatementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStatementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStatementsResponseUnmarshaller.Instance;
 
@@ -9428,7 +9696,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListStatements">REST API Reference for ListStatements Operation</seealso>
         public virtual Task<ListStatementsResponse> ListStatementsAsync(ListStatementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListStatementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListStatementsResponseUnmarshaller.Instance;
 
@@ -9440,7 +9708,7 @@ namespace Amazon.Glue
 
         internal virtual ListTableOptimizerRunsResponse ListTableOptimizerRuns(ListTableOptimizerRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableOptimizerRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableOptimizerRunsResponseUnmarshaller.Instance;
 
@@ -9479,7 +9747,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTableOptimizerRuns">REST API Reference for ListTableOptimizerRuns Operation</seealso>
         public virtual Task<ListTableOptimizerRunsResponse> ListTableOptimizerRunsAsync(ListTableOptimizerRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTableOptimizerRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTableOptimizerRunsResponseUnmarshaller.Instance;
 
@@ -9491,7 +9759,7 @@ namespace Amazon.Glue
 
         internal virtual ListTriggersResponse ListTriggers(ListTriggersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTriggersResponseUnmarshaller.Instance;
 
@@ -9533,7 +9801,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">REST API Reference for ListTriggers Operation</seealso>
         public virtual Task<ListTriggersResponse> ListTriggersAsync(ListTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTriggersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTriggersResponseUnmarshaller.Instance;
 
@@ -9545,7 +9813,7 @@ namespace Amazon.Glue
 
         internal virtual ListUsageProfilesResponse ListUsageProfiles(ListUsageProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsageProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsageProfilesResponseUnmarshaller.Instance;
 
@@ -9578,7 +9846,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListUsageProfiles">REST API Reference for ListUsageProfiles Operation</seealso>
         public virtual Task<ListUsageProfilesResponse> ListUsageProfilesAsync(ListUsageProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListUsageProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListUsageProfilesResponseUnmarshaller.Instance;
 
@@ -9590,7 +9858,7 @@ namespace Amazon.Glue
 
         internal virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -9620,7 +9888,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListWorkflowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListWorkflowsResponseUnmarshaller.Instance;
 
@@ -9632,7 +9900,7 @@ namespace Amazon.Glue
 
         internal virtual ModifyIntegrationResponse ModifyIntegration(ModifyIntegrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
 
@@ -9686,7 +9954,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
         public virtual Task<ModifyIntegrationResponse> ModifyIntegrationAsync(ModifyIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ModifyIntegrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
 
@@ -9698,7 +9966,7 @@ namespace Amazon.Glue
 
         internal virtual PutDataCatalogEncryptionSettingsResponse PutDataCatalogEncryptionSettings(PutDataCatalogEncryptionSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDataCatalogEncryptionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
 
@@ -9729,7 +9997,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogEncryptionSettings">REST API Reference for PutDataCatalogEncryptionSettings Operation</seealso>
         public virtual Task<PutDataCatalogEncryptionSettingsResponse> PutDataCatalogEncryptionSettingsAsync(PutDataCatalogEncryptionSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDataCatalogEncryptionSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDataCatalogEncryptionSettingsResponseUnmarshaller.Instance;
 
@@ -9741,7 +10009,7 @@ namespace Amazon.Glue
 
         internal virtual PutDataQualityProfileAnnotationResponse PutDataQualityProfileAnnotation(PutDataQualityProfileAnnotationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDataQualityProfileAnnotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDataQualityProfileAnnotationResponseUnmarshaller.Instance;
 
@@ -9771,7 +10039,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataQualityProfileAnnotation">REST API Reference for PutDataQualityProfileAnnotation Operation</seealso>
         public virtual Task<PutDataQualityProfileAnnotationResponse> PutDataQualityProfileAnnotationAsync(PutDataQualityProfileAnnotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutDataQualityProfileAnnotationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutDataQualityProfileAnnotationResponseUnmarshaller.Instance;
 
@@ -9783,7 +10051,7 @@ namespace Amazon.Glue
 
         internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -9819,7 +10087,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
 
@@ -9831,7 +10099,7 @@ namespace Amazon.Glue
 
         internal virtual PutSchemaVersionMetadataResponse PutSchemaVersionMetadata(PutSchemaVersionMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSchemaVersionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSchemaVersionMetadataResponseUnmarshaller.Instance;
 
@@ -9869,7 +10137,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutSchemaVersionMetadata">REST API Reference for PutSchemaVersionMetadata Operation</seealso>
         public virtual Task<PutSchemaVersionMetadataResponse> PutSchemaVersionMetadataAsync(PutSchemaVersionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutSchemaVersionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutSchemaVersionMetadataResponseUnmarshaller.Instance;
 
@@ -9881,7 +10149,7 @@ namespace Amazon.Glue
 
         internal virtual PutWorkflowRunPropertiesResponse PutWorkflowRunProperties(PutWorkflowRunPropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWorkflowRunPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWorkflowRunPropertiesResponseUnmarshaller.Instance;
 
@@ -9925,7 +10193,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutWorkflowRunProperties">REST API Reference for PutWorkflowRunProperties Operation</seealso>
         public virtual Task<PutWorkflowRunPropertiesResponse> PutWorkflowRunPropertiesAsync(PutWorkflowRunPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutWorkflowRunPropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutWorkflowRunPropertiesResponseUnmarshaller.Instance;
 
@@ -9937,7 +10205,7 @@ namespace Amazon.Glue
 
         internal virtual QuerySchemaVersionMetadataResponse QuerySchemaVersionMetadata(QuerySchemaVersionMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QuerySchemaVersionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QuerySchemaVersionMetadataResponseUnmarshaller.Instance;
 
@@ -9967,7 +10235,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/QuerySchemaVersionMetadata">REST API Reference for QuerySchemaVersionMetadata Operation</seealso>
         public virtual Task<QuerySchemaVersionMetadataResponse> QuerySchemaVersionMetadataAsync(QuerySchemaVersionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = QuerySchemaVersionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = QuerySchemaVersionMetadataResponseUnmarshaller.Instance;
 
@@ -9979,7 +10247,7 @@ namespace Amazon.Glue
 
         internal virtual RegisterSchemaVersionResponse RegisterSchemaVersion(RegisterSchemaVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterSchemaVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterSchemaVersionResponseUnmarshaller.Instance;
 
@@ -10035,7 +10303,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegisterSchemaVersion">REST API Reference for RegisterSchemaVersion Operation</seealso>
         public virtual Task<RegisterSchemaVersionResponse> RegisterSchemaVersionAsync(RegisterSchemaVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterSchemaVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterSchemaVersionResponseUnmarshaller.Instance;
 
@@ -10047,7 +10315,7 @@ namespace Amazon.Glue
 
         internal virtual RemoveSchemaVersionMetadataResponse RemoveSchemaVersionMetadata(RemoveSchemaVersionMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveSchemaVersionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveSchemaVersionMetadataResponseUnmarshaller.Instance;
 
@@ -10078,7 +10346,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RemoveSchemaVersionMetadata">REST API Reference for RemoveSchemaVersionMetadata Operation</seealso>
         public virtual Task<RemoveSchemaVersionMetadataResponse> RemoveSchemaVersionMetadataAsync(RemoveSchemaVersionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveSchemaVersionMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveSchemaVersionMetadataResponseUnmarshaller.Instance;
 
@@ -10090,7 +10358,7 @@ namespace Amazon.Glue
 
         internal virtual ResetJobBookmarkResponse ResetJobBookmark(ResetJobBookmarkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetJobBookmarkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetJobBookmarkResponseUnmarshaller.Instance;
 
@@ -10144,7 +10412,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResetJobBookmark">REST API Reference for ResetJobBookmark Operation</seealso>
         public virtual Task<ResetJobBookmarkResponse> ResetJobBookmarkAsync(ResetJobBookmarkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResetJobBookmarkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResetJobBookmarkResponseUnmarshaller.Instance;
 
@@ -10156,7 +10424,7 @@ namespace Amazon.Glue
 
         internal virtual ResumeWorkflowRunResponse ResumeWorkflowRun(ResumeWorkflowRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeWorkflowRunResponseUnmarshaller.Instance;
 
@@ -10197,7 +10465,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResumeWorkflowRun">REST API Reference for ResumeWorkflowRun Operation</seealso>
         public virtual Task<ResumeWorkflowRunResponse> ResumeWorkflowRunAsync(ResumeWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ResumeWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ResumeWorkflowRunResponseUnmarshaller.Instance;
 
@@ -10209,7 +10477,7 @@ namespace Amazon.Glue
 
         internal virtual RunStatementResponse RunStatement(RunStatementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunStatementResponseUnmarshaller.Instance;
 
@@ -10254,7 +10522,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RunStatement">REST API Reference for RunStatement Operation</seealso>
         public virtual Task<RunStatementResponse> RunStatementAsync(RunStatementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RunStatementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RunStatementResponseUnmarshaller.Instance;
 
@@ -10266,7 +10534,7 @@ namespace Amazon.Glue
 
         internal virtual SearchTablesResponse SearchTables(SearchTablesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTablesResponseUnmarshaller.Instance;
 
@@ -10307,7 +10575,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SearchTables">REST API Reference for SearchTables Operation</seealso>
         public virtual Task<SearchTablesResponse> SearchTablesAsync(SearchTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchTablesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchTablesResponseUnmarshaller.Instance;
 
@@ -10319,7 +10587,7 @@ namespace Amazon.Glue
 
         internal virtual StartBlueprintRunResponse StartBlueprintRun(StartBlueprintRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBlueprintRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBlueprintRunResponseUnmarshaller.Instance;
 
@@ -10358,7 +10626,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartBlueprintRun">REST API Reference for StartBlueprintRun Operation</seealso>
         public virtual Task<StartBlueprintRunResponse> StartBlueprintRunAsync(StartBlueprintRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBlueprintRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBlueprintRunResponseUnmarshaller.Instance;
 
@@ -10370,7 +10638,7 @@ namespace Amazon.Glue
 
         internal virtual StartColumnStatisticsTaskRunResponse StartColumnStatisticsTaskRun(StartColumnStatisticsTaskRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartColumnStatisticsTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartColumnStatisticsTaskRunResponseUnmarshaller.Instance;
 
@@ -10410,7 +10678,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRun">REST API Reference for StartColumnStatisticsTaskRun Operation</seealso>
         public virtual Task<StartColumnStatisticsTaskRunResponse> StartColumnStatisticsTaskRunAsync(StartColumnStatisticsTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartColumnStatisticsTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartColumnStatisticsTaskRunResponseUnmarshaller.Instance;
 
@@ -10422,7 +10690,7 @@ namespace Amazon.Glue
 
         internal virtual StartColumnStatisticsTaskRunScheduleResponse StartColumnStatisticsTaskRunSchedule(StartColumnStatisticsTaskRunScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartColumnStatisticsTaskRunScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartColumnStatisticsTaskRunScheduleResponseUnmarshaller.Instance;
 
@@ -10455,7 +10723,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRunSchedule">REST API Reference for StartColumnStatisticsTaskRunSchedule Operation</seealso>
         public virtual Task<StartColumnStatisticsTaskRunScheduleResponse> StartColumnStatisticsTaskRunScheduleAsync(StartColumnStatisticsTaskRunScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartColumnStatisticsTaskRunScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartColumnStatisticsTaskRunScheduleResponseUnmarshaller.Instance;
 
@@ -10467,7 +10735,7 @@ namespace Amazon.Glue
 
         internal virtual StartCrawlerResponse StartCrawler(StartCrawlerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCrawlerResponseUnmarshaller.Instance;
 
@@ -10498,7 +10766,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawler">REST API Reference for StartCrawler Operation</seealso>
         public virtual Task<StartCrawlerResponse> StartCrawlerAsync(StartCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCrawlerResponseUnmarshaller.Instance;
 
@@ -10510,7 +10778,7 @@ namespace Amazon.Glue
 
         internal virtual StartCrawlerScheduleResponse StartCrawlerSchedule(StartCrawlerScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCrawlerScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCrawlerScheduleResponseUnmarshaller.Instance;
 
@@ -10547,7 +10815,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartCrawlerSchedule">REST API Reference for StartCrawlerSchedule Operation</seealso>
         public virtual Task<StartCrawlerScheduleResponse> StartCrawlerScheduleAsync(StartCrawlerScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCrawlerScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCrawlerScheduleResponseUnmarshaller.Instance;
 
@@ -10559,7 +10827,7 @@ namespace Amazon.Glue
 
         internal virtual StartDataQualityRuleRecommendationRunResponse StartDataQualityRuleRecommendationRun(StartDataQualityRuleRecommendationRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataQualityRuleRecommendationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
 
@@ -10600,7 +10868,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRuleRecommendationRun">REST API Reference for StartDataQualityRuleRecommendationRun Operation</seealso>
         public virtual Task<StartDataQualityRuleRecommendationRunResponse> StartDataQualityRuleRecommendationRunAsync(StartDataQualityRuleRecommendationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataQualityRuleRecommendationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataQualityRuleRecommendationRunResponseUnmarshaller.Instance;
 
@@ -10612,7 +10880,7 @@ namespace Amazon.Glue
 
         internal virtual StartDataQualityRulesetEvaluationRunResponse StartDataQualityRulesetEvaluationRun(StartDataQualityRulesetEvaluationRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
 
@@ -10650,7 +10918,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRulesetEvaluationRun">REST API Reference for StartDataQualityRulesetEvaluationRun Operation</seealso>
         public virtual Task<StartDataQualityRulesetEvaluationRunResponse> StartDataQualityRulesetEvaluationRunAsync(StartDataQualityRulesetEvaluationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
 
@@ -10662,7 +10930,7 @@ namespace Amazon.Glue
 
         internal virtual StartExportLabelsTaskRunResponse StartExportLabelsTaskRun(StartExportLabelsTaskRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExportLabelsTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExportLabelsTaskRunResponseUnmarshaller.Instance;
 
@@ -10703,7 +10971,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartExportLabelsTaskRun">REST API Reference for StartExportLabelsTaskRun Operation</seealso>
         public virtual Task<StartExportLabelsTaskRunResponse> StartExportLabelsTaskRunAsync(StartExportLabelsTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartExportLabelsTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartExportLabelsTaskRunResponseUnmarshaller.Instance;
 
@@ -10715,7 +10983,7 @@ namespace Amazon.Glue
 
         internal virtual StartImportLabelsTaskRunResponse StartImportLabelsTaskRun(StartImportLabelsTaskRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportLabelsTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportLabelsTaskRunResponseUnmarshaller.Instance;
 
@@ -10782,7 +11050,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartImportLabelsTaskRun">REST API Reference for StartImportLabelsTaskRun Operation</seealso>
         public virtual Task<StartImportLabelsTaskRunResponse> StartImportLabelsTaskRunAsync(StartImportLabelsTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartImportLabelsTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartImportLabelsTaskRunResponseUnmarshaller.Instance;
 
@@ -10794,7 +11062,7 @@ namespace Amazon.Glue
 
         internal virtual StartJobRunResponse StartJobRun(StartJobRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartJobRunResponseUnmarshaller.Instance;
 
@@ -10833,7 +11101,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
         public virtual Task<StartJobRunResponse> StartJobRunAsync(StartJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartJobRunResponseUnmarshaller.Instance;
 
@@ -10845,7 +11113,7 @@ namespace Amazon.Glue
 
         internal virtual StartMLEvaluationTaskRunResponse StartMLEvaluationTaskRun(StartMLEvaluationTaskRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMLEvaluationTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMLEvaluationTaskRunResponseUnmarshaller.Instance;
 
@@ -10896,7 +11164,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLEvaluationTaskRun">REST API Reference for StartMLEvaluationTaskRun Operation</seealso>
         public virtual Task<StartMLEvaluationTaskRunResponse> StartMLEvaluationTaskRunAsync(StartMLEvaluationTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMLEvaluationTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMLEvaluationTaskRunResponseUnmarshaller.Instance;
 
@@ -10908,7 +11176,7 @@ namespace Amazon.Glue
 
         internal virtual StartMLLabelingSetGenerationTaskRunResponse StartMLLabelingSetGenerationTaskRun(StartMLLabelingSetGenerationTaskRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMLLabelingSetGenerationTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMLLabelingSetGenerationTaskRunResponseUnmarshaller.Instance;
 
@@ -10970,7 +11238,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartMLLabelingSetGenerationTaskRun">REST API Reference for StartMLLabelingSetGenerationTaskRun Operation</seealso>
         public virtual Task<StartMLLabelingSetGenerationTaskRunResponse> StartMLLabelingSetGenerationTaskRunAsync(StartMLLabelingSetGenerationTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartMLLabelingSetGenerationTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartMLLabelingSetGenerationTaskRunResponseUnmarshaller.Instance;
 
@@ -10982,7 +11250,7 @@ namespace Amazon.Glue
 
         internal virtual StartTriggerResponse StartTrigger(StartTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTriggerResponseUnmarshaller.Instance;
 
@@ -11022,7 +11290,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartTrigger">REST API Reference for StartTrigger Operation</seealso>
         public virtual Task<StartTriggerResponse> StartTriggerAsync(StartTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartTriggerResponseUnmarshaller.Instance;
 
@@ -11034,7 +11302,7 @@ namespace Amazon.Glue
 
         internal virtual StartWorkflowRunResponse StartWorkflowRun(StartWorkflowRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
 
@@ -11073,7 +11341,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartWorkflowRun">REST API Reference for StartWorkflowRun Operation</seealso>
         public virtual Task<StartWorkflowRunResponse> StartWorkflowRunAsync(StartWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartWorkflowRunResponseUnmarshaller.Instance;
 
@@ -11085,7 +11353,7 @@ namespace Amazon.Glue
 
         internal virtual StopColumnStatisticsTaskRunResponse StopColumnStatisticsTaskRun(StopColumnStatisticsTaskRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopColumnStatisticsTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopColumnStatisticsTaskRunResponseUnmarshaller.Instance;
 
@@ -11118,7 +11386,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRun">REST API Reference for StopColumnStatisticsTaskRun Operation</seealso>
         public virtual Task<StopColumnStatisticsTaskRunResponse> StopColumnStatisticsTaskRunAsync(StopColumnStatisticsTaskRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopColumnStatisticsTaskRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopColumnStatisticsTaskRunResponseUnmarshaller.Instance;
 
@@ -11130,7 +11398,7 @@ namespace Amazon.Glue
 
         internal virtual StopColumnStatisticsTaskRunScheduleResponse StopColumnStatisticsTaskRunSchedule(StopColumnStatisticsTaskRunScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopColumnStatisticsTaskRunScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopColumnStatisticsTaskRunScheduleResponseUnmarshaller.Instance;
 
@@ -11160,7 +11428,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRunSchedule">REST API Reference for StopColumnStatisticsTaskRunSchedule Operation</seealso>
         public virtual Task<StopColumnStatisticsTaskRunScheduleResponse> StopColumnStatisticsTaskRunScheduleAsync(StopColumnStatisticsTaskRunScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopColumnStatisticsTaskRunScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopColumnStatisticsTaskRunScheduleResponseUnmarshaller.Instance;
 
@@ -11172,7 +11440,7 @@ namespace Amazon.Glue
 
         internal virtual StopCrawlerResponse StopCrawler(StopCrawlerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCrawlerResponseUnmarshaller.Instance;
 
@@ -11205,7 +11473,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawler">REST API Reference for StopCrawler Operation</seealso>
         public virtual Task<StopCrawlerResponse> StopCrawlerAsync(StopCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCrawlerResponseUnmarshaller.Instance;
 
@@ -11217,7 +11485,7 @@ namespace Amazon.Glue
 
         internal virtual StopCrawlerScheduleResponse StopCrawlerSchedule(StopCrawlerScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCrawlerScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCrawlerScheduleResponseUnmarshaller.Instance;
 
@@ -11251,7 +11519,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopCrawlerSchedule">REST API Reference for StopCrawlerSchedule Operation</seealso>
         public virtual Task<StopCrawlerScheduleResponse> StopCrawlerScheduleAsync(StopCrawlerScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCrawlerScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCrawlerScheduleResponseUnmarshaller.Instance;
 
@@ -11263,7 +11531,7 @@ namespace Amazon.Glue
 
         internal virtual StopSessionResponse StopSession(StopSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSessionResponseUnmarshaller.Instance;
 
@@ -11302,7 +11570,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopSession">REST API Reference for StopSession Operation</seealso>
         public virtual Task<StopSessionResponse> StopSessionAsync(StopSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopSessionResponseUnmarshaller.Instance;
 
@@ -11314,7 +11582,7 @@ namespace Amazon.Glue
 
         internal virtual StopTriggerResponse StopTrigger(StopTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTriggerResponseUnmarshaller.Instance;
 
@@ -11350,7 +11618,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopTrigger">REST API Reference for StopTrigger Operation</seealso>
         public virtual Task<StopTriggerResponse> StopTriggerAsync(StopTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopTriggerResponseUnmarshaller.Instance;
 
@@ -11362,7 +11630,7 @@ namespace Amazon.Glue
 
         internal virtual StopWorkflowRunResponse StopWorkflowRun(StopWorkflowRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopWorkflowRunResponseUnmarshaller.Instance;
 
@@ -11398,7 +11666,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopWorkflowRun">REST API Reference for StopWorkflowRun Operation</seealso>
         public virtual Task<StopWorkflowRunResponse> StopWorkflowRunAsync(StopWorkflowRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopWorkflowRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopWorkflowRunResponseUnmarshaller.Instance;
 
@@ -11410,7 +11678,7 @@ namespace Amazon.Glue
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -11446,7 +11714,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -11458,7 +11726,7 @@ namespace Amazon.Glue
 
         internal virtual TestConnectionResponse TestConnection(TestConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestConnectionResponseUnmarshaller.Instance;
 
@@ -11517,7 +11785,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TestConnection">REST API Reference for TestConnection Operation</seealso>
         public virtual Task<TestConnectionResponse> TestConnectionAsync(TestConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TestConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TestConnectionResponseUnmarshaller.Instance;
 
@@ -11529,7 +11797,7 @@ namespace Amazon.Glue
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -11562,7 +11830,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -11574,7 +11842,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateBlueprintResponse UpdateBlueprint(UpdateBlueprintRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
 
@@ -11613,7 +11881,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateBlueprint">REST API Reference for UpdateBlueprint Operation</seealso>
         public virtual Task<UpdateBlueprintResponse> UpdateBlueprintAsync(UpdateBlueprintRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBlueprintRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBlueprintResponseUnmarshaller.Instance;
 
@@ -11625,7 +11893,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateCatalogResponse UpdateCatalog(UpdateCatalogRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCatalogResponseUnmarshaller.Instance;
 
@@ -11670,7 +11938,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCatalog">REST API Reference for UpdateCatalog Operation</seealso>
         public virtual Task<UpdateCatalogResponse> UpdateCatalogAsync(UpdateCatalogRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCatalogRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCatalogResponseUnmarshaller.Instance;
 
@@ -11682,7 +11950,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateClassifierResponse UpdateClassifier(UpdateClassifierRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClassifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClassifierResponseUnmarshaller.Instance;
 
@@ -11716,7 +11984,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateClassifier">REST API Reference for UpdateClassifier Operation</seealso>
         public virtual Task<UpdateClassifierResponse> UpdateClassifierAsync(UpdateClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateClassifierRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateClassifierResponseUnmarshaller.Instance;
 
@@ -11728,7 +11996,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateColumnStatisticsForPartitionResponse UpdateColumnStatisticsForPartition(UpdateColumnStatisticsForPartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateColumnStatisticsForPartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateColumnStatisticsForPartitionResponseUnmarshaller.Instance;
 
@@ -11770,7 +12038,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForPartition">REST API Reference for UpdateColumnStatisticsForPartition Operation</seealso>
         public virtual Task<UpdateColumnStatisticsForPartitionResponse> UpdateColumnStatisticsForPartitionAsync(UpdateColumnStatisticsForPartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateColumnStatisticsForPartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateColumnStatisticsForPartitionResponseUnmarshaller.Instance;
 
@@ -11782,7 +12050,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateColumnStatisticsForTableResponse UpdateColumnStatisticsForTable(UpdateColumnStatisticsForTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateColumnStatisticsForTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateColumnStatisticsForTableResponseUnmarshaller.Instance;
 
@@ -11824,7 +12092,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable">REST API Reference for UpdateColumnStatisticsForTable Operation</seealso>
         public virtual Task<UpdateColumnStatisticsForTableResponse> UpdateColumnStatisticsForTableAsync(UpdateColumnStatisticsForTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateColumnStatisticsForTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateColumnStatisticsForTableResponseUnmarshaller.Instance;
 
@@ -11836,7 +12104,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateColumnStatisticsTaskSettingsResponse UpdateColumnStatisticsTaskSettings(UpdateColumnStatisticsTaskSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateColumnStatisticsTaskSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateColumnStatisticsTaskSettingsResponseUnmarshaller.Instance;
 
@@ -11872,7 +12140,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsTaskSettings">REST API Reference for UpdateColumnStatisticsTaskSettings Operation</seealso>
         public virtual Task<UpdateColumnStatisticsTaskSettingsResponse> UpdateColumnStatisticsTaskSettingsAsync(UpdateColumnStatisticsTaskSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateColumnStatisticsTaskSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateColumnStatisticsTaskSettingsResponseUnmarshaller.Instance;
 
@@ -11884,7 +12152,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateConnectionResponse UpdateConnection(UpdateConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
@@ -11917,7 +12185,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateConnection">REST API Reference for UpdateConnection Operation</seealso>
         public virtual Task<UpdateConnectionResponse> UpdateConnectionAsync(UpdateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateConnectionResponseUnmarshaller.Instance;
 
@@ -11929,7 +12197,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateCrawlerResponse UpdateCrawler(UpdateCrawlerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCrawlerResponseUnmarshaller.Instance;
 
@@ -11966,7 +12234,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawler">REST API Reference for UpdateCrawler Operation</seealso>
         public virtual Task<UpdateCrawlerResponse> UpdateCrawlerAsync(UpdateCrawlerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCrawlerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCrawlerResponseUnmarshaller.Instance;
 
@@ -11978,7 +12246,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateCrawlerScheduleResponse UpdateCrawlerSchedule(UpdateCrawlerScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCrawlerScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCrawlerScheduleResponseUnmarshaller.Instance;
 
@@ -12014,7 +12282,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateCrawlerSchedule">REST API Reference for UpdateCrawlerSchedule Operation</seealso>
         public virtual Task<UpdateCrawlerScheduleResponse> UpdateCrawlerScheduleAsync(UpdateCrawlerScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCrawlerScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCrawlerScheduleResponseUnmarshaller.Instance;
 
@@ -12026,7 +12294,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateDatabaseResponse UpdateDatabase(UpdateDatabaseRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatabaseResponseUnmarshaller.Instance;
 
@@ -12074,7 +12342,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDatabase">REST API Reference for UpdateDatabase Operation</seealso>
         public virtual Task<UpdateDatabaseResponse> UpdateDatabaseAsync(UpdateDatabaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatabaseRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatabaseResponseUnmarshaller.Instance;
 
@@ -12086,7 +12354,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateDataQualityRulesetResponse UpdateDataQualityRuleset(UpdateDataQualityRulesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataQualityRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataQualityRulesetResponseUnmarshaller.Instance;
 
@@ -12128,7 +12396,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDataQualityRuleset">REST API Reference for UpdateDataQualityRuleset Operation</seealso>
         public virtual Task<UpdateDataQualityRulesetResponse> UpdateDataQualityRulesetAsync(UpdateDataQualityRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDataQualityRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDataQualityRulesetResponseUnmarshaller.Instance;
 
@@ -12140,7 +12408,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateDevEndpointResponse UpdateDevEndpoint(UpdateDevEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDevEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDevEndpointResponseUnmarshaller.Instance;
 
@@ -12176,7 +12444,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDevEndpoint">REST API Reference for UpdateDevEndpoint Operation</seealso>
         public virtual Task<UpdateDevEndpointResponse> UpdateDevEndpointAsync(UpdateDevEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDevEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDevEndpointResponseUnmarshaller.Instance;
 
@@ -12184,11 +12452,63 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  UpdateGlueIdentityCenterConfiguration
+
+        internal virtual UpdateGlueIdentityCenterConfigurationResponse UpdateGlueIdentityCenterConfiguration(UpdateGlueIdentityCenterConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGlueIdentityCenterConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the existing Glue Identity Center configuration, allowing modification of
+        /// scopes and permissions for the integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlueIdentityCenterConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGlueIdentityCenterConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateGlueIdentityCenterConfiguration">REST API Reference for UpdateGlueIdentityCenterConfiguration Operation</seealso>
+        public virtual Task<UpdateGlueIdentityCenterConfigurationResponse> UpdateGlueIdentityCenterConfigurationAsync(UpdateGlueIdentityCenterConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateGlueIdentityCenterConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateGlueIdentityCenterConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGlueIdentityCenterConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateIntegrationResourceProperty
 
         internal virtual UpdateIntegrationResourcePropertyResponse UpdateIntegrationResourceProperty(UpdateIntegrationResourcePropertyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationResourcePropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResourcePropertyResponseUnmarshaller.Instance;
 
@@ -12234,7 +12554,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateIntegrationResourceProperty">REST API Reference for UpdateIntegrationResourceProperty Operation</seealso>
         public virtual Task<UpdateIntegrationResourcePropertyResponse> UpdateIntegrationResourcePropertyAsync(UpdateIntegrationResourcePropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationResourcePropertyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationResourcePropertyResponseUnmarshaller.Instance;
 
@@ -12246,7 +12566,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateIntegrationTablePropertiesResponse UpdateIntegrationTableProperties(UpdateIntegrationTablePropertiesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationTablePropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationTablePropertiesResponseUnmarshaller.Instance;
 
@@ -12298,7 +12618,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateIntegrationTableProperties">REST API Reference for UpdateIntegrationTableProperties Operation</seealso>
         public virtual Task<UpdateIntegrationTablePropertiesResponse> UpdateIntegrationTablePropertiesAsync(UpdateIntegrationTablePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateIntegrationTablePropertiesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateIntegrationTablePropertiesResponseUnmarshaller.Instance;
 
@@ -12310,7 +12630,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
@@ -12347,7 +12667,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public virtual Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobResponseUnmarshaller.Instance;
 
@@ -12359,7 +12679,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateJobFromSourceControlResponse UpdateJobFromSourceControl(UpdateJobFromSourceControlRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobFromSourceControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobFromSourceControlResponseUnmarshaller.Instance;
 
@@ -12408,7 +12728,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJobFromSourceControl">REST API Reference for UpdateJobFromSourceControl Operation</seealso>
         public virtual Task<UpdateJobFromSourceControlResponse> UpdateJobFromSourceControlAsync(UpdateJobFromSourceControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateJobFromSourceControlRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateJobFromSourceControlResponseUnmarshaller.Instance;
 
@@ -12420,7 +12740,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateMLTransformResponse UpdateMLTransform(UpdateMLTransformRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMLTransformRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMLTransformResponseUnmarshaller.Instance;
 
@@ -12464,7 +12784,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateMLTransform">REST API Reference for UpdateMLTransform Operation</seealso>
         public virtual Task<UpdateMLTransformResponse> UpdateMLTransformAsync(UpdateMLTransformRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMLTransformRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMLTransformResponseUnmarshaller.Instance;
 
@@ -12476,7 +12796,7 @@ namespace Amazon.Glue
 
         internal virtual UpdatePartitionResponse UpdatePartition(UpdatePartitionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePartitionResponseUnmarshaller.Instance;
 
@@ -12512,7 +12832,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdatePartition">REST API Reference for UpdatePartition Operation</seealso>
         public virtual Task<UpdatePartitionResponse> UpdatePartitionAsync(UpdatePartitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdatePartitionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdatePartitionResponseUnmarshaller.Instance;
 
@@ -12524,7 +12844,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateRegistryResponse UpdateRegistry(UpdateRegistryRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
 
@@ -12562,7 +12882,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateRegistry">REST API Reference for UpdateRegistry Operation</seealso>
         public virtual Task<UpdateRegistryResponse> UpdateRegistryAsync(UpdateRegistryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRegistryRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRegistryResponseUnmarshaller.Instance;
 
@@ -12574,7 +12894,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateSchemaResponse UpdateSchema(UpdateSchemaRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
 
@@ -12628,7 +12948,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateSchema">REST API Reference for UpdateSchema Operation</seealso>
         public virtual Task<UpdateSchemaResponse> UpdateSchemaAsync(UpdateSchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSchemaRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSchemaResponseUnmarshaller.Instance;
 
@@ -12640,7 +12960,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateSourceControlFromJobResponse UpdateSourceControlFromJob(UpdateSourceControlFromJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSourceControlFromJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSourceControlFromJobResponseUnmarshaller.Instance;
 
@@ -12689,7 +13009,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateSourceControlFromJob">REST API Reference for UpdateSourceControlFromJob Operation</seealso>
         public virtual Task<UpdateSourceControlFromJobResponse> UpdateSourceControlFromJobAsync(UpdateSourceControlFromJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateSourceControlFromJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateSourceControlFromJobResponseUnmarshaller.Instance;
 
@@ -12701,7 +13021,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateTableResponse UpdateTable(UpdateTableRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableResponseUnmarshaller.Instance;
 
@@ -12755,7 +13075,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         public virtual Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableResponseUnmarshaller.Instance;
 
@@ -12767,7 +13087,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateTableOptimizerResponse UpdateTableOptimizer(UpdateTableOptimizerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableOptimizerResponseUnmarshaller.Instance;
 
@@ -12809,7 +13129,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTableOptimizer">REST API Reference for UpdateTableOptimizer Operation</seealso>
         public virtual Task<UpdateTableOptimizerResponse> UpdateTableOptimizerAsync(UpdateTableOptimizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTableOptimizerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTableOptimizerResponseUnmarshaller.Instance;
 
@@ -12821,7 +13141,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateTriggerResponse UpdateTrigger(UpdateTriggerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTriggerResponseUnmarshaller.Instance;
 
@@ -12864,7 +13184,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTrigger">REST API Reference for UpdateTrigger Operation</seealso>
         public virtual Task<UpdateTriggerResponse> UpdateTriggerAsync(UpdateTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateTriggerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateTriggerResponseUnmarshaller.Instance;
 
@@ -12876,7 +13196,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateUsageProfileResponse UpdateUsageProfile(UpdateUsageProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUsageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUsageProfileResponseUnmarshaller.Instance;
 
@@ -12915,7 +13235,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUsageProfile">REST API Reference for UpdateUsageProfile Operation</seealso>
         public virtual Task<UpdateUsageProfileResponse> UpdateUsageProfileAsync(UpdateUsageProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUsageProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUsageProfileResponseUnmarshaller.Instance;
 
@@ -12927,7 +13247,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateUserDefinedFunctionResponse UpdateUserDefinedFunction(UpdateUserDefinedFunctionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserDefinedFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserDefinedFunctionResponseUnmarshaller.Instance;
 
@@ -12963,7 +13283,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateUserDefinedFunction">REST API Reference for UpdateUserDefinedFunction Operation</seealso>
         public virtual Task<UpdateUserDefinedFunctionResponse> UpdateUserDefinedFunctionAsync(UpdateUserDefinedFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateUserDefinedFunctionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateUserDefinedFunctionResponseUnmarshaller.Instance;
 
@@ -12975,7 +13295,7 @@ namespace Amazon.Glue
 
         internal virtual UpdateWorkflowResponse UpdateWorkflow(UpdateWorkflowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowResponseUnmarshaller.Instance;
 
@@ -13011,7 +13331,7 @@ namespace Amazon.Glue
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
         public virtual Task<UpdateWorkflowResponse> UpdateWorkflowAsync(UpdateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateWorkflowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateWorkflowResponseUnmarshaller.Instance;
 

@@ -67,6 +67,9 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentCoreException("Request object does not have required field AgentRuntimeArn set");
             request.AddPathResource("{agentRuntimeArn}", StringUtils.FromString(publicRequest.AgentRuntimeArn));
             
+            if (publicRequest.IsSetAccountId())
+                request.Parameters.Add("accountId", StringUtils.FromString(publicRequest.AccountId));
+            
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("qualifier", StringUtils.FromString(publicRequest.Qualifier));
             request.ResourcePath = "/runtimes/{agentRuntimeArn}/invocations";

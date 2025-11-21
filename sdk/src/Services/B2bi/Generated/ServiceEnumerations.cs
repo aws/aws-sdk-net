@@ -217,6 +217,56 @@ namespace Amazon.B2bi
 
 
     /// <summary>
+    /// Constants used for properties of type ElementRequirement.
+    /// </summary>
+    public class ElementRequirement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANDATORY for ElementRequirement
+        /// </summary>
+        public static readonly ElementRequirement MANDATORY = new ElementRequirement("MANDATORY");
+        /// <summary>
+        /// Constant OPTIONAL for ElementRequirement
+        /// </summary>
+        public static readonly ElementRequirement OPTIONAL = new ElementRequirement("OPTIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ElementRequirement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ElementRequirement FindValue(string value)
+        {
+            return FindValue<ElementRequirement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ElementRequirement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FileFormat.
     /// </summary>
     public class FileFormat : ConstantClass

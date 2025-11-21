@@ -115,6 +115,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+                if(publicRequest.IsSetNetworkType())
+                {
+                    request.Parameters.Add("NetworkType", StringUtils.FromString(publicRequest.NetworkType));
+                }
                 if(publicRequest.IsSetPort())
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));

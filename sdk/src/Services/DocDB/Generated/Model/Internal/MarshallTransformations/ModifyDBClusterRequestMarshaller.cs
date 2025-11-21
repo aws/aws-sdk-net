@@ -130,6 +130,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MasterUserSecretKmsKeyId", StringUtils.FromString(publicRequest.MasterUserSecretKmsKeyId));
                 }
+                if(publicRequest.IsSetNetworkType())
+                {
+                    request.Parameters.Add("NetworkType", StringUtils.FromString(publicRequest.NetworkType));
+                }
                 if(publicRequest.IsSetNewDBClusterIdentifier())
                 {
                     request.Parameters.Add("NewDBClusterIdentifier", StringUtils.FromString(publicRequest.NewDBClusterIdentifier));

@@ -86,7 +86,8 @@ namespace Amazon.Omics.Model
         /// Gets and sets the property StorageCapacity. 
         /// <para>
         /// The default static storage capacity (in gibibytes) for runs that use this workflow
-        /// or workflow version.
+        /// version. The <c>storageCapacity</c> can be overwritten at run time. The storage capacity
+        /// is not required for runs with a <c>DYNAMIC</c> storage type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
@@ -105,11 +106,12 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The default storage type for runs that use this workflow. STATIC storage allocates
-        /// a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down,
-        /// based on file system utilization. For more information about static and dynamic storage,
-        /// see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
-        /// workflows</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
+        /// The default storage type for runs that use this workflow version. The <c>storageType</c>
+        /// can be overridden at run time. <c>DYNAMIC</c> storage dynamically scales the storage
+        /// up or down, based on file system utilization. STATIC storage allocates a fixed amount
+        /// of storage. For more information about dynamic and static storage types, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html">Run
+        /// storage types</a> in the <i>in the <i>Amazon Web Services HealthOmics User Guide</i>
+        /// </i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -147,7 +149,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        /// The workflow's ID.
+        /// The workflow's ID. The <c>workflowId</c> is not the UUID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=18)]

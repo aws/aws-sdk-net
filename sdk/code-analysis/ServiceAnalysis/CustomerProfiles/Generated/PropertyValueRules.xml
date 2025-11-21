@@ -938,6 +938,45 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetProfileHistoryRecordRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetProfileHistoryRecordRequest.Id</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetProfileHistoryRecordRequest.ProfileId</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetProfileHistoryRecordResponse.Content</property>
+    <min>1</min>
+    <max>256000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetProfileHistoryRecordResponse.Id</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetProfileHistoryRecordResponse.ObjectTypeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetProfileHistoryRecordResponse.PerformedBy</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetProfileHistoryRecordResponse.ProfileObjectUniqueKey</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.GetProfileObjectTypeRequest.DomainName</property>
     <min>1</min>
     <max>64</max>
@@ -1515,6 +1554,42 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListProfileHistoryRecordsRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListProfileHistoryRecordsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListProfileHistoryRecordsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListProfileHistoryRecordsRequest.ObjectTypeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListProfileHistoryRecordsRequest.PerformedBy</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListProfileHistoryRecordsRequest.ProfileId</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListProfileHistoryRecordsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.ListProfileObjectsRequest.DomainName</property>
@@ -2842,6 +2917,26 @@
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.Profile.ProfileId</property>
     <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ProfileHistoryRecord.Id</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ProfileHistoryRecord.ObjectTypeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ProfileHistoryRecord.PerformedBy</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ProfileHistoryRecord.ProfileObjectUniqueKey</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.Range.TimestampFormat</property>

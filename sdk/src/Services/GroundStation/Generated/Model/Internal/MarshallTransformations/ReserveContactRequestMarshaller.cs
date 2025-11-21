@@ -117,6 +117,17 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetTrackingOverrides())
+            {
+                context.Writer.WritePropertyName("trackingOverrides");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TrackingOverridesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TrackingOverrides, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

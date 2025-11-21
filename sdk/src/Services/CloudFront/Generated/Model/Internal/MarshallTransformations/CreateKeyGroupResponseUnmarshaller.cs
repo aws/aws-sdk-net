@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateKeyGroup operation
     /// </summary>  
-    public class CreateKeyGroupResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class CreateKeyGroupResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -52,6 +52,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("Location"))
                 response.Location = context.ResponseData.GetHeaderValue("Location");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -79,7 +80,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -121,6 +121,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, CreateKeyGroupResponse response);
 
         private static CreateKeyGroupResponseUnmarshaller _instance = new CreateKeyGroupResponseUnmarshaller();        
 

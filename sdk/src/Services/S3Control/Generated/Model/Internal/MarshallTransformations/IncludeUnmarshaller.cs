@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Include Object
     /// </summary>  
-    public class IncludeUnmarshaller : IXmlUnmarshaller<Include, XmlUnmarshallerContext>
+    public partial class IncludeUnmarshaller : IXmlUnmarshaller<Include, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,6 +76,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Regions.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -84,6 +86,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, Include unmarshalledObject, int targetDepth);
+
         private static IncludeUnmarshaller _instance = new IncludeUnmarshaller();        
 
         /// <summary>

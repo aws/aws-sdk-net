@@ -413,6 +413,7 @@ namespace Amazon.EC2.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [Obsolete("Specifying Elastic Graphics accelerators is no longer supported on the RunInstances API.")]
         public List<ElasticGpuSpecification> ElasticGpuSpecification
         {
             get { return this._elasticGpuSpecification; }
@@ -441,6 +442,7 @@ namespace Amazon.EC2.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [Obsolete("Specifying Elastic Inference accelerators is no longer supported on the RunInstances API.")]
         public List<ElasticInferenceAccelerator> ElasticInferenceAccelerators
         {
             get { return this._elasticInferenceAccelerators; }

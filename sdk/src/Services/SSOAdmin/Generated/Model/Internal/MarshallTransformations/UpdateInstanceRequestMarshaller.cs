@@ -75,6 +75,17 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("EncryptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetInstanceArn())
             {
                 context.Writer.WritePropertyName("InstanceArn");

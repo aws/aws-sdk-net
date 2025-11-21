@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetReusableDelegationSetLimit operation
     /// </summary>  
-    public class GetReusableDelegationSetLimitResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class GetReusableDelegationSetLimitResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             GetReusableDelegationSetLimitResponse response = new GetReusableDelegationSetLimitResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -83,7 +84,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -117,6 +117,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetReusableDelegationSetLimitResponse response);
 
         private static GetReusableDelegationSetLimitResponseUnmarshaller _instance = new GetReusableDelegationSetLimitResponseUnmarshaller();        
 

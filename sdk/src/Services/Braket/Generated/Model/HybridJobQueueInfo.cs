@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Braket.Model
 {
     /// <summary>
-    /// Information about the queue for a specified job.
+    /// Information about the queue for a specified hybrid job.
     /// </summary>
     public partial class HybridJobQueueInfo
     {
@@ -42,7 +42,8 @@ namespace Amazon.Braket.Model
         /// Gets and sets the property Message. 
         /// <para>
         /// Optional. Provides more information about the queue position. For example, if the
-        /// job is complete and no longer in the queue, the message field contains that information.
+        /// hybrid job is complete and no longer in the queue, the message field contains that
+        /// information.
         /// </para>
         /// </summary>
         public string Message
@@ -60,7 +61,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// Current position of the job in the jobs queue.
+        /// Current position of the hybrid job in the jobs queue.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

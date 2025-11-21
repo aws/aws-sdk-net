@@ -46,6 +46,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAcceleratorPartition())
+            {
+                context.Writer.WritePropertyName("AcceleratorPartition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AcceleratorPartitionConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AcceleratorPartition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetAccelerators())
+            {
+                context.Writer.WritePropertyName("Accelerators");
+                context.Writer.WriteNumberValue(requestObject.Accelerators.Value);
+            }
+
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");
@@ -56,6 +73,32 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("InstanceType");
                 context.Writer.WriteStringValue(requestObject.InstanceType);
+            }
+
+            if(requestObject.IsSetMemoryInGiB())
+            {
+                context.Writer.WritePropertyName("MemoryInGiB");
+                if(StringUtils.IsSpecialFloatValue(requestObject.MemoryInGiB.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MemoryInGiB.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.MemoryInGiB.Value);
+                }
+            }
+
+            if(requestObject.IsSetVCpu())
+            {
+                context.Writer.WritePropertyName("VCpu");
+                if(StringUtils.IsSpecialFloatValue(requestObject.VCpu.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.VCpu.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.VCpu.Value);
+                }
             }
 
         }

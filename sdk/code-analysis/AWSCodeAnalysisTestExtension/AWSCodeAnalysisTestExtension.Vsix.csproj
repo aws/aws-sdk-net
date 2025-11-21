@@ -676,10 +676,6 @@
       <Project>{D014FBA6-A964-4D00-A248-5F518D0B8CC1}</Project>
       <Name>AWSSDK.IoTEventsData.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/IoTFleetHub/AWSSDK.IoTFleetHub.CodeAnalysis.csproj">
-      <Project>{7473EA8B-E5A7-4964-93AE-21E3935A7490}</Project>
-      <Name>AWSSDK.IoTFleetHub.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTFleetWise/AWSSDK.IoTFleetWise.CodeAnalysis.csproj">
       <Project>{8A2B2868-F9D0-4762-8782-04E1259038E9}</Project>
       <Name>AWSSDK.IoTFleetWise.CodeAnalysis</Name>
@@ -828,14 +824,6 @@
       <Project>{39D908BB-E21C-48F4-939F-61092E922DFB}</Project>
       <Name>AWSSDK.LookoutEquipment.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/LookoutforVision/AWSSDK.LookoutforVision.CodeAnalysis.csproj">
-      <Project>{AEAAF64A-F230-4C3C-8AA4-8E2182617E19}</Project>
-      <Name>AWSSDK.LookoutforVision.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/LookoutMetrics/AWSSDK.LookoutMetrics.CodeAnalysis.csproj">
-      <Project>{4DE72996-4492-40ED-939C-098008D6AF81}</Project>
-      <Name>AWSSDK.LookoutMetrics.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MachineLearning/AWSSDK.MachineLearning.CodeAnalysis.csproj">
       <Project>{BFEE58EE-DF58-4F52-A99B-01D05FB251AF}</Project>
       <Name>AWSSDK.MachineLearning.CodeAnalysis</Name>
@@ -972,14 +960,6 @@
       <Project>{39DAFECB-BFC3-4D23-BEAA-0C5235CFA02A}</Project>
       <Name>AWSSDK.OpenSearchService.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/OpsWorks/AWSSDK.OpsWorks.CodeAnalysis.csproj">
-      <Project>{A4E9808D-E63F-4A23-AFAB-6F2B892BE800}</Project>
-      <Name>AWSSDK.OpsWorks.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/OpsWorksCM/AWSSDK.OpsWorksCM.CodeAnalysis.csproj">
-      <Project>{475C25CB-7637-468F-840F-7A45C4CBF93E}</Project>
-      <Name>AWSSDK.OpsWorksCM.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Organizations/AWSSDK.Organizations.CodeAnalysis.csproj">
       <Project>{10373FAB-3A59-4888-A86E-8134207FE450}</Project>
       <Name>AWSSDK.Organizations.CodeAnalysis</Name>
@@ -1056,14 +1036,6 @@
       <Project>{DAE004EE-07C5-4079-AA30-A1A4C990509B}</Project>
       <Name>AWSSDK.Proton.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/QLDB/AWSSDK.QLDB.CodeAnalysis.csproj">
-      <Project>{41DAC2D4-C9AE-4BFE-9F36-14E9F46D036C}</Project>
-      <Name>AWSSDK.QLDB.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/QLDBSession/AWSSDK.QLDBSession.CodeAnalysis.csproj">
-      <Project>{C4A72E0B-0A92-4F6A-A7C4-787F28AA34B3}</Project>
-      <Name>AWSSDK.QLDBSession.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/QuickSight/AWSSDK.QuickSight.CodeAnalysis.csproj">
       <Project>{6A71544A-7001-415B-AC66-D8E043280D46}</Project>
       <Name>AWSSDK.QuickSight.CodeAnalysis</Name>
@@ -1115,10 +1087,6 @@
     <ProjectReference Include="../ServiceAnalysis/ResourceGroupsTaggingAPI/AWSSDK.ResourceGroupsTaggingAPI.CodeAnalysis.csproj">
       <Project>{6C5E5214-C4CF-4B95-9795-414A8805B74C}</Project>
       <Name>AWSSDK.ResourceGroupsTaggingAPI.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/RoboMaker/AWSSDK.RoboMaker.CodeAnalysis.csproj">
-      <Project>{39908929-B076-44FC-91D2-DFE0A21B5A07}</Project>
-      <Name>AWSSDK.RoboMaker.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Route53/AWSSDK.Route53.CodeAnalysis.csproj">
       <Project>{24A64869-D041-41F6-837D-4D8937BA7253}</Project>
@@ -1211,10 +1179,6 @@
     <ProjectReference Include="../ServiceAnalysis/ServerlessApplicationRepository/AWSSDK.ServerlessApplicationRepository.CodeAnalysis.csproj">
       <Project>{99488826-6CBA-4B65-8AA6-2010CC820D84}</Project>
       <Name>AWSSDK.ServerlessApplicationRepository.CodeAnalysis</Name>
-    </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/ServerMigrationService/AWSSDK.ServerMigrationService.CodeAnalysis.csproj">
-      <Project>{9666D877-77CE-4E18-B8AB-7DA494412B8F}</Project>
-      <Name>AWSSDK.ServerMigrationService.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ServiceCatalog/AWSSDK.ServiceCatalog.CodeAnalysis.csproj">
       <Project>{AB07D44F-564C-4626-A665-592885634016}</Project>

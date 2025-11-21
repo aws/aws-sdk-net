@@ -293,7 +293,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteEvaluationJob">REST API Reference for BatchDeleteEvaluationJob Operation</seealso>
         public virtual BatchDeleteEvaluationJobResponse BatchDeleteEvaluationJob(BatchDeleteEvaluationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteEvaluationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteEvaluationJobResponseUnmarshaller.Instance;
 
@@ -334,11 +334,387 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/BatchDeleteEvaluationJob">REST API Reference for BatchDeleteEvaluationJob Operation</seealso>
         public virtual Task<BatchDeleteEvaluationJobResponse> BatchDeleteEvaluationJobAsync(BatchDeleteEvaluationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteEvaluationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteEvaluationJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<BatchDeleteEvaluationJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CancelAutomatedReasoningPolicyBuildWorkflow
+
+
+        /// <summary>
+        /// Cancels a running Automated Reasoning policy build workflow. This stops the policy
+        /// generation process and prevents further processing of the source documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the CancelAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CancelAutomatedReasoningPolicyBuildWorkflow">REST API Reference for CancelAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        public virtual CancelAutomatedReasoningPolicyBuildWorkflowResponse CancelAutomatedReasoningPolicyBuildWorkflow(CancelAutomatedReasoningPolicyBuildWorkflowRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelAutomatedReasoningPolicyBuildWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelAutomatedReasoningPolicyBuildWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<CancelAutomatedReasoningPolicyBuildWorkflowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Cancels a running Automated Reasoning policy build workflow. This stops the policy
+        /// generation process and prevents further processing of the source documents.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CancelAutomatedReasoningPolicyBuildWorkflow">REST API Reference for CancelAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        public virtual Task<CancelAutomatedReasoningPolicyBuildWorkflowResponse> CancelAutomatedReasoningPolicyBuildWorkflowAsync(CancelAutomatedReasoningPolicyBuildWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelAutomatedReasoningPolicyBuildWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelAutomatedReasoningPolicyBuildWorkflowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CancelAutomatedReasoningPolicyBuildWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAutomatedReasoningPolicy
+
+
+        /// <summary>
+        /// Creates an Automated Reasoning policy for Amazon Bedrock Guardrails. Automated Reasoning
+        /// policies use mathematical techniques to detect hallucinations, suggest corrections,
+        /// and highlight unstated assumptions in the responses of your GenAI application.
+        /// 
+        ///  
+        /// <para>
+        /// To create a policy, you upload a source document that describes the rules that you're
+        /// encoding. Automated Reasoning extracts important concepts from the source document
+        /// that will become variables in the policy and infers policy rules.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicy">REST API Reference for CreateAutomatedReasoningPolicy Operation</seealso>
+        public virtual CreateAutomatedReasoningPolicyResponse CreateAutomatedReasoningPolicy(CreateAutomatedReasoningPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAutomatedReasoningPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomatedReasoningPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutomatedReasoningPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an Automated Reasoning policy for Amazon Bedrock Guardrails. Automated Reasoning
+        /// policies use mathematical techniques to detect hallucinations, suggest corrections,
+        /// and highlight unstated assumptions in the responses of your GenAI application.
+        /// 
+        ///  
+        /// <para>
+        /// To create a policy, you upload a source document that describes the rules that you're
+        /// encoding. Automated Reasoning extracts important concepts from the source document
+        /// that will become variables in the policy and infers policy rules.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicy">REST API Reference for CreateAutomatedReasoningPolicy Operation</seealso>
+        public virtual Task<CreateAutomatedReasoningPolicyResponse> CreateAutomatedReasoningPolicyAsync(CreateAutomatedReasoningPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAutomatedReasoningPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomatedReasoningPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAutomatedReasoningPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAutomatedReasoningPolicyTestCase
+
+
+        /// <summary>
+        /// Creates a test for an Automated Reasoning policy. Tests validate that your policy
+        /// works as expected by providing sample inputs and expected outcomes. Use tests to verify
+        /// policy behavior before deploying to production.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicyTestCase service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyTestCase">REST API Reference for CreateAutomatedReasoningPolicyTestCase Operation</seealso>
+        public virtual CreateAutomatedReasoningPolicyTestCaseResponse CreateAutomatedReasoningPolicyTestCase(CreateAutomatedReasoningPolicyTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAutomatedReasoningPolicyTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomatedReasoningPolicyTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutomatedReasoningPolicyTestCaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a test for an Automated Reasoning policy. Tests validate that your policy
+        /// works as expected by providing sample inputs and expected outcomes. Use tests to verify
+        /// policy behavior before deploying to production.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicyTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyTestCase">REST API Reference for CreateAutomatedReasoningPolicyTestCase Operation</seealso>
+        public virtual Task<CreateAutomatedReasoningPolicyTestCaseResponse> CreateAutomatedReasoningPolicyTestCaseAsync(CreateAutomatedReasoningPolicyTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAutomatedReasoningPolicyTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomatedReasoningPolicyTestCaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAutomatedReasoningPolicyTestCaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAutomatedReasoningPolicyVersion
+
+
+        /// <summary>
+        /// Creates a new version of an existing Automated Reasoning policy. This allows you to
+        /// iterate on your policy rules while maintaining previous versions for rollback or comparison
+        /// purposes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomatedReasoningPolicyVersion service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyVersion">REST API Reference for CreateAutomatedReasoningPolicyVersion Operation</seealso>
+        public virtual CreateAutomatedReasoningPolicyVersionResponse CreateAutomatedReasoningPolicyVersion(CreateAutomatedReasoningPolicyVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAutomatedReasoningPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomatedReasoningPolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutomatedReasoningPolicyVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new version of an existing Automated Reasoning policy. This allows you to
+        /// iterate on your policy rules while maintaining previous versions for rollback or comparison
+        /// purposes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomatedReasoningPolicyVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAutomatedReasoningPolicyVersion service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateAutomatedReasoningPolicyVersion">REST API Reference for CreateAutomatedReasoningPolicyVersion Operation</seealso>
+        public virtual Task<CreateAutomatedReasoningPolicyVersionResponse> CreateAutomatedReasoningPolicyVersionAsync(CreateAutomatedReasoningPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateAutomatedReasoningPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomatedReasoningPolicyVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAutomatedReasoningPolicyVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -429,7 +805,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateCustomModel">REST API Reference for CreateCustomModel Operation</seealso>
         public virtual CreateCustomModelResponse CreateCustomModel(CreateCustomModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomModelResponseUnmarshaller.Instance;
 
@@ -523,7 +899,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateCustomModel">REST API Reference for CreateCustomModel Operation</seealso>
         public virtual Task<CreateCustomModelResponse> CreateCustomModelAsync(CreateCustomModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomModelResponseUnmarshaller.Instance;
             
@@ -597,7 +973,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateCustomModelDeployment">REST API Reference for CreateCustomModelDeployment Operation</seealso>
         public virtual CreateCustomModelDeploymentResponse CreateCustomModelDeployment(CreateCustomModelDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomModelDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomModelDeploymentResponseUnmarshaller.Instance;
 
@@ -670,7 +1046,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateCustomModelDeployment">REST API Reference for CreateCustomModelDeployment Operation</seealso>
         public virtual Task<CreateCustomModelDeploymentResponse> CreateCustomModelDeploymentAsync(CreateCustomModelDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCustomModelDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCustomModelDeploymentResponseUnmarshaller.Instance;
             
@@ -713,7 +1089,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob">REST API Reference for CreateEvaluationJob Operation</seealso>
         public virtual CreateEvaluationJobResponse CreateEvaluationJob(CreateEvaluationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEvaluationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEvaluationJobResponseUnmarshaller.Instance;
 
@@ -755,7 +1131,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateEvaluationJob">REST API Reference for CreateEvaluationJob Operation</seealso>
         public virtual Task<CreateEvaluationJobResponse> CreateEvaluationJobAsync(CreateEvaluationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEvaluationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEvaluationJobResponseUnmarshaller.Instance;
             
@@ -795,7 +1171,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateFoundationModelAgreement">REST API Reference for CreateFoundationModelAgreement Operation</seealso>
         public virtual CreateFoundationModelAgreementResponse CreateFoundationModelAgreement(CreateFoundationModelAgreementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFoundationModelAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFoundationModelAgreementResponseUnmarshaller.Instance;
 
@@ -834,7 +1210,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateFoundationModelAgreement">REST API Reference for CreateFoundationModelAgreement Operation</seealso>
         public virtual Task<CreateFoundationModelAgreementResponse> CreateFoundationModelAgreementAsync(CreateFoundationModelAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFoundationModelAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFoundationModelAgreementResponseUnmarshaller.Instance;
             
@@ -923,7 +1299,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrail">REST API Reference for CreateGuardrail Operation</seealso>
         public virtual CreateGuardrailResponse CreateGuardrail(CreateGuardrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGuardrailResponseUnmarshaller.Instance;
 
@@ -1011,7 +1387,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrail">REST API Reference for CreateGuardrail Operation</seealso>
         public virtual Task<CreateGuardrailResponse> CreateGuardrailAsync(CreateGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGuardrailResponseUnmarshaller.Instance;
             
@@ -1056,7 +1432,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrailVersion">REST API Reference for CreateGuardrailVersion Operation</seealso>
         public virtual CreateGuardrailVersionResponse CreateGuardrailVersion(CreateGuardrailVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGuardrailVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGuardrailVersionResponseUnmarshaller.Instance;
 
@@ -1100,7 +1476,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateGuardrailVersion">REST API Reference for CreateGuardrailVersion Operation</seealso>
         public virtual Task<CreateGuardrailVersionResponse> CreateGuardrailVersionAsync(CreateGuardrailVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGuardrailVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGuardrailVersionResponseUnmarshaller.Instance;
             
@@ -1155,7 +1531,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateInferenceProfile">REST API Reference for CreateInferenceProfile Operation</seealso>
         public virtual CreateInferenceProfileResponse CreateInferenceProfile(CreateInferenceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInferenceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInferenceProfileResponseUnmarshaller.Instance;
 
@@ -1209,7 +1585,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateInferenceProfile">REST API Reference for CreateInferenceProfile Operation</seealso>
         public virtual Task<CreateInferenceProfileResponse> CreateInferenceProfileAsync(CreateInferenceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInferenceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInferenceProfileResponseUnmarshaller.Instance;
             
@@ -1253,7 +1629,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateMarketplaceModelEndpoint">REST API Reference for CreateMarketplaceModelEndpoint Operation</seealso>
         public virtual CreateMarketplaceModelEndpointResponse CreateMarketplaceModelEndpoint(CreateMarketplaceModelEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMarketplaceModelEndpointResponseUnmarshaller.Instance;
 
@@ -1296,7 +1672,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateMarketplaceModelEndpoint">REST API Reference for CreateMarketplaceModelEndpoint Operation</seealso>
         public virtual Task<CreateMarketplaceModelEndpointResponse> CreateMarketplaceModelEndpointAsync(CreateMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMarketplaceModelEndpointResponseUnmarshaller.Instance;
             
@@ -1335,7 +1711,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelCopyJob">REST API Reference for CreateModelCopyJob Operation</seealso>
         public virtual CreateModelCopyJobResponse CreateModelCopyJob(CreateModelCopyJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelCopyJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelCopyJobResponseUnmarshaller.Instance;
 
@@ -1373,7 +1749,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelCopyJob">REST API Reference for CreateModelCopyJob Operation</seealso>
         public virtual Task<CreateModelCopyJobResponse> CreateModelCopyJobAsync(CreateModelCopyJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelCopyJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelCopyJobResponseUnmarshaller.Instance;
             
@@ -1446,7 +1822,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelCustomizationJob">REST API Reference for CreateModelCustomizationJob Operation</seealso>
         public virtual CreateModelCustomizationJobResponse CreateModelCustomizationJob(CreateModelCustomizationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelCustomizationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelCustomizationJobResponseUnmarshaller.Instance;
 
@@ -1518,7 +1894,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelCustomizationJob">REST API Reference for CreateModelCustomizationJob Operation</seealso>
         public virtual Task<CreateModelCustomizationJobResponse> CreateModelCustomizationJobAsync(CreateModelCustomizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelCustomizationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelCustomizationJobResponseUnmarshaller.Instance;
             
@@ -1568,7 +1944,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelImportJob">REST API Reference for CreateModelImportJob Operation</seealso>
         public virtual CreateModelImportJobResponse CreateModelImportJob(CreateModelImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelImportJobResponseUnmarshaller.Instance;
 
@@ -1617,7 +1993,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelImportJob">REST API Reference for CreateModelImportJob Operation</seealso>
         public virtual Task<CreateModelImportJobResponse> CreateModelImportJobAsync(CreateModelImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelImportJobResponseUnmarshaller.Instance;
             
@@ -1670,7 +2046,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelInvocationJob">REST API Reference for CreateModelInvocationJob Operation</seealso>
         public virtual CreateModelInvocationJobResponse CreateModelInvocationJob(CreateModelInvocationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelInvocationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelInvocationJobResponseUnmarshaller.Instance;
 
@@ -1722,7 +2098,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateModelInvocationJob">REST API Reference for CreateModelInvocationJob Operation</seealso>
         public virtual Task<CreateModelInvocationJobResponse> CreateModelInvocationJobAsync(CreateModelInvocationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateModelInvocationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateModelInvocationJobResponseUnmarshaller.Instance;
             
@@ -1771,7 +2147,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreatePromptRouter">REST API Reference for CreatePromptRouter Operation</seealso>
         public virtual CreatePromptRouterResponse CreatePromptRouter(CreatePromptRouterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePromptRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePromptRouterResponseUnmarshaller.Instance;
 
@@ -1819,7 +2195,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreatePromptRouter">REST API Reference for CreatePromptRouter Operation</seealso>
         public virtual Task<CreatePromptRouterResponse> CreatePromptRouterAsync(CreatePromptRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreatePromptRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreatePromptRouterResponseUnmarshaller.Instance;
             
@@ -1868,7 +2244,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateProvisionedModelThroughput">REST API Reference for CreateProvisionedModelThroughput Operation</seealso>
         public virtual CreateProvisionedModelThroughputResponse CreateProvisionedModelThroughput(CreateProvisionedModelThroughputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProvisionedModelThroughputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProvisionedModelThroughputResponseUnmarshaller.Instance;
 
@@ -1916,11 +2292,286 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateProvisionedModelThroughput">REST API Reference for CreateProvisionedModelThroughput Operation</seealso>
         public virtual Task<CreateProvisionedModelThroughputResponse> CreateProvisionedModelThroughputAsync(CreateProvisionedModelThroughputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProvisionedModelThroughputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProvisionedModelThroughputResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateProvisionedModelThroughputResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAutomatedReasoningPolicy
+
+
+        /// <summary>
+        /// Deletes an Automated Reasoning policy or policy version. This operation is idempotent.
+        /// If you delete a policy more than once, each call succeeds. Deleting a policy removes
+        /// it permanently and cannot be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicy">REST API Reference for DeleteAutomatedReasoningPolicy Operation</seealso>
+        public virtual DeleteAutomatedReasoningPolicyResponse DeleteAutomatedReasoningPolicy(DeleteAutomatedReasoningPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAutomatedReasoningPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutomatedReasoningPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAutomatedReasoningPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an Automated Reasoning policy or policy version. This operation is idempotent.
+        /// If you delete a policy more than once, each call succeeds. Deleting a policy removes
+        /// it permanently and cannot be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicy">REST API Reference for DeleteAutomatedReasoningPolicy Operation</seealso>
+        public virtual Task<DeleteAutomatedReasoningPolicyResponse> DeleteAutomatedReasoningPolicyAsync(DeleteAutomatedReasoningPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAutomatedReasoningPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutomatedReasoningPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAutomatedReasoningPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAutomatedReasoningPolicyBuildWorkflow
+
+
+        /// <summary>
+        /// Deletes an Automated Reasoning policy build workflow and its associated artifacts.
+        /// This permanently removes the workflow history and any generated assets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyBuildWorkflow">REST API Reference for DeleteAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        public virtual DeleteAutomatedReasoningPolicyBuildWorkflowResponse DeleteAutomatedReasoningPolicyBuildWorkflow(DeleteAutomatedReasoningPolicyBuildWorkflowRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAutomatedReasoningPolicyBuildWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutomatedReasoningPolicyBuildWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAutomatedReasoningPolicyBuildWorkflowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an Automated Reasoning policy build workflow and its associated artifacts.
+        /// This permanently removes the workflow history and any generated assets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyBuildWorkflow">REST API Reference for DeleteAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        public virtual Task<DeleteAutomatedReasoningPolicyBuildWorkflowResponse> DeleteAutomatedReasoningPolicyBuildWorkflowAsync(DeleteAutomatedReasoningPolicyBuildWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAutomatedReasoningPolicyBuildWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutomatedReasoningPolicyBuildWorkflowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAutomatedReasoningPolicyBuildWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAutomatedReasoningPolicyTestCase
+
+
+        /// <summary>
+        /// Deletes an Automated Reasoning policy test. This operation is idempotent; if you delete
+        /// a test more than once, each call succeeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicyTestCase service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyTestCase">REST API Reference for DeleteAutomatedReasoningPolicyTestCase Operation</seealso>
+        public virtual DeleteAutomatedReasoningPolicyTestCaseResponse DeleteAutomatedReasoningPolicyTestCase(DeleteAutomatedReasoningPolicyTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAutomatedReasoningPolicyTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutomatedReasoningPolicyTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAutomatedReasoningPolicyTestCaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an Automated Reasoning policy test. This operation is idempotent; if you delete
+        /// a test more than once, each call succeeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAutomatedReasoningPolicyTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteAutomatedReasoningPolicyTestCase">REST API Reference for DeleteAutomatedReasoningPolicyTestCase Operation</seealso>
+        public virtual Task<DeleteAutomatedReasoningPolicyTestCaseResponse> DeleteAutomatedReasoningPolicyTestCaseAsync(DeleteAutomatedReasoningPolicyTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAutomatedReasoningPolicyTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAutomatedReasoningPolicyTestCaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAutomatedReasoningPolicyTestCaseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1958,7 +2609,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteCustomModel">REST API Reference for DeleteCustomModel Operation</seealso>
         public virtual DeleteCustomModelResponse DeleteCustomModel(DeleteCustomModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomModelResponseUnmarshaller.Instance;
 
@@ -1999,7 +2650,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteCustomModel">REST API Reference for DeleteCustomModel Operation</seealso>
         public virtual Task<DeleteCustomModelResponse> DeleteCustomModelAsync(DeleteCustomModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomModelResponseUnmarshaller.Instance;
             
@@ -2062,7 +2713,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteCustomModelDeployment">REST API Reference for DeleteCustomModelDeployment Operation</seealso>
         public virtual DeleteCustomModelDeploymentResponse DeleteCustomModelDeployment(DeleteCustomModelDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomModelDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomModelDeploymentResponseUnmarshaller.Instance;
 
@@ -2124,7 +2775,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteCustomModelDeployment">REST API Reference for DeleteCustomModelDeployment Operation</seealso>
         public virtual Task<DeleteCustomModelDeploymentResponse> DeleteCustomModelDeploymentAsync(DeleteCustomModelDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCustomModelDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCustomModelDeploymentResponseUnmarshaller.Instance;
             
@@ -2164,7 +2815,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteFoundationModelAgreement">REST API Reference for DeleteFoundationModelAgreement Operation</seealso>
         public virtual DeleteFoundationModelAgreementResponse DeleteFoundationModelAgreement(DeleteFoundationModelAgreementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFoundationModelAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFoundationModelAgreementResponseUnmarshaller.Instance;
 
@@ -2203,7 +2854,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteFoundationModelAgreement">REST API Reference for DeleteFoundationModelAgreement Operation</seealso>
         public virtual Task<DeleteFoundationModelAgreementResponse> DeleteFoundationModelAgreementAsync(DeleteFoundationModelAgreementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFoundationModelAgreementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFoundationModelAgreementResponseUnmarshaller.Instance;
             
@@ -2255,7 +2906,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteGuardrail">REST API Reference for DeleteGuardrail Operation</seealso>
         public virtual DeleteGuardrailResponse DeleteGuardrail(DeleteGuardrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGuardrailResponseUnmarshaller.Instance;
 
@@ -2306,7 +2957,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteGuardrail">REST API Reference for DeleteGuardrail Operation</seealso>
         public virtual Task<DeleteGuardrailResponse> DeleteGuardrailAsync(DeleteGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGuardrailResponseUnmarshaller.Instance;
             
@@ -2348,7 +2999,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteImportedModel">REST API Reference for DeleteImportedModel Operation</seealso>
         public virtual DeleteImportedModelResponse DeleteImportedModel(DeleteImportedModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImportedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImportedModelResponseUnmarshaller.Instance;
 
@@ -2389,7 +3040,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteImportedModel">REST API Reference for DeleteImportedModel Operation</seealso>
         public virtual Task<DeleteImportedModelResponse> DeleteImportedModelAsync(DeleteImportedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteImportedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteImportedModelResponseUnmarshaller.Instance;
             
@@ -2431,7 +3082,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteInferenceProfile">REST API Reference for DeleteInferenceProfile Operation</seealso>
         public virtual DeleteInferenceProfileResponse DeleteInferenceProfile(DeleteInferenceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInferenceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInferenceProfileResponseUnmarshaller.Instance;
 
@@ -2472,7 +3123,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteInferenceProfile">REST API Reference for DeleteInferenceProfile Operation</seealso>
         public virtual Task<DeleteInferenceProfileResponse> DeleteInferenceProfileAsync(DeleteInferenceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInferenceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInferenceProfileResponseUnmarshaller.Instance;
             
@@ -2509,7 +3160,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteMarketplaceModelEndpoint">REST API Reference for DeleteMarketplaceModelEndpoint Operation</seealso>
         public virtual DeleteMarketplaceModelEndpointResponse DeleteMarketplaceModelEndpoint(DeleteMarketplaceModelEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMarketplaceModelEndpointResponseUnmarshaller.Instance;
 
@@ -2545,7 +3196,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteMarketplaceModelEndpoint">REST API Reference for DeleteMarketplaceModelEndpoint Operation</seealso>
         public virtual Task<DeleteMarketplaceModelEndpointResponse> DeleteMarketplaceModelEndpointAsync(DeleteMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMarketplaceModelEndpointResponseUnmarshaller.Instance;
             
@@ -2575,7 +3226,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteModelInvocationLoggingConfiguration">REST API Reference for DeleteModelInvocationLoggingConfiguration Operation</seealso>
         public virtual DeleteModelInvocationLoggingConfigurationResponse DeleteModelInvocationLoggingConfiguration(DeleteModelInvocationLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelInvocationLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelInvocationLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -2604,7 +3255,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteModelInvocationLoggingConfiguration">REST API Reference for DeleteModelInvocationLoggingConfiguration Operation</seealso>
         public virtual Task<DeleteModelInvocationLoggingConfigurationResponse> DeleteModelInvocationLoggingConfigurationAsync(DeleteModelInvocationLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteModelInvocationLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteModelInvocationLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -2641,7 +3292,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeletePromptRouter">REST API Reference for DeletePromptRouter Operation</seealso>
         public virtual DeletePromptRouterResponse DeletePromptRouter(DeletePromptRouterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePromptRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePromptRouterResponseUnmarshaller.Instance;
 
@@ -2677,7 +3328,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeletePromptRouter">REST API Reference for DeletePromptRouter Operation</seealso>
         public virtual Task<DeletePromptRouterResponse> DeletePromptRouterAsync(DeletePromptRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeletePromptRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeletePromptRouterResponseUnmarshaller.Instance;
             
@@ -2720,7 +3371,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteProvisionedModelThroughput">REST API Reference for DeleteProvisionedModelThroughput Operation</seealso>
         public virtual DeleteProvisionedModelThroughputResponse DeleteProvisionedModelThroughput(DeleteProvisionedModelThroughputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProvisionedModelThroughputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProvisionedModelThroughputResponseUnmarshaller.Instance;
 
@@ -2762,7 +3413,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteProvisionedModelThroughput">REST API Reference for DeleteProvisionedModelThroughput Operation</seealso>
         public virtual Task<DeleteProvisionedModelThroughputResponse> DeleteProvisionedModelThroughputAsync(DeleteProvisionedModelThroughputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProvisionedModelThroughputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProvisionedModelThroughputResponseUnmarshaller.Instance;
             
@@ -2804,7 +3455,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeregisterMarketplaceModelEndpoint">REST API Reference for DeregisterMarketplaceModelEndpoint Operation</seealso>
         public virtual DeregisterMarketplaceModelEndpointResponse DeregisterMarketplaceModelEndpoint(DeregisterMarketplaceModelEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterMarketplaceModelEndpointResponseUnmarshaller.Instance;
 
@@ -2845,11 +3496,613 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeregisterMarketplaceModelEndpoint">REST API Reference for DeregisterMarketplaceModelEndpoint Operation</seealso>
         public virtual Task<DeregisterMarketplaceModelEndpointResponse> DeregisterMarketplaceModelEndpointAsync(DeregisterMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterMarketplaceModelEndpointResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeregisterMarketplaceModelEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ExportAutomatedReasoningPolicyVersion
+
+
+        /// <summary>
+        /// Exports the policy definition for an Automated Reasoning policy version. Returns the
+        /// complete policy definition including rules, variables, and custom variable types in
+        /// a structured format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportAutomatedReasoningPolicyVersion service method.</param>
+        /// 
+        /// <returns>The response from the ExportAutomatedReasoningPolicyVersion service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ExportAutomatedReasoningPolicyVersion">REST API Reference for ExportAutomatedReasoningPolicyVersion Operation</seealso>
+        public virtual ExportAutomatedReasoningPolicyVersionResponse ExportAutomatedReasoningPolicyVersion(ExportAutomatedReasoningPolicyVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExportAutomatedReasoningPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportAutomatedReasoningPolicyVersionResponseUnmarshaller.Instance;
+
+            return Invoke<ExportAutomatedReasoningPolicyVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Exports the policy definition for an Automated Reasoning policy version. Returns the
+        /// complete policy definition including rules, variables, and custom variable types in
+        /// a structured format.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportAutomatedReasoningPolicyVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportAutomatedReasoningPolicyVersion service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ExportAutomatedReasoningPolicyVersion">REST API Reference for ExportAutomatedReasoningPolicyVersion Operation</seealso>
+        public virtual Task<ExportAutomatedReasoningPolicyVersionResponse> ExportAutomatedReasoningPolicyVersionAsync(ExportAutomatedReasoningPolicyVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExportAutomatedReasoningPolicyVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportAutomatedReasoningPolicyVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ExportAutomatedReasoningPolicyVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicy
+
+
+        /// <summary>
+        /// Retrieves details about an Automated Reasoning policy or policy version. Returns information
+        /// including the policy definition, metadata, and timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicy">REST API Reference for GetAutomatedReasoningPolicy Operation</seealso>
+        public virtual GetAutomatedReasoningPolicyResponse GetAutomatedReasoningPolicy(GetAutomatedReasoningPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomatedReasoningPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves details about an Automated Reasoning policy or policy version. Returns information
+        /// including the policy definition, metadata, and timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicy">REST API Reference for GetAutomatedReasoningPolicy Operation</seealso>
+        public virtual Task<GetAutomatedReasoningPolicyResponse> GetAutomatedReasoningPolicyAsync(GetAutomatedReasoningPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAutomatedReasoningPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyAnnotations
+
+
+        /// <summary>
+        /// Retrieves the current annotations for an Automated Reasoning policy build workflow.
+        /// Annotations contain corrections to the rules, variables and types to be applied to
+        /// the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyAnnotations service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyAnnotations service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyAnnotations">REST API Reference for GetAutomatedReasoningPolicyAnnotations Operation</seealso>
+        public virtual GetAutomatedReasoningPolicyAnnotationsResponse GetAutomatedReasoningPolicyAnnotations(GetAutomatedReasoningPolicyAnnotationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyAnnotationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyAnnotationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomatedReasoningPolicyAnnotationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the current annotations for an Automated Reasoning policy build workflow.
+        /// Annotations contain corrections to the rules, variables and types to be applied to
+        /// the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyAnnotations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyAnnotations service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyAnnotations">REST API Reference for GetAutomatedReasoningPolicyAnnotations Operation</seealso>
+        public virtual Task<GetAutomatedReasoningPolicyAnnotationsResponse> GetAutomatedReasoningPolicyAnnotationsAsync(GetAutomatedReasoningPolicyAnnotationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyAnnotationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyAnnotationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAutomatedReasoningPolicyAnnotationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyBuildWorkflow
+
+
+        /// <summary>
+        /// Retrieves detailed information about an Automated Reasoning policy build workflow,
+        /// including its status, configuration, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflow">REST API Reference for GetAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        public virtual GetAutomatedReasoningPolicyBuildWorkflowResponse GetAutomatedReasoningPolicyBuildWorkflow(GetAutomatedReasoningPolicyBuildWorkflowRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyBuildWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyBuildWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomatedReasoningPolicyBuildWorkflowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about an Automated Reasoning policy build workflow,
+        /// including its status, configuration, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflow">REST API Reference for GetAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        public virtual Task<GetAutomatedReasoningPolicyBuildWorkflowResponse> GetAutomatedReasoningPolicyBuildWorkflowAsync(GetAutomatedReasoningPolicyBuildWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyBuildWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyBuildWorkflowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAutomatedReasoningPolicyBuildWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyBuildWorkflowResultAssets
+
+
+        /// <summary>
+        /// Retrieves the resulting assets from a completed Automated Reasoning policy build workflow,
+        /// including build logs, quality reports, and generated policy artifacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyBuildWorkflowResultAssets service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyBuildWorkflowResultAssets service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflowResultAssets">REST API Reference for GetAutomatedReasoningPolicyBuildWorkflowResultAssets Operation</seealso>
+        public virtual GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResponse GetAutomatedReasoningPolicyBuildWorkflowResultAssets(GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the resulting assets from a completed Automated Reasoning policy build workflow,
+        /// including build logs, quality reports, and generated policy artifacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyBuildWorkflowResultAssets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyBuildWorkflowResultAssets service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyBuildWorkflowResultAssets">REST API Reference for GetAutomatedReasoningPolicyBuildWorkflowResultAssets Operation</seealso>
+        public virtual Task<GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResponse> GetAutomatedReasoningPolicyBuildWorkflowResultAssetsAsync(GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAutomatedReasoningPolicyBuildWorkflowResultAssetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyNextScenario
+
+
+        /// <summary>
+        /// Retrieves the next test scenario for validating an Automated Reasoning policy. This
+        /// is used during the interactive policy refinement process to test policy behavior.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyNextScenario service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyNextScenario service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyNextScenario">REST API Reference for GetAutomatedReasoningPolicyNextScenario Operation</seealso>
+        public virtual GetAutomatedReasoningPolicyNextScenarioResponse GetAutomatedReasoningPolicyNextScenario(GetAutomatedReasoningPolicyNextScenarioRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyNextScenarioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyNextScenarioResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomatedReasoningPolicyNextScenarioResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the next test scenario for validating an Automated Reasoning policy. This
+        /// is used during the interactive policy refinement process to test policy behavior.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyNextScenario service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyNextScenario service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyNextScenario">REST API Reference for GetAutomatedReasoningPolicyNextScenario Operation</seealso>
+        public virtual Task<GetAutomatedReasoningPolicyNextScenarioResponse> GetAutomatedReasoningPolicyNextScenarioAsync(GetAutomatedReasoningPolicyNextScenarioRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyNextScenarioRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyNextScenarioResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAutomatedReasoningPolicyNextScenarioResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyTestCase
+
+
+        /// <summary>
+        /// Retrieves details about a specific Automated Reasoning policy test.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyTestCase service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestCase">REST API Reference for GetAutomatedReasoningPolicyTestCase Operation</seealso>
+        public virtual GetAutomatedReasoningPolicyTestCaseResponse GetAutomatedReasoningPolicyTestCase(GetAutomatedReasoningPolicyTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomatedReasoningPolicyTestCaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves details about a specific Automated Reasoning policy test.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestCase">REST API Reference for GetAutomatedReasoningPolicyTestCase Operation</seealso>
+        public virtual Task<GetAutomatedReasoningPolicyTestCaseResponse> GetAutomatedReasoningPolicyTestCaseAsync(GetAutomatedReasoningPolicyTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyTestCaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAutomatedReasoningPolicyTestCaseResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAutomatedReasoningPolicyTestResult
+
+
+        /// <summary>
+        /// Retrieves the test result for a specific Automated Reasoning policy test. Returns
+        /// detailed validation findings and execution status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyTestResult service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyTestResult service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestResult">REST API Reference for GetAutomatedReasoningPolicyTestResult Operation</seealso>
+        public virtual GetAutomatedReasoningPolicyTestResultResponse GetAutomatedReasoningPolicyTestResult(GetAutomatedReasoningPolicyTestResultRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyTestResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyTestResultResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomatedReasoningPolicyTestResultResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the test result for a specific Automated Reasoning policy test. Returns
+        /// detailed validation findings and execution status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomatedReasoningPolicyTestResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAutomatedReasoningPolicyTestResult service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetAutomatedReasoningPolicyTestResult">REST API Reference for GetAutomatedReasoningPolicyTestResult Operation</seealso>
+        public virtual Task<GetAutomatedReasoningPolicyTestResultResponse> GetAutomatedReasoningPolicyTestResultAsync(GetAutomatedReasoningPolicyTestResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAutomatedReasoningPolicyTestResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAutomatedReasoningPolicyTestResultResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAutomatedReasoningPolicyTestResultResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2885,7 +4138,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetCustomModel">REST API Reference for GetCustomModel Operation</seealso>
         public virtual GetCustomModelResponse GetCustomModel(GetCustomModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomModelResponseUnmarshaller.Instance;
 
@@ -2924,7 +4177,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetCustomModel">REST API Reference for GetCustomModel Operation</seealso>
         public virtual Task<GetCustomModelResponse> GetCustomModelAsync(GetCustomModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomModelResponseUnmarshaller.Instance;
             
@@ -2984,7 +4237,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetCustomModelDeployment">REST API Reference for GetCustomModelDeployment Operation</seealso>
         public virtual GetCustomModelDeploymentResponse GetCustomModelDeployment(GetCustomModelDeploymentRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomModelDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomModelDeploymentResponseUnmarshaller.Instance;
 
@@ -3043,7 +4296,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetCustomModelDeployment">REST API Reference for GetCustomModelDeployment Operation</seealso>
         public virtual Task<GetCustomModelDeploymentResponse> GetCustomModelDeploymentAsync(GetCustomModelDeploymentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCustomModelDeploymentRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCustomModelDeploymentResponseUnmarshaller.Instance;
             
@@ -3080,7 +4333,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob">REST API Reference for GetEvaluationJob Operation</seealso>
         public virtual GetEvaluationJobResponse GetEvaluationJob(GetEvaluationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvaluationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvaluationJobResponseUnmarshaller.Instance;
 
@@ -3116,7 +4369,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetEvaluationJob">REST API Reference for GetEvaluationJob Operation</seealso>
         public virtual Task<GetEvaluationJobResponse> GetEvaluationJobAsync(GetEvaluationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEvaluationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEvaluationJobResponseUnmarshaller.Instance;
             
@@ -3153,7 +4406,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModel">REST API Reference for GetFoundationModel Operation</seealso>
         public virtual GetFoundationModelResponse GetFoundationModel(GetFoundationModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFoundationModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFoundationModelResponseUnmarshaller.Instance;
 
@@ -3189,7 +4442,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModel">REST API Reference for GetFoundationModel Operation</seealso>
         public virtual Task<GetFoundationModelResponse> GetFoundationModelAsync(GetFoundationModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFoundationModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFoundationModelResponseUnmarshaller.Instance;
             
@@ -3226,7 +4479,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModelAvailability">REST API Reference for GetFoundationModelAvailability Operation</seealso>
         public virtual GetFoundationModelAvailabilityResponse GetFoundationModelAvailability(GetFoundationModelAvailabilityRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFoundationModelAvailabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFoundationModelAvailabilityResponseUnmarshaller.Instance;
 
@@ -3262,7 +4515,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetFoundationModelAvailability">REST API Reference for GetFoundationModelAvailability Operation</seealso>
         public virtual Task<GetFoundationModelAvailabilityResponse> GetFoundationModelAvailabilityAsync(GetFoundationModelAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetFoundationModelAvailabilityRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetFoundationModelAvailabilityResponseUnmarshaller.Instance;
             
@@ -3300,7 +4553,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetGuardrail">REST API Reference for GetGuardrail Operation</seealso>
         public virtual GetGuardrailResponse GetGuardrail(GetGuardrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGuardrailResponseUnmarshaller.Instance;
 
@@ -3337,7 +4590,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetGuardrail">REST API Reference for GetGuardrail Operation</seealso>
         public virtual Task<GetGuardrailResponse> GetGuardrailAsync(GetGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetGuardrailResponseUnmarshaller.Instance;
             
@@ -3374,7 +4627,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetImportedModel">REST API Reference for GetImportedModel Operation</seealso>
         public virtual GetImportedModelResponse GetImportedModel(GetImportedModelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportedModelResponseUnmarshaller.Instance;
 
@@ -3410,7 +4663,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetImportedModel">REST API Reference for GetImportedModel Operation</seealso>
         public virtual Task<GetImportedModelResponse> GetImportedModelAsync(GetImportedModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetImportedModelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetImportedModelResponseUnmarshaller.Instance;
             
@@ -3449,7 +4702,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetInferenceProfile">REST API Reference for GetInferenceProfile Operation</seealso>
         public virtual GetInferenceProfileResponse GetInferenceProfile(GetInferenceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInferenceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInferenceProfileResponseUnmarshaller.Instance;
 
@@ -3487,7 +4740,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetInferenceProfile">REST API Reference for GetInferenceProfile Operation</seealso>
         public virtual Task<GetInferenceProfileResponse> GetInferenceProfileAsync(GetInferenceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInferenceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInferenceProfileResponseUnmarshaller.Instance;
             
@@ -3524,7 +4777,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetMarketplaceModelEndpoint">REST API Reference for GetMarketplaceModelEndpoint Operation</seealso>
         public virtual GetMarketplaceModelEndpointResponse GetMarketplaceModelEndpoint(GetMarketplaceModelEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMarketplaceModelEndpointResponseUnmarshaller.Instance;
 
@@ -3560,7 +4813,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetMarketplaceModelEndpoint">REST API Reference for GetMarketplaceModelEndpoint Operation</seealso>
         public virtual Task<GetMarketplaceModelEndpointResponse> GetMarketplaceModelEndpointAsync(GetMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMarketplaceModelEndpointResponseUnmarshaller.Instance;
             
@@ -3599,7 +4852,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelCopyJob">REST API Reference for GetModelCopyJob Operation</seealso>
         public virtual GetModelCopyJobResponse GetModelCopyJob(GetModelCopyJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelCopyJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelCopyJobResponseUnmarshaller.Instance;
 
@@ -3637,7 +4890,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelCopyJob">REST API Reference for GetModelCopyJob Operation</seealso>
         public virtual Task<GetModelCopyJobResponse> GetModelCopyJobAsync(GetModelCopyJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelCopyJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelCopyJobResponseUnmarshaller.Instance;
             
@@ -3677,7 +4930,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelCustomizationJob">REST API Reference for GetModelCustomizationJob Operation</seealso>
         public virtual GetModelCustomizationJobResponse GetModelCustomizationJob(GetModelCustomizationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelCustomizationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelCustomizationJobResponseUnmarshaller.Instance;
 
@@ -3716,7 +4969,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelCustomizationJob">REST API Reference for GetModelCustomizationJob Operation</seealso>
         public virtual Task<GetModelCustomizationJobResponse> GetModelCustomizationJobAsync(GetModelCustomizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelCustomizationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelCustomizationJobResponseUnmarshaller.Instance;
             
@@ -3756,7 +5009,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelImportJob">REST API Reference for GetModelImportJob Operation</seealso>
         public virtual GetModelImportJobResponse GetModelImportJob(GetModelImportJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelImportJobResponseUnmarshaller.Instance;
 
@@ -3795,7 +5048,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelImportJob">REST API Reference for GetModelImportJob Operation</seealso>
         public virtual Task<GetModelImportJobResponse> GetModelImportJobAsync(GetModelImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelImportJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelImportJobResponseUnmarshaller.Instance;
             
@@ -3833,7 +5086,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelInvocationJob">REST API Reference for GetModelInvocationJob Operation</seealso>
         public virtual GetModelInvocationJobResponse GetModelInvocationJob(GetModelInvocationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelInvocationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelInvocationJobResponseUnmarshaller.Instance;
 
@@ -3870,7 +5123,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelInvocationJob">REST API Reference for GetModelInvocationJob Operation</seealso>
         public virtual Task<GetModelInvocationJobResponse> GetModelInvocationJobAsync(GetModelInvocationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelInvocationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelInvocationJobResponseUnmarshaller.Instance;
             
@@ -3900,7 +5153,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelInvocationLoggingConfiguration">REST API Reference for GetModelInvocationLoggingConfiguration Operation</seealso>
         public virtual GetModelInvocationLoggingConfigurationResponse GetModelInvocationLoggingConfiguration(GetModelInvocationLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelInvocationLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelInvocationLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -3929,7 +5182,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetModelInvocationLoggingConfiguration">REST API Reference for GetModelInvocationLoggingConfiguration Operation</seealso>
         public virtual Task<GetModelInvocationLoggingConfigurationResponse> GetModelInvocationLoggingConfigurationAsync(GetModelInvocationLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetModelInvocationLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetModelInvocationLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -3966,7 +5219,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetPromptRouter">REST API Reference for GetPromptRouter Operation</seealso>
         public virtual GetPromptRouterResponse GetPromptRouter(GetPromptRouterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPromptRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPromptRouterResponseUnmarshaller.Instance;
 
@@ -4002,7 +5255,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetPromptRouter">REST API Reference for GetPromptRouter Operation</seealso>
         public virtual Task<GetPromptRouterResponse> GetPromptRouterAsync(GetPromptRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetPromptRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetPromptRouterResponseUnmarshaller.Instance;
             
@@ -4041,7 +5294,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProvisionedModelThroughput">REST API Reference for GetProvisionedModelThroughput Operation</seealso>
         public virtual GetProvisionedModelThroughputResponse GetProvisionedModelThroughput(GetProvisionedModelThroughputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProvisionedModelThroughputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProvisionedModelThroughputResponseUnmarshaller.Instance;
 
@@ -4079,7 +5332,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetProvisionedModelThroughput">REST API Reference for GetProvisionedModelThroughput Operation</seealso>
         public virtual Task<GetProvisionedModelThroughputResponse> GetProvisionedModelThroughputAsync(GetProvisionedModelThroughputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetProvisionedModelThroughputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetProvisionedModelThroughputResponseUnmarshaller.Instance;
             
@@ -4113,7 +5366,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetUseCaseForModelAccess">REST API Reference for GetUseCaseForModelAccess Operation</seealso>
         public virtual GetUseCaseForModelAccessResponse GetUseCaseForModelAccess(GetUseCaseForModelAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUseCaseForModelAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUseCaseForModelAccessResponseUnmarshaller.Instance;
 
@@ -4146,11 +5399,317 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/GetUseCaseForModelAccess">REST API Reference for GetUseCaseForModelAccess Operation</seealso>
         public virtual Task<GetUseCaseForModelAccessResponse> GetUseCaseForModelAccessAsync(GetUseCaseForModelAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetUseCaseForModelAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetUseCaseForModelAccessResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetUseCaseForModelAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAutomatedReasoningPolicies
+
+
+        /// <summary>
+        /// Lists all Automated Reasoning policies in your account, with optional filtering by
+        /// policy ARN. This helps you manage and discover existing policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicies service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicies">REST API Reference for ListAutomatedReasoningPolicies Operation</seealso>
+        public virtual ListAutomatedReasoningPoliciesResponse ListAutomatedReasoningPolicies(ListAutomatedReasoningPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAutomatedReasoningPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomatedReasoningPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAutomatedReasoningPoliciesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all Automated Reasoning policies in your account, with optional filtering by
+        /// policy ARN. This helps you manage and discover existing policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicies service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicies">REST API Reference for ListAutomatedReasoningPolicies Operation</seealso>
+        public virtual Task<ListAutomatedReasoningPoliciesResponse> ListAutomatedReasoningPoliciesAsync(ListAutomatedReasoningPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAutomatedReasoningPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomatedReasoningPoliciesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAutomatedReasoningPoliciesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAutomatedReasoningPolicyBuildWorkflows
+
+
+        /// <summary>
+        /// Lists all build workflows for an Automated Reasoning policy, showing the history of
+        /// policy creation and modification attempts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyBuildWorkflows service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicyBuildWorkflows service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyBuildWorkflows">REST API Reference for ListAutomatedReasoningPolicyBuildWorkflows Operation</seealso>
+        public virtual ListAutomatedReasoningPolicyBuildWorkflowsResponse ListAutomatedReasoningPolicyBuildWorkflows(ListAutomatedReasoningPolicyBuildWorkflowsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAutomatedReasoningPolicyBuildWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomatedReasoningPolicyBuildWorkflowsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAutomatedReasoningPolicyBuildWorkflowsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all build workflows for an Automated Reasoning policy, showing the history of
+        /// policy creation and modification attempts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyBuildWorkflows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicyBuildWorkflows service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyBuildWorkflows">REST API Reference for ListAutomatedReasoningPolicyBuildWorkflows Operation</seealso>
+        public virtual Task<ListAutomatedReasoningPolicyBuildWorkflowsResponse> ListAutomatedReasoningPolicyBuildWorkflowsAsync(ListAutomatedReasoningPolicyBuildWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAutomatedReasoningPolicyBuildWorkflowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomatedReasoningPolicyBuildWorkflowsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAutomatedReasoningPolicyBuildWorkflowsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAutomatedReasoningPolicyTestCases
+
+
+        /// <summary>
+        /// Lists tests for an Automated Reasoning policy. We recommend using pagination to ensure
+        /// that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyTestCases service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicyTestCases service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestCases">REST API Reference for ListAutomatedReasoningPolicyTestCases Operation</seealso>
+        public virtual ListAutomatedReasoningPolicyTestCasesResponse ListAutomatedReasoningPolicyTestCases(ListAutomatedReasoningPolicyTestCasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAutomatedReasoningPolicyTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomatedReasoningPolicyTestCasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAutomatedReasoningPolicyTestCasesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists tests for an Automated Reasoning policy. We recommend using pagination to ensure
+        /// that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyTestCases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicyTestCases service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestCases">REST API Reference for ListAutomatedReasoningPolicyTestCases Operation</seealso>
+        public virtual Task<ListAutomatedReasoningPolicyTestCasesResponse> ListAutomatedReasoningPolicyTestCasesAsync(ListAutomatedReasoningPolicyTestCasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAutomatedReasoningPolicyTestCasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomatedReasoningPolicyTestCasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAutomatedReasoningPolicyTestCasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAutomatedReasoningPolicyTestResults
+
+
+        /// <summary>
+        /// Lists test results for an Automated Reasoning policy, showing how the policy performed
+        /// against various test scenarios and validation checks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyTestResults service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicyTestResults service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestResults">REST API Reference for ListAutomatedReasoningPolicyTestResults Operation</seealso>
+        public virtual ListAutomatedReasoningPolicyTestResultsResponse ListAutomatedReasoningPolicyTestResults(ListAutomatedReasoningPolicyTestResultsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAutomatedReasoningPolicyTestResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomatedReasoningPolicyTestResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAutomatedReasoningPolicyTestResultsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists test results for an Automated Reasoning policy, showing how the policy performed
+        /// against various test scenarios and validation checks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomatedReasoningPolicyTestResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAutomatedReasoningPolicyTestResults service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListAutomatedReasoningPolicyTestResults">REST API Reference for ListAutomatedReasoningPolicyTestResults Operation</seealso>
+        public virtual Task<ListAutomatedReasoningPolicyTestResultsResponse> ListAutomatedReasoningPolicyTestResultsAsync(ListAutomatedReasoningPolicyTestResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAutomatedReasoningPolicyTestResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomatedReasoningPolicyTestResultsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAutomatedReasoningPolicyTestResultsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4206,7 +5765,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListCustomModelDeployments">REST API Reference for ListCustomModelDeployments Operation</seealso>
         public virtual ListCustomModelDeploymentsResponse ListCustomModelDeployments(ListCustomModelDeploymentsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomModelDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomModelDeploymentsResponseUnmarshaller.Instance;
 
@@ -4265,7 +5824,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListCustomModelDeployments">REST API Reference for ListCustomModelDeployments Operation</seealso>
         public virtual Task<ListCustomModelDeploymentsResponse> ListCustomModelDeploymentsAsync(ListCustomModelDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomModelDeploymentsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomModelDeploymentsResponseUnmarshaller.Instance;
             
@@ -4306,7 +5865,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListCustomModels">REST API Reference for ListCustomModels Operation</seealso>
         public virtual ListCustomModelsResponse ListCustomModels(ListCustomModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomModelsResponseUnmarshaller.Instance;
 
@@ -4346,7 +5905,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListCustomModels">REST API Reference for ListCustomModels Operation</seealso>
         public virtual Task<ListCustomModelsResponse> ListCustomModelsAsync(ListCustomModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCustomModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCustomModelsResponseUnmarshaller.Instance;
             
@@ -4379,7 +5938,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs">REST API Reference for ListEvaluationJobs Operation</seealso>
         public virtual ListEvaluationJobsResponse ListEvaluationJobs(ListEvaluationJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEvaluationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEvaluationJobsResponseUnmarshaller.Instance;
 
@@ -4411,7 +5970,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEvaluationJobs">REST API Reference for ListEvaluationJobs Operation</seealso>
         public virtual Task<ListEvaluationJobsResponse> ListEvaluationJobsAsync(ListEvaluationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEvaluationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEvaluationJobsResponseUnmarshaller.Instance;
             
@@ -4448,7 +6007,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModelAgreementOffers">REST API Reference for ListFoundationModelAgreementOffers Operation</seealso>
         public virtual ListFoundationModelAgreementOffersResponse ListFoundationModelAgreementOffers(ListFoundationModelAgreementOffersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFoundationModelAgreementOffersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFoundationModelAgreementOffersResponseUnmarshaller.Instance;
 
@@ -4484,7 +6043,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModelAgreementOffers">REST API Reference for ListFoundationModelAgreementOffers Operation</seealso>
         public virtual Task<ListFoundationModelAgreementOffersResponse> ListFoundationModelAgreementOffersAsync(ListFoundationModelAgreementOffersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFoundationModelAgreementOffersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFoundationModelAgreementOffersResponseUnmarshaller.Instance;
             
@@ -4520,7 +6079,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModels">REST API Reference for ListFoundationModels Operation</seealso>
         public virtual ListFoundationModelsResponse ListFoundationModels(ListFoundationModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFoundationModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFoundationModelsResponseUnmarshaller.Instance;
 
@@ -4555,7 +6114,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListFoundationModels">REST API Reference for ListFoundationModels Operation</seealso>
         public virtual Task<ListFoundationModelsResponse> ListFoundationModelsAsync(ListFoundationModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFoundationModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFoundationModelsResponseUnmarshaller.Instance;
             
@@ -4603,7 +6162,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListGuardrails">REST API Reference for ListGuardrails Operation</seealso>
         public virtual ListGuardrailsResponse ListGuardrails(ListGuardrailsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGuardrailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGuardrailsResponseUnmarshaller.Instance;
 
@@ -4650,7 +6209,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListGuardrails">REST API Reference for ListGuardrails Operation</seealso>
         public virtual Task<ListGuardrailsResponse> ListGuardrailsAsync(ListGuardrailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGuardrailsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGuardrailsResponseUnmarshaller.Instance;
             
@@ -4686,7 +6245,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListImportedModels">REST API Reference for ListImportedModels Operation</seealso>
         public virtual ListImportedModelsResponse ListImportedModels(ListImportedModelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportedModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportedModelsResponseUnmarshaller.Instance;
 
@@ -4721,7 +6280,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListImportedModels">REST API Reference for ListImportedModels Operation</seealso>
         public virtual Task<ListImportedModelsResponse> ListImportedModelsAsync(ListImportedModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListImportedModelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListImportedModelsResponseUnmarshaller.Instance;
             
@@ -4757,7 +6316,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListInferenceProfiles">REST API Reference for ListInferenceProfiles Operation</seealso>
         public virtual ListInferenceProfilesResponse ListInferenceProfiles(ListInferenceProfilesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInferenceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInferenceProfilesResponseUnmarshaller.Instance;
 
@@ -4792,7 +6351,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListInferenceProfiles">REST API Reference for ListInferenceProfiles Operation</seealso>
         public virtual Task<ListInferenceProfilesResponse> ListInferenceProfilesAsync(ListInferenceProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInferenceProfilesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInferenceProfilesResponseUnmarshaller.Instance;
             
@@ -4830,7 +6389,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListMarketplaceModelEndpoints">REST API Reference for ListMarketplaceModelEndpoints Operation</seealso>
         public virtual ListMarketplaceModelEndpointsResponse ListMarketplaceModelEndpoints(ListMarketplaceModelEndpointsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMarketplaceModelEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMarketplaceModelEndpointsResponseUnmarshaller.Instance;
 
@@ -4867,7 +6426,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListMarketplaceModelEndpoints">REST API Reference for ListMarketplaceModelEndpoints Operation</seealso>
         public virtual Task<ListMarketplaceModelEndpointsResponse> ListMarketplaceModelEndpointsAsync(ListMarketplaceModelEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMarketplaceModelEndpointsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMarketplaceModelEndpointsResponseUnmarshaller.Instance;
             
@@ -4907,7 +6466,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelCopyJobs">REST API Reference for ListModelCopyJobs Operation</seealso>
         public virtual ListModelCopyJobsResponse ListModelCopyJobs(ListModelCopyJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelCopyJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelCopyJobsResponseUnmarshaller.Instance;
 
@@ -4946,7 +6505,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelCopyJobs">REST API Reference for ListModelCopyJobs Operation</seealso>
         public virtual Task<ListModelCopyJobsResponse> ListModelCopyJobsAsync(ListModelCopyJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelCopyJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelCopyJobsResponseUnmarshaller.Instance;
             
@@ -4987,7 +6546,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelCustomizationJobs">REST API Reference for ListModelCustomizationJobs Operation</seealso>
         public virtual ListModelCustomizationJobsResponse ListModelCustomizationJobs(ListModelCustomizationJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelCustomizationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelCustomizationJobsResponseUnmarshaller.Instance;
 
@@ -5027,7 +6586,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelCustomizationJobs">REST API Reference for ListModelCustomizationJobs Operation</seealso>
         public virtual Task<ListModelCustomizationJobsResponse> ListModelCustomizationJobsAsync(ListModelCustomizationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelCustomizationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelCustomizationJobsResponseUnmarshaller.Instance;
             
@@ -5063,7 +6622,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelImportJobs">REST API Reference for ListModelImportJobs Operation</seealso>
         public virtual ListModelImportJobsResponse ListModelImportJobs(ListModelImportJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelImportJobsResponseUnmarshaller.Instance;
 
@@ -5098,7 +6657,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelImportJobs">REST API Reference for ListModelImportJobs Operation</seealso>
         public virtual Task<ListModelImportJobsResponse> ListModelImportJobsAsync(ListModelImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelImportJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelImportJobsResponseUnmarshaller.Instance;
             
@@ -5132,7 +6691,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelInvocationJobs">REST API Reference for ListModelInvocationJobs Operation</seealso>
         public virtual ListModelInvocationJobsResponse ListModelInvocationJobs(ListModelInvocationJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelInvocationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelInvocationJobsResponseUnmarshaller.Instance;
 
@@ -5165,7 +6724,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListModelInvocationJobs">REST API Reference for ListModelInvocationJobs Operation</seealso>
         public virtual Task<ListModelInvocationJobsResponse> ListModelInvocationJobsAsync(ListModelInvocationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListModelInvocationJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListModelInvocationJobsResponseUnmarshaller.Instance;
             
@@ -5198,7 +6757,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListPromptRouters">REST API Reference for ListPromptRouters Operation</seealso>
         public virtual ListPromptRoutersResponse ListPromptRouters(ListPromptRoutersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPromptRoutersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPromptRoutersResponseUnmarshaller.Instance;
 
@@ -5230,7 +6789,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListPromptRouters">REST API Reference for ListPromptRouters Operation</seealso>
         public virtual Task<ListPromptRoutersResponse> ListPromptRoutersAsync(ListPromptRoutersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListPromptRoutersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListPromptRoutersResponseUnmarshaller.Instance;
             
@@ -5265,7 +6824,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListProvisionedModelThroughputs">REST API Reference for ListProvisionedModelThroughputs Operation</seealso>
         public virtual ListProvisionedModelThroughputsResponse ListProvisionedModelThroughputs(ListProvisionedModelThroughputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProvisionedModelThroughputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProvisionedModelThroughputsResponseUnmarshaller.Instance;
 
@@ -5299,7 +6858,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListProvisionedModelThroughputs">REST API Reference for ListProvisionedModelThroughputs Operation</seealso>
         public virtual Task<ListProvisionedModelThroughputsResponse> ListProvisionedModelThroughputsAsync(ListProvisionedModelThroughputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProvisionedModelThroughputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProvisionedModelThroughputsResponseUnmarshaller.Instance;
             
@@ -5343,7 +6902,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -5386,7 +6945,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -5419,7 +6978,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutModelInvocationLoggingConfiguration">REST API Reference for PutModelInvocationLoggingConfiguration Operation</seealso>
         public virtual PutModelInvocationLoggingConfigurationResponse PutModelInvocationLoggingConfiguration(PutModelInvocationLoggingConfigurationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutModelInvocationLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutModelInvocationLoggingConfigurationResponseUnmarshaller.Instance;
 
@@ -5451,7 +7010,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutModelInvocationLoggingConfiguration">REST API Reference for PutModelInvocationLoggingConfiguration Operation</seealso>
         public virtual Task<PutModelInvocationLoggingConfigurationResponse> PutModelInvocationLoggingConfigurationAsync(PutModelInvocationLoggingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutModelInvocationLoggingConfigurationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutModelInvocationLoggingConfigurationResponseUnmarshaller.Instance;
             
@@ -5484,7 +7043,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutUseCaseForModelAccess">REST API Reference for PutUseCaseForModelAccess Operation</seealso>
         public virtual PutUseCaseForModelAccessResponse PutUseCaseForModelAccess(PutUseCaseForModelAccessRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutUseCaseForModelAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutUseCaseForModelAccessResponseUnmarshaller.Instance;
 
@@ -5516,7 +7075,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutUseCaseForModelAccess">REST API Reference for PutUseCaseForModelAccess Operation</seealso>
         public virtual Task<PutUseCaseForModelAccessResponse> PutUseCaseForModelAccessAsync(PutUseCaseForModelAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutUseCaseForModelAccessRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutUseCaseForModelAccessResponseUnmarshaller.Instance;
             
@@ -5557,7 +7116,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/RegisterMarketplaceModelEndpoint">REST API Reference for RegisterMarketplaceModelEndpoint Operation</seealso>
         public virtual RegisterMarketplaceModelEndpointResponse RegisterMarketplaceModelEndpoint(RegisterMarketplaceModelEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterMarketplaceModelEndpointResponseUnmarshaller.Instance;
 
@@ -5597,11 +7156,195 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/RegisterMarketplaceModelEndpoint">REST API Reference for RegisterMarketplaceModelEndpoint Operation</seealso>
         public virtual Task<RegisterMarketplaceModelEndpointResponse> RegisterMarketplaceModelEndpointAsync(RegisterMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RegisterMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RegisterMarketplaceModelEndpointResponseUnmarshaller.Instance;
             
             return InvokeAsync<RegisterMarketplaceModelEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAutomatedReasoningPolicyBuildWorkflow
+
+
+        /// <summary>
+        /// Starts a new build workflow for an Automated Reasoning policy. This initiates the
+        /// process of analyzing source documents and generating policy rules, variables, and
+        /// types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the StartAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyBuildWorkflow">REST API Reference for StartAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        public virtual StartAutomatedReasoningPolicyBuildWorkflowResponse StartAutomatedReasoningPolicyBuildWorkflow(StartAutomatedReasoningPolicyBuildWorkflowRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartAutomatedReasoningPolicyBuildWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAutomatedReasoningPolicyBuildWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<StartAutomatedReasoningPolicyBuildWorkflowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a new build workflow for an Automated Reasoning policy. This initiates the
+        /// process of analyzing source documents and generating policy rules, variables, and
+        /// types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomatedReasoningPolicyBuildWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAutomatedReasoningPolicyBuildWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyBuildWorkflow">REST API Reference for StartAutomatedReasoningPolicyBuildWorkflow Operation</seealso>
+        public virtual Task<StartAutomatedReasoningPolicyBuildWorkflowResponse> StartAutomatedReasoningPolicyBuildWorkflowAsync(StartAutomatedReasoningPolicyBuildWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartAutomatedReasoningPolicyBuildWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAutomatedReasoningPolicyBuildWorkflowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAutomatedReasoningPolicyBuildWorkflowResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAutomatedReasoningPolicyTestWorkflow
+
+
+        /// <summary>
+        /// Initiates a test workflow to validate Automated Reasoning policy tests. The workflow
+        /// executes the specified tests against the policy and generates validation results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomatedReasoningPolicyTestWorkflow service method.</param>
+        /// 
+        /// <returns>The response from the StartAutomatedReasoningPolicyTestWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyTestWorkflow">REST API Reference for StartAutomatedReasoningPolicyTestWorkflow Operation</seealso>
+        public virtual StartAutomatedReasoningPolicyTestWorkflowResponse StartAutomatedReasoningPolicyTestWorkflow(StartAutomatedReasoningPolicyTestWorkflowRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartAutomatedReasoningPolicyTestWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAutomatedReasoningPolicyTestWorkflowResponseUnmarshaller.Instance;
+
+            return Invoke<StartAutomatedReasoningPolicyTestWorkflowResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates a test workflow to validate Automated Reasoning policy tests. The workflow
+        /// executes the specified tests against the policy and generates validation results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomatedReasoningPolicyTestWorkflow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAutomatedReasoningPolicyTestWorkflow service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StartAutomatedReasoningPolicyTestWorkflow">REST API Reference for StartAutomatedReasoningPolicyTestWorkflow Operation</seealso>
+        public virtual Task<StartAutomatedReasoningPolicyTestWorkflowResponse> StartAutomatedReasoningPolicyTestWorkflowAsync(StartAutomatedReasoningPolicyTestWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartAutomatedReasoningPolicyTestWorkflowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAutomatedReasoningPolicyTestWorkflowResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAutomatedReasoningPolicyTestWorkflowResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5637,7 +7380,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob">REST API Reference for StopEvaluationJob Operation</seealso>
         public virtual StopEvaluationJobResponse StopEvaluationJob(StopEvaluationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopEvaluationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopEvaluationJobResponseUnmarshaller.Instance;
 
@@ -5676,7 +7419,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopEvaluationJob">REST API Reference for StopEvaluationJob Operation</seealso>
         public virtual Task<StopEvaluationJobResponse> StopEvaluationJobAsync(StopEvaluationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopEvaluationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopEvaluationJobResponseUnmarshaller.Instance;
             
@@ -5718,7 +7461,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopModelCustomizationJob">REST API Reference for StopModelCustomizationJob Operation</seealso>
         public virtual StopModelCustomizationJobResponse StopModelCustomizationJob(StopModelCustomizationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopModelCustomizationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopModelCustomizationJobResponseUnmarshaller.Instance;
 
@@ -5759,7 +7502,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopModelCustomizationJob">REST API Reference for StopModelCustomizationJob Operation</seealso>
         public virtual Task<StopModelCustomizationJobResponse> StopModelCustomizationJobAsync(StopModelCustomizationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopModelCustomizationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopModelCustomizationJobResponseUnmarshaller.Instance;
             
@@ -5801,7 +7544,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopModelInvocationJob">REST API Reference for StopModelInvocationJob Operation</seealso>
         public virtual StopModelInvocationJobResponse StopModelInvocationJob(StopModelInvocationJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopModelInvocationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopModelInvocationJobResponseUnmarshaller.Instance;
 
@@ -5842,7 +7585,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/StopModelInvocationJob">REST API Reference for StopModelInvocationJob Operation</seealso>
         public virtual Task<StopModelInvocationJobResponse> StopModelInvocationJobAsync(StopModelInvocationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopModelInvocationJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopModelInvocationJobResponseUnmarshaller.Instance;
             
@@ -5886,7 +7629,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -5929,7 +7672,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -5968,7 +7711,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -6006,11 +7749,274 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAutomatedReasoningPolicy
+
+
+        /// <summary>
+        /// Updates an existing Automated Reasoning policy with new rules, variables, or configuration.
+        /// This creates a new version of the policy while preserving the previous version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicy">REST API Reference for UpdateAutomatedReasoningPolicy Operation</seealso>
+        public virtual UpdateAutomatedReasoningPolicyResponse UpdateAutomatedReasoningPolicy(UpdateAutomatedReasoningPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAutomatedReasoningPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomatedReasoningPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAutomatedReasoningPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing Automated Reasoning policy with new rules, variables, or configuration.
+        /// This creates a new version of the policy while preserving the previous version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedReasoningPolicy service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicy">REST API Reference for UpdateAutomatedReasoningPolicy Operation</seealso>
+        public virtual Task<UpdateAutomatedReasoningPolicyResponse> UpdateAutomatedReasoningPolicyAsync(UpdateAutomatedReasoningPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAutomatedReasoningPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomatedReasoningPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAutomatedReasoningPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAutomatedReasoningPolicyAnnotations
+
+
+        /// <summary>
+        /// Updates the annotations for an Automated Reasoning policy build workflow. This allows
+        /// you to modify extracted rules, variables, and types before finalizing the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicyAnnotations service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedReasoningPolicyAnnotations service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyAnnotations">REST API Reference for UpdateAutomatedReasoningPolicyAnnotations Operation</seealso>
+        public virtual UpdateAutomatedReasoningPolicyAnnotationsResponse UpdateAutomatedReasoningPolicyAnnotations(UpdateAutomatedReasoningPolicyAnnotationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAutomatedReasoningPolicyAnnotationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomatedReasoningPolicyAnnotationsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAutomatedReasoningPolicyAnnotationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the annotations for an Automated Reasoning policy build workflow. This allows
+        /// you to modify extracted rules, variables, and types before finalizing the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicyAnnotations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedReasoningPolicyAnnotations service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyAnnotations">REST API Reference for UpdateAutomatedReasoningPolicyAnnotations Operation</seealso>
+        public virtual Task<UpdateAutomatedReasoningPolicyAnnotationsResponse> UpdateAutomatedReasoningPolicyAnnotationsAsync(UpdateAutomatedReasoningPolicyAnnotationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAutomatedReasoningPolicyAnnotationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomatedReasoningPolicyAnnotationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAutomatedReasoningPolicyAnnotationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAutomatedReasoningPolicyTestCase
+
+
+        /// <summary>
+        /// Updates an existing Automated Reasoning policy test. You can modify the content, query,
+        /// expected result, and confidence threshold.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicyTestCase service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyTestCase">REST API Reference for UpdateAutomatedReasoningPolicyTestCase Operation</seealso>
+        public virtual UpdateAutomatedReasoningPolicyTestCaseResponse UpdateAutomatedReasoningPolicyTestCase(UpdateAutomatedReasoningPolicyTestCaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAutomatedReasoningPolicyTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomatedReasoningPolicyTestCaseResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAutomatedReasoningPolicyTestCaseResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing Automated Reasoning policy test. You can modify the content, query,
+        /// expected result, and confidence threshold.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAutomatedReasoningPolicyTestCase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAutomatedReasoningPolicyTestCase service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceInUseException">
+        /// Thrown when attempting to delete or modify a resource that is currently being used
+        /// by other resources or operations. For example, trying to delete an Automated Reasoning
+        /// policy that is referenced by an active guardrail.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateAutomatedReasoningPolicyTestCase">REST API Reference for UpdateAutomatedReasoningPolicyTestCase Operation</seealso>
+        public virtual Task<UpdateAutomatedReasoningPolicyTestCaseResponse> UpdateAutomatedReasoningPolicyTestCaseAsync(UpdateAutomatedReasoningPolicyTestCaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAutomatedReasoningPolicyTestCaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAutomatedReasoningPolicyTestCaseResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAutomatedReasoningPolicyTestCaseResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6101,7 +8107,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateGuardrail">REST API Reference for UpdateGuardrail Operation</seealso>
         public virtual UpdateGuardrailResponse UpdateGuardrail(UpdateGuardrailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGuardrailResponseUnmarshaller.Instance;
 
@@ -6195,7 +8201,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateGuardrail">REST API Reference for UpdateGuardrail Operation</seealso>
         public virtual Task<UpdateGuardrailResponse> UpdateGuardrailAsync(UpdateGuardrailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGuardrailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGuardrailResponseUnmarshaller.Instance;
             
@@ -6239,7 +8245,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateMarketplaceModelEndpoint">REST API Reference for UpdateMarketplaceModelEndpoint Operation</seealso>
         public virtual UpdateMarketplaceModelEndpointResponse UpdateMarketplaceModelEndpoint(UpdateMarketplaceModelEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMarketplaceModelEndpointResponseUnmarshaller.Instance;
 
@@ -6282,7 +8288,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateMarketplaceModelEndpoint">REST API Reference for UpdateMarketplaceModelEndpoint Operation</seealso>
         public virtual Task<UpdateMarketplaceModelEndpointResponse> UpdateMarketplaceModelEndpointAsync(UpdateMarketplaceModelEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMarketplaceModelEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMarketplaceModelEndpointResponseUnmarshaller.Instance;
             
@@ -6322,7 +8328,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateProvisionedModelThroughput">REST API Reference for UpdateProvisionedModelThroughput Operation</seealso>
         public virtual UpdateProvisionedModelThroughputResponse UpdateProvisionedModelThroughput(UpdateProvisionedModelThroughputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProvisionedModelThroughputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProvisionedModelThroughputResponseUnmarshaller.Instance;
 
@@ -6361,7 +8367,7 @@ namespace Amazon.Bedrock
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/UpdateProvisionedModelThroughput">REST API Reference for UpdateProvisionedModelThroughput Operation</seealso>
         public virtual Task<UpdateProvisionedModelThroughputResponse> UpdateProvisionedModelThroughputAsync(UpdateProvisionedModelThroughputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProvisionedModelThroughputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProvisionedModelThroughputResponseUnmarshaller.Instance;
             

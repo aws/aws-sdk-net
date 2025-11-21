@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TestFunction operation
     /// </summary>  
-    public class TestFunctionResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class TestFunctionResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             TestFunctionResponse response = new TestFunctionResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -121,6 +121,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, TestFunctionResponse response);
 
         private static TestFunctionResponseUnmarshaller _instance = new TestFunctionResponseUnmarshaller();        
 

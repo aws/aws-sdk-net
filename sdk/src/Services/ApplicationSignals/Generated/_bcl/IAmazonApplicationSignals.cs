@@ -490,6 +490,54 @@ namespace Amazon.ApplicationSignals
 
         #endregion
         
+        #region  DeleteGroupingConfiguration
+
+
+        /// <summary>
+        /// Deletes the grouping configuration for this account. This removes all custom grouping
+        /// attribute definitions that were previously configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroupingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGroupingConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteGroupingConfiguration">REST API Reference for DeleteGroupingConfiguration Operation</seealso>
+        DeleteGroupingConfigurationResponse DeleteGroupingConfiguration(DeleteGroupingConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the grouping configuration for this account. This removes all custom grouping
+        /// attribute definitions that were previously configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroupingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGroupingConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteGroupingConfiguration">REST API Reference for DeleteGroupingConfiguration Operation</seealso>
+        Task<DeleteGroupingConfigurationResponse> DeleteGroupingConfigurationAsync(DeleteGroupingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteServiceLevelObjective
 
 
@@ -619,6 +667,150 @@ namespace Amazon.ApplicationSignals
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/GetServiceLevelObjective">REST API Reference for GetServiceLevelObjective Operation</seealso>
         Task<GetServiceLevelObjectiveResponse> GetServiceLevelObjectiveAsync(GetServiceLevelObjectiveRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAuditFindings
+
+
+        /// <summary>
+        /// Returns a list of audit findings that provide automated analysis of service behavior
+        /// and root cause analysis. These findings help identify the most significant observations
+        /// about your services, including performance issues, anomalies, and potential problems.
+        /// The findings are generated using heuristic algorithms based on established troubleshooting
+        /// patterns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
+        /// 
+        /// <returns>The response from the ListAuditFindings service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListAuditFindings">REST API Reference for ListAuditFindings Operation</seealso>
+        ListAuditFindingsResponse ListAuditFindings(ListAuditFindingsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of audit findings that provide automated analysis of service behavior
+        /// and root cause analysis. These findings help identify the most significant observations
+        /// about your services, including performance issues, anomalies, and potential problems.
+        /// The findings are generated using heuristic algorithms based on established troubleshooting
+        /// patterns.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAuditFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAuditFindings service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListAuditFindings">REST API Reference for ListAuditFindings Operation</seealso>
+        Task<ListAuditFindingsResponse> ListAuditFindingsAsync(ListAuditFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListEntityEvents
+
+
+        /// <summary>
+        /// Returns a list of change events for a specific entity, such as deployments, configuration
+        /// changes, or other state-changing activities. This operation helps track the history
+        /// of changes that may have affected service performance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListEntityEvents service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListEntityEvents">REST API Reference for ListEntityEvents Operation</seealso>
+        ListEntityEventsResponse ListEntityEvents(ListEntityEventsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of change events for a specific entity, such as deployments, configuration
+        /// changes, or other state-changing activities. This operation helps track the history
+        /// of changes that may have affected service performance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntityEvents service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListEntityEvents">REST API Reference for ListEntityEvents Operation</seealso>
+        Task<ListEntityEventsResponse> ListEntityEventsAsync(ListEntityEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListGroupingAttributeDefinitions
+
+
+        /// <summary>
+        /// Returns the current grouping configuration for this account, including all custom
+        /// grouping attribute definitions that have been configured. These definitions determine
+        /// how services are logically grouped based on telemetry attributes, Amazon Web Services
+        /// tags, or predefined mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupingAttributeDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListGroupingAttributeDefinitions service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListGroupingAttributeDefinitions">REST API Reference for ListGroupingAttributeDefinitions Operation</seealso>
+        ListGroupingAttributeDefinitionsResponse ListGroupingAttributeDefinitions(ListGroupingAttributeDefinitionsRequest request);
+
+
+
+        /// <summary>
+        /// Returns the current grouping configuration for this account, including all custom
+        /// grouping attribute definitions that have been configured. These definitions determine
+        /// how services are logically grouped based on telemetry attributes, Amazon Web Services
+        /// tags, or predefined mappings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupingAttributeDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGroupingAttributeDefinitions service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListGroupingAttributeDefinitions">REST API Reference for ListGroupingAttributeDefinitions Operation</seealso>
+        Task<ListGroupingAttributeDefinitionsResponse> ListGroupingAttributeDefinitionsAsync(ListGroupingAttributeDefinitionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -886,6 +1078,50 @@ namespace Amazon.ApplicationSignals
 
         #endregion
         
+        #region  ListServiceStates
+
+
+        /// <summary>
+        /// Returns information about the last deployment and other change states of services.
+        /// This API provides visibility into recent changes that may have affected service performance,
+        /// helping with troubleshooting and change correlation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceStates service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceStates service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceStates">REST API Reference for ListServiceStates Operation</seealso>
+        ListServiceStatesResponse ListServiceStates(ListServiceStatesRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about the last deployment and other change states of services.
+        /// This API provides visibility into recent changes that may have affected service performance,
+        /// helping with troubleshooting and change correlation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceStates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceStates service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListServiceStates">REST API Reference for ListServiceStates Operation</seealso>
+        Task<ListServiceStatesResponse> ListServiceStatesAsync(ListServiceStatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -928,6 +1164,60 @@ namespace Amazon.ApplicationSignals
 
         #endregion
         
+        #region  PutGroupingConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the grouping configuration for this account. This operation allows
+        /// you to define custom grouping attributes that determine how services are logically
+        /// grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings.
+        /// These grouping attributes can then be used to organize and filter services in the
+        /// Application Signals console and APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutGroupingConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutGroupingConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/PutGroupingConfiguration">REST API Reference for PutGroupingConfiguration Operation</seealso>
+        PutGroupingConfigurationResponse PutGroupingConfiguration(PutGroupingConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates the grouping configuration for this account. This operation allows
+        /// you to define custom grouping attributes that determine how services are logically
+        /// grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings.
+        /// These grouping attributes can then be used to organize and filter services in the
+        /// Application Signals console and APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutGroupingConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutGroupingConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/PutGroupingConfiguration">REST API Reference for PutGroupingConfiguration Operation</seealso>
+        Task<PutGroupingConfigurationResponse> PutGroupingConfigurationAsync(PutGroupingConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartDiscovery
 
 
@@ -965,6 +1255,12 @@ namespace Amazon.ApplicationSignals
         ///  <c>autoscaling:DescribeAutoScalingGroups</c> 
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// A service-linked CloudTrail event channel is created to process CloudTrail events
+        /// and return change event information. This includes last deployment time, userName,
+        /// eventName, and other event metadata.
+        /// </para>
+        ///  
         /// <para>
         /// After completing this step, you still need to instrument your Java and Python applications
         /// to send data to Application Signals. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals-Enable.html">
@@ -1022,6 +1318,12 @@ namespace Amazon.ApplicationSignals
         ///  <c>autoscaling:DescribeAutoScalingGroups</c> 
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// A service-linked CloudTrail event channel is created to process CloudTrail events
+        /// and return change event information. This includes last deployment time, userName,
+        /// eventName, and other event metadata.
+        /// </para>
+        ///  
         /// <para>
         /// After completing this step, you still need to instrument your Java and Python applications
         /// to send data to Application Signals. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals-Enable.html">

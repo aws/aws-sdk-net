@@ -31,7 +31,7 @@ namespace Amazon.Braket.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
-    /// Creates an Amazon Braket job.
+    /// Creates an Amazon Braket hybrid job.
     /// </summary>
     public partial class CreateJobRequest : AmazonBraketRequest
     {
@@ -96,7 +96,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property CheckpointConfig. 
         /// <para>
-        /// Information about the output locations for job checkpoint data.
+        /// Information about the output locations for hybrid job checkpoint data.
         /// </para>
         /// </summary>
         public JobCheckpointConfig CheckpointConfig
@@ -114,7 +114,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique token that guarantees that the call to this API is idempotent.
+        /// The client token associated with this request that guarantees that the request is
+        /// idempotent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -133,7 +134,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property DeviceConfig. 
         /// <para>
-        /// The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.
+        /// The quantum processing unit (QPU) or simulator used to create an Amazon Braket hybrid
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -152,10 +154,20 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property HyperParameters. 
         /// <para>
-        /// Algorithm-specific parameters used by an Amazon Braket job that influence the quality
-        /// of the training job. The values are set with a string of JSON key:value pairs, where
-        /// the key is the name of the hyperparameter and the value is the value of th hyperparameter.
+        /// Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the
+        /// quality of the training job. The values are set with a map of JSON key:value pairs,
+        /// where the key is the name of the hyperparameter and the value is the value of the
+        /// hyperparameter.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not include any security-sensitive information including account access IDs, secrets,
+        /// or tokens in any hyperparameter fields. As part of the shared responsibility model,
+        /// you are responsible for any potential exposure, unauthorized access, or compromise
+        /// of your sensitive data if caused by security-sensitive information included in the
+        /// request hyperparameter variable or plain text fields.
+        /// </para>
+        ///  </important>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -223,7 +235,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the Amazon Braket job.
+        /// The name of the Amazon Braket hybrid job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]
@@ -242,7 +254,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// The path to the S3 location where you want to store job artifacts and the encryption
+        /// The path to the S3 location where you want to store hybrid job artifacts and the encryption
         /// key used to store them.
         /// </para>
         /// </summary>
@@ -264,7 +276,8 @@ namespace Amazon.Braket.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
         /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job
-        /// container on behalf of user, and output resources to the users' s3 buckets.
+        /// container on behalf of user, and output results and hybrid job details to the users'
+        /// s3 buckets.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -283,7 +296,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property StoppingCondition. 
         /// <para>
-        ///  The user-defined criteria that specifies when a job stops running.
+        ///  The user-defined criteria that specifies when a hybrid job stops running.
         /// </para>
         /// </summary>
         public JobStoppingCondition StoppingCondition
@@ -301,8 +314,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A tag object that consists of a key and an optional value, used to manage metadata
-        /// for Amazon Braket resources.
+        /// Tags to be added to the hybrid job you're creating.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

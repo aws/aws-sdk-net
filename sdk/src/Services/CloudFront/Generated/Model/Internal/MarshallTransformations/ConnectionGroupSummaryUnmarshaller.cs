@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConnectionGroupSummary Object
     /// </summary>  
-    public class ConnectionGroupSummaryUnmarshaller : IXmlUnmarshaller<ConnectionGroupSummary, XmlUnmarshallerContext>
+    public partial class ConnectionGroupSummaryUnmarshaller : IXmlUnmarshaller<ConnectionGroupSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -122,6 +122,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -130,6 +132,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ConnectionGroupSummary unmarshalledObject, int targetDepth);
+
         private static ConnectionGroupSummaryUnmarshaller _instance = new ConnectionGroupSummaryUnmarshaller();        
 
         /// <summary>

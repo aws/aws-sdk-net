@@ -64,8 +64,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property BaseThemeId. 
         /// <para>
-        /// The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All
-        /// themes initially inherit from a default Amazon QuickSight theme.
+        /// The theme ID, defined by Amazon Quick Sight, that a custom theme inherits from. All
+        /// themes initially inherit from a default Quick Sight theme.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

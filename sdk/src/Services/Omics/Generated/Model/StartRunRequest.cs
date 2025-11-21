@@ -111,6 +111,12 @@ namespace Amazon.Omics.Model
     /// To learn more about the retention modes, see <a href="https://docs.aws.amazon.com/omics/latest/dev/run-retention.html">Run
     /// retention mode</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// You can use Amazon Q CLI to analyze run logs and make performance optimization recommendations.
+    /// To get started, see the <a href="https://github.com/awslabs/mcp/tree/main/src/aws-healthomics-mcp-server">Amazon
+    /// Web Services HealthOmics MCP server</a> on GitHub.
+    /// </para>
     /// </summary>
     public partial class StartRunRequest : AmazonOmicsRequest
     {
@@ -222,7 +228,7 @@ namespace Amazon.Omics.Model
         /// The role ARN must have permission to write to this S3 bucket.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=750)]
+        [AWSProperty(Required=true, Min=1, Max=750)]
         public string OutputUri
         {
             get { return this._outputUri; }

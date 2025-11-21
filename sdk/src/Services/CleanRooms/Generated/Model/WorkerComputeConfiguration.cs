@@ -36,12 +36,21 @@ namespace Amazon.CleanRooms.Model
     public partial class WorkerComputeConfiguration
     {
         private int? _number;
+        private WorkerComputeConfigurationProperties _properties;
         private WorkerComputeType _type;
 
         /// <summary>
         /// Gets and sets the property Number. 
         /// <para>
         ///  The number of workers.
+        /// </para>
+        ///  
+        /// <para>
+        /// SQL queries support a minimum value of 2 and a maximum value of 400. 
+        /// </para>
+        ///  
+        /// <para>
+        /// PySpark jobs support a minimum value of 4 and a maximum value of 128.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=400)]
@@ -55,6 +64,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetNumber()
         {
             return this._number.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Properties. 
+        /// <para>
+        /// The configuration properties for the worker compute environment. These properties
+        /// allow you to customize the compute settings for your Clean Rooms workloads.
+        /// </para>
+        /// </summary>
+        public WorkerComputeConfigurationProperties Properties
+        {
+            get { return this._properties; }
+            set { this._properties = value; }
+        }
+
+        // Check to see if Properties property is set
+        internal bool IsSetProperties()
+        {
+            return this._properties != null;
         }
 
         /// <summary>

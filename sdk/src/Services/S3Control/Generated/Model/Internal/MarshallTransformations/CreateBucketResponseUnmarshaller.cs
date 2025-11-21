@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateBucket operation
     /// </summary>  
-    public class CreateBucketResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class CreateBucketResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -50,6 +50,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("Location"))
                 response.Location = context.ResponseData.GetHeaderValue("Location");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -79,7 +80,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -113,6 +113,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, CreateBucketResponse response);
 
         private static CreateBucketResponseUnmarshaller _instance = new CreateBucketResponseUnmarshaller();        
 

@@ -154,6 +154,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

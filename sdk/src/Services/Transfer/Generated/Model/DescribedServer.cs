@@ -384,7 +384,14 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The protocol settings that are configured for your server.
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
+        /// <para>
+        /// Avoid placing Network Load Balancers (NLBs) or NAT gateways in front of Transfer Family
+        /// servers, as this increases costs and can cause performance issues, including reduced
+        /// connection limits for FTPS. For more details, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/infrastructure-security.html#nlb-considerations">
+        /// Avoid placing NLBs and NATs in front of Transfer Family</a>.
+        /// </para>
+        ///  </note> <ul> <li> 
         /// <para>
         ///  To indicate passive mode (for FTP and FTPS protocols), use the <c>PassiveIp</c> parameter.
         /// Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall,
@@ -499,9 +506,16 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property S3StorageOptions. 
         /// <para>
         /// Specifies whether or not performance for your Amazon S3 directories is optimized.
-        /// This is disabled by default.
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// If using the console, this is enabled by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If using the API or CLI, this is disabled by default.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// By default, home directory mappings have a <c>TYPE</c> of <c>DIRECTORY</c>. If you
         /// enable this option, you would then need to explicitly set the <c>HomeDirectoryMapEntry</c>

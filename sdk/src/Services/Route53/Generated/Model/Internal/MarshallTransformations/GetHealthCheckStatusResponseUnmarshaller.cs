@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetHealthCheckStatus operation
     /// </summary>  
-    public class GetHealthCheckStatusResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class GetHealthCheckStatusResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             GetHealthCheckStatusResponse response = new GetHealthCheckStatusResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -81,7 +82,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -115,6 +115,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetHealthCheckStatusResponse response);
 
         private static GetHealthCheckStatusResponseUnmarshaller _instance = new GetHealthCheckStatusResponseUnmarshaller();        
 

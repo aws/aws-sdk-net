@@ -43,7 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// The margin provided for the calculation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200000)]
         public long? Margin
         {
             get { return this._margin; }
@@ -62,7 +62,7 @@ namespace Amazon.GeoRoutes.Model
         /// The maximum size of the radius provided for the calculation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200000)]
         public long? MaxRadius
         {
             get { return this._maxRadius; }

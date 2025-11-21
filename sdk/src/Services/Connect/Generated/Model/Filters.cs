@@ -34,10 +34,34 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class Filters
     {
+        private List<string> _agentStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _queues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _routingProfiles = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _routingStepExpressions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AgentStatuses. 
+        /// <para>
+        /// A list of up to 50 agent status IDs or ARNs.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AgentStatuses
+        {
+            get { return this._agentStatuses; }
+            set { this._agentStatuses = value; }
+        }
+
+        // Check to see if AgentStatuses property is set
+        internal bool IsSetAgentStatuses()
+        {
+            return this._agentStatuses != null && (this._agentStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Channels. 

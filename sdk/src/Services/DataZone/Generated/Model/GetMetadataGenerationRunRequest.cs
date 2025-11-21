@@ -32,6 +32,24 @@ namespace Amazon.DataZone.Model
     /// <summary>
     /// Container for the parameters to the GetMetadataGenerationRun operation.
     /// Gets a metadata generation run in Amazon DataZone.
+    /// 
+    ///  
+    /// <para>
+    /// Prerequisites:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Valid domain and run identifier. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The metadata generation run must exist.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User must have read access to the metadata run.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetMetadataGenerationRunRequest : AmazonDataZoneRequest
     {

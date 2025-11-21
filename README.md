@@ -150,8 +150,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.
 * [AWSSDK.AppSync](https://www.nuget.org/packages/AWSSDK.AppSync/)
 	* AWS AppSync is an enterprise-level, fully managed GraphQL service with real-time data synchronization and offline programming features.
-* [AWSSDK.AppTest](https://www.nuget.org/packages/AWSSDK.AppTest/)
-	* AWS Mainframe Modernization Application Testing is an AWS Mainframe Modernization service feature that automates functional equivalence testing for mainframe application modernization and migration to AWS, and regression testing.
+* [AWSSDK.ARCRegionswitch](https://www.nuget.org/packages/AWSSDK.ARCRegionswitch/)
+	* This is the initial SDK release for Region switch
 * [AWSSDK.ARCZonalShift](https://www.nuget.org/packages/AWSSDK.ARCZonalShift/)
 	* Amazon Route 53 Application Recovery Controller Zonal Shift is a new service that makes it easy to shift traffic away from an Availability Zone in a Region. See the developer guide for more information: https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html
 * [AWSSDK.Artifact](https://www.nuget.org/packages/AWSSDK.Artifact/)
@@ -184,10 +184,14 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Add support for searching backups
 * [AWSSDK.Batch](https://www.nuget.org/packages/AWSSDK.Batch/)
 	* AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. 
+* [AWSSDK.BCMDashboards](https://www.nuget.org/packages/AWSSDK.BCMDashboards/)
+	* Billing and Cost Management Dashboards enables users to create dashboards that combine multiple visualizations of cost and usage data. Users can create, manage, and share dashboards. Tags are also available for dashboards.
 * [AWSSDK.BCMDataExports](https://www.nuget.org/packages/AWSSDK.BCMDataExports/)
 	* Users can create, read, update, delete Exports of billing and cost management data.  Users can get details of Export Executions and details of Tables for exporting.  Tagging support is provided for Exports
 * [AWSSDK.BCMPricingCalculator](https://www.nuget.org/packages/AWSSDK.BCMPricingCalculator/)
 	* Initial release of the AWS Billing and Cost Management Pricing Calculator API.
+* [AWSSDK.BCMRecommendedActions](https://www.nuget.org/packages/AWSSDK.BCMRecommendedActions/)
+	* Initial SDK release for AWS Billing and Cost Management Recommended Actions.
 * [AWSSDK.Bedrock](https://www.nuget.org/packages/AWSSDK.Bedrock/)
 	* Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.
 * [AWSSDK.BedrockAgent](https://www.nuget.org/packages/AWSSDK.BedrockAgent/)
@@ -490,8 +494,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* The AWS IoT Events service allows customers to monitor their IoT devices and sensors to detect failures or changes in operation and to trigger actions when these events occur
 * [AWSSDK.IoTEventsData](https://www.nuget.org/packages/AWSSDK.IoTEventsData/)
 	* The AWS IoT Events service allows customers to monitor their IoT devices and sensors to detect failures or changes in operation and to trigger actions when these events occur
-* [AWSSDK.IoTFleetHub](https://www.nuget.org/packages/AWSSDK.IoTFleetHub/)
-	* AWS IoT Fleet Hub, a new feature of AWS IoT Device Management that provides a web application for monitoring and managing device fleets connected to AWS IoT at scale.
 * [AWSSDK.IoTFleetWise](https://www.nuget.org/packages/AWSSDK.IoTFleetWise/)
 	* General availability (GA) for AWS IoT Fleetwise. It adds AWS IoT Fleetwise to AWS SDK. For more information, see https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/Welcome.html.
 * [AWSSDK.IoTJobsDataPlane](https://www.nuget.org/packages/AWSSDK.IoTJobsDataPlane/)
@@ -572,10 +574,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Initial release of Amazon Location Service. A new geospatial service providing capabilities to render maps, geocode/reverse geocode, track device locations, and detect geofence entry/exit events.
 * [AWSSDK.LookoutEquipment](https://www.nuget.org/packages/AWSSDK.LookoutEquipment/)
 	* This release introduces support for Amazon Lookout for Equipment.
-* [AWSSDK.LookoutforVision](https://www.nuget.org/packages/AWSSDK.LookoutforVision/)
-	* This release introduces support for Amazon Lookout for Vision.
-* [AWSSDK.LookoutMetrics](https://www.nuget.org/packages/AWSSDK.LookoutMetrics/)
-	* Amazon Lookout for Metrics is now generally available. You can use Lookout for Metrics to monitor your data for anomalies. For more information, see the Amazon Lookout for Metrics Developer Guide.
 * [AWSSDK.MachineLearning](https://www.nuget.org/packages/AWSSDK.MachineLearning/)
 	* Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
 * [AWSSDK.Macie2](https://www.nuget.org/packages/AWSSDK.Macie2/)
@@ -644,6 +642,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon MTurk is a web service that provides an on-demand, scalable, human workforce to complete jobs that humans can do better than computers, for example, recognizing objects in photos.
 * [AWSSDK.MWAA](https://www.nuget.org/packages/AWSSDK.MWAA/)
 	* (New Service) Amazon MWAA is a managed service for Apache Airflow that makes it easy for data engineers and data scientists to execute data processing workflows in the cloud.
+* [AWSSDK.MWAAServerless](https://www.nuget.org/packages/AWSSDK.MWAAServerless/)
+	* Amazon MWAA now offers serverless deployment, eliminating operational overhead while optimizing costs. The service supports YAML and Python-based workflows, with 80+ AWS Operators. It provides isolated execution, IAM permissions, and automatic scaling with pay-per-use pricing.
 * [AWSSDK.Neptune](https://www.nuget.org/packages/AWSSDK.Neptune/)
 	* Amazon Neptune is a fast, reliable graph database service that makes it easy to build and run applications that work with highly connected datasets. Neptune supports popular graph models Property Graph and W3C's Resource Description Frame (RDF), and their respective query languages Apache TinkerPop Gremlin 3.3.2 and SPARQL 1.1. 
 * [AWSSDK.Neptunedata](https://www.nuget.org/packages/AWSSDK.Neptunedata/)
@@ -674,10 +674,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Publish SDK for Amazon OpenSearch Serverless
 * [AWSSDK.OpenSearchService](https://www.nuget.org/packages/AWSSDK.OpenSearchService/)
 	* Updated Configuration APIs for Amazon OpenSearch Service (successor to Amazon Elasticsearch Service)
-* [AWSSDK.OpsWorks](https://www.nuget.org/packages/AWSSDK.OpsWorks/)
-	* AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage.
-* [AWSSDK.OpsWorksCM](https://www.nuget.org/packages/AWSSDK.OpsWorksCM/)
-	* AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.
 * [AWSSDK.Organizations](https://www.nuget.org/packages/AWSSDK.Organizations/)
 	* AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
 * [AWSSDK.OSIS](https://www.nuget.org/packages/AWSSDK.OSIS/)
@@ -686,6 +682,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This is the initial release for AWS Outposts, a fully managed service that extends AWS infrastructure, services, APIs, and tools to customer sites. AWS Outposts enables you to launch and run EC2 instances and EBS volumes locally at your on-premises location. This release introduces new APIs for creating and viewing Outposts. 
 * [AWSSDK.Panorama](https://www.nuget.org/packages/AWSSDK.Panorama/)
 	* General availability for AWS Panorama. AWS SDK for Panorama includes APIs to manage your devices and nodes, and deploy computer vision applications to the edge. For more information, see the AWS Panorama documentation at http://docs.aws.amazon.com/panorama
+* [AWSSDK.PartnerCentralChannel](https://www.nuget.org/packages/AWSSDK.PartnerCentralChannel/)
+	* Initial GA launch of Partner Central Channel
 * [AWSSDK.PartnerCentralSelling](https://www.nuget.org/packages/AWSSDK.PartnerCentralSelling/)
 	* Announcing AWS Partner Central API for Selling: This service launch Introduces new APIs for co-selling opportunity management and related functions. Key features include notifications, a dynamic sandbox for testing, and streamlined validations.
 * [AWSSDK.PaymentCryptography](https://www.nuget.org/packages/AWSSDK.PaymentCryptography/)
@@ -730,10 +728,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Q - a generative AI powered application that your employees can use to ask questions and get answers from knowledge spread across disparate content repositories, summarize reports, write articles, take actions, and much more - all within their company's connected content repositories.
 * [AWSSDK.QConnect](https://www.nuget.org/packages/AWSSDK.QConnect/)
 	* Amazon Q in Connect, an LLM-enhanced evolution of Amazon Connect Wisdom. This release adds generative AI support to Amazon Q Connect QueryAssistant and GetRecommendations APIs.
-* [AWSSDK.QLDB](https://www.nuget.org/packages/AWSSDK.QLDB/)
-	* Introduces operations needed for managing Amazon QLDB ledgers. This includes the ability to create, delete, modify, and describe Amazon QLDB ledgers. This also includes the ability to cryptographically verify documents and export the journal in a ledger.
-* [AWSSDK.QLDBSession](https://www.nuget.org/packages/AWSSDK.QLDBSession/)
-	* Amazon QLDB introduces the SendCommand API to interact with data in Amazon QLDB ledgers.
 * [AWSSDK.QuickSight](https://www.nuget.org/packages/AWSSDK.QuickSight/)
 	* Amazon QuickSight is a fully managed, serverless, cloud business intelligence system that allows you to extend data and insights to every user in your organization. The first release of APIs for Amazon QuickSight introduces embedding and user/group management capabilities. The get-dashboard-embed-url API allows you to obtain an authenticated dashboard URL that can be embedded in application domains whitelisted for QuickSight dashboard embedding. User APIs allow you to programmatically expand and manage your QuickSight deployments while group APIs allow easier permissions management for resources within QuickSight.
 * [AWSSDK.RAM](https://www.nuget.org/packages/AWSSDK.RAM/)
@@ -762,8 +756,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.
 * [AWSSDK.ResourceGroupsTaggingAPI](https://www.nuget.org/packages/AWSSDK.ResourceGroupsTaggingAPI/)
 	* Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.
-* [AWSSDK.RoboMaker](https://www.nuget.org/packages/AWSSDK.RoboMaker/)
-	* (New Service) AWS RoboMaker is a service that makes it easy to develop, simulate, and deploy intelligent robotics applications at scale. 
 * [AWSSDK.Route53](https://www.nuget.org/packages/AWSSDK.Route53/)
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
 * [AWSSDK.Route53Domains](https://www.nuget.org/packages/AWSSDK.Route53Domains/)
@@ -778,6 +770,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Route 53 Application Recovery Controller's readiness check capability continually monitors resource quotas, capacity, and network routing policies to ensure that the recovery environment is scaled and configured to take over when needed.
 * [AWSSDK.Route53Resolver](https://www.nuget.org/packages/AWSSDK.Route53Resolver/)
 	* This is the first release of the Amazon Route 53 Resolver API. Customers now have the ability to create and manage Amazon Route 53 Resolver endpoints and Amazon Route 53 Resolver rules.
+* [AWSSDK.RTBFabric](https://www.nuget.org/packages/AWSSDK.RTBFabric/)
+	* Update for general availability of AWS RTB Fabric service.
 * [AWSSDK.S3](https://www.nuget.org/packages/AWSSDK.S3/)
 	* Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage.
 * [AWSSDK.S3Control](https://www.nuget.org/packages/AWSSDK.S3Control/)
@@ -818,8 +812,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* The AWS Security Token Service (AWS STS) enables you to provide trusted users with temporary credentials that provide controlled access to your AWS resources.
 * [AWSSDK.ServerlessApplicationRepository](https://www.nuget.org/packages/AWSSDK.ServerlessApplicationRepository/)
 	* First release of the AWS Serverless Application Repository SDK.
-* [AWSSDK.ServerMigrationService](https://www.nuget.org/packages/AWSSDK.ServerMigrationService/)
-	* AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS.
 * [AWSSDK.ServiceCatalog](https://www.nuget.org/packages/AWSSDK.ServiceCatalog/)
 	* AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.
 * [AWSSDK.ServiceDiscovery](https://www.nuget.org/packages/AWSSDK.ServiceDiscovery/)
@@ -830,6 +822,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Shield protects web applications from large and sophisticated DDoS attacks at Layer 3, 4 and 7. In addition AWS Shield provides visibility in attacks, and access to 24X7 DDoS Response Team.
 * [AWSSDK.Signer](https://www.nuget.org/packages/AWSSDK.Signer/)
 	* With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web Services (AWS). Code signing is available through Amazon FreeRTOS and AWS IoT Device Management, and integrated with AWS Certificate Manager (ACM).
+* [AWSSDK.Signin](https://www.nuget.org/packages/AWSSDK.Signin/)
+	* AWS Sign-In manages authentication for AWS services. This service provides secure authentication flows for accessing AWS resources from the console and developer tools. This release adds the CreateOAuth2Token API, which can be used to fetch OAuth2 access tokens and refresh tokens from Sign-In.
 * [AWSSDK.SimpleDB](https://www.nuget.org/packages/AWSSDK.SimpleDB/)
 	* Amazon SimpleDB is a highly available, scalable, and flexible non-relational data store that enables you to store and query data items using web services requests.
 * [AWSSDK.SimpleEmail](https://www.nuget.org/packages/AWSSDK.SimpleEmail/)

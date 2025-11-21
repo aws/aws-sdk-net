@@ -46,7 +46,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The name of the request method. The maximum size is 40 characters. The allowed characters
+        /// The name of the request method. The maximum length is 40 characters. The allowed characters
         /// are A-Z, hyphen (-), and underscore (_). The comparison is case sensitive. Wildcards
         /// are not supported; therefore, the method name must be an exact match.
         /// </para>

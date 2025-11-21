@@ -129,6 +129,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPassthroughSettings())
+            {
+                context.Writer.WritePropertyName("passthroughSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PassthroughSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.PassthroughSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetProresSettings())
             {
                 context.Writer.WritePropertyName("proresSettings");

@@ -41,6 +41,7 @@ namespace Amazon.Notifications.Model
         private int? _maxResults;
         private string _nextToken;
         private NotificationConfigurationStatus _status;
+        private NotificationConfigurationSubtype _subtype;
 
         /// <summary>
         /// Gets and sets the property ChannelArn. 
@@ -187,6 +188,24 @@ namespace Amazon.Notifications.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Subtype. 
+        /// <para>
+        /// The subtype used to filter the notification configurations in the request.
+        /// </para>
+        /// </summary>
+        public NotificationConfigurationSubtype Subtype
+        {
+            get { return this._subtype; }
+            set { this._subtype = value; }
+        }
+
+        // Check to see if Subtype property is set
+        internal bool IsSetSubtype()
+        {
+            return this._subtype != null;
         }
 
     }

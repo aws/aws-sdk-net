@@ -37,8 +37,10 @@ namespace Amazon.Billing.Model
         private string _arn;
         private BillingViewType _billingViewType;
         private string _description;
+        private BillingViewHealthStatus _healthStatus;
         private string _name;
         private string _ownerAccountId;
+        private string _sourceAccountId;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -97,6 +99,24 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HealthStatus. 
+        /// <para>
+        ///  The current health status of the billing view. 
+        /// </para>
+        /// </summary>
+        public BillingViewHealthStatus HealthStatus
+        {
+            get { return this._healthStatus; }
+            set { this._healthStatus = value; }
+        }
+
+        // Check to see if HealthStatus property is set
+        internal bool IsSetHealthStatus()
+        {
+            return this._healthStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         ///  A list of names of the Billing view. 
@@ -131,6 +151,25 @@ namespace Amazon.Billing.Model
         internal bool IsSetOwnerAccountId()
         {
             return this._ownerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAccountId. 
+        /// <para>
+        ///  The Amazon Web Services account ID that owns the source billing view, if this is
+        /// a derived billing view. 
+        /// </para>
+        /// </summary>
+        public string SourceAccountId
+        {
+            get { return this._sourceAccountId; }
+            set { this._sourceAccountId = value; }
+        }
+
+        // Check to see if SourceAccountId property is set
+        internal bool IsSetSourceAccountId()
+        {
+            return this._sourceAccountId != null;
         }
 
     }

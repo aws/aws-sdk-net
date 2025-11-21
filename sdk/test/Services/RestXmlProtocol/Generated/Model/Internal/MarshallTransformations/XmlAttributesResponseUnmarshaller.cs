@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for XmlAttributes operation
     /// </summary>  
-    public class XmlAttributesResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class XmlAttributesResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             XmlAttributesResponse response = new XmlAttributesResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -66,7 +67,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("@test", targetDepth - 1))
-
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         response.Attr = unmarshaller.Unmarshall(context);
@@ -84,7 +84,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -110,6 +109,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, XmlAttributesResponse response);
 
         private static XmlAttributesResponseUnmarshaller _instance = new XmlAttributesResponseUnmarshaller();        
 

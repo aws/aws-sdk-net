@@ -58,6 +58,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ClientSecret);
             }
 
+            if(requestObject.IsSetTenantId())
+            {
+                context.Writer.WritePropertyName("tenantId");
+                context.Writer.WriteStringValue(requestObject.TenantId);
+            }
+
         }
 
         /// <summary>

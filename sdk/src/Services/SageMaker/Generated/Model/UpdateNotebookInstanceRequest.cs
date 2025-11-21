@@ -46,8 +46,10 @@ namespace Amazon.SageMaker.Model
         private bool? _disassociateLifecycleConfig;
         private InstanceMetadataServiceConfiguration _instanceMetadataServiceConfiguration;
         private InstanceType _instanceType;
+        private IPAddressType _ipAddressType;
         private string _lifecycleConfigName;
         private string _notebookInstanceName;
+        private string _platformIdentifier;
         private string _roleArn;
         private RootAccess _rootAccess;
         private int? _volumeSizeInGB;
@@ -257,6 +259,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the notebook instance. Specify <c>ipv4</c> for IPv4-only connectivity
+        /// or <c>dualstack</c> for both IPv4 and IPv6 connectivity. The notebook instance must
+        /// be stopped before updating this setting. When you specify <c>dualstack</c>, the subnet
+        /// must support IPv6 addressing.
+        /// </para>
+        /// </summary>
+        public IPAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LifecycleConfigName. 
         /// <para>
         /// The name of a lifecycle configuration to associate with the notebook instance. For
@@ -294,6 +317,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNotebookInstanceName()
         {
             return this._notebookInstanceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformIdentifier. 
+        /// <para>
+        /// The platform identifier of the notebook instance runtime environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public string PlatformIdentifier
+        {
+            get { return this._platformIdentifier; }
+            set { this._platformIdentifier = value; }
+        }
+
+        // Check to see if PlatformIdentifier property is set
+        internal bool IsSetPlatformIdentifier()
+        {
+            return this._platformIdentifier != null;
         }
 
         /// <summary>

@@ -125,11 +125,61 @@ namespace Amazon.IotData
         #endregion
 
 
+        #region  DeleteConnection
+
+        internal virtual DeleteConnectionResponse DeleteConnection(DeleteConnectionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disconnects a connected MQTT client from Amazon Web Services IoT Core. When you disconnect
+        /// a client, Amazon Web Services IoT Core closes the client's network connection and
+        /// optionally cleans the session state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnection service method, as returned by IotData.</returns>
+        /// <exception cref="Amazon.IotData.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IotData.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteConnection">REST API Reference for DeleteConnection Operation</seealso>
+        public virtual Task<DeleteConnectionResponse> DeleteConnectionAsync(DeleteConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConnectionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteThingShadow
 
         internal virtual DeleteThingShadowResponse DeleteThingShadow(DeleteThingShadowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
 
@@ -185,7 +235,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/DeleteThingShadow">REST API Reference for DeleteThingShadow Operation</seealso>
         public virtual Task<DeleteThingShadowResponse> DeleteThingShadowAsync(DeleteThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteThingShadowResponseUnmarshaller.Instance;
 
@@ -197,7 +247,7 @@ namespace Amazon.IotData
 
         internal virtual GetRetainedMessageResponse GetRetainedMessage(GetRetainedMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRetainedMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRetainedMessageResponseUnmarshaller.Instance;
 
@@ -216,7 +266,7 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">GetRetainedMessage</a>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html">GetRetainedMessage</a>
         /// action.
         /// </para>
         ///  
@@ -255,7 +305,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetRetainedMessage">REST API Reference for GetRetainedMessage Operation</seealso>
         public virtual Task<GetRetainedMessageResponse> GetRetainedMessageAsync(GetRetainedMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetRetainedMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetRetainedMessageResponseUnmarshaller.Instance;
 
@@ -267,7 +317,7 @@ namespace Amazon.IotData
 
         internal virtual GetThingShadowResponse GetThingShadow(GetThingShadowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetThingShadowResponseUnmarshaller.Instance;
 
@@ -323,7 +373,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/GetThingShadow">REST API Reference for GetThingShadow Operation</seealso>
         public virtual Task<GetThingShadowResponse> GetThingShadowAsync(GetThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetThingShadowResponseUnmarshaller.Instance;
 
@@ -335,7 +385,7 @@ namespace Amazon.IotData
 
         internal virtual ListNamedShadowsForThingResponse ListNamedShadowsForThing(ListNamedShadowsForThingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamedShadowsForThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamedShadowsForThingResponseUnmarshaller.Instance;
 
@@ -383,7 +433,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListNamedShadowsForThing">REST API Reference for ListNamedShadowsForThing Operation</seealso>
         public virtual Task<ListNamedShadowsForThingResponse> ListNamedShadowsForThingAsync(ListNamedShadowsForThingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListNamedShadowsForThingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListNamedShadowsForThingResponseUnmarshaller.Instance;
 
@@ -395,7 +445,7 @@ namespace Amazon.IotData
 
         internal virtual ListRetainedMessagesResponse ListRetainedMessages(ListRetainedMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetainedMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetainedMessagesResponseUnmarshaller.Instance;
 
@@ -420,7 +470,7 @@ namespace Amazon.IotData
         /// </para>
         ///  
         /// <para>
-        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">ListRetainedMessages</a>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html">ListRetainedMessages</a>
         /// action.
         /// </para>
         ///  
@@ -456,7 +506,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/ListRetainedMessages">REST API Reference for ListRetainedMessages Operation</seealso>
         public virtual Task<ListRetainedMessagesResponse> ListRetainedMessagesAsync(ListRetainedMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRetainedMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRetainedMessagesResponseUnmarshaller.Instance;
 
@@ -468,7 +518,7 @@ namespace Amazon.IotData
 
         internal virtual PublishResponse Publish(PublishRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
 
@@ -520,7 +570,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish">REST API Reference for Publish Operation</seealso>
         public virtual Task<PublishResponse> PublishAsync(PublishRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishResponseUnmarshaller.Instance;
 
@@ -532,7 +582,7 @@ namespace Amazon.IotData
 
         internal virtual UpdateThingShadowResponse UpdateThingShadow(UpdateThingShadowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
 
@@ -591,7 +641,7 @@ namespace Amazon.IotData
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/UpdateThingShadow">REST API Reference for UpdateThingShadow Operation</seealso>
         public virtual Task<UpdateThingShadowResponse> UpdateThingShadowAsync(UpdateThingShadowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateThingShadowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateThingShadowResponseUnmarshaller.Instance;
 

@@ -34,12 +34,11 @@ namespace Amazon.LocationService.Model
     /// Creates an API key resource in your Amazon Web Services account, which lets you grant
     /// actions for Amazon Location resources to the API key bearer.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">Using
-    /// API keys</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Use
+    /// API keys to authenticate</a> in the <i>Amazon Location Service Developer Guide</i>.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class CreateKeyRequest : AmazonLocationServiceRequest
     {

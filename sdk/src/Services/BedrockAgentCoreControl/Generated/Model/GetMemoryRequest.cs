@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMemory operation.
-    /// Retrieve an existing memory.
+    /// Retrieve an existing Amazon Bedrock AgentCore Memory resource.
     /// </summary>
     public partial class GetMemoryRequest : AmazonBedrockAgentCoreControlRequest
     {

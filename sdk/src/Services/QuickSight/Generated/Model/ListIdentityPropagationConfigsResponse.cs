@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// A list of services and their authorized targets that the Amazon QuickSight IAM Identity
+        /// A list of services and their authorized targets that the Quick Sight IAM Identity
         /// Center application can access.
         /// </para>
         /// <para />

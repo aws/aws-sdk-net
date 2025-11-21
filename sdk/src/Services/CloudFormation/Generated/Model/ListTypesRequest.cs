@@ -31,7 +31,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTypes operation.
-    /// Returns summary information about extension that have been registered with CloudFormation.
+    /// Returns summary information about all extensions, including your private resource
+    /// types, modules, and Hooks as well as all public extensions from Amazon Web Services
+    /// and third-party publishers.
     /// </summary>
     public partial class ListTypesRequest : AmazonCloudFormationRequest
     {
@@ -125,11 +127,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous paginated request didn't return all the remaining results, the response
-        /// object's <c>NextToken</c> parameter value is set to a token. To retrieve the next
-        /// set of results, call this action again and assign that token to the request object's
-        /// <c>NextToken</c> parameter. If there are no remaining results, the previous response
-        /// object's <c>NextToken</c> parameter is set to <c>null</c>.
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -231,8 +230,8 @@ namespace Amazon.CloudFormation.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <c>PUBLIC</c>: Extensions that are publicly visible and available to be activated
-        /// within any Amazon Web Services account. This includes extensions from Amazon Web Services,
-        /// in addition to third-party publishers.
+        /// within any Amazon Web Services account. This includes extensions from Amazon Web Services
+        /// and third-party publishers.
         /// </para>
         ///  </li> </ul> 
         /// <para>

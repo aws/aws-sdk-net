@@ -62,6 +62,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceArn))
+                throw new AmazonPinpointEmailException("Request object does not have required field ResourceArn set");
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));

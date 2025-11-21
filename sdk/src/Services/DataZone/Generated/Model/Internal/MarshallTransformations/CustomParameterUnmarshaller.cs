@@ -86,6 +86,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsOptional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("isUpdateSupported", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.IsUpdateSupported = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("keyName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

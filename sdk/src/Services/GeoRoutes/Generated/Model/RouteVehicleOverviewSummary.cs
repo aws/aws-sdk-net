@@ -50,7 +50,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? BestCaseDuration
         {
             get { return this._bestCaseDuration; }
@@ -69,7 +69,7 @@ namespace Amazon.GeoRoutes.Model
         /// Distance of the step.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
         public long? Distance
         {
             get { return this._distance; }
@@ -92,7 +92,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=4294967295)]
         public long? Duration
         {
             get { return this._duration; }
@@ -115,7 +115,7 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>seconds</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4294967295)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4294967295)]
         public long? TypicalDuration
         {
             get { return this._typicalDuration; }

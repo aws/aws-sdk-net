@@ -262,7 +262,8 @@ namespace Amazon.IVSRealTime.Model
         /// Gets and sets the property Replica. 
         /// <para>
         /// If true, this indicates the <c>participantId</c> is a replicated participant. If this
-        /// is a subscribe event, then this flag refers to <c>remoteParticipantId</c>.
+        /// is a subscribe event, then this flag refers to <c>remoteParticipantId</c>. Default:
+        /// <c>false</c>.
         /// </para>
         /// </summary>
         public bool? Replica

@@ -71,9 +71,17 @@ namespace Amazon.NetworkManager
         /// </summary>
         public static readonly AttachmentErrorCode VPC_NOT_FOUND = new AttachmentErrorCode("VPC_NOT_FOUND");
         /// <summary>
+        /// Constant VPC_UNSUPPORTED_FEATURES for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode VPC_UNSUPPORTED_FEATURES = new AttachmentErrorCode("VPC_UNSUPPORTED_FEATURES");
+        /// <summary>
         /// Constant VPN_CONNECTION_NOT_FOUND for AttachmentErrorCode
         /// </summary>
         public static readonly AttachmentErrorCode VPN_CONNECTION_NOT_FOUND = new AttachmentErrorCode("VPN_CONNECTION_NOT_FOUND");
+        /// <summary>
+        /// Constant VPN_EXISTING_ASSOCIATIONS for AttachmentErrorCode
+        /// </summary>
+        public static readonly AttachmentErrorCode VPN_EXISTING_ASSOCIATIONS = new AttachmentErrorCode("VPN_EXISTING_ASSOCIATIONS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -466,6 +474,22 @@ namespace Amazon.NetworkManager
         /// Constant NETWORK_FUNCTION_GROUP for ChangeType
         /// </summary>
         public static readonly ChangeType NETWORK_FUNCTION_GROUP = new ChangeType("NETWORK_FUNCTION_GROUP");
+        /// <summary>
+        /// Constant ROUTING_POLICY for ChangeType
+        /// </summary>
+        public static readonly ChangeType ROUTING_POLICY = new ChangeType("ROUTING_POLICY");
+        /// <summary>
+        /// Constant ROUTING_POLICY_ATTACHMENT_ASSOCIATION for ChangeType
+        /// </summary>
+        public static readonly ChangeType ROUTING_POLICY_ATTACHMENT_ASSOCIATION = new ChangeType("ROUTING_POLICY_ATTACHMENT_ASSOCIATION");
+        /// <summary>
+        /// Constant ROUTING_POLICY_EDGE_ASSOCIATION for ChangeType
+        /// </summary>
+        public static readonly ChangeType ROUTING_POLICY_EDGE_ASSOCIATION = new ChangeType("ROUTING_POLICY_EDGE_ASSOCIATION");
+        /// <summary>
+        /// Constant ROUTING_POLICY_SEGMENT_ASSOCIATION for ChangeType
+        /// </summary>
+        public static readonly ChangeType ROUTING_POLICY_SEGMENT_ASSOCIATION = new ChangeType("ROUTING_POLICY_SEGMENT_ASSOCIATION");
         /// <summary>
         /// Constant SEGMENT_ACTIONS_CONFIGURATION for ChangeType
         /// </summary>
@@ -1756,6 +1780,56 @@ namespace Amazon.NetworkManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RouteType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RoutingPolicyDirection.
+    /// </summary>
+    public class RoutingPolicyDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Inbound for RoutingPolicyDirection
+        /// </summary>
+        public static readonly RoutingPolicyDirection Inbound = new RoutingPolicyDirection("inbound");
+        /// <summary>
+        /// Constant Outbound for RoutingPolicyDirection
+        /// </summary>
+        public static readonly RoutingPolicyDirection Outbound = new RoutingPolicyDirection("outbound");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RoutingPolicyDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RoutingPolicyDirection FindValue(string value)
+        {
+            return FindValue<RoutingPolicyDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RoutingPolicyDirection(string value)
         {
             return FindValue(value);
         }

@@ -121,6 +121,37 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateThreatEntitySetRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateThreatEntitySetRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateThreatEntitySetRequest.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateThreatEntitySetRequest.Format</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateThreatEntitySetRequest.Location</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateThreatEntitySetRequest.Name</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.CreateThreatIntelSetRequest.ClientToken</property>
     <min>0</min>
     <max>64</max>
@@ -151,6 +182,37 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateTrustedEntitySetRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateTrustedEntitySetRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateTrustedEntitySetRequest.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateTrustedEntitySetRequest.Format</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateTrustedEntitySetRequest.Location</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateTrustedEntitySetRequest.Name</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.DeleteDetectorRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -176,7 +238,17 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DeleteThreatEntitySetRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.DeleteThreatIntelSetRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DeleteTrustedEntitySetRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
   </property-value-rule>
@@ -321,6 +393,38 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.AdminDetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.FailedResourcesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.ResourceArn</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.ScanId</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.ScannedResourcesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.SkippedResourcesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetMalwareScanSettingsRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -342,6 +446,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetRemainingFreeTrialDaysRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetThreatEntitySetRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetThreatEntitySetResponse.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetThreatEntitySetResponse.Format</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetThreatEntitySetResponse.Location</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetThreatEntitySetResponse.Name</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetThreatEntitySetResponse.Status</property>
     <min>1</min>
     <max>300</max>
   </property-value-rule>
@@ -372,6 +507,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetThreatIntelSetResponse.Status</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetTrustedEntitySetRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetTrustedEntitySetResponse.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetTrustedEntitySetResponse.Format</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetTrustedEntitySetResponse.Location</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetTrustedEntitySetResponse.Name</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetTrustedEntitySetResponse.Status</property>
     <min>1</min>
     <max>300</max>
   </property-value-rule>
@@ -441,6 +607,11 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListMalwareScansRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.ListMembersRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -470,6 +641,16 @@
     <pattern>^arn:[A-Za-z_.-]{1,20}:guardduty:[A-Za-z0-9_/.-]{0,63}:\d+:detector/[A-Za-z0-9_/.-]{32,264}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListThreatEntitySetsRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListThreatEntitySetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.ListThreatIntelSetsRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -480,8 +661,23 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListTrustedEntitySetsRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListTrustedEntitySetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.StartMalwareScanRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.StartMalwareScanRequest.ResourceArn</property>
-    <pattern>^arn:[A-Za-z-]+:[A-Za-z0-9]+:[A-Za-z0-9-]+:\d+:(([A-Za-z0-9-]+)[:\/])?[A-Za-z0-9-]*$</pattern>
+    <pattern>^arn:[A-Za-z-]+:[A-Za-z0-9]+:[A-Za-z0-9-]+:\d+:(([A-Za-z0-9-]+)[:\/])?[A-Za-z0-9:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.StartMalwareScanResponse.ScanId</property>
@@ -587,6 +783,27 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateThreatEntitySetRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateThreatEntitySetRequest.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateThreatEntitySetRequest.Location</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateThreatEntitySetRequest.Name</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.UpdateThreatIntelSetRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -607,6 +824,27 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateTrustedEntitySetRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateTrustedEntitySetRequest.ExpectedBucketOwner</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateTrustedEntitySetRequest.Location</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateTrustedEntitySetRequest.Name</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.AccountDetail.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -615,7 +853,6 @@
     <property>Amazon.GuardDuty.Model.AccountDetail.Email</property>
     <min>6</min>
     <max>64</max>
-    <pattern>See rules in parameter description</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.ActorProcess.Name</property>
@@ -631,6 +868,16 @@
     <property>Amazon.GuardDuty.Model.ActorProcess.Sha256</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AdditionalInfo.DeviceName</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AdditionalInfo.VersionId</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.AdminAccount.AdminStatus</property>
@@ -678,6 +925,16 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DnsRequestAction.VpcOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.EbsSnapshot.DeviceName</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.EbsVolumesResult.Status</property>
     <min>1</min>
     <max>300</max>
@@ -698,6 +955,35 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.FailedFileCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.SkippedFileCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.ThreatFoundFileCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.TotalBytes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.TotalFileCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.UniqueThreatCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.IncrementalScanDetails.BaselineResourceArn</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.Indicator.Title</property>
     <min>1</min>
     <max>256</max>
@@ -708,9 +994,29 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ItemDetails.ItemPath</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ItemDetails.ResourceArn</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.KubernetesAuditLogsConfigurationResult.Status</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.MalwareScan.ResourceArn</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.MalwareScan.ScanId</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.Master.AccountId</property>
@@ -731,7 +1037,6 @@
     <property>Amazon.GuardDuty.Model.Member.Email</property>
     <min>6</min>
     <max>64</max>
-    <pattern>See rules in parameter description</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.MemberDataSourceConfiguration.AccountId</property>
@@ -791,6 +1096,35 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScanConfiguration.Role</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScanConfigurationRecoveryPoint.BackupVaultName</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScannedResource.ScannedResourceArn</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScanResultThreat.Count</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScanResultThreat.Hash</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScanResultThreat.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.Sequence.Description</property>
     <max>4096</max>
   </property-value-rule>
@@ -802,6 +1136,11 @@
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.Signal.Description</property>
     <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.StartMalwareScanConfiguration.Role</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.TriggerDetails.Description</property>

@@ -63,24 +63,34 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.DestinationRepository))
+                throw new AmazonCodeArtifactException("Request object does not have required field DestinationRepository set");
             
             if (publicRequest.IsSetDestinationRepository())
                 request.Parameters.Add("destination-repository", StringUtils.FromString(publicRequest.DestinationRepository));
+            if (string.IsNullOrEmpty(publicRequest.Domain))
+                throw new AmazonCodeArtifactException("Request object does not have required field Domain set");
             
             if (publicRequest.IsSetDomain())
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));
             
             if (publicRequest.IsSetDomainOwner())
                 request.Parameters.Add("domain-owner", StringUtils.FromString(publicRequest.DomainOwner));
+            if (string.IsNullOrEmpty(publicRequest.Format))
+                throw new AmazonCodeArtifactException("Request object does not have required field Format set");
             
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));
             
             if (publicRequest.IsSetNamespace())
                 request.Parameters.Add("namespace", StringUtils.FromString(publicRequest.Namespace));
+            if (string.IsNullOrEmpty(publicRequest.Package))
+                throw new AmazonCodeArtifactException("Request object does not have required field Package set");
             
             if (publicRequest.IsSetPackage())
                 request.Parameters.Add("package", StringUtils.FromString(publicRequest.Package));
+            if (string.IsNullOrEmpty(publicRequest.SourceRepository))
+                throw new AmazonCodeArtifactException("Request object does not have required field SourceRepository set");
             
             if (publicRequest.IsSetSourceRepository())
                 request.Parameters.Add("source-repository", StringUtils.FromString(publicRequest.SourceRepository));

@@ -102,9 +102,9 @@ namespace Amazon.QuickSight.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>AvailabilityStatus</c> for <c>AdHocFilteringOption</c> - This status can be either
-        /// <c>ENABLED</c> or <c>DISABLED</c>. When this is set to <c>DISABLED</c>, Amazon QuickSight
-        /// disables the left filter pane on the published dashboard, which can be used for ad
-        /// hoc (one-time) filtering. This option is <c>ENABLED</c> by default. 
+        /// <c>ENABLED</c> or <c>DISABLED</c>. When this is set to <c>DISABLED</c>, Amazon Quick
+        /// Sight disables the left filter pane on the published dashboard, which can be used
+        /// for ad hoc (one-time) filtering. This option is <c>ENABLED</c> by default. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -118,6 +118,26 @@ namespace Amazon.QuickSight.Model
         ///  <c>VisibilityState</c> for <c>SheetControlsOption</c> - This visibility state can
         /// be either <c>COLLAPSED</c> or <c>EXPANDED</c>. This option is <c>COLLAPSED</c> by
         /// default. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AvailabilityStatus</c> for <c>QuickSuiteActionsOption</c> - This status can be
+        /// either <c>ENABLED</c> or <c>DISABLED</c>. Features related to Actions in Amazon Quick
+        /// Suite on dashboards are disabled when this is set to <c>DISABLED</c>. This option
+        /// is <c>DISABLED</c> by default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AvailabilityStatus</c> for <c>ExecutiveSummaryOption</c> - This status can be
+        /// either <c>ENABLED</c> or <c>DISABLED</c>. The option to build an executive summary
+        /// is disabled when this is set to <c>DISABLED</c>. This option is <c>ENABLED</c> by
+        /// default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AvailabilityStatus</c> for <c>DataStoriesSharingOption</c> - This status can be
+        /// either <c>ENABLED</c> or <c>DISABLED</c>. The option to share a data story is disabled
+        /// when this is set to <c>DISABLED</c>. This option is <c>ENABLED</c> by default.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -204,7 +224,7 @@ namespace Amazon.QuickSight.Model
         /// <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
         /// </c> API operation. For <c>SourceTemplate</c>, specify the Amazon Resource Name (ARN)
         /// of the source template. The <c>SourceTemplate</c> ARN can contain any Amazon Web Services
-        /// account and any Amazon QuickSight-supported Amazon Web Services Region. 
+        /// account and any Amazon Quick Sight-supported Amazon Web Services Region. 
         /// </para>
         ///  
         /// <para>

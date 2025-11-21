@@ -52,6 +52,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.EnableDockerAccess);
             }
 
+            if(requestObject.IsSetRootlessDocker())
+            {
+                context.Writer.WritePropertyName("RootlessDocker");
+                context.Writer.WriteStringValue(requestObject.RootlessDocker);
+            }
+
             if(requestObject.IsSetVpcOnlyTrustedAccounts())
             {
                 context.Writer.WritePropertyName("VpcOnlyTrustedAccounts");

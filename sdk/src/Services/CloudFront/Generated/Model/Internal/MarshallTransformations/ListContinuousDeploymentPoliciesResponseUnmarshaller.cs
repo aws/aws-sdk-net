@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListContinuousDeploymentPolicies operation
     /// </summary>  
-    public class ListContinuousDeploymentPoliciesResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class ListContinuousDeploymentPoliciesResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             ListContinuousDeploymentPoliciesResponse response = new ListContinuousDeploymentPoliciesResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -113,6 +113,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, ListContinuousDeploymentPoliciesResponse response);
 
         private static ListContinuousDeploymentPoliciesResponseUnmarshaller _instance = new ListContinuousDeploymentPoliciesResponseUnmarshaller();        
 

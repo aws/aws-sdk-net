@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DomainConflict Object
     /// </summary>  
-    public class DomainConflictUnmarshaller : IXmlUnmarshaller<DomainConflict, XmlUnmarshallerContext>
+    public partial class DomainConflictUnmarshaller : IXmlUnmarshaller<DomainConflict, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, DomainConflict unmarshalledObject, int targetDepth);
+
         private static DomainConflictUnmarshaller _instance = new DomainConflictUnmarshaller();        
 
         /// <summary>

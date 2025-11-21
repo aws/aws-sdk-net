@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3SetObjectLegalHoldOperation Object
     /// </summary>  
-    public class S3SetObjectLegalHoldOperationUnmarshaller : IXmlUnmarshaller<S3SetObjectLegalHoldOperation, XmlUnmarshallerContext>
+    public partial class S3SetObjectLegalHoldOperationUnmarshaller : IXmlUnmarshaller<S3SetObjectLegalHoldOperation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.LegalHold = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3SetObjectLegalHoldOperation unmarshalledObject, int targetDepth);
+
         private static S3SetObjectLegalHoldOperationUnmarshaller _instance = new S3SetObjectLegalHoldOperationUnmarshaller();        
 
         /// <summary>

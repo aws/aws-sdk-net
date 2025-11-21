@@ -39,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
+        /// The Amazon Resource Name (ARN) for the configuration data in this account and Region.
         /// </para>
         ///  
         /// <para>

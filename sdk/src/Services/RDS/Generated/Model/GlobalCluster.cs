@@ -208,6 +208,7 @@ namespace Amazon.RDS.Model
         /// unique key that identifies a global database cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=255)]
         public string GlobalClusterIdentifier
         {
             get { return this._globalClusterIdentifier; }
@@ -246,9 +247,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterResourceId. 
         /// <para>
-        /// The Amazon Web Services Region-unique, immutable identifier for the global database
-        /// cluster. This identifier is found in Amazon Web Services CloudTrail log entries whenever
-        /// the Amazon Web Services KMS key for the DB cluster is accessed.
+        /// The Amazon Web Services <a href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html?id=docs_gateway#partition">partition</a>-unique,
+        /// immutable identifier for the global database cluster. This identifier is found in
+        /// Amazon Web Services CloudTrail log entries whenever the Amazon Web Services KMS key
+        /// for the DB cluster is accessed.
         /// </para>
         /// </summary>
         public string GlobalClusterResourceId

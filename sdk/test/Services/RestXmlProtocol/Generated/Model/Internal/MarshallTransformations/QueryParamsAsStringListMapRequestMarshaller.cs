@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(QueryParamsAsStringListMapRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             if (publicRequest.IsSetFoo())
             {
@@ -99,5 +100,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, QueryParamsAsStringListMapRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, QueryParamsAsStringListMapRequest publicRequest);
     }    
 }

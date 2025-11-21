@@ -75,6 +75,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetSpareInstanceCountPerUltraServer())
+            {
+                context.Writer.WritePropertyName("SpareInstanceCountPerUltraServer");
+                context.Writer.WriteNumberValue(publicRequest.SpareInstanceCountPerUltraServer.Value);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

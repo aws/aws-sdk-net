@@ -65,12 +65,16 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetAssetId())
                 request.Parameters.Add("assetId", StringUtils.FromString(publicRequest.AssetId));
+            if (publicRequest.EndTimeInSeconds == null)
+                throw new AmazonIoTSiteWiseException("Request object does not have required field EndTimeInSeconds set");
             
             if (publicRequest.IsSetEndTimeInSeconds())
                 request.Parameters.Add("endTimeInSeconds", StringUtils.FromLong(publicRequest.EndTimeInSeconds));
             
             if (publicRequest.IsSetEndTimeOffsetInNanos())
                 request.Parameters.Add("endTimeOffsetInNanos", StringUtils.FromInt(publicRequest.EndTimeOffsetInNanos));
+            if (publicRequest.IntervalInSeconds == null)
+                throw new AmazonIoTSiteWiseException("Request object does not have required field IntervalInSeconds set");
             
             if (publicRequest.IsSetIntervalInSeconds())
                 request.Parameters.Add("intervalInSeconds", StringUtils.FromLong(publicRequest.IntervalInSeconds));
@@ -89,15 +93,21 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPropertyId())
                 request.Parameters.Add("propertyId", StringUtils.FromString(publicRequest.PropertyId));
+            if (string.IsNullOrEmpty(publicRequest.Quality))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field Quality set");
             
             if (publicRequest.IsSetQuality())
                 request.Parameters.Add("quality", StringUtils.FromString(publicRequest.Quality));
+            if (publicRequest.StartTimeInSeconds == null)
+                throw new AmazonIoTSiteWiseException("Request object does not have required field StartTimeInSeconds set");
             
             if (publicRequest.IsSetStartTimeInSeconds())
                 request.Parameters.Add("startTimeInSeconds", StringUtils.FromLong(publicRequest.StartTimeInSeconds));
             
             if (publicRequest.IsSetStartTimeOffsetInNanos())
                 request.Parameters.Add("startTimeOffsetInNanos", StringUtils.FromInt(publicRequest.StartTimeOffsetInNanos));
+            if (string.IsNullOrEmpty(publicRequest.Type))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field Type set");
             
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));

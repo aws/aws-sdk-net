@@ -1,3 +1,12 @@
+using Amazon;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal.Util;
+using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.S3.Util;
+using Amazon.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,17 +15,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon;
-using Amazon.S3;
-using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using System.Diagnostics;
-using Amazon.Util;
 using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -331,6 +329,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsTrue(response.ETag.Length > 0);
 
             VerifyPut(testContent, request);
+        }
+
+        [DataTestMethod]
+        [TestCategory("S3")]
+        [DataRow(false, false)]
+        [DataRow(true, false)]
+        [DataRow(false, true)]
+        [DataRow(true, true)]
+        public void PutObjectWithEmptyInputStream(bool disablePayloadSigning, bool disableDefaultChecksumValidation)
+        {
+            PutObjectRequest request = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = "inputStreamPut" + random.Next(),
+                InputStream = new MemoryStream(),
+                DisableDefaultChecksumValidation = disableDefaultChecksumValidation,
+                DisablePayloadSigning = disablePayloadSigning,
+            };
+            PutObjectResponse response = Client.PutObject(request);
+
+            Assert.IsTrue(response.ETag.Length > 0);
         }
 
         [TestMethod]
@@ -1349,6 +1368,64 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.AreEqual(stream.Length - 5, getObjectResponse.ContentLength);
             }
 
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task ConfirmRetrySignature()
+        {
+            var config = new AmazonS3Config
+            {
+                RegionEndpoint = Client.Config.RegionEndpoint,
+                ResignRetries = true
+            };
+            var s3Client = new AmazonS3Client(config);
+            // This test is response to this PR https://github.com/aws/aws-sdk-net/pull/4050 
+            // where retries started failing with signature mismatch due to user agent modifications.
+            // In this test we are confirming all retries are attempted and not failing with signature mismatch.
+            var stream = new FailOnceStream(new MemoryStream(Encoding.UTF8.GetBytes("ConfirmRetrySignature")));
+            PutObjectRequest request = new PutObjectRequest()
+            {
+                BucketName = bucketName,
+                Key = "thestream",
+                InputStream = stream,
+                AutoCloseStream = false,
+                DisablePayloadSigning = true
+            };
+
+            ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)request).UserAgentDetails.AddUserAgentComponent("Modifications");
+
+            await Client.PutObjectAsync(request);
+        }
+
+        private class FailOnceStream : WrapperStream
+        {
+            public FailOnceStream(MemoryStream memoryStream)
+                : base(memoryStream)
+            {
+            }
+
+            bool _firstRead = true;
+
+
+            public override int Read(byte[] buffer, int offset, int count)
+            {
+                if (_firstRead)
+                {
+                    _firstRead = false;
+                    throw new IOException("Fake Exception");
+                }
+                return base.Read(buffer, offset, count);
+            }
+            public override Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+            {
+                if (_firstRead)
+                {
+                    _firstRead = false;
+                    throw new IOException("Fake Exception");
+                }
+                return base.ReadAsync(buffer, offset, count, cancellationToken);
+            }
         }
 
         private class ErrorStream : WrapperStream

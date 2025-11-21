@@ -31,7 +31,7 @@ namespace Amazon.SSMContacts.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags of an escalation plan or contact.
+    /// Lists the tags of a contact, escalation plan, rotation, or on-call schedule.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonSSMContactsRequest
     {
@@ -40,7 +40,8 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the contact or escalation plan.
+        /// The Amazon Resource Name (ARN) of the contact, escalation plan, rotation, or on-call
+        /// schedule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

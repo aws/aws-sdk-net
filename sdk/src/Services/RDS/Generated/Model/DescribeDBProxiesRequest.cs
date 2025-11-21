@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         /// about all DB proxies owned by your Amazon Web Services account ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string DBProxyName
         {
             get { return this._dbProxyName; }

@@ -46,7 +46,7 @@ namespace Amazon.IotData.Model
     /// </para>
     ///  
     /// <para>
-    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">ListRetainedMessages</a>
+    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html">ListRetainedMessages</a>
     /// action.
     /// </para>
     ///  

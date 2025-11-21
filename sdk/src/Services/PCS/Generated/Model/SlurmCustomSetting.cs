@@ -31,6 +31,13 @@ namespace Amazon.PCS.Model
 {
     /// <summary>
     /// Additional settings that directly map to Slurm settings.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// PCS supports a subset of Slurm settings. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-custom-settings.html">Configuring
+    /// custom Slurm settings in PCS</a> in the <i>PCS User Guide</i>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class SlurmCustomSetting
     {
@@ -40,42 +47,10 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property ParameterName. 
         /// <para>
-        /// Amazon Web Services PCS supports configuration of the following Slurm parameters:
+        /// PCS supports custom Slurm settings for clusters, compute node groups, and queues.
+        /// For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-custom-settings.html">Configuring
+        /// custom Slurm settings in PCS</a> in the <i>PCS User Guide</i>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For <b>clusters</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Prolog_1"> <c>Prolog</c> </a>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Epilog_1"> <c>Epilog</c> </a>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_SelectTypeParameters"> <c>SelectTypeParameters</c>
-        /// </a> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// For <b>compute node groups</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Weight"> <c>Weight</c> </a>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://slurm.schedmd.com/slurm.conf.html#OPT_Weight"> <c>RealMemory</c>
-        /// </a> 
-        /// </para>
-        ///  </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ParameterName

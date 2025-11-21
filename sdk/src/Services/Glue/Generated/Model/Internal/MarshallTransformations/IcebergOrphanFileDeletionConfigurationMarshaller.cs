@@ -58,6 +58,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.OrphanFileRetentionPeriodInDays.Value);
             }
 
+            if(requestObject.IsSetRunRateInHours())
+            {
+                context.Writer.WritePropertyName("runRateInHours");
+                context.Writer.WriteNumberValue(requestObject.RunRateInHours.Value);
+            }
+
         }
 
         /// <summary>

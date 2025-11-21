@@ -35,10 +35,34 @@ namespace Amazon.VPCLattice.Model
     /// </summary>
     public partial class ListServiceNetworkResourceAssociationsRequest : AmazonVPCLatticeRequest
     {
+        private bool? _includeChildren;
         private int? _maxResults;
         private string _nextToken;
         private string _resourceConfigurationIdentifier;
         private string _serviceNetworkIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property IncludeChildren. 
+        /// <para>
+        /// Include service network resource associations of the child resource configuration
+        /// with the grouped resource configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// The type is boolean and the default value is false.
+        /// </para>
+        /// </summary>
+        public bool? IncludeChildren
+        {
+            get { return this._includeChildren; }
+            set { this._includeChildren = value; }
+        }
+
+        // Check to see if IncludeChildren property is set
+        internal bool IsSetIncludeChildren()
+        {
+            return this._includeChildren.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -81,7 +105,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationIdentifier. 
         /// <para>
-        /// The ID of the resource configurationk.
+        /// The ID of the resource configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

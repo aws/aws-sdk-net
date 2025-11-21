@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Evs.Model
 {
     /// <summary>
-    /// The initial VLAN subnets for the environment. You must specify a non-overlapping CIDR
-    /// block for each VLAN subnet.
+    /// The initial VLAN subnets for the environment. Amazon EVS VLAN subnets have a minimum
+    /// CIDR block size of /28 and a maximum size of /24. Amazon EVS VLAN subnet CIDR blocks
+    /// must not overlap with other subnets in the VPC.
     /// </summary>
     public partial class InitialVlans
     {
@@ -39,6 +40,8 @@ namespace Amazon.Evs.Model
         private InitialVlanInfo _expansionVlan1;
         private InitialVlanInfo _expansionVlan2;
         private InitialVlanInfo _hcx;
+        private string _hcxNetworkAclId;
+        private bool? _isHcxPublic;
         private InitialVlanInfo _nsxUplink;
         private InitialVlanInfo _vmkManagement;
         private InitialVlanInfo _vmManagement;
@@ -116,6 +119,25 @@ namespace Amazon.Evs.Model
         /// The HCX VLAN subnet. This VLAN subnet allows the HCX Interconnnect (IX) and HCX Network
         /// Extension (NE) to reach their peers and enable HCX Service Mesh creation.
         /// </para>
+        ///  
+        /// <para>
+        /// If you plan to use a public HCX VLAN subnet, the following requirements must be met:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must have a /28 netmask and be allocated from the IPAM public pool. Required for HCX
+        /// internet access configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The HCX public VLAN CIDR block must be added to the VPC as a secondary CIDR block.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must have at least three Elastic IP addresses to be allocated from the public IPAM
+        /// pool for HCX components.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public InitialVlanInfo Hcx
@@ -128,6 +150,44 @@ namespace Amazon.Evs.Model
         internal bool IsSetHcx()
         {
             return this._hcx != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HcxNetworkAclId. 
+        /// <para>
+        /// A unique ID for a network access control list that the HCX VLAN uses. Required when
+        /// <c>isHcxPublic</c> is set to <c>true</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=4, Max=21)]
+        public string HcxNetworkAclId
+        {
+            get { return this._hcxNetworkAclId; }
+            set { this._hcxNetworkAclId = value; }
+        }
+
+        // Check to see if HcxNetworkAclId property is set
+        internal bool IsSetHcxNetworkAclId()
+        {
+            return this._hcxNetworkAclId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsHcxPublic. 
+        /// <para>
+        /// Determines if the HCX VLAN that Amazon EVS provisions is public or private.
+        /// </para>
+        /// </summary>
+        public bool? IsHcxPublic
+        {
+            get { return this._isHcxPublic; }
+            set { this._isHcxPublic = value; }
+        }
+
+        // Check to see if IsHcxPublic property is set
+        internal bool IsSetIsHcxPublic()
+        {
+            return this._isHcxPublic.HasValue; 
         }
 
         /// <summary>
@@ -153,7 +213,7 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property VmkManagement. 
         /// <para>
-        ///  The VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing
+        ///  The host VMkernel management VLAN subnet. This VLAN subnet carries traffic for managing
         /// ESXi hosts and communicating with VMware vCenter Server.
         /// </para>
         /// </summary>

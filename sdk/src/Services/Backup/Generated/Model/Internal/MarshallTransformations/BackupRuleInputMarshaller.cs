@@ -121,6 +121,22 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.RuleName);
             }
 
+            if(requestObject.IsSetScanActions())
+            {
+                context.Writer.WritePropertyName("ScanActions");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectScanActionsListValue in requestObject.ScanActions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ScanActionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectScanActionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");
@@ -143,6 +159,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("TargetBackupVaultName");
                 context.Writer.WriteStringValue(requestObject.TargetBackupVaultName);
+            }
+
+            if(requestObject.IsSetTargetLogicallyAirGappedBackupVaultArn())
+            {
+                context.Writer.WritePropertyName("TargetLogicallyAirGappedBackupVaultArn");
+                context.Writer.WriteStringValue(requestObject.TargetLogicallyAirGappedBackupVaultArn);
             }
 
         }

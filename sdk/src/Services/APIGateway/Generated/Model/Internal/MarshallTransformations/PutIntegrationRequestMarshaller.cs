@@ -163,6 +163,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetResponseTransferMode())
+            {
+                context.Writer.WritePropertyName("responseTransferMode");
+                context.Writer.WriteStringValue(publicRequest.ResponseTransferMode);
+            }
+
             if(publicRequest.IsSetTimeoutInMillis())
             {
                 context.Writer.WritePropertyName("timeoutInMillis");

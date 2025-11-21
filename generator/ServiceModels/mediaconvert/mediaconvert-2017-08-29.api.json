@@ -1,15 +1,15 @@
 {
   "metadata": {
     "apiVersion": "2017-08-29",
-    "endpointPrefix": "mediaconvert",
     "signingName": "mediaconvert",
     "serviceFullName": "AWS Elemental MediaConvert",
     "serviceId": "MediaConvert",
     "protocol": "rest-json",
     "jsonVersion": "1.1",
-    "uid": "mediaconvert-2017-08-29",
     "signatureVersion": "v4",
+    "endpointPrefix": "mediaconvert",
     "serviceAbbreviation": "MediaConvert",
+    "uid": "mediaconvert-2017-08-29",
     "auth": [
       "aws.auth#sigv4"
     ]
@@ -34,6 +34,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -70,6 +73,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -102,6 +108,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -138,6 +147,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -170,6 +182,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -206,6 +221,46 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "ConflictException"
+        }
+      ]
+    },
+    "CreateResourceShare": {
+      "name": "CreateResourceShare",
+      "http": {
+        "method": "POST",
+        "requestUri": "/2017-08-29/resourceShares",
+        "responseCode": 202
+      },
+      "input": {
+        "shape": "CreateResourceShareRequest"
+      },
+      "output": {
+        "shape": "CreateResourceShareResponse"
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -238,6 +293,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -274,6 +332,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -306,6 +367,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -342,6 +406,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -374,6 +441,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -412,6 +482,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -444,6 +517,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -480,6 +556,46 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "ConflictException"
+        }
+      ]
+    },
+    "GetJobsQueryResults": {
+      "name": "GetJobsQueryResults",
+      "http": {
+        "method": "GET",
+        "requestUri": "/2017-08-29/jobsQueries/{id}",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "GetJobsQueryResultsRequest"
+      },
+      "output": {
+        "shape": "GetJobsQueryResultsResponse"
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -512,6 +628,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -548,6 +667,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -580,6 +702,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -616,6 +741,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -648,6 +776,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -684,6 +815,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -716,6 +850,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -752,6 +889,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -784,6 +924,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -820,6 +963,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -852,6 +998,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -888,6 +1037,46 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        },
+        {
+          "shape": "ConflictException"
+        }
+      ]
+    },
+    "StartJobsQuery": {
+      "name": "StartJobsQuery",
+      "http": {
+        "method": "POST",
+        "requestUri": "/2017-08-29/jobsQueries",
+        "responseCode": 201
+      },
+      "input": {
+        "shape": "StartJobsQueryRequest"
+      },
+      "output": {
+        "shape": "StartJobsQueryResponse"
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -920,6 +1109,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -956,6 +1148,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -988,6 +1183,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -1024,6 +1222,9 @@
           "shape": "InternalServerErrorException"
         },
         {
+          "shape": "ServiceQuotaExceededException"
+        },
+        {
           "shape": "ForbiddenException"
         },
         {
@@ -1056,6 +1257,9 @@
         },
         {
           "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ServiceQuotaExceededException"
         },
         {
           "shape": "ForbiddenException"
@@ -1600,6 +1804,10 @@
           "shape": "AudioNormalizationSettings",
           "locationName": "audioNormalizationSettings"
         },
+        "AudioPitchCorrectionSettings": {
+          "shape": "AudioPitchCorrectionSettings",
+          "locationName": "audioPitchCorrectionSettings"
+        },
         "AudioSourceName": {
           "shape": "__stringMax2048",
           "locationName": "audioSourceName"
@@ -1718,6 +1926,15 @@
         }
       }
     },
+    "AudioPitchCorrectionSettings": {
+      "type": "structure",
+      "members": {
+        "SlowPalPitchCorrection": {
+          "shape": "SlowPalPitchCorrection",
+          "locationName": "slowPalPitchCorrection"
+        }
+      }
+    },
     "AudioProperties": {
       "type": "structure",
       "members": {
@@ -1794,6 +2011,10 @@
           "shape": "AudioSelectorType",
           "locationName": "selectorType"
         },
+        "Streams": {
+          "shape": "__listOf__integerMin1Max2147483647",
+          "locationName": "streams"
+        },
         "Tracks": {
           "shape": "__listOf__integerMin1Max2147483647",
           "locationName": "tracks"
@@ -1816,7 +2037,8 @@
         "TRACK",
         "LANGUAGE_CODE",
         "HLS_RENDITION_GROUP",
-        "ALL_PCM"
+        "ALL_PCM",
+        "STREAM"
       ]
     },
     "AudioTypeControl": {
@@ -3010,6 +3232,13 @@
         "AUDIO_ONLY_VARIANT_STREAM"
       ]
     },
+    "CmfcC2paManifest": {
+      "type": "string",
+      "enum": [
+        "INCLUDE",
+        "EXCLUDE"
+      ]
+    },
     "CmfcDescriptiveVideoServiceFlag": {
       "type": "string",
       "enum": [
@@ -3071,6 +3300,14 @@
           "shape": "CmfcAudioTrackType",
           "locationName": "audioTrackType"
         },
+        "C2paManifest": {
+          "shape": "CmfcC2paManifest",
+          "locationName": "c2paManifest"
+        },
+        "CertificateSecret": {
+          "shape": "__stringMin1Max2048PatternArnAZSecretsmanagerWD12SecretAZAZ09",
+          "locationName": "certificateSecret"
+        },
         "DescriptiveVideoServiceFlag": {
           "shape": "CmfcDescriptiveVideoServiceFlag",
           "locationName": "descriptiveVideoServiceFlag"
@@ -3094,6 +3331,10 @@
         "Scte35Source": {
           "shape": "CmfcScte35Source",
           "locationName": "scte35Source"
+        },
+        "SigningKmsKey": {
+          "shape": "__stringMin1PatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912MrkAFAF0932",
+          "locationName": "signingKmsKey"
         },
         "TimedMetadata": {
           "shape": "CmfcTimedMetadata",
@@ -3144,16 +3385,68 @@
         "HEVC",
         "JPEG2000",
         "MJPEG",
+        "MPEG1",
         "MP4V",
         "MPEG2",
         "PRORES",
         "THEORA",
+        "VFW",
         "VP8",
         "VP9",
+        "QTRLE",
         "C608",
         "C708",
         "WEBVTT"
       ]
+    },
+    "CodecMetadata": {
+      "type": "structure",
+      "members": {
+        "BitDepth": {
+          "shape": "__integer",
+          "locationName": "bitDepth"
+        },
+        "ChromaSubsampling": {
+          "shape": "__string",
+          "locationName": "chromaSubsampling"
+        },
+        "CodedFrameRate": {
+          "shape": "FrameRate",
+          "locationName": "codedFrameRate"
+        },
+        "ColorPrimaries": {
+          "shape": "ColorPrimaries",
+          "locationName": "colorPrimaries"
+        },
+        "Height": {
+          "shape": "__integer",
+          "locationName": "height"
+        },
+        "Level": {
+          "shape": "__string",
+          "locationName": "level"
+        },
+        "MatrixCoefficients": {
+          "shape": "MatrixCoefficients",
+          "locationName": "matrixCoefficients"
+        },
+        "Profile": {
+          "shape": "__string",
+          "locationName": "profile"
+        },
+        "ScanType": {
+          "shape": "__string",
+          "locationName": "scanType"
+        },
+        "TransferCharacteristics": {
+          "shape": "TransferCharacteristics",
+          "locationName": "transferCharacteristics"
+        },
+        "Width": {
+          "shape": "__integer",
+          "locationName": "width"
+        }
+      }
     },
     "ColorConversion3DLUTSetting": {
       "type": "structure",
@@ -3609,6 +3902,27 @@
         }
       }
     },
+    "CreateResourceShareRequest": {
+      "type": "structure",
+      "members": {
+        "JobId": {
+          "shape": "__string",
+          "locationName": "jobId"
+        },
+        "SupportCaseId": {
+          "shape": "__string",
+          "locationName": "supportCaseId"
+        }
+      },
+      "required": [
+        "SupportCaseId",
+        "JobId"
+      ]
+    },
+    "CreateResourceShareResponse": {
+      "type": "structure",
+      "members": {}
+    },
     "DashAdditionalManifest": {
       "type": "structure",
       "members": {
@@ -3849,7 +4163,8 @@
       "enum": [
         "BASIC",
         "COMPACT",
-        "DISTINCT"
+        "DISTINCT",
+        "FULL"
       ]
     },
     "DataProperties": {
@@ -5075,6 +5390,13 @@
         }
       }
     },
+    "FrameControl": {
+      "type": "string",
+      "enum": [
+        "NEAREST_IDRFRAME",
+        "NEAREST_IFRAME"
+      ]
+    },
     "FrameMetricType": {
       "type": "string",
       "enum": [
@@ -5083,7 +5405,8 @@
         "MS_SSIM",
         "PSNR_HVS",
         "VMAF",
-        "QVBR"
+        "QVBR",
+        "SHOT_CHANGE"
       ]
     },
     "FrameRate": {
@@ -5140,6 +5463,36 @@
         "JobTemplate": {
           "shape": "JobTemplate",
           "locationName": "jobTemplate"
+        }
+      }
+    },
+    "GetJobsQueryResultsRequest": {
+      "type": "structure",
+      "members": {
+        "Id": {
+          "shape": "__string",
+          "locationName": "id",
+          "location": "uri"
+        }
+      },
+      "required": [
+        "Id"
+      ]
+    },
+    "GetJobsQueryResultsResponse": {
+      "type": "structure",
+      "members": {
+        "Jobs": {
+          "shape": "__listOfJob",
+          "locationName": "jobs"
+        },
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken"
+        },
+        "Status": {
+          "shape": "JobsQueryStatus",
+          "locationName": "status"
         }
       }
     },
@@ -6447,6 +6800,7 @@
       "type": "string",
       "enum": [
         "INCLUDE",
+        "INCLUDE_AS_TS",
         "EXCLUDE"
       ]
     },
@@ -7046,7 +7400,7 @@
           "locationName": "channels"
         },
         "Duration": {
-          "shape": "__integerMin50Max86400000",
+          "shape": "__integerMin1Max86400000",
           "locationName": "duration"
         },
         "FramerateDenominator": {
@@ -7057,9 +7411,17 @@
           "shape": "__integerMin1Max60000",
           "locationName": "framerateNumerator"
         },
+        "Height": {
+          "shape": "__integerMin32Max8192",
+          "locationName": "height"
+        },
         "SampleRate": {
           "shape": "__integerMin32000Max48000",
           "locationName": "sampleRate"
+        },
+        "Width": {
+          "shape": "__integerMin32Max8192",
+          "locationName": "width"
         }
       }
     },
@@ -7188,6 +7550,10 @@
           "shape": "__string",
           "locationName": "jobTemplate"
         },
+        "LastShareDetails": {
+          "shape": "__string",
+          "locationName": "lastShareDetails"
+        },
         "Messages": {
           "shape": "JobMessages",
           "locationName": "messages"
@@ -7219,6 +7585,10 @@
         "Settings": {
           "shape": "JobSettings",
           "locationName": "settings"
+        },
+        "ShareStatus": {
+          "shape": "ShareStatus",
+          "locationName": "shareStatus"
         },
         "SimulateReservedQueue": {
           "shape": "SimulateReservedQueue",
@@ -7484,6 +7854,40 @@
           "locationName": "timedMetadataInsertion"
         }
       }
+    },
+    "JobsQueryFilter": {
+      "type": "structure",
+      "members": {
+        "Key": {
+          "shape": "JobsQueryFilterKey",
+          "locationName": "key"
+        },
+        "Values": {
+          "shape": "__listOf__stringMax100",
+          "locationName": "values"
+        }
+      }
+    },
+    "JobsQueryFilterKey": {
+      "type": "string",
+      "enum": [
+        "queue",
+        "status",
+        "fileInput",
+        "jobEngineVersionRequested",
+        "jobEngineVersionUsed",
+        "audioCodec",
+        "videoCodec"
+      ]
+    },
+    "JobsQueryStatus": {
+      "type": "string",
+      "enum": [
+        "SUBMITTED",
+        "PROGRESSING",
+        "COMPLETE",
+        "ERROR"
+      ]
     },
     "KantarWatermarkSettings": {
       "type": "structure",
@@ -8593,9 +8997,20 @@
         }
       }
     },
+    "Mp2AudioDescriptionMix": {
+      "type": "string",
+      "enum": [
+        "BROADCASTER_MIXED_AD",
+        "NONE"
+      ]
+    },
     "Mp2Settings": {
       "type": "structure",
       "members": {
+        "AudioDescriptionMix": {
+          "shape": "Mp2AudioDescriptionMix",
+          "locationName": "audioDescriptionMix"
+        },
         "Bitrate": {
           "shape": "__integerMin32000Max384000",
           "locationName": "bitrate"
@@ -8725,6 +9140,13 @@
         "MATCH_VIDEO_DURATION"
       ]
     },
+    "MpdC2paManifest": {
+      "type": "string",
+      "enum": [
+        "INCLUDE",
+        "EXCLUDE"
+      ]
+    },
     "MpdCaptionContainerType": {
       "type": "string",
       "enum": [
@@ -8771,9 +9193,17 @@
           "shape": "MpdAudioDuration",
           "locationName": "audioDuration"
         },
+        "C2paManifest": {
+          "shape": "MpdC2paManifest",
+          "locationName": "c2paManifest"
+        },
         "CaptionContainerType": {
           "shape": "MpdCaptionContainerType",
           "locationName": "captionContainerType"
+        },
+        "CertificateSecret": {
+          "shape": "__stringMin1Max2048PatternArnAZSecretsmanagerWD12SecretAZAZ09",
+          "locationName": "certificateSecret"
         },
         "KlvMetadata": {
           "shape": "MpdKlvMetadata",
@@ -8790,6 +9220,10 @@
         "Scte35Source": {
           "shape": "MpdScte35Source",
           "locationName": "scte35Source"
+        },
+        "SigningKmsKey": {
+          "shape": "__stringMin1PatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912MrkAFAF0932",
+          "locationName": "signingKmsKey"
         },
         "TimedMetadata": {
           "shape": "MpdTimedMetadata",
@@ -9662,6 +10096,19 @@
         }
       }
     },
+    "PassthroughSettings": {
+      "type": "structure",
+      "members": {
+        "FrameControl": {
+          "shape": "FrameControl",
+          "locationName": "frameControl"
+        },
+        "VideoSelectorMode": {
+          "shape": "VideoSelectorMode",
+          "locationName": "videoSelectorMode"
+        }
+      }
+    },
     "Policy": {
       "type": "structure",
       "members": {
@@ -10402,7 +10849,35 @@
         }
       }
     },
+    "ServiceQuotaExceededException": {
+      "type": "structure",
+      "members": {
+        "Message": {
+          "shape": "__string",
+          "locationName": "message"
+        }
+      },
+      "exception": true,
+      "error": {
+        "httpStatusCode": 402
+      }
+    },
+    "ShareStatus": {
+      "type": "string",
+      "enum": [
+        "NOT_SHARED",
+        "INITIATED",
+        "SHARED"
+      ]
+    },
     "SimulateReservedQueue": {
+      "type": "string",
+      "enum": [
+        "DISABLED",
+        "ENABLED"
+      ]
+    },
+    "SlowPalPitchCorrection": {
       "type": "string",
       "enum": [
         "DISABLED",
@@ -10478,6 +10953,36 @@
         "ENABLED",
         "DISABLED"
       ]
+    },
+    "StartJobsQueryRequest": {
+      "type": "structure",
+      "members": {
+        "FilterList": {
+          "shape": "__listOfJobsQueryFilter",
+          "locationName": "filterList"
+        },
+        "MaxResults": {
+          "shape": "__integerMin1Max20",
+          "locationName": "maxResults"
+        },
+        "NextToken": {
+          "shape": "__string",
+          "locationName": "nextToken"
+        },
+        "Order": {
+          "shape": "Order",
+          "locationName": "order"
+        }
+      }
+    },
+    "StartJobsQueryResponse": {
+      "type": "structure",
+      "members": {
+        "Id": {
+          "shape": "__string",
+          "locationName": "id"
+        }
+      }
     },
     "StaticKeyProvider": {
       "type": "structure",
@@ -10747,6 +11252,10 @@
     "TrackSourceSettings": {
       "type": "structure",
       "members": {
+        "StreamNumber": {
+          "shape": "__integerMin1Max2147483647",
+          "locationName": "streamNumber"
+        },
         "TrackNumber": {
           "shape": "__integerMin1Max2147483647",
           "locationName": "trackNumber"
@@ -11210,6 +11719,10 @@
           "shape": "Mpeg2Settings",
           "locationName": "mpeg2Settings"
         },
+        "PassthroughSettings": {
+          "shape": "PassthroughSettings",
+          "locationName": "passthroughSettings"
+        },
         "ProresSettings": {
           "shape": "ProresSettings",
           "locationName": "proresSettings"
@@ -11428,6 +11941,10 @@
           "shape": "__integerMinNegative1Max2147483647",
           "locationName": "height"
         },
+        "Opacity": {
+          "shape": "__integerMin0Max100",
+          "locationName": "opacity"
+        },
         "Unit": {
           "shape": "VideoOverlayUnit",
           "locationName": "unit"
@@ -11518,6 +12035,10 @@
           "shape": "__long",
           "locationName": "bitRate"
         },
+        "CodecMetadata": {
+          "shape": "CodecMetadata",
+          "locationName": "codecMetadata"
+        },
         "ColorPrimaries": {
           "shape": "ColorPrimaries",
           "locationName": "colorPrimaries"
@@ -11590,8 +12111,30 @@
         "SampleRange": {
           "shape": "InputSampleRange",
           "locationName": "sampleRange"
+        },
+        "SelectorType": {
+          "shape": "VideoSelectorType",
+          "locationName": "selectorType"
+        },
+        "Streams": {
+          "shape": "__listOf__integerMin1Max2147483647",
+          "locationName": "streams"
         }
       }
+    },
+    "VideoSelectorMode": {
+      "type": "string",
+      "enum": [
+        "AUTO",
+        "REMUX_ALL"
+      ]
+    },
+    "VideoSelectorType": {
+      "type": "string",
+      "enum": [
+        "AUTO",
+        "STREAM"
+      ]
     },
     "VideoTimecodeInsertion": {
       "type": "string",
@@ -12603,6 +13146,11 @@
       "min": 1,
       "max": 8
     },
+    "__integerMin1Max86400000": {
+      "type": "integer",
+      "min": 1,
+      "max": 86400000
+    },
     "__integerMin2000Max30000": {
       "type": "integer",
       "min": 2000,
@@ -12692,11 +13240,6 @@
       "type": "integer",
       "min": 4,
       "max": 12
-    },
-    "__integerMin50Max86400000": {
-      "type": "integer",
-      "min": 50,
-      "max": 86400000
     },
     "__integerMin6000Max1024000": {
       "type": "integer",
@@ -12952,6 +13495,12 @@
         "shape": "JobTemplate"
       }
     },
+    "__listOfJobsQueryFilter": {
+      "type": "list",
+      "member": {
+        "shape": "JobsQueryFilter"
+      }
+    },
     "__listOfMsSmoothAdditionalManifest": {
       "type": "list",
       "member": {
@@ -13102,6 +13651,12 @@
         "shape": "__string"
       }
     },
+    "__listOf__stringMax100": {
+      "type": "list",
+      "member": {
+        "shape": "__stringMax100"
+      }
+    },
     "__listOf__stringMin1": {
       "type": "list",
       "member": {
@@ -13176,6 +13731,10 @@
     },
     "__string": {
       "type": "string"
+    },
+    "__stringMax100": {
+      "type": "string",
+      "max": 100
     },
     "__stringMax1000": {
       "type": "string",
@@ -13377,7 +13936,7 @@
     },
     "__stringPatternArnAwsUsGovAcm": {
       "type": "string",
-      "pattern": "^arn:aws(-us-gov)?:acm:"
+      "pattern": "^arn:aws(-us-gov)?:acm:.*$"
     },
     "__stringPatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912MrkAFAF0932": {
       "type": "string",
@@ -13389,7 +13948,7 @@
     },
     "__stringPatternHttps": {
       "type": "string",
-      "pattern": "^https:\\/\\/"
+      "pattern": "^https:\\/\\/.*$"
     },
     "__stringPatternHttpsD": {
       "type": "string",
@@ -13405,7 +13964,7 @@
     },
     "__stringPatternS3": {
       "type": "string",
-      "pattern": "^s3:\\/\\/"
+      "pattern": "^s3:\\/\\/.*$"
     },
     "__stringPatternS3ASSETMAPXml": {
       "type": "string",

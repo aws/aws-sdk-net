@@ -42,6 +42,7 @@ namespace Amazon.VPCLattice.Model
         private string _failureCode;
         private string _id;
         private bool? _isManagedAssociation;
+        private bool? _privateDnsEnabled;
         private DnsEntry _privateDnsEntry;
         private string _resourceConfigurationArn;
         private string _resourceConfigurationId;
@@ -181,6 +182,25 @@ namespace Amazon.VPCLattice.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PrivateDnsEnabled. 
+        /// <para>
+        ///  Indicates if private DNS is enabled for the service network resource association.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool? PrivateDnsEnabled
+        {
+            get { return this._privateDnsEnabled; }
+            set { this._privateDnsEnabled = value; }
+        }
+
+        // Check to see if PrivateDnsEnabled property is set
+        internal bool IsSetPrivateDnsEnabled()
+        {
+            return this._privateDnsEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property PrivateDnsEntry. 
         /// <para>
         /// The private DNS entry for the service.
@@ -316,7 +336,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the service network associated with the resource configuration.
+        /// The status of the service network’s association with the resource configuration. If
+        /// the deletion fails, try to delete again. 
         /// </para>
         /// </summary>
         public ServiceNetworkResourceAssociationStatus Status

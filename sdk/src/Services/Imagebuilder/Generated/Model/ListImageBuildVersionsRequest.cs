@@ -91,7 +91,6 @@ namespace Amazon.Imagebuilder.Model
         /// The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ImageVersionArn
         {
             get { return this._imageVersionArn; }
@@ -107,7 +106,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum items to return in a request.
+        /// Specify the maximum number of items to return in a request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]

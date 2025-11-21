@@ -358,9 +358,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeApplicationResponse.Name</property>
-    <min>0</min>
-    <max>255</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeApplicationAssignmentRequest.ApplicationArn</property>
@@ -427,6 +427,10 @@
     <min>12</min>
     <max>12</max>
     <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.DescribeInstanceResponse.StatusReason</property>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeInstanceAccessControlAttributeConfigurationRequest.InstanceArn</property>
@@ -534,6 +538,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.GetApplicationGrantRequest.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.GetApplicationSessionConfigurationRequest.ApplicationArn</property>
     <min>10</min>
     <max>1224</max>
     <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
@@ -1102,6 +1112,12 @@
     <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.PutApplicationSessionConfigurationRequest.ApplicationArn</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSOAdmin.Model.PutInlinePolicyToPermissionSetRequest.InlinePolicy</property>
     <min>1</min>
     <max>32768</max>
@@ -1339,9 +1355,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.Application.Name</property>
-    <min>0</min>
-    <max>255</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ApplicationAssignment.ApplicationArn</property>
@@ -1419,6 +1435,22 @@
     <pattern>(http|https):\/\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.EncryptionConfiguration.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-[bcd]):kms:([a-z]{2,}(-[a-z0-9]+)+){1}:[0-9]{12}:key/(mrk-[a-f0-9]{32}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.EncryptionConfigurationDetails.EncryptionStatusReason</property>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.EncryptionConfigurationDetails.KmsKeyArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-[bcd]):kms:([a-z]{2,}(-[a-z0-9]+)+){1}:[0-9]{12}:key/(mrk-[a-f0-9]{32}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSOAdmin.Model.InstanceMetadata.IdentityStoreId</property>
     <min>1</min>
     <max>64</max>
@@ -1441,6 +1473,10 @@
     <min>12</min>
     <max>12</max>
     <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.InstanceMetadata.StatusReason</property>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.ListAccountAssignmentsFilter.AccountId</property>

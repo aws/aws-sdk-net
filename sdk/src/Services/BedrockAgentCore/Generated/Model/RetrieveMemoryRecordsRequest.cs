@@ -31,13 +31,13 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the RetrieveMemoryRecords operation.
-    /// Searches for and retrieves memory records from a memory store based on specified search
-    /// criteria. We recommend using pagination to ensure that the operation returns quickly
-    /// and successfully.
+    /// Searches for and retrieves memory records from an AgentCore Memory resource based
+    /// on specified search criteria. We recommend using pagination to ensure that the operation
+    /// returns quickly and successfully.
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the <c>genesismemory:RetrieveMemoryRecords</c>
+    /// To use this operation, you must have the <c>bedrock-agentcore:RetrieveMemoryRecords</c>
     /// permission.
     /// </para>
     /// </summary>
@@ -52,8 +52,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. Minimum value of 1, maximum
-        /// value of 100. Default is 20.
+        /// The maximum number of results to return in a single call. The default value is 20.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -72,7 +71,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property MemoryId. 
         /// <para>
-        /// The identifier of the memory store from which to retrieve memory records.
+        /// The identifier of the AgentCore Memory resource from which to retrieve memory records.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12)]
@@ -91,8 +90,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace to filter memory records by. If specified, only memory records in this
-        /// namespace are searched.
+        /// The namespace to filter memory records by.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

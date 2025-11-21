@@ -248,6 +248,10 @@ namespace Amazon.PCS
         /// Constant SLURMDBD for EndpointType
         /// </summary>
         public static readonly EndpointType SLURMDBD = new EndpointType("SLURMDBD");
+        /// <summary>
+        /// Constant SLURMRESTD for EndpointType
+        /// </summary>
+        public static readonly EndpointType SLURMRESTD = new EndpointType("SLURMRESTD");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -285,11 +289,65 @@ namespace Amazon.PCS
 
 
     /// <summary>
+    /// Constants used for properties of type NetworkType.
+    /// </summary>
+    public class NetworkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IPV4 for NetworkType
+        /// </summary>
+        public static readonly NetworkType IPV4 = new NetworkType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for NetworkType
+        /// </summary>
+        public static readonly NetworkType IPV6 = new NetworkType("IPV6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkType FindValue(string value)
+        {
+            return FindValue<NetworkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PurchaseOption.
     /// </summary>
     public class PurchaseOption : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CAPACITY_BLOCK for PurchaseOption
+        /// </summary>
+        public static readonly PurchaseOption CAPACITY_BLOCK = new PurchaseOption("CAPACITY_BLOCK");
         /// <summary>
         /// Constant ONDEMAND for PurchaseOption
         /// </summary>
@@ -506,6 +564,56 @@ namespace Amazon.PCS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Size(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlurmRestMode.
+    /// </summary>
+    public class SlurmRestMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for SlurmRestMode
+        /// </summary>
+        public static readonly SlurmRestMode NONE = new SlurmRestMode("NONE");
+        /// <summary>
+        /// Constant STANDARD for SlurmRestMode
+        /// </summary>
+        public static readonly SlurmRestMode STANDARD = new SlurmRestMode("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlurmRestMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlurmRestMode FindValue(string value)
+        {
+            return FindValue<SlurmRestMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlurmRestMode(string value)
         {
             return FindValue(value);
         }

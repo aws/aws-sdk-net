@@ -49,7 +49,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// opportunity. This helps in forecasting financial returns.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Amount
         {
             get { return this._amount; }
@@ -104,9 +104,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// Indicates how frequently the customer is expected to spend the projected amount. This
-        /// can include values such as <c>Monthly</c>, <c>Quarterly</c>, or <c>Annually</c>. The
-        /// default value is <c>Monthly</c>, representing recurring monthly spend.
+        /// Indicates how frequently the customer is expected to spend the projected amount. Only
+        /// the value <c>Monthly</c> is allowed for the <c>Frequency</c> field, representing recurring
+        /// monthly spend.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,6 +127,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <para>
         /// Specifies the name of the partner company that is expected to generate revenue from
         /// the opportunity. This field helps track the partner’s involvement in the opportunity.
+        /// This field only accepts the value <c>AWS</c>. If any other value is provided, the
+        /// system will automatically set it to <c>AWS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]

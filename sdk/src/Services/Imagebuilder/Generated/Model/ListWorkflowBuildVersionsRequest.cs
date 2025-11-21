@@ -42,7 +42,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum items to return in a request.
+        /// Specify the maximum number of items to return in a request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -85,7 +85,6 @@ namespace Amazon.Imagebuilder.Model
         /// build versions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string WorkflowVersionArn
         {
             get { return this._workflowVersionArn; }

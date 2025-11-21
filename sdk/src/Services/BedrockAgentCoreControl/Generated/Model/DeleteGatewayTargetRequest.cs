@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGatewayTarget operation.
-    /// Deletes a Gateway Target.
+    /// Deletes a gateway target.
     /// </summary>
     public partial class DeleteGatewayTargetRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayIdentifier. 
         /// <para>
-        /// The unique identifier of the Gateway associated with the target.
+        /// The unique identifier of the gateway associated with the target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The unique identifier of the Gateway Target to delete.
+        /// The unique identifier of the gateway target to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

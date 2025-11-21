@@ -36,8 +36,29 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class UpdateInstanceRequest : AmazonSSOAdminRequest
     {
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _instanceArn;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Specifies the encryption configuration for your IAM Identity Center instance. You
+        /// can use this to configure customer managed KMS keys (CMK) or Amazon Web Services owned
+        /// KMS keys for encrypting your instance data.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceArn. 
@@ -67,7 +88,7 @@ namespace Amazon.SSOAdmin.Model
         /// Updates the instance name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string Name
         {
             get { return this._name; }

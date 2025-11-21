@@ -83,15 +83,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return per page.
-        /// </para>
-        ///  
-        /// <para>
-        /// The maximum number of results to return per page. The default MaxResult size is 25.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Range: Minimum value of 1. Maximum value of 100.
+        /// The maximum number of results to return per page. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

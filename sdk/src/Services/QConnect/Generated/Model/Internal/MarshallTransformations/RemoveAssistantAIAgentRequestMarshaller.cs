@@ -65,6 +65,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetAssistantId())
                 throw new AmazonQConnectException("Request object does not have required field AssistantId set");
             request.AddPathResource("{assistantId}", StringUtils.FromString(publicRequest.AssistantId));
+            if (string.IsNullOrEmpty(publicRequest.AiAgentType))
+                throw new AmazonQConnectException("Request object does not have required field AiAgentType set");
             
             if (publicRequest.IsSetAiAgentType())
                 request.Parameters.Add("aiAgentType", StringUtils.FromString(publicRequest.AiAgentType));

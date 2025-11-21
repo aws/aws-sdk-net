@@ -42,8 +42,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account. Member
-    /// accounts can remove themselves with <a>LeaveOrganization</a> instead.
+    /// You can only call this operation from the management account. Member accounts can
+    /// remove themselves with <a>LeaveOrganization</a> instead.
     /// </para>
     ///  <important> <ul> <li> 
     /// <para>
@@ -76,8 +76,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier (ID) of the member account that you want to remove from the
-        /// organization.
+        /// ID for the member account that you want to remove from the organization.
         /// </para>
         ///  
         /// <para>

@@ -37,7 +37,18 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Deletes the tags from the bucket.
+    /// Deletes tags from the general purpose bucket if attribute based access control (ABAC)
+    /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+    /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+    /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+    /// instead.
+    /// </para>
+    ///  
+    /// <para>
+    /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+    /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+    /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+    /// instead.
     /// </para>
     ///  
     /// <para>
@@ -59,7 +70,13 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteBucketTaggingRequest : AmazonWebServiceRequest
     {
@@ -72,6 +89,7 @@ namespace Amazon.S3.Model
         /// The bucket that has the tag set to be removed.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }

@@ -309,6 +309,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -316,6 +319,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -325,6 +331,16 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation can't be performed on the endpoint while the endpoint is in
+        /// this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
         /// The specified tenant database wasn't found in the DB instance.
@@ -361,6 +377,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -368,6 +387,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -377,6 +399,16 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation can't be performed on the endpoint while the endpoint is in
+        /// this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
         /// The specified tenant database wasn't found in the DB instance.
@@ -1159,6 +1191,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SourceDatabaseNotSupportedException">
         /// The source DB instance isn't supported for a blue/green deployment.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// The request would result in the user exceeding the allowed amount of storage available
+        /// across all DB instances.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateBlueGreenDeployment">REST API Reference for CreateBlueGreenDeployment Operation</seealso>
         CreateBlueGreenDeploymentResponse CreateBlueGreenDeployment(CreateBlueGreenDeploymentRequest request);
 
@@ -1233,6 +1269,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.SourceDatabaseNotSupportedException">
         /// The source DB instance isn't supported for a blue/green deployment.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// The request would result in the user exceeding the allowed amount of storage available
+        /// across all DB instances.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateBlueGreenDeployment">REST API Reference for CreateBlueGreenDeployment Operation</seealso>
         Task<CreateBlueGreenDeploymentResponse> CreateBlueGreenDeploymentAsync(CreateBlueGreenDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1253,11 +1293,17 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionAlreadyExistsException">
         /// A CEV with the specified name already exists.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionNotFoundException">
+        /// The specified CEV was not found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionQuotaExceededException">
         /// You have exceeded your CEV quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.Ec2ImagePropertiesNotSupportedException">
         /// The AMI configuration prerequisite has not been met.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidCustomDBEngineVersionStateException">
+        /// You can't delete the CEV.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
@@ -1282,11 +1328,17 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionAlreadyExistsException">
         /// A CEV with the specified name already exists.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionNotFoundException">
+        /// The specified CEV was not found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.CustomDBEngineVersionQuotaExceededException">
         /// You have exceeded your CEV quota.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.Ec2ImagePropertiesNotSupportedException">
         /// The AMI configuration prerequisite has not been met.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidCustomDBEngineVersionStateException">
+        /// You can't delete the CEV.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
@@ -1392,12 +1444,24 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         CreateDBClusterResponse CreateDBCluster(CreateDBClusterRequest request);
@@ -1500,12 +1564,24 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         Task<CreateDBClusterResponse> CreateDBClusterAsync(CreateDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1911,6 +1987,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request);
 
@@ -2021,6 +2102,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -2031,18 +2117,13 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB instance that acts as a read replica for an existing source DB instance
-        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running MariaDB,
-        /// MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ
-        /// DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running Db2,
+        /// MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for
+        /// a Multi-AZ DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
         /// with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
         /// from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon
         /// RDS User Guide</i>.
         /// 
-        ///  
-        /// <para>
-        /// Amazon RDS for Db2 supports this operation for standby replicas. To create a standby
-        /// replica for a DB instance running Db2, you must set <c>ReplicaMode</c> to <c>mounted</c>.
-        /// </para>
         ///  
         /// <para>
         /// Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora
@@ -2143,6 +2224,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request);
 
@@ -2150,18 +2236,13 @@ namespace Amazon.RDS
 
         /// <summary>
         /// Creates a new DB instance that acts as a read replica for an existing source DB instance
-        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running MariaDB,
-        /// MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ
-        /// DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
+        /// or Multi-AZ DB cluster. You can create a read replica for a DB instance running Db2,
+        /// MariaDB, MySQL, Oracle, PostgreSQL, or SQL Server. You can create a read replica for
+        /// a Multi-AZ DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
         /// with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
         /// from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon
         /// RDS User Guide</i>.
         /// 
-        ///  
-        /// <para>
-        /// Amazon RDS for Db2 supports this operation for standby replicas. To create a standby
-        /// replica for a DB instance running Db2, you must set <c>ReplicaMode</c> to <c>mounted</c>.
-        /// </para>
         ///  
         /// <para>
         /// Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora
@@ -2264,6 +2345,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         Task<CreateDBInstanceReadReplicaResponse> CreateDBInstanceReadReplicaAsync(CreateDBInstanceReadReplicaRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2929,6 +3015,12 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
+        /// The DB shard group must be in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">REST API Reference for CreateGlobalCluster Operation</seealso>
         CreateGlobalClusterResponse CreateGlobalCluster(CreateGlobalClusterRequest request);
 
@@ -2972,6 +3064,12 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
+        /// The DB shard group must be in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.ResourceNotFoundException">
+        /// The specified resource ID was not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateGlobalCluster">REST API Reference for CreateGlobalCluster Operation</seealso>
         Task<CreateGlobalClusterResponse> CreateGlobalClusterAsync(CreateGlobalClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3364,6 +3462,12 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
         /// </exception>
@@ -3415,6 +3519,12 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
@@ -3737,6 +3847,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
         /// </exception>
@@ -3813,6 +3926,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of DB snapshots.
@@ -4430,6 +4546,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
+        /// <c>DBSnapshotIdentifier</c> is already used by an existing snapshot.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
@@ -4458,6 +4577,9 @@ namespace Amazon.RDS
         /// <returns>The response from the DeleteTenantDatabase service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSnapshotAlreadyExistsException">
+        /// <c>DBSnapshotIdentifier</c> is already used by an existing snapshot.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -7638,6 +7760,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -7645,6 +7770,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -7688,6 +7816,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -7695,6 +7826,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -8106,6 +8240,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <c>DBParameterGroupName</c> doesn't refer to an existing DB parameter group.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <c>DBSubnetGroupName</c> doesn't refer to an existing DB subnet group.
         /// </exception>
@@ -8124,6 +8261,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it's in use.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
         /// in a common VPC.
@@ -8131,6 +8271,13 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -8142,6 +8289,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotAvailableException">
         /// The <c>aurora-iopt1</c> storage type isn't available, because you modified the DB
         /// cluster to use this storage type less than one month ago.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request);
@@ -8183,6 +8338,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <c>DBParameterGroupName</c> doesn't refer to an existing DB parameter group.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
         /// <c>DBSubnetGroupName</c> doesn't refer to an existing DB subnet group.
         /// </exception>
@@ -8201,6 +8359,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it's in use.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
+        /// The global cluster is in an invalid state and can't perform the requested operation.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
         /// in a common VPC.
@@ -8208,6 +8369,13 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
@@ -8219,6 +8387,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotAvailableException">
         /// The <c>aurora-iopt1</c> storage type isn't available, because you modified the DB
         /// cluster to use this storage type less than one month ago.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         Task<ModifyDBClusterResponse> ModifyDBClusterAsync(ModifyDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8307,22 +8483,13 @@ namespace Amazon.RDS
         /// 
         ///  <important> 
         /// <para>
-        /// After you create a DB cluster parameter group, you should wait at least 5 minutes
-        /// before creating your first DB cluster that uses that DB cluster parameter group as
-        /// the default parameter group. This allows Amazon RDS to fully complete the create operation
-        /// before the parameter group is used as the default for a new DB cluster. This is especially
-        /// important for parameters that are critical when creating the default database for
-        /// a DB cluster, such as the character set for the default database defined by the <c>character_set_database</c>
-        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// RDS console</a> or the <c>DescribeDBClusterParameters</c> operation to verify that
-        /// your DB cluster parameter group has been created or modified.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the modified DB cluster parameter group is used by an Aurora Serverless v1 cluster,
-        /// Aurora applies the update immediately. The cluster restart might interrupt your workload.
-        /// In that case, your application must reopen any connections and retry any transactions
-        /// that were active when the parameter changes took effect.
+        /// There are two types of parameters - dynamic parameters and static parameters. Changes
+        /// to dynamic parameters are applied to the DB cluster immediately without a reboot.
+        /// Changes to static parameters are applied only after the DB cluster is rebooted, which
+        /// can be done using <c>RebootDBCluster</c> operation. You can use the <i>Parameter Groups</i>
+        /// option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS console</a>
+        /// or the <c>DescribeDBClusterParameters</c> operation to verify that your DB cluster
+        /// parameter group has been created or modified.
         /// </para>
         ///  </important> 
         /// <para>
@@ -8358,22 +8525,13 @@ namespace Amazon.RDS
         /// 
         ///  <important> 
         /// <para>
-        /// After you create a DB cluster parameter group, you should wait at least 5 minutes
-        /// before creating your first DB cluster that uses that DB cluster parameter group as
-        /// the default parameter group. This allows Amazon RDS to fully complete the create operation
-        /// before the parameter group is used as the default for a new DB cluster. This is especially
-        /// important for parameters that are critical when creating the default database for
-        /// a DB cluster, such as the character set for the default database defined by the <c>character_set_database</c>
-        /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-        /// RDS console</a> or the <c>DescribeDBClusterParameters</c> operation to verify that
-        /// your DB cluster parameter group has been created or modified.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the modified DB cluster parameter group is used by an Aurora Serverless v1 cluster,
-        /// Aurora applies the update immediately. The cluster restart might interrupt your workload.
-        /// In that case, your application must reopen any connections and retry any transactions
-        /// that were active when the parameter changes took effect.
+        /// There are two types of parameters - dynamic parameters and static parameters. Changes
+        /// to dynamic parameters are applied to the DB cluster immediately without a reboot.
+        /// Changes to static parameters are applied only after the DB cluster is rebooted, which
+        /// can be done using <c>RebootDBCluster</c> operation. You can use the <i>Parameter Groups</i>
+        /// option of the <a href="https://console.aws.amazon.com/rds/">Amazon RDS console</a>
+        /// or the <c>DescribeDBClusterParameters</c> operation to verify that your DB cluster
+        /// parameter group has been created or modified.
         /// </para>
         ///  </important> 
         /// <para>
@@ -8596,6 +8754,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request);
 
@@ -8685,6 +8848,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9010,8 +9178,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
-        /// operation doesn't apply to RDS Custom or RDS for Db2.
+        /// Amazon RDS supports upgrading DB snapshots for MariaDB, MySQL, PostgreSQL, and Oracle.
+        /// This operation doesn't apply to RDS Custom or RDS for Db2.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
@@ -9019,6 +9187,12 @@ namespace Amazon.RDS
         /// <returns>The response from the ModifyDBSnapshot service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
+        /// The state of the DB snapshot doesn't allow deletion.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">REST API Reference for ModifyDBSnapshot Operation</seealso>
         ModifyDBSnapshotResponse ModifyDBSnapshot(ModifyDBSnapshotRequest request);
@@ -9031,8 +9205,8 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// Amazon RDS supports upgrading DB snapshots for MySQL, PostgreSQL, and Oracle. This
-        /// operation doesn't apply to RDS Custom or RDS for Db2.
+        /// Amazon RDS supports upgrading DB snapshots for MariaDB, MySQL, PostgreSQL, and Oracle.
+        /// This operation doesn't apply to RDS Custom or RDS for Db2.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBSnapshot service method.</param>
@@ -9043,6 +9217,12 @@ namespace Amazon.RDS
         /// <returns>The response from the ModifyDBSnapshot service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSnapshotStateException">
+        /// The state of the DB snapshot doesn't allow deletion.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">REST API Reference for ModifyDBSnapshot Operation</seealso>
         Task<ModifyDBSnapshotResponse> ModifyDBSnapshotAsync(ModifyDBSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -9172,6 +9352,9 @@ namespace Amazon.RDS
         /// The request would result in the user exceeding the allowed number of subnets in a
         /// DB subnet groups.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
+        /// The DB subnet group cannot be deleted because it's in use.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
         /// in a common VPC.
@@ -9204,6 +9387,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBSubnetQuotaExceededException">
         /// The request would result in the user exceeding the allowed number of subnets in a
         /// DB subnet groups.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
+        /// The DB subnet group cannot be deleted because it's in use.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
         /// The requested subnet is invalid, or multiple subnets were requested that are not all
@@ -9808,6 +9994,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         RebootDBInstanceResponse RebootDBInstance(RebootDBInstanceRequest request);
 
@@ -9849,6 +10038,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance">REST API Reference for RebootDBInstance Operation</seealso>
         Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10022,6 +10214,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.
         /// </exception>
@@ -10052,6 +10247,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.
@@ -10248,6 +10446,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -10255,6 +10456,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -10264,6 +10468,16 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation can't be performed on the endpoint while the endpoint is in
+        /// this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
         /// The specified tenant database wasn't found in the DB instance.
@@ -10298,6 +10512,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBProxyEndpointNotFoundException">
+        /// The DB proxy endpoint doesn't exist.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBProxyNotFoundException">
         /// The specified proxy name doesn't correspond to a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
@@ -10305,6 +10522,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBProxyTargetGroupNotFoundException">
         /// The specified target group isn't available for a proxy owned by your Amazon Web Services
         /// account in the specified Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBShardGroupNotFoundException">
+        /// The specified DB shard group name wasn't found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBSnapshotNotFoundException">
         /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing DB snapshot.
@@ -10314,6 +10534,16 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.IntegrationNotFoundException">
         /// The specified integration could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterEndpointStateException">
+        /// The requested operation can't be performed on the endpoint while the endpoint is in
+        /// this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The requested operation can't be performed while the cluster is in this state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The DB instance isn't in a valid state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseNotFoundException">
         /// The specified tenant database wasn't found in the DB instance.
@@ -10544,6 +10774,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
@@ -10634,6 +10868,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
@@ -10742,12 +10980,24 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         RestoreDBClusterFromSnapshotResponse RestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request);
@@ -10849,12 +11099,24 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         Task<RestoreDBClusterFromSnapshotResponse> RestoreDBClusterFromSnapshotAsync(RestoreDBClusterFromSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10957,12 +11219,24 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         RestoreDBClusterToPointInTimeResponse RestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request);
@@ -11065,12 +11339,24 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.OptionGroupNotFoundException">
         /// The specified option group could not be found.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         Task<RestoreDBClusterToPointInTimeResponse> RestoreDBClusterToPointInTimeAsync(RestoreDBClusterToPointInTimeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -11206,6 +11492,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request);
 
@@ -11340,6 +11631,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -11352,8 +11648,8 @@ namespace Amazon.RDS
         /// Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases
         /// by using backup files. You can create a backup of your on-premises database, store
         /// it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file
-        /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
-        /// Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i>
+        /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Restoring
+        /// a backup into an Amazon RDS for MySQL DB instance</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// 
         ///  
@@ -11434,6 +11730,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
         RestoreDBInstanceFromS3Response RestoreDBInstanceFromS3(RestoreDBInstanceFromS3Request request);
 
@@ -11443,8 +11744,8 @@ namespace Amazon.RDS
         /// Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases
         /// by using backup files. You can create a backup of your on-premises database, store
         /// it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file
-        /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing
-        /// Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i>
+        /// onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Restoring
+        /// a backup into an Amazon RDS for MySQL DB instance</a> in the <i>Amazon RDS User Guide.</i>
         /// 
         /// 
         ///  
@@ -11527,6 +11828,11 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
         Task<RestoreDBInstanceFromS3Response> RestoreDBInstanceFromS3Async(RestoreDBInstanceFromS3Request request, CancellationToken cancellationToken = default(CancellationToken));
@@ -11649,6 +11955,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request);
 
@@ -11769,6 +12080,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         Task<RestoreDBInstanceToPointInTimeResponse> RestoreDBInstanceToPointInTimeAsync(RestoreDBInstanceToPointInTimeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -11966,6 +12282,14 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
         /// The DB shard group must be in the available state.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
         StartDBClusterResponse StartDBCluster(StartDBClusterRequest request);
 
@@ -12003,6 +12327,14 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBShardGroupStateException">
         /// The DB shard group must be in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
         Task<StartDBClusterResponse> StartDBClusterAsync(StartDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -12074,6 +12406,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
         StartDBInstanceResponse StartDBInstance(StartDBInstanceRequest request);
 
@@ -12144,6 +12481,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
         Task<StartDBInstanceResponse> StartDBInstanceAsync(StartDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -12176,6 +12518,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceAutomatedBackupStateException">
+        /// The automated backup is in an invalid state. For example, this automated backup is
+        /// associated with an active instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.
@@ -12218,6 +12564,10 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceAutomatedBackupStateException">
+        /// The automated backup is in an invalid state. For example, this automated backup is
+        /// associated with an active instance.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
         /// The DB instance isn't in a valid state.

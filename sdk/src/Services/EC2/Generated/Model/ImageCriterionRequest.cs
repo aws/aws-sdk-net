@@ -30,53 +30,169 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The list of criteria that are evaluated to determine whch AMIs are discoverable and
-    /// usable in the account in the specified Amazon Web Services Region. Currently, the
-    /// only criteria that can be specified are AMI providers. 
+    /// The criteria that are evaluated to determine which AMIs are discoverable and usable
+    /// in your account for the specified Amazon Web Services Region.
     /// 
     ///  
     /// <para>
-    /// Up to 10 <c>imageCriteria</c> objects can be specified, and up to a total of 200 values
-    /// for all <c>imageProviders</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html#allowed-amis-json-configuration">JSON
-    /// configuration for the Allowed AMIs criteria</a> in the <i>Amazon EC2 User Guide</i>.
+    /// The <c>ImageCriteria</c> can include up to:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// 10 <c>ImageCriterion</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Each <c>ImageCriterion</c> can include up to:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// 200 values for <c>ImageProviders</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 50 values for <c>ImageNames</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 50 values for <c>MarketplaceProductCodes</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html#how-allowed-amis-works">How
+    /// Allowed AMIs works</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ImageCriterionRequest
     {
+        private CreationDateConditionRequest _creationDateCondition;
+        private DeprecationTimeConditionRequest _deprecationTimeCondition;
+        private List<string> _imageNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _imageProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _marketplaceProductCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CreationDateCondition. 
+        /// <para>
+        /// The maximum age for allowed images.
+        /// </para>
+        /// </summary>
+        public CreationDateConditionRequest CreationDateCondition
+        {
+            get { return this._creationDateCondition; }
+            set { this._creationDateCondition = value; }
+        }
+
+        // Check to see if CreationDateCondition property is set
+        internal bool IsSetCreationDateCondition()
+        {
+            return this._creationDateCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeprecationTimeCondition. 
+        /// <para>
+        /// The maximum period since deprecation for allowed images.
+        /// </para>
+        /// </summary>
+        public DeprecationTimeConditionRequest DeprecationTimeCondition
+        {
+            get { return this._deprecationTimeCondition; }
+            set { this._deprecationTimeCondition = value; }
+        }
+
+        // Check to see if DeprecationTimeCondition property is set
+        internal bool IsSetDeprecationTimeCondition()
+        {
+            return this._deprecationTimeCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageNames. 
+        /// <para>
+        /// The names of allowed images. Names can include wildcards (<c>?</c> and <c>*</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// Length: 1–128 characters. With <c>?</c>, the minimum is 3 characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid characters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Letters: <c>A–Z, a–z</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Numbers: <c>0–9</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Special characters: <c>( ) [ ] . / - ' @ _ * ?</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Spaces
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Maximum: 50 values
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> ImageNames
+        {
+            get { return this._imageNames; }
+            set { this._imageNames = value; }
+        }
+
+        // Check to see if ImageNames property is set
+        internal bool IsSetImageNames()
+        {
+            return this._imageNames != null && (this._imageNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ImageProviders. 
         /// <para>
-        /// A list of image providers whose AMIs are discoverable and useable in the account.
-        /// Up to a total of 200 values can be specified.
+        /// The image providers whose images are allowed.
         /// </para>
         ///  
         /// <para>
         /// Possible values:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        ///  <c>amazon</c>: Allow AMIs created by Amazon Web Services.
+        ///  <c>amazon</c>: Allow AMIs created by Amazon or verified providers.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         ///  <c>aws-marketplace</c>: Allow AMIs created by verified providers in the Amazon Web
         /// Services Marketplace.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         ///  <c>aws-backup-vault</c>: Allow AMIs created by Amazon Web Services Backup. 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// 12-digit account ID: Allow AMIs created by this account. One or more account IDs can
-        /// be specified.
+        /// 12-digit account ID: Allow AMIs created by the specified accounts. One or more account
+        /// IDs can be specified.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         ///  <c>none</c>: Allow AMIs created by your own account only. When <c>none</c> is specified,
         /// no other values can be specified.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Maximum: 200 values
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -94,6 +210,41 @@ namespace Amazon.EC2.Model
         internal bool IsSetImageProviders()
         {
             return this._imageProviders != null && (this._imageProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarketplaceProductCodes. 
+        /// <para>
+        /// The Amazon Web Services Marketplace product codes for allowed images.
+        /// </para>
+        ///  
+        /// <para>
+        /// Length: 1-25 characters
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid characters: Letters (<c>A–Z, a–z</c>) and numbers (<c>0–9</c>)
+        /// </para>
+        ///  
+        /// <para>
+        /// Maximum: 50 values
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> MarketplaceProductCodes
+        {
+            get { return this._marketplaceProductCodes; }
+            set { this._marketplaceProductCodes = value; }
+        }
+
+        // Check to see if MarketplaceProductCodes property is set
+        internal bool IsSetMarketplaceProductCodes()
+        {
+            return this._marketplaceProductCodes != null && (this._marketplaceProductCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -69,17 +69,10 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Creates a new capacity provider. Capacity providers are associated with an Amazon
-        /// ECS cluster and are used in capacity provider strategies to facilitate cluster auto
-        /// scaling.
-        /// 
-        ///  
-        /// <para>
-        /// Only capacity providers that use an Auto Scaling group can be created. Amazon ECS
-        /// tasks on Fargate use the <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
-        /// These providers are available to all accounts in the Amazon Web Services Regions that
-        /// Fargate supports.
-        /// </para>
+        /// Creates a capacity provider. Capacity providers are associated with a cluster and
+        /// are used in capacity provider strategies to facilitate cluster auto scaling. You can
+        /// create capacity providers for Amazon ECS Managed Instances and EC2 instances. Fargate
+        /// has the predefined <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
         /// 
@@ -88,6 +81,10 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -103,6 +100,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
         /// There's already a current Amazon ECS container agent update in progress on the container
@@ -117,17 +117,10 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Creates a new capacity provider. Capacity providers are associated with an Amazon
-        /// ECS cluster and are used in capacity provider strategies to facilitate cluster auto
-        /// scaling.
-        /// 
-        ///  
-        /// <para>
-        /// Only capacity providers that use an Auto Scaling group can be created. Amazon ECS
-        /// tasks on Fargate use the <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
-        /// These providers are available to all accounts in the Amazon Web Services Regions that
-        /// Fargate supports.
-        /// </para>
+        /// Creates a capacity provider. Capacity providers are associated with a cluster and
+        /// are used in capacity provider strategies to facilitate cluster auto scaling. You can
+        /// create capacity providers for Amazon ECS Managed Instances and EC2 instances. Fargate
+        /// has the predefined <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -139,6 +132,10 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -154,6 +151,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
         /// There's already a current Amazon ECS container agent update in progress on the container
@@ -262,6 +262,132 @@ namespace Amazon.ECS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateExpressGatewayService
+
+
+        /// <summary>
+        /// Creates an Express service that simplifies deploying containerized web applications
+        /// on Amazon ECS with managed Amazon Web Services infrastructure. This operation provisions
+        /// and configures Application Load Balancers, target groups, security groups, and auto-scaling
+        /// policies automatically.
+        /// 
+        ///  
+        /// <para>
+        /// Specify a primary container configuration with your application image and basic settings.
+        /// Amazon ECS creates the necessary Amazon Web Services resources for traffic distribution,
+        /// health monitoring, network access control, and capacity management.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide an execution role for task operations and an infrastructure role for managing
+        /// Amazon Web Services resources on your behalf.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the CreateExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
+        /// The specified platform version doesn't satisfy the required capabilities of the task
+        /// definition.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
+        /// The specified platform version doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateExpressGatewayService">REST API Reference for CreateExpressGatewayService Operation</seealso>
+        CreateExpressGatewayServiceResponse CreateExpressGatewayService(CreateExpressGatewayServiceRequest request);
+
+
+
+        /// <summary>
+        /// Creates an Express service that simplifies deploying containerized web applications
+        /// on Amazon ECS with managed Amazon Web Services infrastructure. This operation provisions
+        /// and configures Application Load Balancers, target groups, security groups, and auto-scaling
+        /// policies automatically.
+        /// 
+        ///  
+        /// <para>
+        /// Specify a primary container configuration with your application image and basic settings.
+        /// Amazon ECS creates the necessary Amazon Web Services resources for traffic distribution,
+        /// health monitoring, network access control, and capacity management.
+        /// </para>
+        ///  
+        /// <para>
+        /// Provide an execution role for task operations and an infrastructure role for managing
+        /// Amazon Web Services resources on your behalf.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExpressGatewayService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformTaskDefinitionIncompatibilityException">
+        /// The specified platform version doesn't satisfy the required capabilities of the task
+        /// definition.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.PlatformUnknownException">
+        /// The specified platform version doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateExpressGatewayService">REST API Reference for CreateExpressGatewayService Operation</seealso>
+        Task<CreateExpressGatewayServiceResponse> CreateExpressGatewayServiceAsync(CreateExpressGatewayServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -436,6 +562,69 @@ namespace Amazon.ECS
         /// <para>
         /// Load balancer requirement: When your service uses Application Load Balancer, Network
         /// Load Balancer, or Service Connect
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>LINEAR</c>: A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
+        /// traffic from the current production environment to a new environment in equal percentage
+        /// increments. With Amazon ECS linear deployments, you can control the pace of traffic
+        /// shifting and validate new service revisions with increasing amounts of production
+        /// traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Linear deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Gradual validation: When you want to gradually validate your new service version with
+        /// increasing traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Performance monitoring: When you need time to monitor metrics and performance during
+        /// the deployment
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Risk minimization: When you want to minimize risk by exposing the new version to production
+        /// traffic incrementally
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer or Service
+        /// Connect
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>CANARY</c>: A <i>canary</i> deployment strategy (<c>CANARY</c>) shifts a small
+        /// percentage of traffic to the new service revision first, then shifts the remaining
+        /// traffic all at once after a specified time period. This allows you to test the new
+        /// version with a subset of users before full deployment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Canary deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Feature testing: When you want to test new features with a small subset of users before
+        /// full rollout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Production validation: When you need to validate performance and functionality with
+        /// real production traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Blast radius control: When you want to minimize blast radius if issues are discovered
+        /// in the new version
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer or Service
+        /// Connect
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
@@ -686,6 +875,69 @@ namespace Amazon.ECS
         /// <para>
         /// Load balancer requirement: When your service uses Application Load Balancer, Network
         /// Load Balancer, or Service Connect
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>LINEAR</c>: A <i>linear</i> deployment strategy (<c>LINEAR</c>) gradually shifts
+        /// traffic from the current production environment to a new environment in equal percentage
+        /// increments. With Amazon ECS linear deployments, you can control the pace of traffic
+        /// shifting and validate new service revisions with increasing amounts of production
+        /// traffic.
+        /// </para>
+        ///  
+        /// <para>
+        /// Linear deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Gradual validation: When you want to gradually validate your new service version with
+        /// increasing traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Performance monitoring: When you need time to monitor metrics and performance during
+        /// the deployment
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Risk minimization: When you want to minimize risk by exposing the new version to production
+        /// traffic incrementally
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer or Service
+        /// Connect
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>CANARY</c>: A <i>canary</i> deployment strategy (<c>CANARY</c>) shifts a small
+        /// percentage of traffic to the new service revision first, then shifts the remaining
+        /// traffic all at once after a specified time period. This allows you to test the new
+        /// version with a subset of users before full deployment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Canary deployments are best suited for the following scenarios:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Feature testing: When you want to test new features with a small subset of users before
+        /// full rollout
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Production validation: When you need to validate performance and functionality with
+        /// real production traffic
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Blast radius control: When you want to minimize blast radius if issues are discovered
+        /// in the new version
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Load balancer requirement: When your service uses Application Load Balancer or Service
+        /// Connect
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
@@ -1078,6 +1330,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -1089,6 +1345,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
         DeleteCapacityProviderResponse DeleteCapacityProvider(DeleteCapacityProviderRequest request);
@@ -1128,6 +1387,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -1139,6 +1402,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
         Task<DeleteCapacityProviderResponse> DeleteCapacityProviderAsync(DeleteCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1168,6 +1434,12 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterContainsCapacityProviderException">
+        /// The cluster contains one or more capacity providers that prevent the requested operation.
+        /// This exception occurs when you try to delete a cluster that still has active capacity
+        /// providers, including Amazon ECS Managed Instances capacity providers. You must first
+        /// delete all capacity providers from the cluster before you can delete the cluster itself.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterContainsContainerInstancesException">
         /// You can't delete a cluster that has registered container instances. First, deregister
@@ -1235,6 +1507,12 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterContainsCapacityProviderException">
+        /// The cluster contains one or more capacity providers that prevent the requested operation.
+        /// This exception occurs when you try to delete a cluster that still has active capacity
+        /// providers, including Amazon ECS Managed Instances capacity providers. You must first
+        /// delete all capacity providers from the cluster before you can delete the cluster itself.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClusterContainsContainerInstancesException">
         /// You can't delete a cluster that has registered container instances. First, deregister
         /// the container instances before you can delete the cluster. For more information, see
@@ -1274,6 +1552,132 @@ namespace Amazon.ECS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteExpressGatewayService
+
+
+        /// <summary>
+        /// Deletes an Express service and removes all associated Amazon Web Services resources.
+        /// This operation stops service tasks, removes the Application Load Balancer, target
+        /// groups, security groups, auto-scaling policies, and other managed infrastructure components.
+        /// 
+        ///  
+        /// <para>
+        /// The service enters a <c>DRAINING</c> state where existing tasks complete current requests
+        /// without starting new tasks. After all tasks stop, the service and infrastructure are
+        /// permanently removed.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation cannot be reversed. Back up important data and verify the service is
+        /// no longer needed before deletion.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service isn't active. You can't update a service that's inactive. If
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteExpressGatewayService">REST API Reference for DeleteExpressGatewayService Operation</seealso>
+        DeleteExpressGatewayServiceResponse DeleteExpressGatewayService(DeleteExpressGatewayServiceRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an Express service and removes all associated Amazon Web Services resources.
+        /// This operation stops service tasks, removes the Application Load Balancer, target
+        /// groups, security groups, auto-scaling policies, and other managed infrastructure components.
+        /// 
+        ///  
+        /// <para>
+        /// The service enters a <c>DRAINING</c> state where existing tasks complete current requests
+        /// without starting new tasks. After all tasks stop, the service and infrastructure are
+        /// permanently removed.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation cannot be reversed. Back up important data and verify the service is
+        /// no longer needed before deletion.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExpressGatewayService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service isn't active. You can't update a service that's inactive. If
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteExpressGatewayService">REST API Reference for DeleteExpressGatewayService Operation</seealso>
+        Task<DeleteExpressGatewayServiceResponse> DeleteExpressGatewayServiceAsync(DeleteExpressGatewayServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1885,6 +2289,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -1896,6 +2304,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">REST API Reference for DescribeCapacityProviders Operation</seealso>
         DescribeCapacityProvidersResponse DescribeCapacityProviders(DescribeCapacityProvidersRequest request);
@@ -1916,6 +2327,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -1927,6 +2342,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders">REST API Reference for DescribeCapacityProviders Operation</seealso>
         Task<DescribeCapacityProvidersResponse> DescribeCapacityProvidersAsync(DescribeCapacityProvidersRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2076,6 +2494,120 @@ namespace Amazon.ECS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         Task<DescribeContainerInstancesResponse> DescribeContainerInstancesAsync(DescribeContainerInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeExpressGatewayService
+
+
+        /// <summary>
+        /// Retrieves detailed information about an Express service, including current status,
+        /// configuration, managed infrastructure, and service revisions.
+        /// 
+        ///  
+        /// <para>
+        /// Returns comprehensive service details, active service revisions, ingress paths with
+        /// endpoints, and managed Amazon Web Services resource status including load balancers
+        /// and auto-scaling policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>include</c> parameter to retrieve additional information such as resource
+        /// tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeExpressGatewayService">REST API Reference for DescribeExpressGatewayService Operation</seealso>
+        DescribeExpressGatewayServiceResponse DescribeExpressGatewayService(DescribeExpressGatewayServiceRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about an Express service, including current status,
+        /// configuration, managed infrastructure, and service revisions.
+        /// 
+        ///  
+        /// <para>
+        /// Returns comprehensive service details, active service revisions, ingress paths with
+        /// endpoints, and managed Amazon Web Services resource status including load balancers
+        /// and auto-scaling policies.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <c>include</c> parameter to retrieve additional information such as resource
+        /// tags.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExpressGatewayService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeExpressGatewayService">REST API Reference for DescribeExpressGatewayService Operation</seealso>
+        Task<DescribeExpressGatewayServiceResponse> DescribeExpressGatewayServiceAsync(DescribeExpressGatewayServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3954,6 +4486,12 @@ namespace Amazon.ECS
         /// However, you must specify an empty array (<c>[]</c>) to bypass defining a default
         /// strategy.
         /// </para>
+        ///  
+        /// <para>
+        /// Amazon ECS Managed Instances doesn't support this, because when you create a capacity
+        /// provider with Amazon ECS Managed Instances, it becomes available only within the specified
+        /// cluster.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutClusterCapacityProviders service method.</param>
         /// 
@@ -4015,6 +4553,12 @@ namespace Amazon.ECS
         /// used. We recommend that you define a default capacity provider strategy for your cluster.
         /// However, you must specify an empty array (<c>[]</c>) to bypass defining a default
         /// strategy.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon ECS Managed Instances doesn't support this, because when you create a capacity
+        /// provider with Amazon ECS Managed Instances, it becomes available only within the specified
+        /// cluster.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutClusterCapacityProviders service method.</param>
@@ -4259,7 +4803,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-        /// Amazon Web ServicesSupport</a>.
+        /// Amazon Web Services Support</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
@@ -4397,7 +4941,7 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.BlockedException">
         /// Your Amazon Web Services account was blocked. For more information, contact <a href="http://aws.amazon.com/contact-us/">
-        /// Amazon Web ServicesSupport</a>.
+        /// Amazon Web Services Support</a>.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ClientException">
         /// These errors are usually caused by a client action. This client action might be using
@@ -5064,6 +5608,12 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Modifies the parameters for a capacity provider.
+        /// 
+        ///  
+        /// <para>
+        /// These changes only apply to new Amazon ECS Managed Instances, or EC2 instances, not
+        /// existing ones.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
         /// 
@@ -5072,6 +5622,10 @@ namespace Amazon.ECS
         /// These errors are usually caused by a client action. This client action might be using
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
@@ -5085,6 +5639,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
         UpdateCapacityProviderResponse UpdateCapacityProvider(UpdateCapacityProviderRequest request);
 
@@ -5092,6 +5649,12 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Modifies the parameters for a capacity provider.
+        /// 
+        ///  
+        /// <para>
+        /// These changes only apply to new Amazon ECS Managed Instances, or EC2 instances, not
+        /// existing ones.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -5104,6 +5667,10 @@ namespace Amazon.ECS
         /// an action or resource on behalf of a user that doesn't have permissions to use the
         /// action or resource. Or, it might be specifying an identifier that isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// 
@@ -5115,6 +5682,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
         Task<UpdateCapacityProviderResponse> UpdateCapacityProviderAsync(UpdateCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5624,6 +6194,132 @@ namespace Amazon.ECS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState">REST API Reference for UpdateContainerInstancesState Operation</seealso>
         Task<UpdateContainerInstancesStateResponse> UpdateContainerInstancesStateAsync(UpdateContainerInstancesStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateExpressGatewayService
+
+
+        /// <summary>
+        /// Updates an existing Express service configuration. Modifies container settings, resource
+        /// allocation, auto-scaling configuration, and other service parameters without recreating
+        /// the service.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon ECS creates a new service revision with updated configuration and performs
+        /// a rolling deployment to replace existing tasks. The service remains available during
+        /// updates, ensuring zero-downtime deployments.
+        /// </para>
+        ///  
+        /// <para>
+        /// Some parameters like the infrastructure role cannot be modified after service creation
+        /// and require creating a new service.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExpressGatewayService service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service isn't active. You can't update a service that's inactive. If
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateExpressGatewayService">REST API Reference for UpdateExpressGatewayService Operation</seealso>
+        UpdateExpressGatewayServiceResponse UpdateExpressGatewayService(UpdateExpressGatewayServiceRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing Express service configuration. Modifies container settings, resource
+        /// allocation, auto-scaling configuration, and other service parameters without recreating
+        /// the service.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon ECS creates a new service revision with updated configuration and performs
+        /// a rolling deployment to replace existing tasks. The service remains available during
+        /// updates, ensuring zero-downtime deployments.
+        /// </para>
+        ///  
+        /// <para>
+        /// Some parameters like the infrastructure role cannot be modified after service creation
+        /// and require creating a new service.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExpressGatewayService service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExpressGatewayService service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about service event errors, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages-list.html">Amazon
+        /// ECS service event messages</a>. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotActiveException">
+        /// The specified service isn't active. You can't update a service that's inactive. If
+        /// you have previously deleted a service, you can re-create it with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateExpressGatewayService">REST API Reference for UpdateExpressGatewayService Operation</seealso>
+        Task<UpdateExpressGatewayServiceResponse> UpdateExpressGatewayServiceAsync(UpdateExpressGatewayServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

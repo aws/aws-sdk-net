@@ -135,6 +135,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.ShadowYOffset.Value);
             }
 
+            if(requestObject.IsSetSubtitleRows())
+            {
+                context.Writer.WritePropertyName("subtitleRows");
+                context.Writer.WriteStringValue(requestObject.SubtitleRows);
+            }
+
             if(requestObject.IsSetTeletextGridControl())
             {
                 context.Writer.WritePropertyName("teletextGridControl");

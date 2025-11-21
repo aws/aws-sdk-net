@@ -226,7 +226,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Deletes a transit gateway attachment from a Network Firewall. Either the firewall owner or the transit gateway owner can delete the attachment.</p> <important> <p>After you delete a transit gateway attachment, raffic will no longer flow through the firewall endpoints.</p> </important> <p>After you initiate the delete operation, use <a>DescribeFirewall</a> to monitor the deletion status.</p>"
+      "documentation":"<p>Deletes a transit gateway attachment from a Network Firewall. Either the firewall owner or the transit gateway owner can delete the attachment.</p> <important> <p>After you delete a transit gateway attachment, traffic will no longer flow through the firewall endpoints.</p> </important> <p>After you initiate the delete operation, use <a>DescribeFirewall</a> to monitor the deletion status.</p>"
     },
     "DeleteResourcePolicy":{
       "name":"DeleteResourcePolicy",
@@ -695,7 +695,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottlingException"}
       ],
-      "documentation":"<p>Rejects a transit gateway attachment request for Network Firewall. When you reject the attachment request, Network Firewall cancels the creation of routing components between the transit gateway and firewall endpoints.</p> <p>Only the firewall owner can reject the attachment. After rejection, no traffic will flow through the firewall endpoints for this attachment.</p> <p>Use <a>DescribeFirewall</a> to monitor the rejection status. To accept the attachment instead of rejecting it, use <a>AcceptNetworkFirewallTransitGatewayAttachment</a>.</p> <note> <p>Once rejected, you cannot reverse this action. To establish connectivity, you must create a new transit gateway-attached firewall.</p> </note>"
+      "documentation":"<p>Rejects a transit gateway attachment request for Network Firewall. When you reject the attachment request, Network Firewall cancels the creation of routing components between the transit gateway and firewall endpoints.</p> <p>Only the transit gateway owner can reject the attachment. After rejection, no traffic will flow through the firewall endpoints for this attachment.</p> <p>Use <a>DescribeFirewall</a> to monitor the rejection status. To accept the attachment instead of rejecting it, use <a>AcceptNetworkFirewallTransitGatewayAttachment</a>.</p> <note> <p>Once rejected, you cannot reverse this action. To establish connectivity, you must create a new transit gateway-attached firewall.</p> </note>"
     },
     "StartAnalysisReport":{
       "name":"StartAnalysisReport",
@@ -807,7 +807,8 @@
         {"shape":"InvalidRequestException"},
         {"shape":"InternalServerError"},
         {"shape":"ResourceNotFoundException"},
-        {"shape":"ThrottlingException"}
+        {"shape":"ThrottlingException"},
+        {"shape":"InvalidTokenException"}
       ],
       "documentation":"<p>Enables specific types of firewall analysis on a specific firewall you define.</p>"
     },
@@ -1522,7 +1523,7 @@
         },
         "AvailabilityZoneMappings":{
           "shape":"AvailabilityZoneMappings",
-          "documentation":"<p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone independence.</p> <p>You can modify Availability Zones later using <a>AssociateAvailabilityZones</a> or <a>DisassociateAvailabilityZones</a>, but this may briefly disrupt traffic. The <code>AvailabilityZoneChangeProtection</code> setting controls whether you can make these modifications.</p>"
+          "documentation":"<p>Required. The Availability Zones where you want to create firewall endpoints for a transit gateway-attached firewall. You must specify at least one Availability Zone. Consider enabling the firewall in every Availability Zone where you have workloads to maintain Availability Zone isolation.</p> <p>You can modify Availability Zones later using <a>AssociateAvailabilityZones</a> or <a>DisassociateAvailabilityZones</a>, but this may briefly disrupt traffic. The <code>AvailabilityZoneChangeProtection</code> setting controls whether you can make these modifications.</p>"
         },
         "AvailabilityZoneChangeProtection":{
           "shape":"Boolean",
@@ -2151,6 +2152,18 @@
         "LastModifiedTime":{
           "shape":"LastUpdateTime",
           "documentation":"<p>A timestamp indicating when the rule group was last modified.</p>"
+        },
+        "VendorName":{
+          "shape":"VendorName",
+          "documentation":"<p>The name of the Amazon Web Services Marketplace vendor that provides this rule group.</p>"
+        },
+        "ProductId":{
+          "shape":"ProductId",
+          "documentation":"<p>The unique identifier for the product listing associated with this rule group.</p>"
+        },
+        "ListingName":{
+          "shape":"ListingName",
+          "documentation":"<p>The display name of the product listing for this rule group.</p>"
         }
       }
     },
@@ -2410,6 +2423,7 @@
     },
     "Domain":{"type":"string"},
     "EnableMonitoringDashboard":{"type":"boolean"},
+    "EnableTLSSessionHolding":{"type":"boolean"},
     "EnabledAnalysisType":{
       "type":"string",
       "enum":[
@@ -2594,6 +2608,10 @@
         "PolicyVariables":{
           "shape":"PolicyVariables",
           "documentation":"<p>Contains variables that you can use to override default Suricata settings in your firewall policy.</p>"
+        },
+        "EnableTLSSessionHolding":{
+          "shape":"EnableTLSSessionHolding",
+          "documentation":"<p>When true, prevents TCP and TLS packets from reaching destination servers until TLS Inspection has evaluated Server Name Indication (SNI) rules. Requires an associated TLS Inspection configuration.</p>"
         }
       },
       "documentation":"<p>The firewall policy defines the behavior of a firewall using a collection of stateless and stateful rule groups and other settings. You can use one firewall policy for multiple firewalls. </p> <p>This, along with <a>FirewallPolicyResponse</a>, define the policy. You can retrieve all objects for a firewall policy by calling <a>DescribeFirewallPolicy</a>.</p>"
@@ -2851,7 +2869,9 @@
       "type":"string",
       "enum":[
         "ALLOWLIST",
-        "DENYLIST"
+        "DENYLIST",
+        "REJECTLIST",
+        "ALERTLIST"
       ]
     },
     "GetAnalysisReportResultsRequest":{
@@ -3351,6 +3371,10 @@
           "shape":"ResourceManagedType",
           "documentation":"<p>Indicates the general category of the Amazon Web Services managed rule group.</p>"
         },
+        "SubscriptionStatus":{
+          "shape":"SubscriptionStatus",
+          "documentation":"<p>Filters the results to show only rule groups with the specified subscription status. Use this to find subscribed or unsubscribed rule groups.</p>"
+        },
         "Type":{
           "shape":"RuleGroupType",
           "documentation":"<p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>"
@@ -3457,6 +3481,7 @@
         }
       }
     },
+    "ListingName":{"type":"string"},
     "LogDestinationConfig":{
       "type":"structure",
       "required":[
@@ -3593,7 +3618,9 @@
       "enum":[
         "PENDING",
         "IN_SYNC",
-        "CAPACITY_CONSTRAINED"
+        "CAPACITY_CONSTRAINED",
+        "NOT_SUBSCRIBED",
+        "DEPRECATED"
       ]
     },
     "PolicyString":{
@@ -3665,6 +3692,7 @@
       "max":65535,
       "min":1
     },
+    "ProductId":{"type":"string"},
     "ProtocolNumber":{
       "type":"integer",
       "max":255,
@@ -3778,7 +3806,8 @@
       "enum":[
         "AWS_MANAGED_THREAT_SIGNATURES",
         "AWS_MANAGED_DOMAIN_LISTS",
-        "ACTIVE_THREAT_DEFENSE"
+        "ACTIVE_THREAT_DEFENSE",
+        "PARTNER_MANAGED"
       ]
     },
     "ResourceName":{
@@ -3871,6 +3900,10 @@
         "Arn":{
           "shape":"ResourceArn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the rule group.</p>"
+        },
+        "VendorName":{
+          "shape":"VendorName",
+          "documentation":"<p>The name of the Amazon Web Services Marketplace seller that provides this rule group.</p>"
         }
       },
       "documentation":"<p>High-level information about a rule group, returned by <a>ListRuleGroups</a>. You can use the information provided in the metadata to retrieve and manage a rule group.</p>"
@@ -4077,7 +4110,7 @@
         },
         "GeneratedRulesType":{
           "shape":"GeneratedRulesType",
-          "documentation":"<p>Whether you want to allow or deny access to the domains in your target list.</p>"
+          "documentation":"<p>Whether you want to apply allow, reject, alert, or drop behavior to the domains in your target list.</p> <note> <p>When logging is enabled and you choose Alert, traffic that matches the domain specifications generates an alert in the firewall's logs. Then, traffic either passes, is rejected, or drops based on other rules in the firewall policy.</p> </note>"
         }
       },
       "documentation":"<p>Stateful inspection criteria for a domain list rule group. </p> <p>For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake.</p> <p>By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <a>RuleVariables</a> in this guide and <a href=\"https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html\">Stateful domain list rule groups in Network Firewall</a> in the <i>Network Firewall Developer Guide</i>.</p>"
@@ -4552,6 +4585,13 @@
     "SubnetMappings":{
       "type":"list",
       "member":{"shape":"SubnetMapping"}
+    },
+    "SubscriptionStatus":{
+      "type":"string",
+      "enum":[
+        "NOT_SUBSCRIBED",
+        "SUBSCRIBED"
+      ]
     },
     "Summary":{
       "type":"structure",
@@ -5441,6 +5481,7 @@
       "type":"list",
       "member":{"shape":"VariableDefinition"}
     },
+    "VendorName":{"type":"string"},
     "VpcEndpointAssociation":{
       "type":"structure",
       "required":[

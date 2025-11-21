@@ -68,6 +68,12 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("timeRange", targetDepth))
+                {
+                    var unmarshaller = TimeRangeUnmarshaller.Instance;
+                    unmarshalledObject.TimeRange = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

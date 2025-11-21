@@ -91,6 +91,10 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 {
                     return DuplicateRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IdempotencyConflictException"))
+                {
+                    return IdempotencyConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceErrorException"))
                 {
                     return InternalServiceErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

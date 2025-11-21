@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutObjectTaggingRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.AddSubResource("tagging");
         
@@ -85,7 +86,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
             
             if (publicRequest.IsSetVersionId())
-                request.AddSubResource("versionId", StringUtils.FromString(publicRequest.VersionId));
+                request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/{Key+}";
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
@@ -121,8 +122,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                if (publicRequest.IsSetContentMD5())
-                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
@@ -158,5 +157,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutObjectTaggingRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutObjectTaggingRequest publicRequest);
     }    
 }

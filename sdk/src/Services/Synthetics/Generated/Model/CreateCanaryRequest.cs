@@ -61,6 +61,7 @@ namespace Amazon.Synthetics.Model
     {
         private ArtifactConfigInput _artifactConfig;
         private string _artifactS3Location;
+        private List<BrowserConfig> _browserConfigs = AWSConfigs.InitializeCollections ? new List<BrowserConfig>() : null;
         private CanaryCodeInput _code;
         private string _executionRoleArn;
         private int? _failureRetentionPeriodInDays;
@@ -112,6 +113,38 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetArtifactS3Location()
         {
             return this._artifactS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrowserConfigs. 
+        /// <para>
+        /// CloudWatch Synthetics now supports multibrowser canaries for <c>syn-nodejs-puppeteer-11.0</c>
+        /// and <c>syn-nodejs-playwright-3.0</c> runtimes. This feature allows you to run your
+        /// canaries on both Firefox and Chrome browsers. To create a multibrowser canary, you
+        /// need to specify the BrowserConfigs with a list of browsers you want to use.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If not specified, <c>browserConfigs</c> defaults to Chrome.
+        /// </para>
+        ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<BrowserConfig> BrowserConfigs
+        {
+            get { return this._browserConfigs; }
+            set { this._browserConfigs = value; }
+        }
+
+        // Check to see if BrowserConfigs property is set
+        internal bool IsSetBrowserConfigs()
+        {
+            return this._browserConfigs != null && (this._browserConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

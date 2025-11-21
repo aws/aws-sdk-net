@@ -59,11 +59,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// The email address of the member account.
-        /// </para>
-        ///  
-        /// <para>
-        /// The rules for a valid email address:
+        /// The email address of the member account. The following list includes the rules for
+        /// a valid email address:
         /// </para>
         ///  <ul> <li> 
         /// <para>

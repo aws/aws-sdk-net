@@ -267,7 +267,9 @@ namespace Amazon.Evs.Model
         /// Gets and sets the property LicenseInfo. 
         /// <para>
         ///  The license information that Amazon EVS requires to create an environment. Amazon
-        /// EVS requires two license keys: a VCF solution key and a vSAN license key.
+        /// EVS requires two license keys: a VCF solution key and a vSAN license key. The VCF
+        /// solution key must cover a minimum of 256 cores. The vSAN license key must provide
+        /// at least 110 TiB of vSAN capacity.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -387,9 +389,11 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property TermsAccepted. 
         /// <para>
-        /// Customer confirmation that the customer has purchased and maintains sufficient VCF
-        /// software licenses to cover all physical processor cores in the environment, in compliance
-        /// with VMware's licensing requirements and terms of use.
+        /// Customer confirmation that the customer has purchased and will continue to maintain
+        /// the required number of VCF software licenses to cover all physical processor cores
+        /// in the Amazon EVS environment. Information about your VCF software in Amazon EVS will
+        /// be shared with Broadcom to verify license compliance. Amazon EVS does not validate
+        /// license keys. To validate license keys, visit the Broadcom support portal. 
         /// </para>
         /// </summary>
         public bool? TermsAccepted

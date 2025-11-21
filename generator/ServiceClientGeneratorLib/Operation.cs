@@ -128,6 +128,11 @@ namespace ServiceClientGenerator
         {
             get
             {
+                // if a rename happened, look for the original operation in the model
+                if (this.model.DocumentRoot["operations"][this.Name] != null && this.model.DocumentRoot["operations"][this.Name]["httpChecksum"] != null && this.model.DocumentRoot["operations"][this.Name]["httpChecksum"]["requestChecksumRequired"] != null)
+                {
+                    return true;
+                }
                 if (data[ServiceModel.HttpChecksumRequiredKey] != null && data[ServiceModel.HttpChecksumRequiredKey].IsBoolean)
                 {
                     if ((bool)data[ServiceModel.HttpChecksumRequiredKey])
@@ -153,6 +158,10 @@ namespace ServiceClientGenerator
         {
             get
             {
+                if (this.model.DocumentRoot["operations"][this.Name] != null && this.model.DocumentRoot["operations"][this.Name][ServiceModel.HttpChecksumKey] != null)
+                {
+                    return new ChecksumConfiguration(this.model.DocumentRoot["operations"][this.Name][ServiceModel.HttpChecksumKey]);
+                }
                 if (data[ServiceModel.HttpChecksumKey] != null)
                     return new ChecksumConfiguration(data[ServiceModel.HttpChecksumKey]);
 
@@ -340,6 +349,35 @@ namespace ServiceClientGenerator
                 }
 
                 return null;
+            }
+        }
+
+        private IList<Member> _requestPayloadFlattenMembers;
+
+        /// <summary>
+        /// Contains the list of members of the flattened RequestPayloadMember if the RequestPayloadMember
+        /// has been flattened
+        /// </summary>
+        public IList<Member> RequestPayloadFlattenMembers
+        {
+            get
+            {
+                if (_requestPayloadFlattenMembers == null)
+                {
+                    IList<Member> map = new List<Member>();
+                    if (this.model.Customizations.FlattenShapes(this.RequestStructure.Name).Contains(this.RequestPayloadMember.ModeledName))
+                    {
+                        JsonData flattenMemberShape = this.model.DocumentRoot[ServiceModel.ShapesKey][this.data[Shape.MembersKey][this.RequestPayloadMember.ModeledName][ServiceModel.ShapeKey].ToString()];
+                        foreach (KeyValuePair<string, JsonData> kvp in flattenMemberShape[Shape.MembersKey])
+                        {
+                            if (this.model.Customizations.IsExcludedProperty(kvp.Key, this.Name))
+                                continue;
+                            map.Add(new Member(this.model, this.RequestPayloadMember.Shape, kvp.Key, kvp.Key, kvp.Value, null));
+                        }
+                        _requestPayloadFlattenMembers = map;
+                    }
+                }
+                return _requestPayloadFlattenMembers;
             }
         }
 

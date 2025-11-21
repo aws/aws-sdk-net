@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListStorageLensConfigurationEntry Object
     /// </summary>  
-    public class ListStorageLensConfigurationEntryUnmarshaller : IXmlUnmarshaller<ListStorageLensConfigurationEntry, XmlUnmarshallerContext>
+    public partial class ListStorageLensConfigurationEntryUnmarshaller : IXmlUnmarshaller<ListStorageLensConfigurationEntry, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.StorageLensArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ListStorageLensConfigurationEntry unmarshalledObject, int targetDepth);
+
         private static ListStorageLensConfigurationEntryUnmarshaller _instance = new ListStorageLensConfigurationEntryUnmarshaller();        
 
         /// <summary>

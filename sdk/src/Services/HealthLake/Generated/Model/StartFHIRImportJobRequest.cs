@@ -31,7 +31,9 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the StartFHIRImportJob operation.
-    /// Begins a FHIR Import job.
+    /// Start importing bulk FHIR data into an ACTIVE data store. The import job imports FHIR
+    /// data found in the <c>InputDataConfig</c> object and stores processing results in the
+    /// <c>JobOutputDataConfig</c> object.
     /// </summary>
     public partial class StartFHIRImportJobRequest : AmazonHealthLakeRequest
     {
@@ -41,11 +43,12 @@ namespace Amazon.HealthLake.Model
         private InputDataConfig _inputDataConfig;
         private string _jobName;
         private OutputDataConfig _jobOutputDataConfig;
+        private ValidationLevel _validationLevel;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Optional user provided token used for ensuring idempotency.
+        /// The optional user-provided token used for ensuring API idempotency.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -64,7 +67,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
+        /// The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -83,7 +86,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated data store ID.
+        /// The data store identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -102,7 +105,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// The input properties of the FHIR Import job in the StartFHIRImport job request.
+        /// The input properties for the import job request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,7 +124,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the FHIR Import job in the StartFHIRImport job request.
+        /// The import job name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -151,6 +154,24 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetJobOutputDataConfig()
         {
             return this._jobOutputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationLevel. 
+        /// <para>
+        /// The validation level of the import job.
+        /// </para>
+        /// </summary>
+        public ValidationLevel ValidationLevel
+        {
+            get { return this._validationLevel; }
+            set { this._validationLevel = value; }
+        }
+
+        // Check to see if ValidationLevel property is set
+        internal bool IsSetValidationLevel()
+        {
+            return this._validationLevel != null;
         }
 
     }

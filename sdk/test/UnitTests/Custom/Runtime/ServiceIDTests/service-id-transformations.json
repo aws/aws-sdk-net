@@ -715,11 +715,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_IOT_EVENTS_DATA"
   },
   {
-    "service_id": "IoTFleetHub",
-    "services_section_name": "iotfleethub",
-    "service_envvar_name": "AWS_ENDPOINT_URL_IOTFLEETHUB"
-  },
-  {
     "service_id": "IoTFleetWise",
     "services_section_name": "iotfleetwise",
     "service_envvar_name": "AWS_ENDPOINT_URL_IOTFLEETWISE"
@@ -880,16 +875,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_LOOKOUTEQUIPMENT"
   },
   {
-    "service_id": "LookoutMetrics",
-    "services_section_name": "lookoutmetrics",
-    "service_envvar_name": "AWS_ENDPOINT_URL_LOOKOUTMETRICS"
-  },
-  {
-    "service_id": "LookoutVision",
-    "services_section_name": "lookoutvision",
-    "service_envvar_name": "AWS_ENDPOINT_URL_LOOKOUTVISION"
-  },
-  {
     "service_id": "m2",
     "services_section_name": "m2",
     "service_envvar_name": "AWS_ENDPOINT_URL_M2"
@@ -1040,16 +1025,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_OPENSEARCH"
   },
   {
-    "service_id": "OpsWorks",
-    "services_section_name": "opsworks",
-    "service_envvar_name": "AWS_ENDPOINT_URL_OPSWORKS"
-  },
-  {
-    "service_id": "OpsWorksCM",
-    "services_section_name": "opsworkscm",
-    "service_envvar_name": "AWS_ENDPOINT_URL_OPSWORKSCM"
-  },
-  {
     "service_id": "Organizations",
     "services_section_name": "organizations",
     "service_envvar_name": "AWS_ENDPOINT_URL_ORGANIZATIONS"
@@ -1120,16 +1095,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_PROTON"
   },
   {
-    "service_id": "QLDB",
-    "services_section_name": "qldb",
-    "service_envvar_name": "AWS_ENDPOINT_URL_QLDB"
-  },
-  {
-    "service_id": "QLDB Session",
-    "services_section_name": "qldb_session",
-    "service_envvar_name": "AWS_ENDPOINT_URL_QLDB_SESSION"
-  },
-  {
     "service_id": "QuickSight",
     "services_section_name": "quicksight",
     "service_envvar_name": "AWS_ENDPOINT_URL_QUICKSIGHT"
@@ -1188,11 +1153,6 @@
     "service_id": "Resource Groups Tagging API",
     "services_section_name": "resource_groups_tagging_api",
     "service_envvar_name": "AWS_ENDPOINT_URL_RESOURCE_GROUPS_TAGGING_API"
-  },
-  {
-    "service_id": "RoboMaker",
-    "services_section_name": "robomaker",
-    "service_envvar_name": "AWS_ENDPOINT_URL_ROBOMAKER"
   },
   {
     "service_id": "RolesAnywhere",
@@ -1343,11 +1303,6 @@
     "service_id": "signer",
     "services_section_name": "signer",
     "service_envvar_name": "AWS_ENDPOINT_URL_SIGNER"
-  },
-  {
-    "service_id": "SMS",
-    "services_section_name": "sms",
-    "service_envvar_name": "AWS_ENDPOINT_URL_SMS"
   },
   {
     "service_id": "Pinpoint SMS Voice",

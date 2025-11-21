@@ -85,6 +85,14 @@ namespace Amazon.Notifications.Model
         }
 
         /// <summary>
+        /// Paginator for ListMemberAccounts operation
+        ///</summary>
+        public IListMemberAccountsPaginator ListMemberAccounts(ListMemberAccountsRequest request) 
+        {
+            return new ListMemberAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNotificationConfigurations operation
         ///</summary>
         public IListNotificationConfigurationsPaginator ListNotificationConfigurations(ListNotificationConfigurationsRequest request) 
@@ -106,6 +114,14 @@ namespace Amazon.Notifications.Model
         public IListNotificationHubsPaginator ListNotificationHubs(ListNotificationHubsRequest request) 
         {
             return new ListNotificationHubsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListOrganizationalUnits operation
+        ///</summary>
+        public IListOrganizationalUnitsPaginator ListOrganizationalUnits(ListOrganizationalUnitsRequest request) 
+        {
+            return new ListOrganizationalUnitsPaginator(this.client, request);
         }
     }
 }

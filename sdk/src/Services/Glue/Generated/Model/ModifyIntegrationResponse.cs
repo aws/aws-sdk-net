@@ -40,6 +40,7 @@ namespace Amazon.Glue.Model
         private string _description;
         private List<IntegrationError> _errors = AWSConfigs.InitializeCollections ? new List<IntegrationError>() : null;
         private string _integrationArn;
+        private IntegrationConfig _integrationConfig;
         private string _integrationName;
         private string _kmsKeyId;
         private string _sourceArn;
@@ -171,6 +172,24 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IntegrationConfig. 
+        /// <para>
+        /// The updated configuration settings for the integration.
+        /// </para>
+        /// </summary>
+        public IntegrationConfig IntegrationConfig
+        {
+            get { return this._integrationConfig; }
+            set { this._integrationConfig = value; }
+        }
+
+        // Check to see if IntegrationConfig property is set
+        internal bool IsSetIntegrationConfig()
+        {
+            return this._integrationConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IntegrationName. 
         /// <para>
         /// A unique name for an integration in Glue.
@@ -214,7 +233,7 @@ namespace Amazon.Glue.Model
         /// The ARN of the source for the integration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string SourceArn
         {
             get { return this._sourceArn; }
@@ -308,7 +327,7 @@ namespace Amazon.Glue.Model
         /// The ARN of the target for the integration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string TargetArn
         {
             get { return this._targetArn; }

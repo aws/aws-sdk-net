@@ -40,16 +40,8 @@ namespace Amazon.BedrockAgentCore
     /// <summary>
     /// <para>Implementation for accessing BedrockAgentCore</para>
     ///
-    /// <note> 
-    /// <para>
-    /// Amazon Bedrock AgentCore is in preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
-    /// Data plane operations for Amazon Bedrock AgentCore.
-    /// </para>
-    /// 
-    /// </para>
+    /// Welcome to the Amazon Bedrock AgentCore Data Plane API reference. Data Plane actions
+    /// process and handle data or workloads within Amazon Web Services services.
     /// </summary>
     public partial class AmazonBedrockAgentCoreClient : AmazonServiceClient, IAmazonBedrockAgentCore
     {
@@ -268,16 +260,404 @@ namespace Amazon.BedrockAgentCore
         #endregion
 
 
+        #region  BatchCreateMemoryRecords
+
+
+        /// <summary>
+        /// Creates multiple memory records in a single batch operation for the specified memory
+        /// with custom content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateMemoryRecords service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchCreateMemoryRecords">REST API Reference for BatchCreateMemoryRecords Operation</seealso>
+        public virtual BatchCreateMemoryRecordsResponse BatchCreateMemoryRecords(BatchCreateMemoryRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateMemoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateMemoryRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateMemoryRecordsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates multiple memory records in a single batch operation for the specified memory
+        /// with custom content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateMemoryRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchCreateMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchCreateMemoryRecords">REST API Reference for BatchCreateMemoryRecords Operation</seealso>
+        public virtual Task<BatchCreateMemoryRecordsResponse> BatchCreateMemoryRecordsAsync(BatchCreateMemoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateMemoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateMemoryRecordsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchCreateMemoryRecordsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteMemoryRecords
+
+
+        /// <summary>
+        /// Deletes multiple memory records in a single batch operation from the specified memory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteMemoryRecords service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchDeleteMemoryRecords">REST API Reference for BatchDeleteMemoryRecords Operation</seealso>
+        public virtual BatchDeleteMemoryRecordsResponse BatchDeleteMemoryRecords(BatchDeleteMemoryRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteMemoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteMemoryRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteMemoryRecordsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes multiple memory records in a single batch operation from the specified memory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteMemoryRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchDeleteMemoryRecords">REST API Reference for BatchDeleteMemoryRecords Operation</seealso>
+        public virtual Task<BatchDeleteMemoryRecordsResponse> BatchDeleteMemoryRecordsAsync(BatchDeleteMemoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteMemoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteMemoryRecordsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteMemoryRecordsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateMemoryRecords
+
+
+        /// <summary>
+        /// Updates multiple memory records with custom content in a single batch operation within
+        /// the specified memory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateMemoryRecords service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchUpdateMemoryRecords">REST API Reference for BatchUpdateMemoryRecords Operation</seealso>
+        public virtual BatchUpdateMemoryRecordsResponse BatchUpdateMemoryRecords(BatchUpdateMemoryRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateMemoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateMemoryRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateMemoryRecordsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates multiple memory records with custom content in a single batch operation within
+        /// the specified memory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateMemoryRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateMemoryRecords service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/BatchUpdateMemoryRecords">REST API Reference for BatchUpdateMemoryRecords Operation</seealso>
+        public virtual Task<BatchUpdateMemoryRecordsResponse> BatchUpdateMemoryRecordsAsync(BatchUpdateMemoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateMemoryRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateMemoryRecordsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchUpdateMemoryRecordsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CompleteResourceTokenAuth
+
+
+        /// <summary>
+        /// Confirms the user authentication session for obtaining OAuth2.0 tokens for a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteResourceTokenAuth service method.</param>
+        /// 
+        /// <returns>The response from the CompleteResourceTokenAuth service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CompleteResourceTokenAuth">REST API Reference for CompleteResourceTokenAuth Operation</seealso>
+        public virtual CompleteResourceTokenAuthResponse CompleteResourceTokenAuth(CompleteResourceTokenAuthRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CompleteResourceTokenAuthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteResourceTokenAuthResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteResourceTokenAuthResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Confirms the user authentication session for obtaining OAuth2.0 tokens for a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteResourceTokenAuth service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CompleteResourceTokenAuth service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CompleteResourceTokenAuth">REST API Reference for CompleteResourceTokenAuth Operation</seealso>
+        public virtual Task<CompleteResourceTokenAuthResponse> CompleteResourceTokenAuthAsync(CompleteResourceTokenAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CompleteResourceTokenAuthRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteResourceTokenAuthResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CompleteResourceTokenAuthResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEvent
 
 
         /// <summary>
-        /// Creates an event in a memory store. Events represent interactions or activities that
-        /// occur within a session and are associated with specific actors.
+        /// Creates an event in an AgentCore Memory resource. Events represent interactions or
+        /// activities that occur within a session and are associated with specific actors.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:CreateEvent</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:CreateEvent</c> permission.
         /// </para>
         ///  
         /// <para>
@@ -321,7 +701,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreateEvent">REST API Reference for CreateEvent Operation</seealso>
         public virtual CreateEventResponse CreateEvent(CreateEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventResponseUnmarshaller.Instance;
 
@@ -330,12 +710,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Creates an event in a memory store. Events represent interactions or activities that
-        /// occur within a session and are associated with specific actors.
+        /// Creates an event in an AgentCore Memory resource. Events represent interactions or
+        /// activities that occur within a session and are associated with specific actors.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:CreateEvent</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:CreateEvent</c> permission.
         /// </para>
         ///  
         /// <para>
@@ -382,7 +762,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreateEvent">REST API Reference for CreateEvent Operation</seealso>
         public virtual Task<CreateEventResponse> CreateEventAsync(CreateEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateEventResponseUnmarshaller.Instance;
             
@@ -395,12 +775,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Deletes an event from a memory store. When you delete an event, it is permanently
-        /// removed.
+        /// Deletes an event from an AgentCore Memory resource. When you delete an event, it is
+        /// permanently removed.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:DeleteEvent</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:DeleteEvent</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvent service method.</param>
@@ -440,7 +820,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteEvent">REST API Reference for DeleteEvent Operation</seealso>
         public virtual DeleteEventResponse DeleteEvent(DeleteEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventResponseUnmarshaller.Instance;
 
@@ -449,12 +829,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Deletes an event from a memory store. When you delete an event, it is permanently
-        /// removed.
+        /// Deletes an event from an AgentCore Memory resource. When you delete an event, it is
+        /// permanently removed.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:DeleteEvent</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:DeleteEvent</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEvent service method.</param>
@@ -497,7 +877,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteEvent">REST API Reference for DeleteEvent Operation</seealso>
         public virtual Task<DeleteEventResponse> DeleteEventAsync(DeleteEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteEventResponseUnmarshaller.Instance;
             
@@ -510,12 +890,13 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Deletes a memory record from a memory store. When you delete a memory record, it is
-        /// permanently removed.
+        /// Deletes a memory record from an AgentCore Memory resource. When you delete a memory
+        /// record, it is permanently removed.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:DeleteMemoryRecord</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:DeleteMemoryRecord</c>
+        /// permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMemoryRecord service method.</param>
@@ -555,7 +936,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteMemoryRecord">REST API Reference for DeleteMemoryRecord Operation</seealso>
         public virtual DeleteMemoryRecordResponse DeleteMemoryRecord(DeleteMemoryRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMemoryRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMemoryRecordResponseUnmarshaller.Instance;
 
@@ -564,12 +945,13 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Deletes a memory record from a memory store. When you delete a memory record, it is
-        /// permanently removed.
+        /// Deletes a memory record from an AgentCore Memory resource. When you delete a memory
+        /// record, it is permanently removed.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:DeleteMemoryRecord</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:DeleteMemoryRecord</c>
+        /// permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMemoryRecord service method.</param>
@@ -612,11 +994,122 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteMemoryRecord">REST API Reference for DeleteMemoryRecord Operation</seealso>
         public virtual Task<DeleteMemoryRecordResponse> DeleteMemoryRecordAsync(DeleteMemoryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMemoryRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMemoryRecordResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteMemoryRecordResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAgentCard
+
+
+        /// <summary>
+        /// Retrieves the A2A agent card associated with an AgentCore Runtime agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentCard service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentCard service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentCard">REST API Reference for GetAgentCard Operation</seealso>
+        public virtual GetAgentCardResponse GetAgentCard(GetAgentCardRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgentCardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentCardResponseUnmarshaller.Instance;
+
+            return Invoke<GetAgentCardResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the A2A agent card associated with an AgentCore Runtime agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentCard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentCard service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentCard">REST API Reference for GetAgentCard Operation</seealso>
+        public virtual Task<GetAgentCardResponse> GetAgentCardAsync(GetAgentCardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAgentCardRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAgentCardResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAgentCardResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -687,7 +1180,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetBrowserSession">REST API Reference for GetBrowserSession Operation</seealso>
         public virtual GetBrowserSessionResponse GetBrowserSession(GetBrowserSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBrowserSessionResponseUnmarshaller.Instance;
 
@@ -761,7 +1254,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetBrowserSession">REST API Reference for GetBrowserSession Operation</seealso>
         public virtual Task<GetBrowserSessionResponse> GetBrowserSessionAsync(GetBrowserSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetBrowserSessionResponseUnmarshaller.Instance;
             
@@ -835,7 +1328,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetCodeInterpreterSession">REST API Reference for GetCodeInterpreterSession Operation</seealso>
         public virtual GetCodeInterpreterSessionResponse GetCodeInterpreterSession(GetCodeInterpreterSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeInterpreterSessionResponseUnmarshaller.Instance;
 
@@ -908,7 +1401,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetCodeInterpreterSession">REST API Reference for GetCodeInterpreterSession Operation</seealso>
         public virtual Task<GetCodeInterpreterSessionResponse> GetCodeInterpreterSessionAsync(GetCodeInterpreterSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCodeInterpreterSessionResponseUnmarshaller.Instance;
             
@@ -921,11 +1414,11 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves information about a specific event in a memory store.
+        /// Retrieves information about a specific event in an AgentCore Memory resource.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:GetEvent</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:GetEvent</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvent service method.</param>
@@ -965,7 +1458,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetEvent">REST API Reference for GetEvent Operation</seealso>
         public virtual GetEventResponse GetEvent(GetEventRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
 
@@ -974,11 +1467,11 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves information about a specific event in a memory store.
+        /// Retrieves information about a specific event in an AgentCore Memory resource.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:GetEvent</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:GetEvent</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvent service method.</param>
@@ -1021,7 +1514,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetEvent">REST API Reference for GetEvent Operation</seealso>
         public virtual Task<GetEventResponse> GetEventAsync(GetEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetEventRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetEventResponseUnmarshaller.Instance;
             
@@ -1034,11 +1527,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves a specific memory record from a memory store.
+        /// Retrieves a specific memory record from an AgentCore Memory resource.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:GetMemoryRecord</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:GetMemoryRecord</c>
+        /// permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMemoryRecord service method.</param>
@@ -1078,7 +1572,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetMemoryRecord">REST API Reference for GetMemoryRecord Operation</seealso>
         public virtual GetMemoryRecordResponse GetMemoryRecord(GetMemoryRecordRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMemoryRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMemoryRecordResponseUnmarshaller.Instance;
 
@@ -1087,11 +1581,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves a specific memory record from a memory store.
+        /// Retrieves a specific memory record from an AgentCore Memory resource.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:GetMemoryRecord</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:GetMemoryRecord</c>
+        /// permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMemoryRecord service method.</param>
@@ -1134,7 +1629,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetMemoryRecord">REST API Reference for GetMemoryRecord Operation</seealso>
         public virtual Task<GetMemoryRecordResponse> GetMemoryRecordAsync(GetMemoryRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMemoryRecordRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMemoryRecordResponseUnmarshaller.Instance;
             
@@ -1147,7 +1642,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves an API Key associated with an API Key Credential Provider
+        /// Retrieves the API key associated with an API key credential provider.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceApiKey service method.</param>
         /// 
@@ -1184,7 +1679,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetResourceApiKey">REST API Reference for GetResourceApiKey Operation</seealso>
         public virtual GetResourceApiKeyResponse GetResourceApiKey(GetResourceApiKeyRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceApiKeyResponseUnmarshaller.Instance;
 
@@ -1193,7 +1688,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Retrieves an API Key associated with an API Key Credential Provider
+        /// Retrieves the API key associated with an API key credential provider.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceApiKey service method.</param>
         /// <param name="cancellationToken">
@@ -1233,7 +1728,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetResourceApiKey">REST API Reference for GetResourceApiKey Operation</seealso>
         public virtual Task<GetResourceApiKeyResponse> GetResourceApiKeyAsync(GetResourceApiKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceApiKeyRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceApiKeyResponseUnmarshaller.Instance;
             
@@ -1246,7 +1741,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Reaturns the Oauth2Token of the provided resource
+        /// Returns the OAuth 2.0 token of the provided resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceOauth2Token service method.</param>
         /// 
@@ -1283,7 +1778,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetResourceOauth2Token">REST API Reference for GetResourceOauth2Token Operation</seealso>
         public virtual GetResourceOauth2TokenResponse GetResourceOauth2Token(GetResourceOauth2TokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceOauth2TokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceOauth2TokenResponseUnmarshaller.Instance;
 
@@ -1292,7 +1787,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Reaturns the Oauth2Token of the provided resource
+        /// Returns the OAuth 2.0 token of the provided resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceOauth2Token service method.</param>
         /// <param name="cancellationToken">
@@ -1332,7 +1827,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetResourceOauth2Token">REST API Reference for GetResourceOauth2Token Operation</seealso>
         public virtual Task<GetResourceOauth2TokenResponse> GetResourceOauth2TokenAsync(GetResourceOauth2TokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetResourceOauth2TokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetResourceOauth2TokenResponseUnmarshaller.Instance;
             
@@ -1345,7 +1840,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads not acting on behalf of user.
+        /// Obtains a workload access token for agentic workloads not acting on behalf of a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessToken service method.</param>
         /// 
@@ -1382,7 +1877,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetWorkloadAccessToken">REST API Reference for GetWorkloadAccessToken Operation</seealso>
         public virtual GetWorkloadAccessTokenResponse GetWorkloadAccessToken(GetWorkloadAccessTokenRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenResponseUnmarshaller.Instance;
 
@@ -1391,7 +1886,7 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads not acting on behalf of user.
+        /// Obtains a workload access token for agentic workloads not acting on behalf of a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessToken service method.</param>
         /// <param name="cancellationToken">
@@ -1431,7 +1926,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetWorkloadAccessToken">REST API Reference for GetWorkloadAccessToken Operation</seealso>
         public virtual Task<GetWorkloadAccessTokenResponse> GetWorkloadAccessTokenAsync(GetWorkloadAccessTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenResponseUnmarshaller.Instance;
             
@@ -1444,8 +1939,8 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads acting on behalf of user with
-        /// JWT token
+        /// Obtains a workload access token for agentic workloads acting on behalf of a user,
+        /// using a JWT token.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessTokenForJWT service method.</param>
         /// 
@@ -1482,7 +1977,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetWorkloadAccessTokenForJWT">REST API Reference for GetWorkloadAccessTokenForJWT Operation</seealso>
         public virtual GetWorkloadAccessTokenForJWTResponse GetWorkloadAccessTokenForJWT(GetWorkloadAccessTokenForJWTRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenForJWTRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenForJWTResponseUnmarshaller.Instance;
 
@@ -1491,8 +1986,8 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads acting on behalf of user with
-        /// JWT token
+        /// Obtains a workload access token for agentic workloads acting on behalf of a user,
+        /// using a JWT token.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessTokenForJWT service method.</param>
         /// <param name="cancellationToken">
@@ -1532,7 +2027,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetWorkloadAccessTokenForJWT">REST API Reference for GetWorkloadAccessTokenForJWT Operation</seealso>
         public virtual Task<GetWorkloadAccessTokenForJWTResponse> GetWorkloadAccessTokenForJWTAsync(GetWorkloadAccessTokenForJWTRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenForJWTRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenForJWTResponseUnmarshaller.Instance;
             
@@ -1545,8 +2040,8 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads acting on behalf of user with
-        /// User Id.
+        /// Obtains a workload access token for agentic workloads acting on behalf of a user,
+        /// using the user's ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessTokenForUserId service method.</param>
         /// 
@@ -1583,7 +2078,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetWorkloadAccessTokenForUserId">REST API Reference for GetWorkloadAccessTokenForUserId Operation</seealso>
         public virtual GetWorkloadAccessTokenForUserIdResponse GetWorkloadAccessTokenForUserId(GetWorkloadAccessTokenForUserIdRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenForUserIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenForUserIdResponseUnmarshaller.Instance;
 
@@ -1592,8 +2087,8 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Obtains an Workload access token for agentic workloads acting on behalf of user with
-        /// User Id.
+        /// Obtains a workload access token for agentic workloads acting on behalf of a user,
+        /// using the user's ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkloadAccessTokenForUserId service method.</param>
         /// <param name="cancellationToken">
@@ -1633,7 +2128,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetWorkloadAccessTokenForUserId">REST API Reference for GetWorkloadAccessTokenForUserId Operation</seealso>
         public virtual Task<GetWorkloadAccessTokenForUserIdResponse> GetWorkloadAccessTokenForUserIdAsync(GetWorkloadAccessTokenForUserIdRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetWorkloadAccessTokenForUserIdRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetWorkloadAccessTokenForUserIdResponseUnmarshaller.Instance;
             
@@ -1646,21 +2141,40 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Sends a request to an agent runtime in Amazon Bedrock and receives responses in real-time.
-        /// The agent processes the request using the configured foundation model and any associated
-        /// knowledge bases or action groups.
+        /// Sends a request to an agent or tool hosted in an Amazon Bedrock AgentCore Runtime
+        /// and receives responses in real-time. 
         /// 
         ///  
         /// <para>
-        /// To invoke an agent runtime, you must specify the agent runtime ARN and provide a payload
+        /// To invoke an agent you must specify the AgentCore Runtime ARN and provide a payload
         /// containing your request. You can optionally specify a qualifier to target a specific
-        /// version or alias of the agent.
+        /// version or endpoint of the agent.
         /// </para>
         ///  
         /// <para>
         /// This operation supports streaming responses, allowing you to receive partial responses
         /// as they become available. We recommend using pagination to ensure that the operation
         /// returns quickly and successfully when processing large responses.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example code, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-invoke-agent.html">Invoke
+        /// an AgentCore Runtime agent</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you're integrating your agent with OAuth, you can't use the Amazon Web Services
+        /// SDK to call <c>InvokeAgentRuntime</c>. Instead, make a HTTPS request to <c>InvokeAgentRuntime</c>.
+        /// For an example, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-oauth.html">Authenticate
+        /// and authorize with Inbound Auth and Outbound Auth</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:InvokeAgentRuntime</c>
+        /// permission. If you are making a call to <c>InvokeAgentRuntime</c> on behalf of a user
+        /// ID with the <c>X-Amzn-Bedrock-AgentCore-Runtime-User-Id</c> header, You require permissions
+        /// to both actions (<c>bedrock-agentcore:InvokeAgentRuntime</c> and <c>bedrock-agentcore:InvokeAgentRuntimeForUser</c>).
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAgentRuntime service method.</param>
@@ -1704,7 +2218,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntime">REST API Reference for InvokeAgentRuntime Operation</seealso>
         public virtual InvokeAgentRuntimeResponse InvokeAgentRuntime(InvokeAgentRuntimeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeAgentRuntimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeAgentRuntimeResponseUnmarshaller.Instance;
 
@@ -1713,21 +2227,40 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Sends a request to an agent runtime in Amazon Bedrock and receives responses in real-time.
-        /// The agent processes the request using the configured foundation model and any associated
-        /// knowledge bases or action groups.
+        /// Sends a request to an agent or tool hosted in an Amazon Bedrock AgentCore Runtime
+        /// and receives responses in real-time. 
         /// 
         ///  
         /// <para>
-        /// To invoke an agent runtime, you must specify the agent runtime ARN and provide a payload
+        /// To invoke an agent you must specify the AgentCore Runtime ARN and provide a payload
         /// containing your request. You can optionally specify a qualifier to target a specific
-        /// version or alias of the agent.
+        /// version or endpoint of the agent.
         /// </para>
         ///  
         /// <para>
         /// This operation supports streaming responses, allowing you to receive partial responses
         /// as they become available. We recommend using pagination to ensure that the operation
         /// returns quickly and successfully when processing large responses.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example code, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-invoke-agent.html">Invoke
+        /// an AgentCore Runtime agent</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you're integrating your agent with OAuth, you can't use the Amazon Web Services
+        /// SDK to call <c>InvokeAgentRuntime</c>. Instead, make a HTTPS request to <c>InvokeAgentRuntime</c>.
+        /// For an example, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-oauth.html">Authenticate
+        /// and authorize with Inbound Auth and Outbound Auth</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:InvokeAgentRuntime</c>
+        /// permission. If you are making a call to <c>InvokeAgentRuntime</c> on behalf of a user
+        /// ID with the <c>X-Amzn-Bedrock-AgentCore-Runtime-User-Id</c> header, You require permissions
+        /// to both actions (<c>bedrock-agentcore:InvokeAgentRuntime</c> and <c>bedrock-agentcore:InvokeAgentRuntimeForUser</c>).
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InvokeAgentRuntime service method.</param>
@@ -1774,7 +2307,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeAgentRuntime">REST API Reference for InvokeAgentRuntime Operation</seealso>
         public virtual Task<InvokeAgentRuntimeResponse> InvokeAgentRuntimeAsync(InvokeAgentRuntimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeAgentRuntimeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeAgentRuntimeResponseUnmarshaller.Instance;
             
@@ -1859,7 +2392,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeCodeInterpreter">REST API Reference for InvokeCodeInterpreter Operation</seealso>
         public virtual InvokeCodeInterpreterResponse InvokeCodeInterpreter(InvokeCodeInterpreterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeCodeInterpreterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeCodeInterpreterResponseUnmarshaller.Instance;
 
@@ -1943,7 +2476,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeCodeInterpreter">REST API Reference for InvokeCodeInterpreter Operation</seealso>
         public virtual Task<InvokeCodeInterpreterResponse> InvokeCodeInterpreterAsync(InvokeCodeInterpreterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InvokeCodeInterpreterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InvokeCodeInterpreterResponseUnmarshaller.Instance;
             
@@ -1956,12 +2489,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Lists all actors in a memory store. We recommend using pagination to ensure that the
-        /// operation returns quickly and successfully.
+        /// Lists all actors in an AgentCore Memory resource. We recommend using pagination to
+        /// ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListActors</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListActors</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListActors service method.</param>
@@ -2001,7 +2534,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListActors">REST API Reference for ListActors Operation</seealso>
         public virtual ListActorsResponse ListActors(ListActorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActorsResponseUnmarshaller.Instance;
 
@@ -2010,12 +2543,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Lists all actors in a memory store. We recommend using pagination to ensure that the
-        /// operation returns quickly and successfully.
+        /// Lists all actors in an AgentCore Memory resource. We recommend using pagination to
+        /// ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListActors</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListActors</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListActors service method.</param>
@@ -2058,7 +2591,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListActors">REST API Reference for ListActors Operation</seealso>
         public virtual Task<ListActorsResponse> ListActorsAsync(ListActorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListActorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListActorsResponseUnmarshaller.Instance;
             
@@ -2132,7 +2665,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListBrowserSessions">REST API Reference for ListBrowserSessions Operation</seealso>
         public virtual ListBrowserSessionsResponse ListBrowserSessions(ListBrowserSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBrowserSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBrowserSessionsResponseUnmarshaller.Instance;
 
@@ -2205,7 +2738,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListBrowserSessions">REST API Reference for ListBrowserSessions Operation</seealso>
         public virtual Task<ListBrowserSessionsResponse> ListBrowserSessionsAsync(ListBrowserSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBrowserSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBrowserSessionsResponseUnmarshaller.Instance;
             
@@ -2279,7 +2812,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListCodeInterpreterSessions">REST API Reference for ListCodeInterpreterSessions Operation</seealso>
         public virtual ListCodeInterpreterSessionsResponse ListCodeInterpreterSessions(ListCodeInterpreterSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeInterpreterSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeInterpreterSessionsResponseUnmarshaller.Instance;
 
@@ -2352,7 +2885,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListCodeInterpreterSessions">REST API Reference for ListCodeInterpreterSessions Operation</seealso>
         public virtual Task<ListCodeInterpreterSessionsResponse> ListCodeInterpreterSessionsAsync(ListCodeInterpreterSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCodeInterpreterSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCodeInterpreterSessionsResponseUnmarshaller.Instance;
             
@@ -2365,12 +2898,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Lists events in a memory store based on specified criteria. We recommend using pagination
-        /// to ensure that the operation returns quickly and successfully.
+        /// Lists events in an AgentCore Memory resource based on specified criteria. We recommend
+        /// using pagination to ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListEvents</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListEvents</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvents service method.</param>
@@ -2410,7 +2943,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListEvents">REST API Reference for ListEvents Operation</seealso>
         public virtual ListEventsResponse ListEvents(ListEventsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
 
@@ -2419,12 +2952,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Lists events in a memory store based on specified criteria. We recommend using pagination
-        /// to ensure that the operation returns quickly and successfully.
+        /// Lists events in an AgentCore Memory resource based on specified criteria. We recommend
+        /// using pagination to ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListEvents</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListEvents</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvents service method.</param>
@@ -2467,7 +3000,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListEvents">REST API Reference for ListEvents Operation</seealso>
         public virtual Task<ListEventsResponse> ListEventsAsync(ListEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEventsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEventsResponseUnmarshaller.Instance;
             
@@ -2476,16 +3009,126 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
         
+        #region  ListMemoryExtractionJobs
+
+
+        /// <summary>
+        /// Lists all long-term memory extraction jobs that are eligible to be started with optional
+        /// filtering.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryExtractionJobs</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemoryExtractionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListMemoryExtractionJobs service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryExtractionJobs">REST API Reference for ListMemoryExtractionJobs Operation</seealso>
+        public virtual ListMemoryExtractionJobsResponse ListMemoryExtractionJobs(ListMemoryExtractionJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMemoryExtractionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMemoryExtractionJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMemoryExtractionJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all long-term memory extraction jobs that are eligible to be started with optional
+        /// filtering.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryExtractionJobs</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemoryExtractionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMemoryExtractionJobs service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryExtractionJobs">REST API Reference for ListMemoryExtractionJobs Operation</seealso>
+        public virtual Task<ListMemoryExtractionJobsResponse> ListMemoryExtractionJobsAsync(ListMemoryExtractionJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMemoryExtractionJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMemoryExtractionJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMemoryExtractionJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListMemoryRecords
 
 
         /// <summary>
-        /// Lists memory records in a memory store based on specified criteria. We recommend using
-        /// pagination to ensure that the operation returns quickly and successfully.
+        /// Lists memory records in an AgentCore Memory resource based on specified criteria.
+        /// We recommend using pagination to ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListMemoryRecords</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryRecords</c>
+        /// permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemoryRecords service method.</param>
@@ -2525,7 +3168,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryRecords">REST API Reference for ListMemoryRecords Operation</seealso>
         public virtual ListMemoryRecordsResponse ListMemoryRecords(ListMemoryRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMemoryRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMemoryRecordsResponseUnmarshaller.Instance;
 
@@ -2534,12 +3177,13 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Lists memory records in a memory store based on specified criteria. We recommend using
-        /// pagination to ensure that the operation returns quickly and successfully.
+        /// Lists memory records in an AgentCore Memory resource based on specified criteria.
+        /// We recommend using pagination to ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListMemoryRecords</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryRecords</c>
+        /// permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemoryRecords service method.</param>
@@ -2582,7 +3226,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryRecords">REST API Reference for ListMemoryRecords Operation</seealso>
         public virtual Task<ListMemoryRecordsResponse> ListMemoryRecordsAsync(ListMemoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMemoryRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMemoryRecordsResponseUnmarshaller.Instance;
             
@@ -2595,12 +3239,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Lists sessions in a memory store based on specified criteria. We recommend using pagination
-        /// to ensure that the operation returns quickly and successfully.
+        /// Lists sessions in an AgentCore Memory resource based on specified criteria. We recommend
+        /// using pagination to ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListSessions</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListSessions</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
@@ -2640,7 +3284,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
 
@@ -2649,12 +3293,12 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Lists sessions in a memory store based on specified criteria. We recommend using pagination
-        /// to ensure that the operation returns quickly and successfully.
+        /// Lists sessions in an AgentCore Memory resource based on specified criteria. We recommend
+        /// using pagination to ensure that the operation returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:ListSessions</c> permission.
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListSessions</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
@@ -2697,7 +3341,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListSessions">REST API Reference for ListSessions Operation</seealso>
         public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
             
@@ -2710,13 +3354,13 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Searches for and retrieves memory records from a memory store based on specified search
-        /// criteria. We recommend using pagination to ensure that the operation returns quickly
-        /// and successfully.
+        /// Searches for and retrieves memory records from an AgentCore Memory resource based
+        /// on specified search criteria. We recommend using pagination to ensure that the operation
+        /// returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:RetrieveMemoryRecords</c>
+        /// To use this operation, you must have the <c>bedrock-agentcore:RetrieveMemoryRecords</c>
         /// permission.
         /// </para>
         /// </summary>
@@ -2757,7 +3401,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/RetrieveMemoryRecords">REST API Reference for RetrieveMemoryRecords Operation</seealso>
         public virtual RetrieveMemoryRecordsResponse RetrieveMemoryRecords(RetrieveMemoryRecordsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetrieveMemoryRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetrieveMemoryRecordsResponseUnmarshaller.Instance;
 
@@ -2766,13 +3410,13 @@ namespace Amazon.BedrockAgentCore
 
 
         /// <summary>
-        /// Searches for and retrieves memory records from a memory store based on specified search
-        /// criteria. We recommend using pagination to ensure that the operation returns quickly
-        /// and successfully.
+        /// Searches for and retrieves memory records from an AgentCore Memory resource based
+        /// on specified search criteria. We recommend using pagination to ensure that the operation
+        /// returns quickly and successfully.
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must have the <c>genesismemory:RetrieveMemoryRecords</c>
+        /// To use this operation, you must have the <c>bedrock-agentcore:RetrieveMemoryRecords</c>
         /// permission.
         /// </para>
         /// </summary>
@@ -2816,7 +3460,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/RetrieveMemoryRecords">REST API Reference for RetrieveMemoryRecords Operation</seealso>
         public virtual Task<RetrieveMemoryRecordsResponse> RetrieveMemoryRecordsAsync(RetrieveMemoryRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RetrieveMemoryRecordsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RetrieveMemoryRecordsResponseUnmarshaller.Instance;
             
@@ -2902,7 +3546,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartBrowserSession">REST API Reference for StartBrowserSession Operation</seealso>
         public virtual StartBrowserSessionResponse StartBrowserSession(StartBrowserSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBrowserSessionResponseUnmarshaller.Instance;
 
@@ -2987,7 +3631,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartBrowserSession">REST API Reference for StartBrowserSession Operation</seealso>
         public virtual Task<StartBrowserSessionResponse> StartBrowserSessionAsync(StartBrowserSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartBrowserSessionResponseUnmarshaller.Instance;
             
@@ -3072,7 +3716,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartCodeInterpreterSession">REST API Reference for StartCodeInterpreterSession Operation</seealso>
         public virtual StartCodeInterpreterSessionResponse StartCodeInterpreterSession(StartCodeInterpreterSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCodeInterpreterSessionResponseUnmarshaller.Instance;
 
@@ -3156,11 +3800,124 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartCodeInterpreterSession">REST API Reference for StartCodeInterpreterSession Operation</seealso>
         public virtual Task<StartCodeInterpreterSessionResponse> StartCodeInterpreterSessionAsync(StartCodeInterpreterSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartCodeInterpreterSessionResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartCodeInterpreterSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartMemoryExtractionJob
+
+
+        /// <summary>
+        /// Starts a memory extraction job that processes events that failed extraction previously
+        /// in an AgentCore Memory resource and produces structured memory records. When earlier
+        /// extraction attempts have left events unprocessed, this job will pick up and extract
+        /// those as well. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:StartMemoryExtractionJob</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMemoryExtractionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartMemoryExtractionJob service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartMemoryExtractionJob">REST API Reference for StartMemoryExtractionJob Operation</seealso>
+        public virtual StartMemoryExtractionJobResponse StartMemoryExtractionJob(StartMemoryExtractionJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartMemoryExtractionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMemoryExtractionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartMemoryExtractionJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a memory extraction job that processes events that failed extraction previously
+        /// in an AgentCore Memory resource and produces structured memory records. When earlier
+        /// extraction attempts have left events unprocessed, this job will pick up and extract
+        /// those as well. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:StartMemoryExtractionJob</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMemoryExtractionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMemoryExtractionJob service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartMemoryExtractionJob">REST API Reference for StartMemoryExtractionJob Operation</seealso>
+        public virtual Task<StartMemoryExtractionJobResponse> StartMemoryExtractionJobAsync(StartMemoryExtractionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartMemoryExtractionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMemoryExtractionJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartMemoryExtractionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3235,7 +3992,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopBrowserSession">REST API Reference for StopBrowserSession Operation</seealso>
         public virtual StopBrowserSessionResponse StopBrowserSession(StopBrowserSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopBrowserSessionResponseUnmarshaller.Instance;
 
@@ -3313,7 +4070,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopBrowserSession">REST API Reference for StopBrowserSession Operation</seealso>
         public virtual Task<StopBrowserSessionResponse> StopBrowserSessionAsync(StopBrowserSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopBrowserSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopBrowserSessionResponseUnmarshaller.Instance;
             
@@ -3393,7 +4150,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopCodeInterpreterSession">REST API Reference for StopCodeInterpreterSession Operation</seealso>
         public virtual StopCodeInterpreterSessionResponse StopCodeInterpreterSession(StopCodeInterpreterSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCodeInterpreterSessionResponseUnmarshaller.Instance;
 
@@ -3472,11 +4229,140 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopCodeInterpreterSession">REST API Reference for StopCodeInterpreterSession Operation</seealso>
         public virtual Task<StopCodeInterpreterSessionResponse> StopCodeInterpreterSessionAsync(StopCodeInterpreterSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopCodeInterpreterSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopCodeInterpreterSessionResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopCodeInterpreterSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopRuntimeSession
+
+
+        /// <summary>
+        /// Stops a session that is running in an running AgentCore Runtime agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRuntimeSession service method.</param>
+        /// 
+        /// <returns>The response from the StopRuntimeSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopRuntimeSession">REST API Reference for StopRuntimeSession Operation</seealso>
+        public virtual StopRuntimeSessionResponse StopRuntimeSession(StopRuntimeSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRuntimeSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRuntimeSessionResponseUnmarshaller.Instance;
+
+            return Invoke<StopRuntimeSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a session that is running in an running AgentCore Runtime agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRuntimeSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRuntimeSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ConflictException">
+        /// The exception that occurs when the request conflicts with the current state of the
+        /// resource. This can happen when trying to modify a resource that is currently being
+        /// modified by another request, or when trying to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.RuntimeClientErrorException">
+        /// The exception that occurs when there is an error in the runtime client. This can happen
+        /// due to network issues, invalid configuration, or other client-side problems. Check
+        /// the error message for specific details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopRuntimeSession">REST API Reference for StopRuntimeSession Operation</seealso>
+        public virtual Task<StopRuntimeSessionResponse> StopRuntimeSessionAsync(StopRuntimeSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRuntimeSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRuntimeSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopRuntimeSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3529,7 +4415,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/UpdateBrowserStream">REST API Reference for UpdateBrowserStream Operation</seealso>
         public virtual UpdateBrowserStreamResponse UpdateBrowserStream(UpdateBrowserStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrowserStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrowserStreamResponseUnmarshaller.Instance;
 
@@ -3585,7 +4471,7 @@ namespace Amazon.BedrockAgentCore
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/UpdateBrowserStream">REST API Reference for UpdateBrowserStream Operation</seealso>
         public virtual Task<UpdateBrowserStreamResponse> UpdateBrowserStreamAsync(UpdateBrowserStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBrowserStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBrowserStreamResponseUnmarshaller.Instance;
             

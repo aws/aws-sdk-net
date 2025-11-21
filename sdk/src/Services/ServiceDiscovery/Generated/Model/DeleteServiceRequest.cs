@@ -41,10 +41,13 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the service that you want to delete.
+        /// The ID or Amazon Resource Name (ARN) of the service that you want to delete. If the
+        /// namespace associated with the service is shared with your Amazon Web Services account,
+        /// specify the service ARN. For more information about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+        /// Cloud Map namespace sharing</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=64)]
+        [AWSProperty(Required=true, Max=255)]
         public string Id
         {
             get { return this._id; }

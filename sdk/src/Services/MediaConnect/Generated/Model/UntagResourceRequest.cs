@@ -31,7 +31,7 @@ namespace Amazon.MediaConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Deletes specified tags from a resource.
+    /// Deletes specified tags from a resource in the current region.
     /// </summary>
     public partial class UntagResourceRequest : AmazonMediaConnectRequest
     {

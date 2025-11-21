@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/word-cloud.html">Using
-    /// word clouds</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// word clouds</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     /// </summary>
     public partial class WordCloudVisual

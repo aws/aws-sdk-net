@@ -309,6 +309,7 @@ namespace Amazon.PaymentCryptography.Model
         private bool? _enabled;
         private KeyCheckValueAlgorithm _keyCheckValueAlgorithm;
         private ImportKeyMaterial _keyMaterial;
+        private List<string> _replicationRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -373,6 +374,26 @@ namespace Amazon.PaymentCryptography.Model
         internal bool IsSetKeyMaterial()
         {
             return this._keyMaterial != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationRegions.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> ReplicationRegions
+        {
+            get { return this._replicationRegions; }
+            set { this._replicationRegions = value; }
+        }
+
+        // Check to see if ReplicationRegions property is set
+        internal bool IsSetReplicationRegions()
+        {
+            return this._replicationRegions != null && (this._replicationRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -63,6 +63,9 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetIncludeChildren())
+                request.Parameters.Add("includeChildren", StringUtils.FromBool(publicRequest.IncludeChildren));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

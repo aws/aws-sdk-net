@@ -34,6 +34,25 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class ModifyAccountResponse : AmazonWebServiceResponse
     {
+        private string _message;
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The text message to describe the status of BYOL modification.
+        /// </para>
+        /// </summary>
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
 
     }
 }

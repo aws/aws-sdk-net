@@ -94,6 +94,7 @@ namespace Amazon.EKS.Model
         private UpdateAccessConfigRequest _accessConfig;
         private string _clientRequestToken;
         private ComputeConfigRequest _computeConfig;
+        private bool? _deletionProtection;
         private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
         private Logging _logging;
         private string _name;
@@ -157,6 +158,26 @@ namespace Amazon.EKS.Model
         internal bool IsSetComputeConfig()
         {
             return this._computeConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtection. 
+        /// <para>
+        /// Specifies whether to enable or disable deletion protection for the cluster. When enabled
+        /// (<c>true</c>), the cluster cannot be deleted until deletion protection is explicitly
+        /// disabled. When disabled (<c>false</c>), the cluster can be deleted normally.
+        /// </para>
+        /// </summary>
+        public bool? DeletionProtection
+        {
+            get { return this._deletionProtection; }
+            set { this._deletionProtection = value; }
+        }
+
+        // Check to see if DeletionProtection property is set
+        internal bool IsSetDeletionProtection()
+        {
+            return this._deletionProtection.HasValue; 
         }
 
         /// <summary>

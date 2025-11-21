@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace ServiceClientGenerator
 {
@@ -428,6 +429,10 @@ namespace ServiceClientGenerator
         public const string ExcludeMembersKey = "excludeMembers";
         public const string UnwrapXmlOutputKey = "unwrapXmlOutput";
         public const string InheritAlternateBaseClassKey = "inheritAlternateBaseClass";
+        public const string DataTypeSwapIsFlattenedKey = "isFlattened";
+        public const string FlattenShapeKey = "flattenShapes";
+        public const string ExcludeShapesKey = "excludeShapes";
+        public const string AlternateLocationNameKey = "alternateLocationName";
 
         JsonData _documentRoot;
 
@@ -804,6 +809,20 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
+        /// Gets the property modifier for a property if it exists. Otherwise returns false.
+        /// </summary>
+        /// <param name="shapeName"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="propertyModifier"></param>
+        /// <returns></returns>
+        public bool TryGetPropertyModifier(string shapeName, string propertyName, out PropertyModifier propertyModifier)
+        {
+            propertyModifier = null;
+            propertyModifier = GetPropertyModifier(shapeName, propertyName) ?? null;
+            return propertyModifier != null ? true : false;
+        }
+
+        /// <summary>
         /// Determines if the property has a customization to be set to nullable
         /// </summary>
         /// <param name="shapeName">The name of the shape the property is in</param>
@@ -939,7 +958,57 @@ namespace ServiceClientGenerator
             if (jsonData[UnmarshallerKey] != null && jsonData[UnmarshallerKey].IsString)
                 unmarshaller = (string)jsonData[UnmarshallerKey];
 
-            return new DataTypeOverride(dataType, marshaller, unmarshaller);
+            bool isFlattened = false;
+            if (jsonData[DataTypeSwapIsFlattenedKey] != null && jsonData[DataTypeSwapIsFlattenedKey].IsBoolean)
+                isFlattened = (bool)jsonData[DataTypeSwapIsFlattenedKey];
+
+            string alternateLocationName = null;
+            if (jsonData[AlternateLocationNameKey] != null && jsonData[AlternateLocationNameKey].IsString)
+                alternateLocationName = (string)jsonData[AlternateLocationNameKey];
+            return new DataTypeOverride(dataType, marshaller, unmarshaller, isFlattened, alternateLocationName);
+        }
+
+
+        /// <summary>
+        /// Use this customization when you want to flatten a member. For example
+        ///     "flattenShape" : {
+        ///       "PutBucketNotificationRequest" : [
+        ///         "NotificationConfiguration"
+        ///         ]
+        ///     }
+        /// This will flatten the NotificationConfiguration member into its respective members 
+        /// so that PutBucketNotificationRequest will not contain NotificationConfiguration and instead
+        /// contain NotificationConfiguration's members instead
+        /// </summary>
+        /// <param name="shapeName"></param>
+        /// <returns></returns>
+        public HashSet<string> FlattenShapes (string shapeName)
+        {
+            var data = _documentRoot[FlattenShapeKey];
+            if (data != null)
+                data = data[shapeName];
+
+            var flattenShapes = data?.Cast<object>()
+                .Select(entry => entry.ToString());
+
+            return new HashSet<string>(flattenShapes ?? new string[0]);
+        }
+
+        /// <summary>
+        /// Use this customization when you want to exclude shapes from being generated
+        /// "excludeShapes":[
+        ///     "NotificationConfiguration"
+        /// ]
+        /// </summary>
+        /// <returns></returns>
+        public HashSet<string> ExcludeShapes()
+        {
+            var data = _documentRoot[ExcludeShapesKey];
+
+            var excludeShapes = data?.Cast<object>()
+                .Select(entry => entry.ToString());
+
+            return new HashSet<string>(excludeShapes ?? new string[0]);
         }
 
         #region ShapeModifier
@@ -957,10 +1026,27 @@ namespace ServiceClientGenerator
             public const string InjectKey = "inject";
             public const string CustomMarshallKey = "customMarshall";
             public const string DeprecatedMessageKey = "deprecatedMessage";
+            public const string ExcludeFromMarshallingKey = "excludeFromMarshalling";
+            public const string SkipXmlTestExpressionKey = "skipXmlTestExpression";
+            public const string NewObjectIfNullKey = "newObjectIfNull";
+            public const string ShapeDocumentationKey = "shapeDocumentation";
+            public const string ShapeModifierXmlNamespaceKey = "xmlNamespace";
+            public const string OriginalMemberIsOutsideContainingShapeKey = "originalMemberIsOutsideContainingShape";
+            public const string PredicateListUnmarshallersKey = "predicateListUnmarshallers";
+            public const string ExcludeFromUnmarshallingKey = "excludeFromUnmarshalling";
+            public const string InjectXmlMarshallCodeInPayloadKey = "injectXmlMarshallCodeInPayload";
 
             private readonly HashSet<string> _excludedProperties;
             private readonly Dictionary<string, JsonData> _modifiedProperties;
             private readonly Dictionary<string, JsonData> _injectedProperties;
+            private readonly HashSet<string> _excludedMarshallingProperties;
+            private readonly HashSet<string> _skipXmlTestExpressionProperties;
+            private readonly HashSet<string> _newObjectIfNullProperties;
+            private readonly HashSet<string> _shapeDocumentation;
+            private readonly string _shapeModifierXmlNamespace;
+            private readonly Dictionary<string, JsonData> _predicateListUnmarshallers;
+            private readonly HashSet<string> _excludedUnmarshallingProperties;
+            private readonly HashSet<string> _injectXmlMarshallCodeInPayload;
 
             public string DeprecationMessage { get; private set; }
 
@@ -974,9 +1060,29 @@ namespace ServiceClientGenerator
                 // add a 'convenience' member (for backwards compatibility) using
                 // the same name as an original (and now renamed) member.
                 _injectedProperties = ParseInjections(data);
-                Validate(data);
+                _excludedMarshallingProperties = ParseExcludedMarshallingProperties(data);
+                _skipXmlTestExpressionProperties = ParseSkipXmlTestExpressionProperties(data);
+                _newObjectIfNullProperties = ParseNewObjectIfNullProperties(data);
+                _shapeDocumentation = ParseShapeDocumentation(data);
+                _shapeModifierXmlNamespace = ParseXmlNamespace(data);
+                _predicateListUnmarshallers = ParsePredicateListUnmarshallers(data);
+                _excludedUnmarshallingProperties = ParseExcludedUnmarshallingProperties(data);
+                _injectXmlMarshallCodeInPayload = ParseInjectXmlMarshallCodeInPayload(data);
             }
 
+            private HashSet<string> ParseInjectXmlMarshallCodeInPayload(JsonData data)
+            {
+                var shapeModifierData = data[InjectXmlMarshallCodeInPayloadKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(shapeModifierData ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you want to inject some code into the xml payload.
+            /// The code will be injected into the first line of the xml payload marshall logic.
+            /// </summary>
+            public HashSet<string> InjectXmlMarshallCodeInPayload { get { return _injectXmlMarshallCodeInPayload; } }
 
             //"exclude": [
             //    "CopySource",
@@ -995,19 +1101,6 @@ namespace ServiceClientGenerator
             //        }
             //   },
             // Above is an example of how to specify the originalMember on the injected member.
-            private void Validate(JsonData data)
-            {
-                // if a property was excluded, then the injected member must reference the original member that it is replacing
-                if (_excludedProperties.Count == 0 || _injectedProperties.Count == 0)
-                    return;
-                int injectedPropertyOriginalMemberCount = _injectedProperties.Values
-                    .Count(jsonData => jsonData[CustomizationsModel.OriginalMemberKey] != null);
-                if (_excludedProperties.Count != injectedPropertyOriginalMemberCount)
-                {
-                    throw new InvalidDataException($"The customization excludes and injects members without specifying the originalMember. If you are excluding a member and injecting a different member, make sure to specify the original member that" +
-                        $" was excluded on the injected member in the customizations.json file.");
-                }
-            }
 
             #region Property Exclusion
 
@@ -1118,6 +1211,169 @@ namespace ServiceClientGenerator
             }
 
             #endregion
+
+            #region excludeFromMarshalling
+
+            private static HashSet<string> ParseExcludedMarshallingProperties(JsonData data)
+            {
+                var excludedMarshallingProperties = data[ShapeModifier.ExcludeFromMarshallingKey];
+
+                var excludedMarshallingPropertiesHashSet = excludedMarshallingProperties?.Cast<object>()
+                    .Select(exclusion => exclusion.ToString());
+                return new HashSet<string>(excludedMarshallingPropertiesHashSet ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you want to exclude certain members from marshalling but still want
+            /// to generate these members as part of the structure. Usually this is the case when you have custom logic
+            /// around certain properties. See the entry for CreateMultipartUploadRequest in s3.customizations.json as an example.
+            ///    "excludeFromMarshalling":[
+            ///      "ServerSideEncryptionCustomerProvidedKey",
+            ///      "ServerSideEncryptionCustomerProvidedKeyMD5",
+            ///      "Metadata"
+            /// ]
+            /// </summary>
+            public HashSet<string> ExcludedMarshallingProperties { get { return _excludedMarshallingProperties; } }
+            #endregion
+
+            #region SkipXmlTestExpression
+
+            private static HashSet<string> ParseSkipXmlTestExpressionProperties(JsonData data)
+            {
+                var customData = data[ShapeModifier.SkipXmlTestExpressionKey];
+
+                var skipXmlTestExpressionHashSet = customData?.Cast<object>()
+                    .Select(skipMember => skipMember.ToString());
+
+                return new HashSet<string>(skipXmlTestExpressionHashSet ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you want to omit the "context.TestExpression(location_name, targetDepth)"
+            /// for rest-xml services. 
+            /// "skipXmlTestExpression":[
+            ///    "Configuration"
+            ///  ]
+            /// </summary>
+
+            public HashSet<string> SkipXmlTestExpressionProperties { get { return _skipXmlTestExpressionProperties; } }
+
+            #endregion
+
+            #region NewObjectIfNull
+
+            private static HashSet<string> ParseNewObjectIfNullProperties(JsonData data)
+            {
+                var customData = data[ShapeModifier.NewObjectIfNullKey];
+
+                var newObjectIfNullHashSet = customData?.Cast<object>()
+                    .Select(member => member.ToString());
+
+                return new HashSet<string>(newObjectIfNullHashSet ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you want the getter of a property to create the object if the object is null.
+            /// For example
+            /// public LifecycleConfiguration Configuration
+            ///   {
+            ///   get 
+            ///    {
+            ///      if (this.configuration == null)
+            ///        this.configuration = new LifecycleConfiguration();
+            ///      return this.configuration; 
+            ///    }
+            /// 
+            ///  For the actual customization entry:
+            ///             "newObjectIfNull":[
+            ///    "Configuration"
+            /// ]
+            /// </summary>
+            public HashSet<string> NewObjectIfNullProperties { get { return _newObjectIfNullProperties; } }
+            #endregion
+
+            #region ShapeDocumentation
+            private static HashSet<string> ParseShapeDocumentation(JsonData data)
+            {
+                var shapeDocumentation = data[ShapeModifier.ShapeDocumentationKey]?.Cast<object>()
+                    .Select(documentationEntry => documentationEntry.ToString());
+
+                return new HashSet<string>(shapeDocumentation ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you want to add additional documentation to a customization entry. Usually
+            /// when the generated class is a combination of generated and custom code, there is additional information in the 
+            /// documentation that might be deleted once the class is generated. Use this to add that back. 
+            /// 
+            /// Usage:
+            ///             "shapeDocumentation":[
+            ///    "This class contains the configuration Amazon S3 uses to figure out what events you want to listen and send the event to an Amazon Lambda cloud function.",
+            ///    "<para>The queue's policy must allow S3 to send messages to it. The utility method Amazon.SQS.AmazonSQSClient.AuthorizeS3ToSendMessage(string,string) can be used to help setup the queue policy.</para>"
+            ///  ]
+            /// </summary>
+            public HashSet<string> ShapeDocumentation { get { return _shapeDocumentation; } }
+            #endregion
+            #region XmlNamespace
+            private static string ParseXmlNamespace(JsonData data)
+            {
+                string xmlNamespace = (data[ShapeModifierXmlNamespaceKey] != null && data[ShapeModifierXmlNamespaceKey].IsString) ? (string)data[ShapeModifierXmlNamespaceKey] : null;
+                return xmlNamespace;
+            }
+
+            public string XmlNamespace { get { return _shapeModifierXmlNamespace; } }
+            #endregion
+            #region PredicateListUnmarshallers
+            private static Dictionary<string, JsonData> ParsePredicateListUnmarshallers(JsonData data)
+            {
+                var predicateList = data[ShapeModifier.PredicateListUnmarshallersKey]
+                   ?.Cast<JsonData>()
+                   .Select(modifier => modifier.Cast<KeyValuePair<string, JsonData>>().First());
+
+                return predicateList?.ToDictionary(modifier => modifier.Key, modifier => modifier.Value)
+                    ?? new Dictionary<string, JsonData>();
+
+            }
+
+            /// <summary>
+            /// This customization tells the generator that the member's shape is a filter type that has predicates
+            /// and operators and that it should be unmarshalled with the PredicateListUnmarshaller type that each
+            /// of the filters has
+            /// usage:
+            /// 
+            /// </summary>
+            public Dictionary<string, JsonData> PredicateListUnmarshallers { get { return _predicateListUnmarshallers; } }
+
+            #endregion
+
+            #region ExcludedUnmarshallingProperties
+
+            private static HashSet<string> ParseExcludedUnmarshallingProperties(JsonData data)
+            {
+                var excludedUnmarshallingProperties = data[ShapeModifier.ExcludeFromUnmarshallingKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(excludedUnmarshallingProperties ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Properties that should be excluded from unmarshalling. Example usage:
+            /// 
+            /// The members that should be excluded are in the array.
+            /// "S3Grantee":{
+            /// "modify": [
+            ///     {
+            ///        "ID": {"emitPropertyName": "CanonicalUser"}
+            ///     }
+            /// ],
+            /// "excludeFromUnmarshalling":
+            ///   [
+            ///    "Type"
+            ///   ]
+            /// },
+            /// </summary>
+            public HashSet<string> ExcludedUnmarshallingProperties { get { return _excludedUnmarshallingProperties; } }
+            #endregion
         }
 
         /// <summary>
@@ -1151,6 +1407,27 @@ namespace ServiceClientGenerator
                     return false;
                 }
             }
+
+            #region OriginalMemberIsOutsideContainingShape
+                
+            /// <summary>
+            /// This customization is used when the original member of an injected property is actually from another shape.
+            /// Here is how to use it. First set OriginalMemberIsOutsideContainingShape to true. Then 
+            /// fill in "outsideOriginalMember" as a comma separated string of the name of the shape and then the name of the member
+            /// that we should be injecting.
+            ///             "inject":[
+            ///    {
+            ///        "Configuration" : {
+            ///            "shape": "LifecycleConfiguration",
+            ///            "originalMemberIsOutsideContainingShape":true,
+            ///            "outsideOriginalMember":"PutBucketLifecycleConfigurationRequest,LifecycleConfiguration"
+            ///        }
+            ///    }
+            /// ],
+            /// </summary>
+            public bool OriginalMemberIsOutsideContainingShape { get { return _injectionData[ShapeModifier.OriginalMemberIsOutsideContainingShapeKey] != null && _injectionData[ShapeModifier.OriginalMemberIsOutsideContainingShapeKey].IsBoolean ? (bool)_injectionData[ShapeModifier.OriginalMemberIsOutsideContainingShapeKey] : false; } }
+
+            #endregion
         }
 
         /// <summary>
@@ -1163,15 +1440,153 @@ namespace ServiceClientGenerator
             public const string EmitPropertyNameKey = "emitPropertyName";
             public const string LocationNameKey = "locationName";
             public const string AccessModifierKey = "accessModifier";
+            public const string InjectXmlUnmarshallCodeKey = "injectXmlUnmarshallCode";
+            public const string SkipContextTestExpressionUnmarshallingLogicKey = "skipContextTestExpressionUnmarshallingLogic";
+            public const string InjectXmlIsSetCodeKey = "injectXmlIsSet";
+            public const string InjectXmlPrivateMemberAssignmentKey = "injectXmlPrivateMemberAssignment";
+            public const string InjectXmlPropertyGetterKey = "injectXmlPropertyGetter";
+            public const string InjectXmlPropertySetterKey = "injectXmlPropertySetter";
+            public const string SkipSetterKey = "skipSetter";
+            public const string InjectXmlMarshallCodeKey = "injectXmlMarshallCode";
+            public const string SkipXmlIsSetKey = "skipXmlIsSet";
 
-            private readonly string _modelPropertyName; // for debug inspection assist
+            private readonly string _modelPropertyName;
             private readonly JsonData _modifierData;
+            private readonly HashSet<string> _injectXmlUnmarshallCode;
+            private readonly HashSet<string> _injectXmlIsSetCode;
+            private readonly HashSet<string> _injectXmlPrivateMemberAssignment;
+            private readonly HashSet<string> _injectXmlPropertyGetter;
+            private readonly HashSet<string> _injectedXmlPropertySetter;
+            private readonly HashSet<string> _injectXmlMarshallCode;
+            private readonly bool _skipSetter;
+            private readonly bool _skipXmlIsSet;
 
             internal PropertyModifier(string modelPropertyName, JsonData modifierData)
             {
                 this._modelPropertyName = modelPropertyName;
                 this._modifierData = modifierData;
+                _injectXmlUnmarshallCode = ParseInjectXmlUnmarshallCode();
+                _injectXmlIsSetCode = ParseInjectXmlIsSetCode();
+                _injectXmlPrivateMemberAssignment = ParseInjectXmlPrivateMemberAssignment();
+                _injectXmlPropertyGetter = ParseInjectXmlGetter();
+                _injectedXmlPropertySetter = ParseInjectXmlPropertySetter();
+                _skipSetter = ParseXmlSkipSetter();
+                _skipXmlIsSet = ParseSkipXmlIsSet();
+                _injectXmlMarshallCode = ParseInjectXmlMarshallCode();
             }
+
+            private bool ParseSkipXmlIsSet()
+            {
+                var data = _modifierData[SkipXmlIsSetKey];
+                return data != null && data.IsBoolean ? (bool)data : false;
+            }
+
+            /// <summary>
+            /// This forces XML elements to be written even when the property value is null or empty.
+            /// 
+            /// This is needed when an API requires empty XML elements to be present in the structure,
+            /// rather than omitting them entirely (which is the default behavior).
+            /// 
+            /// Example: S3's FilterRule requires both Name and Value elements even when empty:
+            ///   <FilterRule>
+            ///     <Name></Name>    <!-- Must be present even if empty -->
+            ///     <Value></Value>  <!-- Must be present even if empty -->
+            ///   </FilterRule>
+            /// Use this customization when you want to skip the IsSet() checks for rest-xml marshalling
+            ///        "Name": {
+            ///            "skipXmlIsSet" : true
+            ///        }
+            /// </summary>
+            public bool SkipXmlIsSet { get { return _skipXmlIsSet; } }
+
+            private HashSet<string> ParseInjectXmlMarshallCode()
+            {
+                var data = _modifierData[InjectXmlMarshallCodeKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization when you need to inject marshall code for a specific member (within the modify array)
+            /// "MetricsFilter":{
+            ///    "injectXmlMarshallCode": ["MetricsFilterCustomMarshall(publicRequest, xmlWriter);"]
+            /// }
+            /// 
+            /// </summary>
+            public HashSet<string> InjectXmlMarshallCode { get { return _injectXmlMarshallCode; } }
+
+            private bool ParseXmlSkipSetter()
+            {
+                var data = _modifierData[SkipSetterKey];
+                return data != null && data.IsBoolean ? (bool)data : false;
+
+            }
+
+            public bool SkipSetter { get { return _skipSetter; } }
+
+            private HashSet<string> ParseInjectXmlPropertySetter()
+            {
+                var data = _modifierData[InjectXmlPropertySetterKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization within a property modifier to inject code in the Setter for a property.
+            /// If this HashSet has values then the default setter will not be generated and this custom injected
+            /// code will be used instead.
+            /// </summary>
+            public HashSet<string> InjectXmlPropertySetter { get { return _injectedXmlPropertySetter; } }
+
+            private HashSet<string> ParseInjectXmlGetter()
+            {
+                var data = _modifierData[InjectXmlPropertyGetterKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization within a property modifier to inject code in the getter for a property.
+            /// If this HashSet has values then the default getter will not be generated and this custom injected
+            /// code will be used instead.
+            /// </summary>
+            public HashSet<string> InjectXmlPropertyGetter { get { return _injectXmlPropertyGetter; } }
+
+            private HashSet<string> ParseInjectXmlPrivateMemberAssignment()
+            {
+                var data = _modifierData[InjectXmlPrivateMemberAssignmentKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization within a property modifier to inject code in the private member assignment
+            /// for a property. If this HashSet has values then the default private member assignment will not be generated
+            /// and this custom injected code will be used instead.
+            /// </summary>
+            public HashSet<string> InjectXmlPrivateMemberAssignment { get { return _injectXmlPrivateMemberAssignment; } }
+            
+            private HashSet<string> ParseInjectXmlIsSetCode()
+            {
+                var data = _modifierData[InjectXmlIsSetCodeKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization within a property modifier to inject code in the IsSet() method for a property
+            /// If this HashSet has values then the default IsSet() code will not be generated and this custom injected code will be used instead.
+            /// </summary>
+            public HashSet<string> InjectXmlIsSetCode { get { return _injectXmlIsSetCode; } }
+            /// <summary>
+            /// Returns the original property name of the renamed property
+            /// </summary>
+            public string OriginalPropertyName { get { return _modelPropertyName; } }
 
             // The access modifier for the property. Defaults to public if not set in the customization.
             public string AccessModifier
@@ -1243,13 +1658,55 @@ namespace ServiceClientGenerator
             }
 
             public string DeprecationMessage
-        {
-                get
             {
+                get
+                {
                     return _modifierData[ShapeModifier.DeprecatedMessageKey].CastToString();
+                }
             }
+
+            private HashSet<string> ParseInjectXmlUnmarshallCode()
+            {
+                var data = _modifierData[InjectXmlUnmarshallCodeKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            /// <summary>
+            /// Use this customization for rest-xml services when you want to inject some code into the "Context.TestExpression" portion 
+            /// of the member.
+            /// 
+            /// A prime example of this is here https://github.com/aws/aws-sdk-net/blob/79cbc392fc3f1c74fcdf34efd77ad681da8af328/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/ListObjectsV2ResponseUnmarshaller.cs#L85
+            /// How to use this customization (within the modify array of a property) :
+            /// Within the "Contents" member while this member is being unmarshalled the code in the "injectXmlUnmarshallCode" will be added line by line
+            /// right before the "continue" statement within each "context.TestExpression" call.
+            /// {
+            ///        "Contents" : {
+            ///            "emitPropertyName" : "S3Objects",
+            ///            "injectXmlUnmarshallCode":[
+            ///                "response.S3Objects[response.S3Objects.Count - 1].BucketName = response.Name;"
+            ///            ]
+            ///     }
+            /// },
+            /// </summary>
+            public HashSet<string> InjectXmlUnmarshallCode
+            {
+                get { return _injectXmlUnmarshallCode; }
+            }
+
+            /// <summary>
+            /// If this is set, all the logic inside of the "context.testExpression" code block for that member won't be generated. this is meant 
+            /// to be used in conjunction with InjectXmlUnmarshallCode, but can be used separately as well. For example:
+            /// "Versions":{
+            ///   "skipContextTestExpressionUnmarshallingLogic" : true,
+            ///   "injectXmlUnmarshallCode" :[
+            ///      "VersionsItemCustomUnmarshall(context, response);"
+            ///   ]
+            /// }
+            /// </summary>
+            public bool SkipContextTestExpressionUnmarshallingLogic { get { return _modifierData[SkipContextTestExpressionUnmarshallingLogicKey] != null; } }
         }
-            }
 
         #endregion
         // Injection modifier is an array of objects, each object being the
@@ -1360,6 +1817,17 @@ namespace ServiceClientGenerator
             }
 
             return modifiers;
+        }
+
+        public bool TryGetOperationModifiers(string operationName, out OperationModifiers operationModifer)
+        {
+            operationModifer = null;
+            if (GetOperationModifiers(operationName) != null)
+            {
+                operationModifer = GetOperationModifiers(operationName);
+                return true;
+            }
+            return false;
         }
 
         public JsonData GetExamples(string operationName)
@@ -1566,11 +2034,17 @@ namespace ServiceClientGenerator
             /// <param name="dataType">The new custom type for a member</param>
             /// <param name="marshaller">The custom marshaller for a member</param>
             /// <param name="unmarshaller">The custom unmarshaller for a member</param>
-            public DataTypeOverride(string dataType, string marshaller, string unmarshaller)
+            public DataTypeOverride(string dataType, string marshaller, string unmarshaller) : this (dataType, marshaller, unmarshaller, false, null)
+            {
+            }
+
+            public DataTypeOverride(string dataType, string marshaller ,string unmarshaller, bool isFlattened, string alternateLocationName)
             {
                 this.DataType = dataType;
                 this.Marshaller = marshaller;
                 this.Unmarshaller = unmarshaller;
+                this.IsFlattened = isFlattened;
+                this.AlternateLocationName = alternateLocationName;
             }
 
             /// <summary>
@@ -1599,8 +2073,25 @@ namespace ServiceClientGenerator
                 get;
                 private set;
             }
-        }
 
+            /// <summary>
+            /// Indicates whether the new data type is flattened (only matters for lists and maps)
+            /// </summary>
+            public bool IsFlattened
+            {
+                get;
+                private set;
+            }
+
+            /// <summary>
+            /// Specifies an alternate location name for the data type override.
+            /// </summary>
+            public string AlternateLocationName
+            {
+                get;
+                private set;
+            }
+        }
         #endregion
 
         #region RuntimePipelineOverride

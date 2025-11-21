@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationRuleAndOperator Object
     /// </summary>  
-    public class ReplicationRuleAndOperatorUnmarshaller : IXmlUnmarshaller<ReplicationRuleAndOperator, XmlUnmarshallerContext>
+    public partial class ReplicationRuleAndOperatorUnmarshaller : IXmlUnmarshaller<ReplicationRuleAndOperator, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -72,6 +72,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tags.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -80,6 +82,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, ReplicationRuleAndOperator unmarshalledObject, int targetDepth);
+
         private static ReplicationRuleAndOperatorUnmarshaller _instance = new ReplicationRuleAndOperatorUnmarshaller();        
 
         /// <summary>

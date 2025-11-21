@@ -46,6 +46,17 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdvancedOptions())
+            {
+                context.Writer.WritePropertyName("advancedOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AdvancedOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdvancedOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetFileFormat())
             {
                 context.Writer.WritePropertyName("fileFormat");

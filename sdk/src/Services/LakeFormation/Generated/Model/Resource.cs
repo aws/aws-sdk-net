@@ -123,7 +123,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property LFTag. 
         /// <para>
-        /// The LF-tag key and values attached to a resource.
+        /// The LF-Tag key and values attached to a resource.
         /// </para>
         /// </summary>
         public LFTagKeyResource LFTag

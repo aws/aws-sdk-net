@@ -107,7 +107,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cpu. 
         /// <para>
         /// The number of <c>cpu</c> units reserved for the container. This parameter maps to
-        /// <c>CpuShares</c> in the docker container create commandand the <c>--cpu-shares</c>
+        /// <c>CpuShares</c> in the docker container create command and the <c>--cpu-shares</c>
         /// option to docker run.
         /// </para>
         ///  
@@ -1062,7 +1062,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter maps to <c>PortBindings</c> in the the docker container create command
+        /// This parameter maps to <c>PortBindings</c> in the docker container create command
         /// and the <c>--publish</c> option to docker run. If the network mode of a task definition
         /// is set to <c>none</c>, then you can't specify port mappings. If the network mode of
         /// a task definition is set to <c>host</c>, then host ports must either be undefined

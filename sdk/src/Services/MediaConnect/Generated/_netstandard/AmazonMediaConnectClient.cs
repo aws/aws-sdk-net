@@ -300,7 +300,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddBridgeOutputsResponse AddBridgeOutputs(AddBridgeOutputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddBridgeOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddBridgeOutputsResponseUnmarshaller.Instance;
 
@@ -344,7 +344,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeOutputs">REST API Reference for AddBridgeOutputs Operation</seealso>
         public virtual Task<AddBridgeOutputsResponse> AddBridgeOutputsAsync(AddBridgeOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddBridgeOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddBridgeOutputsResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddBridgeSourcesResponse AddBridgeSources(AddBridgeSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddBridgeSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddBridgeSourcesResponseUnmarshaller.Instance;
 
@@ -400,7 +400,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeSources">REST API Reference for AddBridgeSources Operation</seealso>
         public virtual Task<AddBridgeSourcesResponse> AddBridgeSourcesAsync(AddBridgeSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddBridgeSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddBridgeSourcesResponseUnmarshaller.Instance;
 
@@ -412,7 +412,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddFlowMediaStreamsResponse AddFlowMediaStreams(AddFlowMediaStreamsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowMediaStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowMediaStreamsResponseUnmarshaller.Instance;
 
@@ -454,7 +454,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreams">REST API Reference for AddFlowMediaStreams Operation</seealso>
         public virtual Task<AddFlowMediaStreamsResponse> AddFlowMediaStreamsAsync(AddFlowMediaStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowMediaStreamsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowMediaStreamsResponseUnmarshaller.Instance;
 
@@ -466,7 +466,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddFlowOutputsResponse AddFlowOutputs(AddFlowOutputsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowOutputsResponseUnmarshaller.Instance;
 
@@ -510,7 +510,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowOutputs">REST API Reference for AddFlowOutputs Operation</seealso>
         public virtual Task<AddFlowOutputsResponse> AddFlowOutputsAsync(AddFlowOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowOutputsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowOutputsResponseUnmarshaller.Instance;
 
@@ -522,7 +522,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddFlowSourcesResponse AddFlowSources(AddFlowSourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowSourcesResponseUnmarshaller.Instance;
 
@@ -562,7 +562,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowSources">REST API Reference for AddFlowSources Operation</seealso>
         public virtual Task<AddFlowSourcesResponse> AddFlowSourcesAsync(AddFlowSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowSourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowSourcesResponseUnmarshaller.Instance;
 
@@ -574,7 +574,7 @@ namespace Amazon.MediaConnect
 
         internal virtual AddFlowVpcInterfacesResponse AddFlowVpcInterfaces(AddFlowVpcInterfacesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowVpcInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowVpcInterfacesResponseUnmarshaller.Instance;
 
@@ -614,7 +614,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces">REST API Reference for AddFlowVpcInterfaces Operation</seealso>
         public virtual Task<AddFlowVpcInterfacesResponse> AddFlowVpcInterfacesAsync(AddFlowVpcInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AddFlowVpcInterfacesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AddFlowVpcInterfacesResponseUnmarshaller.Instance;
 
@@ -622,11 +622,161 @@ namespace Amazon.MediaConnect
         }
         #endregion
         
+        #region  BatchGetRouterInput
+
+        internal virtual BatchGetRouterInputResponse BatchGetRouterInput(BatchGetRouterInputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRouterInputResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetRouterInputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about multiple router inputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterInput">REST API Reference for BatchGetRouterInput Operation</seealso>
+        public virtual Task<BatchGetRouterInputResponse> BatchGetRouterInputAsync(BatchGetRouterInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRouterInputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetRouterInputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetRouterNetworkInterface
+
+        internal virtual BatchGetRouterNetworkInterfaceResponse BatchGetRouterNetworkInterface(BatchGetRouterNetworkInterfaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetRouterNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRouterNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetRouterNetworkInterfaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about multiple router network interfaces in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRouterNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterNetworkInterface">REST API Reference for BatchGetRouterNetworkInterface Operation</seealso>
+        public virtual Task<BatchGetRouterNetworkInterfaceResponse> BatchGetRouterNetworkInterfaceAsync(BatchGetRouterNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetRouterNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRouterNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetRouterNetworkInterfaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  BatchGetRouterOutput
+
+        internal virtual BatchGetRouterOutputResponse BatchGetRouterOutput(BatchGetRouterOutputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRouterOutputResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetRouterOutputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about multiple router outputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterOutput">REST API Reference for BatchGetRouterOutput Operation</seealso>
+        public virtual Task<BatchGetRouterOutputResponse> BatchGetRouterOutputAsync(BatchGetRouterOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetRouterOutputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetRouterOutputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateBridge
 
         internal virtual CreateBridgeResponse CreateBridge(CreateBridgeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBridgeResponseUnmarshaller.Instance;
 
@@ -671,7 +821,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateBridge">REST API Reference for CreateBridge Operation</seealso>
         public virtual Task<CreateBridgeResponse> CreateBridgeAsync(CreateBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateBridgeResponseUnmarshaller.Instance;
 
@@ -683,7 +833,7 @@ namespace Amazon.MediaConnect
 
         internal virtual CreateFlowResponse CreateFlow(CreateFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowResponseUnmarshaller.Instance;
 
@@ -725,7 +875,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateFlow">REST API Reference for CreateFlow Operation</seealso>
         public virtual Task<CreateFlowResponse> CreateFlowAsync(CreateFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateFlowResponseUnmarshaller.Instance;
 
@@ -737,7 +887,7 @@ namespace Amazon.MediaConnect
 
         internal virtual CreateGatewayResponse CreateGateway(CreateGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
 
@@ -782,7 +932,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
         public virtual Task<CreateGatewayResponse> CreateGatewayAsync(CreateGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayResponseUnmarshaller.Instance;
 
@@ -790,11 +940,181 @@ namespace Amazon.MediaConnect
         }
         #endregion
         
+        #region  CreateRouterInput
+
+        internal virtual CreateRouterInputResponse CreateRouterInput(CreateRouterInputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouterInputResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRouterInputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.RouterInputServiceQuotaExceededException">
+        /// The request to create a new router input would exceed the service quotas for the account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterInput">REST API Reference for CreateRouterInput Operation</seealso>
+        public virtual Task<CreateRouterInputResponse> CreateRouterInputAsync(CreateRouterInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouterInputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRouterInputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateRouterNetworkInterface
+
+        internal virtual CreateRouterNetworkInterfaceResponse CreateRouterNetworkInterface(CreateRouterNetworkInterfaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRouterNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouterNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRouterNetworkInterfaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new router network interface in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouterNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.RouterNetworkInterfaceServiceQuotaExceededException">
+        /// The request to create a new router network interface would exceed the service quotas
+        /// (limits) set for the account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterNetworkInterface">REST API Reference for CreateRouterNetworkInterface Operation</seealso>
+        public virtual Task<CreateRouterNetworkInterfaceResponse> CreateRouterNetworkInterfaceAsync(CreateRouterNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRouterNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouterNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRouterNetworkInterfaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateRouterOutput
+
+        internal virtual CreateRouterOutputResponse CreateRouterOutput(CreateRouterOutputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouterOutputResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRouterOutputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.RouterOutputServiceQuotaExceededException">
+        /// The request to create a new router output would exceed the service quotas (limits)
+        /// set for the account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterOutput">REST API Reference for CreateRouterOutput Operation</seealso>
+        public virtual Task<CreateRouterOutputResponse> CreateRouterOutputAsync(CreateRouterOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRouterOutputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRouterOutputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteBridge
 
         internal virtual DeleteBridgeResponse DeleteBridge(DeleteBridgeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBridgeResponseUnmarshaller.Instance;
 
@@ -838,7 +1158,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteBridge">REST API Reference for DeleteBridge Operation</seealso>
         public virtual Task<DeleteBridgeResponse> DeleteBridgeAsync(DeleteBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteBridgeResponseUnmarshaller.Instance;
 
@@ -850,7 +1170,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DeleteFlowResponse DeleteFlow(DeleteFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowResponseUnmarshaller.Instance;
 
@@ -890,7 +1210,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteFlow">REST API Reference for DeleteFlow Operation</seealso>
         public virtual Task<DeleteFlowResponse> DeleteFlowAsync(DeleteFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteFlowResponseUnmarshaller.Instance;
 
@@ -902,7 +1222,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DeleteGatewayResponse DeleteGateway(DeleteGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
@@ -947,7 +1267,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         public virtual Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayResponseUnmarshaller.Instance;
 
@@ -955,11 +1275,179 @@ namespace Amazon.MediaConnect
         }
         #endregion
         
+        #region  DeleteRouterInput
+
+        internal virtual DeleteRouterInputResponse DeleteRouterInput(DeleteRouterInputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouterInputResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRouterInputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a router input from AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterInput">REST API Reference for DeleteRouterInput Operation</seealso>
+        public virtual Task<DeleteRouterInputResponse> DeleteRouterInputAsync(DeleteRouterInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouterInputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRouterInputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteRouterNetworkInterface
+
+        internal virtual DeleteRouterNetworkInterfaceResponse DeleteRouterNetworkInterface(DeleteRouterNetworkInterfaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRouterNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouterNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRouterNetworkInterfaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a router network interface from AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouterNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterNetworkInterface">REST API Reference for DeleteRouterNetworkInterface Operation</seealso>
+        public virtual Task<DeleteRouterNetworkInterfaceResponse> DeleteRouterNetworkInterfaceAsync(DeleteRouterNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRouterNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouterNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRouterNetworkInterfaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteRouterOutput
+
+        internal virtual DeleteRouterOutputResponse DeleteRouterOutput(DeleteRouterOutputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouterOutputResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRouterOutputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a router output from AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterOutput">REST API Reference for DeleteRouterOutput Operation</seealso>
+        public virtual Task<DeleteRouterOutputResponse> DeleteRouterOutputAsync(DeleteRouterOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRouterOutputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRouterOutputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeregisterGatewayInstance
 
         internal virtual DeregisterGatewayInstanceResponse DeregisterGatewayInstance(DeregisterGatewayInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterGatewayInstanceResponseUnmarshaller.Instance;
 
@@ -1005,7 +1493,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterGatewayInstance">REST API Reference for DeregisterGatewayInstance Operation</seealso>
         public virtual Task<DeregisterGatewayInstanceResponse> DeregisterGatewayInstanceAsync(DeregisterGatewayInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeregisterGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeregisterGatewayInstanceResponseUnmarshaller.Instance;
 
@@ -1017,7 +1505,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeBridgeResponse DescribeBridge(DescribeBridgeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBridgeResponseUnmarshaller.Instance;
 
@@ -1061,7 +1549,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeBridge">REST API Reference for DescribeBridge Operation</seealso>
         public virtual Task<DescribeBridgeResponse> DescribeBridgeAsync(DescribeBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeBridgeResponseUnmarshaller.Instance;
 
@@ -1073,7 +1561,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeFlowResponse DescribeFlow(DescribeFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowResponseUnmarshaller.Instance;
 
@@ -1115,7 +1603,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlow">REST API Reference for DescribeFlow Operation</seealso>
         public virtual Task<DescribeFlowResponse> DescribeFlowAsync(DescribeFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowResponseUnmarshaller.Instance;
 
@@ -1127,7 +1615,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeFlowSourceMetadataResponse DescribeFlowSourceMetadata(DescribeFlowSourceMetadataRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowSourceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowSourceMetadataResponseUnmarshaller.Instance;
 
@@ -1169,7 +1657,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceMetadata">REST API Reference for DescribeFlowSourceMetadata Operation</seealso>
         public virtual Task<DescribeFlowSourceMetadataResponse> DescribeFlowSourceMetadataAsync(DescribeFlowSourceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowSourceMetadataRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowSourceMetadataResponseUnmarshaller.Instance;
 
@@ -1181,7 +1669,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeFlowSourceThumbnailResponse DescribeFlowSourceThumbnail(DescribeFlowSourceThumbnailRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowSourceThumbnailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowSourceThumbnailResponseUnmarshaller.Instance;
 
@@ -1221,7 +1709,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceThumbnail">REST API Reference for DescribeFlowSourceThumbnail Operation</seealso>
         public virtual Task<DescribeFlowSourceThumbnailResponse> DescribeFlowSourceThumbnailAsync(DescribeFlowSourceThumbnailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeFlowSourceThumbnailRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeFlowSourceThumbnailResponseUnmarshaller.Instance;
 
@@ -1233,7 +1721,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeGatewayResponse DescribeGateway(DescribeGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
 
@@ -1278,7 +1766,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGateway">REST API Reference for DescribeGateway Operation</seealso>
         public virtual Task<DescribeGatewayResponse> DescribeGatewayAsync(DescribeGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayResponseUnmarshaller.Instance;
 
@@ -1290,7 +1778,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeGatewayInstanceResponse DescribeGatewayInstance(DescribeGatewayInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayInstanceResponseUnmarshaller.Instance;
 
@@ -1334,7 +1822,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGatewayInstance">REST API Reference for DescribeGatewayInstance Operation</seealso>
         public virtual Task<DescribeGatewayInstanceResponse> DescribeGatewayInstanceAsync(DescribeGatewayInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayInstanceResponseUnmarshaller.Instance;
 
@@ -1346,7 +1834,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeOfferingResponse DescribeOffering(DescribeOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOfferingResponseUnmarshaller.Instance;
 
@@ -1384,7 +1872,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering">REST API Reference for DescribeOffering Operation</seealso>
         public virtual Task<DescribeOfferingResponse> DescribeOfferingAsync(DescribeOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeOfferingResponseUnmarshaller.Instance;
 
@@ -1396,7 +1884,7 @@ namespace Amazon.MediaConnect
 
         internal virtual DescribeReservationResponse DescribeReservation(DescribeReservationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservationResponseUnmarshaller.Instance;
 
@@ -1435,7 +1923,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation">REST API Reference for DescribeReservation Operation</seealso>
         public virtual Task<DescribeReservationResponse> DescribeReservationAsync(DescribeReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeReservationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeReservationResponseUnmarshaller.Instance;
 
@@ -1443,11 +1931,284 @@ namespace Amazon.MediaConnect
         }
         #endregion
         
+        #region  GetRouterInput
+
+        internal virtual GetRouterInputResponse GetRouterInput(GetRouterInputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouterInputResponseUnmarshaller.Instance;
+
+            return Invoke<GetRouterInputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInput">REST API Reference for GetRouterInput Operation</seealso>
+        public virtual Task<GetRouterInputResponse> GetRouterInputAsync(GetRouterInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouterInputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRouterInputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetRouterInputSourceMetadata
+
+        internal virtual GetRouterInputSourceMetadataResponse GetRouterInputSourceMetadata(GetRouterInputSourceMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRouterInputSourceMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouterInputSourceMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetRouterInputSourceMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed metadata information about a specific router input source, including
+        /// stream details and connection state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterInputSourceMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouterInputSourceMetadata service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInputSourceMetadata">REST API Reference for GetRouterInputSourceMetadata Operation</seealso>
+        public virtual Task<GetRouterInputSourceMetadataResponse> GetRouterInputSourceMetadataAsync(GetRouterInputSourceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRouterInputSourceMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouterInputSourceMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRouterInputSourceMetadataResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetRouterInputThumbnail
+
+        internal virtual GetRouterInputThumbnailResponse GetRouterInputThumbnail(GetRouterInputThumbnailRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRouterInputThumbnailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouterInputThumbnailResponseUnmarshaller.Instance;
+
+            return Invoke<GetRouterInputThumbnailResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the thumbnail for a router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterInputThumbnail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouterInputThumbnail service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInputThumbnail">REST API Reference for GetRouterInputThumbnail Operation</seealso>
+        public virtual Task<GetRouterInputThumbnailResponse> GetRouterInputThumbnailAsync(GetRouterInputThumbnailRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRouterInputThumbnailRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouterInputThumbnailResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRouterInputThumbnailResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetRouterNetworkInterface
+
+        internal virtual GetRouterNetworkInterfaceResponse GetRouterNetworkInterface(GetRouterNetworkInterfaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRouterNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouterNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<GetRouterNetworkInterfaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific router network interface in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterNetworkInterface">REST API Reference for GetRouterNetworkInterface Operation</seealso>
+        public virtual Task<GetRouterNetworkInterfaceResponse> GetRouterNetworkInterfaceAsync(GetRouterNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRouterNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouterNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRouterNetworkInterfaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetRouterOutput
+
+        internal virtual GetRouterOutputResponse GetRouterOutput(GetRouterOutputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouterOutputResponseUnmarshaller.Instance;
+
+            return Invoke<GetRouterOutputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterOutput">REST API Reference for GetRouterOutput Operation</seealso>
+        public virtual Task<GetRouterOutputResponse> GetRouterOutputAsync(GetRouterOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRouterOutputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRouterOutputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GrantFlowEntitlements
 
         internal virtual GrantFlowEntitlementsResponse GrantFlowEntitlements(GrantFlowEntitlementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GrantFlowEntitlementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GrantFlowEntitlementsResponseUnmarshaller.Instance;
 
@@ -1491,7 +2252,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantFlowEntitlements">REST API Reference for GrantFlowEntitlements Operation</seealso>
         public virtual Task<GrantFlowEntitlementsResponse> GrantFlowEntitlementsAsync(GrantFlowEntitlementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GrantFlowEntitlementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GrantFlowEntitlementsResponseUnmarshaller.Instance;
 
@@ -1503,7 +2264,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListBridgesResponse ListBridges(ListBridgesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBridgesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBridgesResponseUnmarshaller.Instance;
 
@@ -1542,7 +2303,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListBridges">REST API Reference for ListBridges Operation</seealso>
         public virtual Task<ListBridgesResponse> ListBridgesAsync(ListBridgesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListBridgesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListBridgesResponseUnmarshaller.Instance;
 
@@ -1554,7 +2315,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListEntitlementsResponse ListEntitlements(ListEntitlementsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntitlementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntitlementsResponseUnmarshaller.Instance;
 
@@ -1589,7 +2350,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListEntitlements">REST API Reference for ListEntitlements Operation</seealso>
         public virtual Task<ListEntitlementsResponse> ListEntitlementsAsync(ListEntitlementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListEntitlementsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListEntitlementsResponseUnmarshaller.Instance;
 
@@ -1601,7 +2362,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListFlowsResponse ListFlows(ListFlowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowsResponseUnmarshaller.Instance;
 
@@ -1636,7 +2397,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListFlows">REST API Reference for ListFlows Operation</seealso>
         public virtual Task<ListFlowsResponse> ListFlowsAsync(ListFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListFlowsResponseUnmarshaller.Instance;
 
@@ -1648,7 +2409,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListGatewayInstancesResponse ListGatewayInstances(ListGatewayInstancesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewayInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewayInstancesResponseUnmarshaller.Instance;
 
@@ -1688,7 +2449,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGatewayInstances">REST API Reference for ListGatewayInstances Operation</seealso>
         public virtual Task<ListGatewayInstancesResponse> ListGatewayInstancesAsync(ListGatewayInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewayInstancesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewayInstancesResponseUnmarshaller.Instance;
 
@@ -1700,7 +2461,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListGatewaysResponse ListGateways(ListGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
@@ -1739,7 +2500,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGateways">REST API Reference for ListGateways Operation</seealso>
         public virtual Task<ListGatewaysResponse> ListGatewaysAsync(ListGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewaysResponseUnmarshaller.Instance;
 
@@ -1751,7 +2512,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListOfferingsResponse ListOfferings(ListOfferingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingsResponseUnmarshaller.Instance;
 
@@ -1788,7 +2549,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings">REST API Reference for ListOfferings Operation</seealso>
         public virtual Task<ListOfferingsResponse> ListOfferingsAsync(ListOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOfferingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOfferingsResponseUnmarshaller.Instance;
 
@@ -1800,7 +2561,7 @@ namespace Amazon.MediaConnect
 
         internal virtual ListReservationsResponse ListReservations(ListReservationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
@@ -1836,7 +2597,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations">REST API Reference for ListReservations Operation</seealso>
         public virtual Task<ListReservationsResponse> ListReservationsAsync(ListReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListReservationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListReservationsResponseUnmarshaller.Instance;
 
@@ -1844,11 +2605,206 @@ namespace Amazon.MediaConnect
         }
         #endregion
         
+        #region  ListRouterInputs
+
+        internal virtual ListRouterInputsResponse ListRouterInputs(ListRouterInputsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRouterInputsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRouterInputsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRouterInputsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of router inputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRouterInputs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRouterInputs service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterInputs">REST API Reference for ListRouterInputs Operation</seealso>
+        public virtual Task<ListRouterInputsResponse> ListRouterInputsAsync(ListRouterInputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRouterInputsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRouterInputsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRouterInputsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListRouterNetworkInterfaces
+
+        internal virtual ListRouterNetworkInterfacesResponse ListRouterNetworkInterfaces(ListRouterNetworkInterfacesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRouterNetworkInterfacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRouterNetworkInterfacesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRouterNetworkInterfacesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of router network interfaces in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRouterNetworkInterfaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRouterNetworkInterfaces service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterNetworkInterfaces">REST API Reference for ListRouterNetworkInterfaces Operation</seealso>
+        public virtual Task<ListRouterNetworkInterfacesResponse> ListRouterNetworkInterfacesAsync(ListRouterNetworkInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRouterNetworkInterfacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRouterNetworkInterfacesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRouterNetworkInterfacesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListRouterOutputs
+
+        internal virtual ListRouterOutputsResponse ListRouterOutputs(ListRouterOutputsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRouterOutputsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRouterOutputsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRouterOutputsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of router outputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRouterOutputs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRouterOutputs service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterOutputs">REST API Reference for ListRouterOutputs Operation</seealso>
+        public virtual Task<ListRouterOutputsResponse> ListRouterOutputsAsync(ListRouterOutputsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRouterOutputsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRouterOutputsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRouterOutputsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListTagsForGlobalResource
+
+        internal virtual ListTagsForGlobalResourceResponse ListTagsForGlobalResource(ListTagsForGlobalResourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTagsForGlobalResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForGlobalResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForGlobalResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the tags associated with a global resource in AWS Elemental MediaConnect. The
+        /// API supports the following global resources: router inputs, router outputs and router
+        /// network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForGlobalResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForGlobalResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForGlobalResource">REST API Reference for ListTagsForGlobalResource Operation</seealso>
+        public virtual Task<ListTagsForGlobalResourceResponse> ListTagsForGlobalResourceAsync(ListTagsForGlobalResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTagsForGlobalResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForGlobalResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForGlobalResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1858,7 +2814,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// List all tags on a MediaConnect resource.
+        /// List all tags on a MediaConnect resource in the current region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -1879,7 +2835,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1891,7 +2847,7 @@ namespace Amazon.MediaConnect
 
         internal virtual PurchaseOfferingResponse PurchaseOffering(PurchaseOfferingRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
 
@@ -1932,7 +2888,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering">REST API Reference for PurchaseOffering Operation</seealso>
         public virtual Task<PurchaseOfferingResponse> PurchaseOfferingAsync(PurchaseOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PurchaseOfferingRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PurchaseOfferingResponseUnmarshaller.Instance;
 
@@ -1944,7 +2900,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveBridgeOutputResponse RemoveBridgeOutput(RemoveBridgeOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveBridgeOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveBridgeOutputResponseUnmarshaller.Instance;
 
@@ -1988,7 +2944,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeOutput">REST API Reference for RemoveBridgeOutput Operation</seealso>
         public virtual Task<RemoveBridgeOutputResponse> RemoveBridgeOutputAsync(RemoveBridgeOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveBridgeOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveBridgeOutputResponseUnmarshaller.Instance;
 
@@ -2000,7 +2956,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveBridgeSourceResponse RemoveBridgeSource(RemoveBridgeSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveBridgeSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveBridgeSourceResponseUnmarshaller.Instance;
 
@@ -2044,7 +3000,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeSource">REST API Reference for RemoveBridgeSource Operation</seealso>
         public virtual Task<RemoveBridgeSourceResponse> RemoveBridgeSourceAsync(RemoveBridgeSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveBridgeSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveBridgeSourceResponseUnmarshaller.Instance;
 
@@ -2056,7 +3012,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveFlowMediaStreamResponse RemoveFlowMediaStream(RemoveFlowMediaStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowMediaStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowMediaStreamResponseUnmarshaller.Instance;
 
@@ -2097,7 +3053,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowMediaStream">REST API Reference for RemoveFlowMediaStream Operation</seealso>
         public virtual Task<RemoveFlowMediaStreamResponse> RemoveFlowMediaStreamAsync(RemoveFlowMediaStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowMediaStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowMediaStreamResponseUnmarshaller.Instance;
 
@@ -2109,7 +3065,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveFlowOutputResponse RemoveFlowOutput(RemoveFlowOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowOutputResponseUnmarshaller.Instance;
 
@@ -2152,7 +3108,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowOutput">REST API Reference for RemoveFlowOutput Operation</seealso>
         public virtual Task<RemoveFlowOutputResponse> RemoveFlowOutputAsync(RemoveFlowOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowOutputResponseUnmarshaller.Instance;
 
@@ -2164,7 +3120,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveFlowSourceResponse RemoveFlowSource(RemoveFlowSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowSourceResponseUnmarshaller.Instance;
 
@@ -2205,7 +3161,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowSource">REST API Reference for RemoveFlowSource Operation</seealso>
         public virtual Task<RemoveFlowSourceResponse> RemoveFlowSourceAsync(RemoveFlowSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowSourceResponseUnmarshaller.Instance;
 
@@ -2217,7 +3173,7 @@ namespace Amazon.MediaConnect
 
         internal virtual RemoveFlowVpcInterfaceResponse RemoveFlowVpcInterface(RemoveFlowVpcInterfaceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowVpcInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowVpcInterfaceResponseUnmarshaller.Instance;
 
@@ -2260,7 +3216,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface">REST API Reference for RemoveFlowVpcInterface Operation</seealso>
         public virtual Task<RemoveFlowVpcInterfaceResponse> RemoveFlowVpcInterfaceAsync(RemoveFlowVpcInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RemoveFlowVpcInterfaceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RemoveFlowVpcInterfaceResponseUnmarshaller.Instance;
 
@@ -2268,11 +3224,125 @@ namespace Amazon.MediaConnect
         }
         #endregion
         
+        #region  RestartRouterInput
+
+        internal virtual RestartRouterInputResponse RestartRouterInput(RestartRouterInputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestartRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestartRouterInputResponseUnmarshaller.Instance;
+
+            return Invoke<RestartRouterInputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restarts a router input. This operation can be used to recover from errors or refresh
+        /// the input state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestartRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestartRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RestartRouterInput">REST API Reference for RestartRouterInput Operation</seealso>
+        public virtual Task<RestartRouterInputResponse> RestartRouterInputAsync(RestartRouterInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestartRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestartRouterInputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestartRouterInputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  RestartRouterOutput
+
+        internal virtual RestartRouterOutputResponse RestartRouterOutput(RestartRouterOutputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestartRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestartRouterOutputResponseUnmarshaller.Instance;
+
+            return Invoke<RestartRouterOutputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restarts a router output. This operation can be used to recover from errors or refresh
+        /// the output state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestartRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestartRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RestartRouterOutput">REST API Reference for RestartRouterOutput Operation</seealso>
+        public virtual Task<RestartRouterOutputResponse> RestartRouterOutputAsync(RestartRouterOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestartRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestartRouterOutputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestartRouterOutputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  RevokeFlowEntitlement
 
         internal virtual RevokeFlowEntitlementResponse RevokeFlowEntitlement(RevokeFlowEntitlementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeFlowEntitlementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeFlowEntitlementResponseUnmarshaller.Instance;
 
@@ -2313,7 +3383,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RevokeFlowEntitlement">REST API Reference for RevokeFlowEntitlement Operation</seealso>
         public virtual Task<RevokeFlowEntitlementResponse> RevokeFlowEntitlementAsync(RevokeFlowEntitlementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RevokeFlowEntitlementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RevokeFlowEntitlementResponseUnmarshaller.Instance;
 
@@ -2325,7 +3395,7 @@ namespace Amazon.MediaConnect
 
         internal virtual StartFlowResponse StartFlow(StartFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowResponseUnmarshaller.Instance;
 
@@ -2365,7 +3435,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartFlow">REST API Reference for StartFlow Operation</seealso>
         public virtual Task<StartFlowResponse> StartFlowAsync(StartFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartFlowResponseUnmarshaller.Instance;
 
@@ -2373,11 +3443,123 @@ namespace Amazon.MediaConnect
         }
         #endregion
         
+        #region  StartRouterInput
+
+        internal virtual StartRouterInputResponse StartRouterInput(StartRouterInputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRouterInputResponseUnmarshaller.Instance;
+
+            return Invoke<StartRouterInputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartRouterInput">REST API Reference for StartRouterInput Operation</seealso>
+        public virtual Task<StartRouterInputResponse> StartRouterInputAsync(StartRouterInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRouterInputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartRouterInputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StartRouterOutput
+
+        internal virtual StartRouterOutputResponse StartRouterOutput(StartRouterOutputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRouterOutputResponseUnmarshaller.Instance;
+
+            return Invoke<StartRouterOutputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartRouterOutput">REST API Reference for StartRouterOutput Operation</seealso>
+        public virtual Task<StartRouterOutputResponse> StartRouterOutputAsync(StartRouterOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRouterOutputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartRouterOutputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StopFlow
 
         internal virtual StopFlowResponse StopFlow(StopFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopFlowResponseUnmarshaller.Instance;
 
@@ -2417,7 +3599,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopFlow">REST API Reference for StopFlow Operation</seealso>
         public virtual Task<StopFlowResponse> StopFlowAsync(StopFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopFlowResponseUnmarshaller.Instance;
 
@@ -2425,11 +3607,167 @@ namespace Amazon.MediaConnect
         }
         #endregion
         
+        #region  StopRouterInput
+
+        internal virtual StopRouterInputResponse StopRouterInput(StopRouterInputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRouterInputResponseUnmarshaller.Instance;
+
+            return Invoke<StopRouterInputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopRouterInput">REST API Reference for StopRouterInput Operation</seealso>
+        public virtual Task<StopRouterInputResponse> StopRouterInputAsync(StopRouterInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRouterInputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopRouterInputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  StopRouterOutput
+
+        internal virtual StopRouterOutputResponse StopRouterOutput(StopRouterOutputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRouterOutputResponseUnmarshaller.Instance;
+
+            return Invoke<StopRouterOutputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopRouterOutput">REST API Reference for StopRouterOutput Operation</seealso>
+        public virtual Task<StopRouterOutputResponse> StopRouterOutputAsync(StopRouterOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRouterOutputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopRouterOutputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  TagGlobalResource
+
+        internal virtual TagGlobalResourceResponse TagGlobalResource(TagGlobalResourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TagGlobalResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagGlobalResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagGlobalResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds tags to a global resource in AWS Elemental MediaConnect. The API supports the
+        /// following global resources: router inputs, router outputs and router network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagGlobalResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagGlobalResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagGlobalResource">REST API Reference for TagGlobalResource Operation</seealso>
+        public virtual Task<TagGlobalResourceResponse> TagGlobalResourceAsync(TagGlobalResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TagGlobalResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagGlobalResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagGlobalResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2439,10 +3777,10 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
-        /// If existing tags on a resource are not specified in the request parameters, they are
-        /// not changed. When a resource is deleted, the tags associated with that resource are
-        /// deleted as well.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>
+        /// in the current region. If existing tags on a resource are not specified in the request
+        /// parameters, they are not changed. When a resource is deleted, the tags associated
+        /// with that resource are deleted as well.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2463,7 +3801,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2471,11 +3809,111 @@ namespace Amazon.MediaConnect
         }
         #endregion
         
+        #region  TakeRouterInput
+
+        internal virtual TakeRouterInputResponse TakeRouterInput(TakeRouterInputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TakeRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TakeRouterInputResponseUnmarshaller.Instance;
+
+            return Invoke<TakeRouterInputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a router input with a router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TakeRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TakeRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TakeRouterInput">REST API Reference for TakeRouterInput Operation</seealso>
+        public virtual Task<TakeRouterInputResponse> TakeRouterInputAsync(TakeRouterInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TakeRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TakeRouterInputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TakeRouterInputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UntagGlobalResource
+
+        internal virtual UntagGlobalResourceResponse UntagGlobalResource(UntagGlobalResourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UntagGlobalResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagGlobalResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagGlobalResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes tags from a global resource in AWS Elemental MediaConnect. The API supports
+        /// the following global resources: router inputs, router outputs and router network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagGlobalResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagGlobalResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagGlobalResource">REST API Reference for UntagGlobalResource Operation</seealso>
+        public virtual Task<UntagGlobalResourceResponse> UntagGlobalResourceAsync(UntagGlobalResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UntagGlobalResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagGlobalResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagGlobalResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UntagResource
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2485,7 +3923,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Deletes specified tags from a resource.
+        /// Deletes specified tags from a resource in the current region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2506,7 +3944,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2518,7 +3956,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateBridgeResponse UpdateBridge(UpdateBridgeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeResponseUnmarshaller.Instance;
 
@@ -2562,7 +4000,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridge">REST API Reference for UpdateBridge Operation</seealso>
         public virtual Task<UpdateBridgeResponse> UpdateBridgeAsync(UpdateBridgeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeResponseUnmarshaller.Instance;
 
@@ -2574,7 +4012,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateBridgeOutputResponse UpdateBridgeOutput(UpdateBridgeOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeOutputResponseUnmarshaller.Instance;
 
@@ -2618,7 +4056,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeOutput">REST API Reference for UpdateBridgeOutput Operation</seealso>
         public virtual Task<UpdateBridgeOutputResponse> UpdateBridgeOutputAsync(UpdateBridgeOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeOutputResponseUnmarshaller.Instance;
 
@@ -2630,7 +4068,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateBridgeSourceResponse UpdateBridgeSource(UpdateBridgeSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeSourceResponseUnmarshaller.Instance;
 
@@ -2674,7 +4112,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeSource">REST API Reference for UpdateBridgeSource Operation</seealso>
         public virtual Task<UpdateBridgeSourceResponse> UpdateBridgeSourceAsync(UpdateBridgeSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeSourceResponseUnmarshaller.Instance;
 
@@ -2686,7 +4124,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateBridgeStateResponse UpdateBridgeState(UpdateBridgeStateRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeStateResponseUnmarshaller.Instance;
 
@@ -2730,7 +4168,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeState">REST API Reference for UpdateBridgeState Operation</seealso>
         public virtual Task<UpdateBridgeStateResponse> UpdateBridgeStateAsync(UpdateBridgeStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateBridgeStateRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateBridgeStateResponseUnmarshaller.Instance;
 
@@ -2742,7 +4180,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateFlowResponse UpdateFlow(UpdateFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowResponseUnmarshaller.Instance;
 
@@ -2782,7 +4220,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlow">REST API Reference for UpdateFlow Operation</seealso>
         public virtual Task<UpdateFlowResponse> UpdateFlowAsync(UpdateFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowResponseUnmarshaller.Instance;
 
@@ -2794,7 +4232,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateFlowEntitlementResponse UpdateFlowEntitlement(UpdateFlowEntitlementRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowEntitlementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowEntitlementResponseUnmarshaller.Instance;
 
@@ -2836,7 +4274,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowEntitlement">REST API Reference for UpdateFlowEntitlement Operation</seealso>
         public virtual Task<UpdateFlowEntitlementResponse> UpdateFlowEntitlementAsync(UpdateFlowEntitlementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowEntitlementRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowEntitlementResponseUnmarshaller.Instance;
 
@@ -2848,7 +4286,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateFlowMediaStreamResponse UpdateFlowMediaStream(UpdateFlowMediaStreamRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowMediaStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowMediaStreamResponseUnmarshaller.Instance;
 
@@ -2888,7 +4326,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStream">REST API Reference for UpdateFlowMediaStream Operation</seealso>
         public virtual Task<UpdateFlowMediaStreamResponse> UpdateFlowMediaStreamAsync(UpdateFlowMediaStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowMediaStreamRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowMediaStreamResponseUnmarshaller.Instance;
 
@@ -2900,7 +4338,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateFlowOutputResponse UpdateFlowOutput(UpdateFlowOutputRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowOutputResponseUnmarshaller.Instance;
 
@@ -2940,7 +4378,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowOutput">REST API Reference for UpdateFlowOutput Operation</seealso>
         public virtual Task<UpdateFlowOutputResponse> UpdateFlowOutputAsync(UpdateFlowOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowOutputRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowOutputResponseUnmarshaller.Instance;
 
@@ -2952,7 +4390,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateFlowSourceResponse UpdateFlowSource(UpdateFlowSourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowSourceResponseUnmarshaller.Instance;
 
@@ -2992,7 +4430,7 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowSource">REST API Reference for UpdateFlowSource Operation</seealso>
         public virtual Task<UpdateFlowSourceResponse> UpdateFlowSourceAsync(UpdateFlowSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateFlowSourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateFlowSourceResponseUnmarshaller.Instance;
 
@@ -3004,7 +4442,7 @@ namespace Amazon.MediaConnect
 
         internal virtual UpdateGatewayInstanceResponse UpdateGatewayInstance(UpdateGatewayInstanceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayInstanceResponseUnmarshaller.Instance;
 
@@ -3048,11 +4486,177 @@ namespace Amazon.MediaConnect
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateGatewayInstance">REST API Reference for UpdateGatewayInstance Operation</seealso>
         public virtual Task<UpdateGatewayInstanceResponse> UpdateGatewayInstanceAsync(UpdateGatewayInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayInstanceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateGatewayInstanceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateRouterInput
+
+        internal virtual UpdateRouterInputResponse UpdateRouterInput(UpdateRouterInputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouterInputResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRouterInputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterInput">REST API Reference for UpdateRouterInput Operation</seealso>
+        public virtual Task<UpdateRouterInputResponse> UpdateRouterInputAsync(UpdateRouterInputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRouterInputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouterInputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRouterInputResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateRouterNetworkInterface
+
+        internal virtual UpdateRouterNetworkInterfaceResponse UpdateRouterNetworkInterface(UpdateRouterNetworkInterfaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRouterNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouterNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRouterNetworkInterfaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing router network interface in AWS Elemental
+        /// MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouterNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterNetworkInterface">REST API Reference for UpdateRouterNetworkInterface Operation</seealso>
+        public virtual Task<UpdateRouterNetworkInterfaceResponse> UpdateRouterNetworkInterfaceAsync(UpdateRouterNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRouterNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouterNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRouterNetworkInterfaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateRouterOutput
+
+        internal virtual UpdateRouterOutputResponse UpdateRouterOutput(UpdateRouterOutputRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouterOutputResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRouterOutputResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterOutput">REST API Reference for UpdateRouterOutput Operation</seealso>
+        public virtual Task<UpdateRouterOutputResponse> UpdateRouterOutputAsync(UpdateRouterOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRouterOutputRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRouterOutputResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRouterOutputResponse>(request, options, cancellationToken);
         }
         #endregion
         

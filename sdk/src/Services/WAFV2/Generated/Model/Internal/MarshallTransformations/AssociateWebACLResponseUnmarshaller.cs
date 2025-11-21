@@ -71,6 +71,10 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("WAFFeatureNotIncludedInPricingPlanException"))
+                {
+                    return WAFFeatureNotIncludedInPricingPlanExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInternalErrorException"))
                 {
                     return WAFInternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -82,6 +86,10 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidParameterException"))
                 {
                     return WAFInvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("WAFLimitsExceededException"))
+                {
+                    return WAFLimitsExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
                 {

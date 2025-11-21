@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCaseComment operation.
-    /// Grants permission to update an existing case comment.
+    /// Updates an existing case comment.
     /// </summary>
     public partial class UpdateCaseCommentRequest : AmazonSecurityIRRequest
     {

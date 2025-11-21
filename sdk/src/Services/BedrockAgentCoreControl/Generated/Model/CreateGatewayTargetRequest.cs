@@ -33,11 +33,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// Container for the parameters to the CreateGatewayTarget operation.
     /// Creates a target for a gateway. A target defines an endpoint that the gateway can
     /// connect to.
-    /// 
-    ///  
-    /// <para>
-    /// To create a target, you must specify the gateway identifier and target configuration.
-    /// </para>
     /// </summary>
     public partial class CreateGatewayTargetRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -51,9 +46,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier to ensure that the operation completes no more
-        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
-        /// request but does not return an error.
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If you don't specify this field, a value is randomly generated for
+        /// you. If this token matches a previous request, the service ignores the request, but
+        /// doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
@@ -81,7 +78,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=1)]
         public List<CredentialProviderConfiguration> CredentialProviderConfigurations
         {
             get { return this._credentialProviderConfigurations; }
@@ -116,8 +113,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property GatewayIdentifier. 
         /// <para>
-        /// The identifier of the gateway to create a target for. This can be either the gateway
-        /// ID or the gateway ARN.
+        /// The identifier of the gateway to create a target for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

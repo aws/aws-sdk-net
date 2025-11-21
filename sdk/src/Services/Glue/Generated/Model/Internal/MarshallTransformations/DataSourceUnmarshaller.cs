@@ -56,6 +56,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("DataQualityGlueTable", targetDepth))
+                {
+                    var unmarshaller = DataQualityGlueTableUnmarshaller.Instance;
+                    unmarshalledObject.DataQualityGlueTable = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("GlueTable", targetDepth))
                 {
                     var unmarshaller = GlueTableUnmarshaller.Instance;

@@ -118,6 +118,16 @@ namespace Amazon.GuardDuty.Model
         IListIPSetsPaginator ListIPSets(ListIPSetsRequest request);
 
         /// <summary>
+        /// Paginator for ListMalwareScans operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMalwareScansPaginator ListMalwareScans(ListMalwareScansRequest request);
+
+        /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
         [AWSPaginator(
@@ -148,6 +158,16 @@ namespace Amazon.GuardDuty.Model
         IListPublishingDestinationsPaginator ListPublishingDestinations(ListPublishingDestinationsRequest request);
 
         /// <summary>
+        /// Paginator for ListThreatEntitySets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListThreatEntitySetsPaginator ListThreatEntitySets(ListThreatEntitySetsRequest request);
+
+        /// <summary>
         /// Paginator for ListThreatIntelSets operation
         ///</summary>
         [AWSPaginator(
@@ -156,5 +176,15 @@ namespace Amazon.GuardDuty.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListThreatIntelSetsPaginator ListThreatIntelSets(ListThreatIntelSetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTrustedEntitySets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTrustedEntitySetsPaginator ListTrustedEntitySets(ListTrustedEntitySetsRequest request);
     }
 }

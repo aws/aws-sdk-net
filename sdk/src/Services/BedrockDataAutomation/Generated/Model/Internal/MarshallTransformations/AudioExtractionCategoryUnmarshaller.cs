@@ -62,6 +62,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("typeConfiguration", targetDepth))
+                {
+                    var unmarshaller = AudioExtractionCategoryTypeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TypeConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("types", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -138,6 +138,23 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
+            if(requestObject.IsSetRouterIntegrationState())
+            {
+                context.Writer.WritePropertyName("routerIntegrationState");
+                context.Writer.WriteStringValue(requestObject.RouterIntegrationState);
+            }
+
+            if(requestObject.IsSetRouterIntegrationTransitDecryption())
+            {
+                context.Writer.WritePropertyName("routerIntegrationTransitDecryption");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FlowTransitEncryptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.RouterIntegrationTransitDecryption, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSenderControlPort())
             {
                 context.Writer.WritePropertyName("senderControlPort");
@@ -160,6 +177,20 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("sourceListenerPort");
                 context.Writer.WriteNumberValue(requestObject.SourceListenerPort.Value);
+            }
+
+            if(requestObject.IsSetSourceTags())
+            {
+                context.Writer.WritePropertyName("sourceTags");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectSourceTagsKvp in requestObject.SourceTags)
+                {
+                    context.Writer.WritePropertyName(requestObjectSourceTagsKvp.Key);
+                    var requestObjectSourceTagsValue = requestObjectSourceTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectSourceTagsValue);
+                }
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStreamId())

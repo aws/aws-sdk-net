@@ -81,7 +81,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LinkSharingConfiguration. 
         /// <para>
-        /// Updates the permissions of a shared link to an Amazon QuickSight dashboard.
+        /// Updates the permissions of a shared link to an Quick Sight dashboard.
         /// </para>
         /// </summary>
         public LinkSharingConfiguration LinkSharingConfiguration

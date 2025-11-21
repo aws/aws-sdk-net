@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StorageLensDataExport Object
     /// </summary>  
-    public class StorageLensDataExportUnmarshaller : IXmlUnmarshaller<StorageLensDataExport, XmlUnmarshallerContext>
+    public partial class StorageLensDataExportUnmarshaller : IXmlUnmarshaller<StorageLensDataExport, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.S3BucketDestination = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -76,6 +78,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StorageLensDataExport unmarshalledObject, int targetDepth);
+
         private static StorageLensDataExportUnmarshaller _instance = new StorageLensDataExportUnmarshaller();        
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FunctionConfig Object
     /// </summary>  
-    public class FunctionConfigUnmarshaller : IXmlUnmarshaller<FunctionConfig, XmlUnmarshallerContext>
+    public partial class FunctionConfigUnmarshaller : IXmlUnmarshaller<FunctionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +74,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Runtime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -82,6 +84,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, FunctionConfig unmarshalledObject, int targetDepth);
+
         private static FunctionConfigUnmarshaller _instance = new FunctionConfigUnmarshaller();        
 
         /// <summary>

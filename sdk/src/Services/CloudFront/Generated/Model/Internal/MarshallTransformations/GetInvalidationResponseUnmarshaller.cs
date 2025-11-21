@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetInvalidation operation
     /// </summary>  
-    public class GetInvalidationResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class GetInvalidationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             GetInvalidationResponse response = new GetInvalidationResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -113,6 +113,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetInvalidationResponse response);
 
         private static GetInvalidationResponseUnmarshaller _instance = new GetInvalidationResponseUnmarshaller();        
 

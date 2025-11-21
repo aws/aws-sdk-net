@@ -278,6 +278,16 @@ namespace Amazon.IoTSiteWise.Model
         IListGatewaysPaginator ListGateways(ListGatewaysRequest request);
 
         /// <summary>
+        /// Paginator for ListInterfaceRelationships operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListInterfaceRelationshipsPaginator ListInterfaceRelationships(ListInterfaceRelationshipsRequest request);
+
+        /// <summary>
         /// Paginator for ListPortals operation
         ///</summary>
         [AWSPaginator(

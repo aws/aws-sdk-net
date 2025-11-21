@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JobProgressSummary Object
     /// </summary>  
-    public class JobProgressSummaryUnmarshaller : IXmlUnmarshaller<JobProgressSummary, XmlUnmarshallerContext>
+    public partial class JobProgressSummaryUnmarshaller : IXmlUnmarshaller<JobProgressSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.TotalNumberOfTasks = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,6 +90,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, JobProgressSummary unmarshalledObject, int targetDepth);
+
         private static JobProgressSummaryUnmarshaller _instance = new JobProgressSummaryUnmarshaller();        
 
         /// <summary>

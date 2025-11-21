@@ -34,10 +34,12 @@ namespace Amazon.GroundStation.Model
     /// <note> 
     /// <para>
     ///  For use by AWS Ground Station Agent and shouldn't be called directly.
-    /// </para>
+    /// 
     ///  </note> 
     /// <para>
     /// Gets the latest configuration information for a registered agent.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class GetAgentConfigurationRequest : AmazonGroundStationRequest

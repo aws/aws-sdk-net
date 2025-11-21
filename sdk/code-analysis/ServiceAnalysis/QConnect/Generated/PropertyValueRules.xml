@@ -344,6 +344,12 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.CreateSessionRequest.ContactArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:[a-z-]+?:[a-z-]+?:[a-z0-9-]*?:([0-9]{12})?:[a-zA-Z0-9-:/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.CreateSessionRequest.Description</property>
     <min>1</min>
     <max>255</max>
@@ -1274,6 +1280,11 @@
     <pattern>[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.UpdateAIPromptRequest.ModelId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.UpdateAssistantAIAgentRequest.AssistantId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}</pattern>
   </property-value-rule>
@@ -2183,6 +2194,29 @@
     <max>32767</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailGenerativeAnswerAIAgentConfiguration.EmailGenerativeAnswerAIPromptId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailGenerativeAnswerAIAgentConfiguration.EmailQueryReformulationAIPromptId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailGenerativeAnswerAIAgentConfiguration.Locale</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailGenerativeAnswerChunkDataDetails.Completion</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailGenerativeAnswerChunkDataDetails.NextChunkToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.EmailHeader.Name</property>
     <min>1</min>
     <max>126</max>
@@ -2197,6 +2231,48 @@
   <property-value-rule>
     <property>Amazon.QConnect.Model.EmailMessageTemplateContent.Subject</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailOverviewAIAgentConfiguration.EmailOverviewAIPromptId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailOverviewAIAgentConfiguration.Locale</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailOverviewChunkDataDetails.Completion</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailOverviewChunkDataDetails.NextChunkToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailResponseAIAgentConfiguration.EmailQueryReformulationAIPromptId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailResponseAIAgentConfiguration.EmailResponseAIPromptId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailResponseAIAgentConfiguration.Locale</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailResponseChunkDataDetails.Completion</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.EmailResponseChunkDataDetails.NextChunkToken</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.ExtendedMessageTemplateData.Description</property>

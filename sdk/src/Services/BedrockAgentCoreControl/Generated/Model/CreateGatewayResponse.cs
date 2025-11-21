@@ -55,7 +55,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
         /// <para>
-        /// The authorizer configuration for the created Gateway.
+        /// The authorizer configuration for the created gateway.
         /// </para>
         /// </summary>
         public AuthorizerConfiguration AuthorizerConfiguration
@@ -130,10 +130,18 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ExceptionLevel. 
         /// <para>
-        /// The verbosity of exception messages. Use DEBUG mode to see granular exception messages
-        /// from a Gateway. If this parameter is not set, exception messages are by default sanitized
-        /// for presentation to end users.
+        /// The level of detail in error messages returned when invoking the gateway.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the value is <c>DEBUG</c>, granular exception messages are returned to help a user
+        /// debug the gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value is omitted, a generic error message is returned to the end user.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ExceptionLevel ExceptionLevel
         {
@@ -364,7 +372,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property WorkloadIdentityDetails. 
         /// <para>
-        /// The workload identity details for the created Gateway.
+        /// The workload identity details for the created gateway.
         /// </para>
         /// </summary>
         public WorkloadIdentityDetails WorkloadIdentityDetails

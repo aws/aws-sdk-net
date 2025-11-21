@@ -262,7 +262,7 @@ namespace AWSSDK.UnitTests
                 .Returns(immutableCreds);
 
             // Act
-            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, creds.Object, region);
+            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, creds.Object, region.SystemName);
 
             // Assert
             Assert.IsNotNull(signedPolicy);
@@ -302,7 +302,7 @@ namespace AWSSDK.UnitTests
                 .Returns(immutableCreds);
 
             // Act
-            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, creds.Object, region);
+            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, creds.Object, region.SystemName);
             var decodedPolicy = signedPolicy.GetReadablePolicy();
 
             // Assert - Verify original conditions are preserved
@@ -368,7 +368,7 @@ namespace AWSSDK.UnitTests
                 .Returns(immutableCreds);
 
             // Act
-            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, creds.Object, region);
+            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, creds.Object, region.SystemName);
             var decodedPolicy = signedPolicy.GetReadablePolicy();
 
             // Assert - Verify security token is properly incorporated
@@ -417,7 +417,7 @@ namespace AWSSDK.UnitTests
                 .Returns(immutableCreds);
 
             // Act - create signed policy and serialize to JSON
-            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, creds.Object, region);
+            var signedPolicy = S3PostUploadSignedPolicy.GetSignedPolicy(policy, creds.Object, region.SystemName);
             var json = signedPolicy.ToJson();
             
             // Deserialize back from JSON

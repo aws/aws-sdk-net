@@ -237,6 +237,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ManageMasterUserPassword", StringUtils.FromBool(publicRequest.ManageMasterUserPassword));
                 }
+                if(publicRequest.IsSetMasterUserAuthenticationType())
+                {
+                    request.Parameters.Add("MasterUserAuthenticationType", StringUtils.FromString(publicRequest.MasterUserAuthenticationType));
+                }
                 if(publicRequest.IsSetMasterUsername())
                 {
                     request.Parameters.Add("MasterUsername", StringUtils.FromString(publicRequest.MasterUsername));

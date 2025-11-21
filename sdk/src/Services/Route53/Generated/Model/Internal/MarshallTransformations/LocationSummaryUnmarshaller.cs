@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LocationSummary Object
     /// </summary>  
-    public class LocationSummaryUnmarshaller : IXmlUnmarshaller<LocationSummary, XmlUnmarshallerContext>
+    public partial class LocationSummaryUnmarshaller : IXmlUnmarshaller<LocationSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.LocationName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, LocationSummary unmarshalledObject, int targetDepth);
+
         private static LocationSummaryUnmarshaller _instance = new LocationSummaryUnmarshaller();        
 
         /// <summary>

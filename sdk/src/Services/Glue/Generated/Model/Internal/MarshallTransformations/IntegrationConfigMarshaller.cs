@@ -46,6 +46,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetContinuousSync())
+            {
+                context.Writer.WritePropertyName("ContinuousSync");
+                context.Writer.WriteBooleanValue(requestObject.ContinuousSync.Value);
+            }
+
             if(requestObject.IsSetRefreshInterval())
             {
                 context.Writer.WritePropertyName("RefreshInterval");

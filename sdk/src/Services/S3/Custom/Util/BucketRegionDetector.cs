@@ -113,7 +113,7 @@ namespace Amazon.S3.Util
         private static string GetHeadBucketPreSignedUrl(string bucketName, IRequestContext requestContext)
         {
             // all buckets accessible via USEast1
-            using (var s3Client = GetUsEast1ClientFromCredentials(requestContext.ClientConfig.DefaultAWSCredentials))
+            using (var s3Client = GetUsEast1ClientFromCredentials(requestContext.ExplicitAWSCredentials ?? requestContext.ClientConfig.DefaultAWSCredentials))
             {
                 // IMPORTANT:
                 // This method is called as part of the request pipeline.

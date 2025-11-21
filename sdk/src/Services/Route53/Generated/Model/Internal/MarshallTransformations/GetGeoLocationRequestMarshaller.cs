@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetGeoLocationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             
             if (publicRequest.IsSetContinentCode())
@@ -92,5 +93,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetGeoLocationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetGeoLocationRequest publicRequest);
     }    
 }

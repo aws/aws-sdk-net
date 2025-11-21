@@ -30,33 +30,66 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A set of actions that correspond to Amazon QuickSight permissions.
+    /// A set of actions that correspond to Amazon Quick Sight permissions.
     /// </summary>
     public partial class Capabilities
     {
+        private CapabilityState _action;
         private CapabilityState _addOrRunAnomalyDetectionForAnalyses;
+        private CapabilityState _analysis;
+        private CapabilityState _automate;
+        private CapabilityState _chatAgent;
         private CapabilityState _createAndUpdateDashboardEmailReports;
         private CapabilityState _createAndUpdateDatasets;
         private CapabilityState _createAndUpdateDataSources;
         private CapabilityState _createAndUpdateThemes;
         private CapabilityState _createAndUpdateThresholdAlerts;
+        private CapabilityState _createChatAgents;
         private CapabilityState _createSharedFolders;
         private CapabilityState _createSPICEDataset;
+        private CapabilityState _dashboard;
         private CapabilityState _exportToCsv;
         private CapabilityState _exportToCsvInScheduledReports;
         private CapabilityState _exportToExcel;
         private CapabilityState _exportToExcelInScheduledReports;
         private CapabilityState _exportToPdf;
         private CapabilityState _exportToPdfInScheduledReports;
+        private CapabilityState _flow;
         private CapabilityState _includeContentInScheduledReportsEmail;
+        private CapabilityState _knowledgeBase;
+        private CapabilityState _performFlowUiTask;
         private CapabilityState _printReports;
+        private CapabilityState _publishWithoutApproval;
         private CapabilityState _renameSharedFolders;
+        private CapabilityState _research;
         private CapabilityState _shareAnalyses;
         private CapabilityState _shareDashboards;
         private CapabilityState _shareDatasets;
         private CapabilityState _shareDataSources;
+        private CapabilityState _space;
         private CapabilityState _subscribeDashboardEmailReports;
+        private CapabilityState _useAgentWebSearch;
+        private CapabilityState _useBedrockModels;
         private CapabilityState _viewAccountSPICECapacity;
+
+        /// <summary>
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// The ability to perform actions in external services through Action connectors. Actions
+        /// allow users to interact with third-party systems.
+        /// </para>
+        /// </summary>
+        public CapabilityState Action
+        {
+            get { return this._action; }
+            set { this._action = value; }
+        }
+
+        // Check to see if Action property is set
+        internal bool IsSetAction()
+        {
+            return this._action != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AddOrRunAnomalyDetectionForAnalyses. 
@@ -74,6 +107,60 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAddOrRunAnomalyDetectionForAnalyses()
         {
             return this._addOrRunAnomalyDetectionForAnalyses != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Analysis. 
+        /// <para>
+        /// The ability to perform analysis-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Analysis
+        {
+            get { return this._analysis; }
+            set { this._analysis = value; }
+        }
+
+        // Check to see if Analysis property is set
+        internal bool IsSetAnalysis()
+        {
+            return this._analysis != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Automate. 
+        /// <para>
+        /// The ability to perform automate-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Automate
+        {
+            get { return this._automate; }
+            set { this._automate = value; }
+        }
+
+        // Check to see if Automate property is set
+        internal bool IsSetAutomate()
+        {
+            return this._automate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChatAgent. 
+        /// <para>
+        /// The ability to perform chat-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ChatAgent
+        {
+            get { return this._chatAgent; }
+            set { this._chatAgent = value; }
+        }
+
+        // Check to see if ChatAgent property is set
+        internal bool IsSetChatAgent()
+        {
+            return this._chatAgent != null;
         }
 
         /// <summary>
@@ -167,6 +254,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateChatAgents. 
+        /// <para>
+        /// The ability to create chat agents.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateChatAgents
+        {
+            get { return this._createChatAgents; }
+            set { this._createChatAgents = value; }
+        }
+
+        // Check to see if CreateChatAgents property is set
+        internal bool IsSetCreateChatAgents()
+        {
+            return this._createChatAgents != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateSharedFolders. 
         /// <para>
         /// The ability to create shared folders.
@@ -200,6 +305,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateSPICEDataset()
         {
             return this._createSPICEDataset != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Dashboard. 
+        /// <para>
+        /// The ability to perform dashboard-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Dashboard
+        {
+            get { return this._dashboard; }
+            set { this._dashboard = value; }
+        }
+
+        // Check to see if Dashboard property is set
+        internal bool IsSetDashboard()
+        {
+            return this._dashboard != null;
         }
 
         /// <summary>
@@ -311,6 +434,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Flow. 
+        /// <para>
+        /// The ability to perform flow-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Flow
+        {
+            get { return this._flow; }
+            set { this._flow = value; }
+        }
+
+        // Check to see if Flow property is set
+        internal bool IsSetFlow()
+        {
+            return this._flow != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludeContentInScheduledReportsEmail. 
         /// <para>
         /// The ability to include content in scheduled email reports.
@@ -326,6 +467,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetIncludeContentInScheduledReportsEmail()
         {
             return this._includeContentInScheduledReportsEmail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KnowledgeBase. 
+        /// <para>
+        /// The ability to use knowledge bases to specify content from external applications.
+        /// </para>
+        /// </summary>
+        public CapabilityState KnowledgeBase
+        {
+            get { return this._knowledgeBase; }
+            set { this._knowledgeBase = value; }
+        }
+
+        // Check to see if KnowledgeBase property is set
+        internal bool IsSetKnowledgeBase()
+        {
+            return this._knowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformFlowUiTask. 
+        /// <para>
+        /// The ability to use UI Agent step to perform tasks on public websites.
+        /// </para>
+        /// </summary>
+        public CapabilityState PerformFlowUiTask
+        {
+            get { return this._performFlowUiTask; }
+            set { this._performFlowUiTask = value; }
+        }
+
+        // Check to see if PerformFlowUiTask property is set
+        internal bool IsSetPerformFlowUiTask()
+        {
+            return this._performFlowUiTask != null;
         }
 
         /// <summary>
@@ -347,6 +524,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PublishWithoutApproval. 
+        /// <para>
+        /// The ability to enable approvals for flow share.
+        /// </para>
+        /// </summary>
+        public CapabilityState PublishWithoutApproval
+        {
+            get { return this._publishWithoutApproval; }
+            set { this._publishWithoutApproval = value; }
+        }
+
+        // Check to see if PublishWithoutApproval property is set
+        internal bool IsSetPublishWithoutApproval()
+        {
+            return this._publishWithoutApproval != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RenameSharedFolders. 
         /// <para>
         /// The ability to rename shared folders.
@@ -362,6 +557,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetRenameSharedFolders()
         {
             return this._renameSharedFolders != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Research. 
+        /// <para>
+        /// The ability to perform research-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Research
+        {
+            get { return this._research; }
+            set { this._research = value; }
+        }
+
+        // Check to see if Research property is set
+        internal bool IsSetResearch()
+        {
+            return this._research != null;
         }
 
         /// <summary>
@@ -437,6 +650,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Space. 
+        /// <para>
+        /// The ability to perform space-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Space
+        {
+            get { return this._space; }
+            set { this._space = value; }
+        }
+
+        // Check to see if Space property is set
+        internal bool IsSetSpace()
+        {
+            return this._space != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubscribeDashboardEmailReports. 
         /// <para>
         /// The ability to subscribe to email reports.
@@ -452,6 +683,43 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSubscribeDashboardEmailReports()
         {
             return this._subscribeDashboardEmailReports != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseAgentWebSearch. 
+        /// <para>
+        /// The ability to use internet to enhance results in Chat Agents, Flows, and Quick Research.
+        /// Web search queries will be processed securely in an Amazon Web Services region <c>us-east-1</c>.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseAgentWebSearch
+        {
+            get { return this._useAgentWebSearch; }
+            set { this._useAgentWebSearch = value; }
+        }
+
+        // Check to see if UseAgentWebSearch property is set
+        internal bool IsSetUseAgentWebSearch()
+        {
+            return this._useAgentWebSearch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseBedrockModels. 
+        /// <para>
+        /// The ability to use Bedrock models for general knowledge step in flows.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseBedrockModels
+        {
+            get { return this._useBedrockModels; }
+            set { this._useBedrockModels = value; }
+        }
+
+        // Check to see if UseBedrockModels property is set
+        internal bool IsSetUseBedrockModels()
+        {
+            return this._useBedrockModels != null;
         }
 
         /// <summary>

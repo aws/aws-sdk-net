@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetTrafficPolicy operation
     /// </summary>  
-    public class GetTrafficPolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class GetTrafficPolicyResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             GetTrafficPolicyResponse response = new GetTrafficPolicyResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -77,7 +78,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -111,6 +111,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetTrafficPolicyResponse response);
 
         private static GetTrafficPolicyResponseUnmarshaller _instance = new GetTrafficPolicyResponseUnmarshaller();        
 

@@ -1,6 +1,0 @@
-{
-  "base-name": "ServerMigrationService",
-  "active": true,
-  "synopsis": "AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS.",
-  "legacy-service-id": "SMS"
-}

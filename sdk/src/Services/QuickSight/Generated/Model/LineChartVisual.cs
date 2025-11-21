@@ -35,7 +35,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/line-charts.html">Using
-    /// line charts</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// line charts</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     /// </summary>
     public partial class LineChartVisual

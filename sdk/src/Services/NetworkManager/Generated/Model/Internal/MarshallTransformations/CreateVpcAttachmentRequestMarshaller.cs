@@ -101,6 +101,12 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetRoutingPolicyLabel())
+            {
+                context.Writer.WritePropertyName("RoutingPolicyLabel");
+                context.Writer.WriteStringValue(publicRequest.RoutingPolicyLabel);
+            }
+
             if(publicRequest.IsSetSubnetArns())
             {
                 context.Writer.WritePropertyName("SubnetArns");

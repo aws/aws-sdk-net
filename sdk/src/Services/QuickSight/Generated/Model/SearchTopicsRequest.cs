@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchTopics operation.
-    /// Searches for any Q topic that exists in an Amazon QuickSight account.
+    /// Searches for any Q topic that exists in an Quick Suite account.
     /// </summary>
     public partial class SearchTopicsRequest : AmazonQuickSightRequest
     {

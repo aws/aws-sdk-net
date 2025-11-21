@@ -76,6 +76,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.DomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("environmentId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EnvironmentId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("grantedEntity", targetDepth))
                 {
                     var unmarshaller = GrantedEntityUnmarshaller.Instance;

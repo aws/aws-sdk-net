@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// 
+    /// The customer has exceeded the maximum number of API requests allowed per time period.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

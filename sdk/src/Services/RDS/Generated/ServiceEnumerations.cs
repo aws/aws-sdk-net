@@ -797,6 +797,110 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type DefaultAuthScheme.
+    /// </summary>
+    public class DefaultAuthScheme : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IAM_AUTH for DefaultAuthScheme
+        /// </summary>
+        public static readonly DefaultAuthScheme IAM_AUTH = new DefaultAuthScheme("IAM_AUTH");
+        /// <summary>
+        /// Constant NONE for DefaultAuthScheme
+        /// </summary>
+        public static readonly DefaultAuthScheme NONE = new DefaultAuthScheme("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultAuthScheme(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultAuthScheme FindValue(string value)
+        {
+            return FindValue<DefaultAuthScheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultAuthScheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EndpointNetworkType.
+    /// </summary>
+    public class EndpointNetworkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUAL for EndpointNetworkType
+        /// </summary>
+        public static readonly EndpointNetworkType DUAL = new EndpointNetworkType("DUAL");
+        /// <summary>
+        /// Constant IPV4 for EndpointNetworkType
+        /// </summary>
+        public static readonly EndpointNetworkType IPV4 = new EndpointNetworkType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for EndpointNetworkType
+        /// </summary>
+        public static readonly EndpointNetworkType IPV6 = new EndpointNetworkType("IPV6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndpointNetworkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointNetworkType FindValue(string value)
+        {
+            return FindValue<EndpointNetworkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointNetworkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EngineFamily.
     /// </summary>
     public class EngineFamily : ConstantClass
@@ -1315,6 +1419,56 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type MasterUserAuthenticationType.
+    /// </summary>
+    public class MasterUserAuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IamDbAuth for MasterUserAuthenticationType
+        /// </summary>
+        public static readonly MasterUserAuthenticationType IamDbAuth = new MasterUserAuthenticationType("iam-db-auth");
+        /// <summary>
+        /// Constant Password for MasterUserAuthenticationType
+        /// </summary>
+        public static readonly MasterUserAuthenticationType Password = new MasterUserAuthenticationType("password");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MasterUserAuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MasterUserAuthenticationType FindValue(string value)
+        {
+            return FindValue<MasterUserAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MasterUserAuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReplicaMode.
     /// </summary>
     public class ReplicaMode : ConstantClass
@@ -1403,9 +1557,17 @@ namespace Amazon.RDS
         /// </summary>
         public static readonly SourceType DbSecurityGroup = new SourceType("db-security-group");
         /// <summary>
+        /// Constant DbShardGroup for SourceType
+        /// </summary>
+        public static readonly SourceType DbShardGroup = new SourceType("db-shard-group");
+        /// <summary>
         /// Constant DbSnapshot for SourceType
         /// </summary>
         public static readonly SourceType DbSnapshot = new SourceType("db-snapshot");
+        /// <summary>
+        /// Constant ZeroEtl for SourceType
+        /// </summary>
+        public static readonly SourceType ZeroEtl = new SourceType("zero-etl");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1443,6 +1605,56 @@ namespace Amazon.RDS
 
 
     /// <summary>
+    /// Constants used for properties of type TargetConnectionNetworkType.
+    /// </summary>
+    public class TargetConnectionNetworkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IPV4 for TargetConnectionNetworkType
+        /// </summary>
+        public static readonly TargetConnectionNetworkType IPV4 = new TargetConnectionNetworkType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for TargetConnectionNetworkType
+        /// </summary>
+        public static readonly TargetConnectionNetworkType IPV6 = new TargetConnectionNetworkType("IPV6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetConnectionNetworkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetConnectionNetworkType FindValue(string value)
+        {
+            return FindValue<TargetConnectionNetworkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetConnectionNetworkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TargetHealthReason.
     /// </summary>
     public class TargetHealthReason : ConstantClass
@@ -1464,6 +1676,10 @@ namespace Amazon.RDS
         /// Constant PENDING_PROXY_CAPACITY for TargetHealthReason
         /// </summary>
         public static readonly TargetHealthReason PENDING_PROXY_CAPACITY = new TargetHealthReason("PENDING_PROXY_CAPACITY");
+        /// <summary>
+        /// Constant PROMOTED for TargetHealthReason
+        /// </summary>
+        public static readonly TargetHealthReason PROMOTED = new TargetHealthReason("PROMOTED");
         /// <summary>
         /// Constant UNREACHABLE for TargetHealthReason
         /// </summary>
@@ -1576,6 +1792,10 @@ namespace Amazon.RDS
         /// Constant UNAVAILABLE for TargetState
         /// </summary>
         public static readonly TargetState UNAVAILABLE = new TargetState("UNAVAILABLE");
+        /// <summary>
+        /// Constant UNUSED for TargetState
+        /// </summary>
+        public static readonly TargetState UNUSED = new TargetState("UNUSED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

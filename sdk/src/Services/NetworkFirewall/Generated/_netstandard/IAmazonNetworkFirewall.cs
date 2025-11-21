@@ -902,7 +902,7 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  <important> 
         /// <para>
-        /// After you delete a transit gateway attachment, raffic will no longer flow through
+        /// After you delete a transit gateway attachment, traffic will no longer flow through
         /// the firewall endpoints.
         /// </para>
         ///  </important> 
@@ -2409,8 +2409,8 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// Only the firewall owner can reject the attachment. After rejection, no traffic will
-        /// flow through the firewall endpoints for this attachment.
+        /// Only the transit gateway owner can reject the attachment. After rejection, no traffic
+        /// will flow through the firewall endpoints for this attachment.
         /// </para>
         ///  
         /// <para>
@@ -2841,6 +2841,9 @@ namespace Amazon.NetworkFirewall
         /// isn't valid in the context of the request.
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
         /// </exception>
         /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
         /// Unable to locate a resource using the parameters that you provided.

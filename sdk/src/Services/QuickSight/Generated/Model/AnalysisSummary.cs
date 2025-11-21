@@ -117,8 +117,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the analysis. This name is displayed in the Amazon QuickSight console.
-        /// 
+        /// The name of the analysis. This name is displayed in the Quick Sight console. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -73,6 +73,7 @@ namespace Amazon.RDS.Model
         private int? _iops;
         private string _licenseModel;
         private bool? _manageMasterUserPassword;
+        private MasterUserAuthenticationType _masterUserAuthenticationType;
         private string _masterUserPassword;
         private string _masterUserSecretKmsKeyId;
         private int? _maxAllocatedStorage;
@@ -1045,10 +1046,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Must be in the distinguished name format.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can't be longer than 64 characters.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Example: <c>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</c>
@@ -1450,6 +1447,41 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MasterUserAuthenticationType. 
+        /// <para>
+        /// Specifies the authentication type for the master user. With IAM master user authentication,
+        /// you can change the master DB user to use IAM database authentication.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>password</c> - Use standard database authentication with a password.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>iam-db-auth</c> - Use IAM database authentication for the master user.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.
+        /// </para>
+        /// </summary>
+        public MasterUserAuthenticationType MasterUserAuthenticationType
+        {
+            get { return this._masterUserAuthenticationType; }
+            set { this._masterUserAuthenticationType = value; }
+        }
+
+        // Check to see if MasterUserAuthenticationType property is set
+        internal bool IsSetMasterUserAuthenticationType()
+        {
+            return this._masterUserAuthenticationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
         /// The new password for the master user.
@@ -1539,6 +1571,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }
@@ -2182,11 +2215,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The open mode of a replica database.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// This parameter is only supported for Db2 DB instances and Oracle DB instances.
         /// </para>
-        ///  </note> <dl> <dt>Db2</dt> <dd> 
+        ///  <dl> <dt>Db2</dt> <dd> 
         /// <para>
         /// Standby DB replicas are included in Db2 Advanced Edition (AE) and Db2 Standard Edition
         /// (SE). The main use case for standby replicas is cross-Region disaster recovery. Because
@@ -2196,7 +2229,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// You can create a combination of standby and read-only DB replicas for the same primary
         /// DB instance. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-replication.html">Working
-        /// with read replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.
+        /// with replicas for Amazon RDS for Db2</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2415,6 +2448,7 @@ namespace Amazon.RDS.Model
         /// This setting doesn't apply to RDS Custom DB instances.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string TdeCredentialPassword
         {
             get { return this._tdeCredentialPassword; }

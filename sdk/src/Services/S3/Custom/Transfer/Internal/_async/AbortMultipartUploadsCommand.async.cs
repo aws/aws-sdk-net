@@ -26,21 +26,17 @@ namespace Amazon.S3.Transfer.Internal
 {
     internal partial class AbortMultipartUploadsCommand : BaseCommand
     {
-        TransferUtilityConfig _config;
-
-        internal AbortMultipartUploadsCommand(IAmazonS3 s3Client, string bucketName, DateTime initiateDate, TransferUtilityConfig config)
-        {
-            this._s3Client = s3Client;
-            this._bucketName = bucketName;
-            this._initiatedDate = initiateDate;
-            this._config = config;
-        }
 
         public override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
-            if (string.IsNullOrEmpty(this._bucketName))
+            if (string.IsNullOrEmpty(this._request.BucketName))
             {
                 throw new InvalidOperationException("The bucketName specified is null or empty!");
+            }
+
+            if (!this._request.IsSetInitiatedDate())
+            {
+                throw new InvalidOperationException("InitiatedDate must be specified!");
             }
 
             SemaphoreSlim asyncThrottler = null;
@@ -72,7 +68,7 @@ namespace Amazon.S3.Transfer.Internal
                                 // responses and throw the original exception.
                                 break;
                             }
-                            if (upload.Initiated < this._initiatedDate)
+                            if (upload.Initiated < this._request.InitiatedDate.Value)
                             {
                                 await asyncThrottler.WaitAsync(cancellationToken)
                                     .ConfigureAwait(continueOnCapturedContext: false);

@@ -144,6 +144,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.InstanceType);
             }
 
+            if(publicRequest.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("IpAddressType");
+                context.Writer.WriteStringValue(publicRequest.IpAddressType);
+            }
+
             if(publicRequest.IsSetLifecycleConfigName())
             {
                 context.Writer.WritePropertyName("LifecycleConfigName");
@@ -154,6 +160,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("NotebookInstanceName");
                 context.Writer.WriteStringValue(publicRequest.NotebookInstanceName);
+            }
+
+            if(publicRequest.IsSetPlatformIdentifier())
+            {
+                context.Writer.WritePropertyName("PlatformIdentifier");
+                context.Writer.WriteStringValue(publicRequest.PlatformIdentifier);
             }
 
             if(publicRequest.IsSetRoleArn())

@@ -287,7 +287,7 @@ namespace Amazon.AppMesh
 
         internal virtual CreateGatewayRouteResponse CreateGatewayRoute(CreateGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayRouteResponseUnmarshaller.Instance;
 
@@ -347,7 +347,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateGatewayRoute">REST API Reference for CreateGatewayRoute Operation</seealso>
         public virtual Task<CreateGatewayRouteResponse> CreateGatewayRouteAsync(CreateGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateGatewayRouteResponseUnmarshaller.Instance;
 
@@ -359,7 +359,7 @@ namespace Amazon.AppMesh
 
         internal virtual CreateMeshResponse CreateMesh(CreateMeshRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMeshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMeshResponseUnmarshaller.Instance;
 
@@ -420,7 +420,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh">REST API Reference for CreateMesh Operation</seealso>
         public virtual Task<CreateMeshResponse> CreateMeshAsync(CreateMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateMeshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateMeshResponseUnmarshaller.Instance;
 
@@ -432,7 +432,7 @@ namespace Amazon.AppMesh
 
         internal virtual CreateRouteResponse CreateRoute(CreateRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
@@ -490,7 +490,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public virtual Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRouteResponseUnmarshaller.Instance;
 
@@ -502,7 +502,7 @@ namespace Amazon.AppMesh
 
         internal virtual CreateVirtualGatewayResponse CreateVirtualGateway(CreateVirtualGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVirtualGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVirtualGatewayResponseUnmarshaller.Instance;
 
@@ -564,7 +564,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualGateway">REST API Reference for CreateVirtualGateway Operation</seealso>
         public virtual Task<CreateVirtualGatewayResponse> CreateVirtualGatewayAsync(CreateVirtualGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVirtualGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVirtualGatewayResponseUnmarshaller.Instance;
 
@@ -576,7 +576,7 @@ namespace Amazon.AppMesh
 
         internal virtual CreateVirtualNodeResponse CreateVirtualNode(CreateVirtualNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVirtualNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVirtualNodeResponseUnmarshaller.Instance;
 
@@ -661,7 +661,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">REST API Reference for CreateVirtualNode Operation</seealso>
         public virtual Task<CreateVirtualNodeResponse> CreateVirtualNodeAsync(CreateVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVirtualNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVirtualNodeResponseUnmarshaller.Instance;
 
@@ -673,7 +673,7 @@ namespace Amazon.AppMesh
 
         internal virtual CreateVirtualRouterResponse CreateVirtualRouter(CreateVirtualRouterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVirtualRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVirtualRouterResponseUnmarshaller.Instance;
 
@@ -735,7 +735,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">REST API Reference for CreateVirtualRouter Operation</seealso>
         public virtual Task<CreateVirtualRouterResponse> CreateVirtualRouterAsync(CreateVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVirtualRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVirtualRouterResponseUnmarshaller.Instance;
 
@@ -747,7 +747,7 @@ namespace Amazon.AppMesh
 
         internal virtual CreateVirtualServiceResponse CreateVirtualService(CreateVirtualServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVirtualServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVirtualServiceResponseUnmarshaller.Instance;
 
@@ -809,7 +809,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">REST API Reference for CreateVirtualService Operation</seealso>
         public virtual Task<CreateVirtualServiceResponse> CreateVirtualServiceAsync(CreateVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateVirtualServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateVirtualServiceResponseUnmarshaller.Instance;
 
@@ -821,7 +821,7 @@ namespace Amazon.AppMesh
 
         internal virtual DeleteGatewayRouteResponse DeleteGatewayRoute(DeleteGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayRouteResponseUnmarshaller.Instance;
 
@@ -865,7 +865,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteGatewayRoute">REST API Reference for DeleteGatewayRoute Operation</seealso>
         public virtual Task<DeleteGatewayRouteResponse> DeleteGatewayRouteAsync(DeleteGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteGatewayRouteResponseUnmarshaller.Instance;
 
@@ -877,7 +877,7 @@ namespace Amazon.AppMesh
 
         internal virtual DeleteMeshResponse DeleteMesh(DeleteMeshRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMeshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMeshResponseUnmarshaller.Instance;
 
@@ -927,7 +927,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh">REST API Reference for DeleteMesh Operation</seealso>
         public virtual Task<DeleteMeshResponse> DeleteMeshAsync(DeleteMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMeshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMeshResponseUnmarshaller.Instance;
 
@@ -939,7 +939,7 @@ namespace Amazon.AppMesh
 
         internal virtual DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
@@ -983,7 +983,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public virtual Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRouteResponseUnmarshaller.Instance;
 
@@ -995,7 +995,7 @@ namespace Amazon.AppMesh
 
         internal virtual DeleteVirtualGatewayResponse DeleteVirtualGateway(DeleteVirtualGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualGatewayResponseUnmarshaller.Instance;
 
@@ -1040,7 +1040,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualGateway">REST API Reference for DeleteVirtualGateway Operation</seealso>
         public virtual Task<DeleteVirtualGatewayResponse> DeleteVirtualGatewayAsync(DeleteVirtualGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualGatewayResponseUnmarshaller.Instance;
 
@@ -1052,7 +1052,7 @@ namespace Amazon.AppMesh
 
         internal virtual DeleteVirtualNodeResponse DeleteVirtualNode(DeleteVirtualNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualNodeResponseUnmarshaller.Instance;
 
@@ -1102,7 +1102,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode">REST API Reference for DeleteVirtualNode Operation</seealso>
         public virtual Task<DeleteVirtualNodeResponse> DeleteVirtualNodeAsync(DeleteVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualNodeResponseUnmarshaller.Instance;
 
@@ -1114,7 +1114,7 @@ namespace Amazon.AppMesh
 
         internal virtual DeleteVirtualRouterResponse DeleteVirtualRouter(DeleteVirtualRouterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualRouterResponseUnmarshaller.Instance;
 
@@ -1164,7 +1164,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter">REST API Reference for DeleteVirtualRouter Operation</seealso>
         public virtual Task<DeleteVirtualRouterResponse> DeleteVirtualRouterAsync(DeleteVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualRouterResponseUnmarshaller.Instance;
 
@@ -1176,7 +1176,7 @@ namespace Amazon.AppMesh
 
         internal virtual DeleteVirtualServiceResponse DeleteVirtualService(DeleteVirtualServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualServiceResponseUnmarshaller.Instance;
 
@@ -1220,7 +1220,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualService">REST API Reference for DeleteVirtualService Operation</seealso>
         public virtual Task<DeleteVirtualServiceResponse> DeleteVirtualServiceAsync(DeleteVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteVirtualServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteVirtualServiceResponseUnmarshaller.Instance;
 
@@ -1232,7 +1232,7 @@ namespace Amazon.AppMesh
 
         internal virtual DescribeGatewayRouteResponse DescribeGatewayRoute(DescribeGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayRouteResponseUnmarshaller.Instance;
 
@@ -1272,7 +1272,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeGatewayRoute">REST API Reference for DescribeGatewayRoute Operation</seealso>
         public virtual Task<DescribeGatewayRouteResponse> DescribeGatewayRouteAsync(DescribeGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeGatewayRouteResponseUnmarshaller.Instance;
 
@@ -1284,7 +1284,7 @@ namespace Amazon.AppMesh
 
         internal virtual DescribeMeshResponse DescribeMesh(DescribeMeshRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMeshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMeshResponseUnmarshaller.Instance;
 
@@ -1324,7 +1324,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeMesh">REST API Reference for DescribeMesh Operation</seealso>
         public virtual Task<DescribeMeshResponse> DescribeMeshAsync(DescribeMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeMeshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeMeshResponseUnmarshaller.Instance;
 
@@ -1336,7 +1336,7 @@ namespace Amazon.AppMesh
 
         internal virtual DescribeRouteResponse DescribeRoute(DescribeRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteResponseUnmarshaller.Instance;
 
@@ -1376,7 +1376,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeRoute">REST API Reference for DescribeRoute Operation</seealso>
         public virtual Task<DescribeRouteResponse> DescribeRouteAsync(DescribeRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRouteResponseUnmarshaller.Instance;
 
@@ -1388,7 +1388,7 @@ namespace Amazon.AppMesh
 
         internal virtual DescribeVirtualGatewayResponse DescribeVirtualGateway(DescribeVirtualGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualGatewayResponseUnmarshaller.Instance;
 
@@ -1428,7 +1428,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualGateway">REST API Reference for DescribeVirtualGateway Operation</seealso>
         public virtual Task<DescribeVirtualGatewayResponse> DescribeVirtualGatewayAsync(DescribeVirtualGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualGatewayResponseUnmarshaller.Instance;
 
@@ -1440,7 +1440,7 @@ namespace Amazon.AppMesh
 
         internal virtual DescribeVirtualNodeResponse DescribeVirtualNode(DescribeVirtualNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualNodeResponseUnmarshaller.Instance;
 
@@ -1480,7 +1480,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualNode">REST API Reference for DescribeVirtualNode Operation</seealso>
         public virtual Task<DescribeVirtualNodeResponse> DescribeVirtualNodeAsync(DescribeVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualNodeResponseUnmarshaller.Instance;
 
@@ -1492,7 +1492,7 @@ namespace Amazon.AppMesh
 
         internal virtual DescribeVirtualRouterResponse DescribeVirtualRouter(DescribeVirtualRouterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualRouterResponseUnmarshaller.Instance;
 
@@ -1532,7 +1532,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualRouter">REST API Reference for DescribeVirtualRouter Operation</seealso>
         public virtual Task<DescribeVirtualRouterResponse> DescribeVirtualRouterAsync(DescribeVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualRouterResponseUnmarshaller.Instance;
 
@@ -1544,7 +1544,7 @@ namespace Amazon.AppMesh
 
         internal virtual DescribeVirtualServiceResponse DescribeVirtualService(DescribeVirtualServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualServiceResponseUnmarshaller.Instance;
 
@@ -1584,7 +1584,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualService">REST API Reference for DescribeVirtualService Operation</seealso>
         public virtual Task<DescribeVirtualServiceResponse> DescribeVirtualServiceAsync(DescribeVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeVirtualServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeVirtualServiceResponseUnmarshaller.Instance;
 
@@ -1596,7 +1596,7 @@ namespace Amazon.AppMesh
 
         internal virtual ListGatewayRoutesResponse ListGatewayRoutes(ListGatewayRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -1636,7 +1636,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListGatewayRoutes">REST API Reference for ListGatewayRoutes Operation</seealso>
         public virtual Task<ListGatewayRoutesResponse> ListGatewayRoutesAsync(ListGatewayRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGatewayRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGatewayRoutesResponseUnmarshaller.Instance;
 
@@ -1648,7 +1648,7 @@ namespace Amazon.AppMesh
 
         internal virtual ListMeshesResponse ListMeshes(ListMeshesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMeshesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMeshesResponseUnmarshaller.Instance;
 
@@ -1688,7 +1688,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListMeshes">REST API Reference for ListMeshes Operation</seealso>
         public virtual Task<ListMeshesResponse> ListMeshesAsync(ListMeshesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListMeshesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListMeshesResponseUnmarshaller.Instance;
 
@@ -1700,7 +1700,7 @@ namespace Amazon.AppMesh
 
         internal virtual ListRoutesResponse ListRoutes(ListRoutesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutesResponseUnmarshaller.Instance;
 
@@ -1740,7 +1740,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutes">REST API Reference for ListRoutes Operation</seealso>
         public virtual Task<ListRoutesResponse> ListRoutesAsync(ListRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRoutesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRoutesResponseUnmarshaller.Instance;
 
@@ -1752,7 +1752,7 @@ namespace Amazon.AppMesh
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1792,7 +1792,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1804,7 +1804,7 @@ namespace Amazon.AppMesh
 
         internal virtual ListVirtualGatewaysResponse ListVirtualGateways(ListVirtualGatewaysRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualGatewaysResponseUnmarshaller.Instance;
 
@@ -1844,7 +1844,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualGateways">REST API Reference for ListVirtualGateways Operation</seealso>
         public virtual Task<ListVirtualGatewaysResponse> ListVirtualGatewaysAsync(ListVirtualGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualGatewaysRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualGatewaysResponseUnmarshaller.Instance;
 
@@ -1856,7 +1856,7 @@ namespace Amazon.AppMesh
 
         internal virtual ListVirtualNodesResponse ListVirtualNodes(ListVirtualNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualNodesResponseUnmarshaller.Instance;
 
@@ -1896,7 +1896,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodes">REST API Reference for ListVirtualNodes Operation</seealso>
         public virtual Task<ListVirtualNodesResponse> ListVirtualNodesAsync(ListVirtualNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualNodesResponseUnmarshaller.Instance;
 
@@ -1908,7 +1908,7 @@ namespace Amazon.AppMesh
 
         internal virtual ListVirtualRoutersResponse ListVirtualRouters(ListVirtualRoutersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualRoutersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualRoutersResponseUnmarshaller.Instance;
 
@@ -1948,7 +1948,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualRouters">REST API Reference for ListVirtualRouters Operation</seealso>
         public virtual Task<ListVirtualRoutersResponse> ListVirtualRoutersAsync(ListVirtualRoutersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualRoutersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualRoutersResponseUnmarshaller.Instance;
 
@@ -1960,7 +1960,7 @@ namespace Amazon.AppMesh
 
         internal virtual ListVirtualServicesResponse ListVirtualServices(ListVirtualServicesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualServicesResponseUnmarshaller.Instance;
 
@@ -2000,7 +2000,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualServices">REST API Reference for ListVirtualServices Operation</seealso>
         public virtual Task<ListVirtualServicesResponse> ListVirtualServicesAsync(ListVirtualServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListVirtualServicesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListVirtualServicesResponseUnmarshaller.Instance;
 
@@ -2012,7 +2012,7 @@ namespace Amazon.AppMesh
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2060,7 +2060,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -2072,7 +2072,7 @@ namespace Amazon.AppMesh
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2112,7 +2112,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -2124,7 +2124,7 @@ namespace Amazon.AppMesh
 
         internal virtual UpdateGatewayRouteResponse UpdateGatewayRoute(UpdateGatewayRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayRouteResponseUnmarshaller.Instance;
 
@@ -2173,7 +2173,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateGatewayRoute">REST API Reference for UpdateGatewayRoute Operation</seealso>
         public virtual Task<UpdateGatewayRouteResponse> UpdateGatewayRouteAsync(UpdateGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateGatewayRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateGatewayRouteResponseUnmarshaller.Instance;
 
@@ -2185,7 +2185,7 @@ namespace Amazon.AppMesh
 
         internal virtual UpdateMeshResponse UpdateMesh(UpdateMeshRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMeshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMeshResponseUnmarshaller.Instance;
 
@@ -2229,7 +2229,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMesh">REST API Reference for UpdateMesh Operation</seealso>
         public virtual Task<UpdateMeshResponse> UpdateMeshAsync(UpdateMeshRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateMeshRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateMeshResponseUnmarshaller.Instance;
 
@@ -2241,7 +2241,7 @@ namespace Amazon.AppMesh
 
         internal virtual UpdateRouteResponse UpdateRoute(UpdateRouteRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
 
@@ -2289,7 +2289,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateRoute">REST API Reference for UpdateRoute Operation</seealso>
         public virtual Task<UpdateRouteResponse> UpdateRouteAsync(UpdateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRouteRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRouteResponseUnmarshaller.Instance;
 
@@ -2301,7 +2301,7 @@ namespace Amazon.AppMesh
 
         internal virtual UpdateVirtualGatewayResponse UpdateVirtualGateway(UpdateVirtualGatewayRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVirtualGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVirtualGatewayResponseUnmarshaller.Instance;
 
@@ -2349,7 +2349,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualGateway">REST API Reference for UpdateVirtualGateway Operation</seealso>
         public virtual Task<UpdateVirtualGatewayResponse> UpdateVirtualGatewayAsync(UpdateVirtualGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVirtualGatewayRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVirtualGatewayResponseUnmarshaller.Instance;
 
@@ -2361,7 +2361,7 @@ namespace Amazon.AppMesh
 
         internal virtual UpdateVirtualNodeResponse UpdateVirtualNode(UpdateVirtualNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVirtualNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVirtualNodeResponseUnmarshaller.Instance;
 
@@ -2409,7 +2409,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualNode">REST API Reference for UpdateVirtualNode Operation</seealso>
         public virtual Task<UpdateVirtualNodeResponse> UpdateVirtualNodeAsync(UpdateVirtualNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVirtualNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVirtualNodeResponseUnmarshaller.Instance;
 
@@ -2421,7 +2421,7 @@ namespace Amazon.AppMesh
 
         internal virtual UpdateVirtualRouterResponse UpdateVirtualRouter(UpdateVirtualRouterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVirtualRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVirtualRouterResponseUnmarshaller.Instance;
 
@@ -2469,7 +2469,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualRouter">REST API Reference for UpdateVirtualRouter Operation</seealso>
         public virtual Task<UpdateVirtualRouterResponse> UpdateVirtualRouterAsync(UpdateVirtualRouterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVirtualRouterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVirtualRouterResponseUnmarshaller.Instance;
 
@@ -2481,7 +2481,7 @@ namespace Amazon.AppMesh
 
         internal virtual UpdateVirtualServiceResponse UpdateVirtualService(UpdateVirtualServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVirtualServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVirtualServiceResponseUnmarshaller.Instance;
 
@@ -2529,7 +2529,7 @@ namespace Amazon.AppMesh
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualService">REST API Reference for UpdateVirtualService Operation</seealso>
         public virtual Task<UpdateVirtualServiceResponse> UpdateVirtualServiceAsync(UpdateVirtualServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateVirtualServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateVirtualServiceResponseUnmarshaller.Instance;
 

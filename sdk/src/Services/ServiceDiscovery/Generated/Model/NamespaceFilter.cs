@@ -48,8 +48,8 @@ namespace Amazon.ServiceDiscovery.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>EQ</c>: When you specify <c>EQ</c> for <c>Condition</c>, you can specify only
-        /// one value. <c>EQ</c> is supported for <c>TYPE</c>, <c>NAME</c>, and <c>HTTP_NAME</c>.
-        /// <c>EQ</c> is the default condition and can be omitted.
+        /// one value. <c>EQ</c> is supported for <c>TYPE</c>, <c>NAME</c>, <c>RESOURCE_OWNER</c>
+        /// and <c>HTTP_NAME</c>. <c>EQ</c> is the default condition and can be omitted.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -88,6 +88,13 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         ///  <c>HTTP_NAME</c>: Gets the namespaces with the specified HTTP name.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESOURCE_OWNER</c>: Gets the namespaces created by your Amazon Web Services account
+        /// or by other accounts. This can be used to filter for shared namespaces. For more information
+        /// about shared namespaces, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html">Cross-account
+        /// Cloud Map namespace sharing</a> in the <i>Cloud Map Developer Guide</i>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,6 +126,12 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>HTTP_NAME</c>: Specify the HTTP name of the namespace, which is found in <c>Namespace.Properties.HttpProperties.HttpName</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESOURCE_OWNER</c>: Specify one of <c>SELF</c> or <c>OTHER_ACCOUNTS</c>. <c>SELF</c>
+        /// can be used to filter namespaces created by you and <c>OTHER_ACCOUNTS</c> can be used
+        /// to filter namespaces shared with you that were created by other accounts.
         /// </para>
         ///  </li> </ul>
         /// <para />

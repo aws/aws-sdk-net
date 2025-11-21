@@ -91,6 +91,76 @@ namespace Amazon.PrometheusService
 
 
     /// <summary>
+    /// Constants used for properties of type AnomalyDetectorStatusCode.
+    /// </summary>
+    public class AnomalyDetectorStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AnomalyDetectorStatusCode
+        /// </summary>
+        public static readonly AnomalyDetectorStatusCode ACTIVE = new AnomalyDetectorStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for AnomalyDetectorStatusCode
+        /// </summary>
+        public static readonly AnomalyDetectorStatusCode CREATING = new AnomalyDetectorStatusCode("CREATING");
+        /// <summary>
+        /// Constant CREATION_FAILED for AnomalyDetectorStatusCode
+        /// </summary>
+        public static readonly AnomalyDetectorStatusCode CREATION_FAILED = new AnomalyDetectorStatusCode("CREATION_FAILED");
+        /// <summary>
+        /// Constant DELETING for AnomalyDetectorStatusCode
+        /// </summary>
+        public static readonly AnomalyDetectorStatusCode DELETING = new AnomalyDetectorStatusCode("DELETING");
+        /// <summary>
+        /// Constant DELETION_FAILED for AnomalyDetectorStatusCode
+        /// </summary>
+        public static readonly AnomalyDetectorStatusCode DELETION_FAILED = new AnomalyDetectorStatusCode("DELETION_FAILED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for AnomalyDetectorStatusCode
+        /// </summary>
+        public static readonly AnomalyDetectorStatusCode UPDATE_FAILED = new AnomalyDetectorStatusCode("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for AnomalyDetectorStatusCode
+        /// </summary>
+        public static readonly AnomalyDetectorStatusCode UPDATING = new AnomalyDetectorStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnomalyDetectorStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnomalyDetectorStatusCode FindValue(string value)
+        {
+            return FindValue<AnomalyDetectorStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnomalyDetectorStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LoggingConfigurationStatusCode.
     /// </summary>
     public class LoggingConfigurationStatusCode : ConstantClass
@@ -289,6 +359,126 @@ namespace Amazon.PrometheusService
 
 
     /// <summary>
+    /// Constants used for properties of type ScraperComponentType.
+    /// </summary>
+    public class ScraperComponentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COLLECTOR for ScraperComponentType
+        /// </summary>
+        public static readonly ScraperComponentType COLLECTOR = new ScraperComponentType("COLLECTOR");
+        /// <summary>
+        /// Constant EXPORTER for ScraperComponentType
+        /// </summary>
+        public static readonly ScraperComponentType EXPORTER = new ScraperComponentType("EXPORTER");
+        /// <summary>
+        /// Constant SERVICE_DISCOVERY for ScraperComponentType
+        /// </summary>
+        public static readonly ScraperComponentType SERVICE_DISCOVERY = new ScraperComponentType("SERVICE_DISCOVERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScraperComponentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScraperComponentType FindValue(string value)
+        {
+            return FindValue<ScraperComponentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScraperComponentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScraperLoggingConfigurationStatusCode.
+    /// </summary>
+    public class ScraperLoggingConfigurationStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode ACTIVE = new ScraperLoggingConfigurationStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode CREATING = new ScraperLoggingConfigurationStatusCode("CREATING");
+        /// <summary>
+        /// Constant CREATION_FAILED for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode CREATION_FAILED = new ScraperLoggingConfigurationStatusCode("CREATION_FAILED");
+        /// <summary>
+        /// Constant DELETING for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode DELETING = new ScraperLoggingConfigurationStatusCode("DELETING");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode UPDATE_FAILED = new ScraperLoggingConfigurationStatusCode("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ScraperLoggingConfigurationStatusCode
+        /// </summary>
+        public static readonly ScraperLoggingConfigurationStatusCode UPDATING = new ScraperLoggingConfigurationStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScraperLoggingConfigurationStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScraperLoggingConfigurationStatusCode FindValue(string value)
+        {
+            return FindValue<ScraperLoggingConfigurationStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScraperLoggingConfigurationStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScraperStatusCode.
     /// </summary>
     public class ScraperStatusCode : ConstantClass
@@ -464,6 +654,64 @@ namespace Amazon.PrometheusService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WorkspaceConfigurationStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkspacePolicyStatusCode.
+    /// </summary>
+    public class WorkspacePolicyStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for WorkspacePolicyStatusCode
+        /// </summary>
+        public static readonly WorkspacePolicyStatusCode ACTIVE = new WorkspacePolicyStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for WorkspacePolicyStatusCode
+        /// </summary>
+        public static readonly WorkspacePolicyStatusCode CREATING = new WorkspacePolicyStatusCode("CREATING");
+        /// <summary>
+        /// Constant DELETING for WorkspacePolicyStatusCode
+        /// </summary>
+        public static readonly WorkspacePolicyStatusCode DELETING = new WorkspacePolicyStatusCode("DELETING");
+        /// <summary>
+        /// Constant UPDATING for WorkspacePolicyStatusCode
+        /// </summary>
+        public static readonly WorkspacePolicyStatusCode UPDATING = new WorkspacePolicyStatusCode("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspacePolicyStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspacePolicyStatusCode FindValue(string value)
+        {
+            return FindValue<WorkspacePolicyStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspacePolicyStatusCode(string value)
         {
             return FindValue(value);
         }

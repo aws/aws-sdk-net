@@ -43,7 +43,7 @@ namespace Amazon.GeoRoutes.Model
         /// The last character of the License Plate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1)]
         public string LastCharacter
         {
             get { return this._lastCharacter; }

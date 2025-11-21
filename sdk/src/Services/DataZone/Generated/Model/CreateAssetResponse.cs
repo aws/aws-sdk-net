@@ -43,6 +43,7 @@ namespace Amazon.DataZone.Model
         private string _firstRevisionCreatedBy;
         private List<FormOutput> _formsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _governedGlossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private List<TimeSeriesDataPointSummaryFormOutput> _latestTimeSeriesDataPointFormsOutput = AWSConfigs.InitializeCollections ? new List<TimeSeriesDataPointSummaryFormOutput>() : null;
         private AssetListingDetails _listing;
@@ -229,6 +230,30 @@ namespace Amazon.DataZone.Model
         internal bool IsSetGlossaryTerms()
         {
             return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GovernedGlossaryTerms. 
+        /// <para>
+        /// The glossary terms in a restricted glossary.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<string> GovernedGlossaryTerms
+        {
+            get { return this._governedGlossaryTerms; }
+            set { this._governedGlossaryTerms = value; }
+        }
+
+        // Check to see if GovernedGlossaryTerms property is set
+        internal bool IsSetGovernedGlossaryTerms()
+        {
+            return this._governedGlossaryTerms != null && (this._governedGlossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateFunction operation
     /// </summary>  
-    public class CreateFunctionResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class CreateFunctionResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -52,6 +52,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("Location"))
                 response.Location = context.ResponseData.GetHeaderValue("Location");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -79,7 +80,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -125,6 +125,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, CreateFunctionResponse response);
 
         private static CreateFunctionResponseUnmarshaller _instance = new CreateFunctionResponseUnmarshaller();        
 

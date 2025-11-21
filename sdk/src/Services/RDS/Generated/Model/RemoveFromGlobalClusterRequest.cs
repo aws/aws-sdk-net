@@ -53,6 +53,7 @@ namespace Amazon.RDS.Model
         /// Aurora global database cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DbClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }
@@ -71,6 +72,7 @@ namespace Amazon.RDS.Model
         /// The cluster identifier to detach from the Aurora global database cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string GlobalClusterIdentifier
         {
             get { return this._globalClusterIdentifier; }

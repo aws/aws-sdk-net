@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The Stack data type.
+    /// The <c>Stack</c> data type.
     /// </summary>
     public partial class Stack
     {
@@ -44,6 +44,7 @@ namespace Amazon.CloudFormation.Model
         private bool? _disableRollback;
         private StackDriftInformation _driftInformation;
         private bool? _enableTerminationProtection;
+        private List<OperationEntry> _lastOperations = AWSConfigs.InitializeCollections ? new List<OperationEntry>() : null;
         private DateTime? _lastUpdatedTime;
         private List<string> _notificationARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Output> _outputs = AWSConfigs.InitializeCollections ? new List<Output>() : null;
@@ -192,7 +193,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The detailed status of the resource or stack. If <c>CONFIGURATION_COMPLETE</c> is
         /// present, the resource or resource configuration phase has completed and the stabilization
-        /// of the resources is in progress. The stack sets <c>CONFIGURATION_COMPLETE</c> when
+        /// of the resources is in progress. The StackSets <c>CONFIGURATION_COMPLETE</c> when
         /// all of the resources in the stack have reached that event. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
         /// CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.
@@ -281,6 +282,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetEnableTerminationProtection()
         {
             return this._enableTerminationProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastOperations. 
+        /// <para>
+        /// Information about the most recent operations performed on this stack.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<OperationEntry> LastOperations
+        {
+            get { return this._lastOperations; }
+            set { this._lastOperations = value; }
+        }
+
+        // Check to see if LastOperations property is set
+        internal bool IsSetLastOperations()
+        {
+            return this._lastOperations != null && (this._lastOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -65,6 +65,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetActionStatus())
                 request.Parameters.Add("actionStatus", StringUtils.FromString(publicRequest.ActionStatus));
+            if (string.IsNullOrEmpty(publicRequest.FindingId))
+                throw new AmazonIoTException("Request object does not have required field FindingId set");
             
             if (publicRequest.IsSetFindingId())
                 request.Parameters.Add("findingId", StringUtils.FromString(publicRequest.FindingId));
@@ -74,6 +76,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.TaskId))
+                throw new AmazonIoTException("Request object does not have required field TaskId set");
             
             if (publicRequest.IsSetTaskId())
                 request.Parameters.Add("taskId", StringUtils.FromString(publicRequest.TaskId));

@@ -46,7 +46,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property AmazonSideAsn. 
         /// <para>
-        /// The autonomous system number (ASN) for the Amazon side of the connection.
+        /// The autonomous system number (AS) for the Amazon side of the connection.
         /// </para>
         /// </summary>
         public long? AmazonSideAsn

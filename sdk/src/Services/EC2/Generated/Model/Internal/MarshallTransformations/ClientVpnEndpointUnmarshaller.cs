@@ -154,6 +154,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DnsServers.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("endpointIpAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EndpointIpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("securityGroupIdSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -204,6 +210,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("trafficIpAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TrafficIpAddressType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("transportProtocol", targetDepth))

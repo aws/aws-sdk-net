@@ -74,6 +74,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ExecutionRoleIdentityConfig);
             }
 
+            if(requestObject.IsSetIpAddressType())
+            {
+                context.Writer.WritePropertyName("IpAddressType");
+                context.Writer.WriteStringValue(requestObject.IpAddressType);
+            }
+
             if(requestObject.IsSetRStudioServerProDomainSettingsForUpdate())
             {
                 context.Writer.WritePropertyName("RStudioServerProDomainSettingsForUpdate");
@@ -94,6 +100,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetTrustedIdentityPropagationSettings())
+            {
+                context.Writer.WritePropertyName("TrustedIdentityPropagationSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TrustedIdentityPropagationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrustedIdentityPropagationSettings, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUnifiedStudioSettings())

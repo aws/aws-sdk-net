@@ -2,11 +2,11 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Braket.Model.CancelJobRequest.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CancelJobResponse.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CancelQuantumTaskRequest.ClientToken</property>
@@ -32,15 +32,15 @@
     <property>Amazon.Braket.Model.CreateJobRequest.JobName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$</pattern>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CreateJobRequest.RoleArn</property>
-    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+    <pattern>arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CreateJobResponse.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.CreateQuantumTaskRequest.ClientToken</property>
@@ -82,6 +82,33 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Braket.Model.CreateSpendingLimitRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CreateSpendingLimitRequest.DeviceArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CreateSpendingLimitRequest.SpendingLimit</property>
+    <min>1</min>
+    <pattern>\d+(\.\d{1,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CreateSpendingLimitResponse.SpendingLimitArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:spending-limit/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.DeleteSpendingLimitRequest.SpendingLimitArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:spending-limit/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Braket.Model.GetDeviceRequest.DeviceArn</property>
     <min>1</min>
     <max>256</max>
@@ -93,7 +120,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetJobRequest.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetJobResponse.FailureReason</property>
@@ -102,17 +129,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetJobResponse.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetJobResponse.JobName</property>
     <min>1</min>
     <max>50</max>
-    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$</pattern>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetJobResponse.RoleArn</property>
-    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+    <pattern>arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetQuantumTaskRequest.QuantumTaskArn</property>
@@ -126,7 +153,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetQuantumTaskResponse.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.GetQuantumTaskResponse.QuantumTaskArn</property>
@@ -149,8 +176,29 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Braket.Model.SearchSpendingLimitsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.UpdateSpendingLimitRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.UpdateSpendingLimitRequest.SpendingLimit</property>
+    <min>1</min>
+    <pattern>\d+(\.\d{1,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.UpdateSpendingLimitRequest.SpendingLimitArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:spending-limit/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Braket.Model.Association.Arn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:.*$</pattern>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]*:[0-9]{12}:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.ContainerImage.Uri</property>
@@ -172,7 +220,7 @@
     <property>Amazon.Braket.Model.InputFileConfig.ChannelName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z0-9\.\-_]+$</pattern>
+    <pattern>[A-Za-z0-9\.\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.InputFileConfig.ContentType</property>
@@ -196,7 +244,7 @@
     <property>Amazon.Braket.Model.JobCheckpointConfig.S3Uri</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+    <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.JobEventDetails.Message</property>
@@ -212,7 +260,7 @@
     <property>Amazon.Braket.Model.JobOutputDataConfig.S3Path</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+    <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.JobStoppingCondition.MaxRuntimeInSeconds</property>
@@ -226,7 +274,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.JobSummary.JobArn</property>
-    <pattern>^arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*$</pattern>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:job/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.QuantumTaskSummary.DeviceArn</property>
@@ -242,13 +290,13 @@
     <property>Amazon.Braket.Model.S3DataSource.S3Uri</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+    <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.ScriptModeConfig.S3Uri</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+    <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.SearchDevicesFilter.Name</property>
@@ -264,5 +312,21 @@
     <property>Amazon.Braket.Model.SearchQuantumTasksFilter.Name</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.SearchSpendingLimitsFilter.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.SpendingLimitSummary.DeviceArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.SpendingLimitSummary.SpendingLimitArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:spending-limit/.*</pattern>
   </property-value-rule>
 </property-value-rules>

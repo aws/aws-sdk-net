@@ -31,7 +31,31 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBrand operation.
-    /// Deletes an Amazon QuickSight brand.
+    /// <important> 
+    /// <para>
+    /// This API permanently deletes the specified Quick Sight brand. When you delete a brand:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The brand and all its associated branding elements are permanently removed
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Any applications or dashboards using this brand will revert to default styling
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// This action cannot be undone through the API
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Before proceeding:</b> Verify that the brand is no longer needed and consider
+    /// the impact on any applications currently using this brand.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// Deletes an Quick Sight brand.
+    /// </para>
     /// </summary>
     public partial class DeleteBrandRequest : AmazonQuickSightRequest
     {
@@ -60,7 +84,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property BrandId. 
         /// <para>
-        /// The ID of the Amazon QuickSight brand.
+        /// The ID of the Quick Suite brand.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

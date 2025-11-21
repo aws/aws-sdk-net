@@ -41,6 +41,11 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.StartJobsQueryRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.UpdateJobTemplateRequest.Priority</property>
     <min>-50</min>
     <max>50</max>
@@ -345,7 +350,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmafGroupSettings.Destination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmafGroupSettings.FragmentLength</property>
@@ -381,6 +386,17 @@
     <property>Amazon.MediaConvert.Model.CmafImageBasedTrickPlaySettings.TileWidth</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmfcSettings.CertificateSecret</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:[a-z-]+:secretsmanager:[\w-]+:\d{12}:secret:)?[a-zA-Z0-9_\/_+=.@-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmfcSettings.SigningKmsKey</property>
+    <min>1</min>
+    <pattern>^(arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/)?[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|mrk-[a-fA-F0-9]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmfcSettings.TimedMetadataSchemeIdUri</property>
@@ -446,7 +462,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.DashIsoGroupSettings.Destination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.DashIsoGroupSettings.FragmentLength</property>
@@ -699,7 +715,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.FileGroupSettings.Destination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.FileSourceSettings.SourceFile</property>
@@ -1024,7 +1040,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.HlsGroupSettings.Destination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.HlsGroupSettings.MinSegmentLength</property>
@@ -1182,7 +1198,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.InputVideoGenerator.Duration</property>
-    <min>50</min>
+    <min>1</min>
     <max>86400000</max>
   </property-value-rule>
   <property-value-rule>
@@ -1196,9 +1212,19 @@
     <max>60000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputVideoGenerator.Height</property>
+    <min>32</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.InputVideoGenerator.SampleRate</property>
     <min>32000</min>
     <max>48000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.InputVideoGenerator.Width</property>
+    <min>32</min>
+    <max>8192</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.InsertableImage.Duration</property>
@@ -1312,7 +1338,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.LogDestination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.Metadata3</property>
@@ -1607,6 +1633,17 @@
     <pattern>^(arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/)?[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|mrk-[a-fA-F0-9]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MpdSettings.CertificateSecret</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:[a-z-]+:secretsmanager:[\w-]+:\d{12}:secret:)?[a-zA-Z0-9_\/_+=.@-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MpdSettings.SigningKmsKey</property>
+    <min>1</min>
+    <pattern>^(arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/)?[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|mrk-[a-fA-F0-9]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.MpdSettings.TimedMetadataSchemeIdUri</property>
     <max>1000</max>
   </property-value-rule>
@@ -1685,7 +1722,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.MsSmoothGroupSettings.Destination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.MsSmoothGroupSettings.FragmentLength</property>
@@ -1719,7 +1756,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.AdiFilename</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.AssetId</property>
@@ -1742,7 +1779,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.MetadataDestination</property>
-    <pattern>^s3:\/\/</pattern>
+    <pattern>^s3:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.SourceId</property>
@@ -1751,7 +1788,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NielsenNonLinearWatermarkSettings.TicServerUrl</property>
-    <pattern>^https:\/\/</pattern>
+    <pattern>^https:\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.NoiseReducerFilterSettings.Strength</property>
@@ -1890,7 +1927,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProvider.CertificateArn</property>
-    <pattern>^arn:aws(-us-gov)?:acm:</pattern>
+    <pattern>^arn:aws(-us-gov)?:acm:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProvider.Url</property>
@@ -1898,7 +1935,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProviderCmaf.CertificateArn</property>
-    <pattern>^arn:aws(-us-gov)?:acm:</pattern>
+    <pattern>^arn:aws(-us-gov)?:acm:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.SpekeKeyProviderCmaf.ResourceId</property>
@@ -1952,6 +1989,11 @@
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.TimecodeConfig.TimestampOffset</property>
     <pattern>^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.TrackSourceSettings.StreamNumber</property>
+    <min>1</min>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.TrackSourceSettings.TrackNumber</property>
@@ -2048,6 +2090,11 @@
     <property>Amazon.MediaConvert.Model.VideoOverlayPosition.Height</property>
     <min>-1</min>
     <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.VideoOverlayPosition.Opacity</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.VideoOverlayPosition.Width</property>

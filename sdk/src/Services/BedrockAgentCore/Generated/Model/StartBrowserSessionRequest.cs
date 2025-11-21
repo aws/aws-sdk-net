@@ -69,6 +69,8 @@ namespace Amazon.BedrockAgentCore.Model
         private string _clientToken;
         private string _name;
         private int? _sessionTimeoutSeconds;
+        private string _traceId;
+        private string _traceParent;
         private ViewPort _viewPort;
 
         /// <summary>
@@ -152,6 +154,44 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetSessionTimeoutSeconds()
         {
             return this._sessionTimeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The trace identifier for request tracking.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceId
+        {
+            get { return this._traceId; }
+            set { this._traceId = value; }
+        }
+
+        // Check to see if TraceId property is set
+        internal bool IsSetTraceId()
+        {
+            return this._traceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceParent. 
+        /// <para>
+        /// The parent trace information for distributed tracing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceParent
+        {
+            get { return this._traceParent; }
+            set { this._traceParent = value; }
+        }
+
+        // Check to see if TraceParent property is set
+        internal bool IsSetTraceParent()
+        {
+            return this._traceParent != null;
         }
 
         /// <summary>

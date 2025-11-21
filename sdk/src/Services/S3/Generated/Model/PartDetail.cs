@@ -32,7 +32,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Container for elements related to a part.
     /// </summary>
-    public partial class PartDetail
+    public partial class PartDetail : PartETag
     {
         private DateTime? _lastModified;
         private long? _size;

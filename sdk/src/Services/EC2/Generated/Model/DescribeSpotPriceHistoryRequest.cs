@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeSpotPriceHistoryRequest : AmazonEC2Request
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private bool? _dryRun;
         private DateTime? _endTime;
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
@@ -58,6 +59,11 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Filters the results by the specified Availability Zone.
         /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> can be specified, but
+        /// not both
+        /// </para>
         /// </summary>
         public string AvailabilityZone
         {
@@ -69,6 +75,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// Filters the results by the specified ID of the Availability Zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either <c>AvailabilityZone</c> or <c>AvailabilityZoneId</c> can be specified, but
+        /// not both
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>
@@ -118,6 +147,11 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>availability-zone</c> - The Availability Zone for which prices should be returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>availability-zone-id</c> - The ID of the Availability Zone for which prices should
+        /// be returned.
         /// </para>
         ///  </li> <li> 
         /// <para>

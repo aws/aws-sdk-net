@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpRequestWithLabelsAndTimestampFormat operation
     /// </summary>  
-    public class HttpRequestWithLabelsAndTimestampFormatResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class HttpRequestWithLabelsAndTimestampFormatResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         {
             HttpRequestWithLabelsAndTimestampFormatResponse response = new HttpRequestWithLabelsAndTimestampFormatResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, HttpRequestWithLabelsAndTimestampFormatResponse response);
 
         private static HttpRequestWithLabelsAndTimestampFormatResponseUnmarshaller _instance = new HttpRequestWithLabelsAndTimestampFormatResponseUnmarshaller();        
 

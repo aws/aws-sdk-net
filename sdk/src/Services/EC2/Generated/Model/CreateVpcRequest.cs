@@ -31,14 +31,16 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpc operation.
-    /// Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
-    /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+    /// Creates a VPC with the specified CIDR blocks.
     /// 
     ///  
     /// <para>
-    /// You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided
-    /// IPv6 CIDR block from Amazon's pool of IPv6 addresses or an IPv6 CIDR block from an
-    /// IPv6 address pool that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
+    /// A VPC must have an associated IPv4 CIDR block. You can choose an IPv4 CIDR block or
+    /// an IPAM-allocated IPv4 CIDR block. You can optionally associate an IPv6 CIDR block
+    /// with a VPC. You can choose an IPv6 CIDR block, an Amazon-provided IPv6 CIDR block,
+    /// an IPAM-allocated IPv6 CIDR block, or an IPv6 CIDR block that you brought to Amazon
+    /// Web Services. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP
+    /// addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -49,9 +51,9 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// You can specify the instance tenancy value for the VPC when you create it. You can't
-    /// change this value for the VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
-    /// Instances</a> in the <i>Amazon EC2 User Guide</i>.
+    /// You can specify DNS options and tenancy for a VPC when you create it. You can't change
+    /// the tenancy of a VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/create-vpc-options.html">VPC
+    /// configuration options</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateVpcRequest : AmazonEC2Request
@@ -68,6 +70,7 @@ namespace Amazon.EC2.Model
         private int? _ipv6NetmaskLength;
         private string _ipv6Pool;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+        private VpcEncryptionControlConfiguration _vpcEncryptionControl;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -341,6 +344,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetTagSpecifications()
         {
             return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEncryptionControl. 
+        /// <para>
+        /// Specifies the encryption control configuration to apply to the VPC during creation.
+        /// VPC Encryption Control enables you to enforce encryption for all data in transit within
+        /// and between VPCs to meet compliance requirements.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        public VpcEncryptionControlConfiguration VpcEncryptionControl
+        {
+            get { return this._vpcEncryptionControl; }
+            set { this._vpcEncryptionControl = value; }
+        }
+
+        // Check to see if VpcEncryptionControl property is set
+        internal bool IsSetVpcEncryptionControl()
+        {
+            return this._vpcEncryptionControl != null;
         }
 
     }

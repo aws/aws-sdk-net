@@ -45,7 +45,7 @@ namespace Amazon.Odb
     /// Web Services data centers. You can migrate your Oracle Exadata workloads, establish
     /// low-latency connectivity with applications running on Amazon Web Services, and integrate
     /// with Amazon Web Services services. For example, you can run application servers in
-    /// a virtual private cloud (VPC) and access an Oracle Exadata system running in Oracle
+    /// a Virtual Private Cloud (VPC) and access an Oracle Exadata system running in Oracle
     /// Database@Amazon Web Services. You can get started with Oracle Database@Amazon Web
     /// Services by using the familiar Amazon Web Services Management Console, APIs, or CLI.
     /// 
@@ -57,30 +57,29 @@ namespace Amazon.Odb
     /// some interfaces might require techniques such as polling or callback functions to
     /// determine when a command has been applied. The reference structure is as follows.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// In this preview release documentation, the links in the "See Also" sections do not
-    /// work.
-    /// </para>
-    ///  </note> 
+    ///  
     /// <para>
     ///  <b>Oracle Database@Amazon Web Services API Reference</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For the alphabetical list of API actions, see .
+    /// For the alphabetical list of API actions, see <a href="https://docs.aws.amazon.com/odb/latest/APIReference/API_Operations.html">API
+    /// Actions</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For the alphabetical list of data types, see .
+    /// For the alphabetical list of data types, see <a href="https://docs.aws.amazon.com/odb/latest/APIReference/API_Types.html">Data
+    /// Types</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For a list of common parameters, see <a>CommonParameters</a>.
+    /// For a list of common query parameters, see <a href="https://docs.aws.amazon.com/odb/latest/APIReference/CommonParameters.html">Common
+    /// Parameters</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For descriptions of the error codes, see <a>CommonErrors</a>.
+    /// For descriptions of the error codes, see <a href="https://docs.aws.amazon.com/odb/latest/APIReference/CommonErrors.html">Common
+    /// Errors</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -333,7 +332,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/AcceptMarketplaceRegistration">REST API Reference for AcceptMarketplaceRegistration Operation</seealso>
         public virtual AcceptMarketplaceRegistrationResponse AcceptMarketplaceRegistration(AcceptMarketplaceRegistrationRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptMarketplaceRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptMarketplaceRegistrationResponseUnmarshaller.Instance;
 
@@ -373,7 +372,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/AcceptMarketplaceRegistration">REST API Reference for AcceptMarketplaceRegistration Operation</seealso>
         public virtual Task<AcceptMarketplaceRegistrationResponse> AcceptMarketplaceRegistrationAsync(AcceptMarketplaceRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AcceptMarketplaceRegistrationRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AcceptMarketplaceRegistrationResponseUnmarshaller.Instance;
             
@@ -420,7 +419,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateCloudAutonomousVmCluster">REST API Reference for CreateCloudAutonomousVmCluster Operation</seealso>
         public virtual CreateCloudAutonomousVmClusterResponse CreateCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudAutonomousVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudAutonomousVmClusterResponseUnmarshaller.Instance;
 
@@ -466,7 +465,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateCloudAutonomousVmCluster">REST API Reference for CreateCloudAutonomousVmCluster Operation</seealso>
         public virtual Task<CreateCloudAutonomousVmClusterResponse> CreateCloudAutonomousVmClusterAsync(CreateCloudAutonomousVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudAutonomousVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudAutonomousVmClusterResponseUnmarshaller.Instance;
             
@@ -509,7 +508,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateCloudExadataInfrastructure">REST API Reference for CreateCloudExadataInfrastructure Operation</seealso>
         public virtual CreateCloudExadataInfrastructureResponse CreateCloudExadataInfrastructure(CreateCloudExadataInfrastructureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudExadataInfrastructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudExadataInfrastructureResponseUnmarshaller.Instance;
 
@@ -551,7 +550,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateCloudExadataInfrastructure">REST API Reference for CreateCloudExadataInfrastructure Operation</seealso>
         public virtual Task<CreateCloudExadataInfrastructureResponse> CreateCloudExadataInfrastructureAsync(CreateCloudExadataInfrastructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudExadataInfrastructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudExadataInfrastructureResponseUnmarshaller.Instance;
             
@@ -598,7 +597,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateCloudVmCluster">REST API Reference for CreateCloudVmCluster Operation</seealso>
         public virtual CreateCloudVmClusterResponse CreateCloudVmCluster(CreateCloudVmClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudVmClusterResponseUnmarshaller.Instance;
 
@@ -644,7 +643,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateCloudVmCluster">REST API Reference for CreateCloudVmCluster Operation</seealso>
         public virtual Task<CreateCloudVmClusterResponse> CreateCloudVmClusterAsync(CreateCloudVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateCloudVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateCloudVmClusterResponseUnmarshaller.Instance;
             
@@ -687,7 +686,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateOdbNetwork">REST API Reference for CreateOdbNetwork Operation</seealso>
         public virtual CreateOdbNetworkResponse CreateOdbNetwork(CreateOdbNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOdbNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOdbNetworkResponseUnmarshaller.Instance;
 
@@ -729,7 +728,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateOdbNetwork">REST API Reference for CreateOdbNetwork Operation</seealso>
         public virtual Task<CreateOdbNetworkResponse> CreateOdbNetworkAsync(CreateOdbNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOdbNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOdbNetworkResponseUnmarshaller.Instance;
             
@@ -742,8 +741,7 @@ namespace Amazon.Odb
 
 
         /// <summary>
-        /// Creates a peering connection between an ODB network and either another ODB network
-        /// or a customer-owned VPC.
+        /// Creates a peering connection between an ODB network and a VPC.
         /// 
         ///  
         /// <para>
@@ -780,7 +778,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateOdbPeeringConnection">REST API Reference for CreateOdbPeeringConnection Operation</seealso>
         public virtual CreateOdbPeeringConnectionResponse CreateOdbPeeringConnection(CreateOdbPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOdbPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOdbPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -789,8 +787,7 @@ namespace Amazon.Odb
 
 
         /// <summary>
-        /// Creates a peering connection between an ODB network and either another ODB network
-        /// or a customer-owned VPC.
+        /// Creates a peering connection between an ODB network and a VPC.
         /// 
         ///  
         /// <para>
@@ -830,7 +827,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateOdbPeeringConnection">REST API Reference for CreateOdbPeeringConnection Operation</seealso>
         public virtual Task<CreateOdbPeeringConnectionResponse> CreateOdbPeeringConnectionAsync(CreateOdbPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateOdbPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateOdbPeeringConnectionResponseUnmarshaller.Instance;
             
@@ -871,7 +868,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteCloudAutonomousVmCluster">REST API Reference for DeleteCloudAutonomousVmCluster Operation</seealso>
         public virtual DeleteCloudAutonomousVmClusterResponse DeleteCloudAutonomousVmCluster(DeleteCloudAutonomousVmClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudAutonomousVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudAutonomousVmClusterResponseUnmarshaller.Instance;
 
@@ -911,7 +908,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteCloudAutonomousVmCluster">REST API Reference for DeleteCloudAutonomousVmCluster Operation</seealso>
         public virtual Task<DeleteCloudAutonomousVmClusterResponse> DeleteCloudAutonomousVmClusterAsync(DeleteCloudAutonomousVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudAutonomousVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudAutonomousVmClusterResponseUnmarshaller.Instance;
             
@@ -956,7 +953,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteCloudExadataInfrastructure">REST API Reference for DeleteCloudExadataInfrastructure Operation</seealso>
         public virtual DeleteCloudExadataInfrastructureResponse DeleteCloudExadataInfrastructure(DeleteCloudExadataInfrastructureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudExadataInfrastructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudExadataInfrastructureResponseUnmarshaller.Instance;
 
@@ -1000,7 +997,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteCloudExadataInfrastructure">REST API Reference for DeleteCloudExadataInfrastructure Operation</seealso>
         public virtual Task<DeleteCloudExadataInfrastructureResponse> DeleteCloudExadataInfrastructureAsync(DeleteCloudExadataInfrastructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudExadataInfrastructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudExadataInfrastructureResponseUnmarshaller.Instance;
             
@@ -1041,7 +1038,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteCloudVmCluster">REST API Reference for DeleteCloudVmCluster Operation</seealso>
         public virtual DeleteCloudVmClusterResponse DeleteCloudVmCluster(DeleteCloudVmClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudVmClusterResponseUnmarshaller.Instance;
 
@@ -1081,7 +1078,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteCloudVmCluster">REST API Reference for DeleteCloudVmCluster Operation</seealso>
         public virtual Task<DeleteCloudVmClusterResponse> DeleteCloudVmClusterAsync(DeleteCloudVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteCloudVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteCloudVmClusterResponseUnmarshaller.Instance;
             
@@ -1121,7 +1118,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteOdbNetwork">REST API Reference for DeleteOdbNetwork Operation</seealso>
         public virtual DeleteOdbNetworkResponse DeleteOdbNetwork(DeleteOdbNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOdbNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOdbNetworkResponseUnmarshaller.Instance;
 
@@ -1160,7 +1157,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteOdbNetwork">REST API Reference for DeleteOdbNetwork Operation</seealso>
         public virtual Task<DeleteOdbNetworkResponse> DeleteOdbNetworkAsync(DeleteOdbNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOdbNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOdbNetworkResponseUnmarshaller.Instance;
             
@@ -1206,7 +1203,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteOdbPeeringConnection">REST API Reference for DeleteOdbPeeringConnection Operation</seealso>
         public virtual DeleteOdbPeeringConnectionResponse DeleteOdbPeeringConnection(DeleteOdbPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOdbPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOdbPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -1251,7 +1248,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteOdbPeeringConnection">REST API Reference for DeleteOdbPeeringConnection Operation</seealso>
         public virtual Task<DeleteOdbPeeringConnectionResponse> DeleteOdbPeeringConnectionAsync(DeleteOdbPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteOdbPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteOdbPeeringConnectionResponseUnmarshaller.Instance;
             
@@ -1291,7 +1288,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetCloudAutonomousVmCluster">REST API Reference for GetCloudAutonomousVmCluster Operation</seealso>
         public virtual GetCloudAutonomousVmClusterResponse GetCloudAutonomousVmCluster(GetCloudAutonomousVmClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudAutonomousVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudAutonomousVmClusterResponseUnmarshaller.Instance;
 
@@ -1330,7 +1327,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetCloudAutonomousVmCluster">REST API Reference for GetCloudAutonomousVmCluster Operation</seealso>
         public virtual Task<GetCloudAutonomousVmClusterResponse> GetCloudAutonomousVmClusterAsync(GetCloudAutonomousVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudAutonomousVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudAutonomousVmClusterResponseUnmarshaller.Instance;
             
@@ -1370,7 +1367,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetCloudExadataInfrastructure">REST API Reference for GetCloudExadataInfrastructure Operation</seealso>
         public virtual GetCloudExadataInfrastructureResponse GetCloudExadataInfrastructure(GetCloudExadataInfrastructureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudExadataInfrastructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudExadataInfrastructureResponseUnmarshaller.Instance;
 
@@ -1409,7 +1406,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetCloudExadataInfrastructure">REST API Reference for GetCloudExadataInfrastructure Operation</seealso>
         public virtual Task<GetCloudExadataInfrastructureResponse> GetCloudExadataInfrastructureAsync(GetCloudExadataInfrastructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudExadataInfrastructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudExadataInfrastructureResponseUnmarshaller.Instance;
             
@@ -1449,7 +1446,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetCloudExadataInfrastructureUnallocatedResources">REST API Reference for GetCloudExadataInfrastructureUnallocatedResources Operation</seealso>
         public virtual GetCloudExadataInfrastructureUnallocatedResourcesResponse GetCloudExadataInfrastructureUnallocatedResources(GetCloudExadataInfrastructureUnallocatedResourcesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudExadataInfrastructureUnallocatedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudExadataInfrastructureUnallocatedResourcesResponseUnmarshaller.Instance;
 
@@ -1488,7 +1485,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetCloudExadataInfrastructureUnallocatedResources">REST API Reference for GetCloudExadataInfrastructureUnallocatedResources Operation</seealso>
         public virtual Task<GetCloudExadataInfrastructureUnallocatedResourcesResponse> GetCloudExadataInfrastructureUnallocatedResourcesAsync(GetCloudExadataInfrastructureUnallocatedResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudExadataInfrastructureUnallocatedResourcesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudExadataInfrastructureUnallocatedResourcesResponseUnmarshaller.Instance;
             
@@ -1528,7 +1525,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetCloudVmCluster">REST API Reference for GetCloudVmCluster Operation</seealso>
         public virtual GetCloudVmClusterResponse GetCloudVmCluster(GetCloudVmClusterRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudVmClusterResponseUnmarshaller.Instance;
 
@@ -1567,7 +1564,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetCloudVmCluster">REST API Reference for GetCloudVmCluster Operation</seealso>
         public virtual Task<GetCloudVmClusterResponse> GetCloudVmClusterAsync(GetCloudVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetCloudVmClusterRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetCloudVmClusterResponseUnmarshaller.Instance;
             
@@ -1607,7 +1604,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetDbNode">REST API Reference for GetDbNode Operation</seealso>
         public virtual GetDbNodeResponse GetDbNode(GetDbNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDbNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDbNodeResponseUnmarshaller.Instance;
 
@@ -1646,7 +1643,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetDbNode">REST API Reference for GetDbNode Operation</seealso>
         public virtual Task<GetDbNodeResponse> GetDbNodeAsync(GetDbNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDbNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDbNodeResponseUnmarshaller.Instance;
             
@@ -1686,7 +1683,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetDbServer">REST API Reference for GetDbServer Operation</seealso>
         public virtual GetDbServerResponse GetDbServer(GetDbServerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDbServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDbServerResponseUnmarshaller.Instance;
 
@@ -1725,7 +1722,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetDbServer">REST API Reference for GetDbServer Operation</seealso>
         public virtual Task<GetDbServerResponse> GetDbServerAsync(GetDbServerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetDbServerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetDbServerResponseUnmarshaller.Instance;
             
@@ -1762,7 +1759,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetOciOnboardingStatus">REST API Reference for GetOciOnboardingStatus Operation</seealso>
         public virtual GetOciOnboardingStatusResponse GetOciOnboardingStatus(GetOciOnboardingStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOciOnboardingStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOciOnboardingStatusResponseUnmarshaller.Instance;
 
@@ -1798,7 +1795,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetOciOnboardingStatus">REST API Reference for GetOciOnboardingStatus Operation</seealso>
         public virtual Task<GetOciOnboardingStatusResponse> GetOciOnboardingStatusAsync(GetOciOnboardingStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOciOnboardingStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOciOnboardingStatusResponseUnmarshaller.Instance;
             
@@ -1838,7 +1835,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetOdbNetwork">REST API Reference for GetOdbNetwork Operation</seealso>
         public virtual GetOdbNetworkResponse GetOdbNetwork(GetOdbNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOdbNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOdbNetworkResponseUnmarshaller.Instance;
 
@@ -1877,7 +1874,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetOdbNetwork">REST API Reference for GetOdbNetwork Operation</seealso>
         public virtual Task<GetOdbNetworkResponse> GetOdbNetworkAsync(GetOdbNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOdbNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOdbNetworkResponseUnmarshaller.Instance;
             
@@ -1917,7 +1914,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetOdbPeeringConnection">REST API Reference for GetOdbPeeringConnection Operation</seealso>
         public virtual GetOdbPeeringConnectionResponse GetOdbPeeringConnection(GetOdbPeeringConnectionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOdbPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOdbPeeringConnectionResponseUnmarshaller.Instance;
 
@@ -1956,7 +1953,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetOdbPeeringConnection">REST API Reference for GetOdbPeeringConnection Operation</seealso>
         public virtual Task<GetOdbPeeringConnectionResponse> GetOdbPeeringConnectionAsync(GetOdbPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetOdbPeeringConnectionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetOdbPeeringConnectionResponseUnmarshaller.Instance;
             
@@ -1992,7 +1989,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/InitializeService">REST API Reference for InitializeService Operation</seealso>
         public virtual InitializeServiceResponse InitializeService(InitializeServiceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitializeServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitializeServiceResponseUnmarshaller.Instance;
 
@@ -2027,7 +2024,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/InitializeService">REST API Reference for InitializeService Operation</seealso>
         public virtual Task<InitializeServiceResponse> InitializeServiceAsync(InitializeServiceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = InitializeServiceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = InitializeServiceResponseUnmarshaller.Instance;
             
@@ -2067,7 +2064,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousVirtualMachines">REST API Reference for ListAutonomousVirtualMachines Operation</seealso>
         public virtual ListAutonomousVirtualMachinesResponse ListAutonomousVirtualMachines(ListAutonomousVirtualMachinesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAutonomousVirtualMachinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAutonomousVirtualMachinesResponseUnmarshaller.Instance;
 
@@ -2106,7 +2103,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListAutonomousVirtualMachines">REST API Reference for ListAutonomousVirtualMachines Operation</seealso>
         public virtual Task<ListAutonomousVirtualMachinesResponse> ListAutonomousVirtualMachinesAsync(ListAutonomousVirtualMachinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListAutonomousVirtualMachinesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListAutonomousVirtualMachinesResponseUnmarshaller.Instance;
             
@@ -2146,7 +2143,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListCloudAutonomousVmClusters">REST API Reference for ListCloudAutonomousVmClusters Operation</seealso>
         public virtual ListCloudAutonomousVmClustersResponse ListCloudAutonomousVmClusters(ListCloudAutonomousVmClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudAutonomousVmClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudAutonomousVmClustersResponseUnmarshaller.Instance;
 
@@ -2185,7 +2182,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListCloudAutonomousVmClusters">REST API Reference for ListCloudAutonomousVmClusters Operation</seealso>
         public virtual Task<ListCloudAutonomousVmClustersResponse> ListCloudAutonomousVmClustersAsync(ListCloudAutonomousVmClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudAutonomousVmClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudAutonomousVmClustersResponseUnmarshaller.Instance;
             
@@ -2222,7 +2219,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListCloudExadataInfrastructures">REST API Reference for ListCloudExadataInfrastructures Operation</seealso>
         public virtual ListCloudExadataInfrastructuresResponse ListCloudExadataInfrastructures(ListCloudExadataInfrastructuresRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudExadataInfrastructuresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudExadataInfrastructuresResponseUnmarshaller.Instance;
 
@@ -2258,7 +2255,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListCloudExadataInfrastructures">REST API Reference for ListCloudExadataInfrastructures Operation</seealso>
         public virtual Task<ListCloudExadataInfrastructuresResponse> ListCloudExadataInfrastructuresAsync(ListCloudExadataInfrastructuresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudExadataInfrastructuresRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudExadataInfrastructuresResponseUnmarshaller.Instance;
             
@@ -2299,7 +2296,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListCloudVmClusters">REST API Reference for ListCloudVmClusters Operation</seealso>
         public virtual ListCloudVmClustersResponse ListCloudVmClusters(ListCloudVmClustersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudVmClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudVmClustersResponseUnmarshaller.Instance;
 
@@ -2339,7 +2336,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListCloudVmClusters">REST API Reference for ListCloudVmClusters Operation</seealso>
         public virtual Task<ListCloudVmClustersResponse> ListCloudVmClustersAsync(ListCloudVmClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListCloudVmClustersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListCloudVmClustersResponseUnmarshaller.Instance;
             
@@ -2379,7 +2376,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListDbNodes">REST API Reference for ListDbNodes Operation</seealso>
         public virtual ListDbNodesResponse ListDbNodes(ListDbNodesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbNodesResponseUnmarshaller.Instance;
 
@@ -2418,7 +2415,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListDbNodes">REST API Reference for ListDbNodes Operation</seealso>
         public virtual Task<ListDbNodesResponse> ListDbNodesAsync(ListDbNodesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbNodesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbNodesResponseUnmarshaller.Instance;
             
@@ -2459,7 +2456,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListDbServers">REST API Reference for ListDbServers Operation</seealso>
         public virtual ListDbServersResponse ListDbServers(ListDbServersRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbServersResponseUnmarshaller.Instance;
 
@@ -2499,7 +2496,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListDbServers">REST API Reference for ListDbServers Operation</seealso>
         public virtual Task<ListDbServersResponse> ListDbServersAsync(ListDbServersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbServersRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbServersResponseUnmarshaller.Instance;
             
@@ -2535,7 +2532,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListDbSystemShapes">REST API Reference for ListDbSystemShapes Operation</seealso>
         public virtual ListDbSystemShapesResponse ListDbSystemShapes(ListDbSystemShapesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbSystemShapesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbSystemShapesResponseUnmarshaller.Instance;
 
@@ -2570,7 +2567,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListDbSystemShapes">REST API Reference for ListDbSystemShapes Operation</seealso>
         public virtual Task<ListDbSystemShapesResponse> ListDbSystemShapesAsync(ListDbSystemShapesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDbSystemShapesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDbSystemShapesResponseUnmarshaller.Instance;
             
@@ -2607,7 +2604,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListGiVersions">REST API Reference for ListGiVersions Operation</seealso>
         public virtual ListGiVersionsResponse ListGiVersions(ListGiVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGiVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGiVersionsResponseUnmarshaller.Instance;
 
@@ -2643,7 +2640,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListGiVersions">REST API Reference for ListGiVersions Operation</seealso>
         public virtual Task<ListGiVersionsResponse> ListGiVersionsAsync(ListGiVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListGiVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListGiVersionsResponseUnmarshaller.Instance;
             
@@ -2679,7 +2676,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListOdbNetworks">REST API Reference for ListOdbNetworks Operation</seealso>
         public virtual ListOdbNetworksResponse ListOdbNetworks(ListOdbNetworksRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOdbNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOdbNetworksResponseUnmarshaller.Instance;
 
@@ -2714,7 +2711,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListOdbNetworks">REST API Reference for ListOdbNetworks Operation</seealso>
         public virtual Task<ListOdbNetworksResponse> ListOdbNetworksAsync(ListOdbNetworksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOdbNetworksRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOdbNetworksResponseUnmarshaller.Instance;
             
@@ -2754,7 +2751,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListOdbPeeringConnections">REST API Reference for ListOdbPeeringConnections Operation</seealso>
         public virtual ListOdbPeeringConnectionsResponse ListOdbPeeringConnections(ListOdbPeeringConnectionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOdbPeeringConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOdbPeeringConnectionsResponseUnmarshaller.Instance;
 
@@ -2793,7 +2790,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListOdbPeeringConnections">REST API Reference for ListOdbPeeringConnections Operation</seealso>
         public virtual Task<ListOdbPeeringConnectionsResponse> ListOdbPeeringConnectionsAsync(ListOdbPeeringConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListOdbPeeringConnectionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListOdbPeeringConnectionsResponseUnmarshaller.Instance;
             
@@ -2834,7 +2831,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListSystemVersions">REST API Reference for ListSystemVersions Operation</seealso>
         public virtual ListSystemVersionsResponse ListSystemVersions(ListSystemVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSystemVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSystemVersionsResponseUnmarshaller.Instance;
 
@@ -2874,7 +2871,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListSystemVersions">REST API Reference for ListSystemVersions Operation</seealso>
         public virtual Task<ListSystemVersionsResponse> ListSystemVersionsAsync(ListSystemVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSystemVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSystemVersionsResponseUnmarshaller.Instance;
             
@@ -2899,7 +2896,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2923,7 +2920,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -2963,7 +2960,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/RebootDbNode">REST API Reference for RebootDbNode Operation</seealso>
         public virtual RebootDbNodeResponse RebootDbNode(RebootDbNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootDbNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootDbNodeResponseUnmarshaller.Instance;
 
@@ -3002,7 +2999,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/RebootDbNode">REST API Reference for RebootDbNode Operation</seealso>
         public virtual Task<RebootDbNodeResponse> RebootDbNodeAsync(RebootDbNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RebootDbNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RebootDbNodeResponseUnmarshaller.Instance;
             
@@ -3042,7 +3039,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StartDbNode">REST API Reference for StartDbNode Operation</seealso>
         public virtual StartDbNodeResponse StartDbNode(StartDbNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDbNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDbNodeResponseUnmarshaller.Instance;
 
@@ -3081,7 +3078,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StartDbNode">REST API Reference for StartDbNode Operation</seealso>
         public virtual Task<StartDbNodeResponse> StartDbNodeAsync(StartDbNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartDbNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartDbNodeResponseUnmarshaller.Instance;
             
@@ -3121,7 +3118,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StopDbNode">REST API Reference for StopDbNode Operation</seealso>
         public virtual StopDbNodeResponse StopDbNode(StopDbNodeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDbNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDbNodeResponseUnmarshaller.Instance;
 
@@ -3160,7 +3157,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/StopDbNode">REST API Reference for StopDbNode Operation</seealso>
         public virtual Task<StopDbNodeResponse> StopDbNodeAsync(StopDbNodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopDbNodeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopDbNodeResponseUnmarshaller.Instance;
             
@@ -3188,7 +3185,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3215,7 +3212,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -3240,7 +3237,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3264,7 +3261,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -3308,7 +3305,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateCloudExadataInfrastructure">REST API Reference for UpdateCloudExadataInfrastructure Operation</seealso>
         public virtual UpdateCloudExadataInfrastructureResponse UpdateCloudExadataInfrastructure(UpdateCloudExadataInfrastructureRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCloudExadataInfrastructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCloudExadataInfrastructureResponseUnmarshaller.Instance;
 
@@ -3351,7 +3348,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateCloudExadataInfrastructure">REST API Reference for UpdateCloudExadataInfrastructure Operation</seealso>
         public virtual Task<UpdateCloudExadataInfrastructureResponse> UpdateCloudExadataInfrastructureAsync(UpdateCloudExadataInfrastructureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateCloudExadataInfrastructureRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateCloudExadataInfrastructureResponseUnmarshaller.Instance;
             
@@ -3395,7 +3392,7 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateOdbNetwork">REST API Reference for UpdateOdbNetwork Operation</seealso>
         public virtual UpdateOdbNetworkResponse UpdateOdbNetwork(UpdateOdbNetworkRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOdbNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOdbNetworkResponseUnmarshaller.Instance;
 
@@ -3438,11 +3435,100 @@ namespace Amazon.Odb
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateOdbNetwork">REST API Reference for UpdateOdbNetwork Operation</seealso>
         public virtual Task<UpdateOdbNetworkResponse> UpdateOdbNetworkAsync(UpdateOdbNetworkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateOdbNetworkRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateOdbNetworkResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateOdbNetworkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateOdbPeeringConnection
+
+
+        /// <summary>
+        /// Modifies the settings of an Oracle Database@Amazon Web Services peering connection.
+        /// You can update the display name and add or remove CIDR blocks from the peering connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOdbPeeringConnection service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOdbPeeringConnection service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateOdbPeeringConnection">REST API Reference for UpdateOdbPeeringConnection Operation</seealso>
+        public virtual UpdateOdbPeeringConnectionResponse UpdateOdbPeeringConnection(UpdateOdbPeeringConnectionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOdbPeeringConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOdbPeeringConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOdbPeeringConnectionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the settings of an Oracle Database@Amazon Web Services peering connection.
+        /// You can update the display name and add or remove CIDR blocks from the peering connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOdbPeeringConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOdbPeeringConnection service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateOdbPeeringConnection">REST API Reference for UpdateOdbPeeringConnection Operation</seealso>
+        public virtual Task<UpdateOdbPeeringConnectionResponse> UpdateOdbPeeringConnectionAsync(UpdateOdbPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOdbPeeringConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOdbPeeringConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateOdbPeeringConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion

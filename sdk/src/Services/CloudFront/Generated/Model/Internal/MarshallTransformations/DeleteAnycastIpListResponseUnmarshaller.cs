@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteAnycastIpList operation
     /// </summary>  
-    public class DeleteAnycastIpListResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteAnycastIpListResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             DeleteAnycastIpListResponse response = new DeleteAnycastIpListResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -104,6 +105,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }
             return new AmazonCloudFrontException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteAnycastIpListResponse response);
 
         private static DeleteAnycastIpListResponseUnmarshaller _instance = new DeleteAnycastIpListResponseUnmarshaller();        
 

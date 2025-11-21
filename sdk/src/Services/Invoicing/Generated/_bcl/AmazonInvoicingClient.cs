@@ -320,7 +320,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/BatchGetInvoiceProfile">REST API Reference for BatchGetInvoiceProfile Operation</seealso>
         public virtual BatchGetInvoiceProfileResponse BatchGetInvoiceProfile(BatchGetInvoiceProfileRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetInvoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetInvoiceProfileResponseUnmarshaller.Instance;
 
@@ -356,7 +356,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/BatchGetInvoiceProfile">REST API Reference for BatchGetInvoiceProfile Operation</seealso>
         public virtual Task<BatchGetInvoiceProfileResponse> BatchGetInvoiceProfileAsync(BatchGetInvoiceProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchGetInvoiceProfileRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchGetInvoiceProfileResponseUnmarshaller.Instance;
             
@@ -389,7 +389,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/CreateInvoiceUnit">REST API Reference for CreateInvoiceUnit Operation</seealso>
         public virtual CreateInvoiceUnitResponse CreateInvoiceUnit(CreateInvoiceUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -421,7 +421,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/CreateInvoiceUnit">REST API Reference for CreateInvoiceUnit Operation</seealso>
         public virtual Task<CreateInvoiceUnitResponse> CreateInvoiceUnitAsync(CreateInvoiceUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateInvoiceUnitResponseUnmarshaller.Instance;
             
@@ -457,7 +457,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/DeleteInvoiceUnit">REST API Reference for DeleteInvoiceUnit Operation</seealso>
         public virtual DeleteInvoiceUnitResponse DeleteInvoiceUnit(DeleteInvoiceUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -492,11 +492,92 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/DeleteInvoiceUnit">REST API Reference for DeleteInvoiceUnit Operation</seealso>
         public virtual Task<DeleteInvoiceUnitResponse> DeleteInvoiceUnitAsync(DeleteInvoiceUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteInvoiceUnitResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteInvoiceUnitResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInvoicePDF
+
+
+        /// <summary>
+        /// Returns a URL to download the invoice document and supplemental documents associated
+        /// with an invoice. The URLs are pre-signed and have expiration time. For special cases
+        /// like Brazil, where Amazon Web Services generated invoice identifiers and government
+        /// provided identifiers do not match, use the Amazon Web Services generated invoice identifier
+        /// when making API requests. To grant IAM permission to use this operation, the caller
+        /// needs the <c>invoicing:GetInvoicePDF</c> policy action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvoicePDF service method.</param>
+        /// 
+        /// <returns>The response from the GetInvoicePDF service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoicePDF">REST API Reference for GetInvoicePDF Operation</seealso>
+        public virtual GetInvoicePDFResponse GetInvoicePDF(GetInvoicePDFRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetInvoicePDFRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvoicePDFResponseUnmarshaller.Instance;
+
+            return Invoke<GetInvoicePDFResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a URL to download the invoice document and supplemental documents associated
+        /// with an invoice. The URLs are pre-signed and have expiration time. For special cases
+        /// like Brazil, where Amazon Web Services generated invoice identifiers and government
+        /// provided identifiers do not match, use the Amazon Web Services generated invoice identifier
+        /// when making API requests. To grant IAM permission to use this operation, the caller
+        /// needs the <c>invoicing:GetInvoicePDF</c> policy action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvoicePDF service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInvoicePDF service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoicePDF">REST API Reference for GetInvoicePDF Operation</seealso>
+        public virtual Task<GetInvoicePDFResponse> GetInvoicePDFAsync(GetInvoicePDFRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetInvoicePDFRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvoicePDFResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetInvoicePDFResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -528,7 +609,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoiceUnit">REST API Reference for GetInvoiceUnit Operation</seealso>
         public virtual GetInvoiceUnitResponse GetInvoiceUnit(GetInvoiceUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -563,7 +644,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoiceUnit">REST API Reference for GetInvoiceUnit Operation</seealso>
         public virtual Task<GetInvoiceUnitResponse> GetInvoiceUnitAsync(GetInvoiceUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetInvoiceUnitResponseUnmarshaller.Instance;
             
@@ -599,7 +680,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceSummaries">REST API Reference for ListInvoiceSummaries Operation</seealso>
         public virtual ListInvoiceSummariesResponse ListInvoiceSummaries(ListInvoiceSummariesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvoiceSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvoiceSummariesResponseUnmarshaller.Instance;
 
@@ -634,7 +715,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceSummaries">REST API Reference for ListInvoiceSummaries Operation</seealso>
         public virtual Task<ListInvoiceSummariesResponse> ListInvoiceSummariesAsync(ListInvoiceSummariesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvoiceSummariesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvoiceSummariesResponseUnmarshaller.Instance;
             
@@ -668,7 +749,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceUnits">REST API Reference for ListInvoiceUnits Operation</seealso>
         public virtual ListInvoiceUnitsResponse ListInvoiceUnits(ListInvoiceUnitsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvoiceUnitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvoiceUnitsResponseUnmarshaller.Instance;
 
@@ -701,7 +782,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListInvoiceUnits">REST API Reference for ListInvoiceUnits Operation</seealso>
         public virtual Task<ListInvoiceUnitsResponse> ListInvoiceUnitsAsync(ListInvoiceUnitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListInvoiceUnitsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListInvoiceUnitsResponseUnmarshaller.Instance;
             
@@ -737,7 +818,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -772,7 +853,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
@@ -812,7 +893,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -851,7 +932,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
@@ -887,7 +968,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -922,7 +1003,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
@@ -959,7 +1040,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UpdateInvoiceUnit">REST API Reference for UpdateInvoiceUnit Operation</seealso>
         public virtual UpdateInvoiceUnitResponse UpdateInvoiceUnit(UpdateInvoiceUnitRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInvoiceUnitResponseUnmarshaller.Instance;
 
@@ -995,7 +1076,7 @@ namespace Amazon.Invoicing
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UpdateInvoiceUnit">REST API Reference for UpdateInvoiceUnit Operation</seealso>
         public virtual Task<UpdateInvoiceUnitResponse> UpdateInvoiceUnitAsync(UpdateInvoiceUnitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateInvoiceUnitRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateInvoiceUnitResponseUnmarshaller.Instance;
             

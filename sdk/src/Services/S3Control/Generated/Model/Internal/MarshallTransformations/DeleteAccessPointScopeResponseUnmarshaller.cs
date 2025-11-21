@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteAccessPointScope operation
     /// </summary>  
-    public class DeleteAccessPointScopeResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class DeleteAccessPointScopeResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         {
             DeleteAccessPointScopeResponse response = new DeleteAccessPointScopeResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteAccessPointScopeResponse response);
 
         private static DeleteAccessPointScopeResponseUnmarshaller _instance = new DeleteAccessPointScopeResponseUnmarshaller();        
 

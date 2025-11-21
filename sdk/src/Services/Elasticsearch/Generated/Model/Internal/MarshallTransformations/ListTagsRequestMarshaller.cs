@@ -62,6 +62,8 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ARN))
+                throw new AmazonElasticsearchException("Request object does not have required field ARN set");
             
             if (publicRequest.IsSetARN())
                 request.Parameters.Add("arn", StringUtils.FromString(publicRequest.ARN));

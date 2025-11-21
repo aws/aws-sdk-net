@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFlowMonitor.Model
 {
     /// <summary>
-    /// A summary of information about a monitor, includ the ARN, the name, and the status.
+    /// A summary of information about a monitor, including the ARN, the name, and the status.
     /// </summary>
     public partial class MonitorSummary
     {

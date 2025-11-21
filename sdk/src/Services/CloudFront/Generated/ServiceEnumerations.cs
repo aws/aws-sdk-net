@@ -1115,6 +1115,150 @@ namespace Amazon.CloudFront
 
 
     /// <summary>
+    /// Constants used for properties of type IpAddressType.
+    /// </summary>
+    public class IpAddressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dualstack for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType Dualstack = new IpAddressType("dualstack");
+        /// <summary>
+        /// Constant Ipv4 for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType Ipv4 = new IpAddressType("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for IpAddressType
+        /// </summary>
+        public static readonly IpAddressType Ipv6 = new IpAddressType("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpAddressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpAddressType FindValue(string value)
+        {
+            return FindValue<IpAddressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpAddressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpamCidrStatus.
+    /// </summary>
+    public class IpamCidrStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Advertised for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus Advertised = new IpamCidrStatus("advertised");
+        /// <summary>
+        /// Constant Advertising for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus Advertising = new IpamCidrStatus("advertising");
+        /// <summary>
+        /// Constant Deprovisioned for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus Deprovisioned = new IpamCidrStatus("deprovisioned");
+        /// <summary>
+        /// Constant Deprovisioning for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus Deprovisioning = new IpamCidrStatus("deprovisioning");
+        /// <summary>
+        /// Constant FailedAdvertise for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus FailedAdvertise = new IpamCidrStatus("failed-advertise");
+        /// <summary>
+        /// Constant FailedDeprovision for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus FailedDeprovision = new IpamCidrStatus("failed-deprovision");
+        /// <summary>
+        /// Constant FailedProvision for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus FailedProvision = new IpamCidrStatus("failed-provision");
+        /// <summary>
+        /// Constant FailedWithdraw for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus FailedWithdraw = new IpamCidrStatus("failed-withdraw");
+        /// <summary>
+        /// Constant Provisioned for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus Provisioned = new IpamCidrStatus("provisioned");
+        /// <summary>
+        /// Constant Provisioning for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus Provisioning = new IpamCidrStatus("provisioning");
+        /// <summary>
+        /// Constant Withdrawing for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus Withdrawing = new IpamCidrStatus("withdrawing");
+        /// <summary>
+        /// Constant Withdrawn for IpamCidrStatus
+        /// </summary>
+        public static readonly IpamCidrStatus Withdrawn = new IpamCidrStatus("withdrawn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpamCidrStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpamCidrStatus FindValue(string value)
+        {
+            return FindValue<IpamCidrStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpamCidrStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ItemSelection.
     /// </summary>
     public class ItemSelection : ConstantClass
@@ -1342,6 +1486,14 @@ namespace Amazon.CloudFront
         /// Constant TLSv12_2021 for MinimumProtocolVersion
         /// </summary>
         public static readonly MinimumProtocolVersion TLSv12_2021 = new MinimumProtocolVersion("TLSv1.2_2021");
+        /// <summary>
+        /// Constant TLSv12_2025 for MinimumProtocolVersion
+        /// </summary>
+        public static readonly MinimumProtocolVersion TLSv12_2025 = new MinimumProtocolVersion("TLSv1.2_2025");
+        /// <summary>
+        /// Constant TLSv13_2025 for MinimumProtocolVersion
+        /// </summary>
+        public static readonly MinimumProtocolVersion TLSv13_2025 = new MinimumProtocolVersion("TLSv1.3_2025");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

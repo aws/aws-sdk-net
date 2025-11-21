@@ -127,6 +127,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>availability-zone-id</c> - The ID of the Availability Zone of the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>block-device-mapping.attach-time</c> - The attach time for an EBS volume mapped
         /// to the instance, for example, <c>2022-09-15T17:15:20.000Z</c>.
         /// </para>
@@ -622,13 +626,14 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>platform-details</c> - The platform (<c>Linux/UNIX</c> | <c>Red Hat BYOL Linux</c>
         /// | <c> Red Hat Enterprise Linux</c> | <c>Red Hat Enterprise Linux with HA</c> | <c>Red
-        /// Hat Enterprise Linux with SQL Server Standard and HA</c> | <c>Red Hat Enterprise Linux
-        /// with SQL Server Enterprise and HA</c> | <c>Red Hat Enterprise Linux with SQL Server
-        /// Standard</c> | <c>Red Hat Enterprise Linux with SQL Server Web</c> | <c>Red Hat Enterprise
-        /// Linux with SQL Server Enterprise</c> | <c>SQL Server Enterprise</c> | <c>SQL Server
-        /// Standard</c> | <c>SQL Server Web</c> | <c>SUSE Linux</c> | <c>Ubuntu Pro</c> | <c>Windows</c>
-        /// | <c>Windows BYOL</c> | <c>Windows with SQL Server Enterprise</c> | <c>Windows with
-        /// SQL Server Standard</c> | <c>Windows with SQL Server Web</c>).
+        /// Hat Enterprise Linux with High Availability</c> | <c>Red Hat Enterprise Linux with
+        /// SQL Server Standard and HA</c> | <c>Red Hat Enterprise Linux with SQL Server Enterprise
+        /// and HA</c> | <c>Red Hat Enterprise Linux with SQL Server Standard</c> | <c>Red Hat
+        /// Enterprise Linux with SQL Server Web</c> | <c>Red Hat Enterprise Linux with SQL Server
+        /// Enterprise</c> | <c>SQL Server Enterprise</c> | <c>SQL Server Standard</c> | <c>SQL
+        /// Server Web</c> | <c>SUSE Linux</c> | <c>Ubuntu Pro</c> | <c>Windows</c> | <c>Windows
+        /// BYOL</c> | <c>Windows with SQL Server Enterprise</c> | <c>Windows with SQL Server
+        /// Standard</c> | <c>Windows with SQL Server Web</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -679,7 +684,8 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>requester-id</c> - The ID of the entity that launched the instance on your behalf
-        /// (for example, Amazon Web Services Management Console, Auto Scaling, and so on).
+        /// (for example, Amazon Web Services Management Console, Amazon EC2 Auto Scaling, and
+        /// so on).
         /// </para>
         ///  </li> <li> 
         /// <para>

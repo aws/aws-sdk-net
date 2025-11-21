@@ -39,6 +39,7 @@ namespace Amazon.GameLiftStreams.Model
         private DateTime? _createdAt;
         private DefaultApplication _defaultApplication;
         private string _description;
+        private DateTime? _expiresAt;
         private string _id;
         private DateTime? _lastUpdatedAt;
         private List<LocationState> _locationStates = AWSConfigs.InitializeCollections ? new List<LocationState>() : null;
@@ -156,6 +157,27 @@ namespace Amazon.GameLiftStreams.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpiresAt. 
+        /// <para>
+        /// The time at which this stream group expires. Timestamps are expressed using in ISO8601
+        /// format, such as: <c>2022-12-27T22:29:40+00:00</c> (UTC). After this time, you will
+        /// no longer be able to update this stream group or use it to start stream sessions.
+        /// Only Get and Delete operations will work on an expired stream group.
+        /// </para>
+        /// </summary>
+        public DateTime? ExpiresAt
+        {
+            get { return this._expiresAt; }
+            set { this._expiresAt = value; }
+        }
+
+        // Check to see if ExpiresAt property is set
+        internal bool IsSetExpiresAt()
+        {
+            return this._expiresAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// A unique ID value that is assigned to the resource when it's created. Format example:
@@ -202,27 +224,27 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  
         /// <para>
-        ///  A location can be in one of the following states: 
+        /// A location can be in one of the following states:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>ACTIVATING</b>: Amazon GameLift Streams is preparing the location. You cannot
-        /// stream from, scale the capacity of, or remove this location yet. 
+        ///  <c>ACTIVATING</c>: Amazon GameLift Streams is preparing the location. You cannot
+        /// stream from, scale the capacity of, or remove this location yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ACTIVE</b>: The location is provisioned with initial capacity. You can now stream
-        /// from, scale the capacity of, or remove this location. 
+        ///  <c>ACTIVE</c>: The location is provisioned with initial capacity. You can now stream
+        /// from, scale the capacity of, or remove this location.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ERROR</b>: Amazon GameLift Streams failed to set up this location. The StatusReason
-        /// field describes the error. You can remove this location and try to add it again. 
+        ///  <c>ERROR</c>: Amazon GameLift Streams failed to set up this location. The <c>StatusReason</c>
+        /// field describes the error. You can remove this location and try to add it again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>REMOVING</b>: Amazon GameLift Streams is working to remove this location. It releases
-        /// all provisioned capacity for this location in this stream group. 
+        ///  <c>REMOVING</c>: Amazon GameLift Streams is working to remove this location. This
+        /// will release all provisioned capacity for this location in this stream group.
         /// </para>
         ///  </li> </ul>
         /// <para />
@@ -265,13 +287,20 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>DELETING</c>: Amazon GameLift Streams is in the process of deleting the stream
+        /// group. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>ERROR</c>: An error occurred when the stream group deployed. See <c>StatusReason</c>
+        /// (returned by <c>CreateStreamGroup</c>, <c>GetStreamGroup</c>, and <c>UpdateStreamGroup</c>)
         /// for more information. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DELETING</c>: Amazon GameLift Streams is in the process of deleting the stream
-        /// group. 
+        ///  <c>EXPIRED</c>: The stream group is expired and can no longer host streams. This
+        /// typically occurs when a stream group is 365 days old, as indicated by the value of
+        /// <c>ExpiresAt</c>. Create a new stream group to resume streaming capabilities. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -300,16 +329,15 @@ namespace Amazon.GameLiftStreams.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>internalError</c>: The request can't process right now bcause of an issue with
-        /// the server. Try again later. Reach out to the Amazon GameLift Streams team for more
-        /// help. 
+        ///  <c>internalError</c>: The request can't process right now because of an issue with
+        /// the server. Try again later.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>noAvailableInstances</c>: Amazon GameLift Streams does not currently have enough
-        /// available On-Demand capacity to fulfill your request. Wait a few minutes and retry
+        /// available on-demand capacity to fulfill your request. Wait a few minutes and retry
         /// the request as capacity can shift frequently. You can also try to make the request
-        /// using a different stream class or in another region. 
+        /// using a different stream class or in another region.
         /// </para>
         ///  </li> </ul>
         /// </summary>

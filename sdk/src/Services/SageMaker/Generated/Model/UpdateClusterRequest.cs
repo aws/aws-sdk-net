@@ -35,11 +35,34 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateClusterRequest : AmazonSageMakerRequest
     {
+        private ClusterAutoScalingConfig _autoScaling;
         private string _clusterName;
+        private string _clusterRole;
         private List<ClusterInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupSpecification>() : null;
         private List<string> _instanceGroupsToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ClusterNodeProvisioningMode _nodeProvisioningMode;
         private ClusterNodeRecovery _nodeRecovery;
         private List<ClusterRestrictedInstanceGroupSpecification> _restrictedInstanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterRestrictedInstanceGroupSpecification>() : null;
+        private ClusterTieredStorageConfig _tieredStorageConfig;
+
+        /// <summary>
+        /// Gets and sets the property AutoScaling. 
+        /// <para>
+        /// Updates the autoscaling configuration for the cluster. Use to enable or disable automatic
+        /// node scaling.
+        /// </para>
+        /// </summary>
+        public ClusterAutoScalingConfig AutoScaling
+        {
+            get { return this._autoScaling; }
+            set { this._autoScaling = value; }
+        }
+
+        // Check to see if AutoScaling property is set
+        internal bool IsSetAutoScaling()
+        {
+            return this._autoScaling != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -58,6 +81,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetClusterName()
         {
             return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterRole. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that HyperPod assumes for cluster autoscaling
+        /// operations. Cannot be updated while autoscaling is enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ClusterRole
+        {
+            get { return this._clusterRole; }
+            set { this._clusterRole = value; }
+        }
+
+        // Check to see if ClusterRole property is set
+        internal bool IsSetClusterRole()
+        {
+            return this._clusterRole != null;
         }
 
         /// <summary>
@@ -110,6 +153,28 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NodeProvisioningMode. 
+        /// <para>
+        /// Determines how instance provisioning is handled during cluster operations. In <c>Continuous</c>
+        /// mode, the cluster provisions available instances incrementally and retries until the
+        /// target count is reached. The cluster becomes operational once cluster-level resources
+        /// are ready. Use <c>CurrentCount</c> and <c>TargetCount</c> in <c>DescribeCluster</c>
+        /// to track provisioning progress.
+        /// </para>
+        /// </summary>
+        public ClusterNodeProvisioningMode NodeProvisioningMode
+        {
+            get { return this._nodeProvisioningMode; }
+            set { this._nodeProvisioningMode = value; }
+        }
+
+        // Check to see if NodeProvisioningMode property is set
+        internal bool IsSetNodeProvisioningMode()
+        {
+            return this._nodeProvisioningMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NodeRecovery. 
         /// <para>
         /// The node recovery mode to be applied to the SageMaker HyperPod cluster.
@@ -150,6 +215,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRestrictedInstanceGroups()
         {
             return this._restrictedInstanceGroups != null && (this._restrictedInstanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TieredStorageConfig. 
+        /// <para>
+        /// Updates the configuration for managed tier checkpointing on the HyperPod cluster.
+        /// For example, you can enable or disable the feature and modify the percentage of cluster
+        /// memory allocated for checkpoint storage.
+        /// </para>
+        /// </summary>
+        public ClusterTieredStorageConfig TieredStorageConfig
+        {
+            get { return this._tieredStorageConfig; }
+            set { this._tieredStorageConfig = value; }
+        }
+
+        // Check to see if TieredStorageConfig property is set
+        internal bool IsSetTieredStorageConfig()
+        {
+            return this._tieredStorageConfig != null;
         }
 
     }

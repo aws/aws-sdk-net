@@ -46,6 +46,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDeleteFileThreshold())
+            {
+                context.Writer.WritePropertyName("deleteFileThreshold");
+                context.Writer.WriteNumberValue(requestObject.DeleteFileThreshold.Value);
+            }
+
+            if(requestObject.IsSetMinInputFiles())
+            {
+                context.Writer.WritePropertyName("minInputFiles");
+                context.Writer.WriteNumberValue(requestObject.MinInputFiles.Value);
+            }
+
             if(requestObject.IsSetStrategy())
             {
                 context.Writer.WritePropertyName("strategy");

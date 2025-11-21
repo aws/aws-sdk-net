@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JobManifestGeneratorFilter Object
     /// </summary>  
-    public class JobManifestGeneratorFilterUnmarshaller : IXmlUnmarshaller<JobManifestGeneratorFilter, XmlUnmarshallerContext>
+    public partial class JobManifestGeneratorFilterUnmarshaller : IXmlUnmarshaller<JobManifestGeneratorFilter, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,6 +80,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.KeyNameConstraint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("MatchAnyObjectEncryption/ObjectEncryption", targetDepth))
+                    {
+                        if (unmarshalledObject.MatchAnyObjectEncryption == null)
+                        {
+                            unmarshalledObject.MatchAnyObjectEncryption = new List<ObjectEncryptionFilter>();
+                        }
+                        var unmarshaller = ObjectEncryptionFilterUnmarshaller.Instance;
+                        unmarshalledObject.MatchAnyObjectEncryption.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
                     if (context.TestExpression("MatchAnyStorageClass/member", targetDepth))
                     {
                         if (unmarshalledObject.MatchAnyStorageClass == null)
@@ -112,6 +122,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.ObjectSizeLessThanBytes = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -120,6 +132,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, JobManifestGeneratorFilter unmarshalledObject, int targetDepth);
+
         private static JobManifestGeneratorFilterUnmarshaller _instance = new JobManifestGeneratorFilterUnmarshaller();        
 
         /// <summary>

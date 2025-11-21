@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(AbortMultipartUploadRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "DELETE";
         
             if (publicRequest.IsSetExpectedBucketOwner()) 
@@ -77,9 +78,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(publicRequest.Key))
                 throw new System.ArgumentException("Key is a required property and must be set before making this call.", "AbortMultipartUploadRequest.Key");
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
+            if (string.IsNullOrEmpty(publicRequest.UploadId))
+                throw new AmazonS3Exception("Request object does not have required field UploadId set");
             
             if (publicRequest.IsSetUploadId())
-                request.AddSubResource("uploadId", StringUtils.FromString(publicRequest.UploadId));
+                request.Parameters.Add("uploadId", StringUtils.FromString(publicRequest.UploadId));
             request.ResourcePath = "/{Key+}";
 
             PostMarshallCustomization(request, publicRequest);
@@ -105,5 +108,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, AbortMultipartUploadRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, AbortMultipartUploadRequest publicRequest);
     }    
 }

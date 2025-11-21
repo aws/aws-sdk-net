@@ -43,7 +43,7 @@ namespace Amazon.ChimeSDKMessaging
     /// The Amazon Chime SDK messaging APIs in this section allow software developers to send
     /// and receive messages in custom messaging applications. These APIs depend on the frameworks
     /// provided by the Amazon Chime SDK identity APIs. For more information about the messaging
-    /// APIs, see <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging.html">Amazon
+    /// APIs, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_Operations_Amazon_Chime_SDK_Messaging.html">Amazon
     /// Chime SDK messaging</a>.
     /// </summary>
     public partial class AmazonChimeSDKMessagingClient : AmazonServiceClient, IAmazonChimeSDKMessaging
@@ -271,7 +271,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual AssociateChannelFlowResponse AssociateChannelFlow(AssociateChannelFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateChannelFlowResponseUnmarshaller.Instance;
 
@@ -327,7 +327,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/AssociateChannelFlow">REST API Reference for AssociateChannelFlow Operation</seealso>
         public virtual Task<AssociateChannelFlowResponse> AssociateChannelFlowAsync(AssociateChannelFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = AssociateChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = AssociateChannelFlowResponseUnmarshaller.Instance;
 
@@ -339,7 +339,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual BatchCreateChannelMembershipResponse BatchCreateChannelMembership(BatchCreateChannelMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateChannelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateChannelMembershipResponseUnmarshaller.Instance;
 
@@ -384,7 +384,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/BatchCreateChannelMembership">REST API Reference for BatchCreateChannelMembership Operation</seealso>
         public virtual Task<BatchCreateChannelMembershipResponse> BatchCreateChannelMembershipAsync(BatchCreateChannelMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchCreateChannelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchCreateChannelMembershipResponseUnmarshaller.Instance;
 
@@ -396,7 +396,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ChannelFlowCallbackResponse ChannelFlowCallback(ChannelFlowCallbackRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChannelFlowCallbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChannelFlowCallbackResponseUnmarshaller.Instance;
 
@@ -458,7 +458,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ChannelFlowCallback">REST API Reference for ChannelFlowCallback Operation</seealso>
         public virtual Task<ChannelFlowCallbackResponse> ChannelFlowCallbackAsync(ChannelFlowCallbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ChannelFlowCallbackRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ChannelFlowCallbackResponseUnmarshaller.Instance;
 
@@ -470,7 +470,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual CreateChannelResponse CreateChannel(CreateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -527,7 +527,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
         public virtual Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelResponseUnmarshaller.Instance;
 
@@ -539,7 +539,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual CreateChannelBanResponse CreateChannelBan(CreateChannelBanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelBanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelBanResponseUnmarshaller.Instance;
 
@@ -599,7 +599,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelBan">REST API Reference for CreateChannelBan Operation</seealso>
         public virtual Task<CreateChannelBanResponse> CreateChannelBanAsync(CreateChannelBanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelBanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelBanResponseUnmarshaller.Instance;
 
@@ -611,7 +611,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual CreateChannelFlowResponse CreateChannelFlow(CreateChannelFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelFlowResponseUnmarshaller.Instance;
 
@@ -645,7 +645,7 @@ namespace Amazon.ChimeSDKMessaging
         ///  </li> </ol> <note> 
         /// <para>
         /// Channel flows don't process Control or System messages. For more information about
-        /// the message types provided by Chime SDK messaging, refer to <a href="https://docs.aws.amazon.com/chime/latest/dg/using-the-messaging-sdk.html#msg-types">Message
+        /// the message types provided by Chime SDK messaging, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/using-the-messaging-sdk.html#msg-types">Message
         /// types</a> in the <i>Amazon Chime developer guide</i>.
         /// </para>
         ///  </note>
@@ -684,7 +684,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelFlow">REST API Reference for CreateChannelFlow Operation</seealso>
         public virtual Task<CreateChannelFlowResponse> CreateChannelFlowAsync(CreateChannelFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelFlowResponseUnmarshaller.Instance;
 
@@ -696,7 +696,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual CreateChannelMembershipResponse CreateChannelMembership(CreateChannelMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelMembershipResponseUnmarshaller.Instance;
 
@@ -786,7 +786,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelMembership">REST API Reference for CreateChannelMembership Operation</seealso>
         public virtual Task<CreateChannelMembershipResponse> CreateChannelMembershipAsync(CreateChannelMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelMembershipResponseUnmarshaller.Instance;
 
@@ -798,7 +798,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual CreateChannelModeratorResponse CreateChannelModerator(CreateChannelModeratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelModeratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelModeratorResponseUnmarshaller.Instance;
 
@@ -871,7 +871,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/CreateChannelModerator">REST API Reference for CreateChannelModerator Operation</seealso>
         public virtual Task<CreateChannelModeratorResponse> CreateChannelModeratorAsync(CreateChannelModeratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateChannelModeratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateChannelModeratorResponseUnmarshaller.Instance;
 
@@ -883,7 +883,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DeleteChannelResponse DeleteChannel(DeleteChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -934,7 +934,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
         public virtual Task<DeleteChannelResponse> DeleteChannelAsync(DeleteChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelResponseUnmarshaller.Instance;
 
@@ -946,7 +946,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DeleteChannelBanResponse DeleteChannelBan(DeleteChannelBanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelBanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelBanResponseUnmarshaller.Instance;
 
@@ -992,7 +992,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelBan">REST API Reference for DeleteChannelBan Operation</seealso>
         public virtual Task<DeleteChannelBanResponse> DeleteChannelBanAsync(DeleteChannelBanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelBanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelBanResponseUnmarshaller.Instance;
 
@@ -1004,7 +1004,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DeleteChannelFlowResponse DeleteChannelFlow(DeleteChannelFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelFlowResponseUnmarshaller.Instance;
 
@@ -1056,7 +1056,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelFlow">REST API Reference for DeleteChannelFlow Operation</seealso>
         public virtual Task<DeleteChannelFlowResponse> DeleteChannelFlowAsync(DeleteChannelFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelFlowResponseUnmarshaller.Instance;
 
@@ -1068,7 +1068,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DeleteChannelMembershipResponse DeleteChannelMembership(DeleteChannelMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelMembershipResponseUnmarshaller.Instance;
 
@@ -1118,7 +1118,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelMembership">REST API Reference for DeleteChannelMembership Operation</seealso>
         public virtual Task<DeleteChannelMembershipResponse> DeleteChannelMembershipAsync(DeleteChannelMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelMembershipResponseUnmarshaller.Instance;
 
@@ -1130,7 +1130,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DeleteChannelMessageResponse DeleteChannelMessage(DeleteChannelMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelMessageResponseUnmarshaller.Instance;
 
@@ -1177,7 +1177,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelMessage">REST API Reference for DeleteChannelMessage Operation</seealso>
         public virtual Task<DeleteChannelMessageResponse> DeleteChannelMessageAsync(DeleteChannelMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelMessageResponseUnmarshaller.Instance;
 
@@ -1189,7 +1189,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DeleteChannelModeratorResponse DeleteChannelModerator(DeleteChannelModeratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelModeratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelModeratorResponseUnmarshaller.Instance;
 
@@ -1235,7 +1235,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteChannelModerator">REST API Reference for DeleteChannelModerator Operation</seealso>
         public virtual Task<DeleteChannelModeratorResponse> DeleteChannelModeratorAsync(DeleteChannelModeratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteChannelModeratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteChannelModeratorResponseUnmarshaller.Instance;
 
@@ -1247,7 +1247,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DeleteMessagingStreamingConfigurationsResponse DeleteMessagingStreamingConfigurations(DeleteMessagingStreamingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessagingStreamingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessagingStreamingConfigurationsResponseUnmarshaller.Instance;
 
@@ -1288,7 +1288,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteMessagingStreamingConfigurations">REST API Reference for DeleteMessagingStreamingConfigurations Operation</seealso>
         public virtual Task<DeleteMessagingStreamingConfigurationsResponse> DeleteMessagingStreamingConfigurationsAsync(DeleteMessagingStreamingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteMessagingStreamingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteMessagingStreamingConfigurationsResponseUnmarshaller.Instance;
 
@@ -1300,7 +1300,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DescribeChannelResponse DescribeChannel(DescribeChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
@@ -1346,7 +1346,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
         public virtual Task<DescribeChannelResponse> DescribeChannelAsync(DescribeChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelResponseUnmarshaller.Instance;
 
@@ -1358,7 +1358,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DescribeChannelBanResponse DescribeChannelBan(DescribeChannelBanRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelBanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelBanResponseUnmarshaller.Instance;
 
@@ -1407,7 +1407,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelBan">REST API Reference for DescribeChannelBan Operation</seealso>
         public virtual Task<DescribeChannelBanResponse> DescribeChannelBanAsync(DescribeChannelBanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelBanRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelBanResponseUnmarshaller.Instance;
 
@@ -1419,7 +1419,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DescribeChannelFlowResponse DescribeChannelFlow(DescribeChannelFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelFlowResponseUnmarshaller.Instance;
 
@@ -1459,7 +1459,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelFlow">REST API Reference for DescribeChannelFlow Operation</seealso>
         public virtual Task<DescribeChannelFlowResponse> DescribeChannelFlowAsync(DescribeChannelFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelFlowResponseUnmarshaller.Instance;
 
@@ -1471,7 +1471,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DescribeChannelMembershipResponse DescribeChannelMembership(DescribeChannelMembershipRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelMembershipResponseUnmarshaller.Instance;
 
@@ -1520,7 +1520,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelMembership">REST API Reference for DescribeChannelMembership Operation</seealso>
         public virtual Task<DescribeChannelMembershipResponse> DescribeChannelMembershipAsync(DescribeChannelMembershipRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelMembershipRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelMembershipResponseUnmarshaller.Instance;
 
@@ -1532,7 +1532,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DescribeChannelMembershipForAppInstanceUserResponse DescribeChannelMembershipForAppInstanceUser(DescribeChannelMembershipForAppInstanceUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelMembershipForAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelMembershipForAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -1579,7 +1579,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelMembershipForAppInstanceUser">REST API Reference for DescribeChannelMembershipForAppInstanceUser Operation</seealso>
         public virtual Task<DescribeChannelMembershipForAppInstanceUserResponse> DescribeChannelMembershipForAppInstanceUserAsync(DescribeChannelMembershipForAppInstanceUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelMembershipForAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelMembershipForAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -1591,7 +1591,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DescribeChannelModeratedByAppInstanceUserResponse DescribeChannelModeratedByAppInstanceUser(DescribeChannelModeratedByAppInstanceUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelModeratedByAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelModeratedByAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -1638,7 +1638,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelModeratedByAppInstanceUser">REST API Reference for DescribeChannelModeratedByAppInstanceUser Operation</seealso>
         public virtual Task<DescribeChannelModeratedByAppInstanceUserResponse> DescribeChannelModeratedByAppInstanceUserAsync(DescribeChannelModeratedByAppInstanceUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelModeratedByAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelModeratedByAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -1650,7 +1650,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DescribeChannelModeratorResponse DescribeChannelModerator(DescribeChannelModeratorRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelModeratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelModeratorResponseUnmarshaller.Instance;
 
@@ -1699,7 +1699,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DescribeChannelModerator">REST API Reference for DescribeChannelModerator Operation</seealso>
         public virtual Task<DescribeChannelModeratorResponse> DescribeChannelModeratorAsync(DescribeChannelModeratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeChannelModeratorRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeChannelModeratorResponseUnmarshaller.Instance;
 
@@ -1711,7 +1711,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual DisassociateChannelFlowResponse DisassociateChannelFlow(DisassociateChannelFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateChannelFlowResponseUnmarshaller.Instance;
 
@@ -1769,7 +1769,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DisassociateChannelFlow">REST API Reference for DisassociateChannelFlow Operation</seealso>
         public virtual Task<DisassociateChannelFlowResponse> DisassociateChannelFlowAsync(DisassociateChannelFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DisassociateChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DisassociateChannelFlowResponseUnmarshaller.Instance;
 
@@ -1781,7 +1781,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual GetChannelMembershipPreferencesResponse GetChannelMembershipPreferences(GetChannelMembershipPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelMembershipPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelMembershipPreferencesResponseUnmarshaller.Instance;
 
@@ -1832,7 +1832,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMembershipPreferences">REST API Reference for GetChannelMembershipPreferences Operation</seealso>
         public virtual Task<GetChannelMembershipPreferencesResponse> GetChannelMembershipPreferencesAsync(GetChannelMembershipPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelMembershipPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelMembershipPreferencesResponseUnmarshaller.Instance;
 
@@ -1844,7 +1844,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual GetChannelMessageResponse GetChannelMessage(GetChannelMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelMessageResponseUnmarshaller.Instance;
 
@@ -1893,7 +1893,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMessage">REST API Reference for GetChannelMessage Operation</seealso>
         public virtual Task<GetChannelMessageResponse> GetChannelMessageAsync(GetChannelMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelMessageResponseUnmarshaller.Instance;
 
@@ -1905,7 +1905,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual GetChannelMessageStatusResponse GetChannelMessageStatus(GetChannelMessageStatusRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelMessageStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelMessageStatusResponseUnmarshaller.Instance;
 
@@ -1983,7 +1983,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetChannelMessageStatus">REST API Reference for GetChannelMessageStatus Operation</seealso>
         public virtual Task<GetChannelMessageStatusResponse> GetChannelMessageStatusAsync(GetChannelMessageStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetChannelMessageStatusRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetChannelMessageStatusResponseUnmarshaller.Instance;
 
@@ -1995,7 +1995,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual GetMessagingSessionEndpointResponse GetMessagingSessionEndpoint(GetMessagingSessionEndpointRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMessagingSessionEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMessagingSessionEndpointResponseUnmarshaller.Instance;
 
@@ -2031,7 +2031,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetMessagingSessionEndpoint">REST API Reference for GetMessagingSessionEndpoint Operation</seealso>
         public virtual Task<GetMessagingSessionEndpointResponse> GetMessagingSessionEndpointAsync(GetMessagingSessionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMessagingSessionEndpointRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMessagingSessionEndpointResponseUnmarshaller.Instance;
 
@@ -2043,7 +2043,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual GetMessagingStreamingConfigurationsResponse GetMessagingStreamingConfigurations(GetMessagingStreamingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMessagingStreamingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMessagingStreamingConfigurationsResponseUnmarshaller.Instance;
 
@@ -2087,7 +2087,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetMessagingStreamingConfigurations">REST API Reference for GetMessagingStreamingConfigurations Operation</seealso>
         public virtual Task<GetMessagingStreamingConfigurationsResponse> GetMessagingStreamingConfigurationsAsync(GetMessagingStreamingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = GetMessagingStreamingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = GetMessagingStreamingConfigurationsResponseUnmarshaller.Instance;
 
@@ -2099,7 +2099,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListChannelBansResponse ListChannelBans(ListChannelBansRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelBansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelBansResponseUnmarshaller.Instance;
 
@@ -2145,7 +2145,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelBans">REST API Reference for ListChannelBans Operation</seealso>
         public virtual Task<ListChannelBansResponse> ListChannelBansAsync(ListChannelBansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelBansRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelBansResponseUnmarshaller.Instance;
 
@@ -2157,7 +2157,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListChannelFlowsResponse ListChannelFlows(ListChannelFlowsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelFlowsResponseUnmarshaller.Instance;
 
@@ -2197,7 +2197,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelFlows">REST API Reference for ListChannelFlows Operation</seealso>
         public virtual Task<ListChannelFlowsResponse> ListChannelFlowsAsync(ListChannelFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelFlowsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelFlowsResponseUnmarshaller.Instance;
 
@@ -2209,7 +2209,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListChannelMembershipsResponse ListChannelMemberships(ListChannelMembershipsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelMembershipsResponseUnmarshaller.Instance;
 
@@ -2229,7 +2229,7 @@ namespace Amazon.ChimeSDKMessaging
         ///  </note> 
         /// <para>
         /// If you want to list the channels to which a specific app instance user belongs, see
-        /// the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
+        /// the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a>
         /// API.
         /// </para>
         /// </summary>
@@ -2260,7 +2260,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelMemberships">REST API Reference for ListChannelMemberships Operation</seealso>
         public virtual Task<ListChannelMembershipsResponse> ListChannelMembershipsAsync(ListChannelMembershipsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelMembershipsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelMembershipsResponseUnmarshaller.Instance;
 
@@ -2272,7 +2272,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListChannelMembershipsForAppInstanceUserResponse ListChannelMembershipsForAppInstanceUser(ListChannelMembershipsForAppInstanceUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelMembershipsForAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelMembershipsForAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -2320,7 +2320,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelMembershipsForAppInstanceUser">REST API Reference for ListChannelMembershipsForAppInstanceUser Operation</seealso>
         public virtual Task<ListChannelMembershipsForAppInstanceUserResponse> ListChannelMembershipsForAppInstanceUserAsync(ListChannelMembershipsForAppInstanceUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelMembershipsForAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelMembershipsForAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -2332,7 +2332,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListChannelMessagesResponse ListChannelMessages(ListChannelMessagesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelMessagesResponseUnmarshaller.Instance;
 
@@ -2386,7 +2386,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelMessages">REST API Reference for ListChannelMessages Operation</seealso>
         public virtual Task<ListChannelMessagesResponse> ListChannelMessagesAsync(ListChannelMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelMessagesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelMessagesResponseUnmarshaller.Instance;
 
@@ -2398,7 +2398,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListChannelModeratorsResponse ListChannelModerators(ListChannelModeratorsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelModeratorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelModeratorsResponseUnmarshaller.Instance;
 
@@ -2444,7 +2444,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelModerators">REST API Reference for ListChannelModerators Operation</seealso>
         public virtual Task<ListChannelModeratorsResponse> ListChannelModeratorsAsync(ListChannelModeratorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelModeratorsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelModeratorsResponseUnmarshaller.Instance;
 
@@ -2456,7 +2456,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListChannelsResponse ListChannels(ListChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -2516,7 +2516,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannels">REST API Reference for ListChannels Operation</seealso>
         public virtual Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsResponseUnmarshaller.Instance;
 
@@ -2528,7 +2528,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListChannelsAssociatedWithChannelFlowResponse ListChannelsAssociatedWithChannelFlow(ListChannelsAssociatedWithChannelFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsAssociatedWithChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsAssociatedWithChannelFlowResponseUnmarshaller.Instance;
 
@@ -2569,7 +2569,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelsAssociatedWithChannelFlow">REST API Reference for ListChannelsAssociatedWithChannelFlow Operation</seealso>
         public virtual Task<ListChannelsAssociatedWithChannelFlowResponse> ListChannelsAssociatedWithChannelFlowAsync(ListChannelsAssociatedWithChannelFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsAssociatedWithChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsAssociatedWithChannelFlowResponseUnmarshaller.Instance;
 
@@ -2581,7 +2581,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListChannelsModeratedByAppInstanceUserResponse ListChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsModeratedByAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsModeratedByAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -2627,7 +2627,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListChannelsModeratedByAppInstanceUser">REST API Reference for ListChannelsModeratedByAppInstanceUser Operation</seealso>
         public virtual Task<ListChannelsModeratedByAppInstanceUserResponse> ListChannelsModeratedByAppInstanceUserAsync(ListChannelsModeratedByAppInstanceUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListChannelsModeratedByAppInstanceUserRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListChannelsModeratedByAppInstanceUserResponseUnmarshaller.Instance;
 
@@ -2639,7 +2639,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListSubChannelsResponse ListSubChannels(ListSubChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubChannelsResponseUnmarshaller.Instance;
 
@@ -2679,7 +2679,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListSubChannels">REST API Reference for ListSubChannels Operation</seealso>
         public virtual Task<ListSubChannelsResponse> ListSubChannelsAsync(ListSubChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSubChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSubChannelsResponseUnmarshaller.Instance;
 
@@ -2691,7 +2691,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2730,7 +2730,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -2742,7 +2742,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual PutChannelExpirationSettingsResponse PutChannelExpirationSettings(PutChannelExpirationSettingsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutChannelExpirationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutChannelExpirationSettingsResponseUnmarshaller.Instance;
 
@@ -2802,7 +2802,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelExpirationSettings">REST API Reference for PutChannelExpirationSettings Operation</seealso>
         public virtual Task<PutChannelExpirationSettingsResponse> PutChannelExpirationSettingsAsync(PutChannelExpirationSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutChannelExpirationSettingsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutChannelExpirationSettingsResponseUnmarshaller.Instance;
 
@@ -2814,7 +2814,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual PutChannelMembershipPreferencesResponse PutChannelMembershipPreferences(PutChannelMembershipPreferencesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutChannelMembershipPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutChannelMembershipPreferencesResponseUnmarshaller.Instance;
 
@@ -2868,7 +2868,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutChannelMembershipPreferences">REST API Reference for PutChannelMembershipPreferences Operation</seealso>
         public virtual Task<PutChannelMembershipPreferencesResponse> PutChannelMembershipPreferencesAsync(PutChannelMembershipPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutChannelMembershipPreferencesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutChannelMembershipPreferencesResponseUnmarshaller.Instance;
 
@@ -2880,7 +2880,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual PutMessagingStreamingConfigurationsResponse PutMessagingStreamingConfigurations(PutMessagingStreamingConfigurationsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMessagingStreamingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance;
 
@@ -2928,7 +2928,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutMessagingStreamingConfigurations">REST API Reference for PutMessagingStreamingConfigurations Operation</seealso>
         public virtual Task<PutMessagingStreamingConfigurationsResponse> PutMessagingStreamingConfigurationsAsync(PutMessagingStreamingConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PutMessagingStreamingConfigurationsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance;
 
@@ -2940,7 +2940,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual RedactChannelMessageResponse RedactChannelMessage(RedactChannelMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RedactChannelMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RedactChannelMessageResponseUnmarshaller.Instance;
 
@@ -2950,8 +2950,8 @@ namespace Amazon.ChimeSDKMessaging
 
 
         /// <summary>
-        /// Redacts message content, but not metadata. The message exists in the back end, but
-        /// the action returns null content, and the state shows as redacted.
+        /// Redacts message content and metadata. The message exists in the back end, but the
+        /// action returns null content, and the state shows as redacted.
         /// 
         ///  <note> 
         /// <para>
@@ -2991,7 +2991,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/RedactChannelMessage">REST API Reference for RedactChannelMessage Operation</seealso>
         public virtual Task<RedactChannelMessageResponse> RedactChannelMessageAsync(RedactChannelMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = RedactChannelMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = RedactChannelMessageResponseUnmarshaller.Instance;
 
@@ -3003,7 +3003,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual SearchChannelsResponse SearchChannels(SearchChannelsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchChannelsResponseUnmarshaller.Instance;
 
@@ -3022,6 +3022,12 @@ namespace Amazon.ChimeSDKMessaging
         /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the ARN of the <c>AppInstanceUser</c>
         /// or <c>AppInstanceBot</c> that makes the API call as the value in the header.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This operation isn't supported for <c>AppInstanceUsers</c> with a large number of
+        /// memberships.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchChannels service method.</param>
         /// <param name="cancellationToken">
@@ -3050,7 +3056,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchChannels">REST API Reference for SearchChannels Operation</seealso>
         public virtual Task<SearchChannelsResponse> SearchChannelsAsync(SearchChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SearchChannelsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SearchChannelsResponseUnmarshaller.Instance;
 
@@ -3062,7 +3068,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual SendChannelMessageResponse SendChannelMessage(SendChannelMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendChannelMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendChannelMessageResponseUnmarshaller.Instance;
 
@@ -3122,7 +3128,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SendChannelMessage">REST API Reference for SendChannelMessage Operation</seealso>
         public virtual Task<SendChannelMessageResponse> SendChannelMessageAsync(SendChannelMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendChannelMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendChannelMessageResponseUnmarshaller.Instance;
 
@@ -3134,7 +3140,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3176,7 +3182,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -3188,7 +3194,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3227,7 +3233,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -3239,7 +3245,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual UpdateChannelResponse UpdateChannel(UpdateChannelRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -3293,7 +3299,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
         public virtual Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelResponseUnmarshaller.Instance;
 
@@ -3305,7 +3311,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual UpdateChannelFlowResponse UpdateChannelFlow(UpdateChannelFlowRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelFlowResponseUnmarshaller.Instance;
 
@@ -3348,7 +3354,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UpdateChannelFlow">REST API Reference for UpdateChannelFlow Operation</seealso>
         public virtual Task<UpdateChannelFlowResponse> UpdateChannelFlowAsync(UpdateChannelFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelFlowRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelFlowResponseUnmarshaller.Instance;
 
@@ -3360,7 +3366,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual UpdateChannelMessageResponse UpdateChannelMessage(UpdateChannelMessageRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelMessageResponseUnmarshaller.Instance;
 
@@ -3410,7 +3416,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UpdateChannelMessage">REST API Reference for UpdateChannelMessage Operation</seealso>
         public virtual Task<UpdateChannelMessageResponse> UpdateChannelMessageAsync(UpdateChannelMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelMessageRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelMessageResponseUnmarshaller.Instance;
 
@@ -3422,7 +3428,7 @@ namespace Amazon.ChimeSDKMessaging
 
         internal virtual UpdateChannelReadMarkerResponse UpdateChannelReadMarker(UpdateChannelReadMarkerRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelReadMarkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelReadMarkerResponseUnmarshaller.Instance;
 
@@ -3472,7 +3478,7 @@ namespace Amazon.ChimeSDKMessaging
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/UpdateChannelReadMarker">REST API Reference for UpdateChannelReadMarker Operation</seealso>
         public virtual Task<UpdateChannelReadMarkerResponse> UpdateChannelReadMarkerAsync(UpdateChannelReadMarkerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateChannelReadMarkerRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateChannelReadMarkerResponseUnmarshaller.Instance;
 

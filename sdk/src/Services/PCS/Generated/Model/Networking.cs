@@ -34,8 +34,27 @@ namespace Amazon.PCS.Model
     /// </summary>
     public partial class Networking
     {
+        private NetworkType _networkType;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The IP address version the cluster uses. The default is <c>IPV4</c>.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
@@ -77,7 +96,7 @@ namespace Amazon.PCS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Destination: 0.0.0.0/0 (IPv4)
+        /// Destination: 0.0.0.0/0 (IPv4) or ::/0 (IPv6)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -117,10 +136,10 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The ID of the subnet where Amazon Web Services PCS creates an Elastic Network Interface
-        /// (ENI) to enable communication between managed controllers and Amazon Web Services
-        /// PCS resources. The subnet must have an available IP address, cannot reside in AWS
-        /// Outposts, AWS Wavelength, or an AWS Local Zone.
+        /// The ID of the subnet where PCS creates an Elastic Network Interface (ENI) to enable
+        /// communication between managed controllers and PCS resources. The subnet must have
+        /// an available IP address, cannot reside in Outposts, Wavelength, or an Amazon Web Services
+        /// Local Zone.
         /// </para>
         ///  
         /// <para>

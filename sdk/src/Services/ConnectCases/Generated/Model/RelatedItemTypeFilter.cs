@@ -35,7 +35,9 @@ namespace Amazon.ConnectCases.Model
     public partial class RelatedItemTypeFilter
     {
         private CommentFilter _comment;
+        private ConnectCaseFilter _connectCase;
         private ContactFilter _contact;
+        private CustomFilter _custom;
         private FileFilter _file;
         private SlaFilter _sla;
 
@@ -58,6 +60,24 @@ namespace Amazon.ConnectCases.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectCase. 
+        /// <para>
+        /// Represents the Amazon Connect case to be created as a related item.
+        /// </para>
+        /// </summary>
+        public ConnectCaseFilter ConnectCase
+        {
+            get { return this._connectCase; }
+            set { this._connectCase = value; }
+        }
+
+        // Check to see if ConnectCase property is set
+        internal bool IsSetConnectCase()
+        {
+            return this._connectCase != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Contact. 
         /// <para>
         /// A filter for related items of type <c>Contact</c>.
@@ -73,6 +93,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetContact()
         {
             return this._contact != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Custom. 
+        /// <para>
+        /// Represents the content of a <c>Custom</c> type related item.
+        /// </para>
+        /// </summary>
+        public CustomFilter Custom
+        {
+            get { return this._custom; }
+            set { this._custom = value; }
+        }
+
+        // Check to see if Custom property is set
+        internal bool IsSetCustom()
+        {
+            return this._custom != null;
         }
 
         /// <summary>

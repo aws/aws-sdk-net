@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3JobManifestGenerator Object
     /// </summary>  
-    public class S3JobManifestGeneratorUnmarshaller : IXmlUnmarshaller<S3JobManifestGenerator, XmlUnmarshallerContext>
+    public partial class S3JobManifestGeneratorUnmarshaller : IXmlUnmarshaller<S3JobManifestGenerator, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -86,6 +86,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.SourceBucket = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -94,6 +96,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3JobManifestGenerator unmarshalledObject, int targetDepth);
+
         private static S3JobManifestGeneratorUnmarshaller _instance = new S3JobManifestGeneratorUnmarshaller();        
 
         /// <summary>

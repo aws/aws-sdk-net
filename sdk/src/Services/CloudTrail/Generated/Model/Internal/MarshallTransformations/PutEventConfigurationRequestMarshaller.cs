@@ -75,6 +75,22 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAggregationConfigurations())
+            {
+                context.Writer.WritePropertyName("AggregationConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAggregationConfigurationsListValue in publicRequest.AggregationConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AggregationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAggregationConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetContextKeySelectors())
             {
                 context.Writer.WritePropertyName("ContextKeySelectors");
@@ -101,6 +117,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("MaxEventSize");
                 context.Writer.WriteStringValue(publicRequest.MaxEventSize);
+            }
+
+            if(publicRequest.IsSetTrailName())
+            {
+                context.Writer.WritePropertyName("TrailName");
+                context.Writer.WriteStringValue(publicRequest.TrailName);
             }
 
             writer.WriteEndObject();

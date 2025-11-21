@@ -66,7 +66,7 @@
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleRequest.CredentialArn</property>
     <min>50</min>
     <max>612</max>
-    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+    <pattern>^arn:aws(-\w+)*:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleRequest.CustomRoleArn</property>
@@ -92,7 +92,7 @@
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleResponse.CredentialArn</property>
     <min>50</min>
     <max>612</max>
-    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+    <pattern>^arn:aws(-\w+)*:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.CreatePullThroughCacheRuleResponse.CustomRoleArn</property>
@@ -191,7 +191,7 @@
     <property>Amazon.ECR.Model.DeletePullThroughCacheRuleResponse.CredentialArn</property>
     <min>50</min>
     <max>612</max>
-    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+    <pattern>^arn:aws(-\w+)*:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DeletePullThroughCacheRuleResponse.CustomRoleArn</property>
@@ -266,6 +266,16 @@
     <min>2</min>
     <max>256</max>
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DeregisterPullTimeUpdateExclusionRequest.PrincipalArn</property>
+    <max>200</max>
+    <pattern>^arn:aws(-[a-z]+)*:iam::[0-9]{12}:(role|user)/[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.DeregisterPullTimeUpdateExclusionResponse.PrincipalArn</property>
+    <max>200</max>
+    <pattern>^arn:aws(-[a-z]+)*:iam::[0-9]{12}:(role|user)/[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DescribeImageReplicationStatusRequest.RegistryId</property>
@@ -499,6 +509,21 @@
     <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.ListImageReferrersRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ListImageReferrersRequest.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ListImageReferrersRequest.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.ListImagesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -512,6 +537,11 @@
     <min>2</min>
     <max>256</max>
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.ListPullTimeUpdateExclusionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.PutAccountSettingRequest.Name</property>
@@ -628,6 +658,16 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.RegisterPullTimeUpdateExclusionRequest.PrincipalArn</property>
+    <max>200</max>
+    <pattern>^arn:aws(-[a-z]+)*:iam::[0-9]{12}:(role|user)/[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.RegisterPullTimeUpdateExclusionResponse.PrincipalArn</property>
+    <max>200</max>
+    <pattern>^arn:aws(-[a-z]+)*:iam::[0-9]{12}:(role|user)/[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.SetRepositoryPolicyRequest.PolicyText</property>
     <min>0</min>
     <max>10240</max>
@@ -708,10 +748,30 @@
     <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.UpdateImageStorageClassRequest.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.UpdateImageStorageClassRequest.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.UpdateImageStorageClassResponse.RegistryId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.UpdateImageStorageClassResponse.RepositoryName</property>
+    <min>2</min>
+    <max>256</max>
+    <pattern>(?:[a-z0-9]+(?:[._-][a-z0-9]+)*/)*[a-z0-9]+(?:[._-][a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleRequest.CredentialArn</property>
     <min>50</min>
     <max>612</max>
-    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+    <pattern>^arn:aws(-\w+)*:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleRequest.CustomRoleArn</property>
@@ -731,7 +791,7 @@
     <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleResponse.CredentialArn</property>
     <min>50</min>
     <max>612</max>
-    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+    <pattern>^arn:aws(-\w+)*:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.UpdatePullThroughCacheRuleResponse.CustomRoleArn</property>
@@ -840,7 +900,7 @@
     <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleResponse.CredentialArn</property>
     <min>50</min>
     <max>612</max>
-    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+    <pattern>^arn:aws(-\w+)*:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.ValidatePullThroughCacheRuleResponse.CustomRoleArn</property>
@@ -936,6 +996,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.ImageReferrer.ArtifactType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.ImageReplicationStatus.Region</property>
     <min>2</min>
     <max>25</max>
@@ -990,7 +1055,7 @@
     <property>Amazon.ECR.Model.PullThroughCacheRule.CredentialArn</property>
     <min>50</min>
     <max>612</max>
-    <pattern>^arn:aws:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
+    <pattern>^arn:aws(-\w+)*:secretsmanager:[a-zA-Z0-9-:]+:secret:ecr\-pullthroughcache\/[a-zA-Z0-9\/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.PullThroughCacheRule.CustomRoleArn</property>
@@ -1079,5 +1144,9 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[a-z0-9*](?:[._\-/a-z0-9*]?[a-z0-9*]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ECR.Model.TransitioningImageTotalCount.ImageTotalCount</property>
+    <min>0</min>
   </property-value-rule>
 </property-value-rules>

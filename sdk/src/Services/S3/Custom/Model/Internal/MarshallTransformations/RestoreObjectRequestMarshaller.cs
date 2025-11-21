@@ -40,7 +40,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(RestoreObjectRequest restoreObjectRequest)
         {
-            IRequest request = new DefaultRequest(restoreObjectRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(restoreObjectRequest, "Amazon.S3");
 
             request.HttpMethod = "POST";
 

@@ -66,11 +66,16 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsException("Request object does not have required field MembershipIdentifier set");
             request.AddPathResource("{membershipIdentifier}", StringUtils.FromString(publicRequest.MembershipIdentifier));
             
+            if (publicRequest.IsSetAccessBudgetResourceArn())
+                request.Parameters.Add("accessBudgetResourceArn", StringUtils.FromString(publicRequest.AccessBudgetResourceArn));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.PrivacyBudgetType))
+                throw new AmazonCleanRoomsException("Request object does not have required field PrivacyBudgetType set");
             
             if (publicRequest.IsSetPrivacyBudgetType())
                 request.Parameters.Add("privacyBudgetType", StringUtils.FromString(publicRequest.PrivacyBudgetType));

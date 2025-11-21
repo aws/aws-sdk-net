@@ -31,20 +31,21 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDirectorySetup operation.
-    /// Updates the directory for a particular update type.
+    /// Updates directory configuration for the specified update type.
     /// </summary>
     public partial class UpdateDirectorySetupRequest : AmazonDirectoryServiceRequest
     {
         private bool? _createSnapshotBeforeUpdate;
         private string _directoryId;
+        private DirectorySizeUpdateSettings _directorySizeUpdateSettings;
+        private NetworkUpdateSettings _networkUpdateSettings;
         private OSUpdateSettings _osUpdateSettings;
         private UpdateType _updateType;
 
         /// <summary>
         /// Gets and sets the property CreateSnapshotBeforeUpdate. 
         /// <para>
-        ///  The boolean that specifies if a snapshot for the directory needs to be taken before
-        /// updating the directory. 
+        /// Specifies whether to create a directory snapshot before performing the update.
         /// </para>
         /// </summary>
         public bool? CreateSnapshotBeforeUpdate
@@ -62,7 +63,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        ///  The identifier of the directory on which you want to perform the update. 
+        /// The identifier of the directory to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,9 +80,45 @@ namespace Amazon.DirectoryService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DirectorySizeUpdateSettings. 
+        /// <para>
+        /// Directory size configuration to apply during the update operation.
+        /// </para>
+        /// </summary>
+        public DirectorySizeUpdateSettings DirectorySizeUpdateSettings
+        {
+            get { return this._directorySizeUpdateSettings; }
+            set { this._directorySizeUpdateSettings = value; }
+        }
+
+        // Check to see if DirectorySizeUpdateSettings property is set
+        internal bool IsSetDirectorySizeUpdateSettings()
+        {
+            return this._directorySizeUpdateSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkUpdateSettings. 
+        /// <para>
+        /// Network configuration to apply during the directory update operation.
+        /// </para>
+        /// </summary>
+        public NetworkUpdateSettings NetworkUpdateSettings
+        {
+            get { return this._networkUpdateSettings; }
+            set { this._networkUpdateSettings = value; }
+        }
+
+        // Check to see if NetworkUpdateSettings property is set
+        internal bool IsSetNetworkUpdateSettings()
+        {
+            return this._networkUpdateSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OSUpdateSettings. 
         /// <para>
-        ///  The settings for the OS update that needs to be performed on the directory. 
+        /// Operating system configuration to apply during the directory update operation.
         /// </para>
         /// </summary>
         public OSUpdateSettings OSUpdateSettings
@@ -99,8 +136,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property UpdateType. 
         /// <para>
-        ///  The type of update that needs to be performed on the directory. For example, OS.
-        /// 
+        /// The type of update to perform on the directory.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

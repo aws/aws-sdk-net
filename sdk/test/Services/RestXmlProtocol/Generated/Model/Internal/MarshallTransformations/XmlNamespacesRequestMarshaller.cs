@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(XmlNamespacesRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/XmlNamespaces";
 
@@ -65,7 +66,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 xmlWriter.WriteStartElement("XmlNamespacesRequest", "http://foo.com");
                 if (publicRequest.Nested != null)
                 {
-                    xmlWriter.WriteStartElement("nested");
+                    xmlWriter.WriteStartElement("nested","http://foo.com");
                     if(publicRequest.Nested.IsSetFoo())
                         xmlWriter.WriteElementString("foo", StringUtils.FromString(publicRequest.Nested.Foo));
                     var publicRequestNestedValues = publicRequest.Nested.Values;
@@ -119,5 +120,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, XmlNamespacesRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, XmlNamespacesRequest publicRequest);
     }    
 }

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomOriginConfig Object
     /// </summary>  
-    public class CustomOriginConfigUnmarshaller : IXmlUnmarshaller<CustomOriginConfig, XmlUnmarshallerContext>
+    public partial class CustomOriginConfigUnmarshaller : IXmlUnmarshaller<CustomOriginConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -68,6 +68,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.HTTPSPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IpAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("OriginKeepaliveTimeout", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -92,6 +98,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginSslProtocols = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -100,6 +108,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, CustomOriginConfig unmarshalledObject, int targetDepth);
+
         private static CustomOriginConfigUnmarshaller _instance = new CustomOriginConfigUnmarshaller();        
 
         /// <summary>

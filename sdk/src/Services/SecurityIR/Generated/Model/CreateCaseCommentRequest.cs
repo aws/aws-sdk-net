@@ -31,7 +31,7 @@ namespace Amazon.SecurityIR.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCaseComment operation.
-    /// Grants permission to add a comment to an existing case.
+    /// Adds a comment to an existing case.
     /// </summary>
     public partial class CreateCaseCommentRequest : AmazonSecurityIRRequest
     {
@@ -81,7 +81,13 @@ namespace Amazon.SecurityIR.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// An optional element used in combination with CreateCaseComment.
+        /// <note> 
+        /// <para>
+        /// The <c>clientToken</c> field is an idempotency key used to ensure that repeated attempts
+        /// for a single action will be ignored by the server during retries. A caller supplied
+        /// unique ID (typically a UUID) should be provided. 
+        /// </para>
+        ///  </note>
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

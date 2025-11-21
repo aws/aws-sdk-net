@@ -41,6 +41,9 @@ namespace Amazon.SageMaker.Model
         private ClusterInstanceType _instanceType;
         private DateTime? _lastSoftwareUpdateTime;
         private DateTime? _launchTime;
+        private string _nodeLogicalId;
+        private string _privateDnsHostname;
+        private UltraServerInfo _ultraServerInfo;
 
         /// <summary>
         /// Gets and sets the property InstanceGroupName. 
@@ -153,6 +156,63 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLaunchTime()
         {
             return this._launchTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeLogicalId. 
+        /// <para>
+        /// A unique identifier for the node that persists throughout its lifecycle, from provisioning
+        /// request to termination. This identifier can be used to track the node even before
+        /// it has an assigned <c>InstanceId</c>. This field is only included when <c>IncludeNodeLogicalIds</c>
+        /// is set to <c>True</c> in the <c>ListClusterNodes</c> request.
+        /// </para>
+        /// </summary>
+        public string NodeLogicalId
+        {
+            get { return this._nodeLogicalId; }
+            set { this._nodeLogicalId = value; }
+        }
+
+        // Check to see if NodeLogicalId property is set
+        internal bool IsSetNodeLogicalId()
+        {
+            return this._nodeLogicalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsHostname. 
+        /// <para>
+        /// The private DNS hostname of the SageMaker HyperPod cluster node.
+        /// </para>
+        /// </summary>
+        public string PrivateDnsHostname
+        {
+            get { return this._privateDnsHostname; }
+            set { this._privateDnsHostname = value; }
+        }
+
+        // Check to see if PrivateDnsHostname property is set
+        internal bool IsSetPrivateDnsHostname()
+        {
+            return this._privateDnsHostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UltraServerInfo. 
+        /// <para>
+        /// Contains information about the UltraServer.
+        /// </para>
+        /// </summary>
+        public UltraServerInfo UltraServerInfo
+        {
+            get { return this._ultraServerInfo; }
+            set { this._ultraServerInfo = value; }
+        }
+
+        // Check to see if UltraServerInfo property is set
+        internal bool IsSetUltraServerInfo()
+        {
+            return this._ultraServerInfo != null;
         }
 
     }

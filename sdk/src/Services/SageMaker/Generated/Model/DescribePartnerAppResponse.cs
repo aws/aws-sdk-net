@@ -37,8 +37,11 @@ namespace Amazon.SageMaker.Model
         private PartnerAppConfig _applicationConfig;
         private string _arn;
         private PartnerAppAuthType _authType;
+        private AvailableUpgrade _availableUpgrade;
         private string _baseUrl;
         private DateTime? _creationTime;
+        private DateTime? _currentVersionEolDate;
+        private bool? _enableAutoMinorVersionUpgrade;
         private bool? _enableIamSessionBasedIdentity;
         private ErrorInfo _error;
         private string _executionRoleArn;
@@ -107,6 +110,26 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AvailableUpgrade. 
+        /// <para>
+        /// A map of available minor version upgrades for the SageMaker Partner AI App. The key
+        /// is the semantic version number, and the value is a list of release notes for that
+        /// version. A null value indicates no upgrades are available.
+        /// </para>
+        /// </summary>
+        public AvailableUpgrade AvailableUpgrade
+        {
+            get { return this._availableUpgrade; }
+            set { this._availableUpgrade = value; }
+        }
+
+        // Check to see if AvailableUpgrade property is set
+        internal bool IsSetAvailableUpgrade()
+        {
+            return this._availableUpgrade != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BaseUrl. 
         /// <para>
         /// The URL of the SageMaker Partner AI App that the Application SDK uses to support in-app
@@ -142,6 +165,43 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentVersionEolDate. 
+        /// <para>
+        /// The end-of-life date for the current version of the SageMaker Partner AI App.
+        /// </para>
+        /// </summary>
+        public DateTime? CurrentVersionEolDate
+        {
+            get { return this._currentVersionEolDate; }
+            set { this._currentVersionEolDate = value; }
+        }
+
+        // Check to see if CurrentVersionEolDate property is set
+        internal bool IsSetCurrentVersionEolDate()
+        {
+            return this._currentVersionEolDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableAutoMinorVersionUpgrade. 
+        /// <para>
+        /// Indicates whether the SageMaker Partner AI App is configured for automatic minor version
+        /// upgrades during scheduled maintenance windows.
+        /// </para>
+        /// </summary>
+        public bool? EnableAutoMinorVersionUpgrade
+        {
+            get { return this._enableAutoMinorVersionUpgrade; }
+            set { this._enableAutoMinorVersionUpgrade = value; }
+        }
+
+        // Check to see if EnableAutoMinorVersionUpgrade property is set
+        internal bool IsSetEnableAutoMinorVersionUpgrade()
+        {
+            return this._enableAutoMinorVersionUpgrade.HasValue; 
         }
 
         /// <summary>
@@ -282,6 +342,39 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The status of the SageMaker Partner AI App.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating: SageMaker AI is creating the partner AI app. The partner AI app is not available
+        /// during creation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Updating: SageMaker AI is updating the partner AI app. The partner AI app is not available
+        /// when updating.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deleting: SageMaker AI is deleting the partner AI app. The partner AI app is not available
+        /// during deletion.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Available: The partner AI app is provisioned and accessible.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed: The partner AI app is in a failed state and isn't available. SageMaker AI
+        /// is investigating the issue. For further guidance, contact Amazon Web Services Support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UpdateFailed: The partner AI app couldn't be updated but is available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deleted: The partner AI app is permanently deleted and not available.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public PartnerAppStatus Status
         {

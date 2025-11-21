@@ -29,6 +29,7 @@ using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Identity;
 using Amazon.Runtime.Credentials;
+using System.Linq;
 
 
 
@@ -66,6 +67,8 @@ namespace Amazon.Runtime
         private string serviceURL = null;
         private string authRegion = null;
         private string authServiceName = null;
+        private List<string> authSchemePreference = null;
+        private List<string> sigV4aSigningRegionSet = null;
         private string clientAppId = null;
         private SigningAlgorithm signatureMethod = SigningAlgorithm.HmacSHA256;
         private bool logResponse = false;
@@ -444,7 +447,68 @@ namespace Amazon.Runtime
             get { return this.authServiceName; }
             set { this.authServiceName = value; }
         }
-        
+
+        /// <summary>
+        /// List of preferred authentication schemes in priority order. 
+        /// When a service supports multiple authentication schemes, the SDK attempts to use schemes from this list in 
+        /// the specified order, falling back to default behavior if none of the preferred schemes are available.
+        /// 
+        /// <para />
+        /// 
+        /// Valid values are a list of one or more of the following:
+        /// <list type="bullet">
+        /// <item><b>sigv4</b> – Signature Version 4 (fastest performance, single-region)</item>
+        /// <item><b>sigv4a</b> – Signature Version 4a (enhanced availability, cross-region support, has a slower signing performance than SigV4)</item>
+        /// <item><b>httpBearerAuth</b> – HTTP Bearer token authentication</item>
+        /// </list>
+        /// </summary>
+        /// <remarks>
+        /// Space and tab characters in scheme names are ignored.
+        /// </remarks>
+        public List<string> AuthSchemePreference
+        {
+            get 
+            {
+                if (this.authSchemePreference == null)
+                {
+                    return FallbackInternalConfigurationFactory.AuthSchemePreference;
+                }
+
+                return this.authSchemePreference;
+            }
+            set 
+            {
+                this.authSchemePreference = value; 
+            }
+        }
+
+        /// <summary>
+        /// List of AWS regions for SigV4a multi-region signing.
+        /// This is used as the default region set for the request if SigV4a is the selected authentication scheme.
+        /// </summary>
+        /// <remarks>
+        /// Space and tab characters in region names are ignored.
+        /// <para />
+        /// For backwards compability reasons, the signers in the SDK will attempt to use
+        /// the <see cref="AuthenticationRegion"/> property (if set) over this region set.
+        /// </remarks>
+        public List<string> SigV4aSigningRegionSet
+        {
+            get
+            {
+                if (this.sigV4aSigningRegionSet == null)
+                {
+                    return FallbackInternalConfigurationFactory.SigV4aSigningRegionSet;
+                }
+
+                return this.sigV4aSigningRegionSet;
+            }
+            set 
+            {
+                this.sigV4aSigningRegionSet = value;
+            }
+        }
+
         /// <summary>
         /// The serviceId for the service, which is specified in the metadata in the ServiceModel.
         /// The transformed value of the service ID (replace any spaces in the service ID 

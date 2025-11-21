@@ -435,6 +435,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.CreateWorkflowRequest.ContainerRegistryMapUri</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowRequest.DefinitionUri</property>
     <min>1</min>
     <max>256</max>
@@ -524,6 +530,12 @@
     <property>Amazon.Omics.Model.CreateWorkflowVersionRequest.Accelerators</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateWorkflowVersionRequest.ContainerRegistryMapUri</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowVersionRequest.DefinitionUri</property>
@@ -2945,6 +2957,36 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.ImageDetails.Image</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ImageDetails.ImageDigest</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>sha[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ImageDetails.SourceImage</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ImageMapping.DestinationImage</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ImageMapping.SourceImage</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetJobItem.Id</property>
     <min>10</min>
     <max>36</max>
@@ -3320,6 +3362,30 @@
     <property>Amazon.Omics.Model.ReferenceStoreFilter.Name</property>
     <min>1</min>
     <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RegistryMapping.EcrAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RegistryMapping.EcrRepositoryPrefix</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RegistryMapping.UpstreamRegistryUrl</property>
+    <min>1</min>
+    <max>750</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RegistryMapping.UpstreamRepositoryPrefix</property>
+    <min>2</min>
+    <max>30</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -31,8 +31,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccountSubscription operation.
-    /// Use the DescribeAccountSubscription operation to receive a description of an Amazon
-    /// QuickSight account's subscription. A successful API call returns an <c>AccountInfo</c>
+    /// Use the DescribeAccountSubscription operation to receive a description of an Quick
+    /// Sight account's subscription. A successful API call returns an <c>AccountInfo</c>
     /// object that includes an account's name, subscription status, authentication type,
     /// edition, and notification email address.
     /// </summary>
@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account ID associated with your Amazon QuickSight account.
+        /// The Amazon Web Services account ID associated with your Quick Sight account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

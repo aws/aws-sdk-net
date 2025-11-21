@@ -37,6 +37,7 @@ namespace Amazon.DataZone.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private PolicyGrantDetail _detail;
+        private string _grantId;
         private PolicyGrantPrincipal _principal;
 
         /// <summary>
@@ -91,6 +92,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDetail()
         {
             return this._detail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrantId. 
+        /// <para>
+        /// The ID of the policy grant.
+        /// </para>
+        /// </summary>
+        public string GrantId
+        {
+            get { return this._grantId; }
+            set { this._grantId = value; }
+        }
+
+        // Check to see if GrantId property is set
+        internal bool IsSetGrantId()
+        {
+            return this._grantId != null;
         }
 
         /// <summary>

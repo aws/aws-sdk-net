@@ -65,6 +65,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetCertificateId())
                 throw new AmazonIoTException("Request object does not have required field CertificateId set");
             request.AddPathResource("{certificateId}", StringUtils.FromString(publicRequest.CertificateId));
+            if (string.IsNullOrEmpty(publicRequest.NewStatus))
+                throw new AmazonIoTException("Request object does not have required field NewStatus set");
             
             if (publicRequest.IsSetNewStatus())
                 request.Parameters.Add("newStatus", StringUtils.FromString(publicRequest.NewStatus));

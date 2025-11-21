@@ -36,7 +36,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HttpRequestWithLabels operation
     /// </summary>  
-    public class HttpRequestWithLabelsResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class HttpRequestWithLabelsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         {
             HttpRequestWithLabelsResponse response = new HttpRequestWithLabelsResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
             }
             return new AmazonRestXmlProtocolException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, HttpRequestWithLabelsResponse response);
 
         private static HttpRequestWithLabelsResponseUnmarshaller _instance = new HttpRequestWithLabelsResponseUnmarshaller();        
 

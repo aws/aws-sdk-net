@@ -90,10 +90,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DebugLogging = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DefaultAuthScheme", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DefaultAuthScheme = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Endpoint", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EndpointNetworkType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EndpointNetworkType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("EngineFamily", targetDepth))
@@ -124,6 +136,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TargetConnectionNetworkType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetConnectionNetworkType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("UpdatedDate", targetDepth))

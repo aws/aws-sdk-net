@@ -25,6 +25,64 @@ namespace Amazon.CleanRoomsML
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessBudgetType.
+    /// </summary>
+    public class AccessBudgetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CALENDAR_DAY for AccessBudgetType
+        /// </summary>
+        public static readonly AccessBudgetType CALENDAR_DAY = new AccessBudgetType("CALENDAR_DAY");
+        /// <summary>
+        /// Constant CALENDAR_MONTH for AccessBudgetType
+        /// </summary>
+        public static readonly AccessBudgetType CALENDAR_MONTH = new AccessBudgetType("CALENDAR_MONTH");
+        /// <summary>
+        /// Constant CALENDAR_WEEK for AccessBudgetType
+        /// </summary>
+        public static readonly AccessBudgetType CALENDAR_WEEK = new AccessBudgetType("CALENDAR_WEEK");
+        /// <summary>
+        /// Constant LIFETIME for AccessBudgetType
+        /// </summary>
+        public static readonly AccessBudgetType LIFETIME = new AccessBudgetType("LIFETIME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessBudgetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessBudgetType FindValue(string value)
+        {
+            return FindValue<AccessBudgetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessBudgetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AudienceExportJobStatus.
     /// </summary>
     public class AudienceExportJobStatus : ConstantClass
@@ -273,6 +331,56 @@ namespace Amazon.CleanRoomsML
 
 
     /// <summary>
+    /// Constants used for properties of type AutoRefreshMode.
+    /// </summary>
+    public class AutoRefreshMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AutoRefreshMode
+        /// </summary>
+        public static readonly AutoRefreshMode DISABLED = new AutoRefreshMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AutoRefreshMode
+        /// </summary>
+        public static readonly AutoRefreshMode ENABLED = new AutoRefreshMode("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoRefreshMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoRefreshMode FindValue(string value)
+        {
+            return FindValue<AutoRefreshMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoRefreshMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ColumnType.
     /// </summary>
     public class ColumnType : ConstantClass
@@ -420,6 +528,60 @@ namespace Amazon.CleanRoomsML
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DatasetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EntityType.
+    /// </summary>
+    public class EntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_PERSONALLY_IDENTIFIABLE_INFORMATION for EntityType
+        /// </summary>
+        public static readonly EntityType ALL_PERSONALLY_IDENTIFIABLE_INFORMATION = new EntityType("ALL_PERSONALLY_IDENTIFIABLE_INFORMATION");
+        /// <summary>
+        /// Constant CUSTOM for EntityType
+        /// </summary>
+        public static readonly EntityType CUSTOM = new EntityType("CUSTOM");
+        /// <summary>
+        /// Constant NUMBERS for EntityType
+        /// </summary>
+        public static readonly EntityType NUMBERS = new EntityType("NUMBERS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntityType FindValue(string value)
+        {
+            return FindValue<EntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntityType(string value)
         {
             return FindValue(value);
         }
@@ -939,6 +1101,42 @@ namespace Amazon.CleanRoomsML
         /// </summary>
         public static readonly InstanceType MlC6iXlarge = new InstanceType("ml.c6i.xlarge");
         /// <summary>
+        /// Constant MlC7i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC7i12xlarge = new InstanceType("ml.c7i.12xlarge");
+        /// <summary>
+        /// Constant MlC7i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC7i16xlarge = new InstanceType("ml.c7i.16xlarge");
+        /// <summary>
+        /// Constant MlC7i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC7i24xlarge = new InstanceType("ml.c7i.24xlarge");
+        /// <summary>
+        /// Constant MlC7i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC7i2xlarge = new InstanceType("ml.c7i.2xlarge");
+        /// <summary>
+        /// Constant MlC7i48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC7i48xlarge = new InstanceType("ml.c7i.48xlarge");
+        /// <summary>
+        /// Constant MlC7i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC7i4xlarge = new InstanceType("ml.c7i.4xlarge");
+        /// <summary>
+        /// Constant MlC7i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC7i8xlarge = new InstanceType("ml.c7i.8xlarge");
+        /// <summary>
+        /// Constant MlC7iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC7iLarge = new InstanceType("ml.c7i.large");
+        /// <summary>
+        /// Constant MlC7iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlC7iXlarge = new InstanceType("ml.c7i.xlarge");
+        /// <summary>
         /// Constant MlG4dn12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlG4dn12xlarge = new InstanceType("ml.g4dn.12xlarge");
@@ -994,6 +1192,70 @@ namespace Amazon.CleanRoomsML
         /// Constant MlG5Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlG5Xlarge = new InstanceType("ml.g5.xlarge");
+        /// <summary>
+        /// Constant MlG612xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG612xlarge = new InstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG616xlarge = new InstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG624xlarge = new InstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG62xlarge = new InstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG648xlarge = new InstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG64xlarge = new InstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG68xlarge = new InstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6e12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e12xlarge = new InstanceType("ml.g6e.12xlarge");
+        /// <summary>
+        /// Constant MlG6e16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e16xlarge = new InstanceType("ml.g6e.16xlarge");
+        /// <summary>
+        /// Constant MlG6e24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e24xlarge = new InstanceType("ml.g6e.24xlarge");
+        /// <summary>
+        /// Constant MlG6e2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e2xlarge = new InstanceType("ml.g6e.2xlarge");
+        /// <summary>
+        /// Constant MlG6e48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e48xlarge = new InstanceType("ml.g6e.48xlarge");
+        /// <summary>
+        /// Constant MlG6e4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e4xlarge = new InstanceType("ml.g6e.4xlarge");
+        /// <summary>
+        /// Constant MlG6e8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6e8xlarge = new InstanceType("ml.g6e.8xlarge");
+        /// <summary>
+        /// Constant MlG6eXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6eXlarge = new InstanceType("ml.g6e.xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG6Xlarge = new InstanceType("ml.g6.xlarge");
         /// <summary>
         /// Constant MlM410xlarge for InstanceType
         /// </summary>
@@ -1075,6 +1337,42 @@ namespace Amazon.CleanRoomsML
         /// </summary>
         public static readonly InstanceType MlM6iXlarge = new InstanceType("ml.m6i.xlarge");
         /// <summary>
+        /// Constant MlM7i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM7i12xlarge = new InstanceType("ml.m7i.12xlarge");
+        /// <summary>
+        /// Constant MlM7i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM7i16xlarge = new InstanceType("ml.m7i.16xlarge");
+        /// <summary>
+        /// Constant MlM7i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM7i24xlarge = new InstanceType("ml.m7i.24xlarge");
+        /// <summary>
+        /// Constant MlM7i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM7i2xlarge = new InstanceType("ml.m7i.2xlarge");
+        /// <summary>
+        /// Constant MlM7i48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM7i48xlarge = new InstanceType("ml.m7i.48xlarge");
+        /// <summary>
+        /// Constant MlM7i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM7i4xlarge = new InstanceType("ml.m7i.4xlarge");
+        /// <summary>
+        /// Constant MlM7i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM7i8xlarge = new InstanceType("ml.m7i.8xlarge");
+        /// <summary>
+        /// Constant MlM7iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM7iLarge = new InstanceType("ml.m7i.large");
+        /// <summary>
+        /// Constant MlM7iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlM7iXlarge = new InstanceType("ml.m7i.xlarge");
+        /// <summary>
         /// Constant MlP216xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlP216xlarge = new InstanceType("ml.p2.16xlarge");
@@ -1114,6 +1412,10 @@ namespace Amazon.CleanRoomsML
         /// Constant MlP548xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlP548xlarge = new InstanceType("ml.p5.48xlarge");
+        /// <summary>
+        /// Constant MlP5en48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP5en48xlarge = new InstanceType("ml.p5en.48xlarge");
         /// <summary>
         /// Constant MlR512xlarge for InstanceType
         /// </summary>
@@ -1178,6 +1480,42 @@ namespace Amazon.CleanRoomsML
         /// Constant MlR5Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlR5Xlarge = new InstanceType("ml.r5.xlarge");
+        /// <summary>
+        /// Constant MlR7i12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR7i12xlarge = new InstanceType("ml.r7i.12xlarge");
+        /// <summary>
+        /// Constant MlR7i16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR7i16xlarge = new InstanceType("ml.r7i.16xlarge");
+        /// <summary>
+        /// Constant MlR7i24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR7i24xlarge = new InstanceType("ml.r7i.24xlarge");
+        /// <summary>
+        /// Constant MlR7i2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR7i2xlarge = new InstanceType("ml.r7i.2xlarge");
+        /// <summary>
+        /// Constant MlR7i48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR7i48xlarge = new InstanceType("ml.r7i.48xlarge");
+        /// <summary>
+        /// Constant MlR7i4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR7i4xlarge = new InstanceType("ml.r7i.4xlarge");
+        /// <summary>
+        /// Constant MlR7i8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR7i8xlarge = new InstanceType("ml.r7i.8xlarge");
+        /// <summary>
+        /// Constant MlR7iLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR7iLarge = new InstanceType("ml.r7i.large");
+        /// <summary>
+        /// Constant MlR7iXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlR7iXlarge = new InstanceType("ml.r7i.xlarge");
         /// <summary>
         /// Constant MlT32xlarge for InstanceType
         /// </summary>
@@ -1286,6 +1624,56 @@ namespace Amazon.CleanRoomsML
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogType.
+    /// </summary>
+    public class LogType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for LogType
+        /// </summary>
+        public static readonly LogType ALL = new LogType("ALL");
+        /// <summary>
+        /// Constant ERROR_SUMMARY for LogType
+        /// </summary>
+        public static readonly LogType ERROR_SUMMARY = new LogType("ERROR_SUMMARY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogType FindValue(string value)
+        {
+            return FindValue<LogType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogType(string value)
         {
             return FindValue(value);
         }

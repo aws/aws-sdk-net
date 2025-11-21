@@ -37,6 +37,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private ErrorDetails _error;
         private ExportSqlDetails _exportSqlDetails;
         private string _migrationProjectArn;
+        private Progress _progress;
         private string _requestIdentifier;
         private string _status;
 
@@ -86,6 +87,21 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetMigrationProjectArn()
         {
             return this._migrationProjectArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Progress.
+        /// </summary>
+        public Progress Progress
+        {
+            get { return this._progress; }
+            set { this._progress = value; }
+        }
+
+        // Check to see if Progress property is set
+        internal bool IsSetProgress()
+        {
+            return this._progress != null;
         }
 
         /// <summary>

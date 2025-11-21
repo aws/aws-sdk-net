@@ -45,6 +45,7 @@ namespace Amazon.FSx.Model
         private FileSystemLifecycle _lifecycle;
         private LustreFileSystemConfiguration _lustreConfiguration;
         private List<string> _networkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private NetworkType _networkType;
         private OntapFileSystemConfiguration _ontapConfiguration;
         private OpenZFSFileSystemConfiguration _openZFSConfiguration;
         private string _ownerId;
@@ -333,6 +334,24 @@ namespace Amazon.FSx.Model
         internal bool IsSetNetworkInterfaceIds()
         {
             return this._networkInterfaceIds != null && (this._networkInterfaceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the file system.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

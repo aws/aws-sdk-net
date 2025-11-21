@@ -37,10 +37,31 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ListCollaborationPrivacyBudgetsRequest : AmazonCleanRoomsRequest
     {
+        private string _accessBudgetResourceArn;
         private string _collaborationIdentifier;
         private int? _maxResults;
         private string _nextToken;
         private PrivacyBudgetType _privacyBudgetType;
+
+        /// <summary>
+        /// Gets and sets the property AccessBudgetResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Configured Table Association (ConfiguredTableAssociation)
+        /// used to filter privacy budgets.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public string AccessBudgetResourceArn
+        {
+            get { return this._accessBudgetResourceArn; }
+            set { this._accessBudgetResourceArn = value; }
+        }
+
+        // Check to see if AccessBudgetResourceArn property is set
+        internal bool IsSetAccessBudgetResourceArn()
+        {
+            return this._accessBudgetResourceArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CollaborationIdentifier. 

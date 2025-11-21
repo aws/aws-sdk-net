@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateEmbedUrlForAnonymousUser operation.
-    /// Generates an embed URL that you can use to embed an Amazon QuickSight dashboard or
+    /// Generates an embed URL that you can use to embed an Amazon Quick Suite dashboard or
     /// visual in your website, without having to register any reader users. Before you use
     /// this action, make sure that you have configured the dashboards and permissions.
     /// 
@@ -53,18 +53,19 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You are charged only when the URL is used or there is interaction with Amazon QuickSight.
+    /// You are charged only when the URL is used or there is interaction with Amazon Quick
+    /// Suite.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-    /// Analytics</a> in the <i>Amazon QuickSight User Guide</i>.
+    /// Analytics</a> in the <i>Amazon Quick Suite User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about the high-level steps for embedding and for an interactive
     /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-    /// QuickSight Developer Portal</a>.
+    /// Quick Suite Developer Portal</a>.
     /// </para>
     /// </summary>
     public partial class GenerateEmbedUrlForAnonymousUserRequest : AmazonQuickSightRequest
@@ -82,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The domains that you want to add to the allow list for access to the generated URL
         /// that is then embedded. This optional parameter overrides the static domains that are
-        /// configured in the Manage QuickSight menu in the Amazon QuickSight console. Instead,
+        /// configured in the Manage Quick Sight menu in the Amazon Quick Sight console. Instead,
         /// it allows only the domains that you include in this parameter. You can list up to
         /// three domains or subdomains in each API call.
         /// </para>
@@ -112,8 +113,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AuthorizedResourceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user
-        /// is authorized to access during the lifetime of the session.
+        /// The Amazon Resource Names (ARNs) for the Quick Sight resources that the user is authorized
+        /// to access during the lifetime of the session.
         /// </para>
         ///  
         /// <para>
@@ -190,8 +191,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you
-        /// are not using an Amazon QuickSight custom namespace, set this to <c>default</c>.
+        /// The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If
+        /// you are not using an Amazon Quick Suite custom namespace, set this to <c>default</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -238,7 +239,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// These are not the tags used for the Amazon Web Services resource tagging feature.
         /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-        /// Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
+        /// Row-Level Security (RLS) with Tags</a>in the <i>Amazon Quick Sight User Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

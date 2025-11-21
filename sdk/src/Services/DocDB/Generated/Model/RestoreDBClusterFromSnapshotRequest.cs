@@ -56,6 +56,7 @@ namespace Amazon.DocDB.Model
         private string _engine;
         private string _engineVersion;
         private string _kmsKeyId;
+        private string _networkType;
         private int? _port;
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _snapshotIdentifier;
@@ -311,6 +312,39 @@ namespace Amazon.DocDB.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// The network type of the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the cluster.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+        /// clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>IPV4</c> | <c>DUAL</c> 
+        /// </para>
+        /// </summary>
+        public string NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
         }
 
         /// <summary>

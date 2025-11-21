@@ -193,6 +193,16 @@ namespace Amazon.Runtime.CredentialManagement
         public AccountIdEndpointMode? AccountIdEndpointMode { get; set; }
 
         /// <summary>
+        /// List of preferred authentication schemes in priority order.
+        /// </summary>
+        public List<string> AuthSchemePreference { get; set; }
+
+        /// <summary>
+        /// List of AWS regions for SigV4a multi-region signing.
+        /// </summary>
+        public List<string> SigV4aSigningRegionSet { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties

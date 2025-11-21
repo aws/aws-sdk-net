@@ -68,6 +68,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Extraction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("selfManagedConfiguration", targetDepth))
+                {
+                    var unmarshaller = SelfManagedConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SelfManagedConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

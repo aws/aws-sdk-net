@@ -183,6 +183,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
+                if(publicRequest.IsSetEndpointIpAddressType())
+                {
+                    request.Parameters.Add("EndpointIpAddressType", StringUtils.FromString(publicRequest.EndpointIpAddressType));
+                }
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     if (publicRequest.SecurityGroupIds.Count == 0)
@@ -250,6 +254,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                              publicRequestlistValueIndex++;
                          }
                     }
+                }
+                if(publicRequest.IsSetTrafficIpAddressType())
+                {
+                    request.Parameters.Add("TrafficIpAddressType", StringUtils.FromString(publicRequest.TrafficIpAddressType));
                 }
                 if(publicRequest.IsSetTransportProtocol())
                 {

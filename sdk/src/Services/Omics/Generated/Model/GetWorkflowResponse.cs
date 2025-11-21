@@ -36,6 +36,7 @@ namespace Amazon.Omics.Model
     {
         private Accelerators _accelerators;
         private string _arn;
+        private ContainerRegistryMap _containerRegistryMap;
         private DateTime? _creationTime;
         private string _definition;
         private DefinitionRepositoryDetails _definitionRepositoryDetails;
@@ -93,6 +94,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerRegistryMap. 
+        /// <para>
+        /// The registry map that this workflow is using.
+        /// </para>
+        /// </summary>
+        public ContainerRegistryMap ContainerRegistryMap
+        {
+            get { return this._containerRegistryMap; }
+            set { this._containerRegistryMap = value; }
+        }
+
+        // Check to see if ContainerRegistryMap property is set
+        internal bool IsSetContainerRegistryMap()
+        {
+            return this._containerRegistryMap != null;
         }
 
         /// <summary>

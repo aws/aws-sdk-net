@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Another operation is currently in progress for this stack set. Only one operation
-    /// can be performed for a stack set at a given time.
+    /// Another operation is currently in progress for this StackSet. Only one operation can
+    /// be performed for a stack set at a given time.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

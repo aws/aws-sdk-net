@@ -31,15 +31,15 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStackSet operation.
-    /// Updates the stack set and associated stack instances in the specified accounts and
+    /// Updates the StackSet and associated stack instances in the specified accounts and
     /// Amazon Web Services Regions.
     /// 
     ///  
     /// <para>
-    /// Even if the stack set operation created by updating the stack set fails (completely
-    /// or partially, below or above a specified failure tolerance), the stack set is updated
-    /// with your changes. Subsequent <a>CreateStackInstances</a> calls on the specified stack
-    /// set use the updated stack set.
+    /// Even if the StackSet operation created by updating the StackSet fails (completely
+    /// or partially, below or above a specified failure tolerance), the StackSet is updated
+    /// with your changes. Subsequent <a>CreateStackInstances</a> calls on the specified StackSet
+    /// use the updated StackSet.
     /// </para>
     ///  <note> 
     /// <para>
@@ -89,20 +89,20 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// [Self-managed permissions] The accounts in which to update associated stack instances.
         /// If you specify accounts, you must also specify the Amazon Web Services Regions in
-        /// which to update stack set instances.
+        /// which to update StackSet instances.
         /// </para>
         ///  
         /// <para>
-        /// To update <i>all</i> the stack instances associated with this stack set, don't specify
+        /// To update <i>all</i> the stack instances associated with this StackSet, don't specify
         /// the <c>Accounts</c> or <c>Regions</c> properties.
         /// </para>
         ///  
         /// <para>
-        /// If the stack set update includes changes to the template (that is, if the <c>TemplateBody</c>
+        /// If the StackSet update includes changes to the template (that is, if the <c>TemplateBody</c>
         /// or <c>TemplateURL</c> properties are specified), or the <c>Parameters</c> property,
         /// CloudFormation marks all stack instances with a status of <c>OUTDATED</c> prior to
         /// updating the stack instances in the specified accounts and Amazon Web Services Regions.
-        /// If the stack set update does not include changes to the template or parameters, CloudFormation
+        /// If the StackSet update does not include changes to the template or parameters, CloudFormation
         /// updates the stack instances in the specified accounts and Amazon Web Services Regions,
         /// while leaving all other stack instances with their existing stack instance status.
         /// </para>
@@ -128,20 +128,20 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property AdministrationRoleARN. 
         /// <para>
         /// [Self-managed permissions] The Amazon Resource Name (ARN) of the IAM role to use to
-        /// update this stack set.
+        /// update this StackSet.
         /// </para>
         ///  
         /// <para>
         /// Specify an IAM role only if you are using customized administrator roles to control
-        /// which users or groups can manage specific stack sets within the same administrator
+        /// which users or groups can manage specific StackSets within the same administrator
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
         /// self-managed permissions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you specified a customized administrator role when you created the stack set, you
+        /// If you specified a customized administrator role when you created the StackSet, you
         /// must specify a customized administrator role, even if it is the same customized administrator
-        /// role used with this stack set previously.
+        /// role used with this StackSet previously.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -162,9 +162,9 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// [Service-managed permissions] Describes whether StackSets automatically deploys to
         /// Organizations accounts that are added to a target organization or organizational unit
-        /// (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Manage
-        /// automatic deployments for CloudFormation StackSets that use service-managed permissions</a>
-        /// in the <i>CloudFormation User Guide</i>.
+        /// (OU). For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-manage-auto-deployment.html">Enable
+        /// or disable automatic deployments for StackSets in Organizations</a> in the <i>CloudFormation
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -192,7 +192,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for StackSets with self-managed
         /// permissions.
         /// </para>
         ///  <ul> <li> 
@@ -227,7 +227,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Capabilities. 
         /// <para>
         /// In some cases, you must explicitly acknowledge that your stack template contains certain
-        /// capabilities in order for CloudFormation to update the stack set and its associated
+        /// capabilities in order for CloudFormation to update the StackSet and its associated
         /// stack instances.
         /// </para>
         ///  <ul> <li> 
@@ -309,20 +309,20 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Some templates reference macros. If your stack set template references one or more
-        /// macros, you must update the stack set directly from the processed template, without
-        /// first reviewing the resulting changes in a change set. To update the stack set directly,
+        /// Some templates reference macros. If your StackSet template references one or more
+        /// macros, you must update the StackSet directly from the processed template, without
+        /// first reviewing the resulting changes in a change set. To update the StackSet directly,
         /// you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform
         /// custom processing on CloudFormation templates with template macros</a>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Stack sets with service-managed permissions do not currently support the use of macros
+        /// StackSets with service-managed permissions do not currently support the use of macros
         /// in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a>
         /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
         /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
-        /// for a stack set with service-managed permissions, if you reference a macro in your
-        /// template the stack set operation will fail.
+        /// for a StackSet with service-managed permissions, if you reference a macro in your
+        /// template the StackSet operation will fail.
         /// </para>
         ///  </important> </li> </ul>
         /// <para />
@@ -351,15 +351,15 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// To update all the stack instances associated with this stack set, do not specify <c>DeploymentTargets</c>
+        /// To update all the stack instances associated with this StackSet, do not specify <c>DeploymentTargets</c>
         /// or <c>Regions</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the stack set update includes changes to the template (that is, if <c>TemplateBody</c>
+        /// If the StackSet update includes changes to the template (that is, if <c>TemplateBody</c>
         /// or <c>TemplateURL</c> is specified), or the <c>Parameters</c>, CloudFormation marks
         /// all stack instances with a status of <c>OUTDATED</c> prior to updating the stack instances
-        /// in the specified accounts and Amazon Web Services Regions. If the stack set update
+        /// in the specified accounts and Amazon Web Services Regions. If the StackSet update
         /// doesn't include changes to the template or parameters, CloudFormation updates the
         /// stack instances in the specified accounts and Regions, while leaving all other stack
         /// instances with their existing stack instance status.
@@ -401,19 +401,19 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// [Self-managed permissions] The name of the IAM execution role to use to update the
         /// stack set. If you do not specify an execution role, CloudFormation uses the <c>AWSCloudFormationStackSetExecutionRole</c>
-        /// role for the stack set operation.
+        /// role for the StackSet operation.
         /// </para>
         ///  
         /// <para>
         /// Specify an IAM role only if you are using customized execution roles to control which
-        /// stack resources users and groups can include in their stack sets.
+        /// stack resources users and groups can include in their StackSets.
         /// </para>
         ///  
         /// <para>
         /// If you specify a customized execution role, CloudFormation uses that role to update
         /// the stack. If you do not specify a customized execution role, CloudFormation performs
-        /// the update using the role previously associated with the stack set, so long as you
-        /// have permissions to perform operations on the stack set.
+        /// the update using the role previously associated with the StackSet, so long as you
+        /// have permissions to perform operations on the StackSet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -432,8 +432,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ManagedExecution. 
         /// <para>
-        /// Describes whether StackSets performs non-conflicting operations concurrently and queues
-        /// conflicting operations.
+        /// Describes whether CloudFormation performs non-conflicting operations concurrently
+        /// and queues conflicting operations.
         /// </para>
         /// </summary>
         public ManagedExecution ManagedExecution
@@ -451,14 +451,14 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The unique ID for this stack set operation.
+        /// The unique ID for this StackSet operation.
         /// </para>
         ///  
         /// <para>
         /// The operation ID also functions as an idempotency token, to ensure that CloudFormation
-        /// performs the stack set operation only once, even if you retry the request multiple
-        /// times. You might retry stack set operation requests to ensure that CloudFormation
-        /// successfully received them.
+        /// performs the StackSet operation only once, even if you retry the request multiple
+        /// times. You might retry StackSet operation requests to ensure that CloudFormation successfully
+        /// received them.
         /// </para>
         ///  
         /// <para>
@@ -466,7 +466,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Repeating this stack set operation with a new operation ID retries all stack instances
+        /// Repeating this StackSet operation with a new operation ID retries all stack instances
         /// whose status is <c>OUTDATED</c>.
         /// </para>
         /// </summary>
@@ -486,7 +486,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OperationPreferences. 
         /// <para>
-        /// Preferences for how CloudFormation performs this stack set operation.
+        /// Preferences for how CloudFormation performs this StackSet operation.
         /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
@@ -504,7 +504,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of input parameters for the stack set template.
+        /// A list of input parameters for the StackSet template.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -527,7 +527,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property PermissionModel. 
         /// <para>
-        /// Describes how the IAM roles required for stack set operations are created. You cannot
+        /// Describes how the IAM roles required for StackSet operations are created. You cannot
         /// modify <c>PermissionModel</c> if there are stack instances associated with your stack
         /// set.
         /// </para>
@@ -542,7 +542,7 @@ namespace Amazon.CloudFormation.Model
         /// With <c>service-managed</c> permissions, StackSets automatically creates the IAM roles
         /// required to deploy to accounts managed by Organizations. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
-        /// trusted access for stack sets with Organizations</a>.
+        /// trusted access for StackSets with Organizations</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -562,19 +562,19 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Regions. 
         /// <para>
         /// The Amazon Web Services Regions in which to update associated stack instances. If
-        /// you specify Regions, you must also specify accounts in which to update stack set instances.
+        /// you specify Regions, you must also specify accounts in which to update StackSet instances.
         /// </para>
         ///  
         /// <para>
-        /// To update <i>all</i> the stack instances associated with this stack set, do not specify
+        /// To update <i>all</i> the stack instances associated with this StackSet, do not specify
         /// the <c>Accounts</c> or <c>Regions</c> properties.
         /// </para>
         ///  
         /// <para>
-        /// If the stack set update includes changes to the template (that is, if the <c>TemplateBody</c>
+        /// If the StackSet update includes changes to the template (that is, if the <c>TemplateBody</c>
         /// or <c>TemplateURL</c> properties are specified), or the <c>Parameters</c> property,
         /// CloudFormation marks all stack instances with a status of <c>OUTDATED</c> prior to
-        /// updating the stack instances in the specified accounts and Regions. If the stack set
+        /// updating the stack instances in the specified accounts and Regions. If the StackSet
         /// update does not include changes to the template or parameters, CloudFormation updates
         /// the stack instances in the specified accounts and Regions, while leaving all other
         /// stack instances with their existing stack instance status.
@@ -600,7 +600,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackSetName. 
         /// <para>
-        /// The name or unique ID of the stack set that you want to update.
+        /// The name or unique ID of the StackSet that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -619,14 +619,14 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value pairs to associate with this stack set and the stacks created from it.
+        /// The key-value pairs to associate with this StackSet and the stacks created from it.
         /// CloudFormation also propagates these tags to supported resources that are created
         /// in the stacks. You can specify a maximum number of 50 tags.
         /// </para>
         ///  
         /// <para>
         /// If you specify tags for this parameter, those tags replace any list of tags that are
-        /// currently associated with this stack set. This means:
+        /// currently associated with this StackSet. This means:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -635,10 +635,10 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         /// If you specify <i>any</i> tags using this parameter, you must specify <i>all</i> the
-        /// tags that you want associated with this stack set, even tags you've specified before
-        /// (for example, when creating the stack set or during a previous update of the stack
-        /// set.). Any tags that you don't include in the updated list of tags are removed from
-        /// the stack set, and therefore from the stacks and resources as well.
+        /// tags that you want associated with this StackSet, even tags you've specified before
+        /// (for example, when creating the StackSet or during a previous update of the StackSet.).
+        /// Any tags that you don't include in the updated list of tags are removed from the StackSet,
+        /// and therefore from the stacks and resources as well.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -648,11 +648,11 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// If you specify new tags as part of an <c>UpdateStackSet</c> action, CloudFormation
         /// checks to see if you have the required IAM permission to tag resources. If you omit
-        /// tags that are currently associated with the stack set from the list of tags you specify,
-        /// CloudFormation assumes that you want to remove those tags from the stack set, and
-        /// checks to see if you have permission to untag resources. If you don't have the necessary
+        /// tags that are currently associated with the StackSet from the list of tags you specify,
+        /// CloudFormation assumes that you want to remove those tags from the StackSet, and checks
+        /// to see if you have permission to untag resources. If you don't have the necessary
         /// permission(s), the entire <c>UpdateStackSet</c> action fails with an <c>access denied</c>
-        /// error, and the stack set is not updated.
+        /// error, and the StackSet is not updated.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -728,7 +728,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property UsePreviousTemplate. 
         /// <para>
-        /// Use the existing template that's associated with the stack set that you're updating.
+        /// Use the existing template that's associated with the StackSet that you're updating.
         /// </para>
         ///  
         /// <para>

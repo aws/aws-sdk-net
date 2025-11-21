@@ -270,7 +270,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual BatchDeleteRecipeVersionResponse BatchDeleteRecipeVersion(BatchDeleteRecipeVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteRecipeVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteRecipeVersionResponseUnmarshaller.Instance;
 
@@ -352,7 +352,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/BatchDeleteRecipeVersion">REST API Reference for BatchDeleteRecipeVersion Operation</seealso>
         public virtual Task<BatchDeleteRecipeVersionResponse> BatchDeleteRecipeVersionAsync(BatchDeleteRecipeVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = BatchDeleteRecipeVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = BatchDeleteRecipeVersionResponseUnmarshaller.Instance;
 
@@ -364,7 +364,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -397,7 +397,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateDataset">REST API Reference for CreateDataset Operation</seealso>
         public virtual Task<CreateDatasetResponse> CreateDatasetAsync(CreateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateDatasetResponseUnmarshaller.Instance;
 
@@ -409,7 +409,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual CreateProfileJobResponse CreateProfileJob(CreateProfileJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileJobResponseUnmarshaller.Instance;
 
@@ -445,7 +445,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateProfileJob">REST API Reference for CreateProfileJob Operation</seealso>
         public virtual Task<CreateProfileJobResponse> CreateProfileJobAsync(CreateProfileJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProfileJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProfileJobResponseUnmarshaller.Instance;
 
@@ -457,7 +457,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -490,7 +490,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public virtual Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateProjectResponseUnmarshaller.Instance;
 
@@ -502,7 +502,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual CreateRecipeResponse CreateRecipe(CreateRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecipeResponseUnmarshaller.Instance;
 
@@ -532,7 +532,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipe">REST API Reference for CreateRecipe Operation</seealso>
         public virtual Task<CreateRecipeResponse> CreateRecipeAsync(CreateRecipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecipeResponseUnmarshaller.Instance;
 
@@ -544,7 +544,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual CreateRecipeJobResponse CreateRecipeJob(CreateRecipeJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecipeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecipeJobResponseUnmarshaller.Instance;
 
@@ -581,7 +581,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipeJob">REST API Reference for CreateRecipeJob Operation</seealso>
         public virtual Task<CreateRecipeJobResponse> CreateRecipeJobAsync(CreateRecipeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRecipeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRecipeJobResponseUnmarshaller.Instance;
 
@@ -593,7 +593,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual CreateRulesetResponse CreateRuleset(CreateRulesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRulesetResponseUnmarshaller.Instance;
 
@@ -624,7 +624,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRuleset">REST API Reference for CreateRuleset Operation</seealso>
         public virtual Task<CreateRulesetResponse> CreateRulesetAsync(CreateRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateRulesetResponseUnmarshaller.Instance;
 
@@ -636,7 +636,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual CreateScheduleResponse CreateSchedule(CreateScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScheduleResponseUnmarshaller.Instance;
 
@@ -667,7 +667,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateSchedule">REST API Reference for CreateSchedule Operation</seealso>
         public virtual Task<CreateScheduleResponse> CreateScheduleAsync(CreateScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = CreateScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = CreateScheduleResponseUnmarshaller.Instance;
 
@@ -679,7 +679,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -709,7 +709,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteDataset">REST API Reference for DeleteDataset Operation</seealso>
         public virtual Task<DeleteDatasetResponse> DeleteDatasetAsync(DeleteDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteDatasetResponseUnmarshaller.Instance;
 
@@ -721,7 +721,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DeleteJobResponse DeleteJob(DeleteJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
 
@@ -751,7 +751,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteJob">REST API Reference for DeleteJob Operation</seealso>
         public virtual Task<DeleteJobResponse> DeleteJobAsync(DeleteJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteJobResponseUnmarshaller.Instance;
 
@@ -763,7 +763,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -793,7 +793,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public virtual Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteProjectResponseUnmarshaller.Instance;
 
@@ -805,7 +805,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DeleteRecipeVersionResponse DeleteRecipeVersion(DeleteRecipeVersionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecipeVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecipeVersionResponseUnmarshaller.Instance;
 
@@ -835,7 +835,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRecipeVersion">REST API Reference for DeleteRecipeVersion Operation</seealso>
         public virtual Task<DeleteRecipeVersionResponse> DeleteRecipeVersionAsync(DeleteRecipeVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRecipeVersionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRecipeVersionResponseUnmarshaller.Instance;
 
@@ -847,7 +847,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DeleteRulesetResponse DeleteRuleset(DeleteRulesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRulesetResponseUnmarshaller.Instance;
 
@@ -877,7 +877,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteRuleset">REST API Reference for DeleteRuleset Operation</seealso>
         public virtual Task<DeleteRulesetResponse> DeleteRulesetAsync(DeleteRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteRulesetResponseUnmarshaller.Instance;
 
@@ -889,7 +889,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DeleteScheduleResponse DeleteSchedule(DeleteScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduleResponseUnmarshaller.Instance;
 
@@ -916,7 +916,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DeleteSchedule">REST API Reference for DeleteSchedule Operation</seealso>
         public virtual Task<DeleteScheduleResponse> DeleteScheduleAsync(DeleteScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DeleteScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DeleteScheduleResponseUnmarshaller.Instance;
 
@@ -928,7 +928,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DescribeDatasetResponse DescribeDataset(DescribeDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -955,7 +955,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeDataset">REST API Reference for DescribeDataset Operation</seealso>
         public virtual Task<DescribeDatasetResponse> DescribeDatasetAsync(DescribeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeDatasetResponseUnmarshaller.Instance;
 
@@ -967,7 +967,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
@@ -994,7 +994,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public virtual Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobResponseUnmarshaller.Instance;
 
@@ -1006,7 +1006,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DescribeJobRunResponse DescribeJobRun(DescribeJobRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobRunResponseUnmarshaller.Instance;
 
@@ -1033,7 +1033,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeJobRun">REST API Reference for DescribeJobRun Operation</seealso>
         public virtual Task<DescribeJobRunResponse> DescribeJobRunAsync(DescribeJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeJobRunResponseUnmarshaller.Instance;
 
@@ -1045,7 +1045,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DescribeProjectResponse DescribeProject(DescribeProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
@@ -1072,7 +1072,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeProject">REST API Reference for DescribeProject Operation</seealso>
         public virtual Task<DescribeProjectResponse> DescribeProjectAsync(DescribeProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeProjectResponseUnmarshaller.Instance;
 
@@ -1084,7 +1084,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DescribeRecipeResponse DescribeRecipe(DescribeRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecipeResponseUnmarshaller.Instance;
 
@@ -1112,7 +1112,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRecipe">REST API Reference for DescribeRecipe Operation</seealso>
         public virtual Task<DescribeRecipeResponse> DescribeRecipeAsync(DescribeRecipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRecipeResponseUnmarshaller.Instance;
 
@@ -1124,7 +1124,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DescribeRulesetResponse DescribeRuleset(DescribeRulesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRulesetResponseUnmarshaller.Instance;
 
@@ -1151,7 +1151,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeRuleset">REST API Reference for DescribeRuleset Operation</seealso>
         public virtual Task<DescribeRulesetResponse> DescribeRulesetAsync(DescribeRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeRulesetResponseUnmarshaller.Instance;
 
@@ -1163,7 +1163,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual DescribeScheduleResponse DescribeSchedule(DescribeScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
 
@@ -1190,7 +1190,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DescribeSchedule">REST API Reference for DescribeSchedule Operation</seealso>
         public virtual Task<DescribeScheduleResponse> DescribeScheduleAsync(DescribeScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = DescribeScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = DescribeScheduleResponseUnmarshaller.Instance;
 
@@ -1202,7 +1202,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual ListDatasetsResponse ListDatasets(ListDatasetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -1226,7 +1226,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListDatasets">REST API Reference for ListDatasets Operation</seealso>
         public virtual Task<ListDatasetsResponse> ListDatasetsAsync(ListDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListDatasetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListDatasetsResponseUnmarshaller.Instance;
 
@@ -1238,7 +1238,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual ListJobRunsResponse ListJobRuns(ListJobRunsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobRunsResponseUnmarshaller.Instance;
 
@@ -1265,7 +1265,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListJobRuns">REST API Reference for ListJobRuns Operation</seealso>
         public virtual Task<ListJobRunsResponse> ListJobRunsAsync(ListJobRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobRunsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobRunsResponseUnmarshaller.Instance;
 
@@ -1277,7 +1277,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -1301,7 +1301,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public virtual Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListJobsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
 
@@ -1313,7 +1313,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -1337,7 +1337,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public virtual Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListProjectsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
@@ -1349,7 +1349,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual ListRecipesResponse ListRecipes(ListRecipesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecipesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecipesResponseUnmarshaller.Instance;
 
@@ -1373,7 +1373,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRecipes">REST API Reference for ListRecipes Operation</seealso>
         public virtual Task<ListRecipesResponse> ListRecipesAsync(ListRecipesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecipesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecipesResponseUnmarshaller.Instance;
 
@@ -1385,7 +1385,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual ListRecipeVersionsResponse ListRecipeVersions(ListRecipeVersionsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecipeVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecipeVersionsResponseUnmarshaller.Instance;
 
@@ -1409,7 +1409,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRecipeVersions">REST API Reference for ListRecipeVersions Operation</seealso>
         public virtual Task<ListRecipeVersionsResponse> ListRecipeVersionsAsync(ListRecipeVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRecipeVersionsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRecipeVersionsResponseUnmarshaller.Instance;
 
@@ -1421,7 +1421,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual ListRulesetsResponse ListRulesets(ListRulesetsRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesetsResponseUnmarshaller.Instance;
 
@@ -1449,7 +1449,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListRulesets">REST API Reference for ListRulesets Operation</seealso>
         public virtual Task<ListRulesetsResponse> ListRulesetsAsync(ListRulesetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListRulesetsRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListRulesetsResponseUnmarshaller.Instance;
 
@@ -1461,7 +1461,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual ListSchedulesResponse ListSchedules(ListSchedulesRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchedulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchedulesResponseUnmarshaller.Instance;
 
@@ -1485,7 +1485,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListSchedules">REST API Reference for ListSchedules Operation</seealso>
         public virtual Task<ListSchedulesResponse> ListSchedulesAsync(ListSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListSchedulesRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListSchedulesResponseUnmarshaller.Instance;
 
@@ -1497,7 +1497,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1527,7 +1527,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
@@ -1539,7 +1539,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual PublishRecipeResponse PublishRecipe(PublishRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishRecipeResponseUnmarshaller.Instance;
 
@@ -1569,7 +1569,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/PublishRecipe">REST API Reference for PublishRecipe Operation</seealso>
         public virtual Task<PublishRecipeResponse> PublishRecipeAsync(PublishRecipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = PublishRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = PublishRecipeResponseUnmarshaller.Instance;
 
@@ -1581,7 +1581,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual SendProjectSessionActionResponse SendProjectSessionAction(SendProjectSessionActionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendProjectSessionActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendProjectSessionActionResponseUnmarshaller.Instance;
 
@@ -1611,7 +1611,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/SendProjectSessionAction">REST API Reference for SendProjectSessionAction Operation</seealso>
         public virtual Task<SendProjectSessionActionResponse> SendProjectSessionActionAsync(SendProjectSessionActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = SendProjectSessionActionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = SendProjectSessionActionResponseUnmarshaller.Instance;
 
@@ -1623,7 +1623,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual StartJobRunResponse StartJobRun(StartJobRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartJobRunResponseUnmarshaller.Instance;
 
@@ -1656,7 +1656,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StartJobRun">REST API Reference for StartJobRun Operation</seealso>
         public virtual Task<StartJobRunResponse> StartJobRunAsync(StartJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartJobRunResponseUnmarshaller.Instance;
 
@@ -1668,7 +1668,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual StartProjectSessionResponse StartProjectSession(StartProjectSessionRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartProjectSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartProjectSessionResponseUnmarshaller.Instance;
 
@@ -1701,7 +1701,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StartProjectSession">REST API Reference for StartProjectSession Operation</seealso>
         public virtual Task<StartProjectSessionResponse> StartProjectSessionAsync(StartProjectSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StartProjectSessionRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StartProjectSessionResponseUnmarshaller.Instance;
 
@@ -1713,7 +1713,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual StopJobRunResponse StopJobRun(StopJobRunRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopJobRunResponseUnmarshaller.Instance;
 
@@ -1740,7 +1740,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/StopJobRun">REST API Reference for StopJobRun Operation</seealso>
         public virtual Task<StopJobRunResponse> StopJobRunAsync(StopJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = StopJobRunRequestMarshaller.Instance;
             options.ResponseUnmarshaller = StopJobRunResponseUnmarshaller.Instance;
 
@@ -1752,7 +1752,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1783,7 +1783,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
 
@@ -1795,7 +1795,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1825,7 +1825,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
@@ -1837,7 +1837,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual UpdateDatasetResponse UpdateDataset(UpdateDatasetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
@@ -1867,7 +1867,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateDataset">REST API Reference for UpdateDataset Operation</seealso>
         public virtual Task<UpdateDatasetResponse> UpdateDatasetAsync(UpdateDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateDatasetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateDatasetResponseUnmarshaller.Instance;
 
@@ -1879,7 +1879,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual UpdateProfileJobResponse UpdateProfileJob(UpdateProfileJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileJobResponseUnmarshaller.Instance;
 
@@ -1909,7 +1909,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateProfileJob">REST API Reference for UpdateProfileJob Operation</seealso>
         public virtual Task<UpdateProfileJobResponse> UpdateProfileJobAsync(UpdateProfileJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProfileJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProfileJobResponseUnmarshaller.Instance;
 
@@ -1921,7 +1921,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -1948,7 +1948,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public virtual Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateProjectRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
@@ -1960,7 +1960,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual UpdateRecipeResponse UpdateRecipe(UpdateRecipeRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecipeResponseUnmarshaller.Instance;
 
@@ -1987,7 +1987,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRecipe">REST API Reference for UpdateRecipe Operation</seealso>
         public virtual Task<UpdateRecipeResponse> UpdateRecipeAsync(UpdateRecipeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecipeRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecipeResponseUnmarshaller.Instance;
 
@@ -1999,7 +1999,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual UpdateRecipeJobResponse UpdateRecipeJob(UpdateRecipeJobRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecipeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecipeJobResponseUnmarshaller.Instance;
 
@@ -2029,7 +2029,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRecipeJob">REST API Reference for UpdateRecipeJob Operation</seealso>
         public virtual Task<UpdateRecipeJobResponse> UpdateRecipeJobAsync(UpdateRecipeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRecipeJobRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRecipeJobResponseUnmarshaller.Instance;
 
@@ -2041,7 +2041,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual UpdateRulesetResponse UpdateRuleset(UpdateRulesetRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRulesetResponseUnmarshaller.Instance;
 
@@ -2068,7 +2068,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateRuleset">REST API Reference for UpdateRuleset Operation</seealso>
         public virtual Task<UpdateRulesetResponse> UpdateRulesetAsync(UpdateRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateRulesetRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateRulesetResponseUnmarshaller.Instance;
 
@@ -2080,7 +2080,7 @@ namespace Amazon.GlueDataBrew
 
         internal virtual UpdateScheduleResponse UpdateSchedule(UpdateScheduleRequest request)
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScheduleResponseUnmarshaller.Instance;
 
@@ -2110,7 +2110,7 @@ namespace Amazon.GlueDataBrew
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/UpdateSchedule">REST API Reference for UpdateSchedule Operation</seealso>
         public virtual Task<UpdateScheduleResponse> UpdateScheduleAsync(UpdateScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
-            var options = new InvokeOptions();
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
             options.RequestMarshaller = UpdateScheduleRequestMarshaller.Instance;
             options.ResponseUnmarshaller = UpdateScheduleResponseUnmarshaller.Instance;
 

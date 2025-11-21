@@ -39,7 +39,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(PutBucketTaggingRequest putBucketTaggingRequest)
         {
-            IRequest request = new DefaultRequest(putBucketTaggingRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(putBucketTaggingRequest, "Amazon.S3");
 
             request.HttpMethod = "PUT";
 

@@ -142,52 +142,75 @@ namespace Amazon.Runtime.Internal
                     foreach (PropertyBag schema in authSchemes)
                     {
                         var schemaName = (string)schema["name"];
-                        if (SupportedAuthSchemas.Contains(schemaName))
+                        if (!SupportedAuthSchemas.Contains(schemaName))
                         {
-                            switch (schemaName)
-                            {
-                                case "sigv4-s3express":
-                                case "sigv4":
-                                    {
-                                        request.SignatureVersion = SignatureVersion.SigV4;
-
-                                        var signingRegion = (string)schema["signingRegion"];
-                                        if (!string.IsNullOrEmpty(signingRegion))
-                                        {
-                                            request.AuthenticationRegion = signingRegion;
-                                        }
-
-                                        ApplyCommonSchema(request, schema);
-                                        break;
-                                    }
-                                case "sigv4a":
-                                    {
-                                        // If there are multiple authentication schemes but the CRT dependency is not available,
-                                        // we will proceed to check the next value in authSchemes.
-                                        if (hasMultipleSchemes)
-                                        {
-                                            if (!IsCrtDependencyAvailable())
-                                            {
-                                                continue;
-                                            }
-                                        }
-
-                                        request.SignatureVersion = SignatureVersion.SigV4a;
-
-                                        var signingRegions = ((List<object>)schema["signingRegionSet"]).OfType<string>().ToArray();
-                                        var authenticationRegion = string.Join(",", signingRegions);
-                                        if (!string.IsNullOrEmpty(authenticationRegion))
-                                        {
-                                            request.AuthenticationRegion = authenticationRegion;
-                                        }
-
-                                        ApplyCommonSchema(request, schema);
-                                        break;
-                                    }
-                            }
-                            schemaFound = true;
-                            break;
+                            continue;
                         }
+
+                        // This check is to protect against the (unlikely) scenario where:
+                        // - The endpoint rules support both SigV4a and SigV4 (in that order)
+                        // - Customer has explicitly requested SigV4 to be used (via the auth scheme preference config option)
+                        // - SigV4a signer can be instantiated
+                        // In the previous logic, this method would always pick SigV4a (as it showed up first in the endpoint rules).
+                        if (request.ChosenAuthScheme != null && request.ChosenAuthScheme.ShortName != schemaName)
+                        {
+                            // We also need to check it's not S3 Express because its name is specific to endpoint rules,
+                            // it'll never be the chosen auth scheme in the request object.
+                            // All the S3 Express rules only contain that single auth scheme.
+                            if (!schemaName.EndsWith("-s3express"))
+                            {
+                                continue;
+                            }
+                        }
+
+                        switch (schemaName)
+                        {
+                            case "sigv4-s3express":
+                            case "sigv4":
+                            {
+                                request.SignatureVersion = SignatureVersion.SigV4;
+
+                                var signingRegion = (string)schema["signingRegion"];
+                                if (!string.IsNullOrEmpty(signingRegion))
+                                {
+                                    request.AuthenticationRegion = signingRegion;
+                                }
+
+                                ApplyCommonSchema(request, schema);
+                                break;
+                            }
+                            case "sigv4a":
+                            {
+                                // If there are multiple authentication schemes but the CRT dependency is not available,
+                                // we will proceed to check the next value in authSchemes.
+                                if (hasMultipleSchemes)
+                                {
+                                    if (!IsCrtDependencyAvailable())
+                                    {
+                                        continue;
+                                    }
+                                }
+
+                                request.SignatureVersion = SignatureVersion.SigV4a;
+
+                                // The authentication region could be overriden in the auth resolver by the set in the 
+                                // client config (and that must take precedence over the endpoint rules).
+                                if (string.IsNullOrEmpty(request.AuthenticationRegion))
+                                {
+                                    var signingRegions = ((List<object>)schema["signingRegionSet"]).OfType<string>().ToArray();
+                                    var authenticationRegion = string.Join(",", signingRegions);
+                                    if (!string.IsNullOrEmpty(authenticationRegion))
+                                    {
+                                        request.AuthenticationRegion = authenticationRegion;
+                                    }
+                                }
+
+                                ApplyCommonSchema(request, schema);
+                                break;
+                            }
+                        }
+                        schemaFound = true;
+                        break;
                     }
                     if (!schemaFound && authSchemes.Count > 0)
                     {

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateKeySigningKey operation
     /// </summary>  
-    public class CreateKeySigningKeyResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class CreateKeySigningKeyResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -50,6 +50,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("Location"))
                 response.Location = context.ResponseData.GetHeaderValue("Location");
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -85,7 +86,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -151,6 +151,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, CreateKeySigningKeyResponse response);
 
         private static CreateKeySigningKeyResponseUnmarshaller _instance = new CreateKeySigningKeyResponseUnmarshaller();        
 

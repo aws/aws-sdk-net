@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
         private List<UserAuthConfig> _auth = AWSConfigs.InitializeCollections ? new List<UserAuthConfig>() : null;
         private string _dbProxyName;
         private bool? _debugLogging;
+        private DefaultAuthScheme _defaultAuthScheme;
         private int? _idleClientTimeout;
         private string _newDBProxyName;
         private bool? _requireTLS;
@@ -55,6 +56,7 @@ namespace Amazon.RDS.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Min=0, Max=200)]
         public List<UserAuthConfig> Auth
         {
             get { return this._auth; }
@@ -73,7 +75,7 @@ namespace Amazon.RDS.Model
         /// The identifier for the <c>DBProxy</c> to modify.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string DBProxyName
         {
             get { return this._dbProxyName; }
@@ -89,12 +91,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DebugLogging. 
         /// <para>
-        /// Whether the proxy includes detailed information about SQL statements in its logs.
-        /// This information helps you to debug issues involving SQL behavior or the performance
-        /// and scalability of the proxy connections. The debug information includes the text
-        /// of SQL statements that you submit through the proxy. Thus, only enable this setting
-        /// when needed for debugging, and only when you have security measures in place to safeguard
-        /// any sensitive information that appears in the logs.
+        /// Specifies whether the proxy logs detailed connection and query information. When you
+        /// enable <c>DebugLogging</c>, the proxy captures connection details and connection pool
+        /// behavior from your queries. Debug logging increases CloudWatch costs and can impact
+        /// proxy performance. Enable this option only when you need to troubleshoot connection
+        /// or performance issues.
         /// </para>
         /// </summary>
         public bool? DebugLogging
@@ -107,6 +108,27 @@ namespace Amazon.RDS.Model
         internal bool IsSetDebugLogging()
         {
             return this._debugLogging.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultAuthScheme. 
+        /// <para>
+        /// The default authentication scheme that the proxy uses for client connections to the
+        /// proxy and connections from the proxy to the underlying database. Valid values are
+        /// <c>NONE</c> and <c>IAM_AUTH</c>. When set to <c>IAM_AUTH</c>, the proxy uses end-to-end
+        /// IAM authentication to connect to the database.
+        /// </para>
+        /// </summary>
+        public DefaultAuthScheme DefaultAuthScheme
+        {
+            get { return this._defaultAuthScheme; }
+            set { this._defaultAuthScheme = value; }
+        }
+
+        // Check to see if DefaultAuthScheme property is set
+        internal bool IsSetDefaultAuthScheme()
+        {
+            return this._defaultAuthScheme != null;
         }
 
         /// <summary>
@@ -137,6 +159,7 @@ namespace Amazon.RDS.Model
         /// or contain two consecutive hyphens.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string NewDBProxyName
         {
             get { return this._newDBProxyName; }
@@ -176,6 +199,7 @@ namespace Amazon.RDS.Model
         /// in Amazon Web Services Secrets Manager.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

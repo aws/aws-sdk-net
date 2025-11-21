@@ -37,6 +37,7 @@ namespace Amazon.EntityResolution.Model
         private DateTime? _endTime;
         private ErrorDetails _errorDetails;
         private string _jobId;
+        private JobType _jobType;
         private IdMappingJobMetrics _metrics;
         private List<IdMappingJobOutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingJobOutputSource>() : null;
         private DateTime? _startTime;
@@ -92,6 +93,41 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobType. 
+        /// <para>
+        ///  The job type of the ID mapping job.
+        /// </para>
+        ///  
+        /// <para>
+        /// A value of <c>INCREMENTAL</c> indicates that only new or changed data was processed
+        /// since the last job run. This is the default job type if the workflow was created with
+        /// an <c>incrementalRunConfig</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A value of <c>BATCH</c> indicates that all data was processed from the input source,
+        /// regardless of previous job runs. This is the default job type if the workflow wasn't
+        /// created with an <c>incrementalRunConfig</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A value of <c>DELETE_ONLY</c> indicates that only deletion requests from <c>BatchDeleteUniqueIds</c>
+        /// were processed.
+        /// </para>
+        /// </summary>
+        public JobType JobType
+        {
+            get { return this._jobType; }
+            set { this._jobType = value; }
+        }
+
+        // Check to see if JobType property is set
+        internal bool IsSetJobType()
+        {
+            return this._jobType != null;
         }
 
         /// <summary>

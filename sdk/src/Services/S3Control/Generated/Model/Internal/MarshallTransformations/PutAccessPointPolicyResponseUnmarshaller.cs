@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PutAccessPointPolicy operation
     /// </summary>  
-    public class PutAccessPointPolicyResponseUnmarshaller : XmlResponseUnmarshaller
+    public partial class PutAccessPointPolicyResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         {
             PutAccessPointPolicyResponse response = new PutAccessPointPolicyResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -72,6 +73,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }
             return new AmazonS3ControlException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, PutAccessPointPolicyResponse response);
 
         private static PutAccessPointPolicyResponseUnmarshaller _instance = new PutAccessPointPolicyResponseUnmarshaller();        
 

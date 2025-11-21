@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AllowedMethods Object
     /// </summary>  
-    public class AllowedMethodsUnmarshaller : IXmlUnmarshaller<AllowedMethods, XmlUnmarshallerContext>
+    public partial class AllowedMethodsUnmarshaller : IXmlUnmarshaller<AllowedMethods, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -78,6 +78,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Quantity = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -86,6 +88,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, AllowedMethods unmarshalledObject, int targetDepth);
+
         private static AllowedMethodsUnmarshaller _instance = new AllowedMethodsUnmarshaller();        
 
         /// <summary>

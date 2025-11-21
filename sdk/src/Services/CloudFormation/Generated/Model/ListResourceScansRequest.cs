@@ -43,9 +43,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  If the number of available results exceeds this maximum, the response includes a
-        /// <c>NextToken</c> value that you can use for the <c>NextToken</c> parameter to get
-        /// the next set of results. The default value is 10. The maximum value is 100.
+        /// If the number of available results exceeds this maximum, the response includes a <c>NextToken</c>
+        /// value that you can use for the <c>NextToken</c> parameter to get the next set of results.
+        /// The default value is 10. The maximum value is 100.
         /// </para>
         /// </summary>
         public int? MaxResults
@@ -63,7 +63,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A string that identifies the next page of resource scan results.
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -34,6 +34,26 @@ namespace Amazon.S3Vectors.Model
     /// </summary>
     public partial class CreateVectorBucketResponse : AmazonWebServiceResponse
     {
+        private string _vectorBucketArn;
+
+        /// <summary>
+        /// Gets and sets the property VectorBucketArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the newly created vector bucket.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string VectorBucketArn
+        {
+            get { return this._vectorBucketArn; }
+            set { this._vectorBucketArn = value; }
+        }
+
+        // Check to see if VectorBucketArn property is set
+        internal bool IsSetVectorBucketArn()
+        {
+            return this._vectorBucketArn != null;
+        }
 
     }
 }

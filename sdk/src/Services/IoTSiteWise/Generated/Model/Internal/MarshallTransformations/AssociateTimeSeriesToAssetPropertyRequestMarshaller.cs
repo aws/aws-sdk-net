@@ -63,12 +63,18 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.Alias))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field Alias set");
             
             if (publicRequest.IsSetAlias())
                 request.Parameters.Add("alias", StringUtils.FromString(publicRequest.Alias));
+            if (string.IsNullOrEmpty(publicRequest.AssetId))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field AssetId set");
             
             if (publicRequest.IsSetAssetId())
                 request.Parameters.Add("assetId", StringUtils.FromString(publicRequest.AssetId));
+            if (string.IsNullOrEmpty(publicRequest.PropertyId))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field PropertyId set");
             
             if (publicRequest.IsSetPropertyId())
                 request.Parameters.Add("propertyId", StringUtils.FromString(publicRequest.PropertyId));

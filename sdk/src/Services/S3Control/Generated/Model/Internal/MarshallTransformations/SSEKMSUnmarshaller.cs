@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SSEKMS Object
     /// </summary>  
-    public class SSEKMSUnmarshaller : IXmlUnmarshaller<SSEKMS, XmlUnmarshallerContext>
+    public partial class SSEKMSUnmarshaller : IXmlUnmarshaller<SSEKMS, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +62,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.KeyId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -70,6 +72,9 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, SSEKMS unmarshalledObject, int targetDepth);
+
         private static SSEKMSUnmarshaller _instance = new SSEKMSUnmarshaller();        
 
         /// <summary>

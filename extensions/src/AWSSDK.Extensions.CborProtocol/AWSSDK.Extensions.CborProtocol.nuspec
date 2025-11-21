@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>AWSSDK.Extensions.CborProtocol</id>
+    <title>AWSSDK - Extensions for Cbor protocol support</title>
+    <version>4.0.0.15</version>
+    <authors>Amazon Web Services</authors>
+    <description>This package contains shared serialization and deserialization logic for services that use Cbor protocol in the AWS SDK for .NET.</description>
+    <language>en-US</language>
+    <license type="expression">Apache-2.0</license>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <tags>AWS Amazon aws-sdk-v4</tags>
+    <icon>images\AWSLogo.png</icon>
+    <dependencies>
+      <group targetFramework="net472">
+        <dependency id="AWSSDK.Core" version="4.0.3.2" />
+        <dependency id="System.Formats.Cbor" version="9.0.5" />
+      </group>
+      <group targetFramework="netstandard2.0">
+        <dependency id="AWSSDK.Core" version="4.0.3.2" />
+        <dependency id="System.Formats.Cbor" version="9.0.5" />
+      </group>
+      <group targetFramework="netcoreapp3.1">
+        <dependency id="AWSSDK.Core" version="4.0.3.2" />
+        <dependency id="System.Formats.Cbor" version="9.0.5" />
+      </group>
+      <group targetFramework="net8.0">
+        <dependency id="AWSSDK.Core" version="4.0.3.2" />
+        <dependency id="System.Formats.Cbor" version="9.0.5" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\..\sdk\nuget-content\AWSLogo.png" target="images\" />
+    <file src=".\bin\Release\net472\AWSSDK.Extensions.CborProtocol.dll" target="lib\net472" />
+    <file src=".\bin\Release\net472\AWSSDK.Extensions.CborProtocol.pdb" target="lib\net472" />
+    <file src=".\bin\Release\net472\AWSSDK.Extensions.CborProtocol.xml" target="lib\net472" />
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CborProtocol.dll" target="lib\netstandard2.0" />
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CborProtocol.pdb" target="lib\netstandard2.0" />
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.CborProtocol.xml" target="lib\netstandard2.0" />
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CborProtocol.dll" target="lib\netcoreapp3.1" />
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CborProtocol.pdb" target="lib\netcoreapp3.1" />
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.CborProtocol.xml" target="lib\netcoreapp3.1" />
+    <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CborProtocol.dll" target="lib\net8.0" />
+    <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CborProtocol.pdb" target="lib\net8.0" />
+    <file src=".\bin\Release\net8.0\AWSSDK.Extensions.CborProtocol.xml" target="lib\net8.0" />
+  </files>
+</package>

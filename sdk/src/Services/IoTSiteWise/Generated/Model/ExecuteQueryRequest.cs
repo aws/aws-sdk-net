@@ -76,7 +76,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Default is 250
+        /// Default is 20000
         /// </para>
         ///  </li> </ul>
         /// </summary>

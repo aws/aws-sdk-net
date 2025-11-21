@@ -98,6 +98,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DnsIpAddrs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DnsIpv6Addrs", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DnsIpv6Addrs = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Edition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -120,6 +126,12 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("NetworkType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OsVersion", targetDepth))

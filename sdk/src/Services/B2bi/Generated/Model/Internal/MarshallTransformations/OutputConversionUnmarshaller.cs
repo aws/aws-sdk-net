@@ -56,6 +56,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("advancedOptions", targetDepth))
+                {
+                    var unmarshaller = AdvancedOptionsUnmarshaller.Instance;
+                    unmarshalledObject.AdvancedOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("formatOptions", targetDepth))
                 {
                     var unmarshaller = FormatOptionsUnmarshaller.Instance;

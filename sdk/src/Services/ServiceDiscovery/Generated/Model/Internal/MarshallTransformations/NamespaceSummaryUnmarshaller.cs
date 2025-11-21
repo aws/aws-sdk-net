@@ -92,6 +92,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     unmarshalledObject.Properties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ResourceOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceOwner = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ServiceCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

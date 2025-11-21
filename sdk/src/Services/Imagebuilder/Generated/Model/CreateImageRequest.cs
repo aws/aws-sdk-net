@@ -46,6 +46,7 @@ namespace Amazon.Imagebuilder.Model
         private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private string _infrastructureConfigurationArn;
+        private ImageLoggingConfiguration _loggingConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<WorkflowConfiguration> _workflows = AWSConfigs.InitializeCollections ? new List<WorkflowConfiguration>() : null;
 
@@ -221,6 +222,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetInfrastructureConfigurationArn()
         {
             return this._infrastructureConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// Define logging configuration for the image build process.
+        /// </para>
+        /// </summary>
+        public ImageLoggingConfiguration LoggingConfiguration
+        {
+            get { return this._loggingConfiguration; }
+            set { this._loggingConfiguration = value; }
+        }
+
+        // Check to see if LoggingConfiguration property is set
+        internal bool IsSetLoggingConfiguration()
+        {
+            return this._loggingConfiguration != null;
         }
 
         /// <summary>

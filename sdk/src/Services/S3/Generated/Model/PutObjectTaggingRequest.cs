@@ -103,7 +103,13 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html">DeleteObjectTagging</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class PutObjectTaggingRequest : AmazonWebServiceRequest
     {
@@ -145,6 +151,7 @@ namespace Amazon.S3.Model
         /// is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
             get { return this._bucketName; }
@@ -248,7 +255,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequestPayer.
+        /// Gets and sets the property RequestPayer. 
+        /// <para>
+        /// Confirms that the requester knows that she or he will be charged for the tagging object
+        /// request. Bucket owners need not specify this parameter in their requests.
+        /// </para>
         /// </summary>
         public RequestPayer RequestPayer
         {

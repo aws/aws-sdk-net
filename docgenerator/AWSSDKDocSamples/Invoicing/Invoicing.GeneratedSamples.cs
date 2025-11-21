@@ -70,6 +70,36 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             #endregion
         }
 
+        public void InvoicingGetInvoicePDF()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.GetInvoicePDF(new GetInvoicePDFRequest 
+            {
+                InvoiceId = "abc123"
+            });
+
+            InvoicePDF invoicePDF = response.InvoicePDF;
+
+            #endregion
+        }
+
+        public void InvoicingGetInvoicePDF()
+        {
+            #region example-2
+
+            var client = new AmazonInvoicingClient();
+            var response = client.GetInvoicePDF(new GetInvoicePDFRequest 
+            {
+                InvoiceId = "abc123"
+            });
+
+            InvoicePDF invoicePDF = response.InvoicePDF;
+
+            #endregion
+        }
+
         public void InvoicingGetInvoiceUnit()
         {
             #region example-1

@@ -43,6 +43,10 @@ namespace Amazon.FSx
         /// </summary>
         public static readonly ActiveDirectoryErrorType INVALID_DOMAIN_STAGE = new ActiveDirectoryErrorType("INVALID_DOMAIN_STAGE");
         /// <summary>
+        /// Constant INVALID_NETWORK_TYPE for ActiveDirectoryErrorType
+        /// </summary>
+        public static readonly ActiveDirectoryErrorType INVALID_NETWORK_TYPE = new ActiveDirectoryErrorType("INVALID_NETWORK_TYPE");
+        /// <summary>
         /// Constant WRONG_VPC for ActiveDirectoryErrorType
         /// </summary>
         public static readonly ActiveDirectoryErrorType WRONG_VPC = new ActiveDirectoryErrorType("WRONG_VPC");
@@ -1765,6 +1769,56 @@ namespace Amazon.FSx
 
 
     /// <summary>
+    /// Constants used for properties of type NetworkType.
+    /// </summary>
+    public class NetworkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUAL for NetworkType
+        /// </summary>
+        public static readonly NetworkType DUAL = new NetworkType("DUAL");
+        /// <summary>
+        /// Constant IPV4 for NetworkType
+        /// </summary>
+        public static readonly NetworkType IPV4 = new NetworkType("IPV4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkType FindValue(string value)
+        {
+            return FindValue<NetworkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NfsVersion.
     /// </summary>
     public class NfsVersion : ConstantClass
@@ -3025,6 +3079,10 @@ namespace Amazon.FSx
     {
 
         /// <summary>
+        /// Constant CANCELLED for Status
+        /// </summary>
+        public static readonly Status CANCELLED = new Status("CANCELLED");
+        /// <summary>
         /// Constant COMPLETED for Status
         /// </summary>
         public static readonly Status COMPLETED = new Status("COMPLETED");
@@ -3040,6 +3098,10 @@ namespace Amazon.FSx
         /// Constant OPTIMIZING for Status
         /// </summary>
         public static readonly Status OPTIMIZING = new Status("OPTIMIZING");
+        /// <summary>
+        /// Constant PAUSED for Status
+        /// </summary>
+        public static readonly Status PAUSED = new Status("PAUSED");
         /// <summary>
         /// Constant PENDING for Status
         /// </summary>

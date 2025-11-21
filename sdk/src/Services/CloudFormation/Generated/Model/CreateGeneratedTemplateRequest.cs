@@ -68,7 +68,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        ///  If no resources are specified,the template will be created without any resources.
+        /// If no resources are specified,the template will be created without any resources.
         /// Resources can be added to the template using the <c>UpdateGeneratedTemplate</c> API
         /// action.
         /// </para>

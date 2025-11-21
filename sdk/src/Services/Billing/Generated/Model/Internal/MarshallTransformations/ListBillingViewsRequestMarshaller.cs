@@ -114,6 +114,22 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
 
+            if(publicRequest.IsSetNames())
+            {
+                context.Writer.WritePropertyName("names");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNamesListValue in publicRequest.Names)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = StringSearchMarshaller.Instance;
+                    marshaller.Marshall(publicRequestNamesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetNextToken())
             {
                 context.Writer.WritePropertyName("nextToken");
@@ -124,6 +140,12 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ownerAccountId");
                 context.Writer.WriteStringValue(publicRequest.OwnerAccountId);
+            }
+
+            if(publicRequest.IsSetSourceAccountId())
+            {
+                context.Writer.WritePropertyName("sourceAccountId");
+                context.Writer.WriteStringValue(publicRequest.SourceAccountId);
             }
 
             writer.WriteEndObject();

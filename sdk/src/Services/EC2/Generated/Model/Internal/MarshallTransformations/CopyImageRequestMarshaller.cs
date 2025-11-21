@@ -75,6 +75,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetDestinationAvailabilityZone())
+                {
+                    request.Parameters.Add("DestinationAvailabilityZone", StringUtils.FromString(publicRequest.DestinationAvailabilityZone));
+                }
+                if(publicRequest.IsSetDestinationAvailabilityZoneId())
+                {
+                    request.Parameters.Add("DestinationAvailabilityZoneId", StringUtils.FromString(publicRequest.DestinationAvailabilityZoneId));
+                }
                 if(publicRequest.IsSetDestinationOutpostArn())
                 {
                     request.Parameters.Add("DestinationOutpostArn", StringUtils.FromString(publicRequest.DestinationOutpostArn));
