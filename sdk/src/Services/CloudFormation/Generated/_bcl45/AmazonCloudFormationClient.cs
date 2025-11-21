@@ -44,9 +44,9 @@ namespace Amazon.CloudFormation
     /// CloudFormation allows you to create and manage Amazon Web Services infrastructure
     /// deployments predictably and repeatedly. You can use CloudFormation to leverage Amazon
     /// Web Services products, such as Amazon Elastic Compute Cloud, Amazon Elastic Block
-    /// Store, Amazon Simple Notification Service, Elastic Load Balancing, and Amazon EC2
-    /// Auto Scaling to build highly reliable, highly scalable, cost-effective applications
-    /// without creating or configuring the underlying Amazon Web Services infrastructure.
+    /// Store, Amazon Simple Notification Service, ELB, and Amazon EC2 Auto Scaling to build
+    /// highly reliable, highly scalable, cost-effective applications without creating or
+    /// configuring the underlying Amazon Web Services infrastructure.
     /// </para>
     ///  
     /// <para>
