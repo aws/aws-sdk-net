@@ -12,35 +12,47 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Class for InventorySchedule
+    /// Specifies the schedule for generating S3 Inventory results.
     /// </summary>
-    public class InventorySchedule
+    public partial class InventorySchedule
     {
-        private InventoryFrequency inventoryFrequency;
+        private InventoryFrequency _frequency;
 
         /// <summary>
+        /// Gets and sets the property Frequency. 
+        /// <para>
         /// Specifies how frequently inventory results are produced.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public InventoryFrequency Frequency
         {
-            get { return this.inventoryFrequency; }
-            set { this.inventoryFrequency = value; }
+            get { return this._frequency; }
+            set { this._frequency = value; }
         }
 
         // Check to see if Frequency property is set
-        internal bool IsFrequency()
+        internal bool IsSetFrequency()
         {
-            return this.inventoryFrequency != null;
+            return this._frequency != null;
         }
 
     }
