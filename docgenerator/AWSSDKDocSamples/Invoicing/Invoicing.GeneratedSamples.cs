@@ -55,6 +55,77 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             #endregion
         }
 
+        public void InvoicingCreateProcurementPortalPreference()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.CreateProcurementPortalPreference(new CreateProcurementPortalPreferenceRequest 
+            {
+                BuyerDomain = "NetworkID",
+                BuyerIdentifier = "BuyerId_1",
+                ClientToken = "e362c68e-4e74-48d7-9228-0bc5aa447b42",
+                Contacts = new List<Contact> {
+                    new Contact {
+                        Email = "example-placeholder@amazon.com",
+                        Name = "John Doe"
+                    }
+                },
+                EinvoiceDeliveryEnabled = true,
+                EinvoiceDeliveryPreference = new EinvoiceDeliveryPreference {
+                    ConnectionTestingMethod = "PROD_ENV_DOLLAR_TEST",
+                    EinvoiceDeliveryActivationDate = DateTime.UtcNow,
+                    EinvoiceDeliveryAttachmentTypes = new List<string> {
+                        "INVOICE_PDF"
+                    },
+                    EinvoiceDeliveryDocumentTypes = new List<string> {
+                        "AWS_CLOUD_INVOICE"
+                    },
+                    Protocol = "CXML",
+                    PurchaseOrderDataSources = new List<PurchaseOrderDataSource> {
+                        new PurchaseOrderDataSource {
+                            EinvoiceDeliveryDocumentType = "AWS_CLOUD_INVOICE",
+                            PurchaseOrderDataSourceType = "ASSOCIATED_PURCHASE_ORDER_REQUIRED"
+                        }
+                    }
+                },
+                ProcurementPortalInstanceEndpoint = "https://www.placeholder-domain.test",
+                ProcurementPortalName = "COUPA",
+                ProcurementPortalSharedSecret = "Coupa_Secret",
+                PurchaseOrderRetrievalEnabled = true,
+                ResourceTags = new List<ResourceTag> {
+                    new ResourceTag {
+                        Key = "testKey",
+                        Value = "testValue"
+                    }
+                },
+                Selector = new ProcurementPortalPreferenceSelector {
+                    InvoiceUnitArns = new List<string> {
+                        "arn:aws:invoicing::111111111111:invoice-unit/12345678",
+                        "arn:aws:invoicing::111111111111:invoice-unit/12345679"
+                    },
+                    SellerOfRecords = new List<string> {
+                        "AWS_INC",
+                        "AWS_EUROPE"
+                    }
+                },
+                SupplierDomain = "NetworkID",
+                SupplierIdentifier = "SupplierId_1",
+                TestEnvPreference = new TestEnvPreferenceInput {
+                    BuyerDomain = "NetworkID",
+                    BuyerIdentifier = "BuyerId_1_Test",
+                    ProcurementPortalInstanceEndpoint = "https://www.placeholder-domain.test",
+                    ProcurementPortalSharedSecret = "Coupa_Secret_test",
+                    SupplierDomain = "NetworkID",
+                    SupplierIdentifier = "SupplierId_1_Test"
+                }
+            });
+
+            string procurementPortalPreferenceArn = response.ProcurementPortalPreferenceArn;
+
+            #endregion
+        }
+
         public void InvoicingDeleteInvoiceUnit()
         {
             #region example-1
@@ -66,6 +137,21 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             });
 
             string invoiceUnitArn = response.InvoiceUnitArn;
+
+            #endregion
+        }
+
+        public void InvoicingDeleteProcurementPortalPreference()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.DeleteProcurementPortalPreference(new DeleteProcurementPortalPreferenceRequest 
+            {
+                ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd"
+            });
+
+            string procurementPortalPreferenceArn = response.ProcurementPortalPreferenceArn;
 
             #endregion
         }
@@ -139,6 +225,21 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             string name = response.Name;
             InvoiceUnitRule rule = response.Rule;
             bool taxInheritanceDisabled = response.TaxInheritanceDisabled;
+
+            #endregion
+        }
+
+        public void InvoicingGetProcurementPortalPreference()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.GetProcurementPortalPreference(new GetProcurementPortalPreferenceRequest 
+            {
+                ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/a34fd666-7810-4414-9360-aaa4bcab0abd"
+            });
+
+            ProcurementPortalPreference procurementPortalPreference = response.ProcurementPortalPreference;
 
             #endregion
         }
@@ -316,6 +417,38 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             #endregion
         }
 
+        public void InvoicingListProcurementPortalPreferences()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.ListProcurementPortalPreferences(new ListProcurementPortalPreferencesRequest 
+            {
+                MaxResults = 2
+            });
+
+            string nextToken = response.NextToken;
+            List<ProcurementPortalPreferenceSummary> procurementPortalPreferences = response.ProcurementPortalPreferences;
+
+            #endregion
+        }
+
+        public void InvoicingListProcurementPortalPreferences()
+        {
+            #region example-2
+
+            var client = new AmazonInvoicingClient();
+            var response = client.ListProcurementPortalPreferences(new ListProcurementPortalPreferencesRequest 
+            {
+                MaxResults = 2,
+                NextToken = "AAQA-EFRSURBSGpkVFU5MVNUVWNXTzNoUEptWEFGcEt0QzBBeHZaZmRUU2w3L0hRQmdDeEx3R0NuSnF2NjM5NGNmM1I5KzNIQzNnT0FBQUFmakI4QmdrcWhraUc5dzBCQndhZ2J6QnRBZ0VBTUdnR0NTcUdTSWIzRFFFSEFUQWVCZ2xnaGtnQlpRTUVBUzR3RVFRTVhPSnhEQ04rWk1idnAyb1RBZ0VRZ0RzbFJBeFlXMk9RRGFtTU8vdFc0MUJlTFFNU2hPR1E5bDM3MHcyS05mSjIzbU93MG1aVXk1MzBiWWVsZ3FaZzhjMndhTjZtNzNYTWd3bnpsZz09E8JRNUKK1r2-b9X8Qd1RAOSKHZOCy-UCpOQjJdSfZHcUefTH0YmlIW8ykllegYUWB1D1NjDjC3u2z2e4cLBTmQhrQewSBW-I_i8okXup9RWN60eMOnB6dl5jUiinJ-FjY_jGjbOkiWuJhXteDKP16RfVRW7mxp2-v1-B8gPPxGLolXHBHrb8gt18P8eWs8RcvRRmmbGUy5qa6nFH5WiCq9Bx2fTUTy9Iz_xZooNuiqC6y119EGQqJ9WsWsIUa8MbWHFXtn9-Uriz7osYocbFm1Evv_NCn3YK-wFy9rUlUskcM2n9AqvPYhOyf0reV7E8cErZFR_Ev8l008QcxQfaqK19-gKR9clddwoDzMVfVuyiW3vbzUXz7fzQLr-UMLCGdE3yHf1oz2SEbcxhHZ2eh7-9wEYDv0v92wXg7m7xaYvaKuVBPKqBaq66GdpS1HTfakkjRGvsoBStXWVgPahISglPO__-Ym5NnXOw2wENBVXZ7RsVe6nJ1X15bB1RDkqLV8xJD0L83snuCEBtM9pyUUQOPvfGHzC4yRusMgBav_y1kq0wjqsbJV5EhHV_SIwf-WZa_A=="
+            });
+
+            List<ProcurementPortalPreferenceSummary> procurementPortalPreferences = response.ProcurementPortalPreferences;
+
+            #endregion
+        }
+
         public void InvoicingListTagsForResource()
         {
             #region example-1
@@ -327,6 +460,64 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             });
 
             List<ResourceTag> resourceTags = response.ResourceTags;
+
+            #endregion
+        }
+
+        public void InvoicingPutProcurementPortalPreference()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.PutProcurementPortalPreference(new PutProcurementPortalPreferenceRequest 
+            {
+                Contacts = new List<Contact> {
+                    new Contact {
+                        Email = "example-placeholder2@amazon.com",
+                        Name = "John Doe2"
+                    }
+                },
+                EinvoiceDeliveryEnabled = true,
+                EinvoiceDeliveryPreference = new EinvoiceDeliveryPreference {
+                    ConnectionTestingMethod = "PROD_ENV_DOLLAR_TEST",
+                    EinvoiceDeliveryActivationDate = DateTime.UtcNow,
+                    EinvoiceDeliveryAttachmentTypes = new List<string> {
+                        "INVOICE_PDF"
+                    },
+                    EinvoiceDeliveryDocumentTypes = new List<string> {
+                        "AWS_CLOUD_INVOICE"
+                    },
+                    Protocol = "CXML",
+                    PurchaseOrderDataSources = new List<PurchaseOrderDataSource> {
+                        new PurchaseOrderDataSource {
+                            EinvoiceDeliveryDocumentType = "AWS_CLOUD_INVOICE",
+                            PurchaseOrderDataSourceType = "ASSOCIATED_PURCHASE_ORDER_REQUIRED"
+                        }
+                    }
+                },
+                ProcurementPortalInstanceEndpoint = "https://www.placeholder-domain.test",
+                ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd",
+                ProcurementPortalSharedSecret = "Coupa_Secret_2",
+                PurchaseOrderRetrievalEnabled = true,
+                Selector = new ProcurementPortalPreferenceSelector {
+                    InvoiceUnitArns = new List<string> {
+                        "arn:aws:invoicing::111111111111:invoice-unit/12345679"
+                    },
+                    SellerOfRecords = new List<string> {
+                        "AWS_INC"
+                    }
+                },
+                TestEnvPreference = new TestEnvPreferenceInput {
+                    BuyerDomain = "NetworkID",
+                    BuyerIdentifier = "BuyerId_1_Test",
+                    ProcurementPortalInstanceEndpoint = "https://www.placeholder-domain.test",
+                    ProcurementPortalSharedSecret = "Coupa_Secret_test_2",
+                    SupplierDomain = "NetworkID",
+                    SupplierIdentifier = "SupplierId_1_Test"
+                }
+            });
+
+            string procurementPortalPreferenceArn = response.ProcurementPortalPreferenceArn;
 
             #endregion
         }
@@ -401,6 +592,25 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             });
 
             string invoiceUnitArn = response.InvoiceUnitArn;
+
+            #endregion
+        }
+
+        public void InvoicingUpdateProcurementPortalPreferenceStatus()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.UpdateProcurementPortalPreferenceStatus(new UpdateProcurementPortalPreferenceStatusRequest 
+            {
+                EinvoiceDeliveryPreferenceStatus = "SUSPENDED",
+                EinvoiceDeliveryPreferenceStatusReason = "suspended example reason",
+                ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd",
+                PurchaseOrderRetrievalPreferenceStatus = "SUSPENDED",
+                PurchaseOrderRetrievalPreferenceStatusReason = "suspended example reason"
+            });
+
+            string procurementPortalPreferenceArn = response.ProcurementPortalPreferenceArn;
 
             #endregion
         }
