@@ -85,6 +85,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZoneRelocationStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CatalogArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CatalogArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ClusterAvailabilityStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -294,6 +300,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LakehouseRegistrationStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LakehouseRegistrationStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaintenanceTrackName", targetDepth))
