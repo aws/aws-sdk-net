@@ -130,6 +130,27 @@ namespace Amazon.S3.Transfer.Internal
             Logger.DebugFormat("BufferedMultipartStream: Initialization completed successfully");
         }
 
+        /// <summary>
+        /// Asynchronously reads a sequence of bytes from the stream and advances the position within the stream by the number of bytes read.
+        /// </summary>
+        /// <param name="buffer">The buffer to read data into.</param>
+        /// <param name="offset">The byte offset in <paramref name="buffer"/> at which to begin storing data.</param>
+        /// <param name="count">The maximum number of bytes to read.</param>
+        /// <param name="cancellationToken">A token to cancel the read operation.</param>
+        /// <returns>
+        /// A task that represents the asynchronous read operation. The value of the task's result contains the total number of bytes read into the buffer.
+        /// This can be less than the number of bytes requested if that number of bytes are not currently available, or zero if the end of the stream is reached.
+        /// </returns>
+        /// <exception cref="ObjectDisposedException">The stream has been disposed.</exception>
+        /// <exception cref="InvalidOperationException">The stream has not been initialized. Call <see cref="InitializeAsync"/> first.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="buffer"/> is null.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="offset"/> or <paramref name="count"/> is negative.</exception>
+        /// <exception cref="ArgumentException">The sum of <paramref name="offset"/> and <paramref name="count"/> is greater than the buffer length.</exception>
+        /// <remarks>
+        /// This method reads data from the underlying <see cref="IPartBufferManager"/> which coordinates sequential reading
+        /// from buffered multipart download data. The method automatically handles reading across part boundaries to fill
+        /// the provided buffer when possible, matching standard <see cref="Stream.ReadAsync(byte[], int, int, CancellationToken)"/> behavior.
+        /// </remarks>
         public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
@@ -196,9 +217,32 @@ namespace Amazon.S3.Transfer.Internal
             set => throw new NotSupportedException("Position setter not supported for read-only streams"); 
         }
 
+        /// <summary>
+        /// Flushes any buffered data to the underlying stream. This is a no-op for read-only streams.
+        /// </summary>
         public override void Flush() { }
+        
+        /// <summary>
+        /// Asynchronously flushes any buffered data to the underlying stream. This is a no-op for read-only streams.
+        /// </summary>
+        /// <param name="cancellationToken">A token to cancel the operation.</param>
+        /// <returns>A completed task.</returns>
         public override Task FlushAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 
+        /// <summary>
+        /// Synchronously reads a sequence of bytes from the stream and advances the position within the stream by the number of bytes read.
+        /// </summary>
+        /// <param name="buffer">The buffer to read data into.</param>
+        /// <param name="offset">The byte offset in <paramref name="buffer"/> at which to begin storing data.</param>
+        /// <param name="count">The maximum number of bytes to read.</param>
+        /// <returns>
+        /// The total number of bytes read into the buffer. This can be less than the number of bytes requested if that number of bytes
+        /// are not currently available, or zero if the end of the stream is reached.
+        /// </returns>
+        /// <remarks>
+        /// This is a synchronous wrapper around <see cref="ReadAsync(byte[], int, int, CancellationToken)"/>.
+        /// For better performance, prefer using the asynchronous version when possible.
+        /// </remarks>
         public override int Read(byte[] buffer, int offset, int count)
         {
             return ReadAsync(buffer, offset, count).GetAwaiter().GetResult();
@@ -229,6 +273,16 @@ namespace Amazon.S3.Transfer.Internal
 
         #region Dispose Pattern
 
+        /// <summary>
+        /// Releases the unmanaged resources used by the <see cref="BufferedMultipartStream"/> and optionally releases the managed resources.
+        /// </summary>
+        /// <param name="disposing">
+        /// <c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.
+        /// </param>
+        /// <remarks>
+        /// This method disposes the underlying <see cref="IDownloadManager"/> and <see cref="IPartBufferManager"/>,
+        /// which in turn cleans up any buffered part data and returns ArrayPool buffers to the pool.
+        /// </remarks>
         [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Dispose methods should not throw exceptions")]
         protected override void Dispose(bool disposing)
         {

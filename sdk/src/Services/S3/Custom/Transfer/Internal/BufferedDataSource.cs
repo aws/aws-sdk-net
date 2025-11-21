@@ -48,9 +48,17 @@ namespace Amazon.S3.Transfer.Internal
 
         #endregion
 
+        /// <inheritdoc/>
         public int PartNumber => _partBuffer.PartNumber;
+        
+        /// <inheritdoc/>
         public bool IsComplete => _partBuffer.RemainingBytes == 0;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BufferedDataSource"/> class.
+        /// </summary>
+        /// <param name="partBuffer">The <see cref="StreamPartBuffer"/> containing the buffered part data.</param>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="partBuffer"/> is null.</exception>
         public BufferedDataSource(StreamPartBuffer partBuffer)
         {
             _partBuffer = partBuffer ?? throw new ArgumentNullException(nameof(partBuffer));
@@ -59,6 +67,7 @@ namespace Amazon.S3.Transfer.Internal
                 _partBuffer.PartNumber, _partBuffer.Length, _partBuffer.RemainingBytes);
         }
 
+        /// <inheritdoc/>
         public Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
@@ -119,6 +128,7 @@ namespace Amazon.S3.Transfer.Internal
                 throw new ObjectDisposedException(nameof(BufferedDataSource));
         }
 
+        /// <inheritdoc/>
         [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Dispose methods should not throw exceptions")]
         public void Dispose()
         {

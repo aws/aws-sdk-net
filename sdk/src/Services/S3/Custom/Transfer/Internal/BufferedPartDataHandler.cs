@@ -42,6 +42,12 @@ namespace Amazon.S3.Transfer.Internal
             get { return Logger.GetLogger(typeof(TransferUtility)); }
         }
         
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BufferedPartDataHandler"/> class.
+        /// </summary>
+        /// <param name="partBufferManager">The <see cref="IPartBufferManager"/> for managing part buffers.</param>
+        /// <param name="config">The <see cref="BufferedDownloadConfiguration"/> with buffering settings.</param>
+        /// <exception cref="ArgumentNullException">Thrown when any required parameter is null.</exception>
         public BufferedPartDataHandler(
             IPartBufferManager partBufferManager,
             BufferedDownloadConfiguration config)
@@ -50,6 +56,7 @@ namespace Amazon.S3.Transfer.Internal
             _config = config ?? throw new ArgumentNullException(nameof(config));
         }
         
+        /// <inheritdoc/>
         public async Task ProcessPartAsync(
             int partNumber,
             GetObjectResponse response, 
@@ -74,21 +81,25 @@ namespace Amazon.S3.Transfer.Internal
                 partNumber);
         }
         
+        /// <inheritdoc/>
         public Task WaitForCapacityAsync(CancellationToken cancellationToken)
         {
             return _partBufferManager.WaitForBufferSpaceAsync(cancellationToken);
         }
         
+        /// <inheritdoc/>
         public void ReleaseCapacity()
         {
             _partBufferManager.ReleaseBufferSpace();
         }
         
+        /// <inheritdoc/>
         public void OnDownloadComplete(Exception exception)
         {
             _partBufferManager.MarkDownloadComplete(exception);
         }
         
+        /// <inheritdoc/>
         public void Dispose()
         {
             // _partBufferManager is owned by caller, don't dispose

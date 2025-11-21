@@ -190,6 +190,11 @@ namespace Amazon.S3.Transfer.Internal
 
         #endregion
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PartBufferManager"/> class.
+        /// </summary>
+        /// <param name="config">The <see cref="BufferedDownloadConfiguration"/> with buffer management settings.</param>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="config"/> is null.</exception>
         public PartBufferManager(BufferedDownloadConfiguration config)
         {
             if (config == null)
@@ -202,6 +207,7 @@ namespace Amazon.S3.Transfer.Internal
             Logger.DebugFormat("PartBufferManager initialized with MaxInMemoryParts={0}", config.MaxInMemoryParts);
         }
 
+        /// <inheritdoc/>
         public int NextExpectedPartNumber 
         { 
             get 
@@ -212,10 +218,7 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
-        /// <summary>
-        /// Waits for buffer space to become available before buffering a new part.
-        /// This provides flow control to prevent unbounded memory usage.
-        /// </summary>
+        /// <inheritdoc/>
         /// <remarks>
         /// This method is called by download tasks before buffering a new part. If <see cref="BufferedDownloadConfiguration.MaxInMemoryParts"/>
         /// are already buffered, the task blocks here until the consumer reads and disposes a part,
@@ -243,6 +246,11 @@ namespace Amazon.S3.Transfer.Internal
         /// <summary>
         /// Adds a part data source to the dictionary and signals waiting consumers.
         /// </summary>
+        /// <param name="dataSource">The <see cref="IPartDataSource"/> to add.</param>
+        /// <param name="cancellationToken">A token to cancel the operation.</param>
+        /// <returns>A task that completes when the data source has been added.</returns>
+        /// <exception cref="ArgumentNullException">Thrown when <paramref name="dataSource"/> is null.</exception>
+        /// <exception cref="InvalidOperationException">Thrown when attempting to add a duplicate part number.</exception>
         /// <remarks>
         /// This method is thread-safe and can be called concurrently by multiple download tasks.
         /// After adding the part to the dictionary, it signals _partAvailable to wake any consumer
@@ -281,6 +289,7 @@ namespace Amazon.S3.Transfer.Internal
             return Task.CompletedTask;
         }
 
+        /// <inheritdoc/>
         public async Task AddBufferAsync(StreamPartBuffer buffer, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
@@ -293,6 +302,7 @@ namespace Amazon.S3.Transfer.Internal
             await AddDataSourceAsync(bufferedSource, cancellationToken).ConfigureAwait(false);
         }
 
+        /// <inheritdoc/>
         public async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
@@ -502,10 +512,7 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
-        /// <summary>
-        /// Releases a buffer space slot, allowing producers to buffer additional parts.
-        /// This is the critical feedback mechanism in the flow control loop.
-        /// </summary>
+        /// <inheritdoc/>
         /// <remarks>
         /// Called by the consumer after fully reading and disposing a buffered part.
         /// This method releases a slot in the _bufferSpaceAvailable semaphore, which may
@@ -530,9 +537,7 @@ namespace Amazon.S3.Transfer.Internal
             Logger.DebugFormat("PartBufferManager: Buffer space released (Available slots after release: {0})", availableAfter);
         }
 
-        /// <summary>
-        /// Marks the download as complete (success or failure) and wakes waiting consumers.
-        /// </summary>
+        /// <inheritdoc/>
         /// <remarks>
         /// Called by the download coordinator when all download tasks have finished.
         /// This signals to the consumer that no more parts will arrive, allowing it to
@@ -578,6 +583,7 @@ namespace Amazon.S3.Transfer.Internal
 
         #region Dispose Pattern
 
+        /// <inheritdoc/>
         [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Dispose methods should not throw exceptions")]
         public void Dispose()
         {

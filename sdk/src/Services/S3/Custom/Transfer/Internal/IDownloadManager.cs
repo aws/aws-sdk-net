@@ -71,7 +71,7 @@ namespace Amazon.S3.Transfer.Internal
         public long ObjectSize { get; set; }
 
         /// <summary>
-        /// GetObjectResponse from discovery with ResponseStream (complete for single-part, first part for multipart).
+        /// GetObjectResponse obtained during download initialization, containing the ResponseStream. Represents the complete object for single-part downloads or the first range/part for multipart downloads.
         /// </summary>
         public GetObjectResponse InitialResponse { get; set; }
 

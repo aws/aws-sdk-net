@@ -57,6 +57,15 @@ namespace Amazon.S3.Transfer.Internal
             get { return Logger.GetLogger(typeof(TransferUtility)); }
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MultipartDownloadManager"/> class.
+        /// </summary>
+        /// <param name="s3Client">The <see cref="IAmazonS3"/> client for making S3 requests.</param>
+        /// <param name="request">The <see cref="BaseDownloadRequest"/> containing download parameters.</param>
+        /// <param name="config">The <see cref="DownloadCoordinatorConfiguration"/> with download settings.</param>
+        /// <param name="dataHandler">The <see cref="IPartDataHandler"/> for processing downloaded parts.</param>
+        /// <param name="requestEventHandler">Optional <see cref="RequestEventHandler"/> for user agent tracking.</param>
+        /// <exception cref="ArgumentNullException">Thrown when any required parameter is null.</exception>
         public MultipartDownloadManager(IAmazonS3 s3Client, BaseDownloadRequest request, DownloadCoordinatorConfiguration config, IPartDataHandler dataHandler, RequestEventHandler requestEventHandler = null)
         {
             _s3Client = s3Client ?? throw new ArgumentNullException(nameof(s3Client));
@@ -68,6 +77,7 @@ namespace Amazon.S3.Transfer.Internal
             _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
         }
 
+        /// <inheritdoc/>
         public Exception DownloadException
         { 
             get 
@@ -76,6 +86,7 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
+        /// <inheritdoc/>
         public async Task<DownloadDiscoveryResult> DiscoverDownloadStrategyAsync(CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
@@ -111,6 +122,7 @@ namespace Amazon.S3.Transfer.Internal
             }
         }
 
+        /// <inheritdoc/>
         public async Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
@@ -519,6 +531,7 @@ namespace Amazon.S3.Transfer.Internal
 
         #region Dispose Pattern
 
+        /// <inheritdoc/>
         [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Dispose methods should not throw exceptions")]
         public void Dispose()
         {
