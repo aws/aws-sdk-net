@@ -121,6 +121,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         Task<Document> GetItemAsync(IDictionary<string, DynamoDBEntry> key, GetItemOperationConfig config, CancellationToken cancellationToken = default(CancellationToken));
 
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetItem operation.
+        /// </summary>
+        /// <param name="request">The GetDocumentOperationRequest object containing all parameters for the GetItem operation.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task<Document> GetItemAsync(GetItemDocumentOperationRequest request, CancellationToken cancellationToken = default);
+
+
         #endregion
 
         #region UpdateItemAsync
@@ -393,6 +402,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
             using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 return await GetItemHelperAsync(MakeKey(key), config, cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        /// <inheritdoc/>
+        public async Task<Document> GetItemAsync(GetItemDocumentOperationRequest request,  CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(GetItemAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return await GetItemHelperAsync(request, cancellationToken).ConfigureAwait(false);
             }
         }
 

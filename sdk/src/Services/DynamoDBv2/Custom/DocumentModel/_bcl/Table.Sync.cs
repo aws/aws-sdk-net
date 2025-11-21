@@ -83,6 +83,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Document from DynamoDB.</returns>
         Document GetItem(IDictionary<string, DynamoDBEntry> key, GetItemOperationConfig config = null);
 
+        /// <summary>
+        /// Gets a document from DynamoDB using a request object.
+        /// </summary>
+        /// <param name="request">The GetDocumentOperationRequest object containing all parameters for the GetItem operation.</param>
+        /// <returns>>Document from DynamoDB.</returns>
+        Document GetItem(GetItemDocumentOperationRequest request);
+
+
+
         #endregion
 
         #region UpdateItem
@@ -382,6 +391,17 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return GetItemHelper(MakeKey(key), config);
             }
 
+        }
+
+        /// <inheritdoc/>
+        public Document GetItem(GetItemDocumentOperationRequest request)
+        {
+
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(GetItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return GetItemHelper(request);
+            }
         }
 
         #endregion

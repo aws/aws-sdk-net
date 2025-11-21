@@ -192,6 +192,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
+        internal void ApplyExpression(GetItemRequest request, Table table)
+        {
+            request.ProjectionExpression = ExpressionStatement;
+            request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+        }
+
         internal void ApplyExpression(Get request, Table table)
         {
             request.ProjectionExpression = ExpressionStatement;

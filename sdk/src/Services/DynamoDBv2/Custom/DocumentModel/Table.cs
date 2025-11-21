@@ -149,6 +149,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Resultant Search container.</returns>
         ISearch Scan(ScanOperationConfig config);
 
+        /// <summary>
+        /// Initiates a scan operation on the specified document and returns a search result representing the scan
+        /// outcome.
+        /// </summary>
+        /// <param name="operationRequest">An object containing the parameters and data required to perform the scan operation. Cannot be null.</param>
+        /// <returns>An ISearch instance representing the result of the scan operation. The returned object contains information
+        /// about matches found in the document.</returns>
+        ISearch Scan(ScanDocumentOperationRequest operationRequest);
+
         #endregion
 
         #region Query
@@ -1255,47 +1264,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        internal async Task<Document> PutItemHelperAsync(PutItemDocumentOperationRequest request, CancellationToken cancellationToken)
-        {
-            var req = MapPutItemDocumentOperationRequestToPutItemRequest(request);
-            this.UpdateRequestUserAgentDetails(req, isAsync: true);
-            var resp = await DDBClient.PutItemAsync(req, cancellationToken).ConfigureAwait(false);
-            request.Document.CommitChanges();
-            Document ret = null;
-            if (request.ReturnValues == ReturnValues.AllOldAttributes)
-            {
-                ret = this.FromAttributeMap(resp.Attributes);
-            }
-            return ret;
-        }
-        internal Document PutItemHelper(PutItemDocumentOperationRequest request)
-        {
-            var req = MapPutItemDocumentOperationRequestToPutItemRequest(request);
-
-#if NETSTANDARD
-            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
-            var client = DDBClient as AmazonDynamoDBClient;
-            if (client == null)
-            {
-                throw new InvalidOperationException("Calling the synchronous PutItem from .NET or .NET Core requires initializing the Table " +
-                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when creating a Table via PutItemAsync instead.");
-            }
-#else
-            var client = DDBClient;
-#endif
-
-            var resp = client.PutItem(req);
-
-            request.Document.CommitChanges();
-            Document ret = null;
-            if (request.ReturnValues == ReturnValues.AllOldAttributes)
-            {
-                ret = this.FromAttributeMap(resp.Attributes);
-            }
-            return ret;
-        }
-
-
         internal async Task<Document> PutItemHelperAsync(Document doc, PutItemOperationConfig config, CancellationToken cancellationToken)
         {
             var currentConfig = config ?? new PutItemOperationConfig();
@@ -1341,29 +1309,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return ret;
         }
 
-        private PutItemRequest MapPutItemDocumentOperationRequestToPutItemRequest(PutItemDocumentOperationRequest request)
+        internal async Task<Document> PutItemHelperAsync(PutItemDocumentOperationRequest request, CancellationToken cancellationToken)
         {
-            if(request==null)
-                throw new ArgumentNullException(nameof(request));
+            var pipeline = new PutItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
 
-            if (request.Document == null)
-                throw new InvalidOperationException("The Document property of the PutItemDocumentOperationRequest cannot be null.");
-
-            PutItemRequest req = new PutItemRequest
-            {
-                TableName = TableName,
-                Item = this.ToAttributeMap(request.Document)
-            };
-
-            if (request.ReturnValues == ReturnValues.AllOldAttributes)
-                req.ReturnValues = EnumMapper.Convert(request.ReturnValues);
-
-            if (request.ConditionalExpression is { IsSet: true })
-            {
-                request.ConditionalExpression.ApplyExpression(req, this);
-            }
-
-            return req;
+        internal Document PutItemHelper(PutItemDocumentOperationRequest request)
+        {
+            var pipeline = new PutItemPipeline(this);
+            return pipeline.ExecuteSync(request);
         }
 
         #endregion
@@ -1427,6 +1382,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return this.FromAttributeMap(attributeMap);
         }
 
+        internal Document GetItemHelper(GetItemDocumentOperationRequest request)
+        {
+            var pipeline = new GetItemPipeline(this);
+            return pipeline.ExecuteSync(request);
+        }
+
+        internal async Task<Document> GetItemHelperAsync(GetItemDocumentOperationRequest request, CancellationToken cancellationToken)
+        {
+            var pipeline = new GetItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
         #endregion
 
 
@@ -1446,118 +1413,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Document UpdateHelper(UpdateItemDocumentOperationRequest request)
         {
-            var req = MapUpdateItemOperationToUpdateItemRequest(request, out var doc);
-
-#if NETSTANDARD
-            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
-            var client = DDBClient as AmazonDynamoDBClient;
-            if (client == null)
-            {
-                throw new InvalidOperationException("Calling the synchronous UpdateItem from .NET or .NET Core requires initializing the Table " +
-                   "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when creating a Table via UpdateItemAsync instead.");
-            }
-#else
-            var client = DDBClient;
-#endif
-
-            var resp = client.UpdateItem(req);
-            var returnedAttributes = resp.Attributes;
-
-            // If the document was provided, commit the changes to it
-            doc?.CommitChanges();
-
-            Document ret = null;
-            if (request.ReturnValues != ReturnValues.None)
-            {
-                ret = this.FromAttributeMap(returnedAttributes);
-            }
-            return ret;
-
+            var pipeline = new UpdateItemPipeline(this);
+            return pipeline.ExecuteSync(request);
         }
 
         internal async Task<Document> UpdateHelperAsync(UpdateItemDocumentOperationRequest request,
             CancellationToken cancellationToken)
         {
-            var req = MapUpdateItemOperationToUpdateItemRequest(request, out var doc);
-
-            this.UpdateRequestUserAgentDetails(req, isAsync: true);
-
-            var resp = await DDBClient.UpdateItemAsync(req, cancellationToken).ConfigureAwait(false);
-            var returnedAttributes = resp.Attributes;
-
-            // If the document was provided, commit the changes to it
-            doc?.CommitChanges();
-
-            Document ret = null;
-            if (request.ReturnValues != ReturnValues.None)
-            {
-                ret = this.FromAttributeMap(returnedAttributes);
-            }
-
-            return ret;
-        }
-
-        private UpdateItemRequest MapUpdateItemOperationToUpdateItemRequest(UpdateItemDocumentOperationRequest request, out Document doc)
-        {
-            if (request == null)
-                throw new ArgumentNullException(nameof(request));
-
-            doc = request.Document;
-
-            Expression updateExpression = request.UpdateExpression;
-
-            // Validate that either doc or updateExpression is set, but not both null or both set to non-meaningful values
-            if ((doc == null && updateExpression is not { IsSet: true }) ||
-                (doc != null && updateExpression is { IsSet: true }))
-            {
-                throw new InvalidOperationException("Either Document or UpdateExpression must be set in the request.");
-            }
-
-            UpdateItemRequest req = new UpdateItemRequest
-            {
-                TableName = TableName,
-                ReturnValues = EnumMapper.Convert(request.ReturnValues)
-            };
-
-            Key key = request.Key != null ? MakeKey(request.Key) : null;
-
-            if (doc != null)
-            {
-                key ??= MakeKey(doc);
-                bool haveKeysChanged = HaveKeysChanged(doc);
-                bool updateChangedAttributesOnly = !haveKeysChanged;
-                var attributeUpdates = this.ToAttributeUpdateMap(doc, updateChangedAttributesOnly);
-                foreach (var keyName in this.KeyNames)
-                {
-                    attributeUpdates.Remove(keyName);
-                }
-
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression, this,
-                    out var statement, out var expressionAttributeValues, out var expressionAttributeNames);
-                req.UpdateExpression = statement;
-                req.ExpressionAttributeValues = expressionAttributeValues;
-                req.ExpressionAttributeNames = expressionAttributeNames;
-            }
-
-            if (key == null || key.Count == 0)
-            {
-                throw new InvalidOperationException(
-                    "UpdateItem requires a key to be specified either in the request or in the Document.");
-            }
-
-            req.Key = key;
-
-            if(request.UpdateExpression is { IsSet: true })
-            {
-                request.UpdateExpression.ApplyUpdateExpression(req, this);
-            }
-
-            if(request.ConditionalExpression is { IsSet: true })
-            {
-                request.ConditionalExpression.ApplyConditionalExpression(req, this);
-            }
-
-            return req;
+            var pipeline = new UpdateItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
         internal Document UpdateHelper(Document doc, Key key, UpdateItemOperationConfig config, Expression updateExpression)
@@ -1849,73 +1713,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Document DeleteHelper(DeleteItemDocumentOperationRequest request)
         {
-            var req = MapDeleteItemOperationRequestToDeleteItemRequest(request);
-
-#if NETSTANDARD
-            // Cast the IAmazonDynamoDB to the concrete client instead, so we can access the internal sync-over-async methods
-            var client = DDBClient as AmazonDynamoDBClient;
-            if (client == null)
-            {
-                throw new InvalidOperationException(
-                    "Calling the synchronous DeleteItem from .NET or .NET Core requires initializing the Table " +
-                    "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when calling DeleteItemAsync instead.");
-            }
-#else
-            var client = DDBClient;
-#endif
-
-            var attributes = client.DeleteItem(req).Attributes;
-
-            Document ret = null;
-            if (request.ReturnValues == ReturnValues.AllOldAttributes)
-            {
-                ret = this.FromAttributeMap(attributes);
-            }
-
-            return ret;
+            var pipeline = new DeleteItemPipeline(this);
+            return pipeline.ExecuteSync(request);
         }
 
         internal async Task<Document> DeleteHelperAsync(DeleteItemDocumentOperationRequest request, CancellationToken cancellationToken)
         {
-            var req = MapDeleteItemOperationRequestToDeleteItemRequest(request);
-
-            this.UpdateRequestUserAgentDetails(req, isAsync: true);
-
-            var attributes = (await DDBClient.DeleteItemAsync(req, cancellationToken).ConfigureAwait(false)).Attributes;
-
-            Document ret = null;
-            if (request.ReturnValues == ReturnValues.AllOldAttributes)
-            {
-                ret = this.FromAttributeMap(attributes);
-            }
-            return ret;
-        }
-
-        private DeleteItemRequest MapDeleteItemOperationRequestToDeleteItemRequest(DeleteItemDocumentOperationRequest request)
-        {
-            if (request == null)
-                throw new ArgumentNullException(nameof(request));
-
-            if (request.Key == null || request.Key.Count == 0)
-            {
-                throw new InvalidOperationException("Key cannot be null or empty");
-            }
-            
-            var req = new DeleteItemRequest
-            {
-                TableName = TableName,
-                Key = MakeKey(request.Key)
-            };
-
-            if (request.ReturnValues == ReturnValues.AllOldAttributes)
-                req.ReturnValues = EnumMapper.Convert(request.ReturnValues);
-
-            if(request.ConditionalExpression is { IsSet: true })
-            {
-                request.ConditionalExpression.ApplyExpression(req, this);
-            }
-
-            return req;
+            var pipeline = new DeleteItemPipeline(this);
+            return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
         #endregion
@@ -1966,6 +1771,35 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 ret.TotalSegments = currentConfig.TotalSegments;
                 ret.Segment = currentConfig.Segment;
+            }
+
+            return ret;
+        }
+
+        /// <inheritdoc/>
+        public ISearch Scan(ScanDocumentOperationRequest operationRequest)
+        {
+            if (operationRequest == null)
+                throw new ArgumentNullException("operationRequest");
+
+            Search ret = new Search(SearchType.Scan)
+            {
+                SourceTable = this,
+                TableName = TableName,
+                Limit = operationRequest.Limit,
+                FilterExpression = operationRequest.FilterExpression,
+                ProjectionExpression = operationRequest.ProjectionExpression,
+                Select = operationRequest.Select,
+                CollectResults = operationRequest.CollectResults,
+                IndexName = operationRequest.IndexName,
+                IsConsistentRead = operationRequest.ConsistentRead,
+                PaginationToken = operationRequest.PaginationToken
+            };
+
+            if (operationRequest.TotalSegments != 0)
+            {
+                ret.TotalSegments = operationRequest.TotalSegments;
+                ret.Segment = operationRequest.Segment;
             }
 
             return ret;

@@ -90,10 +90,10 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [DataTestMethod]
-        [DataRow(null, null, "Either Document or UpdateExpression must be set in the request.", true)]
-        [DataRow("doc", "expr", "Either Document or UpdateExpression must be set in the request.", true)]
-        [DataRow(null, null, "Either Document or UpdateExpression must be set in the request.", false)]
-        [DataRow("doc", "expr", "Either Document or UpdateExpression must be set in the request.", false)]
+        [DataRow(null, null, "Either Document or UpdateExpression must be set (exclusively).", true)]
+        [DataRow("doc", "expr", "Either Document or UpdateExpression must be set (exclusively).", true)]
+        [DataRow(null, null, "Either Document or UpdateExpression must be set (exclusively).", false)]
+        [DataRow("doc", "expr", "Either Document or UpdateExpression must be set (exclusively).", false)]
         public async Task UpdateHelper_RequestInvalidDocExprCombination_ThrowsInvalidOperationException(object docObj, object exprObj, string expectedMessage, bool isAsync)
         {
             Document doc = docObj as Document;
@@ -594,7 +594,7 @@ namespace AWSSDK_DotNet.UnitTests
                 ReturnValues = ReturnValues.None
             };
 
-            const string expectedMessage = "Key cannot be null or empty";
+            const string expectedMessage = "DeleteItemDocumentOperationRequest.Key cannot be null or empty.";
 
             if (isAsync)
             {
