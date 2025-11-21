@@ -917,6 +917,68 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  DeleteSigningConfiguration
+
+
+        /// <summary>
+        /// Deletes the registry's signing configuration. Images pushed after deletion of the
+        /// signing configuration will no longer be automatically signed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Deleting the signing configuration does not affect existing image signatures.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSigningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SigningConfigurationNotFoundException">
+        /// The specified signing configuration was not found. This occurs when attempting to
+        /// retrieve or delete a signing configuration that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteSigningConfiguration">REST API Reference for DeleteSigningConfiguration Operation</seealso>
+        DeleteSigningConfigurationResponse DeleteSigningConfiguration(DeleteSigningConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSigningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSigningConfiguration operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSigningConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteSigningConfiguration">REST API Reference for DeleteSigningConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteSigningConfiguration(DeleteSigningConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSigningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSigningConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteSigningConfigurationResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteSigningConfiguration">REST API Reference for DeleteSigningConfiguration Operation</seealso>
+        DeleteSigningConfigurationResponse EndDeleteSigningConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeregisterPullTimeUpdateExclusion
 
 
@@ -1159,6 +1221,69 @@ namespace Amazon.ECR
         /// <returns>Returns a  DescribeImageScanFindingsResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">REST API Reference for DescribeImageScanFindings Operation</seealso>
         DescribeImageScanFindingsResponse EndDescribeImageScanFindings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeImageSigningStatus
+
+
+        /// <summary>
+        /// Returns the signing status for a specified image. If the image matched signing rules
+        /// that reference different signing profiles, a status is returned for each profile.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageSigningStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageSigningStatus service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageSigningStatus">REST API Reference for DescribeImageSigningStatus Operation</seealso>
+        DescribeImageSigningStatusResponse DescribeImageSigningStatus(DescribeImageSigningStatusRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImageSigningStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageSigningStatus operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImageSigningStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageSigningStatus">REST API Reference for DescribeImageSigningStatus Operation</seealso>
+        IAsyncResult BeginDescribeImageSigningStatus(DescribeImageSigningStatusRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeImageSigningStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImageSigningStatus.</param>
+        /// 
+        /// <returns>Returns a  DescribeImageSigningStatusResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageSigningStatus">REST API Reference for DescribeImageSigningStatus Operation</seealso>
+        DescribeImageSigningStatusResponse EndDescribeImageSigningStatus(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1811,6 +1936,66 @@ namespace Amazon.ECR
         /// <returns>Returns a  GetRepositoryPolicyResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">REST API Reference for GetRepositoryPolicy Operation</seealso>
         GetRepositoryPolicyResponse EndGetRepositoryPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSigningConfiguration
+
+
+        /// <summary>
+        /// Retrieves the registry's signing configuration, which defines rules for automatically
+        /// signing images using Amazon Web Services Signer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SigningConfigurationNotFoundException">
+        /// The specified signing configuration was not found. This occurs when attempting to
+        /// retrieve or delete a signing configuration that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetSigningConfiguration">REST API Reference for GetSigningConfiguration Operation</seealso>
+        GetSigningConfigurationResponse GetSigningConfiguration(GetSigningConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSigningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningConfiguration operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSigningConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetSigningConfiguration">REST API Reference for GetSigningConfiguration Operation</seealso>
+        IAsyncResult BeginGetSigningConfiguration(GetSigningConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSigningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSigningConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetSigningConfigurationResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetSigningConfiguration">REST API Reference for GetSigningConfiguration Operation</seealso>
+        GetSigningConfigurationResponse EndGetSigningConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2581,6 +2766,69 @@ namespace Amazon.ECR
         /// <returns>Returns a  PutReplicationConfigurationResult from ECR.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutReplicationConfiguration">REST API Reference for PutReplicationConfiguration Operation</seealso>
         PutReplicationConfigurationResponse EndPutReplicationConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutSigningConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the registry's signing configuration, which defines rules for automatically
+        /// signing images with Amazon Web Services Signer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To successfully generate a signature, the IAM principal pushing images must have permission
+        /// to sign payloads with the Amazon Web Services Signer signing profile referenced in
+        /// the signing configuration.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSigningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutSigningConfiguration">REST API Reference for PutSigningConfiguration Operation</seealso>
+        PutSigningConfigurationResponse PutSigningConfiguration(PutSigningConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutSigningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutSigningConfiguration operation on AmazonECRClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSigningConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutSigningConfiguration">REST API Reference for PutSigningConfiguration Operation</seealso>
+        IAsyncResult BeginPutSigningConfiguration(PutSigningConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutSigningConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutSigningConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutSigningConfigurationResult from ECR.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutSigningConfiguration">REST API Reference for PutSigningConfiguration Operation</seealso>
+        PutSigningConfigurationResponse EndPutSigningConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
