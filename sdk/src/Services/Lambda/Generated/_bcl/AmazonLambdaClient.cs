@@ -849,8 +849,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are available only for DynamoDB and Kinesis event
-        /// sources:
+        /// The following error handling options are available for stream sources (DynamoDB, Kinesis,
+        /// Amazon MSK, and self-managed Apache Kafka):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -871,18 +871,17 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+        /// Kafka topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+        /// a destination</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
-        /// the following option is also available:
+        /// The following option is available only for DynamoDB and Kinesis event sources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
-        /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-        /// a destination</a>.
+        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1002,8 +1001,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are available only for DynamoDB and Kinesis event
-        /// sources:
+        /// The following error handling options are available for stream sources (DynamoDB, Kinesis,
+        /// Amazon MSK, and self-managed Apache Kafka):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1024,18 +1023,17 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+        /// Kafka topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+        /// a destination</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
-        /// the following option is also available:
+        /// The following option is available only for DynamoDB and Kinesis event sources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
-        /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-        /// a destination</a>.
+        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6597,8 +6595,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are available only for DynamoDB and Kinesis event
-        /// sources:
+        /// The following error handling options are available for stream sources (DynamoDB, Kinesis,
+        /// Amazon MSK, and self-managed Apache Kafka):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6619,18 +6617,17 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+        /// Kafka topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+        /// a destination</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
-        /// the following option is also available:
+        /// The following option is available only for DynamoDB and Kinesis event sources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
-        /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-        /// a destination</a>.
+        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6755,8 +6752,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are available only for DynamoDB and Kinesis event
-        /// sources:
+        /// The following error handling options are available for stream sources (DynamoDB, Kinesis,
+        /// Amazon MSK, and self-managed Apache Kafka):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -6777,18 +6774,17 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+        /// Kafka topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+        /// a destination</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
-        /// the following option is also available:
+        /// The following option is available only for DynamoDB and Kinesis event sources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
-        /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-        /// a destination</a>.
+        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>

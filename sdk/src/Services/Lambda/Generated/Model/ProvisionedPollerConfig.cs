@@ -38,6 +38,7 @@ namespace Amazon.Lambda.Model
     {
         private int? _maximumPollers;
         private int? _minimumPollers;
+        private string _pollerGroupName;
 
         /// <summary>
         /// Gets and sets the property MaximumPollers. 
@@ -80,6 +81,29 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMinimumPollers()
         {
             return this._minimumPollers.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PollerGroupName. 
+        /// <para>
+        /// (Amazon MSK and self-managed Apache Kafka) The name of the provisioned poller group.
+        /// Use this option to group multiple ESMs within the VPC to share Event Poller Unit (EPU)
+        /// capacity. This option is used to optimize Provisioned mode costs for your ESMs. You
+        /// can group up to 100 ESMs per poller group and aggregate maximum pollers across all
+        /// ESMs in a group cannot exceed 2000.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string PollerGroupName
+        {
+            get { return this._pollerGroupName; }
+            set { this._pollerGroupName = value; }
+        }
+
+        // Check to see if PollerGroupName property is set
+        internal bool IsSetPollerGroupName()
+        {
+            return this._pollerGroupName != null;
         }
 
     }

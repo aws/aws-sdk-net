@@ -44,9 +44,12 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  
         /// <para>
-        /// To retain records of unsuccessful <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">asynchronous
-        /// invocations</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Amazon S3
-        /// bucket, Lambda function, or Amazon EventBridge event bus as the destination.
+        /// To retain records of failed invocations from <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Kinesis</a>,
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">DynamoDB</a>,
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-on-failure.html">self-managed
+        /// Apache Kafka</a>, or <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-on-failure.html">Amazon
+        /// MSK</a>, you can configure an Amazon SNS topic, Amazon SQS queue, Amazon S3 bucket,
+        /// or Kafka topic as the destination.
         /// </para>
         ///  <note> 
         /// <para>
