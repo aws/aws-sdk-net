@@ -1007,6 +1007,75 @@
                     ]}
                 }
             ]
+        },
+        "PutBucketIntelligentTieringConfigurationRequest" : {
+            "modify" : [
+                {
+                    "Id": {"emitPropertyName": "IntelligentTieringId"}
+                }
+            ]
+        },
+        "IntelligentTieringConfiguration" : {
+            "modify": [
+                {
+                    "Id" :{"emitPropertyName":"IntelligentTieringId"}
+                },
+                {
+                    "Filter": {"emitPropertyName": "IntelligentTieringFilter"}
+                },
+                {                   
+                    "IntelligentTieringFilter" :{
+                        "injectXmlMarshallCode": ["IntelligentTieringFilterCustomMarshall(publicRequest, xmlWriter);"]
+                    }
+                }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "IntelligentTieringFilter" :{
+                        "predicateListUnmarshallerName" : "IntelligentTieringPredicateListFilterUnmarshaller",
+                        "filterPredicateName": "IntelligentTieringFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "GetBucketIntelligentTieringConfigurationRequest":{
+            "modify":[
+                {
+                    "Id" : {"emitPropertyName": "IntelligentTieringId"}
+                }
+            ]
+        },
+        "ListBucketIntelligentTieringConfigurationsRequest":{
+            "modify":[
+                {
+                    "ContinuationToken":{
+                        "injectXmlIsSet":[
+                            "return !string.IsNullOrEmpty(this._continuationToken);"
+                        ]
+                    }
+                }
+            ]
+        },
+        "ListBucketIntelligentTieringConfigurationsOutput":{
+            "modify":[
+                {
+                    "ContinuationToken":{
+                        "injectXmlIsSet":[ "return !string.IsNullOrEmpty(this._continuationToken);"]
+                    }
+                },
+                {
+                    "NextContinuationToken":{
+                        "injectXmlIsSet":["return !string.IsNullOrEmpty(this._nextContinuationToken);"]
+                    }
+                }
+            ]
+        },
+        "DeleteBucketIntelligentTieringConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName": "IntelligentTieringId"}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1381,6 +1450,8 @@
         "MetricsFilter",
         "MetricsAndOperator",
         "AnalyticsFilter",
-        "AnalyticsAndOperator"
+        "AnalyticsAndOperator",
+        "IntelligentTieringFilter",
+        "IntelligentTieringAndOperator"
     ]
 }
