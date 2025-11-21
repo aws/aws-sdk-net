@@ -89,7 +89,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ConvertRecoveryPointToSnapshot">REST API Reference for ConvertRecoveryPointToSnapshot Operation</seealso>
         ConvertRecoveryPointToSnapshotResponse ConvertRecoveryPointToSnapshot(ConvertRecoveryPointToSnapshotRequest request);
@@ -147,7 +147,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
         CreateCustomDomainAssociationResponse CreateCustomDomainAssociation(CreateCustomDomainAssociationRequest request);
@@ -205,7 +205,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateEndpointAccess">REST API Reference for CreateEndpointAccess Operation</seealso>
         CreateEndpointAccessResponse CreateEndpointAccess(CreateEndpointAccessRequest request);
@@ -257,7 +257,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateNamespace">REST API Reference for CreateNamespace Operation</seealso>
         CreateNamespaceResponse CreateNamespace(CreateNamespaceRequest request);
@@ -320,7 +320,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateReservation">REST API Reference for CreateReservation Operation</seealso>
         CreateReservationResponse CreateReservation(CreateReservationRequest request);
@@ -374,7 +374,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
         CreateScheduledActionResponse CreateScheduledAction(CreateScheduledActionRequest request);
@@ -434,7 +434,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
@@ -493,7 +493,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshotCopyConfiguration">REST API Reference for CreateSnapshotCopyConfiguration Operation</seealso>
         CreateSnapshotCopyConfigurationResponse CreateSnapshotCopyConfiguration(CreateSnapshotCopyConfigurationRequest request);
@@ -549,7 +549,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateUsageLimit">REST API Reference for CreateUsageLimit Operation</seealso>
         CreateUsageLimitResponse CreateUsageLimit(CreateUsageLimitRequest request);
@@ -636,7 +636,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateWorkgroup">REST API Reference for CreateWorkgroup Operation</seealso>
         CreateWorkgroupResponse CreateWorkgroup(CreateWorkgroupRequest request);
@@ -694,7 +694,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
         DeleteCustomDomainAssociationResponse DeleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request);
@@ -746,7 +746,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteEndpointAccess">REST API Reference for DeleteEndpointAccess Operation</seealso>
         DeleteEndpointAccessResponse DeleteEndpointAccess(DeleteEndpointAccessRequest request);
@@ -799,7 +799,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
         DeleteNamespaceResponse DeleteNamespace(DeleteNamespaceRequest request);
@@ -848,7 +848,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
@@ -897,7 +897,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request);
@@ -949,7 +949,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request);
@@ -1004,7 +1004,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshotCopyConfiguration">REST API Reference for DeleteSnapshotCopyConfiguration Operation</seealso>
         DeleteSnapshotCopyConfigurationResponse DeleteSnapshotCopyConfiguration(DeleteSnapshotCopyConfigurationRequest request);
@@ -1056,7 +1056,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteUsageLimit">REST API Reference for DeleteUsageLimit Operation</seealso>
         DeleteUsageLimitResponse DeleteUsageLimit(DeleteUsageLimitRequest request);
@@ -1108,7 +1108,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteWorkgroup">REST API Reference for DeleteWorkgroup Operation</seealso>
         DeleteWorkgroupResponse DeleteWorkgroup(DeleteWorkgroupRequest request);
@@ -1174,7 +1174,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCredentials">REST API Reference for GetCredentials Operation</seealso>
         GetCredentialsResponse GetCredentials(GetCredentialsRequest request);
@@ -1232,7 +1232,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCustomDomainAssociation">REST API Reference for GetCustomDomainAssociation Operation</seealso>
         GetCustomDomainAssociationResponse GetCustomDomainAssociation(GetCustomDomainAssociationRequest request);
@@ -1284,7 +1284,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetEndpointAccess">REST API Reference for GetEndpointAccess Operation</seealso>
         GetEndpointAccessResponse GetEndpointAccess(GetEndpointAccessRequest request);
@@ -1333,7 +1333,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetNamespace">REST API Reference for GetNamespace Operation</seealso>
         GetNamespaceResponse GetNamespace(GetNamespaceRequest request);
@@ -1385,7 +1385,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetRecoveryPoint">REST API Reference for GetRecoveryPoint Operation</seealso>
         GetRecoveryPointResponse GetRecoveryPoint(GetRecoveryPointRequest request);
@@ -1439,7 +1439,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservation">REST API Reference for GetReservation Operation</seealso>
         GetReservationResponse GetReservation(GetReservationRequest request);
@@ -1492,7 +1492,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservationOffering">REST API Reference for GetReservationOffering Operation</seealso>
         GetReservationOfferingResponse GetReservationOffering(GetReservationOfferingRequest request);
@@ -1541,7 +1541,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request);
@@ -1590,7 +1590,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetScheduledAction">REST API Reference for GetScheduledAction Operation</seealso>
         GetScheduledActionResponse GetScheduledAction(GetScheduledActionRequest request);
@@ -1639,7 +1639,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetSnapshot">REST API Reference for GetSnapshot Operation</seealso>
         GetSnapshotResponse GetSnapshot(GetSnapshotRequest request);
@@ -1685,7 +1685,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus">REST API Reference for GetTableRestoreStatus Operation</seealso>
         GetTableRestoreStatusResponse GetTableRestoreStatus(GetTableRestoreStatusRequest request);
@@ -1743,7 +1743,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTrack">REST API Reference for GetTrack Operation</seealso>
         GetTrackResponse GetTrack(GetTrackRequest request);
@@ -1795,7 +1795,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetUsageLimit">REST API Reference for GetUsageLimit Operation</seealso>
         GetUsageLimitResponse GetUsageLimit(GetUsageLimitRequest request);
@@ -1844,7 +1844,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetWorkgroup">REST API Reference for GetWorkgroup Operation</seealso>
         GetWorkgroupResponse GetWorkgroup(GetWorkgroupRequest request);
@@ -1899,7 +1899,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations">REST API Reference for ListCustomDomainAssociations Operation</seealso>
         ListCustomDomainAssociationsResponse ListCustomDomainAssociations(ListCustomDomainAssociationsRequest request);
@@ -1951,7 +1951,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListEndpointAccess">REST API Reference for ListEndpointAccess Operation</seealso>
         ListEndpointAccessResponse ListEndpointAccess(ListEndpointAccessRequest request);
@@ -2043,7 +2043,7 @@ namespace Amazon.RedshiftServerless
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
         ListNamespacesResponse ListNamespaces(ListNamespacesRequest request);
@@ -2089,7 +2089,7 @@ namespace Amazon.RedshiftServerless
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListRecoveryPoints">REST API Reference for ListRecoveryPoints Operation</seealso>
         ListRecoveryPointsResponse ListRecoveryPoints(ListRecoveryPointsRequest request);
@@ -2138,7 +2138,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservationOfferings">REST API Reference for ListReservationOfferings Operation</seealso>
         ListReservationOfferingsResponse ListReservationOfferings(ListReservationOfferingsRequest request);
@@ -2187,7 +2187,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservations">REST API Reference for ListReservations Operation</seealso>
         ListReservationsResponse ListReservations(ListReservationsRequest request);
@@ -2240,7 +2240,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
         ListScheduledActionsResponse ListScheduledActions(ListScheduledActionsRequest request);
@@ -2295,7 +2295,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshotCopyConfigurations">REST API Reference for ListSnapshotCopyConfigurations Operation</seealso>
         ListSnapshotCopyConfigurationsResponse ListSnapshotCopyConfigurations(ListSnapshotCopyConfigurationsRequest request);
@@ -2344,7 +2344,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshots">REST API Reference for ListSnapshots Operation</seealso>
         ListSnapshotsResponse ListSnapshots(ListSnapshotsRequest request);
@@ -2393,7 +2393,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus">REST API Reference for ListTableRestoreStatus Operation</seealso>
         ListTableRestoreStatusResponse ListTableRestoreStatus(ListTableRestoreStatusRequest request);
@@ -2445,7 +2445,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -2500,7 +2500,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTracks">REST API Reference for ListTracks Operation</seealso>
         ListTracksResponse ListTracks(ListTracksRequest request);
@@ -2555,7 +2555,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListUsageLimits">REST API Reference for ListUsageLimits Operation</seealso>
         ListUsageLimitsResponse ListUsageLimits(ListUsageLimitsRequest request);
@@ -2601,7 +2601,7 @@ namespace Amazon.RedshiftServerless
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListWorkgroups">REST API Reference for ListWorkgroups Operation</seealso>
         ListWorkgroupsResponse ListWorkgroups(ListWorkgroupsRequest request);
@@ -2657,7 +2657,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
@@ -2709,7 +2709,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreFromRecoveryPoint">REST API Reference for RestoreFromRecoveryPoint Operation</seealso>
         RestoreFromRecoveryPointResponse RestoreFromRecoveryPoint(RestoreFromRecoveryPointRequest request);
@@ -2764,7 +2764,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request);
@@ -2817,7 +2817,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromRecoveryPoint">REST API Reference for RestoreTableFromRecoveryPoint Operation</seealso>
         RestoreTableFromRecoveryPointResponse RestoreTableFromRecoveryPoint(RestoreTableFromRecoveryPointRequest request);
@@ -2871,7 +2871,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot">REST API Reference for RestoreTableFromSnapshot Operation</seealso>
         RestoreTableFromSnapshotResponse RestoreTableFromSnapshot(RestoreTableFromSnapshotRequest request);
@@ -2926,7 +2926,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -2978,7 +2978,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -3036,7 +3036,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateCustomDomainAssociation">REST API Reference for UpdateCustomDomainAssociation Operation</seealso>
         UpdateCustomDomainAssociationResponse UpdateCustomDomainAssociation(UpdateCustomDomainAssociationRequest request);
@@ -3091,7 +3091,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateEndpointAccess">REST API Reference for UpdateEndpointAccess Operation</seealso>
         UpdateEndpointAccessResponse UpdateEndpointAccess(UpdateEndpointAccessRequest request);
@@ -3124,6 +3124,64 @@ namespace Amazon.RedshiftServerless
 
         #endregion
         
+        #region  UpdateLakehouseConfiguration
+
+
+        /// <summary>
+        /// Modifies the lakehouse configuration for a namespace. This operation allows you to
+        /// manage Amazon Redshift federated permissions and Amazon Web Services IAM Identity
+        /// Center trusted identity propagation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLakehouseConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLakehouseConfiguration service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.DryRunException">
+        /// This exception is thrown when the request was successful, but dry run was enabled
+        /// so no action was taken.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateLakehouseConfiguration">REST API Reference for UpdateLakehouseConfiguration Operation</seealso>
+        UpdateLakehouseConfigurationResponse UpdateLakehouseConfiguration(UpdateLakehouseConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLakehouseConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLakehouseConfiguration operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLakehouseConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateLakehouseConfiguration">REST API Reference for UpdateLakehouseConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateLakehouseConfiguration(UpdateLakehouseConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLakehouseConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLakehouseConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateLakehouseConfigurationResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateLakehouseConfiguration">REST API Reference for UpdateLakehouseConfiguration Operation</seealso>
+        UpdateLakehouseConfigurationResponse EndUpdateLakehouseConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateNamespace
 
 
@@ -3146,7 +3204,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateNamespace">REST API Reference for UpdateNamespace Operation</seealso>
         UpdateNamespaceResponse UpdateNamespace(UpdateNamespaceRequest request);
@@ -3198,7 +3256,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
         UpdateScheduledActionResponse UpdateScheduledAction(UpdateScheduledActionRequest request);
@@ -3250,7 +3308,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshot">REST API Reference for UpdateSnapshot Operation</seealso>
         UpdateSnapshotResponse UpdateSnapshot(UpdateSnapshotRequest request);
@@ -3305,7 +3363,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshotCopyConfiguration">REST API Reference for UpdateSnapshotCopyConfiguration Operation</seealso>
         UpdateSnapshotCopyConfigurationResponse UpdateSnapshotCopyConfiguration(UpdateSnapshotCopyConfigurationRequest request);
@@ -3358,7 +3416,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateUsageLimit">REST API Reference for UpdateUsageLimit Operation</seealso>
         UpdateUsageLimitResponse UpdateUsageLimit(UpdateUsageLimitRequest request);
@@ -3444,7 +3502,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateWorkgroup">REST API Reference for UpdateWorkgroup Operation</seealso>
         UpdateWorkgroupResponse UpdateWorkgroup(UpdateWorkgroupRequest request);

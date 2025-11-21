@@ -308,7 +308,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ConvertRecoveryPointToSnapshot">REST API Reference for ConvertRecoveryPointToSnapshot Operation</seealso>
         public virtual ConvertRecoveryPointToSnapshotResponse ConvertRecoveryPointToSnapshot(ConvertRecoveryPointToSnapshotRequest request)
@@ -348,7 +348,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ConvertRecoveryPointToSnapshot">REST API Reference for ConvertRecoveryPointToSnapshot Operation</seealso>
         public virtual Task<ConvertRecoveryPointToSnapshotResponse> ConvertRecoveryPointToSnapshotAsync(ConvertRecoveryPointToSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -387,7 +387,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
         public virtual CreateCustomDomainAssociationResponse CreateCustomDomainAssociation(CreateCustomDomainAssociationRequest request)
@@ -425,7 +425,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
         public virtual Task<CreateCustomDomainAssociationResponse> CreateCustomDomainAssociationAsync(CreateCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -464,7 +464,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateEndpointAccess">REST API Reference for CreateEndpointAccess Operation</seealso>
         public virtual CreateEndpointAccessResponse CreateEndpointAccess(CreateEndpointAccessRequest request)
@@ -502,7 +502,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateEndpointAccess">REST API Reference for CreateEndpointAccess Operation</seealso>
         public virtual Task<CreateEndpointAccessResponse> CreateEndpointAccessAsync(CreateEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -535,7 +535,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateNamespace">REST API Reference for CreateNamespace Operation</seealso>
         public virtual CreateNamespaceResponse CreateNamespace(CreateNamespaceRequest request)
@@ -567,7 +567,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateNamespace">REST API Reference for CreateNamespace Operation</seealso>
         public virtual Task<CreateNamespaceResponse> CreateNamespaceAsync(CreateNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -611,7 +611,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateReservation">REST API Reference for CreateReservation Operation</seealso>
         public virtual CreateReservationResponse CreateReservation(CreateReservationRequest request)
@@ -654,7 +654,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateReservation">REST API Reference for CreateReservation Operation</seealso>
         public virtual Task<CreateReservationResponse> CreateReservationAsync(CreateReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -689,7 +689,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
         public virtual CreateScheduledActionResponse CreateScheduledAction(CreateScheduledActionRequest request)
@@ -723,7 +723,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateScheduledAction">REST API Reference for CreateScheduledAction Operation</seealso>
         public virtual Task<CreateScheduledActionResponse> CreateScheduledActionAsync(CreateScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -764,7 +764,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
@@ -804,7 +804,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public virtual Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -844,7 +844,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshotCopyConfiguration">REST API Reference for CreateSnapshotCopyConfiguration Operation</seealso>
         public virtual CreateSnapshotCopyConfigurationResponse CreateSnapshotCopyConfiguration(CreateSnapshotCopyConfigurationRequest request)
@@ -883,7 +883,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateSnapshotCopyConfiguration">REST API Reference for CreateSnapshotCopyConfiguration Operation</seealso>
         public virtual Task<CreateSnapshotCopyConfigurationResponse> CreateSnapshotCopyConfigurationAsync(CreateSnapshotCopyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -920,7 +920,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateUsageLimit">REST API Reference for CreateUsageLimit Operation</seealso>
         public virtual CreateUsageLimitResponse CreateUsageLimit(CreateUsageLimitRequest request)
@@ -956,7 +956,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateUsageLimit">REST API Reference for CreateUsageLimit Operation</seealso>
         public virtual Task<CreateUsageLimitResponse> CreateUsageLimitAsync(CreateUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1024,7 +1024,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateWorkgroup">REST API Reference for CreateWorkgroup Operation</seealso>
         public virtual CreateWorkgroupResponse CreateWorkgroup(CreateWorkgroupRequest request)
@@ -1091,7 +1091,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/CreateWorkgroup">REST API Reference for CreateWorkgroup Operation</seealso>
         public virtual Task<CreateWorkgroupResponse> CreateWorkgroupAsync(CreateWorkgroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1130,7 +1130,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
         public virtual DeleteCustomDomainAssociationResponse DeleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request)
@@ -1168,7 +1168,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
         public virtual Task<DeleteCustomDomainAssociationResponse> DeleteCustomDomainAssociationAsync(DeleteCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1201,7 +1201,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteEndpointAccess">REST API Reference for DeleteEndpointAccess Operation</seealso>
         public virtual DeleteEndpointAccessResponse DeleteEndpointAccess(DeleteEndpointAccessRequest request)
@@ -1233,7 +1233,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteEndpointAccess">REST API Reference for DeleteEndpointAccess Operation</seealso>
         public virtual Task<DeleteEndpointAccessResponse> DeleteEndpointAccessAsync(DeleteEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1267,7 +1267,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
         public virtual DeleteNamespaceResponse DeleteNamespace(DeleteNamespaceRequest request)
@@ -1300,7 +1300,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteNamespace">REST API Reference for DeleteNamespace Operation</seealso>
         public virtual Task<DeleteNamespaceResponse> DeleteNamespaceAsync(DeleteNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1330,7 +1330,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
@@ -1359,7 +1359,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
         public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1389,7 +1389,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public virtual DeleteScheduledActionResponse DeleteScheduledAction(DeleteScheduledActionRequest request)
@@ -1418,7 +1418,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteScheduledAction">REST API Reference for DeleteScheduledAction Operation</seealso>
         public virtual Task<DeleteScheduledActionResponse> DeleteScheduledActionAsync(DeleteScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1451,7 +1451,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
@@ -1483,7 +1483,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public virtual Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1519,7 +1519,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshotCopyConfiguration">REST API Reference for DeleteSnapshotCopyConfiguration Operation</seealso>
         public virtual DeleteSnapshotCopyConfigurationResponse DeleteSnapshotCopyConfiguration(DeleteSnapshotCopyConfigurationRequest request)
@@ -1554,7 +1554,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteSnapshotCopyConfiguration">REST API Reference for DeleteSnapshotCopyConfiguration Operation</seealso>
         public virtual Task<DeleteSnapshotCopyConfigurationResponse> DeleteSnapshotCopyConfigurationAsync(DeleteSnapshotCopyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1587,7 +1587,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteUsageLimit">REST API Reference for DeleteUsageLimit Operation</seealso>
         public virtual DeleteUsageLimitResponse DeleteUsageLimit(DeleteUsageLimitRequest request)
@@ -1619,7 +1619,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteUsageLimit">REST API Reference for DeleteUsageLimit Operation</seealso>
         public virtual Task<DeleteUsageLimitResponse> DeleteUsageLimitAsync(DeleteUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1652,7 +1652,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteWorkgroup">REST API Reference for DeleteWorkgroup Operation</seealso>
         public virtual DeleteWorkgroupResponse DeleteWorkgroup(DeleteWorkgroupRequest request)
@@ -1684,7 +1684,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/DeleteWorkgroup">REST API Reference for DeleteWorkgroup Operation</seealso>
         public virtual Task<DeleteWorkgroupResponse> DeleteWorkgroupAsync(DeleteWorkgroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1731,7 +1731,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCredentials">REST API Reference for GetCredentials Operation</seealso>
         public virtual GetCredentialsResponse GetCredentials(GetCredentialsRequest request)
@@ -1777,7 +1777,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCredentials">REST API Reference for GetCredentials Operation</seealso>
         public virtual Task<GetCredentialsResponse> GetCredentialsAsync(GetCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1816,7 +1816,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCustomDomainAssociation">REST API Reference for GetCustomDomainAssociation Operation</seealso>
         public virtual GetCustomDomainAssociationResponse GetCustomDomainAssociation(GetCustomDomainAssociationRequest request)
@@ -1854,7 +1854,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetCustomDomainAssociation">REST API Reference for GetCustomDomainAssociation Operation</seealso>
         public virtual Task<GetCustomDomainAssociationResponse> GetCustomDomainAssociationAsync(GetCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1887,7 +1887,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetEndpointAccess">REST API Reference for GetEndpointAccess Operation</seealso>
         public virtual GetEndpointAccessResponse GetEndpointAccess(GetEndpointAccessRequest request)
@@ -1919,7 +1919,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetEndpointAccess">REST API Reference for GetEndpointAccess Operation</seealso>
         public virtual Task<GetEndpointAccessResponse> GetEndpointAccessAsync(GetEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1949,7 +1949,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetNamespace">REST API Reference for GetNamespace Operation</seealso>
         public virtual GetNamespaceResponse GetNamespace(GetNamespaceRequest request)
@@ -1978,7 +1978,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetNamespace">REST API Reference for GetNamespace Operation</seealso>
         public virtual Task<GetNamespaceResponse> GetNamespaceAsync(GetNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2011,7 +2011,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetRecoveryPoint">REST API Reference for GetRecoveryPoint Operation</seealso>
         public virtual GetRecoveryPointResponse GetRecoveryPoint(GetRecoveryPointRequest request)
@@ -2043,7 +2043,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetRecoveryPoint">REST API Reference for GetRecoveryPoint Operation</seealso>
         public virtual Task<GetRecoveryPointResponse> GetRecoveryPointAsync(GetRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2078,7 +2078,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservation">REST API Reference for GetReservation Operation</seealso>
         public virtual GetReservationResponse GetReservation(GetReservationRequest request)
@@ -2112,7 +2112,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservation">REST API Reference for GetReservation Operation</seealso>
         public virtual Task<GetReservationResponse> GetReservationAsync(GetReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2146,7 +2146,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservationOffering">REST API Reference for GetReservationOffering Operation</seealso>
         public virtual GetReservationOfferingResponse GetReservationOffering(GetReservationOfferingRequest request)
@@ -2179,7 +2179,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetReservationOffering">REST API Reference for GetReservationOffering Operation</seealso>
         public virtual Task<GetReservationOfferingResponse> GetReservationOfferingAsync(GetReservationOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2209,7 +2209,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
@@ -2238,7 +2238,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2268,7 +2268,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetScheduledAction">REST API Reference for GetScheduledAction Operation</seealso>
         public virtual GetScheduledActionResponse GetScheduledAction(GetScheduledActionRequest request)
@@ -2297,7 +2297,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetScheduledAction">REST API Reference for GetScheduledAction Operation</seealso>
         public virtual Task<GetScheduledActionResponse> GetScheduledActionAsync(GetScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2327,7 +2327,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetSnapshot">REST API Reference for GetSnapshot Operation</seealso>
         public virtual GetSnapshotResponse GetSnapshot(GetSnapshotRequest request)
@@ -2356,7 +2356,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetSnapshot">REST API Reference for GetSnapshot Operation</seealso>
         public virtual Task<GetSnapshotResponse> GetSnapshotAsync(GetSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2383,7 +2383,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus">REST API Reference for GetTableRestoreStatus Operation</seealso>
         public virtual GetTableRestoreStatusResponse GetTableRestoreStatus(GetTableRestoreStatusRequest request)
@@ -2409,7 +2409,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus">REST API Reference for GetTableRestoreStatus Operation</seealso>
         public virtual Task<GetTableRestoreStatusResponse> GetTableRestoreStatusAsync(GetTableRestoreStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2448,7 +2448,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTrack">REST API Reference for GetTrack Operation</seealso>
         public virtual GetTrackResponse GetTrack(GetTrackRequest request)
@@ -2486,7 +2486,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTrack">REST API Reference for GetTrack Operation</seealso>
         public virtual Task<GetTrackResponse> GetTrackAsync(GetTrackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2519,7 +2519,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetUsageLimit">REST API Reference for GetUsageLimit Operation</seealso>
         public virtual GetUsageLimitResponse GetUsageLimit(GetUsageLimitRequest request)
@@ -2551,7 +2551,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetUsageLimit">REST API Reference for GetUsageLimit Operation</seealso>
         public virtual Task<GetUsageLimitResponse> GetUsageLimitAsync(GetUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2581,7 +2581,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetWorkgroup">REST API Reference for GetWorkgroup Operation</seealso>
         public virtual GetWorkgroupResponse GetWorkgroup(GetWorkgroupRequest request)
@@ -2610,7 +2610,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetWorkgroup">REST API Reference for GetWorkgroup Operation</seealso>
         public virtual Task<GetWorkgroupResponse> GetWorkgroupAsync(GetWorkgroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2646,7 +2646,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations">REST API Reference for ListCustomDomainAssociations Operation</seealso>
         public virtual ListCustomDomainAssociationsResponse ListCustomDomainAssociations(ListCustomDomainAssociationsRequest request)
@@ -2681,7 +2681,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListCustomDomainAssociations">REST API Reference for ListCustomDomainAssociations Operation</seealso>
         public virtual Task<ListCustomDomainAssociationsResponse> ListCustomDomainAssociationsAsync(ListCustomDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2714,7 +2714,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListEndpointAccess">REST API Reference for ListEndpointAccess Operation</seealso>
         public virtual ListEndpointAccessResponse ListEndpointAccess(ListEndpointAccessRequest request)
@@ -2746,7 +2746,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListEndpointAccess">REST API Reference for ListEndpointAccess Operation</seealso>
         public virtual Task<ListEndpointAccessResponse> ListEndpointAccessAsync(ListEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2826,7 +2826,7 @@ namespace Amazon.RedshiftServerless
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
         public virtual ListNamespacesResponse ListNamespaces(ListNamespacesRequest request)
@@ -2852,7 +2852,7 @@ namespace Amazon.RedshiftServerless
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
         public virtual Task<ListNamespacesResponse> ListNamespacesAsync(ListNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2879,7 +2879,7 @@ namespace Amazon.RedshiftServerless
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListRecoveryPoints">REST API Reference for ListRecoveryPoints Operation</seealso>
         public virtual ListRecoveryPointsResponse ListRecoveryPoints(ListRecoveryPointsRequest request)
@@ -2905,7 +2905,7 @@ namespace Amazon.RedshiftServerless
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListRecoveryPoints">REST API Reference for ListRecoveryPoints Operation</seealso>
         public virtual Task<ListRecoveryPointsResponse> ListRecoveryPointsAsync(ListRecoveryPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2935,7 +2935,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservationOfferings">REST API Reference for ListReservationOfferings Operation</seealso>
         public virtual ListReservationOfferingsResponse ListReservationOfferings(ListReservationOfferingsRequest request)
@@ -2964,7 +2964,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservationOfferings">REST API Reference for ListReservationOfferings Operation</seealso>
         public virtual Task<ListReservationOfferingsResponse> ListReservationOfferingsAsync(ListReservationOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2994,7 +2994,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservations">REST API Reference for ListReservations Operation</seealso>
         public virtual ListReservationsResponse ListReservations(ListReservationsRequest request)
@@ -3023,7 +3023,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListReservations">REST API Reference for ListReservations Operation</seealso>
         public virtual Task<ListReservationsResponse> ListReservationsAsync(ListReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3057,7 +3057,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
         public virtual ListScheduledActionsResponse ListScheduledActions(ListScheduledActionsRequest request)
@@ -3090,7 +3090,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListScheduledActions">REST API Reference for ListScheduledActions Operation</seealso>
         public virtual Task<ListScheduledActionsResponse> ListScheduledActionsAsync(ListScheduledActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3126,7 +3126,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshotCopyConfigurations">REST API Reference for ListSnapshotCopyConfigurations Operation</seealso>
         public virtual ListSnapshotCopyConfigurationsResponse ListSnapshotCopyConfigurations(ListSnapshotCopyConfigurationsRequest request)
@@ -3161,7 +3161,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshotCopyConfigurations">REST API Reference for ListSnapshotCopyConfigurations Operation</seealso>
         public virtual Task<ListSnapshotCopyConfigurationsResponse> ListSnapshotCopyConfigurationsAsync(ListSnapshotCopyConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3191,7 +3191,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshots">REST API Reference for ListSnapshots Operation</seealso>
         public virtual ListSnapshotsResponse ListSnapshots(ListSnapshotsRequest request)
@@ -3220,7 +3220,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListSnapshots">REST API Reference for ListSnapshots Operation</seealso>
         public virtual Task<ListSnapshotsResponse> ListSnapshotsAsync(ListSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3250,7 +3250,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus">REST API Reference for ListTableRestoreStatus Operation</seealso>
         public virtual ListTableRestoreStatusResponse ListTableRestoreStatus(ListTableRestoreStatusRequest request)
@@ -3279,7 +3279,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus">REST API Reference for ListTableRestoreStatus Operation</seealso>
         public virtual Task<ListTableRestoreStatusResponse> ListTableRestoreStatusAsync(ListTableRestoreStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3312,7 +3312,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -3344,7 +3344,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3380,7 +3380,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTracks">REST API Reference for ListTracks Operation</seealso>
         public virtual ListTracksResponse ListTracks(ListTracksRequest request)
@@ -3415,7 +3415,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTracks">REST API Reference for ListTracks Operation</seealso>
         public virtual Task<ListTracksResponse> ListTracksAsync(ListTracksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3451,7 +3451,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListUsageLimits">REST API Reference for ListUsageLimits Operation</seealso>
         public virtual ListUsageLimitsResponse ListUsageLimits(ListUsageLimitsRequest request)
@@ -3486,7 +3486,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListUsageLimits">REST API Reference for ListUsageLimits Operation</seealso>
         public virtual Task<ListUsageLimitsResponse> ListUsageLimitsAsync(ListUsageLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3513,7 +3513,7 @@ namespace Amazon.RedshiftServerless
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListWorkgroups">REST API Reference for ListWorkgroups Operation</seealso>
         public virtual ListWorkgroupsResponse ListWorkgroups(ListWorkgroupsRequest request)
@@ -3539,7 +3539,7 @@ namespace Amazon.RedshiftServerless
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListWorkgroups">REST API Reference for ListWorkgroups Operation</seealso>
         public virtual Task<ListWorkgroupsResponse> ListWorkgroupsAsync(ListWorkgroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3576,7 +3576,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
@@ -3612,7 +3612,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
         public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3645,7 +3645,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreFromRecoveryPoint">REST API Reference for RestoreFromRecoveryPoint Operation</seealso>
         public virtual RestoreFromRecoveryPointResponse RestoreFromRecoveryPoint(RestoreFromRecoveryPointRequest request)
@@ -3677,7 +3677,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreFromRecoveryPoint">REST API Reference for RestoreFromRecoveryPoint Operation</seealso>
         public virtual Task<RestoreFromRecoveryPointResponse> RestoreFromRecoveryPointAsync(RestoreFromRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3713,7 +3713,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         public virtual RestoreFromSnapshotResponse RestoreFromSnapshot(RestoreFromSnapshotRequest request)
@@ -3748,7 +3748,7 @@ namespace Amazon.RedshiftServerless
         /// The service limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreFromSnapshot">REST API Reference for RestoreFromSnapshot Operation</seealso>
         public virtual Task<RestoreFromSnapshotResponse> RestoreFromSnapshotAsync(RestoreFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3782,7 +3782,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromRecoveryPoint">REST API Reference for RestoreTableFromRecoveryPoint Operation</seealso>
         public virtual RestoreTableFromRecoveryPointResponse RestoreTableFromRecoveryPoint(RestoreTableFromRecoveryPointRequest request)
@@ -3815,7 +3815,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromRecoveryPoint">REST API Reference for RestoreTableFromRecoveryPoint Operation</seealso>
         public virtual Task<RestoreTableFromRecoveryPointResponse> RestoreTableFromRecoveryPointAsync(RestoreTableFromRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3850,7 +3850,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot">REST API Reference for RestoreTableFromSnapshot Operation</seealso>
         public virtual RestoreTableFromSnapshotResponse RestoreTableFromSnapshot(RestoreTableFromSnapshotRequest request)
@@ -3884,7 +3884,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot">REST API Reference for RestoreTableFromSnapshot Operation</seealso>
         public virtual Task<RestoreTableFromSnapshotResponse> RestoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3920,7 +3920,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -3955,7 +3955,7 @@ namespace Amazon.RedshiftServerless
         /// The request exceeded the number of tags allowed for a resource.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3988,7 +3988,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -4020,7 +4020,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4059,7 +4059,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateCustomDomainAssociation">REST API Reference for UpdateCustomDomainAssociation Operation</seealso>
         public virtual UpdateCustomDomainAssociationResponse UpdateCustomDomainAssociation(UpdateCustomDomainAssociationRequest request)
@@ -4097,7 +4097,7 @@ namespace Amazon.RedshiftServerless
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateCustomDomainAssociation">REST API Reference for UpdateCustomDomainAssociation Operation</seealso>
         public virtual Task<UpdateCustomDomainAssociationResponse> UpdateCustomDomainAssociationAsync(UpdateCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4133,7 +4133,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateEndpointAccess">REST API Reference for UpdateEndpointAccess Operation</seealso>
         public virtual UpdateEndpointAccessResponse UpdateEndpointAccess(UpdateEndpointAccessRequest request)
@@ -4168,7 +4168,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateEndpointAccess">REST API Reference for UpdateEndpointAccess Operation</seealso>
         public virtual Task<UpdateEndpointAccessResponse> UpdateEndpointAccessAsync(UpdateEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4178,6 +4178,83 @@ namespace Amazon.RedshiftServerless
             options.ResponseUnmarshaller = UpdateEndpointAccessResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateEndpointAccessResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLakehouseConfiguration
+
+
+        /// <summary>
+        /// Modifies the lakehouse configuration for a namespace. This operation allows you to
+        /// manage Amazon Redshift federated permissions and Amazon Web Services IAM Identity
+        /// Center trusted identity propagation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLakehouseConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLakehouseConfiguration service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.DryRunException">
+        /// This exception is thrown when the request was successful, but dry run was enabled
+        /// so no action was taken.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateLakehouseConfiguration">REST API Reference for UpdateLakehouseConfiguration Operation</seealso>
+        public virtual UpdateLakehouseConfigurationResponse UpdateLakehouseConfiguration(UpdateLakehouseConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLakehouseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLakehouseConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLakehouseConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies the lakehouse configuration for a namespace. This operation allows you to
+        /// manage Amazon Redshift federated permissions and Amazon Web Services IAM Identity
+        /// Center trusted identity propagation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLakehouseConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLakehouseConfiguration service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ConflictException">
+        /// The submitted action has conflicts.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.DryRunException">
+        /// This exception is thrown when the request was successful, but dry run was enabled
+        /// so no action was taken.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateLakehouseConfiguration">REST API Reference for UpdateLakehouseConfiguration Operation</seealso>
+        public virtual Task<UpdateLakehouseConfigurationResponse> UpdateLakehouseConfigurationAsync(UpdateLakehouseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLakehouseConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLakehouseConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateLakehouseConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4204,7 +4281,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateNamespace">REST API Reference for UpdateNamespace Operation</seealso>
         public virtual UpdateNamespaceResponse UpdateNamespace(UpdateNamespaceRequest request)
@@ -4239,7 +4316,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateNamespace">REST API Reference for UpdateNamespace Operation</seealso>
         public virtual Task<UpdateNamespaceResponse> UpdateNamespaceAsync(UpdateNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4272,7 +4349,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
         public virtual UpdateScheduledActionResponse UpdateScheduledAction(UpdateScheduledActionRequest request)
@@ -4304,7 +4381,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateScheduledAction">REST API Reference for UpdateScheduledAction Operation</seealso>
         public virtual Task<UpdateScheduledActionResponse> UpdateScheduledActionAsync(UpdateScheduledActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4337,7 +4414,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshot">REST API Reference for UpdateSnapshot Operation</seealso>
         public virtual UpdateSnapshotResponse UpdateSnapshot(UpdateSnapshotRequest request)
@@ -4369,7 +4446,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshot">REST API Reference for UpdateSnapshot Operation</seealso>
         public virtual Task<UpdateSnapshotResponse> UpdateSnapshotAsync(UpdateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4405,7 +4482,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshotCopyConfiguration">REST API Reference for UpdateSnapshotCopyConfiguration Operation</seealso>
         public virtual UpdateSnapshotCopyConfigurationResponse UpdateSnapshotCopyConfiguration(UpdateSnapshotCopyConfigurationRequest request)
@@ -4440,7 +4517,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateSnapshotCopyConfiguration">REST API Reference for UpdateSnapshotCopyConfiguration Operation</seealso>
         public virtual Task<UpdateSnapshotCopyConfigurationResponse> UpdateSnapshotCopyConfigurationAsync(UpdateSnapshotCopyConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4474,7 +4551,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateUsageLimit">REST API Reference for UpdateUsageLimit Operation</seealso>
         public virtual UpdateUsageLimitResponse UpdateUsageLimit(UpdateUsageLimitRequest request)
@@ -4507,7 +4584,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateUsageLimit">REST API Reference for UpdateUsageLimit Operation</seealso>
         public virtual Task<UpdateUsageLimitResponse> UpdateUsageLimitAsync(UpdateUsageLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4574,7 +4651,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateWorkgroup">REST API Reference for UpdateWorkgroup Operation</seealso>
         public virtual UpdateWorkgroupResponse UpdateWorkgroup(UpdateWorkgroupRequest request)
@@ -4640,7 +4717,7 @@ namespace Amazon.RedshiftServerless
         /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.RedshiftServerless.Model.ValidationException">
-        /// The input failed to satisfy the constraints specified by an AWS service.
+        /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/UpdateWorkgroup">REST API Reference for UpdateWorkgroup Operation</seealso>
         public virtual Task<UpdateWorkgroupResponse> UpdateWorkgroupAsync(UpdateWorkgroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
