@@ -114,6 +114,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.IntegrationResponses = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("integrationTarget", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IntegrationTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("passthroughBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
