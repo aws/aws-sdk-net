@@ -30,38 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeWebApp operation.
-    /// Describes the web app that's identified by <c>WebAppId</c>. The response includes
-    /// endpoint configuration details such as whether the web app is publicly accessible
-    /// or VPC hosted.
-    /// 
-    ///  
-    /// <para>
-    /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
-    /// a Transfer Family web app in a VPC</a>.
-    /// </para>
+    /// Contains the endpoint configuration for a web app, including VPC settings when the
+    /// endpoint is hosted within a VPC.
     /// </summary>
-    public partial class DescribeWebAppRequest : AmazonTransferRequest
+    public partial class WebAppEndpointDetails
     {
-        private string _webAppId;
+        private WebAppVpcConfig _vpc;
 
         /// <summary>
-        /// Gets and sets the property WebAppId. 
+        /// Gets and sets the property Vpc. 
         /// <para>
-        /// Provide the unique identifier for the web app.
+        /// The VPC configuration for hosting the web app endpoint within a VPC.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=24, Max=24)]
-        public string WebAppId
+        public WebAppVpcConfig Vpc
         {
-            get { return this._webAppId; }
-            set { this._webAppId = value; }
+            get { return this._vpc; }
+            set { this._vpc = value; }
         }
 
-        // Check to see if WebAppId property is set
-        internal bool IsSetWebAppId()
+        // Check to see if Vpc property is set
+        internal bool IsSetVpc()
         {
-            return this._webAppId != null;
+            return this._vpc != null;
         }
 
     }

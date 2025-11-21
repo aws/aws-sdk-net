@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListedWebApp Object
+    /// Response Unmarshaller for DescribedWebAppEndpointDetails Object
     /// </summary>  
-    public class ListedWebAppUnmarshaller : IJsonUnmarshaller<ListedWebApp, JsonUnmarshallerContext>
+    public class DescribedWebAppEndpointDetailsUnmarshaller : IJsonUnmarshaller<DescribedWebAppEndpointDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ListedWebApp Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DescribedWebAppEndpointDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ListedWebApp unmarshalledObject = new ListedWebApp();
+            DescribedWebAppEndpointDetails unmarshalledObject = new DescribedWebAppEndpointDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,10 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccessEndpoint", targetDepth))
+                if (context.TestExpression("Vpc", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessEndpoint = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EndpointType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WebAppEndpoint", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WebAppEndpoint = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WebAppId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WebAppId = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = DescribedWebAppVpcConfigUnmarshaller.Instance;
+                    unmarshalledObject.Vpc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +67,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         }
 
 
-        private static ListedWebAppUnmarshaller _instance = new ListedWebAppUnmarshaller();        
+        private static DescribedWebAppEndpointDetailsUnmarshaller _instance = new DescribedWebAppEndpointDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListedWebAppUnmarshaller Instance
+        public static DescribedWebAppEndpointDetailsUnmarshaller Instance
         {
             get
             {
