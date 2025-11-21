@@ -104,6 +104,17 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetCrossRegionS3RestoreSourcesToEnable())
+                {
+                    context.Writer.WritePropertyName("crossRegionS3RestoreSourcesToEnable");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestCrossRegionS3RestoreSourcesToEnableListValue in publicRequest.CrossRegionS3RestoreSourcesToEnable)
+                    {
+                            context.Writer.Write(publicRequestCrossRegionS3RestoreSourcesToEnableListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetCustomDomainName())
                 {
                     context.Writer.WritePropertyName("customDomainName");
@@ -122,6 +133,18 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DisplayName);
                 }
 
+                if(publicRequest.IsSetKmsAccess())
+                {
+                    context.Writer.WritePropertyName("kmsAccess");
+                    context.Writer.Write(publicRequest.KmsAccess);
+                }
+
+                if(publicRequest.IsSetKmsPolicyDocument())
+                {
+                    context.Writer.WritePropertyName("kmsPolicyDocument");
+                    context.Writer.Write(publicRequest.KmsPolicyDocument);
+                }
+
                 if(publicRequest.IsSetS3Access())
                 {
                     context.Writer.WritePropertyName("s3Access");
@@ -132,6 +155,18 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("s3PolicyDocument");
                     context.Writer.Write(publicRequest.S3PolicyDocument);
+                }
+
+                if(publicRequest.IsSetStsAccess())
+                {
+                    context.Writer.WritePropertyName("stsAccess");
+                    context.Writer.Write(publicRequest.StsAccess);
+                }
+
+                if(publicRequest.IsSetStsPolicyDocument())
+                {
+                    context.Writer.WritePropertyName("stsPolicyDocument");
+                    context.Writer.Write(publicRequest.StsPolicyDocument);
                 }
 
                 if(publicRequest.IsSetTags())

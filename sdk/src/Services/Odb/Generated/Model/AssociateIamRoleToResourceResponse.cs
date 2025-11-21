@@ -30,30 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Odb.Model
 {
     /// <summary>
-    /// Container for the parameters to the InitializeService operation.
-    /// Initializes the ODB service for the first time in an account.
+    /// This is the response object from the AssociateIamRoleToResource operation.
     /// </summary>
-    public partial class InitializeServiceRequest : AmazonOdbRequest
+    public partial class AssociateIamRoleToResourceResponse : AmazonWebServiceResponse
     {
-        private bool? _ociIdentityDomain;
-
-        /// <summary>
-        /// Gets and sets the property OciIdentityDomain. 
-        /// <para>
-        /// The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.
-        /// </para>
-        /// </summary>
-        public bool OciIdentityDomain
-        {
-            get { return this._ociIdentityDomain.GetValueOrDefault(); }
-            set { this._ociIdentityDomain = value; }
-        }
-
-        // Check to see if OciIdentityDomain property is set
-        internal bool IsSetOciIdentityDomain()
-        {
-            return this._ociIdentityDomain.HasValue; 
-        }
 
     }
 }

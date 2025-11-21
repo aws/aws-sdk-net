@@ -66,6 +66,18 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("crossRegionS3RestoreSourcesAccess", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CrossRegionS3RestoreSourcesAccess, CrossRegionS3RestoreSourcesAccessUnmarshaller>(CrossRegionS3RestoreSourcesAccessUnmarshaller.Instance);
+                    unmarshalledObject.CrossRegionS3RestoreSourcesAccess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kmsAccess", targetDepth))
+                {
+                    var unmarshaller = KmsAccessUnmarshaller.Instance;
+                    unmarshalledObject.KmsAccess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("managedS3BackupAccess", targetDepth))
                 {
                     var unmarshaller = ManagedS3BackupAccessUnmarshaller.Instance;
@@ -100,6 +112,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = ServiceNetworkEndpointUnmarshaller.Instance;
                     unmarshalledObject.ServiceNetworkEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stsAccess", targetDepth))
+                {
+                    var unmarshaller = StsAccessUnmarshaller.Instance;
+                    unmarshalledObject.StsAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("zeroEtlAccess", targetDepth))

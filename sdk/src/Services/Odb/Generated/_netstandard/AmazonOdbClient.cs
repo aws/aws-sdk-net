@@ -363,6 +363,64 @@ namespace Amazon.Odb
 
         #endregion
         
+        #region  AssociateIamRoleToResource
+
+        internal virtual AssociateIamRoleToResourceResponse AssociateIamRoleToResource(AssociateIamRoleToResourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateIamRoleToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIamRoleToResourceResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIamRoleToResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates an Amazon Web Services Identity and Access Management (IAM) service role
+        /// with a specified resource to enable Amazon Web Services service integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIamRoleToResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateIamRoleToResource service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/AssociateIamRoleToResource">REST API Reference for AssociateIamRoleToResource Operation</seealso>
+        public virtual Task<AssociateIamRoleToResourceResponse> AssociateIamRoleToResourceAsync(AssociateIamRoleToResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateIamRoleToResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIamRoleToResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateIamRoleToResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCloudAutonomousVmCluster
 
         internal virtual CreateCloudAutonomousVmClusterResponse CreateCloudAutonomousVmCluster(CreateCloudAutonomousVmClusterRequest request)
@@ -932,6 +990,64 @@ namespace Amazon.Odb
             options.ResponseUnmarshaller = DeleteOdbPeeringConnectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteOdbPeeringConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateIamRoleFromResource
+
+        internal virtual DisassociateIamRoleFromResourceResponse DisassociateIamRoleFromResource(DisassociateIamRoleFromResourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateIamRoleFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIamRoleFromResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIamRoleFromResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates an Amazon Web Services Identity and Access Management (IAM) service
+        /// role from a specified resource to disable Amazon Web Services service integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIamRoleFromResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateIamRoleFromResource service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DisassociateIamRoleFromResource">REST API Reference for DisassociateIamRoleFromResource Operation</seealso>
+        public virtual Task<DisassociateIamRoleFromResourceResponse> DisassociateIamRoleFromResourceAsync(DisassociateIamRoleFromResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateIamRoleFromResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIamRoleFromResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateIamRoleFromResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

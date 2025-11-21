@@ -162,6 +162,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hostname = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iamRoles", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<IamRole, IamRoleUnmarshaller>(IamRoleUnmarshaller.Instance);
+                    unmarshalledObject.IamRoles = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("iormConfigCache", targetDepth))
                 {
                     var unmarshaller = ExadataIormConfigUnmarshaller.Instance;

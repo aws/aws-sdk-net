@@ -146,6 +146,70 @@ namespace Amazon.Odb
 
         #endregion
         
+        #region  AssociateIamRoleToResource
+
+
+        /// <summary>
+        /// Associates an Amazon Web Services Identity and Access Management (IAM) service role
+        /// with a specified resource to enable Amazon Web Services service integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIamRoleToResource service method.</param>
+        /// 
+        /// <returns>The response from the AssociateIamRoleToResource service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/AssociateIamRoleToResource">REST API Reference for AssociateIamRoleToResource Operation</seealso>
+        AssociateIamRoleToResourceResponse AssociateIamRoleToResource(AssociateIamRoleToResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateIamRoleToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIamRoleToResource operation on AmazonOdbClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateIamRoleToResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/AssociateIamRoleToResource">REST API Reference for AssociateIamRoleToResource Operation</seealso>
+        IAsyncResult BeginAssociateIamRoleToResource(AssociateIamRoleToResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateIamRoleToResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateIamRoleToResource.</param>
+        /// 
+        /// <returns>Returns a  AssociateIamRoleToResourceResult from Odb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/AssociateIamRoleToResource">REST API Reference for AssociateIamRoleToResource Operation</seealso>
+        AssociateIamRoleToResourceResponse EndAssociateIamRoleToResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCloudAutonomousVmCluster
 
 
@@ -776,6 +840,70 @@ namespace Amazon.Odb
         /// <returns>Returns a  DeleteOdbPeeringConnectionResult from Odb.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteOdbPeeringConnection">REST API Reference for DeleteOdbPeeringConnection Operation</seealso>
         DeleteOdbPeeringConnectionResponse EndDeleteOdbPeeringConnection(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateIamRoleFromResource
+
+
+        /// <summary>
+        /// Disassociates an Amazon Web Services Identity and Access Management (IAM) service
+        /// role from a specified resource to disable Amazon Web Services service integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIamRoleFromResource service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateIamRoleFromResource service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DisassociateIamRoleFromResource">REST API Reference for DisassociateIamRoleFromResource Operation</seealso>
+        DisassociateIamRoleFromResourceResponse DisassociateIamRoleFromResource(DisassociateIamRoleFromResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateIamRoleFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIamRoleFromResource operation on AmazonOdbClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateIamRoleFromResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DisassociateIamRoleFromResource">REST API Reference for DisassociateIamRoleFromResource Operation</seealso>
+        IAsyncResult BeginDisassociateIamRoleFromResource(DisassociateIamRoleFromResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateIamRoleFromResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateIamRoleFromResource.</param>
+        /// 
+        /// <returns>Returns a  DisassociateIamRoleFromResourceResult from Odb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DisassociateIamRoleFromResource">REST API Reference for DisassociateIamRoleFromResource Operation</seealso>
+        DisassociateIamRoleFromResourceResponse EndDisassociateIamRoleFromResource(IAsyncResult asyncResult);
 
         #endregion
         

@@ -40,11 +40,16 @@ namespace Amazon.Odb.Model
         private string _backupSubnetCidr;
         private string _clientSubnetCidr;
         private string _clientToken;
+        private List<string> _crossRegionS3RestoreSourcesToEnable = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _customDomainName;
         private string _defaultDnsPrefix;
         private string _displayName;
+        private Access _kmsAccess;
+        private string _kmsPolicyDocument;
         private Access _s3Access;
         private string _s3PolicyDocument;
+        private Access _stsAccess;
+        private string _stsPolicyDocument;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Access _zeroEtlAccess;
 
@@ -223,6 +228,25 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CrossRegionS3RestoreSourcesToEnable. 
+        /// <para>
+        /// The cross-Region Amazon S3 restore sources to enable for the ODB network.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public List<string> CrossRegionS3RestoreSourcesToEnable
+        {
+            get { return this._crossRegionS3RestoreSourcesToEnable; }
+            set { this._crossRegionS3RestoreSourcesToEnable = value; }
+        }
+
+        // Check to see if CrossRegionS3RestoreSourcesToEnable property is set
+        internal bool IsSetCrossRegionS3RestoreSourcesToEnable()
+        {
+            return this._crossRegionS3RestoreSourcesToEnable != null && (this._crossRegionS3RestoreSourcesToEnable.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomDomainName. 
         /// <para>
         /// The domain name to use for the resources in the ODB network.
@@ -280,6 +304,44 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsAccess. 
+        /// <para>
+        /// The Amazon Web Services Key Management Service (KMS) access configuration for the
+        /// ODB network.
+        /// </para>
+        /// </summary>
+        public Access KmsAccess
+        {
+            get { return this._kmsAccess; }
+            set { this._kmsAccess = value; }
+        }
+
+        // Check to see if KmsAccess property is set
+        internal bool IsSetKmsAccess()
+        {
+            return this._kmsAccess != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsPolicyDocument. 
+        /// <para>
+        /// The KMS policy document that defines permissions for key usage within the ODB network.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=20480)]
+        public string KmsPolicyDocument
+        {
+            get { return this._kmsPolicyDocument; }
+            set { this._kmsPolicyDocument = value; }
+        }
+
+        // Check to see if KmsPolicyDocument property is set
+        internal bool IsSetKmsPolicyDocument()
+        {
+            return this._kmsPolicyDocument != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3Access. 
         /// <para>
         /// Specifies the configuration for Amazon S3 access from the ODB network.
@@ -314,6 +376,45 @@ namespace Amazon.Odb.Model
         internal bool IsSetS3PolicyDocument()
         {
             return this._s3PolicyDocument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StsAccess. 
+        /// <para>
+        /// The Amazon Web Services Security Token Service (STS) access configuration for the
+        /// ODB network.
+        /// </para>
+        /// </summary>
+        public Access StsAccess
+        {
+            get { return this._stsAccess; }
+            set { this._stsAccess = value; }
+        }
+
+        // Check to see if StsAccess property is set
+        internal bool IsSetStsAccess()
+        {
+            return this._stsAccess != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StsPolicyDocument. 
+        /// <para>
+        /// The STS policy document that defines permissions for token service usage within the
+        /// ODB network.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=20480)]
+        public string StsPolicyDocument
+        {
+            get { return this._stsPolicyDocument; }
+            set { this._stsPolicyDocument = value; }
+        }
+
+        // Check to see if StsPolicyDocument property is set
+        internal bool IsSetStsPolicyDocument()
+        {
+            return this._stsPolicyDocument != null;
         }
 
         /// <summary>
