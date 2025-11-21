@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MessageTemplateContentProvider Object
+    /// Response Unmarshaller for WhatsAppMessageTemplateContent Object
     /// </summary>  
-    public class MessageTemplateContentProviderUnmarshaller : IJsonUnmarshaller<MessageTemplateContentProvider, JsonUnmarshallerContext>
+    public class WhatsAppMessageTemplateContentUnmarshaller : IJsonUnmarshaller<WhatsAppMessageTemplateContent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MessageTemplateContentProvider Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WhatsAppMessageTemplateContent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            MessageTemplateContentProvider unmarshalledObject = new MessageTemplateContentProvider();
+            WhatsAppMessageTemplateContent unmarshalledObject = new WhatsAppMessageTemplateContent();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("email", targetDepth))
+                if (context.TestExpression("data", targetDepth))
                 {
-                    var unmarshaller = EmailMessageTemplateContentUnmarshaller.Instance;
-                    unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("push", targetDepth))
-                {
-                    var unmarshaller = PushMessageTemplateContentUnmarshaller.Instance;
-                    unmarshalledObject.Push = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("sms", targetDepth))
-                {
-                    var unmarshaller = SMSMessageTemplateContentUnmarshaller.Instance;
-                    unmarshalledObject.Sms = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("whatsApp", targetDepth))
-                {
-                    var unmarshaller = WhatsAppMessageTemplateContentUnmarshaller.Instance;
-                    unmarshalledObject.WhatsApp = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Data = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static MessageTemplateContentProviderUnmarshaller _instance = new MessageTemplateContentProviderUnmarshaller();        
+        private static WhatsAppMessageTemplateContentUnmarshaller _instance = new WhatsAppMessageTemplateContentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MessageTemplateContentProviderUnmarshaller Instance
+        public static WhatsAppMessageTemplateContentUnmarshaller Instance
         {
             get
             {

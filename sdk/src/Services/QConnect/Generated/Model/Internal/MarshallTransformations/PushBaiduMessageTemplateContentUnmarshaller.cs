@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MessageTemplateVersionSummary Object
+    /// Response Unmarshaller for PushBaiduMessageTemplateContent Object
     /// </summary>  
-    public class MessageTemplateVersionSummaryUnmarshaller : IJsonUnmarshaller<MessageTemplateVersionSummary, JsonUnmarshallerContext>
+    public class PushBaiduMessageTemplateContentUnmarshaller : IJsonUnmarshaller<PushBaiduMessageTemplateContent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MessageTemplateVersionSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PushBaiduMessageTemplateContent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            MessageTemplateVersionSummary unmarshalledObject = new MessageTemplateVersionSummary();
+            PushBaiduMessageTemplateContent unmarshalledObject = new PushBaiduMessageTemplateContent();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,58 +56,58 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("channel", targetDepth))
+                if (context.TestExpression("action", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelSubtype", targetDepth))
+                if (context.TestExpression("body", targetDepth))
+                {
+                    var unmarshaller = MessageTemplateBodyContentProviderUnmarshaller.Instance;
+                    unmarshalledObject.Body = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("imageIconUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelSubtype = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ImageIconUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isActive", targetDepth))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsActive = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("knowledgeBaseArn", targetDepth))
+                if (context.TestExpression("imageUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KnowledgeBaseArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ImageUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("knowledgeBaseId", targetDepth))
+                if (context.TestExpression("rawContent", targetDepth))
+                {
+                    var unmarshaller = MessageTemplateBodyContentProviderUnmarshaller.Instance;
+                    unmarshalledObject.RawContent = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("smallImageIconUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KnowledgeBaseId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.SmallImageIconUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messageTemplateArn", targetDepth))
+                if (context.TestExpression("sound", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageTemplateArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Sound = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("messageTemplateId", targetDepth))
+                if (context.TestExpression("title", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageTemplateId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("versionNumber", targetDepth))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -115,12 +115,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static MessageTemplateVersionSummaryUnmarshaller _instance = new MessageTemplateVersionSummaryUnmarshaller();        
+        private static PushBaiduMessageTemplateContentUnmarshaller _instance = new PushBaiduMessageTemplateContentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MessageTemplateVersionSummaryUnmarshaller Instance
+        public static PushBaiduMessageTemplateContentUnmarshaller Instance
         {
             get
             {

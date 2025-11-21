@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MessageTemplateContentProvider Marshaller
+    /// PushMessageTemplateContent Marshaller
     /// </summary>
-    public class MessageTemplateContentProviderMarshaller : IRequestMarshaller<MessageTemplateContentProvider, JsonMarshallerContext> 
+    public class PushMessageTemplateContentMarshaller : IRequestMarshaller<PushMessageTemplateContent, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,50 +42,50 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MessageTemplateContentProvider requestObject, JsonMarshallerContext context)
+        public void Marshall(PushMessageTemplateContent requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEmail())
+            if(requestObject.IsSetAdm())
             {
-                context.Writer.WritePropertyName("email");
+                context.Writer.WritePropertyName("adm");
                 context.Writer.WriteStartObject();
 
-                var marshaller = EmailMessageTemplateContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.Email, context);
+                var marshaller = PushADMMessageTemplateContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.Adm, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetPush())
+            if(requestObject.IsSetApns())
             {
-                context.Writer.WritePropertyName("push");
+                context.Writer.WritePropertyName("apns");
                 context.Writer.WriteStartObject();
 
-                var marshaller = PushMessageTemplateContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.Push, context);
+                var marshaller = PushAPNSMessageTemplateContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.Apns, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetSms())
+            if(requestObject.IsSetBaidu())
             {
-                context.Writer.WritePropertyName("sms");
+                context.Writer.WritePropertyName("baidu");
                 context.Writer.WriteStartObject();
 
-                var marshaller = SMSMessageTemplateContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.Sms, context);
+                var marshaller = PushBaiduMessageTemplateContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.Baidu, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetWhatsApp())
+            if(requestObject.IsSetFcm())
             {
-                context.Writer.WritePropertyName("whatsApp");
+                context.Writer.WritePropertyName("fcm");
                 context.Writer.WriteStartObject();
 
-                var marshaller = WhatsAppMessageTemplateContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.WhatsApp, context);
+                var marshaller = PushFCMMessageTemplateContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.Fcm, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -95,7 +95,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MessageTemplateContentProviderMarshaller Instance = new MessageTemplateContentProviderMarshaller();
+        public readonly static PushMessageTemplateContentMarshaller Instance = new PushMessageTemplateContentMarshaller();
 
     }
 }

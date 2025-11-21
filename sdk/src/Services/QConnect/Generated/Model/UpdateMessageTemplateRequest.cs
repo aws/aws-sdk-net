@@ -44,6 +44,7 @@ namespace Amazon.QConnect.Model
         private string _knowledgeBaseId;
         private string _language;
         private string _messageTemplateId;
+        private MessageTemplateSourceConfiguration _sourceConfiguration;
 
         /// <summary>
         /// Gets and sets the property Content. 
@@ -144,6 +145,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetMessageTemplateId()
         {
             return this._messageTemplateId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceConfiguration. 
+        /// <para>
+        /// The source configuration of the message template. Only set this argument for WHATSAPP
+        /// channel subtype.
+        /// </para>
+        /// </summary>
+        public MessageTemplateSourceConfiguration SourceConfiguration
+        {
+            get { return this._sourceConfiguration; }
+            set { this._sourceConfiguration = value; }
+        }
+
+        // Check to see if SourceConfiguration property is set
+        internal bool IsSetSourceConfiguration()
+        {
+            return this._sourceConfiguration != null;
         }
 
     }
