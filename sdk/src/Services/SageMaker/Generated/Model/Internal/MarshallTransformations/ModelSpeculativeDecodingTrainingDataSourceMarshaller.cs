@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OptimizationJobOutputConfig Marshaller
+    /// ModelSpeculativeDecodingTrainingDataSource Marshaller
     /// </summary>
-    public class OptimizationJobOutputConfigMarshaller : IRequestMarshaller<OptimizationJobOutputConfig, JsonMarshallerContext> 
+    public class ModelSpeculativeDecodingTrainingDataSourceMarshaller : IRequestMarshaller<ModelSpeculativeDecodingTrainingDataSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OptimizationJobOutputConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ModelSpeculativeDecodingTrainingDataSource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetKmsKeyId())
+            if(requestObject.IsSetS3DataType())
             {
-                context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WritePropertyName("S3DataType");
+                context.Writer.Write(requestObject.S3DataType);
             }
 
-            if(requestObject.IsSetS3OutputLocation())
+            if(requestObject.IsSetS3Uri())
             {
-                context.Writer.WritePropertyName("S3OutputLocation");
-                context.Writer.Write(requestObject.S3OutputLocation);
-            }
-
-            if(requestObject.IsSetSageMakerModel())
-            {
-                context.Writer.WritePropertyName("SageMakerModel");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OptimizationSageMakerModelMarshaller.Instance;
-                marshaller.Marshall(requestObject.SageMakerModel, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("S3Uri");
+                context.Writer.Write(requestObject.S3Uri);
             }
 
         }
@@ -76,7 +65,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OptimizationJobOutputConfigMarshaller Instance = new OptimizationJobOutputConfigMarshaller();
+        public readonly static ModelSpeculativeDecodingTrainingDataSourceMarshaller Instance = new ModelSpeculativeDecodingTrainingDataSourceMarshaller();
 
     }
 }

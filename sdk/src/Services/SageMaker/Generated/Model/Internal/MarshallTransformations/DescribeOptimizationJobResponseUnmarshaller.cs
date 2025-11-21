@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxInstanceCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.MaxInstanceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelSource", targetDepth))
                 {
                     var unmarshaller = OptimizationJobModelSourceUnmarshaller.Instance;

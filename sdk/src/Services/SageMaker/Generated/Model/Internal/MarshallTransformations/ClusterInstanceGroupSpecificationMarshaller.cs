@@ -48,6 +48,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCapacityRequirements())
+            {
+                context.Writer.WritePropertyName("CapacityRequirements");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ClusterCapacityRequirementsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CapacityRequirements, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetExecutionRole())
             {
                 context.Writer.WritePropertyName("ExecutionRole");
@@ -94,6 +105,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetKubernetesConfig())
+            {
+                context.Writer.WritePropertyName("KubernetesConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ClusterKubernetesConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.KubernetesConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLifeCycleConfig())
             {
                 context.Writer.WritePropertyName("LifeCycleConfig");
@@ -103,6 +125,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.LifeCycleConfig, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetMinInstanceCount())
+            {
+                context.Writer.WritePropertyName("MinInstanceCount");
+                context.Writer.Write(requestObject.MinInstanceCount);
             }
 
             if(requestObject.IsSetOnStartDeepHealthChecks())

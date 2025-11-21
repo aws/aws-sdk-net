@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OptimizationConfig Object
+    /// Response Unmarshaller for OptimizationSageMakerModel Object
     /// </summary>  
-    public class OptimizationConfigUnmarshaller : IUnmarshaller<OptimizationConfig, XmlUnmarshallerContext>, IUnmarshaller<OptimizationConfig, JsonUnmarshallerContext>
+    public class OptimizationSageMakerModelUnmarshaller : IUnmarshaller<OptimizationSageMakerModel, XmlUnmarshallerContext>, IUnmarshaller<OptimizationSageMakerModel, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OptimizationConfig IUnmarshaller<OptimizationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OptimizationSageMakerModel IUnmarshaller<OptimizationSageMakerModel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public OptimizationConfig Unmarshall(JsonUnmarshallerContext context)
+        public OptimizationSageMakerModel Unmarshall(JsonUnmarshallerContext context)
         {
-            OptimizationConfig unmarshalledObject = new OptimizationConfig();
+            OptimizationSageMakerModel unmarshalledObject = new OptimizationSageMakerModel();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ModelCompilationConfig", targetDepth))
+                if (context.TestExpression("ModelName", targetDepth))
                 {
-                    var unmarshaller = ModelCompilationConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelCompilationConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModelQuantizationConfig", targetDepth))
-                {
-                    var unmarshaller = ModelQuantizationConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelQuantizationConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModelShardingConfig", targetDepth))
-                {
-                    var unmarshaller = ModelShardingConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelShardingConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModelSpeculativeDecodingConfig", targetDepth))
-                {
-                    var unmarshaller = ModelSpeculativeDecodingConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelSpeculativeDecodingConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static OptimizationConfigUnmarshaller _instance = new OptimizationConfigUnmarshaller();        
+        private static OptimizationSageMakerModelUnmarshaller _instance = new OptimizationSageMakerModelUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OptimizationConfigUnmarshaller Instance
+        public static OptimizationSageMakerModelUnmarshaller Instance
         {
             get
             {

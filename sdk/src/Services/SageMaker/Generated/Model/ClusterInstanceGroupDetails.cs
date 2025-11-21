@@ -34,7 +34,9 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterInstanceGroupDetails
     {
+        private Dictionary<string, int> _activeOperations = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private DeploymentConfiguration _activeSoftwareUpdateConfig;
+        private ClusterCapacityRequirements _capacityRequirements;
         private int? _currentCount;
         private string _currentImageId;
         private string _desiredImageId;
@@ -42,7 +44,9 @@ namespace Amazon.SageMaker.Model
         private string _instanceGroupName;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
+        private ClusterKubernetesConfigDetails _kubernetesConfig;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private int? _minCount;
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private ScheduledUpdateConfig _scheduledUpdateConfig;
@@ -53,6 +57,26 @@ namespace Amazon.SageMaker.Model
         private int? _threadsPerCore;
         private string _trainingPlanArn;
         private string _trainingPlanStatus;
+
+        /// <summary>
+        /// Gets and sets the property ActiveOperations. 
+        /// <para>
+        /// A map indicating active operations currently in progress for the instance group of
+        /// a SageMaker HyperPod cluster. When there is a scaling operation in progress, this
+        /// map contains a key <c>Scaling</c> with value 1. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, int> ActiveOperations
+        {
+            get { return this._activeOperations; }
+            set { this._activeOperations = value; }
+        }
+
+        // Check to see if ActiveOperations property is set
+        internal bool IsSetActiveOperations()
+        {
+            return this._activeOperations != null && (this._activeOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ActiveSoftwareUpdateConfig.
@@ -67,6 +91,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetActiveSoftwareUpdateConfig()
         {
             return this._activeSoftwareUpdateConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityRequirements. 
+        /// <para>
+        /// The instance capacity requirements for the instance group.
+        /// </para>
+        /// </summary>
+        public ClusterCapacityRequirements CapacityRequirements
+        {
+            get { return this._capacityRequirements; }
+            set { this._capacityRequirements = value; }
+        }
+
+        // Check to see if CapacityRequirements property is set
+        internal bool IsSetCapacityRequirements()
+        {
+            return this._capacityRequirements != null;
         }
 
         /// <summary>
@@ -204,6 +246,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KubernetesConfig. 
+        /// <para>
+        /// The Kubernetes configuration for the instance group that contains labels and taints
+        /// to be applied for the nodes in this instance group. 
+        /// </para>
+        /// </summary>
+        public ClusterKubernetesConfigDetails KubernetesConfig
+        {
+            get { return this._kubernetesConfig; }
+            set { this._kubernetesConfig = value; }
+        }
+
+        // Check to see if KubernetesConfig property is set
+        internal bool IsSetKubernetesConfig()
+        {
+            return this._kubernetesConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LifeCycleConfig. 
         /// <para>
         /// Details of LifeCycle configuration for the instance group.
@@ -219,6 +280,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLifeCycleConfig()
         {
             return this._lifeCycleConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinCount. 
+        /// <para>
+        /// The minimum number of instances that must be available in the instance group of a
+        /// SageMaker HyperPod cluster before it transitions to <c>InService</c> status. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=6758)]
+        public int MinCount
+        {
+            get { return this._minCount.GetValueOrDefault(); }
+            set { this._minCount = value; }
+        }
+
+        // Check to see if MinCount property is set
+        internal bool IsSetMinCount()
+        {
+            return this._minCount.HasValue; 
         }
 
         /// <summary>

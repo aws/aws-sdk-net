@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OptimizationConfig Object
+    /// Response Unmarshaller for ClusterSpotOptions Object
     /// </summary>  
-    public class OptimizationConfigUnmarshaller : IUnmarshaller<OptimizationConfig, XmlUnmarshallerContext>, IUnmarshaller<OptimizationConfig, JsonUnmarshallerContext>
+    public class ClusterSpotOptionsUnmarshaller : IUnmarshaller<ClusterSpotOptions, XmlUnmarshallerContext>, IUnmarshaller<ClusterSpotOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        OptimizationConfig IUnmarshaller<OptimizationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ClusterSpotOptions IUnmarshaller<ClusterSpotOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public OptimizationConfig Unmarshall(JsonUnmarshallerContext context)
+        public ClusterSpotOptions Unmarshall(JsonUnmarshallerContext context)
         {
-            OptimizationConfig unmarshalledObject = new OptimizationConfig();
+            ClusterSpotOptions unmarshalledObject = new ClusterSpotOptions();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,41 +66,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ModelCompilationConfig", targetDepth))
-                {
-                    var unmarshaller = ModelCompilationConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelCompilationConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModelQuantizationConfig", targetDepth))
-                {
-                    var unmarshaller = ModelQuantizationConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelQuantizationConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModelShardingConfig", targetDepth))
-                {
-                    var unmarshaller = ModelShardingConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelShardingConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModelSpeculativeDecodingConfig", targetDepth))
-                {
-                    var unmarshaller = ModelSpeculativeDecodingConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelSpeculativeDecodingConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static OptimizationConfigUnmarshaller _instance = new OptimizationConfigUnmarshaller();        
+        private static ClusterSpotOptionsUnmarshaller _instance = new ClusterSpotOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OptimizationConfigUnmarshaller Instance
+        public static ClusterSpotOptionsUnmarshaller Instance
         {
             get
             {

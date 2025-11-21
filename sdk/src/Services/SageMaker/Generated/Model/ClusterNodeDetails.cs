@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterNodeDetails
     {
+        private ClusterCapacityType _capacityType;
         private string _currentImageId;
         private string _desiredImageId;
         private string _instanceGroupName;
@@ -42,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private ClusterInstanceStatusDetails _instanceStatus;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
+        private ClusterKubernetesConfigNodeDetails _kubernetesConfig;
         private DateTime? _lastSoftwareUpdateTime;
         private DateTime? _launchTime;
         private ClusterLifeCycleConfig _lifeCycleConfig;
@@ -53,6 +55,26 @@ namespace Amazon.SageMaker.Model
         private string _privatePrimaryIpv6;
         private int? _threadsPerCore;
         private UltraServerInfo _ultraServerInfo;
+
+        /// <summary>
+        /// Gets and sets the property CapacityType. 
+        /// <para>
+        /// The capacity type of the node. Valid values are <c>OnDemand</c> and <c>Spot</c>. When
+        /// set to <c>OnDemand</c>, the node is launched as an On-Demand instance. When set to
+        /// <c>Spot</c>, the node is launched as a Spot instance. 
+        /// </para>
+        /// </summary>
+        public ClusterCapacityType CapacityType
+        {
+            get { return this._capacityType; }
+            set { this._capacityType = value; }
+        }
+
+        // Check to see if CapacityType property is set
+        internal bool IsSetCapacityType()
+        {
+            return this._capacityType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CurrentImageId. 
@@ -183,6 +205,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubernetesConfig. 
+        /// <para>
+        /// The Kubernetes configuration applied to this node, showing both the current and desired
+        /// state of labels and taints. The cluster works to reconcile the actual state with the
+        /// declared state. 
+        /// </para>
+        /// </summary>
+        public ClusterKubernetesConfigNodeDetails KubernetesConfig
+        {
+            get { return this._kubernetesConfig; }
+            set { this._kubernetesConfig = value; }
+        }
+
+        // Check to see if KubernetesConfig property is set
+        internal bool IsSetKubernetesConfig()
+        {
+            return this._kubernetesConfig != null;
         }
 
         /// <summary>

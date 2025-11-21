@@ -66,10 +66,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActiveOperations", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.ActiveOperations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ActiveSoftwareUpdateConfig", targetDepth))
                 {
                     var unmarshaller = DeploymentConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ActiveSoftwareUpdateConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CapacityRequirements", targetDepth))
+                {
+                    var unmarshaller = ClusterCapacityRequirementsUnmarshaller.Instance;
+                    unmarshalledObject.CapacityRequirements = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CurrentCount", targetDepth))
@@ -114,10 +126,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KubernetesConfig", targetDepth))
+                {
+                    var unmarshaller = ClusterKubernetesConfigDetailsUnmarshaller.Instance;
+                    unmarshalledObject.KubernetesConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LifeCycleConfig", targetDepth))
                 {
                     var unmarshaller = ClusterLifeCycleConfigUnmarshaller.Instance;
                     unmarshalledObject.LifeCycleConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MinCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OnStartDeepHealthChecks", targetDepth))

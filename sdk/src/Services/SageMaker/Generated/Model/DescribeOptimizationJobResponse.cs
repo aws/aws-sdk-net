@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private OptimizationJobDeploymentInstanceType _deploymentInstanceType;
         private string _failureReason;
         private DateTime? _lastModifiedTime;
+        private int? _maxInstanceCount;
         private OptimizationJobModelSource _modelSource;
         private List<OptimizationConfig> _optimizationConfigs = AWSConfigs.InitializeCollections ? new List<OptimizationConfig>() : null;
         private DateTime? _optimizationEndTime;
@@ -127,6 +128,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxInstanceCount. 
+        /// <para>
+        /// The maximum number of instances to use for the optimization job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxInstanceCount
+        {
+            get { return this._maxInstanceCount.GetValueOrDefault(); }
+            set { this._maxInstanceCount = value; }
+        }
+
+        // Check to see if MaxInstanceCount property is set
+        internal bool IsSetMaxInstanceCount()
+        {
+            return this._maxInstanceCount.HasValue; 
         }
 
         /// <summary>

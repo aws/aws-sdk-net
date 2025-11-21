@@ -84,6 +84,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxInstanceCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxInstanceCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OptimizationEndTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

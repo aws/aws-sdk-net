@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _failureMessage;
         private int? _instanceCount;
+        private int? _minCount;
         private int? _targetCount;
 
         /// <summary>
@@ -73,6 +74,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceCount()
         {
             return this._instanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinCount. 
+        /// <para>
+        /// Minimum instance count of the instance group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10000000)]
+        public int MinCount
+        {
+            get { return this._minCount.GetValueOrDefault(); }
+            set { this._minCount = value; }
+        }
+
+        // Check to see if MinCount property is set
+        internal bool IsSetMinCount()
+        {
+            return this._minCount.HasValue; 
         }
 
         /// <summary>

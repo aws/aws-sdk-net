@@ -78,6 +78,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3OutputLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SageMakerModel", targetDepth))
+                {
+                    var unmarshaller = OptimizationSageMakerModelUnmarshaller.Instance;
+                    unmarshalledObject.SageMakerModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

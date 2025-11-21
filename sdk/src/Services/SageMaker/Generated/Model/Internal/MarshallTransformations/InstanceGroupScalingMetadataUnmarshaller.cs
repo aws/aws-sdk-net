@@ -78,6 +78,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MinCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MinCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TargetCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
