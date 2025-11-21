@@ -760,6 +760,10 @@ namespace Amazon.Organizations
         /// Constant TAG_POLICY for EffectivePolicyType
         /// </summary>
         public static readonly EffectivePolicyType TAG_POLICY = new EffectivePolicyType("TAG_POLICY");
+        /// <summary>
+        /// Constant UPGRADE_ROLLOUT_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType UPGRADE_ROLLOUT_POLICY = new EffectivePolicyType("UPGRADE_ROLLOUT_POLICY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1506,6 +1510,10 @@ namespace Amazon.Organizations
         /// Constant TAG_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType TAG_POLICY = new PolicyType("TAG_POLICY");
+        /// <summary>
+        /// Constant UPGRADE_ROLLOUT_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType UPGRADE_ROLLOUT_POLICY = new PolicyType("UPGRADE_ROLLOUT_POLICY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
