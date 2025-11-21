@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceIntegrationsUnion Object
+    /// Response Unmarshaller for RedshiftScopeUnion Object
     /// </summary>  
-    public class ServiceIntegrationsUnionUnmarshaller : IUnmarshaller<ServiceIntegrationsUnion, XmlUnmarshallerContext>, IUnmarshaller<ServiceIntegrationsUnion, JsonUnmarshallerContext>
+    public class RedshiftScopeUnionUnmarshaller : IUnmarshaller<RedshiftScopeUnion, XmlUnmarshallerContext>, IUnmarshaller<RedshiftScopeUnion, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceIntegrationsUnion Unmarshall(XmlUnmarshallerContext context)
+        public RedshiftScopeUnion Unmarshall(XmlUnmarshallerContext context)
         {
-            ServiceIntegrationsUnion unmarshalledObject = new ServiceIntegrationsUnion();
+            RedshiftScopeUnion unmarshalledObject = new RedshiftScopeUnion();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,37 +55,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("LakeFormation/member", targetDepth))
+                    if (context.TestExpression("Connect", targetDepth))
                     {
-                        var unmarshaller = LakeFormationScopeUnionUnmarshaller.Instance;
-                        if (unmarshalledObject.LakeFormation == null)
-                        {
-                            unmarshalledObject.LakeFormation = new List<LakeFormationScopeUnion>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.LakeFormation.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("Redshift/member", targetDepth))
-                    {
-                        var unmarshaller = RedshiftScopeUnionUnmarshaller.Instance;
-                        if (unmarshalledObject.Redshift == null)
-                        {
-                            unmarshalledObject.Redshift = new List<RedshiftScopeUnion>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Redshift.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("S3AccessGrants/member", targetDepth))
-                    {
-                        var unmarshaller = S3AccessGrantsScopeUnionUnmarshaller.Instance;
-                        if (unmarshalledObject.S3AccessGrants == null)
-                        {
-                            unmarshalledObject.S3AccessGrants = new List<S3AccessGrantsScopeUnion>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.S3AccessGrants.Add(item);
+                        var unmarshaller = ConnectUnmarshaller.Instance;
+                        unmarshalledObject.Connect = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -103,18 +76,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceIntegrationsUnion Unmarshall(JsonUnmarshallerContext context)
+        public RedshiftScopeUnion Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ServiceIntegrationsUnionUnmarshaller _instance = new ServiceIntegrationsUnionUnmarshaller();        
+        private static RedshiftScopeUnionUnmarshaller _instance = new RedshiftScopeUnionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceIntegrationsUnionUnmarshaller Instance
+        public static RedshiftScopeUnionUnmarshaller Instance
         {
             get
             {

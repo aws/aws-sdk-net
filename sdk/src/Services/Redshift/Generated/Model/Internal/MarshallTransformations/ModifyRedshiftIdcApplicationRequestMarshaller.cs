@@ -116,6 +116,21 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                                 publicRequestlistValuelistValueIndex++;
                             }
                         }
+                        if(publicRequestlistValue.IsSetRedshift())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Redshift)
+                            {
+                                if(publicRequestlistValuelistValue.IsSetConnect())
+                                {
+                                    if(publicRequestlistValuelistValue.Connect.IsSetAuthorization())
+                                    {
+                                        request.Parameters.Add("ServiceIntegrations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Redshift" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Connect" + "." + "Authorization", StringUtils.FromString(publicRequestlistValuelistValue.Connect.Authorization));
+                                    }
+                                }
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
                         if(publicRequestlistValue.IsSetS3AccessGrants())
                         {
                             int publicRequestlistValuelistValueIndex = 1;
