@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SessionConfiguration Object
+    /// Response Unmarshaller for S3LoggingConfiguration Object
     /// </summary>  
-    public class SessionConfigurationUnmarshaller : IJsonUnmarshaller<SessionConfiguration, JsonUnmarshallerContext>
+    public class S3LoggingConfigurationUnmarshaller : IJsonUnmarshaller<S3LoggingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SessionConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public S3LoggingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SessionConfiguration unmarshalledObject = new SessionConfiguration();
+            S3LoggingConfiguration unmarshalledObject = new S3LoggingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,22 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EncryptionConfiguration", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth))
                 {
-                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRole", targetDepth))
+                if (context.TestExpression("KmsKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.KmsKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IdleTimeoutSeconds", targetDepth))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.IdleTimeoutSeconds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SessionIdleTimeoutInMinutes", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SessionIdleTimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WorkingDirectory", targetDepth))
+                if (context.TestExpression("LogLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkingDirectory = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.LogLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +79,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         }
 
 
-        private static SessionConfigurationUnmarshaller _instance = new SessionConfigurationUnmarshaller();        
+        private static S3LoggingConfigurationUnmarshaller _instance = new S3LoggingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SessionConfigurationUnmarshaller Instance
+        public static S3LoggingConfigurationUnmarshaller Instance
         {
             get
             {

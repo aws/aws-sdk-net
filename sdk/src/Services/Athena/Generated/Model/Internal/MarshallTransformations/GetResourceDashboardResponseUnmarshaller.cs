@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetSession operation
+    /// Response Unmarshaller for GetResourceDashboard operation
     /// </summary>  
-    public class GetSessionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetResourceDashboardResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,70 +46,16 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetSessionResponse response = new GetSessionResponse();
+            GetResourceDashboardResponse response = new GetResourceDashboardResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("Url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EngineConfiguration", targetDepth))
-                {
-                    var unmarshaller = EngineConfigurationUnmarshaller.Instance;
-                    response.EngineConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EngineVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MonitoringConfiguration", targetDepth))
-                {
-                    var unmarshaller = MonitoringConfigurationUnmarshaller.Instance;
-                    response.MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("NotebookVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NotebookVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SessionConfiguration", targetDepth))
-                {
-                    var unmarshaller = SessionConfigurationUnmarshaller.Instance;
-                    response.SessionConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SessionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SessionId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Statistics", targetDepth))
-                {
-                    var unmarshaller = SessionStatisticsUnmarshaller.Instance;
-                    response.Statistics = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = SessionStatusUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WorkGroup", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.WorkGroup = unmarshaller.Unmarshall(context, ref reader);
+                    response.Url = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -153,9 +99,9 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             return new AmazonAthenaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetSessionResponseUnmarshaller _instance = new GetSessionResponseUnmarshaller();        
+        private static GetResourceDashboardResponseUnmarshaller _instance = new GetResourceDashboardResponseUnmarshaller();        
 
-        internal static GetSessionResponseUnmarshaller GetInstance()
+        internal static GetResourceDashboardResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -163,7 +109,7 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetSessionResponseUnmarshaller Instance
+        public static GetResourceDashboardResponseUnmarshaller Instance
         {
             get
             {

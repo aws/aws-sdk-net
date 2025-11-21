@@ -931,8 +931,9 @@ namespace Amazon.Athena
         /// section of the response object are available as soon as <a>QueryExecutionStatus$State</a>
         /// is in a SUCCEEDED or FAILED state. The remaining non-timeline statistics in the response
         /// (like stage-level input and output row count and data size) are updated asynchronously
-        /// and may not be available immediately after a query completes. The non-timeline statistics
-        /// are also not included when a query has row-level filters defined in Lake Formation.
+        /// and may not be available immediately after a query completes or, in some cases, may
+        /// not be returned. The non-timeline statistics are also not included when a query has
+        /// row-level filters defined in Lake Formation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryRuntimeStatistics service method.</param>
         /// <param name="cancellationToken">
@@ -949,6 +950,34 @@ namespace Amazon.Athena
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">REST API Reference for GetQueryRuntimeStatistics Operation</seealso>
         Task<GetQueryRuntimeStatisticsResponse> GetQueryRuntimeStatisticsAsync(GetQueryRuntimeStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetResourceDashboard
+
+
+
+        /// <summary>
+        /// Gets the Live UI/Persistence UI for a session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceDashboard service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceDashboard service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetResourceDashboard">REST API Reference for GetResourceDashboard Operation</seealso>
+        Task<GetResourceDashboardResponse> GetResourceDashboardAsync(GetResourceDashboardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -978,6 +1007,34 @@ namespace Amazon.Athena
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">REST API Reference for GetSession Operation</seealso>
         Task<GetSessionResponse> GetSessionAsync(GetSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetSessionEndpoint
+
+
+
+        /// <summary>
+        /// Gets a connection endpoint and authentication token for a given session Id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSessionEndpoint service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionEndpoint">REST API Reference for GetSessionEndpoint Operation</seealso>
+        Task<GetSessionEndpointResponse> GetSessionEndpointAsync(GetSessionEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

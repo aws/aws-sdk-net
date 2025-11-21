@@ -44,9 +44,11 @@ namespace Amazon.Athena.Model
         private CustomerContentEncryptionConfiguration _customerContentEncryptionConfiguration;
         private bool? _enableMinimumEncryptionConfiguration;
         private bool? _enforceWorkGroupConfiguration;
+        private EngineConfiguration _engineConfiguration;
         private EngineVersion _engineVersion;
         private string _executionRole;
         private ManagedQueryResultsConfigurationUpdates _managedQueryResultsConfigurationUpdates;
+        private MonitoringConfiguration _monitoringConfiguration;
         private bool? _publishCloudWatchMetricsEnabled;
         private QueryResultsS3AccessGrantsConfiguration _queryResultsS3AccessGrantsConfiguration;
         private bool? _removeBytesScannedCutoffPerQuery;
@@ -156,6 +158,21 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineConfiguration.
+        /// </summary>
+        public EngineConfiguration EngineConfiguration
+        {
+            get { return this._engineConfiguration; }
+            set { this._engineConfiguration = value; }
+        }
+
+        // Check to see if EngineConfiguration property is set
+        internal bool IsSetEngineConfiguration()
+        {
+            return this._engineConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The engine version requested when a workgroup is updated. After the update, all queries
@@ -213,6 +230,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetManagedQueryResultsConfigurationUpdates()
         {
             return this._managedQueryResultsConfigurationUpdates != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringConfiguration. 
+        /// <para>
+        /// Contains the configuration settings for managed log persistence, delivering logs to
+        /// Amazon S3 buckets, Amazon CloudWatch log groups etc.
+        /// </para>
+        /// </summary>
+        public MonitoringConfiguration MonitoringConfiguration
+        {
+            get { return this._monitoringConfiguration; }
+            set { this._monitoringConfiguration = value; }
+        }
+
+        // Check to see if MonitoringConfiguration property is set
+        internal bool IsSetMonitoringConfiguration()
+        {
+            return this._monitoringConfiguration != null;
         }
 
         /// <summary>

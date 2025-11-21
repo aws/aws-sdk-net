@@ -37,10 +37,14 @@ namespace Amazon.Athena.Model
     public partial class StartSessionRequest : AmazonAthenaRequest
     {
         private string _clientRequestToken;
+        private bool? _copyWorkGroupTags;
         private string _description;
         private EngineConfiguration _engineConfiguration;
+        private string _executionRole;
+        private MonitoringConfiguration _monitoringConfiguration;
         private string _notebookVersion;
         private int? _sessionIdleTimeoutInMinutes;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _workGroup;
 
         /// <summary>
@@ -71,6 +75,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyWorkGroupTags. 
+        /// <para>
+        /// Copies the tags from the Workgroup to the Session when.
+        /// </para>
+        /// </summary>
+        public bool? CopyWorkGroupTags
+        {
+            get { return this._copyWorkGroupTags; }
+            set { this._copyWorkGroupTags = value; }
+        }
+
+        // Check to see if CopyWorkGroupTags property is set
+        internal bool IsSetCopyWorkGroupTags()
+        {
+            return this._copyWorkGroupTags.HasValue; 
         }
 
         /// <summary>
@@ -112,6 +134,46 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExecutionRole. 
+        /// <para>
+        /// The ARN of the execution role used to access user resources for Spark sessions and
+        /// Identity Center enabled workgroups. This property applies only to Spark enabled workgroups
+        /// and Identity Center enabled workgroups.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExecutionRole
+        {
+            get { return this._executionRole; }
+            set { this._executionRole = value; }
+        }
+
+        // Check to see if ExecutionRole property is set
+        internal bool IsSetExecutionRole()
+        {
+            return this._executionRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringConfiguration. 
+        /// <para>
+        /// Contains the configuration settings for managed log persistence, delivering logs to
+        /// Amazon S3 buckets, Amazon CloudWatch log groups etc.
+        /// </para>
+        /// </summary>
+        public MonitoringConfiguration MonitoringConfiguration
+        {
+            get { return this._monitoringConfiguration; }
+            set { this._monitoringConfiguration = value; }
+        }
+
+        // Check to see if MonitoringConfiguration property is set
+        internal bool IsSetMonitoringConfiguration()
+        {
+            return this._monitoringConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NotebookVersion. 
         /// <para>
         /// The notebook version. This value is supplied automatically for notebook sessions in
@@ -150,6 +212,29 @@ namespace Amazon.Athena.Model
         internal bool IsSetSessionIdleTimeoutInMinutes()
         {
             return this._sessionIdleTimeoutInMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of comma separated tags to add to the session that is created.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
