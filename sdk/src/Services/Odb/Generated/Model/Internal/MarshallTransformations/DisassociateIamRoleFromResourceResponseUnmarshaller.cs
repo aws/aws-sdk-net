@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Odb.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetOciOnboardingStatus operation
+    /// Response Unmarshaller for DisassociateIamRoleFromResource operation
     /// </summary>  
-    public class GetOciOnboardingStatusResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DisassociateIamRoleFromResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,37 +46,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetOciOnboardingStatusResponse response = new GetOciOnboardingStatusResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-                if (context.TestExpression("existingTenancyActivationLink", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ExistingTenancyActivationLink = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("newTenancyActivationLink", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NewTenancyActivationLink = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ociIdentityDomain", targetDepth))
-                {
-                    var unmarshaller = OciIdentityDomainUnmarshaller.Instance;
-                    response.OciIdentityDomain = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-            }
+            DisassociateIamRoleFromResourceResponse response = new DisassociateIamRoleFromResourceResponse();
 
             return response;
         }
@@ -105,9 +75,17 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -121,9 +99,9 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             return new AmazonOdbException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetOciOnboardingStatusResponseUnmarshaller _instance = new GetOciOnboardingStatusResponseUnmarshaller();        
+        private static DisassociateIamRoleFromResourceResponseUnmarshaller _instance = new DisassociateIamRoleFromResourceResponseUnmarshaller();        
 
-        internal static GetOciOnboardingStatusResponseUnmarshaller GetInstance()
+        internal static DisassociateIamRoleFromResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -131,7 +109,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetOciOnboardingStatusResponseUnmarshaller Instance
+        public static DisassociateIamRoleFromResourceResponseUnmarshaller Instance
         {
             get
             {

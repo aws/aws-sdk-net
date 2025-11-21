@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Odb.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InitializeService Request Marshaller
+    /// AssociateIamRoleToResource Request Marshaller
     /// </summary>       
-    public class InitializeServiceRequestMarshaller : IMarshaller<IRequest, InitializeServiceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AssociateIamRoleToResourceRequestMarshaller : IMarshaller<IRequest, AssociateIamRoleToResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((InitializeServiceRequest)input);
+            return this.Marshall((AssociateIamRoleToResourceRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(InitializeServiceRequest publicRequest)
+        public IRequest Marshall(AssociateIamRoleToResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Odb");
-            string target = "Odb.InitializeService";
+            string target = "Odb.AssociateIamRoleToResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2024-08-20";
@@ -75,10 +75,22 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetOciIdentityDomain())
+            if(publicRequest.IsSetAwsIntegration())
             {
-                context.Writer.WritePropertyName("ociIdentityDomain");
-                context.Writer.WriteBooleanValue(publicRequest.OciIdentityDomain.Value);
+                context.Writer.WritePropertyName("awsIntegration");
+                context.Writer.WriteStringValue(publicRequest.AwsIntegration);
+            }
+
+            if(publicRequest.IsSetIamRoleArn())
+            {
+                context.Writer.WritePropertyName("iamRoleArn");
+                context.Writer.WriteStringValue(publicRequest.IamRoleArn);
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("resourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
             }
 
             writer.WriteEndObject();
@@ -94,9 +106,9 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static InitializeServiceRequestMarshaller _instance = new InitializeServiceRequestMarshaller();        
+        private static AssociateIamRoleToResourceRequestMarshaller _instance = new AssociateIamRoleToResourceRequestMarshaller();        
 
-        internal static InitializeServiceRequestMarshaller GetInstance()
+        internal static AssociateIamRoleToResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -104,7 +116,7 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InitializeServiceRequestMarshaller Instance
+        public static AssociateIamRoleToResourceRequestMarshaller Instance
         {
             get
             {
