@@ -570,7 +570,7 @@ namespace ServiceClientGenerator
                         new Operation(this, "PutBucketMetricsConfiguration", DocumentRoot[OperationsKey]["PutBucketMetricsConfiguration"]),
                         new Operation(this, "DeleteBucketMetricsConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetricsConfiguration"]),
                         new Operation(this, "DeleteBucketAnalyticsConfiguration", DocumentRoot[OperationsKey]["DeleteBucketAnalyticsConfiguration"]),
-                        //new Operation(this, "DeleteBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["DeleteBucketIntelligentTieringConfiguration"]),
+                        new Operation(this, "DeleteBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["DeleteBucketIntelligentTieringConfiguration"]),
                         //new Operation(this, "DeleteBucketInventoryConfiguration", DocumentRoot[OperationsKey]["DeleteBucketInventoryConfiguration"]),
 
                     };

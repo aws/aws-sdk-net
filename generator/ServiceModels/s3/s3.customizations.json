@@ -1069,6 +1069,13 @@
                     }
                 }
             ]
+        },
+        "DeleteBucketIntelligentTieringConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName": "IntelligentTieringId"}
+                }
+            ]
         }
     },
     "operationModifiers": {
