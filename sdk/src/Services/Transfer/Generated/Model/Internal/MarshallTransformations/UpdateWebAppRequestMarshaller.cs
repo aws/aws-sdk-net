@@ -75,6 +75,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AccessEndpoint);
                 }
 
+                if(publicRequest.IsSetEndpointDetails())
+                {
+                    context.Writer.WritePropertyName("EndpointDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateWebAppEndpointDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EndpointDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIdentityProviderDetails())
                 {
                     context.Writer.WritePropertyName("IdentityProviderDetails");

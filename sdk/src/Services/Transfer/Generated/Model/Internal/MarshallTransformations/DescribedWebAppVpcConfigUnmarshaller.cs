@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListedWebApp Object
+    /// Response Unmarshaller for DescribedWebAppVpcConfig Object
     /// </summary>  
-    public class ListedWebAppUnmarshaller : IUnmarshaller<ListedWebApp, XmlUnmarshallerContext>, IUnmarshaller<ListedWebApp, JsonUnmarshallerContext>
+    public class DescribedWebAppVpcConfigUnmarshaller : IUnmarshaller<DescribedWebAppVpcConfig, XmlUnmarshallerContext>, IUnmarshaller<DescribedWebAppVpcConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ListedWebApp IUnmarshaller<ListedWebApp, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DescribedWebAppVpcConfig IUnmarshaller<DescribedWebAppVpcConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ListedWebApp Unmarshall(JsonUnmarshallerContext context)
+        public DescribedWebAppVpcConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            ListedWebApp unmarshalledObject = new ListedWebApp();
+            DescribedWebAppVpcConfig unmarshalledObject = new DescribedWebAppVpcConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AccessEndpoint", targetDepth))
+                if (context.TestExpression("SubnetIds", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccessEndpoint = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SubnetIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("VpcEndpointId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EndpointType", targetDepth))
+                if (context.TestExpression("VpcId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WebAppEndpoint", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WebAppEndpoint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WebAppId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WebAppId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         }
 
 
-        private static ListedWebAppUnmarshaller _instance = new ListedWebAppUnmarshaller();        
+        private static DescribedWebAppVpcConfigUnmarshaller _instance = new DescribedWebAppVpcConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListedWebAppUnmarshaller Instance
+        public static DescribedWebAppVpcConfigUnmarshaller Instance
         {
             get
             {

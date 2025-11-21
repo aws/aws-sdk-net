@@ -30,38 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeWebApp operation.
-    /// Describes the web app that's identified by <c>WebAppId</c>. The response includes
-    /// endpoint configuration details such as whether the web app is publicly accessible
-    /// or VPC hosted.
-    /// 
-    ///  
-    /// <para>
-    /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
-    /// a Transfer Family web app in a VPC</a>.
-    /// </para>
+    /// Contains the VPC configuration settings for updating a web app endpoint, including
+    /// the subnet IDs where the endpoint should be deployed.
     /// </summary>
-    public partial class DescribeWebAppRequest : AmazonTransferRequest
+    public partial class UpdateWebAppVpcConfig
     {
-        private string _webAppId;
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property WebAppId. 
+        /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// Provide the unique identifier for the web app.
+        /// The list of subnet IDs within the VPC where the web app endpoint should be deployed
+        /// during the update operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=24, Max=24)]
-        public string WebAppId
+        public List<string> SubnetIds
         {
-            get { return this._webAppId; }
-            set { this._webAppId = value; }
+            get { return this._subnetIds; }
+            set { this._subnetIds = value; }
         }
 
-        // Check to see if WebAppId property is set
-        internal bool IsSetWebAppId()
+        // Check to see if SubnetIds property is set
+        internal bool IsSetSubnetIds()
         {
-            return this._webAppId != null;
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

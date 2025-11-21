@@ -548,7 +548,13 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Creates a web app based on specified parameters, and returns the ID for the new web
-        /// app.
+        /// app. You can configure the web app to be publicly accessible or hosted within a VPC.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebApp service method.</param>
         /// 
@@ -576,7 +582,13 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Creates a web app based on specified parameters, and returns the ID for the new web
-        /// app.
+        /// app. You can configure the web app to be publicly accessible or hosted within a VPC.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebApp service method.</param>
         /// <param name="cancellationToken">
@@ -2081,7 +2093,15 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Describes the web app that's identified by <c>WebAppId</c>.
+        /// Describes the web app that's identified by <c>WebAppId</c>. The response includes
+        /// endpoint configuration details such as whether the web app is publicly accessible
+        /// or VPC hosted.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWebApp service method.</param>
         /// 
@@ -2108,7 +2128,15 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Describes the web app that's identified by <c>WebAppId</c>.
+        /// Describes the web app that's identified by <c>WebAppId</c>. The response includes
+        /// endpoint configuration details such as whether the web app is publicly accessible
+        /// or VPC hosted.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWebApp service method.</param>
         /// <param name="cancellationToken">
@@ -3348,7 +3376,14 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Lists all web apps associated with your Amazon Web Services account for your current
-        /// region.
+        /// region. The response includes the endpoint type for each web app, showing whether
+        /// it is publicly accessible or VPC hosted.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebApps service method.</param>
         /// 
@@ -3372,7 +3407,14 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Lists all web apps associated with your Amazon Web Services account for your current
-        /// region.
+        /// region. The response includes the endpoint type for each web app, showing whether
+        /// it is publicly accessible or VPC hosted.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWebApps service method.</param>
         /// <param name="cancellationToken">
@@ -5144,7 +5186,13 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Assigns new properties to a web app. You can modify the access point, identity provider
-        /// details, and the web app units.
+        /// details, endpoint configuration, and the web app units.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebApp service method.</param>
         /// 
@@ -5177,7 +5225,13 @@ namespace Amazon.Transfer
 
         /// <summary>
         /// Assigns new properties to a web app. You can modify the access point, identity provider
-        /// details, and the web app units.
+        /// details, endpoint configuration, and the web app units.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+        /// a Transfer Family web app in a VPC</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebApp service method.</param>
         /// <param name="cancellationToken">
