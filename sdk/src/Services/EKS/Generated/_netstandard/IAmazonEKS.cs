@@ -324,10 +324,10 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// The cluster control plane is provisioned across multiple Availability Zones and fronted
-        /// by an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions elastic
-        /// network interfaces in your VPC subnets to provide connectivity from the control plane
-        /// instances to the nodes (for example, to support <c>kubectl exec</c>, <c>logs</c>,
-        /// and <c>proxy</c> data flows).
+        /// by an ELB Network Load Balancer. Amazon EKS also provisions elastic network interfaces
+        /// in your VPC subnets to provide connectivity from the control plane instances to the
+        /// nodes (for example, to support <c>kubectl exec</c>, <c>logs</c>, and <c>proxy</c>
+        /// data flows).
         /// </para>
         ///  
         /// <para>
@@ -551,9 +551,9 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
-        /// Amazon EC2 instances that are managed by Amazon Web Services for an Amazon EKS cluster.
-        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
+        /// An Amazon EKS managed node group is an Amazon EC2 Amazon EC2 Auto Scaling group and
+        /// associated Amazon EC2 instances that are managed by Amazon Web Services for an Amazon
+        /// EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
         /// node groups</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         ///  <note> 

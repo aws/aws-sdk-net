@@ -40,6 +40,7 @@ namespace Amazon.EKS.Model
         private string _clientRequestToken;
         private ComputeConfigResponse _computeConfig;
         private ConnectorConfigResponse _connectorConfig;
+        private ControlPlaneScalingConfig _controlPlaneScalingConfig;
         private DateTime? _createdAt;
         private bool? _deletionProtection;
         private List<EncryptionConfig> _encryptionConfig = AWSConfigs.InitializeCollections ? new List<EncryptionConfig>() : null;
@@ -173,6 +174,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetConnectorConfig()
         {
             return this._connectorConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlPlaneScalingConfig. 
+        /// <para>
+        /// The control plane scaling tier configuration. For more information, see EKS Provisioned
+        /// Control Plane in the Amazon EKS User Guide.
+        /// </para>
+        /// </summary>
+        public ControlPlaneScalingConfig ControlPlaneScalingConfig
+        {
+            get { return this._controlPlaneScalingConfig; }
+            set { this._controlPlaneScalingConfig = value; }
+        }
+
+        // Check to see if ControlPlaneScalingConfig property is set
+        internal bool IsSetControlPlaneScalingConfig()
+        {
+            return this._controlPlaneScalingConfig != null;
         }
 
         /// <summary>

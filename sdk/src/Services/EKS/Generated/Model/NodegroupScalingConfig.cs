@@ -30,10 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing the scaling configuration details for the Auto Scaling group
-    /// that is associated with your node group. When creating a node group, you must specify
-    /// all or none of the properties. When updating a node group, you can specify any or
-    /// none of the properties.
+    /// An object representing the scaling configuration details for the Amazon EC2 Auto Scaling
+    /// group that is associated with your node group. When creating a node group, you must
+    /// specify all or none of the properties. When updating a node group, you can specify
+    /// any or none of the properties.
     /// </summary>
     public partial class NodegroupScalingConfig
     {

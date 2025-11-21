@@ -103,6 +103,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetControlPlaneScalingConfig())
+                {
+                    context.Writer.WritePropertyName("controlPlaneScalingConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ControlPlaneScalingConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ControlPlaneScalingConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDeletionProtection())
                 {
                     context.Writer.WritePropertyName("deletionProtection");

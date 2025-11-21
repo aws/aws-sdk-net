@@ -44,10 +44,10 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// The cluster control plane is provisioned across multiple Availability Zones and fronted
-    /// by an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions elastic
-    /// network interfaces in your VPC subnets to provide connectivity from the control plane
-    /// instances to the nodes (for example, to support <c>kubectl exec</c>, <c>logs</c>,
-    /// and <c>proxy</c> data flows).
+    /// by an ELB Network Load Balancer. Amazon EKS also provisions elastic network interfaces
+    /// in your VPC subnets to provide connectivity from the control plane instances to the
+    /// nodes (for example, to support <c>kubectl exec</c>, <c>logs</c>, and <c>proxy</c>
+    /// data flows).
     /// </para>
     ///  
     /// <para>
@@ -93,6 +93,7 @@ namespace Amazon.EKS.Model
         private bool? _bootstrapSelfManagedAddons;
         private string _clientRequestToken;
         private ComputeConfigRequest _computeConfig;
+        private ControlPlaneScalingConfig _controlPlaneScalingConfig;
         private bool? _deletionProtection;
         private List<EncryptionConfig> _encryptionConfig = AWSConfigs.InitializeCollections ? new List<EncryptionConfig>() : null;
         private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
@@ -191,6 +192,25 @@ namespace Amazon.EKS.Model
         internal bool IsSetComputeConfig()
         {
             return this._computeConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlPlaneScalingConfig. 
+        /// <para>
+        /// The control plane scaling tier configuration. For more information, see EKS Provisioned
+        /// Control Plane in the Amazon EKS User Guide.
+        /// </para>
+        /// </summary>
+        public ControlPlaneScalingConfig ControlPlaneScalingConfig
+        {
+            get { return this._controlPlaneScalingConfig; }
+            set { this._controlPlaneScalingConfig = value; }
+        }
+
+        // Check to see if ControlPlaneScalingConfig property is set
+        internal bool IsSetControlPlaneScalingConfig()
+        {
+            return this._controlPlaneScalingConfig != null;
         }
 
         /// <summary>
