@@ -29,7 +29,7 @@ using Amazon.S3.Model;
 namespace Amazon.S3.Transfer.Internal
 {
     /// <summary>
-    /// Buffers downloaded parts in memory using ArrayPool and IPartBufferManager.
+    /// Buffers downloaded parts in memory using <see cref="ArrayPool{T}"/> and <see cref="IPartBufferManager"/>.
     /// Implements current streaming behavior for multipart downloads.
     /// </summary>
     internal class BufferedPartDataHandler : IPartDataHandler

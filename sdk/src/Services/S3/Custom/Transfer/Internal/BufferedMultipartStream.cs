@@ -26,6 +26,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
+using Amazon.S3.Util;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -51,17 +52,17 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
-        /// Gets the discovery result containing metadata from the initial GetObject response.
-        /// Available after InitializeAsync completes successfully.
+        /// Gets the <see cref="DownloadDiscoveryResult"/> containing metadata from the initial GetObject response.
+        /// Available after <see cref="InitializeAsync"/> completes successfully.
         /// </summary>
         public DownloadDiscoveryResult DiscoveryResult => _discoveryResult;
 
         /// <summary>
-        /// Creates a new BufferedMultipartStream with dependency injection.
+        /// Creates a new <see cref="BufferedMultipartStream"/> with dependency injection.
         /// </summary>
-        /// <param name="downloadCoordinator">Coordinates download discovery and orchestration.</param>
-        /// <param name="partBufferManager">Manages part buffer lifecycle and synchronization.</param>
-        /// <param name="config">Configuration settings for the stream.</param>
+        /// <param name="downloadCoordinator"><see cref="IDownloadCoordinator"/> that coordinates download discovery and orchestration.</param>
+        /// <param name="partBufferManager"><see cref="IPartBufferManager"/> that manages part buffer lifecycle and synchronization.</param>
+        /// <param name="config"><see cref="BufferedDownloadConfiguration"/> with settings for the stream.</param>
         public BufferedMultipartStream(IDownloadCoordinator downloadCoordinator, IPartBufferManager partBufferManager, BufferedDownloadConfiguration config)
         {
             _downloadCoordinator = downloadCoordinator ?? throw new ArgumentNullException(nameof(downloadCoordinator));
@@ -70,13 +71,13 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
-        /// Factory method to create BufferedMultipartStream with default dependencies.
+        /// Factory method to create <see cref="BufferedMultipartStream"/> with default dependencies.
         /// </summary>
-        /// <param name="s3Client">S3 client for making requests.</param>
-        /// <param name="request">Stream request parameters.</param>
-        /// <param name="transferConfig">Transfer utility configuration.</param>
-        /// <param name="requestEventHandler">Optional request event handler for user agent tracking.</param>
-        /// <returns>A new BufferedMultipartStream instance.</returns>
+        /// <param name="s3Client"><see cref="IAmazonS3"/> client for making requests.</param>
+        /// <param name="request"><see cref="TransferUtilityOpenStreamRequest"/> with stream request parameters.</param>
+        /// <param name="transferConfig"><see cref="TransferUtilityConfig"/> with transfer utility configuration.</param>
+        /// <param name="requestEventHandler">Optional <see cref="RequestEventHandler"/> for user agent tracking.</param>
+        /// <returns>A new <see cref="BufferedMultipartStream"/> instance.</returns>
         public static BufferedMultipartStream Create(IAmazonS3 s3Client, TransferUtilityOpenStreamRequest request, TransferUtilityConfig transferConfig, RequestEventHandler requestEventHandler = null)
         {
             if (s3Client == null) throw new ArgumentNullException(nameof(s3Client));
@@ -86,7 +87,7 @@ namespace Amazon.S3.Transfer.Internal
             // Determine target part size from request or use 8MB default
             long targetPartSize = request.IsSetPartSize() 
                 ? request.PartSize 
-                : 8 * 1024 * 1024; // 8MB default
+                : S3Constants.DefaultPartSize;
             
             var config = new BufferedDownloadConfiguration(
                 transferConfig.ConcurrentServiceRequests,
@@ -107,42 +108,31 @@ namespace Amazon.S3.Transfer.Internal
         /// <param name="cancellationToken">Cancellation token for the initialization operation.</param>
         public async Task InitializeAsync(CancellationToken cancellationToken)
         {
-            if (_disposed)
-                throw new ObjectDisposedException(nameof(BufferedMultipartStream));
+            ThrowIfDisposed();
             
             if (_initialized)
                 throw new InvalidOperationException("Stream has already been initialized");
 
             Logger.DebugFormat("BufferedMultipartStream: Starting initialization");
 
-            try
-            {
-                _discoveryResult = await _downloadCoordinator.DiscoverDownloadStrategyAsync(cancellationToken)
+            _discoveryResult = await _downloadCoordinator.DiscoverDownloadStrategyAsync(cancellationToken)
                     .ConfigureAwait(false);
                 
-                Logger.DebugFormat("BufferedMultipartStream: Discovery completed - ObjectSize={0}, TotalParts={1}, IsSinglePart={2}",
-                    _discoveryResult.ObjectSize,
-                    _discoveryResult.TotalParts,
-                    _discoveryResult.IsSinglePart);
+            Logger.DebugFormat("BufferedMultipartStream: Discovery completed - ObjectSize={0}, TotalParts={1}, IsSinglePart={2}",
+                _discoveryResult.ObjectSize,
+                _discoveryResult.TotalParts,
+                _discoveryResult.IsSinglePart);
 
-                await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, cancellationToken)
-                    .ConfigureAwait(false);
-                
-                _initialized = true;
-                Logger.DebugFormat("BufferedMultipartStream: Initialization completed successfully");
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex, "BufferedMultipartStream: Initialization failed");
-                // Clean up on initialization failure
-                throw;
-            }
+            await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, cancellationToken)
+                .ConfigureAwait(false);
+            
+            _initialized = true;
+            Logger.DebugFormat("BufferedMultipartStream: Initialization completed successfully");
         }
 
         public override async Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
-            if (_disposed)
-                throw new ObjectDisposedException(nameof(BufferedMultipartStream));
+            ThrowIfDisposed();
             
             if (!_initialized)
                 throw new InvalidOperationException("Stream must be initialized before reading. Call InitializeAsync first.");
@@ -230,6 +220,12 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         #endregion
+
+        private void ThrowIfDisposed()
+        {
+            if (_disposed)
+                throw new ObjectDisposedException(nameof(BufferedMultipartStream));
+        }
 
         #region Dispose Pattern
 

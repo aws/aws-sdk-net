@@ -45,17 +45,17 @@ namespace Amazon.S3.Transfer.Internal
     ///    - Why no synchronization needed: Producer threads never access this field,
     ///      only the single consumer thread reads and writes it sequentially
     ///    
-    /// 2. _completionState (volatile Tuple of bool and Exception)
+    /// 2. _completionState (volatile <see cref="Tuple"/> of bool and <see cref="Exception"/>)
     ///    - Purpose: Atomically tracks download completion status and any error
     ///    - Synchronization: volatile keyword + atomic reference assignment
     ///    - Why combined: _downloadComplete and _downloadException must be read together
-    ///      consistently. Tuple reference assignment is atomic in .NET (prevents partial reads).
+    ///      consistently. <see cref="Tuple"/> reference assignment is atomic in .NET (prevents partial reads).
     ///    - Reads: Direct volatile read gets both values atomically
     ///    - Writes: Simple assignment is atomic for references, volatile ensures visibility
     ///    
     /// 3. _bufferSpaceAvailable (slot counter)
     ///    - Purpose: Flow control to limit memory usage by limiting concurrent buffered parts
-    ///    - Capacity: Set to MaxInMemoryParts (e.g., 10 parts)
+    ///    - Capacity: Set to <see cref="BufferedDownloadConfiguration.MaxInMemoryParts"/> (e.g., 10 parts)
     ///    - Example: If 10 parts are buffered in memory and part 1 is still being read, a download 
     ///      task attempting to buffer part 11 must wait. Once part 1 is consumed and disposed, 
     ///      its buffer slot is released, allowing part 11 to be buffered.
@@ -79,12 +79,12 @@ namespace Amazon.S3.Transfer.Internal
     /// PRODUCER-CONSUMER FLOW:
     /// 
     /// Producer Flow (Download Tasks buffering parts):
-    /// 1. Wait for buffer space: await WaitForBufferSpaceAsync()
-    ///    - Blocks if MaxInMemoryParts are already buffered in memory
+    /// 1. Wait for buffer space: await <see cref="WaitForBufferSpaceAsync"/>
+    ///    - Blocks if <see cref="BufferedDownloadConfiguration.MaxInMemoryParts"/> are already buffered in memory
     ///    - Example: With MaxInMemoryParts=10, if parts 5-14 are buffered, the task downloading
     ///      part 15 blocks here until the reader consumes and releases part 5's buffer
     /// 2. Read part data from S3 into pooled buffer
-    /// 3. Add buffered part: await AddBufferAsync(buffer)
+    /// 3. Add buffered part: await <see cref="AddBufferAsync"/>
     ///    - Adds buffer to _partDataSources dictionary
     ///    - Signals _partAvailable to wake consumer if waiting
     /// 4. Consumer eventually releases the buffer slot after reading the part
@@ -95,10 +95,10 @@ namespace Amazon.S3.Transfer.Internal
     ///    - Example: Waiting for part 2, even if parts 3, 5, 7 are already available
     ///    - Also checks for download completion while waiting to detect end-of-file
     /// 3. Once available, read from the part's buffer sequentially
-    /// 4. When part is fully read (IsComplete = true):
+    /// 4. When part is fully read (<see cref="IPartDataSource.IsComplete"/> = true):
     ///    - Remove part from dictionary
     ///    - Dispose data source (returns buffer to ArrayPool)
-    ///    - Call ReleaseBufferSpace() (frees slot for producer to buffer next part)
+    ///    - Call <see cref="ReleaseBufferSpace"/> (frees slot for producer to buffer next part)
     ///    - Increment _nextExpectedPartNumber (simple increment, no synchronization needed)
     /// 5. Continue to next part to fill caller's buffer across part boundaries if needed
     /// 
@@ -117,7 +117,7 @@ namespace Amazon.S3.Transfer.Internal
     /// MEMORY MANAGEMENT:
     /// This bounded buffer approach prevents memory exhaustion on large files:
     /// - Without flow control: All parts could be buffered simultaneously (e.g., 1000 parts × 10MB = 10GB)
-    /// - With flow control (MaxInMemoryParts=10): Maximum 10 parts buffered (10 × 10MB = 100MB)
+    /// - With flow control (<see cref="BufferedDownloadConfiguration.MaxInMemoryParts"/>=10): Maximum 10 parts buffered (10 × 10MB = 100MB)
     /// - The semaphore creates backpressure on download tasks when memory limit is reached
     /// </remarks>
     internal class PartBufferManager : IPartBufferManager
@@ -140,7 +140,7 @@ namespace Amazon.S3.Transfer.Internal
 
         // Signals when new parts are added or download completes.
         // Automatically resets after waking one waiting reader.
-        // Signaled by: AddBufferAsync when new part added, MarkDownloadComplete when finished.
+        // Signaled by: AddDataSourceAsync when new part added, MarkDownloadComplete when finished.
         // Waited on by: ReadFromCurrentPartAsync when expected part not yet available.
         // Example: Reader waits for part 4. When download task adds part 4, it signals
         // this event, immediately waking the reader to proceed with consumption.
@@ -161,11 +161,11 @@ namespace Amazon.S3.Transfer.Internal
         // Stores download completion status and any error as an atomic unit.
         // SYNCHRONIZATION: volatile keyword + atomic reference assignment
         // Item1: bool indicating if download is complete
-        // Item2: Exception if download failed, null if successful
+        // Item2: <see cref="Exception"/> if download failed, null if successful
         // 
-        // Why Tuple instead of separate fields:
+        // Why <see cref="Tuple"/> instead of separate fields:
         // - Reference assignment is atomic in .NET (prevents partial reads)
-        // - volatile ensures all threads see the latest Tuple instance
+        // - volatile ensures all threads see the latest <see cref="Tuple"/> instance
         // - Reading the tuple gives us both values consistently in a single atomic operation
         // - No race condition where we read complete equals true but exception has not been set yet
         // 
@@ -217,14 +217,14 @@ namespace Amazon.S3.Transfer.Internal
         /// This provides flow control to prevent unbounded memory usage.
         /// </summary>
         /// <remarks>
-        /// This method is called by download tasks before buffering a new part. If MaxInMemoryParts
+        /// This method is called by download tasks before buffering a new part. If <see cref="BufferedDownloadConfiguration.MaxInMemoryParts"/>
         /// are already buffered, the task blocks here until the consumer reads and disposes a part,
-        /// freeing a slot via ReleaseBufferSpace().
+        /// freeing a slot via <see cref="ReleaseBufferSpace"/>.
         /// 
         /// Example: With MaxInMemoryParts=10:
         /// - Parts 1-10 are buffered in memory
         /// - Download task for part 11 calls this method and blocks
-        /// - Consumer reads and completes part 1, calls ReleaseBufferSpace()
+        /// - Consumer reads and completes part 1, calls <see cref="ReleaseBufferSpace"/>
         /// - This method returns, allowing part 11 to be buffered
         /// </remarks>
         public async Task WaitForBufferSpaceAsync(CancellationToken cancellationToken)
@@ -509,15 +509,15 @@ namespace Amazon.S3.Transfer.Internal
         /// <remarks>
         /// Called by the consumer after fully reading and disposing a buffered part.
         /// This method releases a slot in the _bufferSpaceAvailable semaphore, which may
-        /// unblock a download task waiting in WaitForBufferSpaceAsync().
+        /// unblock a download task waiting in <see cref="WaitForBufferSpaceAsync"/>.
         /// 
         /// FLOW CONTROL CYCLE:
-        /// 1. Download task blocks in WaitForBufferSpaceAsync() (slot count = 0)
+        /// 1. Download task blocks in <see cref="WaitForBufferSpaceAsync"/> (slot count = 0)
         /// 2. Consumer reads and completes a part
         /// 3. Consumer calls this method (slot count = 1)
         /// 4. Download task unblocks and can buffer next part
         /// 
-        /// Example: With MaxInMemoryParts=10, after consuming part 1, this allows part 11 to be buffered.
+        /// Example: With <see cref="BufferedDownloadConfiguration.MaxInMemoryParts"/>=10, after consuming part 1, this allows part 11 to be buffered.
         /// </remarks>
         public void ReleaseBufferSpace()
         {
@@ -540,14 +540,14 @@ namespace Amazon.S3.Transfer.Internal
         /// 
         /// SYNCHRONIZATION: Simple assignment is safe because:
         ///   1. Reference assignments are atomic in .NET
-        ///   2. volatile keyword ensures the new Tuple is immediately visible to all threads
+        ///   2. volatile keyword ensures the new <see cref="Tuple"/> is immediately visible to all threads
         ///   3. No lock needed - atomicity comes from single reference write
         /// 
         /// Example: All 5 parts downloaded successfully
         /// - Download coordinator calls MarkDownloadComplete(null)
         /// - Creates new Tuple(true, null) and assigns atomically
         /// - Consumer waiting for non-existent part 6 wakes up
-        /// - Consumer reads Tuple atomically, sees Item1=true, Item2=null
+        /// - Consumer reads <see cref="Tuple"/> atomically, sees Item1=true, Item2=null
         /// - Consumer returns EOF (0 bytes)
         /// </remarks>
         public void MarkDownloadComplete(Exception exception)

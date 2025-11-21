@@ -194,7 +194,7 @@ namespace Amazon.S3.Transfer.Internal
 
         private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, CancellationToken cancellationToken)
         {
-            Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] Waiting for buffer space", partNumber);
+                Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] Waiting for buffer space", partNumber);
 
             // Wait for capacity before starting download
             await _dataHandler.WaitForCapacityAsync(cancellationToken).ConfigureAwait(false);
