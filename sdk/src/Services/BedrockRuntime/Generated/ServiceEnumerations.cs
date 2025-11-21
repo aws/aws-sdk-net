@@ -989,6 +989,60 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailOrigin.
+    /// </summary>
+    public class GuardrailOrigin : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ENFORCED for GuardrailOrigin
+        /// </summary>
+        public static readonly GuardrailOrigin ACCOUNT_ENFORCED = new GuardrailOrigin("ACCOUNT_ENFORCED");
+        /// <summary>
+        /// Constant ORGANIZATION_ENFORCED for GuardrailOrigin
+        /// </summary>
+        public static readonly GuardrailOrigin ORGANIZATION_ENFORCED = new GuardrailOrigin("ORGANIZATION_ENFORCED");
+        /// <summary>
+        /// Constant REQUEST for GuardrailOrigin
+        /// </summary>
+        public static readonly GuardrailOrigin REQUEST = new GuardrailOrigin("REQUEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailOrigin(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailOrigin FindValue(string value)
+        {
+            return FindValue<GuardrailOrigin>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailOrigin(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailOutputScope.
     /// </summary>
     public class GuardrailOutputScope : ConstantClass
@@ -1032,6 +1086,56 @@ namespace Amazon.BedrockRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GuardrailOutputScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailOwnership.
+    /// </summary>
+    public class GuardrailOwnership : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CROSS_ACCOUNT for GuardrailOwnership
+        /// </summary>
+        public static readonly GuardrailOwnership CROSS_ACCOUNT = new GuardrailOwnership("CROSS_ACCOUNT");
+        /// <summary>
+        /// Constant SELF for GuardrailOwnership
+        /// </summary>
+        public static readonly GuardrailOwnership SELF = new GuardrailOwnership("SELF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailOwnership(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailOwnership FindValue(string value)
+        {
+            return FindValue<GuardrailOwnership>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailOwnership(string value)
         {
             return FindValue(value);
         }
