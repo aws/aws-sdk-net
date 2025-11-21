@@ -19,6 +19,7 @@
  *  API Version: 2006-03-01
  *
  */
+using Amazon.Runtime.Internal.Util;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading;
@@ -35,12 +36,27 @@ namespace Amazon.S3.Transfer.Internal
         private readonly StreamPartBuffer _partBuffer;
         private bool _disposed = false;
 
+        #region Logger
+
+        private Logger Logger
+        {
+            get
+            {
+                return Logger.GetLogger(typeof(TransferUtility));
+            }
+        }
+
+        #endregion
+
         public int PartNumber => _partBuffer.PartNumber;
         public bool IsComplete => _partBuffer.RemainingBytes == 0;
 
         public BufferedDataSource(StreamPartBuffer partBuffer)
         {
             _partBuffer = partBuffer ?? throw new ArgumentNullException(nameof(partBuffer));
+            
+            Logger.DebugFormat("BufferedDataSource: Created for part {0} (BufferLength={1}, RemainingBytes={2})", 
+                _partBuffer.PartNumber, _partBuffer.Length, _partBuffer.RemainingBytes);
         }
 
         public Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
@@ -60,12 +76,16 @@ namespace Amazon.S3.Transfer.Internal
 
                 if (_partBuffer.RemainingBytes == 0)
                 {
+                    Logger.DebugFormat("BufferedDataSource: [Part {0}] Reached end of buffer (RemainingBytes=0)", _partBuffer.PartNumber);
                     return Task.FromResult(0); // End of part
                 }
 
                 // Calculate bytes to copy from buffered part
                 var availableBytes = _partBuffer.RemainingBytes;
                 var bytesToRead = Math.Min(count, availableBytes);
+                
+                Logger.DebugFormat("BufferedDataSource: [Part {0}] Reading {1} bytes (Requested={2}, Available={3}, CurrentPosition={4})", 
+                    _partBuffer.PartNumber, bytesToRead, count, availableBytes, _partBuffer.CurrentPosition);
                 
                 Buffer.BlockCopy(
                     _partBuffer.ArrayPoolBuffer,    // Source: ArrayPool buffer
@@ -78,10 +98,15 @@ namespace Amazon.S3.Transfer.Internal
                 // Update position in the part buffer
                 _partBuffer.CurrentPosition += bytesToRead;
                 
+                Logger.DebugFormat("BufferedDataSource: [Part {0}] Read complete (BytesRead={1}, NewPosition={2}, RemainingBytes={3}, IsComplete={4})", 
+                    _partBuffer.PartNumber, bytesToRead, _partBuffer.CurrentPosition, _partBuffer.RemainingBytes, IsComplete);
+                
                 return Task.FromResult(bytesToRead);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Logger.Error(ex, "BufferedDataSource: [Part {0}] Error during read: {1}", _partBuffer.PartNumber, ex.Message);
+                
                 // On any error during read (including validation), mark the buffer as consumed to prevent further reads
                 _partBuffer.CurrentPosition = _partBuffer.Length;
                 throw;
@@ -101,11 +126,15 @@ namespace Amazon.S3.Transfer.Internal
             {
                 try
                 {
+                    Logger.DebugFormat("BufferedDataSource: [Part {0}] Disposing (Returning buffer to ArrayPool)", _partBuffer.PartNumber);
+                    
                     // Dispose the underlying StreamPartBuffer, which returns ArrayPool buffer to pool
                     _partBuffer?.Dispose();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Logger.Error(ex, "BufferedDataSource: [Part {0}] Error during disposal: {1}", _partBuffer.PartNumber, ex.Message);
+                    
                     // Suppressing CA1031: Dispose methods should not throw exceptions
                     // Continue disposal process silently on any errors
                 }

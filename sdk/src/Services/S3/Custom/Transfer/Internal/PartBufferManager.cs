@@ -37,13 +37,23 @@ namespace Amazon.S3.Transfer.Internal
     /// 
     /// SYNCHRONIZATION PRIMITIVES AND THEIR PURPOSES:
     /// 
-    /// 1. _lockObject (object lock)
-    ///    - Protects: _nextExpectedPartNumber, _downloadComplete, _downloadException
-    ///    - Purpose: Ensures only one thread can update the part counter or completion state at a time
-    ///    - Example: When part 3 finishes reading, the lock ensures the counter increments 
-    ///      to 4 before another reader checks it, preventing conflicts.
+    /// 1. _nextExpectedPartNumber (int)
+    ///    - Purpose: Tracks which part to read next, ensuring sequential consumption
+    ///    - Synchronization: None required - only accessed by the consumer thread
+    ///    - Updates: Simple increment (++) after consuming each part
+    ///    - Reads: Direct reads are safe - int reads are naturally atomic
+    ///    - Why no synchronization needed: Producer threads never access this field,
+    ///      only the single consumer thread reads and writes it sequentially
     ///    
-    /// 2. _bufferSpaceAvailable (slot counter)
+    /// 2. _completionState (volatile Tuple of bool and Exception)
+    ///    - Purpose: Atomically tracks download completion status and any error
+    ///    - Synchronization: volatile keyword + atomic reference assignment
+    ///    - Why combined: _downloadComplete and _downloadException must be read together
+    ///      consistently. Tuple reference assignment is atomic in .NET (prevents partial reads).
+    ///    - Reads: Direct volatile read gets both values atomically
+    ///    - Writes: Simple assignment is atomic for references, volatile ensures visibility
+    ///    
+    /// 3. _bufferSpaceAvailable (slot counter)
     ///    - Purpose: Flow control to limit memory usage by limiting concurrent buffered parts
     ///    - Capacity: Set to MaxInMemoryParts (e.g., 10 parts)
     ///    - Example: If 10 parts are buffered in memory and part 1 is still being read, a download 
@@ -51,7 +61,7 @@ namespace Amazon.S3.Transfer.Internal
     ///      its buffer slot is released, allowing part 11 to be buffered.
     ///    - Critical: Prevents unbounded memory growth during large multipart downloads
     ///    
-    /// 3. _partAvailable (signal for readers)
+    /// 4. _partAvailable (signal for readers)
     ///    - Purpose: Signals when new parts are added or download completes
     ///    - Signaled by: AddBufferAsync (when new part added), MarkDownloadComplete (when done)
     ///    - Waited on by: ReadFromCurrentPartAsync (when expected part not yet available)
@@ -59,7 +69,7 @@ namespace Amazon.S3.Transfer.Internal
     ///      it signals this event, waking the waiting reader to proceed.
     ///    - Automatically resets after waking one waiting reader
     ///    
-    /// 4. _partDataSources (dictionary storing parts)
+    /// 5. _partDataSources (dictionary storing parts)
     ///    - Purpose: Thread-safe storage of buffered part data indexed by part number
     ///    - Key: Part number (allows quickly finding the next part to read)
     ///    - Example: Download tasks 1-10 run concurrently, each adding their buffered part to the 
@@ -89,7 +99,7 @@ namespace Amazon.S3.Transfer.Internal
     ///    - Remove part from dictionary
     ///    - Dispose data source (returns buffer to ArrayPool)
     ///    - Call ReleaseBufferSpace() (frees slot for producer to buffer next part)
-    ///    - Increment _nextExpectedPartNumber (under _lockObject for atomicity)
+    ///    - Increment _nextExpectedPartNumber (simple increment, no synchronization needed)
     /// 5. Continue to next part to fill caller's buffer across part boundaries if needed
     /// 
     /// SEQUENTIAL GUARANTEE:
@@ -136,28 +146,33 @@ namespace Amazon.S3.Transfer.Internal
         // this event, immediately waking the reader to proceed with consumption.
         private readonly AutoResetEvent _partAvailable;
 
-        // Prevents conflicts when updating the part counter or completion status.
-        // Guards: _nextExpectedPartNumber, _downloadComplete, _downloadException.
-        // Example: When part 2 finishes reading, this lock ensures _nextExpectedPartNumber
-        // is incremented to 3 before any other thread checks or updates it.
-        private readonly object _lockObject = new object();
-        
         // Tracks the next part number to consume sequentially. Ensures in-order reading.
-        // Uses _lockObject to prevent conflicts when reading or updating.
-        // Consumer advances this after fully consuming each part.
+        // SYNCHRONIZATION: None required - only accessed by the consumer thread
+        // Consumer advances this after fully consuming each part with simple increment.
         // Example: Set to 1 initially. After reading part 1, incremented to 2.
         // Even if part 5 is available, consumer waits for part 2 before proceeding.
+        // 
+        // Why no synchronization:
+        // - Only the consumer thread (calling ReadAsync) ever reads or writes this field
+        // - Producer threads (download tasks) never access it - they only write to the dictionary
+        // - No concurrent access means no need for volatile, Interlocked, or locks
         private int _nextExpectedPartNumber = 1;
 
-        // Indicates all download tasks have completed (successfully or with error).
-        // Protected by _lockObject. Set by MarkDownloadComplete, read by consumer.
-        // When true with null exception: Normal end-of-file, no more parts coming.
-        // When true with non-null exception: Download failed, throw to consumer.
-        private bool _downloadComplete = false;
-
-        // Stores any exception from download tasks. Null if successful.
-        // Protected by _lockObject. If set, thrown to consumer on next read attempt.
-        private Exception _downloadException;
+        // Stores download completion status and any error as an atomic unit.
+        // SYNCHRONIZATION: volatile keyword + atomic reference assignment
+        // Item1: bool indicating if download is complete
+        // Item2: Exception if download failed, null if successful
+        // 
+        // Why Tuple instead of separate fields:
+        // - Reference assignment is atomic in .NET (prevents partial reads)
+        // - volatile ensures all threads see the latest Tuple instance
+        // - Reading the tuple gives us both values consistently in a single atomic operation
+        // - No race condition where we read complete equals true but exception has not been set yet
+        // 
+        // Usage:
+        //   Read:  var state = _completionState; if (state.Item1) then check state.Item2 for error
+        //   Write: _completionState = Tuple.Create(true, exception);
+        private volatile Tuple<bool, Exception> _completionState = Tuple.Create(false, (Exception)null);
 
         private bool _disposed = false;
 
@@ -183,16 +198,17 @@ namespace Amazon.S3.Transfer.Internal
             _partDataSources = new ConcurrentDictionary<int, IPartDataSource>();
             _bufferSpaceAvailable = new SemaphoreSlim(config.MaxInMemoryParts);
             _partAvailable = new AutoResetEvent(false);
+            
+            Logger.DebugFormat("PartBufferManager initialized with MaxInMemoryParts={0}", config.MaxInMemoryParts);
         }
 
         public int NextExpectedPartNumber 
         { 
             get 
             { 
-                lock (_lockObject)
-                {
-                    return _nextExpectedPartNumber;
-                }
+                // Direct read is safe - only the consumer thread accesses this field
+                // No synchronization needed: int reads are naturally atomic on all platforms
+                return _nextExpectedPartNumber;
             }
         }
 
@@ -214,7 +230,14 @@ namespace Amazon.S3.Transfer.Internal
         public async Task WaitForBufferSpaceAsync(CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
+            
+            var availableBefore = _bufferSpaceAvailable.CurrentCount;
+            Logger.DebugFormat("PartBufferManager: Waiting for buffer space (Available slots before wait: {0})", availableBefore);
+            
             await _bufferSpaceAvailable.WaitAsync(cancellationToken).ConfigureAwait(false);
+            
+            var availableAfter = _bufferSpaceAvailable.CurrentCount;
+            Logger.DebugFormat("PartBufferManager: Buffer space acquired (Available slots after acquire: {0})", availableAfter);
         }
 
         /// <summary>
@@ -237,13 +260,20 @@ namespace Amazon.S3.Transfer.Internal
             if (dataSource == null)
                 throw new ArgumentNullException(nameof(dataSource));
 
+            Logger.DebugFormat("PartBufferManager: Adding part {0} (BufferedParts count before add: {1})", 
+                dataSource.PartNumber, _partDataSources.Count);
+
             // Add the data source to the collection
             if (!_partDataSources.TryAdd(dataSource.PartNumber, dataSource))
             {
                 // Duplicate part number - this shouldn't happen in normal operation
+                Logger.Error(null, "PartBufferManager: Duplicate part {0} attempted to be added", dataSource.PartNumber);
                 dataSource?.Dispose(); // Clean up the duplicate part
                 throw new InvalidOperationException($"Duplicate part {dataSource.PartNumber} attempted to be added");
             }
+
+            Logger.DebugFormat("PartBufferManager: Part {0} added successfully (BufferedParts count after add: {1}). Signaling _partAvailable.", 
+                dataSource.PartNumber, _partDataSources.Count);
 
             // Signal that a new part is available
             _partAvailable.Set();
@@ -328,7 +358,7 @@ namespace Amazon.S3.Transfer.Internal
         /// - Removes part 1 from dictionary: {3: buffer3}
         /// - Disposes buffer (returns to ArrayPool)
         /// - Releases buffer slot (ReleaseBufferSpace)
-        /// - Locks _lockObject, increments counter: _nextExpectedPartNumber = 2
+        /// - Increments counter: _nextExpectedPartNumber = 2
         /// - Returns (bytesRead, shouldContinue=true) to fill more of caller's buffer
         /// 
         /// Step 3: Next iteration, now expecting part 2
@@ -346,6 +376,9 @@ namespace Amazon.S3.Transfer.Internal
         {
             var currentPartNumber = _nextExpectedPartNumber;
 
+            Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Expecting part {0} (Requested bytes: {1}, BufferedParts count: {2})", 
+                currentPartNumber, count, _partDataSources.Count);
+
             // Wait for the current part to become available.
             // This loop handles out-of-order part arrival - we always wait for the next 
             // sequential part (_nextExpectedPartNumber) before proceeding, even if later
@@ -353,20 +386,24 @@ namespace Amazon.S3.Transfer.Internal
             // Example: If parts 3, 5, 7 are available but we need part 2, we wait here.
             while (!_partDataSources.ContainsKey(currentPartNumber))
             {
+                Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} not yet available. Waiting on _partAvailable event...", 
+                    currentPartNumber);
+
                 // Check for completion first to avoid indefinite waiting.
-                // Acquires _lockObject to atomically read both completion flags.
-                // This prevents TOCTOU (time-of-check-time-of-use) race condition where
-                // completion could be signaled between checking ContainsKey and waiting.
-                lock (_lockObject)
+                var state = _completionState;
+                if (state.Item1)  // Check if download is complete
                 {
-                    if (_downloadComplete)
+                    if (state.Item2 != null)  // Check for exception
                     {
-                        if (_downloadException != null)
-                            throw new InvalidOperationException("Multipart download failed", _downloadException);
-                        
-                        // True EOF - all parts downloaded, no more data coming
-                        return (0, false);
+                        Logger.Error(state.Item2, "PartBufferManager.ReadFromCurrentPart: Download failed while waiting for part {0}", 
+                            currentPartNumber);
+                        throw new InvalidOperationException("Multipart download failed", state.Item2);
                     }
+                    
+                    Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Download complete, part {0} not available. Returning EOF.", 
+                        currentPartNumber);
+                    // True EOF - all parts downloaded, no more data coming
+                    return (0, false);
                 }
                 
                 // Wait for a part to become available.
@@ -377,14 +414,20 @@ namespace Amazon.S3.Transfer.Internal
                 // Example: Waiting for part 2. When download task completes buffering part 2
                 // and calls AddDataSourceAsync, it signals this event, waking us to check again.
                 await Task.Run(() => _partAvailable.WaitOne(), cancellationToken).ConfigureAwait(false);
+                
+                Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Woke from _partAvailable wait. Rechecking for part {0}...", 
+                    currentPartNumber);
             }
+
+            Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} is available. Reading from data source...", 
+                currentPartNumber);
 
             // At this point, the expected part is available in the dictionary.
             // Double-check with TryGetValue for safety (handles rare race conditions).
             if (!_partDataSources.TryGetValue(currentPartNumber, out var dataSource))
             {
                 // Log technical details for troubleshooting
-                Logger.Error(null, "Part {0} disappeared after availability check. This indicates a race condition in the buffer manager.", currentPartNumber);
+                Logger.Error(null, "PartBufferManager: Part {0} disappeared after availability check. This indicates a race condition in the buffer manager.", currentPartNumber);
                 
                 // Throw user-friendly exception
                 throw new InvalidOperationException("Multipart download failed due to an internal error.");
@@ -395,9 +438,15 @@ namespace Amazon.S3.Transfer.Internal
                 // Read from this part's buffer into the caller's buffer.
                 var partBytesRead = await dataSource.ReadAsync(buffer, offset, count, cancellationToken).ConfigureAwait(false);
                 
+                Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Read {0} bytes from part {1}. IsComplete={2}", 
+                    partBytesRead, currentPartNumber, dataSource.IsComplete);
+                
                 // If this part is fully consumed, perform cleanup and advance to next part.
                 if (dataSource.IsComplete)
                 {
+                    Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} is complete. Cleaning up and advancing to next part...", 
+                        currentPartNumber);
+
                     // Remove from collection
                     _partDataSources.TryRemove(currentPartNumber, out _);
                     
@@ -412,13 +461,10 @@ namespace Amazon.S3.Transfer.Internal
                     ReleaseBufferSpace();
                     
                     // Advance to next part.
-                    // Acquires _lockObject to atomically increment the counter.
-                    // This ensures sequential consumption even with concurrent readers.
-                    // Example: Two threads reading simultaneously won't both increment from 3 to 4.
-                    lock (_lockObject)
-                    {
-                        _nextExpectedPartNumber++;
-                    }
+                    _nextExpectedPartNumber++;
+                    
+                    Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Cleaned up part {0}. Next expected part: {1} (BufferedParts count: {2})", 
+                        currentPartNumber, _nextExpectedPartNumber, _partDataSources.Count);
                     
                     // Continue reading to fill buffer across part boundaries.
                     // This matches standard Stream.Read() behavior where we attempt to
@@ -433,15 +479,22 @@ namespace Amazon.S3.Transfer.Internal
                 // If part is not complete but we got 0 bytes, it's EOF
                 if (partBytesRead == 0)
                 {
+                    Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} returned 0 bytes (EOF)", currentPartNumber);
                     return (0, false);
                 }
+                
+                Logger.DebugFormat("PartBufferManager.ReadFromCurrentPart: Part {0} has more data. Returning {1} bytes (will resume on next call)", 
+                    currentPartNumber, partBytesRead);
                 
                 // Part still has more data available. Return what we read.
                 // We'll resume from this part on the next ReadAsync call.
                 return (partBytesRead, false);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Logger.Error(ex, "PartBufferManager.ReadFromCurrentPart: Error reading from part {0}: {1}", 
+                    currentPartNumber, ex.Message);
+                
                 // Clean up on failure to prevent resource leaks
                 dataSource?.Dispose();
                 ReleaseBufferSpace();
@@ -472,6 +525,9 @@ namespace Amazon.S3.Transfer.Internal
             
             // Release buffer space when a consumer finishes with a part
             _bufferSpaceAvailable.Release();
+            
+            var availableAfter = _bufferSpaceAvailable.CurrentCount;
+            Logger.DebugFormat("PartBufferManager: Buffer space released (Available slots after release: {0})", availableAfter);
         }
 
         /// <summary>
@@ -482,19 +538,32 @@ namespace Amazon.S3.Transfer.Internal
         /// This signals to the consumer that no more parts will arrive, allowing it to
         /// detect end-of-file correctly even if waiting for a part that will never come.
         /// 
+        /// SYNCHRONIZATION: Simple assignment is safe because:
+        ///   1. Reference assignments are atomic in .NET
+        ///   2. volatile keyword ensures the new Tuple is immediately visible to all threads
+        ///   3. No lock needed - atomicity comes from single reference write
+        /// 
         /// Example: All 5 parts downloaded successfully
         /// - Download coordinator calls MarkDownloadComplete(null)
+        /// - Creates new Tuple(true, null) and assigns atomically
         /// - Consumer waiting for non-existent part 6 wakes up
-        /// - Consumer checks _downloadComplete = true, _downloadException = null
+        /// - Consumer reads Tuple atomically, sees Item1=true, Item2=null
         /// - Consumer returns EOF (0 bytes)
         /// </remarks>
         public void MarkDownloadComplete(Exception exception)
         {
-            lock (_lockObject)
+            if (exception != null)
             {
-                _downloadComplete = true;
-                _downloadException = exception;
+                Logger.Error(exception, "PartBufferManager: Download marked complete with error. Signaling completion.");
             }
+            else
+            {
+                Logger.DebugFormat("PartBufferManager: Download marked complete successfully. Signaling completion.");
+            }
+
+            // Create and assign new completion state atomically
+            // No lock needed: reference assignment is atomic, volatile ensures visibility
+            _completionState = Tuple.Create(true, exception);
 
             // Signal that completion status has changed.
             // This wakes any consumer waiting in ReadFromCurrentPartAsync to check completion.

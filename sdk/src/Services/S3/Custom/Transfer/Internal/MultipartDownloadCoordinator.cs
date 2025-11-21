@@ -27,6 +27,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 
 namespace Amazon.S3.Transfer.Internal
@@ -50,6 +51,11 @@ namespace Amazon.S3.Transfer.Internal
 
         private string _savedETag;
         private int _discoveredPartCount;
+
+        private Logger Logger
+        {
+            get { return Logger.GetLogger(typeof(TransferUtility)); }
+        }
 
         public MultipartDownloadCoordinator(IAmazonS3 s3Client, BaseDownloadRequest request, DownloadCoordinatorConfiguration config, IPartDataHandler dataHandler, RequestEventHandler requestEventHandler = null)
         {
@@ -77,6 +83,9 @@ namespace Amazon.S3.Transfer.Internal
             if (_discoveryCompleted)
                 throw new InvalidOperationException("Discovery has already been performed");
 
+            Logger.DebugFormat("MultipartDownloadCoordinator: Starting discovery with strategy={0}",
+                _request.MultipartDownloadType);
+
             try
             {
                 // Use strategy-specific discovery based on MultipartDownloadType
@@ -85,12 +94,19 @@ namespace Amazon.S3.Transfer.Internal
                     : await DiscoverUsingRangeStrategyAsync(cancellationToken).ConfigureAwait(false);
                 
                 _discoveryCompleted = true;
+
+                Logger.InfoFormat("MultipartDownloadCoordinator: Discovery complete - ObjectSize={0}, TotalParts={1}, Strategy={2}, ETagPresent={3}",
+                    result.ObjectSize,
+                    result.TotalParts,
+                    _request.MultipartDownloadType,
+                    !string.IsNullOrEmpty(_savedETag));
                 
                 return result;
             }
             catch (Exception ex)
             {
                 _downloadException = ex;
+                Logger.Error(ex, "MultipartDownloadCoordinator: Discovery failed");
                 throw;
             }
         }
@@ -102,22 +118,30 @@ namespace Amazon.S3.Transfer.Internal
             if (discoveryResult == null)
                 throw new ArgumentNullException(nameof(discoveryResult));
 
+            Logger.DebugFormat("MultipartDownloadCoordinator: Starting downloads - TotalParts={0}, IsSinglePart={1}",
+                discoveryResult.TotalParts, discoveryResult.IsSinglePart);
+
             var downloadTasks = new List<Task>();
             var internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
 
             try
             {
                 // Process Part 1 from InitialResponse (applies to both single-part and multipart)
+                Logger.DebugFormat("MultipartDownloadCoordinator: Buffering Part 1 from discovery response");
                 await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
 
                 if (discoveryResult.IsSinglePart)
                 {
                     // Single-part: Part 1 is the entire object
+                    Logger.DebugFormat("MultipartDownloadCoordinator: Single-part download complete");
                     _dataHandler.OnDownloadComplete(null);
                     return;
                 }
 
                 // Multipart: Start concurrent downloads for remaining parts (Part 2 onwards)
+                Logger.InfoFormat("MultipartDownloadCoordinator: Starting concurrent downloads for parts 2-{0}",
+                    discoveryResult.TotalParts);
+
                 for (int partNum = 2; partNum <= discoveryResult.TotalParts; partNum++)
                 {
                     var task = CreateDownloadTaskAsync(partNum, discoveryResult.ObjectSize, internalCts.Token);
@@ -127,8 +151,12 @@ namespace Amazon.S3.Transfer.Internal
                 // Store count before WhenAllOrFirstException (which modifies the list internally)
                 var expectedTaskCount = downloadTasks.Count;
 
+                Logger.DebugFormat("MultipartDownloadCoordinator: Waiting for {0} download tasks to complete", expectedTaskCount);
+
                 // Wait for all downloads to complete (fails fast on first exception)
                 await TaskHelpers.WhenAllOrFirstExceptionAsync(downloadTasks, cancellationToken).ConfigureAwait(false);
+
+                Logger.DebugFormat("MultipartDownloadCoordinator: All download tasks completed successfully");
 
                 // SEP Part GET Step 6 / Ranged GET Step 8:
                 // "validate that the total number of part GET requests sent matches with the expected PartsCount"
@@ -144,11 +172,14 @@ namespace Amazon.S3.Transfer.Internal
                 }
 
                 // Mark successful completion
+                Logger.InfoFormat("MultipartDownloadCoordinator: Download completed successfully - TotalParts={0}",
+                    discoveryResult.TotalParts);
                 _dataHandler.OnDownloadComplete(null);
             }
             catch (Exception ex)
             {
                 _downloadException = ex;
+                Logger.Error(ex, "MultipartDownloadCoordinator: Download failed");
                 
                 _dataHandler.OnDownloadComplete(ex);
                 throw;
@@ -163,15 +194,24 @@ namespace Amazon.S3.Transfer.Internal
 
         private async Task CreateDownloadTaskAsync(int partNumber, long objectSize, CancellationToken cancellationToken)
         {
+            Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] Waiting for buffer space", partNumber);
+
             // Wait for capacity before starting download
             await _dataHandler.WaitForCapacityAsync(cancellationToken).ConfigureAwait(false);
+
+            Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] Buffer space acquired", partNumber);
             
             GetObjectResponse response = null;
             
             try
             {
+                Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] Waiting for HTTP concurrency slot (Available: {1}/{2})",
+                    partNumber, _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
+
                 // Limit HTTP concurrency
                 await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
+
+                Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] HTTP concurrency slot acquired", partNumber);
                 
                 try
                 {
@@ -187,6 +227,9 @@ namespace Amazon.S3.Transfer.Internal
                         // SEP Part GET Step 4: "The S3 Transfer Manager MUST also set IfMatch member 
                         // for each request to the Etag value saved from Step 3"
                         getObjectRequest.EtagToMatch = _savedETag;
+
+                        Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] Sending GetObject request with PartNumber={1}, IfMatchPresent={2}",
+                            partNumber, partNumber, !string.IsNullOrEmpty(_savedETag));
                     }
                     else
                     {
@@ -199,29 +242,47 @@ namespace Amazon.S3.Transfer.Internal
                         // SEP Ranged GET Step 6: "The S3 Transfer Manager MUST also set IfMatch member 
                         // for each request to the value saved from Step 5"
                         getObjectRequest.EtagToMatch = _savedETag;
+
+                        Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] Sending GetObject request with ByteRange={1}-{2}, IfMatchPresent={3}",
+                            partNumber, startByte, endByte, !string.IsNullOrEmpty(_savedETag));
                     }
                     
                     response = await _s3Client.GetObjectAsync(getObjectRequest, cancellationToken).ConfigureAwait(false);
+
+                    Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] GetObject response received - ContentLength={1}",
+                        partNumber, response.ContentLength);
                     
                     // SEP Part GET Step 5 / Ranged GET Step 7: Validate ContentRange matches request
                     ValidateContentRange(response, partNumber, objectSize);
+
+                    Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] ContentRange validation passed", partNumber);
                     
                     // Validate ETag consistency for SEP compliance
                     if (!string.IsNullOrEmpty(_savedETag) && !string.Equals(_savedETag, response.ETag, StringComparison.OrdinalIgnoreCase))
                     {
+                        Logger.Error(null, "MultipartDownloadCoordinator: [Part {0}] ETag mismatch detected - object modified during download", partNumber);
                         throw new InvalidOperationException($"ETag mismatch detected for part {partNumber} - object may have been modified during download");
                     }
+
+                    Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] ETag validation passed", partNumber);
                 }
                 finally
                 {
                     _httpConcurrencySlots.Release();
+                    Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] HTTP concurrency slot released (Available: {1}/{2})",
+                        partNumber, _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
                 }
+
+                Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] Starting buffering", partNumber);
                 
                 // Delegate data handling to the handler
                 await _dataHandler.ProcessPartAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
+
+                Logger.DebugFormat("MultipartDownloadCoordinator: [Part {0}] Buffering completed successfully", partNumber);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Logger.Error(ex, "MultipartDownloadCoordinator: [Part {0}] Download failed", partNumber);
                 // Release capacity on failure
                 _dataHandler.ReleaseCapacity();
                 throw;
