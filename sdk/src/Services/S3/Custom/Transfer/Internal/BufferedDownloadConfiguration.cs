@@ -27,7 +27,7 @@ namespace Amazon.S3.Transfer.Internal
     /// Configuration settings for buffered multipart downloads to streams.
     /// Extends base coordinator settings with buffer-specific parameters.
     /// </summary>
-    internal class BufferedDownloadConfiguration : DownloadCoordinatorConfiguration
+    internal class BufferedDownloadConfiguration : DownloadManagerConfiguration
     {
         /// <summary>
         /// Maximum parts to keep in memory simultaneously.

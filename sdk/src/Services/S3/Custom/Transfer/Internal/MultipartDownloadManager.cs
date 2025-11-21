@@ -40,7 +40,7 @@ namespace Amazon.S3.Transfer.Internal
     {
         private readonly IAmazonS3 _s3Client;
         private readonly BaseDownloadRequest _request;
-        private readonly DownloadCoordinatorConfiguration _config;
+        private readonly DownloadManagerConfiguration _config;
         private readonly IPartDataHandler _dataHandler;
         private readonly SemaphoreSlim _httpConcurrencySlots;
         private readonly RequestEventHandler _requestEventHandler;
@@ -62,11 +62,11 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         /// <param name="s3Client">The <see cref="IAmazonS3"/> client for making S3 requests.</param>
         /// <param name="request">The <see cref="BaseDownloadRequest"/> containing download parameters.</param>
-        /// <param name="config">The <see cref="DownloadCoordinatorConfiguration"/> with download settings.</param>
+        /// <param name="config">The <see cref="DownloadManagerConfiguration"/> with download settings.</param>
         /// <param name="dataHandler">The <see cref="IPartDataHandler"/> for processing downloaded parts.</param>
         /// <param name="requestEventHandler">Optional <see cref="RequestEventHandler"/> for user agent tracking.</param>
         /// <exception cref="ArgumentNullException">Thrown when any required parameter is null.</exception>
-        public MultipartDownloadManager(IAmazonS3 s3Client, BaseDownloadRequest request, DownloadCoordinatorConfiguration config, IPartDataHandler dataHandler, RequestEventHandler requestEventHandler = null)
+        public MultipartDownloadManager(IAmazonS3 s3Client, BaseDownloadRequest request, DownloadManagerConfiguration config, IPartDataHandler dataHandler, RequestEventHandler requestEventHandler = null)
         {
             _s3Client = s3Client ?? throw new ArgumentNullException(nameof(s3Client));
             _request = request ?? throw new ArgumentNullException(nameof(request));

@@ -27,7 +27,7 @@ namespace Amazon.S3.Transfer.Internal
     /// Base configuration for multipart download coordination.
     /// Contains settings common to all download strategies.
     /// </summary>
-    internal class DownloadCoordinatorConfiguration
+    internal class DownloadManagerConfiguration
     {
         /// <summary>
         /// Maximum concurrent HTTP requests for downloading parts.
@@ -42,15 +42,15 @@ namespace Amazon.S3.Transfer.Internal
         /// <summary>
         /// Protected default constructor for derived classes.
         /// </summary>
-        protected DownloadCoordinatorConfiguration() { }
+        protected DownloadManagerConfiguration() { }
         
         /// <summary>
-        /// Creates a DownloadCoordinatorConfiguration with the specified configuration values.
+        /// Creates a DownloadManagerConfiguration with the specified configuration values.
         /// </summary>
         /// <param name="concurrentServiceRequests">Maximum concurrent HTTP requests for downloading parts.</param>
         /// <param name="targetPartSizeBytes">Target size for each part in bytes.</param>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when any parameter is less than or equal to 0.</exception>
-        public DownloadCoordinatorConfiguration(int concurrentServiceRequests, long targetPartSizeBytes)
+        public DownloadManagerConfiguration(int concurrentServiceRequests, long targetPartSizeBytes)
         {
             if (concurrentServiceRequests <= 0)
                 throw new ArgumentOutOfRangeException(nameof(concurrentServiceRequests), "Must be greater than 0");
