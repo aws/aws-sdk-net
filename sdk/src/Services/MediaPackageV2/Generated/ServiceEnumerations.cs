@@ -1479,6 +1479,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType INCOMPATIBLE_XML_ENCODING = new ValidationExceptionType("INCOMPATIBLE_XML_ENCODING");
         /// <summary>
+        /// Constant INVALID_DRM_SETTINGS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_DRM_SETTINGS = new ValidationExceptionType("INVALID_DRM_SETTINGS");
+        /// <summary>
         /// Constant INVALID_HARVEST_JOB_DURATION for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType INVALID_HARVEST_JOB_DURATION = new ValidationExceptionType("INVALID_HARVEST_JOB_DURATION");
