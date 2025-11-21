@@ -70,6 +70,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     response.Content = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceConfigurationSummary", targetDepth))
+                {
+                    var unmarshaller = MessageTemplateSourceConfigurationSummaryUnmarshaller.Instance;
+                    response.SourceConfigurationSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

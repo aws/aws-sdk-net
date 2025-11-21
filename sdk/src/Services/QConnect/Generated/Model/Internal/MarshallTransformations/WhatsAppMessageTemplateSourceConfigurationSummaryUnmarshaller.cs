@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MessageTemplateVersionSummary Object
+    /// Response Unmarshaller for WhatsAppMessageTemplateSourceConfigurationSummary Object
     /// </summary>  
-    public class MessageTemplateVersionSummaryUnmarshaller : IUnmarshaller<MessageTemplateVersionSummary, XmlUnmarshallerContext>, IUnmarshaller<MessageTemplateVersionSummary, JsonUnmarshallerContext>
+    public class WhatsAppMessageTemplateSourceConfigurationSummaryUnmarshaller : IUnmarshaller<WhatsAppMessageTemplateSourceConfigurationSummary, XmlUnmarshallerContext>, IUnmarshaller<WhatsAppMessageTemplateSourceConfigurationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MessageTemplateVersionSummary IUnmarshaller<MessageTemplateVersionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WhatsAppMessageTemplateSourceConfigurationSummary IUnmarshaller<WhatsAppMessageTemplateSourceConfigurationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MessageTemplateVersionSummary Unmarshall(JsonUnmarshallerContext context)
+        public WhatsAppMessageTemplateSourceConfigurationSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            MessageTemplateVersionSummary unmarshalledObject = new MessageTemplateVersionSummary();
+            WhatsAppMessageTemplateSourceConfigurationSummary unmarshalledObject = new WhatsAppMessageTemplateSourceConfigurationSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,22 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("channel", targetDepth))
+                if (context.TestExpression("businessAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BusinessAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("channelSubtype", targetDepth))
+                if (context.TestExpression("components", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Components = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("language", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelSubtype = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("isActive", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsActive = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("knowledgeBaseArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KnowledgeBaseArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("knowledgeBaseId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KnowledgeBaseId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("messageTemplateArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageTemplateArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("messageTemplateId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageTemplateId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Language = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -114,10 +90,22 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("versionNumber", targetDepth))
+                if (context.TestExpression("status", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("templateId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TemplateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -125,12 +113,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static MessageTemplateVersionSummaryUnmarshaller _instance = new MessageTemplateVersionSummaryUnmarshaller();        
+        private static WhatsAppMessageTemplateSourceConfigurationSummaryUnmarshaller _instance = new WhatsAppMessageTemplateSourceConfigurationSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MessageTemplateVersionSummaryUnmarshaller Instance
+        public static WhatsAppMessageTemplateSourceConfigurationSummaryUnmarshaller Instance
         {
             get
             {

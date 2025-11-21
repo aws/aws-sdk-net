@@ -101,6 +101,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Language);
                 }
 
+                if(publicRequest.IsSetSourceConfiguration())
+                {
+                    context.Writer.WritePropertyName("sourceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageTemplateSourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SourceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

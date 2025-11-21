@@ -34,6 +34,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class MessageTemplateSearchResultData
     {
+        private string _channel;
         private ChannelSubtype _channelSubtype;
         private DateTime? _createdTime;
         private string _description;
@@ -47,8 +48,28 @@ namespace Amazon.QConnect.Model
         private string _messageTemplateArn;
         private string _messageTemplateId;
         private string _name;
+        private MessageTemplateSourceConfigurationSummary _sourceConfigurationSummary;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private long? _versionNumber;
+
+        /// <summary>
+        /// Gets and sets the property Channel. 
+        /// <para>
+        /// The channel of the message template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=10)]
+        public string Channel
+        {
+            get { return this._channel; }
+            set { this._channel = value; }
+        }
+
+        // Check to see if Channel property is set
+        internal bool IsSetChannel()
+        {
+            return this._channel != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelSubtype. 
@@ -293,6 +314,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceConfigurationSummary. 
+        /// <para>
+        /// The source configuration summary of the message template.
+        /// </para>
+        /// </summary>
+        public MessageTemplateSourceConfigurationSummary SourceConfigurationSummary
+        {
+            get { return this._sourceConfigurationSummary; }
+            set { this._sourceConfigurationSummary = value; }
+        }
+
+        // Check to see if SourceConfigurationSummary property is set
+        internal bool IsSetSourceConfigurationSummary()
+        {
+            return this._sourceConfigurationSummary != null;
         }
 
         /// <summary>

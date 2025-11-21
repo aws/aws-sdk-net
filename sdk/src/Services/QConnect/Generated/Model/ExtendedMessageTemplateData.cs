@@ -36,6 +36,7 @@ namespace Amazon.QConnect.Model
     {
         private List<MessageTemplateAttachment> _attachments = AWSConfigs.InitializeCollections ? new List<MessageTemplateAttachment>() : null;
         private List<string> _attributeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _channel;
         private ChannelSubtype _channelSubtype;
         private MessageTemplateContentProvider _content;
         private DateTime? _createdTime;
@@ -52,6 +53,7 @@ namespace Amazon.QConnect.Model
         private string _messageTemplateContentSha256;
         private string _messageTemplateId;
         private string _name;
+        private MessageTemplateSourceConfigurationSummary _sourceConfigurationSummary;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private long? _versionNumber;
 
@@ -92,6 +94,25 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Channel. 
+        /// <para>
+        /// The channel of the message template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=10)]
+        public string Channel
+        {
+            get { return this._channel; }
+            set { this._channel = value; }
+        }
+
+        // Check to see if Channel property is set
+        internal bool IsSetChannel()
+        {
+            return this._channel != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ChannelSubtype. 
         /// <para>
         /// The channel subtype this message template applies to.
@@ -116,7 +137,6 @@ namespace Amazon.QConnect.Model
         /// The content of the message template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MessageTemplateContentProvider Content
         {
             get { return this._content; }
@@ -396,6 +416,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceConfigurationSummary. 
+        /// <para>
+        /// The source configuration summary of the message template.
+        /// </para>
+        /// </summary>
+        public MessageTemplateSourceConfigurationSummary SourceConfigurationSummary
+        {
+            get { return this._sourceConfigurationSummary; }
+            set { this._sourceConfigurationSummary = value; }
+        }
+
+        // Check to see if SourceConfigurationSummary property is set
+        internal bool IsSetSourceConfigurationSummary()
+        {
+            return this._sourceConfigurationSummary != null;
         }
 
         /// <summary>

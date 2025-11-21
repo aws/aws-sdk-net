@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MessageTemplateContentProvider Marshaller
+    /// MessageTemplateSourceConfiguration Marshaller
     /// </summary>
-    public class MessageTemplateContentProviderMarshaller : IRequestMarshaller<MessageTemplateContentProvider, JsonMarshallerContext> 
+    public class MessageTemplateSourceConfigurationMarshaller : IRequestMarshaller<MessageTemplateSourceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,49 +44,16 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MessageTemplateContentProvider requestObject, JsonMarshallerContext context)
+        public void Marshall(MessageTemplateSourceConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEmail())
-            {
-                context.Writer.WritePropertyName("email");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EmailMessageTemplateContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.Email, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPush())
-            {
-                context.Writer.WritePropertyName("push");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = PushMessageTemplateContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.Push, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSms())
-            {
-                context.Writer.WritePropertyName("sms");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SMSMessageTemplateContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.Sms, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetWhatsApp())
             {
                 context.Writer.WritePropertyName("whatsApp");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = WhatsAppMessageTemplateContentMarshaller.Instance;
+                var marshaller = WhatsAppMessageTemplateSourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.WhatsApp, context);
 
                 context.Writer.WriteObjectEnd();
@@ -97,7 +64,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MessageTemplateContentProviderMarshaller Instance = new MessageTemplateContentProviderMarshaller();
+        public readonly static MessageTemplateSourceConfigurationMarshaller Instance = new MessageTemplateSourceConfigurationMarshaller();
 
     }
 }

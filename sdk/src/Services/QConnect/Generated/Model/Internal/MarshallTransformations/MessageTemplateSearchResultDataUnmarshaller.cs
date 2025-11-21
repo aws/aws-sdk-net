@@ -66,6 +66,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("channel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("channelSubtype", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -142,6 +148,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceConfigurationSummary", targetDepth))
+                {
+                    var unmarshaller = MessageTemplateSourceConfigurationSummaryUnmarshaller.Instance;
+                    unmarshalledObject.SourceConfigurationSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))

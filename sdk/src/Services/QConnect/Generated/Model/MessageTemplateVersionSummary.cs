@@ -34,6 +34,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class MessageTemplateVersionSummary
     {
+        private string _channel;
         private ChannelSubtype _channelSubtype;
         private bool? _isActive;
         private string _knowledgeBaseArn;
@@ -42,6 +43,25 @@ namespace Amazon.QConnect.Model
         private string _messageTemplateId;
         private string _name;
         private long? _versionNumber;
+
+        /// <summary>
+        /// Gets and sets the property Channel. 
+        /// <para>
+        /// The channel of the message template.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=10)]
+        public string Channel
+        {
+            get { return this._channel; }
+            set { this._channel = value; }
+        }
+
+        // Check to see if Channel property is set
+        internal bool IsSetChannel()
+        {
+            return this._channel != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChannelSubtype. 

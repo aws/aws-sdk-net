@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MessageTemplateContentProvider Object
+    /// Response Unmarshaller for WhatsAppMessageTemplateSourceConfiguration Object
     /// </summary>  
-    public class MessageTemplateContentProviderUnmarshaller : IUnmarshaller<MessageTemplateContentProvider, XmlUnmarshallerContext>, IUnmarshaller<MessageTemplateContentProvider, JsonUnmarshallerContext>
+    public class WhatsAppMessageTemplateSourceConfigurationUnmarshaller : IUnmarshaller<WhatsAppMessageTemplateSourceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WhatsAppMessageTemplateSourceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MessageTemplateContentProvider IUnmarshaller<MessageTemplateContentProvider, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WhatsAppMessageTemplateSourceConfiguration IUnmarshaller<WhatsAppMessageTemplateSourceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MessageTemplateContentProvider Unmarshall(JsonUnmarshallerContext context)
+        public WhatsAppMessageTemplateSourceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            MessageTemplateContentProvider unmarshalledObject = new MessageTemplateContentProvider();
+            WhatsAppMessageTemplateSourceConfiguration unmarshalledObject = new WhatsAppMessageTemplateSourceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,22 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("email", targetDepth))
+                if (context.TestExpression("businessAccountId", targetDepth))
                 {
-                    var unmarshaller = EmailMessageTemplateContentUnmarshaller.Instance;
-                    unmarshalledObject.Email = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BusinessAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("push", targetDepth))
+                if (context.TestExpression("components", targetDepth))
                 {
-                    var unmarshaller = PushMessageTemplateContentUnmarshaller.Instance;
-                    unmarshalledObject.Push = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Components = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sms", targetDepth))
+                if (context.TestExpression("templateId", targetDepth))
                 {
-                    var unmarshaller = SMSMessageTemplateContentUnmarshaller.Instance;
-                    unmarshalledObject.Sms = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("whatsApp", targetDepth))
-                {
-                    var unmarshaller = WhatsAppMessageTemplateContentUnmarshaller.Instance;
-                    unmarshalledObject.WhatsApp = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TemplateId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +89,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static MessageTemplateContentProviderUnmarshaller _instance = new MessageTemplateContentProviderUnmarshaller();        
+        private static WhatsAppMessageTemplateSourceConfigurationUnmarshaller _instance = new WhatsAppMessageTemplateSourceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MessageTemplateContentProviderUnmarshaller Instance
+        public static WhatsAppMessageTemplateSourceConfigurationUnmarshaller Instance
         {
             get
             {
