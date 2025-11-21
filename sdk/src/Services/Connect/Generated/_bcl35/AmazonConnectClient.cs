@@ -2640,6 +2640,160 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateContactFlowModuleAlias
+
+        /// <summary>
+        /// Creates a named alias that points to a specific version of a contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleAlias">REST API Reference for CreateContactFlowModuleAlias Operation</seealso>
+        public virtual CreateContactFlowModuleAliasResponse CreateContactFlowModuleAlias(CreateContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowModuleAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContactFlowModuleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleAlias operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContactFlowModuleAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleAlias">REST API Reference for CreateContactFlowModuleAlias Operation</seealso>
+        public virtual IAsyncResult BeginCreateContactFlowModuleAlias(CreateContactFlowModuleAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateContactFlowModuleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateContactFlowModuleAlias.</param>
+        /// 
+        /// <returns>Returns a  CreateContactFlowModuleAliasResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleAlias">REST API Reference for CreateContactFlowModuleAlias Operation</seealso>
+        public virtual CreateContactFlowModuleAliasResponse EndCreateContactFlowModuleAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateContactFlowModuleAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateContactFlowModuleVersion
+
+        /// <summary>
+        /// Creates an immutable snapshot of a contact flow module, preserving its content and
+        /// settings at a specific point in time for version control and rollback capabilities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateContactFlowModuleVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleVersion">REST API Reference for CreateContactFlowModuleVersion Operation</seealso>
+        public virtual CreateContactFlowModuleVersionResponse CreateContactFlowModuleVersion(CreateContactFlowModuleVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowModuleVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContactFlowModuleVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleVersion operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContactFlowModuleVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleVersion">REST API Reference for CreateContactFlowModuleVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreateContactFlowModuleVersion(CreateContactFlowModuleVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateContactFlowModuleVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateContactFlowModuleVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateContactFlowModuleVersionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleVersion">REST API Reference for CreateContactFlowModuleVersion Operation</seealso>
+        public virtual CreateContactFlowModuleVersionResponse EndCreateContactFlowModuleVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateContactFlowModuleVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateContactFlowVersion
 
         /// <summary>
@@ -5036,6 +5190,151 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteContactFlowModuleAlias
+
+        /// <summary>
+        /// Removes an alias reference, breaking the named connection to the underlying module
+        /// version without affecting the version itself.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleAlias">REST API Reference for DeleteContactFlowModuleAlias Operation</seealso>
+        public virtual DeleteContactFlowModuleAliasResponse DeleteContactFlowModuleAlias(DeleteContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowModuleAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContactFlowModuleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleAlias operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContactFlowModuleAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleAlias">REST API Reference for DeleteContactFlowModuleAlias Operation</seealso>
+        public virtual IAsyncResult BeginDeleteContactFlowModuleAlias(DeleteContactFlowModuleAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteContactFlowModuleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteContactFlowModuleAlias.</param>
+        /// 
+        /// <returns>Returns a  DeleteContactFlowModuleAliasResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleAlias">REST API Reference for DeleteContactFlowModuleAlias Operation</seealso>
+        public virtual DeleteContactFlowModuleAliasResponse EndDeleteContactFlowModuleAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteContactFlowModuleAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteContactFlowModuleVersion
+
+        /// <summary>
+        /// Removes a specific version of a contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowModuleVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleVersion">REST API Reference for DeleteContactFlowModuleVersion Operation</seealso>
+        public virtual DeleteContactFlowModuleVersionResponse DeleteContactFlowModuleVersion(DeleteContactFlowModuleVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowModuleVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContactFlowModuleVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleVersion operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContactFlowModuleVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleVersion">REST API Reference for DeleteContactFlowModuleVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteContactFlowModuleVersion(DeleteContactFlowModuleVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteContactFlowModuleVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteContactFlowModuleVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteContactFlowModuleVersionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleVersion">REST API Reference for DeleteContactFlowModuleVersion Operation</seealso>
+        public virtual DeleteContactFlowModuleVersionResponse EndDeleteContactFlowModuleVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteContactFlowModuleVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteContactFlowVersion
 
         /// <summary>
@@ -7267,6 +7566,79 @@ namespace Amazon.Connect
         public virtual DescribeContactFlowModuleResponse EndDescribeContactFlowModule(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeContactFlowModuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeContactFlowModuleAlias
+
+        /// <summary>
+        /// Retrieves detailed information about a specific alias, including which version it
+        /// currently points to and its metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModuleAlias service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModuleAlias">REST API Reference for DescribeContactFlowModuleAlias Operation</seealso>
+        public virtual DescribeContactFlowModuleAliasResponse DescribeContactFlowModuleAlias(DescribeContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContactFlowModuleAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContactFlowModuleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModuleAlias operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeContactFlowModuleAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModuleAlias">REST API Reference for DescribeContactFlowModuleAlias Operation</seealso>
+        public virtual IAsyncResult BeginDescribeContactFlowModuleAlias(DescribeContactFlowModuleAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeContactFlowModuleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeContactFlowModuleAlias.</param>
+        /// 
+        /// <returns>Returns a  DescribeContactFlowModuleAliasResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModuleAlias">REST API Reference for DescribeContactFlowModuleAlias Operation</seealso>
+        public virtual DescribeContactFlowModuleAliasResponse EndDescribeContactFlowModuleAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeContactFlowModuleAliasResponse>(asyncResult);
         }
 
         #endregion
@@ -11788,6 +12160,79 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListContactFlowModuleAliases
+
+        /// <summary>
+        /// Lists all aliases associated with a contact flow module, showing their current version
+        /// mappings and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListContactFlowModuleAliases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleAliases">REST API Reference for ListContactFlowModuleAliases Operation</seealso>
+        public virtual ListContactFlowModuleAliasesResponse ListContactFlowModuleAliases(ListContactFlowModuleAliasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactFlowModuleAliasesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContactFlowModuleAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleAliases operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContactFlowModuleAliases
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleAliases">REST API Reference for ListContactFlowModuleAliases Operation</seealso>
+        public virtual IAsyncResult BeginListContactFlowModuleAliases(ListContactFlowModuleAliasesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleAliasesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContactFlowModuleAliases operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContactFlowModuleAliases.</param>
+        /// 
+        /// <returns>Returns a  ListContactFlowModuleAliasesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleAliases">REST API Reference for ListContactFlowModuleAliases Operation</seealso>
+        public virtual ListContactFlowModuleAliasesResponse EndListContactFlowModuleAliases(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListContactFlowModuleAliasesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListContactFlowModules
 
         /// <summary>
@@ -11856,6 +12301,78 @@ namespace Amazon.Connect
         public virtual ListContactFlowModulesResponse EndListContactFlowModules(IAsyncResult asyncResult)
         {
             return EndInvoke<ListContactFlowModulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListContactFlowModuleVersions
+
+        /// <summary>
+        /// Retrieves a paginated list of all versions for a specific contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListContactFlowModuleVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleVersions">REST API Reference for ListContactFlowModuleVersions Operation</seealso>
+        public virtual ListContactFlowModuleVersionsResponse ListContactFlowModuleVersions(ListContactFlowModuleVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactFlowModuleVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContactFlowModuleVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleVersions operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContactFlowModuleVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleVersions">REST API Reference for ListContactFlowModuleVersions Operation</seealso>
+        public virtual IAsyncResult BeginListContactFlowModuleVersions(ListContactFlowModuleVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContactFlowModuleVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContactFlowModuleVersions.</param>
+        /// 
+        /// <returns>Returns a  ListContactFlowModuleVersionsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleVersions">REST API Reference for ListContactFlowModuleVersions Operation</seealso>
+        public virtual ListContactFlowModuleVersionsResponse EndListContactFlowModuleVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListContactFlowModuleVersionsResponse>(asyncResult);
         }
 
         #endregion
@@ -19633,6 +20150,85 @@ namespace Amazon.Connect
         public virtual UpdateContactFlowMetadataResponse EndUpdateContactFlowMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateContactFlowMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateContactFlowModuleAlias
+
+        /// <summary>
+        /// Updates a specific Aliases metadata, including the version it’s tied to, it’s name,
+        /// and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleAlias service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleAlias">REST API Reference for UpdateContactFlowModuleAlias Operation</seealso>
+        public virtual UpdateContactFlowModuleAliasResponse UpdateContactFlowModuleAlias(UpdateContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactFlowModuleAliasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContactFlowModuleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleAlias operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContactFlowModuleAlias
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleAlias">REST API Reference for UpdateContactFlowModuleAlias Operation</seealso>
+        public virtual IAsyncResult BeginUpdateContactFlowModuleAlias(UpdateContactFlowModuleAliasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContactFlowModuleAlias operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContactFlowModuleAlias.</param>
+        /// 
+        /// <returns>Returns a  UpdateContactFlowModuleAliasResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleAlias">REST API Reference for UpdateContactFlowModuleAlias Operation</seealso>
+        public virtual UpdateContactFlowModuleAliasResponse EndUpdateContactFlowModuleAlias(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateContactFlowModuleAliasResponse>(asyncResult);
         }
 
         #endregion

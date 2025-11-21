@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateContactFlowModuleContent Request Marshaller
+    /// DeleteContactFlowModuleVersion Request Marshaller
     /// </summary>       
-    public class UpdateContactFlowModuleContentRequestMarshaller : IMarshaller<IRequest, UpdateContactFlowModuleContentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteContactFlowModuleVersionRequestMarshaller : IMarshaller<IRequest, DeleteContactFlowModuleVersionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateContactFlowModuleContentRequest)input);
+            return this.Marshall((DeleteContactFlowModuleVersionRequest)input);
         }
 
         /// <summary>
@@ -53,49 +53,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateContactFlowModuleContentRequest publicRequest)
+        public IRequest Marshall(DeleteContactFlowModuleVersionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
-            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "DELETE";
 
             if (!publicRequest.IsSetContactFlowModuleId())
                 throw new AmazonConnectException("Request object does not have required field ContactFlowModuleId set");
             request.AddPathResource("{ContactFlowModuleId}", StringUtils.FromString(publicRequest.ContactFlowModuleId));
+            if (!publicRequest.IsSetContactFlowModuleVersion())
+                throw new AmazonConnectException("Request object does not have required field ContactFlowModuleVersion set");
+            request.AddPathResource("{ContactFlowModuleVersion}", StringUtils.FromLong(publicRequest.ContactFlowModuleVersion));
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
-            request.ResourcePath = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/content";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContent())
-                {
-                    context.Writer.WritePropertyName("Content");
-                    context.Writer.Write(publicRequest.Content);
-                }
-
-                if(publicRequest.IsSetSettings())
-                {
-                    context.Writer.WritePropertyName("Settings");
-                    context.Writer.Write(publicRequest.Settings);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.ResourcePath = "/contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/version/{ContactFlowModuleVersion}";
 
             return request;
         }
-        private static UpdateContactFlowModuleContentRequestMarshaller _instance = new UpdateContactFlowModuleContentRequestMarshaller();        
+        private static DeleteContactFlowModuleVersionRequestMarshaller _instance = new DeleteContactFlowModuleVersionRequestMarshaller();        
 
-        internal static UpdateContactFlowModuleContentRequestMarshaller GetInstance()
+        internal static DeleteContactFlowModuleVersionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +82,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateContactFlowModuleContentRequestMarshaller Instance
+        public static DeleteContactFlowModuleVersionRequestMarshaller Instance
         {
             get
             {

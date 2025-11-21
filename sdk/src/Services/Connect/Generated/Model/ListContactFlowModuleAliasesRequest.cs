@@ -30,23 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateContactFlowModuleContent operation.
-    /// Updates specified flow module for the specified Amazon Connect instance. 
-    /// 
-    ///  
-    /// <para>
-    /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-    /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
-    /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
-    /// published.
-    /// </para>
+    /// Container for the parameters to the ListContactFlowModuleAliases operation.
+    /// Lists all aliases associated with a contact flow module, showing their current version
+    /// mappings and metadata.
     /// </summary>
-    public partial class UpdateContactFlowModuleContentRequest : AmazonConnectRequest
+    public partial class ListContactFlowModuleAliasesRequest : AmazonConnectRequest
     {
         private string _contactFlowModuleId;
-        private string _content;
         private string _instanceId;
-        private string _settings;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ContactFlowModuleId. 
@@ -54,7 +47,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the flow module.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true)]
         public string ContactFlowModuleId
         {
             get { return this._contactFlowModuleId; }
@@ -68,33 +61,13 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Content. 
-        /// <para>
-        /// The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-        /// flow in Amazon Connect Flow language</a>. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=256000)]
-        public string Content
-        {
-            get { return this._content; }
-            set { this._content = value; }
-        }
-
-        // Check to see if Content property is set
-        internal bool IsSetContent()
-        {
-            return this._content != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
         /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=250)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -108,21 +81,41 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Settings. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Serialized JSON string of the flow module Settings schema.
+        /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
-        public string Settings
+        [AWSProperty(Min=1, Max=1000)]
+        public int MaxResults
         {
-            get { return this._settings; }
-            set { this._settings = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if Settings property is set
-        internal bool IsSetSettings()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._settings != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

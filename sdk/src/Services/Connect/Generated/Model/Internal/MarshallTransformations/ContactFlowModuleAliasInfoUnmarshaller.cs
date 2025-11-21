@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContactFlowModule Object
+    /// Response Unmarshaller for ContactFlowModuleAliasInfo Object
     /// </summary>  
-    public class ContactFlowModuleUnmarshaller : IUnmarshaller<ContactFlowModule, XmlUnmarshallerContext>, IUnmarshaller<ContactFlowModule, JsonUnmarshallerContext>
+    public class ContactFlowModuleAliasInfoUnmarshaller : IUnmarshaller<ContactFlowModuleAliasInfo, XmlUnmarshallerContext>, IUnmarshaller<ContactFlowModuleAliasInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ContactFlowModule IUnmarshaller<ContactFlowModule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ContactFlowModuleAliasInfo IUnmarshaller<ContactFlowModuleAliasInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContactFlowModule Unmarshall(JsonUnmarshallerContext context)
+        public ContactFlowModuleAliasInfo Unmarshall(JsonUnmarshallerContext context)
         {
-            ContactFlowModule unmarshalledObject = new ContactFlowModule();
+            ContactFlowModuleAliasInfo unmarshalledObject = new ContactFlowModuleAliasInfo();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("AliasId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AliasId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Content", targetDepth))
+                if (context.TestExpression("ContactFlowModuleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContactFlowModuleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ContactFlowModuleId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContactFlowModuleId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
@@ -84,22 +90,16 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExternalInvocationConfiguration", targetDepth))
-                {
-                    var unmarshaller = ExternalInvocationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ExternalInvocationConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FlowModuleContentSha256", targetDepth))
+                if (context.TestExpression("LastModifiedRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlowModuleContentSha256 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModifiedRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -108,40 +108,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Settings", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Settings = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Version", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VersionDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VersionDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -149,12 +119,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContactFlowModuleUnmarshaller _instance = new ContactFlowModuleUnmarshaller();        
+        private static ContactFlowModuleAliasInfoUnmarshaller _instance = new ContactFlowModuleAliasInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContactFlowModuleUnmarshaller Instance
+        public static ContactFlowModuleAliasInfoUnmarshaller Instance
         {
             get
             {

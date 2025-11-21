@@ -30,23 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateContactFlowModuleContent operation.
-    /// Updates specified flow module for the specified Amazon Connect instance. 
-    /// 
-    ///  
-    /// <para>
-    /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-    /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
-    /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
-    /// published.
-    /// </para>
+    /// Container for the parameters to the UpdateContactFlowModuleAlias operation.
+    /// Updates a specific Aliases metadata, including the version it’s tied to, it’s name,
+    /// and description.
     /// </summary>
-    public partial class UpdateContactFlowModuleContentRequest : AmazonConnectRequest
+    public partial class UpdateContactFlowModuleAliasRequest : AmazonConnectRequest
     {
+        private string _aliasId;
         private string _contactFlowModuleId;
-        private string _content;
+        private long? _contactFlowModuleVersion;
+        private string _description;
         private string _instanceId;
-        private string _settings;
+        private string _name;
+
+        /// <summary>
+        /// Gets and sets the property AliasId. 
+        /// <para>
+        /// The identifier of the alias.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=500)]
+        public string AliasId
+        {
+            get { return this._aliasId; }
+            set { this._aliasId = value; }
+        }
+
+        // Check to see if AliasId property is set
+        internal bool IsSetAliasId()
+        {
+            return this._aliasId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContactFlowModuleId. 
@@ -68,23 +82,41 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Content. 
+        /// Gets and sets the property ContactFlowModuleVersion. 
         /// <para>
-        /// The JSON string that represents the content of the flow. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example
-        /// flow in Amazon Connect Flow language</a>. 
+        /// The version of the flow module.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256000)]
-        public string Content
+        [AWSProperty(Min=1)]
+        public long ContactFlowModuleVersion
         {
-            get { return this._content; }
-            set { this._content = value; }
+            get { return this._contactFlowModuleVersion.GetValueOrDefault(); }
+            set { this._contactFlowModuleVersion = value; }
         }
 
-        // Check to see if Content property is set
-        internal bool IsSetContent()
+        // Check to see if ContactFlowModuleVersion property is set
+        internal bool IsSetContactFlowModuleVersion()
         {
-            return this._content != null;
+            return this._contactFlowModuleVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the alias.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -94,7 +126,7 @@ namespace Amazon.Connect.Model
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=250)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -108,21 +140,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Settings. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Serialized JSON string of the flow module Settings schema.
+        /// The name of the alias.
         /// </para>
         /// </summary>
-        public string Settings
+        [AWSProperty(Min=1, Max=127)]
+        public string Name
         {
-            get { return this._settings; }
-            set { this._settings = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Settings property is set
-        internal bool IsSetSettings()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._settings != null;
+            return this._name != null;
         }
 
     }
