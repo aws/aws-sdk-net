@@ -36,6 +36,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _description;
         private List<InputContext> _inputContexts = AWSConfigs.InitializeCollections ? new List<InputContext>() : null;
+        private string _intentDisplayName;
         private string _intentId;
         private string _intentName;
         private DateTime? _lastUpdatedDateTime;
@@ -78,6 +79,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetInputContexts()
         {
             return this._inputContexts != null && (this._inputContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntentDisplayName. 
+        /// <para>
+        /// The display name of the intent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string IntentDisplayName
+        {
+            get { return this._intentDisplayName; }
+            set { this._intentDisplayName = value; }
+        }
+
+        // Check to see if IntentDisplayName property is set
+        internal bool IsSetIntentDisplayName()
+        {
+            return this._intentDisplayName != null;
         }
 
         /// <summary>

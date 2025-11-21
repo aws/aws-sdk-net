@@ -124,6 +124,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.RecommendedActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("speechDetectionSensitivity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SpeechDetectionSensitivity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("voiceSettings", targetDepth))
                 {
                     var unmarshaller = VoiceSettingsUnmarshaller.Instance;

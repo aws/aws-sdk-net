@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NluImprovementSpecification Marshaller
+    /// IntentDisambiguationSettings Marshaller
     /// </summary>
-    public class NluImprovementSpecificationMarshaller : IRequestMarshaller<NluImprovementSpecification, JsonMarshallerContext> 
+    public class IntentDisambiguationSettingsMarshaller : IRequestMarshaller<IntentDisambiguationSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,14 +44,14 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NluImprovementSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(IntentDisambiguationSettings requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAssistedNluMode())
+            if(requestObject.IsSetCustomDisambiguationMessage())
             {
-                context.Writer.WritePropertyName("assistedNluMode");
-                context.Writer.Write(requestObject.AssistedNluMode);
+                context.Writer.WritePropertyName("customDisambiguationMessage");
+                context.Writer.Write(requestObject.CustomDisambiguationMessage);
             }
 
             if(requestObject.IsSetEnabled())
@@ -60,15 +60,10 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Enabled);
             }
 
-            if(requestObject.IsSetIntentDisambiguationSettings())
+            if(requestObject.IsSetMaxDisambiguationIntents())
             {
-                context.Writer.WritePropertyName("intentDisambiguationSettings");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = IntentDisambiguationSettingsMarshaller.Instance;
-                marshaller.Marshall(requestObject.IntentDisambiguationSettings, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("maxDisambiguationIntents");
+                context.Writer.Write(requestObject.MaxDisambiguationIntents);
             }
 
         }
@@ -76,7 +71,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static NluImprovementSpecificationMarshaller Instance = new NluImprovementSpecificationMarshaller();
+        public readonly static IntentDisambiguationSettingsMarshaller Instance = new IntentDisambiguationSettingsMarshaller();
 
     }
 }

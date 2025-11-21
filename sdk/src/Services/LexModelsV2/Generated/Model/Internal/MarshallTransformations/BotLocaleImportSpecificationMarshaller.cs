@@ -79,6 +79,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 }
             }
 
+            if(requestObject.IsSetSpeechDetectionSensitivity())
+            {
+                context.Writer.WritePropertyName("speechDetectionSensitivity");
+                context.Writer.Write(requestObject.SpeechDetectionSensitivity);
+            }
+
             if(requestObject.IsSetVoiceSettings())
             {
                 context.Writer.WritePropertyName("voiceSettings");

@@ -78,6 +78,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputContexts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("intentDisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IntentDisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("intentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

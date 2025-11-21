@@ -38,6 +38,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private AssistedNluMode _assistedNluMode;
         private bool? _enabled;
+        private IntentDisambiguationSettings _intentDisambiguationSettings;
 
         /// <summary>
         /// Gets and sets the property AssistedNluMode. 
@@ -78,6 +79,26 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntentDisambiguationSettings. 
+        /// <para>
+        /// An object containing specifications for the Intent Disambiguation feature within the
+        /// Assisted NLU settings. These settings determine how the bot handles ambiguous user
+        /// inputs that could match multiple intents.
+        /// </para>
+        /// </summary>
+        public IntentDisambiguationSettings IntentDisambiguationSettings
+        {
+            get { return this._intentDisambiguationSettings; }
+            set { this._intentDisambiguationSettings = value; }
+        }
+
+        // Check to see if IntentDisambiguationSettings property is set
+        internal bool IsSetIntentDisambiguationSettings()
+        {
+            return this._intentDisambiguationSettings != null;
         }
 
     }

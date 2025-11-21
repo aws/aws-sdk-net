@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NluImprovementSpecification Object
+    /// Response Unmarshaller for IntentDisambiguationSettings Object
     /// </summary>  
-    public class NluImprovementSpecificationUnmarshaller : IUnmarshaller<NluImprovementSpecification, XmlUnmarshallerContext>, IUnmarshaller<NluImprovementSpecification, JsonUnmarshallerContext>
+    public class IntentDisambiguationSettingsUnmarshaller : IUnmarshaller<IntentDisambiguationSettings, XmlUnmarshallerContext>, IUnmarshaller<IntentDisambiguationSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NluImprovementSpecification IUnmarshaller<NluImprovementSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IntentDisambiguationSettings IUnmarshaller<IntentDisambiguationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public NluImprovementSpecification Unmarshall(JsonUnmarshallerContext context)
+        public IntentDisambiguationSettings Unmarshall(JsonUnmarshallerContext context)
         {
-            NluImprovementSpecification unmarshalledObject = new NluImprovementSpecification();
+            IntentDisambiguationSettings unmarshalledObject = new IntentDisambiguationSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,10 +66,10 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("assistedNluMode", targetDepth))
+                if (context.TestExpression("customDisambiguationMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssistedNluMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomDisambiguationMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("enabled", targetDepth))
@@ -78,10 +78,10 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("intentDisambiguationSettings", targetDepth))
+                if (context.TestExpression("maxDisambiguationIntents", targetDepth))
                 {
-                    var unmarshaller = IntentDisambiguationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.IntentDisambiguationSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxDisambiguationIntents = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +89,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static NluImprovementSpecificationUnmarshaller _instance = new NluImprovementSpecificationUnmarshaller();        
+        private static IntentDisambiguationSettingsUnmarshaller _instance = new IntentDisambiguationSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NluImprovementSpecificationUnmarshaller Instance
+        public static IntentDisambiguationSettingsUnmarshaller Instance
         {
             get
             {
