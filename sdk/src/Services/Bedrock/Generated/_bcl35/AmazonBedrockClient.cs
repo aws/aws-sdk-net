@@ -2331,6 +2331,76 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  DeleteEnforcedGuardrailConfiguration
+
+        /// <summary>
+        /// Deletes the account-level enforced guardrail configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnforcedGuardrailConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEnforcedGuardrailConfiguration service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteEnforcedGuardrailConfiguration">REST API Reference for DeleteEnforcedGuardrailConfiguration Operation</seealso>
+        public virtual DeleteEnforcedGuardrailConfigurationResponse DeleteEnforcedGuardrailConfiguration(DeleteEnforcedGuardrailConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteEnforcedGuardrailConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEnforcedGuardrailConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEnforcedGuardrailConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEnforcedGuardrailConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEnforcedGuardrailConfiguration operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEnforcedGuardrailConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteEnforcedGuardrailConfiguration">REST API Reference for DeleteEnforcedGuardrailConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEnforcedGuardrailConfiguration(DeleteEnforcedGuardrailConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteEnforcedGuardrailConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEnforcedGuardrailConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEnforcedGuardrailConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEnforcedGuardrailConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteEnforcedGuardrailConfigurationResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteEnforcedGuardrailConfiguration">REST API Reference for DeleteEnforcedGuardrailConfiguration Operation</seealso>
+        public virtual DeleteEnforcedGuardrailConfigurationResponse EndDeleteEnforcedGuardrailConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEnforcedGuardrailConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteFoundationModelAgreement
 
         /// <summary>
@@ -5236,6 +5306,76 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  ListEnforcedGuardrailsConfiguration
+
+        /// <summary>
+        /// Lists the account-level enforced guardrail configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnforcedGuardrailsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ListEnforcedGuardrailsConfiguration service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEnforcedGuardrailsConfiguration">REST API Reference for ListEnforcedGuardrailsConfiguration Operation</seealso>
+        public virtual ListEnforcedGuardrailsConfigurationResponse ListEnforcedGuardrailsConfiguration(ListEnforcedGuardrailsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEnforcedGuardrailsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEnforcedGuardrailsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<ListEnforcedGuardrailsConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEnforcedGuardrailsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEnforcedGuardrailsConfiguration operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEnforcedGuardrailsConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEnforcedGuardrailsConfiguration">REST API Reference for ListEnforcedGuardrailsConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginListEnforcedGuardrailsConfiguration(ListEnforcedGuardrailsConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEnforcedGuardrailsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEnforcedGuardrailsConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEnforcedGuardrailsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEnforcedGuardrailsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  ListEnforcedGuardrailsConfigurationResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/ListEnforcedGuardrailsConfiguration">REST API Reference for ListEnforcedGuardrailsConfiguration Operation</seealso>
+        public virtual ListEnforcedGuardrailsConfigurationResponse EndListEnforcedGuardrailsConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEnforcedGuardrailsConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListEvaluationJobs
 
         /// <summary>
@@ -6221,6 +6361,79 @@ namespace Amazon.Bedrock
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutEnforcedGuardrailConfiguration
+
+        /// <summary>
+        /// Sets the account-level enforced guardrail configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEnforcedGuardrailConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutEnforcedGuardrailConfiguration service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutEnforcedGuardrailConfiguration">REST API Reference for PutEnforcedGuardrailConfiguration Operation</seealso>
+        public virtual PutEnforcedGuardrailConfigurationResponse PutEnforcedGuardrailConfiguration(PutEnforcedGuardrailConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutEnforcedGuardrailConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEnforcedGuardrailConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutEnforcedGuardrailConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutEnforcedGuardrailConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutEnforcedGuardrailConfiguration operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEnforcedGuardrailConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutEnforcedGuardrailConfiguration">REST API Reference for PutEnforcedGuardrailConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginPutEnforcedGuardrailConfiguration(PutEnforcedGuardrailConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutEnforcedGuardrailConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutEnforcedGuardrailConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutEnforcedGuardrailConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEnforcedGuardrailConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutEnforcedGuardrailConfigurationResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/PutEnforcedGuardrailConfiguration">REST API Reference for PutEnforcedGuardrailConfiguration Operation</seealso>
+        public virtual PutEnforcedGuardrailConfigurationResponse EndPutEnforcedGuardrailConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutEnforcedGuardrailConfigurationResponse>(asyncResult);
         }
 
         #endregion

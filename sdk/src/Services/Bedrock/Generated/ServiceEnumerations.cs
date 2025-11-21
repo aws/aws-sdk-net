@@ -863,6 +863,52 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationOwner.
+    /// </summary>
+    public class ConfigurationOwner : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for ConfigurationOwner
+        /// </summary>
+        public static readonly ConfigurationOwner ACCOUNT = new ConfigurationOwner("ACCOUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationOwner(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationOwner FindValue(string value)
+        {
+            return FindValue<ConfigurationOwner>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationOwner(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CustomizationType.
     /// </summary>
     public class CustomizationType : ConstantClass
@@ -2406,6 +2452,56 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InferenceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputTags.
+    /// </summary>
+    public class InputTags : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HONOR for InputTags
+        /// </summary>
+        public static readonly InputTags HONOR = new InputTags("HONOR");
+        /// <summary>
+        /// Constant IGNORE for InputTags
+        /// </summary>
+        public static readonly InputTags IGNORE = new InputTags("IGNORE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputTags(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputTags FindValue(string value)
+        {
+            return FindValue<InputTags>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputTags(string value)
         {
             return FindValue(value);
         }
