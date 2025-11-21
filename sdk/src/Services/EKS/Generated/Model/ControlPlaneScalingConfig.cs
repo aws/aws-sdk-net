@@ -30,30 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An Amazon EC2 Auto Scaling group that is associated with an Amazon EKS managed node
-    /// group.
+    /// The control plane scaling tier configuration. For more information, see EKS Provisioned
+    /// Control Plane in the Amazon EKS User Guide.
     /// </summary>
-    public partial class AutoScalingGroup
+    public partial class ControlPlaneScalingConfig
     {
-        private string _name;
+        private ProvisionedControlPlaneTier _tier;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Tier. 
         /// <para>
-        /// The name of the Amazon EC2 Auto Scaling group associated with an Amazon EKS managed
-        /// node group.
+        /// The control plane scaling tier configuration. Available options are <c>standard</c>,
+        /// <c>tier-xl</c>, <c>tier-2xl</c>, or <c>tier-4xl</c>. For more information, see EKS
+        /// Provisioned Control Plane in the Amazon EKS User Guide.
         /// </para>
         /// </summary>
-        public string Name
+        public ProvisionedControlPlaneTier Tier
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._tier; }
+            set { this._tier = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Tier property is set
+        internal bool IsSetTier()
         {
-            return this._name != null;
+            return this._tier != null;
         }
 
     }
