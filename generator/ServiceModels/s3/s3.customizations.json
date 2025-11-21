@@ -1028,6 +1028,21 @@
                         "injectXmlMarshallCode": ["IntelligentTieringFilterCustomMarshall(publicRequest, xmlWriter);"]
                     }
                 }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "IntelligentTieringFilter" :{
+                        "predicateListUnmarshallerName" : "IntelligentTieringPredicateListFilterUnmarshaller",
+                        "filterPredicateName": "IntelligentTieringFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "GetBucketIntelligentTieringConfigurationRequest":{
+            "modify":[
+                {
+                    "Id" : {"emitPropertyName": "IntelligentTieringId"}
+                }
             ]
         }
     },
