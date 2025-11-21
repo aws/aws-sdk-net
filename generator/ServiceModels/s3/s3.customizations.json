@@ -1137,6 +1137,32 @@
                     "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
                 }
             ]
+        },
+        "ListBucketInventoryConfigurationsRequest":{
+            "modify":[
+                {
+                    "ContinuationToken":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._continuationToken);"]}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "ListBucketInventoryConfigurationsOutput":{
+            "modify":[
+                {
+                    "ContinuationToken":{"emitPropertyName":"Token"}
+                },
+                {
+                    "NextContinuationToken":{"emitPropertyName":"NextToken"}
+                },
+                {
+                    "Token":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._token);"]}
+                },
+                {
+                    "NextToken":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._nextToken);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
