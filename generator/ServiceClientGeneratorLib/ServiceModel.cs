@@ -565,7 +565,7 @@ namespace ServiceClientGenerator
 						//new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
                         //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"]),
                         new Operation(this, "PutBucketAnalyticsConfiguration" , DocumentRoot[OperationsKey]["PutBucketAnalyticsConfiguration"]),
-                        //new Operation(this, "PutBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["PutBucketIntelligentTieringConfiguration"]),
+                        new Operation(this, "PutBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["PutBucketIntelligentTieringConfiguration"]),
                         //new Operation(this, "PutBucketInventoryConfiguration", DocumentRoot[OperationsKey]["PutBucketInventoryConfiguration"]),
                         new Operation(this, "PutBucketMetricsConfiguration", DocumentRoot[OperationsKey]["PutBucketMetricsConfiguration"]),
                         new Operation(this, "DeleteBucketMetricsConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetricsConfiguration"]),
