@@ -37,6 +37,7 @@ namespace Amazon.Athena.Model
         private EncryptionConfiguration _encryptionConfiguration;
         private string _executionRole;
         private long? _idleTimeoutSeconds;
+        private int? _sessionIdleTimeoutInMinutes;
         private string _workingDirectory;
 
         /// <summary>
@@ -91,6 +92,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetIdleTimeoutSeconds()
         {
             return this._idleTimeoutSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionIdleTimeoutInMinutes. 
+        /// <para>
+        /// The idle timeout in seconds for the session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=480)]
+        public int SessionIdleTimeoutInMinutes
+        {
+            get { return this._sessionIdleTimeoutInMinutes.GetValueOrDefault(); }
+            set { this._sessionIdleTimeoutInMinutes = value; }
+        }
+
+        // Check to see if SessionIdleTimeoutInMinutes property is set
+        internal bool IsSetSessionIdleTimeoutInMinutes()
+        {
+            return this._sessionIdleTimeoutInMinutes.HasValue; 
         }
 
         /// <summary>

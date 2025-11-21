@@ -37,6 +37,7 @@ namespace Amazon.Athena.Model
     {
         private string _dataManifestLocation;
         private long? _dataScannedInBytes;
+        private double? _dpuCount;
         private long? _engineExecutionTimeInMillis;
         private long? _queryPlanningTimeInMillis;
         private long? _queryQueueTimeInMillis;
@@ -85,6 +86,24 @@ namespace Amazon.Athena.Model
         internal bool IsSetDataScannedInBytes()
         {
             return this._dataScannedInBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DpuCount. 
+        /// <para>
+        /// The number of Data Processing Units (DPUs) that Athena used to run the query.
+        /// </para>
+        /// </summary>
+        public double DpuCount
+        {
+            get { return this._dpuCount.GetValueOrDefault(); }
+            set { this._dpuCount = value; }
+        }
+
+        // Check to see if DpuCount property is set
+        internal bool IsSetDpuCount()
+        {
+            return this._dpuCount.HasValue; 
         }
 
         /// <summary>

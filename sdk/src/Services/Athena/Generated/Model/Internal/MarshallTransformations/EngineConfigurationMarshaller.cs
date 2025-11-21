@@ -62,6 +62,22 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetClassifications())
+            {
+                context.Writer.WritePropertyName("Classifications");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectClassificationsListValue in requestObject.Classifications)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClassificationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectClassificationsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCoordinatorDpuSize())
             {
                 context.Writer.WritePropertyName("CoordinatorDpuSize");

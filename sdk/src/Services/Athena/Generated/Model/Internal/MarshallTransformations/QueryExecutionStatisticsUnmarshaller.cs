@@ -78,6 +78,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataScannedInBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DpuCount", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.DpuCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EngineExecutionTimeInMillis", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

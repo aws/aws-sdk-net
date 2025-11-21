@@ -1592,8 +1592,9 @@ namespace Amazon.Athena
         /// section of the response object are available as soon as <a>QueryExecutionStatus$State</a>
         /// is in a SUCCEEDED or FAILED state. The remaining non-timeline statistics in the response
         /// (like stage-level input and output row count and data size) are updated asynchronously
-        /// and may not be available immediately after a query completes. The non-timeline statistics
-        /// are also not included when a query has row-level filters defined in Lake Formation.
+        /// and may not be available immediately after a query completes or, in some cases, may
+        /// not be returned. The non-timeline statistics are also not included when a query has
+        /// row-level filters defined in Lake Formation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryRuntimeStatistics service method.</param>
         /// 
@@ -1633,6 +1634,56 @@ namespace Amazon.Athena
         /// <returns>Returns a  GetQueryRuntimeStatisticsResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetQueryRuntimeStatistics">REST API Reference for GetQueryRuntimeStatistics Operation</seealso>
         GetQueryRuntimeStatisticsResponse EndGetQueryRuntimeStatistics(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetResourceDashboard
+
+
+        /// <summary>
+        /// Gets the Live UI/Persistence UI for a session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceDashboard service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceDashboard service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetResourceDashboard">REST API Reference for GetResourceDashboard Operation</seealso>
+        GetResourceDashboardResponse GetResourceDashboard(GetResourceDashboardRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourceDashboard operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceDashboard operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceDashboard
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetResourceDashboard">REST API Reference for GetResourceDashboard Operation</seealso>
+        IAsyncResult BeginGetResourceDashboard(GetResourceDashboardRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourceDashboard operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceDashboard.</param>
+        /// 
+        /// <returns>Returns a  GetResourceDashboardResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetResourceDashboard">REST API Reference for GetResourceDashboard Operation</seealso>
+        GetResourceDashboardResponse EndGetResourceDashboard(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1684,6 +1735,56 @@ namespace Amazon.Athena
         /// <returns>Returns a  GetSessionResult from Athena.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession">REST API Reference for GetSession Operation</seealso>
         GetSessionResponse EndGetSession(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetSessionEndpoint
+
+
+        /// <summary>
+        /// Gets a connection endpoint and authentication token for a given session Id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the GetSessionEndpoint service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.ResourceNotFoundException">
+        /// A resource, such as a workgroup, was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionEndpoint">REST API Reference for GetSessionEndpoint Operation</seealso>
+        GetSessionEndpointResponse GetSessionEndpoint(GetSessionEndpointRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSessionEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSessionEndpoint operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSessionEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionEndpoint">REST API Reference for GetSessionEndpoint Operation</seealso>
+        IAsyncResult BeginGetSessionEndpoint(GetSessionEndpointRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSessionEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSessionEndpoint.</param>
+        /// 
+        /// <returns>Returns a  GetSessionEndpointResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionEndpoint">REST API Reference for GetSessionEndpoint Operation</seealso>
+        GetSessionEndpointResponse EndGetSessionEndpoint(IAsyncResult asyncResult);
 
         #endregion
         

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SessionConfiguration Object
+    /// Response Unmarshaller for Classification Object
     /// </summary>  
-    public class SessionConfigurationUnmarshaller : IUnmarshaller<SessionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SessionConfiguration, JsonUnmarshallerContext>
+    public class ClassificationUnmarshaller : IUnmarshaller<Classification, XmlUnmarshallerContext>, IUnmarshaller<Classification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SessionConfiguration IUnmarshaller<SessionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Classification IUnmarshaller<Classification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SessionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public Classification Unmarshall(JsonUnmarshallerContext context)
         {
-            SessionConfiguration unmarshalledObject = new SessionConfiguration();
+            Classification unmarshalledObject = new Classification();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EncryptionConfiguration", targetDepth))
-                {
-                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExecutionRole", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IdleTimeoutSeconds", targetDepth))
+                if (context.TestExpression("Properties", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.IdleTimeoutSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SessionIdleTimeoutInMinutes", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.SessionIdleTimeoutInMinutes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WorkingDirectory", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkingDirectory = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         }
 
 
-        private static SessionConfigurationUnmarshaller _instance = new SessionConfigurationUnmarshaller();        
+        private static ClassificationUnmarshaller _instance = new ClassificationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SessionConfigurationUnmarshaller Instance
+        public static ClassificationUnmarshaller Instance
         {
             get
             {

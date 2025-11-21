@@ -40,6 +40,7 @@ namespace Amazon.Athena.Model
     public partial class StartQueryExecutionRequest : AmazonAthenaRequest
     {
         private string _clientRequestToken;
+        private EngineConfiguration _engineConfiguration;
         private List<string> _executionParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private QueryExecutionContext _queryExecutionContext;
         private string _queryString;
@@ -77,6 +78,21 @@ namespace Amazon.Athena.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineConfiguration.
+        /// </summary>
+        public EngineConfiguration EngineConfiguration
+        {
+            get { return this._engineConfiguration; }
+            set { this._engineConfiguration = value; }
+        }
+
+        // Check to see if EngineConfiguration property is set
+        internal bool IsSetEngineConfiguration()
+        {
+            return this._engineConfiguration != null;
         }
 
         /// <summary>

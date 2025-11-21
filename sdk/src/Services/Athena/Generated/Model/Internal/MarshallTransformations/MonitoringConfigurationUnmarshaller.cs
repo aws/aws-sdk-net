@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SessionConfiguration Object
+    /// Response Unmarshaller for MonitoringConfiguration Object
     /// </summary>  
-    public class SessionConfigurationUnmarshaller : IUnmarshaller<SessionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SessionConfiguration, JsonUnmarshallerContext>
+    public class MonitoringConfigurationUnmarshaller : IUnmarshaller<MonitoringConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MonitoringConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SessionConfiguration IUnmarshaller<SessionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MonitoringConfiguration IUnmarshaller<MonitoringConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SessionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public MonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            SessionConfiguration unmarshalledObject = new SessionConfiguration();
+            MonitoringConfiguration unmarshalledObject = new MonitoringConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EncryptionConfiguration", targetDepth))
+                if (context.TestExpression("CloudWatchLoggingConfiguration", targetDepth))
                 {
-                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = CloudWatchLoggingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchLoggingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRole", targetDepth))
+                if (context.TestExpression("ManagedLoggingConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ManagedLoggingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ManagedLoggingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IdleTimeoutSeconds", targetDepth))
+                if (context.TestExpression("S3LoggingConfiguration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.IdleTimeoutSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SessionIdleTimeoutInMinutes", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.SessionIdleTimeoutInMinutes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WorkingDirectory", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkingDirectory = unmarshaller.Unmarshall(context);
+                    var unmarshaller = S3LoggingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3LoggingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         }
 
 
-        private static SessionConfigurationUnmarshaller _instance = new SessionConfigurationUnmarshaller();        
+        private static MonitoringConfigurationUnmarshaller _instance = new MonitoringConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SessionConfigurationUnmarshaller Instance
+        public static MonitoringConfigurationUnmarshaller Instance
         {
             get
             {

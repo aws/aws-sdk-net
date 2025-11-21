@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SessionConfiguration Object
+    /// Response Unmarshaller for CloudWatchLoggingConfiguration Object
     /// </summary>  
-    public class SessionConfigurationUnmarshaller : IUnmarshaller<SessionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<SessionConfiguration, JsonUnmarshallerContext>
+    public class CloudWatchLoggingConfigurationUnmarshaller : IUnmarshaller<CloudWatchLoggingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<CloudWatchLoggingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SessionConfiguration IUnmarshaller<SessionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CloudWatchLoggingConfiguration IUnmarshaller<CloudWatchLoggingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SessionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public CloudWatchLoggingConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            SessionConfiguration unmarshalledObject = new SessionConfiguration();
+            CloudWatchLoggingConfiguration unmarshalledObject = new CloudWatchLoggingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,28 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EncryptionConfiguration", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth))
                 {
-                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExecutionRole", targetDepth))
+                if (context.TestExpression("LogGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IdleTimeoutSeconds", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.IdleTimeoutSeconds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SessionIdleTimeoutInMinutes", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.SessionIdleTimeoutInMinutes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WorkingDirectory", targetDepth))
+                if (context.TestExpression("LogStreamNamePrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkingDirectory = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogStreamNamePrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogTypes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.LogTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +95,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         }
 
 
-        private static SessionConfigurationUnmarshaller _instance = new SessionConfigurationUnmarshaller();        
+        private static CloudWatchLoggingConfigurationUnmarshaller _instance = new CloudWatchLoggingConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SessionConfigurationUnmarshaller Instance
+        public static CloudWatchLoggingConfigurationUnmarshaller Instance
         {
             get
             {

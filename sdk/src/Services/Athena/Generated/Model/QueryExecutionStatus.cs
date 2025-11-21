@@ -89,9 +89,9 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Athena automatically retries your queries in cases of certain transient errors. As
-        /// a result, you may see the query state transition from <c>RUNNING</c> or <c>FAILED</c>
-        /// to <c>QUEUED</c>. 
+        /// For queries that experience certain transient errors, the state transitions from <c>RUNNING</c>
+        /// back to <c>QUEUED</c>. The <c>FAILED</c> state is always terminal with no automatic
+        /// retry. 
         /// </para>
         ///  </note>
         /// </summary>

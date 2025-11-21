@@ -80,6 +80,17 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetEngineConfiguration())
+                {
+                    context.Writer.WritePropertyName("EngineConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EngineConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EngineConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetExecutionParameters())
                 {
                     context.Writer.WritePropertyName("ExecutionParameters");
