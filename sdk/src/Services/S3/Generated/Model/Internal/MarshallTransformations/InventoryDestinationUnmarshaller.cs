@@ -12,67 +12,78 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
+using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Xml.Serialization;
 
 using Amazon.S3.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    ///   InventoryDestination Unmarshaller
-    /// </summary>
-    public class InventoryDestinationUnmarshaller : IXmlUnmarshaller<InventoryDestination, XmlUnmarshallerContext>
+    /// Response Unmarshaller for InventoryDestination Object
+    /// </summary>  
+    public partial class InventoryDestinationUnmarshaller : IXmlUnmarshaller<InventoryDestination, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
-        /// </summary>
+        /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
         public InventoryDestination Unmarshall(XmlUnmarshallerContext context)
         {
-            InventoryDestination condition = new InventoryDestination();
+            InventoryDestination unmarshalledObject = new InventoryDestination();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
-
-            if (context.IsStartOfDocument)
-                targetDepth += 2;
-
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("S3BucketDestination", targetDepth))
                     {
-                        condition.S3BucketDestination = InventoryS3BucketDestinationUnmarshaller.Instance.Unmarshall(context);
-
+                        var unmarshaller = InventoryS3BucketDestinationUnmarshaller.Instance;
+                        unmarshalledObject.S3BucketDestination = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
-                    return condition;
+                    return unmarshalledObject;
                 }
-            }
-
-
-
-            return condition;
+            }          
+            return unmarshalledObject;
         }
 
-        private static InventoryDestinationUnmarshaller _instance;
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, InventoryDestination unmarshalledObject, int targetDepth);
+
+        private static InventoryDestinationUnmarshaller _instance = new InventoryDestinationUnmarshaller();        
 
         /// <summary>
-        /// Singleton for the unmarshaller
-        /// </summary>
+        /// Gets the singleton.
+        /// </summary>  
         public static InventoryDestinationUnmarshaller Instance
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new InventoryDestinationUnmarshaller();
-                }
                 return _instance;
             }
         }

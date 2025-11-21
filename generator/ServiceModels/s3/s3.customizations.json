@@ -1127,8 +1127,17 @@
                     "Format":{"emitPropertyName":"InventoryFormat"}
                 }
             ]
+        },
+        "GetBucketInventoryConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"InventoryId"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
-        
     },
     "operationModifiers": {
         "CreateBucket": {
