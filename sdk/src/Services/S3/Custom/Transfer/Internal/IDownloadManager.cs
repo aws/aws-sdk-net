@@ -29,7 +29,7 @@ namespace Amazon.S3.Transfer.Internal
     /// <summary>
     /// Coordinates multipart downloads including discovery, concurrent downloads, and progress reporting.
     /// </summary>
-    internal interface IDownloadCoordinator : IDisposable
+    internal interface IDownloadManager : IDisposable
     {
         /// <summary>
         /// Discovers whether the object requires single-part or multipart downloading.

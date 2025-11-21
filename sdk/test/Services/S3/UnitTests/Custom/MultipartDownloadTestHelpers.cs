@@ -499,7 +499,7 @@ namespace AWSSDK.UnitTests
         /// <summary>
         /// Creates a coordinator configured for validation testing.
         /// </summary>
-        internal static MultipartDownloadCoordinator CreateCoordinatorForValidationTest(
+        internal static MultipartDownloadManager CreateCoordinatorForValidationTest(
             IAmazonS3 client, ValidationFailureType failureType)
         {
             var downloadType = failureType == ValidationFailureType.ETagMismatch
@@ -518,7 +518,7 @@ namespace AWSSDK.UnitTests
             mockDataHandler.Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
                 .Returns(Task.CompletedTask);
 
-            return new MultipartDownloadCoordinator(client, request, config, mockDataHandler.Object);
+            return new MultipartDownloadManager(client, request, config, mockDataHandler.Object);
         }
 
         /// <summary>
@@ -555,7 +555,7 @@ namespace AWSSDK.UnitTests
         /// <summary>
         /// Creates a complete test setup for discovery testing.
         /// </summary>
-        internal static (Mock<IAmazonS3>, MultipartDownloadCoordinator) CreateDiscoveryTestSetup(
+        internal static (Mock<IAmazonS3>, MultipartDownloadManager) CreateDiscoveryTestSetup(
             MultipartDownloadType downloadType, long objectSize, int? partsCount, long? partSize = null)
         {
             var mockResponse = CreateDiscoveryResponse(downloadType, objectSize, partsCount);
@@ -571,7 +571,7 @@ namespace AWSSDK.UnitTests
             mockDataHandler.Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
                 .Returns(Task.CompletedTask);
 
-            var coordinator = new MultipartDownloadCoordinator(mockClient.Object, request, config, mockDataHandler.Object);
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
 
             return (mockClient, coordinator);
         }

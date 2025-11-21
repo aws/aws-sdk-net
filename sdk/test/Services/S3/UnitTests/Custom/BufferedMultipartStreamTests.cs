@@ -31,7 +31,7 @@ namespace AWSSDK.UnitTests
 
         #region Test Setup Fields
 
-        private Mock<IDownloadCoordinator> _mockCoordinator;
+        private Mock<IDownloadManager> _mockCoordinator;
         private Mock<IPartBufferManager> _mockBufferManager;
         private BufferedDownloadConfiguration _config;
 
@@ -42,7 +42,7 @@ namespace AWSSDK.UnitTests
         [TestInitialize]
         public void Setup()
         {
-            _mockCoordinator = new Mock<IDownloadCoordinator>();
+            _mockCoordinator = new Mock<IDownloadManager>();
             _mockBufferManager = new Mock<IPartBufferManager>();
             _config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
         }
@@ -168,7 +168,7 @@ namespace AWSSDK.UnitTests
                 InitialResponse = mockResponse
             };
 
-            var mockCoordinator = new Mock<IDownloadCoordinator>();
+            var mockCoordinator = new Mock<IDownloadManager>();
             mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
 
@@ -196,7 +196,7 @@ namespace AWSSDK.UnitTests
                 InitialResponse = mockResponse
             };
 
-            var mockCoordinator = new Mock<IDownloadCoordinator>();
+            var mockCoordinator = new Mock<IDownloadManager>();
             mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
             mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
@@ -230,7 +230,7 @@ namespace AWSSDK.UnitTests
                 InitialResponse = new GetObjectResponse()
             };
 
-            var mockCoordinator = new Mock<IDownloadCoordinator>();
+            var mockCoordinator = new Mock<IDownloadManager>();
             mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
             mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
@@ -258,7 +258,7 @@ namespace AWSSDK.UnitTests
                 InitialResponse = new GetObjectResponse()
             };
 
-            var mockCoordinator = new Mock<IDownloadCoordinator>();
+            var mockCoordinator = new Mock<IDownloadManager>();
             mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
             mockCoordinator.Setup(x => x.StartDownloadsAsync(It.IsAny<DownloadDiscoveryResult>(), It.IsAny<CancellationToken>()))
@@ -292,7 +292,7 @@ namespace AWSSDK.UnitTests
                 InitialResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024)
             };
 
-            var mockCoordinator = new Mock<IDownloadCoordinator>();
+            var mockCoordinator = new Mock<IDownloadManager>();
             mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
 
@@ -321,7 +321,7 @@ namespace AWSSDK.UnitTests
                 InitialResponse = mockResponse
             };
 
-            var mockCoordinator = new Mock<IDownloadCoordinator>();
+            var mockCoordinator = new Mock<IDownloadManager>();
             mockCoordinator.Setup(x => x.DiscoverDownloadStrategyAsync(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(discoveryResult);
 
@@ -343,7 +343,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadAsync_BeforeInitialize_ThrowsInvalidOperationException()
         {
             // Arrange
-            var mockCoordinator = new Mock<IDownloadCoordinator>();
+            var mockCoordinator = new Mock<IDownloadManager>();
             var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
@@ -359,7 +359,7 @@ namespace AWSSDK.UnitTests
         public async Task ReadAsync_AfterDispose_ThrowsObjectDisposedException()
         {
             // Arrange
-            var mockCoordinator = new Mock<IDownloadCoordinator>();
+            var mockCoordinator = new Mock<IDownloadManager>();
             var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var stream = new BufferedMultipartStream(mockCoordinator.Object, mockBufferManager.Object, config);
