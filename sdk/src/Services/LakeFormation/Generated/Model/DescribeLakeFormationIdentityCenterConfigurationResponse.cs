@@ -39,6 +39,7 @@ namespace Amazon.LakeFormation.Model
         private ExternalFilteringConfiguration _externalFiltering;
         private string _instanceArn;
         private string _resourceShare;
+        private List<ServiceIntegrationUnion> _serviceIntegrations = AWSConfigs.InitializeCollections ? new List<ServiceIntegrationUnion>() : null;
         private List<DataLakePrincipal> _shareRecipients = AWSConfigs.InitializeCollections ? new List<DataLakePrincipal>() : null;
 
         /// <summary>
@@ -133,6 +134,30 @@ namespace Amazon.LakeFormation.Model
         internal bool IsSetResourceShare()
         {
             return this._resourceShare != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceIntegrations. 
+        /// <para>
+        /// A list of service integrations for enabling trusted identity propagation with external
+        /// services such as Redshift.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ServiceIntegrationUnion> ServiceIntegrations
+        {
+            get { return this._serviceIntegrations; }
+            set { this._serviceIntegrations = value; }
+        }
+
+        // Check to see if ServiceIntegrations property is set
+        internal bool IsSetServiceIntegrations()
+        {
+            return this._serviceIntegrations != null && (this._serviceIntegrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -1401,6 +1401,10 @@ namespace Amazon.AutoScaling
     {
 
         /// <summary>
+        /// Constant ReplaceRootVolume for RefreshStrategy
+        /// </summary>
+        public static readonly RefreshStrategy ReplaceRootVolume = new RefreshStrategy("ReplaceRootVolume");
+        /// <summary>
         /// Constant Rolling for RefreshStrategy
         /// </summary>
         public static readonly RefreshStrategy Rolling = new RefreshStrategy("Rolling");
@@ -1434,6 +1438,56 @@ namespace Amazon.AutoScaling
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RefreshStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RetentionAction.
+    /// </summary>
+    public class RetentionAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Retain for RetentionAction
+        /// </summary>
+        public static readonly RetentionAction Retain = new RetentionAction("retain");
+        /// <summary>
+        /// Constant Terminate for RetentionAction
+        /// </summary>
+        public static readonly RetentionAction Terminate = new RetentionAction("terminate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetentionAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetentionAction FindValue(string value)
+        {
+            return FindValue<RetentionAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetentionAction(string value)
         {
             return FindValue(value);
         }
@@ -1559,6 +1613,10 @@ namespace Amazon.AutoScaling
         /// </summary>
         public static readonly ScalingActivityStatusCode Failed = new ScalingActivityStatusCode("Failed");
         /// <summary>
+        /// Constant InPlaceUpdateInProgress for ScalingActivityStatusCode
+        /// </summary>
+        public static readonly ScalingActivityStatusCode InPlaceUpdateInProgress = new ScalingActivityStatusCode("InPlaceUpdateInProgress");
+        /// <summary>
         /// Constant InProgress for ScalingActivityStatusCode
         /// </summary>
         public static readonly ScalingActivityStatusCode InProgress = new ScalingActivityStatusCode("InProgress");
@@ -1586,6 +1644,14 @@ namespace Amazon.AutoScaling
         /// Constant WaitingForELBConnectionDraining for ScalingActivityStatusCode
         /// </summary>
         public static readonly ScalingActivityStatusCode WaitingForELBConnectionDraining = new ScalingActivityStatusCode("WaitingForELBConnectionDraining");
+        /// <summary>
+        /// Constant WaitingForInPlaceUpdateToFinalize for ScalingActivityStatusCode
+        /// </summary>
+        public static readonly ScalingActivityStatusCode WaitingForInPlaceUpdateToFinalize = new ScalingActivityStatusCode("WaitingForInPlaceUpdateToFinalize");
+        /// <summary>
+        /// Constant WaitingForInPlaceUpdateToStart for ScalingActivityStatusCode
+        /// </summary>
+        public static readonly ScalingActivityStatusCode WaitingForInPlaceUpdateToStart = new ScalingActivityStatusCode("WaitingForInPlaceUpdateToStart");
         /// <summary>
         /// Constant WaitingForInstanceId for ScalingActivityStatusCode
         /// </summary>

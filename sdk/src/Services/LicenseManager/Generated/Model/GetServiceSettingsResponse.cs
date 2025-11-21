@@ -34,11 +34,55 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class GetServiceSettingsResponse : AmazonWebServiceResponse
     {
+        private string _crossRegionDiscoveryHomeRegion;
+        private List<string> _crossRegionDiscoverySourceRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableCrossAccountsDiscovery;
         private string _licenseManagerResourceShareArn;
         private OrganizationConfiguration _organizationConfiguration;
         private string _s3BucketArn;
+        private ServiceStatus _serviceStatus;
         private string _snsTopicArn;
+
+        /// <summary>
+        /// Gets and sets the property CrossRegionDiscoveryHomeRegion. 
+        /// <para>
+        /// Cross region discovery home region.
+        /// </para>
+        /// </summary>
+        public string CrossRegionDiscoveryHomeRegion
+        {
+            get { return this._crossRegionDiscoveryHomeRegion; }
+            set { this._crossRegionDiscoveryHomeRegion = value; }
+        }
+
+        // Check to see if CrossRegionDiscoveryHomeRegion property is set
+        internal bool IsSetCrossRegionDiscoveryHomeRegion()
+        {
+            return this._crossRegionDiscoveryHomeRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrossRegionDiscoverySourceRegions. 
+        /// <para>
+        /// Cross region discovery source regions.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> CrossRegionDiscoverySourceRegions
+        {
+            get { return this._crossRegionDiscoverySourceRegions; }
+            set { this._crossRegionDiscoverySourceRegions = value; }
+        }
+
+        // Check to see if CrossRegionDiscoverySourceRegions property is set
+        internal bool IsSetCrossRegionDiscoverySourceRegions()
+        {
+            return this._crossRegionDiscoverySourceRegions != null && (this._crossRegionDiscoverySourceRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property EnableCrossAccountsDiscovery. 
@@ -113,6 +157,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetS3BucketArn()
         {
             return this._s3BucketArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceStatus. 
+        /// <para>
+        /// Service status.
+        /// </para>
+        /// </summary>
+        public ServiceStatus ServiceStatus
+        {
+            get { return this._serviceStatus; }
+            set { this._serviceStatus = value; }
+        }
+
+        // Check to see if ServiceStatus property is set
+        internal bool IsSetServiceStatus()
+        {
+            return this._serviceStatus != null;
         }
 
         /// <summary>

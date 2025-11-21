@@ -59,5 +59,13 @@ namespace Amazon.Braket.Model
         {
             return new SearchQuantumTasksPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for SearchSpendingLimits operation
+        ///</summary>
+        public ISearchSpendingLimitsPaginator SearchSpendingLimits(SearchSpendingLimitsRequest request) 
+        {
+            return new SearchSpendingLimitsPaginator(this.client, request);
+        }
     }
 }

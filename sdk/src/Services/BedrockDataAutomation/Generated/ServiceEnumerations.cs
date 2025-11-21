@@ -445,6 +445,56 @@ namespace Amazon.BedrockDataAutomation
 
 
     /// <summary>
+    /// Constants used for properties of type DataAutomationProjectType.
+    /// </summary>
+    public class DataAutomationProjectType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASYNC for DataAutomationProjectType
+        /// </summary>
+        public static readonly DataAutomationProjectType ASYNC = new DataAutomationProjectType("ASYNC");
+        /// <summary>
+        /// Constant SYNC for DataAutomationProjectType
+        /// </summary>
+        public static readonly DataAutomationProjectType SYNC = new DataAutomationProjectType("SYNC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataAutomationProjectType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataAutomationProjectType FindValue(string value)
+        {
+            return FindValue<DataAutomationProjectType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataAutomationProjectType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DesiredModality.
     /// </summary>
     public class DesiredModality : ConstantClass
@@ -813,6 +863,226 @@ namespace Amazon.BedrockDataAutomation
 
 
     /// <summary>
+    /// Constants used for properties of type PIIEntityType.
+    /// </summary>
+    public class PIIEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADDRESS for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType ADDRESS = new PIIEntityType("ADDRESS");
+        /// <summary>
+        /// Constant AGE for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType AGE = new PIIEntityType("AGE");
+        /// <summary>
+        /// Constant ALL for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType ALL = new PIIEntityType("ALL");
+        /// <summary>
+        /// Constant AWS_ACCESS_KEY for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType AWS_ACCESS_KEY = new PIIEntityType("AWS_ACCESS_KEY");
+        /// <summary>
+        /// Constant AWS_SECRET_KEY for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType AWS_SECRET_KEY = new PIIEntityType("AWS_SECRET_KEY");
+        /// <summary>
+        /// Constant CA_HEALTH_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType CA_HEALTH_NUMBER = new PIIEntityType("CA_HEALTH_NUMBER");
+        /// <summary>
+        /// Constant CA_SOCIAL_INSURANCE_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType CA_SOCIAL_INSURANCE_NUMBER = new PIIEntityType("CA_SOCIAL_INSURANCE_NUMBER");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_CVV for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType CREDIT_DEBIT_CARD_CVV = new PIIEntityType("CREDIT_DEBIT_CARD_CVV");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_EXPIRY for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType CREDIT_DEBIT_CARD_EXPIRY = new PIIEntityType("CREDIT_DEBIT_CARD_EXPIRY");
+        /// <summary>
+        /// Constant CREDIT_DEBIT_CARD_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType CREDIT_DEBIT_CARD_NUMBER = new PIIEntityType("CREDIT_DEBIT_CARD_NUMBER");
+        /// <summary>
+        /// Constant DRIVER_ID for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType DRIVER_ID = new PIIEntityType("DRIVER_ID");
+        /// <summary>
+        /// Constant EMAIL for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType EMAIL = new PIIEntityType("EMAIL");
+        /// <summary>
+        /// Constant INTERNATIONAL_BANK_ACCOUNT_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType INTERNATIONAL_BANK_ACCOUNT_NUMBER = new PIIEntityType("INTERNATIONAL_BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant IP_ADDRESS for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType IP_ADDRESS = new PIIEntityType("IP_ADDRESS");
+        /// <summary>
+        /// Constant LICENSE_PLATE for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType LICENSE_PLATE = new PIIEntityType("LICENSE_PLATE");
+        /// <summary>
+        /// Constant MAC_ADDRESS for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType MAC_ADDRESS = new PIIEntityType("MAC_ADDRESS");
+        /// <summary>
+        /// Constant NAME for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType NAME = new PIIEntityType("NAME");
+        /// <summary>
+        /// Constant PASSWORD for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType PASSWORD = new PIIEntityType("PASSWORD");
+        /// <summary>
+        /// Constant PHONE for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType PHONE = new PIIEntityType("PHONE");
+        /// <summary>
+        /// Constant PIN for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType PIN = new PIIEntityType("PIN");
+        /// <summary>
+        /// Constant SWIFT_CODE for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType SWIFT_CODE = new PIIEntityType("SWIFT_CODE");
+        /// <summary>
+        /// Constant UK_NATIONAL_HEALTH_SERVICE_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType UK_NATIONAL_HEALTH_SERVICE_NUMBER = new PIIEntityType("UK_NATIONAL_HEALTH_SERVICE_NUMBER");
+        /// <summary>
+        /// Constant UK_NATIONAL_INSURANCE_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType UK_NATIONAL_INSURANCE_NUMBER = new PIIEntityType("UK_NATIONAL_INSURANCE_NUMBER");
+        /// <summary>
+        /// Constant UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER = new PIIEntityType("UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER");
+        /// <summary>
+        /// Constant URL for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType URL = new PIIEntityType("URL");
+        /// <summary>
+        /// Constant US_BANK_ACCOUNT_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType US_BANK_ACCOUNT_NUMBER = new PIIEntityType("US_BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant US_BANK_ROUTING_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType US_BANK_ROUTING_NUMBER = new PIIEntityType("US_BANK_ROUTING_NUMBER");
+        /// <summary>
+        /// Constant US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER = new PIIEntityType("US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER");
+        /// <summary>
+        /// Constant US_PASSPORT_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType US_PASSPORT_NUMBER = new PIIEntityType("US_PASSPORT_NUMBER");
+        /// <summary>
+        /// Constant US_SOCIAL_SECURITY_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType US_SOCIAL_SECURITY_NUMBER = new PIIEntityType("US_SOCIAL_SECURITY_NUMBER");
+        /// <summary>
+        /// Constant USERNAME for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType USERNAME = new PIIEntityType("USERNAME");
+        /// <summary>
+        /// Constant VEHICLE_IDENTIFICATION_NUMBER for PIIEntityType
+        /// </summary>
+        public static readonly PIIEntityType VEHICLE_IDENTIFICATION_NUMBER = new PIIEntityType("VEHICLE_IDENTIFICATION_NUMBER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PIIEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PIIEntityType FindValue(string value)
+        {
+            return FindValue<PIIEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PIIEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PIIRedactionMaskMode.
+    /// </summary>
+    public class PIIRedactionMaskMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENTITY_TYPE for PIIRedactionMaskMode
+        /// </summary>
+        public static readonly PIIRedactionMaskMode ENTITY_TYPE = new PIIRedactionMaskMode("ENTITY_TYPE");
+        /// <summary>
+        /// Constant PII for PIIRedactionMaskMode
+        /// </summary>
+        public static readonly PIIRedactionMaskMode PII = new PIIRedactionMaskMode("PII");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PIIRedactionMaskMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PIIRedactionMaskMode FindValue(string value)
+        {
+            return FindValue<PIIRedactionMaskMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PIIRedactionMaskMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceOwner.
     /// </summary>
     public class ResourceOwner : ConstantClass
@@ -856,6 +1126,106 @@ namespace Amazon.BedrockDataAutomation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceOwner(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SensitiveDataDetectionMode.
+    /// </summary>
+    public class SensitiveDataDetectionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DETECTION for SensitiveDataDetectionMode
+        /// </summary>
+        public static readonly SensitiveDataDetectionMode DETECTION = new SensitiveDataDetectionMode("DETECTION");
+        /// <summary>
+        /// Constant DETECTION_AND_REDACTION for SensitiveDataDetectionMode
+        /// </summary>
+        public static readonly SensitiveDataDetectionMode DETECTION_AND_REDACTION = new SensitiveDataDetectionMode("DETECTION_AND_REDACTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SensitiveDataDetectionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SensitiveDataDetectionMode FindValue(string value)
+        {
+            return FindValue<SensitiveDataDetectionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SensitiveDataDetectionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SensitiveDataDetectionScopeType.
+    /// </summary>
+    public class SensitiveDataDetectionScopeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for SensitiveDataDetectionScopeType
+        /// </summary>
+        public static readonly SensitiveDataDetectionScopeType CUSTOM = new SensitiveDataDetectionScopeType("CUSTOM");
+        /// <summary>
+        /// Constant STANDARD for SensitiveDataDetectionScopeType
+        /// </summary>
+        public static readonly SensitiveDataDetectionScopeType STANDARD = new SensitiveDataDetectionScopeType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SensitiveDataDetectionScopeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SensitiveDataDetectionScopeType FindValue(string value)
+        {
+            return FindValue<SensitiveDataDetectionScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SensitiveDataDetectionScopeType(string value)
         {
             return FindValue(value);
         }

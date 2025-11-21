@@ -35,6 +35,7 @@ namespace Amazon.BedrockDataAutomation.Model
     public partial class DocumentOverrideConfiguration
     {
         private ModalityProcessingConfiguration _modalityProcessing;
+        private SensitiveDataConfiguration _sensitiveDataConfiguration;
         private SplitterConfiguration _splitter;
 
         /// <summary>
@@ -50,6 +51,21 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetModalityProcessing()
         {
             return this._modalityProcessing != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SensitiveDataConfiguration.
+        /// </summary>
+        public SensitiveDataConfiguration SensitiveDataConfiguration
+        {
+            get { return this._sensitiveDataConfiguration; }
+            set { this._sensitiveDataConfiguration = value; }
+        }
+
+        // Check to see if SensitiveDataConfiguration property is set
+        internal bool IsSetSensitiveDataConfiguration()
+        {
+            return this._sensitiveDataConfiguration != null;
         }
 
         /// <summary>

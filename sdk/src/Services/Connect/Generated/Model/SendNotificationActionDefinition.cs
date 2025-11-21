@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
         private string _content;
         private NotificationContentType _contentType;
         private NotificationDeliveryType _deliveryMethod;
+        private NotificationRecipientType _exclusion;
         private NotificationRecipientType _recipient;
         private string _subject;
 
@@ -96,6 +97,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetDeliveryMethod()
         {
             return this._deliveryMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Exclusion. 
+        /// <para>
+        /// Recipients to exclude from notification.
+        /// </para>
+        /// </summary>
+        public NotificationRecipientType Exclusion
+        {
+            get { return this._exclusion; }
+            set { this._exclusion = value; }
+        }
+
+        // Check to see if Exclusion property is set
+        internal bool IsSetExclusion()
+        {
+            return this._exclusion != null;
         }
 
         /// <summary>

@@ -41,6 +41,13 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
+    /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+    /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+    /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
+    /// instead.
+    /// </para>
+    ///  
+    /// <para>
     /// To use this operation, you must have permission to perform the <c>s3:GetBucketTagging</c>
     /// action. By default, the bucket owner has this permission and can grant this permission
     /// to others.

@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The binary content of the payload.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Amazon.Runtime.Documents.Document Blob
         {
             get { return this._blob; }

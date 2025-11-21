@@ -35,11 +35,13 @@ namespace Amazon.QuickSight.Model
     public partial class FreeFormLayoutElement
     {
         private FreeFormLayoutElementBackgroundStyle _backgroundStyle;
+        private string _borderRadius;
         private FreeFormLayoutElementBorderStyle _borderStyle;
         private string _elementId;
         private LayoutElementType _elementType;
         private string _height;
         private LoadingAnimation _loadingAnimation;
+        private string _padding;
         private List<SheetElementRenderingRule> _renderingRules = AWSConfigs.InitializeCollections ? new List<SheetElementRenderingRule>() : null;
         private FreeFormLayoutElementBorderStyle _selectedBorderStyle;
         private Visibility _visibility;
@@ -63,6 +65,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetBackgroundStyle()
         {
             return this._backgroundStyle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BorderRadius. 
+        /// <para>
+        /// The border radius of a free-form layout element.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public string BorderRadius
+        {
+            get { return this._borderRadius; }
+            set { this._borderRadius = value; }
+        }
+
+        // Check to see if BorderRadius property is set
+        internal bool IsSetBorderRadius()
+        {
+            return this._borderRadius != null;
         }
 
         /// <summary>
@@ -156,6 +177,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetLoadingAnimation()
         {
             return this._loadingAnimation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Padding. 
+        /// <para>
+        /// The padding of a free-form layout element.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public string Padding
+        {
+            get { return this._padding; }
+            set { this._padding = value; }
+        }
+
+        // Check to see if Padding property is set
+        internal bool IsSetPadding()
+        {
+            return this._padding != null;
         }
 
         /// <summary>

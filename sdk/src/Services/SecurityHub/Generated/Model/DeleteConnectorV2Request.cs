@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConnectorV2 operation.
-    /// Grants permission to delete a connectorV2. This API is in preview release and subject
+    /// Grants permission to delete a connectorV2. This API is in public preview and subject
     /// to change.
     /// </summary>
     public partial class DeleteConnectorV2Request : AmazonSecurityHubRequest

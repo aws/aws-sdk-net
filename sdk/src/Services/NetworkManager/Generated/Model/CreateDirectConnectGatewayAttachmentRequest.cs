@@ -39,6 +39,7 @@ namespace Amazon.NetworkManager.Model
         private string _coreNetworkId;
         private string _directConnectGatewayArn;
         private List<string> _edgeLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _routingPolicyLabel;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -122,6 +123,26 @@ namespace Amazon.NetworkManager.Model
         internal bool IsSetEdgeLocations()
         {
             return this._edgeLocations != null && (this._edgeLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingPolicyLabel. 
+        /// <para>
+        /// The routing policy label to apply to the Direct Connect Gateway attachment for traffic
+        /// routing decisions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string RoutingPolicyLabel
+        {
+            get { return this._routingPolicyLabel; }
+            set { this._routingPolicyLabel = value; }
+        }
+
+        // Check to see if RoutingPolicyLabel property is set
+        internal bool IsSetRoutingPolicyLabel()
+        {
+            return this._routingPolicyLabel != null;
         }
 
         /// <summary>

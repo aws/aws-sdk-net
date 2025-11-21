@@ -46,6 +46,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAcceleratorPartition())
+            {
+                context.Writer.WritePropertyName("AcceleratorPartition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AcceleratorPartitionConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AcceleratorPartition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetAccelerators())
             {
                 context.Writer.WritePropertyName("Accelerators");

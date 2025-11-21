@@ -258,6 +258,10 @@ namespace Amazon.Organizations
         /// Constant INVITE for ActionType
         /// </summary>
         public static readonly ActionType INVITE = new ActionType("INVITE");
+        /// <summary>
+        /// Constant TRANSFER_RESPONSIBILITY for ActionType
+        /// </summary>
+        public static readonly ActionType TRANSFER_RESPONSIBILITY = new ActionType("TRANSFER_RESPONSIBILITY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -375,6 +379,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS = new ConstraintViolationExceptionReason("ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS");
+        /// <summary>
         /// Constant ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED");
@@ -487,6 +495,22 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason POLICY_TYPE_ENABLED_FOR_THIS_SERVICE = new ConstraintViolationExceptionReason("POLICY_TYPE_ENABLED_FOR_THIS_SERVICE");
         /// <summary>
+        /// Constant RESPONSIBILITY_TRANSFER_MAX_INBOUND_QUOTA_VIOLATION for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason RESPONSIBILITY_TRANSFER_MAX_INBOUND_QUOTA_VIOLATION = new ConstraintViolationExceptionReason("RESPONSIBILITY_TRANSFER_MAX_INBOUND_QUOTA_VIOLATION");
+        /// <summary>
+        /// Constant RESPONSIBILITY_TRANSFER_MAX_LEVEL_VIOLATION for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason RESPONSIBILITY_TRANSFER_MAX_LEVEL_VIOLATION = new ConstraintViolationExceptionReason("RESPONSIBILITY_TRANSFER_MAX_LEVEL_VIOLATION");
+        /// <summary>
+        /// Constant RESPONSIBILITY_TRANSFER_MAX_OUTBOUND_QUOTA_VIOLATION for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason RESPONSIBILITY_TRANSFER_MAX_OUTBOUND_QUOTA_VIOLATION = new ConstraintViolationExceptionReason("RESPONSIBILITY_TRANSFER_MAX_OUTBOUND_QUOTA_VIOLATION");
+        /// <summary>
+        /// Constant RESPONSIBILITY_TRANSFER_MAX_TRANSFERS_QUOTA_VIOLATION for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason RESPONSIBILITY_TRANSFER_MAX_TRANSFERS_QUOTA_VIOLATION = new ConstraintViolationExceptionReason("RESPONSIBILITY_TRANSFER_MAX_TRANSFERS_QUOTA_VIOLATION");
+        /// <summary>
         /// Constant SERVICE_ACCESS_NOT_ENABLED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason SERVICE_ACCESS_NOT_ENABLED = new ConstraintViolationExceptionReason("SERVICE_ACCESS_NOT_ENABLED");
@@ -494,6 +518,18 @@ namespace Amazon.Organizations
         /// Constant TAG_POLICY_VIOLATION for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason TAG_POLICY_VIOLATION = new ConstraintViolationExceptionReason("TAG_POLICY_VIOLATION");
+        /// <summary>
+        /// Constant TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS = new ConstraintViolationExceptionReason("TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS");
+        /// <summary>
+        /// Constant TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS = new ConstraintViolationExceptionReason("TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS");
+        /// <summary>
+        /// Constant UNSUPPORTED_PRICING for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason UNSUPPORTED_PRICING = new ConstraintViolationExceptionReason("UNSUPPORTED_PRICING");
         /// <summary>
         /// Constant WAIT_PERIOD_ACTIVE for ConstraintViolationExceptionReason
         /// </summary>
@@ -713,6 +749,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly EffectivePolicyType DECLARATIVE_POLICY_EC2 = new EffectivePolicyType("DECLARATIVE_POLICY_EC2");
         /// <summary>
+        /// Constant INSPECTOR_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType INSPECTOR_POLICY = new EffectivePolicyType("INSPECTOR_POLICY");
+        /// <summary>
         /// Constant SECURITYHUB_POLICY for EffectivePolicyType
         /// </summary>
         public static readonly EffectivePolicyType SECURITYHUB_POLICY = new EffectivePolicyType("SECURITYHUB_POLICY");
@@ -779,6 +819,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly HandshakeConstraintViolationExceptionReason INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES = new HandshakeConstraintViolationExceptionReason("INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES");
         /// <summary>
+        /// Constant LEGACY_PERMISSIONS_STILL_IN_USE for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason LEGACY_PERMISSIONS_STILL_IN_USE = new HandshakeConstraintViolationExceptionReason("LEGACY_PERMISSIONS_STILL_IN_USE");
+        /// <summary>
         /// Constant MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED for HandshakeConstraintViolationExceptionReason
         /// </summary>
         public static readonly HandshakeConstraintViolationExceptionReason MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED = new HandshakeConstraintViolationExceptionReason("MANAGEMENT_ACCOUNT_EMAIL_NOT_VERIFIED");
@@ -802,6 +846,18 @@ namespace Amazon.Organizations
         /// Constant PAYMENT_INSTRUMENT_REQUIRED for HandshakeConstraintViolationExceptionReason
         /// </summary>
         public static readonly HandshakeConstraintViolationExceptionReason PAYMENT_INSTRUMENT_REQUIRED = new HandshakeConstraintViolationExceptionReason("PAYMENT_INSTRUMENT_REQUIRED");
+        /// <summary>
+        /// Constant RESPONSIBILITY_TRANSFER_ALREADY_EXISTS for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason RESPONSIBILITY_TRANSFER_ALREADY_EXISTS = new HandshakeConstraintViolationExceptionReason("RESPONSIBILITY_TRANSFER_ALREADY_EXISTS");
+        /// <summary>
+        /// Constant SOURCE_AND_TARGET_CANNOT_MATCH for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason SOURCE_AND_TARGET_CANNOT_MATCH = new HandshakeConstraintViolationExceptionReason("SOURCE_AND_TARGET_CANNOT_MATCH");
+        /// <summary>
+        /// Constant UNUSED_PREPAYMENT_BALANCE for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason UNUSED_PREPAYMENT_BALANCE = new HandshakeConstraintViolationExceptionReason("UNUSED_PREPAYMENT_BALANCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -907,6 +963,18 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly HandshakeResourceType EMAIL = new HandshakeResourceType("EMAIL");
         /// <summary>
+        /// Constant MANAGEMENT_ACCOUNT for HandshakeResourceType
+        /// </summary>
+        public static readonly HandshakeResourceType MANAGEMENT_ACCOUNT = new HandshakeResourceType("MANAGEMENT_ACCOUNT");
+        /// <summary>
+        /// Constant MANAGEMENT_EMAIL for HandshakeResourceType
+        /// </summary>
+        public static readonly HandshakeResourceType MANAGEMENT_EMAIL = new HandshakeResourceType("MANAGEMENT_EMAIL");
+        /// <summary>
+        /// Constant MANAGEMENT_NAME for HandshakeResourceType
+        /// </summary>
+        public static readonly HandshakeResourceType MANAGEMENT_NAME = new HandshakeResourceType("MANAGEMENT_NAME");
+        /// <summary>
         /// Constant MASTER_EMAIL for HandshakeResourceType
         /// </summary>
         public static readonly HandshakeResourceType MASTER_EMAIL = new HandshakeResourceType("MASTER_EMAIL");
@@ -930,6 +998,18 @@ namespace Amazon.Organizations
         /// Constant PARENT_HANDSHAKE for HandshakeResourceType
         /// </summary>
         public static readonly HandshakeResourceType PARENT_HANDSHAKE = new HandshakeResourceType("PARENT_HANDSHAKE");
+        /// <summary>
+        /// Constant RESPONSIBILITY_TRANSFER for HandshakeResourceType
+        /// </summary>
+        public static readonly HandshakeResourceType RESPONSIBILITY_TRANSFER = new HandshakeResourceType("RESPONSIBILITY_TRANSFER");
+        /// <summary>
+        /// Constant TRANSFER_START_TIMESTAMP for HandshakeResourceType
+        /// </summary>
+        public static readonly HandshakeResourceType TRANSFER_START_TIMESTAMP = new HandshakeResourceType("TRANSFER_START_TIMESTAMP");
+        /// <summary>
+        /// Constant TRANSFER_TYPE for HandshakeResourceType
+        /// </summary>
+        public static readonly HandshakeResourceType TRANSFER_TYPE = new HandshakeResourceType("TRANSFER_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1089,9 +1169,21 @@ namespace Amazon.Organizations
     {
 
         /// <summary>
+        /// Constant CALLER_REQUIRED_FIELD_MISSING for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason CALLER_REQUIRED_FIELD_MISSING = new InvalidInputExceptionReason("CALLER_REQUIRED_FIELD_MISSING");
+        /// <summary>
         /// Constant DUPLICATE_TAG_KEY for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason DUPLICATE_TAG_KEY = new InvalidInputExceptionReason("DUPLICATE_TAG_KEY");
+        /// <summary>
+        /// Constant END_DATE_NOT_END_OF_MONTH for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason END_DATE_NOT_END_OF_MONTH = new InvalidInputExceptionReason("END_DATE_NOT_END_OF_MONTH");
+        /// <summary>
+        /// Constant END_DATE_TOO_EARLY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason END_DATE_TOO_EARLY = new InvalidInputExceptionReason("END_DATE_TOO_EARLY");
         /// <summary>
         /// Constant IMMUTABLE_POLICY for InvalidInputExceptionReason
         /// </summary>
@@ -1104,6 +1196,10 @@ namespace Amazon.Organizations
         /// Constant INVALID_EMAIL_ADDRESS_TARGET for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_EMAIL_ADDRESS_TARGET = new InvalidInputExceptionReason("INVALID_EMAIL_ADDRESS_TARGET");
+        /// <summary>
+        /// Constant INVALID_END_DATE for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason INVALID_END_DATE = new InvalidInputExceptionReason("INVALID_END_DATE");
         /// <summary>
         /// Constant INVALID_ENUM for InvalidInputExceptionReason
         /// </summary>
@@ -1149,6 +1245,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_ROLE_NAME = new InvalidInputExceptionReason("INVALID_ROLE_NAME");
         /// <summary>
+        /// Constant INVALID_START_DATE for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason INVALID_START_DATE = new InvalidInputExceptionReason("INVALID_START_DATE");
+        /// <summary>
         /// Constant INVALID_SYNTAX_ORGANIZATION_ARN for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_SYNTAX_ORGANIZATION_ARN = new InvalidInputExceptionReason("INVALID_SYNTAX_ORGANIZATION_ARN");
@@ -1189,6 +1289,22 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly InvalidInputExceptionReason NON_DETACHABLE_POLICY = new InvalidInputExceptionReason("NON_DETACHABLE_POLICY");
         /// <summary>
+        /// Constant START_DATE_NOT_BEGINNING_OF_DAY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason START_DATE_NOT_BEGINNING_OF_DAY = new InvalidInputExceptionReason("START_DATE_NOT_BEGINNING_OF_DAY");
+        /// <summary>
+        /// Constant START_DATE_NOT_BEGINNING_OF_MONTH for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason START_DATE_NOT_BEGINNING_OF_MONTH = new InvalidInputExceptionReason("START_DATE_NOT_BEGINNING_OF_MONTH");
+        /// <summary>
+        /// Constant START_DATE_TOO_EARLY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason START_DATE_TOO_EARLY = new InvalidInputExceptionReason("START_DATE_TOO_EARLY");
+        /// <summary>
+        /// Constant START_DATE_TOO_LATE for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason START_DATE_TOO_LATE = new InvalidInputExceptionReason("START_DATE_TOO_LATE");
+        /// <summary>
         /// Constant TARGET_NOT_SUPPORTED for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason TARGET_NOT_SUPPORTED = new InvalidInputExceptionReason("TARGET_NOT_SUPPORTED");
@@ -1200,6 +1316,10 @@ namespace Amazon.Organizations
         /// Constant UNSUPPORTED_ACTION_IN_RESOURCE_POLICY for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason UNSUPPORTED_ACTION_IN_RESOURCE_POLICY = new InvalidInputExceptionReason("UNSUPPORTED_ACTION_IN_RESOURCE_POLICY");
+        /// <summary>
+        /// Constant UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER = new InvalidInputExceptionReason("UNSUPPORTED_ACTION_IN_RESPONSIBILITY_TRANSFER");
         /// <summary>
         /// Constant UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY for InvalidInputExceptionReason
         /// </summary>
@@ -1367,6 +1487,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly PolicyType DECLARATIVE_POLICY_EC2 = new PolicyType("DECLARATIVE_POLICY_EC2");
         /// <summary>
+        /// Constant INSPECTOR_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType INSPECTOR_POLICY = new PolicyType("INSPECTOR_POLICY");
+        /// <summary>
         /// Constant RESOURCE_CONTROL_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType RESOURCE_CONTROL_POLICY = new PolicyType("RESOURCE_CONTROL_POLICY");
@@ -1466,6 +1590,118 @@ namespace Amazon.Organizations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicyTypeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResponsibilityTransferStatus.
+    /// </summary>
+    public class ResponsibilityTransferStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPTED for ResponsibilityTransferStatus
+        /// </summary>
+        public static readonly ResponsibilityTransferStatus ACCEPTED = new ResponsibilityTransferStatus("ACCEPTED");
+        /// <summary>
+        /// Constant CANCELED for ResponsibilityTransferStatus
+        /// </summary>
+        public static readonly ResponsibilityTransferStatus CANCELED = new ResponsibilityTransferStatus("CANCELED");
+        /// <summary>
+        /// Constant DECLINED for ResponsibilityTransferStatus
+        /// </summary>
+        public static readonly ResponsibilityTransferStatus DECLINED = new ResponsibilityTransferStatus("DECLINED");
+        /// <summary>
+        /// Constant EXPIRED for ResponsibilityTransferStatus
+        /// </summary>
+        public static readonly ResponsibilityTransferStatus EXPIRED = new ResponsibilityTransferStatus("EXPIRED");
+        /// <summary>
+        /// Constant REQUESTED for ResponsibilityTransferStatus
+        /// </summary>
+        public static readonly ResponsibilityTransferStatus REQUESTED = new ResponsibilityTransferStatus("REQUESTED");
+        /// <summary>
+        /// Constant WITHDRAWN for ResponsibilityTransferStatus
+        /// </summary>
+        public static readonly ResponsibilityTransferStatus WITHDRAWN = new ResponsibilityTransferStatus("WITHDRAWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResponsibilityTransferStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponsibilityTransferStatus FindValue(string value)
+        {
+            return FindValue<ResponsibilityTransferStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponsibilityTransferStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResponsibilityTransferType.
+    /// </summary>
+    public class ResponsibilityTransferType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BILLING for ResponsibilityTransferType
+        /// </summary>
+        public static readonly ResponsibilityTransferType BILLING = new ResponsibilityTransferType("BILLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResponsibilityTransferType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponsibilityTransferType FindValue(string value)
+        {
+            return FindValue<ResponsibilityTransferType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponsibilityTransferType(string value)
         {
             return FindValue(value);
         }

@@ -36,7 +36,9 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private ActionOnFailure _actionOnFailure;
         private HadoopStepConfig _config;
+        private string _encryptionKeyArn;
         private string _id;
+        private string _logUri;
         private string _name;
         private StepStatus _status;
 
@@ -78,6 +80,24 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncryptionKeyArn. 
+        /// <para>
+        /// The KMS key ARN to encrypt the logs published to the given Amazon S3 destination.
+        /// </para>
+        /// </summary>
+        public string EncryptionKeyArn
+        {
+            get { return this._encryptionKeyArn; }
+            set { this._encryptionKeyArn = value; }
+        }
+
+        // Check to see if EncryptionKeyArn property is set
+        internal bool IsSetEncryptionKeyArn()
+        {
+            return this._encryptionKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The identifier of the cluster step.
@@ -93,6 +113,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogUri. 
+        /// <para>
+        /// The Amazon S3 destination URI for log publishing.
+        /// </para>
+        /// </summary>
+        public string LogUri
+        {
+            get { return this._logUri; }
+            set { this._logUri = value; }
+        }
+
+        // Check to see if LogUri property is set
+        internal bool IsSetLogUri()
+        {
+            return this._logUri != null;
         }
 
         /// <summary>

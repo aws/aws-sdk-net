@@ -282,6 +282,21 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
             #endregion
         }
 
+        public void OrganizationsDescribeResponsibilityTransfer()
+        {
+            #region to-get-information-about-a-transfer
+
+            var client = new AmazonOrganizationsClient();
+            var response = client.DescribeResponsibilityTransfer(new DescribeResponsibilityTransferRequest 
+            {
+                Id = "rt-exampletransferid222"
+            });
+
+            ResponsibilityTransfer responsibilityTransfer = response.ResponsibilityTransfer;
+
+            #endregion
+        }
+
         public void OrganizationsDetachPolicy()
         {
             #region to-detach-a-policy-from-a-root-ou-or-account
@@ -355,6 +370,28 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
                     Id = "juan@example.com",
                     Type = "EMAIL"
                 }
+            });
+
+            Handshake handshake = response.Handshake;
+
+            #endregion
+        }
+
+        public void OrganizationsInviteOrganizationToTransferResponsibility()
+        {
+            #region to-invite-an-organization-to-transfer-responsibility
+
+            var client = new AmazonOrganizationsClient();
+            var response = client.InviteOrganizationToTransferResponsibility(new InviteOrganizationToTransferResponsibilityRequest 
+            {
+                Notes = "transfer notes",
+                SourceName = "transfer name",
+                StartTimestamp = DateTime.UtcNow,
+                Target = new HandshakeParty {
+                    Id = "juan@example.com",
+                    Type = "EMAIL"
+                },
+                Type = "BILLING"
             });
 
             Handshake handshake = response.Handshake;
@@ -517,6 +554,21 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
             #endregion
         }
 
+        public void OrganizationsListInboundResponsibilityTransfers()
+        {
+            #region to-get-a-list-of-all-inbound-responsibility-transfers
+
+            var client = new AmazonOrganizationsClient();
+            var response = client.ListInboundResponsibilityTransfers(new ListInboundResponsibilityTransfersRequest 
+            {
+                Type = "BILLING"
+            });
+
+            List<ResponsibilityTransfer> responsibilityTransfers = response.ResponsibilityTransfers;
+
+            #endregion
+        }
+
         public void OrganizationsListOrganizationalUnitsForParent()
         {
             #region to-retrieve-a-list-of-all-of-the-OUs-in-a-parent-container
@@ -528,6 +580,21 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
             });
 
             List<OrganizationalUnit> organizationalUnits = response.OrganizationalUnits;
+
+            #endregion
+        }
+
+        public void OrganizationsListOutboundResponsibilityTransfers()
+        {
+            #region to-get-a-list-of-all-outbound-responsibility-transfers
+
+            var client = new AmazonOrganizationsClient();
+            var response = client.ListOutboundResponsibilityTransfers(new ListOutboundResponsibilityTransfersRequest 
+            {
+                Type = "BILLING"
+            });
+
+            List<ResponsibilityTransfer> responsibilityTransfers = response.ResponsibilityTransfers;
 
             #endregion
         }
@@ -637,6 +704,22 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
             #endregion
         }
 
+        public void OrganizationsTerminateResponsibilityTransfer()
+        {
+            #region to-terminate-a-transfer
+
+            var client = new AmazonOrganizationsClient();
+            var response = client.TerminateResponsibilityTransfer(new TerminateResponsibilityTransferRequest 
+            {
+                EndTimestamp = DateTime.UtcNow,
+                Id = "rt-exampletransferid222"
+            });
+
+            ResponsibilityTransfer responsibilityTransfer = response.ResponsibilityTransfer;
+
+            #endregion
+        }
+
         public void OrganizationsUpdateOrganizationalUnit()
         {
             #region to-rename-an-organizational-unit
@@ -682,6 +765,22 @@ namespace AWSSDKDocSamples.Amazon.Organizations.Generated
             });
 
             Policy policy = response.Policy;
+
+            #endregion
+        }
+
+        public void OrganizationsUpdateResponsibilityTransfer()
+        {
+            #region to-rename-a-transfer
+
+            var client = new AmazonOrganizationsClient();
+            var response = client.UpdateResponsibilityTransfer(new UpdateResponsibilityTransferRequest 
+            {
+                Id = "rt-exampletransferid222",
+                Name = "new name"
+            });
+
+            ResponsibilityTransfer responsibilityTransfer = response.ResponsibilityTransfer;
 
             #endregion
         }

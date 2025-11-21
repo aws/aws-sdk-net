@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the ConnectorRegistrationsV2 operation.
     /// Grants permission to complete the authorization based on input parameters. This API
-    /// is in preview release and subject to change.
+    /// is in public preview and subject to change.
     /// </summary>
     public partial class ConnectorRegistrationsV2Request : AmazonSecurityHubRequest
     {

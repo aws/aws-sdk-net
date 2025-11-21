@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
         private DefaultRouteTableAssociationValue _defaultRouteTableAssociation;
         private DefaultRouteTablePropagationValue _defaultRouteTablePropagation;
         private DnsSupportValue _dnsSupport;
+        private EncryptionSupport _encryptionSupport;
         private MulticastSupportValue _multicastSupport;
         private string _propagationDefaultRouteTableId;
         private SecurityGroupReferencingSupportValue _securityGroupReferencingSupport;
@@ -159,6 +160,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDnsSupport()
         {
             return this._dnsSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionSupport. 
+        /// <para>
+        /// Defines if the Transit Gateway supports VPC Encryption Control.
+        /// </para>
+        /// </summary>
+        public EncryptionSupport EncryptionSupport
+        {
+            get { return this._encryptionSupport; }
+            set { this._encryptionSupport = value; }
+        }
+
+        // Check to see if EncryptionSupport property is set
+        internal bool IsSetEncryptionSupport()
+        {
+            return this._encryptionSupport != null;
         }
 
         /// <summary>

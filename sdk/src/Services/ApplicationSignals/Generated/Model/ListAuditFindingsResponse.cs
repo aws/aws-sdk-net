@@ -35,13 +35,16 @@ namespace Amazon.ApplicationSignals.Model
     public partial class ListAuditFindingsResponse : AmazonWebServiceResponse
     {
         private List<AuditFinding> _auditFindings = AWSConfigs.InitializeCollections ? new List<AuditFinding>() : null;
+        private DateTime? _endTime;
         private string _nextToken;
+        private DateTime? _startTime;
 
         /// <summary>
         /// Gets and sets the property AuditFindings. 
         /// <para>
-        /// An array of audit findings that match the specified criteria. Each finding includes
-        /// details about the issue, affected resources, and auditor results.
+        /// An array of structures, where each structure contains information about one audit
+        /// finding, including the auditor results, severity, and associated metric and dependency
+        /// graphs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -63,10 +66,29 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The end of the time period that the returned audit findings apply to. When used in
+        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>
+        /// 
+        /// </para>
+        /// </summary>
+        public DateTime? EndTime
+        {
+            get { return this._endTime; }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use for retrieving the next page of results. This value is present only
-        /// if there are more results available than were returned in the current response.
+        /// Include this value in your next use of this API to get the next set of audit findings.
         /// </para>
         /// </summary>
         public string NextToken
@@ -79,6 +101,26 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The start of the time period that the returned audit findings apply to. When used
+        /// in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>
+        /// 
+        /// </para>
+        /// </summary>
+        public DateTime? StartTime
+        {
+            get { return this._startTime; }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
     }
