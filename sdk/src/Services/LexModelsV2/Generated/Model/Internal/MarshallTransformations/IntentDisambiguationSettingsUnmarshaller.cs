@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NluImprovementSpecification Object
+    /// Response Unmarshaller for IntentDisambiguationSettings Object
     /// </summary>  
-    public class NluImprovementSpecificationUnmarshaller : IJsonUnmarshaller<NluImprovementSpecification, JsonUnmarshallerContext>
+    public class IntentDisambiguationSettingsUnmarshaller : IJsonUnmarshaller<IntentDisambiguationSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NluImprovementSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public IntentDisambiguationSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            NluImprovementSpecification unmarshalledObject = new NluImprovementSpecification();
+            IntentDisambiguationSettings unmarshalledObject = new IntentDisambiguationSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,10 +56,10 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("assistedNluMode", targetDepth))
+                if (context.TestExpression("customDisambiguationMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssistedNluMode = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CustomDisambiguationMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("enabled", targetDepth))
@@ -68,10 +68,10 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("intentDisambiguationSettings", targetDepth))
+                if (context.TestExpression("maxDisambiguationIntents", targetDepth))
                 {
-                    var unmarshaller = IntentDisambiguationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.IntentDisambiguationSettings = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxDisambiguationIntents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +79,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static NluImprovementSpecificationUnmarshaller _instance = new NluImprovementSpecificationUnmarshaller();        
+        private static IntentDisambiguationSettingsUnmarshaller _instance = new IntentDisambiguationSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NluImprovementSpecificationUnmarshaller Instance
+        public static IntentDisambiguationSettingsUnmarshaller Instance
         {
             get
             {

@@ -148,6 +148,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.SlotTypesCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("speechDetectionSensitivity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SpeechDetectionSensitivity = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("voiceSettings", targetDepth))
                 {
                     var unmarshaller = VoiceSettingsUnmarshaller.Instance;
