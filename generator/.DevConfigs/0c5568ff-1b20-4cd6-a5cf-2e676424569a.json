@@ -4,7 +4,9 @@
       "serviceName": "S3",
       "type": "patch",
       "changeLogMessages": [
-        "Generate 4 more S3 operations"
+        "Generate 4 more S3 operations.PutBucketIntelligentTieringConfiguration, GetBucketIntelligentTieringConfiguration.ListBucketIntelligentTieringConfigurations, and DeleteBucketIntelligentTieringConfiguration.",
+        "Fix a bug where calling GetBucketIntelligentTiering with no IntelligentTieringId would call ListBucketIntelligentTieringConfigurations. Now, calling GetBucketIntelligentTiering with no IntelligentTieringId will throw an exception.",
+        "[Breaking Change] IsSetIntelligentTieringConfigurationList() on ListBucketIntelligentTieringConfigurationsResponse changed from public to internal to follow other IsSet methods."
       ]
     }
   ]
