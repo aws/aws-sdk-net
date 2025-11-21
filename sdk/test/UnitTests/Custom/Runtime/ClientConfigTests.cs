@@ -85,6 +85,11 @@ namespace AWSSDK.UnitTests
             {
                 Environment.SetEnvironmentVariable("AWS_REGION", region);
                 var config = new TestClientConfig();
+                
+                // Throws as expected here.
+                Assert.ThrowsException<AmazonClientException>(() => config.RegionEndpoint);
+
+                // This verifies a second get (which could happen in another component) also fails.
                 Assert.ThrowsException<AmazonClientException>(() => config.RegionEndpoint);
             }
             finally

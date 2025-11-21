@@ -267,9 +267,11 @@ namespace Amazon.Runtime
             {
                 if (probeForRegionEndpoint)
                 {
-                    RegionEndpoint = GetDefaultRegionEndpoint();
+                    var defaultRegion = GetDefaultRegionEndpoint();
+                    ValidateRegion(defaultRegion?.SystemName);
+
+                    RegionEndpoint = defaultRegion;
                     this.probeForRegionEndpoint = false;
-                    ValidateRegion(this.regionEndpoint?.SystemName);
                 }
                 return this.regionEndpoint;
             }
