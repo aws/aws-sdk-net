@@ -68,6 +68,17 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSensitiveDataConfiguration())
+            {
+                context.Writer.WritePropertyName("sensitiveDataConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SensitiveDataConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SensitiveDataConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

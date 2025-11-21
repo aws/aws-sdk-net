@@ -135,6 +135,12 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ProjectStage);
             }
 
+            if(publicRequest.IsSetProjectType())
+            {
+                context.Writer.WritePropertyName("projectType");
+                context.Writer.WriteStringValue(publicRequest.ProjectType);
+            }
+
             if(publicRequest.IsSetStandardOutputConfiguration())
             {
                 context.Writer.WritePropertyName("standardOutputConfiguration");

@@ -110,6 +110,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetDetailLevel())
+            {
+                context.Writer.WritePropertyName("DetailLevel");
+                context.Writer.WriteStringValue(publicRequest.DetailLevel);
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");

@@ -1095,6 +1095,142 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type FindingsTrendsStringField.
+    /// </summary>
+    public class FindingsTrendsStringField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Account_id for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Account_id = new FindingsTrendsStringField("account_id");
+        /// <summary>
+        /// Constant Finding_activity_name for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_activity_name = new FindingsTrendsStringField("finding_activity_name");
+        /// <summary>
+        /// Constant Finding_class_name for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_class_name = new FindingsTrendsStringField("finding_class_name");
+        /// <summary>
+        /// Constant Finding_compliance_status for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_compliance_status = new FindingsTrendsStringField("finding_compliance_status");
+        /// <summary>
+        /// Constant Finding_control_id for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_control_id = new FindingsTrendsStringField("finding_control_id");
+        /// <summary>
+        /// Constant Finding_cve_ids for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_cve_ids = new FindingsTrendsStringField("finding_cve_ids");
+        /// <summary>
+        /// Constant Finding_provider for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_provider = new FindingsTrendsStringField("finding_provider");
+        /// <summary>
+        /// Constant Finding_status for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_status = new FindingsTrendsStringField("finding_status");
+        /// <summary>
+        /// Constant Finding_types for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_types = new FindingsTrendsStringField("finding_types");
+        /// <summary>
+        /// Constant Region for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Region = new FindingsTrendsStringField("region");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FindingsTrendsStringField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingsTrendsStringField FindValue(string value)
+        {
+            return FindValue<FindingsTrendsStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingsTrendsStringField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GranularityField.
+    /// </summary>
+    public class GranularityField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Daily for GranularityField
+        /// </summary>
+        public static readonly GranularityField Daily = new GranularityField("Daily");
+        /// <summary>
+        /// Constant Monthly for GranularityField
+        /// </summary>
+        public static readonly GranularityField Monthly = new GranularityField("Monthly");
+        /// <summary>
+        /// Constant Weekly for GranularityField
+        /// </summary>
+        public static readonly GranularityField Weekly = new GranularityField("Weekly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GranularityField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GranularityField FindValue(string value)
+        {
+            return FindValue<GranularityField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GranularityField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GroupByField.
     /// </summary>
     public class GroupByField : ConstantClass
@@ -2926,6 +3062,64 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourcesStringField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourcesTrendsStringField.
+    /// </summary>
+    public class ResourcesTrendsStringField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Account_id for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Account_id = new ResourcesTrendsStringField("account_id");
+        /// <summary>
+        /// Constant Region for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Region = new ResourcesTrendsStringField("region");
+        /// <summary>
+        /// Constant Resource_category for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_category = new ResourcesTrendsStringField("resource_category");
+        /// <summary>
+        /// Constant Resource_type for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_type = new ResourcesTrendsStringField("resource_type");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourcesTrendsStringField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcesTrendsStringField FindValue(string value)
+        {
+            return FindValue<ResourcesTrendsStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcesTrendsStringField(string value)
         {
             return FindValue(value);
         }

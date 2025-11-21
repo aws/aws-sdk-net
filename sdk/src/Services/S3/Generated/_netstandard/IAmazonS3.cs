@@ -1312,7 +1312,15 @@ namespace Amazon.S3
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
         /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
@@ -1560,7 +1568,15 @@ namespace Amazon.S3
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
         /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
@@ -1810,7 +1826,15 @@ namespace Amazon.S3
         /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
         /// 
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
         /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)
@@ -3255,7 +3279,18 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes tags from the bucket.
+        /// Deletes tags from the general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -3302,7 +3337,18 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Deletes tags from the bucket.
+        /// Deletes tags from the general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -4479,6 +4525,29 @@ namespace Amazon.S3
 
         #endregion
                 
+        #region  GetBucketAbac
+
+
+
+        /// <summary>
+        /// Returns the attribute-based access control (ABAC) property of the general purpose
+        /// bucket. If the bucket ABAC is enabled, you can use tags for bucket access control.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+        /// ABAC in general purpose buckets</a>. Whether ABAC is enabled or disabled, you can
+        /// use tags for cost tracking. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">Using
+        /// tags with S3 general purpose buckets</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAbac service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketAbac service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAbac">REST API Reference for GetBucketAbac Operation</seealso>
+        Task<GetBucketAbacResponse> GetBucketAbacAsync(GetBucketAbacRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetBucketAccelerateConfiguration
 
 
@@ -4766,8 +4835,9 @@ namespace Amazon.S3
         /// <summary>
         /// Returns the default encryption configuration for an Amazon S3 bucket. By default,
         /// all buckets have a default encryption configuration that uses server-side encryption
-        /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <c>BucketKeyEnabled</c>
-        /// and <c>BlockedEncryptionTypes</c> statuses. 
+        /// with Amazon S3 managed keys (SSE-S3). This operation also returns the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BucketKeyEnabled.html">BucketKeyEnabled</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">BlockedEncryptionTypes</a>
+        /// statuses. 
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -6044,6 +6114,13 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// Returns the tag set associated with the general purpose bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -11517,6 +11594,33 @@ namespace Amazon.S3
 
         #endregion
                 
+        #region  PutBucketAbac
+
+
+
+        /// <summary>
+        /// Sets the attribute-based access control (ABAC) property of the general purpose bucket.
+        /// When you enable ABAC, you can use tags for bucket access control. Additionally, when
+        /// ABAC is enabled, you must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>,
+        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>,
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListTagsForResource.html">ListTagsForResource</a>
+        /// actions to manage bucket tags, and you can nolonger use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a>
+        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a>
+        /// actions to tag the bucket. You must also have the correct permissions for these actions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">Enabling
+        /// ABAC in general purpose buckets</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAbac service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutBucketAbac service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketAbac">REST API Reference for PutBucketAbac Operation</seealso>
+        Task<PutBucketAbacResponse> PutBucketAbacAsync(PutBucketAbacRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutBucketAccelerateConfiguration
 
 
@@ -12016,7 +12120,8 @@ namespace Amazon.S3
 
         /// <summary>
         /// This operation configures default encryption and Amazon S3 Bucket Keys for an existing
-        /// bucket. You can also block encryption types using this operation.
+        /// bucket. You can also <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_BlockedEncryptionTypes.html">block
+        /// encryption types</a> using this operation.
         /// 
         ///  <note> 
         /// <para>
@@ -13335,7 +13440,19 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for a general purpose bucket. 
+        /// Sets the tags for a general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// operations instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -13428,7 +13545,19 @@ namespace Amazon.S3
         /// </para>
         ///  </note> 
         /// <para>
-        /// Sets the tags for a general purpose bucket. 
+        /// Sets the tags for a general purpose bucket if attribute based access control (ABAC)
+        /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+        /// operations instead.
+        /// </para>
+        ///  
+        /// <para>
+        /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+        /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+        /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html">TagResource</a>
+        /// instead.
         /// </para>
         ///  
         /// <para>
@@ -16828,7 +16957,15 @@ namespace Amazon.S3
         /// the server-side encryption parameters in the initial Initiate Multipart request. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+        /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+        /// specify the SSE-C request headers while writing new data to your bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+        /// or unblocking SSE-C for a general purpose bucket</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you request server-side encryption using a customer-provided encryption key (SSE-C)
         /// in your initiate multipart upload request, you must provide identical encryption information

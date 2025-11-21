@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// A union type that represents different types of entities that can be audited, such
-    /// as services, SLOs, service operations, or canaries.
+    /// A union structure that contains the specific entity information for different types
+    /// of audit targets.
     /// </summary>
     public partial class AuditTargetEntity
     {
@@ -79,8 +79,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property ServiceOperation. 
         /// <para>
-        /// Service operation entity information when the audit target is a specific operation
-        /// within a service.
+        /// Service operation entity information when the audit target is a specific service operation.
         /// </para>
         /// </summary>
         public ServiceOperationEntity ServiceOperation
@@ -98,7 +97,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Slo. 
         /// <para>
-        /// Service Level Objective entity information when the audit target is an SLO.
+        /// SLO entity information when the audit target is a service level objective.
         /// </para>
         /// </summary>
         public ServiceLevelObjectiveEntity Slo

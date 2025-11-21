@@ -37,7 +37,7 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from a member account in the organization.
+    /// You can only call from operation from a member account.
     /// </para>
     ///  <important> <ul> <li> 
     /// <para>

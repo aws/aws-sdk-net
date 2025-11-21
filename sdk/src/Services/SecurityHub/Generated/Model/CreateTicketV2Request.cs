@@ -32,8 +32,8 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the CreateTicketV2 operation.
     /// Grants permission to create a ticket in the chosen ITSM based on finding information
-    /// for the provided finding metadata UID. This API is in preview release and subject
-    /// to change.
+    /// for the provided finding metadata UID. This API is in public preview and subject to
+    /// change.
     /// </summary>
     public partial class CreateTicketV2Request : AmazonSecurityHubRequest
     {

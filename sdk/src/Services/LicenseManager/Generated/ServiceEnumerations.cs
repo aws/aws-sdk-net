@@ -677,6 +677,60 @@ namespace Amazon.LicenseManager
 
 
     /// <summary>
+    /// Constants used for properties of type LicenseAssetGroupStatus.
+    /// </summary>
+    public class LicenseAssetGroupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for LicenseAssetGroupStatus
+        /// </summary>
+        public static readonly LicenseAssetGroupStatus ACTIVE = new LicenseAssetGroupStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for LicenseAssetGroupStatus
+        /// </summary>
+        public static readonly LicenseAssetGroupStatus DELETED = new LicenseAssetGroupStatus("DELETED");
+        /// <summary>
+        /// Constant DISABLED for LicenseAssetGroupStatus
+        /// </summary>
+        public static readonly LicenseAssetGroupStatus DISABLED = new LicenseAssetGroupStatus("DISABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LicenseAssetGroupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LicenseAssetGroupStatus FindValue(string value)
+        {
+            return FindValue<LicenseAssetGroupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LicenseAssetGroupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LicenseConfigurationStatus.
     /// </summary>
     public class LicenseConfigurationStatus : ConstantClass
@@ -1147,6 +1201,10 @@ namespace Amazon.LicenseManager
         /// </summary>
         public static readonly ReportFrequencyType MONTH = new ReportFrequencyType("MONTH");
         /// <summary>
+        /// Constant ONE_TIME for ReportFrequencyType
+        /// </summary>
+        public static readonly ReportFrequencyType ONE_TIME = new ReportFrequencyType("ONE_TIME");
+        /// <summary>
         /// Constant WEEK for ReportFrequencyType
         /// </summary>
         public static readonly ReportFrequencyType WEEK = new ReportFrequencyType("WEEK");
@@ -1192,6 +1250,10 @@ namespace Amazon.LicenseManager
     public class ReportType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant LicenseAssetGroupUsageReport for ReportType
+        /// </summary>
+        public static readonly ReportType LicenseAssetGroupUsageReport = new ReportType("LicenseAssetGroupUsageReport");
         /// <summary>
         /// Constant LicenseConfigurationSummaryReport for ReportType
         /// </summary>

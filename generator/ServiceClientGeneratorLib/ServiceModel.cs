@@ -483,6 +483,8 @@ namespace ServiceClientGenerator
                 {
                     _s3AllowListOperations = new List<Operation>()
                     {
+                        new Operation(this, "GetBucketAbac", DocumentRoot[OperationsKey]["GetBucketAbac"]),
+                        new Operation(this, "PutBucketAbac", DocumentRoot[OperationsKey]["PutBucketAbac"]),
                         new Operation(this,"AbortMultipartUpload", DocumentRoot[OperationsKey]["AbortMultipartUpload"]),
                         new Operation(this,"CreateBucketMetadataTableConfiguration", DocumentRoot[OperationsKey]["CreateBucketMetadataTableConfiguration"]),
                         new Operation(this, "DeleteBucket", DocumentRoot[OperationsKey]["DeleteBucket"]),
@@ -573,7 +575,7 @@ namespace ServiceClientGenerator
 
                     };
                 }
-                return _s3AllowListOperations;
+                return _s3AllowListOperations.Where(operation => operation.data != null).ToList();
             }
         }
 

@@ -48,8 +48,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator.
+    /// You can only call this operation from the management account or a member account that
+    /// is a delegated administrator.
     /// </para>
     ///  
     /// <para>
@@ -107,6 +107,11 @@ namespace Amazon.Organizations.Model
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a>
+        /// 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,8 +130,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property RootId. 
         /// <para>
-        /// The unique identifier (ID) of the root in which you want to disable a policy type.
-        /// You can get the ID from the <a>ListRoots</a> operation.
+        /// ID for the root in which you want to disable a policy type. You can get the ID from
+        /// the <a>ListRoots</a> operation.
         /// </para>
         ///  
         /// <para>

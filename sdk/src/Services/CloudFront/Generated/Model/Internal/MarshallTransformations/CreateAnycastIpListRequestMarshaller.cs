@@ -67,6 +67,28 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetIpAddressType())
                     xmlWriter.WriteElementString("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
 
+                var publicRequestIpamCidrConfigs = publicRequest.IpamCidrConfigs;
+                if (publicRequestIpamCidrConfigs != null && (publicRequestIpamCidrConfigs.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                {
+                    xmlWriter.WriteStartElement("IpamCidrConfigs");
+                    foreach (var publicRequestIpamCidrConfigsValue in publicRequestIpamCidrConfigs) 
+                    {
+                    if (publicRequestIpamCidrConfigsValue != null)
+                    {
+                        xmlWriter.WriteStartElement("IpamCidrConfig");
+                        if(publicRequestIpamCidrConfigsValue.IsSetAnycastIp())
+                            xmlWriter.WriteElementString("AnycastIp", StringUtils.FromString(publicRequestIpamCidrConfigsValue.AnycastIp));
+                        if(publicRequestIpamCidrConfigsValue.IsSetCidr())
+                            xmlWriter.WriteElementString("Cidr", StringUtils.FromString(publicRequestIpamCidrConfigsValue.Cidr));
+                        if(publicRequestIpamCidrConfigsValue.IsSetIpamPoolArn())
+                            xmlWriter.WriteElementString("IpamPoolArn", StringUtils.FromString(publicRequestIpamCidrConfigsValue.IpamPoolArn));
+                        if(publicRequestIpamCidrConfigsValue.IsSetStatus())
+                            xmlWriter.WriteElementString("Status", StringUtils.FromString(publicRequestIpamCidrConfigsValue.Status));
+                        xmlWriter.WriteEndElement();
+                    }
+                    }            
+                    xmlWriter.WriteEndElement();            
+                }
                 if(publicRequest.IsSetIpCount())
                     xmlWriter.WriteElementString("IpCount", StringUtils.FromInt(publicRequest.IpCount.Value));
 
