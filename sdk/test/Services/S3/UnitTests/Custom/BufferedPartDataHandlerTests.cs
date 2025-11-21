@@ -238,6 +238,73 @@ namespace AWSSDK.UnitTests
                 Times.Once);
         }
 
+        [TestMethod]
+        public async Task ProcessPartAsync_WithUnexpectedEOF_ThrowsIOException()
+        {
+            // Arrange
+            var expectedBytes = 1024 * 1024; // 1MB expected
+            var actualBytes = 512 * 1024; // 512KB available (premature EOF)
+            var partData = new byte[actualBytes];
+            new Random().NextBytes(partData);
+
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            // Create a response that promises more bytes than it delivers
+            var response = new GetObjectResponse
+            {
+                ContentLength = expectedBytes, // Promise 1MB
+                ResponseStream = new MemoryStream(partData) // Only deliver 512KB
+            };
+
+            // Act & Assert
+            var exception = await Assert.ThrowsExceptionAsync<IOException>(
+                async () => await handler.ProcessPartAsync(1, response, CancellationToken.None));
+
+            // Verify exception message contains key information
+            StringAssert.Contains(exception.Message, "Unexpected end of stream");
+            StringAssert.Contains(exception.Message, "part 1");
+            StringAssert.Contains(exception.Message, expectedBytes.ToString());
+            StringAssert.Contains(exception.Message, actualBytes.ToString());
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_WithUnexpectedEOF_DoesNotBufferPartialData()
+        {
+            // Arrange
+            var expectedBytes = 1024 * 1024; // 1MB expected
+            var actualBytes = 512 * 1024; // 512KB available (premature EOF)
+            var partData = new byte[actualBytes];
+            new Random().NextBytes(partData);
+
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            var response = new GetObjectResponse
+            {
+                ContentLength = expectedBytes,
+                ResponseStream = new MemoryStream(partData)
+            };
+
+            // Act
+            try
+            {
+                await handler.ProcessPartAsync(1, response, CancellationToken.None);
+                Assert.Fail("Expected IOException was not thrown");
+            }
+            catch (IOException)
+            {
+                // Expected
+            }
+
+            // Assert - should NOT have added any buffer to manager since download failed
+            mockBufferManager.Verify(
+                x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()),
+                Times.Never);
+        }
+
         #endregion
 
         #region ProcessPartAsync Tests - Cancellation

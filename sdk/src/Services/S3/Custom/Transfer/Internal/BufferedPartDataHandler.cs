@@ -23,6 +23,7 @@ using System;
 using System.Buffers;
 using System.Threading;
 using System.Threading.Tasks;
+using System.IO;
 using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 
@@ -151,10 +152,14 @@ namespace Amazon.S3.Transfer.Internal
                     
                     if (bytesRead == 0) 
                     {
-                        Logger.Error(null, "BufferedPartDataHandler: [Part {0}] Unexpected EOF - Expected {1} bytes, got {2} bytes",
-                            partNumber, expectedBytes, totalRead);
-                        // Unexpected EOF
-                        break;
+                        var errorMessage = $"Unexpected end of stream while downloading part {partNumber}. " +
+                            $"Expected {expectedBytes} bytes but only received {totalRead} bytes. " +
+                            $"This indicates a network error or S3 service issue.";
+                        
+                        Logger.Error(null, "BufferedPartDataHandler: [Part {0}] {1}", 
+                            partNumber, errorMessage);
+                        
+                        throw new IOException(errorMessage);
                     }
                     
                     totalRead += bytesRead;
