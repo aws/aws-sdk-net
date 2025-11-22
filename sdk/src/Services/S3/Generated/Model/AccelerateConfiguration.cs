@@ -12,38 +12,49 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Bucket accelerate configuration.
+    /// Configures the transfer acceleration state for an Amazon S3 bucket. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Amazon
+    /// S3 Transfer Acceleration</a> in the <i>Amazon S3 User Guide</i>.
     /// </summary>
     public partial class AccelerateConfiguration
     {
-        private BucketAccelerateStatus status;
+        private BucketAccelerateStatus _status;
 
         /// <summary>
-        /// The accelerate status of the bucket.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Specifies the transfer acceleration status of the bucket.
+        /// </para>
         /// </summary>
         public BucketAccelerateStatus Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
         // Check to see if Status property is set
-        internal bool IsSetBucketAccelerateStatus()
+        internal bool IsSetStatus()
         {
-            return this.status != null;
+            return this._status != null;
         }
+
     }
 }
-    
