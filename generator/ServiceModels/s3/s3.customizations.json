@@ -1160,6 +1160,16 @@
                     "NextToken":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._nextToken);"]}
                 }
             ]
+        },
+        "DeleteBucketInventoryConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"InventoryId"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
