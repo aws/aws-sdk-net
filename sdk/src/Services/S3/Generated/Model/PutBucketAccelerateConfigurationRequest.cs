@@ -12,22 +12,28 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketAccelerateConfiguration operation.
     /// <note> 
     /// <para>
-    /// This operation is not supported by directory buckets.
+    /// This operation is not supported for directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
@@ -37,7 +43,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    ///  To use this operation, you must have permission to perform the <code>s3:PutAccelerateConfiguration</code>
+    ///  To use this operation, you must have permission to perform the <c>s3:PutAccelerateConfiguration</c>
     /// action. The bucket owner has this permission by default. The bucket owner can grant
     /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
     /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
@@ -50,11 +56,11 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  Enabled � Enables accelerated data transfers to the bucket.
+    ///  Enabled – Enables accelerated data transfers to the bucket.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  Suspended � Disables accelerated data transfers to the bucket.
+    ///  Suspended – Disables accelerated data transfers to the bucket.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -78,7 +84,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// The following operations are related to <code>PutBucketAccelerateConfiguration</code>:
+    /// The following operations are related to <c>PutBucketAccelerateConfiguration</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -90,44 +96,72 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class PutBucketAccelerateConfigurationRequest : AmazonWebServiceRequest
     {
-        private string bucketName;
+        private AccelerateConfiguration _accelerateConfiguration;
+        private string _bucketName;
         private ChecksumAlgorithm _checksumAlgorithm;
-        private AccelerateConfiguration accelerateConfiguration;
-        private string expectedBucketOwner;
+        private string _expectedBucketOwner;
 
         /// <summary>
-        /// <para>The name of the bucket for which the accelerate configuration is set.</para>
+        /// Gets and sets the property AccelerateConfiguration. 
+        /// <para>
+        /// Container for setting the transfer acceleration state.
+        /// </para>
         /// </summary>
-        public string BucketName
+        [AWSProperty(Required=true)]
+        public AccelerateConfiguration AccelerateConfiguration
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._accelerateConfiguration; }
+            set { this._accelerateConfiguration = value; }
         }
 
-        // Check to see if Bucket property is set
+        // Check to see if AccelerateConfiguration property is set
+        internal bool IsSetAccelerateConfiguration()
+        {
+            return this._accelerateConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket for which the accelerate configuration is set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string BucketName
+        {
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
+        }
+
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.BucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm used to create the checksum for the object when you use the
+        /// Indicates the algorithm used to create the checksum for the request when you use the
         /// SDK. This header will not provide any additional functionality if you don't use the
-        /// SDK. When you send this header, there must be a corresponding <code>x-amz-checksum</code>
-        /// or <code>x-amz-trailer</code> header sent. Otherwise, Amazon S3 fails the request
-        /// with the HTTP status code <code>400 Bad Request</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// SDK. When you send this header, there must be a corresponding <c>x-amz-checksum</c>
+        /// or <c>x-amz-trailer</c> header sent. Otherwise, Amazon S3 fails the request with the
+        /// HTTP status code <c>400 Bad Request</c>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
         /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you provide an individual checksum, Amazon S3 ignores any provided <code>ChecksumAlgorithm</code>
+        /// If you provide an individual checksum, Amazon S3 ignores any provided <c>ChecksumAlgorithm</c>
         /// parameter.
         /// </para>
         /// </summary>
@@ -144,43 +178,24 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Accelerate configuration for the bucket.
-        /// </summary>
-        public AccelerateConfiguration AccelerateConfiguration
-        {
-            get { return this.accelerateConfiguration; }
-            set { this.accelerateConfiguration = value; }
-        }
-
-        // Check to see if AccelerateConfiguration property is set
-        internal bool IsSetAccelerateConfiguration()
-        {
-            return this.AccelerateConfiguration != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ExpectedBucketOwner. 
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
         }
 
-        /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
-        /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
+        // Check to see if ExpectedBucketOwner property is set
         internal bool IsSetExpectedBucketOwner()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return !String.IsNullOrEmpty(this._expectedBucketOwner);
         }
 
     }
 }
-    
