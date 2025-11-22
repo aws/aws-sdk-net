@@ -561,7 +561,7 @@ namespace ServiceClientGenerator
                         new Operation(this, "ListBucketIntelligentTieringConfigurations", DocumentRoot[OperationsKey]["ListBucketIntelligentTieringConfigurations"]),
                         new Operation(this, "ListBucketInventoryConfigurations", DocumentRoot[OperationsKey]["ListBucketInventoryConfigurations"]),
                         new Operation(this, "ListBucketMetricsConfigurations", DocumentRoot[OperationsKey]["ListBucketMetricsConfigurations"]),
-						//new Operation(this, "PutBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["PutBucketAccelerateConfiguration"]),
+                        new Operation(this, "PutBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["PutBucketAccelerateConfiguration"]),
 						//new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
                         //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"]),
                         new Operation(this, "PutBucketAnalyticsConfiguration" , DocumentRoot[OperationsKey]["PutBucketAnalyticsConfiguration"]),
