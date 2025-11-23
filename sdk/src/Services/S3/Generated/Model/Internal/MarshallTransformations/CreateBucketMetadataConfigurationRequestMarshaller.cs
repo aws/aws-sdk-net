@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// CreateBucketMetadataConfiguration Request Marshaller
     /// </summary>       
-    public class CreateBucketMetadataConfigurationRequestMarshaller : IMarshaller<IRequest, CreateBucketMetadataConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public partial class CreateBucketMetadataConfigurationRequestMarshaller : IMarshaller<IRequest, CreateBucketMetadataConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateBucketMetadataConfigurationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.AddSubResource("metadataConfiguration");
         
@@ -75,9 +76,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             if (!publicRequest.IsSetBucketName())
                 throw new AmazonS3Exception("Request object does not have required field BucketName set");
-            request.AddPathResource("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
-            request.ResourcePath = "/{Bucket}";
-
+            request.ResourcePath = "/";
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
@@ -88,17 +87,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         xmlWriter.WriteStartElement("InventoryTableConfiguration");
                         if(publicRequest.MetadataConfiguration.InventoryTableConfiguration.IsSetConfigurationState())
-                            xmlWriter.WriteElementString("ConfigurationState", StringUtils.FromString(publicRequest.MetadataConfiguration.InventoryTableConfiguration.ConfigurationState));                 
-
+                            xmlWriter.WriteElementString("ConfigurationState", StringUtils.FromString(publicRequest.MetadataConfiguration.InventoryTableConfiguration.ConfigurationState));
                         if (publicRequest.MetadataConfiguration.InventoryTableConfiguration.EncryptionConfiguration != null)
                         {
                             xmlWriter.WriteStartElement("EncryptionConfiguration");
                             if(publicRequest.MetadataConfiguration.InventoryTableConfiguration.EncryptionConfiguration.IsSetKmsKeyArn())
-                                xmlWriter.WriteElementString("KmsKeyArn", StringUtils.FromString(publicRequest.MetadataConfiguration.InventoryTableConfiguration.EncryptionConfiguration.KmsKeyArn));                 
-
+                                xmlWriter.WriteElementString("KmsKeyArn", StringUtils.FromString(publicRequest.MetadataConfiguration.InventoryTableConfiguration.EncryptionConfiguration.KmsKeyArn));
                             if(publicRequest.MetadataConfiguration.InventoryTableConfiguration.EncryptionConfiguration.IsSetSseAlgorithm())
-                                xmlWriter.WriteElementString("SseAlgorithm", StringUtils.FromString(publicRequest.MetadataConfiguration.InventoryTableConfiguration.EncryptionConfiguration.SseAlgorithm));                 
-
+                                xmlWriter.WriteElementString("SseAlgorithm", StringUtils.FromString(publicRequest.MetadataConfiguration.InventoryTableConfiguration.EncryptionConfiguration.SseAlgorithm));
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
@@ -110,22 +106,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         {
                             xmlWriter.WriteStartElement("EncryptionConfiguration");
                             if(publicRequest.MetadataConfiguration.JournalTableConfiguration.EncryptionConfiguration.IsSetKmsKeyArn())
-                                xmlWriter.WriteElementString("KmsKeyArn", StringUtils.FromString(publicRequest.MetadataConfiguration.JournalTableConfiguration.EncryptionConfiguration.KmsKeyArn));                 
-
+                                xmlWriter.WriteElementString("KmsKeyArn", StringUtils.FromString(publicRequest.MetadataConfiguration.JournalTableConfiguration.EncryptionConfiguration.KmsKeyArn));
                             if(publicRequest.MetadataConfiguration.JournalTableConfiguration.EncryptionConfiguration.IsSetSseAlgorithm())
-                                xmlWriter.WriteElementString("SseAlgorithm", StringUtils.FromString(publicRequest.MetadataConfiguration.JournalTableConfiguration.EncryptionConfiguration.SseAlgorithm));                 
-
+                                xmlWriter.WriteElementString("SseAlgorithm", StringUtils.FromString(publicRequest.MetadataConfiguration.JournalTableConfiguration.EncryptionConfiguration.SseAlgorithm));
                             xmlWriter.WriteEndElement();
                         }
                         if (publicRequest.MetadataConfiguration.JournalTableConfiguration.RecordExpiration != null)
                         {
                             xmlWriter.WriteStartElement("RecordExpiration");
                             if(publicRequest.MetadataConfiguration.JournalTableConfiguration.RecordExpiration.IsSetDays())
-                                xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequest.MetadataConfiguration.JournalTableConfiguration.RecordExpiration.Days));                 
-
+                                xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequest.MetadataConfiguration.JournalTableConfiguration.RecordExpiration.Days.Value));
                             if(publicRequest.MetadataConfiguration.JournalTableConfiguration.RecordExpiration.IsSetExpiration())
-                                xmlWriter.WriteElementString("Expiration", StringUtils.FromString(publicRequest.MetadataConfiguration.JournalTableConfiguration.RecordExpiration.Expiration));                 
-
+                                xmlWriter.WriteElementString("Expiration", StringUtils.FromString(publicRequest.MetadataConfiguration.JournalTableConfiguration.RecordExpiration.Expiration));
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
@@ -134,13 +126,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     xmlWriter.WriteEndElement();
                 }
             }
+            PostMarshallCustomization(request, publicRequest);
             try 
             {
                 string content = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(content);
                 request.Headers["Content-Type"] = "application/xml";
-                if (publicRequest.IsSetContentMD5())
-                    request.Headers[Amazon.Util.HeaderKeys.ContentMD5Header] = publicRequest.ContentMD5;
                 ChecksumUtils.SetChecksumData(
                     request,
                     publicRequest.ChecksumAlgorithm,
@@ -154,7 +145,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 throw new AmazonServiceException("Unable to marshall request to XML", e);
             }
-
             return request;
         }
         private static CreateBucketMetadataConfigurationRequestMarshaller _instance = new CreateBucketMetadataConfigurationRequestMarshaller();        
@@ -175,5 +165,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
         }
 
+        partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateBucketMetadataConfigurationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateBucketMetadataConfigurationRequest publicRequest);
     }    
 }
