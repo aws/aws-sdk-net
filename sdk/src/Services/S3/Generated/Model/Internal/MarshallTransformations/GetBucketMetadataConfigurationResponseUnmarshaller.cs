@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GetBucketMetadataConfiguration operation
     /// </summary>  
-    public class GetBucketMetadataConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class GetBucketMetadataConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,6 +48,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             GetBucketMetadataConfigurationResponse response = new GetBucketMetadataConfigurationResponse();
             UnmarshallResult(context,response);
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
 
@@ -75,7 +76,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     return;
                 }
             }
-          
             return;
         }
   
@@ -89,7 +89,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -99,11 +99,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
             }
-            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, GetBucketMetadataConfigurationResponse response);
 
         private static GetBucketMetadataConfigurationResponseUnmarshaller _instance = new GetBucketMetadataConfigurationResponseUnmarshaller();        
 
+        internal static GetBucketMetadataConfigurationResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.

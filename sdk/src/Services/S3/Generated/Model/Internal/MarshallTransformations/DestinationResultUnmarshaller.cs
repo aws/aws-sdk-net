@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MetadataConfigurationResult Object
+    /// Response Unmarshaller for DestinationResult Object
     /// </summary>  
-    public class MetadataConfigurationResultUnmarshaller : IXmlUnmarshaller<MetadataConfigurationResult, XmlUnmarshallerContext>
+    public partial class DestinationResultUnmarshaller : IXmlUnmarshaller<DestinationResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MetadataConfigurationResult Unmarshall(XmlUnmarshallerContext context)
+        public DestinationResult Unmarshall(XmlUnmarshallerContext context)
         {
-            MetadataConfigurationResult unmarshalledObject = new MetadataConfigurationResult();
+            DestinationResult unmarshalledObject = new DestinationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,24 +56,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("DestinationResult", targetDepth))
+                    if (context.TestExpression("TableBucketArn", targetDepth))
                     {
-                        var unmarshaller = DestinationResultUnmarshaller.Instance;
-                        unmarshalledObject.DestinationResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TableBucketArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("InventoryTableConfigurationResult", targetDepth))
+                    if (context.TestExpression("TableBucketType", targetDepth))
                     {
-                        var unmarshaller = InventoryTableConfigurationResultUnmarshaller.Instance;
-                        unmarshalledObject.InventoryTableConfigurationResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TableBucketType = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("JournalTableConfigurationResult", targetDepth))
+                    if (context.TestExpression("TableNamespace", targetDepth))
                     {
-                        var unmarshaller = JournalTableConfigurationResultUnmarshaller.Instance;
-                        unmarshalledObject.JournalTableConfigurationResult = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TableNamespace = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -83,12 +85,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static MetadataConfigurationResultUnmarshaller _instance = new MetadataConfigurationResultUnmarshaller();        
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, DestinationResult unmarshalledObject, int targetDepth);
+
+        private static DestinationResultUnmarshaller _instance = new DestinationResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MetadataConfigurationResultUnmarshaller Instance
+        public static DestinationResultUnmarshaller Instance
         {
             get
             {

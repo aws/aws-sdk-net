@@ -30,25 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// This is the response object from the GetBucketMetadataConfiguration operation.
+    /// The S3 Metadata configuration for a general purpose bucket.
     /// </summary>
-    public partial class GetBucketMetadataConfigurationResponse : AmazonWebServiceResponse
+    public partial class GetBucketMetadataConfigurationResult
     {
-        private GetBucketMetadataConfigurationResult _getBucketMetadataConfigurationResult;
+        private MetadataConfigurationResult _metadataConfigurationResult;
 
         /// <summary>
-        /// Gets and sets the property GetBucketMetadataConfigurationResult.
+        /// Gets and sets the property MetadataConfigurationResult. 
+        /// <para>
+        ///  The metadata configuration for a general purpose bucket. 
+        /// </para>
         /// </summary>
-        public GetBucketMetadataConfigurationResult GetBucketMetadataConfigurationResult
+        [AWSProperty(Required=true)]
+        public MetadataConfigurationResult MetadataConfigurationResult
         {
-            get { return this._getBucketMetadataConfigurationResult; }
-            set { this._getBucketMetadataConfigurationResult = value; }
+            get { return this._metadataConfigurationResult; }
+            set { this._metadataConfigurationResult = value; }
         }
 
-        // Check to see if GetBucketMetadataConfigurationResult property is set
-        internal bool IsSetGetBucketMetadataConfigurationResult()
+        // Check to see if MetadataConfigurationResult property is set
+        internal bool IsSetMetadataConfigurationResult()
         {
-            return this._getBucketMetadataConfigurationResult != null;
+            return this._metadataConfigurationResult != null;
         }
 
     }

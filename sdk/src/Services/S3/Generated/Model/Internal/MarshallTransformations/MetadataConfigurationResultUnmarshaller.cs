@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecordExpiration Object
+    /// Response Unmarshaller for MetadataConfigurationResult Object
     /// </summary>  
-    public class RecordExpirationUnmarshaller : IXmlUnmarshaller<RecordExpiration, XmlUnmarshallerContext>
+    public partial class MetadataConfigurationResultUnmarshaller : IXmlUnmarshaller<MetadataConfigurationResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecordExpiration Unmarshall(XmlUnmarshallerContext context)
+        public MetadataConfigurationResult Unmarshall(XmlUnmarshallerContext context)
         {
-            RecordExpiration unmarshalledObject = new RecordExpiration();
+            MetadataConfigurationResult unmarshalledObject = new MetadataConfigurationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,18 +56,26 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Days", targetDepth))
+                    if (context.TestExpression("DestinationResult", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Days = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DestinationResultUnmarshaller.Instance;
+                        unmarshalledObject.DestinationResult = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Expiration", targetDepth))
+                    if (context.TestExpression("InventoryTableConfigurationResult", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Expiration = unmarshaller.Unmarshall(context);
+                        var unmarshaller = InventoryTableConfigurationResultUnmarshaller.Instance;
+                        unmarshalledObject.InventoryTableConfigurationResult = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("JournalTableConfigurationResult", targetDepth))
+                    {
+                        var unmarshaller = JournalTableConfigurationResultUnmarshaller.Instance;
+                        unmarshalledObject.JournalTableConfigurationResult = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -77,12 +85,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static RecordExpirationUnmarshaller _instance = new RecordExpirationUnmarshaller();        
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, MetadataConfigurationResult unmarshalledObject, int targetDepth);
+
+        private static MetadataConfigurationResultUnmarshaller _instance = new MetadataConfigurationResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecordExpirationUnmarshaller Instance
+        public static MetadataConfigurationResultUnmarshaller Instance
         {
             get
             {
