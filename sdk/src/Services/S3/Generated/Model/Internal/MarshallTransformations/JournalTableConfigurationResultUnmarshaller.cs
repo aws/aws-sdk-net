@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JournalTableConfigurationResult Object
     /// </summary>  
-    public class JournalTableConfigurationResultUnmarshaller : IXmlUnmarshaller<JournalTableConfigurationResult, XmlUnmarshallerContext>
+    public partial class JournalTableConfigurationResultUnmarshaller : IXmlUnmarshaller<JournalTableConfigurationResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -58,7 +58,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Error", targetDepth))
                     {
-                        var unmarshaller = ErrorUnmarshaller.Instance;
+                        var unmarshaller = ErrorDetailsUnmarshaller.Instance;
                         unmarshalledObject.Error = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -86,6 +86,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.TableStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -94,6 +96,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
+
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, JournalTableConfigurationResult unmarshalledObject, int targetDepth);
 
         private static JournalTableConfigurationResultUnmarshaller _instance = new JournalTableConfigurationResultUnmarshaller();        
 

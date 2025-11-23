@@ -1207,6 +1207,16 @@
                     "KmsKeyArn":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._kmsKeyArn);"]}
                 }
             ]
+        },
+        "GetBucketMetadataConfigurationRequest":{
+            "modify":[
+                {
+                    "BucketName":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._bucketName);"]}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
     },
     "operationModifiers": {
