@@ -43,7 +43,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ConfigurationState. 
         /// <para>
-        ///  The configuration state of the inventory table, indicating whether the inventory table is enabled or disabled. 
+        ///  The configuration state of the inventory table, indicating whether the inventory
+        /// table is enabled or disabled. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -117,19 +118,19 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>CREATING</c> - The inventory table is in the process of being created in the
-        /// specified Amazon Web Services managed table bucket.
+        ///  <c>CREATING</c> - The inventory table is in the process of being created in the specified
+        /// Amazon Web Services managed table bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BACKFILLING</c> - The inventory table is in the process of being backfilled.
-        /// When you enable the inventory table for your metadata configuration, the table goes
-        /// through a process known as backfilling, during which Amazon S3 scans your general
-        /// purpose bucket to retrieve the initial metadata for all objects in the bucket. Depending
-        /// on the number of objects in your bucket, this process can take several hours. When
-        /// the backfilling process is finished, the status of your inventory table changes from
-        /// <c>BACKFILLING</c> to <c>ACTIVE</c>. After backfilling is completed, updates to your
-        /// objects are reflected in the inventory table within one hour.
+        ///  <c>BACKFILLING</c> - The inventory table is in the process of being backfilled. When
+        /// you enable the inventory table for your metadata configuration, the table goes through
+        /// a process known as backfilling, during which Amazon S3 scans your general purpose
+        /// bucket to retrieve the initial metadata for all objects in the bucket. Depending on
+        /// the number of objects in your bucket, this process can take several hours. When the
+        /// backfilling process is finished, the status of your inventory table changes from <c>BACKFILLING</c>
+        /// to <c>ACTIVE</c>. After backfilling is completed, updates to your objects are reflected
+        /// in the inventory table within one hour.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -138,10 +139,10 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FAILED</c> - Amazon S3 is unable to create the inventory table, or Amazon S3
-        /// is unable to deliver records.
+        ///  <c>FAILED</c> - Amazon S3 is unable to create the inventory table, or Amazon S3 is
+        /// unable to deliver records.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul>
         /// </summary>
         public string TableStatus
         {

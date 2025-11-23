@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InventoryTableConfigurationResult Object
+    /// Response Unmarshaller for GetBucketMetadataConfigurationResult Object
     /// </summary>  
-    public class InventoryTableConfigurationResultUnmarshaller : IXmlUnmarshaller<InventoryTableConfigurationResult, XmlUnmarshallerContext>
+    public partial class GetBucketMetadataConfigurationResultUnmarshaller : IXmlUnmarshaller<GetBucketMetadataConfigurationResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InventoryTableConfigurationResult Unmarshall(XmlUnmarshallerContext context)
+        public GetBucketMetadataConfigurationResult Unmarshall(XmlUnmarshallerContext context)
         {
-            InventoryTableConfigurationResult unmarshalledObject = new InventoryTableConfigurationResult();
+            GetBucketMetadataConfigurationResult unmarshalledObject = new GetBucketMetadataConfigurationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,36 +56,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ConfigurationState", targetDepth))
+                    if (context.TestExpression("MetadataConfigurationResult", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.ConfigurationState = unmarshaller.Unmarshall(context);
+                        var unmarshaller = MetadataConfigurationResultUnmarshaller.Instance;
+                        unmarshalledObject.MetadataConfigurationResult = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Error", targetDepth))
-                    {
-                        var unmarshaller = ErrorUnmarshaller.Instance;
-                        unmarshalledObject.Error = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TableArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TableName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("TableStatus", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableStatus = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -95,12 +73,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static InventoryTableConfigurationResultUnmarshaller _instance = new InventoryTableConfigurationResultUnmarshaller();        
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, GetBucketMetadataConfigurationResult unmarshalledObject, int targetDepth);
+
+        private static GetBucketMetadataConfigurationResultUnmarshaller _instance = new GetBucketMetadataConfigurationResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InventoryTableConfigurationResultUnmarshaller Instance
+        public static GetBucketMetadataConfigurationResultUnmarshaller Instance
         {
             get
             {
