@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// The journal table record expiration settings for a journal table in an S3 Metadata configuration.
+    /// The journal table record expiration settings for a journal table in an S3 Metadata
+    /// configuration.
     /// </summary>
     public partial class RecordExpiration
     {
@@ -47,9 +48,9 @@ namespace Amazon.S3.Model
         /// <c>365</c>. 
         /// </para>
         /// </summary>
-        public int Days
+        public int? Days
         {
-            get { return this._days.GetValueOrDefault(); }
+            get { return this._days; }
             set { this._days = value; }
         }
 
