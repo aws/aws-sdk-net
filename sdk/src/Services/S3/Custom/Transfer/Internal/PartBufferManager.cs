@@ -37,13 +37,12 @@ namespace Amazon.S3.Transfer.Internal
     /// 
     /// SYNCHRONIZATION PRIMITIVES AND THEIR PURPOSES:
     /// 
-    /// 1. _nextExpectedPartNumber (int)
+    /// 1. _nextExpectedPartNumber (volatile int)
     ///    - Purpose: Tracks which part to read next, ensuring sequential consumption
-    ///    - Synchronization: None required - only accessed by the consumer thread
-    ///    - Updates: Simple increment (++) after consuming each part
-    ///    - Reads: Direct reads are safe - int reads are naturally atomic
-    ///    - Why no synchronization needed: Producer threads never access this field,
-    ///      only the single consumer thread reads and writes it sequentially
+    ///    - Synchronization: volatile keyword for memory visibility across threads
+    ///    - Readers: Producer threads (download tasks) check if their part matches to decide stream-vs-buffer
+    ///    - Writer: Consumer thread (single) increments after consuming each part
+    ///    - Thread safety: volatile ensures producer threads see latest value (prevents stale cached reads)
     ///    
     /// 2. _completionState (volatile <see cref="Tuple"/> of bool and <see cref="Exception"/>)
     ///    - Purpose: Atomically tracks download completion status and any error
@@ -84,7 +83,7 @@ namespace Amazon.S3.Transfer.Internal
     ///    - Example: With MaxInMemoryParts=10, if parts 5-14 are buffered, the task downloading
     ///      part 15 blocks here until the reader consumes and releases part 5's buffer
     /// 2. Read part data from S3 into pooled buffer
-    /// 3. Add buffered part: <see cref="AddBuffer"/>
+    /// 3. Add buffered part: await <see cref="AddBuffer(StreamPartBuffer)"/>
     ///    - Adds buffer to _partDataSources dictionary
     ///    - Signals _partAvailable to wake consumer if waiting
     /// 4. Consumer eventually releases the buffer slot after reading the part
@@ -147,16 +146,15 @@ namespace Amazon.S3.Transfer.Internal
         private readonly AutoResetEvent _partAvailable;
 
         // Tracks the next part number to consume sequentially. Ensures in-order reading.
-        // SYNCHRONIZATION: None required - only accessed by the consumer thread
-        // Consumer advances this after fully consuming each part with simple increment.
+        // SYNCHRONIZATION: volatile keyword for memory visibility
+        // - Consumer thread writes: Increments after fully consuming each part
+        // - Producer threads read: Check if their part matches to decide stream-vs-buffer
+        // - volatile ensures all threads see the most recent value (prevents stale cached reads)
+        // 
         // Example: Set to 1 initially. After reading part 1, incremented to 2.
         // Even if part 5 is available, consumer waits for part 2 before proceeding.
-        // 
-        // Why no synchronization:
-        // - Only the consumer thread (calling ReadAsync) ever reads or writes this field
-        // - Producer threads (download tasks) never access it - they only write to the dictionary
-        // - No concurrent access means no need for volatile, Interlocked, or locks
-        private int _nextExpectedPartNumber = 1;
+        // Producer threads checking this value will always see the latest increment.
+        private volatile int _nextExpectedPartNumber = 1;
 
         // Stores download completion status and any error as an atomic unit.
         // SYNCHRONIZATION: volatile keyword + atomic reference assignment
@@ -296,6 +294,18 @@ namespace Amazon.S3.Transfer.Internal
             // Create a BufferedDataSource and add it
             var bufferedSource = new BufferedDataSource(buffer);
             AddDataSource(bufferedSource);
+        }
+
+        /// <inheritdoc/>
+        public void AddBuffer(IPartDataSource dataSource)
+        {
+            ThrowIfDisposed();
+            
+            if (dataSource == null)
+                throw new ArgumentNullException(nameof(dataSource));
+
+            // Delegate directly to AddDataSourceAsync which already handles IPartDataSource
+            AddDataSource(dataSource);
         }
 
         /// <inheritdoc/>

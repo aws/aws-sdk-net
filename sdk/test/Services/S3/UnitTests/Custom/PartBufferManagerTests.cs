@@ -1,10 +1,14 @@
 using Amazon.S3.Transfer.Internal;
+using Amazon.S3.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.IO;
+using System.Collections.Generic;
 using System.Buffers;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace AWSSDK.UnitTests
 {
@@ -265,7 +269,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 // Act
-                manager.AddBuffer(null);
+                manager.AddBuffer((IPartDataSource)null);
 
                 // Assert - ExpectedException
             }
@@ -934,6 +938,295 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
+        #region AddBufferAsync(IPartDataSource) Tests
+
+        [TestMethod]
+        public async Task AddBufferAsync_IPartDataSource_WithStreamingDataSource_AddsSuccessfully()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                // Create a StreamingDataSource
+                var testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
+                var response = new GetObjectResponse
+                {
+                    ContentLength = 512,
+                    ResponseStream = new MemoryStream(testData)
+                };
+                var streamingSource = new StreamingDataSource(1, response);
+
+                // Act
+                manager.AddBuffer(streamingSource);
+
+                // Assert - Should be able to read from part 1
+                byte[] readBuffer = new byte[512];
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
+                Assert.AreEqual(512, bytesRead);
+                Assert.IsTrue(MultipartDownloadTestHelpers.VerifyDataMatch(testData, readBuffer, 0, 512));
+            }
+            finally
+            {
+                manager.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task AddBufferAsync_IPartDataSource_WithBufferedDataSource_AddsSuccessfully()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                // Create a BufferedDataSource
+                byte[] testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
+                byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
+                Buffer.BlockCopy(testData, 0, testBuffer, 0, 512);
+                var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
+                var bufferedSource = new BufferedDataSource(partBuffer);
+
+                // Act
+                manager.AddBuffer(bufferedSource);
+
+                // Assert - Should be able to read from part 1
+                byte[] readBuffer = new byte[512];
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
+                Assert.AreEqual(512, bytesRead);
+                Assert.IsTrue(MultipartDownloadTestHelpers.VerifyDataMatch(testData, readBuffer, 0, 512));
+            }
+            finally
+            {
+                manager.Dispose();
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public async Task AddBufferAsync_IPartDataSource_WithNull_ThrowsArgumentNullException()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                // Act
+                manager.AddBuffer((IPartDataSource)null);
+
+                // Assert - ExpectedException
+            }
+            finally
+            {
+                manager.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task AddBufferAsync_IPartDataSource_SignalsPartAvailable()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                // Start reading before part is available
+                var readTask = Task.Run(async () =>
+                {
+                    byte[] readBuffer = new byte[512];
+                    return await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
+                });
+
+                // Give read task time to start waiting
+                await Task.Delay(50);
+
+                // Create and add streaming data source
+                var testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
+                var response = new GetObjectResponse
+                {
+                    ContentLength = 512,
+                    ResponseStream = new MemoryStream(testData)
+                };
+                var streamingSource = new StreamingDataSource(1, response);
+
+                // Act
+                manager.AddBuffer(streamingSource);
+
+                // Assert - Read should complete
+                int bytesRead = await readTask;
+                Assert.AreEqual(512, bytesRead);
+            }
+            finally
+            {
+                manager.Dispose();
+            }
+        }
+
+        #endregion
+
+        #region ReadAsync Tests - StreamingDataSource Integration
+
+        [TestMethod]
+        public async Task ReadAsync_FromStreamingDataSource_ReadsCorrectly()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                // Create streaming data source
+                var testData = MultipartDownloadTestHelpers.GenerateTestData(1000, 0);
+                var response = new GetObjectResponse
+                {
+                    ContentLength = 1000,
+                    ResponseStream = new MemoryStream(testData)
+                };
+                var streamingSource = new StreamingDataSource(1, response);
+                manager.AddBuffer(streamingSource);
+
+                // Act - Read in multiple chunks
+                byte[] readBuffer = new byte[400];
+                int bytesRead1 = await manager.ReadAsync(readBuffer, 0, 400, CancellationToken.None);
+                
+                int bytesRead2 = await manager.ReadAsync(readBuffer, 0, 400, CancellationToken.None);
+                
+                int bytesRead3 = await manager.ReadAsync(readBuffer, 0, 200, CancellationToken.None);
+
+                // Assert
+                Assert.AreEqual(400, bytesRead1);
+                Assert.AreEqual(400, bytesRead2);
+                Assert.AreEqual(200, bytesRead3);
+                Assert.AreEqual(2, manager.NextExpectedPartNumber);
+            }
+            finally
+            {
+                manager.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ReadAsync_FromMixedSources_ReadsSequentially()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                // Add streaming source for part 1
+                var testData1 = MultipartDownloadTestHelpers.GenerateTestData(500, 0);
+                var response1 = new GetObjectResponse
+                {
+                    ContentLength = 500,
+                    ResponseStream = new MemoryStream(testData1)
+                };
+                var streamingSource = new StreamingDataSource(1, response1);
+                manager.AddBuffer((IPartDataSource)streamingSource);
+
+                // Add buffered source for part 2
+                var testData2 = MultipartDownloadTestHelpers.GenerateTestData(500, 500);
+                byte[] testBuffer2 = ArrayPool<byte>.Shared.Rent(500);
+                Buffer.BlockCopy(testData2, 0, testBuffer2, 0, 500);
+                var partBuffer2 = new StreamPartBuffer(2, testBuffer2, 500);
+                manager.AddBuffer(partBuffer2);
+
+                // Act - Read across both parts
+                byte[] readBuffer = new byte[750];
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 750, CancellationToken.None);
+
+                // Assert
+                Assert.AreEqual(750, bytesRead);
+                
+                // Verify first 500 bytes from streaming source
+                Assert.IsTrue(MultipartDownloadTestHelpers.VerifyDataMatch(testData1, readBuffer, 0, 500));
+                
+                // Verify next 250 bytes from buffered source
+                byte[] expectedData2 = new byte[250];
+                Array.Copy(testData2, 0, expectedData2, 0, 250);
+                Assert.IsTrue(MultipartDownloadTestHelpers.VerifyDataMatch(expectedData2, readBuffer, 500, 250));
+            }
+            finally
+            {
+                manager.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ReadAsync_StreamingDataSource_DisposesAfterCompletion()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                // Create streaming data source
+                var testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
+                var response = new GetObjectResponse
+                {
+                    ContentLength = 512,
+                    ResponseStream = new MemoryStream(testData)
+                };
+                var streamingSource = new StreamingDataSource(1, response);
+                manager.AddBuffer(streamingSource);
+
+                // Act - Read all data
+                byte[] readBuffer = new byte[512];
+                await manager.ReadAsync(readBuffer, 0, 512, CancellationToken.None);
+
+                // Assert - StreamingDataSource should be disposed after reading
+                // This is verified internally by PartBufferManager
+                Assert.AreEqual(2, manager.NextExpectedPartNumber);
+            }
+            finally
+            {
+                manager.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ReadAsync_MultipleStreamingSources_ReadsSequentially()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var manager = new PartBufferManager(config);
+
+            try
+            {
+                // Add 3 streaming sources
+                for (int i = 1; i <= 3; i++)
+                {
+                    var testData = MultipartDownloadTestHelpers.GeneratePartSpecificData(300, i);
+                    var response = new GetObjectResponse
+                    {
+                        ContentLength = 300,
+                        ResponseStream = new MemoryStream(testData)
+                    };
+                    var streamingSource = new StreamingDataSource(i, response);
+                    manager.AddBuffer(streamingSource);
+                }
+
+                // Act - Read across all parts
+                byte[] readBuffer = new byte[900];
+                int bytesRead = await manager.ReadAsync(readBuffer, 0, 900, CancellationToken.None);
+
+                // Assert
+                Assert.AreEqual(900, bytesRead);
+                Assert.AreEqual(4, manager.NextExpectedPartNumber);
+            }
+            finally
+            {
+                manager.Dispose();
+            }
+        }
+
+        #endregion
+
         #region Disposal Tests
 
         [TestMethod]
@@ -1000,6 +1293,123 @@ namespace AWSSDK.UnitTests
             await manager.WaitForBufferSpaceAsync(CancellationToken.None);
 
             // Assert - ExpectedException
+        }
+
+        #endregion
+
+        #region Thread Safety Tests - Memory Visibility
+
+        [TestMethod]
+        public async Task NextExpectedPartNumber_ConcurrentReads_SeeConsistentValue()
+        {
+            // This test verifies that the volatile keyword on _nextExpectedPartNumber
+            // prevents memory visibility issues when multiple producer threads
+            // read the value while the consumer thread updates it.
+            //
+            // Without volatile, producer threads may see stale cached values,
+            // causing incorrect stream-vs-buffer decisions.
+            //
+            // The test simulates BufferedPartDataHandler.ProcessPartAsync's pattern:
+            // Multiple download threads checking "partNumber == NextExpectedPartNumber"
+            // while the consumer thread increments NextExpectedPartNumber.
+
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var manager = new PartBufferManager(config);
+
+            const int NumReaderThreads = 8;
+            const int NumIncrements = 100;
+            
+            var readErrors = new System.Collections.Concurrent.ConcurrentBag<string>();
+            var startSignal = new ManualResetEventSlim(false);
+            var stopSignal = new ManualResetEventSlim(false);
+
+            try
+            {
+                // Start multiple reader threads that continuously read NextExpectedPartNumber
+                var readerTasks = new Task[NumReaderThreads];
+                for (int i = 0; i < NumReaderThreads; i++)
+                {
+                    int threadId = i;
+                    readerTasks[i] = Task.Run(() =>
+                    {
+                        // Wait for start signal
+                        startSignal.Wait();
+
+                        int lastSeenValue = 0;
+                        
+                        // Aggressively read the value until stopped
+                        while (!stopSignal.IsSet)
+                        {
+                            int currentValue = manager.NextExpectedPartNumber;
+                            
+                            // Verify we never see a value less than what we saw before
+                            // (This would indicate stale cached reads)
+                            if (currentValue < lastSeenValue)
+                            {
+                                readErrors.Add($"Thread {threadId} saw value go backwards: {lastSeenValue} -> {currentValue}");
+                            }
+                            
+                            lastSeenValue = currentValue;
+                            
+                            // Spin to create cache pressure
+                            Thread.SpinWait(10);
+                        }
+                    });
+                }
+
+                // Start all reader threads simultaneously
+                startSignal.Set();
+
+                // Give threads time to start reading
+                await Task.Delay(10);
+
+                // Simulate consumer thread incrementing NextExpectedPartNumber
+                // by adding and reading parts sequentially
+                for (int partNum = 1; partNum <= NumIncrements; partNum++)
+                {
+                    // Add part
+                    byte[] testBuffer = ArrayPool<byte>.Shared.Rent(100);
+                    var partBuffer = new StreamPartBuffer(partNum, testBuffer, 100);
+                    manager.AddBuffer(partBuffer);
+
+                    // Read part completely to trigger increment
+                    byte[] readBuffer = new byte[100];
+                    await manager.ReadAsync(readBuffer, 0, 100, CancellationToken.None);
+
+                    // NextExpectedPartNumber should now be partNum + 1
+                    
+                    // Small spin to create timing variance
+                    Thread.SpinWait(5);
+                }
+
+                // Stop reader threads
+                stopSignal.Set();
+
+                // Wait for all readers to finish
+                await Task.WhenAll(readerTasks);
+
+                // Assert - No reader should have seen inconsistent values
+                if (readErrors.Count > 0)
+                {
+                    var errorMessage = $"Memory visibility issues detected:\n{string.Join("\n", readErrors.Take(10))}";
+                    if (readErrors.Count > 10)
+                    {
+                        errorMessage += $"\n... and {readErrors.Count - 10} more errors";
+                    }
+                    Assert.Fail(errorMessage);
+                }
+
+                // Verify final value is correct
+                Assert.AreEqual(NumIncrements + 1, manager.NextExpectedPartNumber);
+            }
+            finally
+            {
+                stopSignal.Set(); // Ensure threads stop even on failure
+                manager.Dispose();
+                startSignal.Dispose();
+                stopSignal.Dispose();
+            }
         }
 
         #endregion

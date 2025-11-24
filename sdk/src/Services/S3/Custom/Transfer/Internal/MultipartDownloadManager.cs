@@ -231,20 +231,26 @@ namespace Amazon.S3.Transfer.Internal
                     ? new EventHandler<WriteObjectProgressArgs>(DownloadPartProgressEventCallback)
                     : null;
                 
-                // Attach progress callback to Part 1's response if provided
-                if (wrappedCallback != null)
+                try
                 {
-                    discoveryResult.InitialResponse.WriteObjectProgressEvent += wrappedCallback;
+                    // Attach progress callback to Part 1's response if provided
+                    if (wrappedCallback != null)
+                    {
+                        discoveryResult.InitialResponse.WriteObjectProgressEvent += wrappedCallback;
+                    }
+                    
+                    // Process Part 1 from InitialResponse (applies to both single-part and multipart)
+                    Logger.DebugFormat("MultipartDownloadManager: Buffering Part 1 from discovery response");
+                    await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
                 }
-                
-                // Process Part 1 from InitialResponse (applies to both single-part and multipart)
-                Logger.DebugFormat("MultipartDownloadManager: Buffering Part 1 from discovery response");
-                await _dataHandler.ProcessPartAsync(1, discoveryResult.InitialResponse, cancellationToken).ConfigureAwait(false);
-
-                // Detach the event handler after processing to prevent memory leak
-                if (wrappedCallback != null)
+                finally
                 {
-                    discoveryResult.InitialResponse.WriteObjectProgressEvent -= wrappedCallback;
+                    // Always detach the event handler to prevent memory leak
+                    // This runs whether ProcessPartAsync succeeds or throws
+                    if (wrappedCallback != null)
+                    {
+                        discoveryResult.InitialResponse.WriteObjectProgressEvent -= wrappedCallback;
+                    }
                 }
 
                 if (discoveryResult.IsSinglePart)
@@ -347,6 +353,7 @@ namespace Amazon.S3.Transfer.Internal
             Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Buffer space acquired", partNumber);
             
             GetObjectResponse response = null;
+            var ownsResponse = false;  // Track if we still own the response
             
             try
             {
@@ -393,6 +400,7 @@ namespace Amazon.S3.Transfer.Internal
                     }
                     
                     response = await _s3Client.GetObjectAsync(getObjectRequest, cancellationToken).ConfigureAwait(false);
+                    ownsResponse = true;  // We now own the response
                     
                     // Attach progress callback to response if provided
                     if (progressCallback != null)
@@ -424,24 +432,29 @@ namespace Amazon.S3.Transfer.Internal
                         partNumber, _httpConcurrencySlots.CurrentCount, _config.ConcurrentServiceRequests);
                 }
 
-                Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Starting buffering", partNumber);
+                Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Processing part (handler will decide: stream or buffer)", partNumber);
                 
                 // Delegate data handling to the handler
+                // IMPORTANT: Handler takes ownership of response and is responsible for disposing it in ALL cases:
+                // - If streaming: StreamingDataSource takes ownership and disposes when consumer finishes reading
+                // - If buffering: Handler disposes immediately after copying data to buffer
+                // - On error: Handler disposes in its catch block before rethrowing
                 await _dataHandler.ProcessPartAsync(partNumber, response, cancellationToken).ConfigureAwait(false);
+                ownsResponse = false;  // Ownership transferred to handler
 
-                Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Buffering completed successfully", partNumber);
+                Logger.DebugFormat("MultipartDownloadManager: [Part {0}] Processing completed successfully", partNumber);
             }
             catch (Exception ex)
             {
                 Logger.Error(ex, "MultipartDownloadManager: [Part {0}] Download failed", partNumber);
+                
+                // Dispose response if we still own it (error occurred before handler took ownership)
+                if (ownsResponse)
+                    response?.Dispose();
+                
                 // Release capacity on failure
                 _dataHandler.ReleaseCapacity();
                 throw;
-            }
-            finally
-            {
-                // Always dispose the response since we never transfer ownership
-                response?.Dispose();
             }
         }
 

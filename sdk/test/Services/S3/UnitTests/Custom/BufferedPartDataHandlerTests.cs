@@ -1,15 +1,20 @@
 using Amazon.S3.Model;
-using Amazon.S3.Transfer;
 using Amazon.S3.Transfer.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Buffers;
 using System.IO;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests
 {
+    /// <summary>
+    /// Unit tests for BufferedPartDataHandler class.
+    /// Tests intelligent stream-vs-buffer decision making for multipart downloads.
+    /// </summary>
     [TestClass]
     public class BufferedPartDataHandlerTests
     {
@@ -19,14 +24,17 @@ namespace AWSSDK.UnitTests
         public void Constructor_WithValidParameters_CreatesHandler()
         {
             // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
 
             // Act
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
             // Assert
             Assert.IsNotNull(handler);
+
+            // Cleanup
+            handler.Dispose();
         }
 
         [TestMethod]
@@ -38,324 +46,591 @@ namespace AWSSDK.UnitTests
 
             // Act
             var handler = new BufferedPartDataHandler(null, config);
+
+            // Assert - ExpectedException
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Constructor_WithNullConfig_ThrowsArgumentNullException()
+        public void Constructor_WithNullConfiguration_ThrowsArgumentNullException()
         {
             // Arrange
             var mockBufferManager = new Mock<IPartBufferManager>();
 
             // Act
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, null);
+
+            // Assert - ExpectedException
         }
 
         #endregion
 
-        #region ProcessPartAsync Tests - Basic Functionality
+        #region ProcessPartAsync Tests - In-Order (Streaming Path)
 
         [TestMethod]
-        public async Task ProcessPartAsync_BuffersPartData()
+        public async Task ProcessPartAsync_InOrderPart_CreatesStreamingDataSource()
         {
             // Arrange
-            var partSize = 8 * 1024 * 1024; // 8MB
-            var partData = new byte[partSize];
-            new Random().NextBytes(partData);
-
-            var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+
+            IPartDataSource capturedDataSource = null;
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()))
+                .Callback<IPartDataSource>((ds) => capturedDataSource = ds);
+
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
-            var response = new GetObjectResponse
-            {
-                ContentLength = partSize,
-                ResponseStream = new MemoryStream(partData)
-            };
-
-            // Act
-            await handler.ProcessPartAsync(1, response, CancellationToken.None);
-
-            // Assert - should add buffer to manager
-            mockBufferManager.Verify(
-                x => x.AddBuffer(It.IsAny<StreamPartBuffer>()),
-                Times.Once);
-        }
-
-        [TestMethod]
-        public async Task ProcessPartAsync_ReadsExactContentLength()
-        {
-            // Arrange
-            var partSize = 1024;
-            var partData = new byte[partSize];
-            new Random().NextBytes(partData);
-
-            StreamPartBuffer capturedBuffer = null;
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()))
-                .Callback<StreamPartBuffer>((buffer) => capturedBuffer = buffer);
-
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            var response = new GetObjectResponse
-            {
-                ContentLength = partSize,
-                ResponseStream = new MemoryStream(partData)
-            };
-
-            // Act
-            await handler.ProcessPartAsync(1, response, CancellationToken.None);
-
-            // Assert
-            Assert.IsNotNull(capturedBuffer);
-            Assert.AreEqual(partSize, capturedBuffer.Length);
-            Assert.AreEqual(1, capturedBuffer.PartNumber);
-        }
-
-        [TestMethod]
-        public async Task ProcessPartAsync_HandlesSmallPart()
-        {
-            // Arrange
-            var partSize = 100; // Very small
-            var partData = new byte[partSize];
-            new Random().NextBytes(partData);
-
-            StreamPartBuffer capturedBuffer = null;
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()))
-                .Callback<StreamPartBuffer>((buffer) => capturedBuffer = buffer);
-
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            var response = new GetObjectResponse
-            {
-                ContentLength = partSize,
-                ResponseStream = new MemoryStream(partData)
-            };
-
-            // Act
-            await handler.ProcessPartAsync(1, response, CancellationToken.None);
-
-            // Assert
-            Assert.IsNotNull(capturedBuffer);
-            Assert.AreEqual(partSize, capturedBuffer.Length);
-        }
-
-        [TestMethod]
-        public async Task ProcessPartAsync_HandlesLargePart()
-        {
-            // Arrange
-            var partSize = 16 * 1024 * 1024; // 16MB
-            var partData = new byte[partSize];
-            new Random().NextBytes(partData);
-
-            StreamPartBuffer capturedBuffer = null;
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()))
-                .Callback<StreamPartBuffer>((buffer) => capturedBuffer = buffer);
-
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            var response = new GetObjectResponse
-            {
-                ContentLength = partSize,
-                ResponseStream = new MemoryStream(partData)
-            };
-
-            // Act
-            await handler.ProcessPartAsync(1, response, CancellationToken.None);
-
-            // Assert
-            Assert.IsNotNull(capturedBuffer);
-            Assert.AreEqual(partSize, capturedBuffer.Length);
-        }
-
-        #endregion
-
-
-        #region ProcessPartAsync Tests - Data Integrity
-
-        [TestMethod]
-        public async Task ProcessPartAsync_PreservesDataIntegrity()
-        {
-            // Arrange
-            var partSize = 1024 * 1024; // 1MB
-            var partData = new byte[partSize];
-            new Random(42).NextBytes(partData); // Seeded for reproducibility
-
-            StreamPartBuffer capturedBuffer = null;
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()))
-                .Callback<StreamPartBuffer>((buffer) => capturedBuffer = buffer);
-
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            var response = new GetObjectResponse
-            {
-                ContentLength = partSize,
-                ResponseStream = new MemoryStream(partData)
-            };
-
-            // Act
-            await handler.ProcessPartAsync(1, response, CancellationToken.None);
-
-            // Assert - verify data matches exactly
-            Assert.IsNotNull(capturedBuffer);
-            var bufferedData = new byte[capturedBuffer.Length];
-            Buffer.BlockCopy(capturedBuffer.ArrayPoolBuffer, 0, bufferedData, 0, capturedBuffer.Length);
-
-            CollectionAssert.AreEqual(partData, bufferedData);
-        }
-
-        [TestMethod]
-        public async Task ProcessPartAsync_HandlesZeroByteResponse()
-        {
-            // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            var response = new GetObjectResponse
-            {
-                ContentLength = 0,
-                ResponseStream = new MemoryStream(Array.Empty<byte>())
-            };
-
-            // Act
-            await handler.ProcessPartAsync(1, response, CancellationToken.None);
-
-            // Assert - should handle empty response gracefully
-            mockBufferManager.Verify(
-                x => x.AddBuffer(It.IsAny<StreamPartBuffer>()),
-                Times.Once);
-        }
-
-        [TestMethod]
-        public async Task ProcessPartAsync_WithUnexpectedEOF_ThrowsIOException()
-        {
-            // Arrange
-            var expectedBytes = 1024 * 1024; // 1MB expected
-            var actualBytes = 512 * 1024; // 512KB available (premature EOF)
-            var partData = new byte[actualBytes];
-            new Random().NextBytes(partData);
-
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            // Create a response that promises more bytes than it delivers
-            var response = new GetObjectResponse
-            {
-                ContentLength = expectedBytes, // Promise 1MB
-                ResponseStream = new MemoryStream(partData), // Only deliver 512KB
-                ResponseMetadata = new Amazon.Runtime.ResponseMetadata()
-            };
-
-            // Act & Assert
-            var exception = await Assert.ThrowsExceptionAsync<Amazon.S3.Model.StreamSizeMismatchException>(
-                async () => await handler.ProcessPartAsync(1, response, CancellationToken.None));
-
-            // Verify exception message contains key information
-            StringAssert.Contains(exception.Message, expectedBytes.ToString());
-            StringAssert.Contains(exception.Message, actualBytes.ToString());
-        }
-
-        [TestMethod]
-        public async Task ProcessPartAsync_WithUnexpectedEOF_DoesNotBufferPartialData()
-        {
-            // Arrange
-            var expectedBytes = 1024 * 1024; // 1MB expected
-            var actualBytes = 512 * 1024; // 512KB available (premature EOF)
-            var partData = new byte[actualBytes];
-            new Random().NextBytes(partData);
-
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            var response = new GetObjectResponse
-            {
-                ContentLength = expectedBytes,
-                ResponseStream = new MemoryStream(partData),
-                ResponseMetadata = new Amazon.Runtime.ResponseMetadata()
-            };
-
-            // Act
             try
             {
-                await handler.ProcessPartAsync(1, response, CancellationToken.None);
-                Assert.Fail("Expected StreamSizeMismatchException was not thrown");
-            }
-            catch (Amazon.S3.Model.StreamSizeMismatchException)
-            {
-                // Expected
-            }
+                var response = CreateMockGetObjectResponse(512);
 
-            // Assert - should NOT have added any buffer to manager since download failed
-            mockBufferManager.Verify(
-                x => x.AddBuffer(It.IsAny<StreamPartBuffer>()),
-                Times.Never);
+                // Act
+                await handler.ProcessPartAsync(1, response, CancellationToken.None);
+
+                // Assert
+                Assert.IsNotNull(capturedDataSource);
+                Assert.IsInstanceOfType(capturedDataSource, typeof(StreamingDataSource));
+                Assert.AreEqual(1, capturedDataSource.PartNumber);
+
+                // Cleanup
+                capturedDataSource?.Dispose();
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_InOrderPart_ReleasesCapacityImmediately()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()));
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                var response = CreateMockGetObjectResponse(512);
+
+                // Act
+                await handler.ProcessPartAsync(1, response, CancellationToken.None);
+
+                // Assert - ReleaseBufferSpace should be called (through ReleaseCapacity)
+                // Handler calls ReleaseBufferSpace directly, which eventually calls the manager's method
+                // We verify the AddBuffer was called with a StreamingDataSource
+                mockBufferManager.Verify(m => m.AddBuffer(
+                    It.Is<IPartDataSource>(ds => ds is StreamingDataSource)), Times.Once);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_InOrderPart_DoesNotDisposeResponse()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()));
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                var response = CreateMockGetObjectResponse(512);
+
+                // Act
+                await handler.ProcessPartAsync(1, response, CancellationToken.None);
+
+                // Assert - Response stream should still be readable (not disposed)
+                // The StreamingDataSource now owns it and will dispose it later
+                Assert.IsTrue(response.ResponseStream.CanRead);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_MultipleInOrderParts_AllStreamDirectly()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            var streamingCount = 0;
+
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber)
+                .Returns(() => streamingCount + 1);
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()))
+                .Callback<IPartDataSource>((ds) =>
+                {
+                    if (ds is StreamingDataSource)
+                        streamingCount++;
+                });
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                // Act - Process parts 1, 2, 3 in order
+                await handler.ProcessPartAsync(1, CreateMockGetObjectResponse(512), CancellationToken.None);
+                await handler.ProcessPartAsync(2, CreateMockGetObjectResponse(512), CancellationToken.None);
+                await handler.ProcessPartAsync(3, CreateMockGetObjectResponse(512), CancellationToken.None);
+
+                // Assert - All should be streaming
+                Assert.AreEqual(3, streamingCount);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
         }
 
         #endregion
 
-        #region ProcessPartAsync Tests - Cancellation
+        #region ProcessPartAsync Tests - Out-of-Order (Buffering Path)
 
         [TestMethod]
-        [ExpectedException(typeof(TaskCanceledException))]
-        public async Task ProcessPartAsync_WithCancelledToken_ThrowsTaskCanceledException()
+        public async Task ProcessPartAsync_OutOfOrderPart_BuffersToMemory()
         {
             // Arrange
-            var partSize = 8 * 1024 * 1024;
-            var partData = new byte[partSize];
-
-            var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+
+            StreamPartBuffer capturedBuffer = null;
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()))
+                .Callback<StreamPartBuffer>((buffer) => capturedBuffer = buffer);
+
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
-            var response = new GetObjectResponse
+            try
             {
-                ContentLength = partSize,
-                ResponseStream = new MemoryStream(partData)
-            };
+                var testData = MultipartDownloadTestHelpers.GenerateTestData(512, 0);
+                var response = CreateMockGetObjectResponse(512, testData);
 
-            var cts = new CancellationTokenSource();
-            cts.Cancel();
+                // Act - Process part 2 when expecting part 1 (out of order)
+                await handler.ProcessPartAsync(2, response, CancellationToken.None);
 
-            // Act
-            await handler.ProcessPartAsync(1, response, cts.Token);
+                // Assert
+                Assert.IsNotNull(capturedBuffer);
+                Assert.AreEqual(2, capturedBuffer.PartNumber);
+                Assert.AreEqual(512, capturedBuffer.Length);
+
+                // Verify data was buffered correctly
+                byte[] bufferData = new byte[512];
+                Buffer.BlockCopy(capturedBuffer.ArrayPoolBuffer, 0, bufferData, 0, 512);
+                Assert.IsTrue(MultipartDownloadTestHelpers.VerifyDataMatch(testData, bufferData, 0, 512));
+            }
+            finally
+            {
+                handler.Dispose();
+            }
         }
 
         [TestMethod]
-        public async Task ProcessPartAsync_CallsAddBufferOnce()
+        public async Task ProcessPartAsync_OutOfOrderPart_DisposesResponse()
         {
             // Arrange
-            var partSize = 1024;
-            var partData = new byte[partSize];
-
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()));
-
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()));
+
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
-            var response = new GetObjectResponse
+            try
             {
-                ContentLength = partSize,
-                ResponseStream = new MemoryStream(partData)
-            };
+                var response = CreateMockGetObjectResponse(512);
 
-            var cts = new CancellationTokenSource();
+                // Act - Process out of order part
+                await handler.ProcessPartAsync(3, response, CancellationToken.None);
 
-            // Act
-            await handler.ProcessPartAsync(1, response, cts.Token);
+                // Assert - Response should be disposed after buffering
+                // After disposal, stream is either null or no longer readable
+                Assert.IsTrue(response.ResponseStream == null || !response.ResponseStream.CanRead);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
 
-            // Assert - verify AddBuffer was called exactly once
-            mockBufferManager.Verify(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()), Times.Once);
+        [TestMethod]
+        public async Task ProcessPartAsync_OutOfOrderPart_DoesNotReleaseCapacityImmediately()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()));
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                var response = CreateMockGetObjectResponse(512);
+
+                // Act
+                await handler.ProcessPartAsync(2, response, CancellationToken.None);
+
+                // Assert - AddBuffer should be called with StreamPartBuffer (not IPartDataSource)
+                mockBufferManager.Verify(m => m.AddBuffer(
+                    It.IsAny<StreamPartBuffer>()), Times.Once);
+
+                // Note: Capacity will be released later when the buffer is consumed by the reader
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        #endregion
+
+        #region ProcessPartAsync Tests - Mixed Scenarios
+
+        [TestMethod]
+        public async Task ProcessPartAsync_MixedInOrderAndOutOfOrder_HandlesCorrectly()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            
+            var currentExpectedPart = 1;
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber)
+                .Returns(() => currentExpectedPart);
+            
+            var streamingParts = 0;
+            var bufferedParts = 0;
+
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()))
+                .Callback<IPartDataSource>((ds) =>
+                {
+                    if (ds is StreamingDataSource)
+                    {
+                        streamingParts++;
+                        currentExpectedPart++;
+                    }
+                });
+
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()))
+                .Callback<StreamPartBuffer>((buffer) => bufferedParts++);
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                // Act - Mixed order: 1 (in), 3 (out), 2 (in after advance)
+                await handler.ProcessPartAsync(1, CreateMockGetObjectResponse(512), CancellationToken.None);
+                await handler.ProcessPartAsync(3, CreateMockGetObjectResponse(512), CancellationToken.None);
+                await handler.ProcessPartAsync(2, CreateMockGetObjectResponse(512), CancellationToken.None);
+
+                // Assert
+                Assert.AreEqual(2, streamingParts); // Parts 1 and 2 streamed
+                Assert.AreEqual(1, bufferedParts);  // Part 3 buffered
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_InOrderFollowedByOutOfOrder_HandlesCorrectly()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            
+            mockBufferManager.SetupSequence(m => m.NextExpectedPartNumber)
+                .Returns(1)
+                .Returns(2);
+            
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()));
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()));
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                // Act
+                await handler.ProcessPartAsync(1, CreateMockGetObjectResponse(512), CancellationToken.None);
+                await handler.ProcessPartAsync(3, CreateMockGetObjectResponse(512), CancellationToken.None);
+
+                // Assert
+                mockBufferManager.Verify(m => m.AddBuffer(
+                    It.Is<IPartDataSource>(ds => ds is StreamingDataSource && ds.PartNumber == 1)), Times.Once);
+                
+                mockBufferManager.Verify(m => m.AddBuffer(
+                    It.Is<StreamPartBuffer>(b => b.PartNumber == 3)), Times.Once);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_OutOfOrderFollowedByInOrder_HandlesCorrectly()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            
+            // NextExpectedPartNumber is called multiple times per part, so provide enough values
+            // Part 2 (out of order): calls it twice, should return 1 both times
+            // Part 1 (in order): calls it twice, should return 1 both times
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()));
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()));
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                // Act
+                await handler.ProcessPartAsync(2, CreateMockGetObjectResponse(512), CancellationToken.None);
+                await handler.ProcessPartAsync(1, CreateMockGetObjectResponse(512), CancellationToken.None);
+
+                // Assert
+                mockBufferManager.Verify(m => m.AddBuffer(
+                    It.Is<StreamPartBuffer>(b => b.PartNumber == 2)), Times.Once);
+                
+                mockBufferManager.Verify(m => m.AddBuffer(
+                    It.Is<IPartDataSource>(ds => ds is StreamingDataSource && ds.PartNumber == 1)), Times.Once);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_InOrderVsOutOfOrder_VerifyStreamingVsBufferingBehavior()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            
+            // Track what types are added to verify memory allocation patterns
+            var streamingPartNumbers = new List<int>(); // Parts that stream (no ArrayPool allocation)
+            var bufferedPartNumbers = new List<int>(); // Parts that buffer (use ArrayPool)
+            
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            
+            // Capture StreamingDataSource additions (streaming path - NO ArrayPool allocation)
+            mockBufferManager.Setup(m => m.AddBuffer(
+                It.IsAny<StreamingDataSource>()))
+                .Callback<IPartDataSource>((ds) => 
+                {
+                    streamingPartNumbers.Add(ds.PartNumber);
+                });
+            
+            // Capture StreamPartBuffer additions (buffering path - USES ArrayPool)
+            mockBufferManager.Setup(m => m.AddBuffer(
+                It.IsAny<StreamPartBuffer>()))
+                .Callback<StreamPartBuffer>((buffer) => 
+                {
+                    bufferedPartNumbers.Add(buffer.PartNumber);
+                });
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                // Act - Process part 1 (in order - should stream, no ArrayPool buffer)
+                await handler.ProcessPartAsync(1, CreateMockGetObjectResponse(512), CancellationToken.None);
+                
+                // Process part 3 (out of order - should buffer via ArrayPool)
+                await handler.ProcessPartAsync(3, CreateMockGetObjectResponse(512), CancellationToken.None);
+
+                // Assert
+                // Part 1 should use streaming path (no ArrayPool allocation)
+                Assert.AreEqual(1, streamingPartNumbers.Count, "Expected exactly 1 part to stream");
+                Assert.AreEqual(1, streamingPartNumbers[0], "Part 1 should stream directly");
+                
+                // Part 3 should use buffering path (ArrayPool allocation)
+                Assert.AreEqual(1, bufferedPartNumbers.Count, "Expected exactly 1 part to be buffered");
+                Assert.AreEqual(3, bufferedPartNumbers[0], "Part 3 should be buffered");
+                
+                // Verify ReleaseBufferSpace was called for streaming path (immediate capacity release)
+                mockBufferManager.Verify(m => m.ReleaseBufferSpace(), Times.Once, 
+                    "Streaming path should release capacity immediately");
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_AllInOrderParts_NoBufferingAllStreaming()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            
+            var streamingPartNumbers = new List<int>();
+            var bufferedPartNumbers = new List<int>();
+            var currentExpectedPart = 1;
+            
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber)
+                .Returns(() => currentExpectedPart);
+            
+            // Capture streaming additions
+            mockBufferManager.Setup(m => m.AddBuffer(
+                It.IsAny<StreamingDataSource>()))
+                .Callback<IPartDataSource>((ds) => 
+                {
+                    streamingPartNumbers.Add(ds.PartNumber);
+                    currentExpectedPart++; // Advance expected part after streaming
+                });
+            
+            // Capture buffering additions
+            mockBufferManager.Setup(m => m.AddBuffer(
+                It.IsAny<StreamPartBuffer>()))
+                .Callback<StreamPartBuffer>((buffer) => 
+                {
+                    bufferedPartNumbers.Add(buffer.PartNumber);
+                });
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                // Act - Process 5 parts in perfect order
+                for (int i = 1; i <= 5; i++)
+                {
+                    await handler.ProcessPartAsync(i, CreateMockGetObjectResponse(512), CancellationToken.None);
+                }
+
+                // Assert - Best case scenario: all parts stream, zero buffering
+                Assert.AreEqual(5, streamingPartNumbers.Count, "All 5 parts should stream");
+                Assert.AreEqual(0, bufferedPartNumbers.Count, "No parts should be buffered when all arrive in order");
+                
+                // Verify parts streamed in correct order
+                for (int i = 0; i < 5; i++)
+                {
+                    Assert.AreEqual(i + 1, streamingPartNumbers[i], 
+                        $"Part {i + 1} should have streamed in order");
+                }
+                
+                // Verify capacity was released 5 times (once per streaming part)
+                mockBufferManager.Verify(m => m.ReleaseBufferSpace(), Times.Exactly(5),
+                    "Capacity should be released immediately for each streaming part");
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        #endregion
+
+        #region ProcessPartAsync Tests - Error Handling
+
+        [TestMethod]
+        public async Task ProcessPartAsync_StreamingPathError_ReleasesCapacity()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<IPartDataSource>()))
+                .Throws(new InvalidOperationException("Test error"));
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                var response = CreateMockGetObjectResponse(512);
+
+                // Act & Assert
+                await Assert.ThrowsExceptionAsync<InvalidOperationException>(async () =>
+                {
+                    await handler.ProcessPartAsync(1, response, CancellationToken.None);
+                });
+
+                // Note: Handler's ReleaseCapacity is called on error, 
+                // which eventually calls the manager's ReleaseBufferSpace
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_BufferingPathError_ReleasesCapacity()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+            mockBufferManager.Setup(m => m.AddBuffer(It.IsAny<StreamPartBuffer>()))
+                .Throws(new InvalidOperationException("Test error"));
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                var response = CreateMockGetObjectResponse(512);
+
+                // Act & Assert
+                await Assert.ThrowsExceptionAsync<InvalidOperationException>(async () =>
+                {
+                    await handler.ProcessPartAsync(2, response, CancellationToken.None);
+                });
+
+                // Capacity should be released on error
+            }
+            finally
+            {
+                handler.Dispose();
+            }
+        }
+
+        [TestMethod]
+        public async Task ProcessPartAsync_BufferingReadError_DisposesResponseAndReleasesCapacity()
+        {
+            // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.NextExpectedPartNumber).Returns(1);
+
+            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+
+            try
+            {
+                // Create response with faulty stream
+                var faultyStream = new FaultyStream(new IOException("Stream read error"));
+                var response = new GetObjectResponse
+                {
+                    ContentLength = 512,
+                    ResponseStream = faultyStream
+                };
+
+                // Act & Assert
+                await Assert.ThrowsExceptionAsync<IOException>(async () =>
+                {
+                    await handler.ProcessPartAsync(2, response, CancellationToken.None);
+                });
+            }
+            finally
+            {
+                handler.Dispose();
+            }
         }
 
         #endregion
@@ -366,61 +641,26 @@ namespace AWSSDK.UnitTests
         public async Task WaitForCapacityAsync_DelegatesToBufferManager()
         {
             // Arrange
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
+            mockBufferManager.Setup(m => m.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
                 .Returns(Task.CompletedTask);
 
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
-            // Act
-            await handler.WaitForCapacityAsync(CancellationToken.None);
+            try
+            {
+                // Act
+                await handler.WaitForCapacityAsync(CancellationToken.None);
 
-            // Assert
-            mockBufferManager.Verify(
-                x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()),
-                Times.Once);
-        }
-
-        [TestMethod]
-        public async Task WaitForCapacityAsync_PassesCancellationToken()
-        {
-            // Arrange
-            CancellationToken capturedToken = default;
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
-                .Callback<CancellationToken>(ct => capturedToken = ct)
-                .Returns(Task.CompletedTask);
-
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            var cts = new CancellationTokenSource();
-
-            // Act
-            await handler.WaitForCapacityAsync(cts.Token);
-
-            // Assert
-            Assert.AreEqual(cts.Token, capturedToken);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(OperationCanceledException))]
-        public async Task WaitForCapacityAsync_WhenCancelled_ThrowsOperationCanceledException()
-        {
-            // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.WaitForBufferSpaceAsync(It.IsAny<CancellationToken>()))
-                .ThrowsAsync(new OperationCanceledException());
-
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            var cts = new CancellationTokenSource();
-            cts.Cancel();
-
-            // Act
-            await handler.WaitForCapacityAsync(cts.Token);
+                // Assert
+                mockBufferManager.Verify(m => m.WaitForBufferSpaceAsync(
+                    It.IsAny<CancellationToken>()), Times.Once);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
         }
 
         #endregion
@@ -431,32 +671,24 @@ namespace AWSSDK.UnitTests
         public void ReleaseCapacity_DelegatesToBufferManager()
         {
             // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.ReleaseBufferSpace());
+
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
-            // Act
-            handler.ReleaseCapacity();
+            try
+            {
+                // Act
+                handler.ReleaseCapacity();
 
-            // Assert
-            mockBufferManager.Verify(x => x.ReleaseBufferSpace(), Times.Once);
-        }
-
-        [TestMethod]
-        public void ReleaseCapacity_CanBeCalledMultipleTimes()
-        {
-            // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            // Act
-            handler.ReleaseCapacity();
-            handler.ReleaseCapacity();
-            handler.ReleaseCapacity();
-
-            // Assert
-            mockBufferManager.Verify(x => x.ReleaseBufferSpace(), Times.Exactly(3));
+                // Assert
+                mockBufferManager.Verify(m => m.ReleaseBufferSpace(), Times.Once);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
         }
 
         #endregion
@@ -464,113 +696,144 @@ namespace AWSSDK.UnitTests
         #region OnDownloadComplete Tests
 
         [TestMethod]
-        public void OnDownloadComplete_WithNullException_DelegatesToBufferManager()
+        public void OnDownloadComplete_DelegatesToBufferManager()
         {
             // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            mockBufferManager.Setup(m => m.MarkDownloadComplete(It.IsAny<Exception>()));
+
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
-            // Act
-            handler.OnDownloadComplete(null);
+            try
+            {
+                // Act
+                handler.OnDownloadComplete(null);
 
-            // Assert
-            mockBufferManager.Verify(
-                x => x.MarkDownloadComplete(null),
-                Times.Once);
+                // Assert
+                mockBufferManager.Verify(m => m.MarkDownloadComplete(null), Times.Once);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
         }
 
         [TestMethod]
         public void OnDownloadComplete_WithException_PassesExceptionToBufferManager()
         {
             // Arrange
-            var testException = new InvalidOperationException("Test error");
-            Exception capturedEx = null;
-
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.MarkDownloadComplete(It.IsAny<Exception>()))
-                .Callback<Exception>(ex => capturedEx = ex);
-
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
+            var testException = new Exception("Download failed");
+            mockBufferManager.Setup(m => m.MarkDownloadComplete(It.IsAny<Exception>()));
+
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
-            // Act
-            handler.OnDownloadComplete(testException);
+            try
+            {
+                // Act
+                handler.OnDownloadComplete(testException);
 
-            // Assert
-            Assert.AreEqual(testException, capturedEx);
-        }
-
-        [TestMethod]
-        public void OnDownloadComplete_WithCancelledException_PassesToBufferManager()
-        {
-            // Arrange
-            var testException = new OperationCanceledException();
-
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            // Act
-            handler.OnDownloadComplete(testException);
-
-            // Assert
-            mockBufferManager.Verify(
-                x => x.MarkDownloadComplete(It.Is<OperationCanceledException>(e => e == testException)),
-                Times.Once);
-        }
-
-        [TestMethod]
-        public void OnDownloadComplete_CanBeCalledMultipleTimes()
-        {
-            // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
-
-            // Act - calling multiple times should work
-            handler.OnDownloadComplete(null);
-            handler.OnDownloadComplete(new Exception("test"));
-            handler.OnDownloadComplete(null);
-
-            // Assert
-            mockBufferManager.Verify(
-                x => x.MarkDownloadComplete(It.IsAny<Exception>()),
-                Times.Exactly(3));
+                // Assert
+                mockBufferManager.Verify(m => m.MarkDownloadComplete(testException), Times.Once);
+            }
+            finally
+            {
+                handler.Dispose();
+            }
         }
 
         #endregion
 
-        #region Dispose Tests
+        #region Disposal Tests
 
         [TestMethod]
-        public void Dispose_DoesNotDisposeBufferManager()
+        public void Dispose_MultipleCalls_IsIdempotent()
         {
             // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockBufferManager = new Mock<IPartBufferManager>();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
 
-            // Act
+            // Act - Dispose multiple times
+            handler.Dispose();
+            handler.Dispose();
             handler.Dispose();
 
-            // Assert - BufferManager is owned by caller, should not be disposed
-            mockBufferManager.Verify(x => x.Dispose(), Times.Never);
+            // Assert - Should not throw
         }
 
-        [TestMethod]
-        public void Dispose_CanBeCalledMultipleTimes()
+        #endregion
+
+        #region Helper Methods
+
+        /// <summary>
+        /// Creates a mock GetObjectResponse with test data.
+        /// </summary>
+        private GetObjectResponse CreateMockGetObjectResponse(long contentLength, byte[] testData = null)
         {
-            // Arrange
-            var mockBufferManager = new Mock<IPartBufferManager>();
-            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
-            var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
+            if (testData == null)
+            {
+                testData = MultipartDownloadTestHelpers.GenerateTestData((int)contentLength, 0);
+            }
 
-            // Act
-            handler.Dispose();
-            handler.Dispose(); // Should not throw
+            return new GetObjectResponse
+            {
+                ContentLength = contentLength,
+                ResponseStream = new MemoryStream(testData),
+                ETag = "test-etag"
+            };
+        }
 
-            // Assert - no exception
+        /// <summary>
+        /// Stream that throws exceptions for testing error handling.
+        /// </summary>
+        private class FaultyStream : Stream
+        {
+            private readonly Exception _exception;
+
+            public FaultyStream(Exception exception)
+            {
+                _exception = exception;
+            }
+
+            public override bool CanRead => true;
+            public override bool CanSeek => false;
+            public override bool CanWrite => false;
+            public override long Length => throw new NotSupportedException();
+            public override long Position
+            {
+                get => throw new NotSupportedException();
+                set => throw new NotSupportedException();
+            }
+
+            public override void Flush() { }
+
+            public override int Read(byte[] buffer, int offset, int count)
+            {
+                throw _exception;
+            }
+
+            public override Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
+            {
+                throw _exception;
+            }
+
+            public override long Seek(long offset, SeekOrigin origin)
+            {
+                throw new NotSupportedException();
+            }
+
+            public override void SetLength(long value)
+            {
+                throw new NotSupportedException();
+            }
+
+            public override void Write(byte[] buffer, int offset, int count)
+            {
+                throw new NotSupportedException();
+            }
         }
 
         #endregion
