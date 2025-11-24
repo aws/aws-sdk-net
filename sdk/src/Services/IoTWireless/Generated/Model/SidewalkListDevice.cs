@@ -37,6 +37,7 @@ namespace Amazon.IoTWireless.Model
         private string _amazonId;
         private List<CertificateList> _deviceCertificates = AWSConfigs.InitializeCollections ? new List<CertificateList>() : null;
         private string _deviceProfileId;
+        private SidewalkPositioning _positioning;
         private string _sidewalkId;
         private string _sidewalkManufacturingSn;
         private WirelessDeviceSidewalkStatus _status;
@@ -100,6 +101,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDeviceProfileId()
         {
             return this._deviceProfileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Positioning. 
+        /// <para>
+        /// The Positioning object of the Sidewalk device.
+        /// </para>
+        /// </summary>
+        public SidewalkPositioning Positioning
+        {
+            get { return this._positioning; }
+            set { this._positioning = value; }
+        }
+
+        // Check to see if Positioning property is set
+        internal bool IsSetPositioning()
+        {
+            return this._positioning != null;
         }
 
         /// <summary>

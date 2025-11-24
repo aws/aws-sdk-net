@@ -43,9 +43,11 @@ namespace Amazon.APIGateway.Model
         private string _credentials;
         private string _httpMethod;
         private Dictionary<string, IntegrationResponse> _integrationResponses = AWSConfigs.InitializeCollections ? new Dictionary<string, IntegrationResponse>() : null;
+        private string _integrationTarget;
         private string _passthroughBehavior;
         private Dictionary<string, string> _requestParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Dictionary<string, string> _requestTemplates = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private ResponseTransferMode _responseTransferMode;
         private int? _timeoutInMillis;
         private TlsConfig _tlsConfig;
         private IntegrationType _type;
@@ -226,6 +228,24 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IntegrationTarget. 
+        /// <para>
+        ///  The ALB or NLB listener to send the request to. 
+        /// </para>
+        /// </summary>
+        public string IntegrationTarget
+        {
+            get { return this._integrationTarget; }
+            set { this._integrationTarget = value; }
+        }
+
+        // Check to see if IntegrationTarget property is set
+        internal bool IsSetIntegrationTarget()
+        {
+            return this._integrationTarget != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PassthroughBehavior. 
         /// <para>
         /// Specifies how the method request body of an unmapped content type will be passed through
@@ -310,6 +330,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetRequestTemplates()
         {
             return this._requestTemplates != null && (this._requestTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseTransferMode. 
+        /// <para>
+        ///  The response transfer mode of the integration. 
+        /// </para>
+        /// </summary>
+        public ResponseTransferMode ResponseTransferMode
+        {
+            get { return this._responseTransferMode; }
+            set { this._responseTransferMode = value; }
+        }
+
+        // Check to see if ResponseTransferMode property is set
+        internal bool IsSetResponseTransferMode()
+        {
+            return this._responseTransferMode != null;
         }
 
         /// <summary>

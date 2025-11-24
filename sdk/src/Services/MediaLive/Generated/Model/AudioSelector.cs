@@ -42,7 +42,7 @@ namespace Amazon.MediaLive.Model
         /// will use this name to uniquely identify this Selector.  Selector names should be unique
         /// per input.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

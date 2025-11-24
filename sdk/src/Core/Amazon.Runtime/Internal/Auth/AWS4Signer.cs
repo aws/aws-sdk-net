@@ -64,7 +64,9 @@ namespace Amazon.Runtime.Internal.Auth
             HeaderKeys.XAmznTraceIdHeader,
             HeaderKeys.TransferEncodingHeader,
             HeaderKeys.AmzSdkInvocationId,
-            HeaderKeys.AmzSdkRequest
+            HeaderKeys.AmzSdkRequest,
+            HeaderKeys.UserAgentHeader,
+            HeaderKeys.XAmzUserAgentHeader
         };
 
         public AWS4Signer()
@@ -549,15 +551,22 @@ namespace Amazon.Runtime.Internal.Auth
         }
 
         /// <summary>
-        /// Appends "aws-chunked" to the Content-Encoding header if it's already set
+        /// Adds <see cref="AWSChunkedEncoding"/> to the <see cref="HeaderKeys.ContentEncodingHeader"/> (appending to the
+        /// existing value if it's already set).
         /// </summary>
         /// <param name="request">Request to modify</param>
         private static void SetContentEncodingHeader(IRequest request)
         {
-            if (request.Headers.TryGetValue(HeaderKeys.ContentEncodingHeader, out var originalEncoding) &&
-                !originalEncoding.Contains(AWSChunkedEncoding))
+            if (request.Headers.TryGetValue(HeaderKeys.ContentEncodingHeader, out var originalEncoding))
             {
-                request.Headers[HeaderKeys.ContentEncodingHeader] = $"{originalEncoding}, {AWSChunkedEncoding}";
+                if (!originalEncoding.Contains(AWSChunkedEncoding))
+                {
+                    request.Headers[HeaderKeys.ContentEncodingHeader] = $"{originalEncoding}, {AWSChunkedEncoding}";
+                }
+            }
+            else
+            {
+                request.Headers[HeaderKeys.ContentEncodingHeader] = AWSChunkedEncoding;
             }
         }
 

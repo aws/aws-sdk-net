@@ -50,8 +50,41 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class ServerSideEncryptionRule
     {
+        private BlockedEncryptionTypes _blockedEncryptionTypes;
         private bool? _bucketKeyEnabled;
         private ServerSideEncryptionByDefault _serverSideEncryptionByDefault;
+
+        /// <summary>
+        /// Gets and sets the property BlockedEncryptionTypes. 
+        /// <para>
+        /// A bucket-level setting for Amazon S3 general purpose buckets used to prevent the upload
+        /// of new objects encrypted with the specified server-side encryption type. For example,
+        /// blocking an encryption type will block <c>PutObject</c>, <c>CopyObject</c>, <c>PostObject</c>,
+        /// multipart upload, and replication requests to the bucket for objects with the specified
+        /// encryption type. However, you can continue to read and list any pre-existing objects
+        /// already encrypted with the specified encryption type. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/userguide/block-encryption-type.html">Blocking
+        /// an encryption type for a general purpose bucket</a>. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, this parameter only supports blocking or unblocking Server Side Encryption
+        /// with Customer Provided Keys (SSE-C). For more information about SSE-C, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">Using
+        /// server-side encryption with customer-provided keys (SSE-C)</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public BlockedEncryptionTypes BlockedEncryptionTypes
+        {
+            get { return this._blockedEncryptionTypes; }
+            set { this._blockedEncryptionTypes = value; }
+        }
+
+        // Check to see if BlockedEncryptionTypes property is set
+        internal bool IsSetBlockedEncryptionTypes()
+        {
+            return this._blockedEncryptionTypes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BucketKeyEnabled. 

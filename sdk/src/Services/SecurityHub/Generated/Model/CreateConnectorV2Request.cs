@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the CreateConnectorV2 operation.
     /// Grants permission to create a connectorV2 based on input parameters. This API is in
-    /// preview release and subject to change.
+    /// public preview and subject to change.
     /// </summary>
     public partial class CreateConnectorV2Request : AmazonSecurityHubRequest
     {

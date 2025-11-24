@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
-    /// AWS CodeStar Notifications can't create the notification rule because you do not have
+    /// CodeStar Notifications can't create the notification rule because you do not have
     /// sufficient permissions.
     /// </summary>
     #if !NETSTANDARD

@@ -65,6 +65,8 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetId())
                 throw new AmazonAccessAnalyzerException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
+            if (string.IsNullOrEmpty(publicRequest.AnalyzerArn))
+                throw new AmazonAccessAnalyzerException("Request object does not have required field AnalyzerArn set");
             
             if (publicRequest.IsSetAnalyzerArn())
                 request.Parameters.Add("analyzerArn", StringUtils.FromString(publicRequest.AnalyzerArn));

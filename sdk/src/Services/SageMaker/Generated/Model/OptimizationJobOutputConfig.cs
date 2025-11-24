@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _kmsKeyId;
         private string _s3OutputLocation;
+        private OptimizationSageMakerModel _sageMakerModel;
 
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
@@ -77,6 +78,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetS3OutputLocation()
         {
             return this._s3OutputLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SageMakerModel. 
+        /// <para>
+        /// The name of a SageMaker model to use as the output destination for an optimization
+        /// job.
+        /// </para>
+        /// </summary>
+        public OptimizationSageMakerModel SageMakerModel
+        {
+            get { return this._sageMakerModel; }
+            set { this._sageMakerModel = value; }
+        }
+
+        // Check to see if SageMakerModel property is set
+        internal bool IsSetSageMakerModel()
+        {
+            return this._sageMakerModel != null;
         }
 
     }

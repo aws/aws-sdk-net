@@ -751,9 +751,17 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         public static readonly DkimSigningAttributesOrigin AWS_SES_AP_SOUTHEAST_3 = new DkimSigningAttributesOrigin("AWS_SES_AP_SOUTHEAST_3");
         /// <summary>
+        /// Constant AWS_SES_AP_SOUTHEAST_5 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_AP_SOUTHEAST_5 = new DkimSigningAttributesOrigin("AWS_SES_AP_SOUTHEAST_5");
+        /// <summary>
         /// Constant AWS_SES_CA_CENTRAL_1 for DkimSigningAttributesOrigin
         /// </summary>
         public static readonly DkimSigningAttributesOrigin AWS_SES_CA_CENTRAL_1 = new DkimSigningAttributesOrigin("AWS_SES_CA_CENTRAL_1");
+        /// <summary>
+        /// Constant AWS_SES_CA_WEST_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_CA_WEST_1 = new DkimSigningAttributesOrigin("AWS_SES_CA_WEST_1");
         /// <summary>
         /// Constant AWS_SES_EU_CENTRAL_1 for DkimSigningAttributesOrigin
         /// </summary>

@@ -28,6 +28,46 @@ namespace Amazon.ApiGatewayV2.Model
     {
 
         /// <summary>
+        /// Paginator for ListPortalProducts operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPortalProductsPaginator ListPortalProducts(ListPortalProductsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPortals operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPortalsPaginator ListPortals(ListPortalsRequest request);
+
+        /// <summary>
+        /// Paginator for ListProductPages operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListProductPagesPaginator ListProductPages(ListProductPagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListProductRestEndpointPages operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListProductRestEndpointPagesPaginator ListProductRestEndpointPages(ListProductRestEndpointPagesRequest request);
+
+        /// <summary>
         /// Paginator for ListRoutingRules operation
         ///</summary>
         [AWSPaginator(

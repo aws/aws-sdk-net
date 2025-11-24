@@ -60,9 +60,18 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriodValue. 
         /// <para>
-        /// The period value for which the retention rule is to retain resources. The period is
-        /// measured using the unit specified for <b>RetentionPeriodUnit</b>.
+        /// The period value for which the retention rule is to retain resources, measured in
+        /// days. The supported retention periods are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// EBS volumes: 1 - 7 days
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EBS snapshots and EBS-backed AMIs: 1 - 365 days
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3650)]
         public int? RetentionPeriodValue

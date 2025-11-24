@@ -36,6 +36,8 @@ namespace Amazon.EC2.Model
     {
         private string _allocationId;
         private string _associationId;
+        private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _failureMessage;
         private bool? _isPrimary;
         private string _networkInterfaceId;
@@ -79,6 +81,45 @@ namespace Amazon.EC2.Model
         internal bool IsSetAssociationId()
         {
             return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The Availability Zone where this Elastic IP address (EIP) is being used to handle
+        /// outbound NAT traffic.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone where this Elastic IP address (EIP) is being used
+        /// to handle outbound NAT traffic. Use this instead of AvailabilityZone for consistent
+        /// identification of AZs across Amazon Web Services Regions.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>

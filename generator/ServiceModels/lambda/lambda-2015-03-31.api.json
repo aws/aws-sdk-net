@@ -611,6 +611,7 @@
         {"shape":"RequestTooLargeException"},
         {"shape":"KMSDisabledException"},
         {"shape":"UnsupportedMediaTypeException"},
+        {"shape":"SerializedRequestEntityTooLargeException"},
         {"shape":"InvalidRuntimeException"},
         {"shape":"EC2UnexpectedException"},
         {"shape":"InvalidSubnetIDException"},
@@ -671,6 +672,7 @@
         {"shape":"RequestTooLargeException"},
         {"shape":"KMSDisabledException"},
         {"shape":"UnsupportedMediaTypeException"},
+        {"shape":"SerializedRequestEntityTooLargeException"},
         {"shape":"InvalidRuntimeException"},
         {"shape":"EC2UnexpectedException"},
         {"shape":"InvalidSubnetIDException"},
@@ -1652,7 +1654,8 @@
         "Architectures":{"shape":"ArchitecturesList"},
         "EphemeralStorage":{"shape":"EphemeralStorage"},
         "SnapStart":{"shape":"SnapStart"},
-        "LoggingConfig":{"shape":"LoggingConfig"}
+        "LoggingConfig":{"shape":"LoggingConfig"},
+        "TenancyConfig":{"shape":"TenancyConfig"}
       }
     },
     "CreateFunctionUrlConfigRequest":{
@@ -1869,7 +1872,7 @@
       "type":"string",
       "max":350,
       "min":0,
-      "pattern":"$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)"
+      "pattern":"$|kafka://([^.]([a-zA-Z0-9\\-_.]{0,248}))|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)"
     },
     "DestinationConfig":{
       "type":"structure",
@@ -2259,7 +2262,8 @@
         "EphemeralStorage":{"shape":"EphemeralStorage"},
         "SnapStart":{"shape":"SnapStartResponse"},
         "RuntimeVersionConfig":{"shape":"RuntimeVersionConfig"},
-        "LoggingConfig":{"shape":"LoggingConfig"}
+        "LoggingConfig":{"shape":"LoggingConfig"},
+        "TenancyConfig":{"shape":"TenancyConfig"}
       }
     },
     "FunctionEventInvokeConfig":{
@@ -2843,6 +2847,11 @@
           "shape":"Qualifier",
           "location":"querystring",
           "locationName":"Qualifier"
+        },
+        "TenantId":{
+          "shape":"TenantId",
+          "location":"header",
+          "locationName":"X-Amz-Tenant-Id"
         }
       },
       "payload":"Payload"
@@ -2963,7 +2972,12 @@
           "location":"querystring",
           "locationName":"Qualifier"
         },
-        "Payload":{"shape":"Blob"}
+        "Payload":{"shape":"Blob"},
+        "TenantId":{
+          "shape":"TenantId",
+          "location":"header",
+          "locationName":"X-Amz-Tenant-Id"
+        }
       },
       "payload":"Payload"
     },
@@ -3852,8 +3866,15 @@
       "type":"structure",
       "members":{
         "MinimumPollers":{"shape":"MinimumNumberOfPollers"},
-        "MaximumPollers":{"shape":"MaximumNumberOfPollers"}
+        "MaximumPollers":{"shape":"MaximumNumberOfPollers"},
+        "PollerGroupName":{"shape":"ProvisionedPollerGroupName"}
       }
+    },
+    "ProvisionedPollerGroupName":{
+      "type":"string",
+      "max":128,
+      "min":0,
+      "pattern":"[a-zA-Z0-9-_]*"
     },
     "PublishLayerVersionRequest":{
       "type":"structure",
@@ -4265,7 +4286,10 @@
         "python3.12",
         "java21",
         "python3.13",
-        "nodejs22.x"
+        "nodejs22.x",
+        "nodejs24.x",
+        "python3.14",
+        "java25"
       ]
     },
     "RuntimeVersionArn":{
@@ -4346,6 +4370,18 @@
     "SensitiveString":{
       "type":"string",
       "sensitive":true
+    },
+    "SerializedRequestEntityTooLargeException":{
+      "type":"structure",
+      "members":{
+        "Type":{"shape":"String"},
+        "message":{"shape":"String"}
+      },
+      "error":{
+        "httpStatusCode":413,
+        "senderFault":true
+      },
+      "exception":true
     },
     "ServiceException":{
       "type":"structure",
@@ -4589,6 +4625,23 @@
       "max":1000,
       "min":84,
       "pattern":".*"
+    },
+    "TenancyConfig":{
+      "type":"structure",
+      "required":["TenantIsolationMode"],
+      "members":{
+        "TenantIsolationMode":{"shape":"TenantIsolationMode"}
+      }
+    },
+    "TenantId":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"[a-zA-Z0-9\\._:\\/=+\\-@ ]+"
+    },
+    "TenantIsolationMode":{
+      "type":"string",
+      "enum":["PER_TENANT"]
     },
     "ThrottleReason":{
       "type":"string",

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Object stored in S3 containing ephemeris data.
+    /// Object stored in Amazon S3 containing ephemeris data.
     /// </summary>
     public partial class S3Object
     {
@@ -79,7 +79,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// For versioned S3 objects, the version to use for the ephemeris.
+        /// For versioned Amazon S3 objects, the version to use for the ephemeris.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

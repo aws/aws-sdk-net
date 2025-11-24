@@ -75,6 +75,52 @@ namespace Amazon.GeoMaps
 
 
     /// <summary>
+    /// Constants used for properties of type ContourDensity.
+    /// </summary>
+    public class ContourDensity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Medium for ContourDensity
+        /// </summary>
+        public static readonly ContourDensity Medium = new ContourDensity("Medium");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContourDensity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContourDensity FindValue(string value)
+        {
+            return FindValue<ContourDensity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContourDensity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LabelSize.
     /// </summary>
     public class LabelSize : ConstantClass
@@ -334,6 +380,206 @@ namespace Amazon.GeoMaps
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StaticMapStyle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Terrain.
+    /// </summary>
+    public class Terrain : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Hillshade for Terrain
+        /// </summary>
+        public static readonly Terrain Hillshade = new Terrain("Hillshade");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Terrain(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Terrain FindValue(string value)
+        {
+            return FindValue<Terrain>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Terrain(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TileAdditionalFeature.
+    /// </summary>
+    public class TileAdditionalFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ContourLines for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature ContourLines = new TileAdditionalFeature("ContourLines");
+        /// <summary>
+        /// Constant Hillshade for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature Hillshade = new TileAdditionalFeature("Hillshade");
+        /// <summary>
+        /// Constant Logistics for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature Logistics = new TileAdditionalFeature("Logistics");
+        /// <summary>
+        /// Constant Transit for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature Transit = new TileAdditionalFeature("Transit");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TileAdditionalFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TileAdditionalFeature FindValue(string value)
+        {
+            return FindValue<TileAdditionalFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TileAdditionalFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Traffic.
+    /// </summary>
+    public class Traffic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for Traffic
+        /// </summary>
+        public static readonly Traffic All = new Traffic("All");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Traffic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Traffic FindValue(string value)
+        {
+            return FindValue<Traffic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Traffic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TravelMode.
+    /// </summary>
+    public class TravelMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Transit for TravelMode
+        /// </summary>
+        public static readonly TravelMode Transit = new TravelMode("Transit");
+        /// <summary>
+        /// Constant Truck for TravelMode
+        /// </summary>
+        public static readonly TravelMode Truck = new TravelMode("Truck");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TravelMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TravelMode FindValue(string value)
+        {
+            return FindValue<TravelMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TravelMode(string value)
         {
             return FindValue(value);
         }

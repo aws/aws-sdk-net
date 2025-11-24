@@ -62,6 +62,8 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-07-26";
             request.HttpMethod = "GET";
 
+            if (publicRequest.BlacklistItemNames == null)
+                throw new AmazonPinpointEmailException("Request object does not have required field BlacklistItemNames set");
             
             if (publicRequest.IsSetBlacklistItemNames())
                 request.ParameterCollection.Add("BlacklistItemNames", publicRequest.BlacklistItemNames);

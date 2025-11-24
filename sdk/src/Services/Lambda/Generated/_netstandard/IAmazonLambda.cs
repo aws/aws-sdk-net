@@ -403,8 +403,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are available only for DynamoDB and Kinesis event
-        /// sources:
+        /// The following error handling options are available for stream sources (DynamoDB, Kinesis,
+        /// Amazon MSK, and self-managed Apache Kafka):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -425,18 +425,17 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+        /// Kafka topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+        /// a destination</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
-        /// the following option is also available:
+        /// The following option is available only for DynamoDB and Kinesis event sources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
-        /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-        /// a destination</a>.
+        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -780,7 +779,12 @@ namespace Amazon.Lambda
         /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
         /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A deleted Lambda function cannot be recovered. Ensure that you specify the correct
+        /// function name and version before deleting.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
         /// For Amazon Web Services services and resources that invoke your function directly,
@@ -818,7 +822,12 @@ namespace Amazon.Lambda
         /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
         /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// A deleted Lambda function cannot be recovered. Ensure that you specify the correct
+        /// function name and version before deleting.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>.
         /// For Amazon Web Services services and resources that invoke your function directly,
@@ -1677,6 +1686,11 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
+        /// For synchronous invocations, the maximum payload size is 6 MB. For asynchronous invocations,
+        /// the maximum payload size is 1 MB.
+        /// </para>
+        ///  
+        /// <para>
         /// For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
         /// invocation</a>, details about the function response, including errors, are included
         /// in the response body and headers. For either invocation type, you can find more information
@@ -1817,6 +1831,11 @@ namespace Amazon.Lambda
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
+        /// The processed request payload exceeded the <c>Invoke</c> request body size limit for
+        /// asynchronous invocations. While the event payload may be under 1 MB, the size after
+        /// internal serialization exceeds the maximum allowed size for asynchronous invocations.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
         /// </exception>
@@ -1954,6 +1973,11 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ResourceNotReadyException">
         /// The function is inactive and its VPC connection is no longer available. Wait for the
         /// VPC connection to reestablish and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
+        /// The processed request payload exceeded the <c>Invoke</c> request body size limit for
+        /// asynchronous invocations. While the event payload may be under 1 MB, the size after
+        /// internal serialization exceeds the maximum allowed size for asynchronous invocations.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -3090,8 +3114,8 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are available only for DynamoDB and Kinesis event
-        /// sources:
+        /// The following error handling options are available for stream sources (DynamoDB, Kinesis,
+        /// Amazon MSK, and self-managed Apache Kafka):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3112,18 +3136,17 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
+        /// Kafka topic, or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
+        /// a destination</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
-        /// the following option is also available:
+        /// The following option is available only for DynamoDB and Kinesis event sources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>OnFailure</c> – Send discarded records to an Amazon SQS queue, Amazon SNS topic,
-        /// or Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-retain-records.html#invocation-async-destinations">Adding
-        /// a destination</a>.
+        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>

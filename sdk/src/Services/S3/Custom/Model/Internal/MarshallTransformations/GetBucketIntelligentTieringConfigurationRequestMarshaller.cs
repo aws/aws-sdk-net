@@ -28,49 +28,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	/// <summary>
 	/// Get InventoryConfiguration Request Marshaller
 	/// </summary>    
-	public class GetBucketIntelligentTieringConfigurationRequestMarshaller : IMarshaller<IRequest, GetBucketIntelligentTieringConfigurationRequest>, IMarshaller<IRequest, Amazon.Runtime.AmazonWebServiceRequest>
+	public partial class GetBucketIntelligentTieringConfigurationRequestMarshaller : IMarshaller<IRequest, GetBucketIntelligentTieringConfigurationRequest>, IMarshaller<IRequest, Amazon.Runtime.AmazonWebServiceRequest>
 	{
-        public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetBucketIntelligentTieringConfigurationRequest publicRequest)
         {
-            return this.Marshall((GetBucketIntelligentTieringConfigurationRequest)input);
-        }
-
-        public IRequest Marshall(GetBucketIntelligentTieringConfigurationRequest getBucketIntelligentTieringConfigurationRequest)
-        {
-            IRequest request = new DefaultRequest(getBucketIntelligentTieringConfigurationRequest, "AmazonS3");
-
-            request.Suppress404Exceptions = true;
-            request.HttpMethod = "GET";
-            
-            if (string.IsNullOrEmpty(getBucketIntelligentTieringConfigurationRequest.BucketName))
-                throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "GetBucketInventoryConfigurationRequest.BucketName");
-
-            if (getBucketIntelligentTieringConfigurationRequest.IsSetExpectedBucketOwner())
-                request.Headers.Add(S3Constants.AmzHeaderExpectedBucketOwner, S3Transforms.ToStringValue(getBucketIntelligentTieringConfigurationRequest.ExpectedBucketOwner));
-
-            request.ResourcePath = "/";
-            request.AddSubResource("intelligent-tiering");
-            request.AddSubResource("id", getBucketIntelligentTieringConfigurationRequest.IntelligentTieringId);
-            request.UseQueryString = true;
-
-            return request;
-        }
-
-        private static GetBucketIntelligentTieringConfigurationRequestMarshaller _instance;
-
-        /// <summary>
-        /// Singleton for marshaller
-        /// </summary>
-        public static GetBucketIntelligentTieringConfigurationRequestMarshaller Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new GetBucketIntelligentTieringConfigurationRequestMarshaller();
-                }
-                return _instance;
-            }
+            defaultRequest.Suppress404Exceptions = true;
         }
     }
 }

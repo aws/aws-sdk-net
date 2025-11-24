@@ -68,6 +68,17 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPreview())
+            {
+                context.Writer.WritePropertyName("preview");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PreviewConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.Preview, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetProgressive())
             {
                 context.Writer.WritePropertyName("progressive");

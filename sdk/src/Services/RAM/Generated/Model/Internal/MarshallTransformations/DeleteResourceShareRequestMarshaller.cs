@@ -65,6 +65,8 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetClientToken())
                 request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
+            if (string.IsNullOrEmpty(publicRequest.ResourceShareArn))
+                throw new AmazonRAMException("Request object does not have required field ResourceShareArn set");
             
             if (publicRequest.IsSetResourceShareArn())
                 request.Parameters.Add("resourceShareArn", StringUtils.FromString(publicRequest.ResourceShareArn));

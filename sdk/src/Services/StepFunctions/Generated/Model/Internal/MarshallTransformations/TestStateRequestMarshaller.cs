@@ -75,6 +75,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContext())
+            {
+                context.Writer.WritePropertyName("context");
+                context.Writer.WriteStringValue(publicRequest.Context);
+            }
+
             if(publicRequest.IsSetDefinition())
             {
                 context.Writer.WritePropertyName("definition");
@@ -93,6 +99,17 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.InspectionLevel);
             }
 
+            if(publicRequest.IsSetMock())
+            {
+                context.Writer.WritePropertyName("mock");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MockInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Mock, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetRevealSecrets())
             {
                 context.Writer.WritePropertyName("revealSecrets");
@@ -103,6 +120,23 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("roleArn");
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetStateConfiguration())
+            {
+                context.Writer.WritePropertyName("stateConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TestStateConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StateConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStateName())
+            {
+                context.Writer.WritePropertyName("stateName");
+                context.Writer.WriteStringValue(publicRequest.StateName);
             }
 
             if(publicRequest.IsSetVariables())

@@ -52,6 +52,9 @@ namespace Amazon.EC2.Model
         private InstanceMatchCriteria _instanceMatchCriteria;
         private CapacityReservationInstancePlatform _instancePlatform;
         private string _instanceType;
+        private bool? _interruptible;
+        private InterruptibleCapacityAllocation _interruptibleCapacityAllocation;
+        private InterruptionInfo _interruptionInfo;
         private string _outpostArn;
         private string _ownerId;
         private string _placementGroupArn;
@@ -84,7 +87,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
         /// <para>
-        /// The Availability Zone ID of the Capacity Reservation.
+        /// The ID of the Availability Zone in which the capacity is reserved.
         /// </para>
         /// </summary>
         public string AvailabilityZoneId
@@ -235,7 +238,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
-        /// The date and time at which the Capacity Reservation was created.
+        /// The date and time the Capacity Reservation was created.
         /// </para>
         /// </summary>
         public DateTime? CreateDate
@@ -294,10 +297,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        /// The date and time at which the Capacity Reservation expires. When a Capacity Reservation
-        /// expires, the reserved capacity is released and you can no longer launch instances
-        /// into it. The Capacity Reservation's state changes to <c>expired</c> when it reaches
-        /// its end date and time.
+        /// The date and time the Capacity Reservation expires. When a Capacity Reservation expires,
+        /// the reserved capacity is released and you can no longer launch instances into it.
+        /// The Capacity Reservation's state changes to <c>expired</c> when it reaches its end
+        /// date and time.
         /// </para>
         /// </summary>
         public DateTime? EndDate
@@ -431,6 +434,64 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Interruptible. 
+        /// <para>
+        ///  Indicates whether this Capacity Reservation is interruptible, meaning instances may
+        /// be terminated when the owner reclaims capacity. 
+        /// </para>
+        /// </summary>
+        public bool? Interruptible
+        {
+            get { return this._interruptible; }
+            set { this._interruptible = value; }
+        }
+
+        // Check to see if Interruptible property is set
+        internal bool IsSetInterruptible()
+        {
+            return this._interruptible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterruptibleCapacityAllocation. 
+        /// <para>
+        ///  Contains allocation details for interruptible reservations, including current allocated
+        /// instances and target instance counts within the interruptibleCapacityAllocation object.
+        /// 
+        /// </para>
+        /// </summary>
+        public InterruptibleCapacityAllocation InterruptibleCapacityAllocation
+        {
+            get { return this._interruptibleCapacityAllocation; }
+            set { this._interruptibleCapacityAllocation = value; }
+        }
+
+        // Check to see if InterruptibleCapacityAllocation property is set
+        internal bool IsSetInterruptibleCapacityAllocation()
+        {
+            return this._interruptibleCapacityAllocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterruptionInfo. 
+        /// <para>
+        ///  Information about the interruption configuration and association with the source
+        /// reservation for interruptible Capacity Reservations. 
+        /// </para>
+        /// </summary>
+        public InterruptionInfo InterruptionInfo
+        {
+            get { return this._interruptionInfo; }
+            set { this._interruptionInfo = value; }
+        }
+
+        // Check to see if InterruptionInfo property is set
+        internal bool IsSetInterruptionInfo()
+        {
+            return this._interruptionInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutpostArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
@@ -508,7 +569,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The date and time at which the Capacity Reservation was started.
+        /// The date and time the Capacity Reservation was started.
         /// </para>
         /// </summary>
         public DateTime? StartDate

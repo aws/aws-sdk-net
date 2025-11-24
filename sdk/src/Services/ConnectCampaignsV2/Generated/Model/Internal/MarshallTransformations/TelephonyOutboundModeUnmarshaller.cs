@@ -68,6 +68,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Predictive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("preview", targetDepth))
+                {
+                    var unmarshaller = PreviewConfigUnmarshaller.Instance;
+                    unmarshalledObject.Preview = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("progressive", targetDepth))
                 {
                     var unmarshaller = ProgressiveConfigUnmarshaller.Instance;

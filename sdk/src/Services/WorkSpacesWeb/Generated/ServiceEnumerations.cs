@@ -121,6 +121,156 @@ namespace Amazon.WorkSpacesWeb
 
 
     /// <summary>
+    /// Constants used for properties of type Category.
+    /// </summary>
+    public class Category : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Chat for Category
+        /// </summary>
+        public static readonly Category Chat = new Category("Chat");
+        /// <summary>
+        /// Constant CriminalActivity for Category
+        /// </summary>
+        public static readonly Category CriminalActivity = new Category("CriminalActivity");
+        /// <summary>
+        /// Constant Cults for Category
+        /// </summary>
+        public static readonly Category Cults = new Category("Cults");
+        /// <summary>
+        /// Constant DownloadSites for Category
+        /// </summary>
+        public static readonly Category DownloadSites = new Category("DownloadSites");
+        /// <summary>
+        /// Constant Gambling for Category
+        /// </summary>
+        public static readonly Category Gambling = new Category("Gambling");
+        /// <summary>
+        /// Constant Games for Category
+        /// </summary>
+        public static readonly Category Games = new Category("Games");
+        /// <summary>
+        /// Constant GenerativeAI for Category
+        /// </summary>
+        public static readonly Category GenerativeAI = new Category("GenerativeAI");
+        /// <summary>
+        /// Constant Hacking for Category
+        /// </summary>
+        public static readonly Category Hacking = new Category("Hacking");
+        /// <summary>
+        /// Constant HateAndIntolerance for Category
+        /// </summary>
+        public static readonly Category HateAndIntolerance = new Category("HateAndIntolerance");
+        /// <summary>
+        /// Constant IllegalDrug for Category
+        /// </summary>
+        public static readonly Category IllegalDrug = new Category("IllegalDrug");
+        /// <summary>
+        /// Constant IllegalSoftware for Category
+        /// </summary>
+        public static readonly Category IllegalSoftware = new Category("IllegalSoftware");
+        /// <summary>
+        /// Constant ImageSharing for Category
+        /// </summary>
+        public static readonly Category ImageSharing = new Category("ImageSharing");
+        /// <summary>
+        /// Constant InstantMessaging for Category
+        /// </summary>
+        public static readonly Category InstantMessaging = new Category("InstantMessaging");
+        /// <summary>
+        /// Constant Nudity for Category
+        /// </summary>
+        public static readonly Category Nudity = new Category("Nudity");
+        /// <summary>
+        /// Constant ParkedDomains for Category
+        /// </summary>
+        public static readonly Category ParkedDomains = new Category("ParkedDomains");
+        /// <summary>
+        /// Constant PeerToPeer for Category
+        /// </summary>
+        public static readonly Category PeerToPeer = new Category("PeerToPeer");
+        /// <summary>
+        /// Constant Pornography for Category
+        /// </summary>
+        public static readonly Category Pornography = new Category("Pornography");
+        /// <summary>
+        /// Constant ProfessionalNetwork for Category
+        /// </summary>
+        public static readonly Category ProfessionalNetwork = new Category("ProfessionalNetwork");
+        /// <summary>
+        /// Constant SchoolCheating for Category
+        /// </summary>
+        public static readonly Category SchoolCheating = new Category("SchoolCheating");
+        /// <summary>
+        /// Constant SelfHarm for Category
+        /// </summary>
+        public static readonly Category SelfHarm = new Category("SelfHarm");
+        /// <summary>
+        /// Constant SexEducation for Category
+        /// </summary>
+        public static readonly Category SexEducation = new Category("SexEducation");
+        /// <summary>
+        /// Constant SocialNetworking for Category
+        /// </summary>
+        public static readonly Category SocialNetworking = new Category("SocialNetworking");
+        /// <summary>
+        /// Constant StreamingMediaAndDownloads for Category
+        /// </summary>
+        public static readonly Category StreamingMediaAndDownloads = new Category("StreamingMediaAndDownloads");
+        /// <summary>
+        /// Constant Tasteless for Category
+        /// </summary>
+        public static readonly Category Tasteless = new Category("Tasteless");
+        /// <summary>
+        /// Constant Violence for Category
+        /// </summary>
+        public static readonly Category Violence = new Category("Violence");
+        /// <summary>
+        /// Constant Weapons for Category
+        /// </summary>
+        public static readonly Category Weapons = new Category("Weapons");
+        /// <summary>
+        /// Constant WebBasedEmail for Category
+        /// </summary>
+        public static readonly Category WebBasedEmail = new Category("WebBasedEmail");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Category(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Category FindValue(string value)
+        {
+            return FindValue<Category>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Category(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnabledType.
     /// </summary>
     public class EnabledType : ConstantClass
@@ -232,6 +382,10 @@ namespace Amazon.WorkSpacesWeb
         /// Constant TabOpen for Event
         /// </summary>
         public static readonly Event TabOpen = new Event("TabOpen");
+        /// <summary>
+        /// Constant UrlBlockByContentFilter for Event
+        /// </summary>
+        public static readonly Event UrlBlockByContentFilter = new Event("UrlBlockByContentFilter");
         /// <summary>
         /// Constant UrlLoad for Event
         /// </summary>

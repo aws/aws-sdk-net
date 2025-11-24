@@ -88,6 +88,56 @@ namespace Amazon.ApplicationSignals.Model
         /// The entity (service or resource) that was affected by this change event, including
         /// its key attributes.
         /// </para>
+        ///  
+        /// <para>
+        /// This is a string-to-string map. It can include the following fields.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Type</c> designates the type of object this is.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ResourceType</c> specifies the type of the resource. This field is used only when
+        /// the value of the <c>Type</c> field is <c>Resource</c> or <c>AWS::Resource</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Name</c> specifies the name of the object. This is used only if the value of the
+        /// <c>Type</c> field is <c>Service</c>, <c>RemoteService</c>, or <c>AWS::Service</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Identifier</c> identifies the resource objects of this resource. This is used
+        /// only if the value of the <c>Type</c> field is <c>Resource</c> or <c>AWS::Resource</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Environment</c> specifies the location where this object is hosted, or what it
+        /// belongs to.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AwsAccountId</c> specifies the account where this object is in.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Below is an example of a service.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>{ "Type": "Service", "Name": "visits-service", "Environment": "petclinic-test"
+        /// }</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Below is an example of a resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>{ "Type": "AWS::Resource", "ResourceType": "AWS::DynamoDB::Table", "Identifier":
+        /// "Customers" }</c> 
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -110,7 +160,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// A unique identifier for this change event.
+        /// A unique identifier for this change event. For CloudTrail-based events, this is the
+        /// CloudTrail event id. For other events, this will be <c>Unknown</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

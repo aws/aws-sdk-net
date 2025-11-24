@@ -31,11 +31,12 @@ namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
     /// A structure that contains the result of an automated audit analysis, including the
-    /// auditor name, description of findings, and severity level.
+    /// auditor name, description of findings, additional data, and severity level.
     /// </summary>
     public partial class AuditorResult
     {
         private string _auditor;
+        private Dictionary<string, string> _data = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _description;
         private Severity _severity;
 
@@ -55,6 +56,30 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetAuditor()
         {
             return this._auditor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// This is a string-to-string map. It contains additional data about the result of an
+        /// automated audit analysis.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Data
+        {
+            get { return this._data; }
+            set { this._data = value; }
+        }
+
+        // Check to see if Data property is set
+        internal bool IsSetData()
+        {
+            return this._data != null && (this._data.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

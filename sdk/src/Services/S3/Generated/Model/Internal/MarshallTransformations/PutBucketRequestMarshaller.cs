@@ -56,12 +56,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutBucketRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
-        
-            if (publicRequest.IsSetCannedACL()) 
-            {
-                request.Headers["x-amz-acl"] = publicRequest.CannedACL;
-            }
         
             if (publicRequest.IsSetObjectLockEnabledForBucket()) 
             {
@@ -78,9 +74,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
+                string regionCode = CustomRegionHandling(xmlWriter, publicRequest);
                 if (publicRequest.IsSetPutBucketConfiguration())
                 {
-                    xmlWriter.WriteStartElement("CreateBucketConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    if (regionCode == null)
+                        xmlWriter.WriteStartElement("CreateBucketConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
                     if (publicRequest.PutBucketConfiguration.BucketInfo != null)
                     {
                         xmlWriter.WriteStartElement("Bucket");
@@ -157,5 +155,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketRequest publicRequest);
     }    
 }

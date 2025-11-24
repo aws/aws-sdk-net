@@ -33,7 +33,7 @@ namespace Amazon.AppRegistry
     public partial class AmazonAppRegistryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Service Catalog AppRegistry", "4.0.1.8");
+            InternalSDKUtils.BuildUserAgentString("Service Catalog AppRegistry", "4.0.2.5");
 
         private static readonly AmazonAppRegistryEndpointResolver EndpointResolver =
             new AmazonAppRegistryEndpointResolver();

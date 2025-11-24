@@ -46,6 +46,17 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetActionabilities())
+            {
+                context.Writer.WritePropertyName("actionabilities");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectActionabilitiesListValue in requestObject.Actionabilities)
+                {
+                        context.Writer.WriteStringValue(requestObjectActionabilitiesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetAwsAccountIds())
             {
                 context.Writer.WritePropertyName("awsAccountIds");
@@ -132,6 +143,17 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.LastUpdatedTime, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPersonas())
+            {
+                context.Writer.WritePropertyName("personas");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPersonasListValue in requestObject.Personas)
+                {
+                        context.Writer.WriteStringValue(requestObjectPersonasListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRegions())

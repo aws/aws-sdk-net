@@ -56,10 +56,13 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(AssociateAliasRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             if (!publicRequest.IsSetTargetDistributionId())
                 throw new AmazonCloudFrontException("Request object does not have required field TargetDistributionId set");
             request.AddPathResource("{TargetDistributionId}", StringUtils.FromString(publicRequest.TargetDistributionId));
+            if (string.IsNullOrEmpty(publicRequest.Alias))
+                throw new AmazonCloudFrontException("Request object does not have required field Alias set");
             
             if (publicRequest.IsSetAlias())
                 request.Parameters.Add("Alias", StringUtils.FromString(publicRequest.Alias));
@@ -89,5 +92,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, AssociateAliasRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, AssociateAliasRequest publicRequest);
     }    
 }

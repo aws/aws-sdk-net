@@ -37,7 +37,9 @@ namespace Amazon.LakeFormation.Model
     /// 
     ///  
     /// <para>
-    /// This operation returns only those permissions that have been explicitly granted.
+    /// This operation returns only those permissions that have been explicitly granted. If
+    /// both <c>Principal</c> and <c>Resource</c> parameters are provided, the response returns
+    /// effective permissions rather than the explicitly granted permissions.
     /// </para>
     ///  
     /// <para>
@@ -79,7 +81,14 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property IncludeRelated. 
         /// <para>
-        /// Indicates that related permissions should be included in the results.
+        /// Indicates that related permissions should be included in the results when listing
+        /// permissions on a table resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set the field to <c>TRUE</c> to show the cell filters on a table resource. Default
+        /// is <c>FALSE</c>. The Principal parameter must not be specified when requesting cell
+        /// filter information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

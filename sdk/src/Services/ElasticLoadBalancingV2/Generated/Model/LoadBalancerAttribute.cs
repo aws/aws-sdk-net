@@ -125,6 +125,23 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>health_check_logs.s3.enabled</c> - Indicates whether health check logs are enabled.
+        /// The value is <c>true</c> or <c>false</c>. The default is <c>false</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>health_check_logs.s3.bucket</c> - The name of the S3 bucket for the health check
+        /// logs. This attribute is required if health check logs are enabled. The bucket must
+        /// exist in the same region as the load balancer and have a bucket policy that grants
+        /// Elastic Load Balancing permissions to write to the bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>health_check_logs.s3.prefix</c> - The prefix for the location in the S3 bucket
+        /// for the health check logs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>routing.http.desync_mitigation_mode</c> - Determines how the load balancer handles
         /// requests that might pose a security risk to your application. The possible values
         /// are <c>monitor</c>, <c>defensive</c>, and <c>strictest</c>. The default is <c>defensive</c>.
@@ -184,10 +201,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <c>routing.http2.enabled</c> - Indicates whether HTTP/2 is enabled. The possible
-        /// values are <c>true</c> and <c>false</c>. The default is <c>true</c>. Elastic Load
-        /// Balancing requires that message header names contain only alphanumeric characters
-        /// and hyphens.
+        ///  <c>routing.http2.enabled</c> - Indicates whether clients can connect to the load
+        /// balancer using HTTP/2. If <c>true</c>, clients can connect using HTTP/2 or HTTP/1.1.
+        /// However, all client requests are subject to the stricter HTTP/2 header validation
+        /// rules. For example, message header names must contain only alphanumeric characters
+        /// and hyphens. If <c>false</c>, clients must connect using HTTP/1.1. The default is
+        /// <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

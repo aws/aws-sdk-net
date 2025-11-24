@@ -224,6 +224,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("OutboundStrategy", targetDepth))
+                {
+                    var unmarshaller = OutboundStrategyUnmarshaller.Instance;
+                    unmarshalledObject.OutboundStrategy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PreviousContactId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -266,6 +272,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.RelatedContactId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RingStartTimestamp", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RingStartTimestamp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RoutingCriteria", targetDepth))
                 {
                     var unmarshaller = RoutingCriteriaUnmarshaller.Instance;
@@ -294,6 +306,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TaskTemplateInfo", targetDepth))
+                {
+                    var unmarshaller = TaskTemplateInfoV2Unmarshaller.Instance;
+                    unmarshalledObject.TaskTemplateInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalPauseCount", targetDepth))

@@ -62,6 +62,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceArn))
+                throw new AmazonMacie2Exception("Request object does not have required field ResourceArn set");
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));

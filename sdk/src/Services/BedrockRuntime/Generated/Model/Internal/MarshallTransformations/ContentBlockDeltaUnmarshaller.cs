@@ -74,6 +74,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("toolResult", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ToolResultBlockDelta, ToolResultBlockDeltaUnmarshaller>(ToolResultBlockDeltaUnmarshaller.Instance);
+                    unmarshalledObject.ToolResult = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("toolUse", targetDepth))
                 {
                     var unmarshaller = ToolUseBlockDeltaUnmarshaller.Instance;

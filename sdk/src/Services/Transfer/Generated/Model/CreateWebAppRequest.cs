@@ -32,11 +32,18 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the CreateWebApp operation.
     /// Creates a web app based on specified parameters, and returns the ID for the new web
-    /// app.
+    /// app. You can configure the web app to be publicly accessible or hosted within a VPC.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+    /// a Transfer Family web app in a VPC</a>.
+    /// </para>
     /// </summary>
     public partial class CreateWebAppRequest : AmazonTransferRequest
     {
         private string _accessEndpoint;
+        private WebAppEndpointDetails _endpointDetails;
         private WebAppIdentityProviderDetails _identityProviderDetails;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private WebAppEndpointPolicy _webAppEndpointPolicy;
@@ -67,6 +74,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetAccessEndpoint()
         {
             return this._accessEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointDetails. 
+        /// <para>
+        /// The endpoint configuration for the web app. You can specify whether the web app endpoint
+        /// is publicly accessible or hosted within a VPC.
+        /// </para>
+        /// </summary>
+        public WebAppEndpointDetails EndpointDetails
+        {
+            get { return this._endpointDetails; }
+            set { this._endpointDetails = value; }
+        }
+
+        // Check to see if EndpointDetails property is set
+        internal bool IsSetEndpointDetails()
+        {
+            return this._endpointDetails != null;
         }
 
         /// <summary>

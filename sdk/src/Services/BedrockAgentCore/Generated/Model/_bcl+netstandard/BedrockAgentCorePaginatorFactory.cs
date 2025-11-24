@@ -53,6 +53,14 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Paginator for ListMemoryExtractionJobs operation
+        ///</summary>
+        public IListMemoryExtractionJobsPaginator ListMemoryExtractionJobs(ListMemoryExtractionJobsRequest request) 
+        {
+            return new ListMemoryExtractionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMemoryRecords operation
         ///</summary>
         public IListMemoryRecordsPaginator ListMemoryRecords(ListMemoryRecordsRequest request) 

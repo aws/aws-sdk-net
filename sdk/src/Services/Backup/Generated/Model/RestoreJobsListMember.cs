@@ -36,6 +36,7 @@ namespace Amazon.Backup.Model
     {
         private string _accountId;
         private long? _backupSizeInBytes;
+        private string _backupVaultArn;
         private DateTime? _completionDate;
         private RestoreJobCreator _createdBy;
         private string _createdResourceArn;
@@ -44,11 +45,14 @@ namespace Amazon.Backup.Model
         private string _deletionStatusMessage;
         private long? _expectedCompletionTimeMinutes;
         private string _iamRoleArn;
+        private bool? _isParent;
+        private string _parentJobId;
         private string _percentDone;
         private string _recoveryPointArn;
         private DateTime? _recoveryPointCreationDate;
         private string _resourceType;
         private string _restoreJobId;
+        private string _sourceResourceArn;
         private RestoreJobStatus _status;
         private string _statusMessage;
         private RestoreValidationStatus _validationStatus;
@@ -88,6 +92,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetBackupSizeInBytes()
         {
             return this._backupSizeInBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupVaultArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the backup vault containing the recovery point being
+        /// restored. This helps identify vault access policies and permissions.
+        /// </para>
+        /// </summary>
+        public string BackupVaultArn
+        {
+            get { return this._backupVaultArn; }
+            set { this._backupVaultArn = value; }
+        }
+
+        // Check to see if BackupVaultArn property is set
+        internal bool IsSetBackupVaultArn()
+        {
+            return this._backupVaultArn != null;
         }
 
         /// <summary>
@@ -243,6 +266,43 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsParent. 
+        /// <para>
+        /// This is a boolean value indicating whether the restore job is a parent (composite)
+        /// restore job.
+        /// </para>
+        /// </summary>
+        public bool? IsParent
+        {
+            get { return this._isParent; }
+            set { this._isParent = value; }
+        }
+
+        // Check to see if IsParent property is set
+        internal bool IsSetIsParent()
+        {
+            return this._isParent.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentJobId. 
+        /// <para>
+        /// This is the unique identifier of the parent restore job for the selected restore job.
+        /// </para>
+        /// </summary>
+        public string ParentJobId
+        {
+            get { return this._parentJobId; }
+            set { this._parentJobId = value; }
+        }
+
+        // Check to see if ParentJobId property is set
+        internal bool IsSetParentJobId()
+        {
+            return this._parentJobId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PercentDone. 
         /// <para>
         /// Contains an estimated percentage complete of a job at the time the job status was
@@ -334,6 +394,25 @@ namespace Amazon.Backup.Model
         internal bool IsSetRestoreJobId()
         {
             return this._restoreJobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the original resource that was backed up. This provides
+        /// context about what resource is being restored.
+        /// </para>
+        /// </summary>
+        public string SourceResourceArn
+        {
+            get { return this._sourceResourceArn; }
+            set { this._sourceResourceArn = value; }
+        }
+
+        // Check to see if SourceResourceArn property is set
+        internal bool IsSetSourceResourceArn()
+        {
+            return this._sourceResourceArn != null;
         }
 
         /// <summary>

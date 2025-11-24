@@ -46,6 +46,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAmazonQProperties())
+            {
+                context.Writer.WritePropertyName("amazonQProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AmazonQPropertiesPatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.AmazonQProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetAthenaProperties())
             {
                 context.Writer.WritePropertyName("athenaProperties");
@@ -75,6 +86,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
                 var marshaller = IamPropertiesPatchMarshaller.Instance;
                 marshaller.Marshall(requestObject.IamProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetMlflowProperties())
+            {
+                context.Writer.WritePropertyName("mlflowProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MlflowPropertiesPatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.MlflowProperties, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -34,6 +34,28 @@ namespace Amazon.GeoMaps.Model
     /// <c>GetStaticMap</c> provides high-quality static map images with customizable options.
     /// You can modify the map's appearance and overlay additional information. It's an ideal
     /// solution for applications requiring tailored static map snapshots.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see the following topics in the <i>Amazon Location Service Developer
+    /// Guide</i>:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/static-maps.html">Static
+    /// maps</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/customizing-static-maps.html">Customize
+    /// static maps</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/overlaying-static-map.html">Overlay
+    /// on the static map</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetStaticMapRequest : AmazonGeoMapsRequest
     {
@@ -61,9 +83,9 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property BoundedPositions. 
         /// <para>
-        /// Takes in two or more pair of coordinates, [Lon, Lat], with each coordinate separated
-        /// by a comma. The API will generate an image to encompass all of the provided coordinates.
-        /// 
+        /// Takes in two or more pair of coordinates in World Geodetic System (WGS 84) format:
+        /// [longitude, latitude], with each coordinate separated by a comma. The API will generate
+        /// an image to encompass all of the provided coordinates. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -74,7 +96,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: 97.170451,78.039098,99.045536,27.176178
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=7)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2000)]
         public string BoundedPositions
         {
             get { return this._boundedPositions; }
@@ -90,15 +112,16 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property BoundingBox. 
         /// <para>
-        /// Takes in two pairs of coordinates, [Lon, Lat], denoting south-westerly and north-easterly
-        /// edges of the image. The underlying area becomes the view of the image. 
+        /// Takes in two pairs of coordinates in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude], denoting south-westerly and north-easterly edges of the image. The underlying
+        /// area becomes the view of the image. 
         /// </para>
         ///  
         /// <para>
         /// Example: -123.17075,49.26959,-123.08125,49.31429
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=7)]
+        [AWSProperty(Sensitive=true, Min=0, Max=100)]
         public string BoundingBox
         {
             get { return this._boundingBox; }
@@ -114,8 +137,9 @@ namespace Amazon.GeoMaps.Model
         /// <summary>
         /// Gets and sets the property Center. 
         /// <para>
-        /// Takes in a pair of coordinates, [Lon, Lat], which becomes the center point of the
-        /// image. This parameter requires that either zoom or radius is set.
+        /// Takes in a pair of coordinates in World Geodetic System (WGS 84) format: [longitude,
+        /// latitude], which becomes the center point of the image. This parameter requires that
+        /// either zoom or radius is set.
         /// </para>
         ///  <note> 
         /// <para>
@@ -650,7 +674,7 @@ namespace Amazon.GeoMaps.Model
         /// Example: <c>100</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=350)]
         public int? Padding
         {
             get { return this._padding; }

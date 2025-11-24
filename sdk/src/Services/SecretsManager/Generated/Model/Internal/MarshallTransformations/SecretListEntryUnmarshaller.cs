@@ -80,6 +80,18 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ExternalSecretRotationMetadata", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ExternalSecretRotationMetadataItem, ExternalSecretRotationMetadataItemUnmarshaller>(ExternalSecretRotationMetadataItemUnmarshaller.Instance);
+                    unmarshalledObject.ExternalSecretRotationMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ExternalSecretRotationRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExternalSecretRotationRoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -156,6 +168,12 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

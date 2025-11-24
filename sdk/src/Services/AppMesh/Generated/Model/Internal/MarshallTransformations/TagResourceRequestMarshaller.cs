@@ -63,6 +63,8 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-01-25";
             request.HttpMethod = "PUT";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceArn))
+                throw new AmazonAppMeshException("Request object does not have required field ResourceArn set");
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));

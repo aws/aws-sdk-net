@@ -40,6 +40,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private DbStorageType _dbStorageType;
         private ClusterDeploymentType _deploymentType;
         private string _endpoint;
+        private EngineType _engineType;
         private string _id;
         private string _name;
         private NetworkType _networkType;
@@ -156,6 +157,24 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngineType. 
+        /// <para>
+        /// The engine type of your DB cluster.
+        /// </para>
+        /// </summary>
+        public EngineType EngineType
+        {
+            get { return this._engineType; }
+            set { this._engineType = value; }
+        }
+
+        // Check to see if EngineType property is set
+        internal bool IsSetEngineType()
+        {
+            return this._engineType != null;
         }
 
         /// <summary>

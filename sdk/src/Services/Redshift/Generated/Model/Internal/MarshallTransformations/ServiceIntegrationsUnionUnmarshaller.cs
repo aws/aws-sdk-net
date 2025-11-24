@@ -66,6 +66,17 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.LakeFormation.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("Redshift/member", targetDepth))
+                    {
+                        var unmarshaller = RedshiftScopeUnionUnmarshaller.Instance;
+                        if (unmarshalledObject.Redshift == null)
+                        {
+                            unmarshalledObject.Redshift = new List<RedshiftScopeUnion>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Redshift.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("S3AccessGrants/member", targetDepth))
                     {
                         var unmarshaller = S3AccessGrantsScopeUnionUnmarshaller.Instance;

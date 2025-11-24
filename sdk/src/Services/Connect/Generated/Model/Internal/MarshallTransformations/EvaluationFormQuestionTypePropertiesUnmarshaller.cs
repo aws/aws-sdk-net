@@ -68,6 +68,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.SingleSelect = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Text", targetDepth))
+                {
+                    var unmarshaller = EvaluationFormTextQuestionPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

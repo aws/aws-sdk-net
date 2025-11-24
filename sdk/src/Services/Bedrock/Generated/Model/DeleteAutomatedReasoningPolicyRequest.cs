@@ -37,7 +37,30 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class DeleteAutomatedReasoningPolicyRequest : AmazonBedrockRequest
     {
+        private bool? _force;
         private string _policyArn;
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Specifies whether to force delete the automated reasoning policy even if it has active
+        /// resources. When <c>false</c>, Amazon Bedrock validates if all artifacts have been
+        /// deleted (e.g. policy version, test case, test result) for a policy before deletion.
+        /// When <c>true</c>, Amazon Bedrock will delete the policy and all its artifacts without
+        /// validation. Default is <c>false</c>. 
+        /// </para>
+        /// </summary>
+        public bool? Force
+        {
+            get { return this._force; }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PolicyArn. 

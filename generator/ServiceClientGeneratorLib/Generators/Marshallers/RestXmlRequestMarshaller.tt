@@ -37,6 +37,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		public IRequest Marshall(<#=this.Operation.Name #>Request publicRequest)
 		{
 			var request = new DefaultRequest(publicRequest, "<#=this.Config.Namespace#>");
+			PreMarshallCustomization(request, publicRequest);
 <#
 
 	if ((this.Config.ServiceModel.H2Support == H2SupportDegree.Optional && this.Operation.IsEventStreamBidi) || (this.Config.ServiceModel.H2Support == H2SupportDegree.EventStream && this.Operation.IsEventStreamOutput) || this.Config.ServiceModel.H2Support == H2SupportDegree.Required)
@@ -131,6 +132,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	this.AddRequestSingletonMethod();
 #>
 		partial void PostMarshallCustomization(DefaultRequest defaultRequest, <#=this.Operation.Name#>Request publicRequest);
+		partial void PreMarshallCustomization(DefaultRequest defaultRequest, <#=this.Operation.Name#>Request publicRequest);
 	}	
 }
 
@@ -147,6 +149,15 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 			using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
 			{   
 <#+
+		if (this.Config.ServiceModel.Customizations.ShapeModifiers.TryGetValue(operation.RequestStructure.Name, out var shapeModifier) && shapeModifier.InjectXmlMarshallCodeInPayload.Count > 0)
+		{
+			foreach (var codeSnippet in shapeModifier.InjectXmlMarshallCodeInPayload)
+			{
+#>
+				<#=codeSnippet#>
+<#+
+			}
+		}
 		if(operation.RequestPayloadMember==null)
 		{
 			if(string.IsNullOrEmpty(operation.XmlNamespacePrefix))
@@ -201,9 +212,23 @@ WriteXmlAttributeString(level, member, variableName, isPayload: false);
 					}
 					else
 					{
+						if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(operation.RequestPayloadMember.OwningShape.Name, operation.RequestPayloadMember.ModeledName, out var propertyModifier) && propertyModifier.InjectXmlMarshallCode.Count > 0)
+						{
+							foreach (var codeSnippet in propertyModifier.InjectXmlMarshallCode)
+							{
+#>
+					<#=codeSnippet#>
+<#+
+							}
+#>
+<#+
+						}
+						else
+						{
 #>
 					xmlWriter.WriteStartElement("<#=operation.RequestPayloadMember.LocationName#>", "<#=operation.XmlNamespace#>");
 <#+
+						}
 					}
 				}
 				else
@@ -242,7 +267,11 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 		variableName = (operation.RequestPayloadMember == null || requestPayloadMemberIsFlattened) ? variableName : variableName + "." + operation.RequestPayloadMember.PropertyName;
 		foreach(var member in childmembers)
 		{			
-			if(member.IsStructure)
+			if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier) && propModifier.InjectXmlMarshallCode.Count > 0)
+			{
+				WriteInjectXmlMarshallCode(level, propModifier.InjectXmlMarshallCode);
+			}
+			else if(member.IsStructure)
 			{
 				ProcessStructure(level, variableName, member);				
 			}
@@ -337,9 +366,9 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 
 		foreach(var member in sortedMembers)
 		{
-			if (this.Config.ServiceModel.Customizations.TryGetVisitorPattern(member.Shape.Name, out var visitorPattern) && !visitorPattern.Visited)
+			if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier) && propModifier.InjectXmlMarshallCode.Count > 0)
 			{
-				WriteVisitorPattern(level, variableName, member);
+				WriteInjectXmlMarshallCode(level, propModifier.InjectXmlMarshallCode);
 			}
 			else if(member.IsStructure)
 			{
@@ -375,26 +404,51 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 <#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.ModeledName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.IsNullable ? ".Value" : string.Empty)#>));
 <#+
 			}
+			else if(this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectPropModifier ) && injectPropModifier.InjectXmlMarshallCode.Count > 0)
+			{
+				foreach (var codeSnippet in injectPropModifier.InjectXmlMarshallCode)
+				{
+#>
+<#=new string(' ', (level) * 4)#>				<#=codeSnippet#>
+<#+
+				}
+				continue;
+			}
+			else if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var propModifier2) && propModifier2.SkipXmlIsSet)
+			{
+				if (!member.IsXmlAttribute)
+				{
+#>
+<#=new string(' ', (level - 1) * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.IsNullable ? ".Value" : string.Empty)#>));
+<#+
+				}
+				else
+				{
+#>
+					WriteXmlAttributeString(level, member, variableName, false);
+<#+
+				}
+			}
 			else
 			{
 #>
 <#=new string(' ', level * 4)#>				if(<#=variableName#>.IsSet<#=member.PropertyName#>())
 <#+
-				if (!member.IsXmlAttribute)
-				{
+					if (!member.IsXmlAttribute)
+					{
 #>
 <#=new string(' ', level * 4)#>					xmlWriter.WriteElementString("<#=member.MarshallName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#><#=(member.IsNullable ? ".Value" : string.Empty)#>));
 <#+
-				}
+					}
 #>
 <#+
-				else
-				{
+					else
+					{
 					WriteXmlAttributeString(level, member, variableName, false);
+					}
 				}
 			}
 		}
-	}
 
 	void ProcessStructure(int level, string variableName, Shape shape)
 	{
@@ -524,7 +578,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 					if (overrideDataType.DataType.Contains("List<") && overrideDataType.AlternateLocationName != null)
 						listMarshallName = overrideDataType.AlternateLocationName;
 				}
-				else
+				if (listMarshallName == null)
 					listMarshallName = member.Shape.ListMarshallName ?? "member";
 				// see https://smithy.io/2.0/spec/protocol-traits.html#xmlflattened-trait
 				if(member.IsFlattened || member.Shape.IsFlattened)
@@ -891,27 +945,13 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 	}
 #>
 <#+
-	protected void WriteVisitorPattern(int level, string variableName, Member member)
+	protected void WriteInjectXmlMarshallCode(int level, HashSet<string> injectXmlMarshallCode)
 	{
-		var visitorPattern = this.Config.ServiceModel.Customizations.GetVisitorPattern(member.Shape.Name);
-		visitorPattern.Visited = true;
+		foreach (var injectCode in injectXmlMarshallCode)
+		{
 #>
-<#=new string(' ', level * 4)#>				if (<#=variableName#>.<#=member.ModeledName#> != null)
-<#=new string(' ', level * 4)#>				{
-<#=new string(' ', level * 4)#>					if (<#=variableName#>.<#=member.ModeledName#>.<#=visitorPattern.PredicateName#> != null)
-<#=new string(' ', level * 4)#>					{
-<#=new string(' ', level * 4)#>						xmlWriter.WriteStartElement("<#=member.MarshallName#>");
-<#=new string(' ', level * 4)#>						<#=variableName#>.<#=member.ModeledName#>.<#=visitorPattern.PredicateName#>.Accept(new <#=visitorPattern.VisitorName#>(<#=visitorPattern.VisitorParam#>));
-<#=new string(' ', level * 4)#>						xmlWriter.WriteEndElement();
-<#=new string(' ', level * 4)#>					}
-<#=new string(' ', level * 4)#>					else
-<#=new string(' ', level * 4)#>					{
+<#=new string(' ', level * 4)#>				<#=injectCode#>
 <#+
-												ProcessStructure(level+=2, variableName, member);
-#>
-<#=new string(' ' , level * 4)#>					}
-
-<#=new string(' ', level * 4)#>				}
-<#+
+		}
 	}
 #>

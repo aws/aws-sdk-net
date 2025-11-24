@@ -46,6 +46,17 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBillSourceAccounts())
+            {
+                context.Writer.WritePropertyName("BillSourceAccounts");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectBillSourceAccountsListValue in requestObject.BillSourceAccounts)
+                {
+                        context.Writer.WriteStringValue(requestObjectBillSourceAccountsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetLinkedAccounts())
             {
                 context.Writer.WritePropertyName("LinkedAccounts");

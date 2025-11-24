@@ -45,6 +45,7 @@ namespace Amazon.Lightsail.Model
     {
         private string _bucketName;
         private bool? _includeConnectedResources;
+        private bool? _includeCors;
         private string _pageToken;
 
         /// <summary>
@@ -89,6 +90,32 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetIncludeConnectedResources()
         {
             return this._includeConnectedResources.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeCors. 
+        /// <para>
+        /// A Boolean value that indicates whether to include Lightsail bucket CORS configuration
+        /// in the response. For more information, see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring
+        /// cross-origin resource sharing (CORS)</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only supported when getting a single bucket with <c>bucketName</c>
+        /// specified. The default value for this parameter is <c>False</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? IncludeCors
+        {
+            get { return this._includeCors; }
+            set { this._includeCors = value; }
+        }
+
+        // Check to see if IncludeCors property is set
+        internal bool IsSetIncludeCors()
+        {
+            return this._includeCors.HasValue; 
         }
 
         /// <summary>

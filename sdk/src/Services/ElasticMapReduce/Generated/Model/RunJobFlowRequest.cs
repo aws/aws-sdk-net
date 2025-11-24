@@ -87,6 +87,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _logEncryptionKmsKeyId;
         private string _logUri;
         private ManagedScalingPolicy _managedScalingPolicy;
+        private MonitoringConfiguration _monitoringConfiguration;
         private string _name;
         private List<SupportedProductConfig> _newSupportedProducts = AWSConfigs.InitializeCollections ? new List<SupportedProductConfig>() : null;
         private string _osReleaseLabel;
@@ -491,6 +492,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetManagedScalingPolicy()
         {
             return this._managedScalingPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringConfiguration. 
+        /// <para>
+        /// Contains CloudWatch log configuration metadata and settings.
+        /// </para>
+        /// </summary>
+        public MonitoringConfiguration MonitoringConfiguration
+        {
+            get { return this._monitoringConfiguration; }
+            set { this._monitoringConfiguration = value; }
+        }
+
+        // Check to see if MonitoringConfiguration property is set
+        internal bool IsSetMonitoringConfiguration()
+        {
+            return this._monitoringConfiguration != null;
         }
 
         /// <summary>

@@ -75,8 +75,14 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
+            if (publicRequest.IsSetOwningGroupId())
+                request.Parameters.Add("owningGroupId", StringUtils.FromString(publicRequest.OwningGroupId));
+            
             if (publicRequest.IsSetOwningProjectId())
                 request.Parameters.Add("owningProjectId", StringUtils.FromString(publicRequest.OwningProjectId));
+            
+            if (publicRequest.IsSetOwningUserId())
+                request.Parameters.Add("owningUserId", StringUtils.FromString(publicRequest.OwningUserId));
             
             if (publicRequest.IsSetSortBy())
                 request.Parameters.Add("sortBy", StringUtils.FromString(publicRequest.SortBy));

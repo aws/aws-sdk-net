@@ -37,8 +37,12 @@ namespace Amazon.Backup.Model
     {
         private string _backupPlanArn;
         private string _backupPlanId;
+        private string _backupPlanName;
         private string _backupPlanVersion;
+        private string _backupRuleCron;
         private string _backupRuleId;
+        private string _backupRuleName;
+        private string _backupRuleTimezone;
 
         /// <summary>
         /// Gets and sets the property BackupPlanArn. 
@@ -78,6 +82,25 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BackupPlanName. 
+        /// <para>
+        /// The name of the backup plan that created this recovery point. This provides human-readable
+        /// context about which backup plan was responsible for the backup job.
+        /// </para>
+        /// </summary>
+        public string BackupPlanName
+        {
+            get { return this._backupPlanName; }
+            set { this._backupPlanName = value; }
+        }
+
+        // Check to see if BackupPlanName property is set
+        internal bool IsSetBackupPlanName()
+        {
+            return this._backupPlanName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BackupPlanVersion. 
         /// <para>
         /// Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are
@@ -97,6 +120,25 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BackupRuleCron. 
+        /// <para>
+        /// The cron expression that defines the schedule for the backup rule. This shows the
+        /// frequency and timing of when backups are automatically triggered.
+        /// </para>
+        /// </summary>
+        public string BackupRuleCron
+        {
+            get { return this._backupRuleCron; }
+            set { this._backupRuleCron = value; }
+        }
+
+        // Check to see if BackupRuleCron property is set
+        internal bool IsSetBackupRuleCron()
+        {
+            return this._backupRuleCron != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BackupRuleId. 
         /// <para>
         /// Uniquely identifies a rule used to schedule the backup of a selection of resources.
@@ -112,6 +154,44 @@ namespace Amazon.Backup.Model
         internal bool IsSetBackupRuleId()
         {
             return this._backupRuleId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupRuleName. 
+        /// <para>
+        /// The name of the backup rule within the backup plan that created this recovery point.
+        /// This helps identify which specific rule triggered the backup job.
+        /// </para>
+        /// </summary>
+        public string BackupRuleName
+        {
+            get { return this._backupRuleName; }
+            set { this._backupRuleName = value; }
+        }
+
+        // Check to see if BackupRuleName property is set
+        internal bool IsSetBackupRuleName()
+        {
+            return this._backupRuleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupRuleTimezone. 
+        /// <para>
+        /// The timezone used for the backup rule schedule. This provides context for when backups
+        /// are scheduled to run in the specified timezone.
+        /// </para>
+        /// </summary>
+        public string BackupRuleTimezone
+        {
+            get { return this._backupRuleTimezone; }
+            set { this._backupRuleTimezone = value; }
+        }
+
+        // Check to see if BackupRuleTimezone property is set
+        internal bool IsSetBackupRuleTimezone()
+        {
+            return this._backupRuleTimezone != null;
         }
 
     }

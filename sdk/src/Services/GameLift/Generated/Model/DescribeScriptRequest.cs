@@ -31,8 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScript operation.
-    /// Retrieves properties for a Realtime script. 
+    /// <b>This API works with the following fleet types:</b> EC2
     /// 
+    ///  
+    /// <para>
+    /// Retrieves properties for a Realtime script. 
+    /// </para>
     ///  
     /// <para>
     /// To request a script record, specify the script ID. If successful, an object containing

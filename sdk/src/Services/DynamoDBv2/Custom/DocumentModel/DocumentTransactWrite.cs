@@ -505,9 +505,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private static bool TryFilterDuplicates<T>(Dictionary<string, T> src, Dictionary<string, T> other,
             out Dictionary<string, T> dest, out List<string> conflictingKeys)
         {
-            dest = new Dictionary<string, T>();
             conflictingKeys = new List<string>();
 
+            // If src is null, there's nothing to filter - return null
+            if (src == null)
+            {
+                dest = null;
+                return true;
+            }
+
+            // If other is null, all of src is unique - return src as-is
+            if (other == null)
+            {
+                dest = src;
+                return true;
+            }
+
+            dest = new Dictionary<string, T>();
             foreach (var kvp in src)
             {
                 if (other.TryGetValue(kvp.Key, out var otherValue))

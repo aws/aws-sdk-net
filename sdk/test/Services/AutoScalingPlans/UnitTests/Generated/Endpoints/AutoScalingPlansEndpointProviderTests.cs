@@ -497,12 +497,42 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("AutoScalingPlans")]
+        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new AutoScalingPlansEndpointParameters();
+            parameters["Region"] = "us-gov-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAutoScalingPlansEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://autoscaling-plans.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AutoScalingPlans")]
         [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
         public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new AutoScalingPlansEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonAutoScalingPlansEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://autoscaling-plans.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("AutoScalingPlans")]
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new AutoScalingPlansEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonAutoScalingPlansEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://autoscaling-plans.us-gov-west-1.amazonaws.com", endpoint.URL);
@@ -521,21 +551,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonAutoScalingPlansEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://autoscaling-plans-fips.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("AutoScalingPlans")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new AutoScalingPlansEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonAutoScalingPlansEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://autoscaling-plans-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]

@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDistributionsByConnectionModeRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetConnectionMode())
                 throw new AmazonCloudFrontException("Request object does not have required field ConnectionMode set");
@@ -92,5 +93,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByConnectionModeRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByConnectionModeRequest publicRequest);
     }    
 }

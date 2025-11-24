@@ -56,12 +56,15 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetAccessGrantsInstanceForPrefixRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
         
             if (publicRequest.IsSetAccountId()) 
             {
                 request.Headers["x-amz-account-id"] = publicRequest.AccountId;
             }
+            if (string.IsNullOrEmpty(publicRequest.S3Prefix))
+                throw new AmazonS3ControlException("Request object does not have required field S3Prefix set");
             
             if (publicRequest.IsSetS3Prefix())
                 request.Parameters.Add("s3prefix", StringUtils.FromString(publicRequest.S3Prefix));
@@ -91,5 +94,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetAccessGrantsInstanceForPrefixRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetAccessGrantsInstanceForPrefixRequest publicRequest);
     }    
 }

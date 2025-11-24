@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateTrafficPolicyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2013-04-01/trafficpolicy";
 
@@ -108,5 +109,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateTrafficPolicyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateTrafficPolicyRequest publicRequest);
     }    
 }

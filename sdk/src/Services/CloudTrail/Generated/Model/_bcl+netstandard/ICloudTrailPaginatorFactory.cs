@@ -78,6 +78,16 @@ namespace Amazon.CloudTrail.Model
         IListImportsPaginator ListImports(ListImportsRequest request);
 
         /// <summary>
+        /// Paginator for ListInsightsData operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListInsightsDataPaginator ListInsightsData(ListInsightsDataRequest request);
+
+        /// <summary>
         /// Paginator for ListInsightsMetricData operation
         ///</summary>
         [AWSPaginator(

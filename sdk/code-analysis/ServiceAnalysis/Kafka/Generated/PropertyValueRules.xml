@@ -31,6 +31,11 @@
     <pattern>^[0-9A-Za-z][0-9A-Za-z-]{0,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kafka.Model.DescribeTopicPartitionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kafka.Model.ListClientVpcConnectionsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -82,6 +87,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kafka.Model.ListScramSecretsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.ListTopicsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>

@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateDistributionRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
         
             if (publicRequest.IsSetIfMatch()) 
@@ -841,6 +842,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                         xmlWriter.WriteElementString("OriginKeepaliveTimeout", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginKeepaliveTimeout.Value));
                                     if(publicRequestDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOriginReadTimeout())
                                         xmlWriter.WriteElementString("OriginReadTimeout", StringUtils.FromInt(publicRequestDistributionConfigOriginsItemsValue.VpcOriginConfig.OriginReadTimeout.Value));
+                                    if(publicRequestDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetOwnerAccountId())
+                                        xmlWriter.WriteElementString("OwnerAccountId", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.VpcOriginConfig.OwnerAccountId));
                                     if(publicRequestDistributionConfigOriginsItemsValue.VpcOriginConfig.IsSetVpcOriginId())
                                         xmlWriter.WriteElementString("VpcOriginId", StringUtils.FromString(publicRequestDistributionConfigOriginsItemsValue.VpcOriginConfig.VpcOriginId));
                                     xmlWriter.WriteEndElement();
@@ -982,5 +985,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateDistributionRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateDistributionRequest publicRequest);
     }    
 }

@@ -41,6 +41,7 @@ namespace Amazon.IoTWireless.Model
         private LoRaWANUpdateDevice _loRaWAN;
         private string _name;
         private PositioningConfigStatus _positioning;
+        private SidewalkUpdateWirelessDevice _sidewalk;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -144,7 +145,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property Positioning. 
         /// <para>
-        /// FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+        /// The integration status of the Device Location feature for LoRaWAN and Sidewalk devices.
         /// </para>
         /// </summary>
         public PositioningConfigStatus Positioning
@@ -157,6 +158,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetPositioning()
         {
             return this._positioning != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sidewalk. 
+        /// <para>
+        /// The updated sidewalk properties.
+        /// </para>
+        /// </summary>
+        public SidewalkUpdateWirelessDevice Sidewalk
+        {
+            get { return this._sidewalk; }
+            set { this._sidewalk = value; }
+        }
+
+        // Check to see if Sidewalk property is set
+        internal bool IsSetSidewalk()
+        {
+            return this._sidewalk != null;
         }
 
     }

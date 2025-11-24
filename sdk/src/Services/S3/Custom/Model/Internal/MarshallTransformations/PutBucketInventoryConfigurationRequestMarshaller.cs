@@ -40,7 +40,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
         public IRequest Marshall(PutBucketInventoryConfigurationRequest putBucketInventoryConfigurationRequest)
         {
-            IRequest request = new DefaultRequest(putBucketInventoryConfigurationRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(putBucketInventoryConfigurationRequest, "Amazon.S3");
 
             request.HttpMethod = "PUT";
 

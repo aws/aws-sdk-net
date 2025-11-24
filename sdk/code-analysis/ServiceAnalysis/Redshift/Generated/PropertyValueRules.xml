@@ -206,6 +206,12 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.CreateClusterRequest.CatalogName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.CreateClusterRequest.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1823,6 +1829,36 @@
     <pattern>^arn:aws[a-z\-]*:redshift(-serverless)?:[a-z0-9\-]+:[0-9]{12}:(namespace\/|namespace:)[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationRequest.CatalogName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationRequest.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationRequest.LakehouseIdcApplicationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationResponse.CatalogArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationResponse.ClusterIdentifier</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationResponse.LakehouseIdcApplicationArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.ModifyLakehouseConfigurationResponse.LakehouseRegistrationStatus</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyRedshiftIdcApplicationRequest.IamRoleArn</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -1979,6 +2015,12 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.CatalogName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.ClusterIdentifier</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -2032,6 +2074,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.PreferredMaintenanceWindow</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.RestoreFromClusterSnapshotRequest.RedshiftIdcApplicationArn</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
@@ -2244,6 +2290,10 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.CatalogArn</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.ClusterAvailabilityStatus</property>
     <max>2147483647</max>
   </property-value-rule>
@@ -2305,6 +2355,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.Cluster.KmsKeyId</property>
+    <max>2147483647</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Redshift.Model.Cluster.LakehouseRegistrationStatus</property>
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>

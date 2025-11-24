@@ -89,6 +89,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             ClearTable(nestedTableName);
             ClearTable(hashRangeTableName);
             ClearTable(numericHashRangeTableName);
+            ClearTable(compositeHashRangeTableName);
         }
 
         public static void CreateContext(DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, bool disableFetchingTableMetadata = false)
@@ -109,6 +110,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public static string hashTableName;
         public static string hashRangeTableName;
         public static string numericHashRangeTableName;
+        public static string compositeHashRangeTableName;
         public static DynamoDBContext Context = null;
 
         public static int OneMB = 1024 * 1024;
@@ -158,10 +160,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             hashTableName = TableNamePrefix + "HashTable";
             hashRangeTableName = TableNamePrefix + "HashRangeTable";
             numericHashRangeTableName = TableNamePrefix + "NumericHashRangeTable";
+            compositeHashRangeTableName = TableNamePrefix + "CompositeHashRangeTable";
             bool createNestedTable = true;
             bool createHashTable = true;
             bool createHashRangeTable = true;
             bool createNumericHashRangeTable = true;
+            bool createCompositeHashRangeTable = true;
 
             if (ReuseTables)
             {
@@ -184,6 +188,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     WaitForTableStatus(numericHashRangeTableName, TableStatus.ACTIVE);
                     createNumericHashRangeTable = false;
+                }
+                if (GetStatus(compositeHashRangeTableName) != null)
+                {
+                    WaitForTableStatus(compositeHashRangeTableName, TableStatus.ACTIVE);
+                    createCompositeHashRangeTable = false;
                 }
             }
 
@@ -327,12 +336,100 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 WaitForTableStatus(numericHashRangeTableName, TableStatus.ACTIVE);
             }
 
+            if (createCompositeHashRangeTable)
+            {
+                var attributeDefinitions = new List<AttributeDefinition>
+                {
+                    new AttributeDefinition("Id", ScalarAttributeType.N),
+                    new AttributeDefinition("UserName", ScalarAttributeType.S),
+                    new AttributeDefinition("OrderId", ScalarAttributeType.S),
+                    new AttributeDefinition("Timestamp", ScalarAttributeType.N),
+                    new AttributeDefinition("Region", ScalarAttributeType.S),
+                    new AttributeDefinition("Status", ScalarAttributeType.S),
+                    new AttributeDefinition("Amount", ScalarAttributeType.N),
+                    new AttributeDefinition("Category", ScalarAttributeType.S),
+                    new AttributeDefinition("Priority", ScalarAttributeType.N)
+                };
+                // GSI definitions with variations in number of keys
+                var globalSecondaryIndexes = new List<GlobalSecondaryIndex>
+                {
+                    // GSI1: HASH + RANGE
+                    new GlobalSecondaryIndex
+                    {
+                        IndexName = "GSI1",
+                        KeySchema = new List<KeySchemaElement>
+                        {
+                            new KeySchemaElement("UserName", KeyType.HASH),
+                            new KeySchemaElement("Timestamp", KeyType.RANGE)
+                        },
+                        Projection = new Projection { ProjectionType = ProjectionType.ALL }
+                    },
+                    // GSI2: 2HASH + RANGE
+                    new GlobalSecondaryIndex
+                    {
+                        IndexName = "GSI2",
+                        KeySchema = new List<KeySchemaElement>
+                        {
+                            new KeySchemaElement("UserName", KeyType.HASH),
+                            new KeySchemaElement("OrderId", KeyType.HASH),
+                            new KeySchemaElement("Timestamp", KeyType.RANGE)
+                        },
+                        Projection = new Projection { ProjectionType = ProjectionType.ALL }
+                    },
+                    // GSI3: 2HASH + 2RANGE
+                    new GlobalSecondaryIndex
+                    {
+                        IndexName = "GSI3",
+                        KeySchema = new List<KeySchemaElement>
+                        {
+                            new KeySchemaElement("UserName", KeyType.HASH),
+                            new KeySchemaElement("Region", KeyType.HASH),
+                            new KeySchemaElement("Status", KeyType.RANGE),
+                            new KeySchemaElement("Category", KeyType.RANGE)
+                        },
+                        Projection = new Projection { ProjectionType = ProjectionType.ALL }
+                    },
+                    // GSI4:  4HASH + 4RANGE
+                    new GlobalSecondaryIndex
+                    {
+                        IndexName = "GSI4",
+                        KeySchema = new List<KeySchemaElement>
+                        {
+                            new KeySchemaElement("Id", KeyType.HASH),
+                            new KeySchemaElement("UserName", KeyType.HASH),
+                            new KeySchemaElement("OrderId", KeyType.HASH),
+                            new KeySchemaElement("Region", KeyType.HASH),
+                            new KeySchemaElement("Status", KeyType.RANGE),
+                            new KeySchemaElement("Category", KeyType.RANGE),
+                            new KeySchemaElement("Amount", KeyType.RANGE),
+                            new KeySchemaElement("Priority", KeyType.RANGE)
+                        },
+                        Projection = new Projection { ProjectionType = ProjectionType.ALL }
+                    }
+                };
+                Client.CreateTable(new CreateTableRequest
+                {
+                    TableName = compositeHashRangeTableName,
+                    AttributeDefinitions = attributeDefinitions,
+                    KeySchema = new List<KeySchemaElement>
+                    {
+                        new KeySchemaElement("Id", KeyType.HASH),
+                        new KeySchemaElement("Status", KeyType.RANGE)
+                    },
+                    GlobalSecondaryIndexes = globalSecondaryIndexes,
+                    BillingMode = BillingMode.PAY_PER_REQUEST
+                });
+                CreatedTables.Add(compositeHashRangeTableName);
+                WaitForTableStatus(compositeHashRangeTableName, TableStatus.ACTIVE);
+            }
+
 
             // Make sure TTL is enabled for the tables and is on the correct attribute
             EnsureTTL(nestedTableName);
             EnsureTTL(hashTableName);
             EnsureTTL(hashRangeTableName);
             EnsureTTL(numericHashRangeTableName);
+            EnsureTTL(compositeHashRangeTableName);
         }
         public static void RemoveCreatedTables()
         {
@@ -418,7 +515,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             TableStatus status = null;
             try
             {
-                status = Client.DescribeTable(tableName).Table.TableStatus;
+                var table = Client.DescribeTable(tableName);
+                status = table.Table.TableStatus;
             }
             catch(ResourceNotFoundException)
             {

@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateTrafficPolicyInstanceRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             if (!publicRequest.IsSetId())
                 throw new AmazonRoute53Exception("Request object does not have required field Id set");
@@ -111,5 +112,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateTrafficPolicyInstanceRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateTrafficPolicyInstanceRequest publicRequest);
     }    
 }

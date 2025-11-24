@@ -294,6 +294,12 @@ namespace Amazon.GeoMaps
 
         /// <summary>
         /// <c>GetGlyphs</c> returns the map's glyphs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/styling-labels-with-glyphs.html">Style
+        /// labels with glyphs</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGlyphs service method.</param>
         /// <param name="cancellationToken">
@@ -327,6 +333,12 @@ namespace Amazon.GeoMaps
 
         /// <summary>
         /// <c>GetSprites</c> returns the map's sprites.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/styling-iconography-with-sprites.html">Style
+        /// iconography with sprites</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSprites service method.</param>
         /// <param name="cancellationToken">
@@ -362,6 +374,28 @@ namespace Amazon.GeoMaps
         /// <c>GetStaticMap</c> provides high-quality static map images with customizable options.
         /// You can modify the map's appearance and overlay additional information. It's an ideal
         /// solution for applications requiring tailored static map snapshots.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see the following topics in the <i>Amazon Location Service Developer
+        /// Guide</i>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/static-maps.html">Static
+        /// maps</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/customizing-static-maps.html">Customize
+        /// static maps</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/overlaying-static-map.html">Overlay
+        /// on the static map</a> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStaticMap service method.</param>
         /// <param name="cancellationToken">
@@ -408,6 +442,12 @@ namespace Amazon.GeoMaps
 
         /// <summary>
         /// <c>GetStyleDescriptor</c> returns information about the style.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/styling-dynamic-maps.html">Style
+        /// dynamic maps</a> in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStyleDescriptor service method.</param>
         /// <param name="cancellationToken">
@@ -443,6 +483,12 @@ namespace Amazon.GeoMaps
         /// <c>GetTile</c> returns a tile. Map tiles are used by clients to render a map. they're
         /// addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom)
         /// level.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/tiles.html">Tiles</a>
+        /// in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTile service method.</param>
         /// <param name="cancellationToken">

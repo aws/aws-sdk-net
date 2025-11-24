@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.AcceptChannelHandshake(Amazon.PartnerCentralChannel.Model.AcceptChannelHandshakeRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.AcceptChannelHandshake(Amazon.PartnerCentralChannel.Model.AcceptChannelHandshakeRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.AcceptChannelHandshakeRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.AcceptChannelHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for AcceptChannelHandshake"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CancelChannelHandshake(Amazon.PartnerCentralChannel.Model.CancelChannelHandshakeRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CancelChannelHandshake(Amazon.PartnerCentralChannel.Model.CancelChannelHandshakeRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CancelChannelHandshakeRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CancelChannelHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for CancelChannelHandshake"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CreateChannelHandshake(Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CreateChannelHandshake(Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for CreateChannelHandshake - START_SERVICE_PERIOD with Minimum Notice Period"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CreateChannelHandshake(Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CreateChannelHandshake(Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for CreateChannelHandshake - START_SERVICE_PERIOD with Fixed Commitment Period"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CreateChannelHandshake(Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CreateChannelHandshake(Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for CreateChannelHandshake - REVOKE_SERVICE_PERIOD"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CreateChannelHandshake(Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CreateChannelHandshake(Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateChannelHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for CreateChannelHandshake - PROGRAM_MANAGEMENT_ACCOUNT"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CreateProgramManagementAccount(Amazon.PartnerCentralChannel.Model.CreateProgramManagementAccountRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CreateProgramManagementAccount(Amazon.PartnerCentralChannel.Model.CreateProgramManagementAccountRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateProgramManagementAccountRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateProgramManagementAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for CreateProgramManagementAccount"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.CreateRelationship(Amazon.PartnerCentralChannel.Model.CreateRelationshipRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.CreateRelationship(Amazon.PartnerCentralChannel.Model.CreateRelationshipRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateRelationshipRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.CreateRelationshipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for CreateRelationship"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.DeleteProgramManagementAccount(Amazon.PartnerCentralChannel.Model.DeleteProgramManagementAccountRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.DeleteProgramManagementAccount(Amazon.PartnerCentralChannel.Model.DeleteProgramManagementAccountRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.DeleteProgramManagementAccountRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.DeleteProgramManagementAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for DeleteProgramManagementAccount"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.DeleteRelationship(Amazon.PartnerCentralChannel.Model.DeleteRelationshipRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.DeleteRelationship(Amazon.PartnerCentralChannel.Model.DeleteRelationshipRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.DeleteRelationshipRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.DeleteRelationshipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for DeleteRelationship"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.GetRelationship(Amazon.PartnerCentralChannel.Model.GetRelationshipRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.GetRelationship(Amazon.PartnerCentralChannel.Model.GetRelationshipRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.GetRelationshipRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.GetRelationshipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for GetRelationship"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.ListChannelHandshakes(Amazon.PartnerCentralChannel.Model.ListChannelHandshakesRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.ListChannelHandshakes(Amazon.PartnerCentralChannel.Model.ListChannelHandshakesRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListChannelHandshakesRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListChannelHandshakesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for ListChannelHandshakes - START_SERVICE_PERIOD"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.ListChannelHandshakes(Amazon.PartnerCentralChannel.Model.ListChannelHandshakesRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.ListChannelHandshakes(Amazon.PartnerCentralChannel.Model.ListChannelHandshakesRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListChannelHandshakesRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListChannelHandshakesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for ListChannelHandshakes - REVOKE_SERVICE_PERIOD"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.ListChannelHandshakes(Amazon.PartnerCentralChannel.Model.ListChannelHandshakesRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.ListChannelHandshakes(Amazon.PartnerCentralChannel.Model.ListChannelHandshakesRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListChannelHandshakesRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListChannelHandshakesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for ListChannelHandshakes - PROGRAM_MANAGEMENT_ACCOUNT"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.ListProgramManagementAccounts(Amazon.PartnerCentralChannel.Model.ListProgramManagementAccountsRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.ListProgramManagementAccounts(Amazon.PartnerCentralChannel.Model.ListProgramManagementAccountsRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListProgramManagementAccountsRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListProgramManagementAccountsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for ListProgramManagementAccounts"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.ListRelationships(Amazon.PartnerCentralChannel.Model.ListRelationshipsRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.ListRelationships(Amazon.PartnerCentralChannel.Model.ListRelationshipsRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListRelationshipsRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListRelationshipsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for ListRelationships"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.ListTagsForResource(Amazon.PartnerCentralChannel.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.ListTagsForResource(Amazon.PartnerCentralChannel.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for ListTagsForResource"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.RejectChannelHandshake(Amazon.PartnerCentralChannel.Model.RejectChannelHandshakeRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.RejectChannelHandshake(Amazon.PartnerCentralChannel.Model.RejectChannelHandshakeRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.RejectChannelHandshakeRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.RejectChannelHandshakeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for RejectChannelHandshake"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.TagResource(Amazon.PartnerCentralChannel.Model.TagResourceRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.TagResource(Amazon.PartnerCentralChannel.Model.TagResourceRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.TagResourceRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for TagResource"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.UntagResource(Amazon.PartnerCentralChannel.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.UntagResource(Amazon.PartnerCentralChannel.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.UntagResourceRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for UntagResource"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.UpdateProgramManagementAccount(Amazon.PartnerCentralChannel.Model.UpdateProgramManagementAccountRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.UpdateProgramManagementAccount(Amazon.PartnerCentralChannel.Model.UpdateProgramManagementAccountRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.UpdateProgramManagementAccountRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.UpdateProgramManagementAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for UpdateProgramManagementAccount"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralChannel.IAmazonPartnerCentralChannel.UpdateRelationship(Amazon.PartnerCentralChannel.Model.UpdateRelationshipRequest)" />
+            <member name="M:Amazon.PartnerCentralChannel.AmazonPartnerCentralChannelClient.UpdateRelationship(Amazon.PartnerCentralChannel.Model.UpdateRelationshipRequest)" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.UpdateRelationshipRequest" />
+            <member name="T:Amazon.PartnerCentralChannel.Model.UpdateRelationshipResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for UpdateRelationship"
+                    source=".\AWSSDKDocSamples\PartnerCentralChannel\PartnerCentralChannel.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

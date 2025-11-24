@@ -62,6 +62,7 @@ namespace Amazon.Connect.Model
         private DateTime? _lastResumedTimestamp;
         private DateTime? _lastUpdateTimestamp;
         private string _name;
+        private OutboundStrategy _outboundStrategy;
         private string _previousContactId;
         private QualityMetrics _qualityMetrics;
         private QueueInfo _queueInfo;
@@ -69,11 +70,13 @@ namespace Amazon.Connect.Model
         private int? _queueTimeAdjustmentSeconds;
         private List<RecordingInfo> _recordings = AWSConfigs.InitializeCollections ? new List<RecordingInfo>() : null;
         private string _relatedContactId;
+        private DateTime? _ringStartTimestamp;
         private RoutingCriteria _routingCriteria;
         private DateTime? _scheduledTimestamp;
         private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private EndpointInfo _systemEndpoint;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private TaskTemplateInfoV2 _taskTemplateInfo;
         private int? _totalPauseCount;
         private int? _totalPauseDurationInSeconds;
         private WisdomInfo _wisdomInfo;
@@ -423,7 +426,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property DisconnectReason. 
         /// <para>
-        /// The disconnect reason for the contact.
+        /// The disconnect reason for the contact. For a list and description of all the possible
+        /// disconnect reasons by channel, see DisconnectReason under <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
         /// </summary>
         public string DisconnectReason
@@ -612,6 +617,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutboundStrategy. 
+        /// <para>
+        /// Information about the outbound strategy.
+        /// </para>
+        /// </summary>
+        public OutboundStrategy OutboundStrategy
+        {
+            get { return this._outboundStrategy; }
+            set { this._outboundStrategy = value; }
+        }
+
+        // Check to see if OutboundStrategy property is set
+        internal bool IsSetOutboundStrategy()
+        {
+            return this._outboundStrategy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PreviousContactId. 
         /// <para>
         /// If this contact is not the first contact, this is the ID of the previous contact.
@@ -753,6 +776,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RingStartTimestamp. 
+        /// <para>
+        /// The timestamp when ringing started for a campaign call.
+        /// </para>
+        /// </summary>
+        public DateTime? RingStartTimestamp
+        {
+            get { return this._ringStartTimestamp; }
+            set { this._ringStartTimestamp = value; }
+        }
+
+        // Check to see if RingStartTimestamp property is set
+        internal bool IsSetRingStartTimestamp()
+        {
+            return this._ringStartTimestamp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property RoutingCriteria. 
         /// <para>
         /// Latest routing criteria on the contact.
@@ -861,6 +902,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskTemplateInfo. 
+        /// <para>
+        /// If this contact was created using a task template, this contains information about
+        /// the task template.
+        /// </para>
+        /// </summary>
+        public TaskTemplateInfoV2 TaskTemplateInfo
+        {
+            get { return this._taskTemplateInfo; }
+            set { this._taskTemplateInfo = value; }
+        }
+
+        // Check to see if TaskTemplateInfo property is set
+        internal bool IsSetTaskTemplateInfo()
+        {
+            return this._taskTemplateInfo != null;
         }
 
         /// <summary>

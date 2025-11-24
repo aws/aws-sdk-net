@@ -302,6 +302,11 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.GetResourceDashboardRequest.ResourceARN</property>
+    <min>1</min>
+    <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.GetSessionRequest.SessionId</property>
     <min>1</min>
     <max>256</max>
@@ -329,6 +334,11 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.GetSessionResponse.WorkGroup</property>
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetSessionEndpointRequest.SessionId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.GetSessionStatusRequest.SessionId</property>
@@ -766,6 +776,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.StartSessionRequest.ExecutionRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.StartSessionRequest.NotebookVersion</property>
     <min>1</min>
     <max>128</max>
@@ -1000,6 +1016,23 @@
     <min>24</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.Classification.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CloudWatchLoggingConfiguration.LogGroup</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[a-zA-Z0-9._/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CloudWatchLoggingConfiguration.LogStreamNamePrefix</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[^:*]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.Column.Comment</property>
     <min>0</min>
     <max>255</max>
@@ -1090,6 +1123,12 @@
     <property>Amazon.Athena.Model.InvalidRequestException.AthenaErrorCode</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ManagedLoggingConfiguration.KmsKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+$|^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+$|^alias/[a-zA-Z0-9/_-]+$|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.ManagedQueryResultsEncryptionConfiguration.KmsKey</property>
@@ -1221,10 +1260,26 @@
     <max>10080</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.S3LoggingConfiguration.KmsKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:key/?[a-zA-Z_0-9+=,.@\-_/]+$|^arn:aws[a-z\-]*:kms:([a-z0-9\-]+):\d{12}:alias/?[a-zA-Z_0-9+=,.@\-_/]+$|^alias/[a-zA-Z0-9/_-]+$|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.S3LoggingConfiguration.LogLocation</property>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][a-z0-9\-]*[a-z0-9](/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.SessionConfiguration.ExecutionRole</property>
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.SessionConfiguration.SessionIdleTimeoutInMinutes</property>
+    <min>1</min>
+    <max>480</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.SessionStatus.StateChangeReason</property>

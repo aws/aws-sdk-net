@@ -107,8 +107,8 @@ namespace Amazon.CodeStarNotifications.Model
         /// <para>
         /// The level of detail included in the notifications for this resource. BASIC will include
         /// only the contents of the event as it would appear in Amazon CloudWatch. FULL will
-        /// include any supplemental information provided by AWS CodeStar Notifications and/or
-        /// the service for the resource for which the notification is created.
+        /// include any supplemental information provided by CodeStar Notifications and/or the
+        /// service for the resource for which the notification is created.
         /// </para>
         /// </summary>
         public DetailType DetailType
@@ -246,8 +246,8 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// A list of the Chatbot topics and Chatbot clients associated with the notification
-        /// rule.
+        /// A list of the Amazon Q Developer in chat applications topics and Amazon Q Developer
+        /// in chat applications clients associated with the notification rule.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

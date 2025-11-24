@@ -259,26 +259,31 @@ using Amazon.Runtime.Internal.Util;
 		{
 			foreach(var member in operation.RequestQueryStringMembers)
 			{
-#>			
-			if (<#=variableName#>.IsSet<#=member.PropertyName#>())
-<#+
-                if (member.CustomMarshallerTransformation != null)
+                if (member.IsRequired)
                 {
-                // S3 uses the subresources collection instead of the parameters collection because object keys can contain 
-                // '?' making string-splitting of a resource path potentially hazardous
-                // see https://github.com/aws/aws-sdk-net/blob/d4ac138db3288771c57dacdbdb96d800fc344fbd/sdk/src/Core/Amazon.Runtime/Internal/DefaultRequest.cs#L188-L194 
-                    if (this.Config.ServiceId == "S3")
+                    if (member.Shape.IsString)
                     {
 #>
-                request.AddSubResource("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
+            if (string.IsNullOrEmpty(<#=variableName#>.<#=member.PropertyName#>))
+                throw new <#=this.Config.BaseException#>("Request object does not have required field <#=member.PropertyName#> set");
 <#+
                     }
                     else
                     {
 #>
-				request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
+            if (<#=variableName#>.<#=member.PropertyName#> == null)
+                throw new <#=this.Config.BaseException#>("Request object does not have required field <#=member.PropertyName#> set");
 <#+
                     }
+                }
+#>			
+			if (<#=variableName#>.IsSet<#=member.PropertyName#>())
+<#+
+                if (member.CustomMarshallerTransformation != null)
+                {
+#>
+				request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.CustomMarshallerTransformation#>(<#=variableName#>.<#=member.PropertyName#>));
+<#+
                 }
                 else if (member.IsList)
                 {
@@ -304,38 +309,17 @@ using Amazon.Runtime.Internal.Util;
                 }
                 else
                 {
-                // S3 uses the subresources collection instead of the parameters collection because object keys can contain 
-                // '?' making string-splitting of a resource path potentially hazardous
-                // see https://github.com/aws/aws-sdk-net/blob/d4ac138db3288771c57dacdbdb96d800fc344fbd/sdk/src/Core/Amazon.Runtime/Internal/DefaultRequest.cs#L188-L194 
-                    if (this.Config.ServiceId == "S3" && !this.Config.ServiceModel.S3AddParametersList.Contains(operation.Name))
-                    {
-#>
-				request.AddSubResource("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
-<#+
-                    }
-                    else
-                    {
 #>
                 request.Parameters.Add("<#=member.MarshallLocationName#>", <#=member.PrimitiveMarshaller#>(<#=variableName#>.<#=member.PropertyName#>));
-<#+			        }
+<#+
 				}
                 if(member.IsIdempotent)
 	            {
-                    if (this.Config.ServiceId == "S3")
-                    {
-#>
-            else
-                request.AddSubResource("<#=member.MarshallLocationName#>", System.Guid.NewGuid().ToString());
-<#+
-                    }
-                    else
-                    {
 #>
             else            
                 request.Parameters.Add("<#=member.MarshallLocationName#>", System.Guid.NewGuid().ToString());
                 
 <#+ 
-                    }
 	            }
 			}
 		}

@@ -46,6 +46,7 @@ namespace Amazon.Connect.Model
         private string _contactFlowModuleId;
         private string _content;
         private string _instanceId;
+        private string _settings;
 
         /// <summary>
         /// Gets and sets the property ContactFlowModuleId. 
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         /// flow in Amazon Connect Flow language</a>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256000)]
+        [AWSProperty(Min=1, Max=256000)]
         public string Content
         {
             get { return this._content; }
@@ -104,6 +105,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Settings. 
+        /// <para>
+        /// Serialized JSON string of the flow module Settings schema.
+        /// </para>
+        /// </summary>
+        public string Settings
+        {
+            get { return this._settings; }
+            set { this._settings = value; }
+        }
+
+        // Check to see if Settings property is set
+        internal bool IsSetSettings()
+        {
+            return this._settings != null;
         }
 
     }

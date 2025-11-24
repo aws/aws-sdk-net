@@ -31,11 +31,12 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEphemerides operation.
-    /// List existing ephemerides.
+    /// List your existing ephemerides.
     /// </summary>
     public partial class ListEphemeridesRequest : AmazonGroundStationRequest
     {
         private DateTime? _endTime;
+        private EphemerisType _ephemerisType;
         private int? _maxResults;
         private string _nextToken;
         private string _satelliteId;
@@ -45,8 +46,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time to list in UTC. The operation will return an ephemeris if its expiration
-        /// time is within the time range defined by the <c>startTime</c> and <c>endTime</c>.
+        /// The end time for the list operation in UTC. Returns ephemerides with expiration times
+        /// within your specified time range.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,6 +61,24 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemerisType. 
+        /// <para>
+        /// Filter ephemerides by type. If not specified, all ephemeris types will be returned.
+        /// </para>
+        /// </summary>
+        public EphemerisType EphemerisType
+        {
+            get { return this._ephemerisType; }
+            set { this._ephemerisType = value; }
+        }
+
+        // Check to see if EphemerisType property is set
+        internal bool IsSetEphemerisType()
+        {
+            return this._ephemerisType != null;
         }
 
         /// <summary>
@@ -106,7 +125,7 @@ namespace Amazon.GroundStation.Model
         /// The AWS Ground Station satellite ID to list ephemeris for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Min=36, Max=36)]
         public string SatelliteId
         {
             get { return this._satelliteId; }
@@ -122,8 +141,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time to list in UTC. The operation will return an ephemeris if its expiration
-        /// time is within the time range defined by the <c>startTime</c> and <c>endTime</c>.
+        /// The start time for the list operation in UTC. Returns ephemerides with expiration
+        /// times within your specified time range.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

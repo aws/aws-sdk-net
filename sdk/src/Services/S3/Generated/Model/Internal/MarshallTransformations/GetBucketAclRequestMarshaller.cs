@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetBucketAclRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.AddSubResource("acl");
         
@@ -89,5 +90,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketAclRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetBucketAclRequest publicRequest);
     }    
 }

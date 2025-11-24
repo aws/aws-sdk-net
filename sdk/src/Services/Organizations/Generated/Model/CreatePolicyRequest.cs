@@ -46,8 +46,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator.
+    /// You can only call this operation from the management account or a member account that
+    /// is a delegated administrator.
     /// </para>
     /// </summary>
     public partial class CreatePolicyRequest : AmazonOrganizationsRequest
@@ -203,6 +203,16 @@ namespace Amazon.Organizations.Model
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_upgrade_rollout.html">UPGRADE_ROLLOUT_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a>
         /// 
         /// </para>
         ///  </li> </ul>

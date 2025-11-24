@@ -86,6 +86,18 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("currentServiceDeployment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrentServiceDeployment = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("currentServiceRevisions", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ServiceCurrentRevisionSummary, ServiceCurrentRevisionSummaryUnmarshaller>(ServiceCurrentRevisionSummaryUnmarshaller.Instance);
+                    unmarshalledObject.CurrentServiceRevisions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("deploymentConfiguration", targetDepth))
                 {
                     var unmarshaller = DeploymentConfigurationUnmarshaller.Instance;
@@ -186,6 +198,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PropagateTags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("resourceManagementType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceManagementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))

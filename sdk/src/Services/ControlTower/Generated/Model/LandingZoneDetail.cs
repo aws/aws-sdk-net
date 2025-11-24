@@ -38,6 +38,7 @@ namespace Amazon.ControlTower.Model
         private LandingZoneDriftStatusSummary _driftStatus;
         private string _latestAvailableVersion;
         private Amazon.Runtime.Documents.Document _manifest;
+        private List<string> _remediationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LandingZoneStatus _status;
         private string _version;
 
@@ -115,6 +116,31 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetManifest()
         {
             return !this._manifest.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemediationTypes. 
+        /// <para>
+        /// The types of remediation actions configured for the landing zone, such as automatic
+        /// drift correction or compliance enforcement.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> RemediationTypes
+        {
+            get { return this._remediationTypes; }
+            set { this._remediationTypes = value; }
+        }
+
+        // Check to see if RemediationTypes property is set
+        internal bool IsSetRemediationTypes()
+        {
+            return this._remediationTypes != null && (this._remediationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

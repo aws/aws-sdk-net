@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDomainConflictsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/domain-conflicts";
 
@@ -117,5 +118,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDomainConflictsRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListDomainConflictsRequest publicRequest);
     }    
 }

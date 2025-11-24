@@ -443,6 +443,7 @@ namespace Amazon.DeviceFarm.Model
         /// longer supported</a>.
         /// </para>
         /// </summary>
+        [Obsolete("Direct Device Access is no longer available.")]
         public bool? RemoteDebugEnabled
         {
             get { return this._remoteDebugEnabled; }

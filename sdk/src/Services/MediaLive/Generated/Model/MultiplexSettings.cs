@@ -43,7 +43,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MaximumVideoBufferDelayMilliseconds. Maximum video buffer
         /// delay in milliseconds.
         /// </summary>
-        [AWSProperty(Min=800, Max=3000)]
         public int? MaximumVideoBufferDelayMilliseconds
         {
             get { return this._maximumVideoBufferDelayMilliseconds; }
@@ -59,7 +58,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property TransportStreamBitrate. Transport stream bit rate.
         /// </summary>
-        [AWSProperty(Required=true, Min=1000000, Max=100000000)]
+        [AWSProperty(Required=true)]
         public int? TransportStreamBitrate
         {
             get { return this._transportStreamBitrate; }
@@ -75,7 +74,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property TransportStreamId. Transport stream ID.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=65535)]
+        [AWSProperty(Required=true)]
         public int? TransportStreamId
         {
             get { return this._transportStreamId; }
@@ -92,7 +91,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property TransportStreamReservedBitrate. Transport stream reserved
         /// bit rate.
         /// </summary>
-        [AWSProperty(Min=0, Max=100000000)]
         public int? TransportStreamReservedBitrate
         {
             get { return this._transportStreamReservedBitrate; }

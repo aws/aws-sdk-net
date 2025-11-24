@@ -37,11 +37,14 @@ namespace Amazon.MediaConvert.Model
     {
         private MpdAccessibilityCaptionHints _accessibilityCaptionHints;
         private MpdAudioDuration _audioDuration;
+        private MpdC2paManifest _c2paManifest;
         private MpdCaptionContainerType _captionContainerType;
+        private string _certificateSecret;
         private MpdKlvMetadata _klvMetadata;
         private MpdManifestMetadataSignaling _manifestMetadataSignaling;
         private MpdScte35Esam _scte35Esam;
         private MpdScte35Source _scte35Source;
+        private string _signingKmsKey;
         private MpdTimedMetadata _timedMetadata;
         private MpdTimedMetadataBoxVersion _timedMetadataBoxVersion;
         private string _timedMetadataSchemeIdUri;
@@ -95,10 +98,27 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property C2paManifest. When enabled, a C2PA compliant manifest will
+        /// be generated, signed and embeded in the output. For more information on C2PA, see
+        /// https://c2pa.org/specifications/specifications/2.1/index.html
+        /// </summary>
+        public MpdC2paManifest C2paManifest
+        {
+            get { return this._c2paManifest; }
+            set { this._c2paManifest = value; }
+        }
+
+        // Check to see if C2paManifest property is set
+        internal bool IsSetC2paManifest()
+        {
+            return this._c2paManifest != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CaptionContainerType. Use this setting only in DASH output
-        /// groups that include sidecar TTML or IMSC captions. You specify sidecar captions in
-        /// a separate output from your audio and video. Choose Raw for captions in a single XML
-        /// file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained
+        /// groups that include sidecar TTML, IMSC or WEBVTT captions. You specify sidecar captions
+        /// in a separate output from your audio and video. Choose Raw for captions in a single
+        /// XML file in a raw container. Choose Fragmented MPEG-4 for captions in XML format contained
         /// within fragmented MP4 files. This set of fragmented MP4 files is separate from your
         /// video and audio fragmented MP4 files.
         /// </summary>
@@ -112,6 +132,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCaptionContainerType()
         {
             return this._captionContainerType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateSecret. Specify the name or ARN of the AWS Secrets
+        /// Manager secret that contains your C2PA public certificate chain in PEM format. Provide
+        /// a valid secret name or ARN. Note that your MediaConvert service role must allow access
+        /// to this secret. The public certificate chain is added to the COSE header (x5chain)
+        /// for signature validation. Include the signer's certificate and all intermediate certificates.
+        /// Do not include the root certificate. For details on COSE, see: https://opensource.contentauthenticity.org/docs/manifest/signing-manifests
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string CertificateSecret
+        {
+            get { return this._certificateSecret; }
+            set { this._certificateSecret = value; }
+        }
+
+        // Check to see if CertificateSecret property is set
+        internal bool IsSetCertificateSecret()
+        {
+            return this._certificateSecret != null;
         }
 
         /// <summary>
@@ -189,6 +230,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetScte35Source()
         {
             return this._scte35Source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SigningKmsKey. Specify the ID or ARN of the AWS KMS key
+        /// used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note
+        /// that your MediaConvert service role must allow access to this key.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string SigningKmsKey
+        {
+            get { return this._signingKmsKey; }
+            set { this._signingKmsKey = value; }
+        }
+
+        // Check to see if SigningKmsKey property is set
+        internal bool IsSetSigningKmsKey()
+        {
+            return this._signingKmsKey != null;
         }
 
         /// <summary>

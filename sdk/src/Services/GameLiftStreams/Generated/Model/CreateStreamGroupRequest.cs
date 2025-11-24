@@ -31,14 +31,13 @@ namespace Amazon.GameLiftStreams.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamGroup operation.
-    /// Manage how Amazon GameLift Streams streams your applications by using a stream group.
-    /// A stream group is a collection of resources that Amazon GameLift Streams uses to stream
-    /// your application to end-users. When you create a stream group, you specify an application
-    /// to stream by default and the type of hardware to use, such as the graphical processing
-    /// unit (GPU). You can also link additional applications, which allows you to stream
-    /// those applications using this stream group. Depending on your expected users, you
-    /// also scale the number of concurrent streams you want to support at one time, and in
-    /// what locations. 
+    /// Stream groups manage how Amazon GameLift Streams allocates resources and handles
+    /// concurrent streams, allowing you to effectively manage capacity and costs. Within
+    /// a stream group, you specify an application to stream, streaming locations and their
+    /// capacity, and the stream class you want to use when streaming applications to your
+    /// end-users. A stream class defines the hardware configuration of the compute resources
+    /// that Amazon GameLift Streams will use when streaming, such as the CPU, GPU, and memory.
+    /// 
     /// 
     ///  
     /// <para>
@@ -50,8 +49,8 @@ namespace Amazon.GameLiftStreams.Model
     /// <para>
     ///  <b>Always-on</b>: The streaming capacity that is allocated and ready to handle stream
     /// requests without delay. You pay for this capacity whether it's in use or not. Best
-    /// for quickest time from streaming request to streaming session. Default is 1 when creating
-    /// a stream group or adding a location. 
+    /// for quickest time from streaming request to streaming session. Default is 1 (2 for
+    /// high stream classes) when creating a stream group or adding a location. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -63,17 +62,32 @@ namespace Amazon.GameLiftStreams.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// Values for capacity must be whole number multiples of the tenancy value of the stream
+    /// group's stream class.
+    /// </para>
+    ///  
+    /// <para>
     ///  To adjust the capacity of any <c>ACTIVE</c> stream group, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
     /// 
     /// </para>
     ///  
     /// <para>
-    ///  If the request is successful, Amazon GameLift Streams begins creating the stream
-    /// group. Amazon GameLift Streams assigns a unique ID to the stream group resource and
-    /// sets the status to <c>ACTIVATING</c>. When the stream group reaches <c>ACTIVE</c>
-    /// status, you can start stream sessions by using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html">StartStreamSession</a>.
+    ///  If the <c>CreateStreamGroup</c> request is successful, Amazon GameLift Streams assigns
+    /// a unique ID to the stream group resource and sets the status to <c>ACTIVATING</c>.
+    /// It can take a few minutes for Amazon GameLift Streams to finish creating the stream
+    /// group while it searches for unallocated compute resources and provisions them. When
+    /// complete, the stream group status will be <c>ACTIVE</c> and you can start stream sessions
+    /// by using <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_StartStreamSession.html">StartStreamSession</a>.
     /// To check the stream group's status, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamGroup.html">GetStreamGroup</a>.
     /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// Stream groups should be recreated every 3-4 weeks to pick up important service updates
+    /// and fixes. Stream groups that are older than 180 days can no longer be updated with
+    /// new application associations. Stream groups expire when they are 365 days old, at
+    /// which point they can no longer stream sessions. The exact expiration date is indicated
+    /// by the date value in the <c>ExpiresAt</c> field.
     /// </para>
     /// </summary>
     public partial class CreateStreamGroupRequest : AmazonGameLiftStreamsRequest

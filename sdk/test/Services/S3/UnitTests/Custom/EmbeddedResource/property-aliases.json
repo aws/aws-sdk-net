@@ -1,0 +1,132 @@
+{
+  "PropertyAliases": {
+    "PutObjectResponse": {
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "SSEKMSEncryptionContext": "ServerSideEncryptionKeyManagementServiceEncryptionContext",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId"
+    },
+    "TransferUtilityUploadResponse": {
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "SSEKMSEncryptionContext": "ServerSideEncryptionKeyManagementServiceEncryptionContext",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId"
+    },
+    "PutObjectRequest": {
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId",
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "SSEKMSEncryptionContext": "ServerSideEncryptionKeyManagementServiceEncryptionContext",
+      "ACL": "CannedACL",
+      "Bucket": "BucketName",
+      "SSECustomerKey": "ServerSideEncryptionCustomerProvidedKey",
+      "Tagging": "TagSet",
+      "GrantFullControl": "Grants",
+      "GrantRead": "Grants",
+      "GrantReadACP": "Grants",
+      "GrantWriteACP": "Grants"
+    },
+    "GetObjectRequest": {
+      "Bucket": "BucketName",
+      "SSECustomerKey": "ServerSideEncryptionCustomerProvidedKey",
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "ResponseCacheControl": "CacheControl",
+      "ResponseContentDisposition": "ContentDisposition",
+      "ResponseContentEncoding": "ContentEncoding",
+      "ResponseContentLanguage": "ContentLanguage",
+      "ResponseContentType": "ContentType",
+      "ResponseExpires": "Expires",
+      "IfMatch": "EtagToMatch",
+      "IfNoneMatch": "EtagToNotMatch",
+      "IfModifiedSince": "ModifiedSinceDate",
+      "IfUnmodifiedSince": "UnmodifiedSinceDate"
+    },
+    "TransferUtilityDownloadRequest": {
+      "Bucket": "BucketName",
+      "IfModifiedSince": "ModifiedSinceDate",
+      "IfUnmodifiedSince": "UnmodifiedSinceDate",
+      "ResponseCacheControl": "CacheControl",
+      "ResponseContentDisposition": "ContentDisposition",
+      "ResponseContentEncoding": "ContentEncoding",
+      "ResponseContentLanguage": "ContentLanguage",
+      "ResponseContentType": "ContentType",
+      "ResponseExpires": "Expires",
+      "SSECustomerKey": "ServerSideEncryptionCustomerProvidedKey",
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5"
+    },
+    "TransferUtilityOpenStreamRequest": {
+      "Bucket": "BucketName",
+      "IfModifiedSince": "ModifiedSinceDate",
+      "IfUnmodifiedSince": "UnmodifiedSinceDate",
+      "ResponseCacheControl": "CacheControl",
+      "ResponseContentDisposition": "ContentDisposition",
+      "ResponseContentEncoding": "ContentEncoding",
+      "ResponseContentLanguage": "ContentLanguage",
+      "ResponseContentType": "ContentType",
+      "ResponseExpires": "Expires",
+      "SSECustomerKey": "ServerSideEncryptionCustomerProvidedKey",
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5"
+    },
+    "TransferUtilityUploadRequest": {
+      "ACL": "CannedACL",
+      "Bucket": "BucketName",
+      "GrantFullControl": "Grants",
+      "GrantRead": "Grants",
+      "GrantReadACP": "Grants",
+      "GrantWriteACP": "Grants",
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKey": "ServerSideEncryptionCustomerProvidedKey",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId",
+      "Tagging": "TagSet"
+    },
+    "TransferUtilityUploadDirectoryRequest": {
+      "ACL": "CannedACL",
+      "Bucket": "BucketName",
+      "GrantFullControl": "Grants",
+      "GrantRead": "Grants",
+      "GrantReadACP": "Grants",
+      "GrantWriteACP": "Grants",
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKey": "ServerSideEncryptionCustomerProvidedKey",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId",
+      "Tagging": "TagSet"
+    },
+    "InitiateMultipartUploadRequest": {
+      "ACL": "CannedACL",
+      "Bucket": "BucketName",
+      "GrantFullControl": "Grants",
+      "GrantRead": "Grants",
+      "GrantReadACP": "Grants",
+      "GrantWriteACP": "Grants",
+      "ServerSideEncryption": "ServerSideEncryptionMethod",
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKey": "ServerSideEncryptionCustomerProvidedKey",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5",
+      "SSEKMSKeyId": "ServerSideEncryptionKeyManagementServiceKeyId",
+      "Tagging": "TagSet",
+      "SSEKMSEncryptionContext": "ServerSideEncryptionKeyManagementServiceEncryptionContext"
+    },
+    "UploadPartRequest": {
+      "Bucket": "BucketName",
+      "SSECustomerAlgorithm": "ServerSideEncryptionCustomerMethod",
+      "SSECustomerKey": "ServerSideEncryptionCustomerProvidedKey",
+      "SSECustomerKeyMD5": "ServerSideEncryptionCustomerProvidedKeyMD5"
+    },
+    "CompleteMultipartUploadRequest": {
+      "Bucket": "BucketName"
+    },
+    "AbortMultipartUploadRequest": {
+      "Bucket": "BucketName"
+    }
+  }
+}

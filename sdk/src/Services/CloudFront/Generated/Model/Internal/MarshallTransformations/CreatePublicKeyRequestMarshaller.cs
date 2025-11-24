@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreatePublicKeyRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/public-key";
 
@@ -114,5 +115,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreatePublicKeyRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreatePublicKeyRequest publicRequest);
     }    
 }

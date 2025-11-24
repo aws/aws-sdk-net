@@ -68,6 +68,8 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetConfigurationProfileId())
                 throw new AmazonAppConfigException("Request object does not have required field ConfigurationProfileId set");
             request.AddPathResource("{ConfigurationProfileId}", StringUtils.FromString(publicRequest.ConfigurationProfileId));
+            if (string.IsNullOrEmpty(publicRequest.ConfigurationVersion))
+                throw new AmazonAppConfigException("Request object does not have required field ConfigurationVersion set");
             
             if (publicRequest.IsSetConfigurationVersion())
                 request.Parameters.Add("configuration_version", StringUtils.FromString(publicRequest.ConfigurationVersion));

@@ -393,6 +393,38 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.AdminDetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.FailedResourcesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.ResourceArn</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.ScanId</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.ScannedResourcesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResponse.SkippedResourcesCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetMalwareScanSettingsRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -575,6 +607,11 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListMalwareScansRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.ListMembersRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -634,8 +671,13 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.StartMalwareScanRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.StartMalwareScanRequest.ResourceArn</property>
-    <pattern>^arn:[A-Za-z-]+:[A-Za-z0-9]+:[A-Za-z0-9-]+:\d+:(([A-Za-z0-9-]+)[:\/])?[A-Za-z0-9-]*$</pattern>
+    <pattern>^arn:[A-Za-z-]+:[A-Za-z0-9]+:[A-Za-z0-9-]+:\d+:(([A-Za-z0-9-]+)[:\/])?[A-Za-z0-9:-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.StartMalwareScanResponse.ScanId</property>
@@ -828,6 +870,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AdditionalInfo.DeviceName</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AdditionalInfo.VersionId</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.AdminAccount.AdminStatus</property>
     <min>1</min>
     <max>300</max>
@@ -878,6 +930,11 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.EbsSnapshot.DeviceName</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.EbsVolumesResult.Status</property>
     <min>1</min>
     <max>300</max>
@@ -898,6 +955,35 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.FailedFileCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.SkippedFileCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.ThreatFoundFileCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.TotalBytes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.TotalFileCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetMalwareScanResultDetails.UniqueThreatCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.IncrementalScanDetails.BaselineResourceArn</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.Indicator.Title</property>
     <min>1</min>
     <max>256</max>
@@ -908,9 +994,29 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ItemDetails.ItemPath</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ItemDetails.ResourceArn</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.KubernetesAuditLogsConfigurationResult.Status</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.MalwareScan.ResourceArn</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.MalwareScan.ScanId</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.Master.AccountId</property>
@@ -990,6 +1096,35 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScanConfiguration.Role</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScanConfigurationRecoveryPoint.BackupVaultName</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScannedResource.ScannedResourceArn</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScanResultThreat.Count</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScanResultThreat.Hash</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ScanResultThreat.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.Sequence.Description</property>
     <max>4096</max>
   </property-value-rule>
@@ -1001,6 +1136,11 @@
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.Signal.Description</property>
     <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.StartMalwareScanConfiguration.Role</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.TriggerDetails.Description</property>

@@ -41,6 +41,7 @@ namespace Amazon.LexModelsV2.Model
         private GenerativeAISettings _generativeaiSettings;
         private string _localeId;
         private double? _nluIntentConfidenceThreshold;
+        private SpeechDetectionSensitivity _speechDetectionSensitivity;
         private VoiceSettings _voiceSettings;
 
         /// <summary>
@@ -161,6 +162,26 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetNluIntentConfidenceThreshold()
         {
             return this._nluIntentConfidenceThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpeechDetectionSensitivity. 
+        /// <para>
+        /// The new sensitivity level for voice activity detection (VAD) in the bot locale. This
+        /// setting helps optimize speech recognition accuracy by adjusting how the system responds
+        /// to background noise during voice interactions.
+        /// </para>
+        /// </summary>
+        public SpeechDetectionSensitivity SpeechDetectionSensitivity
+        {
+            get { return this._speechDetectionSensitivity; }
+            set { this._speechDetectionSensitivity = value; }
+        }
+
+        // Check to see if SpeechDetectionSensitivity property is set
+        internal bool IsSetSpeechDetectionSensitivity()
+        {
+            return this._speechDetectionSensitivity != null;
         }
 
         /// <summary>

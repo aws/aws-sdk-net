@@ -64,6 +64,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     response.NewTenancyActivationLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ociIdentityDomain", targetDepth))
+                {
+                    var unmarshaller = OciIdentityDomainUnmarshaller.Instance;
+                    response.OciIdentityDomain = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -52,6 +52,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("latestVersionReferences", targetDepth))
+                {
+                    var unmarshaller = LatestVersionReferencesUnmarshaller.Instance;
+                    response.LatestVersionReferences = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("workflow", targetDepth))
                 {
                     var unmarshaller = WorkflowUnmarshaller.Instance;

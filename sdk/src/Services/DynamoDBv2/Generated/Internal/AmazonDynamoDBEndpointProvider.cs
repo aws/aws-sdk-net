@@ -98,7 +98,7 @@ namespace Amazon.DynamoDBv2.Internal
                         {
                             throw new AmazonClientException("Invalid Configuration: Dualstack and local endpoint are not supported");
                         }
-                        return new Endpoint("http://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""signingRegion"":""us-east-1"",""name"":""sigv4"",""signingName"":""dynamodb""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint("http://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""dynamodb"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
                     }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
@@ -138,17 +138,17 @@ namespace Amazon.DynamoDBv2.Internal
                         {
                             if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArn"]) && (refs["ParsedArn"] = ParseArn((string)refs["ResourceArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
                             {
-                                return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
                             }
                             if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArnList"]) && (refs["FirstArn"] = GetAttr(refs["ResourceArnList"], "[0]")) != null && (refs["ParsedArn"] = ParseArn((string)refs["FirstArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
                             {
-                                return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
                             }
                             if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["AccountId"]))
                             {
                                 if (IsValidHostLabel((string)refs["AccountId"], false))
                                 {
-                                    return new Endpoint(Interpolate(@"https://{AccountId}.ddb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                    return new Endpoint(Interpolate(@"https://{AccountId}.ddb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
                                 }
                                 throw new AmazonClientException("Credentials-sourced account ID parameter is invalid");
                             }
@@ -170,17 +170,17 @@ namespace Amazon.DynamoDBv2.Internal
                     }
                     if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArn"]) && (refs["ParsedArn"] = ParseArn((string)refs["ResourceArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
                     {
-                        return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
                     }
                     if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["ResourceArnList"]) && (refs["FirstArn"] = GetAttr(refs["ResourceArnList"], "[0]")) != null && (refs["ParsedArn"] = ParseArn((string)refs["FirstArn"])) != null && Equals(GetAttr(refs["ParsedArn"], "service"), "dynamodb") && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "region"), false) && Equals(GetAttr(refs["ParsedArn"], "region"), Interpolate(@"{Region}", refs)) && IsValidHostLabel((string)GetAttr(refs["ParsedArn"], "accountId"), false))
                     {
-                        return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://{ParsedArn#accountId}.ddb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
                     }
                     if (IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && IsSet(refs["AccountId"]))
                     {
                         if (IsValidHostLabel((string)refs["AccountId"], false))
                         {
-                            return new Endpoint(Interpolate(@"https://{AccountId}.ddb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            return new Endpoint(Interpolate(@"https://{AccountId}.ddb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("Credentials-sourced account ID parameter is invalid");
                     }

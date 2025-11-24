@@ -428,6 +428,32 @@ namespace Amazon.ApplicationSignals
 
         #endregion
                 
+        #region  ListEntityEvents
+
+
+
+        /// <summary>
+        /// Returns a list of change events for a specific entity, such as deployments, configuration
+        /// changes, or other state-changing activities. This operation helps track the history
+        /// of changes that may have affected service performance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntityEvents service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListEntityEvents">REST API Reference for ListEntityEvents Operation</seealso>
+        Task<ListEntityEventsResponse> ListEntityEventsAsync(ListEntityEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListGroupingAttributeDefinitions
 
 
@@ -734,6 +760,12 @@ namespace Amazon.ApplicationSignals
         ///  <c>autoscaling:DescribeAutoScalingGroups</c> 
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        /// A service-linked CloudTrail event channel is created to process CloudTrail events
+        /// and return change event information. This includes last deployment time, userName,
+        /// eventName, and other event metadata.
+        /// </para>
+        ///  
         /// <para>
         /// After completing this step, you still need to instrument your Java and Python applications
         /// to send data to Application Signals. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Application-Signals-Enable.html">

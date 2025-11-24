@@ -144,6 +144,11 @@ namespace Amazon.S3.Model
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
         /// tags with directory buckets</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// You must have the <c>s3express:TagResource</c> permission to create a directory bucket
+        /// with tags.
+        /// </para>
         ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

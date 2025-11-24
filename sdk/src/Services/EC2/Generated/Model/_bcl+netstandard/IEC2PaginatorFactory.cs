@@ -118,6 +118,16 @@ namespace Amazon.EC2.Model
         IDescribeCapacityBlockStatusPaginator DescribeCapacityBlockStatus(DescribeCapacityBlockStatusRequest request);
 
         /// <summary>
+        /// Paginator for DescribeCapacityManagerDataExports operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeCapacityManagerDataExportsPaginator DescribeCapacityManagerDataExports(DescribeCapacityManagerDataExportsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationBillingRequests operation
         ///</summary>
         [AWSPaginator(
@@ -516,6 +526,26 @@ namespace Amazon.EC2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IDescribeIpamPoolsPaginator DescribeIpamPools(DescribeIpamPoolsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeIpamPrefixListResolvers operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeIpamPrefixListResolversPaginator DescribeIpamPrefixListResolvers(DescribeIpamPrefixListResolversRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeIpamPrefixListResolverTargets operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeIpamPrefixListResolverTargetsPaginator DescribeIpamPrefixListResolverTargets(DescribeIpamPrefixListResolverTargetsRequest request);
 
         /// <summary>
         /// Paginator for DescribeIpamResourceDiscoveries operation
@@ -1308,6 +1338,16 @@ namespace Amazon.EC2.Model
         IDescribeVpcsPaginator DescribeVpcs(DescribeVpcsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeVpnConcentrators operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeVpnConcentratorsPaginator DescribeVpnConcentrators(DescribeVpnConcentratorsRequest request);
+
+        /// <summary>
         /// Paginator for GetAssociatedIpv6PoolCidrs operation
         ///</summary>
         [AWSPaginator(
@@ -1326,6 +1366,26 @@ namespace Amazon.EC2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetAwsNetworkPerformanceDataPaginator GetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request);
+
+        /// <summary>
+        /// Paginator for GetCapacityManagerMetricData operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetCapacityManagerMetricDataPaginator GetCapacityManagerMetricData(GetCapacityManagerMetricDataRequest request);
+
+        /// <summary>
+        /// Paginator for GetCapacityManagerMetricDimensions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetCapacityManagerMetricDimensionsPaginator GetCapacityManagerMetricDimensions(GetCapacityManagerMetricDimensionsRequest request);
 
         /// <summary>
         /// Paginator for GetGroupsForCapacityReservation operation
@@ -1396,6 +1456,36 @@ namespace Amazon.EC2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetIpamPoolCidrsPaginator GetIpamPoolCidrs(GetIpamPoolCidrsRequest request);
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverRules operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetIpamPrefixListResolverRulesPaginator GetIpamPrefixListResolverRules(GetIpamPrefixListResolverRulesRequest request);
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverVersionEntries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetIpamPrefixListResolverVersionEntriesPaginator GetIpamPrefixListResolverVersionEntries(GetIpamPrefixListResolverVersionEntriesRequest request);
+
+        /// <summary>
+        /// Paginator for GetIpamPrefixListResolverVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetIpamPrefixListResolverVersionsPaginator GetIpamPrefixListResolverVersions(GetIpamPrefixListResolverVersionsRequest request);
 
         /// <summary>
         /// Paginator for GetIpamResourceCidrs operation

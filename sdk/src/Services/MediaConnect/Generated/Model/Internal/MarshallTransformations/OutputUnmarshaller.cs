@@ -68,6 +68,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.BridgePorts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("connectedRouterInputArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectedRouterInputArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("dataTransferSubscriberFeePercent", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -144,6 +150,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("routerIntegrationState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RouterIntegrationState = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("routerIntegrationTransitEncryption", targetDepth))
+                {
+                    var unmarshaller = FlowTransitEncryptionUnmarshaller.Instance;
+                    unmarshalledObject.RouterIntegrationTransitEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transport", targetDepth))

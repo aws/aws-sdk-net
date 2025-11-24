@@ -80,7 +80,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IntegrationConfig.
+        /// Gets and sets the property IntegrationConfig. 
+        /// <para>
+        /// The configuration settings for the integration. Currently, only the RefreshInterval
+        /// can be modified. 
+        /// </para>
         /// </summary>
         public IntegrationConfig IntegrationConfig
         {

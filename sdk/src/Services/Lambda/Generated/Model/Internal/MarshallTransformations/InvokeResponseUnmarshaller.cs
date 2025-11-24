@@ -175,6 +175,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotReadyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("SerializedRequestEntityTooLargeException"))
+                {
+                    return SerializedRequestEntityTooLargeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
                 {
                     return ServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

@@ -50,6 +50,7 @@ namespace Amazon.Odb.Model
         private string _domain;
         private string _giVersion;
         private string _hostname;
+        private List<IamRole> _iamRoles = AWSConfigs.InitializeCollections ? new List<IamRole>() : null;
         private ExadataIormConfig _iormConfigCache;
         private bool? _isLocalBackupEnabled;
         private bool? _isSparseDiskgroupEnabled;
@@ -373,6 +374,30 @@ namespace Amazon.Odb.Model
         internal bool IsSetHostname()
         {
             return this._hostname != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamRoles. 
+        /// <para>
+        /// The Amazon Web Services Identity and Access Management (IAM) service roles associated
+        /// with the VM cluster.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<IamRole> IamRoles
+        {
+            get { return this._iamRoles; }
+            set { this._iamRoles = value; }
+        }
+
+        // Check to see if IamRoles property is set
+        internal bool IsSetIamRoles()
+        {
+            return this._iamRoles != null && (this._iamRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

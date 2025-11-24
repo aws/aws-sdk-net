@@ -1959,6 +1959,12 @@
     <pattern>^(vpc-[0-9a-f]{8,})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.DomainJoinServiceAccountSecret</property>
+    <min>64</min>
+    <max>1024</max>
+    <pattern>^arn:[^:]{1,63}:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+-[a-zA-Z0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryAttributes.DomainName</property>
     <min>1</min>
     <max>255</max>
@@ -1981,6 +1987,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.DomainJoinServiceAccountSecret</property>
+    <min>64</min>
+    <max>1024</max>
+    <pattern>^arn:[^:]{1,63}:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+-[a-zA-Z0-9]{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfiguration.DomainName</property>
@@ -2011,6 +2023,12 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfigurationUpdates.DomainJoinServiceAccountSecret</property>
+    <min>64</min>
+    <max>1024</max>
+    <pattern>^arn:[^:]{1,63}:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+-[a-zA-Z0-9]{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.SelfManagedActiveDirectoryConfigurationUpdates.DomainName</property>
@@ -2396,5 +2414,11 @@
     <min>7</min>
     <max>7</max>
     <pattern>^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.WindowsFsrmConfiguration.EventLogDestination</property>
+    <min>8</min>
+    <max>1024</max>
+    <pattern>^arn:[^:]{1,63}:[^:]{0,63}:[^:]{0,63}:(?:|\d{12}):[^/].{0,1023}$</pattern>
   </property-value-rule>
 </property-value-rules>

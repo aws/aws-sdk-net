@@ -8,13 +8,13 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.BedrockAgentCoreControl")]
 #if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Bedrock Agent Core Control Plane Fronting Layer. Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Bedrock AgentCore Control. Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.")]
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Bedrock Agent Core Control Plane Fronting Layer. Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Bedrock AgentCore Control. Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.")]
 #elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Bedrock Agent Core Control Plane Fronting Layer. Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Bedrock AgentCore Control. Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.")]
 #elif NET8_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Bedrock Agent Core Control Plane Fronting Layer. Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Bedrock AgentCore Control. Initial release of Amazon Bedrock AgentCore SDK including Runtime, Built-In Tools, Memory, Gateway and Identity.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -42,4 +42,4 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.7.0")]
+[assembly: AssemblyFileVersion("4.0.11.0")]

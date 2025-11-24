@@ -141,6 +141,56 @@ namespace Amazon.TimestreamInfluxDB
 
 
     /// <summary>
+    /// Constants used for properties of type DataFusionRuntimeType.
+    /// </summary>
+    public class DataFusionRuntimeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MultiThread for DataFusionRuntimeType
+        /// </summary>
+        public static readonly DataFusionRuntimeType MultiThread = new DataFusionRuntimeType("multi-thread");
+        /// <summary>
+        /// Constant MultiThreadAlt for DataFusionRuntimeType
+        /// </summary>
+        public static readonly DataFusionRuntimeType MultiThreadAlt = new DataFusionRuntimeType("multi-thread-alt");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataFusionRuntimeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataFusionRuntimeType FindValue(string value)
+        {
+            return FindValue<DataFusionRuntimeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataFusionRuntimeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DbInstanceType.
     /// </summary>
     public class DbInstanceType : ConstantClass
@@ -329,6 +379,10 @@ namespace Amazon.TimestreamInfluxDB
     {
 
         /// <summary>
+        /// Constant Days for DurationType
+        /// </summary>
+        public static readonly DurationType Days = new DurationType("days");
+        /// <summary>
         /// Constant Hours for DurationType
         /// </summary>
         public static readonly DurationType Hours = new DurationType("hours");
@@ -374,6 +428,60 @@ namespace Amazon.TimestreamInfluxDB
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EngineType.
+    /// </summary>
+    public class EngineType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INFLUXDB_V2 for EngineType
+        /// </summary>
+        public static readonly EngineType INFLUXDB_V2 = new EngineType("INFLUXDB_V2");
+        /// <summary>
+        /// Constant INFLUXDB_V3_CORE for EngineType
+        /// </summary>
+        public static readonly EngineType INFLUXDB_V3_CORE = new EngineType("INFLUXDB_V3_CORE");
+        /// <summary>
+        /// Constant INFLUXDB_V3_ENTERPRISE for EngineType
+        /// </summary>
+        public static readonly EngineType INFLUXDB_V3_ENTERPRISE = new EngineType("INFLUXDB_V3_ENTERPRISE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EngineType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngineType FindValue(string value)
+        {
+            return FindValue<EngineType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngineType(string value)
         {
             return FindValue(value);
         }
@@ -437,9 +545,25 @@ namespace Amazon.TimestreamInfluxDB
     {
 
         /// <summary>
+        /// Constant COMPACT for InstanceMode
+        /// </summary>
+        public static readonly InstanceMode COMPACT = new InstanceMode("COMPACT");
+        /// <summary>
+        /// Constant INGEST for InstanceMode
+        /// </summary>
+        public static readonly InstanceMode INGEST = new InstanceMode("INGEST");
+        /// <summary>
         /// Constant PRIMARY for InstanceMode
         /// </summary>
         public static readonly InstanceMode PRIMARY = new InstanceMode("PRIMARY");
+        /// <summary>
+        /// Constant PROCESS for InstanceMode
+        /// </summary>
+        public static readonly InstanceMode PROCESS = new InstanceMode("PROCESS");
+        /// <summary>
+        /// Constant QUERY for InstanceMode
+        /// </summary>
+        public static readonly InstanceMode QUERY = new InstanceMode("QUERY");
         /// <summary>
         /// Constant REPLICA for InstanceMode
         /// </summary>
@@ -478,6 +602,52 @@ namespace Amazon.TimestreamInfluxDB
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogFormats.
+    /// </summary>
+    public class LogFormats : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Full for LogFormats
+        /// </summary>
+        public static readonly LogFormats Full = new LogFormats("full");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogFormats(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogFormats FindValue(string value)
+        {
+            return FindValue<LogFormats>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogFormats(string value)
         {
             return FindValue(value);
         }
@@ -676,6 +846,10 @@ namespace Amazon.TimestreamInfluxDB
     public class TracingType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Disabled for TracingType
+        /// </summary>
+        public static readonly TracingType Disabled = new TracingType("disabled");
         /// <summary>
         /// Constant Jaeger for TracingType
         /// </summary>

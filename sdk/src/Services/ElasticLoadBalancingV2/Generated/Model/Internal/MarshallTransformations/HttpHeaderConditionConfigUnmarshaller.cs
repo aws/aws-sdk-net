@@ -61,6 +61,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.HttpHeaderName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("RegexValues/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.RegexValues == null)
+                        {
+                            unmarshalledObject.RegexValues = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.RegexValues.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Values/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

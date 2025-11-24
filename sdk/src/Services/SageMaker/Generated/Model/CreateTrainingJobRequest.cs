@@ -161,7 +161,6 @@ namespace Amazon.SageMaker.Model
         /// Your Own Algorithms with Amazon SageMaker</a>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AlgorithmSpecification AlgorithmSpecification
         {
             get { return this._algorithmSpecification; }
@@ -555,7 +554,6 @@ namespace Amazon.SageMaker.Model
         /// count greater than 1.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ResourceConfig ResourceConfig
         {
             get { return this._resourceConfig; }
@@ -654,7 +652,6 @@ namespace Amazon.SageMaker.Model
         /// the model artifacts, so the results of training are not lost. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public StoppingCondition StoppingCondition
         {
             get { return this._stoppingCondition; }

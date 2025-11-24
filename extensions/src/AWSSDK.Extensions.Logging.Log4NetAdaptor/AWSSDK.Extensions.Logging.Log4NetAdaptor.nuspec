@@ -3,7 +3,7 @@
   <metadata>
     <id>AWSSDK.Extensions.Logging.Log4NetAdaptor</id>
     <title>AWSSDK - Adaptor for log4net</title>
-    <version>4.0.0.6</version>
+    <version>4.0.0.14</version>
     <authors>Amazon Web Services</authors>
     <description>Integrates the AWS SDK for .NET logging into log4net.</description>
     <language>en-US</language>
@@ -14,7 +14,7 @@
     <readme>README.md</readme>
     <dependencies>
       <group targetFramework="netstandard2.0">
-        <dependency id="AWSSDK.Core" version="4.0.1.0" />
+        <dependency id="AWSSDK.Core" version="4.0.3.3" />
         <dependency id="log4net" version="3.0.1" />
       </group>
     </dependencies>

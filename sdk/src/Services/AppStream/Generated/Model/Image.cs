@@ -47,7 +47,9 @@ namespace Amazon.AppStream.Model
         private List<ResourceError> _imageErrors = AWSConfigs.InitializeCollections ? new List<ResourceError>() : null;
         private ImagePermissions _imagePermissions;
         private ImageSharedWithOthers _imageSharedWithOthers;
+        private ImageType _imageType;
         private LatestAppstreamAgentVersion _latestAppstreamAgentVersion;
+        private bool? _managedSoftwareIncluded;
         private string _name;
         private PlatformType _platform;
         private DateTime? _publicBaseImageReleasedDate;
@@ -82,8 +84,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AppstreamAgentVersion. 
         /// <para>
-        /// The version of the AppStream 2.0 agent to use for instances that are launched from
-        /// this image. 
+        /// The version of the WorkSpaces Applications agent to use for instances that are launched
+        /// from this image. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -194,8 +196,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DynamicAppProvidersEnabled. 
         /// <para>
-        /// Indicates whether dynamic app providers are enabled within an AppStream 2.0 image
-        /// or not.
+        /// Indicates whether dynamic app providers are enabled within an WorkSpaces Applications
+        /// image or not.
         /// </para>
         /// </summary>
         public DynamicAppProvidersEnabled DynamicAppProvidersEnabled
@@ -308,9 +310,31 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageType. 
+        /// <para>
+        /// The type of the image. Images created through AMI import have type "custom", while
+        /// WorkSpaces Applications provided images have type "native". Custom images support
+        /// additional instance types including GeneralPurpose, MemoryOptimized, ComputeOptimized,
+        /// and Accelerated instance families.
+        /// </para>
+        /// </summary>
+        public ImageType ImageType
+        {
+            get { return this._imageType; }
+            set { this._imageType = value; }
+        }
+
+        // Check to see if ImageType property is set
+        internal bool IsSetImageType()
+        {
+            return this._imageType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LatestAppstreamAgentVersion. 
         /// <para>
-        /// Indicates whether the image is using the latest AppStream 2.0 agent version or not.
+        /// Indicates whether the image is using the latest WorkSpaces Applications agent version
+        /// or not.
         /// </para>
         /// </summary>
         public LatestAppstreamAgentVersion LatestAppstreamAgentVersion
@@ -323,6 +347,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetLatestAppstreamAgentVersion()
         {
             return this._latestAppstreamAgentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedSoftwareIncluded. 
+        /// <para>
+        /// Indicates whether the image includes license-included applications.
+        /// </para>
+        /// </summary>
+        public bool? ManagedSoftwareIncluded
+        {
+            get { return this._managedSoftwareIncluded; }
+            set { this._managedSoftwareIncluded = value; }
+        }
+
+        // Check to see if ManagedSoftwareIncluded property is set
+        internal bool IsSetManagedSoftwareIncluded()
+        {
+            return this._managedSoftwareIncluded.HasValue; 
         }
 
         /// <summary>

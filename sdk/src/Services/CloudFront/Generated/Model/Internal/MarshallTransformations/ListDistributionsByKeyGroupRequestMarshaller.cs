@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDistributionsByKeyGroupRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetKeyGroupId())
                 throw new AmazonCloudFrontException("Request object does not have required field KeyGroupId set");
@@ -92,5 +93,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByKeyGroupRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByKeyGroupRequest publicRequest);
     }    
 }

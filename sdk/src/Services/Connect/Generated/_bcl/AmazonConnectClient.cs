@@ -642,22 +642,12 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Custom contact routing. You can build custom contact routing mechanisms beyond the
-        /// default system routing in Amazon Connect. You can create tailored contact distribution
-        /// logic that offers queued contacts directly to specific agents.
+        /// Programmatically assign queued contacts to available users.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Manual contact assignment. You can programmatically assign queued contacts to available
-        /// users. This provides flexibility to contact centers that require manual oversight
-        /// or specialized routing workflows outside of standard queue management.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about how manual contact assignment works in the agent workspace,
-        /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
-        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
-        /// Administrator Guide</i>. 
+        /// Leverage the IAM context key <c>connect:PreferredUserArn</c> to restrict contact association
+        /// to specific preferred user.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -665,7 +655,7 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use this API chat/SMS, email, and task contacts. It does not support voice contacts.
+        /// Use this API with chat, email, and task contacts. It does not support voice contacts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -683,6 +673,12 @@ namespace Amazon.Connect
         /// It respects the IAM context key <c>connect:PreferredUserArn</c> to enforce authorization
         /// controls and prevent unauthorized contact associations. Verify that your IAM policies
         /// are properly configured to support your intended use cases.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The service quota <i>Queues per routing profile per instance</i> applies to manually
+        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -735,22 +731,12 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Custom contact routing. You can build custom contact routing mechanisms beyond the
-        /// default system routing in Amazon Connect. You can create tailored contact distribution
-        /// logic that offers queued contacts directly to specific agents.
+        /// Programmatically assign queued contacts to available users.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Manual contact assignment. You can programmatically assign queued contacts to available
-        /// users. This provides flexibility to contact centers that require manual oversight
-        /// or specialized routing workflows outside of standard queue management.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about how manual contact assignment works in the agent workspace,
-        /// see the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/worklist-app.html">Access
-        /// the Worklist app in the Amazon Connect agent workspace</a> in the <i>Amazon Connect
-        /// Administrator Guide</i>. 
+        /// Leverage the IAM context key <c>connect:PreferredUserArn</c> to restrict contact association
+        /// to specific preferred user.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -758,7 +744,7 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use this API chat/SMS, email, and task contacts. It does not support voice contacts.
+        /// Use this API with chat, email, and task contacts. It does not support voice contacts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -776,6 +762,12 @@ namespace Amazon.Connect
         /// It respects the IAM context key <c>connect:PreferredUserArn</c> to enforce authorization
         /// controls and prevent unauthorized contact associations. Verify that your IAM policies
         /// are properly configured to support your intended use cases.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The service quota <i>Queues per routing profile per instance</i> applies to manually
+        /// assigned queues, too. For more information about this quota, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#connect-quotas">Amazon
+        /// Connect quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -888,6 +880,301 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = AssociateDefaultVocabularyResponseUnmarshaller.Instance;
             
             return InvokeAsync<AssociateDefaultVocabularyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateEmailAddressAlias
+
+
+        /// <summary>
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance. This creates a forwarding relationship where emails sent to the alias email
+        /// address are automatically forwarded to the primary email address. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Unified customer support</b>: Create multiple entry points (for example, support@example.com,
+        /// help@example.com, customercare@example.com) that all forward to a single agent queue
+        /// for streamlined management.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Department consolidation</b>: Forward emails from legacy department addresses
+        /// (for example, sales@example.com, info@example.com) to a centralized customer service
+        /// email during organizational restructuring.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Brand management</b>: Enable you to use familiar brand-specific email addresses
+        /// that forward to the appropriate Amazon Connect instance email address.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each email address can have a maximum of one alias. You cannot create multiple aliases
+        /// for the same email address. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the alias email address already receives direct emails, it continues to receive
+        /// direct emails plus forwarded emails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot chain email aliases together (that is, create an alias of an alias).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>AssociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A confirmation of the alias relationship details (you must call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>
+        /// to verify).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the association occurred.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The status of the forwarding configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEmailAddressAlias service method.</param>
+        /// 
+        /// <returns>The response from the AssociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateEmailAddressAlias">REST API Reference for AssociateEmailAddressAlias Operation</seealso>
+        public virtual AssociateEmailAddressAliasResponse AssociateEmailAddressAlias(AssociateEmailAddressAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateEmailAddressAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEmailAddressAliasResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateEmailAddressAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance. This creates a forwarding relationship where emails sent to the alias email
+        /// address are automatically forwarded to the primary email address. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Unified customer support</b>: Create multiple entry points (for example, support@example.com,
+        /// help@example.com, customercare@example.com) that all forward to a single agent queue
+        /// for streamlined management.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Department consolidation</b>: Forward emails from legacy department addresses
+        /// (for example, sales@example.com, info@example.com) to a centralized customer service
+        /// email during organizational restructuring.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Brand management</b>: Enable you to use familiar brand-specific email addresses
+        /// that forward to the appropriate Amazon Connect instance email address.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Each email address can have a maximum of one alias. You cannot create multiple aliases
+        /// for the same email address. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the alias email address already receives direct emails, it continues to receive
+        /// direct emails plus forwarded emails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot chain email aliases together (that is, create an alias of an alias).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>AssociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A confirmation of the alias relationship details (you must call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>
+        /// to verify).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the association occurred.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The status of the forwarding configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DisassociateEmailAddressAlias.html">DisassociateEmailAddressAlias</a>:
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEmailAddressAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.IdempotencyException">
+        /// An entity with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateEmailAddressAlias">REST API Reference for AssociateEmailAddressAlias Operation</seealso>
+        public virtual Task<AssociateEmailAddressAliasResponse> AssociateEmailAddressAliasAsync(AssociateEmailAddressAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateEmailAddressAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEmailAddressAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateEmailAddressAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2811,6 +3098,180 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = CreateContactFlowModuleResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateContactFlowModuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateContactFlowModuleAlias
+
+
+        /// <summary>
+        /// Creates a named alias that points to a specific version of a contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleAlias service method.</param>
+        /// 
+        /// <returns>The response from the CreateContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleAlias">REST API Reference for CreateContactFlowModuleAlias Operation</seealso>
+        public virtual CreateContactFlowModuleAliasResponse CreateContactFlowModuleAlias(CreateContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a named alias that points to a specific version of a contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleAlias">REST API Reference for CreateContactFlowModuleAlias Operation</seealso>
+        public virtual Task<CreateContactFlowModuleAliasResponse> CreateContactFlowModuleAliasAsync(CreateContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateContactFlowModuleAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateContactFlowModuleVersion
+
+
+        /// <summary>
+        /// Creates an immutable snapshot of a contact flow module, preserving its content and
+        /// settings at a specific point in time for version control and rollback capabilities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateContactFlowModuleVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleVersion">REST API Reference for CreateContactFlowModuleVersion Operation</seealso>
+        public virtual CreateContactFlowModuleVersionResponse CreateContactFlowModuleVersion(CreateContactFlowModuleVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowModuleVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an immutable snapshot of a contact flow module, preserving its content and
+        /// settings at a specific point in time for version control and rollback capabilities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactFlowModuleVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleVersion">REST API Reference for CreateContactFlowModuleVersion Operation</seealso>
+        public virtual Task<CreateContactFlowModuleVersionResponse> CreateContactFlowModuleVersionAsync(CreateContactFlowModuleVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateContactFlowModuleVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5597,6 +6058,162 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteContactFlowModuleAlias
+
+
+        /// <summary>
+        /// Removes an alias reference, breaking the named connection to the underlying module
+        /// version without affecting the version itself.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleAlias service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleAlias">REST API Reference for DeleteContactFlowModuleAlias Operation</seealso>
+        public virtual DeleteContactFlowModuleAliasResponse DeleteContactFlowModuleAlias(DeleteContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes an alias reference, breaking the named connection to the underlying module
+        /// version without affecting the version itself.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleAlias">REST API Reference for DeleteContactFlowModuleAlias Operation</seealso>
+        public virtual Task<DeleteContactFlowModuleAliasResponse> DeleteContactFlowModuleAliasAsync(DeleteContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteContactFlowModuleAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteContactFlowModuleVersion
+
+
+        /// <summary>
+        /// Removes a specific version of a contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowModuleVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleVersion">REST API Reference for DeleteContactFlowModuleVersion Operation</seealso>
+        public virtual DeleteContactFlowModuleVersionResponse DeleteContactFlowModuleVersion(DeleteContactFlowModuleVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowModuleVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a specific version of a contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowModuleVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleVersion">REST API Reference for DeleteContactFlowModuleVersion Operation</seealso>
+        public virtual Task<DeleteContactFlowModuleVersionResponse> DeleteContactFlowModuleVersionAsync(DeleteContactFlowModuleVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteContactFlowModuleVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteContactFlowVersion
 
 
@@ -7678,7 +8295,36 @@ namespace Amazon.Connect
         /// <para>
         /// Describes the specified contact. 
         /// </para>
-        ///  <important> <ul> <li> 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve contact information such as the caller's phone number and the specific number
+        /// the caller dialed to integrate into custom monitoring or custom agent experience solutions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detect when a customer chat session disconnects due to a network issue on the agent's
+        /// end. Use the DisconnectReason field in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// to detect this event and then re-queue the chat for followup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Identify after contact work (ACW) duration and call recordings information when a
+        /// COMPLETED event is received by using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-events.html">contact
+        /// event stream</a>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <c>SystemEndpoint</c> is not populated for contacts with initiation method of MONITOR,
         /// QUEUE_TRANSFER, or CALLBACK
@@ -7689,7 +8335,11 @@ namespace Amazon.Connect
         /// and then it is deleted. Only contact information that is available in Amazon Connect
         /// is returned by this API.
         /// </para>
-        ///  </li> </ul> </important>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
         /// 
@@ -7727,7 +8377,36 @@ namespace Amazon.Connect
         /// <para>
         /// Describes the specified contact. 
         /// </para>
-        ///  <important> <ul> <li> 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Retrieve contact information such as the caller's phone number and the specific number
+        /// the caller dialed to integrate into custom monitoring or custom agent experience solutions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Detect when a customer chat session disconnects due to a network issue on the agent's
+        /// end. Use the DisconnectReason field in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// to detect this event and then re-queue the chat for followup.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Identify after contact work (ACW) duration and call recordings information when a
+        /// COMPLETED event is received by using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-events.html">contact
+        /// event stream</a>. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  <c>SystemEndpoint</c> is not populated for contacts with initiation method of MONITOR,
         /// QUEUE_TRANSFER, or CALLBACK
@@ -7738,7 +8417,11 @@ namespace Amazon.Connect
         /// and then it is deleted. Only contact information that is available in Amazon Connect
         /// is returned by this API.
         /// </para>
-        ///  </li> </ul> </important>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContact service method.</param>
         /// <param name="cancellationToken">
@@ -8054,6 +8737,85 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeContactFlowModuleResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeContactFlowModuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeContactFlowModuleAlias
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific alias, including which version it
+        /// currently points to and its metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModuleAlias service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModuleAlias">REST API Reference for DescribeContactFlowModuleAlias Operation</seealso>
+        public virtual DescribeContactFlowModuleAliasResponse DescribeContactFlowModuleAlias(DescribeContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific alias, including which version it
+        /// currently points to and its metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModuleAlias">REST API Reference for DescribeContactFlowModuleAlias Operation</seealso>
+        public virtual Task<DescribeContactFlowModuleAliasResponse> DescribeContactFlowModuleAliasAsync(DescribeContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowModuleAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeContactFlowModuleAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9966,6 +10728,307 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DisassociateBotResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisassociateBotResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateEmailAddressAlias
+
+
+        /// <summary>
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// After disassociation, emails sent to the former alias email address are no longer
+        /// forwarded to the primary email address. Both email addresses continue to exist independently
+        /// and can receive emails directly.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Department separation</b>: Remove alias relationships when splitting a consolidated
+        /// support queue back into separate department-specific queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Email address retirement</b>: Cleanly remove forwarding relationships before decommissioning
+        /// old email addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Organizational restructuring</b>: Reconfigure email routing when business processes
+        /// change and aliases are no longer needed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Concurrent operations: This API uses distributed locking, so concurrent operations
+        /// on the same email addresses may be temporarily blocked.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Emails sent to the former alias address are still delivered directly to that address
+        /// if it exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to delete the email addresses after disassociation. Both addresses
+        /// remain active independently.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a successful disassociation, you can immediately create a new alias relationship
+        /// with the same addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 200 status means alias was successfully disassociated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>DisassociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Details in the response about the email that was disassociated. The response returns
+        /// an empty body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the disassociation occurred.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEmailAddressAlias service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateEmailAddressAlias">REST API Reference for DisassociateEmailAddressAlias Operation</seealso>
+        public virtual DisassociateEmailAddressAliasResponse DisassociateEmailAddressAlias(DisassociateEmailAddressAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateEmailAddressAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEmailAddressAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateEmailAddressAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes the alias association between two email addresses in an Amazon Connect instance.
+        /// After disassociation, emails sent to the former alias email address are no longer
+        /// forwarded to the primary email address. Both email addresses continue to exist independently
+        /// and can receive emails directly.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Department separation</b>: Remove alias relationships when splitting a consolidated
+        /// support queue back into separate department-specific queues.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Email address retirement</b>: Cleanly remove forwarding relationships before decommissioning
+        /// old email addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Organizational restructuring</b>: Reconfigure email routing when business processes
+        /// change and aliases are no longer needed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Concurrent operations: This API uses distributed locking, so concurrent operations
+        /// on the same email addresses may be temporarily blocked.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Emails sent to the former alias address are still delivered directly to that address
+        /// if it exists.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not need to delete the email addresses after disassociation. Both addresses
+        /// remain active independently.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After a successful disassociation, you can immediately create a new alias relationship
+        /// with the same addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 200 status means alias was successfully disassociated.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>DisassociateEmailAddressAlias</c> does not return the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Details in the response about the email that was disassociated. The response returns
+        /// an empty body.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The timestamp of when the disassociation occurred.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Related operations</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_AssociateEmailAddressAlias.html">AssociateEmailAddressAlias</a>:
+        /// Associates an email address alias with an existing email address in an Amazon Connect
+        /// instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeEmailAddress.html">DescribeEmailAddress</a>:
+        /// View current alias configurations for an email address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchEmailAddresses.html">SearchEmailAddresses</a>:
+        /// Find email addresses and their alias relationships across an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateEmailAddress.html">CreateEmailAddress</a>:
+        /// Create new email addresses that can participate in alias relationships.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteEmailAddress.html">DeleteEmailAddress</a>:
+        /// Remove email addresses (automatically removes any alias relationships).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateEmailAddressMetadata.html">UpdateEmailAddressMetadata</a>:
+        /// Modify email address properties (does not affect alias relationships).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEmailAddressAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEmailAddressAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateEmailAddressAlias">REST API Reference for DisassociateEmailAddressAlias Operation</seealso>
+        public virtual Task<DisassociateEmailAddressAliasResponse> DisassociateEmailAddressAliasAsync(DisassociateEmailAddressAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateEmailAddressAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEmailAddressAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateEmailAddressAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12905,6 +13968,85 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListContactFlowModuleAliases
+
+
+        /// <summary>
+        /// Lists all aliases associated with a contact flow module, showing their current version
+        /// mappings and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleAliases service method.</param>
+        /// 
+        /// <returns>The response from the ListContactFlowModuleAliases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleAliases">REST API Reference for ListContactFlowModuleAliases Operation</seealso>
+        public virtual ListContactFlowModuleAliasesResponse ListContactFlowModuleAliases(ListContactFlowModuleAliasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactFlowModuleAliasesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all aliases associated with a contact flow module, showing their current version
+        /// mappings and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactFlowModuleAliases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleAliases">REST API Reference for ListContactFlowModuleAliases Operation</seealso>
+        public virtual Task<ListContactFlowModuleAliasesResponse> ListContactFlowModuleAliasesAsync(ListContactFlowModuleAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleAliasesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListContactFlowModuleAliasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListContactFlowModules
 
 
@@ -12978,6 +14120,83 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListContactFlowModulesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListContactFlowModulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListContactFlowModuleVersions
+
+
+        /// <summary>
+        /// Retrieves a paginated list of all versions for a specific contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListContactFlowModuleVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleVersions">REST API Reference for ListContactFlowModuleVersions Operation</seealso>
+        public virtual ListContactFlowModuleVersionsResponse ListContactFlowModuleVersions(ListContactFlowModuleVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactFlowModuleVersionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a paginated list of all versions for a specific contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactFlowModuleVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleVersions">REST API Reference for ListContactFlowModuleVersions Operation</seealso>
+        public virtual Task<ListContactFlowModuleVersionsResponse> ListContactFlowModuleVersionsAsync(ListContactFlowModuleVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleVersionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListContactFlowModuleVersionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -14909,9 +16128,10 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This API returns list of queues where contacts can be manually assigned or picked.
-        /// The user can additionally filter on queues, if they have access to those queues (otherwise
-        /// a invalid request exception will be thrown).
+        /// This API returns list of queues where contacts can be manually assigned or picked
+        /// by an agent who has access to the Worklist app. The user can additionally filter on
+        /// queues, if they have access to those queues (otherwise a invalid request exception
+        /// will be thrown).
         /// </para>
         ///  
         /// <para>
@@ -14978,9 +16198,10 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This API returns list of queues where contacts can be manually assigned or picked.
-        /// The user can additionally filter on queues, if they have access to those queues (otherwise
-        /// a invalid request exception will be thrown).
+        /// This API returns list of queues where contacts can be manually assigned or picked
+        /// by an agent who has access to the Worklist app. The user can additionally filter on
+        /// queues, if they have access to those queues (otherwise a invalid request exception
+        /// will be thrown).
         /// </para>
         ///  
         /// <para>
@@ -17192,6 +18413,147 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchContactEvaluations
+
+
+        /// <summary>
+        /// Searches contact evaluations in an Amazon Connect instance, with optional filtering.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Find contact evaluations by using specific search criteria.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find contact evaluations that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds. Contact Evaluations
+        /// may not be fully backfilled with historical data in all regions yet, however all recently
+        /// created Contact Evaluations should be available for search.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactEvaluations service method.</param>
+        /// 
+        /// <returns>The response from the SearchContactEvaluations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactEvaluations">REST API Reference for SearchContactEvaluations Operation</seealso>
+        public virtual SearchContactEvaluationsResponse SearchContactEvaluations(SearchContactEvaluationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchContactEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactEvaluationsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchContactEvaluationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches contact evaluations in an Amazon Connect instance, with optional filtering.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Find contact evaluations by using specific search criteria.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find contact evaluations that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds. Contact Evaluations
+        /// may not be fully backfilled with historical data in all regions yet, however all recently
+        /// created Contact Evaluations should be available for search.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchContactEvaluations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchContactEvaluations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchContactEvaluations">REST API Reference for SearchContactEvaluations Operation</seealso>
+        public virtual Task<SearchContactEvaluationsResponse> SearchContactEvaluationsAsync(SearchContactEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchContactEvaluationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchContactEvaluationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchContactEvaluationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchContactFlowModules
 
 
@@ -17478,6 +18840,151 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = SearchEmailAddressesResponseUnmarshaller.Instance;
             
             return InvokeAsync<SearchEmailAddressesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchEvaluationForms
+
+
+        /// <summary>
+        /// Searches evaluation forms in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List all evaluation forms in an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that meet specific criteria, such as Title, Description,
+        /// Status, and more.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchEvaluationForms service method.</param>
+        /// 
+        /// <returns>The response from the SearchEvaluationForms service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEvaluationForms">REST API Reference for SearchEvaluationForms Operation</seealso>
+        public virtual SearchEvaluationFormsResponse SearchEvaluationForms(SearchEvaluationFormsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchEvaluationFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchEvaluationFormsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchEvaluationFormsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches evaluation forms in an Amazon Connect instance, with optional filtering.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Use cases</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Following are common uses cases for this API:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// List all evaluation forms in an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that meet specific criteria, such as Title, Description,
+        /// Status, and more.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Find all evaluation forms that are tagged with a specific set of tags.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A Search operation, unlike a List operation, takes time to index changes to resource
+        /// (create, update or delete). If you don't see updated information for recently changed
+        /// contact evaluations, try calling the API again in a few seconds.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+        /// Connect endpoints and quotas</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchEvaluationForms service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchEvaluationForms service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchEvaluationForms">REST API Reference for SearchEvaluationForms Operation</seealso>
+        public virtual Task<SearchEvaluationFormsResponse> SearchEvaluationFormsAsync(SearchEvaluationFormsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchEvaluationFormsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchEvaluationFormsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchEvaluationFormsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -19581,8 +21088,9 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// There is a 60-second dialing timeout for this operation. If the call is not connected
-        /// after 60 seconds, it fails.
+        /// Dialing timeout for this operation can be configured with the “RingTimeoutInSeconds”
+        /// parameter. If not specified, the default dialing timeout will be 60 seconds which
+        /// means if the call is not connected within 60 seconds, it fails.
         /// </para>
         ///  <note> 
         /// <para>
@@ -19597,6 +21105,12 @@ namespace Amazon.Connect
         /// = <c>CAMPAIGN</c>, you must submit a service quota increase request to the quota <a
         /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
         /// Connect campaigns</a>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For Preview dialing mode, only the Amazon Connect outbound campaigns service principal
+        /// is allowed to assume a role in your account and call this API with OutboundStrategy.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -19647,8 +21161,9 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// There is a 60-second dialing timeout for this operation. If the call is not connected
-        /// after 60 seconds, it fails.
+        /// Dialing timeout for this operation can be configured with the “RingTimeoutInSeconds”
+        /// parameter. If not specified, the default dialing timeout will be 60 seconds which
+        /// means if the call is not connected within 60 seconds, it fails.
         /// </para>
         ///  <note> 
         /// <para>
@@ -19663,6 +21178,12 @@ namespace Amazon.Connect
         /// = <c>CAMPAIGN</c>, you must submit a service quota increase request to the quota <a
         /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
         /// Connect campaigns</a>. 
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// For Preview dialing mode, only the Amazon Connect outbound campaigns service principal
+        /// is allowed to assume a role in your account and call this API with OutboundStrategy.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -20088,7 +21609,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
-        /// The contact with the specified ID is not active or does not exist.
+        /// The contact with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -20149,7 +21670,7 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the StopContact service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotFoundException">
-        /// The contact with the specified ID is not active or does not exist.
+        /// The contact with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -21597,6 +23118,97 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateContactFlowMetadataResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateContactFlowMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateContactFlowModuleAlias
+
+
+        /// <summary>
+        /// Updates a specific Aliases metadata, including the version it’s tied to, it’s name,
+        /// and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleAlias service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleAlias">REST API Reference for UpdateContactFlowModuleAlias Operation</seealso>
+        public virtual UpdateContactFlowModuleAliasResponse UpdateContactFlowModuleAlias(UpdateContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a specific Aliases metadata, including the version it’s tied to, it’s name,
+        /// and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleAlias">REST API Reference for UpdateContactFlowModuleAlias Operation</seealso>
+        public virtual Task<UpdateContactFlowModuleAliasResponse> UpdateContactFlowModuleAliasAsync(UpdateContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowModuleAliasResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateContactFlowModuleAliasResponse>(request, options, cancellationToken);
         }
 
         #endregion

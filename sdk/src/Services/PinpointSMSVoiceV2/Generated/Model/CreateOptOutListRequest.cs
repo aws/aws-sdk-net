@@ -44,7 +44,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// for the phone number is added to the opt-out list. In addition to STOP, your recipients
     /// can use any supported opt-out keyword, such as CANCEL or OPTOUT. For a list of supported
     /// opt-out keywords, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-manage.html#channels-sms-manage-optout">
-    /// SMS opt out </a> in the <i>AWS End User Messaging SMS User Guide</i>.
+    /// SMS opt out </a> in the End User MessagingSMS User Guide.
     /// </para>
     /// </summary>
     public partial class CreateOptOutListRequest : AmazonPinpointSMSVoiceV2Request

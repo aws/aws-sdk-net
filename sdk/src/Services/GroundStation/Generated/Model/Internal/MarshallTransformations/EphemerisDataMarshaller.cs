@@ -46,6 +46,17 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAzEl())
+            {
+                context.Writer.WritePropertyName("azEl");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AzElEphemerisMarshaller.Instance;
+                marshaller.Marshall(requestObject.AzEl, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetOem())
             {
                 context.Writer.WritePropertyName("oem");

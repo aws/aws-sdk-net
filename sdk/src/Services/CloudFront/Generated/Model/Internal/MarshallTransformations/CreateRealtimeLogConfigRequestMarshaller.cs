@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateRealtimeLogConfigRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.ResourcePath = "/2020-05-31/realtime-log-config";
 
@@ -142,5 +143,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, CreateRealtimeLogConfigRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, CreateRealtimeLogConfigRequest publicRequest);
     }    
 }

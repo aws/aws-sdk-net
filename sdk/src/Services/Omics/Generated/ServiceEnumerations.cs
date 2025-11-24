@@ -2444,6 +2444,10 @@ namespace Amazon.Omics
         /// Constant WDL for WorkflowEngine
         /// </summary>
         public static readonly WorkflowEngine WDL = new WorkflowEngine("WDL");
+        /// <summary>
+        /// Constant WDL_LENIENT for WorkflowEngine
+        /// </summary>
+        public static readonly WorkflowEngine WDL_LENIENT = new WorkflowEngine("WDL_LENIENT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

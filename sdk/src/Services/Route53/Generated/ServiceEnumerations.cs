@@ -399,6 +399,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly CloudWatchRegion UsIsobEast1 = new CloudWatchRegion("us-isob-east-1");
         /// <summary>
+        /// Constant UsIsobWest1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion UsIsobWest1 = new CloudWatchRegion("us-isob-west-1");
+        /// <summary>
         /// Constant UsIsoEast1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion UsIsoEast1 = new CloudWatchRegion("us-iso-east-1");
@@ -1542,6 +1546,10 @@ namespace Amazon.Route53
         /// Constant UsIsobEast1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion UsIsobEast1 = new VPCRegion("us-isob-east-1");
+        /// <summary>
+        /// Constant UsIsobWest1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion UsIsobWest1 = new VPCRegion("us-isob-west-1");
         /// <summary>
         /// Constant UsIsoEast1 for VPCRegion
         /// </summary>

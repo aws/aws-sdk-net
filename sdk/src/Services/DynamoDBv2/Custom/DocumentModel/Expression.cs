@@ -86,11 +86,41 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal void ApplyExpression(ScanRequest request, Table table)
         {
             request.FilterExpression = this.ExpressionStatement;
-            request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+
+            if (this.ExpressionAttributeValues?.Count > 0)
+            {
+                if (request.ExpressionAttributeValues == null)
+                {
+                    request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+                }
+                else
+                {
+                    var reqEav = request.ExpressionAttributeValues;
+                    var feav = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+                    var combinedEav = Common.Combine(reqEav, feav, null);
+
+
+                    if (combinedEav?.Count > 0)
+                    {
+                        request.ExpressionAttributeValues = combinedEav;
+                    }
+                }
+
+            }
 
             if (this.ExpressionAttributeNames?.Count > 0)
             {
-                request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+                if (request.ExpressionAttributeNames==null)
+                {
+                    request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+                }
+                else
+                {
+                    var combinedEan= Common.Combine(request.ExpressionAttributeNames,
+                        this.ExpressionAttributeNames, StringComparer.Ordinal);
+
+                    request.ExpressionAttributeNames = combinedEan;
+                }
             }
         }
 

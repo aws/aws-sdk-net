@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(PutBucketNotificationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "PUT";
             request.AddSubResource("notification");
         
@@ -112,10 +113,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         if (publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue != null)
                                         {
                                             xmlWriter.WriteStartElement("FilterRule");
-                                            if(publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue.IsSetName())
-                                                xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
-                                            if(publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue.IsSetValue())
-                                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
+                                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
+                                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestLambdaFunctionConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
                                             xmlWriter.WriteEndElement();
                                         }
                                         }            
@@ -164,10 +163,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         if (publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue != null)
                                         {
                                             xmlWriter.WriteStartElement("FilterRule");
-                                            if(publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue.IsSetName())
-                                                xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
-                                            if(publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue.IsSetValue())
-                                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
+                                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
+                                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestQueueConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
                                             xmlWriter.WriteEndElement();
                                         }
                                         }            
@@ -216,10 +213,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                         if (publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue != null)
                                         {
                                             xmlWriter.WriteStartElement("FilterRule");
-                                            if(publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue.IsSetName())
-                                                xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
-                                            if(publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue.IsSetValue())
-                                                xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
+                                            xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue.Name));
+                                            xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTopicConfigurationsValueFilterS3KeyFilterFilterRulesValue.Value));
                                             xmlWriter.WriteEndElement();
                                         }
                                         }            
@@ -279,5 +274,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, PutBucketNotificationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, PutBucketNotificationRequest publicRequest);
     }    
 }

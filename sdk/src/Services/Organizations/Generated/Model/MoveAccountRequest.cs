@@ -36,7 +36,7 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    /// This operation can be called only from the organization's management account.
+    /// You can only call this operation from the management account.
     /// </para>
     /// </summary>
     public partial class MoveAccountRequest : AmazonOrganizationsRequest
@@ -48,7 +48,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The unique identifier (ID) of the account that you want to move.
+        /// ID for the account that you want to move.
         /// </para>
         ///  
         /// <para>
@@ -72,8 +72,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property DestinationParentId. 
         /// <para>
-        /// The unique identifier (ID) of the root or organizational unit that you want to move
-        /// the account to.
+        /// ID for the root or organizational unit that you want to move the account to.
         /// </para>
         ///  
         /// <para>
@@ -110,8 +109,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property SourceParentId. 
         /// <para>
-        /// The unique identifier (ID) of the root or organizational unit that you want to move
-        /// the account from.
+        /// ID for the root or organizational unit that you want to move the account from.
         /// </para>
         ///  
         /// <para>

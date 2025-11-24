@@ -82,6 +82,8 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPartial())
                 request.Parameters.Add("partial", StringUtils.FromBool(publicRequest.Partial));
+            if (string.IsNullOrEmpty(publicRequest.Query))
+                throw new AmazonCloudSearchDomainException("Request object does not have required field Query set");
             
             if (publicRequest.IsSetQuery())
                 request.Parameters.Add("q", StringUtils.FromString(publicRequest.Query));

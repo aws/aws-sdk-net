@@ -715,11 +715,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_IOT_EVENTS_DATA"
   },
   {
-    "service_id": "IoTFleetHub",
-    "services_section_name": "iotfleethub",
-    "service_envvar_name": "AWS_ENDPOINT_URL_IOTFLEETHUB"
-  },
-  {
     "service_id": "IoTFleetWise",
     "services_section_name": "iotfleetwise",
     "service_envvar_name": "AWS_ENDPOINT_URL_IOTFLEETWISE"
@@ -878,16 +873,6 @@
     "service_id": "LookoutEquipment",
     "services_section_name": "lookoutequipment",
     "service_envvar_name": "AWS_ENDPOINT_URL_LOOKOUTEQUIPMENT"
-  },
-  {
-    "service_id": "LookoutMetrics",
-    "services_section_name": "lookoutmetrics",
-    "service_envvar_name": "AWS_ENDPOINT_URL_LOOKOUTMETRICS"
-  },
-  {
-    "service_id": "LookoutVision",
-    "services_section_name": "lookoutvision",
-    "service_envvar_name": "AWS_ENDPOINT_URL_LOOKOUTVISION"
   },
   {
     "service_id": "m2",
@@ -1110,16 +1095,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_PROTON"
   },
   {
-    "service_id": "QLDB",
-    "services_section_name": "qldb",
-    "service_envvar_name": "AWS_ENDPOINT_URL_QLDB"
-  },
-  {
-    "service_id": "QLDB Session",
-    "services_section_name": "qldb_session",
-    "service_envvar_name": "AWS_ENDPOINT_URL_QLDB_SESSION"
-  },
-  {
     "service_id": "QuickSight",
     "services_section_name": "quicksight",
     "service_envvar_name": "AWS_ENDPOINT_URL_QUICKSIGHT"
@@ -1178,11 +1153,6 @@
     "service_id": "Resource Groups Tagging API",
     "services_section_name": "resource_groups_tagging_api",
     "service_envvar_name": "AWS_ENDPOINT_URL_RESOURCE_GROUPS_TAGGING_API"
-  },
-  {
-    "service_id": "RoboMaker",
-    "services_section_name": "robomaker",
-    "service_envvar_name": "AWS_ENDPOINT_URL_ROBOMAKER"
   },
   {
     "service_id": "RolesAnywhere",

@@ -1328,6 +1328,43 @@ namespace Amazon.GuardDuty
 
         #endregion
                 
+        #region  GetMalwareScan
+
+
+
+        /// <summary>
+        /// Retrieves the detailed information for a specific malware scan. Each member account
+        /// can view the malware scan details for their own account. An administrator can view
+        /// malware scan details for all accounts in the organization.
+        /// 
+        ///  
+        /// <para>
+        /// There might be regional differences because some data sources might not be available
+        /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+        /// and endpoints</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMalwareScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMalwareScan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMalwareScan">REST API Reference for GetMalwareScan Operation</seealso>
+        Task<GetMalwareScanResponse> GetMalwareScanAsync(GetMalwareScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetMalwareScanSettings
 
 
@@ -1855,6 +1892,32 @@ namespace Amazon.GuardDuty
 
         #endregion
                 
+        #region  ListMalwareScans
+
+
+
+        /// <summary>
+        /// Returns a list of malware scans. Each member account can view the malware scans for
+        /// their own accounts. An administrator can view the malware scans for all of its members'
+        /// accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMalwareScans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMalwareScans service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListMalwareScans">REST API Reference for ListMalwareScans Operation</seealso>
+        Task<ListMalwareScansResponse> ListMalwareScansAsync(ListMalwareScansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListMembers
 
 
@@ -2035,18 +2098,61 @@ namespace Amazon.GuardDuty
 
         #endregion
                 
+        #region  SendObjectMalwareScan
+
+
+
+        /// <summary>
+        /// Initiates a malware scan for a specific S3 object. This API allows you to perform
+        /// on-demand malware scanning of individual objects in S3 buckets that have Malware Protection
+        /// for S3 enabled.
+        /// 
+        ///  
+        /// <para>
+        /// When you use this API, the Amazon Web Services service terms for GuardDuty Malware
+        /// Protection apply. For more information, see <a href="http://aws.amazon.com/service-terms/#87._Amazon_GuardDuty">Amazon
+        /// Web Services service terms for GuardDuty Malware Protection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendObjectMalwareScan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendObjectMalwareScan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/SendObjectMalwareScan">REST API Reference for SendObjectMalwareScan Operation</seealso>
+        Task<SendObjectMalwareScanResponse> SendObjectMalwareScanAsync(SendObjectMalwareScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartMalwareScan
 
 
 
         /// <summary>
         /// Initiates the malware scan. Invoking this API will automatically create the <a href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked
-        /// role</a> in the corresponding account.
+        /// role</a> in the corresponding account if the resourceArn belongs to an EC2 instance.
         /// 
         ///  
         /// <para>
         /// When the malware scan starts, you can use the associated scan ID to track the status
-        /// of the scan. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeMalwareScans.html">DescribeMalwareScans</a>.
+        /// of the scan. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListMalwareScans.html">ListMalwareScans</a>
+        /// and <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_GetMalwareScan.html">GetMalwareScan</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use this API, the Amazon Web Services service terms for GuardDuty Malware
+        /// Protection apply. For more information, see <a href="http://aws.amazon.com/service-terms/#87._Amazon_GuardDuty">Amazon
+        /// Web Services service terms for GuardDuty Malware Protection</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMalwareScan service method.</param>

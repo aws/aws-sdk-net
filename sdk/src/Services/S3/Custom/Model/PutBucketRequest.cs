@@ -52,27 +52,11 @@ namespace Amazon.S3.Model
         /// When set, this will determine where your data will
         /// reside in S3. Refer <see cref="T:Amazon.S3.S3Region"/>
         /// for a list of possible values.
-        /// This should not be set at the same time as <see cref="BucketRegionName"/>
-        /// If it is, then whichever is set last will be the region where the bucket is created.
         /// </remarks>
         public S3Region BucketRegion
         {
-            get 
-            {
-                return bucketRegion;
-            } 
-            set 
-            { 
-                this.bucketRegion = value;
-                if (this.bucketRegion != null && !string.IsNullOrEmpty(bucketRegion.Value))
-                {
-                    if (this._putBucketConfiguration == null)
-                    {
-                        _putBucketConfiguration = new PutBucketConfiguration();
-                        _putBucketConfiguration.LocationConstraint = bucketRegion.Value;
-                    }
-                }
-            }
+            get { return this.bucketRegion; }
+            set { this.bucketRegion = value; }
         }
 
         // Check to see if BucketRegion property is set
@@ -84,28 +68,11 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The bucket region locality expressed using the name of the region.
         /// When set, this will determine where your data will reside in S3.
-        /// Valid values: us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1
-        /// This should not be set at the same time as <see cref="BucketRegion"/>. If both are set, whichever was set last
-        /// will take precedence.
         /// </summary>
         public string BucketRegionName
         {
-            get 
-            {
-                return bucketRegionName;
-            }
-            set
-            {
-                this.bucketRegionName = value;
-                if (bucketRegionName != "us-east-1")
-                {
-                    _putBucketConfiguration = new PutBucketConfiguration();
-                    if (bucketRegionName == "eu-west-1")
-                        _putBucketConfiguration.LocationConstraint = "EU";
-                    else
-                        _putBucketConfiguration.LocationConstraint = bucketRegionName;
-                }
-            }
+            get { return this.bucketRegionName; }
+            set {this.bucketRegionName = value; }
         }
 
         // Check to see if BucketRegionName property is set

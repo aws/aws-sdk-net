@@ -40,7 +40,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// </summary>
         public IRequest Marshall(DeleteObjectTaggingRequest deleteObjectTaggingRequest)
         {
-            IRequest request = new DefaultRequest(deleteObjectTaggingRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(deleteObjectTaggingRequest, "Amazon.S3");
 
             request.HttpMethod = "DELETE";
 

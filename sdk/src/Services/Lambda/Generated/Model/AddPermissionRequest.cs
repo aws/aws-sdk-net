@@ -157,8 +157,8 @@ namespace Amazon.Lambda.Model
         /// The type of authentication that your function URL uses. Set to <c>AWS_IAM</c> if you
         /// want to restrict access to authenticated users only. Set to <c>NONE</c> if you want
         /// to bypass IAM authentication to create a public endpoint. For more information, see
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
-        /// auth model for Lambda function URLs</a>.
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control access
+        /// to Lambda function URLs</a>.
         /// </para>
         /// </summary>
         public FunctionUrlAuthType FunctionUrlAuthType
@@ -176,10 +176,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property InvokedViaFunctionUrl. 
         /// <para>
-        /// Restricts the <c>lambda:InvokeFunction</c> action to calls coming from a function
-        /// URL. When set to <c>true</c>, this prevents the principal from invoking the function
-        /// by any means other than the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security
-        /// and auth model for Lambda function URLs</a>.
+        /// Restricts the <c>lambda:InvokeFunction</c> action to function URL calls. When specified,
+        /// this option prevents the principal from invoking the function by any means other than
+        /// the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control
+        /// access to Lambda function URLs</a>.
         /// </para>
         /// </summary>
         public bool? InvokedViaFunctionUrl

@@ -133,7 +133,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
     internal enum ReturnItemCollectionMetricsValues
     {
         None,
-        All
+        All,
+        INDEXES
     }
 
     internal enum SearchType
@@ -183,6 +184,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     return "NONE";
                 case ReturnItemCollectionMetricsValues.All:
                     return "ALL";
+                case ReturnItemCollectionMetricsValues.INDEXES:
+                    return "INDEXES";
                 default:
                     throw new ArgumentOutOfRangeException("value", "Invalid ReturnItemCollectionMetricsValues value");
             }
@@ -447,6 +450,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 request.AttributesToGet = null;
             }
         }
+
         public static void ConvertAttributesToGetToProjectionExpression(ScanRequest request)
         {
             if (request.IsSetAttributesToGet() &&

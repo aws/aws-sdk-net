@@ -53,6 +53,9 @@ namespace Amazon.AppStream.Model
         private string _imageName;
         private string _instanceType;
         private string _name;
+        private VolumeConfig _rootVolumeConfig;
+        private List<string> _softwaresToInstall = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _softwaresToUninstall = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcConfig _vpcConfig;
 
@@ -84,8 +87,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AppstreamAgentVersion. 
         /// <para>
-        /// The version of the AppStream 2.0 agent to use for this image builder. To use the latest
-        /// version of the AppStream 2.0 agent, specify [LATEST]. 
+        /// The version of the WorkSpaces Applications agent to use for this image builder. To
+        /// use the latest version of the WorkSpaces Applications agent, specify [LATEST]. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -182,14 +185,15 @@ namespace Amazon.AppStream.Model
         /// The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume
         /// a role, the image builder calls the AWS Security Token Service (STS) <c>AssumeRole</c>
         /// API operation and passes the ARN of the role to use. The operation creates a new session
-        /// with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
-        /// creates the <b>appstream_machine_role</b> credential profile on the instance.
+        /// with temporary credentials. WorkSpaces Applications retrieves the temporary credentials
+        /// and creates the <b>appstream_machine_role</b> credential profile on the instance.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using
-        /// an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream
-        /// 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// an IAM Role to Grant Permissions to Applications and Scripts Running on WorkSpaces
+        /// Applications Streaming Instances</a> in the <i>Amazon WorkSpaces Applications Administration
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -341,10 +345,6 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// stream.graphics-desktop.2xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// stream.graphics.g4dn.xlarge
         /// </para>
         ///  </li> <li> 
@@ -366,18 +366,6 @@ namespace Amazon.AppStream.Model
         ///  </li> <li> 
         /// <para>
         /// stream.graphics.g4dn.16xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-pro.4xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-pro.8xlarge
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// stream.graphics-pro.16xlarge
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -498,6 +486,274 @@ namespace Amazon.AppStream.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RootVolumeConfig. 
+        /// <para>
+        /// The configuration for the root volume of the image builder. Use this to customize
+        /// storage capacity from 200 GB up to 500 GB based on your application installation requirements.
+        /// </para>
+        /// </summary>
+        public VolumeConfig RootVolumeConfig
+        {
+            get { return this._rootVolumeConfig; }
+            set { this._rootVolumeConfig = value; }
+        }
+
+        // Check to see if RootVolumeConfig property is set
+        internal bool IsSetRootVolumeConfig()
+        {
+            return this._rootVolumeConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwaresToInstall. 
+        /// <para>
+        /// The list of license included applications to install on the image builder during creation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Professional_Plus_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Professional_Plus_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Professional_Plus_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Professional_Plus_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Standard_64Bit
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SoftwaresToInstall
+        {
+            get { return this._softwaresToInstall; }
+            set { this._softwaresToInstall = value; }
+        }
+
+        // Check to see if SoftwaresToInstall property is set
+        internal bool IsSetSoftwaresToInstall()
+        {
+            return this._softwaresToInstall != null && (this._softwaresToInstall.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwaresToUninstall. 
+        /// <para>
+        /// The list of license included applications to uninstall from the image builder during
+        /// creation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Professional_Plus_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Professional_Plus_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Professional_Plus_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Professional_Plus_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Professional_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Professional_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2021_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Office_2024_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2021_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Visio_2024_LTSC_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2021_Standard_64Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Standard_32Bit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Microsoft_Project_2024_Standard_64Bit
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SoftwaresToUninstall
+        {
+            get { return this._softwaresToUninstall; }
+            set { this._softwaresToUninstall = value; }
+        }
+
+        // Check to see if SoftwaresToUninstall property is set
+        internal bool IsSetSoftwaresToUninstall()
+        {
+            return this._softwaresToUninstall != null && (this._softwaresToUninstall.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags to associate with the image builder. A tag is a key-value pair, and the value
@@ -520,7 +776,7 @@ namespace Amazon.AppStream.Model
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

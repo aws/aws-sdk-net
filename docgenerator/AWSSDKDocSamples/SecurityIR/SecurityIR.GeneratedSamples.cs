@@ -293,6 +293,23 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
             #endregion
         }
 
+        public void SecurityIRListInvestigations()
+        {
+            #region example-1
+
+            var client = new AmazonSecurityIRClient();
+            var response = client.ListInvestigations(new ListInvestigationsRequest 
+            {
+                CaseId = "8403556009",
+                MaxResults = 10
+            });
+
+            List<InvestigationAction> investigationActions = response.InvestigationActions;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
         public void SecurityIRListMemberships()
         {
             #region example-1
@@ -319,6 +336,40 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
             });
 
             Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
+        public void SecurityIRSendFeedback()
+        {
+            #region example-1
+
+            var client = new AmazonSecurityIRClient();
+            var response = client.SendFeedback(new SendFeedbackRequest 
+            {
+                CaseId = "8403556009",
+                Comment = "The CloudTrail analysis was very helpful in identifying the root cause of the security incident.",
+                ResultId = "inv-polkjhyuty",
+                Usefulness = "USEFUL"
+            });
+
+
+            #endregion
+        }
+
+        public void SecurityIRSendFeedback()
+        {
+            #region example-2
+
+            var client = new AmazonSecurityIRClient();
+            var response = client.SendFeedback(new SendFeedbackRequest 
+            {
+                CaseId = "8403556009",
+                Comment = "The investigation results were too generic and didn't provide actionable insights for our specific incident.",
+                ResultId = "inv-irutjfhgjk",
+                Usefulness = "NOT_USEFUL"
+            });
+
 
             #endregion
         }

@@ -21,6 +21,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.PrometheusService.IAmazonPrometheusService.CreateScraper(Amazon.PrometheusService.Model.CreateScraperRequest)" />
+            <member name="M:Amazon.PrometheusService.AmazonPrometheusServiceClient.CreateScraper(Amazon.PrometheusService.Model.CreateScraperRequest)" />
+            <member name="T:Amazon.PrometheusService.Model.CreateScraperRequest" />
+            <member name="T:Amazon.PrometheusService.Model.CreateScraperResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateScraper with generic VPC config with mandatory securityGroupIds and subnetIds"
+                    source=".\AWSSDKDocSamples\PrometheusService\PrometheusService.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.PrometheusService.IAmazonPrometheusService.DeleteScraper(Amazon.PrometheusService.Model.DeleteScraperRequest)" />
             <member name="M:Amazon.PrometheusService.AmazonPrometheusServiceClient.DeleteScraper(Amazon.PrometheusService.Model.DeleteScraperRequest)" />
             <member name="T:Amazon.PrometheusService.Model.DeleteScraperRequest" />

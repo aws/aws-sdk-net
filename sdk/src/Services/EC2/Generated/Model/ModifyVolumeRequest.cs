@@ -114,13 +114,13 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <c>io2</c>: 100 - 256,000 IOPS
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
         /// <para>
-        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">instances
-        /// built on the Nitro System</a>. On other instances, you can achieve performance up
-        /// to 32,000 IOPS.
+        ///  <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">
+        /// Instances built on the Nitro System</a> can support up to 256,000 IOPS. Other instances
+        /// can support up to 32,000 IOPS.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Default: The existing value is retained if you keep the same volume type. If you change
         /// the volume type to <c>io1</c>, <c>io2</c>, or <c>gp3</c>, the default is 3,000.

@@ -198,6 +198,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Resultant Search container.</returns>
         ISearch Query(QueryOperationConfig config);
 
+
+        /// <summary>
+        /// Initiates a Search object to Query a DynamoDB table, with the
+        /// specified operation request.
+        /// </summary>
+        /// <param name="operationRequest">Operation request configuration</param>
+        /// <returns></returns>
+        ISearch Query(QueryDocumentOperationRequest operationRequest);
+
         #endregion
 
         #region BatchGet
@@ -567,6 +576,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             GlobalSecondaryIndexes = new Dictionary<string, GlobalSecondaryIndexDescription>();
             GlobalSecondaryIndexNames = new List<string>();
             Attributes = new List<AttributeDefinition>();
+            
         }
 
         private TableDescription DescribeTable(string tableName)
@@ -838,21 +848,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     indexDescription.KeySchema = new List<KeySchemaElement>();
                 }
 
-                var hashKeyProperty = itemStorageConfig.BaseTypeStorageConfig.GetPropertyStorage(gsi.HashKeyPropertyName);
-                indexDescription.KeySchema.Add(new KeySchemaElement()
+                var sortedGsiHashKeyProperties = gsi.HashKeyPropertyNames.OrderBy(kvp => kvp.Value).Select(kvp => kvp.Key).ToList();
+                foreach (var gsiHashKeyPropertyName in sortedGsiHashKeyProperties)
                 {
-                    AttributeName = hashKeyProperty.AttributeName,
-                    KeyType = KeyType.HASH
-                });
-
-                if (!string.IsNullOrEmpty(gsi.RangeKeyPropertyName))
-                {
-                    var rangeKeyProperty = itemStorageConfig.BaseTypeStorageConfig.GetPropertyStorage(gsi.RangeKeyPropertyName);
+                    var hashKeyProperty = itemStorageConfig.BaseTypeStorageConfig.GetPropertyStorage(gsiHashKeyPropertyName);
                     indexDescription.KeySchema.Add(new KeySchemaElement()
                     {
-                        AttributeName = rangeKeyProperty.AttributeName,
-                        KeyType = KeyType.RANGE
+                        AttributeName = hashKeyProperty.AttributeName,
+                        KeyType = KeyType.HASH
                     });
+                }
+                
+                if(gsi.RangeKeyPropertyNames.Any())
+                {
+                    var sortedRangeKeyProperties = gsi.RangeKeyPropertyNames.OrderBy(kvp => kvp.Value).Select(kvp => kvp.Key).ToList();
+                    foreach (var gsiRangeKeyPropertyName in sortedRangeKeyProperties)
+                    {
+                        var rangeKeyProperty = itemStorageConfig.BaseTypeStorageConfig.GetPropertyStorage(gsiRangeKeyPropertyName);
+                        indexDescription.KeySchema.Add(new KeySchemaElement()
+                        {
+                            AttributeName = rangeKeyProperty.AttributeName,
+                            KeyType = KeyType.RANGE
+                        });
+                    }
                 }
 
                 table.GlobalSecondaryIndexes[gsiIndexName] = indexDescription;
@@ -1770,6 +1788,31 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 Select = config.Select,
                 CollectResults = config.CollectResults,
                 PaginationToken = config.PaginationToken
+            };
+
+            return ret;
+        }
+
+        /// <inheritdoc/>
+        public ISearch Query(QueryDocumentOperationRequest operationRequest)
+        {
+            if (operationRequest == null)
+                throw new ArgumentNullException("operationRequest");
+
+            Search ret = new Search(SearchType.Query)
+            {
+                SourceTable = this,
+                TableName = TableName,
+                KeyExpression = operationRequest.KeyConditionExpression,
+                FilterExpression = operationRequest.FilterExpression,
+                ProjectionExpression = operationRequest.ProjectionExpression,
+                Limit = operationRequest.Limit,
+                IsConsistentRead = operationRequest.ConsistentRead,
+                IsBackwardSearch = operationRequest.BackwardSearch,
+                IndexName = operationRequest.IndexName,
+                Select = operationRequest.Select,
+                CollectResults = operationRequest.CollectResults,
+                PaginationToken = operationRequest.PaginationToken
             };
 
             return ret;

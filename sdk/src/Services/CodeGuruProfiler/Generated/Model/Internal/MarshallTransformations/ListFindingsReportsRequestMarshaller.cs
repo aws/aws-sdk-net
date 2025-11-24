@@ -68,6 +68,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetDailyReportsOnly())
                 request.Parameters.Add("dailyReportsOnly", StringUtils.FromBool(publicRequest.DailyReportsOnly));
+            if (publicRequest.EndTime == null)
+                throw new AmazonCodeGuruProfilerException("Request object does not have required field EndTime set");
             
             if (publicRequest.IsSetEndTime())
                 request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
@@ -77,6 +79,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (publicRequest.StartTime == null)
+                throw new AmazonCodeGuruProfilerException("Request object does not have required field StartTime set");
             
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));

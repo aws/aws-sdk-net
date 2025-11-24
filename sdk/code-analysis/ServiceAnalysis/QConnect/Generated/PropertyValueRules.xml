@@ -2275,6 +2275,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.ExtendedMessageTemplateData.Channel</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.ExtendedMessageTemplateData.Description</property>
     <min>1</min>
     <max>255</max>
@@ -2540,6 +2545,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.MessageTemplateData.Channel</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.MessageTemplateData.Description</property>
     <min>1</min>
     <max>255</max>
@@ -2600,6 +2610,11 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.MessageTemplateSearchResultData.Channel</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.MessageTemplateSearchResultData.Description</property>
     <min>1</min>
     <max>255</max>
@@ -2647,6 +2662,11 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.MessageTemplateSummary.Channel</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.MessageTemplateSummary.Description</property>
     <min>1</min>
     <max>255</max>
@@ -2679,6 +2699,11 @@
     <min>1</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9\s_.,-]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.MessageTemplateVersionSummary.Channel</property>
+    <min>1</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.MessageTemplateVersionSummary.KnowledgeBaseArn</property>
@@ -2715,6 +2740,94 @@
     <property>Amazon.QConnect.Model.ParsingPrompt.ParsingPromptText</property>
     <min>1</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushADMMessageTemplateContent.ImageIconUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushADMMessageTemplateContent.ImageUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushADMMessageTemplateContent.SmallImageIconUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushADMMessageTemplateContent.Sound</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushADMMessageTemplateContent.Title</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushADMMessageTemplateContent.Url</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushAPNSMessageTemplateContent.MediaUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushAPNSMessageTemplateContent.Sound</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushAPNSMessageTemplateContent.Title</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushAPNSMessageTemplateContent.Url</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushBaiduMessageTemplateContent.ImageIconUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushBaiduMessageTemplateContent.ImageUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushBaiduMessageTemplateContent.SmallImageIconUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushBaiduMessageTemplateContent.Sound</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushBaiduMessageTemplateContent.Title</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushBaiduMessageTemplateContent.Url</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushFCMMessageTemplateContent.ImageIconUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushFCMMessageTemplateContent.ImageUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushFCMMessageTemplateContent.SmallImageIconUrl</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushFCMMessageTemplateContent.Sound</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushFCMMessageTemplateContent.Title</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.PushFCMMessageTemplateContent.Url</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.QueryConditionItem.Value</property>
@@ -3040,5 +3153,48 @@
     <property>Amazon.QConnect.Model.WebCrawlerLimits.RateLimit</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.WhatsAppMessageTemplateContent.Data</property>
+    <min>1</min>
+    <max>6000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.WhatsAppMessageTemplateSourceConfiguration.BusinessAccountId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-[0-9a-zA-Z]+$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.WhatsAppMessageTemplateSourceConfiguration.TemplateId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.WhatsAppMessageTemplateSourceConfigurationSummary.BusinessAccountId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>.*(^waba-[0-9a-zA-Z]+$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.WhatsAppMessageTemplateSourceConfigurationSummary.Language</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.WhatsAppMessageTemplateSourceConfigurationSummary.Name</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.WhatsAppMessageTemplateSourceConfigurationSummary.StatusReason</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.WhatsAppMessageTemplateSourceConfigurationSummary.TemplateId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
 </property-value-rules>

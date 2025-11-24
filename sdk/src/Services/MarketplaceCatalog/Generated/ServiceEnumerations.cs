@@ -209,6 +209,10 @@ namespace Amazon.MarketplaceCatalog
     {
 
         /// <summary>
+        /// Constant CompatibleAWSServices for ContainerProductSortBy
+        /// </summary>
+        public static readonly ContainerProductSortBy CompatibleAWSServices = new ContainerProductSortBy("CompatibleAWSServices");
+        /// <summary>
         /// Constant EntityId for ContainerProductSortBy
         /// </summary>
         public static readonly ContainerProductSortBy EntityId = new ContainerProductSortBy("EntityId");
@@ -1048,6 +1052,10 @@ namespace Amazon.MarketplaceCatalog
     public class SaaSProductSortBy : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DeliveryOptionTypes for SaaSProductSortBy
+        /// </summary>
+        public static readonly SaaSProductSortBy DeliveryOptionTypes = new SaaSProductSortBy("DeliveryOptionTypes");
         /// <summary>
         /// Constant EntityId for SaaSProductSortBy
         /// </summary>

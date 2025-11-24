@@ -35,9 +35,28 @@ namespace Amazon.ApplicationSignals.Model
     /// </summary>
     public partial class AuditTargetEntity
     {
+        private CanaryEntity _canary;
         private ServiceEntity _service;
         private ServiceOperationEntity _serviceOperation;
         private ServiceLevelObjectiveEntity _slo;
+
+        /// <summary>
+        /// Gets and sets the property Canary. 
+        /// <para>
+        /// Canary entity information when the audit target is a CloudWatch Synthetics canary.
+        /// </para>
+        /// </summary>
+        public CanaryEntity Canary
+        {
+            get { return this._canary; }
+            set { this._canary = value; }
+        }
+
+        // Check to see if Canary property is set
+        internal bool IsSetCanary()
+        {
+            return this._canary != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Service. 

@@ -138,6 +138,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SnapshotId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("sourceVolumeId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceVolumeId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("sseType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Campaign _campaign;
         private Endpoint _customerEndpoint;
+        private OutboundStrategy _outboundStrategy;
         private string _queueId;
         private string _requestIdentifier;
         private Endpoint _systemEndpoint;
@@ -98,6 +99,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetCustomerEndpoint()
         {
             return this._customerEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutboundStrategy. 
+        /// <para>
+        /// Information about the outbound strategy.
+        /// </para>
+        /// </summary>
+        public OutboundStrategy OutboundStrategy
+        {
+            get { return this._outboundStrategy; }
+            set { this._outboundStrategy = value; }
+        }
+
+        // Check to see if OutboundStrategy property is set
+        internal bool IsSetOutboundStrategy()
+        {
+            return this._outboundStrategy != null;
         }
 
         /// <summary>

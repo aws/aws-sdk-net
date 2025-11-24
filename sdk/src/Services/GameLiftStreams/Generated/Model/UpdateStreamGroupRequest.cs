@@ -32,9 +32,9 @@ namespace Amazon.GameLiftStreams.Model
     /// <summary>
     /// Container for the parameters to the UpdateStreamGroup operation.
     /// Updates the configuration settings for an Amazon GameLift Streams stream group resource.
-    /// You can change the description, the set of locations, and the requested capacity of
-    /// a stream group per location. If you want to change the stream class, create a new
-    /// stream group. 
+    /// To update a stream group, it must be in <c>ACTIVE</c> status. You can change the description,
+    /// the set of locations, and the requested capacity of a stream group per location. If
+    /// you want to change the stream class, create a new stream group. 
     /// 
     ///  
     /// <para>
@@ -46,8 +46,8 @@ namespace Amazon.GameLiftStreams.Model
     /// <para>
     ///  <b>Always-on</b>: The streaming capacity that is allocated and ready to handle stream
     /// requests without delay. You pay for this capacity whether it's in use or not. Best
-    /// for quickest time from streaming request to streaming session. Default is 1 when creating
-    /// a stream group or adding a location. 
+    /// for quickest time from streaming request to streaming session. Default is 1 (2 for
+    /// high stream classes) when creating a stream group or adding a location. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -59,9 +59,15 @@ namespace Amazon.GameLiftStreams.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// Values for capacity must be whole number multiples of the tenancy value of the stream
+    /// group's stream class.
+    /// </para>
+    ///  
+    /// <para>
     /// To update a stream group, specify the stream group's Amazon Resource Name (ARN) and
     /// provide the new values. If the request is successful, Amazon GameLift Streams returns
-    /// the complete updated metadata for the stream group.
+    /// the complete updated metadata for the stream group. Expired stream groups cannot be
+    /// updated.
     /// </para>
     /// </summary>
     public partial class UpdateStreamGroupRequest : AmazonGameLiftStreamsRequest

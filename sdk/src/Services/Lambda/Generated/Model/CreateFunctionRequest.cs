@@ -128,6 +128,7 @@ namespace Amazon.Lambda.Model
         private Runtime _runtime;
         private SnapStart _snapStart;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private TenancyConfig _tenancyConfig;
         private int? _timeout;
         private TracingConfig _tracingConfig;
         private VpcConfig _vpcConfig;
@@ -624,6 +625,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenancyConfig. 
+        /// <para>
+        /// Configuration for multi-tenant applications that use Lambda functions. Defines tenant
+        /// isolation settings and resource allocations. Required for functions supporting multiple
+        /// tenants.
+        /// </para>
+        /// </summary>
+        public TenancyConfig TenancyConfig
+        {
+            get { return this._tenancyConfig; }
+            set { this._tenancyConfig = value; }
+        }
+
+        // Check to see if TenancyConfig property is set
+        internal bool IsSetTenancyConfig()
+        {
+            return this._tenancyConfig != null;
         }
 
         /// <summary>

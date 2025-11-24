@@ -56,7 +56,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetConnectionGroupByRoutingEndpointRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
+            if (string.IsNullOrEmpty(publicRequest.RoutingEndpoint))
+                throw new AmazonCloudFrontException("Request object does not have required field RoutingEndpoint set");
             
             if (publicRequest.IsSetRoutingEndpoint())
                 request.Parameters.Add("RoutingEndpoint", StringUtils.FromString(publicRequest.RoutingEndpoint));
@@ -86,5 +89,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetConnectionGroupByRoutingEndpointRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetConnectionGroupByRoutingEndpointRequest publicRequest);
     }    
 }

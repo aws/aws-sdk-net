@@ -175,6 +175,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetServiceTier())
+            {
+                context.Writer.WritePropertyName("serviceTier");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServiceTierMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ServiceTier, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSystem())
             {
                 context.Writer.WritePropertyName("system");

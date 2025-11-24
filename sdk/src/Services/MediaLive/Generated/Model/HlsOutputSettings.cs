@@ -77,7 +77,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property NameModifier. String concatenated to the end of the destination
         /// filename. Accepts \"Format Identifiers\":#formatIdentifierParameters.
         /// </summary>
-        [AWSProperty(Min=1)]
         public string NameModifier
         {
             get { return this._nameModifier; }

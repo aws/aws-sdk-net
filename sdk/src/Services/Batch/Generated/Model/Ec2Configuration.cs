@@ -156,17 +156,14 @@ namespace Amazon.Batch.Model
         ///  </note> </dd> </dl> </dd> <dt>EKS</dt> <dd> 
         /// <para>
         /// If the <c>imageIdOverride</c> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
-        /// EKS-optimized Amazon Linux AMI</a> (<c>EKS_AL2</c>) is used. If a new image type is
-        /// specified in an update, but neither an <c>imageId</c> nor a <c>imageIdOverride</c>
+        /// EKS-optimized Amazon Linux 2023 AMI</a> (<c>EKS_AL2023</c>) is used. If a new image
+        /// type is specified in an update, but neither an <c>imageId</c> nor a <c>imageIdOverride</c>
         /// parameter is specified, then the latest Amazon EKS optimized AMI for that image type
         /// that Batch supports is used.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Starting end of October 2025 Amazon EKS optimized Amazon Linux 2023 AMIs will be the
-        /// default on Batch for EKS versions prior to 1.33. Starting from Kubernetes version
-        /// 1.33, EKS optimized Amazon Linux 2023 AMIs will be the default when it becomes supported
-        /// on Batch.
+        /// Amazon Linux 2023 AMIs are the default on Batch for Amazon EKS.
         /// </para>
         ///  
         /// <para>
@@ -181,19 +178,19 @@ namespace Amazon.Batch.Model
         ///  </important> <dl> <dt>EKS_AL2</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
-        /// Linux 2</a>: Default for all non-GPU instance families.
+        /// Linux 2</a>: Used for non-GPU instance families.
         /// </para>
         ///  </dd> <dt>EKS_AL2_NVIDIA</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
-        /// Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <c>P4</c>
+        /// Linux 2 (accelerated)</a>: Used for GPU instance families (for example, <c>P4</c>
         /// and <c>G4</c>) and can be used for all non Amazon Web Services Graviton-based instance
         /// types.
         /// </para>
         ///  </dd> <dt>EKS_AL2023</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
-        /// Linux 2023</a>: Batch supports Amazon Linux 2023.
+        /// Linux 2023</a>: Default for non-GPU instance families.
         /// </para>
         ///  <note> 
         /// <para>
@@ -202,8 +199,8 @@ namespace Amazon.Batch.Model
         ///  </note> </dd> <dt>EKS_AL2023_NVIDIA</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
-        /// Linux 2023 (accelerated)</a>: GPU instance families and can be used for all non Amazon
-        /// Web Services Graviton-based instance types.
+        /// Linux 2023 (accelerated)</a>: Default for GPU instance families and can be used for
+        /// all non Amazon Web Services Graviton-based instance types.
         /// </para>
         ///  </dd> </dl> </dd> </dl>
         /// </summary>

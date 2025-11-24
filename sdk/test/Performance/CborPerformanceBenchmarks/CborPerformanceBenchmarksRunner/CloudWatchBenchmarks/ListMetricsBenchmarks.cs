@@ -42,6 +42,10 @@ public class ListMetricsBenchmarks : BaseBenchmarks
     public override byte[] Marshall()
     {
         var iRequest = ListMetricsRequestMarshaller.Instance.Marshall(request);
+#if !USE_CBOR
+        string queryString = Utils.GetParametersAsString(iRequest.ParameterCollection);
+        iRequest.Content = System.Text.Encoding.UTF8.GetBytes(queryString);
+#endif
         MarshalledRequest = iRequest;
 
         return iRequest.Content;

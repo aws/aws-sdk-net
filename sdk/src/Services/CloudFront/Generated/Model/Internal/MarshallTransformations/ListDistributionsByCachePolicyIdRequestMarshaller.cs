@@ -56,6 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDistributionsByCachePolicyIdRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetCachePolicyId())
                 throw new AmazonCloudFrontException("Request object does not have required field CachePolicyId set");
@@ -92,5 +93,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByCachePolicyIdRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListDistributionsByCachePolicyIdRequest publicRequest);
     }    
 }

@@ -1371,6 +1371,17 @@
     <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.ConnectorVpcLatticeEgressConfig.PortNumber</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ConnectorVpcLatticeEgressConfig.ResourceConfigurationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.CopyStepDetails.Name</property>
     <min>0</min>
     <max>30</max>
@@ -1599,6 +1610,17 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedConnectorVpcLatticeEgressConfig.PortNumber</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedConnectorVpcLatticeEgressConfig.ResourceConfigurationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedExecution.ExecutionId</property>
     <min>36</min>
     <max>36</max>
@@ -1786,6 +1808,12 @@
     <min>24</min>
     <max>24</max>
     <pattern>webapp-[0-9a-f]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedWebAppVpcConfig.VpcEndpointId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>vpce-[0-9a-f]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedWorkflow.Arn</property>
@@ -2206,6 +2234,17 @@
     <min>0</min>
     <max>256</max>
     <pattern>\$\{(\w+.)+\w+\}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateConnectorVpcLatticeEgressConfig.PortNumber</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.UpdateConnectorVpcLatticeEgressConfig.ResourceConfigurationArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.UpdateWebAppIdentityCenterConfig.Role</property>

@@ -125,6 +125,14 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Paginator for GetScheduledQueryHistory operation
+        ///</summary>
+        public IGetScheduledQueryHistoryPaginator GetScheduledQueryHistory(GetScheduledQueryHistoryRequest request) 
+        {
+            return new GetScheduledQueryHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAnomalies operation
         ///</summary>
         public IListAnomaliesPaginator ListAnomalies(ListAnomaliesRequest request) 
@@ -146,6 +154,14 @@ namespace Amazon.CloudWatchLogs.Model
         public IListLogGroupsForQueryPaginator ListLogGroupsForQuery(ListLogGroupsForQueryRequest request) 
         {
             return new ListLogGroupsForQueryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListScheduledQueries operation
+        ///</summary>
+        public IListScheduledQueriesPaginator ListScheduledQueries(ListScheduledQueriesRequest request) 
+        {
+            return new ListScheduledQueriesPaginator(this.client, request);
         }
     }
 }

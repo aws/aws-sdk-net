@@ -42,6 +42,7 @@ namespace Amazon.WorkSpaces.Model
         private string _directoryName;
         private WorkspaceDirectoryType _directoryType;
         private List<string> _dnsIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _dnsIpv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EndpointEncryptionMode _endpointEncryptionMode;
         private string _errorMessage;
         private string _iamRoleId;
@@ -213,6 +214,29 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetDnsIpAddresses()
         {
             return this._dnsIpAddresses != null && (this._dnsIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsIpv6Addresses. 
+        /// <para>
+        /// The IPv6 addresses of the DNS servers for the directory.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> DnsIpv6Addresses
+        {
+            get { return this._dnsIpv6Addresses; }
+            set { this._dnsIpv6Addresses = value; }
+        }
+
+        // Check to see if DnsIpv6Addresses property is set
+        internal bool IsSetDnsIpv6Addresses()
+        {
+            return this._dnsIpv6Addresses != null && (this._dnsIpv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

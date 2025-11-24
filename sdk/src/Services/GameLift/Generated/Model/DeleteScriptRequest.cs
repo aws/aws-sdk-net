@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteScript operation.
+    /// <b>This API works with the following fleet types:</b> EC2
+    /// 
+    ///  
+    /// <para>
     /// Deletes a Realtime script. This operation permanently deletes the script record. If
     /// script files were uploaded, they are also deleted (files stored in an S3 bucket are
     /// not deleted). 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To delete a script, specify the script ID. Before deleting a script, be sure to terminate

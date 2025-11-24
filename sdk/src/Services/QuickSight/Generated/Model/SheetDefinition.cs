@@ -199,7 +199,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the sheet. This name is displayed on the sheet's tab in the QuickSight
+        /// The name of the sheet. This name is displayed on the sheet's tab in the Quick Suite
         /// console.
         /// </para>
         /// </summary>

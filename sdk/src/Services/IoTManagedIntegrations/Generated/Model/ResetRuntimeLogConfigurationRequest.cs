@@ -31,8 +31,7 @@ namespace Amazon.IoTManagedIntegrations.Model
 {
     /// <summary>
     /// Container for the parameters to the ResetRuntimeLogConfiguration operation.
-    /// Reset a runtime log configuration for a specific managed thing or for all managed
-    /// things as a group.
+    /// Reset a runtime log configuration for a specific managed thing.
     /// </summary>
     public partial class ResetRuntimeLogConfigurationRequest : AmazonIoTManagedIntegrationsRequest
     {

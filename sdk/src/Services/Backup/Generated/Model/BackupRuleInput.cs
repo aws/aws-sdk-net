@@ -41,10 +41,12 @@ namespace Amazon.Backup.Model
         private Lifecycle _lifecycle;
         private Dictionary<string, string> _recoveryPointTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _ruleName;
+        private List<ScanAction> _scanActions = AWSConfigs.InitializeCollections ? new List<ScanAction>() : null;
         private string _scheduleExpression;
         private string _scheduleExpressionTimezone;
         private long? _startWindowMinutes;
         private string _targetBackupVaultName;
+        private string _targetLogicallyAirGappedBackupVaultArn;
 
         /// <summary>
         /// Gets and sets the property CompletionWindowMinutes. 
@@ -227,6 +229,30 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScanActions. 
+        /// <para>
+        /// Contains your scanning configuration for the backup rule and includes the malware
+        /// scanner, and scan mode of either full or incremental.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ScanAction> ScanActions
+        {
+            get { return this._scanActions; }
+            set { this._scanActions = value; }
+        }
+
+        // Check to see if ScanActions property is set
+        internal bool IsSetScanActions()
+        {
+            return this._scanActions != null && (this._scanActions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
         /// A CRON expression in UTC specifying when Backup initiates a backup job. When no CRON
@@ -317,6 +343,28 @@ namespace Amazon.Backup.Model
         internal bool IsSetTargetBackupVaultName()
         {
             return this._targetBackupVaultName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLogicallyAirGappedBackupVaultArn. 
+        /// <para>
+        /// The ARN of a logically air-gapped vault. ARN must be in the same account and Region.
+        /// If provided, supported fully managed resources back up directly to logically air-gapped
+        /// vault, while other supported resources create a temporary (billable) snapshot in backup
+        /// vault, then copy it to logically air-gapped vault. Unsupported resources only back
+        /// up to the specified backup vault.
+        /// </para>
+        /// </summary>
+        public string TargetLogicallyAirGappedBackupVaultArn
+        {
+            get { return this._targetLogicallyAirGappedBackupVaultArn; }
+            set { this._targetLogicallyAirGappedBackupVaultArn = value; }
+        }
+
+        // Check to see if TargetLogicallyAirGappedBackupVaultArn property is set
+        internal bool IsSetTargetLogicallyAirGappedBackupVaultArn()
+        {
+            return this._targetLogicallyAirGappedBackupVaultArn != null;
         }
 
     }

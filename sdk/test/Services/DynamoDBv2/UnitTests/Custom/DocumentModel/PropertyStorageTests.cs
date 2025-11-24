@@ -59,7 +59,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void AddIndex_AddsIndexToIndexesList()
         {
             var storage = CreatePropertyStorage();
-            var gsi = new PropertyStorage.GSI(true, "Attr", "Index1");
+            var gsi = new PropertyStorage.GSI(true, "Attr", 0,"Index1");
             storage.AddIndex(gsi);
 
             Assert.AreEqual(1, storage.Indexes.Count);
@@ -70,7 +70,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void AddGsiIndex_AddsGSIIndex()
         {
             var storage = CreatePropertyStorage();
-            storage.AddGsiIndex(true, "Attr", "Index1", "Index2");
+            storage.AddGsiIndex(true, "Attr", 0, "Index1", "Index2");
 
             Assert.AreEqual(1, storage.Indexes.Count);
             var gsi = storage.Indexes[0] as PropertyStorage.GSI;
@@ -279,7 +279,7 @@ namespace AWSSDK_DotNet.UnitTests
             var storage = CreatePropertyStorage("Id");
             storage.IndexNames = new List<string>();
             storage.FlattenProperties = new List<PropertyStorage>();
-            storage.AddGsiIndex(true, "Attr", "IndexA", "IndexB");
+            storage.AddGsiIndex(true, "Attr", 0, "IndexA", "IndexB");
 
             storage.Validate(context);
 
@@ -393,5 +393,34 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsInstanceOfType(storage.Converter, typeof(ValidPropertyConverter));
         }
 
+
+        [TestMethod]
+        public void Validate_InstantiatesConverterType_WhenConverterTypeIsValid()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DummyContext(mockClient.Object);
+
+            var storage = CreatePropertyStorage("Name");
+            storage.ConverterType = typeof(FakePropertyConverter);
+            storage.IndexNames = new List<string>();
+            storage.FlattenProperties = new List<PropertyStorage>();
+
+            storage.Validate(context);
+
+            Assert.IsNotNull(storage.Converter);
+            Assert.IsInstanceOfType(storage.Converter, typeof(FakePropertyConverter));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Validate_ThrowsWhenConverterTypeDoesNotImplementIPropertyConverter()
+        {
+            var storage = CreatePropertyStorage("Name");
+            storage.ConverterType = typeof(object);
+            storage.IndexNames = new List<string>();
+            storage.FlattenProperties = new List<PropertyStorage>();
+
+            storage.Validate(null);
+        }
     }
 }

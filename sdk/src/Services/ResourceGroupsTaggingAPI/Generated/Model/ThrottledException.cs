@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
-    /// The request was denied to limit the frequency of submitted requests.
+    /// The request failed because it exceeded the allowed frequency of submitted requests.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

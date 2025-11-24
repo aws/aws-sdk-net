@@ -86,6 +86,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.ProjectIdentifier))
+                throw new AmazonDataZoneException("Request object does not have required field ProjectIdentifier set");
             
             if (publicRequest.IsSetProjectIdentifier())
                 request.Parameters.Add("projectIdentifier", StringUtils.FromString(publicRequest.ProjectIdentifier));

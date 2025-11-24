@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The type of experience you want to embed. For anonymous users, you can embed QuickSight
-    /// dashboards.
+    /// The type of experience you want to embed. For anonymous users, you can embed Quick
+    /// Suite dashboards.
     /// </summary>
     public partial class AnonymousUserEmbeddingExperienceConfiguration
     {

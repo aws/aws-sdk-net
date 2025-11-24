@@ -62,6 +62,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("enableTrustedIdentityPropagation", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableTrustedIdentityPropagation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("glueConnection", targetDepth))
                 {
                     var unmarshaller = GlueConnectionUnmarshaller.Instance;

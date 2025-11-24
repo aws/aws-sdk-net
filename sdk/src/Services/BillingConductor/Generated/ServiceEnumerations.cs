@@ -97,6 +97,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly BillingGroupStatus ACTIVE = new BillingGroupStatus("ACTIVE");
         /// <summary>
+        /// Constant PENDING for BillingGroupStatus
+        /// </summary>
+        public static readonly BillingGroupStatus PENDING = new BillingGroupStatus("PENDING");
+        /// <summary>
         /// Constant PRIMARY_ACCOUNT_MISSING for BillingGroupStatus
         /// </summary>
         public static readonly BillingGroupStatus PRIMARY_ACCOUNT_MISSING = new BillingGroupStatus("PRIMARY_ACCOUNT_MISSING");
@@ -130,6 +134,102 @@ namespace Amazon.BillingConductor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BillingGroupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BillingGroupType.
+    /// </summary>
+    public class BillingGroupType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STANDARD for BillingGroupType
+        /// </summary>
+        public static readonly BillingGroupType STANDARD = new BillingGroupType("STANDARD");
+        /// <summary>
+        /// Constant TRANSFER_BILLING for BillingGroupType
+        /// </summary>
+        public static readonly BillingGroupType TRANSFER_BILLING = new BillingGroupType("TRANSFER_BILLING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingGroupType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingGroupType FindValue(string value)
+        {
+            return FindValue<BillingGroupType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingGroupType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComputationRuleEnum.
+    /// </summary>
+    public class ComputationRuleEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONSOLIDATED for ComputationRuleEnum
+        /// </summary>
+        public static readonly ComputationRuleEnum CONSOLIDATED = new ComputationRuleEnum("CONSOLIDATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputationRuleEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputationRuleEnum FindValue(string value)
+        {
+            return FindValue<ComputationRuleEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputationRuleEnum(string value)
         {
             return FindValue(value);
         }
@@ -649,6 +749,52 @@ namespace Amazon.BillingConductor
 
 
     /// <summary>
+    /// Constants used for properties of type SearchOption.
+    /// </summary>
+    public class SearchOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STARTS_WITH for SearchOption
+        /// </summary>
+        public static readonly SearchOption STARTS_WITH = new SearchOption("STARTS_WITH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchOption FindValue(string value)
+        {
+            return FindValue<SearchOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationExceptionReason.
     /// </summary>
     public class ValidationExceptionReason : ConstantClass
@@ -662,6 +808,10 @@ namespace Amazon.BillingConductor
         /// Constant ACCOUNTS_NOT_ASSOCIATED for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ACCOUNTS_NOT_ASSOCIATED = new ValidationExceptionReason("ACCOUNTS_NOT_ASSOCIATED");
+        /// <summary>
+        /// Constant BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD = new ValidationExceptionReason("BILLING_GROUP_ALREADY_EXIST_IN_CURRENT_BILLING_PERIOD");
         /// <summary>
         /// Constant CANNOT_DELETE_AUTO_ASSOCIATE_BILLING_GROUP for ValidationExceptionReason
         /// </summary>
@@ -699,6 +849,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_BILLING_ENTITY = new ValidationExceptionReason("ILLEGAL_BILLING_ENTITY");
         /// <summary>
+        /// Constant ILLEGAL_BILLING_GROUP_TYPE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_BILLING_GROUP_TYPE = new ValidationExceptionReason("ILLEGAL_BILLING_GROUP_TYPE");
+        /// <summary>
         /// Constant ILLEGAL_BILLING_PERIOD for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_BILLING_PERIOD = new ValidationExceptionReason("ILLEGAL_BILLING_PERIOD");
@@ -714,6 +868,10 @@ namespace Amazon.BillingConductor
         /// Constant ILLEGAL_CHILD_ASSOCIATE_RESOURCE for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_CHILD_ASSOCIATE_RESOURCE = new ValidationExceptionReason("ILLEGAL_CHILD_ASSOCIATE_RESOURCE");
+        /// <summary>
+        /// Constant ILLEGAL_COMPUTATION_RULE for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_COMPUTATION_RULE = new ValidationExceptionReason("ILLEGAL_COMPUTATION_RULE");
         /// <summary>
         /// Constant ILLEGAL_CUSTOMLINEITEM for ValidationExceptionReason
         /// </summary>
@@ -734,6 +892,10 @@ namespace Amazon.BillingConductor
         /// Constant ILLEGAL_EXPRESSION for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason ILLEGAL_EXPRESSION = new ValidationExceptionReason("ILLEGAL_EXPRESSION");
+        /// <summary>
+        /// Constant ILLEGAL_LINE_ITEM_FILTER for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason ILLEGAL_LINE_ITEM_FILTER = new ValidationExceptionReason("ILLEGAL_LINE_ITEM_FILTER");
         /// <summary>
         /// Constant ILLEGAL_MODIFIER_PERCENTAGE for ValidationExceptionReason
         /// </summary>
@@ -830,6 +992,10 @@ namespace Amazon.BillingConductor
         /// Constant MISSING_BILLINGGROUP for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason MISSING_BILLINGGROUP = new ValidationExceptionReason("MISSING_BILLINGGROUP");
+        /// <summary>
+        /// Constant MISSING_COSTCATEGORY for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason MISSING_COSTCATEGORY = new ValidationExceptionReason("MISSING_COSTCATEGORY");
         /// <summary>
         /// Constant MISSING_CUSTOMLINEITEM for ValidationExceptionReason
         /// </summary>

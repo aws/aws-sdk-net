@@ -53,6 +53,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private HttpRequestMethodConditionConfig _httpRequestMethodConfig;
         private PathPatternConditionConfig _pathPatternConfig;
         private QueryStringConditionConfig _queryStringConfig;
+        private List<string> _regexValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SourceIpConditionConfig _sourceIpConfig;
         private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -188,6 +189,31 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetQueryStringConfig()
         {
             return this._queryStringConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegexValues. 
+        /// <para>
+        /// The regular expressions to match against the condition field. The maximum length of
+        /// each string is 128 characters. Specify only when <c>Field</c> is <c>http-header</c>,
+        /// <c>host-header</c>, or <c>path-pattern</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> RegexValues
+        {
+            get { return this._regexValues; }
+            set { this._regexValues = value; }
+        }
+
+        // Check to see if RegexValues property is set
+        internal bool IsSetRegexValues()
+        {
+            return this._regexValues != null && (this._regexValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

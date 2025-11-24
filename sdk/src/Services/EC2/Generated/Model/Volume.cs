@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private string _outpostArn;
         private int? _size;
         private string _snapshotId;
+        private string _sourceVolumeId;
         private SSEType _sseType;
         private VolumeState _state;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -304,6 +305,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetSnapshotId()
         {
             return this._snapshotId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceVolumeId. 
+        /// <para>
+        /// The ID of the source volume from which the volume copy was created. Only for volume
+        /// copies.
+        /// </para>
+        /// </summary>
+        public string SourceVolumeId
+        {
+            get { return this._sourceVolumeId; }
+            set { this._sourceVolumeId = value; }
+        }
+
+        // Check to see if SourceVolumeId property is set
+        internal bool IsSetSourceVolumeId()
+        {
+            return this._sourceVolumeId != null;
         }
 
         /// <summary>

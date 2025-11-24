@@ -1114,6 +1114,91 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  CreateCoreNetworkPrefixListAssociation
+
+
+        /// <summary>
+        /// Creates an association between a core network and a prefix list for routing control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetworkPrefixListAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateCoreNetworkPrefixListAssociation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetworkPrefixListAssociation">REST API Reference for CreateCoreNetworkPrefixListAssociation Operation</seealso>
+        public virtual CreateCoreNetworkPrefixListAssociationResponse CreateCoreNetworkPrefixListAssociation(CreateCoreNetworkPrefixListAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCoreNetworkPrefixListAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoreNetworkPrefixListAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCoreNetworkPrefixListAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an association between a core network and a prefix list for routing control.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCoreNetworkPrefixListAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCoreNetworkPrefixListAssociation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateCoreNetworkPrefixListAssociation">REST API Reference for CreateCoreNetworkPrefixListAssociation Operation</seealso>
+        public virtual Task<CreateCoreNetworkPrefixListAssociationResponse> CreateCoreNetworkPrefixListAssociationAsync(CreateCoreNetworkPrefixListAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCoreNetworkPrefixListAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCoreNetworkPrefixListAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCoreNetworkPrefixListAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDevice
 
 
@@ -2240,6 +2325,91 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = DeleteCoreNetworkPolicyVersionResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteCoreNetworkPolicyVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCoreNetworkPrefixListAssociation
+
+
+        /// <summary>
+        /// Deletes an association between a core network and a prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkPrefixListAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetworkPrefixListAssociation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPrefixListAssociation">REST API Reference for DeleteCoreNetworkPrefixListAssociation Operation</seealso>
+        public virtual DeleteCoreNetworkPrefixListAssociationResponse DeleteCoreNetworkPrefixListAssociation(DeleteCoreNetworkPrefixListAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCoreNetworkPrefixListAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoreNetworkPrefixListAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCoreNetworkPrefixListAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an association between a core network and a prefix list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCoreNetworkPrefixListAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCoreNetworkPrefixListAssociation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/DeleteCoreNetworkPrefixListAssociation">REST API Reference for DeleteCoreNetworkPrefixListAssociation Operation</seealso>
+        public virtual Task<DeleteCoreNetworkPrefixListAssociationResponse> DeleteCoreNetworkPrefixListAssociationAsync(DeleteCoreNetworkPrefixListAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCoreNetworkPrefixListAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCoreNetworkPrefixListAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCoreNetworkPrefixListAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5240,6 +5410,77 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  ListAttachmentRoutingPolicyAssociations
+
+
+        /// <summary>
+        /// Lists the routing policy associations for attachments in a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachmentRoutingPolicyAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachmentRoutingPolicyAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachmentRoutingPolicyAssociations">REST API Reference for ListAttachmentRoutingPolicyAssociations Operation</seealso>
+        public virtual ListAttachmentRoutingPolicyAssociationsResponse ListAttachmentRoutingPolicyAssociations(ListAttachmentRoutingPolicyAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAttachmentRoutingPolicyAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachmentRoutingPolicyAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAttachmentRoutingPolicyAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the routing policy associations for attachments in a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachmentRoutingPolicyAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAttachmentRoutingPolicyAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachmentRoutingPolicyAssociations">REST API Reference for ListAttachmentRoutingPolicyAssociations Operation</seealso>
+        public virtual Task<ListAttachmentRoutingPolicyAssociationsResponse> ListAttachmentRoutingPolicyAssociationsAsync(ListAttachmentRoutingPolicyAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAttachmentRoutingPolicyAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAttachmentRoutingPolicyAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAttachmentRoutingPolicyAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAttachments
 
 
@@ -5437,6 +5678,148 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = ListCoreNetworkPolicyVersionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListCoreNetworkPolicyVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCoreNetworkPrefixListAssociations
+
+
+        /// <summary>
+        /// Lists the prefix list associations for a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkPrefixListAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListCoreNetworkPrefixListAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPrefixListAssociations">REST API Reference for ListCoreNetworkPrefixListAssociations Operation</seealso>
+        public virtual ListCoreNetworkPrefixListAssociationsResponse ListCoreNetworkPrefixListAssociations(ListCoreNetworkPrefixListAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCoreNetworkPrefixListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoreNetworkPrefixListAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCoreNetworkPrefixListAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the prefix list associations for a core network.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkPrefixListAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCoreNetworkPrefixListAssociations service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkPrefixListAssociations">REST API Reference for ListCoreNetworkPrefixListAssociations Operation</seealso>
+        public virtual Task<ListCoreNetworkPrefixListAssociationsResponse> ListCoreNetworkPrefixListAssociationsAsync(ListCoreNetworkPrefixListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCoreNetworkPrefixListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoreNetworkPrefixListAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCoreNetworkPrefixListAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCoreNetworkRoutingInformation
+
+
+        /// <summary>
+        /// Lists routing information for a core network, including routes and their attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkRoutingInformation service method.</param>
+        /// 
+        /// <returns>The response from the ListCoreNetworkRoutingInformation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkRoutingInformation">REST API Reference for ListCoreNetworkRoutingInformation Operation</seealso>
+        public virtual ListCoreNetworkRoutingInformationResponse ListCoreNetworkRoutingInformation(ListCoreNetworkRoutingInformationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCoreNetworkRoutingInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoreNetworkRoutingInformationResponseUnmarshaller.Instance;
+
+            return Invoke<ListCoreNetworkRoutingInformationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists routing information for a core network, including routes and their attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCoreNetworkRoutingInformation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCoreNetworkRoutingInformation service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListCoreNetworkRoutingInformation">REST API Reference for ListCoreNetworkRoutingInformation Operation</seealso>
+        public virtual Task<ListCoreNetworkRoutingInformationResponse> ListCoreNetworkRoutingInformationAsync(ListCoreNetworkRoutingInformationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCoreNetworkRoutingInformationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCoreNetworkRoutingInformationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCoreNetworkRoutingInformationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5681,6 +6064,91 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAttachmentRoutingPolicyLabel
+
+
+        /// <summary>
+        /// Applies a routing policy label to an attachment for traffic routing decisions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttachmentRoutingPolicyLabel service method.</param>
+        /// 
+        /// <returns>The response from the PutAttachmentRoutingPolicyLabel service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutAttachmentRoutingPolicyLabel">REST API Reference for PutAttachmentRoutingPolicyLabel Operation</seealso>
+        public virtual PutAttachmentRoutingPolicyLabelResponse PutAttachmentRoutingPolicyLabel(PutAttachmentRoutingPolicyLabelRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAttachmentRoutingPolicyLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAttachmentRoutingPolicyLabelResponseUnmarshaller.Instance;
+
+            return Invoke<PutAttachmentRoutingPolicyLabelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Applies a routing policy label to an attachment for traffic routing decisions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttachmentRoutingPolicyLabel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAttachmentRoutingPolicyLabel service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/PutAttachmentRoutingPolicyLabel">REST API Reference for PutAttachmentRoutingPolicyLabel Operation</seealso>
+        public virtual Task<PutAttachmentRoutingPolicyLabelResponse> PutAttachmentRoutingPolicyLabelAsync(PutAttachmentRoutingPolicyLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAttachmentRoutingPolicyLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAttachmentRoutingPolicyLabelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAttachmentRoutingPolicyLabelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6015,6 +6483,91 @@ namespace Amazon.NetworkManager
             options.ResponseUnmarshaller = RejectAttachmentResponseUnmarshaller.Instance;
             
             return InvokeAsync<RejectAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveAttachmentRoutingPolicyLabel
+
+
+        /// <summary>
+        /// Removes a routing policy label from an attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAttachmentRoutingPolicyLabel service method.</param>
+        /// 
+        /// <returns>The response from the RemoveAttachmentRoutingPolicyLabel service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RemoveAttachmentRoutingPolicyLabel">REST API Reference for RemoveAttachmentRoutingPolicyLabel Operation</seealso>
+        public virtual RemoveAttachmentRoutingPolicyLabelResponse RemoveAttachmentRoutingPolicyLabel(RemoveAttachmentRoutingPolicyLabelRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RemoveAttachmentRoutingPolicyLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAttachmentRoutingPolicyLabelResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveAttachmentRoutingPolicyLabelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a routing policy label from an attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAttachmentRoutingPolicyLabel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RemoveAttachmentRoutingPolicyLabel service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ServiceQuotaExceededException">
+        /// A service limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/RemoveAttachmentRoutingPolicyLabel">REST API Reference for RemoveAttachmentRoutingPolicyLabel Operation</seealso>
+        public virtual Task<RemoveAttachmentRoutingPolicyLabelResponse> RemoveAttachmentRoutingPolicyLabelAsync(RemoveAttachmentRoutingPolicyLabelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RemoveAttachmentRoutingPolicyLabelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RemoveAttachmentRoutingPolicyLabelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RemoveAttachmentRoutingPolicyLabelResponse>(request, options, cancellationToken);
         }
 
         #endregion

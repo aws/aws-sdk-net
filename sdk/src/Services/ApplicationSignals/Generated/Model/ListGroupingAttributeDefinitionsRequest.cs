@@ -38,7 +38,48 @@ namespace Amazon.ApplicationSignals.Model
     /// </summary>
     public partial class ListGroupingAttributeDefinitionsRequest : AmazonApplicationSignalsRequest
     {
+        private string _awsAccountId;
+        private bool? _includeLinkedAccounts;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AwsAccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID to retrieve grouping attribute definitions for.
+        /// Use this when accessing grouping configurations from a different account in cross-account
+        /// monitoring scenarios.
+        /// </para>
+        /// </summary>
+        public string AwsAccountId
+        {
+            get { return this._awsAccountId; }
+            set { this._awsAccountId = value; }
+        }
+
+        // Check to see if AwsAccountId property is set
+        internal bool IsSetAwsAccountId()
+        {
+            return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeLinkedAccounts. 
+        /// <para>
+        /// If you are using this operation in a monitoring account, specify <c>true</c> to include
+        /// grouping attributes from source accounts in the returned data.
+        /// </para>
+        /// </summary>
+        public bool? IncludeLinkedAccounts
+        {
+            get { return this._includeLinkedAccounts; }
+            set { this._includeLinkedAccounts = value; }
+        }
+
+        // Check to see if IncludeLinkedAccounts property is set
+        internal bool IsSetIncludeLinkedAccounts()
+        {
+            return this._includeLinkedAccounts.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 

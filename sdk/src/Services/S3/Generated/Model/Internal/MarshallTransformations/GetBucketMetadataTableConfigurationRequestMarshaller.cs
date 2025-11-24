@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetBucketMetadataTableConfigurationRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             request.AddSubResource("metadataTable");
         
@@ -89,5 +90,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetBucketMetadataTableConfigurationRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetBucketMetadataTableConfigurationRequest publicRequest);
     }    
 }

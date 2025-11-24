@@ -56,6 +56,7 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         public IRequest Marshall(TimestampFormatHeadersRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.RestXmlProtocol");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
         
             if (publicRequest.IsSetDefaultFormat()) 
@@ -117,5 +118,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, TimestampFormatHeadersRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, TimestampFormatHeadersRequest publicRequest);
     }    
 }

@@ -39,6 +39,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private bool? _isDefault;
         private string _priority;
         private string _ruleArn;
+        private List<RuleTransform> _transforms = AWSConfigs.InitializeCollections ? new List<RuleTransform>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -142,6 +143,29 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetRuleArn()
         {
             return this._ruleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Transforms. 
+        /// <para>
+        /// The transforms for the rule.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RuleTransform> Transforms
+        {
+            get { return this._transforms; }
+            set { this._transforms = value; }
+        }
+
+        // Check to see if Transforms property is set
+        internal bool IsSetTransforms()
+        {
+            return this._transforms != null && (this._transforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -62,6 +62,8 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-04-20";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceARN))
+                throw new AmazonChimeSDKIdentityException("Request object does not have required field ResourceARN set");
             
             if (publicRequest.IsSetResourceARN())
                 request.Parameters.Add("arn", StringUtils.FromString(publicRequest.ResourceARN));

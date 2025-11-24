@@ -34,14 +34,34 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class ConnectionPropertiesOutput
     {
+        private AmazonQPropertiesOutput _amazonqProperties;
         private AthenaPropertiesOutput _athenaProperties;
         private GluePropertiesOutput _glueProperties;
         private HyperPodPropertiesOutput _hyperPodProperties;
         private IamPropertiesOutput _iamProperties;
+        private MlflowPropertiesOutput _mlflowProperties;
         private RedshiftPropertiesOutput _redshiftProperties;
         private S3PropertiesOutput _s3Properties;
         private SparkEmrPropertiesOutput _sparkEmrProperties;
         private SparkGluePropertiesOutput _sparkGlueProperties;
+
+        /// <summary>
+        /// Gets and sets the property AmazonQProperties. 
+        /// <para>
+        /// The Amazon Q properties of the connection.
+        /// </para>
+        /// </summary>
+        public AmazonQPropertiesOutput AmazonQProperties
+        {
+            get { return this._amazonqProperties; }
+            set { this._amazonqProperties = value; }
+        }
+
+        // Check to see if AmazonQProperties property is set
+        internal bool IsSetAmazonQProperties()
+        {
+            return this._amazonqProperties != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AthenaProperties. 
@@ -113,6 +133,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetIamProperties()
         {
             return this._iamProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlflowProperties. 
+        /// <para>
+        /// The MLflow properties of a connection.
+        /// </para>
+        /// </summary>
+        public MlflowPropertiesOutput MlflowProperties
+        {
+            get { return this._mlflowProperties; }
+            set { this._mlflowProperties = value; }
+        }
+
+        // Check to see if MlflowProperties property is set
+        internal bool IsSetMlflowProperties()
+        {
+            return this._mlflowProperties != null;
         }
 
         /// <summary>

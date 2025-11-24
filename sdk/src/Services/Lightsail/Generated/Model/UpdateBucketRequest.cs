@@ -44,6 +44,7 @@ namespace Amazon.Lightsail.Model
         private BucketAccessLogConfig _accessLogConfig;
         private AccessRules _accessRules;
         private string _bucketName;
+        private BucketCorsConfig _cors;
         private List<string> _readonlyAccessAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _versioning;
 
@@ -100,6 +101,33 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetBucketName()
         {
             return this._bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cors. 
+        /// <para>
+        /// Sets the cross-origin resource sharing (CORS) configuration for your bucket. If a
+        /// CORS configuration exists, it is replaced with the specified configuration. For AWS
+        /// CLI operations, this parameter can also be passed as a file. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lightsail/latest/userguide/configure-cors.html">Configuring
+        /// cross-origin resource sharing (CORS)</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// CORS information is only returned in a response when you update the CORS policy.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public BucketCorsConfig Cors
+        {
+            get { return this._cors; }
+            set { this._cors = value; }
+        }
+
+        // Check to see if Cors property is set
+        internal bool IsSetCors()
+        {
+            return this._cors != null;
         }
 
         /// <summary>

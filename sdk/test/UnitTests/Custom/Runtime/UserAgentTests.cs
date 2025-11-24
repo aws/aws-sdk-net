@@ -36,6 +36,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests
 {
@@ -233,6 +234,43 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void Test_AddsCustomUserAgentAddition_SkipDuplicates()
+        {
+            var userAgentAddition = "custom-feature/1.0";
+            var userAgentAddition2 = "custom-feature/2.0";
+
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = "test-bucket",
+                Key = "test-key",
+                ContentBody = "test-content",
+            };
+
+            var userAgentDetails = ((IAmazonWebServiceRequest)putObjectRequest).UserAgentDetails;
+
+            userAgentDetails.AddUserAgentComponent(userAgentAddition);
+            userAgentDetails.AddUserAgentComponent(userAgentAddition);
+
+            userAgentDetails.AddUserAgentComponent(userAgentAddition2);
+            userAgentDetails.AddUserAgentComponent(userAgentAddition2);
+            userAgentDetails.AddUserAgentComponent(userAgentAddition2);
+
+            var config = new AmazonS3Config();
+            var request = RunMockRequest(putObjectRequest, config, new PutObjectRequestMarshaller(), new PutObjectResponseUnmarshaller());
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+
+            var userAgentParts = userAgentHeader.Split(' ');
+
+            Assert.IsTrue(userAgentParts.Contains(userAgentAddition));
+            Assert.AreEqual(1, userAgentParts.Count(e => e == userAgentAddition));
+
+            Assert.IsTrue(userAgentParts.Contains(userAgentAddition2));
+            Assert.AreEqual(1, userAgentParts.Count(e => e == userAgentAddition2));
+        }
+
+        [TestMethod]
         public void ObservabilityFeatureIds_NoInUserAgentByDefault()
         {
             var config = new AmazonS3Config();
@@ -346,13 +384,107 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(string.Empty, result);
         }
 
-        private IRequest RunMockRequest(AmazonWebServiceRequest request, AmazonS3Config config,
-            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
-            ResponseUnmarshaller unmarshaller)
+        [TestMethod]
+        public void Test_ReusingRequestObjectDoesNotDuplicateUserAgentComponents()
         {
+            var listObjectsV2Request = new ListObjectsV2Request
+            {
+                BucketName = "test"
+            };
+
+            var customComponent = "reuse-test/1.0";
+            ((IAmazonWebServiceRequest)listObjectsV2Request).UserAgentDetails.AddUserAgentComponent(customComponent);
+            ((IAmazonWebServiceRequest)listObjectsV2Request).UserAgentDetails.AddFeature(UserAgentFeatureId.S3_TRANSFER);
+
+            // Run the same request multiple times
+            RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+            RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+            var request = RunMockRequest(listObjectsV2Request, new AmazonS3Config(), ListObjectsV2RequestMarshaller.Instance, ListObjectsV2ResponseUnmarshaller.Instance);
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+
+            // Verify custom component appears only once
+            Assert.AreEqual(1, Regex.Matches(userAgentHeader, Regex.Escape(customComponent)).Count);
+
+            // Verify feature ID appears only once in metrics section
+            var metricsSection = userAgentHeader.Split(' ').First(part => part.StartsWith("m/")).Remove(0, 2);
+            Assert.AreEqual(1, Regex.Matches(metricsSection, UserAgentFeatureId.S3_TRANSFER.Value).Count);
+        }
+
+        [TestMethod]
+        public void Test_UserAgentHeaderExcludedFromSigning()
+        {
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = "test-bucket",
+                Key = "test-key",
+                ContentBody = "test-content",
+            };
+
+            ((IAmazonWebServiceRequest)putObjectRequest).UserAgentDetails.AddUserAgentComponent("signing-test/1.0");
+
+            var config = new AmazonS3Config();
+            var request = RunMockRequest(putObjectRequest, config, PutObjectRequestMarshaller.Instance, PutObjectResponseUnmarshaller.Instance);
+
+            // Verify user agent header is present in request
+            Assert.IsTrue(request.Headers.ContainsKey(HeaderKeys.UserAgentHeader));
+            Assert.IsTrue(request.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
+
+            // Verify user agent header was excluded from signing
+            var authHeader = request.Headers[HeaderKeys.AuthorizationHeader];
+
+            var signedHeadersList = Regex.Match(authHeader, @"SignedHeaders=([^,\s]+)").Groups[1].Value.Split(';');
+            Assert.IsFalse(signedHeadersList.Contains(HeaderKeys.UserAgentHeader.ToLowerInvariant()));
+        }
+
+
+
+        [TestMethod]
+        public void Test_UserAgentPersistsAcrossRetries()
+        {
+            var putObjectRequest = new PutObjectRequest
+            {
+                BucketName = "test-bucket",
+                Key = "test-key",
+                ContentBody = "test-content",
+            };
+
+            var customComponent = "retry-test/1.0";
+            ((IAmazonWebServiceRequest)putObjectRequest).UserAgentDetails.AddUserAgentComponent(customComponent);
+            ((IAmazonWebServiceRequest)putObjectRequest).UserAgentDetails.AddFeature(UserAgentFeatureId.S3_TRANSFER);
+
+            var config = new AmazonS3Config { RetryMode = RequestRetryMode.Standard };
             var requestInspector = new RequestInspectorHandler();
             var factory = new HttpHandlerTests.MockHttpRequestFactory();
-            var httpHandler = new HttpHandler<Stream>(factory, new object());
+            var httpHandler = new RetryingHttpHandler(factory, new object());
+            var request = RunMockRequest(putObjectRequest, config, PutObjectRequestMarshaller.Instance, PutObjectResponseUnmarshaller.Instance, httpHandler);
+
+            request.Headers.TryGetValue(HeaderKeys.UserAgentHeader, out string userAgentHeader);
+            Assert.IsNotNull(userAgentHeader);
+
+            // Verify custom component appears only once (not duplicated during retries)
+            Assert.AreEqual(1, Regex.Matches(userAgentHeader, Regex.Escape(customComponent)).Count);
+
+            // Verify feature IDs appear only once in metrics section
+            var metricsSection = userAgentHeader.Split(' ').First(part => part.StartsWith("m/")).Remove(0, 2);
+            Assert.AreEqual(1, Regex.Matches(metricsSection, UserAgentFeatureId.S3_TRANSFER.Value).Count);
+
+            // Verify retry mode is added
+            Assert.AreEqual(1, Regex.Matches(metricsSection, UserAgentFeatureId.RETRY_MODE_STANDARD.Value).Count);
+        }
+
+        private IRequest RunMockRequest(AmazonWebServiceRequest request, AmazonS3Config config,
+            IMarshaller<IRequest, AmazonWebServiceRequest> marshaller,
+            ResponseUnmarshaller unmarshaller, HttpHandler<Stream> httpHandler = null)
+        {
+            var requestInspector = new RequestInspectorHandler();
+
+            if (httpHandler == null)
+            {
+                var factory = new HttpHandlerTests.MockHttpRequestFactory();
+                httpHandler = new HttpHandler<Stream>(factory, new object());
+            }
 
             RetryPolicy retryPolicy = null;
             if (config.RetryMode == RequestRetryMode.Adaptive)
@@ -366,10 +498,12 @@ namespace AWSSDK.UnitTests
             {
                 httpHandler,
                 requestInspector,
+                new Signer(),
                 retryHandler,
                 new ChecksumHandler(),
                 new AmazonS3PostMarshallHandler(),
                 new AmazonS3EndpointResolver(),
+                new AmazonS3AuthSchemeHandler(),
                 new Marshaller(),
                 new AmazonS3PreMarshallHandler()
             });
@@ -381,7 +515,8 @@ namespace AWSSDK.UnitTests
                     Marshaller = marshaller,
                     OriginalRequest = request,
                     Request = marshaller.Marshall(request),
-                    Unmarshaller = unmarshaller
+                    Unmarshaller = unmarshaller,
+                    ExplicitAWSCredentials = new BasicAWSCredentials("awsAccessKeyId", "awsSecretAccessKey"),
                 },
                 new ResponseContext()
             );
@@ -416,6 +551,42 @@ namespace AWSSDK.UnitTests
             public override Tracer GetTracer(string scope)
             {
                 return new NoOpTracer();
+            }
+        }
+
+        public class RetryingHttpHandler : HttpHandler<Stream>
+        {
+            private int _callCount = 0;
+
+            public RetryingHttpHandler(IHttpRequestFactory<Stream> requestFactory, object callbackSender) : base(requestFactory, callbackSender)
+            {
+            }
+
+            public override void InvokeSync(IExecutionContext executionContext)
+            {
+                base.InvokeSync(executionContext);
+                _callCount++;
+                if (_callCount <= 2)
+                {
+                    // First call fails to trigger retry
+                    throw new AmazonServiceException("Simulated failure", ErrorType.Receiver, "InternalError", "request-id", System.Net.HttpStatusCode.InternalServerError);
+                }
+
+                // Third call succeeds
+            }
+
+            public override async Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+            {
+                var results = await base.InvokeAsync<T>(executionContext);
+                _callCount++;
+                if (_callCount <= 2)
+                {
+                    // First call fails to trigger retry
+                    throw new AmazonServiceException("Simulated failure", ErrorType.Receiver, "InternalError", "request-id", System.Net.HttpStatusCode.InternalServerError);
+                }
+
+                // Third call succeeds
+                return results;
             }
         }
     }

@@ -42,7 +42,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property DetailsUri. URI associated with a signal map's monitor
         /// deployment.
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
         public string DetailsUri
         {
             get { return this._detailsUri; }
@@ -59,7 +58,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ErrorMessage. Error message associated with a failed monitor
         /// deployment of a signal map.
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
         public string ErrorMessage
         {
             get { return this._errorMessage; }

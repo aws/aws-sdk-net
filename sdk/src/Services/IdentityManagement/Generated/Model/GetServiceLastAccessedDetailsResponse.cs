@@ -86,7 +86,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property JobCompletionDate. 
         /// <para>
-        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the generated report job was completed or failed.
         /// </para>
         ///  
@@ -111,7 +111,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property JobCreationDate. 
         /// <para>
-        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the report job was created.
         /// </para>
         /// </summary>
@@ -189,7 +189,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ServicesLastAccessed. 
         /// <para>
-        ///  A <c>ServiceLastAccessed</c> object that contains details about the most recent attempt
+        ///  A <c>ServiceLastAccessed</c> object that contains details about the most recent attempt
         /// to access the service.
         /// </para>
         /// <para />

@@ -35,6 +35,7 @@ namespace Amazon.IoTWireless.Model
     public partial class SidewalkGetStartImportInfo
     {
         private List<string> _deviceCreationFileList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SidewalkPositioning _positioning;
         private string _role;
 
         /// <summary>
@@ -58,6 +59,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDeviceCreationFileList()
         {
             return this._deviceCreationFileList != null && (this._deviceCreationFileList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Positioning. 
+        /// <para>
+        /// The Positioning object of the Sidewalk device.
+        /// </para>
+        /// </summary>
+        public SidewalkPositioning Positioning
+        {
+            get { return this._positioning; }
+            set { this._positioning = value; }
+        }
+
+        // Check to see if Positioning property is set
+        internal bool IsSetPositioning()
+        {
+            return this._positioning != null;
         }
 
         /// <summary>

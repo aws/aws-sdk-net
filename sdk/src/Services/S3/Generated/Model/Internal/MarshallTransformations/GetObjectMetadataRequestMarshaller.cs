@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetObjectMetadataRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "HEAD";
         
             if (publicRequest.IsSetChecksumMode()) 
@@ -109,28 +110,28 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddPathResource("{Key+}", StringUtils.FromString(publicRequest.Key));
             
             if (publicRequest.IsSetPartNumber())
-                request.AddSubResource("partNumber", StringUtils.FromInt(publicRequest.PartNumber));
+                request.Parameters.Add("partNumber", StringUtils.FromInt(publicRequest.PartNumber));
             
             if (publicRequest.IsSetResponseCacheControl())
-                request.AddSubResource("response-cache-control", StringUtils.FromString(publicRequest.ResponseCacheControl));
+                request.Parameters.Add("response-cache-control", StringUtils.FromString(publicRequest.ResponseCacheControl));
             
             if (publicRequest.IsSetResponseContentDisposition())
-                request.AddSubResource("response-content-disposition", StringUtils.FromString(publicRequest.ResponseContentDisposition));
+                request.Parameters.Add("response-content-disposition", StringUtils.FromString(publicRequest.ResponseContentDisposition));
             
             if (publicRequest.IsSetResponseContentEncoding())
-                request.AddSubResource("response-content-encoding", StringUtils.FromString(publicRequest.ResponseContentEncoding));
+                request.Parameters.Add("response-content-encoding", StringUtils.FromString(publicRequest.ResponseContentEncoding));
             
             if (publicRequest.IsSetResponseContentLanguage())
-                request.AddSubResource("response-content-language", StringUtils.FromString(publicRequest.ResponseContentLanguage));
+                request.Parameters.Add("response-content-language", StringUtils.FromString(publicRequest.ResponseContentLanguage));
             
             if (publicRequest.IsSetResponseContentType())
-                request.AddSubResource("response-content-type", StringUtils.FromString(publicRequest.ResponseContentType));
+                request.Parameters.Add("response-content-type", StringUtils.FromString(publicRequest.ResponseContentType));
             
             if (publicRequest.IsSetResponseExpires())
-                request.AddSubResource("response-expires", StringUtils.FromDateTimeToRFC822(publicRequest.ResponseExpires));
+                request.Parameters.Add("response-expires", StringUtils.FromDateTimeToRFC822(publicRequest.ResponseExpires));
             
             if (publicRequest.IsSetVersionId())
-                request.AddSubResource("versionId", StringUtils.FromString(publicRequest.VersionId));
+                request.Parameters.Add("versionId", StringUtils.FromString(publicRequest.VersionId));
             request.ResourcePath = "/{Key+}";
 
             PostMarshallCustomization(request, publicRequest);
@@ -156,5 +157,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetObjectMetadataRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, GetObjectMetadataRequest publicRequest);
     }    
 }

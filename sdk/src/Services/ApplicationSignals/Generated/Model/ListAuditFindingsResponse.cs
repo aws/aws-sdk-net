@@ -35,7 +35,9 @@ namespace Amazon.ApplicationSignals.Model
     public partial class ListAuditFindingsResponse : AmazonWebServiceResponse
     {
         private List<AuditFinding> _auditFindings = AWSConfigs.InitializeCollections ? new List<AuditFinding>() : null;
+        private DateTime? _endTime;
         private string _nextToken;
+        private DateTime? _startTime;
 
         /// <summary>
         /// Gets and sets the property AuditFindings. 
@@ -64,6 +66,26 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The end of the time period that the returned audit findings apply to. When used in
+        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>
+        /// 
+        /// </para>
+        /// </summary>
+        public DateTime? EndTime
+        {
+            get { return this._endTime; }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Include this value in your next use of this API to get the next set of audit findings.
@@ -79,6 +101,26 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The start of the time period that the returned audit findings apply to. When used
+        /// in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>
+        /// 
+        /// </para>
+        /// </summary>
+        public DateTime? StartTime
+        {
+            get { return this._startTime; }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
     }

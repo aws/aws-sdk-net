@@ -68,6 +68,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.OriginReadTimeout = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("OwnerAccountId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("VpcOriginId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -58,6 +58,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string SsoRoleName = "sso_role_name";
         private const string SsoStartUrl = "sso_start_url";
         private const string SsoSession = "sso_session";
+        private const string LoginSession = "login_session";
         private const string EC2MetadataServiceEndpointField = "ec2_metadata_service_endpoint";
         private const string EC2MetadataServiceEndpointModeField = "ec2_metadata_service_endpoint_mode";
         private const string UseDualstackEndpointField = "use_dualstack_endpoint";
@@ -94,6 +95,7 @@ namespace Amazon.Runtime.CredentialManagement
             SsoRoleName,
             SsoStartUrl,
             SsoSession,
+            LoginSession,
             EC2MetadataServiceEndpointField,
             EC2MetadataServiceEndpointModeField,
             UseDualstackEndpointField,
@@ -136,6 +138,7 @@ namespace Amazon.Runtime.CredentialManagement
                 CredentialProfileType.AssumeRoleExternalMFASessionName,
                 CredentialProfileType.AssumeRoleMFASessionName,
                 CredentialProfileType.SSO,
+                CredentialProfileType.Login,
             };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -162,6 +165,7 @@ namespace Amazon.Runtime.CredentialManagement
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
                     { nameof(CredentialProfileOptions.SsoSession), SsoSession },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
+                    { nameof(CredentialProfileOptions.LoginSession), LoginSession },
                 }
             );
         /// <summary>

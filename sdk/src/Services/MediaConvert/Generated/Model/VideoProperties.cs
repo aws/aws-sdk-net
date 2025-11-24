@@ -36,6 +36,7 @@ namespace Amazon.MediaConvert.Model
     {
         private int? _bitDepth;
         private long? _bitRate;
+        private CodecMetadata _codecMetadata;
         private ColorPrimaries _colorPrimaries;
         private FrameRate _frameRate;
         private int? _height;
@@ -44,7 +45,9 @@ namespace Amazon.MediaConvert.Model
         private int? _width;
 
         /// <summary>
-        /// Gets and sets the property BitDepth. The bit depth of the video track.
+        /// Gets and sets the property BitDepth. The number of bits used per color component such
+        /// as 8, 10, or 12 bits. Standard range (SDR) video typically uses 8-bit, while 10-bit
+        /// is common for high dynamic range (HDR).
         /// </summary>
         public int? BitDepth
         {
@@ -74,8 +77,28 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ColorPrimaries. The color space color primaries of the
-        /// video track.
+        /// Gets and sets the property CodecMetadata. Codec-specific parameters parsed from the
+        /// video essence headers. This information provides detailed technical specifications
+        /// about how the video was encoded, including profile settings, resolution details, and
+        /// color space information that can help you understand the source video characteristics
+        /// and make informed encoding decisions.
+        /// </summary>
+        public CodecMetadata CodecMetadata
+        {
+            get { return this._codecMetadata; }
+            set { this._codecMetadata = value; }
+        }
+
+        // Check to see if CodecMetadata property is set
+        internal bool IsSetCodecMetadata()
+        {
+            return this._codecMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ColorPrimaries. The color space primaries of the video
+        /// track, defining the red, green, and blue color coordinates used for the video. This
+        /// information helps ensure accurate color reproduction during playback and transcoding.
         /// </summary>
         public ColorPrimaries ColorPrimaries
         {
@@ -90,7 +113,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FrameRate. The frame rate of the video or audio track.
+        /// Gets and sets the property FrameRate. The frame rate of the video or audio track,
+        /// expressed as a fraction with numerator and denominator values.
         /// </summary>
         public FrameRate FrameRate
         {
@@ -121,7 +145,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property MatrixCoefficients. The color space matrix coefficients
-        /// of the video track.
+        /// of the video track, defining how RGB color values are converted to and from YUV color
+        /// space. This affects color accuracy during encoding and decoding processes.
         /// </summary>
         public MatrixCoefficients MatrixCoefficients
         {
@@ -137,7 +162,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property TransferCharacteristics. The color space transfer characteristics
-        /// of the video track.
+        /// of the video track, defining the relationship between linear light values and the
+        /// encoded signal values. This affects brightness and contrast reproduction.
         /// </summary>
         public TransferCharacteristics TransferCharacteristics
         {

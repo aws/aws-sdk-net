@@ -65,6 +65,8 @@ namespace Amazon.Route53RecoveryControlConfig.Model.Internal.MarshallTransformat
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonRoute53RecoveryControlConfigException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonRoute53RecoveryControlConfigException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("TagKeys", publicRequest.TagKeys);

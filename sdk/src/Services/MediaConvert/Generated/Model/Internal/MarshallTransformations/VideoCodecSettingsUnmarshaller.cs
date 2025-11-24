@@ -104,6 +104,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mpeg2Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("passthroughSettings", targetDepth))
+                {
+                    var unmarshaller = PassthroughSettingsUnmarshaller.Instance;
+                    unmarshalledObject.PassthroughSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("proresSettings", targetDepth))
                 {
                     var unmarshaller = ProresSettingsUnmarshaller.Instance;

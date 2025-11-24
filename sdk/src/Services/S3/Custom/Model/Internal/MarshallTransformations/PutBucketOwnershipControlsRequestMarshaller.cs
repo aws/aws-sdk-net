@@ -41,7 +41,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(PutBucketOwnershipControlsRequest putBucketOwnershipControlsRequest)
         {
-            IRequest request = new DefaultRequest(putBucketOwnershipControlsRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(putBucketOwnershipControlsRequest, "Amazon.S3");
 
             request.HttpMethod = "PUT";
 

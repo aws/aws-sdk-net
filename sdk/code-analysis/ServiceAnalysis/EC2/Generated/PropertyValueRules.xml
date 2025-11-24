@@ -146,6 +146,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityManagerDataExportsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCapacityReservationBillingRequestsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -159,6 +164,11 @@
     <property>Amazon.EC2.Model.DescribeCapacityReservationsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityReservationTopologyRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCarrierGatewaysRequest.MaxResults</property>
@@ -283,6 +293,16 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceSqlHaHistoryStatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceSqlHaStatesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeInstanceTopologyRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -313,7 +333,22 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamPoliciesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIpamPoolsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamPrefixListResolversRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamPrefixListResolverTargetsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -579,6 +614,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayMeteringPoliciesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeTransitGatewayMulticastDomainsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -664,6 +704,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVpcEncryptionControlsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeVpcEndpointAssociationsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -679,6 +724,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVpnConcentratorsRequest.MaxResults</property>
+    <min>200</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DisassociateCapacityReservationBillingOwnerRequest.UnusedReservationBillingOwnerId</property>
     <min>12</min>
     <max>12</max>
@@ -690,9 +740,18 @@
     <max>4000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.EnableInstanceSqlHaStandbyDetectionsRequest.SqlServerCredentials</property>
+    <pattern>^(?=.{20,2048}$)arn:aws[a-z-]*:secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetAssociatedIpv6PoolCidrsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetCapacityManagerMetricDataRequest.Period</property>
+    <min>3600</min>
+    <max>86400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetCapacityReservationUsageRequest.MaxResults</property>
@@ -730,12 +789,37 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPolicyAllocationRulesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPolicyOrganizationTargetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetIpamPoolAllocationsRequest.MaxResults</property>
     <min>1000</min>
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetIpamPoolCidrsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPrefixListResolverRulesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPrefixListResolverVersionEntriesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamPrefixListResolverVersionsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -790,6 +874,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetTransitGatewayMeteringPolicyEntriesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetTransitGatewayMulticastDomainAssociationsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -821,6 +910,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetVerifiedAccessEndpointTargetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetVpcResourcesBlockingEncryptionEnforcementRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -1111,6 +1205,11 @@
     <max>1283</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPolicy.IpamPolicyArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.IpamPool.AllocationDefaultNetmaskLength</property>
     <min>0</min>
     <max>128</max>
@@ -1137,6 +1236,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.IpamPool.IpamScopeArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPrefixListResolver.IpamArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPrefixListResolver.IpamPrefixListResolverArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamPrefixListResolverTarget.IpamPrefixListResolverTargetArn</property>
     <min>1</min>
     <max>1283</max>
   </property-value-rule>

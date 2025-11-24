@@ -78,9 +78,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPrice. 
         /// <para>
-        /// If specified, indicates that the instance group uses Spot Instances. This is the maximum
-        /// price you are willing to pay for Spot Instances. Specify <c>OnDemandPrice</c> to set
-        /// the amount equal to the On-Demand price, or specify an amount in USD.
+        /// The bid price for each Amazon EC2 Spot Instance type as defined by <c>InstanceType</c>.
+        /// Expressed in USD. If neither <c>BidPrice</c> nor <c>BidPriceAsPercentageOfOnDemandPrice</c>
+        /// is provided, <c>BidPriceAsPercentageOfOnDemandPrice</c> defaults to 100%.
         /// </para>
         /// </summary>
         public string BidPrice

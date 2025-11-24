@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeStarNotifications.Model
 {
     /// <summary>
-    /// AWS CodeStar Notifications can't find a resource that matches the provided ARN.
+    /// CodeStar Notifications can't find a resource that matches the provided ARN.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

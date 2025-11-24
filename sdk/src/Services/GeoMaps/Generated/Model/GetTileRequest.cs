@@ -34,14 +34,46 @@ namespace Amazon.GeoMaps.Model
     /// <c>GetTile</c> returns a tile. Map tiles are used by clients to render a map. they're
     /// addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom)
     /// level.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/tiles.html">Tiles</a>
+    /// in the <i>Amazon Location Service Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class GetTileRequest : AmazonGeoMapsRequest
     {
+        private List<string> _additionalFeatures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _key;
         private string _tileset;
         private string _x;
         private string _y;
         private string _z;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalFeatures. 
+        /// <para>
+        /// A list of optional additional parameters such as map styles that can be requested
+        /// for each result.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=4)]
+        public List<string> AdditionalFeatures
+        {
+            get { return this._additionalFeatures; }
+            set { this._additionalFeatures = value; }
+        }
+
+        // Check to see if AdditionalFeatures property is set
+        internal bool IsSetAdditionalFeatures()
+        {
+            return this._additionalFeatures != null && (this._additionalFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Key. 
@@ -92,7 +124,7 @@ namespace Amazon.GeoMaps.Model
         /// The X axis value for the map tile. Must be between 0 and 19.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=7)]
         public string X
         {
             get { return this._x; }
@@ -111,7 +143,7 @@ namespace Amazon.GeoMaps.Model
         /// The Y axis value for the map tile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=7)]
         public string Y
         {
             get { return this._y; }
@@ -130,7 +162,7 @@ namespace Amazon.GeoMaps.Model
         /// The zoom value for the map tile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=2)]
         public string Z
         {
             get { return this._z; }

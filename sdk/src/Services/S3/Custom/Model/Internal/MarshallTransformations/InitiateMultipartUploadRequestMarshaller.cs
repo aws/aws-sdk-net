@@ -32,7 +32,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             var headers = publicRequest.Headers;
             foreach (var key in headers.Keys)
-                defaultRequest.Headers.Add(key, headers[key]);
+            {
+                if (!string.IsNullOrEmpty(key))
+                    defaultRequest.Headers.Add(key, headers[key]);
+            }
+
 
             HeaderACLRequestMarshaller.Marshall(defaultRequest, publicRequest);
             AmazonS3Util.SetMetadataHeaders(defaultRequest, publicRequest.Metadata);

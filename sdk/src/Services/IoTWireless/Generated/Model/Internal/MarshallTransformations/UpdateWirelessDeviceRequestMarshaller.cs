@@ -111,6 +111,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Positioning);
             }
 
+            if(publicRequest.IsSetSidewalk())
+            {
+                context.Writer.WritePropertyName("Sidewalk");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SidewalkUpdateWirelessDeviceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Sidewalk, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

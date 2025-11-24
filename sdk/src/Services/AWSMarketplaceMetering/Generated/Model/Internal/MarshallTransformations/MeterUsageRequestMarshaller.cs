@@ -75,6 +75,17 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
             if(publicRequest.IsSetDryRun())
             {
                 context.Writer.WritePropertyName("DryRun");

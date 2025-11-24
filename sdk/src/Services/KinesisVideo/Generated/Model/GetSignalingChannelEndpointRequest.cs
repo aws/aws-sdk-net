@@ -40,7 +40,8 @@ namespace Amazon.KinesisVideo.Model
     ///  <c>Protocols</c> is used to determine the communication mechanism. For example, if
     /// you specify <c>WSS</c> as the protocol, this API produces a secure websocket endpoint.
     /// If you specify <c>HTTPS</c> as the protocol, this API generates an HTTPS endpoint.
-    /// 
+    /// If you specify <c>WEBRTC</c> as the protocol, but the signaling channel isn't configured
+    /// for ingestion, you will receive the error <c>InvalidArgumentException</c>.
     /// </para>
     ///  
     /// <para>

@@ -64,6 +64,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     response.ComponentBuildVersionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("latestVersionReferences", targetDepth))
+                {
+                    var unmarshaller = LatestVersionReferencesUnmarshaller.Instance;
+                    response.LatestVersionReferences = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("requestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -102,6 +108,10 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ClientException"))
                 {
                     return ClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DryRunOperationException"))
+                {
+                    return DryRunOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
                 {

@@ -42,12 +42,23 @@ namespace Amazon.Kinesis.Model
     /// Data streams with an on-demand mode require no capacity planning and automatically
     /// scale to handle gigabytes of write and read throughput per minute. With the on-demand
     /// mode, Kinesis Data Streams automatically manages the shards in order to provide the
-    /// necessary throughput. For the data streams with a provisioned mode, you must specify
-    /// the number of shards for the data stream. Each shard can support reads up to five
-    /// transactions per second, up to a maximum data read total of 2 MiB per second. Each
-    /// shard can support writes up to 1,000 records per second, up to a maximum data write
-    /// total of 1 MiB per second. If the amount of data input increases or decreases, you
-    /// can add or remove shards.
+    /// necessary throughput.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you'd still like to proactively scale your on-demand data stream’s capacity, you
+    /// can unlock the warm throughput feature for on-demand data streams by enabling <c>MinimumThroughputBillingCommitment</c>
+    /// for your account. Once your account has <c>MinimumThroughputBillingCommitment</c>
+    /// enabled, you can specify the warm throughput in MiB per second that your stream can
+    /// support in writes.
+    /// </para>
+    ///  
+    /// <para>
+    /// For the data streams with a provisioned mode, you must specify the number of shards
+    /// for the data stream. Each shard can support reads up to five transactions per second,
+    /// up to a maximum data read total of 2 MiB per second. Each shard can support writes
+    /// up to 1,000 records per second, up to a maximum data write total of 1 MiB per second.
+    /// If the amount of data input increases or decreases, you can add or remove shards.
     /// </para>
     ///  
     /// <para>
@@ -78,7 +89,8 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
+    /// For the default shard or on-demand throughput limits for an Amazon Web Services account,
+    /// see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon
     /// Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact
     /// Amazon Web Services Support</a>.
@@ -105,10 +117,32 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class CreateStreamRequest : AmazonKinesisRequest
     {
+        private int? _maxRecordSizeInKiB;
         private int? _shardCount;
         private StreamModeDetails _streamModeDetails;
         private string _streamName;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private int? _warmThroughputMiBps;
+
+        /// <summary>
+        /// Gets and sets the property MaxRecordSizeInKiB. 
+        /// <para>
+        /// The maximum record size of a single record in kibibyte (KiB) that you can write to,
+        /// and read from a stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1024, Max=10240)]
+        public int? MaxRecordSizeInKiB
+        {
+            get { return this._maxRecordSizeInKiB; }
+            set { this._maxRecordSizeInKiB = value; }
+        }
+
+        // Check to see if MaxRecordSizeInKiB property is set
+        internal bool IsSetMaxRecordSizeInKiB()
+        {
+            return this._maxRecordSizeInKiB.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ShardCount. 
@@ -196,6 +230,26 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughputMiBps. 
+        /// <para>
+        /// The target warm throughput in MB/s that the stream should be scaled to handle. This
+        /// represents the throughput capacity that will be immediately available for write operations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? WarmThroughputMiBps
+        {
+            get { return this._warmThroughputMiBps; }
+            set { this._warmThroughputMiBps = value; }
+        }
+
+        // Check to see if WarmThroughputMiBps property is set
+        internal bool IsSetWarmThroughputMiBps()
+        {
+            return this._warmThroughputMiBps.HasValue; 
         }
 
     }

@@ -395,7 +395,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(Query)))
             {
-                var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
+                var query = ConvertQueryByValue<T>(hashKeyValue, operationConfig);
                 return FromSearch<T>(query);
             }
         }
@@ -405,7 +405,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(Query)))
             {
-                var query = ConvertQueryByValue<T>(hashKeyValue, null, queryConfig?.ToDynamoDBOperationConfig());
+                var query = ConvertQueryByValue<T>(hashKeyValue, queryConfig?.ToDynamoDBOperationConfig());
                 return FromSearch<T>(query);
             }
         }
@@ -437,7 +437,21 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
-        public IEnumerable<T> Query<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, QueryConfig queryConfig)
+        public IEnumerable<T> Query<T>(QueryConditional queryConditional, QueryConfig queryConfig)
+        {
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(Query)))
+            {
+                if (queryConditional == null)
+                    throw new ArgumentNullException(nameof(queryConditional));
+
+                var query = ConvertQueryConditional<T>(queryConditional, queryConfig?.ToDynamoDBOperationConfig());
+                return FromSearch<T>(query);
+            }
+        }
+
+        /// <inheritdoc/>
+        public IEnumerable<T> Query<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values,
+            QueryConfig queryConfig)
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(Query)))
             {

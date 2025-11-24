@@ -104,6 +104,7 @@ namespace Amazon.SecretsManager.Model
         private MemoryStream _secretBinary;
         private string _secretId;
         private string _secretString;
+        private string _type;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -302,6 +303,27 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetSecretString()
         {
             return this._secretString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The exact string that identifies the third-party partner that holds the external secret.
+        /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed
+        /// external secret partners</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

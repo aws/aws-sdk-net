@@ -57,6 +57,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSource())
+            {
+                context.Writer.WritePropertyName("source");
+                context.Writer.WriteStringValue(requestObject.Source);
+            }
+
             if(requestObject.IsSetSourceContent())
             {
                 context.Writer.WritePropertyName("sourceContent");

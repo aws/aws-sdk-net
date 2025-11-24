@@ -31,7 +31,7 @@ namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
     /// A structure that specifies the target entity for audit analysis, such as a <c>service</c>,
-    /// <c>SLO</c>, or <c>service_operation</c>.
+    /// <c>SLO</c>, <c>service_operation</c>, or <c>canary</c>.
     /// </summary>
     public partial class AuditTarget
     {
@@ -60,7 +60,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of entity being audited, such as <c>Service</c>, <c>SLO</c>, or <c>ServiceOperation</c>.
+        /// The type of entity being audited, such as <c>service</c>, <c>SLO</c>, <c>service_operation</c>,
+        /// or <c>canary</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

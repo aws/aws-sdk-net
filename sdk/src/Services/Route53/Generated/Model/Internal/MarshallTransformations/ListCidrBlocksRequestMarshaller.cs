@@ -56,6 +56,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListCidrBlocksRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
             if (!publicRequest.IsSetCollectionId())
                 throw new AmazonRoute53Exception("Request object does not have required field CollectionId set");
@@ -95,5 +96,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, ListCidrBlocksRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, ListCidrBlocksRequest publicRequest);
     }    
 }

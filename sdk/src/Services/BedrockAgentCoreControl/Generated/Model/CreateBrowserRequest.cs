@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CreateBrowserRequest : AmazonBedrockAgentCoreControlRequest
     {
+        private BrowserSigningConfigInput _browserSigning;
         private string _clientToken;
         private string _description;
         private string _executionRoleArn;
@@ -42,6 +43,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private BrowserNetworkConfiguration _networkConfiguration;
         private RecordingConfig _recording;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property BrowserSigning. 
+        /// <para>
+        /// The browser signing configuration that enables cryptographic agent identification
+        /// using HTTP message signatures for web bot authentication.
+        /// </para>
+        /// </summary>
+        public BrowserSigningConfigInput BrowserSigning
+        {
+            get { return this._browserSigning; }
+            set { this._browserSigning = value; }
+        }
+
+        // Check to see if BrowserSigning property is set
+        internal bool IsSetBrowserSigning()
+        {
+            return this._browserSigning != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 

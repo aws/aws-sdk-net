@@ -56,6 +56,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("BlockedEncryptionTypes", targetDepth))
+                    {
+                        var unmarshaller = BlockedEncryptionTypesUnmarshaller.Instance;
+                        unmarshalledObject.BlockedEncryptionTypes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("BucketKeyEnabled", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

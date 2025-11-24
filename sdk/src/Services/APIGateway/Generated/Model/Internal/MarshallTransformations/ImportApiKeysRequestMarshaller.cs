@@ -67,6 +67,8 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetFailOnWarnings())
                 request.Parameters.Add("failonwarnings", StringUtils.FromBool(publicRequest.FailOnWarnings));
+            if (string.IsNullOrEmpty(publicRequest.Format))
+                throw new AmazonAPIGatewayException("Request object does not have required field Format set");
             
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));

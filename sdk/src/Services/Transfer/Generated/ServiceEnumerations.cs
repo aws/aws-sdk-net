@@ -329,6 +329,110 @@ namespace Amazon.Transfer
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectorEgressType.
+    /// </summary>
+    public class ConnectorEgressType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SERVICE_MANAGED for ConnectorEgressType
+        /// </summary>
+        public static readonly ConnectorEgressType SERVICE_MANAGED = new ConnectorEgressType("SERVICE_MANAGED");
+        /// <summary>
+        /// Constant VPC_LATTICE for ConnectorEgressType
+        /// </summary>
+        public static readonly ConnectorEgressType VPC_LATTICE = new ConnectorEgressType("VPC_LATTICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorEgressType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorEgressType FindValue(string value)
+        {
+            return FindValue<ConnectorEgressType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorEgressType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorStatus.
+    /// </summary>
+    public class ConnectorStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus ACTIVE = new ConnectorStatus("ACTIVE");
+        /// <summary>
+        /// Constant ERRORED for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus ERRORED = new ConnectorStatus("ERRORED");
+        /// <summary>
+        /// Constant PENDING for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus PENDING = new ConnectorStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorStatus FindValue(string value)
+        {
+            return FindValue<ConnectorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CustomStepStatus.
     /// </summary>
     public class CustomStepStatus : ConstantClass
@@ -1896,6 +2000,56 @@ namespace Amazon.Transfer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WebAppEndpointPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WebAppEndpointType.
+    /// </summary>
+    public class WebAppEndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLIC for WebAppEndpointType
+        /// </summary>
+        public static readonly WebAppEndpointType PUBLIC = new WebAppEndpointType("PUBLIC");
+        /// <summary>
+        /// Constant VPC for WebAppEndpointType
+        /// </summary>
+        public static readonly WebAppEndpointType VPC = new WebAppEndpointType("VPC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WebAppEndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebAppEndpointType FindValue(string value)
+        {
+            return FindValue<WebAppEndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebAppEndpointType(string value)
         {
             return FindValue(value);
         }

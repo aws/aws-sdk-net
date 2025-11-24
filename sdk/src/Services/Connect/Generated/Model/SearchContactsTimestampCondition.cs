@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The timestamp condition indicating which timestamp should be used and how it should
-    /// be filtered.
+    /// The timestamp condition indicating which contact timestamp should be used and how
+    /// it should be filtered. It is not an actual timestamp value.
     /// </summary>
     public partial class SearchContactsTimestampCondition
     {

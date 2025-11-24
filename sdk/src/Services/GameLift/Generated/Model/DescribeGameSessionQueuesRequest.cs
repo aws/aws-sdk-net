@@ -31,11 +31,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGameSessionQueues operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves the properties for one or more game session queues. When requesting multiple
     /// queues, use the pagination parameters to retrieve results as a set of sequential pages.
     /// When specifying a list of queues, objects are returned only for queues that currently
     /// exist in the Region.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Learn more</b> 

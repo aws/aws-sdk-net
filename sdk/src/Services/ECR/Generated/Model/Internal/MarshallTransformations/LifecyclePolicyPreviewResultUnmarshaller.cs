@@ -86,6 +86,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.ImageTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("storageClass", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StorageClass = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

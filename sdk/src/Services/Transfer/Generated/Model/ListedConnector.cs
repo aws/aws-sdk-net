@@ -81,6 +81,12 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// The URL of the partner's AS2 or SFTP endpoint.
         /// </para>
+        ///  
+        /// <para>
+        /// When creating AS2 connectors or service-managed SFTP connectors (connectors without
+        /// egress configuration), you must provide a URL to specify the remote server endpoint.
+        /// For VPC Lattice type connectors, the URL must be null.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
         public string Url

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Configuration information for a guardrail that you use with the <a>ConverseStream</a>
+    /// Configuration information for a guardrail that you use with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>
     /// action.
     /// </summary>
     public partial class GuardrailStreamConfiguration
@@ -46,7 +46,7 @@ namespace Amazon.BedrockRuntime.Model
         /// The identifier for the guardrail.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string GuardrailIdentifier
         {
             get { return this._guardrailIdentifier; }
@@ -65,7 +65,6 @@ namespace Amazon.BedrockRuntime.Model
         /// The version of the guardrail.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string GuardrailVersion
         {
             get { return this._guardrailVersion; }

@@ -231,6 +231,56 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type AccessType.
+    /// </summary>
+    public class AccessType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIVATE for AccessType
+        /// </summary>
+        public static readonly AccessType PRIVATE = new AccessType("PRIVATE");
+        /// <summary>
+        /// Constant PUBLIC for AccessType
+        /// </summary>
+        public static readonly AccessType PUBLIC = new AccessType("PUBLIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessType FindValue(string value)
+        {
+            return FindValue<AccessType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AgentUpdateStatus.
     /// </summary>
     public class AgentUpdateStatus : ConstantClass
@@ -1477,6 +1527,14 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly DeploymentStrategy BLUE_GREEN = new DeploymentStrategy("BLUE_GREEN");
         /// <summary>
+        /// Constant CANARY for DeploymentStrategy
+        /// </summary>
+        public static readonly DeploymentStrategy CANARY = new DeploymentStrategy("CANARY");
+        /// <summary>
+        /// Constant LINEAR for DeploymentStrategy
+        /// </summary>
+        public static readonly DeploymentStrategy LINEAR = new DeploymentStrategy("LINEAR");
+        /// <summary>
         /// Constant ROLLING for DeploymentStrategy
         /// </summary>
         public static readonly DeploymentStrategy ROLLING = new DeploymentStrategy("ROLLING");
@@ -1864,6 +1922,160 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecuteCommandLogging(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExpressGatewayServiceInclude.
+    /// </summary>
+    public class ExpressGatewayServiceInclude : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TAGS for ExpressGatewayServiceInclude
+        /// </summary>
+        public static readonly ExpressGatewayServiceInclude TAGS = new ExpressGatewayServiceInclude("TAGS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExpressGatewayServiceInclude(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExpressGatewayServiceInclude FindValue(string value)
+        {
+            return FindValue<ExpressGatewayServiceInclude>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExpressGatewayServiceInclude(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExpressGatewayServiceScalingMetric.
+    /// </summary>
+    public class ExpressGatewayServiceScalingMetric : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVERAGE_CPU for ExpressGatewayServiceScalingMetric
+        /// </summary>
+        public static readonly ExpressGatewayServiceScalingMetric AVERAGE_CPU = new ExpressGatewayServiceScalingMetric("AVERAGE_CPU");
+        /// <summary>
+        /// Constant AVERAGE_MEMORY for ExpressGatewayServiceScalingMetric
+        /// </summary>
+        public static readonly ExpressGatewayServiceScalingMetric AVERAGE_MEMORY = new ExpressGatewayServiceScalingMetric("AVERAGE_MEMORY");
+        /// <summary>
+        /// Constant REQUEST_COUNT_PER_TARGET for ExpressGatewayServiceScalingMetric
+        /// </summary>
+        public static readonly ExpressGatewayServiceScalingMetric REQUEST_COUNT_PER_TARGET = new ExpressGatewayServiceScalingMetric("REQUEST_COUNT_PER_TARGET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExpressGatewayServiceScalingMetric(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExpressGatewayServiceScalingMetric FindValue(string value)
+        {
+            return FindValue<ExpressGatewayServiceScalingMetric>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExpressGatewayServiceScalingMetric(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExpressGatewayServiceStatusCode.
+    /// </summary>
+    public class ExpressGatewayServiceStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ExpressGatewayServiceStatusCode
+        /// </summary>
+        public static readonly ExpressGatewayServiceStatusCode ACTIVE = new ExpressGatewayServiceStatusCode("ACTIVE");
+        /// <summary>
+        /// Constant DRAINING for ExpressGatewayServiceStatusCode
+        /// </summary>
+        public static readonly ExpressGatewayServiceStatusCode DRAINING = new ExpressGatewayServiceStatusCode("DRAINING");
+        /// <summary>
+        /// Constant INACTIVE for ExpressGatewayServiceStatusCode
+        /// </summary>
+        public static readonly ExpressGatewayServiceStatusCode INACTIVE = new ExpressGatewayServiceStatusCode("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExpressGatewayServiceStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExpressGatewayServiceStatusCode FindValue(string value)
+        {
+            return FindValue<ExpressGatewayServiceStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExpressGatewayServiceStatusCode(string value)
         {
             return FindValue(value);
         }
@@ -2565,6 +2777,68 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type ManagedResourceStatus.
+    /// </summary>
+    public class ManagedResourceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ManagedResourceStatus
+        /// </summary>
+        public static readonly ManagedResourceStatus ACTIVE = new ManagedResourceStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for ManagedResourceStatus
+        /// </summary>
+        public static readonly ManagedResourceStatus DELETED = new ManagedResourceStatus("DELETED");
+        /// <summary>
+        /// Constant DEPROVISIONING for ManagedResourceStatus
+        /// </summary>
+        public static readonly ManagedResourceStatus DEPROVISIONING = new ManagedResourceStatus("DEPROVISIONING");
+        /// <summary>
+        /// Constant FAILED for ManagedResourceStatus
+        /// </summary>
+        public static readonly ManagedResourceStatus FAILED = new ManagedResourceStatus("FAILED");
+        /// <summary>
+        /// Constant PROVISIONING for ManagedResourceStatus
+        /// </summary>
+        public static readonly ManagedResourceStatus PROVISIONING = new ManagedResourceStatus("PROVISIONING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedResourceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedResourceStatus FindValue(string value)
+        {
+            return FindValue<ManagedResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ManagedScalingStatus.
     /// </summary>
     public class ManagedScalingStatus : ConstantClass
@@ -3155,6 +3429,56 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceManagementType.
+    /// </summary>
+    public class ResourceManagementType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOMER for ResourceManagementType
+        /// </summary>
+        public static readonly ResourceManagementType CUSTOMER = new ResourceManagementType("CUSTOMER");
+        /// <summary>
+        /// Constant ECS for ResourceManagementType
+        /// </summary>
+        public static readonly ResourceManagementType ECS = new ResourceManagementType("ECS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceManagementType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceManagementType FindValue(string value)
+        {
+            return FindValue<ResourceManagementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceManagementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass
@@ -3344,6 +3668,106 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Scope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceConnectAccessLoggingFormat.
+    /// </summary>
+    public class ServiceConnectAccessLoggingFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for ServiceConnectAccessLoggingFormat
+        /// </summary>
+        public static readonly ServiceConnectAccessLoggingFormat JSON = new ServiceConnectAccessLoggingFormat("JSON");
+        /// <summary>
+        /// Constant TEXT for ServiceConnectAccessLoggingFormat
+        /// </summary>
+        public static readonly ServiceConnectAccessLoggingFormat TEXT = new ServiceConnectAccessLoggingFormat("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceConnectAccessLoggingFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceConnectAccessLoggingFormat FindValue(string value)
+        {
+            return FindValue<ServiceConnectAccessLoggingFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceConnectAccessLoggingFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceConnectIncludeQueryParameters.
+    /// </summary>
+    public class ServiceConnectIncludeQueryParameters : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ServiceConnectIncludeQueryParameters
+        /// </summary>
+        public static readonly ServiceConnectIncludeQueryParameters DISABLED = new ServiceConnectIncludeQueryParameters("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ServiceConnectIncludeQueryParameters
+        /// </summary>
+        public static readonly ServiceConnectIncludeQueryParameters ENABLED = new ServiceConnectIncludeQueryParameters("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceConnectIncludeQueryParameters(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceConnectIncludeQueryParameters FindValue(string value)
+        {
+            return FindValue<ServiceConnectIncludeQueryParameters>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceConnectIncludeQueryParameters(string value)
         {
             return FindValue(value);
         }

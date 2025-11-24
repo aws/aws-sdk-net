@@ -65,6 +65,8 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetId())
                 throw new AmazonMigrationHubOrchestratorException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
+            if (string.IsNullOrEmpty(publicRequest.WorkflowId))
+                throw new AmazonMigrationHubOrchestratorException("Request object does not have required field WorkflowId set");
             
             if (publicRequest.IsSetWorkflowId())
                 request.Parameters.Add("workflowId", StringUtils.FromString(publicRequest.WorkflowId));

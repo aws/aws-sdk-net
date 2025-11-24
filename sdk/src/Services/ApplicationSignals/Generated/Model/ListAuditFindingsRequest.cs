@@ -41,6 +41,7 @@ namespace Amazon.ApplicationSignals.Model
     {
         private List<string> _auditors = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<AuditTarget> _auditTargets = AWSConfigs.InitializeCollections ? new List<AuditTarget>() : null;
+        private DetailLevel _detailLevel;
         private DateTime? _endTime;
         private int? _maxResults;
         private string _nextToken;
@@ -66,7 +67,12 @@ namespace Amazon.ApplicationSignals.Model
         ///  <c>operation_metric</c> - OperationMetricAuditor: Detects anomalies in service operation
         /// metrics from Application Signals RED metrics during the Assessment phase
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// Anomaly detection is not supported for sparse metrics (those missing more than 80%
+        /// of datapoints within the given time period).
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <c>service_quota</c> - ServiceQuotaAuditor: Monitors resource utilization against
         /// service quotas during the Assessment phase
@@ -140,6 +146,24 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetAuditTargets()
         {
             return this._auditTargets != null && (this._auditTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetailLevel. 
+        /// <para>
+        /// The level of details of the audit findings. Supported values: <c>BRIEF</c>, <c>DETAILED</c>.
+        /// </para>
+        /// </summary>
+        public DetailLevel DetailLevel
+        {
+            get { return this._detailLevel; }
+            set { this._detailLevel = value; }
+        }
+
+        // Check to see if DetailLevel property is set
+        internal bool IsSetDetailLevel()
+        {
+            return this._detailLevel != null;
         }
 
         /// <summary>

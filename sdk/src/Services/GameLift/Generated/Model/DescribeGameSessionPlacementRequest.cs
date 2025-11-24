@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGameSessionPlacement operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves information, including current status, about a game session placement request.
     /// 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To get game session placement details, specify the placement ID.

@@ -56,6 +56,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateJobPriorityRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.S3Control");
+            PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
         
             if (publicRequest.IsSetAccountId()) 
@@ -65,6 +66,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetJobId())
                 throw new AmazonS3ControlException("Request object does not have required field JobId set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.JobId));
+            if (publicRequest.Priority == null)
+                throw new AmazonS3ControlException("Request object does not have required field Priority set");
             
             if (publicRequest.IsSetPriority())
                 request.Parameters.Add("priority", StringUtils.FromInt(publicRequest.Priority));
@@ -94,5 +97,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
         }
 
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, UpdateJobPriorityRequest publicRequest);
+        partial void PreMarshallCustomization(DefaultRequest defaultRequest, UpdateJobPriorityRequest publicRequest);
     }    
 }

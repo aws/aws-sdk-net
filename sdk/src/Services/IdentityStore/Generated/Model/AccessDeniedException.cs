@@ -37,6 +37,7 @@ namespace Amazon.IdentityStore.Model
     #endif
     public partial class AccessDeniedException : AmazonIdentityStoreException
     {
+        private AccessDeniedExceptionReason _reason;
 
         /// <summary>
         /// Constructs a new AccessDeniedException with the specified error
@@ -98,6 +99,7 @@ namespace Amazon.IdentityStore.Model
         protected AccessDeniedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (AccessDeniedExceptionReason)info.GetValue("Reason", typeof(AccessDeniedExceptionReason));
             this.RequestId = (string)info.GetValue("RequestId", typeof(string));
         }
 
@@ -114,9 +116,29 @@ namespace Amazon.IdentityStore.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
             info.AddValue("RequestId", this.RequestId);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// Indicates the reason for an access denial when returned by KMS while accessing a Customer
+        /// Managed KMS key. For non-KMS access-denied errors, this field is not included.
+        /// </para>
+        /// </summary>
+        public AccessDeniedExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

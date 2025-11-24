@@ -158,6 +158,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.MasterPublicDnsName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MonitoringConfiguration", targetDepth))
+                {
+                    var unmarshaller = MonitoringConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

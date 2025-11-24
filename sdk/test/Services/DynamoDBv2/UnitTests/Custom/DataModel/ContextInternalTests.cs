@@ -9,6 +9,7 @@ using System.Linq.Expressions;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Util;
 using DynamoDBContextConfig = Amazon.DynamoDBv2.DataModel.DynamoDBContextConfig;
+using System.Collections.Generic;
 
 namespace AWSSDK_DotNet.UnitTests
 {
@@ -146,6 +147,24 @@ namespace AWSSDK_DotNet.UnitTests
             public string PropY { get; set; }
         }
 
+        public class TestGSIEntity
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI1", Order = 1)]
+            public string GsiHash { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI1", Order = 2)]
+            public string GsiHash2 { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI1", Order = 1)]
+            public string GsiRange { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI1", Order = 2)]
+            public string GsiRange2 { get; set; }
+        }
+
         private Mock<IAmazonDynamoDB> mockClient;
         private DynamoDBContext context;
 
@@ -154,39 +173,121 @@ namespace AWSSDK_DotNet.UnitTests
         {
             mockClient = new Mock<IAmazonDynamoDB>(MockBehavior.Strict);
             mockClient.Setup(m => m.Config).Returns(new AmazonDynamoDBConfig());
-            mockClient.Setup(m => m.DescribeTable(It.Is<DescribeTableRequest>(r => r.TableName == "TestEntity")))
-                .Returns(new DescribeTableResponse
+            mockClient.Setup(m => m.DescribeTable(It.IsAny<DescribeTableRequest>()))
+                .Returns((DescribeTableRequest req) =>
                 {
-                    Table = new TableDescription
+                    if (req.TableName == "TestGSIEntity")
                     {
-                        TableName = "TestEntity",
-                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                        return new DescribeTableResponse
                         {
-                            new KeySchemaElement
+                            Table = new TableDescription
                             {
-                                AttributeName = "Id",
-                                KeyType = KeyType.HASH
-                            },
-                            new KeySchemaElement
-                            {
-                                AttributeName = "Name",
-                                KeyType = KeyType.RANGE
+                                TableName = "TestGSIEntity",
+                                KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                                {
+                                    new KeySchemaElement
+                                    {
+                                        AttributeName = "Id",
+                                        KeyType = KeyType.HASH
+                                    }
+                                },
+                                AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                                {
+                                    new AttributeDefinition
+                                    {
+                                        AttributeName = "Id",
+                                        AttributeType = ScalarAttributeType.N
+                                    },
+                                    new AttributeDefinition
+                                    {
+                                        AttributeName = "GsiHash",
+                                        AttributeType = ScalarAttributeType.S
+                                    },
+                                    new AttributeDefinition
+                                    {
+                                        AttributeName = "GsiHash2",
+                                        AttributeType = ScalarAttributeType.S
+                                    },
+                                    new AttributeDefinition
+                                    {
+                                        AttributeName = "GsiRange",
+                                        AttributeType = ScalarAttributeType.S
+                                    },
+                                    new AttributeDefinition
+                                    {
+                                        AttributeName = "GsiRange2",
+                                        AttributeType = ScalarAttributeType.S
+                                    }
+                                },
+                                GlobalSecondaryIndexes = new System.Collections.Generic.List<GlobalSecondaryIndexDescription>
+                                {
+                                    new GlobalSecondaryIndexDescription
+                                    {
+                                        IndexName = "GSI1",
+                                        KeySchema = new System.Collections.Generic.List<KeySchemaElement>
+                                        {
+                                            new KeySchemaElement
+                                            {
+                                                AttributeName = "GsiHash",
+                                                KeyType = KeyType.HASH
+                                            },
+                                            new KeySchemaElement
+                                            {
+                                                AttributeName = "GsiHash2",
+                                                KeyType = KeyType.HASH
+                                            },
+                                            new KeySchemaElement
+                                            {
+                                                AttributeName = "GsiRange",
+                                                KeyType = KeyType.RANGE
+                                            },
+                                            new KeySchemaElement
+                                            {
+                                                AttributeName = "GsiRange2",
+                                                KeyType = KeyType.RANGE
+                                            }
+                                        },
+                                        Projection = new Projection { ProjectionType = ProjectionType.ALL },
+                                        IndexStatus = IndexStatus.ACTIVE
+                                    }
+                                }
                             }
-                        },
-                        AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
+                        };
+                    }
+                    // Default for TestEntity
+                    return new DescribeTableResponse
+                    {
+                        Table = new TableDescription
                         {
-                            new AttributeDefinition
+                            TableName = "TestEntity",
+                            KeySchema = new System.Collections.Generic.List<KeySchemaElement>
                             {
-                                AttributeName = "Id",
-                                AttributeType = ScalarAttributeType.N
+                                new KeySchemaElement
+                                {
+                                    AttributeName = "Id",
+                                    KeyType = KeyType.HASH
+                                },
+                                new KeySchemaElement
+                                {
+                                    AttributeName = "Name",
+                                    KeyType = KeyType.RANGE
+                                }
                             },
-                            new AttributeDefinition
+                            AttributeDefinitions = new System.Collections.Generic.List<AttributeDefinition>
                             {
-                                AttributeName = "Name",
-                                AttributeType = ScalarAttributeType.S
+                                new AttributeDefinition
+                                {
+                                    AttributeName = "Id",
+                                    AttributeType = ScalarAttributeType.N
+                                },
+                                new AttributeDefinition
+                                {
+                                    AttributeName = "Name",
+                                    AttributeType = ScalarAttributeType.S
+                                }
                             }
                         }
-                    }
+                    };
                 });
             mockClient.Setup(m => m.DescribeTable(It.Is<DescribeTableRequest>(r => r.TableName == "TestEntityWithUpdateBehavior")))
                 .Returns(new DescribeTableResponse
@@ -314,7 +415,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(1, actualResult.Filter.ToConditions().Count);
             Assert.IsNull(actualResult.FilterExpression);
             Assert.IsNotNull(actualResult.AttributesToGet);
-            Assert.AreEqual(6, actualResult.AttributesToGet.Count);
+            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualResult.AttributesToGet.Count);
         }
 
         [TestMethod]
@@ -329,7 +430,8 @@ namespace AWSSDK_DotNet.UnitTests
                 Expression = filterExpr
             };
 
-            var result = context.ConvertQueryByValue<TestEntity>(1, null, operationConfig);
+            // Act
+            var result = context.ConvertQueryByValue<TestEntity>(1, operationConfig, null);
 
             Assert.IsNotNull(result);
 
@@ -337,12 +439,12 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(search.Search);
             Assert.IsNotNull(search.Search.KeyExpression);
             Assert.IsNotNull(search.Search.KeyExpression.ExpressionStatement);
-            Assert.IsTrue(search.Search.KeyExpression.ExpressionStatement.Contains("#hashKey = :hashKey"));
+            Assert.IsTrue(search.Search.KeyExpression.ExpressionStatement.Contains("#hashKey0 = :hashKey0"));
             Assert.IsNotNull(search.Search.KeyExpression.ExpressionAttributeNames);
-            Assert.IsTrue(search.Search.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey"));
+            Assert.IsTrue(search.Search.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey0"));
             Assert.IsNotNull(search.Search.KeyExpression.ExpressionAttributeValues);
-            Assert.IsTrue(search.Search.KeyExpression.ExpressionAttributeValues.ContainsKey(":hashKey"));
-            var keyValue = search.Search.KeyExpression.ExpressionAttributeValues[":hashKey"];
+            Assert.IsTrue(search.Search.KeyExpression.ExpressionAttributeValues.ContainsKey(":hashKey0"));
+            var keyValue = search.Search.KeyExpression.ExpressionAttributeValues[":hashKey0"];
             Assert.AreEqual(1, keyValue.AsInt());
 
             Assert.IsNotNull(search.Search.FilterExpression);
@@ -351,182 +453,707 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("bar", search.Search.FilterExpression.ExpressionAttributeValues[":C0"].ToString());
         }
         [TestMethod]
-        public void ObjectToItemStorageHelper_SerializesAllProperties()
+        public void ConvertQueryConditional_WithHashKeyOnly_ReturnsValidSearch()
         {
-            var entity = new TestEntity
-            {
-                Id = 42,
-                Name = "TestName",
-                Description = "TestDescription",
-                NullableValue = 99
-            };
+            // Arrange
+            var queryConditional = QueryConditional.HashKeyEqualTo("Id", 1);
 
-            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
-            var storage = context.ObjectToItemStorageHelper(entity, config, flatConfig, keysOnly: false, ignoreNullValues: false);
+            // Act
+            var result = context.ConvertQueryConditional<ContextInternalTests.TestEntity>(queryConditional, null);
 
-            Assert.IsNotNull(storage);
-            Assert.AreEqual(42, storage.Document["Id"].AsInt());
-            Assert.AreEqual("TestName", storage.Document["Name"].AsString());
-            Assert.AreEqual("TestDescription", storage.Document["Description"].AsString());
-            Assert.AreEqual(99, storage.Document["NullableValue"].AsInt());
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+
+            var actualSearch = result.Search;
+            Assert.IsNotNull(actualSearch.Filter);
+            Assert.AreEqual(0, actualSearch.Filter.ToConditions().Count);
+            Assert.IsNotNull(actualSearch.FilterExpression);
+            Assert.IsFalse(actualSearch.FilterExpression.IsSet);
+            Assert.IsNotNull(actualSearch.AttributesToGet);
+            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
+
+            // Assert KeyExpression
+            Assert.IsNotNull(actualSearch.KeyExpression);
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionStatement);
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionStatement.Contains("#hashKey0 = :hashKey0"));
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionAttributeNames);
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey0"));
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionAttributeValues);
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionAttributeValues.ContainsKey(":hashKey0"));
+            var actualKeyValue = actualSearch.KeyExpression.ExpressionAttributeValues[":hashKey0"];
+            Assert.AreEqual(1, actualKeyValue.AsInt());
         }
 
         [TestMethod]
-        public void ObjectToItemStorageHelper_KeysOnly_SerializesOnlyKeys()
+        public void ConvertQueryConditional_WithHashKeyAndRangeKey_ReturnsValidSearch()
         {
-            var entity = new TestEntity
-            {
-                Id = 7,
-                Name = "KeyName",
-                Description = "ShouldNotBeSerialized",
-                NullableValue = 123
-            };
+            // Arrange
+            var queryConditional = QueryConditional.HashKeyEqualTo("Id", 1)
+                .AndRangeKeyEqualTo("Name", "test");
 
-            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
-            var storage = context.ObjectToItemStorageHelper(entity, config, flatConfig, keysOnly: true, ignoreNullValues: false);
+            // Act
+            var result = context.ConvertQueryConditional<ContextInternalTests.TestEntity>(queryConditional, null);
 
-            Assert.IsNotNull(storage);
-            Assert.AreEqual(7, storage.Document["Id"].AsInt());
-            Assert.AreEqual("KeyName", storage.Document["Name"].AsString());
-            Assert.IsFalse(storage.Document.ContainsKey("Description"));
-            Assert.IsFalse(storage.Document.ContainsKey("NullableValue"));
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+
+            var actualSearch = result.Search;
+            Assert.IsNotNull(actualSearch.Filter);
+            Assert.AreEqual(0, actualSearch.Filter.ToConditions().Count);
+            Assert.IsNotNull(actualSearch.FilterExpression);
+            Assert.IsFalse(actualSearch.FilterExpression.IsSet);
+            Assert.IsNotNull(actualSearch.AttributesToGet);
+            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
+
+            // Assert KeyExpression for both hash and range key
+            Assert.IsNotNull(actualSearch.KeyExpression);
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionStatement);
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionStatement.Equals("#hashKey0 = :hashKey0 AND #rangeKey0 = :rangeKey0"));
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionAttributeNames);
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey0"));
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionAttributeNames.ContainsKey("#rangeKey0"));
+            Assert.AreEqual("Id", actualSearch.KeyExpression.ExpressionAttributeNames["#hashKey0"]);
+            Assert.AreEqual("Name", actualSearch.KeyExpression.ExpressionAttributeNames["#rangeKey0"]);
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionAttributeValues);
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionAttributeValues.ContainsKey(":hashKey0"));
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionAttributeValues.ContainsKey(":rangeKey0"));
+            var actualHashKeyValue = actualSearch.KeyExpression.ExpressionAttributeValues[":hashKey0"];
+            var actualRangeKeyValue = actualSearch.KeyExpression.ExpressionAttributeValues[":rangeKey0"];
+            Assert.AreEqual(1, actualHashKeyValue.AsInt());
+            Assert.AreEqual("test", actualRangeKeyValue.AsString());
         }
 
         [TestMethod]
-        public void ObjectToItemStorageHelper_IgnoreNullValues_DoesNotSerializeNulls()
+        public void ConvertQueryConditional_WithGSIIndexNameAndOrder_ReturnsValidSearch()
         {
-            var entity = new TestEntity
+            // Arrange
+            var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
+                .AndHashKeyEqualTo("GsiHash2", "hashValue2");
+            var operationConfig = new DynamoDBOperationConfig
             {
-                Id = 1,
-                Name = "NullTest",
-                Description = null,
-                NullableValue = null
+                IndexName = "GSI1"
             };
 
-            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
-            var storage = context.ObjectToItemStorageHelper(entity, config, flatConfig, keysOnly: false, ignoreNullValues: true);
+            // Act
+            var result = context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
 
-            Assert.IsNotNull(storage);
-            Assert.AreEqual(1, storage.Document["Id"].AsInt());
-            Assert.AreEqual("NullTest", storage.Document["Name"].AsString());
-            Assert.IsFalse(storage.Document.ContainsKey("Description"));
-            Assert.IsFalse(storage.Document.ContainsKey("NullableValue"));
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+            var actualSearch = result.Search;
+            Assert.IsNotNull(actualSearch.KeyExpression);
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionStatement);
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionStatement.Contains("#hashKey0 = :hashKey0"));
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionStatement.Contains("AND #hashKey1 = :hashKey1"));
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionAttributeNames);
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey0"));
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey1"));
+            Assert.AreEqual("GsiHash", actualSearch.KeyExpression.ExpressionAttributeNames["#hashKey0"]);
+            Assert.AreEqual("GsiHash2", actualSearch.KeyExpression.ExpressionAttributeNames["#hashKey1"]);
+            Assert.IsNotNull(actualSearch.KeyExpression.ExpressionAttributeValues);
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionAttributeValues.ContainsKey(":hashKey0"));
+            Assert.IsTrue(actualSearch.KeyExpression.ExpressionAttributeValues.ContainsKey(":hashKey1"));
+            Assert.AreEqual("hashValue1", actualSearch.KeyExpression.ExpressionAttributeValues[":hashKey0"].AsString());
+            Assert.AreEqual("hashValue2", actualSearch.KeyExpression.ExpressionAttributeValues[":hashKey1"].AsString());
+            Assert.AreEqual(SelectValues.AllProjectedAttributes, actualSearch.Select);
         }
 
         [TestMethod]
-        public void ObjectToItemStorageHelper_NullObject_ThrowsArgumentNullException()
+        public void ConvertQueryByValue_WithExpressionAndQueryFilter_ThrowsInvalidOperationException()
         {
-            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
+            // Arrange: provide both an expression filter and a QueryFilter which should be incompatible
+            Expression<Func<ContextInternalTests.TestEntity, bool>> expr = e => e.Name == "foo";
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
 
-            Assert.ThrowsException<ArgumentNullException>(() =>
-                context.ObjectToItemStorageHelper(null, config, flatConfig, keysOnly: false, ignoreNullValues: false)
-            );
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                Expression = filterExpr,
+                QueryFilter = new List<ScanCondition>
+                {
+                    new ScanCondition("Name", ScanOperator.Equal, "bar")
+                }
+            };
+
+            // Act & Assert
+            var ex = Assert.ThrowsException<InvalidOperationException>(() =>
+                context.ConvertQueryByValue<ContextInternalTests.TestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig));
+
+            Assert.IsTrue(ex.Message.Contains("Cannot specify both QueryFilter and ExpressionFilter in the same operation configuration. Please use one or the other."), "Unexpected exception message: " + ex.Message);
         }
 
         [TestMethod]
-        public void ObjectToItemStorageHelper_AutoGeneratedTimestamp_NullValue_SetsTimestamp()
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ConvertQueryConditional_WithNullQueryConditional_ThrowsArgumentNullException()
         {
-            var entity = new TestEntity
-            {
-                Id = 100,
-                Name = "TimestampTest",
-                UpdatedAt = null
-            };
-
-            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
-            var storage = context.ObjectToItemStorageHelper(entity, config, flatConfig, keysOnly: false, ignoreNullValues: false);
-
-            Assert.IsNotNull(storage);
-            Assert.IsTrue(storage.Document.ContainsKey("UpdatedAt"));
-            var timestampValue = storage.Document["UpdatedAt"].AsString();
-            Assert.IsNotNull(timestampValue);
-            Assert.IsTrue(DateTime.TryParse(timestampValue, null, System.Globalization.DateTimeStyles.RoundtripKind, out var parsed));
-            Assert.IsTrue((DateTime.UtcNow - parsed.ToUniversalTime()).TotalSeconds < 10);
+            // Act
+            context.ConvertQueryConditional<ContextInternalTests.TestEntity>(null, null);
         }
 
         [TestMethod]
-        public void ObjectToItemStorageHelper_AutoGeneratedTimestamp_NonNullValue_DoesNotOverwrite()
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ConvertQueryConditional_WithNullHashKeys_ThrowsInvalidOperationException()
         {
-            var now = DateTime.UtcNow.AddDays(-1);
-            var entity = new TestEntity
-            {
-                Id = 101,
-                Name = "TimestampTest",
-                UpdatedAt = now
-            };
+            // Arrange
+            var queryConditional = QueryConditional.HashKeysEqual(null);
 
-            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
-            var storage = context.ObjectToItemStorageHelper(entity, config, flatConfig, keysOnly: false, ignoreNullValues: false);
-
-            Assert.IsNotNull(storage);
-            Assert.IsTrue(storage.Document.ContainsKey("UpdatedAt"));
-            var timestampValue = storage.Document["UpdatedAt"].AsDateTime();
-            Assert.AreEqual(now.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat), timestampValue.ToUniversalTime().ToString(AWSSDKUtils.ISO8601DateFormat));
+            // Act
+            context.ConvertQueryConditional<ContextInternalTests.TestEntity>(queryConditional, null);
         }
 
         [TestMethod]
-        public void ObjectToItemStorageHelper_AutoGeneratedTimestamp_IgnoreNullValues_StillSetsTimestamp()
+        public void ConvertQueryConditional_WithQueryFilter_ReturnsValidSearch()
         {
-            var entity = new TestEntity
+            // Arrange
+            var queryFilter = new System.Collections.Generic.List<ScanCondition>
             {
-                Id = 102,
-                Name = "TimestampTest",
-                UpdatedAt = null
+                new ScanCondition("Name", ScanOperator.Equal, "foo")
             };
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                QueryFilter = queryFilter
+            };
+            var queryConditional = QueryConditional.HashKeyEqualTo("Id", 1);
 
-            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
-            var storage = context.ObjectToItemStorageHelper(entity, config, flatConfig, keysOnly: false, ignoreNullValues: true);
+            // Act
+            var result = context.ConvertQueryConditional<ContextInternalTests.TestEntity>(queryConditional, operationConfig);
 
-            Assert.IsNotNull(storage);
-            Assert.IsTrue(storage.Document.ContainsKey("UpdatedAt"));
-            var timestampValue = storage.Document["UpdatedAt"].AsString();
-            Assert.IsNotNull(timestampValue);
-            Assert.IsTrue(DateTime.TryParse(timestampValue, null, System.Globalization.DateTimeStyles.RoundtripKind, out _));
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+            var actualSearch = result.Search;
+            Assert.IsNotNull(actualSearch.Filter);
+            var conditions = actualSearch.Filter.ToConditions();
+            Assert.AreEqual(2, conditions.Count);
+            Assert.IsTrue(conditions.ContainsKey("Name"));
+            var condition = conditions["Name"];
+            Assert.AreEqual(ComparisonOperator.EQ, condition.ComparisonOperator);
+            Assert.AreEqual(1, condition.AttributeValueList.Count);
+            Assert.AreEqual("foo", condition.AttributeValueList[0].S);
+            Assert.IsTrue(conditions.ContainsKey("Id"));
+            var keyCondition = conditions["Id"];
+            Assert.AreEqual(ComparisonOperator.EQ, keyCondition.ComparisonOperator);
+            Assert.AreEqual(1, keyCondition.AttributeValueList.Count);
+            Assert.AreEqual("1", keyCondition.AttributeValueList[0].N);
+            Assert.IsNull(actualSearch.FilterExpression);
+            Assert.IsNotNull(actualSearch.AttributesToGet);
+            Assert.AreEqual(typeof(TestEntity).GetProperties().Length, actualSearch.AttributesToGet.Count);
+            Assert.IsNull(actualSearch.KeyExpression);
         }
 
         [TestMethod]
-        public void ObjectToItemStorageHelper_AutoGeneratedTimestamp_NotMarkedProperty_NullValue_DoesNotSetTimestamp()
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ConvertQueryByValues_WithRangeKeyPropertiesNotInModel_ThrowsInvalidOperationException()
         {
-            var entity = new TestEntity
+            // Arrange
+            var hashKeys = 1;
+            var operationConfig = new DynamoDBOperationConfig()
             {
-                Id = 103,
-                Name = null,
-                UpdatedAt = null
+                QueryFilter = new List<ScanCondition>
+                {
+                    new ScanCondition("ExtraRange", ScanOperator.Equal, "extra"),
+                    new ScanCondition("Name", ScanOperator.Equal, "test")
+                }
             };
-
-            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
-            var storage = context.ObjectToItemStorageHelper(entity, config, flatConfig, keysOnly: false, ignoreNullValues: true);
-
-            Assert.IsNotNull(storage);
-            Assert.IsFalse(storage.Document.ContainsKey("Name"));
+            try
+            {
+                // Act
+                context.ConvertQueryByValue<ContextInternalTests.TestEntity>(hashKeys, operationConfig, null);
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("Unable to find storage information for property [ExtraRange]"));
+                throw;
+            }
         }
 
         [TestMethod]
-        public void ObjectToItemStorageHelper_AutoGeneratedTimestamp_KeysOnly_DoesNotSetTimestamp()
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ConvertQueryByValues_WithMoreThanOneRangeRangeKeyCondition_ThrowsInvalidOperationException()
         {
-            var entity = new TestEntity
+            // Arrange
+            var hashKeys = new Dictionary<string, object> { { "GsiHash", "GsiHash" } ,
+            { "GsiHash2", "GsiHash2" }};
+            var operationConfig = new DynamoDBOperationConfig()
             {
-                Id = 104,
-                Name = "KeysOnlyTest",
-                UpdatedAt = null
+                IndexName = "GSI1"
+            };
+            try
+            {
+                // Act
+                context.ConvertQueryByValue<ContextInternalTests.TestGSIEntity>("GsiHash", operationConfig, null);
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("The number of hash key properties provided (1) does not match the number of hash key properties defined (2)." +
+                    " Index GSI1 has multiple hash keys. For multiple hash keys, use QueryConditional.KeyEqual() with a dictionary of key-value pairs."));
+                throw;
+            }
+        }
+
+        [TestMethod]
+        public void ConvertFromQuery_WithQueryOperationConfig_ReturnsValidContextSearch()
+        {
+            // Arrange
+            var queryConfig = new QueryOperationConfig
+            {
+                IndexName = "GSI1",
+                Select = SelectValues.AllProjectedAttributes,
+                Limit = 10,
+                ConsistentRead = true
             };
 
-            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
-            var config = context.StorageConfigCache.GetConfig<TestEntity>(flatConfig);
-            var storage = context.ObjectToItemStorageHelper(entity, config, flatConfig, keysOnly: true, ignoreNullValues: false);
+            // Act
+            var result = context.ConvertFromQuery<ContextInternalTests.TestEntity>(queryConfig, null);
 
-            Assert.IsNotNull(storage);
-            Assert.IsTrue(storage.Document.ContainsKey("Id"));
-            Assert.IsTrue(storage.Document.ContainsKey("Name"));
-            Assert.IsFalse(storage.Document.ContainsKey("UpdatedAt"));
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+            Assert.IsNotNull(result.FlatConfig);
+            Assert.AreEqual("GSI1", result.Search.IndexName);
+            Assert.AreEqual(SelectValues.AllProjectedAttributes, result.Search.Select);
+            Assert.AreEqual(10, result.Search.Limit);
+            Assert.IsTrue(result.Search.IsConsistentRead);
+        }
+
+        [TestMethod]
+        public void ConvertFromQuery_WithQueryDocumentOperationRequest_ReturnsValidContextSearch()
+        {
+            // Arrange
+            var request = new QueryDocumentOperationRequest
+            {
+                IndexName = "GSI1",
+                Limit = 5,
+                CollectResults = true,
+                ConsistentRead = true
+            };
+
+            // Act
+            var result = context.ConvertFromQuery<ContextInternalTests.TestEntity>(request, null);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+            Assert.IsNotNull(result.FlatConfig);
+            Assert.AreEqual("GSI1", result.Search.IndexName);
+            Assert.AreEqual(5, result.Search.Limit);
+            Assert.IsTrue(result.Search.CollectResults);
+            Assert.IsTrue(result.Search.IsConsistentRead);
+        }
+
+        [TestMethod]
+        public void ConvertQueryByValue_WithRangeEqualCondition_UsesQueryFilterNotKeyExpression()
+        {
+            var result = context.ConvertQueryByValue<ContextInternalTests.TestEntity>(1, QueryOperator.Equal, new object[] { "test" }, null);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+
+            var search = result.Search;
+
+            Assert.IsNotNull(search.Filter, "Expected Query.Filter to be set for ConvertQueryByValue with range condition.");
+            var conditions = search.Filter.ToConditions();
+
+            Assert.IsTrue(conditions.ContainsKey("Id"));
+            var idCondition = conditions["Id"];
+            Assert.AreEqual(ComparisonOperator.EQ, idCondition.ComparisonOperator);
+            Assert.AreEqual(1, idCondition.AttributeValueList.Count);
+            Assert.AreEqual("1", idCondition.AttributeValueList[0].N);
+
+            Assert.IsTrue(conditions.ContainsKey("Name"));
+            var nameCondition = conditions["Name"];
+            Assert.AreEqual(ComparisonOperator.EQ, nameCondition.ComparisonOperator);
+            Assert.AreEqual(1, nameCondition.AttributeValueList.Count);
+            Assert.AreEqual("test", nameCondition.AttributeValueList[0].S);
+
+            Assert.IsNull(search.KeyExpression, "Expected KeyExpression to be null when QueryFilter is used.");
+        }
+
+        [TestMethod]
+        public void ConvertQueryByValue_WithBetweenOperator_UsesQueryFilterNotKeyExpression()
+        {
+            var result = context.ConvertQueryByValue<ContextInternalTests.TestEntity>(1, QueryOperator.Between, new object[] { "a", "z" }, null);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+
+            var search = result.Search;
+
+            Assert.IsNotNull(search.Filter, "Expected Query.Filter to be set for ConvertQueryByValue with BETWEEN range condition.");
+            var conditions = search.Filter.ToConditions();
+
+            Assert.IsTrue(conditions.ContainsKey("Id"));
+            var idCondition = conditions["Id"];
+            Assert.AreEqual(ComparisonOperator.EQ, idCondition.ComparisonOperator);
+            Assert.AreEqual(1, idCondition.AttributeValueList.Count);
+            Assert.AreEqual("1", idCondition.AttributeValueList[0].N);
+
+            Assert.IsTrue(conditions.ContainsKey("Name"));
+            var nameCondition = conditions["Name"];
+            Assert.AreEqual(ComparisonOperator.BETWEEN, nameCondition.ComparisonOperator);
+            Assert.AreEqual(2, nameCondition.AttributeValueList.Count);
+            Assert.AreEqual("a", nameCondition.AttributeValueList[0].S);
+            Assert.AreEqual("z", nameCondition.AttributeValueList[1].S);
+
+            Assert.IsNull(search.KeyExpression, "Expected KeyExpression to be null when QueryFilter is used.");
+        }
+
+        [TestMethod]
+        public void ConvertQueryByValue_WithRangeEqualCondition_AndExpressionFilter_BuildsKeyAndFilterExpressions()
+        {
+            Expression<Func<ContextInternalTests.TestEntity, bool>> expr = e => e.Name == "bar";
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                Expression = filterExpr
+            };
+
+            var result = context.ConvertQueryByValue<ContextInternalTests.TestEntity>(1, QueryOperator.Equal, new object[] { "test" }, operationConfig);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+            var search = result.Search;
+
+            Assert.IsNotNull(search.KeyExpression);
+            Assert.IsNotNull(search.KeyExpression.ExpressionStatement);
+            Assert.IsTrue(search.KeyExpression.ExpressionStatement.Contains("#hashKey0 = :hashKey0"));
+            Assert.IsTrue(search.KeyExpression.ExpressionStatement.Contains("#rangeKey0 = :rangeKey0") ||
+                          search.KeyExpression.ExpressionStatement.Contains("AND #rangeKey0 = :rangeKey0"));
+
+            Assert.IsNotNull(search.KeyExpression.ExpressionAttributeValues);
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeValues.ContainsKey(":hashKey0"));
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeValues.ContainsKey(":rangeKey0"));
+            Assert.AreEqual(1, search.KeyExpression.ExpressionAttributeValues[":hashKey0"].AsInt());
+            Assert.AreEqual("test", search.KeyExpression.ExpressionAttributeValues[":rangeKey0"].AsString());
+
+            Assert.IsNotNull(search.FilterExpression);
+            Assert.AreEqual("#C0 = :C0", search.FilterExpression.ExpressionStatement);
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeNames);
+            Assert.AreEqual("Name", search.FilterExpression.ExpressionAttributeNames["#C0"]);
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeValues);
+            Assert.AreEqual("bar", search.FilterExpression.ExpressionAttributeValues[":C0"].ToString());
+        }
+
+        [TestMethod]
+        public void ConvertQueryByValue_WithBetweenOperator_AndExpressionFilter_BuildsKeyAndFilterExpressions()
+        {
+            Expression<Func<ContextInternalTests.TestEntity, bool>> expr = e => e.Id == 1;
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                Expression = filterExpr
+            };
+
+            var result = context.ConvertQueryByValue<ContextInternalTests.TestEntity>(1, QueryOperator.Between, new object[] { "a", "z" }, operationConfig);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+            var search = result.Search;
+
+            Assert.IsNotNull(search.KeyExpression);
+            Assert.IsNotNull(search.KeyExpression.ExpressionStatement);
+            Assert.IsTrue(search.KeyExpression.ExpressionStatement.Contains(":rangeKeyL0"));
+            Assert.IsTrue(search.KeyExpression.ExpressionStatement.Contains(":rangeKeyH0"));
+
+            Assert.IsNotNull(search.KeyExpression.ExpressionAttributeValues);
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeValues.ContainsKey(":rangeKeyL0"));
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeValues.ContainsKey(":rangeKeyH0"));
+            Assert.AreEqual("a", search.KeyExpression.ExpressionAttributeValues[":rangeKeyL0"].AsString());
+            Assert.AreEqual("z", search.KeyExpression.ExpressionAttributeValues[":rangeKeyH0"].AsString());
+
+            Assert.IsNotNull(search.FilterExpression);
+            Assert.IsTrue(search.FilterExpression.ExpressionStatement.Contains("#C0 = :C0"));
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeNames);
+            Assert.AreEqual("Id", search.FilterExpression.ExpressionAttributeNames["#C0"]);
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeValues);
+            Assert.AreEqual(1, search.FilterExpression.ExpressionAttributeValues[":C0"].AsInt());
+        }
+
+        [TestMethod]
+        public void ConvertQueryConditional_WithBetweenRangeCondition_AndExpressionFilter_BuildsKeyAndFilterExpressions_ForGSI()
+        {
+            var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
+                .AndHashKeyEqualTo("GsiHash2", "hashValue2")
+                .AndRangeKeyBetween("GsiRange", "a", "z");
+
+            Expression<Func<ContextInternalTests.TestGSIEntity, bool>> expr = e => e.Id == 1;
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                Expression = filterExpr,
+                IndexName = "GSI1"
+            };
+
+            var result = context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+            var search = result.Search;
+
+            Assert.IsNotNull(search.KeyExpression);
+            Assert.IsNotNull(search.KeyExpression.ExpressionStatement);
+            Assert.IsTrue(search.KeyExpression.ExpressionStatement.Contains(":rangeKeyL0"));
+            Assert.IsTrue(search.KeyExpression.ExpressionStatement.Contains(":rangeKeyH0"));
+
+            Assert.IsNotNull(search.KeyExpression.ExpressionAttributeNames);
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey0"));
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey1"));
+            Assert.AreEqual("GsiHash", search.KeyExpression.ExpressionAttributeNames["#hashKey0"]);
+            Assert.AreEqual("GsiHash2", search.KeyExpression.ExpressionAttributeNames["#hashKey1"]);
+
+            Assert.IsNotNull(search.KeyExpression.ExpressionAttributeValues);
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeValues.ContainsKey(":rangeKeyL0"));
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeValues.ContainsKey(":rangeKeyH0"));
+            Assert.AreEqual("a", search.KeyExpression.ExpressionAttributeValues[":rangeKeyL0"].AsString());
+            Assert.AreEqual("z", search.KeyExpression.ExpressionAttributeValues[":rangeKeyH0"].AsString());
+
+            Assert.IsNotNull(search.FilterExpression);
+            Assert.IsTrue(search.FilterExpression.ExpressionStatement.Contains("#C0 = :C0"));
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeNames);
+            Assert.AreEqual("Id", search.FilterExpression.ExpressionAttributeNames["#C0"]);
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeValues);
+            Assert.AreEqual(1, search.FilterExpression.ExpressionAttributeValues[":C0"].AsInt());
+        }
+
+        [TestMethod]
+        public void ConvertQueryConditional_WithLessThanOrEqualRangeCondition_AndExpressionFilter_BuildsKeyAndFilterExpressions_ForGSI()
+        {
+            var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
+                .AndHashKeyEqualTo("GsiHash2", "hashValue2")
+                .AndRangeKeyLessThanOrEqual("GsiRange", "m");
+
+            Expression<Func<ContextInternalTests.TestGSIEntity, bool>> expr = e => e.Id == 1;
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                Expression = filterExpr,
+                IndexName = "GSI1"
+            };
+
+            var result = context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+            var search = result.Search;
+
+            Assert.IsNotNull(search.KeyExpression);
+            Assert.IsNotNull(search.KeyExpression.ExpressionStatement);
+            Assert.IsTrue(search.KeyExpression.ExpressionStatement.Contains(":rangeKey0"));
+
+            Assert.IsNotNull(search.KeyExpression.ExpressionAttributeNames);
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey0"));
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey1"));
+            Assert.AreEqual("GsiHash", search.KeyExpression.ExpressionAttributeNames["#hashKey0"]);
+            Assert.AreEqual("GsiHash2", search.KeyExpression.ExpressionAttributeNames["#hashKey1"]);
+
+            Assert.IsNotNull(search.KeyExpression.ExpressionAttributeValues);
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeValues.ContainsKey(":rangeKey0"));
+            Assert.AreEqual("m", search.KeyExpression.ExpressionAttributeValues[":rangeKey0"].AsString());
+
+            Assert.IsNotNull(search.FilterExpression);
+            Assert.IsTrue(search.FilterExpression.ExpressionStatement.Contains("#C0 = :C0"));
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeNames);
+            Assert.AreEqual("Id", search.FilterExpression.ExpressionAttributeNames["#C0"]);
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeValues);
+            Assert.AreEqual(1, search.FilterExpression.ExpressionAttributeValues[":C0"].AsInt());
+        }
+
+        [TestMethod]
+        public void ConvertQueryConditional_WithLessThanRangeCondition_AndExpressionFilter_BuildsKeyAndFilterExpressions_ForGSI()
+        {
+            var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
+                .AndHashKeyEqualTo("GsiHash2", "hashValue2")
+                .AndRangeKeyLessThan("GsiRange", "m");
+
+            Expression<Func<ContextInternalTests.TestGSIEntity, bool>> expr = e => e.Id == 1;
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                Expression = filterExpr,
+                IndexName = "GSI1"
+            };
+
+            var result = context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+            var search = result.Search;
+
+            Assert.IsNotNull(search.KeyExpression);
+            Assert.IsNotNull(search.KeyExpression.ExpressionStatement);
+            Assert.IsTrue(search.KeyExpression.ExpressionStatement.Contains(":rangeKey0"));
+
+            Assert.IsNotNull(search.KeyExpression.ExpressionAttributeNames);
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey0"));
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey1"));
+            Assert.AreEqual("GsiHash", search.KeyExpression.ExpressionAttributeNames["#hashKey0"]);
+            Assert.AreEqual("GsiHash2", search.KeyExpression.ExpressionAttributeNames["#hashKey1"]);
+
+            Assert.IsNotNull(search.KeyExpression.ExpressionAttributeValues);
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeValues.ContainsKey(":rangeKey0"));
+            Assert.AreEqual("m", search.KeyExpression.ExpressionAttributeValues[":rangeKey0"].AsString());
+
+            Assert.IsNotNull(search.FilterExpression);
+            Assert.IsTrue(search.FilterExpression.ExpressionStatement.Contains("#C0 = :C0"));
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeNames);
+            Assert.AreEqual("Id", search.FilterExpression.ExpressionAttributeNames["#C0"]);
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeValues);
+            Assert.AreEqual(1, search.FilterExpression.ExpressionAttributeValues[":C0"].AsInt());
+        }
+
+        [TestMethod]
+        public void ConvertQueryConditional_WithGreaterThanOrEqualRangeCondition_AndExpressionFilter_BuildsKeyAndFilterExpressions_ForGSI()
+        {
+            var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
+                .AndHashKeyEqualTo("GsiHash2", "hashValue2")
+                .AndRangeKeyGreaterThanOrEqual("GsiRange", "m");
+
+            Expression<Func<ContextInternalTests.TestGSIEntity, bool>> expr = e => e.Id == 1;
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                Expression = filterExpr,
+                IndexName = "GSI1"
+            };
+
+            var result = context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Search);
+            var search = result.Search;
+
+            Assert.IsNotNull(search.KeyExpression);
+            Assert.IsNotNull(search.KeyExpression.ExpressionStatement);
+            Assert.IsTrue(search.KeyExpression.ExpressionStatement.Contains(":rangeKey0"));
+
+            Assert.IsNotNull(search.KeyExpression.ExpressionAttributeNames);
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey0"));
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeNames.ContainsKey("#hashKey1"));
+            Assert.AreEqual("GsiHash", search.KeyExpression.ExpressionAttributeNames["#hashKey0"]);
+            Assert.AreEqual("GsiHash2", search.KeyExpression.ExpressionAttributeNames["#hashKey1"]);
+
+            Assert.IsNotNull(search.KeyExpression.ExpressionAttributeValues);
+            Assert.IsTrue(search.KeyExpression.ExpressionAttributeValues.ContainsKey(":rangeKey0"));
+            Assert.AreEqual("m", search.KeyExpression.ExpressionAttributeValues[":rangeKey0"].AsString());
+
+            Assert.IsNotNull(search.FilterExpression);
+            Assert.IsTrue(search.FilterExpression.ExpressionStatement.Contains("#C0 = :C0"));
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeNames);
+            Assert.AreEqual("Id", search.FilterExpression.ExpressionAttributeNames["#C0"]);
+            Assert.IsNotNull(search.FilterExpression.ExpressionAttributeValues);
+            Assert.AreEqual(1, search.FilterExpression.ExpressionAttributeValues[":C0"].AsInt());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ConvertQueryConditional_WithTooManyRangeKeyConditions_ThrowsInvalidOperationException()
+        {
+            var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
+                .AndHashKeyEqualTo("GsiHash2", "hashValue2")
+                .AndRangeKeyEqualTo("GsiRange", "a")
+                .AndRangeKeyEqualTo("GsiRange2", "b")
+                .AndRangeKeyEqualTo("ExtraRange", "c");
+
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                IndexName = "GSI1"
+            };
+
+            try
+            {
+                context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("The number of range key properties provided (3) exceeds the number of range key properties defined (2)."),
+                    "Unexpected exception message: " + ex.Message);
+                throw;
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ConvertQueryConditional_WithMissingHashKeyProperty_ThrowsInvalidOperationException()
+        {
+            // Arrange: provide a hash-keys dictionary that doesn't contain the expected attribute name "Id"
+            var hashKeys = new Dictionary<string, object>
+            {
+                { "MissingHashAttribute", 1 }
+            };
+            var queryConditional = QueryConditional.HashKeysEqual(hashKeys);
+
+            try
+            {
+                // Act
+                context.ConvertQueryConditional<ContextInternalTests.TestEntity>(queryConditional, null);
+            }
+            catch (InvalidOperationException ex)
+            {
+                // Assert: ensure the exception mentions the missing hash key property name (Id)
+                Assert.IsTrue(ex.Message.Contains("The hash key property 'Id' was not found in the provided hash keys."),
+                    "Unexpected exception message: " + ex.Message);
+                throw;
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ConvertQueryConditional_WithNonContiguousRangeKeyConditions_ThrowsInvalidOperationException()
+        {
+            var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
+                .AndHashKeyEqualTo("GsiHash2", "hashValue2")
+                .AndRangeKeyEqualTo("GsiRange2", "b");
+
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                IndexName = "GSI1"
+            };
+
+            try
+            {
+                // Act
+                context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("contiguous, left-to-right prefix"), "Unexpected exception message: " + ex.Message);
+                Assert.IsTrue(ex.Message.Contains("Missing condition for attribute 'GsiRange'"), "Unexpected exception message: " + ex.Message);
+                throw;
+            }
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ConvertQueryConditional_WithNonEqualityOperatorNotRightMost_ThrowsInvalidOperationException()
+        {
+            var queryConditional = QueryConditional.HashKeyEqualTo("GsiHash", "hashValue1")
+                .AndHashKeyEqualTo("GsiHash2", "hashValue2")
+                .AndRangeKeyGreaterThan("GsiRange", "m")    
+                .AndRangeKeyEqualTo("GsiRange2", "z");
+
+            var operationConfig = new DynamoDBOperationConfig
+            {
+                IndexName = "GSI1"
+            };
+
+            try
+            {
+                context.ConvertQueryConditional<ContextInternalTests.TestGSIEntity>(queryConditional, operationConfig);
+            }
+            catch (InvalidOperationException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("Only the right-most range key condition may use a non-equality operator"), "Unexpected exception message: " + ex.Message);
+                Assert.IsTrue(ex.Message.Contains("Operator 'GreaterThan'") && ex.Message.Contains("GsiRange"), "Unexpected exception message: " + ex.Message);
+                throw;
+            }
         }
 
         [TestMethod]
