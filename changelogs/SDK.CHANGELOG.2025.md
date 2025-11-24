@@ -1,3 +1,9 @@
+### 3.7.1172.0 (2025-11-24 19:16 UTC)
+* CloudFront (3.7.508.0)
+	* Add TrustStore, ConnectionFunction APIs to CloudFront SDK
+* CloudWatchLogs (3.7.505.0)
+	* New CloudWatch Logs feature - LogGroup Deletion Protection, a capability that allows customers to safeguard their critical CloudWatch log groups from accidental or unintended deletion.
+
 ### 3.7.1171.0 (2025-11-21 22:36 UTC)
 * APIGateway (3.7.504.0)
 	* API Gateway supports VPC link V2 for REST APIs.
