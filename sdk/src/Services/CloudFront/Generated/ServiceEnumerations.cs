@@ -2439,6 +2439,60 @@ namespace Amazon.CloudFront
 
 
     /// <summary>
+    /// Constants used for properties of type TrustStoreStatus.
+    /// </summary>
+    public class TrustStoreStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for TrustStoreStatus
+        /// </summary>
+        public static readonly TrustStoreStatus Active = new TrustStoreStatus("active");
+        /// <summary>
+        /// Constant Failed for TrustStoreStatus
+        /// </summary>
+        public static readonly TrustStoreStatus Failed = new TrustStoreStatus("failed");
+        /// <summary>
+        /// Constant Pending for TrustStoreStatus
+        /// </summary>
+        public static readonly TrustStoreStatus Pending = new TrustStoreStatus("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrustStoreStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrustStoreStatus FindValue(string value)
+        {
+            return FindValue<TrustStoreStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrustStoreStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ValidationTokenHost.
     /// </summary>
     public class ValidationTokenHost : ConstantClass
@@ -2482,6 +2536,56 @@ namespace Amazon.CloudFront
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationTokenHost(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ViewerMtlsMode.
+    /// </summary>
+    public class ViewerMtlsMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Optional for ViewerMtlsMode
+        /// </summary>
+        public static readonly ViewerMtlsMode Optional = new ViewerMtlsMode("optional");
+        /// <summary>
+        /// Constant Required for ViewerMtlsMode
+        /// </summary>
+        public static readonly ViewerMtlsMode Required = new ViewerMtlsMode("required");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ViewerMtlsMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ViewerMtlsMode FindValue(string value)
+        {
+            return FindValue<ViewerMtlsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ViewerMtlsMode(string value)
         {
             return FindValue(value);
         }

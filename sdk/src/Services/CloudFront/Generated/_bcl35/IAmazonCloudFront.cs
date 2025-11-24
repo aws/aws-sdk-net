@@ -787,6 +787,67 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateConnectionFunction
+
+
+        /// <summary>
+        /// Creates a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionFunction">REST API Reference for CreateConnectionFunction Operation</seealso>
+        CreateConnectionFunctionResponse CreateConnectionFunction(CreateConnectionFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnectionFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionFunction">REST API Reference for CreateConnectionFunction Operation</seealso>
+        IAsyncResult BeginCreateConnectionFunction(CreateConnectionFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnectionFunction.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectionFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionFunction">REST API Reference for CreateConnectionFunction Operation</seealso>
+        CreateConnectionFunctionResponse EndCreateConnectionFunction(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateConnectionGroup
 
 
@@ -2674,6 +2735,64 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateTrustStore
+
+
+        /// <summary>
+        /// Creates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        CreateTrustStoreResponse CreateTrustStore(CreateTrustStoreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        IAsyncResult BeginCreateTrustStore(CreateTrustStoreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrustStore.</param>
+        /// 
+        /// <returns>Returns a  CreateTrustStoreResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        CreateTrustStoreResponse EndCreateTrustStore(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateVpcOrigin
 
 
@@ -2944,6 +3063,67 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  DeleteCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse EndDeleteCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteConnectionFunction
+
+
+        /// <summary>
+        /// Deletes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionFunction">REST API Reference for DeleteConnectionFunction Operation</seealso>
+        DeleteConnectionFunctionResponse DeleteConnectionFunction(DeleteConnectionFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnectionFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionFunction">REST API Reference for DeleteConnectionFunction Operation</seealso>
+        IAsyncResult BeginDeleteConnectionFunction(DeleteConnectionFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnectionFunction.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectionFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionFunction">REST API Reference for DeleteConnectionFunction Operation</seealso>
+        DeleteConnectionFunctionResponse EndDeleteConnectionFunction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4157,6 +4337,64 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  DeleteTrustStore
+
+
+        /// <summary>
+        /// Deletes a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        DeleteTrustStoreResponse DeleteTrustStore(DeleteTrustStoreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        IAsyncResult BeginDeleteTrustStore(DeleteTrustStoreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrustStore.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrustStoreResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        DeleteTrustStoreResponse EndDeleteTrustStore(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteVpcOrigin
 
 
@@ -4218,6 +4456,58 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  DeleteVpcOriginResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteVpcOrigin">REST API Reference for DeleteVpcOrigin Operation</seealso>
         DeleteVpcOriginResponse EndDeleteVpcOrigin(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeConnectionFunction
+
+
+        /// <summary>
+        /// Describes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeConnectionFunction">REST API Reference for DescribeConnectionFunction Operation</seealso>
+        DescribeConnectionFunctionResponse DescribeConnectionFunction(DescribeConnectionFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConnectionFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeConnectionFunction">REST API Reference for DescribeConnectionFunction Operation</seealso>
+        IAsyncResult BeginDescribeConnectionFunction(DescribeConnectionFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConnectionFunction.</param>
+        /// 
+        /// <returns>Returns a  DescribeConnectionFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeConnectionFunction">REST API Reference for DescribeConnectionFunction Operation</seealso>
+        DescribeConnectionFunctionResponse EndDescribeConnectionFunction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4721,6 +5011,55 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  GetCloudFrontOriginAccessIdentityConfigResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig">REST API Reference for GetCloudFrontOriginAccessIdentityConfig Operation</seealso>
         GetCloudFrontOriginAccessIdentityConfigResponse EndGetCloudFrontOriginAccessIdentityConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetConnectionFunction
+
+
+        /// <summary>
+        /// Gets a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionFunction">REST API Reference for GetConnectionFunction Operation</seealso>
+        GetConnectionFunctionResponse GetConnectionFunction(GetConnectionFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectionFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionFunction">REST API Reference for GetConnectionFunction Operation</seealso>
+        IAsyncResult BeginGetConnectionFunction(GetConnectionFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectionFunction.</param>
+        /// 
+        /// <returns>Returns a  GetConnectionFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionFunction">REST API Reference for GetConnectionFunction Operation</seealso>
+        GetConnectionFunctionResponse EndGetConnectionFunction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6300,6 +6639,55 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetTrustStore
+
+
+        /// <summary>
+        /// Gets a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the GetTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetTrustStore">REST API Reference for GetTrustStore Operation</seealso>
+        GetTrustStoreResponse GetTrustStore(GetTrustStoreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStore operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetTrustStore">REST API Reference for GetTrustStore Operation</seealso>
+        IAsyncResult BeginGetTrustStore(GetTrustStoreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrustStore.</param>
+        /// 
+        /// <returns>Returns a  GetTrustStoreResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetTrustStore">REST API Reference for GetTrustStore Operation</seealso>
+        GetTrustStoreResponse EndGetTrustStore(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetVpcOrigin
 
 
@@ -6615,6 +7003,55 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListConnectionFunctions
+
+
+        /// <summary>
+        /// Lists connection functions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionFunctions service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectionFunctions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionFunctions">REST API Reference for ListConnectionFunctions Operation</seealso>
+        ListConnectionFunctionsResponse ListConnectionFunctions(ListConnectionFunctionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectionFunctions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionFunctions operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectionFunctions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionFunctions">REST API Reference for ListConnectionFunctions Operation</seealso>
+        IAsyncResult BeginListConnectionFunctions(ListConnectionFunctionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectionFunctions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectionFunctions.</param>
+        /// 
+        /// <returns>Returns a  ListConnectionFunctionsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionFunctions">REST API Reference for ListConnectionFunctions Operation</seealso>
+        ListConnectionFunctionsResponse EndListConnectionFunctions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListConnectionGroups
 
 
@@ -6884,6 +7321,55 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  ListDistributionsByCachePolicyIdResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId">REST API Reference for ListDistributionsByCachePolicyId Operation</seealso>
         ListDistributionsByCachePolicyIdResponse EndListDistributionsByCachePolicyId(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDistributionsByConnectionFunction
+
+
+        /// <summary>
+        /// Lists distributions by connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionFunction">REST API Reference for ListDistributionsByConnectionFunction Operation</seealso>
+        ListDistributionsByConnectionFunctionResponse ListDistributionsByConnectionFunction(ListDistributionsByConnectionFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByConnectionFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionFunction">REST API Reference for ListDistributionsByConnectionFunction Operation</seealso>
+        IAsyncResult BeginListDistributionsByConnectionFunction(ListDistributionsByConnectionFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributionsByConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionsByConnectionFunction.</param>
+        /// 
+        /// <returns>Returns a  ListDistributionsByConnectionFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionFunction">REST API Reference for ListDistributionsByConnectionFunction Operation</seealso>
+        ListDistributionsByConnectionFunctionResponse EndListDistributionsByConnectionFunction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7216,6 +7702,55 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  ListDistributionsByResponseHeadersPolicyIdResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByResponseHeadersPolicyId">REST API Reference for ListDistributionsByResponseHeadersPolicyId Operation</seealso>
         ListDistributionsByResponseHeadersPolicyIdResponse EndListDistributionsByResponseHeadersPolicyId(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDistributionsByTrustStore
+
+
+        /// <summary>
+        /// Lists distributions by trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByTrustStore">REST API Reference for ListDistributionsByTrustStore Operation</seealso>
+        ListDistributionsByTrustStoreResponse ListDistributionsByTrustStore(ListDistributionsByTrustStoreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByTrustStore operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByTrustStore">REST API Reference for ListDistributionsByTrustStore Operation</seealso>
+        IAsyncResult BeginListDistributionsByTrustStore(ListDistributionsByTrustStoreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributionsByTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionsByTrustStore.</param>
+        /// 
+        /// <returns>Returns a  ListDistributionsByTrustStoreResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByTrustStore">REST API Reference for ListDistributionsByTrustStore Operation</seealso>
+        ListDistributionsByTrustStoreResponse EndListDistributionsByTrustStore(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8268,6 +8803,55 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListTrustStores
+
+
+        /// <summary>
+        /// Lists trust stores.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustStores service method.</param>
+        /// 
+        /// <returns>The response from the ListTrustStores service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTrustStores">REST API Reference for ListTrustStores Operation</seealso>
+        ListTrustStoresResponse ListTrustStores(ListTrustStoresRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrustStores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustStores operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrustStores
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTrustStores">REST API Reference for ListTrustStores Operation</seealso>
+        IAsyncResult BeginListTrustStores(ListTrustStoresRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrustStores operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrustStores.</param>
+        /// 
+        /// <returns>Returns a  ListTrustStoresResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTrustStores">REST API Reference for ListTrustStores Operation</seealso>
+        ListTrustStoresResponse EndListTrustStores(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListVpcOrigins
 
 
@@ -8317,6 +8901,64 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  ListVpcOriginsResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListVpcOrigins">REST API Reference for ListVpcOrigins Operation</seealso>
         ListVpcOriginsResponse EndListVpcOrigins(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PublishConnectionFunction
+
+
+        /// <summary>
+        /// Publishes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the PublishConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishConnectionFunction">REST API Reference for PublishConnectionFunction Operation</seealso>
+        PublishConnectionFunctionResponse PublishConnectionFunction(PublishConnectionFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishConnectionFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPublishConnectionFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishConnectionFunction">REST API Reference for PublishConnectionFunction Operation</seealso>
+        IAsyncResult BeginPublishConnectionFunction(PublishConnectionFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PublishConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPublishConnectionFunction.</param>
+        /// 
+        /// <returns>Returns a  PublishConnectionFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishConnectionFunction">REST API Reference for PublishConnectionFunction Operation</seealso>
+        PublishConnectionFunctionResponse EndPublishConnectionFunction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8496,6 +9138,64 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  TagResourceResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TestConnectionFunction
+
+
+        /// <summary>
+        /// Tests a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the TestConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TestFunctionFailedException">
+        /// The CloudFront function failed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestConnectionFunction">REST API Reference for TestConnectionFunction Operation</seealso>
+        TestConnectionFunctionResponse TestConnectionFunction(TestConnectionFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestConnectionFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestConnectionFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestConnectionFunction">REST API Reference for TestConnectionFunction Operation</seealso>
+        IAsyncResult BeginTestConnectionFunction(TestConnectionFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestConnectionFunction.</param>
+        /// 
+        /// <returns>Returns a  TestConnectionFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestConnectionFunction">REST API Reference for TestConnectionFunction Operation</seealso>
+        TestConnectionFunctionResponse EndTestConnectionFunction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8852,6 +9552,67 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  UpdateCloudFrontOriginAccessIdentityResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         UpdateCloudFrontOriginAccessIdentityResponse EndUpdateCloudFrontOriginAccessIdentity(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateConnectionFunction
+
+
+        /// <summary>
+        /// Updates a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionFunction">REST API Reference for UpdateConnectionFunction Operation</seealso>
+        UpdateConnectionFunctionResponse UpdateConnectionFunction(UpdateConnectionFunctionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionFunction operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnectionFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionFunction">REST API Reference for UpdateConnectionFunction Operation</seealso>
+        IAsyncResult BeginUpdateConnectionFunction(UpdateConnectionFunctionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnectionFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnectionFunction.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectionFunctionResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionFunction">REST API Reference for UpdateConnectionFunction Operation</seealso>
+        UpdateConnectionFunctionResponse EndUpdateConnectionFunction(IAsyncResult asyncResult);
 
         #endregion
         
@@ -10632,6 +11393,61 @@ namespace Amazon.CloudFront
         /// <returns>Returns a  UpdateStreamingDistributionResult from CloudFront.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistribution">REST API Reference for UpdateStreamingDistribution Operation</seealso>
         UpdateStreamingDistributionResponse EndUpdateStreamingDistribution(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateTrustStore
+
+
+        /// <summary>
+        /// Updates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateTrustStore">REST API Reference for UpdateTrustStore Operation</seealso>
+        UpdateTrustStoreResponse UpdateTrustStore(UpdateTrustStoreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustStore operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrustStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateTrustStore">REST API Reference for UpdateTrustStore Operation</seealso>
+        IAsyncResult BeginUpdateTrustStore(UpdateTrustStoreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTrustStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrustStore.</param>
+        /// 
+        /// <returns>Returns a  UpdateTrustStoreResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateTrustStore">REST API Reference for UpdateTrustStore Operation</seealso>
+        UpdateTrustStoreResponse EndUpdateTrustStore(IAsyncResult asyncResult);
 
         #endregion
         

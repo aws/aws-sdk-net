@@ -86,6 +86,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ConnectionFunctionAssociation", targetDepth))
+                    {
+                        var unmarshaller = ConnectionFunctionAssociationUnmarshaller.Instance;
+                        unmarshalledObject.ConnectionFunctionAssociation = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ConnectionMode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -180,6 +186,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = ViewerCertificateUnmarshaller.Instance;
                         unmarshalledObject.ViewerCertificate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ViewerMtlsConfig", targetDepth))
+                    {
+                        var unmarshaller = ViewerMtlsConfigUnmarshaller.Instance;
+                        unmarshalledObject.ViewerMtlsConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("WebACLId", targetDepth))

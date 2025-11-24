@@ -388,6 +388,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetComment())
                             xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.Comment));                 
 
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.ConnectionFunctionAssociation != null)
+                        {
+                            xmlWriter.WriteStartElement("ConnectionFunctionAssociation");
+                            if(publicRequest.DistributionConfigWithTags.DistributionConfig.ConnectionFunctionAssociation.IsSetId())
+                                xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.ConnectionFunctionAssociation.Id));                 
+
+                            xmlWriter.WriteEndElement();
+                        }
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetConnectionMode())
                             xmlWriter.WriteElementString("ConnectionMode", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.ConnectionMode));                 
 
@@ -1057,6 +1065,28 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             if(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerCertificate.IsSetSSLSupportMethod())
                                 xmlWriter.WriteElementString("SSLSupportMethod", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerCertificate.SSLSupportMethod));                 
 
+                            xmlWriter.WriteEndElement();
+                        }
+                        if (publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerMtlsConfig != null)
+                        {
+                            xmlWriter.WriteStartElement("ViewerMtlsConfig");
+                            if(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerMtlsConfig.IsSetMode())
+                                xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerMtlsConfig.Mode));                 
+
+                            if (publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig != null)
+                            {
+                                xmlWriter.WriteStartElement("TrustStoreConfig");
+                                if(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.IsSetAdvertiseTrustStoreCaNames())
+                                    xmlWriter.WriteElementString("AdvertiseTrustStoreCaNames", StringUtils.FromBool(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.AdvertiseTrustStoreCaNames));                 
+
+                                if(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.IsSetIgnoreCertificateExpiry())
+                                    xmlWriter.WriteElementString("IgnoreCertificateExpiry", StringUtils.FromBool(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.IgnoreCertificateExpiry));                 
+
+                                if(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.IsSetTrustStoreId())
+                                    xmlWriter.WriteElementString("TrustStoreId", StringUtils.FromString(publicRequest.DistributionConfigWithTags.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.TrustStoreId));                 
+
+                                xmlWriter.WriteEndElement();
+                            }
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.DistributionConfigWithTags.DistributionConfig.IsSetWebACLId())

@@ -392,6 +392,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     if(publicRequest.DistributionConfig.IsSetComment())
                         xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.DistributionConfig.Comment));
 
+                    if (publicRequest.DistributionConfig.ConnectionFunctionAssociation != null)
+                    {
+                        xmlWriter.WriteStartElement("ConnectionFunctionAssociation");
+                        if(publicRequest.DistributionConfig.ConnectionFunctionAssociation.IsSetId())
+                            xmlWriter.WriteElementString("Id", StringUtils.FromString(publicRequest.DistributionConfig.ConnectionFunctionAssociation.Id));                 
+
+                        xmlWriter.WriteEndElement();
+                    }
                     if(publicRequest.DistributionConfig.IsSetConnectionMode())
                         xmlWriter.WriteElementString("ConnectionMode", StringUtils.FromString(publicRequest.DistributionConfig.ConnectionMode));
 
@@ -1061,6 +1069,28 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         if(publicRequest.DistributionConfig.ViewerCertificate.IsSetSSLSupportMethod())
                             xmlWriter.WriteElementString("SSLSupportMethod", StringUtils.FromString(publicRequest.DistributionConfig.ViewerCertificate.SSLSupportMethod));                 
 
+                        xmlWriter.WriteEndElement();
+                    }
+                    if (publicRequest.DistributionConfig.ViewerMtlsConfig != null)
+                    {
+                        xmlWriter.WriteStartElement("ViewerMtlsConfig");
+                        if(publicRequest.DistributionConfig.ViewerMtlsConfig.IsSetMode())
+                            xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.DistributionConfig.ViewerMtlsConfig.Mode));                 
+
+                        if (publicRequest.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig != null)
+                        {
+                            xmlWriter.WriteStartElement("TrustStoreConfig");
+                            if(publicRequest.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.IsSetAdvertiseTrustStoreCaNames())
+                                xmlWriter.WriteElementString("AdvertiseTrustStoreCaNames", StringUtils.FromBool(publicRequest.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.AdvertiseTrustStoreCaNames));                 
+
+                            if(publicRequest.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.IsSetIgnoreCertificateExpiry())
+                                xmlWriter.WriteElementString("IgnoreCertificateExpiry", StringUtils.FromBool(publicRequest.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.IgnoreCertificateExpiry));                 
+
+                            if(publicRequest.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.IsSetTrustStoreId())
+                                xmlWriter.WriteElementString("TrustStoreId", StringUtils.FromString(publicRequest.DistributionConfig.ViewerMtlsConfig.TrustStoreConfig.TrustStoreId));                 
+
+                            xmlWriter.WriteEndElement();
+                        }
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.DistributionConfig.IsSetWebACLId())
