@@ -178,7 +178,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var client = Table.DDBClient as AmazonDynamoDBClient;
             if (client == null)
             {
-                throw new InvalidOperationException("Calling the synchronous GetItem from .NET or .NET Core requires initializing the Table " +
+                throw new InvalidOperationException("Calling the synchronous PutItem from .NET or .NET Core requires initializing the Table " +
                    "with an actual AmazonDynamoDBClient. You can use a mocked or substitute IAmazonDynamoDB when creating a Table via PutItemAsync instead.");
             }
             return client.PutItem(lowLevel);
@@ -352,7 +352,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 #endif
         }
 
-        protected override async Task<UpdateItemResponse>InvokeAsync(UpdateItemRequest lowLevel, CancellationToken ct) =>
+        protected override async Task<UpdateItemResponse> InvokeAsync(UpdateItemRequest lowLevel, CancellationToken ct) =>
             await Table.DDBClient.UpdateItemAsync(lowLevel, ct).ConfigureAwait(false);
 
         protected override Document PostProcess(UpdateItemDocumentOperationRequest request,
