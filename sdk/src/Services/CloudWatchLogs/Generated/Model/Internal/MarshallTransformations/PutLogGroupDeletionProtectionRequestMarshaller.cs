@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateLogGroup Request Marshaller
+    /// PutLogGroupDeletionProtection Request Marshaller
     /// </summary>       
-    public class CreateLogGroupRequestMarshaller : IMarshaller<IRequest, CreateLogGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutLogGroupDeletionProtectionRequestMarshaller : IMarshaller<IRequest, PutLogGroupDeletionProtectionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateLogGroupRequest)input);
+            return this.Marshall((PutLogGroupDeletionProtectionRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateLogGroupRequest publicRequest)
+        public IRequest Marshall(PutLogGroupDeletionProtectionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.CreateLogGroup";
+            string target = "Logs_20140328.PutLogGroupDeletionProtection";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2014-03-28";
@@ -81,36 +81,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
             }
 
-            if(publicRequest.IsSetKmsKeyId())
+            if(publicRequest.IsSetLogGroupIdentifier())
             {
-                context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
-            }
-
-            if(publicRequest.IsSetLogGroupClass())
-            {
-                context.Writer.WritePropertyName("logGroupClass");
-                context.Writer.WriteStringValue(publicRequest.LogGroupClass);
-            }
-
-            if(publicRequest.IsSetLogGroupName())
-            {
-                context.Writer.WritePropertyName("logGroupName");
-                context.Writer.WriteStringValue(publicRequest.LogGroupName);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
-                }
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("logGroupIdentifier");
+                context.Writer.WriteStringValue(publicRequest.LogGroupIdentifier);
             }
 
             writer.WriteEndObject();
@@ -126,9 +100,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateLogGroupRequestMarshaller _instance = new CreateLogGroupRequestMarshaller();        
+        private static PutLogGroupDeletionProtectionRequestMarshaller _instance = new PutLogGroupDeletionProtectionRequestMarshaller();        
 
-        internal static CreateLogGroupRequestMarshaller GetInstance()
+        internal static PutLogGroupDeletionProtectionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +110,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateLogGroupRequestMarshaller Instance
+        public static PutLogGroupDeletionProtectionRequestMarshaller Instance
         {
             get
             {
