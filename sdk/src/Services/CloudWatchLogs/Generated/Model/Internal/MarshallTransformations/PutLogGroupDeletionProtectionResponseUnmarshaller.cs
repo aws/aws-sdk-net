@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteLogGroup operation
+    /// Response Unmarshaller for PutLogGroupDeletionProtection operation
     /// </summary>  
-    public class DeleteLogGroupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutLogGroupDeletionProtectionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteLogGroupResponse response = new DeleteLogGroupResponse();
+            PutLogGroupDeletionProtectionResponse response = new PutLogGroupDeletionProtectionResponse();
 
 
             return response;
@@ -70,6 +70,14 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                {
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidOperationException"))
+                {
+                    return InvalidOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -86,17 +94,13 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 {
                     return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-                {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonCloudWatchLogsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteLogGroupResponseUnmarshaller _instance = new DeleteLogGroupResponseUnmarshaller();        
+        private static PutLogGroupDeletionProtectionResponseUnmarshaller _instance = new PutLogGroupDeletionProtectionResponseUnmarshaller();        
 
-        internal static DeleteLogGroupResponseUnmarshaller GetInstance()
+        internal static PutLogGroupDeletionProtectionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -104,7 +108,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteLogGroupResponseUnmarshaller Instance
+        public static PutLogGroupDeletionProtectionResponseUnmarshaller Instance
         {
             get
             {

@@ -37,6 +37,7 @@ namespace Amazon.CloudWatchLogs.Model
         private string _arn;
         private DateTime? _creationTime;
         private DataProtectionStatus _dataProtectionStatus;
+        private bool? _deletionProtectionEnabled;
         private List<string> _inheritedProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _kmsKeyId;
         private string _logGroupArn;
@@ -111,6 +112,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDataProtectionStatus()
         {
             return this._dataProtectionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtectionEnabled. 
+        /// <para>
+        /// Indicates whether deletion protection is enabled for this log group. When enabled,
+        /// deletion protection blocks all deletion operations until it is explicitly disabled.
+        /// </para>
+        /// </summary>
+        public bool DeletionProtectionEnabled
+        {
+            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            set { this._deletionProtectionEnabled = value; }
+        }
+
+        // Check to see if DeletionProtectionEnabled property is set
+        internal bool IsSetDeletionProtectionEnabled()
+        {
+            return this._deletionProtectionEnabled.HasValue; 
         }
 
         /// <summary>

@@ -1584,6 +1584,9 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
         public virtual Task<DeleteLogGroupResponse> DeleteLogGroupAsync(DeleteLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1630,6 +1633,9 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
         public virtual Task<DeleteLogStreamResponse> DeleteLogStreamAsync(DeleteLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5490,6 +5496,66 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = PutLogEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutLogEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutLogGroupDeletionProtection
+
+        internal virtual PutLogGroupDeletionProtectionResponse PutLogGroupDeletionProtection(PutLogGroupDeletionProtectionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutLogGroupDeletionProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLogGroupDeletionProtectionResponseUnmarshaller.Instance;
+
+            return Invoke<PutLogGroupDeletionProtectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables or disables deletion protection for the specified log group. When enabled
+        /// on a log group, deletion protection blocks all deletion operations until it is explicitly
+        /// disabled.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the parameters that are common to all actions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
+        /// Parameters</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLogGroupDeletionProtection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutLogGroupDeletionProtection service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogGroupDeletionProtection">REST API Reference for PutLogGroupDeletionProtection Operation</seealso>
+        public virtual Task<PutLogGroupDeletionProtectionResponse> PutLogGroupDeletionProtectionAsync(PutLogGroupDeletionProtectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutLogGroupDeletionProtectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutLogGroupDeletionProtectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutLogGroupDeletionProtectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
