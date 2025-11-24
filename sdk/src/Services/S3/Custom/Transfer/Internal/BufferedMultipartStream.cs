@@ -282,6 +282,8 @@ namespace Amazon.S3.Transfer.Internal
         /// <remarks>
         /// This method disposes the underlying <see cref="IDownloadManager"/> and <see cref="IPartBufferManager"/>,
         /// which in turn cleans up any buffered part data and returns ArrayPool buffers to the pool.
+        /// It also disposes the InitialResponse from the discovery result, which contains the HTTP connection
+        /// and network stream that must be explicitly disposed to return the connection to the pool.
         /// </remarks>
         [SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "Dispose methods should not throw exceptions")]
         protected override void Dispose(bool disposing)
@@ -290,7 +292,13 @@ namespace Amazon.S3.Transfer.Internal
             {
                 try
                 {
-                    // Dispose modular dependencies
+                    // Dispose InitialResponse first (contains HTTP connection and network stream)
+                    // This is critical because GetObjectResponse holds unmanaged resources that
+                    // won't be cleaned up by GC - must be explicitly disposed to return HTTP
+                    // connection to the pool and close network streams
+                    _discoveryResult?.InitialResponse?.Dispose();
+                    
+                    // Then dispose modular dependencies
                     _downloadCoordinator?.Dispose();
                     _partBufferManager?.Dispose();
                 }

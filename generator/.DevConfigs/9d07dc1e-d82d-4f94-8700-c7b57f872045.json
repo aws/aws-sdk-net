@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Optimized multipart download manager to stream responses directly where applicable."
+      ]
+    }
+  ]
+}

@@ -47,6 +47,14 @@ namespace Amazon.S3.Transfer.Internal
         Task AddBufferAsync(StreamPartBuffer buffer, CancellationToken cancellationToken);
         
         /// <summary>
+        /// Adds a part data source (streaming or buffered) and signals readers when next expected part arrives.
+        /// </summary>
+        /// <param name="dataSource">The part data source to add (can be StreamingDataSource or BufferedDataSource).</param>
+        /// <param name="cancellationToken">A token to cancel the operation.</param>
+        /// <returns>A task that completes when the data source has been added and signaling is complete.</returns>
+        Task AddBufferAsync(IPartDataSource dataSource, CancellationToken cancellationToken);
+        
+        /// <summary>
         /// Reads data from the buffer manager. Automatically handles sequential part consumption
         /// and reads across part boundaries to fill the buffer when possible, matching standard Stream.Read() behavior.
         /// </summary>

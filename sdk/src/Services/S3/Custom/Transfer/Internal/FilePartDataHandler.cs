@@ -69,26 +69,42 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <inheritdoc/>
+        /// <remarks>
+        /// <para><strong>Response Ownership:</strong></para>
+        /// <para>
+        /// This method takes ownership of the response and is responsible for disposing it in ALL cases,
+        /// including error scenarios. Callers must NOT dispose the response after calling this method.
+        /// </para>
+        /// </remarks>
         public async Task ProcessPartAsync(
             int partNumber,
             GetObjectResponse response,
             CancellationToken cancellationToken)
         {
-            Logger.DebugFormat("FilePartDataHandler: [Part {0}] Starting to process part - ContentLength={1}",
-                partNumber, response.ContentLength);
+            try
+            {
+                Logger.DebugFormat("FilePartDataHandler: [Part {0}] Starting to process part - ContentLength={1}",
+                    partNumber, response.ContentLength);
 
-            // Calculate offset for this part based on ContentRange or part number
-            long offset = GetPartOffset(response, partNumber);
+                // Calculate offset for this part based on ContentRange or part number
+                long offset = GetPartOffset(response, partNumber);
 
-            Logger.DebugFormat("FilePartDataHandler: [Part {0}] Calculated file offset={1}",
-                partNumber, offset);
+                Logger.DebugFormat("FilePartDataHandler: [Part {0}] Calculated file offset={1}",
+                    partNumber, offset);
 
-            // Write part data to file at the calculated offset
-            await WritePartToFileAsync(offset, response, cancellationToken)
-                .ConfigureAwait(false);
+                // Write part data to file at the calculated offset
+                await WritePartToFileAsync(offset, response, cancellationToken)
+                    .ConfigureAwait(false);
 
-            Logger.DebugFormat("FilePartDataHandler: [Part {0}] File write completed successfully",
-                partNumber);
+                Logger.DebugFormat("FilePartDataHandler: [Part {0}] File write completed successfully",
+                    partNumber);
+            }
+            finally
+            {
+                // Always dispose response after writing to disk (success or failure)
+                // This releases the HTTP connection back to the pool
+                response?.Dispose();
+            }
         }
 
         /// <inheritdoc/>
