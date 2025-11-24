@@ -1462,6 +1462,89 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateConnectionFunction
+
+
+        /// <summary>
+        /// Creates a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionFunction">REST API Reference for CreateConnectionFunction Operation</seealso>
+        public virtual CreateConnectionFunctionResponse CreateConnectionFunction(CreateConnectionFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectionFunctionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateConnectionFunction">REST API Reference for CreateConnectionFunction Operation</seealso>
+        public virtual Task<CreateConnectionFunctionResponse> CreateConnectionFunctionAsync(CreateConnectionFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectionFunctionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateConnectionFunctionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateConnectionGroup
 
 
@@ -4456,6 +4539,83 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateTrustStore
+
+
+        /// <summary>
+        /// Creates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        public virtual CreateTrustStoreResponse CreateTrustStore(CreateTrustStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrustStoreResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateTrustStore">REST API Reference for CreateTrustStore Operation</seealso>
+        public virtual Task<CreateTrustStoreResponse> CreateTrustStoreAsync(CreateTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrustStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateTrustStoreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateVpcOrigin
 
 
@@ -4852,6 +5012,89 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = DeleteCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteCloudFrontOriginAccessIdentityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteConnectionFunction
+
+
+        /// <summary>
+        /// Deletes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionFunction">REST API Reference for DeleteConnectionFunction Operation</seealso>
+        public virtual DeleteConnectionFunctionResponse DeleteConnectionFunction(DeleteConnectionFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectionFunctionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteConnectionFunction">REST API Reference for DeleteConnectionFunction Operation</seealso>
+        public virtual Task<DeleteConnectionFunctionResponse> DeleteConnectionFunctionAsync(DeleteConnectionFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectionFunctionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteConnectionFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6633,6 +6876,83 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  DeleteTrustStore
+
+
+        /// <summary>
+        /// Deletes a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        public virtual DeleteTrustStoreResponse DeleteTrustStore(DeleteTrustStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTrustStoreResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteTrustStore">REST API Reference for DeleteTrustStore Operation</seealso>
+        public virtual Task<DeleteTrustStoreResponse> DeleteTrustStoreAsync(DeleteTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTrustStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteTrustStoreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteVpcOrigin
 
 
@@ -6718,6 +7038,71 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = DeleteVpcOriginResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteVpcOriginResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeConnectionFunction
+
+
+        /// <summary>
+        /// Describes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the DescribeConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeConnectionFunction">REST API Reference for DescribeConnectionFunction Operation</seealso>
+        public virtual DescribeConnectionFunctionResponse DescribeConnectionFunction(DescribeConnectionFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConnectionFunctionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeConnectionFunction">REST API Reference for DescribeConnectionFunction Operation</seealso>
+        public virtual Task<DescribeConnectionFunctionResponse> DescribeConnectionFunctionAsync(DescribeConnectionFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeConnectionFunctionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeConnectionFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7393,6 +7778,65 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = GetCloudFrontOriginAccessIdentityConfigResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetCloudFrontOriginAccessIdentityConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConnectionFunction
+
+
+        /// <summary>
+        /// Gets a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionFunction">REST API Reference for GetConnectionFunction Operation</seealso>
+        public virtual GetConnectionFunctionResponse GetConnectionFunction(GetConnectionFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectionFunctionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetConnectionFunction">REST API Reference for GetConnectionFunction Operation</seealso>
+        public virtual Task<GetConnectionFunctionResponse> GetConnectionFunctionAsync(GetConnectionFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectionFunctionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetConnectionFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9380,6 +9824,65 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetTrustStore
+
+
+        /// <summary>
+        /// Gets a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the GetTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetTrustStore">REST API Reference for GetTrustStore Operation</seealso>
+        public virtual GetTrustStoreResponse GetTrustStore(GetTrustStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<GetTrustStoreResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetTrustStore">REST API Reference for GetTrustStore Operation</seealso>
+        public virtual Task<GetTrustStoreResponse> GetTrustStoreAsync(GetTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTrustStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTrustStoreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetVpcOrigin
 
 
@@ -9825,6 +10328,65 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListConnectionFunctions
+
+
+        /// <summary>
+        /// Lists connection functions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionFunctions service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectionFunctions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionFunctions">REST API Reference for ListConnectionFunctions Operation</seealso>
+        public virtual ListConnectionFunctionsResponse ListConnectionFunctions(ListConnectionFunctionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConnectionFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectionFunctionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectionFunctionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists connection functions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectionFunctions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectionFunctions service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListConnectionFunctions">REST API Reference for ListConnectionFunctions Operation</seealso>
+        public virtual Task<ListConnectionFunctionsResponse> ListConnectionFunctionsAsync(ListConnectionFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConnectionFunctionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectionFunctionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListConnectionFunctionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListConnectionGroups
 
 
@@ -10180,6 +10742,65 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = ListDistributionsByCachePolicyIdResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListDistributionsByCachePolicyIdResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDistributionsByConnectionFunction
+
+
+        /// <summary>
+        /// Lists distributions by connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionFunction">REST API Reference for ListDistributionsByConnectionFunction Operation</seealso>
+        public virtual ListDistributionsByConnectionFunctionResponse ListDistributionsByConnectionFunction(ListDistributionsByConnectionFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByConnectionFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByConnectionFunctionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists distributions by connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDistributionsByConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByConnectionFunction">REST API Reference for ListDistributionsByConnectionFunction Operation</seealso>
+        public virtual Task<ListDistributionsByConnectionFunctionResponse> ListDistributionsByConnectionFunctionAsync(ListDistributionsByConnectionFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByConnectionFunctionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDistributionsByConnectionFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10610,6 +11231,65 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = ListDistributionsByResponseHeadersPolicyIdResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListDistributionsByResponseHeadersPolicyIdResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDistributionsByTrustStore
+
+
+        /// <summary>
+        /// Lists distributions by trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByTrustStore">REST API Reference for ListDistributionsByTrustStore Operation</seealso>
+        public virtual ListDistributionsByTrustStoreResponse ListDistributionsByTrustStore(ListDistributionsByTrustStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByTrustStoreResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists distributions by trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDistributionsByTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByTrustStore">REST API Reference for ListDistributionsByTrustStore Operation</seealso>
+        public virtual Task<ListDistributionsByTrustStoreResponse> ListDistributionsByTrustStoreAsync(ListDistributionsByTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByTrustStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDistributionsByTrustStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11981,6 +12661,65 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListTrustStores
+
+
+        /// <summary>
+        /// Lists trust stores.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustStores service method.</param>
+        /// 
+        /// <returns>The response from the ListTrustStores service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTrustStores">REST API Reference for ListTrustStores Operation</seealso>
+        public virtual ListTrustStoresResponse ListTrustStores(ListTrustStoresRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTrustStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustStoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrustStoresResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists trust stores.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrustStores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTrustStores service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTrustStores">REST API Reference for ListTrustStores Operation</seealso>
+        public virtual Task<ListTrustStoresResponse> ListTrustStoresAsync(ListTrustStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTrustStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrustStoresResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTrustStoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListVpcOrigins
 
 
@@ -12042,6 +12781,83 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = ListVpcOriginsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListVpcOriginsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PublishConnectionFunction
+
+
+        /// <summary>
+        /// Publishes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the PublishConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishConnectionFunction">REST API Reference for PublishConnectionFunction Operation</seealso>
+        public virtual PublishConnectionFunctionResponse PublishConnectionFunction(PublishConnectionFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PublishConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishConnectionFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<PublishConnectionFunctionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Publishes a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PublishConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishConnectionFunction">REST API Reference for PublishConnectionFunction Operation</seealso>
+        public virtual Task<PublishConnectionFunctionResponse> PublishConnectionFunctionAsync(PublishConnectionFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PublishConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishConnectionFunctionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PublishConnectionFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12283,6 +13099,83 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestConnectionFunction
+
+
+        /// <summary>
+        /// Tests a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the TestConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TestFunctionFailedException">
+        /// The CloudFront function failed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestConnectionFunction">REST API Reference for TestConnectionFunction Operation</seealso>
+        public virtual TestConnectionFunctionResponse TestConnectionFunction(TestConnectionFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TestConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestConnectionFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<TestConnectionFunctionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Tests a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TestFunctionFailedException">
+        /// The CloudFront function failed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestConnectionFunction">REST API Reference for TestConnectionFunction Operation</seealso>
+        public virtual Task<TestConnectionFunctionResponse> TestConnectionFunctionAsync(TestConnectionFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TestConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TestConnectionFunctionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<TestConnectionFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12800,6 +13693,89 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = UpdateCloudFrontOriginAccessIdentityResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateCloudFrontOriginAccessIdentityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateConnectionFunction
+
+
+        /// <summary>
+        /// Updates a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionFunction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionFunction">REST API Reference for UpdateConnectionFunction Operation</seealso>
+        public virtual UpdateConnectionFunctionResponse UpdateConnectionFunction(UpdateConnectionFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectionFunctionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a connection function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionFunction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectionFunction service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
+        /// The entity size limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this Amazon Web Services Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateConnectionFunction">REST API Reference for UpdateConnectionFunction Operation</seealso>
+        public virtual Task<UpdateConnectionFunctionResponse> UpdateConnectionFunctionAsync(UpdateConnectionFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionFunctionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateConnectionFunctionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -15697,6 +16673,77 @@ namespace Amazon.CloudFront
             options.ResponseUnmarshaller = UpdateStreamingDistributionResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateStreamingDistributionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateTrustStore
+
+
+        /// <summary>
+        /// Updates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustStore service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateTrustStore">REST API Reference for UpdateTrustStore Operation</seealso>
+        public virtual UpdateTrustStoreResponse UpdateTrustStore(UpdateTrustStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustStoreResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTrustStoreResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a trust store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTrustStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTrustStore service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateTrustStore">REST API Reference for UpdateTrustStore Operation</seealso>
+        public virtual Task<UpdateTrustStoreResponse> UpdateTrustStoreAsync(UpdateTrustStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTrustStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTrustStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateTrustStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion

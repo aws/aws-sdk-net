@@ -45,6 +45,14 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Paginator for ListConnectionFunctions operation
+        ///</summary>
+        public IListConnectionFunctionsPaginator ListConnectionFunctions(ListConnectionFunctionsRequest request) 
+        {
+            return new ListConnectionFunctionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListConnectionGroups operation
         ///</summary>
         public IListConnectionGroupsPaginator ListConnectionGroups(ListConnectionGroupsRequest request) 
@@ -61,11 +69,27 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Paginator for ListDistributionsByConnectionFunction operation
+        ///</summary>
+        public IListDistributionsByConnectionFunctionPaginator ListDistributionsByConnectionFunction(ListDistributionsByConnectionFunctionRequest request) 
+        {
+            return new ListDistributionsByConnectionFunctionPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDistributionsByConnectionMode operation
         ///</summary>
         public IListDistributionsByConnectionModePaginator ListDistributionsByConnectionMode(ListDistributionsByConnectionModeRequest request) 
         {
             return new ListDistributionsByConnectionModePaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDistributionsByTrustStore operation
+        ///</summary>
+        public IListDistributionsByTrustStorePaginator ListDistributionsByTrustStore(ListDistributionsByTrustStoreRequest request) 
+        {
+            return new ListDistributionsByTrustStorePaginator(this.client, request);
         }
 
         /// <summary>
@@ -138,6 +162,14 @@ namespace Amazon.CloudFront.Model
         public IListStreamingDistributionsPaginator ListStreamingDistributions(ListStreamingDistributionsRequest request) 
         {
             return new ListStreamingDistributionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTrustStores operation
+        ///</summary>
+        public IListTrustStoresPaginator ListTrustStores(ListTrustStoresRequest request) 
+        {
+            return new ListTrustStoresPaginator(this.client, request);
         }
     }
 }
