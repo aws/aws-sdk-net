@@ -31,7 +31,7 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the ListObjects operation.
-    /// <note> 
+    /// <important> 
     /// <para>
     /// This operation is not supported for directory buckets.
     /// </para>
