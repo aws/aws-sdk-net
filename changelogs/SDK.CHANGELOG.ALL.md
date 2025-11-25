@@ -1,3 +1,13 @@
+### 4.0.141.0 (2025-11-25 19:21 UTC)
+* EC2 (4.0.61.0)
+	* This release adds support to view Network firewall proxy appliances attached to an existing NAT Gateway via DescribeNatGateways API NatGatewayAttachedAppliance structure.
+* NetworkFirewall (4.0.10.0)
+	* Network Firewall release of the Proxy feature.
+* Organizations (4.0.9.0)
+	* Add support for policy operations on the S3_POLICY and BEDROCK_POLICY policy type.
+* Route53 (4.0.7.0)
+	* Adds support for new route53 feature: accelerated recovery.
+
 ### 4.0.140.0 (2025-11-24 19:14 UTC)
 * CloudFront (4.0.10.0)
 	* Add TrustStore, ConnectionFunction APIs to CloudFront SDK
