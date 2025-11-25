@@ -32,7 +32,7 @@ namespace Amazon.EKSAuth
     public partial class AmazonEKSAuthConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EKS Auth", "3.7.501.8");
+            InternalSDKUtils.BuildUserAgentString("EKS Auth", "3.7.501.9");
 
         private string _userAgent = UserAgentString;
         ///<summary>

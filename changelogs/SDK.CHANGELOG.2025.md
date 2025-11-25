@@ -1,3 +1,16 @@
+### 3.7.1173.0 (2025-11-25 19:22 UTC)
+* EC2 (3.7.535.0)
+	* This release adds support to view Network firewall proxy appliances attached to an existing NAT Gateway via DescribeNatGateways API NatGatewayAttachedAppliance structure.
+* NetworkFirewall (3.7.506.0)
+	* Network Firewall release of the Proxy feature.
+* Organizations (3.7.508.0)
+	* Add support for policy operations on the S3_POLICY and BEDROCK_POLICY policy type.
+* Route53 (3.7.505.0)
+	* Adds support for new route53 feature: accelerated recovery.
+* Core 3.7.500.49
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1172.0 (2025-11-24 19:16 UTC)
 * CloudFront (3.7.508.0)
 	* Add TrustStore, ConnectionFunction APIs to CloudFront SDK

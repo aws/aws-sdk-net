@@ -32,7 +32,7 @@ namespace Amazon.GroundStation
     public partial class AmazonGroundStationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("GroundStation", "3.7.502.6");
+            InternalSDKUtils.BuildUserAgentString("GroundStation", "3.7.502.7");
 
         private string _userAgent = UserAgentString;
         ///<summary>
