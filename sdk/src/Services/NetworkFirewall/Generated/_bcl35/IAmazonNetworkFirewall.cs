@@ -519,6 +519,81 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  AttachRuleGroupsToProxyConfiguration
+
+
+        /// <summary>
+        /// Attaches <a>ProxyRuleGroup</a> resources to a <a>ProxyConfiguration</a> 
+        /// 
+        ///  
+        /// <para>
+        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
+        /// The details of the behavior are defined in the rule groups that you add to your configuration.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachRuleGroupsToProxyConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the AttachRuleGroupsToProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AttachRuleGroupsToProxyConfiguration">REST API Reference for AttachRuleGroupsToProxyConfiguration Operation</seealso>
+        AttachRuleGroupsToProxyConfigurationResponse AttachRuleGroupsToProxyConfiguration(AttachRuleGroupsToProxyConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AttachRuleGroupsToProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AttachRuleGroupsToProxyConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachRuleGroupsToProxyConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AttachRuleGroupsToProxyConfiguration">REST API Reference for AttachRuleGroupsToProxyConfiguration Operation</seealso>
+        IAsyncResult BeginAttachRuleGroupsToProxyConfiguration(AttachRuleGroupsToProxyConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AttachRuleGroupsToProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachRuleGroupsToProxyConfiguration.</param>
+        /// 
+        /// <returns>Returns a  AttachRuleGroupsToProxyConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AttachRuleGroupsToProxyConfiguration">REST API Reference for AttachRuleGroupsToProxyConfiguration Operation</seealso>
+        AttachRuleGroupsToProxyConfigurationResponse EndAttachRuleGroupsToProxyConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateFirewall
 
 
@@ -704,6 +779,345 @@ namespace Amazon.NetworkFirewall
         /// <returns>Returns a  CreateFirewallPolicyResult from NetworkFirewall.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewallPolicy">REST API Reference for CreateFirewallPolicy Operation</seealso>
         CreateFirewallPolicyResponse EndCreateFirewallPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateProxy
+
+
+        /// <summary>
+        /// Creates an Network Firewall <a>Proxy</a> 
+        /// 
+        ///  
+        /// <para>
+        /// Attaches a Proxy configuration to a NAT Gateway. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To manage a proxy's tags, use the standard Amazon Web Services resource tagging operations,
+        /// <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about proxies, use <a>ListProxies</a> and <a>DescribeProxy</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxy service method.</param>
+        /// 
+        /// <returns>The response from the CreateProxy service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.UnsupportedOperationException">
+        /// The operation you requested isn't supported by Network Firewall.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxy">REST API Reference for CreateProxy Operation</seealso>
+        CreateProxyResponse CreateProxy(CreateProxyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxy operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProxy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxy">REST API Reference for CreateProxy Operation</seealso>
+        IAsyncResult BeginCreateProxy(CreateProxyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProxy.</param>
+        /// 
+        /// <returns>Returns a  CreateProxyResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxy">REST API Reference for CreateProxy Operation</seealso>
+        CreateProxyResponse EndCreateProxy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateProxyConfiguration
+
+
+        /// <summary>
+        /// Creates an Network Firewall <a>ProxyConfiguration</a> 
+        /// 
+        ///  
+        /// <para>
+        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
+        /// The details of the behavior are defined in the rule groups that you add to your configuration.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To manage a proxy configuration's tags, use the standard Amazon Web Services resource
+        /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about proxies, use <a>ListProxyConfigurations</a> and <a>DescribeProxyConfiguration</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxyConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyConfiguration">REST API Reference for CreateProxyConfiguration Operation</seealso>
+        CreateProxyConfigurationResponse CreateProxyConfiguration(CreateProxyConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxyConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProxyConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyConfiguration">REST API Reference for CreateProxyConfiguration Operation</seealso>
+        IAsyncResult BeginCreateProxyConfiguration(CreateProxyConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProxyConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateProxyConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyConfiguration">REST API Reference for CreateProxyConfiguration Operation</seealso>
+        CreateProxyConfigurationResponse EndCreateProxyConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateProxyRuleGroup
+
+
+        /// <summary>
+        /// Creates an Network Firewall <a>ProxyRuleGroup</a> 
+        /// 
+        ///  
+        /// <para>
+        /// Collections of related proxy filtering rules. Rule groups help you manage and reuse
+        /// sets of rules across multiple proxy configurations. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To manage a proxy rule group's tags, use the standard Amazon Web Services resource
+        /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about proxy rule groups, use <a>ListProxyRuleGroups</a> and
+        /// <a>DescribeProxyRuleGroup</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about individual proxy rules, use <a>DescribeProxyRuleGroup</a>
+        /// and <a>DescribeProxyRule</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxyRuleGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRuleGroup">REST API Reference for CreateProxyRuleGroup Operation</seealso>
+        CreateProxyRuleGroupResponse CreateProxyRuleGroup(CreateProxyRuleGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProxyRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxyRuleGroup operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProxyRuleGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRuleGroup">REST API Reference for CreateProxyRuleGroup Operation</seealso>
+        IAsyncResult BeginCreateProxyRuleGroup(CreateProxyRuleGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProxyRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProxyRuleGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateProxyRuleGroupResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRuleGroup">REST API Reference for CreateProxyRuleGroup Operation</seealso>
+        CreateProxyRuleGroupResponse EndCreateProxyRuleGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateProxyRules
+
+
+        /// <summary>
+        /// Creates Network Firewall <a>ProxyRule</a> resources. 
+        /// 
+        ///  
+        /// <para>
+        /// Attaches new proxy rule(s) to an existing proxy rule group. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about individual proxy rules, use <a>DescribeProxyRuleGroup</a>
+        /// and <a>DescribeProxyRule</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxyRules service method.</param>
+        /// 
+        /// <returns>The response from the CreateProxyRules service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRules">REST API Reference for CreateProxyRules Operation</seealso>
+        CreateProxyRulesResponse CreateProxyRules(CreateProxyRulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProxyRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProxyRules operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProxyRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRules">REST API Reference for CreateProxyRules Operation</seealso>
+        IAsyncResult BeginCreateProxyRules(CreateProxyRulesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProxyRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProxyRules.</param>
+        /// 
+        /// <returns>Returns a  CreateProxyRulesResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateProxyRules">REST API Reference for CreateProxyRules Operation</seealso>
+        CreateProxyRulesResponse EndCreateProxyRules(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1213,6 +1627,286 @@ namespace Amazon.NetworkFirewall
         /// <returns>Returns a  DeleteNetworkFirewallTransitGatewayAttachmentResult from NetworkFirewall.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteNetworkFirewallTransitGatewayAttachment">REST API Reference for DeleteNetworkFirewallTransitGatewayAttachment Operation</seealso>
         DeleteNetworkFirewallTransitGatewayAttachmentResponse EndDeleteNetworkFirewallTransitGatewayAttachment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteProxy
+
+
+        /// <summary>
+        /// Deletes the specified <a>Proxy</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// Detaches a Proxy configuration from a NAT Gateway. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProxy service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.UnsupportedOperationException">
+        /// The operation you requested isn't supported by Network Firewall.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxy">REST API Reference for DeleteProxy Operation</seealso>
+        DeleteProxyResponse DeleteProxy(DeleteProxyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxy operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProxy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxy">REST API Reference for DeleteProxy Operation</seealso>
+        IAsyncResult BeginDeleteProxy(DeleteProxyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProxy.</param>
+        /// 
+        /// <returns>Returns a  DeleteProxyResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxy">REST API Reference for DeleteProxy Operation</seealso>
+        DeleteProxyResponse EndDeleteProxy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteProxyConfiguration
+
+
+        /// <summary>
+        /// Deletes the specified <a>ProxyConfiguration</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyConfiguration">REST API Reference for DeleteProxyConfiguration Operation</seealso>
+        DeleteProxyConfigurationResponse DeleteProxyConfiguration(DeleteProxyConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProxyConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyConfiguration">REST API Reference for DeleteProxyConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteProxyConfiguration(DeleteProxyConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProxyConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteProxyConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyConfiguration">REST API Reference for DeleteProxyConfiguration Operation</seealso>
+        DeleteProxyConfigurationResponse EndDeleteProxyConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteProxyRuleGroup
+
+
+        /// <summary>
+        /// Deletes the specified <a>ProxyRuleGroup</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyRuleGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRuleGroup">REST API Reference for DeleteProxyRuleGroup Operation</seealso>
+        DeleteProxyRuleGroupResponse DeleteProxyRuleGroup(DeleteProxyRuleGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProxyRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyRuleGroup operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProxyRuleGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRuleGroup">REST API Reference for DeleteProxyRuleGroup Operation</seealso>
+        IAsyncResult BeginDeleteProxyRuleGroup(DeleteProxyRuleGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProxyRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProxyRuleGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteProxyRuleGroupResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRuleGroup">REST API Reference for DeleteProxyRuleGroup Operation</seealso>
+        DeleteProxyRuleGroupResponse EndDeleteProxyRuleGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteProxyRules
+
+
+        /// <summary>
+        /// Deletes the specified <a>ProxyRule</a>(s). currently attached to a <a>ProxyRuleGroup</a>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyRules service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProxyRules service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRules">REST API Reference for DeleteProxyRules Operation</seealso>
+        DeleteProxyRulesResponse DeleteProxyRules(DeleteProxyRulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProxyRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProxyRules operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProxyRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRules">REST API Reference for DeleteProxyRules Operation</seealso>
+        IAsyncResult BeginDeleteProxyRules(DeleteProxyRulesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProxyRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProxyRules.</param>
+        /// 
+        /// <returns>Returns a  DeleteProxyRulesResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteProxyRules">REST API Reference for DeleteProxyRules Operation</seealso>
+        DeleteProxyRulesResponse EndDeleteProxyRules(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1858,6 +2552,279 @@ namespace Amazon.NetworkFirewall
 
         #endregion
         
+        #region  DescribeProxy
+
+
+        /// <summary>
+        /// Returns the data objects for the specified proxy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxy service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProxy service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxy">REST API Reference for DescribeProxy Operation</seealso>
+        DescribeProxyResponse DescribeProxy(DescribeProxyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxy operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProxy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxy">REST API Reference for DescribeProxy Operation</seealso>
+        IAsyncResult BeginDescribeProxy(DescribeProxyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProxy.</param>
+        /// 
+        /// <returns>Returns a  DescribeProxyResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxy">REST API Reference for DescribeProxy Operation</seealso>
+        DescribeProxyResponse EndDescribeProxy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeProxyConfiguration
+
+
+        /// <summary>
+        /// Returns the data objects for the specified proxy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyConfiguration">REST API Reference for DescribeProxyConfiguration Operation</seealso>
+        DescribeProxyConfigurationResponse DescribeProxyConfiguration(DescribeProxyConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProxyConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyConfiguration">REST API Reference for DescribeProxyConfiguration Operation</seealso>
+        IAsyncResult BeginDescribeProxyConfiguration(DescribeProxyConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProxyConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeProxyConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyConfiguration">REST API Reference for DescribeProxyConfiguration Operation</seealso>
+        DescribeProxyConfigurationResponse EndDescribeProxyConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeProxyRule
+
+
+        /// <summary>
+        /// Returns the data objects for the specified proxy configuration for the specified proxy
+        /// rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyRule service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProxyRule service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRule">REST API Reference for DescribeProxyRule Operation</seealso>
+        DescribeProxyRuleResponse DescribeProxyRule(DescribeProxyRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProxyRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyRule operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProxyRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRule">REST API Reference for DescribeProxyRule Operation</seealso>
+        IAsyncResult BeginDescribeProxyRule(DescribeProxyRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProxyRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProxyRule.</param>
+        /// 
+        /// <returns>Returns a  DescribeProxyRuleResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRule">REST API Reference for DescribeProxyRule Operation</seealso>
+        DescribeProxyRuleResponse EndDescribeProxyRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeProxyRuleGroup
+
+
+        /// <summary>
+        /// Returns the data objects for the specified proxy rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyRuleGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProxyRuleGroup service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRuleGroup">REST API Reference for DescribeProxyRuleGroup Operation</seealso>
+        DescribeProxyRuleGroupResponse DescribeProxyRuleGroup(DescribeProxyRuleGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProxyRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProxyRuleGroup operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProxyRuleGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRuleGroup">REST API Reference for DescribeProxyRuleGroup Operation</seealso>
+        IAsyncResult BeginDescribeProxyRuleGroup(DescribeProxyRuleGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeProxyRuleGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProxyRuleGroup.</param>
+        /// 
+        /// <returns>Returns a  DescribeProxyRuleGroupResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeProxyRuleGroup">REST API Reference for DescribeProxyRuleGroup Operation</seealso>
+        DescribeProxyRuleGroupResponse EndDescribeProxyRuleGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeResourcePolicy
 
 
@@ -2278,6 +3245,81 @@ namespace Amazon.NetworkFirewall
         /// <returns>Returns a  DescribeVpcEndpointAssociationResult from NetworkFirewall.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeVpcEndpointAssociation">REST API Reference for DescribeVpcEndpointAssociation Operation</seealso>
         DescribeVpcEndpointAssociationResponse EndDescribeVpcEndpointAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DetachRuleGroupsFromProxyConfiguration
+
+
+        /// <summary>
+        /// Detaches <a>ProxyRuleGroup</a> resources from a <a>ProxyConfiguration</a> 
+        /// 
+        ///  
+        /// <para>
+        /// A Proxy Configuration defines the monitoring and protection behavior for a Proxy.
+        /// The details of the behavior are defined in the rule groups that you add to your configuration.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachRuleGroupsFromProxyConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DetachRuleGroupsFromProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DetachRuleGroupsFromProxyConfiguration">REST API Reference for DetachRuleGroupsFromProxyConfiguration Operation</seealso>
+        DetachRuleGroupsFromProxyConfigurationResponse DetachRuleGroupsFromProxyConfiguration(DetachRuleGroupsFromProxyConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DetachRuleGroupsFromProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DetachRuleGroupsFromProxyConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachRuleGroupsFromProxyConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DetachRuleGroupsFromProxyConfiguration">REST API Reference for DetachRuleGroupsFromProxyConfiguration Operation</seealso>
+        IAsyncResult BeginDetachRuleGroupsFromProxyConfiguration(DetachRuleGroupsFromProxyConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DetachRuleGroupsFromProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachRuleGroupsFromProxyConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DetachRuleGroupsFromProxyConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DetachRuleGroupsFromProxyConfiguration">REST API Reference for DetachRuleGroupsFromProxyConfiguration Operation</seealso>
+        DetachRuleGroupsFromProxyConfigurationResponse EndDetachRuleGroupsFromProxyConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2885,6 +3927,213 @@ namespace Amazon.NetworkFirewall
         /// <returns>Returns a  ListFlowOperationsResult from NetworkFirewall.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFlowOperations">REST API Reference for ListFlowOperations Operation</seealso>
         ListFlowOperationsResponse EndListFlowOperations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListProxies
+
+
+        /// <summary>
+        /// Retrieves the metadata for the proxies that you have defined. Depending on your setting
+        /// for max results and the number of proxies, a single call might not return the full
+        /// list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProxies service method.</param>
+        /// 
+        /// <returns>The response from the ListProxies service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxies">REST API Reference for ListProxies Operation</seealso>
+        ListProxiesResponse ListProxies(ListProxiesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProxies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProxies operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProxies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxies">REST API Reference for ListProxies Operation</seealso>
+        IAsyncResult BeginListProxies(ListProxiesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProxies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProxies.</param>
+        /// 
+        /// <returns>Returns a  ListProxiesResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxies">REST API Reference for ListProxies Operation</seealso>
+        ListProxiesResponse EndListProxies(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListProxyConfigurations
+
+
+        /// <summary>
+        /// Retrieves the metadata for the proxy configuration that you have defined. Depending
+        /// on your setting for max results and the number of proxy configurations, a single call
+        /// might not return the full list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProxyConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListProxyConfigurations service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyConfigurations">REST API Reference for ListProxyConfigurations Operation</seealso>
+        ListProxyConfigurationsResponse ListProxyConfigurations(ListProxyConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProxyConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProxyConfigurations operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProxyConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyConfigurations">REST API Reference for ListProxyConfigurations Operation</seealso>
+        IAsyncResult BeginListProxyConfigurations(ListProxyConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProxyConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProxyConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListProxyConfigurationsResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyConfigurations">REST API Reference for ListProxyConfigurations Operation</seealso>
+        ListProxyConfigurationsResponse EndListProxyConfigurations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListProxyRuleGroups
+
+
+        /// <summary>
+        /// Retrieves the metadata for the proxy rule groups that you have defined. Depending
+        /// on your setting for max results and the number of proxy rule groups, a single call
+        /// might not return the full list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProxyRuleGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListProxyRuleGroups service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyRuleGroups">REST API Reference for ListProxyRuleGroups Operation</seealso>
+        ListProxyRuleGroupsResponse ListProxyRuleGroups(ListProxyRuleGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProxyRuleGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProxyRuleGroups operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProxyRuleGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyRuleGroups">REST API Reference for ListProxyRuleGroups Operation</seealso>
+        IAsyncResult BeginListProxyRuleGroups(ListProxyRuleGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProxyRuleGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProxyRuleGroups.</param>
+        /// 
+        /// <returns>Returns a  ListProxyRuleGroupsResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListProxyRuleGroups">REST API Reference for ListProxyRuleGroups Operation</seealso>
+        ListProxyRuleGroupsResponse EndListProxyRuleGroups(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4390,6 +5639,349 @@ namespace Amazon.NetworkFirewall
         /// <returns>Returns a  UpdateLoggingConfigurationResult from NetworkFirewall.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateLoggingConfiguration">REST API Reference for UpdateLoggingConfiguration Operation</seealso>
         UpdateLoggingConfigurationResponse EndUpdateLoggingConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProxy
+
+
+        /// <summary>
+        /// Updates the properties of the specified proxy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProxy service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.UnsupportedOperationException">
+        /// The operation you requested isn't supported by Network Firewall.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxy">REST API Reference for UpdateProxy Operation</seealso>
+        UpdateProxyResponse UpdateProxy(UpdateProxyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxy operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProxy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxy">REST API Reference for UpdateProxy Operation</seealso>
+        IAsyncResult BeginUpdateProxy(UpdateProxyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProxy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProxy.</param>
+        /// 
+        /// <returns>Returns a  UpdateProxyResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxy">REST API Reference for UpdateProxy Operation</seealso>
+        UpdateProxyResponse EndUpdateProxy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProxyConfiguration
+
+
+        /// <summary>
+        /// Updates the properties of the specified proxy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProxyConfiguration service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyConfiguration">REST API Reference for UpdateProxyConfiguration Operation</seealso>
+        UpdateProxyConfigurationResponse UpdateProxyConfiguration(UpdateProxyConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyConfiguration operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProxyConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyConfiguration">REST API Reference for UpdateProxyConfiguration Operation</seealso>
+        IAsyncResult BeginUpdateProxyConfiguration(UpdateProxyConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProxyConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProxyConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdateProxyConfigurationResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyConfiguration">REST API Reference for UpdateProxyConfiguration Operation</seealso>
+        UpdateProxyConfigurationResponse EndUpdateProxyConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProxyRule
+
+
+        /// <summary>
+        /// Updates the properties of the specified proxy rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProxyRule service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRule">REST API Reference for UpdateProxyRule Operation</seealso>
+        UpdateProxyRuleResponse UpdateProxyRule(UpdateProxyRuleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProxyRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRule operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProxyRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRule">REST API Reference for UpdateProxyRule Operation</seealso>
+        IAsyncResult BeginUpdateProxyRule(UpdateProxyRuleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProxyRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProxyRule.</param>
+        /// 
+        /// <returns>Returns a  UpdateProxyRuleResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRule">REST API Reference for UpdateProxyRule Operation</seealso>
+        UpdateProxyRuleResponse EndUpdateProxyRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProxyRuleGroupPriorities
+
+
+        /// <summary>
+        /// Updates proxy rule group priorities within a proxy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRuleGroupPriorities service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProxyRuleGroupPriorities service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRuleGroupPriorities">REST API Reference for UpdateProxyRuleGroupPriorities Operation</seealso>
+        UpdateProxyRuleGroupPrioritiesResponse UpdateProxyRuleGroupPriorities(UpdateProxyRuleGroupPrioritiesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProxyRuleGroupPriorities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRuleGroupPriorities operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProxyRuleGroupPriorities
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRuleGroupPriorities">REST API Reference for UpdateProxyRuleGroupPriorities Operation</seealso>
+        IAsyncResult BeginUpdateProxyRuleGroupPriorities(UpdateProxyRuleGroupPrioritiesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProxyRuleGroupPriorities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProxyRuleGroupPriorities.</param>
+        /// 
+        /// <returns>Returns a  UpdateProxyRuleGroupPrioritiesResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRuleGroupPriorities">REST API Reference for UpdateProxyRuleGroupPriorities Operation</seealso>
+        UpdateProxyRuleGroupPrioritiesResponse EndUpdateProxyRuleGroupPriorities(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateProxyRulePriorities
+
+
+        /// <summary>
+        /// Updates proxy rule priorities within a proxy rule group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRulePriorities service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProxyRulePriorities service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRulePriorities">REST API Reference for UpdateProxyRulePriorities Operation</seealso>
+        UpdateProxyRulePrioritiesResponse UpdateProxyRulePriorities(UpdateProxyRulePrioritiesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProxyRulePriorities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProxyRulePriorities operation on AmazonNetworkFirewallClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProxyRulePriorities
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRulePriorities">REST API Reference for UpdateProxyRulePriorities Operation</seealso>
+        IAsyncResult BeginUpdateProxyRulePriorities(UpdateProxyRulePrioritiesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProxyRulePriorities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProxyRulePriorities.</param>
+        /// 
+        /// <returns>Returns a  UpdateProxyRulePrioritiesResult from NetworkFirewall.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateProxyRulePriorities">REST API Reference for UpdateProxyRulePriorities Operation</seealso>
+        UpdateProxyRulePrioritiesResponse EndUpdateProxyRulePriorities(IAsyncResult asyncResult);
 
         #endregion
         

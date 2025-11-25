@@ -569,6 +569,56 @@ namespace Amazon.NetworkFirewall
 
 
     /// <summary>
+    /// Constants used for properties of type ListenerPropertyType.
+    /// </summary>
+    public class ListenerPropertyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTTP for ListenerPropertyType
+        /// </summary>
+        public static readonly ListenerPropertyType HTTP = new ListenerPropertyType("HTTP");
+        /// <summary>
+        /// Constant HTTPS for ListenerPropertyType
+        /// </summary>
+        public static readonly ListenerPropertyType HTTPS = new ListenerPropertyType("HTTPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListenerPropertyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListenerPropertyType FindValue(string value)
+        {
+            return FindValue<ListenerPropertyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListenerPropertyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogDestinationType.
     /// </summary>
     public class LogDestinationType : ConstantClass
@@ -785,6 +835,180 @@ namespace Amazon.NetworkFirewall
 
 
     /// <summary>
+    /// Constants used for properties of type ProxyModifyState.
+    /// </summary>
+    public class ProxyModifyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ProxyModifyState
+        /// </summary>
+        public static readonly ProxyModifyState COMPLETED = new ProxyModifyState("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for ProxyModifyState
+        /// </summary>
+        public static readonly ProxyModifyState FAILED = new ProxyModifyState("FAILED");
+        /// <summary>
+        /// Constant MODIFYING for ProxyModifyState
+        /// </summary>
+        public static readonly ProxyModifyState MODIFYING = new ProxyModifyState("MODIFYING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProxyModifyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProxyModifyState FindValue(string value)
+        {
+            return FindValue<ProxyModifyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProxyModifyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProxyRulePhaseAction.
+    /// </summary>
+    public class ProxyRulePhaseAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALERT for ProxyRulePhaseAction
+        /// </summary>
+        public static readonly ProxyRulePhaseAction ALERT = new ProxyRulePhaseAction("ALERT");
+        /// <summary>
+        /// Constant ALLOW for ProxyRulePhaseAction
+        /// </summary>
+        public static readonly ProxyRulePhaseAction ALLOW = new ProxyRulePhaseAction("ALLOW");
+        /// <summary>
+        /// Constant DENY for ProxyRulePhaseAction
+        /// </summary>
+        public static readonly ProxyRulePhaseAction DENY = new ProxyRulePhaseAction("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProxyRulePhaseAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProxyRulePhaseAction FindValue(string value)
+        {
+            return FindValue<ProxyRulePhaseAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProxyRulePhaseAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProxyState.
+    /// </summary>
+    public class ProxyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACH_FAILED for ProxyState
+        /// </summary>
+        public static readonly ProxyState ATTACH_FAILED = new ProxyState("ATTACH_FAILED");
+        /// <summary>
+        /// Constant ATTACHED for ProxyState
+        /// </summary>
+        public static readonly ProxyState ATTACHED = new ProxyState("ATTACHED");
+        /// <summary>
+        /// Constant ATTACHING for ProxyState
+        /// </summary>
+        public static readonly ProxyState ATTACHING = new ProxyState("ATTACHING");
+        /// <summary>
+        /// Constant DETACH_FAILED for ProxyState
+        /// </summary>
+        public static readonly ProxyState DETACH_FAILED = new ProxyState("DETACH_FAILED");
+        /// <summary>
+        /// Constant DETACHED for ProxyState
+        /// </summary>
+        public static readonly ProxyState DETACHED = new ProxyState("DETACHED");
+        /// <summary>
+        /// Constant DETACHING for ProxyState
+        /// </summary>
+        public static readonly ProxyState DETACHING = new ProxyState("DETACHING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProxyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProxyState FindValue(string value)
+        {
+            return FindValue<ProxyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProxyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceManagedStatus.
     /// </summary>
     public class ResourceManagedStatus : ConstantClass
@@ -994,6 +1218,60 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RevocationCheckAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleGroupRequestPhase.
+    /// </summary>
+    public class RuleGroupRequestPhase : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POST_RES for RuleGroupRequestPhase
+        /// </summary>
+        public static readonly RuleGroupRequestPhase POST_RES = new RuleGroupRequestPhase("POST_RES");
+        /// <summary>
+        /// Constant PRE_DNS for RuleGroupRequestPhase
+        /// </summary>
+        public static readonly RuleGroupRequestPhase PRE_DNS = new RuleGroupRequestPhase("PRE_DNS");
+        /// <summary>
+        /// Constant PRE_REQ for RuleGroupRequestPhase
+        /// </summary>
+        public static readonly RuleGroupRequestPhase PRE_REQ = new RuleGroupRequestPhase("PRE_REQ");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleGroupRequestPhase(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleGroupRequestPhase FindValue(string value)
+        {
+            return FindValue<RuleGroupRequestPhase>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleGroupRequestPhase(string value)
         {
             return FindValue(value);
         }
@@ -1610,6 +1888,56 @@ namespace Amazon.NetworkFirewall
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TCPFlag(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TlsInterceptMode.
+    /// </summary>
+    public class TlsInterceptMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for TlsInterceptMode
+        /// </summary>
+        public static readonly TlsInterceptMode DISABLED = new TlsInterceptMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for TlsInterceptMode
+        /// </summary>
+        public static readonly TlsInterceptMode ENABLED = new TlsInterceptMode("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TlsInterceptMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TlsInterceptMode FindValue(string value)
+        {
+            return FindValue<TlsInterceptMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TlsInterceptMode(string value)
         {
             return FindValue(value);
         }
