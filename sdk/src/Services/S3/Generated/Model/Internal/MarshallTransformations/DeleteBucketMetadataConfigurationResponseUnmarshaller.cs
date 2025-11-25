@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteBucketMetadataConfiguration operation
     /// </summary>  
-    public class DeleteBucketMetadataConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
+    public partial class DeleteBucketMetadataConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -47,6 +47,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             DeleteBucketMetadataConfigurationResponse response = new DeleteBucketMetadataConfigurationResponse();
             
+            PostUnmarshallCustomization(context, response);
             return response;
         }        
   
@@ -60,7 +61,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            S3ErrorResponse errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
@@ -70,11 +71,17 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
             }
-            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
+
+        partial void PostUnmarshallCustomization(XmlUnmarshallerContext context, DeleteBucketMetadataConfigurationResponse response);
 
         private static DeleteBucketMetadataConfigurationResponseUnmarshaller _instance = new DeleteBucketMetadataConfigurationResponseUnmarshaller();        
 
+        internal static DeleteBucketMetadataConfigurationResponseUnmarshaller GetInstance()
+        {
+            return _instance;
+        }
 
         /// <summary>
         /// Gets the singleton.
