@@ -55,6 +55,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("attachedApplianceSet/item", targetDepth))
+                    {
+                        var unmarshaller = NatGatewayAttachedApplianceUnmarshaller.Instance;
+                        if (unmarshalledObject.AttachedAppliances == null)
+                        {
+                            unmarshalledObject.AttachedAppliances = new List<NatGatewayAttachedAppliance>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AttachedAppliances.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("autoProvisionZones", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
