@@ -1224,6 +1224,37 @@
                     "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
                 }
             ]
+        },
+        "ListObjectsRequest":{
+            "modify":[
+                {
+                    "EncodingType":{"emitPropertyName":"Encoding"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "ListObjectsOutput":{
+            "modify":[
+                {
+                    "Contents":{
+                        "emitPropertyName":"S3Objects"
+                    }
+                },
+                {
+                    "S3Objects":{
+                        "injectXmlUnmarshallCode":["ContentsCustomUnmarshall(context, response);"],
+                        "skipContextTestExpressionUnmarshallingLogic" : true
+                    }
+                },
+                {
+                    "NextMarker":{"injectXmlPropertyGetter":["get { return NextMarkerCustomGetter(); }"]}
+                },
+                {
+                    "EncodingType":{"emitPropertyName":"Encoding"}
+                }
+            ]
         }
         
     },
@@ -1520,6 +1551,13 @@
                 "Type": "string",
                 "Marshaller": "StringUtils.FromString",
                 "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "ListObjectsOutput": {
+            "CommonPrefixes" : {
+                "Type": "List<string>",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller" : "CommonPrefixesItemUnmarshaller"
             }
         }
     },
