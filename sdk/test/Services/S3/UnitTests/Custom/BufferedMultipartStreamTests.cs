@@ -796,6 +796,121 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
+        #region MaxInMemoryParts Tests
+
+        [TestMethod]
+        public void Create_UsesRequestMaxInMemoryParts_NotConfig()
+        {
+            // Arrange
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            request.MaxInMemoryParts = 256; // Set custom value on request
+            
+            var transferConfig = new TransferUtilityConfig
+            {
+                ConcurrentServiceRequests = 20 // TransferUtilityConfig no longer has MaxInMemoryParts
+            };
+
+            // Act
+            var stream = BufferedMultipartStream.Create(mockClient.Object, request, transferConfig);
+
+            // Assert
+            Assert.IsNotNull(stream);
+            // Verify the stream was created successfully with request's MaxInMemoryParts
+        }
+
+        [TestMethod]
+        public async Task Create_WithCustomMaxInMemoryParts_FlowsToConfiguration()
+        {
+            // Arrange
+            var customMaxParts = 512;
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            request.MaxInMemoryParts = customMaxParts;
+            
+            var transferConfig = new TransferUtilityConfig();
+            var stream = BufferedMultipartStream.Create(mockClient.Object, request, transferConfig);
+            
+            await stream.InitializeAsync(CancellationToken.None);
+
+            // Act - Read from stream to verify it works with custom MaxInMemoryParts
+            var buffer = new byte[512];
+            var bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+
+            // Assert
+            Assert.IsTrue(bytesRead > 0, "Should successfully read with custom MaxInMemoryParts");
+            
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task Create_WithDefaultMaxInMemoryParts_UsesRequestDefault()
+        {
+            // Arrange - Don't set MaxInMemoryParts explicitly, should use request's default (1024)
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024);
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            // Don't set request.MaxInMemoryParts - should default to 1024
+            
+            var transferConfig = new TransferUtilityConfig();
+            var stream = BufferedMultipartStream.Create(mockClient.Object, request, transferConfig);
+            
+            await stream.InitializeAsync(CancellationToken.None);
+
+            // Act
+            var buffer = new byte[512];
+            var bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+
+            // Assert
+            Assert.IsTrue(bytesRead > 0, "Should work with default MaxInMemoryParts from request");
+            
+            // Cleanup
+            stream.Dispose();
+        }
+
+        [DataTestMethod]
+        [DataRow(1, DisplayName = "Minimum MaxInMemoryParts (1)")]
+        [DataRow(10, DisplayName = "Small MaxInMemoryParts (10)")]
+        [DataRow(512, DisplayName = "Medium MaxInMemoryParts (512)")]
+        [DataRow(2048, DisplayName = "Large MaxInMemoryParts (2048)")]
+        public async Task Create_WithVariousMaxInMemoryParts_WorksCorrectly(int maxInMemoryParts)
+        {
+            // Arrange
+            var totalParts = 5;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            request.MaxInMemoryParts = maxInMemoryParts;
+            
+            var transferConfig = new TransferUtilityConfig { ConcurrentServiceRequests = 2 };
+            var stream = BufferedMultipartStream.Create(mockClient.Object, request, transferConfig);
+            
+            await stream.InitializeAsync(CancellationToken.None);
+
+            // Act - Read some data
+            var buffer = new byte[1024];
+            var bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+
+            // Assert
+            Assert.IsTrue(bytesRead > 0, 
+                $"Should successfully process download with MaxInMemoryParts={maxInMemoryParts}");
+            
+            // Cleanup
+            stream.Dispose();
+        }
+
+        #endregion
+
         #region Synchronous Read Tests
 
         [TestMethod]

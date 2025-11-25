@@ -345,7 +345,8 @@ namespace AWSSDK.UnitTests
             string bucketName = "test-bucket",
             string key = "test-key",
             long? partSize = null,
-            MultipartDownloadType downloadType = MultipartDownloadType.PART)
+            MultipartDownloadType downloadType = MultipartDownloadType.PART,
+            int? maxInMemoryParts = null)
         {
             var request = new TransferUtilityOpenStreamRequest
             {
@@ -357,6 +358,11 @@ namespace AWSSDK.UnitTests
             if (partSize.HasValue)
             {
                 request.PartSize = partSize.Value;
+            }
+            
+            if (maxInMemoryParts.HasValue)
+            {
+                request.MaxInMemoryParts = maxInMemoryParts.Value;
             }
             
             return request;
