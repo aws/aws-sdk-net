@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using SDKDocGenerator.Writers;
 using System.Diagnostics;
 
@@ -120,6 +121,9 @@ namespace SDKDocGenerator
             Info("Generating table of contents entries...");
             TOCWriter.Write();
 
+            Info("Generating sitemap...");
+            GenerateSitemap(options.OutputFolder);
+
             CopyVersionInfoManifest();
 
             if (options.WriteStaticContent)
@@ -188,6 +192,45 @@ namespace SDKDocGenerator
             {
                 throw new Exception($"Failed to find version file at {Options.SDKVersionFilePath}.");
             }
+        }
+
+        /// <summary>
+        /// Generates a sitemap.xml file containing URLs for all content pages.
+        /// This helps search engines discover and index the documentation.
+        /// </summary>
+        private void GenerateSitemap(string outputFolder)
+        {
+            var itemsFolder = Path.Combine(outputFolder, "items");
+            if (!Directory.Exists(itemsFolder))
+            {
+                Info("...skipping sitemap generation, items folder not found");
+                return;
+            }
+
+            var htmlFiles = Directory.GetFiles(itemsFolder, "*.html", SearchOption.AllDirectories);
+            var sitemapPath = Path.Combine(outputFolder, "sitemap.xml");
+            var lastmod = DateTime.UtcNow.ToString("yyyy-MM-dd");
+            const string baseUrl = "https://docs.aws.amazon.com/sdkfornet/v4/apidocs/";
+
+            using (var writer = XmlWriter.Create(sitemapPath, new XmlWriterSettings { Indent = true }))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("urlset", "http://www.sitemaps.org/schemas/sitemap/0.9");
+
+                foreach (var file in htmlFiles)
+                {
+                    var relativePath = file.Substring(outputFolder.Length + 1).Replace('\\', '/');
+                    writer.WriteStartElement("url");
+                    writer.WriteElementString("loc", baseUrl + relativePath);
+                    writer.WriteElementString("lastmod", lastmod);
+                    writer.WriteEndElement();
+                }
+
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+            }
+
+            Info("...wrote {0} URLs to sitemap.xml", htmlFiles.Length);
         }
 
         /// <summary>
