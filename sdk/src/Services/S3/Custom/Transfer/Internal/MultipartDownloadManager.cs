@@ -197,12 +197,15 @@ namespace Amazon.S3.Transfer.Internal
                             discoveryResult.TotalParts);
                         _dataHandler.OnDownloadComplete(null);
                     }
+                    #pragma warning disable CA1031 // Do not catch general exception types
+
                     catch (Exception ex)
                     {
                         _downloadException = ex;
                         Logger.Error(ex, "MultipartDownloadManager: Background download task failed");
                         _dataHandler.OnDownloadComplete(ex);
                     }
+                        #pragma warning restore CA1031 // Do not catch general exception types
                 }, cancellationToken);
 
                 // Return immediately to allow consumer to start reading
@@ -413,6 +416,7 @@ namespace Amazon.S3.Transfer.Internal
                     InitialResponse = firstRangeResponse  // Keep response with stream
                 };
             }
+            
             
             // Parse total object size from ContentRange (e.g., "bytes 0-5242879/52428800" -> 52428800)
             var totalContentLength = ExtractTotalSizeFromContentRange(firstRangeResponse.ContentRange);
