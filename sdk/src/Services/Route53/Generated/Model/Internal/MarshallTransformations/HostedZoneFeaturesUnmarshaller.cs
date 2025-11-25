@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HostedZone Object
+    /// Response Unmarshaller for HostedZoneFeatures Object
     /// </summary>  
-    public class HostedZoneUnmarshaller : IUnmarshaller<HostedZone, XmlUnmarshallerContext>, IUnmarshaller<HostedZone, JsonUnmarshallerContext>
+    public class HostedZoneFeaturesUnmarshaller : IUnmarshaller<HostedZoneFeatures, XmlUnmarshallerContext>, IUnmarshaller<HostedZoneFeatures, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HostedZone Unmarshall(XmlUnmarshallerContext context)
+        public HostedZoneFeatures Unmarshall(XmlUnmarshallerContext context)
         {
-            HostedZone unmarshalledObject = new HostedZone();
+            HostedZoneFeatures unmarshalledObject = new HostedZoneFeatures();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,46 +56,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("Id", targetDepth))
+                    if (context.TestExpression("AcceleratedRecoveryStatus", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AcceleratedRecoveryStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Name", targetDepth))
+                    if (context.TestExpression("FailureReasons", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("CallerReference", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CallerReference = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Config", targetDepth))
-                    {
-                        var unmarshaller = HostedZoneConfigUnmarshaller.Instance;
-                        unmarshalledObject.Config = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ResourceRecordSetCount", targetDepth))
-                    {
-                        var unmarshaller = LongUnmarshaller.Instance;
-                        unmarshalledObject.ResourceRecordSetCount = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("LinkedService", targetDepth))
-                    {
-                        var unmarshaller = LinkedServiceUnmarshaller.Instance;
-                        unmarshalledObject.LinkedService = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Features", targetDepth))
-                    {
-                        var unmarshaller = HostedZoneFeaturesUnmarshaller.Instance;
-                        unmarshalledObject.Features = unmarshaller.Unmarshall(context);
+                        var unmarshaller = HostedZoneFailureReasonsUnmarshaller.Instance;
+                        unmarshalledObject.FailureReasons = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -112,17 +82,17 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public HostedZone Unmarshall(JsonUnmarshallerContext context)
+        public HostedZoneFeatures Unmarshall(JsonUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
 
-        private static HostedZoneUnmarshaller _instance = new HostedZoneUnmarshaller();        
+        private static HostedZoneFeaturesUnmarshaller _instance = new HostedZoneFeaturesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HostedZoneUnmarshaller Instance
+        public static HostedZoneFeaturesUnmarshaller Instance
         {
             get
             {

@@ -25,6 +25,80 @@ namespace Amazon.Route53
 {
 
     /// <summary>
+    /// Constants used for properties of type AcceleratedRecoveryStatus.
+    /// </summary>
+    public class AcceleratedRecoveryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLE_FAILED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus DISABLE_FAILED = new AcceleratedRecoveryStatus("DISABLE_FAILED");
+        /// <summary>
+        /// Constant DISABLED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus DISABLED = new AcceleratedRecoveryStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus DISABLING = new AcceleratedRecoveryStatus("DISABLING");
+        /// <summary>
+        /// Constant DISABLING_HOSTED_ZONE_LOCKED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus DISABLING_HOSTED_ZONE_LOCKED = new AcceleratedRecoveryStatus("DISABLING_HOSTED_ZONE_LOCKED");
+        /// <summary>
+        /// Constant ENABLE_FAILED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus ENABLE_FAILED = new AcceleratedRecoveryStatus("ENABLE_FAILED");
+        /// <summary>
+        /// Constant ENABLED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus ENABLED = new AcceleratedRecoveryStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus ENABLING = new AcceleratedRecoveryStatus("ENABLING");
+        /// <summary>
+        /// Constant ENABLING_HOSTED_ZONE_LOCKED for AcceleratedRecoveryStatus
+        /// </summary>
+        public static readonly AcceleratedRecoveryStatus ENABLING_HOSTED_ZONE_LOCKED = new AcceleratedRecoveryStatus("ENABLING_HOSTED_ZONE_LOCKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcceleratedRecoveryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcceleratedRecoveryStatus FindValue(string value)
+        {
+            return FindValue<AcceleratedRecoveryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcceleratedRecoveryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AccountLimitType.
     /// </summary>
     public class AccountLimitType : ConstantClass

@@ -403,8 +403,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <c>FailureThreshold</c>, the default value is three
-        /// health checks.
+        /// Otherwise, if you don't specify a value for <c>FailureThreshold</c>, the default value
+        /// is three health checks.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

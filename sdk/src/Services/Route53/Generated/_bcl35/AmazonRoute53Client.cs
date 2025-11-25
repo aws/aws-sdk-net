@@ -6377,6 +6377,85 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  UpdateHostedZoneFeatures
+
+        /// <summary>
+        /// Updates the features configuration for a hosted zone. This operation allows you to
+        /// enable or disable specific features for your hosted zone, such as accelerated recovery.
+        /// 
+        ///  
+        /// <para>
+        /// Accelerated recovery enables you to update DNS records in your public hosted zone
+        /// even when the us-east-1 region is unavailable.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneFeatures service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHostedZoneFeatures service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneFeatures">REST API Reference for UpdateHostedZoneFeatures Operation</seealso>
+        public virtual UpdateHostedZoneFeaturesResponse UpdateHostedZoneFeatures(UpdateHostedZoneFeaturesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHostedZoneFeaturesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHostedZoneFeaturesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHostedZoneFeaturesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHostedZoneFeatures operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneFeatures operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHostedZoneFeatures
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneFeatures">REST API Reference for UpdateHostedZoneFeatures Operation</seealso>
+        public virtual IAsyncResult BeginUpdateHostedZoneFeatures(UpdateHostedZoneFeaturesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHostedZoneFeaturesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHostedZoneFeaturesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateHostedZoneFeatures operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateHostedZoneFeatures.</param>
+        /// 
+        /// <returns>Returns a  UpdateHostedZoneFeaturesResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneFeatures">REST API Reference for UpdateHostedZoneFeatures Operation</seealso>
+        public virtual UpdateHostedZoneFeaturesResponse EndUpdateHostedZoneFeatures(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateHostedZoneFeaturesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateTrafficPolicyComment
 
         /// <summary>

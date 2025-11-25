@@ -5061,6 +5061,65 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  UpdateHostedZoneFeatures
+
+        internal virtual UpdateHostedZoneFeaturesResponse UpdateHostedZoneFeatures(UpdateHostedZoneFeaturesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHostedZoneFeaturesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHostedZoneFeaturesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHostedZoneFeaturesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the features configuration for a hosted zone. This operation allows you to
+        /// enable or disable specific features for your hosted zone, such as accelerated recovery.
+        /// 
+        ///  
+        /// <para>
+        /// Accelerated recovery enables you to update DNS records in your public hosted zone
+        /// even when the us-east-1 region is unavailable.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneFeatures service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHostedZoneFeatures service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
+        /// This operation can't be completed because the current account has reached the limit
+        /// on the resource you are trying to create. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the Amazon Web Services Support Center.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneFeatures">REST API Reference for UpdateHostedZoneFeatures Operation</seealso>
+        public virtual Task<UpdateHostedZoneFeaturesResponse> UpdateHostedZoneFeaturesAsync(UpdateHostedZoneFeaturesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateHostedZoneFeaturesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHostedZoneFeaturesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateHostedZoneFeaturesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateTrafficPolicyComment
 
         internal virtual UpdateTrafficPolicyCommentResponse UpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request)
