@@ -209,7 +209,7 @@ namespace Amazon.S3.Transfer
                 CheckForBlockedArn(request.BucketName, "DownloadDirectory");
                 var command = new DownloadDirectoryCommand(this._s3Client, request, this._config);
                 command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
-                await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+                var response = await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
             }
         }
         #endregion

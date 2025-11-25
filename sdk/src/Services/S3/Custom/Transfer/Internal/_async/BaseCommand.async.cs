@@ -31,7 +31,7 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         public abstract Task<TResponse> ExecuteAsync(CancellationToken cancellationToken);
 
-        protected static async Task ExecuteCommandAsync<T>(BaseCommand<T> command, CancellationTokenSource internalCts, SemaphoreSlim throttler) where T : class
+        protected static async Task ExecuteCommandAsync<T>(BaseCommand<T> command, CancellationTokenSource internalCts) where T : class
         {
             try
             {
@@ -47,10 +47,6 @@ namespace Amazon.S3.Transfer.Internal
                     internalCts.Cancel();
                 }
                 throw;
-            }
-            finally
-            {
-                throttler.Release();
             }
         }
     }

@@ -13,7 +13,9 @@
  * permissions and limitations under the License.
  */
 
-using Amazon.Runtime;
+using System;
+using System.Collections.Generic;
+using Amazon.S3.Transfer.Model;
 
 namespace Amazon.S3.Transfer
 {
@@ -23,8 +25,24 @@ namespace Amazon.S3.Transfer
     public class TransferUtilityDownloadDirectoryResponse
     {
         /// <summary>
-        /// The number of objects that have been downloaded
+        /// The number of objects that have been successfully downloaded.
         /// </summary>
         public long ObjectsDownloaded { get; set; }
+
+        /// <summary>
+        /// The number of objects that failed to download. Zero if all succeeded.
+        /// </summary>
+        public long ObjectsFailed { get; set; }
+
+        /// <summary>
+        /// The collection of exceptions encountered when downloading individual objects.
+        /// Only populated when the <see cref="FailurePolicy"/> is <see cref="FailurePolicy.ContinueOnFailure"/>.
+        /// </summary>
+        public IList<Exception> Errors { get; set; }
+
+        /// <summary>
+        /// Overall result of the directory download operation.
+        /// </summary>
+        public DirectoryResult Result { get; set; }
     }
 }
