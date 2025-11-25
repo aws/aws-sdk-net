@@ -533,6 +533,7 @@ namespace AWSSDK.UnitTests
 
             // Act & Assert (exception expected via attribute)
             await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
         }
 
         [TestMethod]
@@ -739,6 +740,7 @@ namespace AWSSDK.UnitTests
 
             // Act
             await coordinator.StartDownloadsAsync(discoveryResult, cts.Token);
+            await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
         }
 
         [TestMethod]
@@ -779,6 +781,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+                await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
             }
             catch (OperationCanceledException)
             {
@@ -823,6 +826,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+                await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
             }
             catch (OperationCanceledException)
             {
@@ -933,6 +937,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+                await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
             }
             catch (OperationCanceledException)
             {
@@ -1009,6 +1014,122 @@ namespace AWSSDK.UnitTests
 
             // Act
             await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
+        }
+
+        #endregion
+
+        #region Deadlock Prevention Tests
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_ReturnsImmediately_PreventsDeadlock()
+        {
+            // Arrange - Create a scenario where buffer would fill during downloads
+            var totalParts = 5;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            // Track download state
+            var downloadsStarted = new System.Collections.Concurrent.ConcurrentBag<int>();
+            var bufferBlockingStarted = new TaskCompletionSource<bool>();
+            
+            var mockDataHandler = new Mock<IPartDataHandler>();
+            
+            // Simulate WaitForCapacityAsync being called (downloads are actively buffering)
+            mockDataHandler
+                .Setup(x => x.WaitForCapacityAsync(It.IsAny<CancellationToken>()))
+                .Returns(() =>
+                {
+                    bufferBlockingStarted.TrySetResult(true);
+                    // Return immediately to allow downloads to proceed
+                    return Task.CompletedTask;
+                });
+            
+            mockDataHandler
+                .Setup(x => x.ProcessPartAsync(It.IsAny<int>(), It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
+                .Callback<int, GetObjectResponse, CancellationToken>((partNum, _, __) => 
+                {
+                    downloadsStarted.Add(partNum);
+                })
+                .Returns(Task.CompletedTask);
+            
+            mockDataHandler
+                .Setup(x => x.OnDownloadComplete(It.IsAny<Exception>()));
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.PART);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration(concurrentRequests: 2);
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
+            
+            var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
+            
+            // Act - StartDownloadsAsync should return immediately (not wait for all downloads)
+            var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            stopwatch.Stop();
+            
+            // Assert - StartDownloadsAsync should return almost immediately
+            // The key is it returns BEFORE all downloads complete, allowing consumer to start reading
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds < 1000, 
+                $"StartDownloadsAsync should return immediately, took {stopwatch.ElapsedMilliseconds}ms");
+            
+            // Verify Part 1 was processed (synchronously during StartDownloadsAsync)
+            Assert.IsTrue(downloadsStarted.Contains(1), "Part 1 should be processed synchronously");
+            
+            // Wait for background downloads to start
+            var bufferCalledTask = Task.WhenAny(bufferBlockingStarted.Task, Task.Delay(2000));
+            await bufferCalledTask;
+            Assert.IsTrue(bufferBlockingStarted.Task.IsCompleted, 
+                "Background downloads should have started after StartDownloadsAsync returned");
+            
+            // Verify DownloadCompletionTask exists and is for background work
+            Assert.IsNotNull(coordinator.DownloadCompletionTask, 
+                "DownloadCompletionTask should be set for multipart downloads");
+            
+            // Wait for all background downloads to complete
+            await coordinator.DownloadCompletionTask;
+            
+            // Verify all parts were eventually processed
+            Assert.AreEqual(totalParts, downloadsStarted.Count, 
+                "All parts should be processed in background");
+        }
+
+        [TestMethod]
+        public async Task StartDownloadsAsync_SinglePart_ReturnsImmediatelyWithoutBackgroundTask()
+        {
+            // Arrange - Single-part downloads should not create background tasks
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client();
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            
+            var mockDataHandler = CreateMockDataHandler();
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, mockDataHandler.Object);
+            
+            var discoveryResult = new DownloadDiscoveryResult
+            {
+                TotalParts = 1,
+                ObjectSize = 1024,
+                InitialResponse = new GetObjectResponse()
+            };
+            
+            // Act
+            var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            stopwatch.Stop();
+            
+            // Assert - Should return immediately for single-part
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds < 100, 
+                $"Single-part download should return immediately, took {stopwatch.ElapsedMilliseconds}ms");
+            
+            // DownloadCompletionTask should be completed immediately (no background work)
+            Assert.IsTrue(coordinator.DownloadCompletionTask.IsCompleted, 
+                "DownloadCompletionTask should be completed for single-part downloads");
+            
+            // Verify OnDownloadComplete was called
+            mockDataHandler.Verify(x => x.OnDownloadComplete(null), Times.Once);
         }
 
         #endregion

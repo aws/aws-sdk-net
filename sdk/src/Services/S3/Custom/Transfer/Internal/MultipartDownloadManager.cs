@@ -48,6 +48,7 @@ namespace Amazon.S3.Transfer.Internal
         private Exception _downloadException;
         private bool _disposed = false;
         private bool _discoveryCompleted = false;
+        private Task _downloadCompletionTask;
 
         private string _savedETag;
         private int _discoveredPartCount;
@@ -85,6 +86,13 @@ namespace Amazon.S3.Transfer.Internal
                 return _downloadException;
             }
         }
+
+        /// <summary>
+        /// Gets a task that completes when all download tasks have finished.
+        /// Returns a completed task for single-part downloads.
+        /// For multipart downloads, this task can be awaited to observe exceptions from background downloads.
+        /// </summary>
+        public Task DownloadCompletionTask => _downloadCompletionTask ?? Task.CompletedTask;
 
         /// <inheritdoc/>
         public async Task<DownloadDiscoveryResult> DiscoverDownloadStrategyAsync(CancellationToken cancellationToken)
@@ -163,30 +171,58 @@ namespace Amazon.S3.Transfer.Internal
                 // Store count before WhenAllOrFirstException (which modifies the list internally)
                 var expectedTaskCount = downloadTasks.Count;
 
-                Logger.DebugFormat("MultipartDownloadManager: Waiting for {0} download tasks to complete", expectedTaskCount);
+                Logger.DebugFormat("MultipartDownloadManager: Starting {0} download tasks in background", expectedTaskCount);
 
-                // Wait for all downloads to complete (fails fast on first exception)
-                await TaskHelpers.WhenAllOrFirstExceptionAsync(downloadTasks, cancellationToken).ConfigureAwait(false);
+                // Check if already cancelled before creating background task
+                cancellationToken.ThrowIfCancellationRequested();
 
-                Logger.DebugFormat("MultipartDownloadManager: All download tasks completed successfully");
-
-                // SEP Part GET Step 6 / Ranged GET Step 8:
-                // "validate that the total number of part GET requests sent matches with the expected PartsCount"
-                // Note: This should always be true if we reach this point, since WhenAllOrFirstException
-                // ensures all tasks completed successfully (or threw on first failure).
-                // The check serves as a defensive assertion for SEP compliance.
-                // Note: expectedTaskCount + 1 accounts for Part 1 being buffered during discovery
-                if (expectedTaskCount + 1 != discoveryResult.TotalParts)
+                // Start background task to wait for all downloads to complete
+                // This allows the method to return immediately so the consumer can start reading
+                // which prevents deadlock when MaxInMemoryParts is reached before consumer begins reading
+                _downloadCompletionTask = Task.Run(async () =>
                 {
-                    throw new InvalidOperationException(
-                        $"Request count mismatch. Expected {discoveryResult.TotalParts} parts, " +
-                        $"but sent {expectedTaskCount + 1} requests");
-                }
+                    try
+                    {
+                        Logger.DebugFormat("MultipartDownloadManager: Background task waiting for {0} download tasks", expectedTaskCount);
+                        
+                        // Wait for all downloads to complete (fails fast on first exception)
+                        await TaskHelpers.WhenAllOrFirstExceptionAsync(downloadTasks, cancellationToken).ConfigureAwait(false);
 
-                // Mark successful completion
-                Logger.InfoFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
-                    discoveryResult.TotalParts);
-                _dataHandler.OnDownloadComplete(null);
+                        Logger.DebugFormat("MultipartDownloadManager: All download tasks completed successfully");
+
+                        // SEP Part GET Step 6 / Ranged GET Step 8:
+                        // "validate that the total number of part GET requests sent matches with the expected PartsCount"
+                        // Note: This should always be true if we reach this point, since WhenAllOrFirstException
+                        // ensures all tasks completed successfully (or threw on first failure).
+                        // The check serves as a defensive assertion for SEP compliance.
+                        // Note: expectedTaskCount + 1 accounts for Part 1 being buffered during discovery
+                        if (expectedTaskCount + 1 != discoveryResult.TotalParts)
+                        {
+                            throw new InvalidOperationException(
+                                $"Request count mismatch. Expected {discoveryResult.TotalParts} parts, " +
+                                $"but sent {expectedTaskCount + 1} requests");
+                        }
+
+                        // Mark successful completion
+                        Logger.InfoFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
+                            discoveryResult.TotalParts);
+                        _dataHandler.OnDownloadComplete(null);
+                    }
+                    #pragma warning disable CA1031 // Do not catch general exception types
+
+                    catch (Exception ex)
+                    {
+                        _downloadException = ex;
+                        Logger.Error(ex, "MultipartDownloadManager: Background download task failed");
+                        _dataHandler.OnDownloadComplete(ex);
+                        throw;
+                    }
+                    #pragma warning restore CA1031 // Do not catch general exception types
+                }, cancellationToken);
+
+                // Return immediately to allow consumer to start reading
+                // This prevents deadlock when buffer fills up before consumer begins reading
+                Logger.DebugFormat("MultipartDownloadManager: Returning to allow consumer to start reading");
             }
             catch (Exception ex)
             {
@@ -392,6 +428,7 @@ namespace Amazon.S3.Transfer.Internal
                     InitialResponse = firstRangeResponse  // Keep response with stream
                 };
             }
+            
             
             // Parse total object size from ContentRange (e.g., "bytes 0-5242879/52428800" -> 52428800)
             var totalContentLength = ExtractTotalSizeFromContentRange(firstRangeResponse.ContentRange);
