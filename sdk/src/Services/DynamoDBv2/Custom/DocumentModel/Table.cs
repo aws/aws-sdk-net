@@ -1421,30 +1421,49 @@ namespace Amazon.DynamoDBv2.DocumentModel
             else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
             {
                 currentConfig.ConditionalExpression.ApplyExpression(req, this);
-
-                string statement;
-                Dictionary<string, AttributeValue> expressionAttributeValues;
-                Dictionary<string, string> expressionAttributeNames;
-
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression, this, out statement, out expressionAttributeValues, out expressionAttributeNames);
+                Common.ConvertAttributeUpdatesToUpdateExpression(
+                    attributeUpdates,
+                    updateExpression,
+                    this,
+                    out string statement,
+                    out Dictionary<string, AttributeValue> expressionAttributeValues,
+                    out Dictionary<string, string> expressionAttributeNames
+                );
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
 
-                if (req.ExpressionAttributeValues == null)
-                    req.ExpressionAttributeValues = expressionAttributeValues;
-                else
+                // Common.ConvertAttributeUpdatesToUpdateExpression initializes the expression dictionaries as empty,
+                // so we'll only add them to the request if there are values.
+
+                if (expressionAttributeValues.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeValues)
-                        req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeValues == null)
+                    {
+                        req.ExpressionAttributeValues = expressionAttributeValues;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeValues)
+                        {
+                            req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
 
-                if (req.ExpressionAttributeNames == null)
-                    req.ExpressionAttributeNames = expressionAttributeNames;
-                else
+                if (expressionAttributeNames.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeNames)
-                        req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeNames == null)
+                    {
+                        req.ExpressionAttributeNames = expressionAttributeNames;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeNames)
+                        {
+                            req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
             }
 #if NETSTANDARD
@@ -1512,30 +1531,49 @@ namespace Amazon.DynamoDBv2.DocumentModel
             else if (currentConfig.ConditionalExpression is { IsSet: true } || updateExpression is { IsSet: true })
             {
                 currentConfig.ConditionalExpression?.ApplyExpression(req, this);
-
-                string statement;
-                Dictionary<string, AttributeValue> expressionAttributeValues;
-                Dictionary<string, string> expressionAttributeNames;
-
-                Common.ConvertAttributeUpdatesToUpdateExpression(attributeUpdates, updateExpression,this, out statement, out expressionAttributeValues, out expressionAttributeNames);
+                Common.ConvertAttributeUpdatesToUpdateExpression(
+                    attributeUpdates,
+                    updateExpression,
+                    this,
+                    out string statement,
+                    out Dictionary<string, AttributeValue> expressionAttributeValues,
+                    out Dictionary<string, string> expressionAttributeNames
+                );
 
                 req.AttributeUpdates = null;
                 req.UpdateExpression = statement;
 
-                if (req.ExpressionAttributeValues == null)
-                    req.ExpressionAttributeValues = expressionAttributeValues;
-                else
+                // Common.ConvertAttributeUpdatesToUpdateExpression initializes the expression dictionaries as empty,
+                // so we'll only add them to the request if there are values.
+
+                if (expressionAttributeValues.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeValues)
-                        req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeValues == null)
+                    {
+                        req.ExpressionAttributeValues = expressionAttributeValues;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeValues)
+                        {
+                            req.ExpressionAttributeValues.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
 
-                if (req.ExpressionAttributeNames == null)
-                    req.ExpressionAttributeNames = expressionAttributeNames;
-                else
+                if (expressionAttributeNames.Count > 0)
                 {
-                    foreach (var kvp in expressionAttributeNames)
-                        req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                    if (req.ExpressionAttributeNames == null)
+                    {
+                        req.ExpressionAttributeNames = expressionAttributeNames;
+                    }
+                    else
+                    {
+                        foreach (var kvp in expressionAttributeNames)
+                        {
+                            req.ExpressionAttributeNames.Add(kvp.Key, kvp.Value);
+                        }
+                    }
                 }
             }
 
