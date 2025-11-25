@@ -1291,6 +1291,17 @@
                     
                 }
             ]
+        },
+        "UpdateBucketMetadataJournalTableConfigurationRequest":{
+            "modify":[
+                {
+                    "ContentMD5":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._contentMD5);"]}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+                
+            ]
         }
         
     },
