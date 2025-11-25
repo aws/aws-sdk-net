@@ -163,30 +163,51 @@ namespace Amazon.S3.Transfer.Internal
                 // Store count before WhenAllOrFirstException (which modifies the list internally)
                 var expectedTaskCount = downloadTasks.Count;
 
-                Logger.DebugFormat("MultipartDownloadManager: Waiting for {0} download tasks to complete", expectedTaskCount);
+                Logger.DebugFormat("MultipartDownloadManager: Starting {0} download tasks in background", expectedTaskCount);
 
-                // Wait for all downloads to complete (fails fast on first exception)
-                await TaskHelpers.WhenAllOrFirstExceptionAsync(downloadTasks, cancellationToken).ConfigureAwait(false);
-
-                Logger.DebugFormat("MultipartDownloadManager: All download tasks completed successfully");
-
-                // SEP Part GET Step 6 / Ranged GET Step 8:
-                // "validate that the total number of part GET requests sent matches with the expected PartsCount"
-                // Note: This should always be true if we reach this point, since WhenAllOrFirstException
-                // ensures all tasks completed successfully (or threw on first failure).
-                // The check serves as a defensive assertion for SEP compliance.
-                // Note: expectedTaskCount + 1 accounts for Part 1 being buffered during discovery
-                if (expectedTaskCount + 1 != discoveryResult.TotalParts)
+                // Start background task to wait for all downloads to complete
+                // This allows the method to return immediately so the consumer can start reading
+                // which prevents deadlock when MaxInMemoryParts is reached before consumer begins reading
+                _ = Task.Run(async () =>
                 {
-                    throw new InvalidOperationException(
-                        $"Request count mismatch. Expected {discoveryResult.TotalParts} parts, " +
-                        $"but sent {expectedTaskCount + 1} requests");
-                }
+                    try
+                    {
+                        Logger.DebugFormat("MultipartDownloadManager: Background task waiting for {0} download tasks", expectedTaskCount);
+                        
+                        // Wait for all downloads to complete (fails fast on first exception)
+                        await TaskHelpers.WhenAllOrFirstExceptionAsync(downloadTasks, cancellationToken).ConfigureAwait(false);
 
-                // Mark successful completion
-                Logger.InfoFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
-                    discoveryResult.TotalParts);
-                _dataHandler.OnDownloadComplete(null);
+                        Logger.DebugFormat("MultipartDownloadManager: All download tasks completed successfully");
+
+                        // SEP Part GET Step 6 / Ranged GET Step 8:
+                        // "validate that the total number of part GET requests sent matches with the expected PartsCount"
+                        // Note: This should always be true if we reach this point, since WhenAllOrFirstException
+                        // ensures all tasks completed successfully (or threw on first failure).
+                        // The check serves as a defensive assertion for SEP compliance.
+                        // Note: expectedTaskCount + 1 accounts for Part 1 being buffered during discovery
+                        if (expectedTaskCount + 1 != discoveryResult.TotalParts)
+                        {
+                            throw new InvalidOperationException(
+                                $"Request count mismatch. Expected {discoveryResult.TotalParts} parts, " +
+                                $"but sent {expectedTaskCount + 1} requests");
+                        }
+
+                        // Mark successful completion
+                        Logger.InfoFormat("MultipartDownloadManager: Download completed successfully - TotalParts={0}",
+                            discoveryResult.TotalParts);
+                        _dataHandler.OnDownloadComplete(null);
+                    }
+                    catch (Exception ex)
+                    {
+                        _downloadException = ex;
+                        Logger.Error(ex, "MultipartDownloadManager: Background download task failed");
+                        _dataHandler.OnDownloadComplete(ex);
+                    }
+                }, cancellationToken);
+
+                // Return immediately to allow consumer to start reading
+                // This prevents deadlock when buffer fills up before consumer begins reading
+                Logger.DebugFormat("MultipartDownloadManager: Returning to allow consumer to start reading");
             }
             catch (Exception ex)
             {
