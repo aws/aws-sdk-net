@@ -290,22 +290,18 @@ namespace Amazon.S3.Transfer
         /// 	var config = new TransferUtilityConfig
         /// 	{
         /// 	    // Control how many parts download in parallel (default: 10)
-        /// 	    ConcurrentServiceRequests = 20,
-        /// 	    
-        /// 	    // Limit memory usage by capping buffered parts (default: 1024)
-        /// 	    // With 8MB parts, 1024 parts = 8GB max memory
-        /// 	    MaxInMemoryParts = 512
+        /// 	    ConcurrentServiceRequests = 20
         /// 	};
         /// 	var transferUtility = new TransferUtility(s3Client, config);
         /// 	</code>
         /// 	<para>
         /// 	Use <see cref="TransferUtilityConfig.ConcurrentServiceRequests"/> to control parallel download threads.
-        /// 	Use <see cref="TransferUtilityConfig.MaxInMemoryParts"/> to limit memory consumption by capping the number 
+        /// 	Use <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> to limit memory consumption by capping the number 
         /// 	of buffered parts in memory.
         /// 	</para>
         /// 	<para>
         /// 	<b>Memory Considerations:</b> The buffering mechanism uses memory to store downloaded parts. 
-        /// 	Adjust <see cref="TransferUtilityConfig.MaxInMemoryParts"/> if you need to limit memory usage, 
+        /// 	Adjust <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> if you need to limit memory usage, 
         /// 	especially when downloading very large files or multiple files concurrently.
         /// 	</para>
         /// </remarks>
@@ -348,17 +344,13 @@ namespace Amazon.S3.Transfer
         /// 	var config = new TransferUtilityConfig
         /// 	{
         /// 	    // Control how many parts download in parallel (default: 10)
-        /// 	    ConcurrentServiceRequests = 20,
-        /// 	    
-        /// 	    // Limit memory usage by capping buffered parts (default: 1024)
-        /// 	    // With 8MB parts, 1024 parts = 8GB max memory
-        /// 	    MaxInMemoryParts = 512
+        /// 	    ConcurrentServiceRequests = 20
         /// 	};
         /// 	var transferUtility = new TransferUtility(s3Client, config);
         /// 	</code>
         /// 	<para>
         /// 	Use <see cref="TransferUtilityConfig.ConcurrentServiceRequests"/> to control parallel download threads.
-        /// 	Use <see cref="TransferUtilityConfig.MaxInMemoryParts"/> to limit memory consumption by capping the number 
+        /// 	Use <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> to limit memory consumption by capping the number 
         /// 	of buffered parts in memory.
         /// 	</para>
         /// 	<para>
@@ -375,7 +367,7 @@ namespace Amazon.S3.Transfer
         /// 	</code>
         /// 	<para>
         /// 	<b>Memory Considerations:</b> The buffering mechanism uses memory to store downloaded parts. 
-        /// 	Adjust <see cref="TransferUtilityConfig.MaxInMemoryParts"/> if you need to limit memory usage, 
+        /// 	Adjust <see cref="TransferUtilityOpenStreamRequest.MaxInMemoryParts"/> if you need to limit memory usage, 
         /// 	especially when downloading very large files or multiple files concurrently.
         /// 	</para>
         /// </remarks>

@@ -390,6 +390,278 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         #endregion
 
+        #region MaxInMemoryParts Tests
+
+        [TestMethod]
+        [TestCategory("S3")]
+        [TestCategory("OpenStream")]
+        [TestCategory("MaxInMemoryParts")]
+        [TestCategory("Multipart")]
+        public async Task OpenStream_WithCustomMaxInMemoryParts_DownloadsSuccessfully()
+        {
+            // Arrange - Upload as multipart to test MaxInMemoryParts buffering
+            var objectSize = 32 * MB;
+            var uploadPartSize = 8 * MB;  // Force multipart upload with 4 parts
+            var downloadPartSize = 8 * MB;
+            var maxInMemoryParts = 2;  // Only buffer 2 parts in memory at once
+            var key = UtilityMethods.GenerateName("maxinmemory-test");
+            var filePath = Path.Combine(Path.GetTempPath(), key);
+            UtilityMethods.GenerateFile(filePath, objectSize);
+            
+            // Calculate checksum before upload
+            var expectedChecksum = CalculateFileChecksum(filePath);
+            
+            // Upload using TransferUtility to ensure multipart upload
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = filePath,
+                PartSize = uploadPartSize  // Force multipart upload
+            };
+            
+            var transferUtility = new TransferUtility(Client);
+            await transferUtility.UploadAsync(uploadRequest);
+
+            // Verify object is multipart
+            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                PartNumber = 1
+            });
+            Assert.IsTrue(metadata.PartsCount > 1, "Object should be multipart to test MaxInMemoryParts");
+
+            var downloadRequest = new TransferUtilityOpenStreamRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                PartSize = downloadPartSize,
+                MaxInMemoryParts = maxInMemoryParts
+            };
+
+            // Act
+            using (var response = await transferUtility.OpenStreamWithResponseAsync(downloadRequest))
+            {
+                // Assert
+                Assert.IsNotNull(response, "Response should not be null");
+                Assert.IsNotNull(response.ResponseStream, "ResponseStream should not be null");
+                ValidateHeaders(response, objectSize);
+
+                var downloadedBytes = await ReadStreamToByteArray(response.ResponseStream, objectSize, (int)(2 * MB));
+                var actualChecksum = CalculateChecksum(downloadedBytes);
+                
+                Assert.AreEqual(expectedChecksum, actualChecksum, 
+                    "Downloaded data checksum should match with custom MaxInMemoryParts");
+                Assert.AreEqual(objectSize, downloadedBytes.Length, 
+                    "Downloaded size should match with custom MaxInMemoryParts");
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        [TestCategory("OpenStream")]
+        [TestCategory("MaxInMemoryParts")]
+        [TestCategory("Multipart")]
+        public async Task OpenStream_WithDefaultMaxInMemoryParts_DownloadsSuccessfully()
+        {
+            // Arrange - Upload as multipart, download without specifying MaxInMemoryParts
+            var objectSize = 24 * MB;
+            var uploadPartSize = 8 * MB;
+            var downloadPartSize = 8 * MB;
+            var key = UtilityMethods.GenerateName("default-maxinmemory-test");
+            var filePath = Path.Combine(Path.GetTempPath(), key);
+            UtilityMethods.GenerateFile(filePath, objectSize);
+            
+            // Calculate checksum before upload
+            var expectedChecksum = CalculateFileChecksum(filePath);
+            
+            // Upload using TransferUtility to ensure multipart upload
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = filePath,
+                PartSize = uploadPartSize
+            };
+            
+            var transferUtility = new TransferUtility(Client);
+            await transferUtility.UploadAsync(uploadRequest);
+
+            // Verify object is multipart
+            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                PartNumber = 1
+            });
+            Assert.IsTrue(metadata.PartsCount > 1, "Object should be multipart");
+
+            var downloadRequest = new TransferUtilityOpenStreamRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                PartSize = downloadPartSize
+                // MaxInMemoryParts not specified - should use default (1024)
+            };
+
+            // Act
+            using (var response = await transferUtility.OpenStreamWithResponseAsync(downloadRequest))
+            {
+                // Assert
+                Assert.IsNotNull(response);
+                Assert.IsNotNull(response.ResponseStream);
+                ValidateHeaders(response, objectSize);
+
+                var downloadedBytes = await ReadStreamToByteArray(response.ResponseStream, objectSize, (int)(2 * MB));
+                var actualChecksum = CalculateChecksum(downloadedBytes);
+                
+                Assert.AreEqual(expectedChecksum, actualChecksum, 
+                    "Downloaded data checksum should match with default MaxInMemoryParts");
+                Assert.AreEqual(objectSize, downloadedBytes.Length, 
+                    "Downloaded size should match with default MaxInMemoryParts");
+            }
+        }
+
+        [DataTestMethod]
+        [TestCategory("S3")]
+        [TestCategory("OpenStream")]
+        [TestCategory("MaxInMemoryParts")]
+        [TestCategory("Multipart")]
+        [DataRow(1, DisplayName = "MaxInMemoryParts = 1 (minimal buffering)")]
+        [DataRow(2, DisplayName = "MaxInMemoryParts = 2")]
+        [DataRow(4, DisplayName = "MaxInMemoryParts = 4")]
+        [DataRow(10, DisplayName = "MaxInMemoryParts = 10")]
+        public async Task OpenStream_WithVariousMaxInMemoryParts_DownloadsSuccessfully(int maxInMemoryParts)
+        {
+            // Arrange - Upload as multipart, test various MaxInMemoryParts values
+            var objectSize = 24 * MB;
+            var uploadPartSize = 8 * MB;  // Creates 3 parts
+            var downloadPartSize = 8 * MB;
+            var key = UtilityMethods.GenerateName($"maxinmemory-{maxInMemoryParts}-test");
+            var filePath = Path.Combine(Path.GetTempPath(), key);
+            UtilityMethods.GenerateFile(filePath, objectSize);
+            
+            // Calculate checksum before upload
+            var expectedChecksum = CalculateFileChecksum(filePath);
+            
+            // Upload using TransferUtility to ensure multipart upload
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = filePath,
+                PartSize = uploadPartSize
+            };
+            
+            var transferUtility = new TransferUtility(Client);
+            await transferUtility.UploadAsync(uploadRequest);
+
+            // Verify object is multipart
+            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                PartNumber = 1
+            });
+            Assert.IsTrue(metadata.PartsCount > 1, "Object should be multipart");
+
+            var downloadRequest = new TransferUtilityOpenStreamRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                PartSize = downloadPartSize,
+                MaxInMemoryParts = maxInMemoryParts
+            };
+
+            // Act
+            using (var response = await transferUtility.OpenStreamWithResponseAsync(downloadRequest))
+            {
+                // Assert
+                Assert.IsNotNull(response, $"Response should not be null with MaxInMemoryParts={maxInMemoryParts}");
+                Assert.IsNotNull(response.ResponseStream, 
+                    $"ResponseStream should not be null with MaxInMemoryParts={maxInMemoryParts}");
+
+                var downloadedBytes = await ReadStreamToByteArray(response.ResponseStream, objectSize, (int)(2 * MB));
+                var actualChecksum = CalculateChecksum(downloadedBytes);
+                
+                Assert.AreEqual(expectedChecksum, actualChecksum, 
+                    $"Downloaded data checksum should match with MaxInMemoryParts={maxInMemoryParts}");
+                Assert.AreEqual(objectSize, downloadedBytes.Length, 
+                    $"Downloaded size should match with MaxInMemoryParts={maxInMemoryParts}");
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        [TestCategory("OpenStream")]
+        [TestCategory("MaxInMemoryParts")]
+        [TestCategory("Multipart")]
+        public async Task OpenStream_LargeObjectWithSmallMaxInMemoryParts_DownloadsSuccessfully()
+        {
+            // Arrange - Test memory-constrained scenario with large object
+            // This simulates downloading a large file while limiting memory usage
+            var objectSize = 40 * MB;
+            var uploadPartSize = 8 * MB;  // Creates 5 parts
+            var downloadPartSize = 8 * MB;
+            var maxInMemoryParts = 2;  // Only buffer 2 parts (16MB) instead of all 5 (40MB)
+            var key = UtilityMethods.GenerateName("large-maxinmemory-test");
+            var filePath = Path.Combine(Path.GetTempPath(), key);
+            UtilityMethods.GenerateFile(filePath, objectSize);
+            
+            // Calculate checksum before upload
+            var expectedChecksum = CalculateFileChecksum(filePath);
+            
+            // Upload using TransferUtility to ensure multipart upload
+            var uploadRequest = new TransferUtilityUploadRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                FilePath = filePath,
+                PartSize = uploadPartSize
+            };
+            
+            var transferUtility = new TransferUtility(Client);
+            await transferUtility.UploadAsync(uploadRequest);
+
+            // Verify object is multipart
+            var metadata = await Client.GetObjectMetadataAsync(new GetObjectMetadataRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                PartNumber = 1
+            });
+            Assert.IsTrue(metadata.PartsCount > 1, "Object should be multipart");
+
+            var downloadRequest = new TransferUtilityOpenStreamRequest
+            {
+                BucketName = bucketName,
+                Key = key,
+                PartSize = downloadPartSize,
+                MaxInMemoryParts = maxInMemoryParts
+            };
+
+            // Act
+            using (var response = await transferUtility.OpenStreamWithResponseAsync(downloadRequest))
+            {
+                // Assert
+                Assert.IsNotNull(response);
+                Assert.IsNotNull(response.ResponseStream);
+                ValidateHeaders(response, objectSize);
+
+                // Read in smaller chunks to simulate streaming consumption
+                var downloadedBytes = await ReadStreamToByteArray(response.ResponseStream, objectSize, (int)(1 * MB));
+                var actualChecksum = CalculateChecksum(downloadedBytes);
+                
+                Assert.AreEqual(expectedChecksum, actualChecksum, 
+                    "Large object should download correctly with limited MaxInMemoryParts");
+                Assert.AreEqual(objectSize, downloadedBytes.Length, 
+                    "Downloaded size should match for large object with limited MaxInMemoryParts");
+            }
+        }
+
+        #endregion
+
         #region Helper Methods
 
         /// <summary>
