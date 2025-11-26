@@ -219,7 +219,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (request == null) throw new ArgumentNullException(nameof(request));
 
             if (request.Key == null || request.Key.Count == 0)
-                throw new InvalidOperationException("GetDocumentOperationRequest.Key cannot be null or empty.");
+                throw new InvalidOperationException("GetItemDocumentOperationRequest.Key cannot be null or empty.");
         }
 
         protected override GetItemRequest Map(GetItemDocumentOperationRequest request)
