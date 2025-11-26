@@ -12,27 +12,36 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
 using System.IO;
+using System.Net;
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
-    /// Container for elements related to a particular multipart upload.
+    /// Container for the <c>MultipartUpload</c> for the Amazon S3 object.
     /// </summary>
-    public class MultipartUpload
+    public partial class MultipartUpload
     {
         private ChecksumAlgorithm _checksumAlgorithm;
-        private string key;
-        private string uploadId;
-        private Owner owner;
-        private Initiator initiator;
-        private DateTime? initiated;
-        private S3StorageClass storageClass;
-        private ChecksumType checksumType;
+        private ChecksumType _checksumType;
+        private DateTime? _initiated;
+        private Initiator _initiator;
+        private string _key;
+        private Owner _owner;
+        private S3StorageClass _storageClass;
+        private string _uploadId;
 
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
@@ -53,51 +62,78 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChecksumType. 
+        /// <para>
+        /// The checksum type that is used to calculate the object’s checksum value. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ChecksumType ChecksumType
+        {
+            get { return this._checksumType; }
+            set { this._checksumType = value; }
+        }
+
+        // Check to see if ChecksumType property is set
+        internal bool IsSetChecksumType()
+        {
+            return this._checksumType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Initiated. 
+        /// <para>
         /// Date and time at which the multipart upload was initiated.
-        ///  
+        /// </para>
         /// </summary>
         public DateTime? Initiated
         {
-            get { return this.initiated; }
-            set { this.initiated = value; }
+            get { return this._initiated; }
+            set { this._initiated = value; }
         }
 
         // Check to see if Initiated property is set
         internal bool IsSetInitiated()
         {
-            return this.initiated.HasValue;
+            return this._initiated.HasValue; 
         }
 
         /// <summary>
+        /// Gets and sets the property Initiator. 
+        /// <para>
         /// Identifies who initiated the multipart upload.
-        ///  
+        /// </para>
         /// </summary>
         public Initiator Initiator
         {
-            get { return this.initiator; }
-            set { this.initiator = value; }
+            get { return this._initiator; }
+            set { this._initiator = value; }
         }
 
         // Check to see if Initiator property is set
         internal bool IsSetInitiator()
         {
-            return this.initiator != null;
+            return this._initiator != null;
         }
 
         /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
         /// Key of the object for which the multipart upload was initiated.
-        ///  
+        /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string Key
         {
-            get { return this.key; }
-            set { this.key = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
         // Check to see if Key property is set
         internal bool IsSetKey()
         {
-            return this.key != null;
+            return this._key != null;
         }
 
         /// <summary>
@@ -114,14 +150,14 @@ namespace Amazon.S3.Model
         /// </summary>
         public Owner Owner
         {
-            get { return this.owner; }
-            set { this.owner = value; }
+            get { return this._owner; }
+            set { this._owner = value; }
         }
 
         // Check to see if Owner property is set
         internal bool IsSetOwner()
         {
-            return this.owner != null;
+            return this._owner != null;
         }
 
         /// <summary>
@@ -131,60 +167,41 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <b>Directory buckets</b> - Only the S3 Express One Zone storage class is supported
-        /// by directory buckets to store objects.
+        ///  <b>Directory buckets</b> - Directory buckets only support <c>EXPRESS_ONEZONE</c>
+        /// (the S3 Express One Zone storage class) in Availability Zones and <c>ONEZONE_IA</c>
+        /// (the S3 One Zone-Infrequent Access storage class) in Dedicated Local Zones.
         /// </para>
         ///  </note>
         /// </summary>
         public S3StorageClass StorageClass
         {
-            get { return this.storageClass; }
-            set { this.storageClass = value; }
+            get { return this._storageClass; }
+            set { this._storageClass = value; }
         }
 
         // Check to see if StorageClass property is set
         internal bool IsSetStorageClass()
         {
-            return this.storageClass != null;
+            return this._storageClass != null;
         }
 
         /// <summary>
+        /// Gets and sets the property UploadId. 
+        /// <para>
         /// Upload ID that identifies the multipart upload.
-        ///  
+        /// </para>
         /// </summary>
         public string UploadId
         {
-            get { return this.uploadId; }
-            set { this.uploadId = value; }
+            get { return this._uploadId; }
+            set { this._uploadId = value; }
         }
 
         // Check to see if UploadId property is set
         internal bool IsSetUploadId()
         {
-            return this.uploadId != null;
+            return this._uploadId != null;
         }
 
-        /// <summary>
-        /// Gets and sets the property ChecksumType.
-        /// <para>
-        /// The checksum type that is used to calculate the object's checksum value.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity in the Amazon S3 User Guide</a>.
-        /// </para>
-        /// </summary>
-        public ChecksumType ChecksumType
-        {
-            get { return this.checksumType; }
-            set { this.checksumType = value; }
-        }
-
-        /// <summary>
-        /// Checks to see if ChecksumType is set.
-        /// </summary>
-        /// <returns>true, if ChecksumType property is set.</returns>
-        internal bool IsSetChecksumType()
-        {
-            return checksumType != null;
-        }
     }
 }
