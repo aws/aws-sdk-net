@@ -123,7 +123,7 @@ namespace Amazon.S3.Transfer.Internal
                 _discoveryResult.TotalParts,
                 _discoveryResult.IsSinglePart);
 
-            await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, cancellationToken)
+            await _downloadCoordinator.StartDownloadsAsync(_discoveryResult, null, cancellationToken)
                 .ConfigureAwait(false);
             
             _initialized = true;

@@ -144,7 +144,7 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <inheritdoc/>
-        public async Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken, EventHandler<WriteObjectProgressArgs> progressCallback = null)
+        public async Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken)
         {
             ThrowIfDisposed();
             
