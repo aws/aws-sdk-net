@@ -138,6 +138,12 @@ namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.MemoryDbReservedInstances = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("natGateway", targetDepth))
+                {
+                    var unmarshaller = NatGatewayUnmarshaller.Instance;
+                    unmarshalledObject.NatGateway = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("openSearchReservedInstances", targetDepth))
                 {
                     var unmarshaller = OpenSearchReservedInstancesUnmarshaller.Instance;
