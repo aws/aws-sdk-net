@@ -12,26 +12,34 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+
+/*
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
+ */
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.Text;
+using System.IO;
+using System.Net;
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the PutBucketInventoryConfiguration operation.
     /// <note> 
     /// <para>
-    /// This operation is not supported by directory buckets.
+    /// This operation is not supported for directory buckets.
     /// </para>
     ///  </note> 
     /// <para>
-    /// This implementation of the <code>PUT</code> action adds an inventory configuration
-    /// (identified by the inventory ID) to the bucket. You can have up to 1,000 inventory
-    /// configurations per bucket. 
+    /// This implementation of the <c>PUT</c> action adds an S3 Inventory configuration (identified
+    /// by the inventory ID) to the bucket. You can have up to 1,000 inventory configurations
+    /// per bucket. 
     /// </para>
     ///  
     /// <para>
@@ -60,14 +68,13 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </important> <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// To use this operation, you must have permission to perform the <code>s3:PutInventoryConfiguration</code>
+    /// To use this operation, you must have permission to perform the <c>s3:PutInventoryConfiguration</c>
     /// action. The bucket owner has this permission by default and can grant this permission
     /// to others. 
     /// </para>
     ///  
     /// <para>
-    /// The <code>s3:PutInventoryConfiguration</code> permission allows a user to create an
-    /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory.html">S3
+    /// The <c>s3:PutInventoryConfiguration</c> permission allows a user to create an <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory.html">S3
     /// Inventory</a> report that includes all object metadata fields available and to specify
     /// the destination bucket to store the inventory. A user with read access to objects
     /// in the destination bucket can also access all object metadata fields that are available
@@ -85,7 +92,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </dd> </dl> 
     /// <para>
-    ///  <code>PutBucketInventoryConfiguration</code> has the following special errors:
+    ///  <c>PutBucketInventoryConfiguration</c> has the following special errors:
     /// </para>
     ///  <dl> <dt>HTTP 400 Bad Request Error</dt> <dd> 
     /// <para>
@@ -107,12 +114,12 @@ namespace Amazon.S3.Model
     ///  </dd> <dt>HTTP 403 Forbidden Error</dt> <dd> 
     /// <para>
     ///  <i>Cause:</i> You are not the owner of the specified bucket, or you do not have the
-    /// <code>s3:PutInventoryConfiguration</code> bucket permission to set the configuration
-    /// on the bucket. 
+    /// <c>s3:PutInventoryConfiguration</c> bucket permission to set the configuration on
+    /// the bucket. 
     /// </para>
     ///  </dd> </dl> 
     /// <para>
-    /// The following operations are related to <code>PutBucketInventoryConfiguration</code>:
+    /// The following operations are related to <c>PutBucketInventoryConfiguration</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -129,58 +136,38 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketInventoryConfigurations.html">ListBucketInventoryConfigurations</a>
     /// 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// You must URL encode any signed header values that contain spaces. For example, if
+    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
+    /// must URL encode this value to <c>my%20%20file.txt</c>.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class PutBucketInventoryConfigurationRequest : AmazonWebServiceRequest
     {
-        private string bucketName;
-        private string inventoryId;
-        private InventoryConfiguration inventoryConfiguration;
-        private string expectedBucketOwner;
+        private string _bucketName;
+        private string _expectedBucketOwner;
+        private InventoryConfiguration _inventoryConfiguration;
+        private string _inventoryId;
 
         /// <summary>
+        /// Gets and sets the property BucketName. 
+        /// <para>
         /// The name of the bucket where the inventory configuration will be stored.
+        /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
-        // Check to see if Bucket property is set
+        // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return !(string.IsNullOrEmpty(this.bucketName));
-        }
-
-        /// <summary>
-        /// Specifies the inventory Id.
-        /// </summary>
-        public string InventoryId
-        {
-            get { return this.inventoryId; }
-            set { this.inventoryId = value; }
-        }
-
-        // Check to see if InventoryId property is set
-        internal bool IsSetInventoryId()
-        {
-            return !(string.IsNullOrEmpty(this.inventoryId));
-        }
-
-        /// <summary>
-        /// Specifies the inventory configuration.
-        /// </summary>
-        public InventoryConfiguration InventoryConfiguration
-        {
-            get { return this.inventoryConfiguration; }
-            set { this.inventoryConfiguration = value; }
-        }
-
-        // Check to see if InventoryConfiguration property is set
-        internal bool IsSetInventoryConfiguration()
-        {
-            return this.inventoryConfiguration != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
@@ -188,22 +175,57 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
+        }
+
+        // Check to see if ExpectedBucketOwner property is set
+        internal bool IsSetExpectedBucketOwner()
+        {
+            return !String.IsNullOrEmpty(this._expectedBucketOwner);
         }
 
         /// <summary>
-        /// Checks to see if ExpectedBucketOwner is set.
+        /// Gets and sets the property InventoryConfiguration. 
+        /// <para>
+        /// Specifies the inventory configuration.
+        /// </para>
         /// </summary>
-        /// <returns>true, if ExpectedBucketOwner property is set.</returns>
-        internal bool IsSetExpectedBucketOwner()
+        [AWSProperty(Required=true)]
+        public InventoryConfiguration InventoryConfiguration
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            get { return this._inventoryConfiguration; }
+            set { this._inventoryConfiguration = value; }
+        }
+
+        // Check to see if InventoryConfiguration property is set
+        internal bool IsSetInventoryConfiguration()
+        {
+            return this._inventoryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InventoryId. 
+        /// <para>
+        /// The ID used to identify the inventory configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string InventoryId
+        {
+            get { return this._inventoryId; }
+            set { this._inventoryId = value; }
+        }
+
+        // Check to see if InventoryId property is set
+        internal bool IsSetInventoryId()
+        {
+            return this._inventoryId != null;
         }
 
     }
