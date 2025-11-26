@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DestinationResult Object
+    /// Response Unmarshaller for InventoryTableConfigurationResult Object
     /// </summary>  
-    public class DestinationResultUnmarshaller : IXmlUnmarshaller<DestinationResult, XmlUnmarshallerContext>
+    public partial class InventoryTableConfigurationResultUnmarshaller : IXmlUnmarshaller<InventoryTableConfigurationResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DestinationResult Unmarshall(XmlUnmarshallerContext context)
+        public InventoryTableConfigurationResult Unmarshall(XmlUnmarshallerContext context)
         {
-            DestinationResult unmarshalledObject = new DestinationResult();
+            InventoryTableConfigurationResult unmarshalledObject = new InventoryTableConfigurationResult();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,24 +56,38 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("TableBucketArn", targetDepth))
+                    if (context.TestExpression("ConfigurationState", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableBucketArn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ConfigurationState = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TableBucketType", targetDepth))
+                    if (context.TestExpression("Error", targetDepth))
+                    {
+                        var unmarshaller = ErrorDetailsUnmarshaller.Instance;
+                        unmarshalledObject.Error = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TableArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableBucketType = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TableArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("TableNamespace", targetDepth))
+                    if (context.TestExpression("TableName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.TableNamespace = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("TableStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TableStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+
+                    XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -83,12 +97,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static DestinationResultUnmarshaller _instance = new DestinationResultUnmarshaller();        
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, InventoryTableConfigurationResult unmarshalledObject, int targetDepth);
+
+        private static InventoryTableConfigurationResultUnmarshaller _instance = new InventoryTableConfigurationResultUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DestinationResultUnmarshaller Instance
+        public static InventoryTableConfigurationResultUnmarshaller Instance
         {
             get
             {

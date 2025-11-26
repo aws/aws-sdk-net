@@ -131,7 +131,7 @@ namespace Amazon.S3.Model
         ///  <c>FAILED</c> - Amazon S3 is unable to create the journal table, or Amazon S3 is
         /// unable to deliver records.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string TableStatus
