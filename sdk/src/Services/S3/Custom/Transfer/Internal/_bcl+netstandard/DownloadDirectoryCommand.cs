@@ -63,14 +63,34 @@ namespace Amazon.S3.Transfer.Internal
 
             this._totalNumberOfFilesToDownload = objs.Count;
 
-            SemaphoreSlim asyncThrottler = null;
+            // Two-level throttling architecture:
+            // 1. File-level throttler: Controls how many files are downloaded concurrently
+            // 2. HTTP-level throttler: Controls total HTTP requests across ALL file downloads
+            //
+            // Example with ConcurrentServiceRequests = 10:
+            //   - fileOperationThrottler = 10: Up to 10 files can download simultaneously
+            //   - sharedHttpRequestThrottler = 10: All 10 files share 10 total HTTP request slots
+            //   - Without HTTP throttler: Would result in 10 files × 10 parts = 100 concurrent HTTP requests
+            //   - With HTTP throttler: Enforces 10 total concurrent HTTP requests across all files
+            //
+            // This prevents resource exhaustion when downloading many large files with multipart downloads.
+            SemaphoreSlim fileOperationThrottler = null;
+            SemaphoreSlim sharedHttpRequestThrottler = null;
             CancellationTokenSource internalCts = null;
 
             try
             {
-                asyncThrottler = DownloadFilesConcurrently ?
+                // File-level throttler: Controls concurrent file operations
+                fileOperationThrottler = DownloadFilesConcurrently ?
                     new SemaphoreSlim(this._config.ConcurrentServiceRequests) :
                     new SemaphoreSlim(1);
+
+                // HTTP-level throttler: Shared across all downloads to control total HTTP concurrency
+                // Only needed for multipart downloads where each file makes multiple HTTP requests
+                if (this._useMultipartDownload)
+                {
+                    sharedHttpRequestThrottler = new SemaphoreSlim(this._config.ConcurrentServiceRequests);
+                }
 
                 internalCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
                 var pendingTasks = new List<Task>();
@@ -79,7 +99,7 @@ namespace Amazon.S3.Transfer.Internal
                     if (s3o.Key.EndsWith("/", StringComparison.Ordinal))
                         continue;
 
-                    await asyncThrottler.WaitAsync(cancellationToken)
+                    await fileOperationThrottler.WaitAsync(cancellationToken)
                         .ConfigureAwait(continueOnCapturedContext: false);
 
                     cancellationToken.ThrowIfCancellationRequested();
@@ -105,9 +125,18 @@ namespace Amazon.S3.Transfer.Internal
                     this._currentFile = s3o.Key.Substring(prefixLength);
 
                     var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, prefixLength);
-                    var command = new DownloadCommand(this._s3Client, downloadRequest);
+                    
+                    BaseCommand<TransferUtilityDownloadResponse> command;
+                    if (this._useMultipartDownload)
+                    {
+                        command = new MultipartDownloadCommand(this._s3Client, downloadRequest, this._config, sharedHttpRequestThrottler);
+                    }
+                    else
+                    {
+                        command = new DownloadCommand(this._s3Client, downloadRequest);
+                    }
 
-                    var task = ExecuteCommandAsync(command, internalCts, asyncThrottler);
+                    var task = ExecuteCommandAsync(command, internalCts, fileOperationThrottler);
                     
                     pendingTasks.Add(task);
                 }
@@ -122,7 +151,8 @@ namespace Amazon.S3.Transfer.Internal
             finally
             {
                 internalCts.Dispose();
-                asyncThrottler.Dispose();
+                fileOperationThrottler.Dispose();
+                sharedHttpRequestThrottler?.Dispose();
             }
         }
 

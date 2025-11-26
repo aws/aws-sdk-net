@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "minor",
+      "changeLogMessages": [
+        "Created new DownloadDirectoryWithResponseAsync methods on the Amazon.S3.Transfer.TransferUtility class. The new operations support downloading directories using multipart download for files and return response metadata."
+      ]
+    }
+  ]
+}

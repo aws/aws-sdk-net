@@ -47,6 +47,10 @@ namespace Amazon.S3.Transfer.Internal
             get { return Logger.GetLogger(typeof(TransferUtility)); }
         }
 
+        /// <summary>
+        /// Initializes a new instance for file downloads.
+        /// Writes parts directly to disk without memory buffering.
+        /// </summary>
         public FilePartDataHandler(FileDownloadConfiguration config)
         {
             _config = config ?? throw new ArgumentNullException(nameof(config));
@@ -90,14 +94,16 @@ namespace Amazon.S3.Transfer.Internal
         /// <inheritdoc/>
         public Task WaitForCapacityAsync(CancellationToken cancellationToken)
         {
-            // No backpressure needed - OS handles concurrent file access
+            // No-op: FilePartDataHandler writes directly to disk without buffering parts in memory.
+            // Memory throttling is only needed for BufferedPartDataHandler which keeps parts in memory.
             return Task.CompletedTask;
         }
 
         /// <inheritdoc/>
         public void ReleaseCapacity()
         {
-            // No-op
+            // No-op: FilePartDataHandler writes directly to disk without buffering parts in memory.
+            // Memory throttling is only needed for BufferedPartDataHandler which keeps parts in memory.
         }
 
         /// <inheritdoc/>
