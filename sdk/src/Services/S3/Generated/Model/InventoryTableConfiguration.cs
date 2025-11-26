@@ -40,7 +40,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ConfigurationState. 
         /// <para>
-        ///  The configuration state of the inventory table, indicating whether the inventory table is enabled or disabled. 
+        ///  The configuration state of the inventory table, indicating whether the inventory
+        /// table is enabled or disabled. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

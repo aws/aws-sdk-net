@@ -572,7 +572,8 @@ namespace ServiceClientGenerator
                         new Operation(this, "DeleteBucketAnalyticsConfiguration", DocumentRoot[OperationsKey]["DeleteBucketAnalyticsConfiguration"]),
                         new Operation(this, "DeleteBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["DeleteBucketIntelligentTieringConfiguration"]),
                         new Operation(this, "DeleteBucketInventoryConfiguration", DocumentRoot[OperationsKey]["DeleteBucketInventoryConfiguration"]),
-                        new Operation(this,"PutBucketRequestPayment", DocumentRoot[OperationsKey]["PutBucketRequestPayment"])
+                        new Operation(this,"PutBucketRequestPayment", DocumentRoot[OperationsKey]["PutBucketRequestPayment"]),
+                        new Operation(this, "CreateBucketMetadataConfiguration",DocumentRoot[OperationsKey]["CreateBucketMetadataConfiguration"])
 
                     };
                 }
@@ -602,7 +603,8 @@ namespace ServiceClientGenerator
                         "GetBucketAcl",
                         "PutObjectAcl",
                         "GetObjectAcl",
-                        "PutBucketAcl"
+                        "PutBucketAcl",
+                        "CreateBucketMetadataConfiguration"
                     };
                 }
                 return _s3RequestMarshallerThrowAmazonS3ExceptionList;

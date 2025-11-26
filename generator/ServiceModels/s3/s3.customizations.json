@@ -1187,6 +1187,26 @@
                     "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
                 }
             ]
+        },
+        "CreateBucketMetadataConfigurationRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "ContentMD5":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._contentMD5);"]}
+                },
+                {
+                    "BucketName":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._bucketName);"]}
+                }
+            ]
+        },
+        "MetadataTableEncryptionConfiguration":{
+            "modify":[
+                {
+                    "KmsKeyArn":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._kmsKeyArn);"]}
+                }
+            ]
         }
         
     },
