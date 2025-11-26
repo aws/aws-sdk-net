@@ -569,6 +569,10 @@ namespace Amazon.CostOptimizationHub
         /// </summary>
         public static readonly ResourceType MemoryDbReservedInstances = new ResourceType("MemoryDbReservedInstances");
         /// <summary>
+        /// Constant NatGateway for ResourceType
+        /// </summary>
+        public static readonly ResourceType NatGateway = new ResourceType("NatGateway");
+        /// <summary>
         /// Constant OpenSearchReservedInstances for ResourceType
         /// </summary>
         public static readonly ResourceType OpenSearchReservedInstances = new ResourceType("OpenSearchReservedInstances");
