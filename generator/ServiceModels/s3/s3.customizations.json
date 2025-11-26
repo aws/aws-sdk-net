@@ -1105,7 +1105,7 @@
                     "InventoryFilter":{"injectXmlMarshallCode":["InventoryFilterCustomMarshall(publicRequest, xmlWriter);"]}
                 },
                 {
-                    "IsEnabled":{"injectXmlMarshallCode":["xmlWriter.WriteElementString(\"IsEnabled\", StringUtils.FromBool(publicRequest.InventoryConfiguration.IsEnabled.GetValueOrDefault()));"]}
+                    "IsEnabled":{"injectXmlMarshallCode":["CustomIsEnabledMarshall(publicRequest, xmlWriter);"]}
                 }
             ]
         },
@@ -1208,6 +1208,7 @@
                 }
             ]
         }
+        
     },
     "operationModifiers": {
         "CreateBucket": {
