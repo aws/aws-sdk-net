@@ -30,13 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The StackSummary Data Type
+    /// The <c>StackSummary</c> Data Type
     /// </summary>
     public partial class StackSummary
     {
         private DateTime? _creationTime;
         private DateTime? _deletionTime;
         private StackDriftInformationSummary _driftInformation;
+        private List<OperationEntry> _lastOperations = AWSConfigs.InitializeCollections ? new List<OperationEntry>() : null;
         private DateTime? _lastUpdatedTime;
         private string _parentId;
         private string _rootId;
@@ -102,6 +103,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDriftInformation()
         {
             return this._driftInformation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastOperations. 
+        /// <para>
+        /// Information about the most recent operations performed on this stack.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<OperationEntry> LastOperations
+        {
+            get { return this._lastOperations; }
+            set { this._lastOperations = value; }
+        }
+
+        // Check to see if LastOperations property is set
+        internal bool IsSetLastOperations()
+        {
+            return this._lastOperations != null && (this._lastOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

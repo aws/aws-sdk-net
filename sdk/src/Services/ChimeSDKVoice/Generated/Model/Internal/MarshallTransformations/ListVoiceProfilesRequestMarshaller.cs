@@ -68,6 +68,8 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.VoiceProfileDomainId))
+                throw new AmazonChimeSDKVoiceException("Request object does not have required field VoiceProfileDomainId set");
             
             if (publicRequest.IsSetVoiceProfileDomainId())
                 request.Parameters.Add("voice-profile-domain-id", StringUtils.FromString(publicRequest.VoiceProfileDomainId));

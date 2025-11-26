@@ -58,6 +58,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
+            if (string.IsNullOrEmpty(publicRequest.Domain))
+                throw new AmazonCloudFrontException("Request object does not have required field Domain set");
             
             if (publicRequest.IsSetDomain())
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));

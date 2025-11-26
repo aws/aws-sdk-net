@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchGameSessions operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves all active game sessions that match a set of search criteria and sorts them
     /// into a specified order. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation is not designed to continually track game session status because that

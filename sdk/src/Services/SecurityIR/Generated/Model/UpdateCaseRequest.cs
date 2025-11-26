@@ -37,6 +37,7 @@ namespace Amazon.SecurityIR.Model
     {
         private DateTime? _actualIncidentStartDate;
         private string _caseId;
+        private List<CaseMetadataEntry> _caseMetadata = AWSConfigs.InitializeCollections ? new List<CaseMetadataEntry>() : null;
         private string _description;
         private EngagementType _engagementType;
         private List<string> _impactedAccountsToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -87,6 +88,30 @@ namespace Amazon.SecurityIR.Model
         internal bool IsSetCaseId()
         {
             return this._caseId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CaseMetadata. 
+        /// <para>
+        /// Update the case request with case metadata
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public List<CaseMetadataEntry> CaseMetadata
+        {
+            get { return this._caseMetadata; }
+            set { this._caseMetadata = value; }
+        }
+
+        // Check to see if CaseMetadata property is set
+        internal bool IsSetCaseMetadata()
+        {
+            return this._caseMetadata != null && (this._caseMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

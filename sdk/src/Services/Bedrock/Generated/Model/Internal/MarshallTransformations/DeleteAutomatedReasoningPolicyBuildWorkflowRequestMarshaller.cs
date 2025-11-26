@@ -68,6 +68,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetPolicyArn())
                 throw new AmazonBedrockException("Request object does not have required field PolicyArn set");
             request.AddPathResource("{policyArn}", StringUtils.FromString(publicRequest.PolicyArn));
+            if (publicRequest.LastUpdatedAt == null)
+                throw new AmazonBedrockException("Request object does not have required field LastUpdatedAt set");
             
             if (publicRequest.IsSetLastUpdatedAt())
                 request.Parameters.Add("updatedAt", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LastUpdatedAt));

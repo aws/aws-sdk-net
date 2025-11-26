@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAlias operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves properties for an alias. This operation returns all alias metadata and settings.
     /// To get an alias's target fleet ID only, use <c>ResolveAlias</c>. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To get alias properties, specify the alias ID. If successful, the requested alias

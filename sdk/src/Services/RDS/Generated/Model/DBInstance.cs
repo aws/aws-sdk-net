@@ -129,6 +129,7 @@ namespace Amazon.RDS.Model
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tdeCredentialArn;
         private string _timezone;
+        private UpgradeRolloutOrder _upgradeRolloutOrder;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
@@ -1960,6 +1961,37 @@ namespace Amazon.RDS.Model
         internal bool IsSetTimezone()
         {
             return this._timezone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpgradeRolloutOrder. 
+        /// <para>
+        /// This data type represents the order in which the instances are upgraded.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// [first] - Typically used for development or testing environments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// [second] - Default order for resources not specifically configured.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// [last] - Usually reserved for production environments.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public UpgradeRolloutOrder UpgradeRolloutOrder
+        {
+            get { return this._upgradeRolloutOrder; }
+            set { this._upgradeRolloutOrder = value; }
+        }
+
+        // Check to see if UpgradeRolloutOrder property is set
+        internal bool IsSetUpgradeRolloutOrder()
+        {
+            return this._upgradeRolloutOrder != null;
         }
 
         /// <summary>

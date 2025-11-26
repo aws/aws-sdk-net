@@ -62,6 +62,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.DistributionConfigurationArn))
+                throw new AmazonImagebuilderException("Request object does not have required field DistributionConfigurationArn set");
             
             if (publicRequest.IsSetDistributionConfigurationArn())
                 request.Parameters.Add("distributionConfigurationArn", StringUtils.FromString(publicRequest.DistributionConfigurationArn));

@@ -65,6 +65,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetResource())
                 throw new AmazonLambdaException("Request object does not have required field Resource set");
             request.AddPathResource("{Resource}", StringUtils.FromString(publicRequest.Resource));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonLambdaException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

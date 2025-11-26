@@ -66,12 +66,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetDurationSeconds())
                 request.Parameters.Add("durationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
+            if (string.IsNullOrEmpty(publicRequest.Permission))
+                throw new AmazonS3ControlException("Request object does not have required field Permission set");
             
             if (publicRequest.IsSetPermission())
                 request.Parameters.Add("permission", StringUtils.FromString(publicRequest.Permission));
             
             if (publicRequest.IsSetPrivilege())
                 request.Parameters.Add("privilege", StringUtils.FromString(publicRequest.Privilege));
+            if (string.IsNullOrEmpty(publicRequest.Target))
+                throw new AmazonS3ControlException("Request object does not have required field Target set");
             
             if (publicRequest.IsSetTarget())
                 request.Parameters.Add("target", StringUtils.FromString(publicRequest.Target));

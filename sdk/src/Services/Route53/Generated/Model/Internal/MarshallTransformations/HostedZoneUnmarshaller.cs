@@ -92,6 +92,12 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         unmarshalledObject.LinkedService = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Features", targetDepth))
+                    {
+                        var unmarshaller = HostedZoneFeaturesUnmarshaller.Instance;
+                        unmarshalledObject.Features = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
 
                     XmlStructureUnmarshallCustomization(context, unmarshalledObject, targetDepth);
                 }

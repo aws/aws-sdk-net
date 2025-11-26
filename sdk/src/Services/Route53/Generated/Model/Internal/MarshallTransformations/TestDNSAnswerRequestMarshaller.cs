@@ -58,12 +58,18 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
+            if (string.IsNullOrEmpty(publicRequest.HostedZoneId))
+                throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
             
             if (publicRequest.IsSetHostedZoneId())
                 request.Parameters.Add("hostedzoneid", StringUtils.FromString(publicRequest.HostedZoneId));
+            if (string.IsNullOrEmpty(publicRequest.RecordName))
+                throw new AmazonRoute53Exception("Request object does not have required field RecordName set");
             
             if (publicRequest.IsSetRecordName())
                 request.Parameters.Add("recordname", StringUtils.FromString(publicRequest.RecordName));
+            if (string.IsNullOrEmpty(publicRequest.RecordType))
+                throw new AmazonRoute53Exception("Request object does not have required field RecordType set");
             
             if (publicRequest.IsSetRecordType())
                 request.Parameters.Add("recordtype", StringUtils.FromString(publicRequest.RecordType));

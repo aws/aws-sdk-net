@@ -82,21 +82,19 @@ namespace Amazon.DynamoDBv2.DataModel
         public static bool AttributeType(object _, string dynamoDbType) => throw new NotSupportedException("The method AttributeType is intended for use only in expression trees and should not be called at runtime.");
     }
 
-
-
     internal static class ContextExpressionsUtils
     {
-        internal static string GetRangeKeyConditionExpression(string rangeKeyAlias, QueryOperator op)
+        internal static string GetRangeKeyConditionExpression(string rangeKeyAlias, QueryOperator op,int index)
         {
             return op switch
             {
-                QueryOperator.Equal => $" AND {rangeKeyAlias} = :rangeKey0",
-                QueryOperator.LessThan => $" AND {rangeKeyAlias} < :rangeKey0",
-                QueryOperator.LessThanOrEqual => $" AND {rangeKeyAlias} <= :rangeKey0",
-                QueryOperator.GreaterThan => $" AND {rangeKeyAlias} > :rangeKey0",
-                QueryOperator.GreaterThanOrEqual => $" AND {rangeKeyAlias} >= :rangeKey0",
-                QueryOperator.Between => $" AND {rangeKeyAlias} BETWEEN :rangeKey0 AND :rangeKey0",
-                QueryOperator.BeginsWith => $" AND begins_with({rangeKeyAlias}, :rangeKey0)",
+                QueryOperator.Equal => $" AND {rangeKeyAlias}{index} = :rangeKey{index}",
+                QueryOperator.LessThan => $" AND {rangeKeyAlias}{index} < :rangeKey{index}",
+                QueryOperator.LessThanOrEqual => $" AND {rangeKeyAlias}{index} <= :rangeKey{index}",
+                QueryOperator.GreaterThan => $" AND {rangeKeyAlias}{index} > :rangeKey{index}",
+                QueryOperator.GreaterThanOrEqual => $" AND {rangeKeyAlias}{index} >= :rangeKey{index}",
+                QueryOperator.Between => $" AND {rangeKeyAlias}{index} BETWEEN :rangeKeyL{index} AND :rangeKeyH{index}",
+                QueryOperator.BeginsWith => $" AND begins_with({rangeKeyAlias}{index}, :rangeKey{index})",
                 _ => throw new NotSupportedException($"QueryOperator '{op}' is not supported for key conditions.")
             };
         }

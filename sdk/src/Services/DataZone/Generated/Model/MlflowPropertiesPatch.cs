@@ -35,7 +35,6 @@ namespace Amazon.DataZone.Model
     public partial class MlflowPropertiesPatch
     {
         private string _trackingServerArn;
-        private string _trackingServerName;
 
         /// <summary>
         /// Gets and sets the property TrackingServerArn. 
@@ -53,24 +52,6 @@ namespace Amazon.DataZone.Model
         internal bool IsSetTrackingServerArn()
         {
             return this._trackingServerArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TrackingServerName. 
-        /// <para>
-        /// The name of the tracking server as part of the MLflow properties of a connection.
-        /// </para>
-        /// </summary>
-        public string TrackingServerName
-        {
-            get { return this._trackingServerName; }
-            set { this._trackingServerName = value; }
-        }
-
-        // Check to see if TrackingServerName property is set
-        internal bool IsSetTrackingServerName()
-        {
-            return this._trackingServerName != null;
         }
 
     }

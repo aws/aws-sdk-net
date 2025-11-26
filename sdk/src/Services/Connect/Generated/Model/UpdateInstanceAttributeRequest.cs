@@ -53,7 +53,7 @@ namespace Amazon.Connect.Model
         ///  <note> 
         /// <para>
         /// Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature,
-        /// contact Amazon Web ServicesSupport for allowlisting.
+        /// contact Amazon Web Services Support for allowlisting.
         /// </para>
         ///  </note>
         /// </summary>

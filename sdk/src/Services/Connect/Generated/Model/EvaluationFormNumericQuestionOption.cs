@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormNumericQuestionOption
     {
         private bool? _automaticFail;
+        private AutomaticFailConfiguration _automaticFailConfiguration;
         private int? _maxValue;
         private int? _minValue;
         private int? _score;
@@ -56,6 +57,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetAutomaticFail()
         {
             return this._automaticFail.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomaticFailConfiguration. 
+        /// <para>
+        /// A configuration for automatic fail.
+        /// </para>
+        /// </summary>
+        public AutomaticFailConfiguration AutomaticFailConfiguration
+        {
+            get { return this._automaticFailConfiguration; }
+            set { this._automaticFailConfiguration = value; }
+        }
+
+        // Check to see if AutomaticFailConfiguration property is set
+        internal bool IsSetAutomaticFailConfiguration()
+        {
+            return this._automaticFailConfiguration != null;
         }
 
         /// <summary>

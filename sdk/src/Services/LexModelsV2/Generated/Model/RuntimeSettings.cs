@@ -41,7 +41,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property NluImprovement. 
         /// <para>
-        /// An object containing specifications for the assisted nlu feature.
+        /// An object containing specifications for the Assisted NLU feature within the bot's
+        /// runtime settings. These settings determine how the bot processes and interprets user
+        /// utterances during conversations.
         /// </para>
         /// </summary>
         public NluImprovementSpecification NluImprovement

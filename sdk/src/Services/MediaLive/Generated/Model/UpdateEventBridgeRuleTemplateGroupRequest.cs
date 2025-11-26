@@ -41,7 +41,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Description. A resource's optional description.
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }

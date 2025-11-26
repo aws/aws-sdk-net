@@ -135,6 +135,26 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                                      }
                                 }
                             }
+                            if(publicRequestlistValue.IsSetRedshift())
+                            {
+                                if (publicRequestlistValue.Redshift.Count == 0)
+                                    request.Parameters.Add("ServiceIntegrations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Redshift", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Redshift)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetConnect())
+                                        {
+                                            if(publicRequestlistValuelistValue.Connect.IsSetAuthorization())
+                                            {
+                                                request.Parameters.Add("ServiceIntegrations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Redshift" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Connect" + "." + "Authorization", StringUtils.FromString(publicRequestlistValuelistValue.Connect.Authorization));
+                                            }
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
                             if(publicRequestlistValue.IsSetS3AccessGrants())
                             {
                                 if (publicRequestlistValue.S3AccessGrants.Count == 0)

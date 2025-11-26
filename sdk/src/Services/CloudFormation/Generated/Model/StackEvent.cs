@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The StackEvent data type.
+    /// The <c>StackEvent</c> data type.
     /// </summary>
     public partial class StackEvent
     {
@@ -44,6 +44,7 @@ namespace Amazon.CloudFormation.Model
         private string _hookStatusReason;
         private string _hookType;
         private string _logicalResourceId;
+        private string _operationId;
         private string _physicalResourceId;
         private string _resourceProperties;
         private ResourceStatus _resourceStatus;
@@ -274,6 +275,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetLogicalResourceId()
         {
             return this._logicalResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The unique identifier of the operation that generated this stack event.
+        /// </para>
+        /// </summary>
+        public string OperationId
+        {
+            get { return this._operationId; }
+            set { this._operationId = value; }
+        }
+
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
+        {
+            return this._operationId != null;
         }
 
         /// <summary>

@@ -180,19 +180,19 @@ namespace Amazon.DynamoDBv2.DataModel
 
         public void AddIndex(DynamoDBGlobalSecondaryIndexHashKeyAttribute gsiHashKey)
         {
-            AddIndex(new GSI(true, gsiHashKey.AttributeName, gsiHashKey.IndexNames));
+            AddIndex(new GSI(true, gsiHashKey.AttributeName, gsiHashKey.Order, gsiHashKey.IndexNames));
         }
         public void AddIndex(DynamoDBGlobalSecondaryIndexRangeKeyAttribute gsiRangeKey)
         {
-            AddIndex(new GSI(false, gsiRangeKey.AttributeName, gsiRangeKey.IndexNames));
+            AddIndex(new GSI(false, gsiRangeKey.AttributeName, gsiRangeKey.Order, gsiRangeKey.IndexNames));
         }
         public void AddIndex(DynamoDBLocalSecondaryIndexRangeKeyAttribute lsiRangeKey)
         {
             AddIndex(new LSI(lsiRangeKey.AttributeName, lsiRangeKey.IndexNames));
         }
-        public void AddGsiIndex(bool isHashKey, string attributeName, params string[] indexNames)
+        public void AddGsiIndex(bool isHashKey, string attributeName,int order, params string[] indexNames)
         {
-            AddIndex(new GSI(isHashKey, attributeName, indexNames));
+            AddIndex(new GSI(isHashKey, attributeName, order, indexNames));
         }
         public void AddLsiIndex(string attributeName, params string[] indexNames)
         {
@@ -225,10 +225,13 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             public bool IsHashKey { get; private set; }
 
-            public GSI(bool isHashKey, string attributeName, params string[] indexNames)
+            public int Order { get; private set; }
+
+            public GSI(bool isHashKey, string attributeName, int order, params string[] indexNames)
                 : base(attributeName, indexNames)
             {
                 IsHashKey = isHashKey;
+                Order = order;
             }
         }
 
@@ -320,14 +323,16 @@ namespace Amazon.DynamoDBv2.DataModel
         public GSIConfig(string indexName)
         {
             IndexName = indexName;
+            HashKeyPropertyNames = new Dictionary<string, int>();
+            RangeKeyPropertyNames = new Dictionary<string, int>();
         }
 
         // index name
         public string IndexName { get; set; }
 
         // keys
-        public string HashKeyPropertyName { get; set; }
-        public string RangeKeyPropertyName { get; set; }
+        public Dictionary<string,int> HashKeyPropertyNames { get; set; }
+        public Dictionary<string, int> RangeKeyPropertyNames { get; set; }
     }
 
     /// <summary>
@@ -539,41 +544,39 @@ namespace Amazon.DynamoDBv2.DataModel
             return gsiConfig;
         }
 
-        public string GetCorrectHashKeyProperty(DynamoDBFlatConfig currentConfig, string hashKeyProperty)
+        public List<string> GetCorrectHashKeyProperty(DynamoDBFlatConfig currentConfig, List<string> hashKeyProperties)
         {
             if (currentConfig.IsIndexOperation)
             {
                 string indexName = currentConfig.IndexName;
                 GSIConfig gsiConfig = this.GetGSIConfig(indexName);
-                // Use GSI hash key if GSI is found AND GSI hash-key is set
-                if (gsiConfig != null && !string.IsNullOrEmpty(gsiConfig.HashKeyPropertyName))
-                    hashKeyProperty = gsiConfig.HashKeyPropertyName;
+                // Use GSI hash key if GSI is found AND GSI hash-keys are set
+                if (gsiConfig != null && gsiConfig.HashKeyPropertyNames != null && gsiConfig.HashKeyPropertyNames.Count != 0)
+                    hashKeyProperties = gsiConfig.HashKeyPropertyNames.OrderBy(kv => kv.Value).Select(kv => kv.Key).ToList(); ;
             }
-            return hashKeyProperty;
+            return hashKeyProperties;
         }
-        public string GetRangeKeyByIndex(string indexName)
+            
+        public List<string> GetRangeKeyByIndex(string indexName)
         {
-            string rangeKeyPropertyName = null;
+            List<string> rangeKeyPropertyNames = null;
 
             // test LSI first
             List<string> rangeProperties;
             if (IndexNameToLSIRangePropertiesMapping.TryGetValue(indexName, out rangeProperties) &&
-                rangeProperties != null &&
-                rangeProperties.Count == 1)
+                rangeProperties != null && rangeProperties.Count == 1)
             {
-                rangeKeyPropertyName = rangeProperties[0];
+                rangeKeyPropertyNames = rangeProperties;
             }
 
             GSIConfig gsiConfig = GetGSIConfig(indexName);
             if (gsiConfig != null)
             {
-                rangeKeyPropertyName = gsiConfig.RangeKeyPropertyName;
+                rangeKeyPropertyNames = gsiConfig.RangeKeyPropertyNames.OrderBy(kv => kv.Value)
+                    .Select(kv=> kv.Key).ToList();
             }
 
-            if (string.IsNullOrEmpty(rangeKeyPropertyName))
-                throw new InvalidOperationException("Unable to determine range key from index name");
-
-            return rangeKeyPropertyName;
+            return rangeKeyPropertyNames;
         }
         public PropertyStorage VersionPropertyStorage
         {
@@ -646,7 +649,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     var gsi = index as PropertyStorage.GSI;
                     if (gsi != null)
-                        AddGSIConfigs(gsi.IndexNames, propertyName, gsi.IsHashKey);
+                        AddGSIConfigs(gsi.IndexNames, propertyName, gsi.IsHashKey, gsi.Order);
 
                     var lsi = index as PropertyStorage.LSI;
                     if (lsi != null)
@@ -720,7 +723,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        private void AddGSIConfigs(List<string> gsiIndexNames, string propertyName, bool isHashKey)
+        private void AddGSIConfigs(List<string> gsiIndexNames, string propertyName, bool isHashKey, int order)
         {
             foreach (var index in gsiIndexNames)
             {
@@ -730,10 +733,22 @@ namespace Amazon.DynamoDBv2.DataModel
                     gsiConfig = new GSIConfig(index);
                     this.IndexNameToGSIMapping[index] = gsiConfig;
                 }
-                if (isHashKey)
-                    gsiConfig.HashKeyPropertyName = propertyName;
-                else
-                    gsiConfig.RangeKeyPropertyName = propertyName;
+
+                var targetDict = isHashKey ? gsiConfig.HashKeyPropertyNames : gsiConfig.RangeKeyPropertyNames;
+
+                string keyToRemove = null;
+                foreach (var kv in targetDict)
+                {
+                    if (kv.Value != order) continue;
+                    keyToRemove = kv.Key;
+                    break;
+                }
+                if (keyToRemove != null)
+                {
+                    targetDict.Remove(keyToRemove);
+                }
+
+                targetDict[propertyName] = order;
             }
         }
 
@@ -1158,16 +1173,46 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 string indexName = kvp.Key;
                 var gsi = kvp.Value;
-
+                var hashKeyOrder = 0;
+                var rangeKeyOrder = 0;
+                var keyOrder = 0;
                 foreach (var element in gsi.KeySchema)
                 {
                     string attributeName = element.AttributeName;
                     bool isHashKey = element.KeyType == KeyType.HASH;
-
                     property = GetProperty(config, attributeName, true);
                     if (property != null)
                     {
-                        property.AddGsiIndex(isHashKey, attributeName, indexName);
+                        keyOrder = isHashKey ? hashKeyOrder : rangeKeyOrder;
+                        
+                        // Check for existing properties with same GSI configuration and remove index
+                        foreach (var existingProperty in config.BaseTypeStorageConfig.Properties)
+                        {
+                            var gsiToModify = existingProperty.Indexes.OfType<PropertyStorage.GSI>()
+                                .FirstOrDefault(gsiIndex => gsiIndex.IndexNames.Contains(indexName) &&
+                                                            gsiIndex.Order == keyOrder &&
+                                                            gsiIndex.IsHashKey == isHashKey);
+                            if (gsiToModify != null)
+                            {
+                                gsiToModify.IndexNames.Remove(indexName);
+                                if (gsiToModify.IndexNames.Count == 0)
+                                {
+                                    existingProperty.Indexes.Remove(gsiToModify);
+                                }
+                            }
+                        }
+                        
+                        property.AddGsiIndex(isHashKey, attributeName, keyOrder, indexName);
+
+                        if (isHashKey)
+                        {
+                            hashKeyOrder++;
+                        }
+                        else
+                        {
+                            rangeKeyOrder++;
+                        }
+
                     }
                 }
             }
@@ -1195,6 +1240,8 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
         }
+
+
         private static void PopulateConfigFromMappings(ItemStorageConfig config, Dictionary<Type, TypeMapping> typeMappings)
         {
             var baseType = config.BaseTypeStorageConfig.TargetType;
@@ -1255,6 +1302,13 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             return property;
+        }
+        
+        private static List<PropertyStorage> GetIndexProperties(ItemStorageConfig config, string indexName)
+        {
+            return config.BaseTypeStorageConfig.Properties
+                .Where(p => p.Indexes != null && p.Indexes.Any(gsi => gsi.IndexNames.Contains(indexName)))
+                .ToList();
         }
 
         private static void Validate(bool value, string messageFormat, params object[] args)

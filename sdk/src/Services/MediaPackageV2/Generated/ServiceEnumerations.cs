@@ -1257,6 +1257,56 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type ScteInSegments.
+    /// </summary>
+    public class ScteInSegments : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ScteInSegments
+        /// </summary>
+        public static readonly ScteInSegments ALL = new ScteInSegments("ALL");
+        /// <summary>
+        /// Constant NONE for ScteInSegments
+        /// </summary>
+        public static readonly ScteInSegments NONE = new ScteInSegments("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScteInSegments(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScteInSegments FindValue(string value)
+        {
+            return FindValue<ScteInSegments>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScteInSegments(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TsEncryptionMethod.
     /// </summary>
     public class TsEncryptionMethod : ConstantClass
@@ -1428,6 +1478,10 @@ namespace Amazon.MediaPackageV2
         /// Constant INCOMPATIBLE_XML_ENCODING for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType INCOMPATIBLE_XML_ENCODING = new ValidationExceptionType("INCOMPATIBLE_XML_ENCODING");
+        /// <summary>
+        /// Constant INVALID_DRM_SETTINGS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_DRM_SETTINGS = new ValidationExceptionType("INVALID_DRM_SETTINGS");
         /// <summary>
         /// Constant INVALID_HARVEST_JOB_DURATION for ValidationExceptionType
         /// </summary>

@@ -40,6 +40,7 @@ namespace Amazon.Braket.Model
         private string _clientToken;
         private string _deviceArn;
         private string _deviceParameters;
+        private ExperimentalCapabilities _experimentalCapabilities;
         private string _jobToken;
         private string _outputs3Bucket;
         private string _outputs3KeyPrefix;
@@ -144,6 +145,24 @@ namespace Amazon.Braket.Model
         internal bool IsSetDeviceParameters()
         {
             return this._deviceParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentalCapabilities. 
+        /// <para>
+        /// Enable experimental capabilities for the quantum task.
+        /// </para>
+        /// </summary>
+        public ExperimentalCapabilities ExperimentalCapabilities
+        {
+            get { return this._experimentalCapabilities; }
+            set { this._experimentalCapabilities = value; }
+        }
+
+        // Check to see if ExperimentalCapabilities property is set
+        internal bool IsSetExperimentalCapabilities()
+        {
+            return this._experimentalCapabilities != null;
         }
 
         /// <summary>

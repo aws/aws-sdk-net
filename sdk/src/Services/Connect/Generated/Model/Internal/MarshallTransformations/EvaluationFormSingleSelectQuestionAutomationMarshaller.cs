@@ -46,6 +46,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAnswerSource())
+            {
+                context.Writer.WritePropertyName("AnswerSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormQuestionAutomationAnswerSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.AnswerSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDefaultOptionRefId())
             {
                 context.Writer.WritePropertyName("DefaultOptionRefId");

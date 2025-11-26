@@ -40,7 +40,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property EntitlementArn. The MediaConnect entitlement ARN available
         /// as a Flow source.
         /// </summary>
-        [AWSProperty(Min=1)]
         public string EntitlementArn
         {
             get { return this._entitlementArn; }

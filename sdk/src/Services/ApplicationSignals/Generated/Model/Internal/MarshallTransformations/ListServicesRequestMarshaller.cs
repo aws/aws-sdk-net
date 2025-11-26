@@ -65,6 +65,8 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetAwsAccountId())
                 request.Parameters.Add("AwsAccountId", StringUtils.FromString(publicRequest.AwsAccountId));
+            if (publicRequest.EndTime == null)
+                throw new AmazonApplicationSignalsException("Request object does not have required field EndTime set");
             
             if (publicRequest.IsSetEndTime())
                 request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
@@ -77,6 +79,8 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (publicRequest.StartTime == null)
+                throw new AmazonApplicationSignalsException("Request object does not have required field StartTime set");
             
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));

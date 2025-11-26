@@ -81,6 +81,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.EventDataStore);
             }
 
+            if(publicRequest.IsSetTrailName())
+            {
+                context.Writer.WritePropertyName("TrailName");
+                context.Writer.WriteStringValue(publicRequest.TrailName);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

@@ -37,6 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _availabilityZone;
         private string _id;
         private int? _port;
+        private string _quicServerId;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -128,6 +129,33 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuicServerId. 
+        /// <para>
+        /// The server ID for the targets. This value is required if the protocol is <c>QUIC</c>
+        /// or <c>TCP_QUIC</c> and can't be used with other protocols.
+        /// </para>
+        ///  
+        /// <para>
+        /// The ID consists of the <c>0x</c> prefix followed by 16 hexadecimal characters. Any
+        /// letters must be lowercase. The value must be unique at the listener level. You can't
+        /// modify the server ID for a registered target. You must deregister the target and then
+        /// provide a new server ID when you register the target again.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string QuicServerId
+        {
+            get { return this._quicServerId; }
+            set { this._quicServerId = value; }
+        }
+
+        // Check to see if QuicServerId property is set
+        internal bool IsSetQuicServerId()
+        {
+            return this._quicServerId != null;
         }
 
     }

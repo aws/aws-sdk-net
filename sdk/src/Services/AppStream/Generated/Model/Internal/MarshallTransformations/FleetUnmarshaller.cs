@@ -176,6 +176,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Platform = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RootVolumeConfig", targetDepth))
+                {
+                    var unmarshaller = VolumeConfigUnmarshaller.Instance;
+                    unmarshalledObject.RootVolumeConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SessionScriptS3Location", targetDepth))
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;

@@ -53,7 +53,7 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the maintenance configuration.
+        /// The name of the table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

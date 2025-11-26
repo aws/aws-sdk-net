@@ -58,10 +58,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AudioDuration);
             }
 
+            if(requestObject.IsSetC2paManifest())
+            {
+                context.Writer.WritePropertyName("c2paManifest");
+                context.Writer.WriteStringValue(requestObject.C2paManifest);
+            }
+
             if(requestObject.IsSetCaptionContainerType())
             {
                 context.Writer.WritePropertyName("captionContainerType");
                 context.Writer.WriteStringValue(requestObject.CaptionContainerType);
+            }
+
+            if(requestObject.IsSetCertificateSecret())
+            {
+                context.Writer.WritePropertyName("certificateSecret");
+                context.Writer.WriteStringValue(requestObject.CertificateSecret);
             }
 
             if(requestObject.IsSetKlvMetadata())
@@ -86,6 +98,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("scte35Source");
                 context.Writer.WriteStringValue(requestObject.Scte35Source);
+            }
+
+            if(requestObject.IsSetSigningKmsKey())
+            {
+                context.Writer.WritePropertyName("signingKmsKey");
+                context.Writer.WriteStringValue(requestObject.SigningKmsKey);
             }
 
             if(requestObject.IsSetTimedMetadata())

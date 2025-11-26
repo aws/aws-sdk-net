@@ -84,6 +84,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IpamConfig", targetDepth))
+                    {
+                        var unmarshaller = IpamConfigUnmarshaller.Instance;
+                        unmarshalledObject.IpamConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IpCount", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

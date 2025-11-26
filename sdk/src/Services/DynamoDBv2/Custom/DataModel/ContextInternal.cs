@@ -13,20 +13,17 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
+using Amazon.Util.Internal;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.IO;
-using System.Reflection;
-
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
-
-using Amazon.Util.Internal;
-using System.Globalization;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using Amazon.Util;
 using ThirdParty.RuntimeBackports;
 using Expression = System.Linq.Expressions.Expression;
@@ -1117,40 +1114,68 @@ namespace Amazon.DynamoDBv2.DataModel
             return filter;
         }
 
-        private QueryFilter ComposeQueryFilter(DynamoDBFlatConfig currentConfig, object hashKeyValue, IEnumerable<QueryCondition> conditions, ItemStorageConfig storageConfig, out List<string> indexNames)
+        private QueryFilter ComposeQueryFilter(DynamoDBFlatConfig currentConfig, Dictionary<string, object> hashKeys, IEnumerable<QueryCondition> conditions, ItemStorageConfig storageConfig, out List<string> indexNames)
         {
-            ValidateHashKey(hashKeyValue, storageConfig);
-            var hashKeyEntry = HashKeyValueToDynamoDBEntry(currentConfig, hashKeyValue, storageConfig);
+            ValidateHashKey(hashKeys, storageConfig);
+            var hashKeyEntry = HashKeyValueToDynamoDBEntry(currentConfig, hashKeys, storageConfig);
 
-            Document hashKey = new Document
-            {
-                [hashKeyEntry.Item1] = hashKeyEntry.Item2
-            };
+            Document hashKey = new Document();
+            foreach (var entry in hashKeyEntry) { 
+                hashKey[entry.AttributeName] = entry.Value;
+            }
 
             return ComposeQueryFilterHelper(currentConfig, hashKey, conditions, storageConfig, out indexNames);
         }
 
-        private (string, DynamoDBEntry) HashKeyValueToDynamoDBEntry(DynamoDBFlatConfig currentConfig, object hashKeyValue,
+        private IEnumerable<HashKeyEntry> HashKeyValueToDynamoDBEntry(DynamoDBFlatConfig currentConfig, Dictionary<string, object> hashKeys,
             ItemStorageConfig storageConfig)
         {
             // Set hash key property name
-            // In case of index queries, if GSI, different key could be used
-            string hashKeyProperty = storageConfig.HashKeyPropertyNames[0];
-            hashKeyProperty = storageConfig.GetCorrectHashKeyProperty(currentConfig, hashKeyProperty);
+            // In case of index queries, if GSI, different keys could be used
+            List<string> hashKeyProperties = storageConfig.HashKeyPropertyNames;
+            hashKeyProperties = storageConfig.GetCorrectHashKeyProperty(currentConfig, storageConfig.HashKeyPropertyNames);
 
-            PropertyStorage propertyStorage = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(hashKeyProperty);
-            string hashAttributeName = propertyStorage.AttributeName;
+            if (hashKeyProperties != null && hashKeyProperties.Count != hashKeys.Count)
+            {
+                throw new InvalidOperationException(
+                    $"The number of hash key properties provided ({hashKeys.Count}) does not match the number of hash key properties defined ({hashKeyProperties.Count}). " +
+                    $"{(currentConfig.IsIndexOperation ? "Index" : "Table")} {(currentConfig.IsIndexOperation ? currentConfig.IndexName : storageConfig.TableName)} has multiple hash keys. For multiple hash keys, use QueryConditional.KeyEqual() with a dictionary of key-value pairs.");
+            }
 
-            DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(propertyStorage, hashKeyValue, currentConfig);
-            if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyProperty);
+            foreach (var hashKeyProperty in hashKeyProperties)
+            {
+                PropertyStorage propertyStorage = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(hashKeyProperty);
+                string hashAttributeName = propertyStorage.AttributeName;
+                var found = hashKeys.TryGetValue(hashAttributeName, out var hashKeyValue);
+                if(!found)
+                {
+                    // Try with DEFAULT_HASH_KEY_NAME for backward compatibility
+                    found = hashKeys.TryGetValue(DEFAULT_HASH_KEY_NAME, out hashKeyValue);
+                }
+                if(!found)
+                {
+                    throw new InvalidOperationException($"The hash key property '{hashKeyProperty}' was not found in the provided hash keys.");
+                }
+                DynamoDBEntry hashKeyEntry = ValueToDynamoDBEntry(propertyStorage, hashKeyValue, currentConfig);
+                if (hashKeyEntry == null) throw new InvalidOperationException("Unable to convert hash key value for property " + hashKeyProperty);
 
-            return (hashAttributeName, hashKeyEntry);
+                yield return new HashKeyEntry(hashAttributeName, hashKeyEntry);
+            }
         }
 
-        private static void ValidateHashKey(object hashKeyValue, ItemStorageConfig storageConfig)
+        private static void ValidateHashKey(Dictionary<string, object> hashKeys, ItemStorageConfig storageConfig)
         {
-            if (hashKeyValue == null)
-                throw new ArgumentNullException("hashKeyValue");
+            if (hashKeys == null)
+                throw new ArgumentNullException(nameof(hashKeys));
+
+            if (hashKeys.Count == 0)
+                throw new ArgumentException("hashKeys must contain at least one entry.", nameof(hashKeys));
+
+            foreach (var kvp in hashKeys)
+            {
+                if (string.IsNullOrEmpty(kvp.Key))
+                    throw new ArgumentException("All hash key names must be non-null and non-empty.", nameof(hashKeys));
+            }
 
             if (storageConfig.HashKeyPropertyNames == null || storageConfig.HashKeyPropertyNames.Count == 0)
             {
@@ -1161,6 +1186,33 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         private static string NO_INDEX = DynamoDBFlatConfig.DefaultIndexName;
+
+        /// <summary>
+        /// Default hash key name used for backward compatibility in legacy query operations.
+        /// </summary>
+        private const string DEFAULT_HASH_KEY_NAME = "#SDKHashKey";
+
+        /// <summary>
+        /// Default range key name used for backward compatibility in legacy query operations.
+        /// </summary>
+        private const string DEFAULT_RANGE_KEY_NAME = "#SDKRangeKey";
+
+        private const string RANGE_KEY_EXPRESSION_ATTRIBUTE_NAME = "#rangeKey";
+        private const string RANGE_KEY_EXPRESSION_ATTRIBUTE_VALUE = ":rangeKey";
+
+        private const int MAX_COMPOSITE_KEYS = 4;
+
+        internal class HashKeyEntry
+        {
+            public string AttributeName { get; set; }
+            public DynamoDBEntry Value { get; set; }
+
+            public HashKeyEntry(string attributeName, DynamoDBEntry value)
+            {
+                AttributeName = attributeName;
+                Value = value;
+            }
+        }
 
         private void ValidateQueryKeyConfiguration(ItemStorageConfig storageConfig, DynamoDBFlatConfig currentConfig)
         {
@@ -1195,12 +1247,17 @@ namespace Amazon.DynamoDBv2.DataModel
             QueryFilter filter = new QueryFilter();
 
             // Configure hash-key equality condition
-            string hashKeyProperty = storageConfig.HashKeyPropertyNames[0];
-            hashKeyProperty = storageConfig.GetCorrectHashKeyProperty(currentConfig, hashKeyProperty);
-            PropertyStorage propertyStorage = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(hashKeyProperty);
-            string attributeName = propertyStorage.AttributeName;
-            DynamoDBEntry hashValue = hashKey[attributeName];
-            filter.AddCondition(attributeName, QueryOperator.Equal, hashValue);
+            List<string> hashKeyProperties = storageConfig.HashKeyPropertyNames;
+            hashKeyProperties = storageConfig.GetCorrectHashKeyProperty(currentConfig, hashKeyProperties);
+            foreach (var hashKeyProperty in hashKeyProperties)
+            {
+                PropertyStorage propertyStorage = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(hashKeyProperty);
+                string attributeName = propertyStorage.AttributeName;
+                DynamoDBEntry hashValue = hashKey[attributeName];
+                if (hashValue == null)
+                    throw new InvalidOperationException("Hash key value missing for property " + hashKeyProperty);
+                filter.AddCondition(attributeName, QueryOperator.Equal, hashValue);
+            }
 
             indexNames = new List<string>();
             if (conditions != null)
@@ -1289,20 +1346,48 @@ namespace Amazon.DynamoDBv2.DataModel
             return null;
         }
 
-        private static List<QueryCondition> CreateQueryConditions(DynamoDBFlatConfig flatConfig, QueryOperator op, IEnumerable<object> values, ItemStorageConfig storageConfig)
+        private static List<QueryCondition>  CreateQueryConditions(DynamoDBFlatConfig flatConfig, Dictionary<string,RangeKeyCondition> values, ItemStorageConfig storageConfig)
         {
-            string rangeKeyPropertyName;
+            List<string> rangeKeyPropertyNames;
 
             string indexName = flatConfig.IndexName;
             if (string.IsNullOrEmpty(indexName))
-                rangeKeyPropertyName = storageConfig.RangeKeyPropertyNames.FirstOrDefault();
+                rangeKeyPropertyNames = storageConfig.RangeKeyPropertyNames; 
             else
-                rangeKeyPropertyName = storageConfig.GetRangeKeyByIndex(indexName);
+                rangeKeyPropertyNames = storageConfig.GetRangeKeyByIndex(indexName);
+            List<QueryCondition> conditions = new List<QueryCondition>();
 
-            List<QueryCondition> conditions = new List<QueryCondition>
+            if (values.Count > rangeKeyPropertyNames.Count)
             {
-                new QueryCondition(rangeKeyPropertyName, op, values.ToArray())
-            };
+                throw new InvalidOperationException("The number of range key properties provided (" + values.Count + ") exceeds the number of range key properties defined (" + rangeKeyPropertyNames.Count + "). " );
+            }
+
+            if(values.Count(x => x.Value.Operator != QueryOperator.Equal) > 1)
+            {
+                throw new InvalidOperationException("Only one range key condition can use a non-equality operator. Multiple non-equality operators are not supported in composite key queries.");
+            }
+
+            for (int i = 0; i < rangeKeyPropertyNames.Count; i++)
+            {
+                var rangeKeyProperty = rangeKeyPropertyNames[i];
+                var rangeKeyPropertyStorage = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(rangeKeyProperty);
+                var rangeKeyAttributeName = rangeKeyPropertyStorage.AttributeName;
+
+                RangeKeyCondition rangeKeyCondition = null;
+
+                // Try to get the range key condition by attribute name 
+                // of if it's the first range key, try the default name for backward compatibility
+                if (values.TryGetValue(rangeKeyAttributeName, out rangeKeyCondition) ||
+                    (i == 0 && values.TryGetValue(DEFAULT_RANGE_KEY_NAME, out rangeKeyCondition)))
+                {
+                    var rangeKeyValues = rangeKeyCondition.Values as object[] ?? rangeKeyCondition.Values.ToArray();
+                    if (rangeKeyValues.Any())
+                    {
+                        conditions.Add(new QueryCondition(rangeKeyProperty, rangeKeyCondition.Operator, rangeKeyValues));
+                    }
+                }
+            }
+
             return conditions;
         }
 
@@ -1394,7 +1479,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             public DynamoDBFlatConfig FlatConfig { get; set; }
             public Search Search { get; set; }
-
+    
             public ContextSearch(Search search, DynamoDBFlatConfig flatConfig)
             {
                 Search = search;
@@ -1430,29 +1515,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Scan/Query
 
-        private ContextSearch ConvertScan<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
-        {
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
-            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-            ScanFilter filter = ComposeScanFilter(conditions, storageConfig, flatConfig);
-
-            Table table = GetTargetTable(storageConfig, flatConfig);
-            var scanConfig = new ScanOperationConfig
-            {
-                AttributesToGet = storageConfig.AttributesToGet,
-                Select = SelectValues.SpecificAttributes,
-                Filter = filter,
-                ConditionalOperator = flatConfig.ConditionalOperator,
-                IndexName = flatConfig.IndexName,
-                ConsistentRead = flatConfig.ConsistentRead.GetValueOrDefault(false)
-            };
-
-            // table.Scan() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
-            Search scan = table.Scan(scanConfig) as Search;
-            return new ContextSearch(scan, flatConfig);
-        }
-
-
         internal ContextSearch ConvertScan<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextExpression filterExpression, DynamoDBOperationConfig operationConfig)
         {
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
@@ -1483,29 +1545,26 @@ namespace Amazon.DynamoDBv2.DataModel
             return new ContextSearch(scan, flatConfig);
         }
 
-        private ContextSearch ConvertFromScan<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
+        internal ContextSearch ConvertFromQuery<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
         {
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
-            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-            Table table = GetTargetTable(storageConfig, flatConfig);
-
-            // table.Scan() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
-            Search search = table.Scan(scanConfig) as Search;
-            return new ContextSearch(search, flatConfig);
-        }
-
-        private ContextSearch ConvertFromQuery<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig)
-        {
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
-            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-            Table table = GetTargetTable(storageConfig, flatConfig);
+            var (table, flatConfig) = GetTableAndFlatConfig<T>(operationConfig);
 
             // table.Query() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
             Search search = table.Query(queryConfig) as Search;
             return new ContextSearch(search, flatConfig);
         }
 
-        private ContextSearch ConvertQueryByValue<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
+        internal ContextSearch ConvertFromQuery<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryDocumentOperationRequest queryConfig, DynamoDBOperationConfig operationConfig)
+        {
+            var (table, flatConfig) = GetTableAndFlatConfig<T>(operationConfig);
+
+            // table.Query() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search search = table.Query(queryConfig) as Search;
+            return new ContextSearch(search, flatConfig);
+        }
+
+        internal ContextSearch ConvertQueryByValue<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKeyValue,
+            QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig)
         {
             if (operationConfig != null)
             {
@@ -1514,41 +1573,81 @@ namespace Amazon.DynamoDBv2.DataModel
 
             DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-          
+
+            // Create hash key dictionary for backward compatibility
+            var hashKeys = new Dictionary<string, object> { { DEFAULT_HASH_KEY_NAME, hashKeyValue } };
+
+            if (values == null)
+            {
+                throw new InvalidOperationException("The 'values' parameter cannot be null." +
+                                                    " To perform a hash-only query use the overload that does not accept range values.");
+            }
+
+            Dictionary<string, RangeKeyCondition> rangeKeys = null;
+            var rangeKeyValues = values as object[] ?? values.ToArray();
+            if (rangeKeyValues.Any())
+            {
+                // Create range key dictionary for backward compatibility using default range key name
+                rangeKeys = new Dictionary<string, RangeKeyCondition> { { DEFAULT_RANGE_KEY_NAME, new RangeKeyCondition(op, rangeKeyValues) } };
+            }
+
             ContextSearch query;
             if (operationConfig is { Expression: { Filter: not null } })
             {
-                query = ConvertQueryByValueWithExpression<T>(hashKeyValue, op, values, operationConfig.Expression.Filter,
-                    operationConfig, storageConfig);
+                query = ConvertQueryByValueWithExpression<T>(hashKeys, rangeKeys, operationConfig.Expression.Filter,
+                    flatConfig, storageConfig);
             }
             else
             {
-                List<QueryCondition> conditions = CreateQueryConditions(flatConfig, op, values, storageConfig);
-                query = ConvertQueryByValue<T>(hashKeyValue, conditions, operationConfig, storageConfig);
+                List<QueryCondition> conditions = CreateQueryConditions(flatConfig, rangeKeys, storageConfig);
+                query = HandleConditionsQuery<T>(flatConfig, hashKeys, conditions, storageConfig);
             }
             return query;
         }
 
-        private ContextSearch ConvertQueryByValueWithExpression<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values,
-            Expression filterExpression, DynamoDBOperationConfig operationConfig, ItemStorageConfig storageConfig)
+        /// <summary>
+        /// todo
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="queryConditional"></param>
+        /// <param name="operationConfig"></param>
+        /// <returns></returns>
+        internal ContextSearch ConvertQueryConditional<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryConditional queryConditional,
+            DynamoDBOperationConfig operationConfig)
         {
-            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
-
-            if (storageConfig == null)
-                storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
-            if (operationConfig.QueryFilter != null && operationConfig.QueryFilter.Count != 0)
+            if (operationConfig != null)
             {
-                throw new InvalidOperationException("QueryFilter is not supported with filter expression. Use either QueryFilter or filter expression, but not both.");
+                operationConfig.ValidateFilter();
             }
-            return ConvertQueryHelper<T>(hashKeyValue, op, values, flatConfig, storageConfig, filterExpression);
 
+            var hashKeys = TryGetHashKeys(queryConditional);
+            var rangeKeys = TryGetRangeKeys(queryConditional);
+
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+
+            ContextSearch query;
+            if (operationConfig is { QueryFilter: not null } && operationConfig.QueryFilter.Count != 0)
+            {
+                List<QueryCondition> conditions = CreateQueryConditions(flatConfig, rangeKeys, storageConfig);
+                query = HandleConditionsQuery<T>(flatConfig, hashKeys, conditions, storageConfig);
+            }
+            else
+            {
+                query = ConvertQueryByValueWithExpression<T>(hashKeys, rangeKeys, operationConfig?.Expression?.Filter,
+                    flatConfig, storageConfig);
+            }
+
+            return query;
         }
 
-        internal ContextSearch
-            ConvertQueryByValue<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(
-                object hashKeyValue, IEnumerable<QueryCondition> conditions, DynamoDBOperationConfig operationConfig,
+        internal ContextSearch ConvertQueryByValue<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(
+                object hashKeyValue, DynamoDBOperationConfig operationConfig,
                 ItemStorageConfig storageConfig = null)
         {
+            // Create hash key dictionary for backward compatibility
+            var hashKeys = new Dictionary<string, object> { { DEFAULT_HASH_KEY_NAME, hashKeyValue } };
+
             if (operationConfig != null)
             {
                 operationConfig.ValidateFilter();
@@ -1558,88 +1657,205 @@ namespace Amazon.DynamoDBv2.DataModel
 
             storageConfig ??= StorageConfigCache.GetConfig<T>(flatConfig);
 
-            ContextSearch query;
-            if (operationConfig is { Expression: { Filter: not null } })
-            {
-                if(conditions!=null && conditions.Any())
-                {
-                    throw new InvalidOperationException("Query conditions are not supported with filter expression. Use either Query conditions or filter expression, but not both.");
-                }
-                query = ConvertQueryByValueWithExpression<T>(hashKeyValue, QueryOperator.Equal, null,
-                    operationConfig.Expression.Filter, operationConfig, storageConfig);
-            }
-            else
-            {
-                List<string> indexNames;
-                QueryFilter filter = ComposeQueryFilter(flatConfig, hashKeyValue, conditions, storageConfig, out indexNames);
-                query = ConvertQueryHelper<T>(flatConfig, storageConfig, filter, indexNames);
-            }
+            var query = operationConfig is { Expression: { Filter: not null } } ? 
+                ConvertQueryByValueWithExpression<T>(hashKeys, null, operationConfig.Expression.Filter, flatConfig, storageConfig) 
+                : HandleConditionsQuery<T>(flatConfig, hashKeys, null, storageConfig);
 
             return query;
         }
 
+        // Helper to create flat config and resolve target table for query-based operations
+        private (Table Table, DynamoDBFlatConfig FlatConfig) GetTableAndFlatConfig<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(DynamoDBOperationConfig operationConfig)
+        {
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            Table table = GetTargetTable(storageConfig, flatConfig);
+            return (table, flatConfig);
+        }
+
+        private ContextSearch ConvertScan<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig)
+        {
+            DynamoDBFlatConfig flatConfig = new DynamoDBFlatConfig(operationConfig, this.Config);
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            ScanFilter filter = ComposeScanFilter(conditions, storageConfig, flatConfig);
+
+            Table table = GetTargetTable(storageConfig, flatConfig);
+            var scanConfig = new ScanOperationConfig
+            {
+                AttributesToGet = storageConfig.AttributesToGet,
+                Select = SelectValues.SpecificAttributes,
+                Filter = filter,
+                ConditionalOperator = flatConfig.ConditionalOperator,
+                IndexName = flatConfig.IndexName,
+                ConsistentRead = flatConfig.ConsistentRead.GetValueOrDefault(false)
+            };
+
+            // table.Scan() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search scan = table.Scan(scanConfig) as Search;
+            return new ContextSearch(scan, flatConfig);
+        }
+
+        private ContextSearch ConvertFromScan<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig)
+        {
+            var (table, flatConfig) = GetTableAndFlatConfig<T>(operationConfig);
+
+            // table.Scan() returns the ISearch interface but we explicitly cast it to a Search object since we rely on its internal behavior
+            Search search = table.Scan(scanConfig) as Search;
+            return new ContextSearch(search, flatConfig);
+        }
+
+        private Dictionary<string, object> TryGetHashKeys(QueryConditional queryConditional)
+        {
+            if (queryConditional == null)
+                throw new ArgumentNullException(nameof(queryConditional));
+            var hashKeys = queryConditional.HashKeys ?? new Dictionary<string, object>();
+            return hashKeys.Count == 0 ? throw new InvalidOperationException("At least one hash key must be specified for the query.") : hashKeys;
+        }
+
+        private Dictionary<string, RangeKeyCondition> TryGetRangeKeys(QueryConditional queryConditional)
+        {
+            return queryConditional?.RangeValues ?? new Dictionary<string, RangeKeyCondition>();
+        }
+
+
+        private ContextSearch ConvertQueryByValueWithExpression<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Dictionary<string, object> hashKeys,
+            Dictionary<string, RangeKeyCondition> rangeKeyConditions, Expression filterExpression, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig)
+        {
+            if (storageConfig == null)
+                storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            if (flatConfig.QueryFilter != null && flatConfig.QueryFilter.Count != 0)
+            {
+                throw new InvalidOperationException("QueryFilter is not supported with filter expression. Use either QueryFilter or filter expression, but not both.");
+            }
+            return ConvertQueryHelper<T>(hashKeys, rangeKeyConditions, flatConfig, storageConfig, filterExpression);
+
+        }
+
+        private ContextSearch HandleConditionsQuery<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(
+            DynamoDBFlatConfig flatConfig, Dictionary<string, object> hashKeys,
+            IEnumerable<QueryCondition> conditions, ItemStorageConfig storageConfig)
+        {
+            List<string> indexNames;
+            QueryFilter filter = ComposeQueryFilter(flatConfig, hashKeys, conditions, storageConfig, out indexNames);
+            return ConvertQueryHelper<T>(flatConfig, storageConfig, filter, indexNames);
+        }
+
+        /// <summary>
+        /// Converts query parameters into a ContextSearch object for DynamoDB operations.
+        /// Validates hash keys, range key conditions, and builds the appropriate key expressions.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="hashKeys">Dictionary of hash key values for the query</param>
+        /// <param name="rangeKeyConditions">Dictionary of range key conditions for the query</param>
+        /// <param name="flatConfig">Flattened DynamoDB operation configuration</param>
+        /// <param name="storageConfig">Item storage configuration for the type</param>
+        /// <param name="filterExpression">Optional filter expression to apply to the query</param>
+        /// <returns>A ContextSearch object configured for the DynamoDB query operation</returns>
+        /// <exception cref="InvalidOperationException"></exception>
         private ContextSearch ConvertQueryHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(
-                object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBFlatConfig flatConfig,
+                Dictionary<string, object> hashKeys, Dictionary<string, RangeKeyCondition> rangeKeyConditions,
+                DynamoDBFlatConfig flatConfig,
                 ItemStorageConfig storageConfig,
                 Expression filterExpression)
         {
-            ValidateHashKey(hashKeyValue, storageConfig);
+            ValidateHashKey(hashKeys, storageConfig);
             ValidateQueryKeyConfiguration(storageConfig, flatConfig);
 
-            var hashKeyEntry = HashKeyValueToDynamoDBEntry(flatConfig, hashKeyValue, storageConfig);
-            var keyExpression = new DocumentModel.Expression
+            var hashKeyEntries = HashKeyValueToDynamoDBEntry(flatConfig, hashKeys, storageConfig);
+
+            var hashKeyEntryList = hashKeyEntries as HashKeyEntry[] ?? hashKeyEntries.ToArray();
+            if (hashKeyEntries == null || !hashKeyEntryList.Any())
             {
-                ExpressionStatement = "#hashKey = :hashKey",
-                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
-                {
-                    { ":hashKey", hashKeyEntry.Item2 }
-                },
-                ExpressionAttributeNames = new Dictionary<string, string>
-                {
-                    { "#hashKey", hashKeyEntry.Item1 }
-                }
-            };
+                throw new InvalidOperationException(
+                    "Unable to convert hash key value to DynamoDB entry. Ensure the hash key value is valid and properly configured.");
+            }
+
+            if (hashKeyEntryList.Length > MAX_COMPOSITE_KEYS)
+            {
+                throw new InvalidOperationException($"DynamoDB only supports up to {MAX_COMPOSITE_KEYS} hash key attributes.");
+            }
+
+            var keyExpression = MapHashKeyExpression();
 
             string indexName = flatConfig.IndexName;
 
-            var rangeKeyPropertyName = string.IsNullOrEmpty(indexName) ?
-                storageConfig.RangeKeyPropertyNames.FirstOrDefault() : storageConfig.GetRangeKeyByIndex(indexName);
+            var rangeKeyPropertyNames = string.IsNullOrEmpty(indexName)
+                ? storageConfig.RangeKeyPropertyNames
+                : storageConfig.GetRangeKeyByIndex(indexName);
 
-            if (!string.IsNullOrEmpty(rangeKeyPropertyName) && values != null)
+            if (!(rangeKeyConditions == null || !rangeKeyConditions.Any()))
             {
-                keyExpression.ExpressionStatement += ContextExpressionsUtils.GetRangeKeyConditionExpression($"#rangeKey", op);
-                keyExpression.ExpressionAttributeNames.Add("#rangeKey", rangeKeyPropertyName);
-                var valuesList = values?.ToList();
-                var rangeKeyProperty = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(rangeKeyPropertyName);
-                if (op == QueryOperator.Between && valuesList is { Count: 2 })
+                if (rangeKeyConditions.Count > MAX_COMPOSITE_KEYS)
                 {
-                    keyExpression.ExpressionAttributeValues.Add(":rangeKey0", ToDynamoDBEntry(
-                        rangeKeyProperty,
-                        valuesList.ElementAt(0),
-                        flatConfig,
-                        true));
-                    keyExpression.ExpressionAttributeValues.Add(":rangeKey1", ToDynamoDBEntry(
-                        rangeKeyProperty,
-                        valuesList.ElementAt(1),
-                        flatConfig,
-                        true));
+                    throw new InvalidOperationException(
+                        $"DynamoDB only supports up to {MAX_COMPOSITE_KEYS} range key attributes.");
                 }
-                else
+
+                if (rangeKeyPropertyNames != null && rangeKeyPropertyNames.Any())
                 {
-                    keyExpression.ExpressionAttributeValues.Add(":rangeKey0", ToDynamoDBEntry(
-                        rangeKeyProperty,
-                        valuesList.FirstOrDefault(),
-                        flatConfig,
-                        true
-                    ));
+                    var rangeKeyPropsCount = rangeKeyPropertyNames.Count();
+                    if (rangeKeyConditions.Count > rangeKeyPropsCount)
+                    {
+                        throw new InvalidOperationException(
+                            $"The number of range key properties provided ({rangeKeyConditions.Count}) exceeds the number of range key properties defined ({rangeKeyPropsCount}).");
+                    }
+                    
+                    var rangeKeyConditionsAdded = 0;
+
+                    for (var i = 0; i < rangeKeyPropsCount; i++)
+                    {
+                        var rangeKeyPropertyName = rangeKeyPropertyNames.ElementAt(i);
+
+                        var rangeKeyProperty =
+                            storageConfig.BaseTypeStorageConfig.GetPropertyStorage(rangeKeyPropertyName);
+                        var rangeKeyAttributeName = rangeKeyProperty.AttributeName;
+
+                        // Range keys are optional. For composite range there should be no skipping of preceding Sort Keys
+                        // e.g. for configured range keys [a,b,c] allowed: none | a | a and b | a and b and c.
+                        // Disallowed: a and c (skips b). Only the right-most provided condition may be non-equality.
+                        if (!rangeKeyConditions.TryGetValue(rangeKeyAttributeName, out var rangeKeyCondition) &&
+                            (i != 0 || !rangeKeyConditions.TryGetValue(DEFAULT_RANGE_KEY_NAME, out rangeKeyCondition)))
+                        {
+                            if (rangeKeyConditionsAdded == rangeKeyConditions.Count)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                throw new InvalidOperationException(
+                                    $"Range key conditions must be provided as a contiguous, left-to-right prefix of the configured range keys (no skipping). " +
+                                    $"Configured range keys: [{string.Join(", ", rangeKeyPropertyNames)}]. " +
+                                    $"Missing condition for attribute '{rangeKeyAttributeName}' at position {i}. " +
+                                    "Examples (for range keys [a,b,c]): allowed = none; a; a and b; a and b and c. " +
+                                    "Only the right-most provided range key condition may use a non-equality operator.");
+                            }
+                        }
+
+                        rangeKeyConditionsAdded++;
+
+                        if (rangeKeyCondition.Operator != QueryOperator.Equal && rangeKeyConditionsAdded != rangeKeyConditions.Count)
+                        {
+                            throw new InvalidOperationException(
+                                "Only the right-most range key condition may use a non-equality operator. " +
+                                $"Operator '{rangeKeyCondition.Operator}' found on range key attribute '{rangeKeyAttributeName}' at position {i}.");
+                        }
+                        MapRangeKeyConditionExpression(rangeKeyCondition, i, rangeKeyPropertyName, rangeKeyProperty);
+
+                    }
+
+                    if (rangeKeyConditionsAdded != rangeKeyConditions.Count)
+                    {
+                        throw new InvalidOperationException(
+                            $"Number of range key conditions applied ({rangeKeyConditionsAdded}) does not match number provided ({rangeKeyConditions.Count}).");
+                    }
                 }
             }
 
             Table table = GetTargetTable(storageConfig, flatConfig);
             var queryConfig = new QueryOperationConfig
             {
-                ConsistentRead = flatConfig.ConsistentRead.Value,
-                BackwardSearch = flatConfig.BackwardQuery.Value,
+                ConsistentRead = flatConfig.ConsistentRead != null && flatConfig.ConsistentRead.Value,
+                BackwardSearch = flatConfig.BackwardQuery != null && flatConfig.BackwardQuery.Value,
                 KeyExpression = keyExpression,
             };
 
@@ -1661,9 +1877,82 @@ namespace Amazon.DynamoDBv2.DataModel
             Search query = table.Query(queryConfig) as Search;
 
             return new ContextSearch(query, flatConfig);
+
+            
+            DocumentModel.Expression MapHashKeyExpression()
+            {
+                var keyExpression1 = new DocumentModel.Expression
+                {
+                    ExpressionStatement = "#hashKey0 = :hashKey0",
+                    ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry>
+                    {
+                        { ":hashKey0", hashKeyEntryList[0].Value }
+                    },
+                    ExpressionAttributeNames = new Dictionary<string, string>
+                    {
+                        { "#hashKey0", hashKeyEntryList[0].AttributeName }
+                    }
+                };
+                var hashkeyCount = hashKeyEntryList.Count();
+                for (var i = 1; i < hashkeyCount; i++)
+                {
+                    keyExpression1.ExpressionStatement += $" AND #hashKey{i} = :hashKey{i}";
+                    keyExpression1.ExpressionAttributeValues.Add($":hashKey{i}", hashKeyEntryList[i].Value);
+                    keyExpression1.ExpressionAttributeNames.Add($"#hashKey{i}", hashKeyEntryList[i].AttributeName);
+                }
+
+                return keyExpression1;
+            }
+
+            void MapRangeKeyConditionExpression( RangeKeyCondition rangeKeyCondition, int index,
+                string rangeKeyPropertyName,  PropertyStorage rangeKeyProperty)
+            {
+                keyExpression.ExpressionStatement +=
+                    ContextExpressionsUtils.GetRangeKeyConditionExpression(RANGE_KEY_EXPRESSION_ATTRIBUTE_NAME,
+                        rangeKeyCondition.Operator, index);
+                keyExpression.ExpressionAttributeNames.Add($"{RANGE_KEY_EXPRESSION_ATTRIBUTE_NAME}{index}",
+                    rangeKeyPropertyName);
+                var valuesList = rangeKeyCondition.Values?.ToList();
+
+                if (rangeKeyCondition.Operator == QueryOperator.Between)
+                {
+                    if (valuesList is { Count: 2 })
+                    {
+                        keyExpression.ExpressionAttributeValues.Add($"{RANGE_KEY_EXPRESSION_ATTRIBUTE_VALUE}L{index}",
+                            ToDynamoDBEntry(
+                                rangeKeyProperty,
+                                valuesList.ElementAt(0),
+                                flatConfig,
+                                true));
+                        keyExpression.ExpressionAttributeValues.Add($"{RANGE_KEY_EXPRESSION_ATTRIBUTE_VALUE}H{index}",
+                            ToDynamoDBEntry(
+                                rangeKeyProperty,
+                                valuesList.ElementAt(1),
+                                flatConfig,
+                                true));
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Between operator requires exactly 2 values.");
+                    }
+                }
+                else
+                {
+                    if (valuesList != null)
+                        keyExpression.ExpressionAttributeValues.Add($"{RANGE_KEY_EXPRESSION_ATTRIBUTE_VALUE}{index}",
+                            ToDynamoDBEntry(
+                                rangeKeyProperty,
+                                valuesList.FirstOrDefault(),
+                                flatConfig,
+                                true
+                            ));
+                    else
+                    {
+                        throw new InvalidOperationException("Condition requires at least 1 value.");
+                    }
+                }
+            }
         }
-
-
 
         private ContextSearch ConvertQueryHelper<T>(DynamoDBFlatConfig currentConfig, ItemStorageConfig storageConfig, QueryFilter filter, List<string> indexNames)
         {
@@ -1672,8 +1961,8 @@ namespace Amazon.DynamoDBv2.DataModel
             var queryConfig = new QueryOperationConfig
             {
                 Filter = filter,
-                ConsistentRead = currentConfig.ConsistentRead.Value,
-                BackwardSearch = currentConfig.BackwardQuery.Value,
+                ConsistentRead = currentConfig.ConsistentRead != null && currentConfig.ConsistentRead.Value,
+                BackwardSearch = currentConfig.BackwardQuery != null && currentConfig.BackwardQuery.Value,
                 IndexName = indexName,
                 ConditionalOperator = currentConfig.ConditionalOperator
             };
@@ -2203,3 +2492,4 @@ namespace Amazon.DynamoDBv2.DataModel
         #endregion
     }
 }
+       

@@ -849,6 +849,266 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  CreatePortal
+
+
+        /// <summary>
+        /// Creates a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePortal service method.</param>
+        /// 
+        /// <returns>The response from the CreatePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
+        public virtual CreatePortalResponse CreatePortal(CreatePortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePortalResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePortalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortal">REST API Reference for CreatePortal Operation</seealso>
+        public virtual Task<CreatePortalResponse> CreatePortalAsync(CreatePortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePortalResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePortalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreatePortalProduct
+
+
+        /// <summary>
+        /// Creates a new portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePortalProduct service method.</param>
+        /// 
+        /// <returns>The response from the CreatePortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortalProduct">REST API Reference for CreatePortalProduct Operation</seealso>
+        public virtual CreatePortalProductResponse CreatePortalProduct(CreatePortalProductRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePortalProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePortalProductResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePortalProductResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePortalProduct service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreatePortalProduct">REST API Reference for CreatePortalProduct Operation</seealso>
+        public virtual Task<CreatePortalProductResponse> CreatePortalProductAsync(CreatePortalProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePortalProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePortalProductResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePortalProductResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateProductPage
+
+
+        /// <summary>
+        /// Creates a new product page for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProductPage service method.</param>
+        /// 
+        /// <returns>The response from the CreateProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductPage">REST API Reference for CreateProductPage Operation</seealso>
+        public virtual CreateProductPageResponse CreateProductPage(CreateProductPageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProductPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProductPageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProductPageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new product page for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProductPage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductPage">REST API Reference for CreateProductPage Operation</seealso>
+        public virtual Task<CreateProductPageResponse> CreateProductPageAsync(CreateProductPageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProductPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProductPageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateProductPageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateProductRestEndpointPage
+
+
+        /// <summary>
+        /// Creates a product REST endpoint page for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProductRestEndpointPage service method.</param>
+        /// 
+        /// <returns>The response from the CreateProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductRestEndpointPage">REST API Reference for CreateProductRestEndpointPage Operation</seealso>
+        public virtual CreateProductRestEndpointPageResponse CreateProductRestEndpointPage(CreateProductRestEndpointPageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProductRestEndpointPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProductRestEndpointPageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProductRestEndpointPageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a product REST endpoint page for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProductRestEndpointPage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateProductRestEndpointPage">REST API Reference for CreateProductRestEndpointPage Operation</seealso>
+        public virtual Task<CreateProductRestEndpointPageResponse> CreateProductRestEndpointPageAsync(CreateProductRestEndpointPageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateProductRestEndpointPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProductRestEndpointPageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateProductRestEndpointPageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateRoute
 
 
@@ -1756,6 +2016,343 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  DeletePortal
+
+
+        /// <summary>
+        /// Deletes a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortal service method.</param>
+        /// 
+        /// <returns>The response from the DeletePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
+        public virtual DeletePortalResponse DeletePortal(DeletePortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePortalResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePortalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortal">REST API Reference for DeletePortal Operation</seealso>
+        public virtual Task<DeletePortalResponse> DeletePortalAsync(DeletePortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePortalResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePortalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePortalProduct
+
+
+        /// <summary>
+        /// Deletes a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortalProduct service method.</param>
+        /// 
+        /// <returns>The response from the DeletePortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProduct">REST API Reference for DeletePortalProduct Operation</seealso>
+        public virtual DeletePortalProductResponse DeletePortalProduct(DeletePortalProductRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePortalProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePortalProductResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePortalProductResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortalProduct service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProduct">REST API Reference for DeletePortalProduct Operation</seealso>
+        public virtual Task<DeletePortalProductResponse> DeletePortalProductAsync(DeletePortalProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePortalProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePortalProductResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePortalProductResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePortalProductSharingPolicy
+
+
+        /// <summary>
+        /// Deletes the sharing policy for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortalProductSharingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeletePortalProductSharingPolicy service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProductSharingPolicy">REST API Reference for DeletePortalProductSharingPolicy Operation</seealso>
+        public virtual DeletePortalProductSharingPolicyResponse DeletePortalProductSharingPolicy(DeletePortalProductSharingPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePortalProductSharingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePortalProductSharingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePortalProductSharingPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the sharing policy for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePortalProductSharingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePortalProductSharingPolicy service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeletePortalProductSharingPolicy">REST API Reference for DeletePortalProductSharingPolicy Operation</seealso>
+        public virtual Task<DeletePortalProductSharingPolicyResponse> DeletePortalProductSharingPolicyAsync(DeletePortalProductSharingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePortalProductSharingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePortalProductSharingPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePortalProductSharingPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteProductPage
+
+
+        /// <summary>
+        /// Deletes a product page of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProductPage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductPage">REST API Reference for DeleteProductPage Operation</seealso>
+        public virtual DeleteProductPageResponse DeleteProductPage(DeleteProductPageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProductPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProductPageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProductPageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a product page of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProductPage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductPage">REST API Reference for DeleteProductPage Operation</seealso>
+        public virtual Task<DeleteProductPageResponse> DeleteProductPageAsync(DeleteProductPageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProductPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProductPageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteProductPageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteProductRestEndpointPage
+
+
+        /// <summary>
+        /// Deletes a product REST endpoint page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProductRestEndpointPage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductRestEndpointPage">REST API Reference for DeleteProductRestEndpointPage Operation</seealso>
+        public virtual DeleteProductRestEndpointPageResponse DeleteProductRestEndpointPage(DeleteProductRestEndpointPageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProductRestEndpointPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProductRestEndpointPageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProductRestEndpointPageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a product REST endpoint page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProductRestEndpointPage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DeleteProductRestEndpointPage">REST API Reference for DeleteProductRestEndpointPage Operation</seealso>
+        public virtual Task<DeleteProductRestEndpointPageResponse> DeleteProductRestEndpointPageAsync(DeleteProductRestEndpointPageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteProductRestEndpointPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProductRestEndpointPageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteProductRestEndpointPageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteRoute
 
 
@@ -2145,6 +2742,85 @@ namespace Amazon.ApiGatewayV2
             options.ResponseUnmarshaller = DeleteVpcLinkResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteVpcLinkResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisablePortal
+
+
+        /// <summary>
+        /// Deletes the publication of a portal portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisablePortal service method.</param>
+        /// 
+        /// <returns>The response from the DisablePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DisablePortal">REST API Reference for DisablePortal Operation</seealso>
+        public virtual DisablePortalResponse DisablePortal(DisablePortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisablePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisablePortalResponseUnmarshaller.Instance;
+
+            return Invoke<DisablePortalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the publication of a portal portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisablePortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisablePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/DisablePortal">REST API Reference for DisablePortal Operation</seealso>
+        public virtual Task<DisablePortalResponse> DisablePortalAsync(DisablePortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisablePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisablePortalResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisablePortalResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3219,6 +3895,351 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  GetPortal
+
+
+        /// <summary>
+        /// Gets a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortal service method.</param>
+        /// 
+        /// <returns>The response from the GetPortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortal">REST API Reference for GetPortal Operation</seealso>
+        public virtual GetPortalResponse GetPortal(GetPortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPortalResponseUnmarshaller.Instance;
+
+            return Invoke<GetPortalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortal">REST API Reference for GetPortal Operation</seealso>
+        public virtual Task<GetPortalResponse> GetPortalAsync(GetPortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPortalResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPortalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPortalProduct
+
+
+        /// <summary>
+        /// Gets a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortalProduct service method.</param>
+        /// 
+        /// <returns>The response from the GetPortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProduct">REST API Reference for GetPortalProduct Operation</seealso>
+        public virtual GetPortalProductResponse GetPortalProduct(GetPortalProductRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPortalProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPortalProductResponseUnmarshaller.Instance;
+
+            return Invoke<GetPortalProductResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortalProduct service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProduct">REST API Reference for GetPortalProduct Operation</seealso>
+        public virtual Task<GetPortalProductResponse> GetPortalProductAsync(GetPortalProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPortalProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPortalProductResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPortalProductResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPortalProductSharingPolicy
+
+
+        /// <summary>
+        /// Gets the sharing policy for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortalProductSharingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPortalProductSharingPolicy service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProductSharingPolicy">REST API Reference for GetPortalProductSharingPolicy Operation</seealso>
+        public virtual GetPortalProductSharingPolicyResponse GetPortalProductSharingPolicy(GetPortalProductSharingPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPortalProductSharingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPortalProductSharingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPortalProductSharingPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the sharing policy for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPortalProductSharingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPortalProductSharingPolicy service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetPortalProductSharingPolicy">REST API Reference for GetPortalProductSharingPolicy Operation</seealso>
+        public virtual Task<GetPortalProductSharingPolicyResponse> GetPortalProductSharingPolicyAsync(GetPortalProductSharingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPortalProductSharingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPortalProductSharingPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPortalProductSharingPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetProductPage
+
+
+        /// <summary>
+        /// Gets a product page of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProductPage service method.</param>
+        /// 
+        /// <returns>The response from the GetProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductPage">REST API Reference for GetProductPage Operation</seealso>
+        public virtual GetProductPageResponse GetProductPage(GetProductPageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProductPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProductPageResponseUnmarshaller.Instance;
+
+            return Invoke<GetProductPageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a product page of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProductPage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductPage">REST API Reference for GetProductPage Operation</seealso>
+        public virtual Task<GetProductPageResponse> GetProductPageAsync(GetProductPageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProductPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProductPageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetProductPageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetProductRestEndpointPage
+
+
+        /// <summary>
+        /// Gets a product REST endpoint page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProductRestEndpointPage service method.</param>
+        /// 
+        /// <returns>The response from the GetProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductRestEndpointPage">REST API Reference for GetProductRestEndpointPage Operation</seealso>
+        public virtual GetProductRestEndpointPageResponse GetProductRestEndpointPage(GetProductRestEndpointPageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProductRestEndpointPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProductRestEndpointPageResponseUnmarshaller.Instance;
+
+            return Invoke<GetProductRestEndpointPageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a product REST endpoint page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProductRestEndpointPage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/GetProductRestEndpointPage">REST API Reference for GetProductRestEndpointPage Operation</seealso>
+        public virtual Task<GetProductRestEndpointPageResponse> GetProductRestEndpointPageAsync(GetProductRestEndpointPageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProductRestEndpointPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProductRestEndpointPageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetProductRestEndpointPageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRoute
 
 
@@ -3892,6 +4913,266 @@ namespace Amazon.ApiGatewayV2
 
         #endregion
         
+        #region  ListPortalProducts
+
+
+        /// <summary>
+        /// Lists portal products.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPortalProducts service method.</param>
+        /// 
+        /// <returns>The response from the ListPortalProducts service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortalProducts">REST API Reference for ListPortalProducts Operation</seealso>
+        public virtual ListPortalProductsResponse ListPortalProducts(ListPortalProductsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPortalProductsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPortalProductsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPortalProductsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists portal products.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPortalProducts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPortalProducts service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortalProducts">REST API Reference for ListPortalProducts Operation</seealso>
+        public virtual Task<ListPortalProductsResponse> ListPortalProductsAsync(ListPortalProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPortalProductsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPortalProductsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPortalProductsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPortals
+
+
+        /// <summary>
+        /// Lists portals.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPortals service method.</param>
+        /// 
+        /// <returns>The response from the ListPortals service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortals">REST API Reference for ListPortals Operation</seealso>
+        public virtual ListPortalsResponse ListPortals(ListPortalsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPortalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPortalsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPortalsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists portals.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPortals service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPortals service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListPortals">REST API Reference for ListPortals Operation</seealso>
+        public virtual Task<ListPortalsResponse> ListPortalsAsync(ListPortalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPortalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPortalsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPortalsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListProductPages
+
+
+        /// <summary>
+        /// Lists the product pages for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProductPages service method.</param>
+        /// 
+        /// <returns>The response from the ListProductPages service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductPages">REST API Reference for ListProductPages Operation</seealso>
+        public virtual ListProductPagesResponse ListProductPages(ListProductPagesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProductPagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProductPagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProductPagesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the product pages for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProductPages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProductPages service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductPages">REST API Reference for ListProductPages Operation</seealso>
+        public virtual Task<ListProductPagesResponse> ListProductPagesAsync(ListProductPagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProductPagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProductPagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListProductPagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListProductRestEndpointPages
+
+
+        /// <summary>
+        /// Lists the product REST endpoint pages of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProductRestEndpointPages service method.</param>
+        /// 
+        /// <returns>The response from the ListProductRestEndpointPages service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductRestEndpointPages">REST API Reference for ListProductRestEndpointPages Operation</seealso>
+        public virtual ListProductRestEndpointPagesResponse ListProductRestEndpointPages(ListProductRestEndpointPagesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProductRestEndpointPagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProductRestEndpointPagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProductRestEndpointPagesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the product REST endpoint pages of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProductRestEndpointPages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProductRestEndpointPages service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ListProductRestEndpointPages">REST API Reference for ListProductRestEndpointPages Operation</seealso>
+        public virtual Task<ListProductRestEndpointPagesResponse> ListProductRestEndpointPagesAsync(ListProductRestEndpointPagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProductRestEndpointPagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProductRestEndpointPagesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListProductRestEndpointPagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListRoutingRules
 
 
@@ -3951,6 +5232,233 @@ namespace Amazon.ApiGatewayV2
             options.ResponseUnmarshaller = ListRoutingRulesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListRoutingRulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PreviewPortal
+
+
+        /// <summary>
+        /// Creates a portal preview.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PreviewPortal service method.</param>
+        /// 
+        /// <returns>The response from the PreviewPortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PreviewPortal">REST API Reference for PreviewPortal Operation</seealso>
+        public virtual PreviewPortalResponse PreviewPortal(PreviewPortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PreviewPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PreviewPortalResponseUnmarshaller.Instance;
+
+            return Invoke<PreviewPortalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a portal preview.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PreviewPortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PreviewPortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PreviewPortal">REST API Reference for PreviewPortal Operation</seealso>
+        public virtual Task<PreviewPortalResponse> PreviewPortalAsync(PreviewPortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PreviewPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PreviewPortalResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PreviewPortalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PublishPortal
+
+
+        /// <summary>
+        /// Publishes a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishPortal service method.</param>
+        /// 
+        /// <returns>The response from the PublishPortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PublishPortal">REST API Reference for PublishPortal Operation</seealso>
+        public virtual PublishPortalResponse PublishPortal(PublishPortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PublishPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishPortalResponseUnmarshaller.Instance;
+
+            return Invoke<PublishPortalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Publishes a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishPortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PublishPortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PublishPortal">REST API Reference for PublishPortal Operation</seealso>
+        public virtual Task<PublishPortalResponse> PublishPortalAsync(PublishPortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PublishPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PublishPortalResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PublishPortalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutPortalProductSharingPolicy
+
+
+        /// <summary>
+        /// Updates the sharing policy for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPortalProductSharingPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutPortalProductSharingPolicy service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutPortalProductSharingPolicy">REST API Reference for PutPortalProductSharingPolicy Operation</seealso>
+        public virtual PutPortalProductSharingPolicyResponse PutPortalProductSharingPolicy(PutPortalProductSharingPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutPortalProductSharingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPortalProductSharingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutPortalProductSharingPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the sharing policy for a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutPortalProductSharingPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutPortalProductSharingPolicy service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/PutPortalProductSharingPolicy">REST API Reference for PutPortalProductSharingPolicy Operation</seealso>
+        public virtual Task<PutPortalProductSharingPolicyResponse> PutPortalProductSharingPolicyAsync(PutPortalProductSharingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutPortalProductSharingPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutPortalProductSharingPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutPortalProductSharingPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4882,6 +6390,292 @@ namespace Amazon.ApiGatewayV2
             options.ResponseUnmarshaller = UpdateModelResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateModelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePortal
+
+
+        /// <summary>
+        /// Updates a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortal service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
+        public virtual UpdatePortalResponse UpdatePortal(UpdatePortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePortalResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePortalResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePortal service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// See the accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortal">REST API Reference for UpdatePortal Operation</seealso>
+        public virtual Task<UpdatePortalResponse> UpdatePortalAsync(UpdatePortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePortalResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePortalResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePortalProduct
+
+
+        /// <summary>
+        /// Updates the portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortalProduct service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortalProduct">REST API Reference for UpdatePortalProduct Operation</seealso>
+        public virtual UpdatePortalProductResponse UpdatePortalProduct(UpdatePortalProductRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePortalProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePortalProductResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePortalProductResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePortalProduct service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePortalProduct service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdatePortalProduct">REST API Reference for UpdatePortalProduct Operation</seealso>
+        public virtual Task<UpdatePortalProductResponse> UpdatePortalProductAsync(UpdatePortalProductRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePortalProductRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePortalProductResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePortalProductResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateProductPage
+
+
+        /// <summary>
+        /// Updates a product page of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProductPage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductPage">REST API Reference for UpdateProductPage Operation</seealso>
+        public virtual UpdateProductPageResponse UpdateProductPage(UpdateProductPageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProductPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProductPageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProductPageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a product page of a portal product.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProductPage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProductPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductPage">REST API Reference for UpdateProductPage Operation</seealso>
+        public virtual Task<UpdateProductPageResponse> UpdateProductPageAsync(UpdateProductPageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProductPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProductPageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateProductPageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateProductRestEndpointPage
+
+
+        /// <summary>
+        /// Updates a product REST endpoint page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProductRestEndpointPage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductRestEndpointPage">REST API Reference for UpdateProductRestEndpointPage Operation</seealso>
+        public virtual UpdateProductRestEndpointPageResponse UpdateProductRestEndpointPage(UpdateProductRestEndpointPageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProductRestEndpointPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProductRestEndpointPageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProductRestEndpointPageResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a product REST endpoint page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProductRestEndpointPage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProductRestEndpointPage service method, as returned by ApiGatewayV2.</returns>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.BadRequestException">
+        /// The request is not valid, for example, the input is incomplete or incorrect. See the
+        /// accompanying error message for details.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.NotFoundException">
+        /// The resource specified in the request was not found. See the message field for more
+        /// information.
+        /// </exception>
+        /// <exception cref="Amazon.ApiGatewayV2.Model.TooManyRequestsException">
+        /// A limit has been exceeded. See the accompanying error message for details.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateProductRestEndpointPage">REST API Reference for UpdateProductRestEndpointPage Operation</seealso>
+        public virtual Task<UpdateProductRestEndpointPageResponse> UpdateProductRestEndpointPageAsync(UpdateProductRestEndpointPageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateProductRestEndpointPageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProductRestEndpointPageResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateProductRestEndpointPageResponse>(request, options, cancellationToken);
         }
 
         #endregion

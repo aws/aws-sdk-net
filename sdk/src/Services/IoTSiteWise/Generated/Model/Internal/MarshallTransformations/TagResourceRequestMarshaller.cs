@@ -63,6 +63,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceArn))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field ResourceArn set");
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));

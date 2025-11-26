@@ -62,6 +62,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-07-15";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceARN))
+                throw new AmazonChimeSDKMediaPipelinesException("Request object does not have required field ResourceARN set");
             
             if (publicRequest.IsSetResourceARN())
                 request.Parameters.Add("arn", StringUtils.FromString(publicRequest.ResourceARN));

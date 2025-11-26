@@ -125,6 +125,22 @@
     <pattern>.*[!-~]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationRequest.CustomDomainName</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationRequest.DomainVerificationIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>((dv-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:domainverification/dv-[a-fA-F0-9]{17}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationRequest.GroupDomain</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateResourceConfigurationRequest.Name</property>
     <min>3</min>
     <max>40</max>
@@ -147,6 +163,28 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationResponse.CustomDomainName</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationResponse.DomainVerificationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:domainverification/dv-[a-fA-F0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationResponse.DomainVerificationId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>dv-[a-fA-F0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.CreateResourceConfigurationResponse.GroupDomain</property>
+    <min>3</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateResourceConfigurationResponse.Id</property>
@@ -513,6 +551,12 @@
     <pattern>((((sn)|(svc)|(rcfg))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(resourceconfiguration/rcfg)|(service/svc))-[0-9a-z]{17}))</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DeleteDomainVerificationRequest.DomainVerificationIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>((dv-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:domainverification/dv-[a-fA-F0-9]{17}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VPCLattice.Model.DeleteListenerRequest.ListenerIdentifier</property>
     <min>20</min>
     <max>2048</max>
@@ -770,6 +814,29 @@
     <max>36864</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetDomainVerificationRequest.DomainVerificationIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>((dv-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:domainverification/dv-[a-fA-F0-9]{17}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetDomainVerificationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:domainverification/dv-[a-fA-F0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetDomainVerificationResponse.DomainName</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetDomainVerificationResponse.Id</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>dv-[a-fA-F0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetListenerRequest.ListenerIdentifier</property>
     <min>20</min>
     <max>2048</max>
@@ -830,6 +897,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.GetResourceConfigurationResponse.CustomDomainName</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceConfigurationResponse.DomainVerificationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:domainverification/dv-[a-fA-F0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceConfigurationResponse.DomainVerificationId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>dv-[a-fA-F0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.GetResourceConfigurationResponse.GroupDomain</property>
     <min>3</min>
     <max>255</max>
   </property-value-rule>
@@ -1220,6 +1304,21 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListDomainVerificationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListDomainVerificationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListDomainVerificationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VPCLattice.Model.ListListenersRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -1239,6 +1338,12 @@
     <property>Amazon.VPCLattice.Model.ListListenersResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ListResourceConfigurationsRequest.DomainVerificationIdentifier</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>((dv-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:domainverification/dv-[a-fA-F0-9]{17}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ListResourceConfigurationsRequest.MaxResults</property>
@@ -1561,6 +1666,34 @@
     <min>17</min>
     <max>2048</max>
     <pattern>((tg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:targetgroup/tg-[0-9a-z]{17}))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.StartDomainVerificationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[!-~]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.StartDomainVerificationRequest.DomainName</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.StartDomainVerificationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:domainverification/dv-[a-fA-F0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.StartDomainVerificationResponse.DomainName</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.StartDomainVerificationResponse.Id</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>dv-[a-fA-F0-9]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.TagResourceRequest.ResourceArn</property>
@@ -1930,6 +2063,23 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DomainVerificationSummary.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:domainverification/dv-[a-fA-F0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DomainVerificationSummary.DomainName</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.DomainVerificationSummary.Id</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>dv-[a-fA-F0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VPCLattice.Model.FixedResponseAction.StatusCode</property>
     <min>100</min>
     <max>599</max>
@@ -2041,6 +2191,22 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:[a-z0-9f\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceConfigurationSummary.CustomDomainName</property>
+    <min>3</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceConfigurationSummary.DomainVerificationId</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>dv-[a-fA-F0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VPCLattice.Model.ResourceConfigurationSummary.GroupDomain</property>
+    <min>3</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.ResourceConfigurationSummary.Id</property>

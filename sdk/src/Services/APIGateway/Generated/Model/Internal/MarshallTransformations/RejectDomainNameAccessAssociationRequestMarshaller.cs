@@ -62,9 +62,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.DomainNameAccessAssociationArn))
+                throw new AmazonAPIGatewayException("Request object does not have required field DomainNameAccessAssociationArn set");
             
             if (publicRequest.IsSetDomainNameAccessAssociationArn())
                 request.Parameters.Add("domainNameAccessAssociationArn", StringUtils.FromString(publicRequest.DomainNameAccessAssociationArn));
+            if (string.IsNullOrEmpty(publicRequest.DomainNameArn))
+                throw new AmazonAPIGatewayException("Request object does not have required field DomainNameArn set");
             
             if (publicRequest.IsSetDomainNameArn())
                 request.Parameters.Add("domainNameArn", StringUtils.FromString(publicRequest.DomainNameArn));

@@ -35,10 +35,13 @@ namespace Amazon.BCMPricingCalculator.Model
     public partial class UpdateBillEstimateResponse : AmazonWebServiceResponse
     {
         private BillInterval _billInterval;
+        private string _costCategoryGroupSharingPreferenceArn;
+        private DateTime? _costCategoryGroupSharingPreferenceEffectiveDate;
         private BillEstimateCostSummary _costSummary;
         private DateTime? _createdAt;
         private DateTime? _expiresAt;
         private string _failureMessage;
+        private GroupSharingPreferenceEnum _groupSharingPreference;
         private string _id;
         private string _name;
         private BillEstimateStatus _status;
@@ -59,6 +62,43 @@ namespace Amazon.BCMPricingCalculator.Model
         internal bool IsSetBillInterval()
         {
             return this._billInterval != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CostCategoryGroupSharingPreferenceArn. 
+        /// <para>
+        /// The arn of the cost category used in the reserved and prioritized group sharing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CostCategoryGroupSharingPreferenceArn
+        {
+            get { return this._costCategoryGroupSharingPreferenceArn; }
+            set { this._costCategoryGroupSharingPreferenceArn = value; }
+        }
+
+        // Check to see if CostCategoryGroupSharingPreferenceArn property is set
+        internal bool IsSetCostCategoryGroupSharingPreferenceArn()
+        {
+            return this._costCategoryGroupSharingPreferenceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CostCategoryGroupSharingPreferenceEffectiveDate. 
+        /// <para>
+        /// Timestamp of the effective date of the cost category used in the group sharing settings.
+        /// </para>
+        /// </summary>
+        public DateTime? CostCategoryGroupSharingPreferenceEffectiveDate
+        {
+            get { return this._costCategoryGroupSharingPreferenceEffectiveDate; }
+            set { this._costCategoryGroupSharingPreferenceEffectiveDate = value; }
+        }
+
+        // Check to see if CostCategoryGroupSharingPreferenceEffectiveDate property is set
+        internal bool IsSetCostCategoryGroupSharingPreferenceEffectiveDate()
+        {
+            return this._costCategoryGroupSharingPreferenceEffectiveDate.HasValue; 
         }
 
         /// <summary>
@@ -131,6 +171,25 @@ namespace Amazon.BCMPricingCalculator.Model
         internal bool IsSetFailureMessage()
         {
             return this._failureMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupSharingPreference. 
+        /// <para>
+        /// The setting for the reserved instance and savings plan group sharing used in this
+        /// estimate.
+        /// </para>
+        /// </summary>
+        public GroupSharingPreferenceEnum GroupSharingPreference
+        {
+            get { return this._groupSharingPreference; }
+            set { this._groupSharingPreference = value; }
+        }
+
+        // Check to see if GroupSharingPreference property is set
+        internal bool IsSetGroupSharingPreference()
+        {
+            return this._groupSharingPreference != null;
         }
 
         /// <summary>

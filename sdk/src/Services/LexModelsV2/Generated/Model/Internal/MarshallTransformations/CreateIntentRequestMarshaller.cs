@@ -159,6 +159,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetIntentDisplayName())
+            {
+                context.Writer.WritePropertyName("intentDisplayName");
+                context.Writer.WriteStringValue(publicRequest.IntentDisplayName);
+            }
+
             if(publicRequest.IsSetIntentName())
             {
                 context.Writer.WritePropertyName("intentName");

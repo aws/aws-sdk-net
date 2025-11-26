@@ -47,6 +47,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _clientToken;
         private string _description;
         private ExceptionLevel _exceptionLevel;
+        private List<GatewayInterceptorConfiguration> _interceptorConfigurations = AWSConfigs.InitializeCollections ? new List<GatewayInterceptorConfiguration>() : null;
         private string _kmsKeyArn;
         private string _name;
         private GatewayProtocolConfiguration _protocolConfiguration;
@@ -85,6 +86,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>AWS_IAM</c> - Authorize with your Amazon Web Services IAM credentials.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NONE</c> - No authorization
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -169,6 +174,31 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetExceptionLevel()
         {
             return this._exceptionLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterceptorConfigurations. 
+        /// <para>
+        /// A list of configuration settings for a gateway interceptor. Gateway interceptors allow
+        /// custom code to be invoked during gateway invocations.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<GatewayInterceptorConfiguration> InterceptorConfigurations
+        {
+            get { return this._interceptorConfigurations; }
+            set { this._interceptorConfigurations = value; }
+        }
+
+        // Check to see if InterceptorConfigurations property is set
+        internal bool IsSetInterceptorConfigurations()
+        {
+            return this._interceptorConfigurations != null && (this._interceptorConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -63,6 +63,8 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             request.AddSubResource("scope", "channel-flow-associations");
+            if (string.IsNullOrEmpty(publicRequest.ChannelFlowArn))
+                throw new AmazonChimeSDKMessagingException("Request object does not have required field ChannelFlowArn set");
             
             if (publicRequest.IsSetChannelFlowArn())
                 request.Parameters.Add("channel-flow-arn", StringUtils.FromString(publicRequest.ChannelFlowArn));

@@ -68,6 +68,8 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.OutpostId))
+                throw new AmazonS3OutpostsException("Request object does not have required field OutpostId set");
             
             if (publicRequest.IsSetOutpostId())
                 request.Parameters.Add("outpostId", StringUtils.FromString(publicRequest.OutpostId));

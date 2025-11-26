@@ -62,10 +62,22 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("push", targetDepth))
+                {
+                    var unmarshaller = PushMessageTemplateContentUnmarshaller.Instance;
+                    unmarshalledObject.Push = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("sms", targetDepth))
                 {
                     var unmarshaller = SMSMessageTemplateContentUnmarshaller.Instance;
                     unmarshalledObject.Sms = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("whatsApp", targetDepth))
+                {
+                    var unmarshaller = WhatsAppMessageTemplateContentUnmarshaller.Instance;
+                    unmarshalledObject.WhatsApp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

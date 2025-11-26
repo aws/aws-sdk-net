@@ -2735,6 +2735,27 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateInterruptibleCapacityReservationAllocation
+
+
+
+        /// <summary>
+        /// Creates an interruptible Capacity Reservation by specifying the number of unused
+        /// instances you want to allocate from your source reservation. This helps you make unused
+        /// capacity available for other workloads within your account while maintaining control
+        /// to reclaim it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInterruptibleCapacityReservationAllocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInterruptibleCapacityReservationAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInterruptibleCapacityReservationAllocation">REST API Reference for CreateInterruptibleCapacityReservationAllocation Operation</seealso>
+        Task<CreateInterruptibleCapacityReservationAllocationResponse> CreateInterruptibleCapacityReservationAllocationAsync(CreateInterruptibleCapacityReservationAllocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateIpam
 
 
@@ -2785,6 +2806,41 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateIpamExternalResourceVerificationToken service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamExternalResourceVerificationToken">REST API Reference for CreateIpamExternalResourceVerificationToken Operation</seealso>
         Task<CreateIpamExternalResourceVerificationTokenResponse> CreateIpamExternalResourceVerificationTokenAsync(CreateIpamExternalResourceVerificationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateIpamPolicy
+
+
+
+        /// <summary>
+        /// Creates an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/define-public-ipv4-allocation-strategy-with-ipam-policies.html">Define
+        /// public IPv4 allocation strategy with IPAM policies</a> in the <i>Amazon VPC IPAM User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamPolicy">REST API Reference for CreateIpamPolicy Operation</seealso>
+        Task<CreateIpamPolicyResponse> CreateIpamPolicyAsync(CreateIpamPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4374,6 +4430,43 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateTransitGatewayMeteringPolicy
+
+
+
+        /// <summary>
+        /// Creates a metering policy for a transit gateway to track and measure network traffic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicy">REST API Reference for CreateTransitGatewayMeteringPolicy Operation</seealso>
+        Task<CreateTransitGatewayMeteringPolicyResponse> CreateTransitGatewayMeteringPolicyAsync(CreateTransitGatewayMeteringPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateTransitGatewayMeteringPolicyEntry
+
+
+
+        /// <summary>
+        /// Creates an entry in a transit gateway metering policy to define traffic measurement
+        /// rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayMeteringPolicyEntry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayMeteringPolicyEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMeteringPolicyEntry">REST API Reference for CreateTransitGatewayMeteringPolicyEntry Operation</seealso>
+        Task<CreateTransitGatewayMeteringPolicyEntryResponse> CreateTransitGatewayMeteringPolicyEntryAsync(CreateTransitGatewayMeteringPolicyEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateTransitGatewayMulticastDomain
 
 
@@ -4734,6 +4827,32 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateVpcEncryptionControl
+
+
+
+        /// <summary>
+        /// Creates a VPC Encryption Control configuration for a specified VPC. VPC Encryption
+        /// Control enables you to enforce encryption for all data in transit within and between
+        /// VPCs to meet compliance requirements for standards like HIPAA, FedRAMP, and PCI DSS.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEncryptionControl">REST API Reference for CreateVpcEncryptionControl Operation</seealso>
+        Task<CreateVpcEncryptionControlResponse> CreateVpcEncryptionControlAsync(CreateVpcEncryptionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateVpcEndpoint
 
 
@@ -4864,6 +4983,24 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         Task<CreateVpcPeeringConnectionResponse> CreateVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateVpnConcentrator
+
+
+
+        /// <summary>
+        /// Creates a VPN concentrator that aggregates multiple VPN connections to a transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpnConcentrator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConcentrator">REST API Reference for CreateVpnConcentrator Operation</seealso>
+        Task<CreateVpnConcentratorResponse> CreateVpnConcentratorAsync(CreateVpnConcentratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5399,6 +5536,35 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteIpamExternalResourceVerificationToken service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamExternalResourceVerificationToken">REST API Reference for DeleteIpamExternalResourceVerificationToken Operation</seealso>
         Task<DeleteIpamExternalResourceVerificationTokenResponse> DeleteIpamExternalResourceVerificationTokenAsync(DeleteIpamExternalResourceVerificationTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteIpamPolicy
+
+
+
+        /// <summary>
+        /// Deletes an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamPolicy">REST API Reference for DeleteIpamPolicy Operation</seealso>
+        Task<DeleteIpamPolicyResponse> DeleteIpamPolicyAsync(DeleteIpamPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6390,6 +6556,42 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteTransitGatewayMeteringPolicy
+
+
+
+        /// <summary>
+        /// Deletes a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicy">REST API Reference for DeleteTransitGatewayMeteringPolicy Operation</seealso>
+        Task<DeleteTransitGatewayMeteringPolicyResponse> DeleteTransitGatewayMeteringPolicyAsync(DeleteTransitGatewayMeteringPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTransitGatewayMeteringPolicyEntry
+
+
+
+        /// <summary>
+        /// Deletes an entry from a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayMeteringPolicyEntry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayMeteringPolicyEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMeteringPolicyEntry">REST API Reference for DeleteTransitGatewayMeteringPolicyEntry Operation</seealso>
+        Task<DeleteTransitGatewayMeteringPolicyEntryResponse> DeleteTransitGatewayMeteringPolicyEntryAsync(DeleteTransitGatewayMeteringPolicyEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteTransitGatewayMulticastDomain
 
 
@@ -6692,6 +6894,31 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteVpcEncryptionControl
+
+
+
+        /// <summary>
+        /// Deletes a VPC Encryption Control configuration. This removes the encryption policy
+        /// enforcement from the specified VPC.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEncryptionControl">REST API Reference for DeleteVpcEncryptionControl Operation</seealso>
+        Task<DeleteVpcEncryptionControlResponse> DeleteVpcEncryptionControlAsync(DeleteVpcEncryptionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteVpcEndpointConnectionNotifications
 
 
@@ -6783,6 +7010,24 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVpnConcentrator
+
+
+
+        /// <summary>
+        /// Deletes the specified VPN concentrator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConcentrator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpnConcentrator service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConcentrator">REST API Reference for DeleteVpnConcentrator Operation</seealso>
+        Task<DeleteVpnConcentratorResponse> DeleteVpnConcentratorAsync(DeleteVpnConcentratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -8698,7 +8943,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified attribute of the specified instance. You can specify only
-        /// one attribute at a time.
+        /// one attribute at a time. Available attributes include SQL license exemption configuration
+        /// for instances registered with the SQL LE service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -8901,6 +9147,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// The response includes SQL license exemption status information for instances registered
+        /// with the SQL LE service, providing visibility into license exemption configuration
+        /// and status.
+        /// </para>
+        ///  
+        /// <para>
         /// If you specify an instance ID that is not valid, an error is returned. If you specify
         /// an instance that you do not own, it is not included in the output.
         /// </para>
@@ -8960,6 +9212,12 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
+        /// The response includes SQL license exemption status information for instances registered
+        /// with the SQL LE service, providing visibility into license exemption configuration
+        /// and status.
+        /// </para>
+        ///  
+        /// <para>
         /// If you specify an instance ID that is not valid, an error is returned. If you specify
         /// an instance that you do not own, it is not included in the output.
         /// </para>
@@ -9006,6 +9264,44 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeInstanceSqlHaHistoryStates
+
+
+
+        /// <summary>
+        /// Describes the historical SQL Server High Availability states for Amazon EC2 instances
+        /// that are enabled for Amazon EC2 High Availability for SQL Server monitoring.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceSqlHaHistoryStates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceSqlHaHistoryStates service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaHistoryStates">REST API Reference for DescribeInstanceSqlHaHistoryStates Operation</seealso>
+        Task<DescribeInstanceSqlHaHistoryStatesResponse> DescribeInstanceSqlHaHistoryStatesAsync(DescribeInstanceSqlHaHistoryStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeInstanceSqlHaStates
+
+
+
+        /// <summary>
+        /// Describes the SQL Server High Availability states for Amazon EC2 instances that are
+        /// enabled for Amazon EC2 High Availability for SQL Server monitoring.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceSqlHaStates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeInstanceSqlHaStates service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceSqlHaStates">REST API Reference for DescribeInstanceSqlHaStates Operation</seealso>
+        Task<DescribeInstanceSqlHaStatesResponse> DescribeInstanceSqlHaStatesAsync(DescribeInstanceSqlHaStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeInstanceStatus
 
 
@@ -9037,6 +9333,12 @@ namespace Amazon.EC2
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SQL license exemption monitoring</b> - For instances registered with the SQL LE
+        /// service, status includes SQL license exemption monitoring health and processing status
+        /// to provide operational visibility into license exemption functionality.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -9091,6 +9393,12 @@ namespace Amazon.EC2
         ///  <b>Instance state</b> - You can manage your instances from the moment you launch
         /// them through their termination. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>SQL license exemption monitoring</b> - For instances registered with the SQL LE
+        /// service, status includes SQL license exemption monitoring health and processing status
+        /// to provide operational visibility into license exemption functionality.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -9258,10 +9566,15 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe verification tokens. A verification token is an Amazon Web Services-generated
-        /// random value that you can use to prove ownership of an external resource. For example,
-        /// you can use a verification token to validate that you control a public IP address
-        /// range when you bring an IP address range to Amazon Web Services (BYOIP).
+        /// Describe verification tokens.
+        /// 
+        ///  
+        /// <para>
+        /// A verification token is an Amazon Web Services-generated random value that you can
+        /// use to prove ownership of an external resource. For example, you can use a verification
+        /// token to validate that you control a public IP address range when you bring an IP
+        /// address range to Amazon Web Services (BYOIP). 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIpamExternalResourceVerificationTokens service method.</param>
         /// <param name="cancellationToken">
@@ -9271,6 +9584,35 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeIpamExternalResourceVerificationTokens service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
         Task<DescribeIpamExternalResourceVerificationTokensResponse> DescribeIpamExternalResourceVerificationTokensAsync(DescribeIpamExternalResourceVerificationTokensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeIpamPolicies
+
+
+
+        /// <summary>
+        /// Describes one or more IPAM policies.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamPolicies">REST API Reference for DescribeIpamPolicies Operation</seealso>
+        Task<DescribeIpamPoliciesResponse> DescribeIpamPoliciesAsync(DescribeIpamPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -11558,6 +11900,24 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeTransitGatewayMeteringPolicies
+
+
+
+        /// <summary>
+        /// Describes one or more transit gateway metering policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayMeteringPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayMeteringPolicies service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMeteringPolicies">REST API Reference for DescribeTransitGatewayMeteringPolicies Operation</seealso>
+        Task<DescribeTransitGatewayMeteringPoliciesResponse> DescribeTransitGatewayMeteringPoliciesAsync(DescribeTransitGatewayMeteringPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeTransitGatewayMulticastDomains
 
 
@@ -12169,6 +12529,33 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeVpcEncryptionControls
+
+
+
+        /// <summary>
+        /// Describes one or more VPC Encryption Control configurations. VPC Encryption Control
+        /// enables you to enforce encryption for all data in transit within and between VPCs
+        /// to meet compliance requirements You can filter the results to return information about
+        /// specific encryption controls or VPCs.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEncryptionControls service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcEncryptionControls service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEncryptionControls">REST API Reference for DescribeVpcEncryptionControls Operation</seealso>
+        Task<DescribeVpcEncryptionControlsResponse> DescribeVpcEncryptionControlsAsync(DescribeVpcEncryptionControlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeVpcEndpointAssociations
 
 
@@ -12377,6 +12764,24 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeVpcs service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         Task<DescribeVpcsResponse> DescribeVpcsAsync(DescribeVpcsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeVpnConcentrators
+
+
+
+        /// <summary>
+        /// Describes one or more of your VPN concentrators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConcentrators service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpnConcentrators service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConcentrators">REST API Reference for DescribeVpnConcentrators Operation</seealso>
+        Task<DescribeVpnConcentratorsResponse> DescribeVpnConcentratorsAsync(DescribeVpnConcentratorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -12918,6 +13323,27 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DisableInstanceSqlHaStandbyDetections
+
+
+
+        /// <summary>
+        /// Disable Amazon EC2 instances running in an SQL Server High Availability cluster from
+        /// SQL Server High Availability instance standby detection monitoring. Once disabled,
+        /// Amazon Web Services no longer monitors the metadata for the instances to determine
+        /// whether they are active or standby nodes in the SQL Server High Availability cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableInstanceSqlHaStandbyDetections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableInstanceSqlHaStandbyDetections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableInstanceSqlHaStandbyDetections">REST API Reference for DisableInstanceSqlHaStandbyDetections Operation</seealso>
+        Task<DisableInstanceSqlHaStandbyDetectionsResponse> DisableInstanceSqlHaStandbyDetectionsAsync(DisableInstanceSqlHaStandbyDetectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableIpamOrganizationAdminAccount
 
 
@@ -12934,6 +13360,35 @@ namespace Amazon.EC2
         /// <returns>The response from the DisableIpamOrganizationAdminAccount service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamOrganizationAdminAccount">REST API Reference for DisableIpamOrganizationAdminAccount Operation</seealso>
         Task<DisableIpamOrganizationAdminAccountResponse> DisableIpamOrganizationAdminAccountAsync(DisableIpamOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisableIpamPolicy
+
+
+
+        /// <summary>
+        /// Disables an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableIpamPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableIpamPolicy">REST API Reference for DisableIpamPolicy Operation</seealso>
+        Task<DisableIpamPolicyResponse> DisableIpamPolicyAsync(DisableIpamPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -13915,6 +14370,38 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  EnableInstanceSqlHaStandbyDetections
+
+
+
+        /// <summary>
+        /// Enable Amazon EC2 instances running in an SQL Server High Availability cluster for
+        /// SQL Server High Availability instance standby detection monitoring. Once enabled,
+        /// Amazon Web Services monitors the metadata for the instances to determine whether they
+        /// are active or standby nodes in the SQL Server High Availability cluster. If the instances
+        /// are determined to be standby failover nodes, Amazon Web Services automatically applies
+        /// SQL Server licensing fee waiver for those instances.
+        /// 
+        ///  
+        /// <para>
+        /// To register an instance, it must be running a Windows SQL Server license-included
+        /// AMI and have the Amazon Web Services Systems Manager agent installed and running.
+        /// Only Windows Server 2019 and later and SQL Server (Standard and Enterprise editions)
+        /// 2017 and later are supported. For more information, see <a href="https://docs.aws.amazon.com/sql-server-ec2/latest/userguide/prerequisites-and-requirements.html">
+        /// Prerequisites for using SQL Server High Availability instance standby detection</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableInstanceSqlHaStandbyDetections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableInstanceSqlHaStandbyDetections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableInstanceSqlHaStandbyDetections">REST API Reference for EnableInstanceSqlHaStandbyDetections Operation</seealso>
+        Task<EnableInstanceSqlHaStandbyDetectionsResponse> EnableInstanceSqlHaStandbyDetectionsAsync(EnableInstanceSqlHaStandbyDetectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  EnableIpamOrganizationAdminAccount
 
 
@@ -13933,6 +14420,41 @@ namespace Amazon.EC2
         /// <returns>The response from the EnableIpamOrganizationAdminAccount service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamOrganizationAdminAccount">REST API Reference for EnableIpamOrganizationAdminAccount Operation</seealso>
         Task<EnableIpamOrganizationAdminAccountResponse> EnableIpamOrganizationAdminAccountAsync(EnableIpamOrganizationAdminAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  EnableIpamPolicy
+
+
+
+        /// <summary>
+        /// Enables an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/define-public-ipv4-allocation-strategy-with-ipam-policies.html">Define
+        /// public IPv4 allocation strategy with IPAM policies</a> in the <i>Amazon VPC IPAM User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamPolicy">REST API Reference for EnableIpamPolicy Operation</seealso>
+        Task<EnableIpamPolicyResponse> EnableIpamPolicyAsync(EnableIpamPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -14648,6 +15170,35 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  GetEnabledIpamPolicy
+
+
+
+        /// <summary>
+        /// Gets the enabled IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnabledIpamPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEnabledIpamPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEnabledIpamPolicy">REST API Reference for GetEnabledIpamPolicy Operation</seealso>
+        Task<GetEnabledIpamPolicyResponse> GetEnabledIpamPolicyAsync(GetEnabledIpamPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetFlowLogsIntegrationTemplate
 
 
@@ -14733,6 +15284,26 @@ namespace Amazon.EC2
         /// <returns>The response from the GetHostReservationPurchasePreview service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         Task<GetHostReservationPurchasePreviewResponse> GetHostReservationPurchasePreviewAsync(GetHostReservationPurchasePreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetImageAncestry
+
+
+
+        /// <summary>
+        /// Retrieves the ancestry chain of the specified AMI, tracing its lineage back to the
+        /// root AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-ancestry.html">AMI
+        /// ancestry</a> in <i>Amazon EC2 User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetImageAncestry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetImageAncestry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageAncestry">REST API Reference for GetImageAncestry Operation</seealso>
+        Task<GetImageAncestryResponse> GetImageAncestryAsync(GetImageAncestryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -14953,6 +15524,75 @@ namespace Amazon.EC2
         /// <returns>The response from the GetIpamDiscoveredResourceCidrs service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs">REST API Reference for GetIpamDiscoveredResourceCidrs Operation</seealso>
         Task<GetIpamDiscoveredResourceCidrsResponse> GetIpamDiscoveredResourceCidrsAsync(GetIpamDiscoveredResourceCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIpamPolicyAllocationRules
+
+
+
+        /// <summary>
+        /// Gets the allocation rules for an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Allocation rules are optional configurations within an IPAM policy that map Amazon
+        /// Web Services resource types to specific IPAM pools. If no rules are defined, the resource
+        /// types default to using Amazon-provided IP addresses.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPolicyAllocationRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamPolicyAllocationRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyAllocationRules">REST API Reference for GetIpamPolicyAllocationRules Operation</seealso>
+        Task<GetIpamPolicyAllocationRulesResponse> GetIpamPolicyAllocationRulesAsync(GetIpamPolicyAllocationRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIpamPolicyOrganizationTargets
+
+
+
+        /// <summary>
+        /// Gets the Amazon Web Services Organizations targets for an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// A target can be an individual Amazon Web Services account or an entity within an Amazon
+        /// Web Services Organization to which an IPAM policy can be applied.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamPolicyOrganizationTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamPolicyOrganizationTargets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamPolicyOrganizationTargets">REST API Reference for GetIpamPolicyOrganizationTargets Operation</seealso>
+        Task<GetIpamPolicyOrganizationTargetsResponse> GetIpamPolicyOrganizationTargetsAsync(GetIpamPolicyOrganizationTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -15574,6 +16214,24 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  GetTransitGatewayMeteringPolicyEntries
+
+
+
+        /// <summary>
+        /// Retrieves the entries for a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayMeteringPolicyEntries service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayMeteringPolicyEntries service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMeteringPolicyEntries">REST API Reference for GetTransitGatewayMeteringPolicyEntries Operation</seealso>
+        Task<GetTransitGatewayMeteringPolicyEntriesResponse> GetTransitGatewayMeteringPolicyEntriesAsync(GetTransitGatewayMeteringPolicyEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetTransitGatewayMulticastDomainAssociations
 
 
@@ -15735,6 +16393,30 @@ namespace Amazon.EC2
         /// <returns>The response from the GetVerifiedAccessGroupPolicy service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy">REST API Reference for GetVerifiedAccessGroupPolicy Operation</seealso>
         Task<GetVerifiedAccessGroupPolicyResponse> GetVerifiedAccessGroupPolicyAsync(GetVerifiedAccessGroupPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetVpcResourcesBlockingEncryptionEnforcement
+
+
+
+        /// <summary>
+        /// Gets information about resources in a VPC that are blocking encryption enforcement.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcResourcesBlockingEncryptionEnforcement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpcResourcesBlockingEncryptionEnforcement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpcResourcesBlockingEncryptionEnforcement">REST API Reference for GetVpcResourcesBlockingEncryptionEnforcement Operation</seealso>
+        Task<GetVpcResourcesBlockingEncryptionEnforcementResponse> GetVpcResourcesBlockingEncryptionEnforcementAsync(GetVpcResourcesBlockingEncryptionEnforcementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -16024,6 +16706,24 @@ namespace Amazon.EC2
         /// <returns>The response from the ListSnapshotsInRecycleBin service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListSnapshotsInRecycleBin">REST API Reference for ListSnapshotsInRecycleBin Operation</seealso>
         Task<ListSnapshotsInRecycleBinResponse> ListSnapshotsInRecycleBinAsync(ListSnapshotsInRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListVolumesInRecycleBin
+
+
+
+        /// <summary>
+        /// Lists one or more volumes that are currently in the Recycle Bin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVolumesInRecycleBin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVolumesInRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ListVolumesInRecycleBin">REST API Reference for ListVolumesInRecycleBin Operation</seealso>
+        Task<ListVolumesInRecycleBinResponse> ListVolumesInRecycleBinAsync(ListVolumesInRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -16880,6 +17580,41 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  ModifyIpamPolicyAllocationRules
+
+
+
+        /// <summary>
+        /// Modifies the allocation rules in an IPAM policy.
+        /// 
+        ///  
+        /// <para>
+        /// An IPAM policy is a set of rules that define how public IPv4 addresses from IPAM pools
+        /// are allocated to Amazon Web Services resources. Each rule maps an Amazon Web Services
+        /// service to IPAM pools that the service will use to get IP addresses. A single policy
+        /// can have multiple rules and be applied to multiple Amazon Web Services Regions. If
+        /// the IPAM pool run out of addresses then the services fallback to Amazon-provided IP
+        /// addresses. A policy can be applied to an individual Amazon Web Services account or
+        /// an entity within Amazon Web Services Organizations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Allocation rules are optional configurations within an IPAM policy that map Amazon
+        /// Web Services resource types to specific IPAM pools. If no rules are defined, the resource
+        /// types default to using Amazon-provided IP addresses.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamPolicyAllocationRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamPolicyAllocationRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamPolicyAllocationRules">REST API Reference for ModifyIpamPolicyAllocationRules Operation</seealso>
+        Task<ModifyIpamPolicyAllocationRulesResponse> ModifyIpamPolicyAllocationRulesAsync(ModifyIpamPolicyAllocationRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifyIpamPool
 
 
@@ -17483,6 +18218,24 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  ModifyTransitGatewayMeteringPolicy
+
+
+
+        /// <summary>
+        /// Modifies a transit gateway metering policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayMeteringPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayMeteringPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayMeteringPolicy">REST API Reference for ModifyTransitGatewayMeteringPolicy Operation</seealso>
+        Task<ModifyTransitGatewayMeteringPolicyResponse> ModifyTransitGatewayMeteringPolicyAsync(ModifyTransitGatewayMeteringPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifyTransitGatewayPrefixListReference
 
 
@@ -17785,6 +18538,31 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyVpcBlockPublicAccessOptions service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">REST API Reference for ModifyVpcBlockPublicAccessOptions Operation</seealso>
         Task<ModifyVpcBlockPublicAccessOptionsResponse> ModifyVpcBlockPublicAccessOptionsAsync(ModifyVpcBlockPublicAccessOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyVpcEncryptionControl
+
+
+
+        /// <summary>
+        /// Modifies the encryption control configuration for a VPC. You can update the encryption
+        /// mode and exclusion settings for various gateway types and peering connections.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEncryptionControl">REST API Reference for ModifyVpcEncryptionControl Operation</seealso>
+        Task<ModifyVpcEncryptionControlResponse> ModifyVpcEncryptionControlAsync(ModifyVpcEncryptionControlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -19486,6 +20264,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  RestoreVolumeFromRecycleBin
+
+
+
+        /// <summary>
+        /// Restores a volume from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-volumes.html#recycle-bin-restore-volumes">Restore
+        /// volumes from the Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreVolumeFromRecycleBin service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreVolumeFromRecycleBin service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreVolumeFromRecycleBin">REST API Reference for RestoreVolumeFromRecycleBin Operation</seealso>
+        Task<RestoreVolumeFromRecycleBinResponse> RestoreVolumeFromRecycleBinAsync(RestoreVolumeFromRecycleBinRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RevokeClientVpnIngress
 
 
@@ -20354,6 +21151,25 @@ namespace Amazon.EC2
         /// <returns>The response from the UpdateCapacityManagerOrganizationsAccess service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateCapacityManagerOrganizationsAccess">REST API Reference for UpdateCapacityManagerOrganizationsAccess Operation</seealso>
         Task<UpdateCapacityManagerOrganizationsAccessResponse> UpdateCapacityManagerOrganizationsAccessAsync(UpdateCapacityManagerOrganizationsAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateInterruptibleCapacityReservationAllocation
+
+
+
+        /// <summary>
+        /// Modifies the number of instances allocated to an interruptible reservation, allowing
+        /// you to add more capacity or reclaim capacity to your source Capacity Reservation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInterruptibleCapacityReservationAllocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInterruptibleCapacityReservationAllocation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateInterruptibleCapacityReservationAllocation">REST API Reference for UpdateInterruptibleCapacityReservationAllocation Operation</seealso>
+        Task<UpdateInterruptibleCapacityReservationAllocationResponse> UpdateInterruptibleCapacityReservationAllocationAsync(UpdateInterruptibleCapacityReservationAllocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

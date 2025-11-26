@@ -7,6 +7,17 @@
     <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFront.Model.CreateConnectionFunctionRequest.ConnectionFunctionCode</property>
+    <min>1</min>
+    <max>40960</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.CreateConnectionFunctionRequest.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFront.Model.CreateDistributionTenantRequest.Name</property>
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-.]{1,126}[a-zA-Z0-9]</pattern>
   </property-value-rule>
@@ -33,6 +44,11 @@
     <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFront.Model.DeleteConnectionFunctionRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFront.Model.DeleteFunctionRequest.Name</property>
     <min>1</min>
     <max>64</max>
@@ -45,6 +61,11 @@
     <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFront.Model.DeleteTrustStoreRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFront.Model.DescribeFunctionRequest.Name</property>
     <min>1</min>
     <max>64</max>
@@ -55,6 +76,11 @@
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.GetConnectionFunctionResponse.ConnectionFunctionCode</property>
+    <min>1</min>
+    <max>40960</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.GetFunctionRequest.Name</property>
@@ -86,6 +112,11 @@
     <pattern>arn:aws(-cn)?:cloudfront::[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFront.Model.PublishConnectionFunctionRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFront.Model.PublishFunctionRequest.Name</property>
     <min>1</min>
     <max>64</max>
@@ -94,6 +125,16 @@
   <property-value-rule>
     <property>Amazon.CloudFront.Model.TagResourceRequest.Resource</property>
     <pattern>arn:aws(-cn)?:cloudfront::[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.TestConnectionFunctionRequest.ConnectionObject</property>
+    <min>0</min>
+    <max>40960</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.TestConnectionFunctionRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.TestFunctionRequest.EventObject</property>
@@ -109,6 +150,16 @@
   <property-value-rule>
     <property>Amazon.CloudFront.Model.UntagResourceRequest.Resource</property>
     <pattern>arn:aws(-cn)?:cloudfront::[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.UpdateConnectionFunctionRequest.ConnectionFunctionCode</property>
+    <min>1</min>
+    <max>40960</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.UpdateConnectionFunctionRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.UpdateFunctionRequest.FunctionCode</property>
@@ -133,6 +184,11 @@
     <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFront.Model.UpdateTrustStoreRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFront.Model.AnycastIpList.Name</property>
     <min>1</min>
     <max>64</max>
@@ -140,6 +196,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFront.Model.AnycastIpListSummary.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-_]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.CaCertificatesBundleS3Location.Region</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[a-z]{2}-[a-z]+-\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.ConnectionFunctionAssociation.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.ConnectionFunctionSummary.Id</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFront.Model.ConnectionFunctionSummary.Name</property>
     <min>1</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9-_]{1,64}</pattern>

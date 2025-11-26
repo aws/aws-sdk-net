@@ -145,8 +145,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name of the CloudWatch metric used as a service level indicator (SLI) for measuring
-        /// service performance.
+        /// The name of the CloudWatch metric to use for the SLO, when using a custom metric rather
+        /// than Application Signals standard metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

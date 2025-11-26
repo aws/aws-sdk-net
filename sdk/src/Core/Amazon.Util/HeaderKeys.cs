@@ -120,5 +120,7 @@ namespace Amazon.Util
         public const string XAmzRenameSourceIfNoneMatchHeader = "x-amz-rename-source-if-none-match";
         public const string XAmzRenameSourceIfUnmodifiedSinceHeader = "x-amz-rename-source-if-unmodified-since";
         public const string XAmzQueryMode = "x-amzn-query-mode";
+
+        public const string DPoPHeader = "DPoP";
     }
 }

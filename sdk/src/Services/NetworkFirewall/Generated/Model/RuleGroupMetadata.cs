@@ -37,6 +37,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private string _arn;
         private string _name;
+        private string _vendorName;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -75,6 +76,24 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VendorName. 
+        /// <para>
+        /// The name of the Amazon Web Services Marketplace seller that provides this rule group.
+        /// </para>
+        /// </summary>
+        public string VendorName
+        {
+            get { return this._vendorName; }
+            set { this._vendorName = value; }
+        }
+
+        // Check to see if VendorName property is set
+        internal bool IsSetVendorName()
+        {
+            return this._vendorName != null;
         }
 
     }

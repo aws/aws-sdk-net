@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComputeAccess operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Container
+    /// 
+    ///  
+    /// <para>
     /// Requests authorization to remotely connect to a hosting resource in a Amazon GameLift
     /// Servers managed fleet. This operation is not used with Amazon GameLift Servers Anywhere
     /// fleets.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 

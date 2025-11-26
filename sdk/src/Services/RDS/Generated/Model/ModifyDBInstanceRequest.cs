@@ -1046,10 +1046,6 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Must be in the distinguished name format.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Can't be longer than 64 characters.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Example: <c>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</c>

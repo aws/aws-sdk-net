@@ -165,6 +165,14 @@ namespace Amazon.NetworkManager.Model
         }
 
         /// <summary>
+        /// Paginator for ListAttachmentRoutingPolicyAssociations operation
+        ///</summary>
+        public IListAttachmentRoutingPolicyAssociationsPaginator ListAttachmentRoutingPolicyAssociations(ListAttachmentRoutingPolicyAssociationsRequest request) 
+        {
+            return new ListAttachmentRoutingPolicyAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAttachments operation
         ///</summary>
         public IListAttachmentsPaginator ListAttachments(ListAttachmentsRequest request) 
@@ -186,6 +194,22 @@ namespace Amazon.NetworkManager.Model
         public IListCoreNetworkPolicyVersionsPaginator ListCoreNetworkPolicyVersions(ListCoreNetworkPolicyVersionsRequest request) 
         {
             return new ListCoreNetworkPolicyVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCoreNetworkPrefixListAssociations operation
+        ///</summary>
+        public IListCoreNetworkPrefixListAssociationsPaginator ListCoreNetworkPrefixListAssociations(ListCoreNetworkPrefixListAssociationsRequest request) 
+        {
+            return new ListCoreNetworkPrefixListAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCoreNetworkRoutingInformation operation
+        ///</summary>
+        public IListCoreNetworkRoutingInformationPaginator ListCoreNetworkRoutingInformation(ListCoreNetworkRoutingInformationRequest request) 
+        {
+            return new ListCoreNetworkRoutingInformationPaginator(this.client, request);
         }
 
         /// <summary>

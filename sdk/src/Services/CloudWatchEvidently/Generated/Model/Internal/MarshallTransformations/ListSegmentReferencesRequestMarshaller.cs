@@ -71,6 +71,8 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.Type))
+                throw new AmazonCloudWatchEvidentlyException("Request object does not have required field Type set");
             
             if (publicRequest.IsSetType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));

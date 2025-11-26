@@ -35,6 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class ReplicationConfig
     {
         private ComputeConfig _computeConfig;
+        private bool? _isReadOnly;
         private string _replicationConfigArn;
         private DateTime? _replicationConfigCreateTime;
         private string _replicationConfigIdentifier;
@@ -62,6 +63,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetComputeConfig()
         {
             return this._computeConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsReadOnly. 
+        /// <para>
+        /// Indicates whether the replication configuration is read-only. When set to <c>true</c>,
+        /// this replication configuration is managed by DMS as part of a zero-ETL integration
+        /// and cannot be modified or deleted directly. You can only modify or delete read-only
+        /// replication configurations through their associated zero-ETL integration.
+        /// </para>
+        /// </summary>
+        public bool? IsReadOnly
+        {
+            get { return this._isReadOnly; }
+            set { this._isReadOnly = value; }
+        }
+
+        // Check to see if IsReadOnly property is set
+        internal bool IsSetIsReadOnly()
+        {
+            return this._isReadOnly.HasValue; 
         }
 
         /// <summary>

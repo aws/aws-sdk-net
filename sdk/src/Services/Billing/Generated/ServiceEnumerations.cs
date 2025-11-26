@@ -167,6 +167,14 @@ namespace Amazon.Billing
         /// </summary>
         public static readonly BillingViewType BILLING_GROUP = new BillingViewType("BILLING_GROUP");
         /// <summary>
+        /// Constant BILLING_TRANSFER for BillingViewType
+        /// </summary>
+        public static readonly BillingViewType BILLING_TRANSFER = new BillingViewType("BILLING_TRANSFER");
+        /// <summary>
+        /// Constant BILLING_TRANSFER_SHOWBACK for BillingViewType
+        /// </summary>
+        public static readonly BillingViewType BILLING_TRANSFER_SHOWBACK = new BillingViewType("BILLING_TRANSFER_SHOWBACK");
+        /// <summary>
         /// Constant CUSTOM for BillingViewType
         /// </summary>
         public static readonly BillingViewType CUSTOM = new BillingViewType("CUSTOM");
@@ -250,6 +258,52 @@ namespace Amazon.Billing
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Dimension(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchOption.
+    /// </summary>
+    public class SearchOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STARTS_WITH for SearchOption
+        /// </summary>
+        public static readonly SearchOption STARTS_WITH = new SearchOption("STARTS_WITH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchOption FindValue(string value)
+        {
+            return FindValue<SearchOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchOption(string value)
         {
             return FindValue(value);
         }

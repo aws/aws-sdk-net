@@ -500,6 +500,192 @@ namespace Amazon.MediaConnect
 
         #endregion
         
+        #region  BatchGetRouterInput
+
+
+        /// <summary>
+        /// Retrieves information about multiple router inputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRouterInput service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterInput">REST API Reference for BatchGetRouterInput Operation</seealso>
+        BatchGetRouterInputResponse BatchGetRouterInput(BatchGetRouterInputRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about multiple router inputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterInput">REST API Reference for BatchGetRouterInput Operation</seealso>
+        Task<BatchGetRouterInputResponse> BatchGetRouterInputAsync(BatchGetRouterInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchGetRouterNetworkInterface
+
+
+        /// <summary>
+        /// Retrieves information about multiple router network interfaces in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRouterNetworkInterface service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterNetworkInterface">REST API Reference for BatchGetRouterNetworkInterface Operation</seealso>
+        BatchGetRouterNetworkInterfaceResponse BatchGetRouterNetworkInterface(BatchGetRouterNetworkInterfaceRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about multiple router network interfaces in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRouterNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterNetworkInterface">REST API Reference for BatchGetRouterNetworkInterface Operation</seealso>
+        Task<BatchGetRouterNetworkInterfaceResponse> BatchGetRouterNetworkInterfaceAsync(BatchGetRouterNetworkInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  BatchGetRouterOutput
+
+
+        /// <summary>
+        /// Retrieves information about multiple router outputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRouterOutput service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterOutput">REST API Reference for BatchGetRouterOutput Operation</seealso>
+        BatchGetRouterOutputResponse BatchGetRouterOutput(BatchGetRouterOutputRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about multiple router outputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterOutput">REST API Reference for BatchGetRouterOutput Operation</seealso>
+        Task<BatchGetRouterOutputResponse> BatchGetRouterOutputAsync(BatchGetRouterOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateBridge
 
 
@@ -722,6 +908,232 @@ namespace Amazon.MediaConnect
 
         #endregion
         
+        #region  CreateRouterInput
+
+
+        /// <summary>
+        /// Creates a new router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouterInput service method.</param>
+        /// 
+        /// <returns>The response from the CreateRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.RouterInputServiceQuotaExceededException">
+        /// The request to create a new router input would exceed the service quotas for the account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterInput">REST API Reference for CreateRouterInput Operation</seealso>
+        CreateRouterInputResponse CreateRouterInput(CreateRouterInputRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.RouterInputServiceQuotaExceededException">
+        /// The request to create a new router input would exceed the service quotas for the account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterInput">REST API Reference for CreateRouterInput Operation</seealso>
+        Task<CreateRouterInputResponse> CreateRouterInputAsync(CreateRouterInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateRouterNetworkInterface
+
+
+        /// <summary>
+        /// Creates a new router network interface in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouterNetworkInterface service method.</param>
+        /// 
+        /// <returns>The response from the CreateRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.RouterNetworkInterfaceServiceQuotaExceededException">
+        /// The request to create a new router network interface would exceed the service quotas
+        /// (limits) set for the account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterNetworkInterface">REST API Reference for CreateRouterNetworkInterface Operation</seealso>
+        CreateRouterNetworkInterfaceResponse CreateRouterNetworkInterface(CreateRouterNetworkInterfaceRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new router network interface in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouterNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.RouterNetworkInterfaceServiceQuotaExceededException">
+        /// The request to create a new router network interface would exceed the service quotas
+        /// (limits) set for the account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterNetworkInterface">REST API Reference for CreateRouterNetworkInterface Operation</seealso>
+        Task<CreateRouterNetworkInterfaceResponse> CreateRouterNetworkInterfaceAsync(CreateRouterNetworkInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateRouterOutput
+
+
+        /// <summary>
+        /// Creates a new router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouterOutput service method.</param>
+        /// 
+        /// <returns>The response from the CreateRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.RouterOutputServiceQuotaExceededException">
+        /// The request to create a new router output would exceed the service quotas (limits)
+        /// set for the account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterOutput">REST API Reference for CreateRouterOutput Operation</seealso>
+        CreateRouterOutputResponse CreateRouterOutput(CreateRouterOutputRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.RouterOutputServiceQuotaExceededException">
+        /// The request to create a new router output would exceed the service quotas (limits)
+        /// set for the account.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateRouterOutput">REST API Reference for CreateRouterOutput Operation</seealso>
+        Task<CreateRouterOutputResponse> CreateRouterOutputAsync(CreateRouterOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteBridge
 
 
@@ -935,6 +1347,228 @@ namespace Amazon.MediaConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRouterInput
+
+
+        /// <summary>
+        /// Deletes a router input from AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouterInput service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterInput">REST API Reference for DeleteRouterInput Operation</seealso>
+        DeleteRouterInputResponse DeleteRouterInput(DeleteRouterInputRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a router input from AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterInput">REST API Reference for DeleteRouterInput Operation</seealso>
+        Task<DeleteRouterInputResponse> DeleteRouterInputAsync(DeleteRouterInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRouterNetworkInterface
+
+
+        /// <summary>
+        /// Deletes a router network interface from AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouterNetworkInterface service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterNetworkInterface">REST API Reference for DeleteRouterNetworkInterface Operation</seealso>
+        DeleteRouterNetworkInterfaceResponse DeleteRouterNetworkInterface(DeleteRouterNetworkInterfaceRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a router network interface from AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouterNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterNetworkInterface">REST API Reference for DeleteRouterNetworkInterface Operation</seealso>
+        Task<DeleteRouterNetworkInterfaceResponse> DeleteRouterNetworkInterfaceAsync(DeleteRouterNetworkInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteRouterOutput
+
+
+        /// <summary>
+        /// Deletes a router output from AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouterOutput service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterOutput">REST API Reference for DeleteRouterOutput Operation</seealso>
+        DeleteRouterOutputResponse DeleteRouterOutput(DeleteRouterOutputRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a router output from AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteRouterOutput">REST API Reference for DeleteRouterOutput Operation</seealso>
+        Task<DeleteRouterOutputResponse> DeleteRouterOutputAsync(DeleteRouterOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1572,6 +2206,362 @@ namespace Amazon.MediaConnect
 
         #endregion
         
+        #region  GetRouterInput
+
+
+        /// <summary>
+        /// Retrieves information about a specific router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterInput service method.</param>
+        /// 
+        /// <returns>The response from the GetRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInput">REST API Reference for GetRouterInput Operation</seealso>
+        GetRouterInputResponse GetRouterInput(GetRouterInputRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInput">REST API Reference for GetRouterInput Operation</seealso>
+        Task<GetRouterInputResponse> GetRouterInputAsync(GetRouterInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRouterInputSourceMetadata
+
+
+        /// <summary>
+        /// Retrieves detailed metadata information about a specific router input source, including
+        /// stream details and connection state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterInputSourceMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetRouterInputSourceMetadata service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInputSourceMetadata">REST API Reference for GetRouterInputSourceMetadata Operation</seealso>
+        GetRouterInputSourceMetadataResponse GetRouterInputSourceMetadata(GetRouterInputSourceMetadataRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves detailed metadata information about a specific router input source, including
+        /// stream details and connection state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterInputSourceMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouterInputSourceMetadata service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInputSourceMetadata">REST API Reference for GetRouterInputSourceMetadata Operation</seealso>
+        Task<GetRouterInputSourceMetadataResponse> GetRouterInputSourceMetadataAsync(GetRouterInputSourceMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRouterInputThumbnail
+
+
+        /// <summary>
+        /// Retrieves the thumbnail for a router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterInputThumbnail service method.</param>
+        /// 
+        /// <returns>The response from the GetRouterInputThumbnail service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInputThumbnail">REST API Reference for GetRouterInputThumbnail Operation</seealso>
+        GetRouterInputThumbnailResponse GetRouterInputThumbnail(GetRouterInputThumbnailRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the thumbnail for a router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterInputThumbnail service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouterInputThumbnail service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInputThumbnail">REST API Reference for GetRouterInputThumbnail Operation</seealso>
+        Task<GetRouterInputThumbnailResponse> GetRouterInputThumbnailAsync(GetRouterInputThumbnailRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRouterNetworkInterface
+
+
+        /// <summary>
+        /// Retrieves information about a specific router network interface in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterNetworkInterface service method.</param>
+        /// 
+        /// <returns>The response from the GetRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterNetworkInterface">REST API Reference for GetRouterNetworkInterface Operation</seealso>
+        GetRouterNetworkInterfaceResponse GetRouterNetworkInterface(GetRouterNetworkInterfaceRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific router network interface in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterNetworkInterface">REST API Reference for GetRouterNetworkInterface Operation</seealso>
+        Task<GetRouterNetworkInterfaceResponse> GetRouterNetworkInterfaceAsync(GetRouterNetworkInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRouterOutput
+
+
+        /// <summary>
+        /// Retrieves information about a specific router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterOutput service method.</param>
+        /// 
+        /// <returns>The response from the GetRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterOutput">REST API Reference for GetRouterOutput Operation</seealso>
+        GetRouterOutputResponse GetRouterOutput(GetRouterOutputRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterOutput">REST API Reference for GetRouterOutput Operation</seealso>
+        Task<GetRouterOutputResponse> GetRouterOutputAsync(GetRouterOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GrantFlowEntitlements
 
 
@@ -2070,11 +3060,249 @@ namespace Amazon.MediaConnect
 
         #endregion
         
+        #region  ListRouterInputs
+
+
+        /// <summary>
+        /// Retrieves a list of router inputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRouterInputs service method.</param>
+        /// 
+        /// <returns>The response from the ListRouterInputs service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterInputs">REST API Reference for ListRouterInputs Operation</seealso>
+        ListRouterInputsResponse ListRouterInputs(ListRouterInputsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of router inputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRouterInputs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRouterInputs service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterInputs">REST API Reference for ListRouterInputs Operation</seealso>
+        Task<ListRouterInputsResponse> ListRouterInputsAsync(ListRouterInputsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListRouterNetworkInterfaces
+
+
+        /// <summary>
+        /// Retrieves a list of router network interfaces in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRouterNetworkInterfaces service method.</param>
+        /// 
+        /// <returns>The response from the ListRouterNetworkInterfaces service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterNetworkInterfaces">REST API Reference for ListRouterNetworkInterfaces Operation</seealso>
+        ListRouterNetworkInterfacesResponse ListRouterNetworkInterfaces(ListRouterNetworkInterfacesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of router network interfaces in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRouterNetworkInterfaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRouterNetworkInterfaces service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterNetworkInterfaces">REST API Reference for ListRouterNetworkInterfaces Operation</seealso>
+        Task<ListRouterNetworkInterfacesResponse> ListRouterNetworkInterfacesAsync(ListRouterNetworkInterfacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListRouterOutputs
+
+
+        /// <summary>
+        /// Retrieves a list of router outputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRouterOutputs service method.</param>
+        /// 
+        /// <returns>The response from the ListRouterOutputs service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterOutputs">REST API Reference for ListRouterOutputs Operation</seealso>
+        ListRouterOutputsResponse ListRouterOutputs(ListRouterOutputsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of router outputs in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRouterOutputs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRouterOutputs service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListRouterOutputs">REST API Reference for ListRouterOutputs Operation</seealso>
+        Task<ListRouterOutputsResponse> ListRouterOutputsAsync(ListRouterOutputsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListTagsForGlobalResource
+
+
+        /// <summary>
+        /// Lists the tags associated with a global resource in AWS Elemental MediaConnect. The
+        /// API supports the following global resources: router inputs, router outputs and router
+        /// network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForGlobalResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForGlobalResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForGlobalResource">REST API Reference for ListTagsForGlobalResource Operation</seealso>
+        ListTagsForGlobalResourceResponse ListTagsForGlobalResource(ListTagsForGlobalResourceRequest request);
+
+
+
+        /// <summary>
+        /// Lists the tags associated with a global resource in AWS Elemental MediaConnect. The
+        /// API supports the following global resources: router inputs, router outputs and router
+        /// network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForGlobalResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForGlobalResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForGlobalResource">REST API Reference for ListTagsForGlobalResource Operation</seealso>
+        Task<ListTagsForGlobalResourceResponse> ListTagsForGlobalResourceAsync(ListTagsForGlobalResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
         /// <summary>
-        /// List all tags on a MediaConnect resource.
+        /// List all tags on a MediaConnect resource in the current region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -2095,7 +3323,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// List all tags on a MediaConnect resource.
+        /// List all tags on a MediaConnect resource in the current region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2614,6 +3842,158 @@ namespace Amazon.MediaConnect
 
         #endregion
         
+        #region  RestartRouterInput
+
+
+        /// <summary>
+        /// Restarts a router input. This operation can be used to recover from errors or refresh
+        /// the input state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestartRouterInput service method.</param>
+        /// 
+        /// <returns>The response from the RestartRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RestartRouterInput">REST API Reference for RestartRouterInput Operation</seealso>
+        RestartRouterInputResponse RestartRouterInput(RestartRouterInputRequest request);
+
+
+
+        /// <summary>
+        /// Restarts a router input. This operation can be used to recover from errors or refresh
+        /// the input state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestartRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestartRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RestartRouterInput">REST API Reference for RestartRouterInput Operation</seealso>
+        Task<RestartRouterInputResponse> RestartRouterInputAsync(RestartRouterInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RestartRouterOutput
+
+
+        /// <summary>
+        /// Restarts a router output. This operation can be used to recover from errors or refresh
+        /// the output state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestartRouterOutput service method.</param>
+        /// 
+        /// <returns>The response from the RestartRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RestartRouterOutput">REST API Reference for RestartRouterOutput Operation</seealso>
+        RestartRouterOutputResponse RestartRouterOutput(RestartRouterOutputRequest request);
+
+
+
+        /// <summary>
+        /// Restarts a router output. This operation can be used to recover from errors or refresh
+        /// the output state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestartRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestartRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RestartRouterOutput">REST API Reference for RestartRouterOutput Operation</seealso>
+        Task<RestartRouterOutputResponse> RestartRouterOutputAsync(RestartRouterOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RevokeFlowEntitlement
 
 
@@ -2748,6 +4128,154 @@ namespace Amazon.MediaConnect
 
         #endregion
         
+        #region  StartRouterInput
+
+
+        /// <summary>
+        /// Starts a router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRouterInput service method.</param>
+        /// 
+        /// <returns>The response from the StartRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartRouterInput">REST API Reference for StartRouterInput Operation</seealso>
+        StartRouterInputResponse StartRouterInput(StartRouterInputRequest request);
+
+
+
+        /// <summary>
+        /// Starts a router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartRouterInput">REST API Reference for StartRouterInput Operation</seealso>
+        Task<StartRouterInputResponse> StartRouterInputAsync(StartRouterInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartRouterOutput
+
+
+        /// <summary>
+        /// Starts a router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRouterOutput service method.</param>
+        /// 
+        /// <returns>The response from the StartRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartRouterOutput">REST API Reference for StartRouterOutput Operation</seealso>
+        StartRouterOutputResponse StartRouterOutput(StartRouterOutputRequest request);
+
+
+
+        /// <summary>
+        /// Starts a router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StartRouterOutput">REST API Reference for StartRouterOutput Operation</seealso>
+        Task<StartRouterOutputResponse> StartRouterOutputAsync(StartRouterOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopFlow
 
 
@@ -2814,14 +4342,212 @@ namespace Amazon.MediaConnect
 
         #endregion
         
+        #region  StopRouterInput
+
+
+        /// <summary>
+        /// Stops a router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRouterInput service method.</param>
+        /// 
+        /// <returns>The response from the StopRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopRouterInput">REST API Reference for StopRouterInput Operation</seealso>
+        StopRouterInputResponse StopRouterInput(StopRouterInputRequest request);
+
+
+
+        /// <summary>
+        /// Stops a router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopRouterInput">REST API Reference for StopRouterInput Operation</seealso>
+        Task<StopRouterInputResponse> StopRouterInputAsync(StopRouterInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopRouterOutput
+
+
+        /// <summary>
+        /// Stops a router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRouterOutput service method.</param>
+        /// 
+        /// <returns>The response from the StopRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopRouterOutput">REST API Reference for StopRouterOutput Operation</seealso>
+        StopRouterOutputResponse StopRouterOutput(StopRouterOutputRequest request);
+
+
+
+        /// <summary>
+        /// Stops a router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/StopRouterOutput">REST API Reference for StopRouterOutput Operation</seealso>
+        Task<StopRouterOutputResponse> StopRouterOutputAsync(StopRouterOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagGlobalResource
+
+
+        /// <summary>
+        /// Adds tags to a global resource in AWS Elemental MediaConnect. The API supports the
+        /// following global resources: router inputs, router outputs and router network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagGlobalResource service method.</param>
+        /// 
+        /// <returns>The response from the TagGlobalResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagGlobalResource">REST API Reference for TagGlobalResource Operation</seealso>
+        TagGlobalResourceResponse TagGlobalResource(TagGlobalResourceRequest request);
+
+
+
+        /// <summary>
+        /// Adds tags to a global resource in AWS Elemental MediaConnect. The API supports the
+        /// following global resources: router inputs, router outputs and router network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagGlobalResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagGlobalResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TagGlobalResource">REST API Reference for TagGlobalResource Operation</seealso>
+        Task<TagGlobalResourceResponse> TagGlobalResourceAsync(TagGlobalResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TagResource
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
-        /// If existing tags on a resource are not specified in the request parameters, they are
-        /// not changed. When a resource is deleted, the tags associated with that resource are
-        /// deleted as well.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>
+        /// in the current region. If existing tags on a resource are not specified in the request
+        /// parameters, they are not changed. When a resource is deleted, the tags associated
+        /// with that resource are deleted as well.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -2842,10 +4568,10 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
-        /// If existing tags on a resource are not specified in the request parameters, they are
-        /// not changed. When a resource is deleted, the tags associated with that resource are
-        /// deleted as well.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>
+        /// in the current region. If existing tags on a resource are not specified in the request
+        /// parameters, they are not changed. When a resource is deleted, the tags associated
+        /// with that resource are deleted as well.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -2868,11 +4594,135 @@ namespace Amazon.MediaConnect
 
         #endregion
         
+        #region  TakeRouterInput
+
+
+        /// <summary>
+        /// Associates a router input with a router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TakeRouterInput service method.</param>
+        /// 
+        /// <returns>The response from the TakeRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TakeRouterInput">REST API Reference for TakeRouterInput Operation</seealso>
+        TakeRouterInputResponse TakeRouterInput(TakeRouterInputRequest request);
+
+
+
+        /// <summary>
+        /// Associates a router input with a router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TakeRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TakeRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/TakeRouterInput">REST API Reference for TakeRouterInput Operation</seealso>
+        Task<TakeRouterInputResponse> TakeRouterInputAsync(TakeRouterInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagGlobalResource
+
+
+        /// <summary>
+        /// Removes tags from a global resource in AWS Elemental MediaConnect. The API supports
+        /// the following global resources: router inputs, router outputs and router network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagGlobalResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagGlobalResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagGlobalResource">REST API Reference for UntagGlobalResource Operation</seealso>
+        UntagGlobalResourceResponse UntagGlobalResource(UntagGlobalResourceRequest request);
+
+
+
+        /// <summary>
+        /// Removes tags from a global resource in AWS Elemental MediaConnect. The API supports
+        /// the following global resources: router inputs, router outputs and router network interfaces.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagGlobalResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagGlobalResource service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UntagGlobalResource">REST API Reference for UntagGlobalResource Operation</seealso>
+        Task<UntagGlobalResourceResponse> UntagGlobalResourceAsync(UntagGlobalResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UntagResource
 
 
         /// <summary>
-        /// Deletes specified tags from a resource.
+        /// Deletes specified tags from a resource in the current region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -2893,7 +4743,7 @@ namespace Amazon.MediaConnect
 
 
         /// <summary>
-        /// Deletes specified tags from a resource.
+        /// Deletes specified tags from a resource in the current region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -3617,6 +5467,224 @@ namespace Amazon.MediaConnect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateGatewayInstance">REST API Reference for UpdateGatewayInstance Operation</seealso>
         Task<UpdateGatewayInstanceResponse> UpdateGatewayInstanceAsync(UpdateGatewayInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRouterInput
+
+
+        /// <summary>
+        /// Updates the configuration of an existing router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouterInput service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterInput">REST API Reference for UpdateRouterInput Operation</seealso>
+        UpdateRouterInputResponse UpdateRouterInput(UpdateRouterInputRequest request);
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing router input in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouterInput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRouterInput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterInput">REST API Reference for UpdateRouterInput Operation</seealso>
+        Task<UpdateRouterInputResponse> UpdateRouterInputAsync(UpdateRouterInputRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRouterNetworkInterface
+
+
+        /// <summary>
+        /// Updates the configuration of an existing router network interface in AWS Elemental
+        /// MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouterNetworkInterface service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterNetworkInterface">REST API Reference for UpdateRouterNetworkInterface Operation</seealso>
+        UpdateRouterNetworkInterfaceResponse UpdateRouterNetworkInterface(UpdateRouterNetworkInterfaceRequest request);
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing router network interface in AWS Elemental
+        /// MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouterNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRouterNetworkInterface service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterNetworkInterface">REST API Reference for UpdateRouterNetworkInterface Operation</seealso>
+        Task<UpdateRouterNetworkInterfaceResponse> UpdateRouterNetworkInterfaceAsync(UpdateRouterNetworkInterfaceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateRouterOutput
+
+
+        /// <summary>
+        /// Updates the configuration of an existing router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouterOutput service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterOutput">REST API Reference for UpdateRouterOutput Operation</seealso>
+        UpdateRouterOutputResponse UpdateRouterOutput(UpdateRouterOutputRequest request);
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing router output in AWS Elemental MediaConnect.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRouterOutput service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRouterOutput service method, as returned by MediaConnect.</returns>
+        /// <exception cref="Amazon.MediaConnect.Model.BadRequestException">
+        /// This exception is thrown if the request contains a semantic error. The precise meaning
+        /// depends on the API, and is documented in the error message.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ForbiddenException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.InternalServerErrorException">
+        /// The server encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.ServiceUnavailableException">
+        /// The service is currently unavailable or busy.
+        /// </exception>
+        /// <exception cref="Amazon.MediaConnect.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateRouterOutput">REST API Reference for UpdateRouterOutput Operation</seealso>
+        Task<UpdateRouterOutputResponse> UpdateRouterOutputAsync(UpdateRouterOutputRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

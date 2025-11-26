@@ -79,6 +79,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetHlg2020Settings())
+            {
+                context.Writer.WritePropertyName("hlg2020Settings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Hlg2020SettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Hlg2020Settings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRec601Settings())
             {
                 context.Writer.WritePropertyName("rec601Settings");

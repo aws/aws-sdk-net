@@ -55,6 +55,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("bgpLogEnabled", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.BgpLogEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("bgpLogGroupArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BgpLogGroupArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("bgpLogOutputFormat", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.BgpLogOutputFormat = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("logEnabled", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

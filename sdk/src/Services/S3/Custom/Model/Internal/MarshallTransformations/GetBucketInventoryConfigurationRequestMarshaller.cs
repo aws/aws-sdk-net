@@ -33,7 +33,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(GetBucketInventoryConfigurationRequest getInventoryConfigurationRequest)
         {
-            IRequest request = new DefaultRequest(getInventoryConfigurationRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(getInventoryConfigurationRequest, "Amazon.S3");
 
             request.Suppress404Exceptions = true;
             request.HttpMethod = "GET";

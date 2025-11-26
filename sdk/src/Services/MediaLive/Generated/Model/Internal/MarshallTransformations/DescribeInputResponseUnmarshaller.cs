@@ -130,6 +130,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("routerSettings", targetDepth))
+                {
+                    var unmarshaller = RouterInputSettingsUnmarshaller.Instance;
+                    response.RouterSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("sdiSources", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -63,6 +63,8 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceArn))
+                throw new AmazonSSMIncidentsException("Request object does not have required field ResourceArn set");
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("resourceArn", StringUtils.FromString(publicRequest.ResourceArn));

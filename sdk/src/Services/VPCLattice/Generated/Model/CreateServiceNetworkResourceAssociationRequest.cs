@@ -38,6 +38,7 @@ namespace Amazon.VPCLattice.Model
     public partial class CreateServiceNetworkResourceAssociationRequest : AmazonVPCLatticeRequest
     {
         private string _clientToken;
+        private bool? _privateDnsEnabled;
         private string _resourceConfigurationIdentifier;
         private string _serviceNetworkIdentifier;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -62,6 +63,25 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsEnabled. 
+        /// <para>
+        ///  Indicates if private DNS is enabled for the service network resource association.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool? PrivateDnsEnabled
+        {
+            get { return this._privateDnsEnabled; }
+            set { this._privateDnsEnabled = value; }
+        }
+
+        // Check to see if PrivateDnsEnabled property is set
+        internal bool IsSetPrivateDnsEnabled()
+        {
+            return this._privateDnsEnabled.HasValue; 
         }
 
         /// <summary>

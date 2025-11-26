@@ -71,6 +71,8 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetWorkerId())
                 throw new AmazonDeadlineException("Request object does not have required field WorkerId set");
             request.AddPathResource("{workerId}", StringUtils.FromString(publicRequest.WorkerId));
+            if (string.IsNullOrEmpty(publicRequest.QueueId))
+                throw new AmazonDeadlineException("Request object does not have required field QueueId set");
             
             if (publicRequest.IsSetQueueId())
                 request.Parameters.Add("queueId", StringUtils.FromString(publicRequest.QueueId));

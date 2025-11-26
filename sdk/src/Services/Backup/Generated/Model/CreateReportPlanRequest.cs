@@ -161,7 +161,7 @@ namespace Amazon.Backup.Model
         ///  
         /// <para>
         ///  <c>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT
-        /// | RESTORE_JOB_REPORT</c> 
+        /// | RESTORE_JOB_REPORT | SCAN_JOB_REPORT </c> 
         /// </para>
         ///  
         /// <para>

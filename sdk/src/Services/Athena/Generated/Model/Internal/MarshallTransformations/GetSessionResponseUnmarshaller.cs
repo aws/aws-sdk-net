@@ -70,6 +70,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     response.EngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MonitoringConfiguration", targetDepth))
+                {
+                    var unmarshaller = MonitoringConfigurationUnmarshaller.Instance;
+                    response.MonitoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("NotebookVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

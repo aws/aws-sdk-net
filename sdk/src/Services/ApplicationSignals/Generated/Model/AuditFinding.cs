@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// Represents an audit finding that identifies a potential issue, misconfiguration, or
-    /// compliance violation in Application Signals resources.
+    /// A structure that contains information about an audit finding, which represents an
+    /// automated analysis result about service behavior, performance issues, or potential
+    /// problems identified through heuristic algorithms.
     /// </summary>
     public partial class AuditFinding
     {
@@ -45,8 +46,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property AuditorResults. 
         /// <para>
-        /// An array of results from different auditors that examined the resource. Each result
-        /// includes the auditor name, description, and severity level.
+        /// An array of auditor results that contain the specific findings, descriptions, and
+        /// severity levels identified by different auditing algorithms.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -70,8 +71,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property DependencyGraph. 
         /// <para>
-        /// A dependency graph showing the relationships between services that may be affected
-        /// by or related to the audit finding.
+        /// A structure containing nodes and edges that represent the dependency relationships
+        /// relevant to this audit finding, helping to understand the context and potential impact.
         /// </para>
         /// </summary>
         public DependencyGraph DependencyGraph
@@ -89,8 +90,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property KeyAttributes. 
         /// <para>
-        /// A map of key attributes that identify the resource associated with this audit finding.
-        /// These attributes help locate and understand the context of the finding.
+        /// The key attributes that identify the service or entity this audit finding relates
+        /// to. This is a string-to-string map that includes fields like Type, Name, and Environment.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -114,8 +115,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property MetricGraph. 
         /// <para>
-        /// A metric graph associated with the audit finding, showing relevant performance data
-        /// that may be related to the identified issue.
+        /// A structure containing metric data queries and time range information that provides
+        /// context for the audit finding through relevant performance metrics.
         /// </para>
         /// </summary>
         public MetricGraph MetricGraph
@@ -133,8 +134,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// The operation or action that was being audited when this finding was discovered. This
-        /// provides context about what was being examined.
+        /// The name of the operation associated with this audit finding, if the finding is specific
+        /// to a particular service operation.
         /// </para>
         /// </summary>
         public string Operation
@@ -152,7 +153,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type or category of the audit finding, such as "Performance", "Security", or "Configuration".
+        /// The type of audit finding.
         /// </para>
         /// </summary>
         public string Type

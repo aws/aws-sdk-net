@@ -1624,6 +1624,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.NoLongerSupportedException">
+        /// The requested operation is no longer supported by Systems Manager.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
@@ -1665,6 +1668,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.NoLongerSupportedException">
+        /// The requested operation is no longer supported by Systems Manager.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -1713,6 +1719,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.NoLongerSupportedException">
+        /// The requested operation is no longer supported by Systems Manager.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
@@ -1757,6 +1766,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of a document is 64 KB.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.NoLongerSupportedException">
+        /// The requested operation is no longer supported by Systems Manager.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -9999,7 +10011,18 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
+        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
+        /// to that date. Existing customers can continue to use the service as normal. For more
+        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Web Services Systems Manager Change Manager availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Information about approval reviews for a version of a change template in Change Manager.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDocumentMetadataHistory service method.</param>
         /// 
@@ -10028,7 +10051,18 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
+        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
+        /// to that date. Existing customers can continue to use the service as normal. For more
+        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Web Services Systems Manager Change Manager availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Information about approval reviews for a version of a change template in Change Manager.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDocumentMetadataHistory service method.</param>
         /// <param name="cancellationToken">
@@ -13085,9 +13119,20 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
+        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
+        /// to that date. Existing customers can continue to use the service as normal. For more
+        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Web Services Systems Manager Change Manager availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates a change request for Change Manager. The Automation runbooks specified in
         /// the change request run only after all required approvals for the change request have
         /// been received.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartChangeRequestExecution service method.</param>
         /// 
@@ -13118,6 +13163,9 @@ namespace Amazon.SimpleSystemsManagement
         /// For example, they may not match the set of parameters permitted for the specified
         /// Automation document.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.NoLongerSupportedException">
+        /// The requested operation is no longer supported by Systems Manager.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">REST API Reference for StartChangeRequestExecution Operation</seealso>
         public virtual StartChangeRequestExecutionResponse StartChangeRequestExecution(StartChangeRequestExecutionRequest request)
         {
@@ -13130,9 +13178,20 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
+        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
+        /// to that date. Existing customers can continue to use the service as normal. For more
+        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Web Services Systems Manager Change Manager availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates a change request for Change Manager. The Automation runbooks specified in
         /// the change request run only after all required approvals for the change request have
         /// been received.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartChangeRequestExecution service method.</param>
         /// <param name="cancellationToken">
@@ -13165,6 +13224,9 @@ namespace Amazon.SimpleSystemsManagement
         /// The supplied parameters for invoking the specified Automation runbook are incorrect.
         /// For example, they may not match the set of parameters permitted for the specified
         /// Automation document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.NoLongerSupportedException">
+        /// The requested operation is no longer supported by Systems Manager.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution">REST API Reference for StartChangeRequestExecution Operation</seealso>
         public virtual Task<StartChangeRequestExecutionResponse> StartChangeRequestExecutionAsync(StartChangeRequestExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -14051,8 +14113,19 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
+        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
+        /// to that date. Existing customers can continue to use the service as normal. For more
+        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Web Services Systems Manager Change Manager availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Updates information related to approval reviews for a specific version of a change
         /// template in Change Manager.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentMetadata service method.</param>
         /// 
@@ -14085,8 +14158,19 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Amazon Web Services Systems Manager Change Manager will no longer be open to new customers
+        /// starting November 7, 2025. If you would like to use Change Manager, sign up prior
+        /// to that date. Existing customers can continue to use the service as normal. For more
+        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon
+        /// Web Services Systems Manager Change Manager availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Updates information related to approval reviews for a specific version of a change
         /// template in Change Manager.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentMetadata service method.</param>
         /// <param name="cancellationToken">

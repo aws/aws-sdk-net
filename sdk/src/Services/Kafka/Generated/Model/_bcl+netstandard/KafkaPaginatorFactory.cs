@@ -37,6 +37,14 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeTopicPartitions operation
+        ///</summary>
+        public IDescribeTopicPartitionsPaginator DescribeTopicPartitions(DescribeTopicPartitionsRequest request) 
+        {
+            return new DescribeTopicPartitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListClientVpcConnections operation
         ///</summary>
         public IListClientVpcConnectionsPaginator ListClientVpcConnections(ListClientVpcConnectionsRequest request) 
@@ -122,6 +130,14 @@ namespace Amazon.Kafka.Model
         public IListScramSecretsPaginator ListScramSecrets(ListScramSecretsRequest request) 
         {
             return new ListScramSecretsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTopics operation
+        ///</summary>
+        public IListTopicsPaginator ListTopics(ListTopicsRequest request) 
+        {
+            return new ListTopicsPaginator(this.client, request);
         }
 
         /// <summary>

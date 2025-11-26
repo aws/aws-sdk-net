@@ -43,6 +43,7 @@ namespace Amazon.ControlTower.Model
     public partial class DriftStatusSummary
     {
         private DriftStatus _driftStatus;
+        private EnabledControlDriftTypes _types;
 
         /// <summary>
         /// Gets and sets the property DriftStatus. 
@@ -85,6 +86,24 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetDriftStatus()
         {
             return this._driftStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Types. 
+        /// <para>
+        /// An object that categorizes the different types of drift detected for the enabled control.
+        /// </para>
+        /// </summary>
+        public EnabledControlDriftTypes Types
+        {
+            get { return this._types; }
+            set { this._types = value; }
+        }
+
+        // Check to see if Types property is set
+        internal bool IsSetTypes()
+        {
+            return this._types != null;
         }
 
     }

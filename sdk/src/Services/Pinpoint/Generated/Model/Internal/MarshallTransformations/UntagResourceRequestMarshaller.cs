@@ -65,6 +65,8 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonPinpointException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{resource-arn}", StringUtils.FromString(publicRequest.ResourceArn));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonPinpointException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

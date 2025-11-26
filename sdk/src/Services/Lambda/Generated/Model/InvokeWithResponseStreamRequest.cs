@@ -51,6 +51,7 @@ namespace Amazon.Lambda.Model
         private LogType _logType;
         private MemoryStream _payload;
         private string _qualifier;
+        private string _tenantId;
 
         /// <summary>
         /// Gets and sets the property ClientContext. 
@@ -201,6 +202,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetQualifier()
         {
             return this._qualifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantId. 
+        /// <para>
+        /// The identifier of the tenant in a multi-tenant Lambda function.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string TenantId
+        {
+            get { return this._tenantId; }
+            set { this._tenantId = value; }
+        }
+
+        // Check to see if TenantId property is set
+        internal bool IsSetTenantId()
+        {
+            return this._tenantId != null;
         }
 
     }

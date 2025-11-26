@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContainerGroupDefinition operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Updates properties in an existing container group definition. This operation doesn't
     /// replace the definition. Instead, it creates a new version of the definition and saves
     /// it separately. You can access all versions that you choose to retain.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// The only property you can't update is the container group type.

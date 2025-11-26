@@ -55,6 +55,12 @@ namespace Amazon.Backup.Model
         /// be true or false. Example: <c>update-global-settings --global-settings isMpaEnabled=false
         /// --region us-west-2</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// A value for Backup Service-Linked Role creation, styled as<c>isDelegatedAdministratorEnabled</c>.
+        /// Values can be true or false. Example: <c>update-global-settings --global-settings
+        /// isDelegatedAdministratorEnabled=false --region us-west-2</c>.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

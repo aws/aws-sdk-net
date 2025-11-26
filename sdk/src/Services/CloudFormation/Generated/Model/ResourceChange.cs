@@ -44,7 +44,10 @@ namespace Amazon.CloudFormation.Model
         private ModuleInfo _moduleInfo;
         private string _physicalResourceId;
         private PolicyAction _policyAction;
+        private string _previousDeploymentContext;
         private Replacement _replacement;
+        private List<ResourceDriftIgnoredAttribute> _resourceDriftIgnoredAttributes = AWSConfigs.InitializeCollections ? new List<ResourceDriftIgnoredAttribute>() : null;
+        private StackResourceDriftStatus _resourceDriftStatus;
         private string _resourceType;
         private List<string> _scope = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -53,8 +56,9 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The action that CloudFormation takes on the resource, such as <c>Add</c> (adds a new
         /// resource), <c>Modify</c> (changes a resource), <c>Remove</c> (deletes a resource),
-        /// <c>Import</c> (imports a resource), or <c>Dynamic</c> (exact action for the resource
-        /// can't be determined).
+        /// <c>Import</c> (imports a resource), <c>Dynamic</c> (exact action for the resource
+        /// can't be determined), or <c>SyncWithActual</c> (resource will not be changed, only
+        /// CloudFormation metadata will change).
         /// </para>
         /// </summary>
         public ChangeAction Action
@@ -251,6 +255,24 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreviousDeploymentContext. 
+        /// <para>
+        /// Information about the resource's state from the previous CloudFormation deployment.
+        /// </para>
+        /// </summary>
+        public string PreviousDeploymentContext
+        {
+            get { return this._previousDeploymentContext; }
+            set { this._previousDeploymentContext = value; }
+        }
+
+        // Check to see if PreviousDeploymentContext property is set
+        internal bool IsSetPreviousDeploymentContext()
+        {
+            return this._previousDeploymentContext != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Replacement. 
         /// <para>
         /// For the <c>Modify</c> action, indicates whether CloudFormation will replace the resource
@@ -279,6 +301,75 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetReplacement()
         {
             return this._replacement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceDriftIgnoredAttributes. 
+        /// <para>
+        /// List of resource attributes for which drift was ignored.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ResourceDriftIgnoredAttribute> ResourceDriftIgnoredAttributes
+        {
+            get { return this._resourceDriftIgnoredAttributes; }
+            set { this._resourceDriftIgnoredAttributes = value; }
+        }
+
+        // Check to see if ResourceDriftIgnoredAttributes property is set
+        internal bool IsSetResourceDriftIgnoredAttributes()
+        {
+            return this._resourceDriftIgnoredAttributes != null && (this._resourceDriftIgnoredAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceDriftStatus. 
+        /// <para>
+        /// The drift status of the resource. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IN_SYNC</c> – The resource matches its template definition.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MODIFIED</c> – Resource properties were modified outside CloudFormation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETED</c> – The resource was deleted outside CloudFormation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOT_CHECKED</c> – CloudFormation doesn’t currently return this value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UNKNOWN</c> – Drift status could not be determined.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UNSUPPORTED</c> – Resource type does not support actual state comparison.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Only present for drift-aware change sets.
+        /// </para>
+        /// </summary>
+        public StackResourceDriftStatus ResourceDriftStatus
+        {
+            get { return this._resourceDriftStatus; }
+            set { this._resourceDriftStatus = value; }
+        }
+
+        // Check to see if ResourceDriftStatus property is set
+        internal bool IsSetResourceDriftStatus()
+        {
+            return this._resourceDriftStatus != null;
         }
 
         /// <summary>

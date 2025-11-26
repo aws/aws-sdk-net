@@ -1463,7 +1463,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to complete the authorization based on input parameters. This API
-        /// is in preview release and subject to change.
+        /// is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConnectorRegistrationsV2 service method.</param>
         /// 
@@ -1494,7 +1494,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to complete the authorization based on input parameters. This API
-        /// is in preview release and subject to change.
+        /// is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConnectorRegistrationsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -1871,7 +1871,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to create a connectorV2 based on input parameters. This API is in
-        /// preview release and subject to change.
+        /// public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnectorV2 service method.</param>
         /// 
@@ -1902,7 +1902,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to create a connectorV2 based on input parameters. This API is in
-        /// preview release and subject to change.
+        /// public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConnectorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2301,8 +2301,8 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to create a ticket in the chosen ITSM based on finding information
-        /// for the provided finding metadata UID. This API is in preview release and subject
-        /// to change.
+        /// for the provided finding metadata UID. This API is in public preview and subject to
+        /// change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTicketV2 service method.</param>
         /// 
@@ -2333,8 +2333,8 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to create a ticket in the chosen ITSM based on finding information
-        /// for the provided finding metadata UID. This API is in preview release and subject
-        /// to change.
+        /// for the provided finding metadata UID. This API is in public preview and subject to
+        /// change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTicketV2 service method.</param>
         /// <param name="cancellationToken">
@@ -2744,7 +2744,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Grants permission to delete a connectorV2. This API is in preview release and subject
+        /// Grants permission to delete a connectorV2. This API is in public preview and subject
         /// to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorV2 service method.</param>
@@ -2775,7 +2775,7 @@ namespace Amazon.SecurityHub
 
 
         /// <summary>
-        /// Grants permission to delete a connectorV2. This API is in preview release and subject
+        /// Grants permission to delete a connectorV2. This API is in public preview and subject
         /// to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorV2 service method.</param>
@@ -4927,7 +4927,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to retrieve details for a connectorV2 based on connector id. This
-        /// API is in preview release and subject to change.
+        /// API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConnectorV2 service method.</param>
         /// 
@@ -4958,7 +4958,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to retrieve details for a connectorV2 based on connector id. This
-        /// API is in preview release and subject to change.
+        /// API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConnectorV2 service method.</param>
         /// <param name="cancellationToken">
@@ -5355,6 +5355,64 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingStatisticsV2">REST API Reference for GetFindingStatisticsV2 Operation</seealso>
         Task<GetFindingStatisticsV2Response> GetFindingStatisticsV2Async(GetFindingStatisticsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetFindingsTrendsV2
+
+
+        /// <summary>
+        /// Returns findings trend data based on the specified criteria. This operation helps
+        /// you analyze patterns and changes in findings over time. This API is in public preview
+        /// and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsTrendsV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingsTrendsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsTrendsV2">REST API Reference for GetFindingsTrendsV2 Operation</seealso>
+        GetFindingsTrendsV2Response GetFindingsTrendsV2(GetFindingsTrendsV2Request request);
+
+
+
+        /// <summary>
+        /// Returns findings trend data based on the specified criteria. This operation helps
+        /// you analyze patterns and changes in findings over time. This API is in public preview
+        /// and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingsTrendsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFindingsTrendsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingsTrendsV2">REST API Reference for GetFindingsTrendsV2 Operation</seealso>
+        Task<GetFindingsTrendsV2Response> GetFindingsTrendsV2Async(GetFindingsTrendsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5889,6 +5947,64 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesStatisticsV2">REST API Reference for GetResourcesStatisticsV2 Operation</seealso>
         Task<GetResourcesStatisticsV2Response> GetResourcesStatisticsV2Async(GetResourcesStatisticsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetResourcesTrendsV2
+
+
+        /// <summary>
+        /// Returns resource trend data based on the specified criteria. This operation helps
+        /// you analyze patterns and changes in resource compliance over time. This API is in
+        /// public preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesTrendsV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcesTrendsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesTrendsV2">REST API Reference for GetResourcesTrendsV2 Operation</seealso>
+        GetResourcesTrendsV2Response GetResourcesTrendsV2(GetResourcesTrendsV2Request request);
+
+
+
+        /// <summary>
+        /// Returns resource trend data based on the specified criteria. This operation helps
+        /// you analyze patterns and changes in resource compliance over time. This API is in
+        /// public preview and subject to change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcesTrendsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcesTrendsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetResourcesTrendsV2">REST API Reference for GetResourcesTrendsV2 Operation</seealso>
+        Task<GetResourcesTrendsV2Response> GetResourcesTrendsV2Async(GetResourcesTrendsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6475,7 +6591,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to retrieve a list of connectorsV2 and their metadata for the calling
-        /// account. This API is in preview release and subject to change.
+        /// account. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConnectorsV2 service method.</param>
         /// 
@@ -6506,7 +6622,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to retrieve a list of connectorsV2 and their metadata for the calling
-        /// account. This API is in preview release and subject to change.
+        /// account. This API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConnectorsV2 service method.</param>
         /// <param name="cancellationToken">
@@ -7579,7 +7695,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to update a connectorV2 based on its id and input parameters. This
-        /// API is in preview release and subject to change.
+        /// API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorV2 service method.</param>
         /// 
@@ -7610,7 +7726,7 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Grants permission to update a connectorV2 based on its id and input parameters. This
-        /// API is in preview release and subject to change.
+        /// API is in public preview and subject to change.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorV2 service method.</param>
         /// <param name="cancellationToken">

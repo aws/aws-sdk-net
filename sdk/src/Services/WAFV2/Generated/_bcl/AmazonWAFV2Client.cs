@@ -368,6 +368,10 @@ namespace Amazon.WAFV2
         /// <param name="request">Container for the necessary parameters to execute the AssociateWebACL service method.</param>
         /// 
         /// <returns>The response from the AssociateWebACL service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFFeatureNotIncludedInPricingPlanException">
+        /// The operation failed because the specified WAF feature isn't supported by the CloudFront
+        /// pricing plan associated with the web ACL.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -493,6 +497,10 @@ namespace Amazon.WAFV2
         /// </param>
         /// 
         /// <returns>The response from the AssociateWebACL service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFFeatureNotIncludedInPricingPlanException">
+        /// The operation failed because the specified WAF feature isn't supported by the CloudFront
+        /// pricing plan associated with the web ACL.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -6659,6 +6667,10 @@ namespace Amazon.WAFV2
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutLoggingConfiguration service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFFeatureNotIncludedInPricingPlanException">
+        /// The operation failed because the specified WAF feature isn't supported by the CloudFront
+        /// pricing plan associated with the web ACL.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -6815,6 +6827,10 @@ namespace Amazon.WAFV2
         /// </param>
         /// 
         /// <returns>The response from the PutLoggingConfiguration service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFFeatureNotIncludedInPricingPlanException">
+        /// The operation failed because the specified WAF feature isn't supported by the CloudFront
+        /// pricing plan associated with the web ACL.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -8747,6 +8763,10 @@ namespace Amazon.WAFV2
         /// expired. You can retrieve the available versions for the managed rule group by calling
         /// <a>ListAvailableManagedRuleGroupVersions</a>.
         /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFFeatureNotIncludedInPricingPlanException">
+        /// The operation failed because the specified WAF feature isn't supported by the CloudFront
+        /// pricing plan associated with the web ACL.
+        /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system
         /// problem. Retry your request.
@@ -8930,6 +8950,10 @@ namespace Amazon.WAFV2
         /// The operation failed because the specified version for the managed rule group has
         /// expired. You can retrieve the available versions for the managed rule group by calling
         /// <a>ListAvailableManagedRuleGroupVersions</a>.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFFeatureNotIncludedInPricingPlanException">
+        /// The operation failed because the specified WAF feature isn't supported by the CloudFront
+        /// pricing plan associated with the web ACL.
         /// </exception>
         /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
         /// Your request is valid, but WAF couldn’t perform the operation because of a system

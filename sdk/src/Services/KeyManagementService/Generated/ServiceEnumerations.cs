@@ -417,6 +417,10 @@ namespace Amazon.KeyManagementService
     {
 
         /// <summary>
+        /// Constant ECC_NIST_EDWARDS25519 for DataKeyPairSpec
+        /// </summary>
+        public static readonly DataKeyPairSpec ECC_NIST_EDWARDS25519 = new DataKeyPairSpec("ECC_NIST_EDWARDS25519");
+        /// <summary>
         /// Constant ECC_NIST_P256 for DataKeyPairSpec
         /// </summary>
         public static readonly DataKeyPairSpec ECC_NIST_P256 = new DataKeyPairSpec("ECC_NIST_P256");
@@ -1059,6 +1063,10 @@ namespace Amazon.KeyManagementService
         /// </summary>
         public static readonly KeyMaterialState NON_CURRENT = new KeyMaterialState("NON_CURRENT");
         /// <summary>
+        /// Constant PENDING_MULTI_REGION_IMPORT_AND_ROTATION for KeyMaterialState
+        /// </summary>
+        public static readonly KeyMaterialState PENDING_MULTI_REGION_IMPORT_AND_ROTATION = new KeyMaterialState("PENDING_MULTI_REGION_IMPORT_AND_ROTATION");
+        /// <summary>
         /// Constant PENDING_ROTATION for KeyMaterialState
         /// </summary>
         public static readonly KeyMaterialState PENDING_ROTATION = new KeyMaterialState("PENDING_ROTATION");
@@ -1104,6 +1112,10 @@ namespace Amazon.KeyManagementService
     public class KeySpec : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ECC_NIST_EDWARDS25519 for KeySpec
+        /// </summary>
+        public static readonly KeySpec ECC_NIST_EDWARDS25519 = new KeySpec("ECC_NIST_EDWARDS25519");
         /// <summary>
         /// Constant ECC_NIST_P256 for KeySpec
         /// </summary>
@@ -1624,6 +1636,14 @@ namespace Amazon.KeyManagementService
         /// Constant ECDSA_SHA_512 for SigningAlgorithmSpec
         /// </summary>
         public static readonly SigningAlgorithmSpec ECDSA_SHA_512 = new SigningAlgorithmSpec("ECDSA_SHA_512");
+        /// <summary>
+        /// Constant ED25519_PH_SHA_512 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec ED25519_PH_SHA_512 = new SigningAlgorithmSpec("ED25519_PH_SHA_512");
+        /// <summary>
+        /// Constant ED25519_SHA_512 for SigningAlgorithmSpec
+        /// </summary>
+        public static readonly SigningAlgorithmSpec ED25519_SHA_512 = new SigningAlgorithmSpec("ED25519_SHA_512");
         /// <summary>
         /// Constant ML_DSA_SHAKE_256 for SigningAlgorithmSpec
         /// </summary>

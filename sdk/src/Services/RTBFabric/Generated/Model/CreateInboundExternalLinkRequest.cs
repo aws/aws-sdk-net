@@ -38,6 +38,7 @@ namespace Amazon.RTBFabric.Model
         private LinkAttributes _attributes;
         private string _clientToken;
         private string _gatewayId;
+        private LinkLogSettings _logSettings;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -93,6 +94,22 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetGatewayId()
         {
             return this._gatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogSettings.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public LinkLogSettings LogSettings
+        {
+            get { return this._logSettings; }
+            set { this._logSettings = value; }
+        }
+
+        // Check to see if LogSettings property is set
+        internal bool IsSetLogSettings()
+        {
+            return this._logSettings != null;
         }
 
         /// <summary>

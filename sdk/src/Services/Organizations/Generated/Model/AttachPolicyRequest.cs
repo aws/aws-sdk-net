@@ -75,10 +75,30 @@ namespace Amazon.Organizations.Model
     ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_security_hub.html">SECURITYHUB_POLICY</a>
     /// 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_upgrade_rollout.html">UPGRADE_ROLLOUT_POLICY</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_inspector.html">INSPECTOR_POLICY</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_bedrock.html">BEDROCK_POLICY</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_S3.html">S3_POLICY</a>
+    /// 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// This operation can be called only from the organization's management account or by
-    /// a member account that is a delegated administrator.
+    /// You can only call this operation from the management account or a member account that
+    /// is a delegated administrator.
     /// </para>
     /// </summary>
     public partial class AttachPolicyRequest : AmazonOrganizationsRequest
@@ -89,8 +109,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The unique identifier (ID) of the policy that you want to attach to the target. You
-        /// can get the ID for the policy by calling the <a>ListPolicies</a> operation.
+        /// ID for the policy that you want to attach to the target. You can get the ID for the
+        /// policy by calling the <a>ListPolicies</a> operation.
         /// </para>
         ///  
         /// <para>
@@ -115,9 +135,9 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// The unique identifier (ID) of the root, OU, or account that you want to attach the
-        /// policy to. You can get the ID by calling the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>,
-        /// or <a>ListAccounts</a> operations.
+        /// ID for the root, OU, or account that you want to attach the policy to. You can get
+        /// the ID by calling the <a>ListRoots</a>, <a>ListOrganizationalUnitsForParent</a>, or
+        /// <a>ListAccounts</a> operations.
         /// </para>
         ///  
         /// <para>

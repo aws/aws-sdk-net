@@ -89,7 +89,8 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property SingleMasterConfiguration. 
         /// <para>
         /// The structure containing the configuration for the <c>SINGLE_MASTER</c> type of the
-        /// signaling channel that you want to update. 
+        /// signaling channel that you want to update. This parameter and the channel message's
+        /// time-to-live are required for channels with the <c>SINGLE_MASTER</c> channel type.
         /// </para>
         /// </summary>
         public SingleMasterConfiguration SingleMasterConfiguration

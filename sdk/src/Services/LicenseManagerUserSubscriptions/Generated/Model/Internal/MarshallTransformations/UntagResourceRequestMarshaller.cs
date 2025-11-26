@@ -65,6 +65,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonLicenseManagerUserSubscriptionsException("Request object does not have required field ResourceArn set");
             request.AddPathResource("{ResourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            if (publicRequest.TagKeys == null)
+                throw new AmazonLicenseManagerUserSubscriptionsException("Request object does not have required field TagKeys set");
             
             if (publicRequest.IsSetTagKeys())
                 request.ParameterCollection.Add("tagKeys", publicRequest.TagKeys);

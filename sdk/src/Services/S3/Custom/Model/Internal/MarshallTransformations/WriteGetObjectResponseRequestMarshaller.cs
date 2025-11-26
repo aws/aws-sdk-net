@@ -36,7 +36,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(WriteGetObjectResponseRequest writeGetObjectResponseRequest)
         {
-            IRequest request = new DefaultRequest(writeGetObjectResponseRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(writeGetObjectResponseRequest, "Amazon.S3");
 
             request.HttpMethod = "POST";
 

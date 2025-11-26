@@ -264,7 +264,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
-    /// Configuration for the Table.Query operation
+    /// Configuration for the Table.Query operation.
+    /// Consider using QueryDocumentOperationRequest for new code as it provides a more modern expression-based API.
     /// </summary>
     public class QueryOperationConfig
     {

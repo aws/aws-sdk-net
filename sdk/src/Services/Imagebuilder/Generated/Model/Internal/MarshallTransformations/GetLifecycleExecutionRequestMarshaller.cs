@@ -62,6 +62,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.LifecycleExecutionId))
+                throw new AmazonImagebuilderException("Request object does not have required field LifecycleExecutionId set");
             
             if (publicRequest.IsSetLifecycleExecutionId())
                 request.Parameters.Add("lifecycleExecutionId", StringUtils.FromString(publicRequest.LifecycleExecutionId));

@@ -259,6 +259,23 @@ using Amazon.Runtime.Internal.Util;
 		{
 			foreach(var member in operation.RequestQueryStringMembers)
 			{
+                if (member.IsRequired)
+                {
+                    if (member.Shape.IsString)
+                    {
+#>
+            if (string.IsNullOrEmpty(<#=variableName#>.<#=member.PropertyName#>))
+                throw new <#=this.Config.BaseException#>("Request object does not have required field <#=member.PropertyName#> set");
+<#+
+                    }
+                    else
+                    {
+#>
+            if (<#=variableName#>.<#=member.PropertyName#> == null)
+                throw new <#=this.Config.BaseException#>("Request object does not have required field <#=member.PropertyName#> set");
+<#+
+                    }
+                }
 #>			
 			if (<#=variableName#>.IsSet<#=member.PropertyName#>())
 <#+

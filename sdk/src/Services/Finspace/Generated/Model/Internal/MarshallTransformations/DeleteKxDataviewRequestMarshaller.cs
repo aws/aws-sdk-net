@@ -71,6 +71,8 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetEnvironmentId())
                 throw new AmazonFinspaceException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{environmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
+            if (string.IsNullOrEmpty(publicRequest.ClientToken))
+                throw new AmazonFinspaceException("Request object does not have required field ClientToken set");
             
             if (publicRequest.IsSetClientToken())
                 request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));

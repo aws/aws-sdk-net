@@ -511,6 +511,56 @@ namespace Amazon.Kafka
 
 
     /// <summary>
+    /// Constants used for properties of type RebalancingStatus.
+    /// </summary>
+    public class RebalancingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RebalancingStatus
+        /// </summary>
+        public static readonly RebalancingStatus ACTIVE = new RebalancingStatus("ACTIVE");
+        /// <summary>
+        /// Constant PAUSED for RebalancingStatus
+        /// </summary>
+        public static readonly RebalancingStatus PAUSED = new RebalancingStatus("PAUSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RebalancingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RebalancingStatus FindValue(string value)
+        {
+            return FindValue<RebalancingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RebalancingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReplicationStartingPositionType.
     /// </summary>
     public class ReplicationStartingPositionType : ConstantClass
@@ -778,6 +828,64 @@ namespace Amazon.Kafka
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TopicState.
+    /// </summary>
+    public class TopicState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for TopicState
+        /// </summary>
+        public static readonly TopicState ACTIVE = new TopicState("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for TopicState
+        /// </summary>
+        public static readonly TopicState CREATING = new TopicState("CREATING");
+        /// <summary>
+        /// Constant DELETING for TopicState
+        /// </summary>
+        public static readonly TopicState DELETING = new TopicState("DELETING");
+        /// <summary>
+        /// Constant UPDATING for TopicState
+        /// </summary>
+        public static readonly TopicState UPDATING = new TopicState("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TopicState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TopicState FindValue(string value)
+        {
+            return FindValue<TopicState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TopicState(string value)
         {
             return FindValue(value);
         }

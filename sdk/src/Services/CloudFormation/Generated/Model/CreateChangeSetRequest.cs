@@ -69,6 +69,7 @@ namespace Amazon.CloudFormation.Model
         private string _changeSetName;
         private ChangeSetType _changeSetType;
         private string _clientToken;
+        private DeploymentMode _deploymentMode;
         private string _description;
         private bool? _importExistingResources;
         private bool? _includeNestedStacks;
@@ -98,7 +99,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Some stack templates might include resources that can affect permissions in your Amazon
-        /// Web Services account; for example, by creating new IAM users. For those stacks, you
+        /// Web Services account, for example, by creating new IAM users. For those stacks, you
         /// must explicitly acknowledge this by specifying one of these capabilities.
         /// </para>
         ///  
@@ -305,6 +306,35 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeploymentMode. 
+        /// <para>
+        /// Determines how CloudFormation handles configuration drift during deployment.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>REVERT_DRIFT</c> – Creates a drift-aware change set that brings actual resource
+        /// states in line with template definitions. Provides a three-way comparison between
+        /// actual state, previous deployment state, and desired state.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html">Using
+        /// drift-aware change sets</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        /// </summary>
+        public DeploymentMode DeploymentMode
+        {
+            get { return this._deploymentMode; }
+            set { this._deploymentMode = value; }
+        }
+
+        // Check to see if DeploymentMode property is set
+        internal bool IsSetDeploymentMode()
+        {
+            return this._deploymentMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description to help you identify this change set.
@@ -493,8 +523,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// The template resource types that you have permissions to work with if you execute
-        /// this change set, such as <c>AWS::EC2::Instance</c>, <c>AWS::EC2::*</c>, or <c>Custom::MyCustomInstance</c>.
+        /// Specifies which resource types you can work with, such as <c>AWS::EC2::Instance</c>
+        /// or <c>Custom::MyCustomInstance</c>.
         /// </para>
         ///  
         /// <para>
@@ -502,7 +532,8 @@ namespace Amazon.CloudFormation.Model
         /// the stack update fails. By default, CloudFormation grants permissions to all resource
         /// types. IAM uses this parameter for condition keys in IAM policies for CloudFormation.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/control-access-with-iam.html">Control
-        /// access with Identity and Access Management</a> in the <i>CloudFormation User Guide</i>.
+        /// CloudFormation access with Identity and Access Management</a> in the <i>CloudFormation
+        /// User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -630,7 +661,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify only <c>TemplateBody</c> or <c>TemplateURL</c>.
+        /// Conditional: You must specify only one of the following parameters: <c>TemplateBody</c>,
+        /// <c>TemplateURL</c>, or set the <c>UsePreviousTemplate</c> to <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -657,7 +689,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify only <c>TemplateBody</c> or <c>TemplateURL</c>.
+        /// Conditional: You must specify only one of the following parameters: <c>TemplateBody</c>,
+        /// <c>TemplateURL</c>, or set the <c>UsePreviousTemplate</c> to <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5120)]
@@ -678,6 +711,19 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Whether to reuse the template that's associated with the stack to create the change
         /// set.
+        /// </para>
+        ///  
+        /// <para>
+        /// When using templates with the <c>AWS::LanguageExtensions</c> transform, provide the
+        /// template instead of using <c>UsePreviousTemplate</c> to ensure new parameter values
+        /// and Systems Manager parameter updates are applied correctly. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/transform-aws-languageextensions.html">AWS::LanguageExtensions
+        /// transform</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Conditional: You must specify only one of the following parameters: <c>TemplateBody</c>,
+        /// <c>TemplateURL</c>, or set the <c>UsePreviousTemplate</c> to <c>true</c>.
         /// </para>
         /// </summary>
         public bool? UsePreviousTemplate

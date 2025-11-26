@@ -108,7 +108,13 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>CREATED | RUNNING | COMPLETED | FAILED</c> 
+        ///  <c>CREATED | RUNNING | COMPLETED | FAILED | COMPLETED_WITH_ISSUES</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Please note that only scanning jobs finish with state completed with issues. For
+        /// backup jobs this is a console interpretation of a job that finishes in completed state
+        /// and has a status message.
         /// </para>
         /// </summary>
         public string ByStatus

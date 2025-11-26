@@ -652,7 +652,6 @@ namespace Amazon.SageMaker.Model
         /// the model artifacts, so the results of training are not lost. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public StoppingCondition StoppingCondition
         {
             get { return this._stoppingCondition; }

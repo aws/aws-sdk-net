@@ -66,5 +66,15 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
             OutputToken = new[] { "PaginationToken" }
         )]
         IGetTagValuesPaginator GetTagValues(GetTagValuesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRequiredTags operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRequiredTagsPaginator ListRequiredTags(ListRequiredTagsRequest request);
     }
 }

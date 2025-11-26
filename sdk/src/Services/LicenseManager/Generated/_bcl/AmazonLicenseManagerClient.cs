@@ -913,6 +913,164 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  CreateLicenseAssetGroup
+
+
+        /// <summary>
+        /// Creates a license asset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseAssetGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateLicenseAssetGroup service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseAssetGroup">REST API Reference for CreateLicenseAssetGroup Operation</seealso>
+        public virtual CreateLicenseAssetGroupResponse CreateLicenseAssetGroup(CreateLicenseAssetGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateLicenseAssetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseAssetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLicenseAssetGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a license asset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseAssetGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLicenseAssetGroup service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseAssetGroup">REST API Reference for CreateLicenseAssetGroup Operation</seealso>
+        public virtual Task<CreateLicenseAssetGroupResponse> CreateLicenseAssetGroupAsync(CreateLicenseAssetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateLicenseAssetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseAssetGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLicenseAssetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateLicenseAssetRuleset
+
+
+        /// <summary>
+        /// Creates a license asset ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseAssetRuleset service method.</param>
+        /// 
+        /// <returns>The response from the CreateLicenseAssetRuleset service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseAssetRuleset">REST API Reference for CreateLicenseAssetRuleset Operation</seealso>
+        public virtual CreateLicenseAssetRulesetResponse CreateLicenseAssetRuleset(CreateLicenseAssetRulesetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateLicenseAssetRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseAssetRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLicenseAssetRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a license asset ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseAssetRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLicenseAssetRuleset service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseAssetRuleset">REST API Reference for CreateLicenseAssetRuleset Operation</seealso>
+        public virtual Task<CreateLicenseAssetRulesetResponse> CreateLicenseAssetRulesetAsync(CreateLicenseAssetRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateLicenseAssetRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseAssetRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateLicenseAssetRulesetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateLicenseConfiguration
 
 
@@ -1554,6 +1712,164 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  DeleteLicenseAssetGroup
+
+
+        /// <summary>
+        /// Deletes a license asset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseAssetGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLicenseAssetGroup service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseAssetGroup">REST API Reference for DeleteLicenseAssetGroup Operation</seealso>
+        public virtual DeleteLicenseAssetGroupResponse DeleteLicenseAssetGroup(DeleteLicenseAssetGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseAssetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseAssetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLicenseAssetGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a license asset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseAssetGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLicenseAssetGroup service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseAssetGroup">REST API Reference for DeleteLicenseAssetGroup Operation</seealso>
+        public virtual Task<DeleteLicenseAssetGroupResponse> DeleteLicenseAssetGroupAsync(DeleteLicenseAssetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseAssetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseAssetGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLicenseAssetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLicenseAssetRuleset
+
+
+        /// <summary>
+        /// Deletes a license asset ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseAssetRuleset service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLicenseAssetRuleset service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseAssetRuleset">REST API Reference for DeleteLicenseAssetRuleset Operation</seealso>
+        public virtual DeleteLicenseAssetRulesetResponse DeleteLicenseAssetRuleset(DeleteLicenseAssetRulesetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseAssetRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseAssetRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLicenseAssetRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a license asset ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseAssetRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLicenseAssetRuleset service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseAssetRuleset">REST API Reference for DeleteLicenseAssetRuleset Operation</seealso>
+        public virtual Task<DeleteLicenseAssetRulesetResponse> DeleteLicenseAssetRulesetAsync(DeleteLicenseAssetRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseAssetRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseAssetRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteLicenseAssetRulesetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteLicenseConfiguration
 
 
@@ -2151,6 +2467,164 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  GetLicenseAssetGroup
+
+
+        /// <summary>
+        /// Gets a license asset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseAssetGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetLicenseAssetGroup service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseAssetGroup">REST API Reference for GetLicenseAssetGroup Operation</seealso>
+        public virtual GetLicenseAssetGroupResponse GetLicenseAssetGroup(GetLicenseAssetGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetLicenseAssetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseAssetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetLicenseAssetGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a license asset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseAssetGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLicenseAssetGroup service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseAssetGroup">REST API Reference for GetLicenseAssetGroup Operation</seealso>
+        public virtual Task<GetLicenseAssetGroupResponse> GetLicenseAssetGroupAsync(GetLicenseAssetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetLicenseAssetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseAssetGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLicenseAssetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLicenseAssetRuleset
+
+
+        /// <summary>
+        /// Gets a license asset ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseAssetRuleset service method.</param>
+        /// 
+        /// <returns>The response from the GetLicenseAssetRuleset service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseAssetRuleset">REST API Reference for GetLicenseAssetRuleset Operation</seealso>
+        public virtual GetLicenseAssetRulesetResponse GetLicenseAssetRuleset(GetLicenseAssetRulesetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetLicenseAssetRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseAssetRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<GetLicenseAssetRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets a license asset ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLicenseAssetRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLicenseAssetRuleset service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseAssetRuleset">REST API Reference for GetLicenseAssetRuleset Operation</seealso>
+        public virtual Task<GetLicenseAssetRulesetResponse> GetLicenseAssetRulesetAsync(GetLicenseAssetRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetLicenseAssetRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetLicenseAssetRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetLicenseAssetRulesetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetLicenseConfiguration
 
 
@@ -2534,6 +3008,85 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  ListAssetsForLicenseAssetGroup
+
+
+        /// <summary>
+        /// Lists assets for a license asset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetsForLicenseAssetGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListAssetsForLicenseAssetGroup service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListAssetsForLicenseAssetGroup">REST API Reference for ListAssetsForLicenseAssetGroup Operation</seealso>
+        public virtual ListAssetsForLicenseAssetGroupResponse ListAssetsForLicenseAssetGroup(ListAssetsForLicenseAssetGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAssetsForLicenseAssetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetsForLicenseAssetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssetsForLicenseAssetGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists assets for a license asset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetsForLicenseAssetGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssetsForLicenseAssetGroup service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListAssetsForLicenseAssetGroup">REST API Reference for ListAssetsForLicenseAssetGroup Operation</seealso>
+        public virtual Task<ListAssetsForLicenseAssetGroupResponse> ListAssetsForLicenseAssetGroupAsync(ListAssetsForLicenseAssetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAssetsForLicenseAssetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetsForLicenseAssetGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAssetsForLicenseAssetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAssociationsForLicenseConfiguration
 
 
@@ -2785,6 +3338,164 @@ namespace Amazon.LicenseManager
 
         #endregion
         
+        #region  ListLicenseAssetGroups
+
+
+        /// <summary>
+        /// Lists license asset groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseAssetGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListLicenseAssetGroups service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseAssetGroups">REST API Reference for ListLicenseAssetGroups Operation</seealso>
+        public virtual ListLicenseAssetGroupsResponse ListLicenseAssetGroups(ListLicenseAssetGroupsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListLicenseAssetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseAssetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLicenseAssetGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists license asset groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseAssetGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLicenseAssetGroups service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseAssetGroups">REST API Reference for ListLicenseAssetGroups Operation</seealso>
+        public virtual Task<ListLicenseAssetGroupsResponse> ListLicenseAssetGroupsAsync(ListLicenseAssetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListLicenseAssetGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseAssetGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLicenseAssetGroupsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLicenseAssetRulesets
+
+
+        /// <summary>
+        /// Lists license asset rulesets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseAssetRulesets service method.</param>
+        /// 
+        /// <returns>The response from the ListLicenseAssetRulesets service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseAssetRulesets">REST API Reference for ListLicenseAssetRulesets Operation</seealso>
+        public virtual ListLicenseAssetRulesetsResponse ListLicenseAssetRulesets(ListLicenseAssetRulesetsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListLicenseAssetRulesetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseAssetRulesetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLicenseAssetRulesetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists license asset rulesets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseAssetRulesets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLicenseAssetRulesets service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseAssetRulesets">REST API Reference for ListLicenseAssetRulesets Operation</seealso>
+        public virtual Task<ListLicenseAssetRulesetsResponse> ListLicenseAssetRulesetsAsync(ListLicenseAssetRulesetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListLicenseAssetRulesetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseAssetRulesetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLicenseAssetRulesetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListLicenseConfigurations
 
 
@@ -2860,6 +3571,85 @@ namespace Amazon.LicenseManager
             options.ResponseUnmarshaller = ListLicenseConfigurationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListLicenseConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLicenseConfigurationsForOrganization
+
+
+        /// <summary>
+        /// Lists license configurations for an organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseConfigurationsForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the ListLicenseConfigurationsForOrganization service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.FilterLimitExceededException">
+        /// The request uses too many filters or too many filter values.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConfigurationsForOrganization">REST API Reference for ListLicenseConfigurationsForOrganization Operation</seealso>
+        public virtual ListLicenseConfigurationsForOrganizationResponse ListLicenseConfigurationsForOrganization(ListLicenseConfigurationsForOrganizationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListLicenseConfigurationsForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseConfigurationsForOrganizationResponseUnmarshaller.Instance;
+
+            return Invoke<ListLicenseConfigurationsForOrganizationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists license configurations for an organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseConfigurationsForOrganization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLicenseConfigurationsForOrganization service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.FilterLimitExceededException">
+        /// The request uses too many filters or too many filter values.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConfigurationsForOrganization">REST API Reference for ListLicenseConfigurationsForOrganization Operation</seealso>
+        public virtual Task<ListLicenseConfigurationsForOrganizationResponse> ListLicenseConfigurationsForOrganizationAsync(ListLicenseConfigurationsForOrganizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListLicenseConfigurationsForOrganizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseConfigurationsForOrganizationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListLicenseConfigurationsForOrganizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3709,6 +4499,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
@@ -3746,6 +4539,9 @@ namespace Amazon.LicenseManager
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4044,6 +4840,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
         {
@@ -4099,6 +4898,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -4136,6 +4938,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
         {
@@ -4172,6 +4977,9 @@ namespace Amazon.LicenseManager
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -4180,6 +4988,164 @@ namespace Amazon.LicenseManager
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLicenseAssetGroup
+
+
+        /// <summary>
+        /// Updates a license asset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLicenseAssetGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLicenseAssetGroup service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseAssetGroup">REST API Reference for UpdateLicenseAssetGroup Operation</seealso>
+        public virtual UpdateLicenseAssetGroupResponse UpdateLicenseAssetGroup(UpdateLicenseAssetGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLicenseAssetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLicenseAssetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLicenseAssetGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a license asset group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLicenseAssetGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLicenseAssetGroup service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseAssetGroup">REST API Reference for UpdateLicenseAssetGroup Operation</seealso>
+        public virtual Task<UpdateLicenseAssetGroupResponse> UpdateLicenseAssetGroupAsync(UpdateLicenseAssetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLicenseAssetGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLicenseAssetGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateLicenseAssetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateLicenseAssetRuleset
+
+
+        /// <summary>
+        /// Updates a license asset ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLicenseAssetRuleset service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLicenseAssetRuleset service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseAssetRuleset">REST API Reference for UpdateLicenseAssetRuleset Operation</seealso>
+        public virtual UpdateLicenseAssetRulesetResponse UpdateLicenseAssetRuleset(UpdateLicenseAssetRulesetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLicenseAssetRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLicenseAssetRulesetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLicenseAssetRulesetResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a license asset ruleset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLicenseAssetRuleset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLicenseAssetRuleset service method, as returned by LicenseManager.</returns>
+        /// <exception cref="Amazon.LicenseManager.Model.AccessDeniedException">
+        /// Access to resource denied.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.AuthorizationException">
+        /// The Amazon Web Services user account does not have permission to perform the action.
+        /// Check the IAM policy associated with this account.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.RateLimitExceededException">
+        /// Too many requests have been submitted. Try again after a brief wait.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
+        /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseAssetRuleset">REST API Reference for UpdateLicenseAssetRuleset Operation</seealso>
+        public virtual Task<UpdateLicenseAssetRulesetResponse> UpdateLicenseAssetRulesetAsync(UpdateLicenseAssetRulesetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLicenseAssetRulesetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLicenseAssetRulesetResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateLicenseAssetRulesetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4507,6 +5473,9 @@ namespace Amazon.LicenseManager
         /// The Amazon Web Services user account does not have permission to perform the action.
         /// Check the IAM policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
         /// </exception>
@@ -4515,6 +5484,9 @@ namespace Amazon.LicenseManager
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateServiceSettings">REST API Reference for UpdateServiceSettings Operation</seealso>
         public virtual UpdateServiceSettingsResponse UpdateServiceSettings(UpdateServiceSettingsRequest request)
@@ -4543,6 +5515,9 @@ namespace Amazon.LicenseManager
         /// The Amazon Web Services user account does not have permission to perform the action.
         /// Check the IAM policy associated with this account.
         /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ConflictException">
+        /// There was a conflict processing the request. Try your request again.
+        /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.InvalidParameterValueException">
         /// One or more parameter values are not valid.
         /// </exception>
@@ -4551,6 +5526,9 @@ namespace Amazon.LicenseManager
         /// </exception>
         /// <exception cref="Amazon.LicenseManager.Model.ServerInternalException">
         /// The server experienced an internal error. Try again.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManager.Model.ValidationException">
+        /// The provided input is not valid. Try your request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateServiceSettings">REST API Reference for UpdateServiceSettings Operation</seealso>
         public virtual Task<UpdateServiceSettingsResponse> UpdateServiceSettingsAsync(UpdateServiceSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

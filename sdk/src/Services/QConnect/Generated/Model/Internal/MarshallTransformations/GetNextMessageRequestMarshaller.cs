@@ -68,6 +68,8 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetSessionId())
                 throw new AmazonQConnectException("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
+            if (string.IsNullOrEmpty(publicRequest.NextMessageToken))
+                throw new AmazonQConnectException("Request object does not have required field NextMessageToken set");
             
             if (publicRequest.IsSetNextMessageToken())
                 request.Parameters.Add("nextMessageToken", StringUtils.FromString(publicRequest.NextMessageToken));

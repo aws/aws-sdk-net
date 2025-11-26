@@ -39,7 +39,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(PutBucketVersioningRequest putBucketVersioningRequest)
         {
-            IRequest request = new DefaultRequest(putBucketVersioningRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(putBucketVersioningRequest, "Amazon.S3");
 
             request.HttpMethod = "PUT";
 

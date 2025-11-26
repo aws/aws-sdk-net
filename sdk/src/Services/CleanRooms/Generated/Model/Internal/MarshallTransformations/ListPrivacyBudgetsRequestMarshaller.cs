@@ -74,6 +74,8 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.PrivacyBudgetType))
+                throw new AmazonCleanRoomsException("Request object does not have required field PrivacyBudgetType set");
             
             if (publicRequest.IsSetPrivacyBudgetType())
                 request.Parameters.Add("privacyBudgetType", StringUtils.FromString(publicRequest.PrivacyBudgetType));

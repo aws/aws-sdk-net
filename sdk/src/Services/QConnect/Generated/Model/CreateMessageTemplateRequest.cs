@@ -48,6 +48,7 @@ namespace Amazon.QConnect.Model
         private string _knowledgeBaseId;
         private string _language;
         private string _name;
+        private MessageTemplateSourceConfiguration _sourceConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -97,7 +98,6 @@ namespace Amazon.QConnect.Model
         /// The content of the message template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public MessageTemplateContentProvider Content
         {
             get { return this._content; }
@@ -213,7 +213,7 @@ namespace Amazon.QConnect.Model
         /// The name of the message template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -224,6 +224,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceConfiguration. 
+        /// <para>
+        /// The source configuration of the message template. Only set this argument for WHATSAPP
+        /// channel subtype.
+        /// </para>
+        /// </summary>
+        public MessageTemplateSourceConfiguration SourceConfiguration
+        {
+            get { return this._sourceConfiguration; }
+            set { this._sourceConfiguration = value; }
+        }
+
+        // Check to see if SourceConfiguration property is set
+        internal bool IsSetSourceConfiguration()
+        {
+            return this._sourceConfiguration != null;
         }
 
         /// <summary>

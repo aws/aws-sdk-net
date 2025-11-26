@@ -58,10 +58,24 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Access to the <c>ListInsightsMetricData</c> API operation is linked to the <c>cloudtrail:LookupEvents</c>
-    /// action. To use this operation, you must have permissions to perform the <c>cloudtrail:LookupEvents</c>
+    /// To use <c>ListInsightsMetricData</c> operation, you must have the following permissions:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If <c>ListInsightsMetricData</c> is invoked with <c>TrailName</c> parameter, access
+    /// to the <c>ListInsightsMetricData</c> API operation is linked to the <c>cloudtrail:LookupEvents</c>
+    /// action and <c>cloudtrail:ListInsightsData</c>. To use this operation, you must have
+    /// permissions to perform the <c>cloudtrail:LookupEvents</c> and <c>cloudtrail:ListInsightsData</c>
+    /// action on the specific trail.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>ListInsightsMetricData</c> is invoked without <c>TrailName</c> parameter, access
+    /// to the <c>ListInsightsMetricData</c> API operation is linked to the <c>cloudtrail:LookupEvents</c>
+    /// action only. To use this operation, you must have permissions to perform the <c>cloudtrail:LookupEvents</c>
     /// action.
     /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListInsightsMetricDataRequest : AmazonCloudTrailRequest
     {
@@ -75,6 +89,7 @@ namespace Amazon.CloudTrail.Model
         private string _nextToken;
         private int? _period;
         private DateTime? _startTime;
+        private string _trailName;
 
         /// <summary>
         /// Gets and sets the property DataType. 
@@ -292,6 +307,27 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetStartTime()
         {
             return this._startTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrailName. 
+        /// <para>
+        /// The Amazon Resource Name(ARN) or name of the trail for which you want to retrieve
+        /// Insights metrics data. This parameter should only be provided to fetch Insights metrics
+        /// data generated on trails logging data events. This parameter is not required for Insights
+        /// metric data generated on trails logging management events.
+        /// </para>
+        /// </summary>
+        public string TrailName
+        {
+            get { return this._trailName; }
+            set { this._trailName = value; }
+        }
+
+        // Check to see if TrailName property is set
+        internal bool IsSetTrailName()
+        {
+            return this._trailName != null;
         }
 
     }

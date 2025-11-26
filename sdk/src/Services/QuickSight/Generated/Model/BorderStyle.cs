@@ -34,7 +34,27 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class BorderStyle
     {
+        private string _color;
         private bool? _show;
+        private string _width;
+
+        /// <summary>
+        /// Gets and sets the property Color. 
+        /// <para>
+        /// The option to add color for tile borders for visuals.
+        /// </para>
+        /// </summary>
+        public string Color
+        {
+            get { return this._color; }
+            set { this._color = value; }
+        }
+
+        // Check to see if Color property is set
+        internal bool IsSetColor()
+        {
+            return this._color != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Show. 
@@ -52,6 +72,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShow()
         {
             return this._show.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Width. 
+        /// <para>
+        /// The option to set the width of tile borders for visuals.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public string Width
+        {
+            get { return this._width; }
+            set { this._width = value; }
+        }
+
+        // Check to see if Width property is set
+        internal bool IsSetWidth()
+        {
+            return this._width != null;
         }
 
     }

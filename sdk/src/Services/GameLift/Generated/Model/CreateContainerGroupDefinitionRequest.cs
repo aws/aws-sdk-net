@@ -31,12 +31,16 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContainerGroupDefinition operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
     /// your game server with Amazon GameLift Servers managed containers hosting. An Amazon
     /// GameLift Servers container group is similar to a container task or pod. Use container
     /// group definitions when you create a container fleet with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
     /// 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// A container group definition determines how Amazon GameLift Servers deploys your containers

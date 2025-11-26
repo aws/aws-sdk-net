@@ -218,6 +218,16 @@ namespace Amazon.DatabaseMigrationService.Model
         IDescribeMetadataModelAssessmentsPaginator DescribeMetadataModelAssessments(DescribeMetadataModelAssessmentsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeMetadataModelChildren operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "Marker" }
+        )]
+        IDescribeMetadataModelChildrenPaginator DescribeMetadataModelChildren(DescribeMetadataModelChildrenRequest request);
+
+        /// <summary>
         /// Paginator for DescribeMetadataModelConversions operation
         ///</summary>
         [AWSPaginator(
@@ -226,6 +236,16 @@ namespace Amazon.DatabaseMigrationService.Model
             OutputToken = new[] { "Marker" }
         )]
         IDescribeMetadataModelConversionsPaginator DescribeMetadataModelConversions(DescribeMetadataModelConversionsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMetadataModelCreations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "Marker" }
+        )]
+        IDescribeMetadataModelCreationsPaginator DescribeMetadataModelCreations(DescribeMetadataModelCreationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeMetadataModelExportsAsScript operation

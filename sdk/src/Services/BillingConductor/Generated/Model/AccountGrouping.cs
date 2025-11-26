@@ -37,6 +37,7 @@ namespace Amazon.BillingConductor.Model
     {
         private bool? _autoAssociate;
         private List<string> _linkedAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _responsibilityTransferArn;
 
         /// <summary>
         /// Gets and sets the property AutoAssociate. 
@@ -69,7 +70,7 @@ namespace Amazon.BillingConductor.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=30)]
+        [AWSProperty(Min=0, Max=30)]
         public List<string> LinkedAccountIds
         {
             get { return this._linkedAccountIds; }
@@ -80,6 +81,26 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetLinkedAccountIds()
         {
             return this._linkedAccountIds != null && (this._linkedAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponsibilityTransferArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) that identifies the transfer relationship owned by
+        /// the Bill Transfer account (caller account). When specified, the PrimaryAccountId is
+        /// no longer required. 
+        /// </para>
+        /// </summary>
+        public string ResponsibilityTransferArn
+        {
+            get { return this._responsibilityTransferArn; }
+            set { this._responsibilityTransferArn = value; }
+        }
+
+        // Check to see if ResponsibilityTransferArn property is set
+        internal bool IsSetResponsibilityTransferArn()
+        {
+            return this._responsibilityTransferArn != null;
         }
 
     }

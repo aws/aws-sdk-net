@@ -60,6 +60,23 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.ListRequiredTagsRequest.MaxResults</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.ListRequiredTagsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ResourceGroupsTaggingAPI.Model.ListRequiredTagsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ResourceGroupsTaggingAPI.Model.StartReportCreationRequest.S3Bucket</property>
     <min>3</min>
     <max>63</max>

@@ -66,6 +66,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetJobId())
                 throw new AmazonS3ControlException("Request object does not have required field JobId set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.JobId));
+            if (string.IsNullOrEmpty(publicRequest.RequestedJobStatus))
+                throw new AmazonS3ControlException("Request object does not have required field RequestedJobStatus set");
             
             if (publicRequest.IsSetRequestedJobStatus())
                 request.Parameters.Add("requestedJobStatus", StringUtils.FromString(publicRequest.RequestedJobStatus));

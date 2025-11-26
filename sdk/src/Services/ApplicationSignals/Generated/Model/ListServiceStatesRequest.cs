@@ -31,16 +31,9 @@ namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
     /// Container for the parameters to the ListServiceStates operation.
-    /// Retrieves the current state information for services monitored by Application Signals.
-    /// Service states include health status, recent change events, and other operational
-    /// metadata.
-    /// 
-    ///  
-    /// <para>
-    /// You can filter results by time range, AWS account, and service attributes to focus
-    /// on specific services or time periods. This operation supports pagination and can include
-    /// data from linked accounts.
-    /// </para>
+    /// Returns information about the last deployment and other change states of services.
+    /// This API provides visibility into recent changes that may have affected service performance,
+    /// helping with troubleshooting and change correlation.
     /// </summary>
     public partial class ListServiceStatesRequest : AmazonApplicationSignalsRequest
     {
@@ -55,8 +48,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property AttributeFilters. 
         /// <para>
-        /// An array of attribute filters to narrow down the service states returned. Each filter
-        /// specifies an attribute name and the values to match against.
+        /// A list of attribute filters to narrow down the services. You can filter by platform,
+        /// environment, or other service attributes.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -80,9 +73,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The AWS account ID to filter service states. If specified, only service states from
-        /// this account will be returned. If not specified, service states from the current account
-        /// (and linked accounts if enabled) are returned.
+        /// The Amazon Web Services account ID to filter service states by. Use this to limit
+        /// results to services from a specific account.
         /// </para>
         /// </summary>
         public string AwsAccountId
@@ -100,9 +92,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end time for the service states query. Only service states before this time will
-        /// be included. Specify the time as the number of milliseconds since January 1, 1970,
-        /// 00:00:00 UTC.
+        /// The end of the time period to retrieve service state information for. When used in
+        /// a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,9 +112,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property IncludeLinkedAccounts. 
         /// <para>
-        /// Specifies whether to include service states from linked AWS accounts in the results.
-        /// Set to <c>true</c> to include linked accounts, or <c>false</c> to only include the
-        /// current account. Defaults to <c>false</c>.
+        /// If you are using this operation in a monitoring account, specify <c>true</c> to include
+        /// service states from source accounts in the returned data.
         /// </para>
         /// </summary>
         public bool? IncludeLinkedAccounts
@@ -141,8 +131,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of service states to return in a single request. Valid range is
-        /// 1 to 100. If not specified, defaults to 50.
+        /// The maximum number of service states to return in one operation. If you omit this
+        /// parameter, the default of 20 is used.
         /// </para>
         /// </summary>
         [AWSProperty(Max=250)]
@@ -161,8 +151,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results. Use this token to retrieve additional pages
-        /// of service states when the result set is large.
+        /// Include this value, if it was returned by the previous operation, to get the next
+        /// set of service states.
         /// </para>
         /// </summary>
         public string NextToken
@@ -180,9 +170,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start time for the service states query. Only service states from this time onward
-        /// will be included. Specify the time as the number of milliseconds since January 1,
-        /// 1970, 00:00:00 UTC.
+        /// The start of the time period to retrieve service state information for. When used
+        /// in a raw HTTP Query API, it is formatted as epoch time in seconds. For example, <c>1698778057</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

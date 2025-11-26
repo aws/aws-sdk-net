@@ -45,9 +45,9 @@ namespace Amazon.CloudFormation
     /// CloudFormation allows you to create and manage Amazon Web Services infrastructure
     /// deployments predictably and repeatedly. You can use CloudFormation to leverage Amazon
     /// Web Services products, such as Amazon Elastic Compute Cloud, Amazon Elastic Block
-    /// Store, Amazon Simple Notification Service, Elastic Load Balancing, and Amazon EC2
-    /// Auto Scaling to build highly reliable, highly scalable, cost-effective applications
-    /// without creating or configuring the underlying Amazon Web Services infrastructure.
+    /// Store, Amazon Simple Notification Service, ELB, and Amazon EC2 Auto Scaling to build
+    /// highly reliable, highly scalable, cost-effective applications without creating or
+    /// configuring the underlying Amazon Web Services infrastructure.
     /// </para>
     ///  
     /// <para>
@@ -1397,7 +1397,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns hook-related information for the change set and a list of changes that CloudFormation
+        /// Returns Hook-related information for the change set and a list of changes that CloudFormation
         /// makes when you run the change set.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChangeSetHooks service method.</param>
@@ -1418,6 +1418,74 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = DescribeChangeSetHooksResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeChangeSetHooksResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeEvents
+
+        internal virtual DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEventsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns CloudFormation events based on flexible query criteria. Groups events by operation
+        /// ID, enabling you to focus on individual stack operations during deployment.
+        /// 
+        ///  
+        /// <para>
+        /// An operation is any action performed on a stack, including stack lifecycle actions
+        /// (Create, Update, Delete, Rollback), change set creation, nested stack creation, and
+        /// automatic rollbacks triggered by failures. Each operation has a unique identifier
+        /// (Operation ID) and represents a discrete change attempt on the stack.
+        /// </para>
+        ///  
+        /// <para>
+        /// Returns different types of events including:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Progress events</b> - Status updates during stack operation execution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Validation errors</b> - Failures from CloudFormation Early Validations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Provisioning errors</b> - Resource creation and update failures.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Hook invocation errors</b> - Failures from CloudFormation Hook during stack operations.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// One of <c>ChangeSetName</c>, <c>OperationId</c> or <c>StackName</c> must be specified
+        /// as input.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeEvents service method, as returned by CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
+        public virtual Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEventsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2548,6 +2616,50 @@ namespace Amazon.CloudFormation
             options.ResponseUnmarshaller = GetGeneratedTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetGeneratedTemplateResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetHookResult
+
+        internal virtual GetHookResultResponse GetHookResult(GetHookResultRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHookResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHookResultResponseUnmarshaller.Instance;
+
+            return Invoke<GetHookResultResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed information and remediation guidance for a Hook invocation result.
+        /// 
+        ///  
+        /// <para>
+        /// If the Hook uses a KMS key to encrypt annotations, callers of the <c>GetHookResult</c>
+        /// operation must have <c>kms:Decrypt</c> permissions. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-kms-key-policy.html">KMS
+        /// key policy and permissions for encrypting CloudFormation Hooks results at rest</a>
+        /// in the <i>CloudFormation Hooks User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHookResult service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetHookResult service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.HookResultNotFoundException">
+        /// The specified target doesn't have any requested Hook invocations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetHookResult">REST API Reference for GetHookResult Operation</seealso>
+        public virtual Task<GetHookResultResponse> GetHookResultAsync(GetHookResultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetHookResultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetHookResultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetHookResultResponse>(request, options, cancellationToken);
         }
         #endregion
         

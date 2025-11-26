@@ -35,6 +35,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class GetContainerRecipeResponse : AmazonWebServiceResponse
     {
         private ContainerRecipe _containerRecipe;
+        private LatestVersionReferences _latestVersionReferences;
         private string _requestId;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetContainerRecipe()
         {
             return this._containerRecipe != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestVersionReferences. 
+        /// <para>
+        /// The resource ARNs with different wildcard variations of semantic versioning.
+        /// </para>
+        /// </summary>
+        public LatestVersionReferences LatestVersionReferences
+        {
+            get { return this._latestVersionReferences; }
+            set { this._latestVersionReferences = value; }
+        }
+
+        // Check to see if LatestVersionReferences property is set
+        internal bool IsSetLatestVersionReferences()
+        {
+            return this._latestVersionReferences != null;
         }
 
         /// <summary>

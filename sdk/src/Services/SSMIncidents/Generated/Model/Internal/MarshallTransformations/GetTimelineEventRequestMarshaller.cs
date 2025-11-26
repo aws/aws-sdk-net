@@ -62,9 +62,13 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.EventId))
+                throw new AmazonSSMIncidentsException("Request object does not have required field EventId set");
             
             if (publicRequest.IsSetEventId())
                 request.Parameters.Add("eventId", StringUtils.FromString(publicRequest.EventId));
+            if (string.IsNullOrEmpty(publicRequest.IncidentRecordArn))
+                throw new AmazonSSMIncidentsException("Request object does not have required field IncidentRecordArn set");
             
             if (publicRequest.IsSetIncidentRecordArn())
                 request.Parameters.Add("incidentRecordArn", StringUtils.FromString(publicRequest.IncidentRecordArn));

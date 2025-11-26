@@ -34,7 +34,27 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class RollbackStackResponse : AmazonWebServiceResponse
     {
+        private string _operationId;
         private string _stackId;
+
+        /// <summary>
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// A unique identifier for this rollback operation that can be used to track the operation's
+        /// progress and events.
+        /// </para>
+        /// </summary>
+        public string OperationId
+        {
+            get { return this._operationId; }
+            set { this._operationId = value; }
+        }
+
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
+        {
+            return this._operationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StackId. 

@@ -36,6 +36,7 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class EventFilter
     {
+        private List<string> _actionabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<DateTimeRange> _endTimes = AWSConfigs.InitializeCollections ? new List<DateTimeRange>() : null;
         private List<string> _entityArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -45,10 +46,37 @@ namespace Amazon.AWSHealth.Model
         private List<string> _eventTypeCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _eventTypeCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<DateTimeRange> _lastUpdatedTimes = AWSConfigs.InitializeCollections ? new List<DateTimeRange>() : null;
+        private List<string> _personas = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _services = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<DateTimeRange> _startTimes = AWSConfigs.InitializeCollections ? new List<DateTimeRange>() : null;
         private List<Dictionary<string, string>> _tags = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Actionabilities. 
+        /// <para>
+        /// A list of actionability values to filter events. Use this to filter events based on
+        /// whether they require action (<c>ACTION_REQUIRED</c>), may require action (<c>ACTION_MAY_BE_REQUIRED</c>)
+        /// or are informational (<c>INFORMATIONAL</c>).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> Actionabilities
+        {
+            get { return this._actionabilities; }
+            set { this._actionabilities = value; }
+        }
+
+        // Check to see if Actionabilities property is set
+        internal bool IsSetActionabilities()
+        {
+            return this._actionabilities != null && (this._actionabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -269,6 +297,31 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetLastUpdatedTimes()
         {
             return this._lastUpdatedTimes != null && (this._lastUpdatedTimes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Personas. 
+        /// <para>
+        /// A list of persona values to filter events. Use this to filter events based on their
+        /// target audience: <c>OPERATIONS</c>, <c>SECURITY</c>, or <c>BILLING</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> Personas
+        {
+            get { return this._personas; }
+            set { this._personas = value; }
+        }
+
+        // Check to see if Personas property is set
+        internal bool IsSetPersonas()
+        {
+            return this._personas != null && (this._personas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

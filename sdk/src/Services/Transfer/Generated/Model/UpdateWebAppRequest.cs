@@ -32,11 +32,18 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the UpdateWebApp operation.
     /// Assigns new properties to a web app. You can modify the access point, identity provider
-    /// details, and the web app units.
+    /// details, endpoint configuration, and the web app units.
+    /// 
+    ///  
+    /// <para>
+    /// For more information about using VPC endpoints with Transfer Family, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-webapp-in-vpc.html">Create
+    /// a Transfer Family web app in a VPC</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateWebAppRequest : AmazonTransferRequest
     {
         private string _accessEndpoint;
+        private UpdateWebAppEndpointDetails _endpointDetails;
         private UpdateWebAppIdentityProviderDetails _identityProviderDetails;
         private string _webAppId;
         private WebAppUnits _webAppUnits;
@@ -60,6 +67,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetAccessEndpoint()
         {
             return this._accessEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointDetails. 
+        /// <para>
+        /// The updated endpoint configuration for the web app. You can modify the endpoint type
+        /// and VPC configuration settings.
+        /// </para>
+        /// </summary>
+        public UpdateWebAppEndpointDetails EndpointDetails
+        {
+            get { return this._endpointDetails; }
+            set { this._endpointDetails = value; }
+        }
+
+        // Check to see if EndpointDetails property is set
+        internal bool IsSetEndpointDetails()
+        {
+            return this._endpointDetails != null;
         }
 
         /// <summary>

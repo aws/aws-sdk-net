@@ -129,6 +129,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.IntegrationHttpMethod);
             }
 
+            if(publicRequest.IsSetIntegrationTarget())
+            {
+                context.Writer.WritePropertyName("integrationTarget");
+                context.Writer.WriteStringValue(publicRequest.IntegrationTarget);
+            }
+
             if(publicRequest.IsSetPassthroughBehavior())
             {
                 context.Writer.WritePropertyName("passthroughBehavior");
@@ -161,6 +167,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestRequestTemplatesValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResponseTransferMode())
+            {
+                context.Writer.WritePropertyName("responseTransferMode");
+                context.Writer.WriteStringValue(publicRequest.ResponseTransferMode);
             }
 
             if(publicRequest.IsSetTimeoutInMillis())

@@ -53,6 +53,8 @@ namespace Amazon.MediaLive.Model
         private int? _qvbrQualityLevel;
         private Av1RateControlMode _rateControlMode;
         private Av1SceneChangeDetect _sceneChangeDetect;
+        private Av1SpatialAq _spatialAq;
+        private Av1TemporalAq _temporalAq;
         private TimecodeBurninSettings _timecodeBurninSettings;
 
         /// <summary>
@@ -77,7 +79,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required when
         /// the rate control mode is CBR. Not used for QVBR.
         /// </summary>
-        [AWSProperty(Min=50000, Max=12000000)]
         public int? Bitrate
         {
             get { return this._bitrate; }
@@ -93,7 +94,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property BufSize. The size of the buffer (HRD buffer model) in bits.
         /// </summary>
-        [AWSProperty(Min=50000, Max=24000000)]
         public int? BufSize
         {
             get { return this._bufSize; }
@@ -144,7 +144,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FramerateDenominator. The denominator for the framerate.
         /// Framerate is a fraction, for example, 24000 / 1001.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=3003)]
+        [AWSProperty(Required=true)]
         public int? FramerateDenominator
         {
             get { return this._framerateDenominator; }
@@ -161,7 +161,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FramerateNumerator. The numerator for the framerate. Framerate
         /// is a fraction, for example, 24000 / 1001.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int? FramerateNumerator
         {
             get { return this._framerateNumerator; }
@@ -244,7 +244,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property MaxBitrate. The maximum bitrate to assign.For recommendations,
         /// see the description for qvbrQualityLevel.
         /// </summary>
-        [AWSProperty(Min=50000, Max=12000000)]
         public int? MaxBitrate
         {
             get { return this._maxBitrate; }
@@ -262,7 +261,6 @@ namespace Amazon.MediaLive.Model
         /// a minimum bitrate if you want to keep the output bitrate about a threshold, in order
         /// to prevent the downstream system from de-allocating network bandwidth for this output.
         /// </summary>
-        [AWSProperty(Min=0, Max=8000000)]
         public int? MinBitrate
         {
             get { return this._minBitrate; }
@@ -285,7 +283,6 @@ namespace Amazon.MediaLive.Model
         /// next GOP. For GOP stretch to succeed, you must enable LookAheadRateControl.Note that
         /// the maximum GOP stretch = (GOP size) + (Minimum I-interval) - 1
         /// </summary>
-        [AWSProperty(Min=0, Max=30)]
         public int? MinIInterval
         {
             get { return this._minIInterval; }
@@ -302,7 +299,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ParDenominator. The denominator for the output pixel aspect
         /// ratio (PAR).
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? ParDenominator
         {
             get { return this._parDenominator; }
@@ -319,7 +315,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property ParNumerator. The numerator for the output pixel aspect
         /// ratio (PAR).
         /// </summary>
-        [AWSProperty(Min=1)]
         public int? ParNumerator
         {
             get { return this._parNumerator; }
@@ -347,7 +342,6 @@ namespace Amazon.MediaLive.Model
         /// 1,500,000 to 3,000,000Smartphone: qvbrQualityLevel: Leave empty. maxBitrate: 1,000,000
         /// to 1,500,000
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
         public int? QvbrQualityLevel
         {
             get { return this._qvbrQualityLevel; }
@@ -393,6 +387,43 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSceneChangeDetect()
         {
             return this._sceneChangeDetect != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpatialAq. Spatial AQ makes adjustments within each frame
+        /// based on spatial variation of content complexity. Enabled: MediaLive will determine
+        /// the appropriate level of spatial AQ to apply. Disabled: No spatial AQ. For more information,
+        /// see the topic about video adaptive quantization in the MediaLive user guide.
+        /// </summary>
+        public Av1SpatialAq SpatialAq
+        {
+            get { return this._spatialAq; }
+            set { this._spatialAq = value; }
+        }
+
+        // Check to see if SpatialAq property is set
+        internal bool IsSetSpatialAq()
+        {
+            return this._spatialAq != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemporalAq. Temporal AQ makes adjustments within each frame
+        /// based on variations in content complexity over time. Enabled: MediaLive will determine
+        /// the appropriate level of temporal AQ to apply. Disabled: No temporal AQ. For more
+        /// information, see the topic about video adaptive quantization in the MediaLive user
+        /// guide.
+        /// </summary>
+        public Av1TemporalAq TemporalAq
+        {
+            get { return this._temporalAq; }
+            set { this._temporalAq = value; }
+        }
+
+        // Check to see if TemporalAq property is set
+        internal bool IsSetTemporalAq()
+        {
+            return this._temporalAq != null;
         }
 
         /// <summary>

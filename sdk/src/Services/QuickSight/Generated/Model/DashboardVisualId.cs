@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The ID of the dashboard that has the visual that you want to embed. The <c>DashboardId</c>
         /// can be found in the <c>IDs for developers</c> section of the <c>Embed visual</c> pane
-        /// of the visual's on-visual menu of the QuickSight console. You can also get the <c>DashboardId</c>
+        /// of the visual's on-visual menu of the Quick Suite console. You can also get the <c>DashboardId</c>
         /// with a <c>ListDashboards</c> API operation.
         /// </para>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The ID of the sheet that the has visual that you want to embed. The <c>SheetId</c>
         /// can be found in the <c>IDs for developers</c> section of the <c>Embed visual</c> pane
-        /// of the visual's on-visual menu of the QuickSight console.
+        /// of the visual's on-visual menu of the Quick Suite console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

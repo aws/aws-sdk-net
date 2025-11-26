@@ -31,8 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateScript operation.
-    /// Updates Realtime script metadata and content.
+    /// <b>This API works with the following fleet types:</b> EC2
     /// 
+    ///  
+    /// <para>
+    /// Updates Realtime script metadata and content.
+    /// </para>
     ///  
     /// <para>
     /// To update script metadata, specify the script ID and provide updated name and/or version

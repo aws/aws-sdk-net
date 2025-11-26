@@ -65,6 +65,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetExecutionId())
                 throw new AmazonIoTException("Request object does not have required field ExecutionId set");
             request.AddPathResource("{executionId}", StringUtils.FromString(publicRequest.ExecutionId));
+            if (string.IsNullOrEmpty(publicRequest.TargetArn))
+                throw new AmazonIoTException("Request object does not have required field TargetArn set");
             
             if (publicRequest.IsSetTargetArn())
                 request.Parameters.Add("targetArn", StringUtils.FromString(publicRequest.TargetArn));

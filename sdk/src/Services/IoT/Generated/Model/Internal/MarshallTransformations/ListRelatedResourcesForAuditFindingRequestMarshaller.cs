@@ -62,6 +62,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.FindingId))
+                throw new AmazonIoTException("Request object does not have required field FindingId set");
             
             if (publicRequest.IsSetFindingId())
                 request.Parameters.Add("findingId", StringUtils.FromString(publicRequest.FindingId));

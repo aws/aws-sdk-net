@@ -55,6 +55,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("ApplicationType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ApplicationType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AuthorizedTokenIssuerList/member", targetDepth))
                     {
                         var unmarshaller = AuthorizedTokenIssuerUnmarshaller.Instance;

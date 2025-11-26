@@ -11,16 +11,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.DeleteServiceLevelObjectiveRequest.Id</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.GetServiceLevelObjectiveRequest.Id</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListAuditFindingsRequest.MaxResults</property>
     <min>1</min>
     <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListEntityEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListGroupingAttributeDefinitionsRequest.AwsAccountId</property>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServiceDependenciesRequest.MaxResults</property>
@@ -34,7 +43,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServiceLevelObjectiveExclusionWindowsRequest.Id</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServiceLevelObjectiveExclusionWindowsRequest.MaxResults</property>
@@ -99,7 +108,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.UpdateServiceLevelObjectiveRequest.Id</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.AttributeFilter.AttributeFilterName</property>
@@ -112,7 +121,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.BatchUpdateExclusionWindowsError.SloId</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.BurnRateConfiguration.LookBackWindowMinutes</property>
@@ -301,7 +310,7 @@
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjective.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjective.Description</property>
@@ -316,7 +325,7 @@
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveBudgetReport.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveBudgetReport.Name</property>
@@ -326,7 +335,7 @@
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveBudgetReportError.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveBudgetReportError.Name</property>
@@ -336,7 +345,7 @@
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveSummary.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveSummary.Name</property>

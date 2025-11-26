@@ -31,10 +31,14 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the StopFleetActions operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Container
+    /// 
+    ///  
+    /// <para>
     /// Suspends certain types of activity in a fleet location. Currently, this operation
     /// is used to stop auto-scaling activity. For multi-location fleets, fleet actions are
     /// managed separately for each location. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Stopping fleet actions has several potential purposes. It allows you to temporarily
