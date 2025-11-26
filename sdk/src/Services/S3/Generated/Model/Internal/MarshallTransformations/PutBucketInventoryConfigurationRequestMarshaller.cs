@@ -132,7 +132,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         }            
                         xmlWriter.WriteEndElement();            
                     }
-                    xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.InventoryConfiguration.IsEnabled.GetValueOrDefault()));
+                    if(publicRequest.InventoryConfiguration.IsSetIsEnabled())
+                        xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.InventoryConfiguration.IsEnabled.Value));
+
                     if (publicRequest.InventoryConfiguration.Schedule != null)
                     {
                         xmlWriter.WriteStartElement("Schedule");
