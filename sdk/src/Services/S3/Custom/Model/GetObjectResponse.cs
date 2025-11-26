@@ -69,7 +69,6 @@ namespace Amazon.S3.Model
         private string _checksumSHA1;
         private string _checksumSHA256;
         private ChecksumType _checksumType;
-        private string _contentLanguage;
 
         /// <summary>
         /// The date and time at which the object is no longer cacheable.
@@ -175,14 +174,8 @@ namespace Amazon.S3.Model
         /// </summary>
         public string ContentLanguage
         {
-            get { return this._contentLanguage; }
-            set { this._contentLanguage = value; }
-        }
-
-        // Check to see if ContentLanguage property is set
-        internal bool IsSetContentLanguage()
-        {
-            return this._contentLanguage != null;
+            get { return this.Headers.ContentLanguage; }
+            set { this.Headers.ContentLanguage = value; }
         }
 
         /// <summary>
