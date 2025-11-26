@@ -618,7 +618,7 @@ namespace Amazon.S3.Transfer
     /// request.ObjectDownloadFailedEvent += (sender, args) =>
     /// {
     ///     // args.DirectoryRequest: original directory request
-    ///     // args.ObjectRequest: upload request for the failed object
+    ///     // args.ObjectRequest: download request for the failed object
     ///     // args.Exception: exception thrown during the object download
     ///     Console.WriteLine($"Failed to download {args.ObjectRequest.Key}: {args.Exception}");
     /// };
