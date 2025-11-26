@@ -1,3 +1,11 @@
+### 4.0.142.0 (2025-11-26 19:16 UTC)
+* BedrockRuntime (4.0.13.0)
+	* Bedrock Runtime Reserved Service Support
+* ComputeOptimizer (4.0.4.0)
+	* Compute Optimizer now identifies idle NAT Gateway resources for cost optimization based on traffic patterns and backup configuration analysis. Access recommendations via the GetIdleRecommendations API.
+* CostOptimizationHub (4.0.6.0)
+	* This release enables AWS Cost Optimization Hub to show cost optimization recommendations for NAT Gateway.
+
 ### 4.0.141.0 (2025-11-25 19:21 UTC)
 * EC2 (4.0.61.0)
 	* This release adds support to view Network firewall proxy appliances attached to an existing NAT Gateway via DescribeNatGateways API NatGatewayAttachedAppliance structure.
