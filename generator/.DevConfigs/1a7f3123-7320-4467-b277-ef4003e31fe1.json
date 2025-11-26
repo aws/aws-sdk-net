@@ -1,0 +1,16 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "The following changes are a result of moving S3 from custom code to generated code based on the model provided by S3:",
+        "[Breaking Change] The method isSetS3BucketDestination() in Amazon.S3.Model.InventoryDestination has been changed from public to internal to be consistent with all other services.",
+        "[Breaking Change] The method isSetAccountId() in Amazon.S3.Model.InventoryS3BucketDestination has been changed from public to internal to be consistent with all other services.",
+        "[Breaking Change] The method IsSetInventoryConfigurationList() in Amazon.S3.Model.ListBucketInventoryConfigurationsResponse has been changed from public to internal to be consistent with all other services.",
+        "[Breaking Change] The setter for Days in Amazon.S3.Model.RecordExpiration has been changed from int to int? to be consistent with the nullability changes in V4.",
+        "Generates Put, Get, Delete, and ListBucketInventoryConfiguration. Generate PutBucketAccelerateConfiguration, PutBucketRequestPayment, CreateBucketMetadataTableConfiguration, GetBucketMetadataConfiguration."
+      ]
+    }
+  ]
+}

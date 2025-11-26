@@ -552,26 +552,29 @@ namespace ServiceClientGenerator
                         new Operation(this, "CreateSession", DocumentRoot[OperationsKey]["CreateSession"]),
                         new Operation(this, "GetBucketAnalyticsConfiguration", DocumentRoot[OperationsKey]["GetBucketAnalyticsConfiguration"]),
                         new Operation(this, "GetBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["GetBucketIntelligentTieringConfiguration"]),
-                        //new Operation(this, "GetBucketInventoryConfiguration", DocumentRoot[OperationsKey]["GetBucketInventoryConfiguration"]),
+                        new Operation(this, "GetBucketInventoryConfiguration", DocumentRoot[OperationsKey]["GetBucketInventoryConfiguration"]),
 						//new Operation(this, "GetBucketLogging", DocumentRoot[OperationsKey]["GetBucketLogging"]),
 						new Operation(this, "GetBucketMetricsConfiguration", DocumentRoot[OperationsKey]["GetBucketMetricsConfiguration"]),
 						//new Operation(this, "GetBucketVersioning", DocumentRoot[OperationsKey]["GetBucketVersioning"]),
                         //new Operation(this, "GetBucketWebsite", DocumentRoot[OperationsKey]["GetBucketWebsite"]),
 						new Operation(this, "ListBucketAnalyticsConfigurations", DocumentRoot[OperationsKey]["ListBucketAnalyticsConfigurations"]),
                         new Operation(this, "ListBucketIntelligentTieringConfigurations", DocumentRoot[OperationsKey]["ListBucketIntelligentTieringConfigurations"]),
-                        //new Operation(this, "ListBucketInventoryConfigurations", DocumentRoot[OperationsKey]["ListBucketInventoryConfigurations"]),
+                        new Operation(this, "ListBucketInventoryConfigurations", DocumentRoot[OperationsKey]["ListBucketInventoryConfigurations"]),
                         new Operation(this, "ListBucketMetricsConfigurations", DocumentRoot[OperationsKey]["ListBucketMetricsConfigurations"]),
-						//new Operation(this, "PutBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["PutBucketAccelerateConfiguration"]),
+                        new Operation(this, "PutBucketAccelerateConfiguration", DocumentRoot[OperationsKey]["PutBucketAccelerateConfiguration"]),
 						//new Operation(this, "RestoreObject", DocumentRoot[OperationsKey]["RestoreObject"]),
                         //new Operation(this, "SelectObjectContent", DocumentRoot[OperationsKey]["SelectObjectContent"]),
                         new Operation(this, "PutBucketAnalyticsConfiguration" , DocumentRoot[OperationsKey]["PutBucketAnalyticsConfiguration"]),
                         new Operation(this, "PutBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["PutBucketIntelligentTieringConfiguration"]),
-                        //new Operation(this, "PutBucketInventoryConfiguration", DocumentRoot[OperationsKey]["PutBucketInventoryConfiguration"]),
+                        new Operation(this, "PutBucketInventoryConfiguration", DocumentRoot[OperationsKey]["PutBucketInventoryConfiguration"]),
                         new Operation(this, "PutBucketMetricsConfiguration", DocumentRoot[OperationsKey]["PutBucketMetricsConfiguration"]),
                         new Operation(this, "DeleteBucketMetricsConfiguration", DocumentRoot[OperationsKey]["DeleteBucketMetricsConfiguration"]),
                         new Operation(this, "DeleteBucketAnalyticsConfiguration", DocumentRoot[OperationsKey]["DeleteBucketAnalyticsConfiguration"]),
                         new Operation(this, "DeleteBucketIntelligentTieringConfiguration", DocumentRoot[OperationsKey]["DeleteBucketIntelligentTieringConfiguration"]),
-                        //new Operation(this, "DeleteBucketInventoryConfiguration", DocumentRoot[OperationsKey]["DeleteBucketInventoryConfiguration"]),
+                        new Operation(this, "DeleteBucketInventoryConfiguration", DocumentRoot[OperationsKey]["DeleteBucketInventoryConfiguration"]),
+                        new Operation(this,"PutBucketRequestPayment", DocumentRoot[OperationsKey]["PutBucketRequestPayment"]),
+                        new Operation(this, "CreateBucketMetadataConfiguration",DocumentRoot[OperationsKey]["CreateBucketMetadataConfiguration"]),
+                        new Operation(this, "GetBucketMetadataConfiguration", DocumentRoot[OperationsKey]["GetBucketMetadataConfiguration"])
 
                     };
                 }
@@ -601,7 +604,9 @@ namespace ServiceClientGenerator
                         "GetBucketAcl",
                         "PutObjectAcl",
                         "GetObjectAcl",
-                        "PutBucketAcl"
+                        "PutBucketAcl",
+                        "CreateBucketMetadataConfiguration",
+                        "GetBucketMetadataConfiguration"
                     };
                 }
                 return _s3RequestMarshallerThrowAmazonS3ExceptionList;
