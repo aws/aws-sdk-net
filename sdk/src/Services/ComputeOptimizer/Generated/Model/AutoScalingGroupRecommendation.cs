@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes an Auto Scaling group recommendation.
+    /// Describes an Amazon EC2 Auto Scaling group recommendation.
     /// </summary>
     public partial class AutoScalingGroupRecommendation
     {
@@ -51,7 +51,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID of the Auto Scaling group.
+        /// The Amazon Web Services account ID of the Amazon EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         public string AccountId
@@ -69,7 +69,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Auto Scaling group.
+        /// The Amazon Resource Name (ARN) of the Amazon EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupArn
@@ -87,7 +87,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
         /// <para>
-        /// The name of the Auto Scaling group.
+        /// The name of the Amazon EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         public string AutoScalingGroupName
@@ -105,7 +105,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property CurrentConfiguration. 
         /// <para>
-        /// An array of objects that describe the current configuration of the Auto Scaling group.
+        /// An array of objects that describe the current configuration of the Amazon EC2 Auto
+        /// Scaling group.
         /// </para>
         /// </summary>
         public AutoScalingGroupConfiguration CurrentConfiguration
@@ -123,8 +124,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property CurrentInstanceGpuInfo. 
         /// <para>
-        ///  Describes the GPU accelerator settings for the current instance type of the Auto
-        /// Scaling group. 
+        ///  Describes the GPU accelerator settings for the current instance type of the Amazon
+        /// EC2 Auto Scaling group. 
         /// </para>
         /// </summary>
         public GpuInfo CurrentInstanceGpuInfo
@@ -142,9 +143,10 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property CurrentPerformanceRisk. 
         /// <para>
-        /// The risk of the current Auto Scaling group not meeting the performance needs of its
-        /// workloads. The higher the risk, the more likely the current Auto Scaling group configuration
-        /// has insufficient capacity and cannot meet workload requirements.
+        /// The risk of the current Amazon EC2 Auto Scaling group not meeting the performance
+        /// needs of its workloads. The higher the risk, the more likely the current Amazon EC2
+        /// Auto Scaling group configuration has insufficient capacity and cannot meet workload
+        /// requirements.
         /// </para>
         /// </summary>
         public CurrentPerformanceRisk CurrentPerformanceRisk
@@ -162,8 +164,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property EffectiveRecommendationPreferences. 
         /// <para>
-        /// An object that describes the effective recommendation preferences for the Auto Scaling
-        /// group.
+        /// An object that describes the effective recommendation preferences for the Amazon EC2
+        /// Auto Scaling group.
         /// </para>
         /// </summary>
         public EffectiveRecommendationPreferences EffectiveRecommendationPreferences
@@ -181,24 +183,24 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Finding. 
         /// <para>
-        /// The finding classification of the Auto Scaling group.
+        /// The finding classification of the Amazon EC2 Auto Scaling group.
         /// </para>
         ///  
         /// <para>
-        /// Findings for Auto Scaling groups include:
+        /// Findings for Amazon EC2 Auto Scaling groups include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <c>NotOptimized</c> </b>—An Auto Scaling group is considered not optimized when
-        /// Compute Optimizer identifies a recommendation that can provide better performance
+        ///  <b> <c>NotOptimized</c> </b>—An Amazon EC2 Auto Scaling group is considered not optimized
+        /// when Compute Optimizer identifies a recommendation that can provide better performance
         /// for your workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <c>Optimized</c> </b>—An Auto Scaling group is considered optimized when Compute
-        /// Optimizer determines that the group is correctly provisioned to run your workload
-        /// based on the chosen instance type. For optimized resources, Compute Optimizer might
-        /// recommend a new generation instance type.
+        ///  <b> <c>Optimized</c> </b>—An Amazon EC2 Auto Scaling group is considered optimized
+        /// when Compute Optimizer determines that the group is correctly provisioned to run your
+        /// workload based on the chosen instance type. For optimized resources, Compute Optimizer
+        /// might recommend a new generation instance type.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -217,8 +219,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property InferredWorkloadTypes. 
         /// <para>
-        /// The applications that might be running on the instances in the Auto Scaling group
-        /// as inferred by Compute Optimizer.
+        /// The applications that might be running on the instances in the Amazon EC2 Auto Scaling
+        /// group as inferred by Compute Optimizer.
         /// </para>
         ///  
         /// <para>
@@ -278,7 +280,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LastRefreshTimestamp. 
         /// <para>
-        /// The timestamp of when the Auto Scaling group recommendation was last generated.
+        /// The timestamp of when the Amazon EC2 Auto Scaling group recommendation was last generated.
         /// </para>
         /// </summary>
         public DateTime LastRefreshTimestamp
@@ -296,8 +298,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property LookBackPeriodInDays. 
         /// <para>
-        /// The number of days for which utilization metrics were analyzed for the Auto Scaling
-        /// group.
+        /// The number of days for which utilization metrics were analyzed for the Amazon EC2
+        /// Auto Scaling group.
         /// </para>
         /// </summary>
         public double LookBackPeriodInDays
@@ -315,8 +317,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property RecommendationOptions. 
         /// <para>
-        /// An array of objects that describe the recommendation options for the Auto Scaling
-        /// group.
+        /// An array of objects that describe the recommendation options for the Amazon EC2 Auto
+        /// Scaling group.
         /// </para>
         /// </summary>
         public List<AutoScalingGroupRecommendationOption> RecommendationOptions
@@ -334,7 +336,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property UtilizationMetrics. 
         /// <para>
-        /// An array of objects that describe the utilization metrics of the Auto Scaling group.
+        /// An array of objects that describe the utilization metrics of the Amazon EC2 Auto Scaling
+        /// group.
         /// </para>
         /// </summary>
         public List<UtilizationMetric> UtilizationMetrics

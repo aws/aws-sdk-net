@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes the configuration of an EC2 Auto Scaling group.
+    /// Describes the configuration of an EC2 Amazon EC2 Auto Scaling group.
     /// </summary>
     public partial class AutoScalingGroupConfiguration
     {
@@ -46,8 +46,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        ///  Describes the allocation strategy that the EC2 Auto Scaling group uses. This field
-        /// is only available for EC2 Auto Scaling groups with mixed instance types. 
+        ///  Describes the allocation strategy that the EC2 Amazon EC2 Auto Scaling group uses.
+        /// This field is only available for EC2 Amazon EC2 Auto Scaling groups with mixed instance
+        /// types. 
         /// </para>
         /// </summary>
         public AllocationStrategy AllocationStrategy
@@ -65,7 +66,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
         /// <para>
-        /// The desired capacity, or number of instances, for the EC2 Auto Scaling group.
+        /// The desired capacity, or number of instances, for the EC2 Amazon EC2 Auto Scaling
+        /// group.
         /// </para>
         /// </summary>
         public int DesiredCapacity
@@ -84,8 +86,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property EstimatedInstanceHourReductionPercentage. 
         /// <para>
         ///  Describes the projected percentage reduction in instance hours after adopting the
-        /// recommended configuration. This field is only available for EC2 Auto Scaling groups
-        /// with scaling policies. 
+        /// recommended configuration. This field is only available for EC2 Amazon EC2 Auto Scaling
+        /// groups with scaling policies. 
         /// </para>
         /// </summary>
         public double EstimatedInstanceHourReductionPercentage
@@ -103,7 +105,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type for the EC2 Auto Scaling group.
+        /// The instance type for the EC2 Amazon EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -121,7 +123,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum size, or maximum number of instances, for the EC2 Auto Scaling group.
+        /// The maximum size, or maximum number of instances, for the EC2 Amazon EC2 Auto Scaling
+        /// group.
         /// </para>
         /// </summary>
         public int MaxSize
@@ -139,7 +142,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property MinSize. 
         /// <para>
-        /// The minimum size, or minimum number of instances, for the EC2 Auto Scaling group.
+        /// The minimum size, or minimum number of instances, for the EC2 Amazon EC2 Auto Scaling
+        /// group.
         /// </para>
         /// </summary>
         public int MinSize
@@ -157,8 +161,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property MixedInstanceTypes. 
         /// <para>
-        ///  List the instance types within an EC2 Auto Scaling group that has mixed instance
-        /// types. 
+        ///  List the instance types within an EC2 Amazon EC2 Auto Scaling group that has mixed
+        /// instance types. 
         /// </para>
         /// </summary>
         public List<string> MixedInstanceTypes
@@ -176,8 +180,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  Describes whether the EC2 Auto Scaling group has a single instance type or a mixed
-        /// instance type configuration. 
+        ///  Describes whether the EC2 Amazon EC2 Auto Scaling group has a single instance type
+        /// or a mixed instance type configuration. 
         /// </para>
         /// </summary>
         public AsgType Type

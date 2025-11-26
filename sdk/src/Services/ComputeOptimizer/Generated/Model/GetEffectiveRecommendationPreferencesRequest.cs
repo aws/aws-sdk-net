@@ -50,7 +50,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation
-        /// preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.
+        /// preferences. Only EC2 instance and Amazon EC2 Auto Scaling group ARNs are currently
+        /// supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

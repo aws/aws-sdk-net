@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
-    /// Describes a recommendation option for an Auto Scaling group.
+    /// Describes a recommendation option for an Amazon EC2 Auto Scaling group.
     /// </summary>
     public partial class AutoScalingGroupRecommendationOption
     {
@@ -46,7 +46,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// An array of objects that describe an Auto Scaling group configuration.
+        /// An array of objects that describe an Amazon EC2 Auto Scaling group configuration.
         /// </para>
         /// </summary>
         public AutoScalingGroupConfiguration Configuration
@@ -64,8 +64,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property InstanceGpuInfo. 
         /// <para>
-        ///  Describes the GPU accelerator settings for the recommended instance type of the Auto
-        /// Scaling group. 
+        ///  Describes the GPU accelerator settings for the recommended instance type of the Amazon
+        /// EC2 Auto Scaling group. 
         /// </para>
         /// </summary>
         public GpuInfo InstanceGpuInfo
@@ -110,7 +110,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property PerformanceRisk. 
         /// <para>
-        /// The performance risk of the Auto Scaling group configuration recommendation.
+        /// The performance risk of the Amazon EC2 Auto Scaling group configuration recommendation.
         /// </para>
         ///  
         /// <para>
@@ -145,8 +145,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ProjectedUtilizationMetrics. 
         /// <para>
-        /// An array of objects that describe the projected utilization metrics of the Auto Scaling
-        /// group recommendation option.
+        /// An array of objects that describe the projected utilization metrics of the Amazon
+        /// EC2 Auto Scaling group recommendation option.
         /// </para>
         ///  <note> 
         /// <para>
@@ -173,7 +173,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Rank. 
         /// <para>
-        /// The rank of the Auto Scaling group recommendation option.
+        /// The rank of the Amazon EC2 Auto Scaling group recommendation option.
         /// </para>
         ///  
         /// <para>
@@ -195,8 +195,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property SavingsOpportunity. 
         /// <para>
-        /// An object that describes the savings opportunity for the Auto Scaling group recommendation
-        /// option. Savings opportunity includes the estimated monthly savings amount and percentage.
+        /// An object that describes the savings opportunity for the Amazon EC2 Auto Scaling group
+        /// recommendation option. Savings opportunity includes the estimated monthly savings
+        /// amount and percentage.
         /// </para>
         /// </summary>
         public SavingsOpportunity SavingsOpportunity
@@ -214,9 +215,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property SavingsOpportunityAfterDiscounts. 
         /// <para>
-        ///  An object that describes the savings opportunity for the Auto Scaling group recommendation
-        /// option that includes Savings Plans and Reserved Instances discounts. Savings opportunity
-        /// includes the estimated monthly savings and percentage. 
+        ///  An object that describes the savings opportunity for the Amazon EC2 Auto Scaling
+        /// group recommendation option that includes Savings Plans and Reserved Instances discounts.
+        /// Savings opportunity includes the estimated monthly savings and percentage. 
         /// </para>
         /// </summary>
         public AutoScalingGroupSavingsOpportunityAfterDiscounts SavingsOpportunityAfterDiscounts

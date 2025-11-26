@@ -488,7 +488,7 @@ namespace Amazon.ComputeOptimizer
 
 
         /// <summary>
-        /// Exports optimization recommendations for Auto Scaling groups.
+        /// Exports optimization recommendations for Amazon EC2 Auto Scaling groups.
         /// 
         ///  
         /// <para>
@@ -500,8 +500,8 @@ namespace Amazon.ComputeOptimizer
         /// </para>
         ///  
         /// <para>
-        /// You can have only one Auto Scaling group export job in progress per Amazon Web Services
-        /// Region.
+        /// You can have only one Amazon EC2 Auto Scaling group export job in progress per Amazon
+        /// Web Services Region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportAutoScalingGroupRecommendations service method.</param>
@@ -544,7 +544,7 @@ namespace Amazon.ComputeOptimizer
 
 
         /// <summary>
-        /// Exports optimization recommendations for Auto Scaling groups.
+        /// Exports optimization recommendations for Amazon EC2 Auto Scaling groups.
         /// 
         ///  
         /// <para>
@@ -556,8 +556,8 @@ namespace Amazon.ComputeOptimizer
         /// </para>
         ///  
         /// <para>
-        /// You can have only one Auto Scaling group export job in progress per Amazon Web Services
-        /// Region.
+        /// You can have only one Amazon EC2 Auto Scaling group export job in progress per Amazon
+        /// Web Services Region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportAutoScalingGroupRecommendations service method.</param>
@@ -1432,7 +1432,7 @@ namespace Amazon.ComputeOptimizer
 
 
         /// <summary>
-        /// Returns Auto Scaling group recommendations.
+        /// Returns Amazon EC2 Auto Scaling group recommendations.
         /// 
         ///  
         /// <para>
@@ -1481,7 +1481,7 @@ namespace Amazon.ComputeOptimizer
 
 
         /// <summary>
-        /// Returns Auto Scaling group recommendations.
+        /// Returns Amazon EC2 Auto Scaling group recommendations.
         /// 
         ///  
         /// <para>
@@ -2862,7 +2862,7 @@ namespace Amazon.ComputeOptimizer
         /// <para>
         /// Use the <c>scope</c> parameter to specify which preferences to return. You can specify
         /// to return preferences for an organization, a specific account ID, or a specific EC2
-        /// instance or Auto Scaling group Amazon Resource Name (ARN).
+        /// instance or Amazon EC2 Auto Scaling group Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
@@ -2916,7 +2916,7 @@ namespace Amazon.ComputeOptimizer
         /// <para>
         /// Use the <c>scope</c> parameter to specify which preferences to return. You can specify
         /// to return preferences for an organization, a specific account ID, or a specific EC2
-        /// instance or Auto Scaling group Amazon Resource Name (ARN).
+        /// instance or Amazon EC2 Auto Scaling group Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
@@ -2984,7 +2984,7 @@ namespace Amazon.ComputeOptimizer
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// EC2Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
+        /// EC2Amazon EC2 Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3061,7 +3061,7 @@ namespace Amazon.ComputeOptimizer
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// EC2Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
+        /// EC2Amazon EC2 Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

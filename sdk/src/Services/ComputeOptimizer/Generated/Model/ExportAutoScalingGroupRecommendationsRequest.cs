@@ -31,7 +31,7 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// Container for the parameters to the ExportAutoScalingGroupRecommendations operation.
-    /// Exports optimization recommendations for Auto Scaling groups.
+    /// Exports optimization recommendations for Amazon EC2 Auto Scaling groups.
     /// 
     ///  
     /// <para>
@@ -43,8 +43,8 @@ namespace Amazon.ComputeOptimizer.Model
     /// </para>
     ///  
     /// <para>
-    /// You can have only one Auto Scaling group export job in progress per Amazon Web Services
-    /// Region.
+    /// You can have only one Amazon EC2 Auto Scaling group export job in progress per Amazon
+    /// Web Services Region.
     /// </para>
     /// </summary>
     public partial class ExportAutoScalingGroupRecommendationsRequest : AmazonComputeOptimizerRequest
@@ -60,8 +60,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The IDs of the Amazon Web Services accounts for which to export Auto Scaling group
-        /// recommendations.
+        /// The IDs of the Amazon Web Services accounts for which to export Amazon EC2 Auto Scaling
+        /// group recommendations.
         /// </para>
         ///  
         /// <para>
@@ -140,8 +140,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of objects to specify a filter that exports a more specific set of Auto Scaling
-        /// group recommendations.
+        /// An array of objects to specify a filter that exports a more specific set of Amazon
+        /// EC2 Auto Scaling group recommendations.
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -201,8 +201,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property RecommendationPreferences. 
         /// <para>
-        /// An object to specify the preferences for the Auto Scaling group recommendations to
-        /// export.
+        /// An object to specify the preferences for the Amazon EC2 Auto Scaling group recommendations
+        /// to export.
         /// </para>
         /// </summary>
         public RecommendationPreferences RecommendationPreferences

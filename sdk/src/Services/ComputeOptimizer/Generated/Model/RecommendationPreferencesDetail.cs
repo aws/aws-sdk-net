@@ -170,8 +170,8 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// The <c>Ec2Instance</c> option encompasses standalone instances and instances that
-        /// are part of Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses only
-        /// instances that are part of an Auto Scaling group.
+        /// are part of Amazon EC2 Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses
+        /// only instances that are part of an Amazon EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         public ResourceType ResourceType
