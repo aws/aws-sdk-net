@@ -2125,11 +2125,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 if (EventException != null)
                     throw EventException;
 
-                // Since  AWSSDKUtils.InvokeInBackground fires the event in the background it is possible that we check too early that the event has fired. In this case, we sleep and check again.
-                for (int retries = 1; retries < 5 && !EventFired; retries++)
-                {
-                    Thread.Sleep(1000 * retries);
-                }
+                // Since events are now fired synchronously, we can check immediately without retries
                 Assert.IsTrue(EventFired, $"{typeof(T).Name} event was not fired");
             }
         }
