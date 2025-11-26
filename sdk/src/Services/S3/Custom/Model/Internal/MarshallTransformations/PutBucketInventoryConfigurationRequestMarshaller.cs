@@ -50,5 +50,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 xmlWriter.WriteEndElement();
             }
         }
+        void CustomIsEnabledMarshall(PutBucketInventoryConfigurationRequest publicRequest, XmlWriter xmlWriter)
+        {
+            xmlWriter.WriteElementString("IsEnabled", StringUtils.FromBool(publicRequest.InventoryConfiguration.IsEnabled.GetValueOrDefault()));
+        }
     }
 }
