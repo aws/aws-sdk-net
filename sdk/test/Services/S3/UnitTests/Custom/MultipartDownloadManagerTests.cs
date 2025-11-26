@@ -577,7 +577,7 @@ namespace AWSSDK.UnitTests
             var mockBufferManager = new Mock<IPartBufferManager>();
 
             // Act
-            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
 
             // Assert - should complete without any downloads
             mockClient.Verify(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()), Times.Never);
@@ -594,7 +594,7 @@ namespace AWSSDK.UnitTests
             var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
 
             // Act
-            await coordinator.StartDownloadsAsync(null, CancellationToken.None);
+            await coordinator.StartDownloadsAsync(null, null, CancellationToken.None);
         }
 
         #endregion
@@ -617,7 +617,7 @@ namespace AWSSDK.UnitTests
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
 
             // Act & Assert (exception expected via attribute)
-            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
             await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
         }
 
@@ -641,7 +641,7 @@ namespace AWSSDK.UnitTests
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
 
             // Act - should succeed with matching ETags
-            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
 
             // Assert - no exception thrown
         }
@@ -683,7 +683,7 @@ namespace AWSSDK.UnitTests
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
 
             // Act - should succeed with valid ranges
-            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
 
             // Assert - no exception thrown
         }
@@ -824,7 +824,7 @@ namespace AWSSDK.UnitTests
             cts.Cancel();
 
             // Act
-            await coordinator.StartDownloadsAsync(discoveryResult, cts.Token);
+            await coordinator.StartDownloadsAsync(discoveryResult, null, cts.Token);
             await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
         }
 
@@ -865,7 +865,7 @@ namespace AWSSDK.UnitTests
             // Act
             try
             {
-                await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+                await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
                 await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
             }
             catch (OperationCanceledException)
@@ -910,7 +910,7 @@ namespace AWSSDK.UnitTests
             // Act
             try
             {
-                await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+                await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
                 await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
             }
             catch (OperationCanceledException)
@@ -944,7 +944,7 @@ namespace AWSSDK.UnitTests
             var cts = new CancellationTokenSource();
 
             // Act
-            await coordinator.StartDownloadsAsync(discoveryResult, cts.Token);
+            await coordinator.StartDownloadsAsync(discoveryResult, null, cts.Token);
 
             // Assert - The cancellation token was passed through to the data handler
             Assert.IsNotNull(discoveryResult);
@@ -970,7 +970,7 @@ namespace AWSSDK.UnitTests
             cts.Cancel();
 
             // Act - should complete without throwing even though token is cancelled
-            await coordinator.StartDownloadsAsync(discoveryResult, cts.Token);
+            await coordinator.StartDownloadsAsync(discoveryResult, null, cts.Token);
 
             // Assert - no exception thrown, no S3 calls made
             mockClient.Verify(x => x.GetObjectAsync(It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()), Times.Never);
@@ -1021,7 +1021,7 @@ namespace AWSSDK.UnitTests
             // Act
             try
             {
-                await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+                await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
                 await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
             }
             catch (OperationCanceledException)
@@ -1098,7 +1098,7 @@ namespace AWSSDK.UnitTests
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
 
             // Act
-            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
             await coordinator.DownloadCompletionTask; // Wait for background task to observe exceptions
         }
 
@@ -1153,7 +1153,7 @@ namespace AWSSDK.UnitTests
             
             // Act - StartDownloadsAsync should return immediately (not wait for all downloads)
             var stopwatch = System.Diagnostics.Stopwatch.StartNew();
-            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
             stopwatch.Stop();
             
             // Assert - StartDownloadsAsync should return almost immediately
@@ -1202,7 +1202,7 @@ namespace AWSSDK.UnitTests
             
             // Act
             var stopwatch = System.Diagnostics.Stopwatch.StartNew();
-            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
+            await coordinator.StartDownloadsAsync(discoveryResult, null, CancellationToken.None);
             stopwatch.Stop();
             
             // DownloadCompletionTask should be completed immediately (no background work)
@@ -1761,7 +1761,7 @@ namespace AWSSDK.UnitTests
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
 
             // Act
-            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None, progressCallback);
+            await coordinator.StartDownloadsAsync(discoveryResult, progressCallback, CancellationToken.None);
             
             // Wait for async progress events to complete
             var success = await WaitForProgressEventsAsync(progressEvents, progressLock, totalObjectSize);
@@ -1817,7 +1817,7 @@ namespace AWSSDK.UnitTests
             var discoveryResult = await coordinator.DiscoverDownloadStrategyAsync(CancellationToken.None);
 
             // Act
-            await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None, progressCallback);
+            await coordinator.StartDownloadsAsync(discoveryResult, progressCallback, CancellationToken.None);
             
             // Wait for async progress events to complete
             var success = await WaitForProgressEventsAsync(progressEvents, progressLock, totalObjectSize);

@@ -45,10 +45,10 @@ namespace Amazon.S3.Transfer.Internal
         /// Starts concurrent downloads with HTTP concurrency control and part range calculations.
         /// </summary>
         /// <param name="discoveryResult">Results from the discovery phase.</param>
-        /// <param name="cancellationToken">A token to cancel the download operation.</param>
         /// <param name="progressCallback">Optional callback for progress tracking events.</param>
+        /// <param name="cancellationToken">A token to cancel the download operation.</param>
         /// <returns>A task that completes when all downloads finish or an error occurs.</returns>
-        Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, CancellationToken cancellationToken, EventHandler<WriteObjectProgressArgs> progressCallback = null);
+        Task StartDownloadsAsync(DownloadDiscoveryResult discoveryResult, EventHandler<WriteObjectProgressArgs> progressCallback, CancellationToken cancellationToken);
 
         /// <summary>
         /// Exception that occurred during downloads, if any.

@@ -73,7 +73,7 @@ namespace Amazon.S3.Transfer.Internal
                         
                         // Step 2: Start concurrent downloads for all parts
                         Logger.DebugFormat("Starting downloads for {0} part(s)", discoveryResult.TotalParts);
-                        await coordinator.StartDownloadsAsync(discoveryResult, cancellationToken, DownloadPartProgressEventCallback)
+                        await coordinator.StartDownloadsAsync(discoveryResult, DownloadPartProgressEventCallback, cancellationToken)
                             .ConfigureAwait(false);
                         
                         // Step 2b: Wait for all downloads to complete before returning
