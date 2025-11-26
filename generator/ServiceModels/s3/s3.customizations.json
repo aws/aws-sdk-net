@@ -1180,6 +1180,13 @@
                     "ExpectedBucketOwner": {"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
                 }
             ]
+        },
+        "PutBucketRequestPaymentRequest":{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
         }
         
     },
