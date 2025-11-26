@@ -1738,6 +1738,10 @@ namespace Amazon.BedrockRuntime
         /// Constant Priority for ServiceTierType
         /// </summary>
         public static readonly ServiceTierType Priority = new ServiceTierType("priority");
+        /// <summary>
+        /// Constant Reserved for ServiceTierType
+        /// </summary>
+        public static readonly ServiceTierType Reserved = new ServiceTierType("reserved");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

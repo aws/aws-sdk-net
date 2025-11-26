@@ -2461,7 +2461,8 @@
       "enum":[
         "priority",
         "default",
-        "flex"
+        "flex",
+        "reserved"
       ]
     },
     "ServiceUnavailableException":{
