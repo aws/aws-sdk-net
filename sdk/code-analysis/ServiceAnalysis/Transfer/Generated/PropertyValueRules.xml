@@ -1810,6 +1810,12 @@
     <pattern>webapp-[0-9a-f]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.DescribedWebAppVpcConfig.VpcEndpointId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>vpce-[0-9a-f]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.DescribedWorkflow.Arn</property>
     <min>20</min>
     <max>1600</max>

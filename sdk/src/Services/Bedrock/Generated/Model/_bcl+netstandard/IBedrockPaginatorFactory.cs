@@ -88,6 +88,16 @@ namespace Amazon.Bedrock.Model
         IListCustomModelsPaginator ListCustomModels(ListCustomModelsRequest request);
 
         /// <summary>
+        /// Paginator for ListEnforcedGuardrailsConfiguration operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListEnforcedGuardrailsConfigurationPaginator ListEnforcedGuardrailsConfiguration(ListEnforcedGuardrailsConfigurationRequest request);
+
+        /// <summary>
         /// Paginator for ListEvaluationJobs operation
         ///</summary>
         [AWSPaginator(

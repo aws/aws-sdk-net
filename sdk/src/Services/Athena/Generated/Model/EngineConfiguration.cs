@@ -36,6 +36,7 @@ namespace Amazon.Athena.Model
     public partial class EngineConfiguration
     {
         private Dictionary<string, string> _additionalConfigs = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Classification> _classifications = AWSConfigs.InitializeCollections ? new List<Classification>() : null;
         private int? _coordinatorDpuSize;
         private int? _defaultExecutorDpuSize;
         private int? _maxConcurrentDpus;
@@ -66,6 +67,29 @@ namespace Amazon.Athena.Model
         internal bool IsSetAdditionalConfigs()
         {
             return this._additionalConfigs != null && (this._additionalConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Classifications. 
+        /// <para>
+        /// The configuration classifications that can be specified for the engine.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Classification> Classifications
+        {
+            get { return this._classifications; }
+            set { this._classifications = value; }
+        }
+
+        // Check to see if Classifications property is set
+        internal bool IsSetClassifications()
+        {
+            return this._classifications != null && (this._classifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +139,7 @@ namespace Amazon.Athena.Model
         /// The maximum number of DPUs that can run concurrently.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=5000)]
+        [AWSProperty(Min=2, Max=5000)]
         public int? MaxConcurrentDpus
         {
             get { return this._maxConcurrentDpus; }

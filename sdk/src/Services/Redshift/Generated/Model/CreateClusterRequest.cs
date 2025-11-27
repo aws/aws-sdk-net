@@ -79,6 +79,7 @@ namespace Amazon.Redshift.Model
         private int? _automatedSnapshotRetentionPeriod;
         private string _availabilityZone;
         private bool? _availabilityZoneRelocation;
+        private string _catalogName;
         private string _clusterIdentifier;
         private string _clusterParameterGroupName;
         private List<string> _clusterSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -266,6 +267,47 @@ namespace Amazon.Redshift.Model
         internal bool IsSetAvailabilityZoneRelocation()
         {
             return this._availabilityZoneRelocation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CatalogName. 
+        /// <para>
+        /// The name of the Glue data catalog that will be associated with the cluster enabled
+        /// with Amazon Redshift federated permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain at least one lowercase letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can only contain lowercase letters (a-z), numbers (0-9), underscores (_), and hyphens
+        /// (-).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Pattern: <c>^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>my-catalog_01</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string CatalogName
+        {
+            get { return this._catalogName; }
+            set { this._catalogName = value; }
+        }
+
+        // Check to see if CatalogName property is set
+        internal bool IsSetCatalogName()
+        {
+            return this._catalogName != null;
         }
 
         /// <summary>

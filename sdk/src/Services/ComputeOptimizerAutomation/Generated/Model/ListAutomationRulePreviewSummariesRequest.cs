@@ -1,0 +1,162 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the compute-optimizer-automation-2025-09-22.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.ComputeOptimizerAutomation.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ListAutomationRulePreviewSummaries operation.
+    /// Returns a summary of the recommended actions that match your rule preview configuration
+    /// and criteria.
+    /// </summary>
+    public partial class ListAutomationRulePreviewSummariesRequest : AmazonComputeOptimizerAutomationRequest
+    {
+        private Criteria _criteria;
+        private int? _maxResults;
+        private string _nextToken;
+        private OrganizationScope _organizationScope;
+        private List<string> _recommendedActionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private RuleType _ruleType;
+
+        /// <summary>
+        /// Gets and sets the property Criteria.
+        /// </summary>
+        public Criteria Criteria
+        {
+            get { return this._criteria; }
+            set { this._criteria = value; }
+        }
+
+        // Check to see if Criteria property is set
+        internal bool IsSetCriteria()
+        {
+            return this._criteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of automation rule preview summaries to return in a single response.
+        /// Valid range is 1-1000.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int? MaxResults
+        {
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A token used for pagination to retrieve the next set of results when the response
+        /// is truncated.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationScope. 
+        /// <para>
+        /// The organizational scope for the rule preview.
+        /// </para>
+        /// </summary>
+        public OrganizationScope OrganizationScope
+        {
+            get { return this._organizationScope; }
+            set { this._organizationScope = value; }
+        }
+
+        // Check to see if OrganizationScope property is set
+        internal bool IsSetOrganizationScope()
+        {
+            return this._organizationScope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendedActionTypes. 
+        /// <para>
+        /// The types of recommended actions to include in the preview.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<string> RecommendedActionTypes
+        {
+            get { return this._recommendedActionTypes; }
+            set { this._recommendedActionTypes = value; }
+        }
+
+        // Check to see if RecommendedActionTypes property is set
+        internal bool IsSetRecommendedActionTypes()
+        {
+            return this._recommendedActionTypes != null && (this._recommendedActionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleType. 
+        /// <para>
+        /// The type of rule.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public RuleType RuleType
+        {
+            get { return this._ruleType; }
+            set { this._ruleType = value; }
+        }
+
+        // Check to see if RuleType property is set
+        internal bool IsSetRuleType()
+        {
+            return this._ruleType != null;
+        }
+
+    }
+}

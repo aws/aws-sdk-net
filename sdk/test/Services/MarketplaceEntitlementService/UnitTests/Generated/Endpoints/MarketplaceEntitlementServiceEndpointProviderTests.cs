@@ -218,7 +218,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonMarketplaceEntitlementServiceEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://entitlement.marketplace.eusc-de-east-1.amazonaws.eu", endpoint.URL);
+            Assert.AreEqual("https://entitlement-marketplace.eusc-de-east-1.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]

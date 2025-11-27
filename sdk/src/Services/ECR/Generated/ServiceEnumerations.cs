@@ -1295,6 +1295,106 @@ namespace Amazon.ECR
 
 
     /// <summary>
+    /// Constants used for properties of type SigningRepositoryFilterType.
+    /// </summary>
+    public class SigningRepositoryFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WILDCARD_MATCH for SigningRepositoryFilterType
+        /// </summary>
+        public static readonly SigningRepositoryFilterType WILDCARD_MATCH = new SigningRepositoryFilterType("WILDCARD_MATCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SigningRepositoryFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SigningRepositoryFilterType FindValue(string value)
+        {
+            return FindValue<SigningRepositoryFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SigningRepositoryFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SigningStatus.
+    /// </summary>
+    public class SigningStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for SigningStatus
+        /// </summary>
+        public static readonly SigningStatus COMPLETE = new SigningStatus("COMPLETE");
+        /// <summary>
+        /// Constant FAILED for SigningStatus
+        /// </summary>
+        public static readonly SigningStatus FAILED = new SigningStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for SigningStatus
+        /// </summary>
+        public static readonly SigningStatus IN_PROGRESS = new SigningStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SigningStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SigningStatus FindValue(string value)
+        {
+            return FindValue<SigningStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SigningStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TagStatus.
     /// </summary>
     public class TagStatus : ConstantClass

@@ -58,6 +58,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
+            if(requestObject.IsSetIntentDisambiguationSettings())
+            {
+                context.Writer.WritePropertyName("intentDisambiguationSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IntentDisambiguationSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.IntentDisambiguationSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

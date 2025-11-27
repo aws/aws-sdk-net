@@ -44,6 +44,12 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
+    /// The response includes SQL license exemption status information for instances registered
+    /// with the SQL LE service, providing visibility into license exemption configuration
+    /// and status.
+    /// </para>
+    ///  
+    /// <para>
     /// If you specify an instance ID that is not valid, an error is returned. If you specify
     /// an instance that you do not own, it is not included in the output.
     /// </para>

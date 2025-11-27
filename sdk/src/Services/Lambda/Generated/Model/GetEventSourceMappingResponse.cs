@@ -122,8 +122,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BisectBatchOnFunctionError. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch
-        /// in two and retry. The default value is false.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) If the function
+        /// returns an error, split the batch in two and retry. The default value is false.
         /// </para>
         /// </summary>
         public bool? BisectBatchOnFunctionError
@@ -141,9 +141,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DestinationConfig. 
         /// <para>
-        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka event sources
-        /// only) A configuration object that specifies the destination of an event after Lambda
-        /// processes it.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) A configuration
+        /// object that specifies the destination of an event after Lambda processes it.
         /// </para>
         /// </summary>
         public DestinationConfig DestinationConfig
@@ -279,8 +278,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionResponseTypes. 
         /// <para>
-        /// (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums
-        /// applied to the event source mapping.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, self-managed Apache Kafka, and Amazon SQS)
+        /// A list of current response type enums applied to the event source mapping.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -396,9 +395,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) Discard records older than the specified age.
-        /// The default value is -1, which sets the maximum age to infinite. When the value is
-        /// set to infinite, Lambda never discards old records.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records
+        /// older than the specified age. The default value is -1, which sets the maximum age
+        /// to infinite. When the value is set to infinite, Lambda never discards old records.
         /// </para>
         ///  <note> 
         /// <para>
@@ -423,10 +422,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Kinesis and DynamoDB Streams only) Discard records after the specified number of
-        /// retries. The default value is -1, which sets the maximum number of retries to infinite.
-        /// When MaximumRetryAttempts is infinite, Lambda retries failed records until the record
-        /// expires in the event source.
+        /// (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka) Discard records
+        /// after the specified number of retries. The default value is -1, which sets the maximum
+        /// number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries
+        /// failed records until the record expires in the event source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]

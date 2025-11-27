@@ -51,5 +51,13 @@ namespace Amazon.Invoicing.Model
         {
             return new ListInvoiceUnitsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListProcurementPortalPreferences operation
+        ///</summary>
+        public IListProcurementPortalPreferencesPaginator ListProcurementPortalPreferences(ListProcurementPortalPreferencesRequest request) 
+        {
+            return new ListProcurementPortalPreferencesPaginator(this.client, request);
+        }
     }
 }

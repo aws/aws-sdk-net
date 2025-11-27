@@ -38,8 +38,34 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class AutoDeployment
     {
+        private List<string> _dependsOn = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enabled;
         private bool? _retainStacksOnAccountRemoval;
+
+        /// <summary>
+        /// Gets and sets the property DependsOn. 
+        /// <para>
+        /// A list of StackSet ARNs that this StackSet depends on for auto-deployment operations.
+        /// When auto-deployment is triggered, operations will be sequenced to ensure all dependencies
+        /// complete successfully before this StackSet's operation begins.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> DependsOn
+        {
+            get { return this._dependsOn; }
+            set { this._dependsOn = value; }
+        }
+
+        // Check to see if DependsOn property is set
+        internal bool IsSetDependsOn()
+        {
+            return this._dependsOn != null && (this._dependsOn.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Enabled. 

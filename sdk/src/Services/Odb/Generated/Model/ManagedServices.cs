@@ -34,13 +34,58 @@ namespace Amazon.Odb.Model
     /// </summary>
     public partial class ManagedServices
     {
+        private List<CrossRegionS3RestoreSourcesAccess> _crossRegionS3RestoreSourcesAccess = AWSConfigs.InitializeCollections ? new List<CrossRegionS3RestoreSourcesAccess>() : null;
+        private KmsAccess _kmsAccess;
         private ManagedS3BackupAccess _manageds3BackupAccess;
         private List<string> _managedServicesIpv4Cidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceGatewayArn;
         private S3Access _s3Access;
         private string _serviceNetworkArn;
         private ServiceNetworkEndpoint _serviceNetworkEndpoint;
+        private StsAccess _stsAccess;
         private ZeroEtlAccess _zeroEtlAccess;
+
+        /// <summary>
+        /// Gets and sets the property CrossRegionS3RestoreSourcesAccess. 
+        /// <para>
+        /// The access configuration for the cross-Region Amazon S3 database restore source.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<CrossRegionS3RestoreSourcesAccess> CrossRegionS3RestoreSourcesAccess
+        {
+            get { return this._crossRegionS3RestoreSourcesAccess; }
+            set { this._crossRegionS3RestoreSourcesAccess = value; }
+        }
+
+        // Check to see if CrossRegionS3RestoreSourcesAccess property is set
+        internal bool IsSetCrossRegionS3RestoreSourcesAccess()
+        {
+            return this._crossRegionS3RestoreSourcesAccess != null && (this._crossRegionS3RestoreSourcesAccess.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsAccess. 
+        /// <para>
+        /// The Amazon Web Services Key Management Service (KMS) access configuration for managed
+        /// services.
+        /// </para>
+        /// </summary>
+        public KmsAccess KmsAccess
+        {
+            get { return this._kmsAccess; }
+            set { this._kmsAccess = value; }
+        }
+
+        // Check to see if KmsAccess property is set
+        internal bool IsSetKmsAccess()
+        {
+            return this._kmsAccess != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ManagedS3BackupAccess. 
@@ -156,6 +201,25 @@ namespace Amazon.Odb.Model
         internal bool IsSetServiceNetworkEndpoint()
         {
             return this._serviceNetworkEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StsAccess. 
+        /// <para>
+        /// The Amazon Web Services Security Token Service (STS) access configuration for managed
+        /// services.
+        /// </para>
+        /// </summary>
+        public StsAccess StsAccess
+        {
+            get { return this._stsAccess; }
+            set { this._stsAccess = value; }
+        }
+
+        // Check to see if StsAccess property is set
+        internal bool IsSetStsAccess()
+        {
+            return this._stsAccess != null;
         }
 
         /// <summary>

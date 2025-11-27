@@ -2007,6 +2007,56 @@ namespace Amazon.Transfer
 
 
     /// <summary>
+    /// Constants used for properties of type WebAppEndpointType.
+    /// </summary>
+    public class WebAppEndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLIC for WebAppEndpointType
+        /// </summary>
+        public static readonly WebAppEndpointType PUBLIC = new WebAppEndpointType("PUBLIC");
+        /// <summary>
+        /// Constant VPC for WebAppEndpointType
+        /// </summary>
+        public static readonly WebAppEndpointType VPC = new WebAppEndpointType("VPC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WebAppEndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebAppEndpointType FindValue(string value)
+        {
+            return FindValue<WebAppEndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebAppEndpointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WorkflowStepType.
     /// </summary>
     public class WorkflowStepType : ConstantClass

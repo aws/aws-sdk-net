@@ -59,6 +59,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetApplicationType())
+                {
+                    request.Parameters.Add("ApplicationType", StringUtils.FromString(publicRequest.ApplicationType));
+                }
                 if(publicRequest.IsSetAuthorizedTokenIssuerList())
                 {
                     if (publicRequest.AuthorizedTokenIssuerList.Count == 0)
@@ -133,6 +137,26 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                                             if(publicRequestlistValuelistValue.LakeFormationQuery.IsSetAuthorization())
                                             {
                                                 request.Parameters.Add("ServiceIntegrations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LakeFormation" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "LakeFormationQuery" + "." + "Authorization", StringUtils.FromString(publicRequestlistValuelistValue.LakeFormationQuery.Authorization));
+                                            }
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetRedshift())
+                            {
+                                if (publicRequestlistValue.Redshift.Count == 0)
+                                    request.Parameters.Add("ServiceIntegrations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Redshift", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Redshift)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetConnect())
+                                        {
+                                            if(publicRequestlistValuelistValue.Connect.IsSetAuthorization())
+                                            {
+                                                request.Parameters.Add("ServiceIntegrations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Redshift" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Connect" + "." + "Authorization", StringUtils.FromString(publicRequestlistValuelistValue.Connect.Authorization));
                                             }
                                         }
                                          publicRequestlistValuelistValueIndex++;

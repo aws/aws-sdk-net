@@ -81,7 +81,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateArchiveRequest.KmsKeyArn</property>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-z0-9-]{1,20}:[0-9]{12}:(key|alias)/.+</pattern>
+    <pattern>arn:aws(|-cn|-us-gov|-eusc):kms:[a-z0-9-]{1,20}:[0-9]{12}:(key|alias)/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.CreateArchiveResponse.ArchiveId</property>
@@ -311,7 +311,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetArchiveResponse.KmsKeyArn</property>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-z0-9-]{1,20}:[0-9]{12}:(key|alias)/.+</pattern>
+    <pattern>arn:aws(|-cn|-us-gov|-eusc):kms:[a-z0-9-]{1,20}:[0-9]{12}:(key|alias)/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.GetArchiveExportRequest.ExportId</property>
@@ -640,7 +640,7 @@
     <property>Amazon.MailManager.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>arn:aws(|-cn|-us-gov):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+</pattern>
+    <pattern>arn:aws(|-cn|-us-gov|-eusc):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.ListTrafficPoliciesRequest.NextToken</property>
@@ -721,13 +721,13 @@
     <property>Amazon.MailManager.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>arn:aws(|-cn|-us-gov):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+</pattern>
+    <pattern>arn:aws(|-cn|-us-gov|-eusc):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>arn:aws(|-cn|-us-gov):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+</pattern>
+    <pattern>arn:aws(|-cn|-us-gov|-eusc):ses:[a-z0-9-]{1,20}:[0-9]{12}:(mailmanager-|addon-).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.UpdateArchiveRequest.ArchiveId</property>
@@ -959,11 +959,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.IngressPointAuthConfiguration.SecretArn</property>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov|aws-eusc):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.IngressPointConfiguration.SecretArn</property>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov|aws-eusc):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.IngressPointConfiguration.SmtpPassword</property>
@@ -1010,7 +1010,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.RelayAuthentication.SecretArn</property>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov|aws-eusc):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Row.IngressPointId</property>
@@ -1092,7 +1092,7 @@
     <property>Amazon.MailManager.Model.SnsAction.TopicArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):sns:[a-z]{2}-[a-z]+-\d{1}:\d{12}:[\w\-]{1,256}</pattern>
+    <pattern>arn:(aws|aws-cn|aws-us-gov|aws-eusc):sns:[a-z0-9-]+:\d{12}:[\w\-]{1,256}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Tag.Key</property>

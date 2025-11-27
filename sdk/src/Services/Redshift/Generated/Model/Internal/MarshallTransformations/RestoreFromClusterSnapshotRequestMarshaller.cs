@@ -83,6 +83,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AvailabilityZoneRelocation", StringUtils.FromBool(publicRequest.AvailabilityZoneRelocation));
                 }
+                if(publicRequest.IsSetCatalogName())
+                {
+                    request.Parameters.Add("CatalogName", StringUtils.FromString(publicRequest.CatalogName));
+                }
                 if(publicRequest.IsSetClusterIdentifier())
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
@@ -198,6 +202,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     request.Parameters.Add("PubliclyAccessible", StringUtils.FromBool(publicRequest.PubliclyAccessible));
+                }
+                if(publicRequest.IsSetRedshiftIdcApplicationArn())
+                {
+                    request.Parameters.Add("RedshiftIdcApplicationArn", StringUtils.FromString(publicRequest.RedshiftIdcApplicationArn));
                 }
                 if(publicRequest.IsSetReservedNodeId())
                 {

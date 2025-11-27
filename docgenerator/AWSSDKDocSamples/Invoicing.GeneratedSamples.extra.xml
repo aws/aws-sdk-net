@@ -40,6 +40,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.CreateProcurementPortalPreference(Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.CreateProcurementPortalPreference(Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest)" />
+            <member name="T:Amazon.Invoicing.Model.CreateProcurementPortalPreferenceRequest" />
+            <member name="T:Amazon.Invoicing.Model.CreateProcurementPortalPreferenceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateProcurementPortalPreference for Coupa"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Invoicing.IAmazonInvoicing.DeleteInvoiceUnit(Amazon.Invoicing.Model.DeleteInvoiceUnitRequest)" />
             <member name="M:Amazon.Invoicing.AmazonInvoicingClient.DeleteInvoiceUnit(Amazon.Invoicing.Model.DeleteInvoiceUnitRequest)" />
             <member name="T:Amazon.Invoicing.Model.DeleteInvoiceUnitRequest" />
@@ -52,6 +71,25 @@
                 </para>
                 <code
                     title="DeleteInvoiceUnit"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.DeleteProcurementPortalPreference(Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.DeleteProcurementPortalPreference(Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceRequest)" />
+            <member name="T:Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceRequest" />
+            <member name="T:Amazon.Invoicing.Model.DeleteProcurementPortalPreferenceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="DeleteProcurementPortalPreference call"
                     source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -130,6 +168,25 @@
                     title="GetInvoiceUnit as of specified time"
                     source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.GetProcurementPortalPreference(Amazon.Invoicing.Model.GetProcurementPortalPreferenceRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.GetProcurementPortalPreference(Amazon.Invoicing.Model.GetProcurementPortalPreferenceRequest)" />
+            <member name="T:Amazon.Invoicing.Model.GetProcurementPortalPreferenceRequest" />
+            <member name="T:Amazon.Invoicing.Model.GetProcurementPortalPreferenceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetProcurementPortalPreference for Coupa pref"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -306,6 +363,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListProcurementPortalPreferences for Coupa prefs. First Call with following pages"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortalPreferences(Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalPreferencesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListProcurementPortalPreferences for Coupa prefs. Second Call with the last page"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListTagsForResource(Amazon.Invoicing.Model.ListTagsForResourceRequest)" />
             <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListTagsForResource(Amazon.Invoicing.Model.ListTagsForResourceRequest)" />
             <member name="T:Amazon.Invoicing.Model.ListTagsForResourceRequest" />
@@ -318,6 +413,25 @@
                 </para>
                 <code
                     title="ListTagsForResource"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.PutProcurementPortalPreference(Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.PutProcurementPortalPreference(Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest)" />
+            <member name="T:Amazon.Invoicing.Model.PutProcurementPortalPreferenceRequest" />
+            <member name="T:Amazon.Invoicing.Model.PutProcurementPortalPreferenceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="PutProcurementPortalPreference for Coupa pref"
                     source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -396,6 +510,25 @@
                     title="UpdateInvoiceUnit with specific fields"
                     source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.UpdateProcurementPortalPreferenceStatus(Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.UpdateProcurementPortalPreferenceStatus(Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest)" />
+            <member name="T:Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusRequest" />
+            <member name="T:Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="UpdateProcurementPortalPreference for EinvoiceDeliveryPreferenceStatus and PurchaseOrderRetrievalPreferenceStatus"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
             </example>
         </value>
     </doc>

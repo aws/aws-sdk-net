@@ -81,6 +81,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
             }
 
+            if(publicRequest.IsSetCopyWorkGroupTags())
+            {
+                context.Writer.WritePropertyName("CopyWorkGroupTags");
+                context.Writer.WriteBooleanValue(publicRequest.CopyWorkGroupTags.Value);
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
@@ -98,6 +104,23 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetExecutionRole())
+            {
+                context.Writer.WritePropertyName("ExecutionRole");
+                context.Writer.WriteStringValue(publicRequest.ExecutionRole);
+            }
+
+            if(publicRequest.IsSetMonitoringConfiguration())
+            {
+                context.Writer.WritePropertyName("MonitoringConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MonitoringConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetNotebookVersion())
             {
                 context.Writer.WritePropertyName("NotebookVersion");
@@ -108,6 +131,22 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SessionIdleTimeoutInMinutes");
                 context.Writer.WriteNumberValue(publicRequest.SessionIdleTimeoutInMinutes.Value);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetWorkGroup())
