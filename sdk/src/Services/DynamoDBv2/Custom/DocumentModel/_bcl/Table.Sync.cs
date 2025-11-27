@@ -87,7 +87,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Gets a document from DynamoDB using a request object.
         /// </summary>
         /// <param name="request">The GetDocumentOperationRequest object containing all parameters for the GetItem operation.</param>
-        /// <returns>>Document from DynamoDB.</returns>
+        /// <returns>Document from DynamoDB.</returns>
         Document GetItem(GetItemDocumentOperationRequest request);
 
 

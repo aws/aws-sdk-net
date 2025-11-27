@@ -35,6 +35,7 @@ namespace Amazon.QConnect.Model
     public partial class MessageTemplateSummary
     {
         private long? _activeVersionNumber;
+        private string _channel;
         private ChannelSubtype _channelSubtype;
         private DateTime? _createdTime;
         private string _description;
@@ -45,6 +46,7 @@ namespace Amazon.QConnect.Model
         private string _messageTemplateArn;
         private string _messageTemplateId;
         private string _name;
+        private MessageTemplateSourceConfiguration _sourceConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -64,6 +66,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetActiveVersionNumber()
         {
             return this._activeVersionNumber.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Channel. 
+        /// <para>
+        /// The channel this message template applies to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=10)]
+        public string Channel
+        {
+            get { return this._channel; }
+            set { this._channel = value; }
+        }
+
+        // Check to see if Channel property is set
+        internal bool IsSetChannel()
+        {
+            return this._channel != null;
         }
 
         /// <summary>
@@ -254,6 +275,21 @@ namespace Amazon.QConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceConfiguration.
+        /// </summary>
+        public MessageTemplateSourceConfiguration SourceConfiguration
+        {
+            get { return this._sourceConfiguration; }
+            set { this._sourceConfiguration = value; }
+        }
+
+        // Check to see if SourceConfiguration property is set
+        internal bool IsSetSourceConfiguration()
+        {
+            return this._sourceConfiguration != null;
         }
 
         /// <summary>

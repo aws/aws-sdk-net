@@ -1231,6 +1231,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateOptimizationJobRequest.MaxInstanceCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateOptimizationJobRequest.OptimizationJobName</property>
     <min>1</min>
     <max>63</max>
@@ -3965,6 +3969,10 @@
     <property>Amazon.SageMaker.Model.DescribeOptimizationJobResponse.FailureReason</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeOptimizationJobResponse.MaxInstanceCount</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeOptimizationJobResponse.OptimizationJobArn</property>
@@ -9266,6 +9274,11 @@
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.MinCount</property>
+    <min>0</min>
+    <max>6758</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.TargetCount</property>
     <min>0</min>
     <max>6758</max>
@@ -9315,6 +9328,11 @@
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterInstanceGroupSpecification.MinInstanceCount</property>
+    <min>0</min>
+    <max>6758</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupSpecification.ThreadsPerCore</property>
     <min>1</min>
     <max>2</max>
@@ -9332,6 +9350,18 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstancePlacement.AvailabilityZoneId</property>
     <pattern>[a-z]{3}\d-az\d</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterKubernetesTaint.Key</property>
+    <min>1</min>
+    <max>317</max>
+    <pattern>([a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*/)?[A-Za-z0-9]([-A-Za-z0-9_.]*[A-Za-z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterKubernetesTaint.Value</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterLifeCycleConfig.OnCreate</property>
@@ -11406,6 +11436,11 @@
     <max>10000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.InstanceGroupScalingMetadata.MinCount</property>
+    <min>0</min>
+    <max>10000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.InstanceGroupScalingMetadata.TargetCount</property>
     <min>0</min>
   </property-value-rule>
@@ -12189,6 +12224,12 @@
     <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelSpeculativeDecodingTrainingDataSource.S3Uri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelStepMetadata.Arn</property>
     <min>0</min>
     <max>256</max>
@@ -12650,6 +12691,10 @@
     <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.OptimizationJobSummary.MaxInstanceCount</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.OptimizationJobSummary.OptimizationJobArn</property>
     <min>0</min>
     <max>256</max>
@@ -12666,6 +12711,12 @@
     <min>0</min>
     <max>255</max>
     <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.OptimizationSageMakerModel.ModelName</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9]([\-a-zA-Z0-9]*[a-zA-Z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputConfig.CompilerOptions</property>

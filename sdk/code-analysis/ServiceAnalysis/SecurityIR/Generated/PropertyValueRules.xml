@@ -217,6 +217,22 @@
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityIR.Model.ListInvestigationsRequest.CaseId</property>
+    <min>10</min>
+    <max>32</max>
+    <pattern>\d{10,32}.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityIR.Model.ListInvestigationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityIR.Model.ListInvestigationsRequest.NextToken</property>
+    <min>0</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListMembershipsRequest.MaxResults</property>
     <min>1</min>
     <max>25</max>
@@ -231,6 +247,21 @@
     <min>12</min>
     <max>1010</max>
     <pattern>arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:(membership/m-[a-z0-9]{10,32}|case/[0-9]{10})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityIR.Model.SendFeedbackRequest.CaseId</property>
+    <min>10</min>
+    <max>32</max>
+    <pattern>\d{10,32}.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityIR.Model.SendFeedbackRequest.Comment</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityIR.Model.SendFeedbackRequest.ResultId</property>
+    <pattern>inv-[a-z0-9]{10,32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.TagResourceRequest.ResourceArn</property>
@@ -342,6 +373,16 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityIR.Model.CaseMetadataEntry.Key</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityIR.Model.CaseMetadataEntry.Value</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetMembershipAccountDetailError.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -368,6 +409,25 @@
     <property>Amazon.SecurityIR.Model.IncidentResponder.Name</property>
     <min>3</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityIR.Model.InvestigationAction.Content</property>
+    <min>1</min>
+    <max>5000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityIR.Model.InvestigationAction.InvestigationId</property>
+    <pattern>inv-[a-z0-9]{10,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityIR.Model.InvestigationAction.Title</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityIR.Model.InvestigationFeedback.Comment</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCasesItem.CaseArn</property>

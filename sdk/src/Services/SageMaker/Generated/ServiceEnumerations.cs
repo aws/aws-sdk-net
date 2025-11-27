@@ -141,6 +141,52 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ActiveClusterOperationName.
+    /// </summary>
+    public class ActiveClusterOperationName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Scaling for ActiveClusterOperationName
+        /// </summary>
+        public static readonly ActiveClusterOperationName Scaling = new ActiveClusterOperationName("Scaling");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActiveClusterOperationName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActiveClusterOperationName FindValue(string value)
+        {
+            return FindValue<ActiveClusterOperationName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActiveClusterOperationName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AdditionalS3DataSourceDataType.
     /// </summary>
     public class AdditionalS3DataSourceDataType : ConstantClass
@@ -4181,6 +4227,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterCapacityType.
+    /// </summary>
+    public class ClusterCapacityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OnDemand for ClusterCapacityType
+        /// </summary>
+        public static readonly ClusterCapacityType OnDemand = new ClusterCapacityType("OnDemand");
+        /// <summary>
+        /// Constant Spot for ClusterCapacityType
+        /// </summary>
+        public static readonly ClusterCapacityType Spot = new ClusterCapacityType("Spot");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterCapacityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterCapacityType FindValue(string value)
+        {
+            return FindValue<ClusterCapacityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterCapacityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterConfigMode.
     /// </summary>
     public class ClusterConfigMode : ConstantClass
@@ -4846,6 +4942,60 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClusterInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterKubernetesTaintEffect.
+    /// </summary>
+    public class ClusterKubernetesTaintEffect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NoExecute for ClusterKubernetesTaintEffect
+        /// </summary>
+        public static readonly ClusterKubernetesTaintEffect NoExecute = new ClusterKubernetesTaintEffect("NoExecute");
+        /// <summary>
+        /// Constant NoSchedule for ClusterKubernetesTaintEffect
+        /// </summary>
+        public static readonly ClusterKubernetesTaintEffect NoSchedule = new ClusterKubernetesTaintEffect("NoSchedule");
+        /// <summary>
+        /// Constant PreferNoSchedule for ClusterKubernetesTaintEffect
+        /// </summary>
+        public static readonly ClusterKubernetesTaintEffect PreferNoSchedule = new ClusterKubernetesTaintEffect("PreferNoSchedule");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterKubernetesTaintEffect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterKubernetesTaintEffect FindValue(string value)
+        {
+            return FindValue<ClusterKubernetesTaintEffect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterKubernetesTaintEffect(string value)
         {
             return FindValue(value);
         }
@@ -12127,6 +12277,102 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ModelSpeculativeDecodingS3DataType.
+    /// </summary>
+    public class ModelSpeculativeDecodingS3DataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ManifestFile for ModelSpeculativeDecodingS3DataType
+        /// </summary>
+        public static readonly ModelSpeculativeDecodingS3DataType ManifestFile = new ModelSpeculativeDecodingS3DataType("ManifestFile");
+        /// <summary>
+        /// Constant S3Prefix for ModelSpeculativeDecodingS3DataType
+        /// </summary>
+        public static readonly ModelSpeculativeDecodingS3DataType S3Prefix = new ModelSpeculativeDecodingS3DataType("S3Prefix");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelSpeculativeDecodingS3DataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelSpeculativeDecodingS3DataType FindValue(string value)
+        {
+            return FindValue<ModelSpeculativeDecodingS3DataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelSpeculativeDecodingS3DataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModelSpeculativeDecodingTechnique.
+    /// </summary>
+    public class ModelSpeculativeDecodingTechnique : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EAGLE for ModelSpeculativeDecodingTechnique
+        /// </summary>
+        public static readonly ModelSpeculativeDecodingTechnique EAGLE = new ModelSpeculativeDecodingTechnique("EAGLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelSpeculativeDecodingTechnique(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelSpeculativeDecodingTechnique FindValue(string value)
+        {
+            return FindValue<ModelSpeculativeDecodingTechnique>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelSpeculativeDecodingTechnique(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModelVariantAction.
     /// </summary>
     public class ModelVariantAction : ConstantClass
@@ -13376,6 +13622,14 @@ namespace Amazon.SageMaker
         /// Constant MlP548xlarge for OptimizationJobDeploymentInstanceType
         /// </summary>
         public static readonly OptimizationJobDeploymentInstanceType MlP548xlarge = new OptimizationJobDeploymentInstanceType("ml.p5.48xlarge");
+        /// <summary>
+        /// Constant MlP5e48xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlP5e48xlarge = new OptimizationJobDeploymentInstanceType("ml.p5e.48xlarge");
+        /// <summary>
+        /// Constant MlP5en48xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlP5en48xlarge = new OptimizationJobDeploymentInstanceType("ml.p5en.48xlarge");
         /// <summary>
         /// Constant MlTrn12xlarge for OptimizationJobDeploymentInstanceType
         /// </summary>

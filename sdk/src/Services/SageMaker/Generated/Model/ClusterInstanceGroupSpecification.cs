@@ -34,18 +34,39 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterInstanceGroupSpecification
     {
+        private ClusterCapacityRequirements _capacityRequirements;
         private string _executionRole;
         private string _imageId;
         private int? _instanceCount;
         private string _instanceGroupName;
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
+        private ClusterKubernetesConfig _kubernetesConfig;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private int? _minInstanceCount;
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private ScheduledUpdateConfig _scheduledUpdateConfig;
         private int? _threadsPerCore;
         private string _trainingPlanArn;
+
+        /// <summary>
+        /// Gets and sets the property CapacityRequirements. 
+        /// <para>
+        /// Specifies the capacity requirements for the instance group.
+        /// </para>
+        /// </summary>
+        public ClusterCapacityRequirements CapacityRequirements
+        {
+            get { return this._capacityRequirements; }
+            set { this._capacityRequirements = value; }
+        }
+
+        // Check to see if CapacityRequirements property is set
+        internal bool IsSetCapacityRequirements()
+        {
+            return this._capacityRequirements != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
@@ -208,6 +229,26 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KubernetesConfig. 
+        /// <para>
+        /// Specifies the Kubernetes configuration for the instance group. You describe what you
+        /// want the labels and taints to look like, and the cluster works to reconcile the actual
+        /// state with the declared state for nodes in this instance group. 
+        /// </para>
+        /// </summary>
+        public ClusterKubernetesConfig KubernetesConfig
+        {
+            get { return this._kubernetesConfig; }
+            set { this._kubernetesConfig = value; }
+        }
+
+        // Check to see if KubernetesConfig property is set
+        internal bool IsSetKubernetesConfig()
+        {
+            return this._kubernetesConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LifeCycleConfig. 
         /// <para>
         /// Specifies the LifeCycle configuration for the instance group.
@@ -224,6 +265,29 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLifeCycleConfig()
         {
             return this._lifeCycleConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinInstanceCount. 
+        /// <para>
+        /// Defines the minimum number of instances required for an instance group to become <c>InService</c>.
+        /// If this threshold isn't met within 3 hours, the instance group rolls back to its previous
+        /// state - zero instances for new instance groups, or previous settings for existing
+        /// instance groups. <c>MinInstanceCount</c> only affects the initial transition to <c>InService</c>
+        /// and does not guarantee maintaining this minimum afterward. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=6758)]
+        public int? MinInstanceCount
+        {
+            get { return this._minInstanceCount; }
+            set { this._minInstanceCount = value; }
+        }
+
+        // Check to see if MinInstanceCount property is set
+        internal bool IsSetMinInstanceCount()
+        {
+            return this._minInstanceCount.HasValue; 
         }
 
         /// <summary>

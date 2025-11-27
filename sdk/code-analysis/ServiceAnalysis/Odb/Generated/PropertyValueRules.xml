@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Odb.Model.AssociateIamRoleToResourceRequest.IamRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.AssociateIamRoleToResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\d{12}:cloud-vm-cluster/[a-z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.CreateCloudAutonomousVmClusterRequest.AutonomousDataStorageSizeInTBs</property>
     <min>0</min>
   </property-value-rule>
@@ -205,7 +217,17 @@
     <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.CreateOdbNetworkRequest.KmsPolicyDocument</property>
+    <min>3</min>
+    <max>20480</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.CreateOdbNetworkRequest.S3PolicyDocument</property>
+    <min>3</min>
+    <max>20480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.CreateOdbNetworkRequest.StsPolicyDocument</property>
     <min>3</min>
     <max>20480</max>
   </property-value-rule>
@@ -262,6 +284,18 @@
     <min>6</min>
     <max>2048</max>
     <pattern>(arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):[a-z0-9-]+:[a-z0-9-]*:[0-9]+:[a-z0-9-]+/[a-zA-Z0-9_~.-]{6,64}|[a-zA-Z0-9_~.-]{6,64})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.DisassociateIamRoleFromResourceRequest.IamRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.DisassociateIamRoleFromResourceRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-[a-z]?|aws-iso):odb:[a-z0-9-]+:\d{12}:cloud-vm-cluster/[a-z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.GetCloudAutonomousVmClusterRequest.CloudAutonomousVmClusterId</property>
@@ -561,6 +595,11 @@
     <pattern>[a-zA-Z_](?!.*--)[a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateOdbNetworkRequest.KmsPolicyDocument</property>
+    <min>3</min>
+    <max>20480</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.UpdateOdbNetworkRequest.OdbNetworkId</property>
     <min>6</min>
     <max>2048</max>
@@ -568,6 +607,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.UpdateOdbNetworkRequest.S3PolicyDocument</property>
+    <min>3</min>
+    <max>20480</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.UpdateOdbNetworkRequest.StsPolicyDocument</property>
     <min>3</min>
     <max>20480</max>
   </property-value-rule>
@@ -743,6 +787,12 @@
     <min>6</min>
     <max>64</max>
     <pattern>[a-zA-Z0-9_~.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.IamRole.IamRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Odb.Model.MaintenanceWindow.CustomActionTimeoutInMins</property>

@@ -65,6 +65,20 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetAutoDeployment())
                 {
+                    if(publicRequest.AutoDeployment.IsSetDependsOn())
+                    {
+                        if (publicRequest.AutoDeployment.DependsOn.Count == 0)
+                            request.Parameters.Add("AutoDeployment" + "." + "DependsOn", "");
+                        else
+                        {
+                             int publicRequestAutoDeploymentlistValueIndex = 1;
+                             foreach(var publicRequestAutoDeploymentlistValue in publicRequest.AutoDeployment.DependsOn)
+                             {
+                                 request.Parameters.Add("AutoDeployment" + "." + "DependsOn" + "." + "member" + "." + publicRequestAutoDeploymentlistValueIndex, StringUtils.FromString(publicRequestAutoDeploymentlistValue));
+                                 publicRequestAutoDeploymentlistValueIndex++;
+                             }
+                        }
+                    }
                     if(publicRequest.AutoDeployment.IsSetEnabled())
                     {
                         request.Parameters.Add("AutoDeployment" + "." + "Enabled", StringUtils.FromBool(publicRequest.AutoDeployment.Enabled));

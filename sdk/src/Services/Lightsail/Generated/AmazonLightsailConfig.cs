@@ -33,7 +33,7 @@ namespace Amazon.Lightsail
     public partial class AmazonLightsailConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lightsail", "4.0.4.7");
+            InternalSDKUtils.BuildUserAgentString("Lightsail", "4.0.4.8");
 
         private static readonly AmazonLightsailEndpointResolver EndpointResolver =
             new AmazonLightsailEndpointResolver();

@@ -68,6 +68,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("intentDisambiguationSettings", targetDepth))
+                {
+                    var unmarshaller = IntentDisambiguationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.IntentDisambiguationSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -1795,6 +1795,64 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type ProvisionedControlPlaneTier.
+    /// </summary>
+    public class ProvisionedControlPlaneTier : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Standard for ProvisionedControlPlaneTier
+        /// </summary>
+        public static readonly ProvisionedControlPlaneTier Standard = new ProvisionedControlPlaneTier("standard");
+        /// <summary>
+        /// Constant Tier2xl for ProvisionedControlPlaneTier
+        /// </summary>
+        public static readonly ProvisionedControlPlaneTier Tier2xl = new ProvisionedControlPlaneTier("tier-2xl");
+        /// <summary>
+        /// Constant Tier4xl for ProvisionedControlPlaneTier
+        /// </summary>
+        public static readonly ProvisionedControlPlaneTier Tier4xl = new ProvisionedControlPlaneTier("tier-4xl");
+        /// <summary>
+        /// Constant TierXl for ProvisionedControlPlaneTier
+        /// </summary>
+        public static readonly ProvisionedControlPlaneTier TierXl = new ProvisionedControlPlaneTier("tier-xl");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProvisionedControlPlaneTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProvisionedControlPlaneTier FindValue(string value)
+        {
+            return FindValue<ProvisionedControlPlaneTier>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProvisionedControlPlaneTier(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RepairAction.
     /// </summary>
     public class RepairAction : ConstantClass
@@ -2109,6 +2167,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType PodIdentityAssociations = new UpdateParamType("PodIdentityAssociations");
         /// <summary>
+        /// Constant PreviousTier for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType PreviousTier = new UpdateParamType("PreviousTier");
+        /// <summary>
         /// Constant PublicAccessCidrs for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType PublicAccessCidrs = new UpdateParamType("PublicAccessCidrs");
@@ -2148,6 +2210,10 @@ namespace Amazon.EKS
         /// Constant TaintsToRemove for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType TaintsToRemove = new UpdateParamType("TaintsToRemove");
+        /// <summary>
+        /// Constant UpdatedTier for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType UpdatedTier = new UpdateParamType("UpdatedTier");
         /// <summary>
         /// Constant UpdateStrategy for UpdateParamType
         /// </summary>
@@ -2288,6 +2354,10 @@ namespace Amazon.EKS
         /// Constant ConfigUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType ConfigUpdate = new UpdateType("ConfigUpdate");
+        /// <summary>
+        /// Constant ControlPlaneScalingConfigUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType ControlPlaneScalingConfigUpdate = new UpdateType("ControlPlaneScalingConfigUpdate");
         /// <summary>
         /// Constant DeletionProtectionUpdate for UpdateType
         /// </summary>

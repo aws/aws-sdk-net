@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         private string _credentials;
         private string _httpMethod;
         private string _integrationHttpMethod;
+        private string _integrationTarget;
         private string _passthroughBehavior;
         private Dictionary<string, string> _requestParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Dictionary<string, string> _requestTemplates = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -216,6 +217,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetIntegrationHttpMethod()
         {
             return this._integrationHttpMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationTarget. 
+        /// <para>
+        ///  The ALB or NLB listener to send the request to. 
+        /// </para>
+        /// </summary>
+        public string IntegrationTarget
+        {
+            get { return this._integrationTarget; }
+            set { this._integrationTarget = value; }
+        }
+
+        // Check to see if IntegrationTarget property is set
+        internal bool IsSetIntegrationTarget()
+        {
+            return this._integrationTarget != null;
         }
 
         /// <summary>

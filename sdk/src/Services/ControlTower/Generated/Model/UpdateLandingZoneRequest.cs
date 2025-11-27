@@ -70,7 +70,6 @@ namespace Amazon.ControlTower.Model
         /// The schema for the landing zone's JSON manifest file is not published, by design.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Amazon.Runtime.Documents.Document Manifest
         {
             get { return this._manifest; }

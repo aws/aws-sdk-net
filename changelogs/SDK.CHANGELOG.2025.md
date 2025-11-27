@@ -1,3 +1,80 @@
+### 4.0.139.0 (2025-11-21 21:17 UTC)
+* APIGateway (4.0.5.0)
+	* API Gateway supports VPC link V2 for REST APIs.
+* Athena (4.0.3.0)
+	* Introduces Spark workgroup features including log persistence, S3/CloudWatch delivery, UI and History Server APIs, and SparkConnect 3.5.6 support. Adds DPU usage limits at workgroup and query levels as well as DPU usage tracking for Capacity Reservation queries to optimize performance and costs.
+* AWSMarketplaceMetering (4.0.3.0)
+	* Endpoint update for new region
+* Bedrock (4.0.15.0)
+	* Add support to automatically enforce safeguards across accounts within an AWS Organization.
+* BedrockAgentCoreControl (4.0.11.0)
+	* Support for agentcore gateway interceptor configurations and NONE authorizer type
+* BedrockDataAutomationRuntime (4.0.4.0)
+	* Adding new fields to GetDataAutomationStatus: jobSubmissionTime, jobCompletionTime, and jobDurationInSeconds
+* BedrockRuntime (4.0.12.0)
+	* Add support to automatically enforce safeguards across accounts within an AWS Organization.
+* CloudFormation (4.0.8.0)
+	* Adds the DependsOn field to the AutoDeployment configuration parameter for CreateStackSet, UpdateStackSet, and DescribeStackSet APIs, allowing users to set and read auto-deployment dependencies between StackSets
+* ComputeOptimizerAutomation (4.0.0.0)
+	* Initial release of AWS Compute Optimizer Automation. Create automation rules to implement recommended actions on a recurring schedule based on your specified criteria. Supported actions include: snapshot and delete unattached EBS volumes and upgrade volume types to the latest generation.
+* Connect (4.0.19.0)
+	* New APIs to support aliases and versions for ContactFlowModule. Updated ContactFlowModule APIs to support custom blocks.
+* ControlTower (4.0.4.0)
+	* The manifest field is now optional for the AWS Control Tower CreateLandingZone and UpdateLandingZone APIs for Landing Zone version 4.0
+* EC2 (4.0.60.0)
+	* This release adds a new capability to create and manage interruptible EC2 Capacity Reservations.
+* ECR (4.0.8.0)
+	* Add support for ECR managed signing
+* EKS (4.0.8.0)
+	* Adds support for controlPlaneScalingConfig on EKS Clusters.
+* ElasticLoadBalancingV2 (4.0.6.1)
+	* This release adds the health check log feature in ALB, allowing customers to send detailed target health check log data directly to their designated Amazon S3 bucket.
+* Invoicing (4.0.6.0)
+	* Added the CreateProcurementPortalPreference, GetProcurementPortalPreference, PutProcurementPortalPreference, UpdateProcurementPortalPreferenceStatus, ListProcurementPortalPreferences and DeleteProcurementPortalPreference APIs for procurement portal preference management.
+* KeyManagementService (4.0.8.0)
+	* Support for on-demand rotation of AWS KMS Multi-Region keys with imported key material
+* KinesisVideo (4.0.3.0)
+	* This release adds support for Tiered Storage
+* Lambda (4.0.8.0)
+	* Launching Enhanced Error Handling and ESM Grouping capabilities for Kafka ESMs
+* LexModelsV2 (4.0.4.0)
+	* Adds support for Intent Disambiguation, allowing resolution of ambiguous user inputs when multiple intents match by presenting clarifying questions to users. Also adds Speech Detection Sensitivity configuration for optimizing voice activity detection sensitivity levels in various noise environments.
+* MailManager (4.0.4.0)
+	* Add support for resources in the aws-eusc partition.
+* MarketplaceEntitlementService (4.0.3.0)
+	* Endpoint update for new region
+* MediaPackageV2 (4.0.9.0)
+	* Adds support for excluding session key tags from HLS multivariant playlists
+* Odb (4.0.2.0)
+	* Adds AssociateIamRoleToResource and DisassociateIamRoleFromResource APIs for managing IAM roles. Enhances CreateOdbNetwork and UpdateOdbNetwork APIs with KMS, STS, and cross-region S3 parameters. Adds OCI identity domain support to InitializeService API.
+* Organizations (4.0.8.0)
+	* Add support for policy operations on the UPGRADE_ROLLOUT_POLICY policy type.
+* QConnect (4.0.4.0)
+	* This release introduces two new messaging channel subtypes: Push, WhatsApp, under MessageTemplate which is a resource in Amazon Q in Connect.
+* QuickSight (4.0.10.0)
+	* Amazon Quick Suite now supports QuickChat as an embedding type when calling the GenerateEmbedUrlForRegisteredUser API, enabling developers to embed conversational AI agents directly into their applications.
+* RDS (4.0.13.0)
+	* Add support for Upgrade Rollout Order
+* Redshift (4.0.5.0)
+	* Added support for Amazon Redshift Federated Permissions and AWS IAM Identity Center trusted identity propagation.
+* RedshiftServerless (4.0.2.0)
+	* Added UpdateLakehouseConfiguration API to manage Amazon Redshift Federated Permissions and AWS IAM Identity Center trusted identity propagation for namespaces.
+* S3 (4.0.13.1)
+	* Generate 4 more S3 operations: PutBucketIntelligentTieringConfiguration, GetBucketIntelligentTieringConfiguration, ListBucketIntelligentTieringConfigurations, and DeleteBucketIntelligentTieringConfiguration.
+	* Fix a bug where calling GetBucketIntelligentTiering with no IntelligentTieringId would call ListBucketIntelligentTieringConfigurations. Now, calling GetBucketIntelligentTiering with no IntelligentTieringId will throw an exception.
+	* [Breaking Change] IsSetIntelligentTieringConfigurationList() on ListBucketIntelligentTieringConfigurationsResponse changed from public to internal to follow other IsSet methods.
+* SageMaker (4.0.36.0)
+	* Enhanced SageMaker HyperPod instance groups with support for MinInstanceCount, CapacityRequirements (Spot/On-Demand), and KubernetesConfig (labels and taints). Also Added speculative decoding and MaxInstanceCount for model optimization jobs.
+* SecurityIR (4.0.6.0)
+	* Add ListInvestigations and SendFeedback APIs to support SecurityIR AI agents
+* SimpleEmailV2 (4.0.7.0)
+	* Added support for new SES regions - Asia Pacific (Malaysia) and Canada (Calgary)
+* Transfer (4.0.5.0)
+	* Adds support for creating Webapps accessible from a VPC.
+* Core 4.0.3.3
+	* Update the SDK to throw an error when the resolved AWS region is not a valid host label
+	* All service and extension packages updated to require new Core
+
 ### 4.0.138.0 (2025-11-20 21:25 UTC)
 * ApplicationSignals (4.0.5.0)
 	* Amazon CloudWatch Application Signals now supports un-instrumented services discovery, cross-account views, and change history, helping SRE and DevOps teams monitor and troubleshoot their large-scale distributed applications.

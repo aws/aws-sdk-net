@@ -60,6 +60,12 @@ namespace AWSSDK_DotNet.UnitTests
         private Document InvokePutSync(PutItemDocumentOperationRequest request)
             => _table.PutItem(request);
 
+        private Task<Document> InvokeGetAsync(GetItemDocumentOperationRequest request)
+            => _table.GetItemAsync(request, CancellationToken.None);
+
+        private Document InvokeGetSync(GetItemDocumentOperationRequest request)
+            => _table.GetItem(request);
+
         private async Task AssertThrowsAsync<T>(Func<Task> act, string expectedMessage = null) where T : Exception
         {
             var ex = await Assert.ThrowsExceptionAsync<T>(act);
@@ -783,6 +789,146 @@ namespace AWSSDK_DotNet.UnitTests
             {
                 var ex = Assert.ThrowsException<InvalidOperationException>(() => InvokePutSync(request));
                 Assert.AreEqual(expectedMessage, ex.Message);
+            }
+        }
+        #endregion
+
+        #region GetItemHelper Tests
+
+        [DataTestMethod]
+        [DataRow(true)]
+        [DataRow(false)]
+        public async Task GetItemHelper_RequestNull_ThrowsArgumentNullException(bool isAsync)
+        {
+            if (isAsync)
+            {
+                await AssertThrowsAsync<System.ArgumentNullException>(() => InvokeGetAsync(null));
+            }
+            else
+            {
+                AssertThrowsSync<System.ArgumentNullException>(() => InvokeGetSync(null));
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow(true, true)]
+        [DataRow(true, false)]
+        [DataRow(false, true)]
+        [DataRow(false, false)]
+        public async Task GetItemHelper_KeyNullOrEmpty_ThrowsInvalidOperationException(bool isAsync, bool keyIsNull)
+        {
+            var request = new GetItemDocumentOperationRequest
+            {
+                Key = keyIsNull ? null : new Dictionary<string, DynamoDBEntry>(),
+                ConsistentRead = false
+            };
+
+            const string expectedMessage = "GetItemDocumentOperationRequest.Key cannot be null or empty.";
+
+            if (isAsync)
+            {
+                var ex = await Assert.ThrowsExceptionAsync<System.InvalidOperationException>(() => InvokeGetAsync(request));
+                Assert.AreEqual(expectedMessage, ex.Message);
+            }
+            else
+            {
+                var ex = Assert.ThrowsException<System.InvalidOperationException>(() => InvokeGetSync(request));
+                Assert.AreEqual(expectedMessage, ex.Message);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow(true)]
+        [DataRow(false)]
+        public async Task GetItemHelper_AppliesProjectionExpression(bool isAsync)
+        {
+            var request = new GetItemDocumentOperationRequest
+            {
+                Key = new Dictionary<string, DynamoDBEntry> { { "Id", new Primitive("abc") } },
+                ConsistentRead = true,
+                ProjectionExpression = new Expression
+                {
+                    ExpressionStatement = "#A, #B",
+                    ExpressionAttributeNames = new Dictionary<string, string>
+                    {
+                        { "#A", "AttrA" },
+                        { "#B", "AttrB" }
+                    }
+                }
+            };
+
+            Predicate<GetItemRequest> predicate = r =>
+                r.Key.ContainsKey("Id")
+                && r.ConsistentRead == true
+                && r.ProjectionExpression == "#A, #B"
+                && r.ExpressionAttributeNames.ContainsKey("#A")
+                && r.ExpressionAttributeNames.ContainsKey("#B");
+
+            var getResponse = new GetItemResponse { Item = new Dictionary<string, AttributeValue> { { "AttrA", new AttributeValue { S = "valA" } } } };
+
+            if (isAsync)
+            {
+                _ddbClientMock
+                    .Setup(c => c.GetItemAsync(It.Is<GetItemRequest>(r => predicate(r)), It.IsAny<CancellationToken>()))
+                    .ReturnsAsync(getResponse)
+                    .Verifiable();
+
+                var result = await InvokeGetAsync(request);
+                Assert.IsNotNull(result);
+                _ddbClientMock.Verify(c => c.GetItemAsync(It.Is<GetItemRequest>(r => predicate(r)), It.IsAny<CancellationToken>()), Times.Once);
+            }
+            else
+            {
+                _ddbClientMock
+                    .Setup(c => c.GetItem(It.Is<GetItemRequest>(r => predicate(r))))
+                    .Returns(getResponse)
+                    .Verifiable();
+
+                var result = InvokeGetSync(request);
+                Assert.IsNotNull(result);
+                _ddbClientMock.Verify(c => c.GetItem(It.Is<GetItemRequest>(r => predicate(r))), Times.Once);
+            }
+        }
+
+        [DataTestMethod]
+        [DataRow(true)]
+        [DataRow(false)]
+        public async Task GetItemHelper_ReturnsDocument(bool isAsync)
+        {
+            var request = new GetItemDocumentOperationRequest
+            {
+                Key = new Dictionary<string, DynamoDBEntry> { { "Id", new Primitive("123") } },
+                ConsistentRead = false
+            };
+
+            var getResponse = new GetItemResponse
+            {
+                Item = new Dictionary<string, AttributeValue>
+                {
+                    { "Id", new AttributeValue { S = "123" } },
+                    { "Name", new AttributeValue { S = "John" } }
+                }
+            };
+
+            if (isAsync)
+            {
+                _ddbClientMock.Setup(c => c.GetItemAsync(It.IsAny<GetItemRequest>(), It.IsAny<CancellationToken>()))
+                    .ReturnsAsync(getResponse);
+
+                var result = await InvokeGetAsync(request);
+                Assert.IsNotNull(result);
+                Assert.AreEqual("123", result["Id"].AsPrimitive().Value);
+                Assert.AreEqual("John", result["Name"].AsPrimitive().Value);
+            }
+            else
+            {
+                _ddbClientMock.Setup(c => c.GetItem(It.IsAny<GetItemRequest>()))
+                    .Returns(getResponse);
+
+                var result = InvokeGetSync(request);
+                Assert.IsNotNull(result);
+                Assert.AreEqual("123", result["Id"].AsPrimitive().Value);
+                Assert.AreEqual("John", result["Name"].AsPrimitive().Value);
             }
         }
         #endregion

@@ -109,11 +109,27 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListContactFlowModuleAliases operation
+        ///</summary>
+        public IListContactFlowModuleAliasesPaginator ListContactFlowModuleAliases(ListContactFlowModuleAliasesRequest request) 
+        {
+            return new ListContactFlowModuleAliasesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContactFlowModules operation
         ///</summary>
         public IListContactFlowModulesPaginator ListContactFlowModules(ListContactFlowModulesRequest request) 
         {
             return new ListContactFlowModulesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContactFlowModuleVersions operation
+        ///</summary>
+        public IListContactFlowModuleVersionsPaginator ListContactFlowModuleVersions(ListContactFlowModuleVersionsRequest request) 
+        {
+            return new ListContactFlowModuleVersionsPaginator(this.client, request);
         }
 
         /// <summary>

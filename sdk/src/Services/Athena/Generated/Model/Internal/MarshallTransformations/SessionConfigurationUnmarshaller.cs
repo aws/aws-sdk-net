@@ -74,6 +74,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdleTimeoutSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SessionIdleTimeoutInMinutes", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.SessionIdleTimeoutInMinutes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("WorkingDirectory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

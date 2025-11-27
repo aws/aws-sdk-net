@@ -4,7 +4,7 @@
       "serviceName": "DynamoDBv2",
       "type": "minor",
       "changeLogMessages": [
-        "Add Request Object Pattern and Expression-Based for DynamoDB Document Model "
+        "Add Request Object Pattern and Expression-Based for DynamoDB Document Model."
       ]
     }
   ]

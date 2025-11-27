@@ -2051,6 +2051,118 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  CreateContactFlowModuleAlias
+
+        internal virtual CreateContactFlowModuleAliasResponse CreateContactFlowModuleAlias(CreateContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a named alias that points to a specific version of a contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleAlias">REST API Reference for CreateContactFlowModuleAlias Operation</seealso>
+        public virtual Task<CreateContactFlowModuleAliasResponse> CreateContactFlowModuleAliasAsync(CreateContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContactFlowModuleAliasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateContactFlowModuleVersion
+
+        internal virtual CreateContactFlowModuleVersionResponse CreateContactFlowModuleVersion(CreateContactFlowModuleVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContactFlowModuleVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an immutable snapshot of a contact flow module, preserving its content and
+        /// settings at a specific point in time for version control and rollback capabilities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowModuleVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContactFlowModuleVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModuleVersion">REST API Reference for CreateContactFlowModuleVersion Operation</seealso>
+        public virtual Task<CreateContactFlowModuleVersionResponse> CreateContactFlowModuleVersionAsync(CreateContactFlowModuleVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContactFlowModuleVersionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateContactFlowVersion
 
         internal virtual CreateContactFlowVersionResponse CreateContactFlowVersion(CreateContactFlowVersionRequest request)
@@ -3817,6 +3929,109 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DeleteContactFlowModuleAlias
+
+        internal virtual DeleteContactFlowModuleAliasResponse DeleteContactFlowModuleAlias(DeleteContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes an alias reference, breaking the named connection to the underlying module
+        /// version without affecting the version itself.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleAlias">REST API Reference for DeleteContactFlowModuleAlias Operation</seealso>
+        public virtual Task<DeleteContactFlowModuleAliasResponse> DeleteContactFlowModuleAliasAsync(DeleteContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteContactFlowModuleAliasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteContactFlowModuleVersion
+
+        internal virtual DeleteContactFlowModuleVersionResponse DeleteContactFlowModuleVersion(DeleteContactFlowModuleVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContactFlowModuleVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes a specific version of a contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactFlowModuleVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContactFlowModuleVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModuleVersion">REST API Reference for DeleteContactFlowModuleVersion Operation</seealso>
+        public virtual Task<DeleteContactFlowModuleVersionResponse> DeleteContactFlowModuleVersionAsync(DeleteContactFlowModuleVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContactFlowModuleVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContactFlowModuleVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteContactFlowModuleVersionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteContactFlowVersion
 
         internal virtual DeleteContactFlowVersionResponse DeleteContactFlowVersion(DeleteContactFlowVersionRequest request)
@@ -5440,6 +5655,58 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeContactFlowModuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeContactFlowModuleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeContactFlowModuleAlias
+
+        internal virtual DescribeContactFlowModuleAliasResponse DescribeContactFlowModuleAlias(DescribeContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific alias, including which version it
+        /// currently points to and its metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModuleAlias">REST API Reference for DescribeContactFlowModuleAlias Operation</seealso>
+        public virtual Task<DescribeContactFlowModuleAliasResponse> DescribeContactFlowModuleAliasAsync(DescribeContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeContactFlowModuleAliasResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -8742,6 +9009,58 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListContactFlowModuleAliases
+
+        internal virtual ListContactFlowModuleAliasesResponse ListContactFlowModuleAliases(ListContactFlowModuleAliasesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleAliasesResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactFlowModuleAliasesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all aliases associated with a contact flow module, showing their current version
+        /// mappings and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleAliases service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactFlowModuleAliases service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleAliases">REST API Reference for ListContactFlowModuleAliases Operation</seealso>
+        public virtual Task<ListContactFlowModuleAliasesResponse> ListContactFlowModuleAliasesAsync(ListContactFlowModuleAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleAliasesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleAliasesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContactFlowModuleAliasesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListContactFlowModules
 
         internal virtual ListContactFlowModulesResponse ListContactFlowModules(ListContactFlowModulesRequest request)
@@ -8790,6 +9109,57 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListContactFlowModulesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListContactFlowModulesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListContactFlowModuleVersions
+
+        internal virtual ListContactFlowModuleVersionsResponse ListContactFlowModuleVersions(ListContactFlowModuleVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContactFlowModuleVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of all versions for a specific contact flow module.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowModuleVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContactFlowModuleVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModuleVersions">REST API Reference for ListContactFlowModuleVersions Operation</seealso>
+        public virtual Task<ListContactFlowModuleVersionsResponse> ListContactFlowModuleVersionsAsync(ListContactFlowModuleVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContactFlowModuleVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContactFlowModuleVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContactFlowModuleVersionsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -14488,6 +14858,64 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateContactFlowMetadataResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateContactFlowMetadataResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateContactFlowModuleAlias
+
+        internal virtual UpdateContactFlowModuleAliasResponse UpdateContactFlowModuleAlias(UpdateContactFlowModuleAliasRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContactFlowModuleAliasResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a specific Aliases metadata, including the version it’s tied to, it’s name,
+        /// and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleAlias service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContactFlowModuleAlias service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowModuleAlias">REST API Reference for UpdateContactFlowModuleAlias Operation</seealso>
+        public virtual Task<UpdateContactFlowModuleAliasResponse> UpdateContactFlowModuleAliasAsync(UpdateContactFlowModuleAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContactFlowModuleAliasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContactFlowModuleAliasResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContactFlowModuleAliasResponse>(request, options, cancellationToken);
         }
         #endregion
         
