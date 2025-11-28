@@ -76,12 +76,20 @@ namespace Amazon.S3.Transfer.Internal
         /// <param name="dataHandler">The <see cref="IPartDataHandler"/> for processing downloaded parts.</param>
         /// <param name="requestEventHandler">Optional <see cref="RequestEventHandler"/> for user agent tracking.</param>
         /// <exception cref="ArgumentNullException">Thrown when any required parameter is null.</exception>
+        /// <exception cref="NotSupportedException">Thrown when using S3 encryption client, which does not support multipart downloads.</exception>
         public MultipartDownloadManager(IAmazonS3 s3Client, BaseDownloadRequest request, DownloadManagerConfiguration config, IPartDataHandler dataHandler, RequestEventHandler requestEventHandler = null)
         {
             _s3Client = s3Client ?? throw new ArgumentNullException(nameof(s3Client));
             _request = request ?? throw new ArgumentNullException(nameof(request));
             _config = config ?? throw new ArgumentNullException(nameof(config));
             _dataHandler = dataHandler ?? throw new ArgumentNullException(nameof(dataHandler));
+
+            // Validate that S3 encryption client is not being used for multipart downloads
+            if (_s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
+            {
+                throw new NotSupportedException("Multipart download is not supported when using S3 encryption client. Please use the regular S3 encryption client for multipart download.");
+            }
+
             _requestEventHandler = requestEventHandler;
             
             _httpConcurrencySlots = new SemaphoreSlim(_config.ConcurrentServiceRequests);
