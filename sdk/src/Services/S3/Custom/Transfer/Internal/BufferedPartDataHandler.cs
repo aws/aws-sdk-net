@@ -82,7 +82,7 @@ namespace Amazon.S3.Transfer.Internal
                 partNumber, buffer.Length);
                 
             // Add the buffered part to the buffer manager
-            await _partBufferManager.AddBufferAsync(buffer, cancellationToken).ConfigureAwait(false);
+            _partBufferManager.AddBuffer(buffer);
 
             Logger.DebugFormat("BufferedPartDataHandler: [Part {0}] Added to buffer manager",
                 partNumber);

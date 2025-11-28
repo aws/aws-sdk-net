@@ -84,7 +84,7 @@ namespace Amazon.S3.Transfer.Internal
     ///    - Example: With MaxInMemoryParts=10, if parts 5-14 are buffered, the task downloading
     ///      part 15 blocks here until the reader consumes and releases part 5's buffer
     /// 2. Read part data from S3 into pooled buffer
-    /// 3. Add buffered part: await <see cref="AddBufferAsync"/>
+    /// 3. Add buffered part: <see cref="AddBuffer"/>
     ///    - Adds buffer to _partDataSources dictionary
     ///    - Signals _partAvailable to wake consumer if waiting
     /// 4. Consumer eventually releases the buffer slot after reading the part
@@ -286,7 +286,7 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <inheritdoc/>
-        public async Task AddBufferAsync(StreamPartBuffer buffer, CancellationToken cancellationToken)
+        public void AddBuffer(StreamPartBuffer buffer)
         {
             ThrowIfDisposed();
             

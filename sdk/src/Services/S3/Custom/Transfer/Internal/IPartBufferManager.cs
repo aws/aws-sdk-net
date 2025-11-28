@@ -48,9 +48,7 @@ namespace Amazon.S3.Transfer.Internal
         /// Adds a downloaded part buffer and signals readers when next expected part arrives.
         /// </summary>
         /// <param name="buffer">The downloaded part buffer to add.</param>
-        /// <param name="cancellationToken">A token to cancel the operation.</param>
-        /// <returns>A task that completes when the buffer has been added and signaling is complete.</returns>
-        Task AddBufferAsync(StreamPartBuffer buffer, CancellationToken cancellationToken);
+        void AddBuffer(StreamPartBuffer buffer);
         
         /// <summary>
         /// Reads data from the buffer manager. Automatically handles sequential part consumption
