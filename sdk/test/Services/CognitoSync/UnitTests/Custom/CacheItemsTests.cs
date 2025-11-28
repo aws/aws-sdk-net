@@ -1,36 +1,13 @@
-﻿using Amazon;
-using Amazon.CognitoIdentity;
-using Amazon.CognitoIdentity.Model;
-using Amazon.CognitoSync;
-using Amazon.CognitoSync.Model;
-using Amazon.Runtime;
-using Amazon.SecurityToken;
-using Amazon.SimpleNotificationService;
-using Amazon.SimpleNotificationService.Model;
-using AWSSDK_DotNet.IntegrationTests.Utils;
+﻿using Amazon.CognitoSync;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Threading;
 
-namespace AWSSDK_DotNet.IntegrationTests.Tests
+namespace AWSSDK.UnitTests.CognitoSync
 {
     [TestClass]
-    public class CognitoSync : TestBase<AmazonCognitoSyncClient>
+    public class CacheItemsTests
     {
-        [TestCleanup]
-        public void Cleanup()
-        {
-        }
-
-        [ClassCleanup]
-        public static void ClassCleanup()
-        {
-            BaseClean();
-        }
-
         [TestMethod]
         [TestCategory("CognitoSync")]
         public void CacheTest()

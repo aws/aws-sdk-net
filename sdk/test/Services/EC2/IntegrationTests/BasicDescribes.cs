@@ -1,72 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using Amazon.IdentityManagement.Model;
-using Amazon.Runtime;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.EC2;
+﻿using Amazon.EC2;
 using Amazon.EC2.Model;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
 {
     [TestClass]
+    [TestCategory("EC2")]
     public class BasicDescribes : TestBase<AmazonEC2Client>
     {
-        [ClassCleanup]
-        public static void Cleanup()
-        {
-            BaseClean();
-        }
-
         [TestMethod]
-        [TestCategory("EC2")]
-        public void TestDescribeAmazonImages()
+        public async Task TestDescribeAmazonImages()
         {
-            // perform a filtered query to (a) test parameter marshalling
-            // and (b) cut down the time to run -- an unfiltered request
-            // yields a lot of images
-            var request = new DescribeImagesRequest()
+            // perform a filtered query to cut down the time to run -- an unfiltered request
+            // yields a lot of images.
+            var request = new DescribeImagesRequest
             {
-                Owners = new List<string> { "amazon" }
+                Owners = new List<string> { "amazon" },
+                MaxResults = 10,
             };
-            var response = Client.DescribeImages(request);
 
+            var response = await Client.DescribeImagesAsync(request);
             Assert.IsNotNull(response);
             Assert.IsNotNull(response.Images);
         }
 
         [TestMethod]
-        [TestCategory("EC2")]
-        public void TestDescribeAmazonImagesWithDryRun()
+        public async Task TestDescribeAmazonImagesWithDryRun()
         {
-            var request = new DescribeImagesRequest()
+            var request = new DescribeImagesRequest
             {
                 DryRun = true,
                 Owners = new List<string> { "amazon" },
             };
-            
-            var assertedException = Assert.ThrowsException<AmazonEC2Exception>( () => {
-                Client.DescribeImages(request);
-            });
-            
+
+            var assertedException = await Assert.ThrowsExceptionAsync<AmazonEC2Exception>(() => Client.DescribeImagesAsync(request));
             Assert.AreEqual(HttpStatusCode.PreconditionFailed, assertedException.StatusCode);
             Assert.AreEqual("DryRunOperation", assertedException.ErrorCode);
         }
 
-#if ASYNC_AWAIT
         [TestMethod]
-        [TestCategory("EC2")]
-        public async System.Threading.Tasks.Task TestDescribeAmazonImagesCancellationTest()
+        public async Task TestDescribeAmazonImagesCancellationTest()
         {
-            // perform a filtered query to (a) test parameter marshalling
-            // and (b) cut down the time to run -- an unfiltered request
-            // yields a lot of images
-            var request = new DescribeImagesRequest()
+            // perform a filtered query to cut down the time to run -- an unfiltered request
+            // yields a lot of images.
+            var request = new DescribeImagesRequest
             {
                 Owners = new List<string> { "amazon" }
             };
@@ -76,7 +58,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             var token = cts.Token;
             try
             {
-                var response = await Client.DescribeImagesAsync(request,token);
+                await Client.DescribeImagesAsync(request, token);
             }
             catch (OperationCanceledException exception)
             {
@@ -86,6 +68,5 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
             }            
             Assert.Fail("An OperationCanceledException was not thrown");
         }
-#endif
     }
 }

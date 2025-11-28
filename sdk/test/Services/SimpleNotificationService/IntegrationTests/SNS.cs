@@ -1,53 +1,46 @@
-﻿using System;
+﻿using Amazon.Auth.AccessControlPolicy;
+using Amazon.SimpleNotificationService;
+using Amazon.SimpleNotificationService.Model;
+using Amazon.SQS;
+using Amazon.SQS.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
-using Amazon.Auth.AccessControlPolicy;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-
-using Amazon.SimpleNotificationService;
-using Amazon.SimpleNotificationService.Model;
-using Amazon.SQS;
-using Amazon.SQS.Model;
-
+using System.Threading.Tasks;
 using SNSMessageAttributeValue = Amazon.SimpleNotificationService.Model.MessageAttributeValue;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
+    [TestCategory("SimpleNotificationService")]
     public class SNS : TestBase<AmazonSimpleNotificationServiceClient>
     {
-
-        static AmazonSQSClient sqsClient;
+        private static AmazonSQSClient sqsClient;
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
-            sqsClient = new AmazonSQSClient();
+            sqsClient = new AmazonSQSClient(Client.Config.RegionEndpoint);
         }
 
         [ClassCleanup]
         public static void Cleanup()
         {
+            sqsClient?.Dispose();
             BaseClean();
-            if (sqsClient != null)
-            {
-                sqsClient.Dispose();
-                sqsClient = null;
-            }
         }
 
         [TestMethod]
-        [TestCategory("SimpleNotificationService")]
-        public void CRUDTopics()
+        public async Task CRUDTopics()
         {
             // list all topics
-            var allTopics = GetAllTopics();
+            var allTopics = await GetAllTopics();
             var currentTopicCount = allTopics.Count;
 
             // create new topic
@@ -56,13 +49,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 Name = name
             };
-            var createTopicResult = Client.CreateTopic(createTopicRequest);
+            var createTopicResult = await Client.CreateTopicAsync(createTopicRequest);
             var topicArn = createTopicResult.TopicArn;
 
             try
             {
                 // verify there is a new topic
-                allTopics = GetAllTopics();
+                allTopics = await GetAllTopics();
                 Assert.AreNotEqual(currentTopicCount, allTopics.Count);
 
                 // set topic attribute
@@ -72,121 +65,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     AttributeName = "DisplayName",
                     AttributeValue = "Test topic"
                 };
-                Client.SetTopicAttributes(setTopicAttributesRequest);
+                await Client.SetTopicAttributesAsync(setTopicAttributesRequest);
 
                 // verify topic attributes
                 var getTopicAttributesRequest = new GetTopicAttributesRequest
                 {
                     TopicArn = topicArn
                 };
-                var topicAttributes =
-                    Client.GetTopicAttributes(getTopicAttributesRequest).Attributes;
-                Assert.AreEqual(setTopicAttributesRequest.AttributeValue,
-                    topicAttributes[setTopicAttributesRequest.AttributeName]);
+
+                var topicAttributes = (await Client.GetTopicAttributesAsync(getTopicAttributesRequest)).Attributes;
+                Assert.AreEqual(
+                    setTopicAttributesRequest.AttributeValue,
+                    topicAttributes[setTopicAttributesRequest.AttributeName]
+                );
 
             }
             finally
             {
-                // delete new topic
-                var deleteTopicRequest = new DeleteTopicRequest
+                await Client.DeleteTopicAsync(new DeleteTopicRequest
                 {
                     TopicArn = topicArn
-                };
-                Client.DeleteTopic(deleteTopicRequest);
+                });
 
                 // verify the topic was deleted
-                allTopics = GetAllTopics();
-                Assert.AreEqual(currentTopicCount, allTopics.Count);
-            }
-        }
-
-        // Constraints:
-        // to run this test, a valid email address must be supplied and
-        // the subscription confirmed within two minutes by default
-        //[TestMethod]
-        [TestCategory("SNS")]
-        public void SubscribeTopic()
-        {
-            const string emailAddress = "replaceme@example.com";
-            var subscriptionWaitDelay = TimeSpan.FromMinutes(2);
-
-            // create new topic
-            var name = "dotnetsdk" + DateTime.UtcNow.Ticks;
-            var createTopicRequest = new CreateTopicRequest
-            {
-                Name = name
-            };
-            var createTopicResult = Client.CreateTopic(createTopicRequest);
-            var topicArn = createTopicResult.TopicArn;
-
-            try
-            {
-                // subscribe an email address to the topic
-                var subscribeRequest = new SubscribeRequest
-                {
-                    Protocol = "email",
-                    Endpoint = emailAddress,
-                    TopicArn = topicArn
-                };
-                Client.Subscribe(subscribeRequest);
-
-                // wait until subscription has been confirmed, maximum wait time of two minutes
-                // by default
-                string subArn = null;
-                var latest = DateTime.UtcNow + subscriptionWaitDelay;
-                while (DateTime.UtcNow < latest)
-                {
-                    // get subscriptions for topic
-                    var listSubscriptionsRequest = new ListSubscriptionsByTopicRequest
-                    {
-                        TopicArn = topicArn
-                    };
-                    var subs = Client.ListSubscriptionsByTopic(listSubscriptionsRequest).Subscriptions;
-                    Assert.AreEqual(1, subs.Count);
-
-                    // test whether the subscription has been confirmed
-                    var subscription = subs[0];
-                    if (!string.Equals(subscription.SubscriptionArn, "PendingConfirmation", StringComparison.Ordinal))
-                    {
-                        subArn = subscription.SubscriptionArn;
-                        break;
-                    }
-
-                    // wait
-                    Thread.Sleep(TimeSpan.FromSeconds(15));
-                }
-
-                // verify that the subscription was confirmed and the arn has been set
-                Assert.IsNotNull(subArn);
-
-                // publish a message to the topic
-                Client.Publish(new PublishRequest
-                {
-                    TopicArn = topicArn,
-                    Subject = "Test subject",
-                    Message = "Test message"
-                });
-
-                // delete the subscription
-                Client.Unsubscribe(new UnsubscribeRequest
-                {
-                    SubscriptionArn = subArn
-                });
-            }
-            finally
-            {
-                // delete the topic
-                var deleteTopicRequest = new DeleteTopicRequest
-                {
-                    TopicArn = topicArn
-                };
-                Client.DeleteTopic(deleteTopicRequest);
+                allTopics = await GetAllTopics();
+                Assert.IsFalse(allTopics.Any(t => t.TopicArn == topicArn));
             }
         }
 
         [TestMethod]
-        [TestCategory("SimpleNotificationService")]
-        public void TestPublishAsJson()
+        public async Task TestPublishAsJson()
         {
             // create new topic
             var name = "dotnetsdk" + DateTime.UtcNow.Ticks;
@@ -194,12 +102,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 Name = name
             };
-            var createTopicResult = Client.CreateTopic(createTopicRequest);
+
+            var createTopicResult = await Client.CreateTopicAsync(createTopicRequest);
             var topicArn = createTopicResult.TopicArn;
 
             try
             {
-                var pubRequest = new PublishRequest()
+                var pubRequest = new PublishRequest
                 {
                     TopicArn = topicArn,
                     MessageStructure = "json",
@@ -209,38 +118,37 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 var gotException = true;
                 try
                 {
-                    Client.Publish(pubRequest);
+                    await Client.PublishAsync(pubRequest);
                     gotException = false;
                 }
                 catch (AmazonSimpleNotificationServiceException e)
                 {
                     Assert.AreEqual("InvalidParameter", e.ErrorCode);
                 }
-                Assert.IsTrue(gotException, "Failed to get exception about invalid JSON");
 
+                Assert.IsTrue(gotException, "Failed to get exception about invalid JSON");
                 pubRequest.Message = "{\"default\" : \"Data\"}";
-                Client.Publish(pubRequest);
+                await Client.PublishAsync(pubRequest);
             }
             finally
             {
-                Client.DeleteTopic(new DeleteTopicRequest { TopicArn = topicArn });
+                await Client.DeleteTopicAsync(new DeleteTopicRequest { TopicArn = topicArn });
             }
         }
 
         [TestMethod]
-        [TestCategory("SimpleNotificationService")]
-        public void IsMessageSignatureValidSHA1()
+        public async Task IsMessageSignatureValidSHA1()
         {
             string topicArn = null;
             string queueUrl = null;
 
             try
             {
-                topicArn = CreateTopic();
-                queueUrl = CreateQueue();
+                topicArn = await CreateTopic();
+                queueUrl = await CreateQueue();
 
-                SubscribeQueue(topicArn, queueUrl);
-                List<Message> messages = PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
+                await SubscribeQueue(topicArn, queueUrl);
+                List<Message> messages = await PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), queueUrl);
 
                 Assert.AreEqual(1, messages.Count);
                 var bodyJson = GetBodyJson(messages[0]);
@@ -254,24 +162,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             finally
             {
                 if (topicArn != null)
-                    Client.DeleteTopic(new DeleteTopicRequest { TopicArn = topicArn });
+                {
+                    await Client.DeleteTopicAsync(new DeleteTopicRequest { TopicArn = topicArn });
+                }
 
                 if (queueUrl != null)
-                    sqsClient.DeleteQueue(new DeleteQueueRequest { QueueUrl = queueUrl });
+                {
+                    await sqsClient.DeleteQueueAsync(new DeleteQueueRequest { QueueUrl = queueUrl });
+                }
             }
         }
 
         [TestMethod]
-        [TestCategory("SimpleNotificationService")]
-        public void IsMessageSignatureValidSHA256()
+        public async Task IsMessageSignatureValidSHA256()
         {
             string topicArn = null;
             string queueUrl = null;
 
             try
             {
-                topicArn = CreateTopic();
-                queueUrl = CreateQueue();
+                topicArn = await CreateTopic();
+                queueUrl = await CreateQueue();
 
                 // set topic attribute
                 var setTopicAttributesRequest = new SetTopicAttributesRequest
@@ -280,10 +191,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     AttributeName = "SignatureVersion",
                     AttributeValue = "2"
                 };
-                Client.SetTopicAttributes(setTopicAttributesRequest);
+                await Client.SetTopicAttributesAsync(setTopicAttributesRequest);
 
-                SubscribeQueue(topicArn, queueUrl);
-                List<Message> messages = PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), topicArn, queueUrl);
+                await SubscribeQueue(topicArn, queueUrl);
+                List<Message> messages = await PublishToSNSAndReceiveMessages(GetPublishRequest(topicArn), queueUrl);
 
                 Assert.AreEqual(1, messages.Count);
                 var bodyJson = GetBodyJson(messages[0]);
@@ -297,28 +208,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             finally
             {
                 if (topicArn != null)
-                    Client.DeleteTopic(new DeleteTopicRequest { TopicArn = topicArn });
+                {
+                    await Client.DeleteTopicAsync(new DeleteTopicRequest { TopicArn = topicArn });
+                }
 
                 if (queueUrl != null)
-                    sqsClient.DeleteQueue(new DeleteQueueRequest { QueueUrl = queueUrl });
+                {
+                    await sqsClient.DeleteQueueAsync(new DeleteQueueRequest { QueueUrl = queueUrl });
+                }
             }
         }
 
         [TestMethod]
-        [TestCategory("SimpleNotificationService")]
-        public void TestQueueSubscription()
+        public async Task TestQueueSubscription()
         {
             string topicArn = null;
             string queueUrl = null;
 
             try
             {
-                topicArn = CreateTopic();
-                queueUrl = CreateQueue();
+                topicArn = await CreateTopic();
+                queueUrl = await CreateQueue();
 
-                var subscriptionArn = SubscribeQueue(topicArn, queueUrl);
+                var subscriptionArn = await SubscribeQueue(topicArn, queueUrl);
                 var publishRequest = GetPublishRequest(topicArn);
-                List<Message> messages = PublishToSNSAndReceiveMessages(publishRequest, topicArn, queueUrl);
+                List<Message> messages = await PublishToSNSAndReceiveMessages(publishRequest, queueUrl);
 
                 Assert.AreEqual(1, messages.Count);
                 var message = messages[0];
@@ -349,36 +263,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                                         : Convert.ToBase64String(value.BinaryValue.ToArray()), jsonValue);
                 }
 
-                sqsClient.DeleteMessage(new DeleteMessageRequest
+                await sqsClient.DeleteMessageAsync(new DeleteMessageRequest
                 {
                     QueueUrl = queueUrl,
                     ReceiptHandle = messages[0].ReceiptHandle
                 });
 
                 // This will unsubscribe but leave the policy in place.
-                Client.Unsubscribe(new UnsubscribeRequest
+                await Client.UnsubscribeAsync(new UnsubscribeRequest
                 {
                     SubscriptionArn = subscriptionArn
                 });
 
                 // Subscribe again to see if this affects the policy.
-                Client.SubscribeQueue(topicArn, sqsClient, queueUrl);
+                await Client.SubscribeQueueAsync(topicArn, sqsClient, queueUrl);
 
-                Client.Publish(new PublishRequest
+                await Client.PublishAsync(new PublishRequest
                 {
                     TopicArn = topicArn,
                     Message = "Test Message again"
                 });
 
-                messages = sqsClient.ReceiveMessage(new ReceiveMessageRequest
+                messages = (await sqsClient.ReceiveMessageAsync(new ReceiveMessageRequest
                 {
                     QueueUrl = queueUrl,
                     WaitTimeSeconds = 20
-                }).Messages;
+                })).Messages;
 
                 Assert.AreEqual(1, messages.Count);
 
-                var getAttributeResponse = sqsClient.GetQueueAttributes(new GetQueueAttributesRequest
+                var getAttributeResponse = await sqsClient.GetQueueAttributesAsync(new GetQueueAttributesRequest
                 {
                     AttributeNames = new List<string> { "All" },
                     QueueUrl = queueUrl
@@ -390,80 +304,75 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             finally
             {
                 if (topicArn != null)
-                    Client.DeleteTopic(new DeleteTopicRequest { TopicArn = topicArn });
+                {
+                    await Client.DeleteTopicAsync(new DeleteTopicRequest { TopicArn = topicArn });
+                }
 
                 if (queueUrl != null)
-                    sqsClient.DeleteQueue(new DeleteQueueRequest { QueueUrl = queueUrl });
+                {
+                    await sqsClient.DeleteQueueAsync(new DeleteQueueRequest { QueueUrl = queueUrl });
+                }
             }
         }
 
         [TestMethod]
-        [TestCategory("SimpleNotificationService")]
-        public void TestMultipleQueueSubscription()
+        public async Task TestMultipleQueueSubscription()
         {
             var topicArns = new List<string>();
 
             var topicName1 = "dotnetsdkTopic" + DateTime.UtcNow.Ticks;
-            topicArns.Add(Client.CreateTopic(topicName1).TopicArn);
+            topicArns.Add((await Client.CreateTopicAsync(topicName1)).TopicArn);
 
             var topicName2 = "dotnetsdkTopic" + DateTime.UtcNow.Ticks;
-            topicArns.Add(Client.CreateTopic(topicName2).TopicArn);
+            topicArns.Add((await Client.CreateTopicAsync(topicName2)).TopicArn);
 
             var queueName = "dotnetsdkQueue-" + DateTime.UtcNow.Ticks;
-            var queueUrl = sqsClient.CreateQueue(queueName).QueueUrl;
+            var queueUrl = (await sqsClient.CreateQueueAsync(queueName)).QueueUrl;
 
             try
             {
-                var subscriptionArns = Client.SubscribeQueueToTopics(topicArns, sqsClient, queueUrl).Values;
-
+                var subscriptionArns = (await Client.SubscribeQueueToTopicsAsync(topicArns, sqsClient, queueUrl)).Values;
                 Assert.AreEqual(2, subscriptionArns.Count);
-
                 Thread.Sleep(TimeSpan.FromSeconds(5));
 
-                var attributes = sqsClient.GetQueueAttributes(queueUrl, new List<string> { "All" }).Attributes;
+                var attributes = (await sqsClient.GetQueueAttributesAsync(queueUrl, new List<string> { "All" })).Attributes;
                 var policy = Policy.FromJson(attributes["Policy"]);
-
                 Assert.AreEqual(2, policy.Statements.Count);
             }
             finally
             {
                 foreach (var topicArn in topicArns)
                 {
-                    Client.DeleteTopic(new DeleteTopicRequest { TopicArn = topicArn });
+                    await Client.DeleteTopicAsync(new DeleteTopicRequest { TopicArn = topicArn });
                 }
-                sqsClient.DeleteQueue(new DeleteQueueRequest { QueueUrl = queueUrl });
+
+                await sqsClient.DeleteQueueAsync(new DeleteQueueRequest { QueueUrl = queueUrl });
             }
         }
 
         [TestMethod]
-        [TestCategory("SimpleNotificationService")]
-        public void FindTopic()
+        public async Task FindTopic()
         {
-            // create new topic
             var name = "dotnetsdk" + DateTime.UtcNow.Ticks;
             var createTopicRequest = new CreateTopicRequest
             {
                 Name = name
             };
-            var createTopicResult = Client.CreateTopic(createTopicRequest);
+
+            var createTopicResult = await Client.CreateTopicAsync(createTopicRequest);
             var topicArn = createTopicResult.TopicArn;
 
             try
             {
-                // find the topic by name
-                var foundTopic = Client.FindTopic(name);
-
-                // verify that the topic was fund
+                var foundTopic = await Client.FindTopicAsync(name);
                 Assert.IsNotNull(foundTopic);
             }
             finally
             {
-                // delete the topic
-                var deleteTopicRequest = new DeleteTopicRequest
+                await Client.DeleteTopicAsync(new DeleteTopicRequest
                 {
                     TopicArn = topicArn
-                };
-                Client.DeleteTopic(deleteTopicRequest);
+                });
             }
         }
 
@@ -478,14 +387,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             return bodyJson;
         }
 
-        private static List<Topic> GetAllTopics()
+        private static async Task<List<Topic>> GetAllTopics()
         {
             var allTopics = new List<Topic>();
             var listRequest = new ListTopicsRequest();
             do
             {
-                var listResponse = Client.ListTopics(listRequest);
-
+                var listResponse = await Client.ListTopicsAsync(listRequest);
                 if (listResponse.Topics != null)
                 {
                     allTopics.AddRange(listResponse.Topics);
@@ -493,7 +401,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
                 listRequest.NextToken = listResponse.NextToken;
             } while (!string.IsNullOrEmpty(listRequest.NextToken));
-            return allTopics ?? new List<Topic>();
+            return allTopics;
         }
 
         private PublishRequest GetPublishRequest(string topicArn)
@@ -510,42 +418,43 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     { "Prime", new SNSMessageAttributeValue { StringValue = "31", DataType = "Number" } },
                 }
             };
-
         }
 
-        private List<Message> PublishToSNSAndReceiveMessages(PublishRequest publishRequest, string topicArn, string queueUrl)
+        private async Task<List<Message>> PublishToSNSAndReceiveMessages(PublishRequest publishRequest, string queueUrl)
         {
-            Client.Publish(publishRequest);
+            await Client.PublishAsync(publishRequest);
 
-            var messages = (sqsClient.ReceiveMessage(new ReceiveMessageRequest
+            var receiveResponse = await sqsClient.ReceiveMessageAsync(new ReceiveMessageRequest
             {
                 QueueUrl = queueUrl,
                 WaitTimeSeconds = 20
-            })).Messages;
-            return messages;
+            });
+
+            return receiveResponse.Messages;
         }
 
-        private string SubscribeQueue(string topicArn, string queueUrl)
+        private async Task<string> SubscribeQueue(string topicArn, string queueUrl)
         {
-            var subscriptionARN = Client.SubscribeQueue(topicArn, sqsClient, queueUrl);
+            var subscriptionARN = await Client.SubscribeQueueAsync(topicArn, sqsClient, queueUrl);
 
             // Sleep to wait for the subscribe to complete.
-            Thread.Sleep(TimeSpan.FromSeconds(5));
+            await Task.Delay(TimeSpan.FromSeconds(5));
 
             return subscriptionARN;
         }
 
-        private string CreateQueue()
+        private async Task<string> CreateQueue()
         {
             var queueName = UtilityMethods.GenerateName("TestQueueSubscription");
-            var queueUrl = (sqsClient.CreateQueue(new CreateQueueRequest
+            var createResponse = await sqsClient.CreateQueueAsync(new CreateQueueRequest
             {
                 QueueName = queueName
-            })).QueueUrl;
-            return queueUrl;
+            });
+
+            return createResponse.QueueUrl;
         }
 
-        private string CreateTopic()
+        private async Task<string> CreateTopic()
         {
             // create new topic
             var topicName = UtilityMethods.GenerateName("TestQueueSubscription");
@@ -553,10 +462,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 Name = topicName
             };
-            var createTopicResult = Client.CreateTopic(createTopicRequest);
-            var topicArn = createTopicResult.TopicArn;
-            return topicArn;
-        }
 
+            var createTopicResult = await Client.CreateTopicAsync(createTopicRequest);
+            return createTopicResult.TopicArn;
+        }
     }
 }

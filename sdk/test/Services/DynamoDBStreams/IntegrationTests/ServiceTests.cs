@@ -1,10 +1,5 @@
 ﻿using Amazon.DynamoDBStreams;
-using AWSSDK_DotNet.IntegrationTests.Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDBStreams
@@ -14,16 +9,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDBStreams
     {
         [TestMethod]
         [TestCategory("DynamoDBStreams")]
-        public void TestDynamoDBStreamWithServiceURL()
+        public async Task TestDynamoDBStreamWithServiceURL()
         {
-            var config = new AmazonDynamoDBStreamsConfig();
-            config.ServiceURL = "https://streams.dynamodb.us-east-1.amazonaws.com/";
+            var config = new AmazonDynamoDBStreamsConfig
+            {
+                ServiceURL = "https://streams.dynamodb.us-east-1.amazonaws.com/"
+            };
+
             using (var client = new AmazonDynamoDBStreamsClient(config))
             {
-                var response = client.ListStreams();
+                var response = await client.ListStreamsAsync();
                 Assert.IsNotNull(response.Streams);
             }
         }
     }
-    
 }
