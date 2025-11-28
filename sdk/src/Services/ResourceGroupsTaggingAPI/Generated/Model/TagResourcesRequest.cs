@@ -58,6 +58,17 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// the resource belongs to as well as permissions for adding tags. For more information,
     /// see the documentation for each service.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When you use the <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/overview.html">Amazon
+    /// Web Services Resource Groups Tagging API</a> to update tags for Amazon Web Services
+    /// CloudFormation stack sets, Amazon Web Services calls the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html">Amazon
+    /// Web Services CloudFormation <c>UpdateStack</c> </a> operation. This operation may
+    /// initiate additional resource property updates in addition to the desired tag updates.
+    /// To avoid unexpected resource updates, Amazon Web Services recommends that you only
+    /// apply or update tags to your CloudFormation stack sets using Amazon Web Services CloudFormation.
+    /// 
+    /// </para>
     ///  </li> </ul> <important> 
     /// <para>
     /// Do not store personally identifiable information (PII) or other confidential or sensitive
@@ -77,13 +88,20 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>tag:TagResource</c> 
+    ///  <c>tag:TagResources</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <c>ec2:CreateTags</c> 
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// In addition, some services might have specific requirements for tagging some types
+    /// of resources. For example, to tag an Amazon S3 bucket, you must also have the <c>s3:GetBucketTagging</c>
+    /// permission. If the expected minimum permissions don't work, check the documentation
+    /// for that service's tagging APIs for more information.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class TagResourcesRequest : AmazonResourceGroupsTaggingAPIRequest
     {

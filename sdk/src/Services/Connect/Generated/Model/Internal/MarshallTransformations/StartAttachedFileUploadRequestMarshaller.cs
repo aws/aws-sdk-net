@@ -66,6 +66,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            if (string.IsNullOrEmpty(publicRequest.AssociatedResourceArn))
+                throw new AmazonConnectException("Request object does not have required field AssociatedResourceArn set");
             
             if (publicRequest.IsSetAssociatedResourceArn())
                 request.Parameters.Add("associatedResourceArn", StringUtils.FromString(publicRequest.AssociatedResourceArn));

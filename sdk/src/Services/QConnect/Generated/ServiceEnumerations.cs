@@ -537,9 +537,17 @@ namespace Amazon.QConnect
         /// </summary>
         public static readonly ChannelSubtype EMAIL = new ChannelSubtype("EMAIL");
         /// <summary>
+        /// Constant PUSH for ChannelSubtype
+        /// </summary>
+        public static readonly ChannelSubtype PUSH = new ChannelSubtype("PUSH");
+        /// <summary>
         /// Constant SMS for ChannelSubtype
         /// </summary>
         public static readonly ChannelSubtype SMS = new ChannelSubtype("SMS");
+        /// <summary>
+        /// Constant WHATSAPP for ChannelSubtype
+        /// </summary>
+        public static readonly ChannelSubtype WHATSAPP = new ChannelSubtype("WHATSAPP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2273,6 +2281,60 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type PushMessageAction.
+    /// </summary>
+    public class PushMessageAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEEP_LINK for PushMessageAction
+        /// </summary>
+        public static readonly PushMessageAction DEEP_LINK = new PushMessageAction("DEEP_LINK");
+        /// <summary>
+        /// Constant OPEN_APP for PushMessageAction
+        /// </summary>
+        public static readonly PushMessageAction OPEN_APP = new PushMessageAction("OPEN_APP");
+        /// <summary>
+        /// Constant URL for PushMessageAction
+        /// </summary>
+        public static readonly PushMessageAction URL = new PushMessageAction("URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PushMessageAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PushMessageAction FindValue(string value)
+        {
+            return FindValue<PushMessageAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PushMessageAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QueryConditionComparisonOperator.
     /// </summary>
     public class QueryConditionComparisonOperator : ConstantClass
@@ -3324,6 +3386,60 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WebScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WhatsAppSourceConfigurationStatus.
+    /// </summary>
+    public class WhatsAppSourceConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID for WhatsAppSourceConfigurationStatus
+        /// </summary>
+        public static readonly WhatsAppSourceConfigurationStatus INVALID = new WhatsAppSourceConfigurationStatus("INVALID");
+        /// <summary>
+        /// Constant REJECTED for WhatsAppSourceConfigurationStatus
+        /// </summary>
+        public static readonly WhatsAppSourceConfigurationStatus REJECTED = new WhatsAppSourceConfigurationStatus("REJECTED");
+        /// <summary>
+        /// Constant VALID for WhatsAppSourceConfigurationStatus
+        /// </summary>
+        public static readonly WhatsAppSourceConfigurationStatus VALID = new WhatsAppSourceConfigurationStatus("VALID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WhatsAppSourceConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WhatsAppSourceConfigurationStatus FindValue(string value)
+        {
+            return FindValue<WhatsAppSourceConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WhatsAppSourceConfigurationStatus(string value)
         {
             return FindValue(value);
         }

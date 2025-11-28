@@ -68,6 +68,8 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetCreationTimeBefore())
                 request.Parameters.Add("CreationTimeBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.CreationTimeBefore));
+            if (string.IsNullOrEmpty(publicRequest.FlowDefinitionArn))
+                throw new AmazonAugmentedAIRuntimeException("Request object does not have required field FlowDefinitionArn set");
             
             if (publicRequest.IsSetFlowDefinitionArn())
                 request.Parameters.Add("FlowDefinitionArn", StringUtils.FromString(publicRequest.FlowDefinitionArn));

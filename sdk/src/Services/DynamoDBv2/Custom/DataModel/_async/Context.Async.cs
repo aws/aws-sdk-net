@@ -21,7 +21,6 @@ using ThirdParty.RuntimeBackports;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
-using System.Linq.Expressions;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -432,7 +431,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
             {
-                var query = ConvertQueryByValue<T>(hashKeyValue, null, null);
+                var query = ConvertQueryByValue<T>(hashKeyValue, null);
                 return FromSearchAsync<T>(query);
             }
         }
@@ -443,7 +442,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
             {
-                var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
+                var query = ConvertQueryByValue<T>(hashKeyValue, operationConfig);
                 return FromSearchAsync<T>(query);
             }
         }
@@ -453,7 +452,7 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
             {
-                var query = ConvertQueryByValue<T>(hashKeyValue, null, queryConfig?.ToDynamoDBOperationConfig());
+                var query = ConvertQueryByValue<T>(hashKeyValue, queryConfig?.ToDynamoDBOperationConfig());
                 return FromSearchAsync<T>(query);
             }
         }
@@ -499,6 +498,19 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+        public IAsyncSearch<T> QueryAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryConditional queryConditional, QueryConfig queryConfig)
+        {
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
+            {
+                if (queryConditional == null)
+                    throw new ArgumentNullException("queryConditional");
+
+                var query = ConvertQueryConditional<T>(queryConditional, queryConfig?.ToDynamoDBOperationConfig());
+                return FromSearchAsync<T>(query);
+            }
+        }
+
+        /// <inheritdoc/>
         public IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryOperationConfig queryConfig)
         {
             using (DynamoDBTelemetry.CreateSpan(this, nameof(FromQueryAsync)))
@@ -531,6 +543,19 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (queryConfig == null) throw new ArgumentNullException("queryConfig");
 
                 var search = ConvertFromQuery<T>(queryConfig, fromQueryConfig?.ToDynamoDBOperationConfig());
+                return FromSearchAsync<T>(search);
+            }
+        }
+
+        /// <inheritdoc/>
+        public IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryDocumentOperationRequest queryOperationRequest, FromQueryConfig fromQueryConfig)
+        {
+
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(FromQueryAsync)))
+            {
+                if (queryOperationRequest == null) throw new ArgumentNullException("queryOperationRequest");
+
+                var search = ConvertFromQuery<T>(queryOperationRequest, fromQueryConfig?.ToDynamoDBOperationConfig());
                 return FromSearchAsync<T>(search);
             }
         }

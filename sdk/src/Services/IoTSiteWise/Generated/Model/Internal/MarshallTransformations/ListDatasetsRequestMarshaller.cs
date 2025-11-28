@@ -68,6 +68,8 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.SourceType))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field SourceType set");
             
             if (publicRequest.IsSetSourceType())
                 request.Parameters.Add("sourceType", StringUtils.FromString(publicRequest.SourceType));

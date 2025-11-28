@@ -52,12 +52,6 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.TrackingServerArn);
             }
 
-            if(requestObject.IsSetTrackingServerName())
-            {
-                context.Writer.WritePropertyName("trackingServerName");
-                context.Writer.WriteStringValue(requestObject.TrackingServerName);
-            }
-
         }
 
         /// <summary>

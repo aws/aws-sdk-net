@@ -32,6 +32,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 // Cleanup existing data
                 CleanupTables();
 
+                TestCompositeHashRangeTable();
                 // Recreate context
                 bool isEmptyStringEnabled = true;
                 CreateContext(conversion, isEmptyStringEnabled);
@@ -54,7 +55,215 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TestMultiTableTransactionOperations();
 
                 TestStoreAsEpoch();
+
             }
+        }
+
+        private void TestCompositeHashRangeTable()
+        {
+            var entity1 = new CompositeHashRangeEntity
+            {
+                Id = 1,
+                Status = "active",
+                UserName = "alice",
+                Timestamp = 1000,
+                OrderId = "order-1",
+                Region = "us-west-2",
+                Category = "electronics",
+                Amount = 100,
+                Priority = 4
+            };
+            var entity11 = new CompositeHashRangeEntity
+            {
+                Id = 1,
+                Status = "pending",
+                UserName = "alice",
+                Timestamp = 1001,
+                OrderId = "order-1",
+                Region = "us-west-2",
+                Category = "electronics",
+                Amount = 100,
+                Priority = 1
+            };
+            var entity21 = new CompositeHashRangeEntity
+            {
+                Id = 21,
+                Status = "active",
+                UserName = "alice",
+                Timestamp = 1002,
+                OrderId = "order-1",
+                Region = "us-west-1",
+                Category = "electronics",
+                Amount = 100,
+                Priority = 2
+            };
+            var entity22 = new CompositeHashRangeEntity
+            {
+                Id = 21,
+                Status = "pending",
+                UserName = "alice",
+                Timestamp = 1003,
+                OrderId = "order-1",
+                Region = "us-west-2",
+                Category = "electronics",
+                Amount = 100,
+                Priority = 3
+            };
+            var entity31 = new CompositeHashRangeEntity
+            {
+                Id = 31,
+                Status = "shipped",
+                UserName = "bob",
+                Timestamp = 1004,
+                OrderId = "order-2",
+                Region = "us-east-1",
+                Category = "books",
+                Amount = 150,
+                Priority = 1
+            };
+            var entity32 = new CompositeHashRangeEntity
+            {
+                Id = 31,
+                Status = "delivered",
+                UserName = "bob",
+                Timestamp = 1005,
+                OrderId = "order-2",
+                Region = "us-east-1",
+                Category = "books",
+                Amount = 150,
+                Priority = 2
+            };
+            var entity41 = new CompositeHashRangeEntity
+            {
+                Id = 41,
+                Status = "active",
+                UserName = "charlie",
+                Timestamp = 1006,
+                OrderId = "order-3",
+                Region = "us-central",
+                Category = "clothing",
+                Amount = 75,
+                Priority = 3
+            };
+            var entity42 = new CompositeHashRangeEntity
+            {
+                Id = 41,
+                Status = "completed",
+                UserName = "charlie",
+                Timestamp = 1007,
+                OrderId = "order-3",
+                Region = "us-central",
+                Category = "clothing",
+                Amount = 75,
+                Priority = 4
+            };
+
+            Context.Save(entity1);
+            Context.Save(entity11);
+            Context.Save(entity21);
+            Context.Save(entity22);
+            Context.Save(entity31);
+            Context.Save(entity32);
+            Context.Save(entity41);
+            Context.Save(entity42);
+
+            // Query GSI1 with single hash key
+            var queryConditional1 = QueryConditional.HashKeyEqualTo("UserName", "bob");
+            var results1 = Context.Query<CompositeHashRangeEntity>(queryConditional1, new QueryConfig
+            {
+                IndexName = "GSI1",
+                QueryFilter = new List<ScanCondition>
+                {
+                    new ScanCondition("OrderId", ScanOperator.Equal, "order-2")
+                }
+            }).ToList();
+            Assert.AreEqual(2, results1.Count);
+            Assert.IsTrue(results1.All(r => r.UserName == "bob"));
+
+            // Query GSI1: composite-range behavior — Timestamp > 1000 (should return 1001,1002,1003)
+            var queryGsi1Range = QueryConditional.HashKeyEqualTo("UserName", "alice")
+                .AndRangeKeyGreaterThan("Timestamp", 1000);
+            var gsi1RangeResults = Context.Query<CompositeHashRangeEntity>(queryGsi1Range, new QueryConfig { IndexName = "GSI1" }).ToList();
+            Assert.AreEqual(3, gsi1RangeResults.Count);
+            CollectionAssert.AreEqual(new[] { 1001, 1002, 1003 }, gsi1RangeResults.Select(r => r.Timestamp).ToArray());
+
+            // Query GSI1 with descending order
+            var gsi1DescResults = Context.Query<CompositeHashRangeEntity>(queryGsi1Range, new QueryConfig { IndexName = "GSI1" , BackwardQuery = true}).ToList();
+            Assert.AreEqual(3, gsi1DescResults.Count);
+            Assert.AreEqual(1003, gsi1DescResults.First().Timestamp);
+
+
+            // Query GSI2 with all hash keys (UserName + OrderId)
+            var queryConditional2 = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("OrderId", "order-2");
+            var results2 = Context.Query<CompositeHashRangeEntity>(queryConditional2,
+                new QueryConfig
+                {
+                    IndexName = "GSI2"
+                }).ToList();
+            Assert.AreEqual(2, results2.Count);
+            Assert.IsTrue(results2.All(r => r.UserName == "bob" && r.OrderId == "order-2"));
+
+            // Query GSI2 with all hash keys (UserName + OrderId) and QueryFilter
+            var results21 = Context.Query<CompositeHashRangeEntity>(queryConditional2,
+                new QueryConfig
+                {
+                    IndexName = "GSI2",
+                    QueryFilter = new List<ScanCondition>
+                    {
+                        new ScanCondition("Timestamp", ScanOperator.GreaterThan, 1004)
+                    }
+                }).ToList();
+            Assert.AreEqual(1, results21.Count);
+            Assert.IsTrue(results21.All(r => r.UserName == "bob" && r.OrderId == "order-2"));
+
+
+            // Query GSI2 with all hash keys and first range key
+            var queryConditional2Range = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("OrderId", "order-2").AndRangeKeyGreaterThan("Timestamp", 1004);
+            var results2Range = Context.Query<CompositeHashRangeEntity>(queryConditional2Range, new QueryConfig { IndexName = "GSI2" }).ToList();
+            Assert.AreEqual(1, results2Range.Count);
+            Assert.IsTrue(results2Range.All(r => r.UserName == "bob" && r.OrderId == "order-2" && r.Timestamp > 1004));
+
+            // Query GSI2 with hash keys and Timestamp < 1003 (for alice/order-1 -> should return 1000,1001,1002)
+            var queryGsi2Alice = QueryConditional.HashKeyEqualTo("UserName", "alice").AndHashKeyEqualTo("OrderId", "order-1").AndRangeKeyLessThan("Timestamp", 1003);
+            var gsi2AliceResults = Context.Query<CompositeHashRangeEntity>(queryGsi2Alice, new QueryConfig { IndexName = "GSI2" }).ToList();
+            Assert.AreEqual(3, gsi2AliceResults.Count);
+            CollectionAssert.AreEqual(new[] { 1000, 1001, 1002 }, gsi2AliceResults.Select(r => r.Timestamp).ToArray());
+
+            // Query GSI3 with all hash keys
+            var queryConditional3 = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("Region", "us-east-1");
+            var results3 = Context.Query<CompositeHashRangeEntity>(queryConditional3, new QueryConfig { IndexName = "GSI3" }).ToList();
+            Assert.AreEqual(2, results3.Count);
+            Assert.IsTrue(results3.All(r => r.UserName == "bob" && r.Region == "us-east-1"));
+
+            // Query GSI3 with all hash keys and first range key (Status equal)
+            var queryConditional3Range = QueryConditional.HashKeyEqualTo("UserName", "bob").AndHashKeyEqualTo("Region", "us-east-1").AndRangeKeyEqualTo("Status", "shipped");
+            var results3Range = Context.Query<CompositeHashRangeEntity>(queryConditional3Range, new QueryConfig { IndexName = "GSI3" }).ToList();
+            Assert.AreEqual(1, results3Range.Count);
+            Assert.IsTrue(results3Range.All(r => r.UserName == "bob" && r.Region == "us-east-1" && r.Status == "shipped"));
+
+            // Query GSI4 with all hash keys
+            var queryConditional4 = QueryConditional.HashKeyEqualTo("Id", 41).AndHashKeyEqualTo("UserName", "charlie").AndHashKeyEqualTo("OrderId", "order-3").AndHashKeyEqualTo("Region", "us-central");
+            var results4 = Context.Query<CompositeHashRangeEntity>(queryConditional4, new QueryConfig { IndexName = "GSI4" }).ToList();
+            Assert.AreEqual(2, results4.Count);
+            Assert.IsTrue(results4.All(r => r.Id == 41 && r.UserName == "charlie" && r.OrderId == "order-3" && r.Region == "us-central"));
+
+            // Query GSI4 with all hash keys and first range key (Status equal)
+            var queryConditional4Range = QueryConditional.HashKeyEqualTo("Id", 41).AndHashKeyEqualTo("UserName", "charlie").AndHashKeyEqualTo("OrderId", "order-3")
+                .AndHashKeyEqualTo("Region", "us-central").AndRangeKeyEqualTo("Status", "active");
+            var results4Range = Context.Query<CompositeHashRangeEntity>(queryConditional4Range, new QueryConfig { IndexName = "GSI4" }).ToList();
+            Assert.AreEqual(1, results4Range.Count);
+            Assert.IsTrue(results4Range.All(r => r.Id == 41 && r.UserName == "charlie" && r.OrderId == "order-3" && r.Region == "us-central" && r.Status == "active"));
+
+            // Additional composite-range check on GSI4: Priority > 2 should return both items for Id=41/charlie/order-3/region
+            var queryGsi4Priority = QueryConditional.HashKeyEqualTo("Id", 41)
+                .AndHashKeyEqualTo("UserName", "charlie")
+                .AndHashKeyEqualTo("OrderId", "order-3")
+                .AndHashKeyEqualTo("Region", "us-central")
+                .AndRangeKeyEqualTo("Status", "active")
+                .AndRangeKeyEqualTo("Category", "clothing")
+                .AndRangeKeyGreaterThan("Amount", 200);
+            var gsi4PriorityResults = Context.Query<CompositeHashRangeEntity>(queryGsi4Priority, new QueryConfig { IndexName = "GSI4" }).ToList();
+            Assert.AreEqual(0, gsi4PriorityResults.Count);
         }
 
         [TestMethod]
@@ -1549,6 +1758,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     .AddRangeKey("Name", DynamoDBEntryType.String)
                     .Build());
 
+                Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-CompositeHashRangeTable")
+                    .AddHashKey("Id", DynamoDBEntryType.Numeric)
+                    .AddRangeKey("Status", DynamoDBEntryType.String)
+                    .AddGlobalSecondaryIndex("GSI1", "UserName", DynamoDBEntryType.String, "Timestamp", DynamoDBEntryType.Numeric)
+                    .AddGlobalSecondaryIndex("GSI2",
+                        new List<KeyValuePair<string, DynamoDBEntryType>> {
+                            new KeyValuePair<string, DynamoDBEntryType>("UserName", DynamoDBEntryType.String),
+                            new KeyValuePair<string, DynamoDBEntryType>( "OrderId", DynamoDBEntryType.String ) },
+                        new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Timestamp", DynamoDBEntryType.Numeric) })
+                    .AddGlobalSecondaryIndex("GSI3",
+                        new List<KeyValuePair<string, DynamoDBEntryType>> {
+                            new KeyValuePair<string, DynamoDBEntryType>( "UserName", DynamoDBEntryType.String ),
+                            new KeyValuePair<string, DynamoDBEntryType>( "Region", DynamoDBEntryType.String ) },
+                        new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Status", DynamoDBEntryType.String),
+                            new KeyValuePair<string, DynamoDBEntryType>( "Category", DynamoDBEntryType.String ) })
+                    .AddGlobalSecondaryIndex("GSI4",
+                        new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType> ("Id", DynamoDBEntryType.Numeric ),
+                            new KeyValuePair<string, DynamoDBEntryType>( "UserName", DynamoDBEntryType.String ),
+                            new KeyValuePair<string, DynamoDBEntryType>("OrderId", DynamoDBEntryType.String),
+                            new KeyValuePair<string, DynamoDBEntryType>("Region", DynamoDBEntryType.String ) },
+                        new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>( "Status", DynamoDBEntryType.String ),
+                            new KeyValuePair<string, DynamoDBEntryType>( "Category", DynamoDBEntryType.String ),
+                            new KeyValuePair<string, DynamoDBEntryType>(  "Amount", DynamoDBEntryType.Numeric ),
+                            new KeyValuePair<string, DynamoDBEntryType>(  "Priority", DynamoDBEntryType.Numeric )})
+                    .Build());
+
                 TestEmptyStringsWithFeatureEnabled();
 
                 TestEnumHashKeyObjects();
@@ -1613,6 +1848,92 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 TestStoreAsAnnotatedEpoch();
             }
         }
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_IndexOrder()
+        {
+            Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashTable")
+                .AddHashKey("Id", DynamoDBEntryType.Numeric)
+                .AddGlobalSecondaryIndex("GlobalIndex", "Company", DynamoDBEntryType.String, "Price",
+                    DynamoDBEntryType.Numeric)
+                .Build());
+            var order = new OrderIndex()
+            {
+                Id = 6,
+                CompanyName = "TestCompany",
+                Price = 1000
+            };
+
+            await Context.SaveAsync(order);
+            var savedOrders = Context.Query<OrderIndex>(
+                order.CompanyName,
+                QueryOperator.Equal,
+                new object[] { 1000 },
+                new QueryConfig 
+            {
+                IndexName = "GlobalIndex",
+            });
+            Assert.IsNotNull(savedOrders);
+            var savedOrder = savedOrders.FirstOrDefault();
+            Assert.IsNotNull(savedOrder);
+        }
+
+        [DynamoDBTable("HashTable")]
+        public class OrderIndex
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            [DynamoDBProperty("Company")]
+            public string CompanyName { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GlobalIndex")]
+            public string CompanyInfo { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GlobalIndex")]
+            public int Price { get; set; }
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_IndexStructure()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            Context.RegisterTableDefinition(new TableBuilder(Client, "DotNetTests-HashTable")
+                .AddHashKey("Id", DynamoDBEntryType.Numeric)
+                .AddGlobalSecondaryIndex("GlobalIndex", "CompanyInfo", DynamoDBEntryType.String, "Price",
+                    DynamoDBEntryType.Numeric)
+                .Build());
+
+            var order = new Order()
+            {
+                Id = 6,
+                Payment = new PaymentInfo()
+                {
+                    CompanyName = "TestCompany",
+                    Price = 1000
+                }
+            };
+
+            await Context.SaveAsync(order);
+            var savedOrders = Context.Query<Order>(
+                order.Payment.CompanyName, // Hash-key for the index is Company
+                QueryOperator.Equal, // Range-key for the index is Price, so the
+                new object[] { 1000 }, // condition is against a numerical value
+                new QueryConfig // Configure the index to use
+                {
+                    IndexName = "GlobalIndex",
+                });
+            Assert.IsNotNull(savedOrders);
+            var savedOrder = savedOrders.FirstOrDefault();
+            Assert.IsNotNull(savedOrder);
+            Assert.AreEqual(order.Id, savedOrder.Id);
+            Assert.IsNotNull(savedOrder.Payment);
+            Assert.AreEqual(order.Payment.Price, savedOrder.Payment.Price);
+            Assert.AreEqual(order.Payment.CompanyName, savedOrder.Payment.CompanyName);
+        }
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
@@ -1640,7 +1961,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsNotNull(savedProductFlat.Details);
             Assert.AreEqual(product.Details.Description, savedProductFlat.Details.Description);
             Assert.AreEqual(0, savedProductFlat.Details.Version);
-            Assert.AreEqual("TestProduct",savedProductFlat.Name);
+            Assert.AreEqual("TestProduct", savedProductFlat.Name);
             Assert.AreEqual("TestProductDetails", savedProductFlat.Details.Name);
 
             // flattened property, which itself contains another flattened property.
@@ -1689,7 +2010,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 {
                     CompanyName = "TestCompany",
                     Price = 1000
-
                 }
             };
 
@@ -2354,7 +2674,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         private void TestHashObjects()
         {
             string bucketName = "aws-sdk-net-s3link-" + DateTime.UtcNow.Ticks;
-            var s3Client = new Amazon.S3.AmazonS3Client(Amazon.RegionEndpoint.USEast1);
+            var s3Client = new Amazon.S3.AmazonS3Client();
             s3Client.PutBucket(bucketName);
             try
             {
@@ -4302,6 +4622,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             [DynamoDBFlatten]
             public PaymentInfo Payment { get; set; }
+
+            public string CompanyInfo { get; set; }
         }
 
         public class PaymentInfo
@@ -4425,6 +4747,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         #endregion
+
+        [DynamoDBTable("CompositeHashRangeTable")]
+        public class CompositeHashRangeEntity
+        {
+            [DynamoDBHashKey]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI4", Order = 1)]
+            public int Id { get; set; }
+
+            [DynamoDBRangeKey]
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI3", Order = 1)]
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI4", Order = 1)]
+            public string Status { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI1")]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI3", Order = 1)]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI2", Order = 2)]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI4", Order = 2)]
+            public string UserName { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI1")]
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI2")]
+            public int Timestamp { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI2", Order = 1)]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI4", Order = 3)]
+            public string OrderId { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI3", Order = 2)]
+            [DynamoDBGlobalSecondaryIndexHashKey("GSI4", Order = 4)]
+            public string Region { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI3", Order = 2)]
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI4", Order = 2)]
+            public string Category { get; set; }
+
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI4", Order = 3)]
+            public int Amount { get; set; }
+
+            [DynamoDBGlobalSecondaryIndexRangeKey("GSI4", Order = 4)]
+            public int Priority { get; set; }
+        }
 
         #endregion
     }

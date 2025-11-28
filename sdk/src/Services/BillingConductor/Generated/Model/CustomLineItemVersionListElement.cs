@@ -144,7 +144,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ComputationRule. 
         /// <para>
-        /// The display settings of the custom line item
+        ///  The computation rule for a specific version of a custom line item, determining how
+        /// charges are computed and reflected in the bill. 
         /// </para>
         /// </summary>
         public ComputationRuleEnum ComputationRule
@@ -272,7 +273,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property PresentationDetails. 
         /// <para>
-        /// The presentation configuration of the custom line item
+        ///  Presentation configuration for a specific version of a custom line item, specifying
+        /// how charges are displayed in the bill. 
         /// </para>
         /// </summary>
         public PresentationObject PresentationDetails

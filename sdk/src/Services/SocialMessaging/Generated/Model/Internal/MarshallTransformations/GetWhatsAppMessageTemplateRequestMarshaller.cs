@@ -62,9 +62,13 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2024-01-01";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.Id))
+                throw new AmazonSocialMessagingException("Request object does not have required field Id set");
             
             if (publicRequest.IsSetId())
                 request.Parameters.Add("id", StringUtils.FromString(publicRequest.Id));
+            if (string.IsNullOrEmpty(publicRequest.MetaTemplateId))
+                throw new AmazonSocialMessagingException("Request object does not have required field MetaTemplateId set");
             
             if (publicRequest.IsSetMetaTemplateId())
                 request.Parameters.Add("metaTemplateId", StringUtils.FromString(publicRequest.MetaTemplateId));

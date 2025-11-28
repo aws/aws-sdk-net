@@ -39,6 +39,7 @@ namespace Amazon.BedrockRuntime.Model
         private DocumentCharLocation _documentChar;
         private DocumentChunkLocation _documentChunk;
         private DocumentPageLocation _documentPage;
+        private SearchResultLocation _searchResultLocation;
         private WebLocation _web;
 
         /// <summary>
@@ -94,6 +95,25 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetDocumentPage()
         {
             return this._documentPage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchResultLocation. 
+        /// <para>
+        /// The search result location where the cited content is found, including the search
+        /// result index and block positions within the content array.
+        /// </para>
+        /// </summary>
+        public SearchResultLocation SearchResultLocation
+        {
+            get { return this._searchResultLocation; }
+            set { this._searchResultLocation = value; }
+        }
+
+        // Check to see if SearchResultLocation property is set
+        internal bool IsSetSearchResultLocation()
+        {
+            return this._searchResultLocation != null;
         }
 
         /// <summary>

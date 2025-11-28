@@ -108,6 +108,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.DisableExecuteApiEndpoint.Value);
             }
 
+            if(publicRequest.IsSetEndpointAccessMode())
+            {
+                context.Writer.WritePropertyName("endpointAccessMode");
+                context.Writer.WriteStringValue(publicRequest.EndpointAccessMode);
+            }
+
             if(publicRequest.IsSetEndpointConfiguration())
             {
                 context.Writer.WritePropertyName("endpointConfiguration");
@@ -135,6 +141,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("policy");
                 context.Writer.WriteStringValue(publicRequest.Policy);
+            }
+
+            if(publicRequest.IsSetSecurityPolicy())
+            {
+                context.Writer.WritePropertyName("securityPolicy");
+                context.Writer.WriteStringValue(publicRequest.SecurityPolicy);
             }
 
             if(publicRequest.IsSetTags())

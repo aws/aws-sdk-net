@@ -267,7 +267,10 @@ namespace Amazon.Runtime
             {
                 if (probeForRegionEndpoint)
                 {
-                    RegionEndpoint = GetDefaultRegionEndpoint();
+                    var defaultRegion = GetDefaultRegionEndpoint();
+                    ValidateRegion(defaultRegion?.SystemName);
+
+                    RegionEndpoint = defaultRegion;
                     this.probeForRegionEndpoint = false;
                 }
                 return this.regionEndpoint;
@@ -294,6 +297,21 @@ namespace Amazon.Runtime
                         RegionEndpoint.GetBySystemName(
                             value.SystemName.Replace("fips-", "").Replace("-fips", ""));
                 }
+
+                ValidateRegion(this.regionEndpoint?.SystemName);
+            }
+        }
+
+        private static void ValidateRegion(string regionSystemName)
+        {
+            if (string.IsNullOrWhiteSpace(regionSystemName))
+            {
+                return;
+            }
+
+            if (!Internal.Endpoints.StandardLibrary.Fn.IsValidHostLabel(regionSystemName, true))
+            {
+                throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture, "The specified '{0}' region is not a valid hostname component.", regionSystemName));
             }
         }
 
@@ -434,7 +452,11 @@ namespace Amazon.Runtime
         public string AuthenticationRegion
         {
             get { return this.authRegion; }
-            set { this.authRegion = value; }
+            set
+            {
+                ValidateRegion(value);
+                this.authRegion = value; 
+            }
         }
 
         /// <summary>

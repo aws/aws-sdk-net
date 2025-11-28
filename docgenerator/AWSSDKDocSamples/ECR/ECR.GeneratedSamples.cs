@@ -172,6 +172,21 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
             #endregion
         }
 
+        public void ECRDeregisterPullTimeUpdateExclusion()
+        {
+            #region deregisterpulltimeupdateexclusion-example
+
+            var client = new AmazonECRClient();
+            var response = client.DeregisterPullTimeUpdateExclusion(new DeregisterPullTimeUpdateExclusionRequest 
+            {
+                PrincipalArn = "arn:aws:iam::012345678910:role/ECRAccess"
+            });
+
+            string principalArn = response.PrincipalArn;
+
+            #endregion
+        }
+
         public void ECRDescribeRepositories()
         {
             #region describe-repositories-1470856017467
@@ -238,6 +253,58 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
             #endregion
         }
 
+        public void ECRListImageReferrers()
+        {
+            #region listimagereferrers-basic-example
+
+            var client = new AmazonECRClient();
+            var response = client.ListImageReferrers(new ListImageReferrersRequest 
+            {
+                RepositoryName = "sample-repo",
+                SubjectId = new SubjectIdentifier { ImageDigest = "sha256:943e640159415616581703a53fa4ed87e96740655fd67daf2d2146a35337bce5" }
+            });
+
+            List<ImageReferrer> referrers = response.Referrers;
+
+            #endregion
+        }
+
+        public void ECRListImageReferrers()
+        {
+            #region listimagereferrers-filtered-example
+
+            var client = new AmazonECRClient();
+            var response = client.ListImageReferrers(new ListImageReferrersRequest 
+            {
+                Filter = new ListImageReferrersFilter { ArtifactTypes = new List<string> {
+                    "application/vnd.dev.sigstore.bundle.v0.3+json"
+                } },
+                RepositoryName = "sample-repo",
+                SubjectId = new SubjectIdentifier { ImageDigest = "sha256:943e640159415616581703a53fa4ed87e96740655fd67daf2d2146a35337bce5" }
+            });
+
+            List<ImageReferrer> referrers = response.Referrers;
+
+            #endregion
+        }
+
+        public void ECRListImageReferrers()
+        {
+            #region listimagereferrers-archived-example
+
+            var client = new AmazonECRClient();
+            var response = client.ListImageReferrers(new ListImageReferrersRequest 
+            {
+                Filter = new ListImageReferrersFilter { ArtifactStatus = "ANY" },
+                RepositoryName = "sample-repo",
+                SubjectId = new SubjectIdentifier { ImageDigest = "sha256:943e640159415616581703a53fa4ed87e96740655fd67daf2d2146a35337bce5" }
+            });
+
+            List<ImageReferrer> referrers = response.Referrers;
+
+            #endregion
+        }
+
         public void ECRListImages()
         {
             #region listimages-example-1470868161594
@@ -249,6 +316,94 @@ namespace AWSSDKDocSamples.Amazon.ECR.Generated
             });
 
             List<ImageIdentifier> imageIds = response.ImageIds;
+
+            #endregion
+        }
+
+        public void ECRListPullTimeUpdateExclusions()
+        {
+            #region listpulltimeupdateexclusions-basic-example
+
+            var client = new AmazonECRClient();
+            var response = client.ListPullTimeUpdateExclusions(new ListPullTimeUpdateExclusionsRequest 
+            {
+            });
+
+            List<string> pullTimeUpdateExclusions = response.PullTimeUpdateExclusions;
+
+            #endregion
+        }
+
+        public void ECRListPullTimeUpdateExclusions()
+        {
+            #region listpulltimeupdateexclusions-paginated-example
+
+            var client = new AmazonECRClient();
+            var response = client.ListPullTimeUpdateExclusions(new ListPullTimeUpdateExclusionsRequest 
+            {
+                MaxResults = 2
+            });
+
+            string nextToken = response.NextToken;
+            List<string> pullTimeUpdateExclusions = response.PullTimeUpdateExclusions;
+
+            #endregion
+        }
+
+        public void ECRRegisterPullTimeUpdateExclusion()
+        {
+            #region registerpulltimeupdateexclusion-role-example
+
+            var client = new AmazonECRClient();
+            var response = client.RegisterPullTimeUpdateExclusion(new RegisterPullTimeUpdateExclusionRequest 
+            {
+                PrincipalArn = "arn:aws:iam::012345678910:role/ECRAccess"
+            });
+
+            DateTime createdAt = response.CreatedAt;
+            string principalArn = response.PrincipalArn;
+
+            #endregion
+        }
+
+        public void ECRUpdateImageStorageClass()
+        {
+            #region updateimagestorageclass-archive-example
+
+            var client = new AmazonECRClient();
+            var response = client.UpdateImageStorageClass(new UpdateImageStorageClassRequest 
+            {
+                ImageId = new ImageIdentifier { ImageDigest = "sha256:0b1a4e0c81c434fa7928e5c4a2651a521ebabc4ff200c65f7e25b99373efca3b" },
+                RegistryId = "724772093679",
+                RepositoryName = "hello-repository",
+                TargetStorageClass = "ARCHIVE"
+            });
+
+            ImageIdentifier imageId = response.ImageId;
+            string imageStatus = response.ImageStatus;
+            string registryId = response.RegistryId;
+            string repositoryName = response.RepositoryName;
+
+            #endregion
+        }
+
+        public void ECRUpdateImageStorageClass()
+        {
+            #region updateimagestorageclass-restore-example
+
+            var client = new AmazonECRClient();
+            var response = client.UpdateImageStorageClass(new UpdateImageStorageClassRequest 
+            {
+                ImageId = new ImageIdentifier { ImageDigest = "sha256:0b1a4e0c81c434fa7928e5c4a2651a521ebabc4ff200c65f7e25b99373efca3b" },
+                RegistryId = "724772093679",
+                RepositoryName = "hello-repository",
+                TargetStorageClass = "STANDARD"
+            });
+
+            ImageIdentifier imageId = response.ImageId;
+            string imageStatus = response.ImageStatus;
+            string registryId = response.RegistryId;
+            string repositoryName = response.RepositoryName;
 
             #endregion
         }

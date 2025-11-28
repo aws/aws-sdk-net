@@ -41,6 +41,7 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         AssumeRoleExternalMFASessionName,
         AssumeRoleMFASessionName,
         SSO,
+        Login
     }
 
     public enum CredentialSourceType
@@ -81,6 +82,8 @@ namespace Amazon.Runtime.CredentialManagement.Internal
         private const string SsoRoleName = nameof(CredentialProfileOptions.SsoRoleName);
         private const string SsoStartUrl = nameof(CredentialProfileOptions.SsoStartUrl);
         private const string SsoSession = nameof(CredentialProfileOptions.SsoSession);
+
+        private const string LoginSession = nameof(CredentialProfileOptions.LoginSession);
 
         private static HashSet<string> SsoProperties = new HashSet<string>(
             new string[] { SsoAccountId, SsoRegion, SsoRegistrationScopes, SsoRoleName, SsoStartUrl, SsoSession },
@@ -227,6 +230,12 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                         new HashSet<string> { SsoSession }
                     } 
                 },
+                {
+                    CredentialProfileType.Login, new List<HashSet<string>>()
+                    {
+                        new HashSet<string> { LoginSession }
+                    }
+                },
                 { 
                     CredentialProfileType.AssumeRoleMFASessionName, new List<HashSet<string>>() 
                     { 
@@ -289,6 +298,39 @@ namespace Amazon.Runtime.CredentialManagement.Internal
                     if (item.SetEquals(propertyNames))
                     {
                         profileType = pair.Key;
+                    }
+                }
+            }
+
+            // If profile type was not detected due to presence of LoginSession property, then try to match without LoginSession
+            if (profileType == null && propertyNames.Contains(LoginSession))
+            {
+                HashSet<string> propertyNamesWithoutLoginSession = new HashSet<string>(propertyNames.Where(p => p != LoginSession));
+                bool profileTypeDetected = false;
+
+                foreach (var pair in TypePropertyDictionary)
+                {
+                    foreach (var item in pair.Value)
+                    {
+                        // If we have reached the Login profile type, it's of higher precedence than subsequent profiles.
+                        if (pair.Key == CredentialProfileType.Login)
+                        {
+                            profileType = CredentialProfileType.Login;
+                            profileTypeDetected = true;
+                            break;
+                        }
+
+                        if (item.SetEquals(propertyNamesWithoutLoginSession))
+                        {
+                            profileType = pair.Key;
+                            profileTypeDetected = true;
+                            break;
+                        }
+                    }
+
+                    if (profileTypeDetected)
+                    {
+                        break;
                     }
                 }
             }

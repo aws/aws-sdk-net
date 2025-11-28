@@ -62,6 +62,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.BuildLog = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("generatedTestCases", targetDepth))
+                {
+                    var unmarshaller = AutomatedReasoningPolicyGeneratedTestCasesUnmarshaller.Instance;
+                    unmarshalledObject.GeneratedTestCases = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("policyDefinition", targetDepth))
                 {
                     var unmarshaller = AutomatedReasoningPolicyDefinitionUnmarshaller.Instance;

@@ -63,6 +63,8 @@ namespace Amazon.DirectoryServiceData.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-05-31";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.DirectoryId))
+                throw new AmazonDirectoryServiceDataException("Request object does not have required field DirectoryId set");
             
             if (publicRequest.IsSetDirectoryId())
                 request.Parameters.Add("DirectoryId", StringUtils.FromString(publicRequest.DirectoryId));

@@ -41,6 +41,7 @@ namespace Amazon.APIGateway.Model
         private string _certificateName;
         private string _certificatePrivateKey;
         private string _domainName;
+        private EndpointAccessMode _endpointAccessMode;
         private EndpointConfiguration _endpointConfiguration;
         private MutualTlsAuthenticationInput _mutualTlsAuthentication;
         private string _ownershipVerificationCertificateArn;
@@ -167,6 +168,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointAccessMode. 
+        /// <para>
+        ///  The endpoint access mode of the DomainName. Only available for DomainNames that use
+        /// security policies that start with <c>SecurityPolicy_</c>. 
+        /// </para>
+        /// </summary>
+        public EndpointAccessMode EndpointAccessMode
+        {
+            get { return this._endpointAccessMode; }
+            set { this._endpointAccessMode = value; }
+        }
+
+        // Check to see if EndpointAccessMode property is set
+        internal bool IsSetEndpointAccessMode()
+        {
+            return this._endpointAccessMode != null;
         }
 
         /// <summary>
@@ -303,8 +323,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property SecurityPolicy. 
         /// <para>
-        /// The Transport Layer Security (TLS) version + cipher suite for this DomainName. The
-        /// valid values are <c>TLS_1_0</c> and <c>TLS_1_2</c>.
+        /// The Transport Layer Security (TLS) version + cipher suite for this DomainName.
         /// </para>
         /// </summary>
         public SecurityPolicy SecurityPolicy

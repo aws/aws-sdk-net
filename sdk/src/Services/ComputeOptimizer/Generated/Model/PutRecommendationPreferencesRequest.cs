@@ -155,8 +155,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// You can only set this preference for the Amazon EC2 instance and Auto Scaling group
-        /// resource types. 
+        /// You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling
+        /// group resource types. 
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
@@ -165,7 +165,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Auto Scaling group lookback preferences can only be set at the resource level.
+        /// Amazon EC2 Auto Scaling group lookback preferences can only be set at the resource
+        /// level.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -191,8 +192,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can only set this preference for the Amazon EC2 instance and Auto Scaling group
-        /// resource types.
+        /// You can only set this preference for the Amazon EC2 instance and Amazon EC2 Auto Scaling
+        /// group resource types.
         /// </para>
         ///  </note>
         /// <para />
@@ -221,8 +222,8 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// The <c>Ec2Instance</c> option encompasses standalone instances and instances that
-        /// are part of Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses only
-        /// instances that are part of an Auto Scaling group.
+        /// are part of Amazon EC2 Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses
+        /// only instances that are part of an Amazon EC2 Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -285,14 +286,15 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot create recommendation preferences for Auto Scaling groups at the organization
-        /// and account levels. You can create recommendation preferences for Auto Scaling groups
-        /// only at the resource level by specifying a scope name of <c>ResourceArn</c> and a
-        /// scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure
-        /// the preference for all instances that are part of the specified Auto Scaling group.
-        /// You also cannot create recommendation preferences at the resource level for instances
-        /// that are part of an Auto Scaling group. You can create recommendation preferences
-        /// at the resource level only for standalone instances.
+        /// You cannot create recommendation preferences for Amazon EC2 Auto Scaling groups at
+        /// the organization and account levels. You can create recommendation preferences for
+        /// Amazon EC2 Auto Scaling groups only at the resource level by specifying a scope name
+        /// of <c>ResourceArn</c> and a scope value of the Amazon EC2 Auto Scaling group Amazon
+        /// Resource Name (ARN). This will configure the preference for all instances that are
+        /// part of the specified Amazon EC2 Auto Scaling group. You also cannot create recommendation
+        /// preferences at the resource level for instances that are part of an Amazon EC2 Auto
+        /// Scaling group. You can create recommendation preferences at the resource level only
+        /// for standalone instances.
         /// </para>
         ///  </note>
         /// </summary>

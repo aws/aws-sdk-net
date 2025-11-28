@@ -74,6 +74,8 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetEndedAt())
                 request.Parameters.Add("endedAt", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndedAt));
+            if (string.IsNullOrEmpty(publicRequest.FormName))
+                throw new AmazonDataZoneException("Request object does not have required field FormName set");
             
             if (publicRequest.IsSetFormName())
                 request.Parameters.Add("formName", StringUtils.FromString(publicRequest.FormName));

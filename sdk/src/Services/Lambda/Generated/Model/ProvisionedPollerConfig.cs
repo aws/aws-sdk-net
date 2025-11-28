@@ -32,18 +32,21 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">
     /// provisioned mode</a> configuration for the event source. Use Provisioned Mode to customize
-    /// the minimum and maximum number of event pollers for your event source. An event poller
-    /// is a compute unit that provides approximately 5 MBps of throughput.
+    /// the minimum and maximum number of event pollers for your event source.
     /// </summary>
     public partial class ProvisionedPollerConfig
     {
         private int? _maximumPollers;
         private int? _minimumPollers;
+        private string _pollerGroupName;
 
         /// <summary>
         /// Gets and sets the property MaximumPollers. 
         /// <para>
-        /// The maximum number of event pollers this event source can scale up to.
+        /// The maximum number of event pollers this event source can scale up to. For Amazon
+        /// SQS events source mappings, default is 200, and minimum value allowed is 2. For Amazon
+        /// MSK and self-managed Apache Kafka event source mappings, default is 200, and minimum
+        /// value allowed is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -62,7 +65,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MinimumPollers. 
         /// <para>
-        /// The minimum number of event pollers this event source can scale down to.
+        /// The minimum number of event pollers this event source can scale down to. For Amazon
+        /// SQS events source mappings, default is 2, and minimum 2 required. For Amazon MSK and
+        /// self-managed Apache Kafka event source mappings, default is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -76,6 +81,29 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMinimumPollers()
         {
             return this._minimumPollers.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PollerGroupName. 
+        /// <para>
+        /// (Amazon MSK and self-managed Apache Kafka) The name of the provisioned poller group.
+        /// Use this option to group multiple ESMs within the VPC to share Event Poller Unit (EPU)
+        /// capacity. This option is used to optimize Provisioned mode costs for your ESMs. You
+        /// can group up to 100 ESMs per poller group and aggregate maximum pollers across all
+        /// ESMs in a group cannot exceed 2000.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string PollerGroupName
+        {
+            get { return this._pollerGroupName; }
+            set { this._pollerGroupName = value; }
+        }
+
+        // Check to see if PollerGroupName property is set
+        internal bool IsSetPollerGroupName()
+        {
+            return this._pollerGroupName != null;
         }
 
     }

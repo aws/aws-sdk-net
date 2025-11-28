@@ -31,7 +31,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the DissociatePackages operation.
-    /// Dissociates multiple packages from a domain simulatneously.
+    /// Dissociates multiple packages from a domain simultaneously.
     /// </summary>
     public partial class DissociatePackagesRequest : AmazonOpenSearchServiceRequest
     {

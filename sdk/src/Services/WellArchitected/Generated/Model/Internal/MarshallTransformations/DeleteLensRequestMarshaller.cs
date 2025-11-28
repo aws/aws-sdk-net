@@ -65,12 +65,16 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetLensAlias())
                 throw new AmazonWellArchitectedException("Request object does not have required field LensAlias set");
             request.AddPathResource("{LensAlias}", StringUtils.FromString(publicRequest.LensAlias));
+            if (string.IsNullOrEmpty(publicRequest.ClientRequestToken))
+                throw new AmazonWellArchitectedException("Request object does not have required field ClientRequestToken set");
             
             if (publicRequest.IsSetClientRequestToken())
                 request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
             else            
                 request.Parameters.Add("ClientRequestToken", System.Guid.NewGuid().ToString());
                 
+            if (string.IsNullOrEmpty(publicRequest.LensStatus))
+                throw new AmazonWellArchitectedException("Request object does not have required field LensStatus set");
             
             if (publicRequest.IsSetLensStatus())
                 request.Parameters.Add("LensStatus", StringUtils.FromString(publicRequest.LensStatus));

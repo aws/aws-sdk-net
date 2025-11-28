@@ -58,6 +58,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "GET";
+            if (string.IsNullOrEmpty(publicRequest.HostedZoneId))
+                throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
             
             if (publicRequest.IsSetHostedZoneId())
                 request.Parameters.Add("id", StringUtils.FromString(publicRequest.HostedZoneId));

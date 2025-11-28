@@ -59,6 +59,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             PreMarshallCustomization(request, publicRequest);
             request.HttpMethod = "POST";
             request.AddSubResource("Operation", "Tag");
+            if (string.IsNullOrEmpty(publicRequest.Resource))
+                throw new AmazonCloudFrontException("Request object does not have required field Resource set");
             
             if (publicRequest.IsSetResource())
                 request.Parameters.Add("Resource", StringUtils.FromString(publicRequest.Resource));

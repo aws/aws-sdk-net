@@ -71,6 +71,8 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.Simulation))
+                throw new AmazonSimSpaceWeaverException("Request object does not have required field Simulation set");
             
             if (publicRequest.IsSetSimulation())
                 request.Parameters.Add("simulation", StringUtils.FromString(publicRequest.Simulation));

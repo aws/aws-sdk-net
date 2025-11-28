@@ -37,6 +37,14 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Paginator for ListEntityEvents operation
+        ///</summary>
+        public IListEntityEventsPaginator ListEntityEvents(ListEntityEventsRequest request) 
+        {
+            return new ListEntityEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListServiceDependencies operation
         ///</summary>
         public IListServiceDependenciesPaginator ListServiceDependencies(ListServiceDependenciesRequest request) 

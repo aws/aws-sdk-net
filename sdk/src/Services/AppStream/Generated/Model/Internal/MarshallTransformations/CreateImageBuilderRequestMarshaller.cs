@@ -156,6 +156,17 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetRootVolumeConfig())
+            {
+                context.Writer.WritePropertyName("RootVolumeConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VolumeConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RootVolumeConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSoftwaresToInstall())
             {
                 context.Writer.WritePropertyName("SoftwaresToInstall");

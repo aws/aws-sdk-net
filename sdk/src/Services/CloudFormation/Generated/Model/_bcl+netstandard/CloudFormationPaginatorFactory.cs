@@ -45,6 +45,22 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeChangeSet operation
+        ///</summary>
+        public IDescribeChangeSetPaginator DescribeChangeSet(DescribeChangeSetRequest request) 
+        {
+            return new DescribeChangeSetPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeEvents operation
+        ///</summary>
+        public IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request) 
+        {
+            return new DescribeEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeStackEvents operation
         ///</summary>
         public IDescribeStackEventsPaginator DescribeStackEvents(DescribeStackEventsRequest request) 

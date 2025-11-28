@@ -229,6 +229,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.StringSearch.SearchValue</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_\+=\.\-@ ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.TagValues.Key</property>
     <min>0</min>
     <max>1024</max>

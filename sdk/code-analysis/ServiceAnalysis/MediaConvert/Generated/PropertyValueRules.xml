@@ -388,6 +388,17 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmfcSettings.CertificateSecret</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:[a-z-]+:secretsmanager:[\w-]+:\d{12}:secret:)?[a-zA-Z0-9_\/_+=.@-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.CmfcSettings.SigningKmsKey</property>
+    <min>1</min>
+    <pattern>^(arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/)?[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|mrk-[a-fA-F0-9]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.CmfcSettings.TimedMetadataSchemeIdUri</property>
     <max>1000</max>
   </property-value-rule>
@@ -1187,7 +1198,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.InputVideoGenerator.Duration</property>
-    <min>50</min>
+    <min>1</min>
     <max>86400000</max>
   </property-value-rule>
   <property-value-rule>
@@ -1618,6 +1629,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.Mp4Settings.SigningKmsKey</property>
+    <min>1</min>
+    <pattern>^(arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/)?[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|mrk-[a-fA-F0-9]{32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MpdSettings.CertificateSecret</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:[a-z-]+:secretsmanager:[\w-]+:\d{12}:secret:)?[a-zA-Z0-9_\/_+=.@-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConvert.Model.MpdSettings.SigningKmsKey</property>
     <min>1</min>
     <pattern>^(arn:aws(-us-gov|-cn)?:kms:[a-z-]{2,6}-(east|west|central|((north|south)(east|west)?))-[1-9]{1,2}:\d{12}:key/)?[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}|mrk-[a-fA-F0-9]{32}$</pattern>
   </property-value-rule>

@@ -2791,6 +2791,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly ErrorCode ALREADY_ENABLED = new ErrorCode("ALREADY_ENABLED");
         /// <summary>
+        /// Constant BLOCKED_BY_ORGANIZATION_POLICY for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode BLOCKED_BY_ORGANIZATION_POLICY = new ErrorCode("BLOCKED_BY_ORGANIZATION_POLICY");
+        /// <summary>
         /// Constant DISABLE_IN_PROGRESS for ErrorCode
         /// </summary>
         public static readonly ErrorCode DISABLE_IN_PROGRESS = new ErrorCode("DISABLE_IN_PROGRESS");
@@ -5248,6 +5252,10 @@ namespace Amazon.Inspector2
         /// Constant EXCLUDED_BY_TAG for ScanStatusReason
         /// </summary>
         public static readonly ScanStatusReason EXCLUDED_BY_TAG = new ScanStatusReason("EXCLUDED_BY_TAG");
+        /// <summary>
+        /// Constant IMAGE_ARCHIVED for ScanStatusReason
+        /// </summary>
+        public static readonly ScanStatusReason IMAGE_ARCHIVED = new ScanStatusReason("IMAGE_ARCHIVED");
         /// <summary>
         /// Constant IMAGE_SIZE_EXCEEDED for ScanStatusReason
         /// </summary>

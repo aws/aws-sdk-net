@@ -144,7 +144,14 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorDimension. 
         /// <para>
-        /// The dimensions to evaluate. 
+        /// For customer managed monitors, do not specify this field.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Amazon Web Services managed monitors, this field controls which cost dimension
+        /// is automatically analyzed by the monitor. For <c>TAG</c> and <c>COST_CATEGORY </c>
+        /// dimensions, you must also specify MonitorSpecification to configure the specific tag
+        /// or cost category key to analyze.
         /// </para>
         /// </summary>
         public MonitorDimension MonitorDimension
@@ -179,7 +186,50 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MonitorSpecification.
+        /// Gets and sets the property MonitorSpecification. 
+        /// <para>
+        /// An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// object used to control what costs the monitor analyzes for anomalies.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Amazon Web Services managed monitors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If MonitorDimension is <c>SERVICE</c> or <c>LINKED_ACCOUNT</c>, do not specify this
+        /// field
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If MonitorDimension is <c>TAG</c>, set this field to <c>{ "Tags": { "Key": "your tag
+        /// key" } }</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If MonitorDimension is <c>COST_CATEGORY</c>, set this field to <c>{ "CostCategories":
+        /// { "Key": "your cost category key" } }</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For customer managed monitors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To track linked accounts, set this field to <c>{ "Dimensions": { "Key": "LINKED_ACCOUNT",
+        /// "Values": [ "your list of up to 10 account IDs" ] } } </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To track cost allocation tags, set this field to <c>{ "Tags": { "Key": "your tag key",
+        /// "Values": [ "your list of up to 10 tag values" ] } } </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To track cost categories, set this field to<c>{ "CostCategories": { "Key": "your cost
+        /// category key", "Values": [ "your cost category value" ] } } </c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Expression MonitorSpecification
         {
@@ -196,7 +246,25 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MonitorType. 
         /// <para>
-        /// The possible type values. 
+        /// The type of the monitor. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Set this to <c>DIMENSIONAL</c> for an Amazon Web Services managed monitor. Amazon
+        /// Web Services managed monitors automatically track up to the top 5,000 values by cost
+        /// within a dimension of your choosing. Each dimension value is evaluated independently.
+        /// If you start incurring cost in a new value of your chosen dimension, it will automatically
+        /// be analyzed by an Amazon Web Services managed monitor.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set this to <c>CUSTOM</c> for a customer managed monitor. Customer managed monitors
+        /// let you select specific dimension values that get monitored in aggregate. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about monitor types, see <a href="https://docs.aws.amazon.com/cost-management/latest/userguide/getting-started-ad.html#monitor-type-def">Monitor
+        /// types</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

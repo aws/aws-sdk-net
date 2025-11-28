@@ -103,6 +103,17 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.StreamName);
             }
 
+            if(publicRequest.IsSetStreamStorageConfiguration())
+            {
+                context.Writer.WritePropertyName("StreamStorageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StreamStorageConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StreamStorageConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

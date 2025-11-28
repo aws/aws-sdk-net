@@ -91,6 +91,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue != null)
                         {
                             xmlWriter.WriteStartElement("Rule");
+                            if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BlockedEncryptionTypes != null)
+                            {
+                                xmlWriter.WriteStartElement("BlockedEncryptionTypes");
+                                var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType = publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BlockedEncryptionTypes.EncryptionType;
+                                if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType != null && (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                {
+                                    foreach (var publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionTypeValue in publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionType) 
+                                    {
+                                        xmlWriter.WriteStartElement("EncryptionType");
+                                        xmlWriter.WriteValue(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValueBlockedEncryptionTypesEncryptionTypeValue);
+                                        xmlWriter.WriteEndElement();
+                                    }            
+                                }
+                                xmlWriter.WriteEndElement();
+                            }
                             if(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.IsSetBucketKeyEnabled())
                                 xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.BucketKeyEnabled.Value));
                             if (publicRequestServerSideEncryptionConfigurationServerSideEncryptionRulesValue.ServerSideEncryptionByDefault != null)

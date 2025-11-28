@@ -110,6 +110,17 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetCrossRegionS3RestoreSourcesToEnable())
+            {
+                context.Writer.WritePropertyName("crossRegionS3RestoreSourcesToEnable");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCrossRegionS3RestoreSourcesToEnableListValue in publicRequest.CrossRegionS3RestoreSourcesToEnable)
+                {
+                        context.Writer.WriteStringValue(publicRequestCrossRegionS3RestoreSourcesToEnableListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetCustomDomainName())
             {
                 context.Writer.WritePropertyName("customDomainName");
@@ -128,6 +139,18 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DisplayName);
             }
 
+            if(publicRequest.IsSetKmsAccess())
+            {
+                context.Writer.WritePropertyName("kmsAccess");
+                context.Writer.WriteStringValue(publicRequest.KmsAccess);
+            }
+
+            if(publicRequest.IsSetKmsPolicyDocument())
+            {
+                context.Writer.WritePropertyName("kmsPolicyDocument");
+                context.Writer.WriteStringValue(publicRequest.KmsPolicyDocument);
+            }
+
             if(publicRequest.IsSetS3Access())
             {
                 context.Writer.WritePropertyName("s3Access");
@@ -138,6 +161,18 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("s3PolicyDocument");
                 context.Writer.WriteStringValue(publicRequest.S3PolicyDocument);
+            }
+
+            if(publicRequest.IsSetStsAccess())
+            {
+                context.Writer.WritePropertyName("stsAccess");
+                context.Writer.WriteStringValue(publicRequest.StsAccess);
+            }
+
+            if(publicRequest.IsSetStsPolicyDocument())
+            {
+                context.Writer.WritePropertyName("stsPolicyDocument");
+                context.Writer.WriteStringValue(publicRequest.StsPolicyDocument);
             }
 
             if(publicRequest.IsSetTags())

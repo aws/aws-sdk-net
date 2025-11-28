@@ -80,6 +80,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.NluIntentConfidenceThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("speechDetectionSensitivity", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SpeechDetectionSensitivity = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("voiceSettings", targetDepth))
                 {
                     var unmarshaller = VoiceSettingsUnmarshaller.Instance;

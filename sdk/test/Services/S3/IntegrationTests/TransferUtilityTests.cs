@@ -1821,6 +1821,93 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 #endif
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void UploadDirectoryWithMixedFileTypesContentTypeTest()
+        {
+            var directory = CreateMixedFileTypeTestDirectory();
+            var keyPrefix = directory.Name;
+
+            // Upload directory without setting explicit ContentType
+            var transferUtility = new TransferUtility(Client);
+            var request = new TransferUtilityUploadDirectoryRequest
+            {
+                BucketName = bucketName,
+                Directory = directory.FullName,
+                KeyPrefix = keyPrefix,
+                SearchPattern = "*",
+                SearchOption = SearchOption.AllDirectories
+                // Note: No ContentType set - should auto-detect per file
+            };
+
+            transferUtility.UploadDirectory(request);
+
+            // Validate each file got correct content type based on extension
+            ValidateDirectoryContentTypes(Client, bucketName, keyPrefix, directory);
+        }
+
+        public static DirectoryInfo CreateMixedFileTypeTestDirectory()
+        {
+            var directoryPath = GenerateDirectoryPath("MixedFileTypeTest");
+
+            var testFiles = new Dictionary<string, string>
+            {
+                { "test.html", "<html><body>Test HTML</body></html>" },
+                { "test.css", "body { color: red; }" },
+                { "test.js", "console.log('test');" },
+                { "test.json", "{ \"test\": \"value\" }" },
+                { "test.txt", "Plain text content" },
+                { "test.xml", "<?xml version=\"1.0\"?><root>test</root>" },
+                { "test.pdf", "PDF content placeholder" },
+                { "test.svg", "<svg><rect width=\"100\" height=\"100\"/></svg>" }
+            };
+
+            foreach (var file in testFiles)
+            {
+                var filePath = Path.Combine(directoryPath, file.Key);
+                Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+                File.WriteAllText(filePath, file.Value);
+            }
+
+            return new DirectoryInfo(directoryPath);
+        }
+
+        private static void ValidateDirectoryContentTypes(IAmazonS3 s3client, string bucketName, string keyPrefix, DirectoryInfo directory)
+        {
+            var expectedContentTypes = new Dictionary<string, string>
+            {
+                { ".html", "text/html" },
+                { ".css", "text/css" },
+                { ".js", "application/x-javascript" },
+                { ".json", "application/json" },
+                { ".txt", "text/plain" },
+                { ".xml", "text/xml" },
+                { ".pdf", "application/pdf" },
+                { ".svg", "image/svg+xml" }
+            };
+
+            var files = directory.GetFiles("*", SearchOption.AllDirectories);
+            foreach (var file in files)
+            {
+                var filePath = file.FullName;
+                var relativePath = filePath.Substring(directory.FullName.Length + 1);
+                var key = (!string.IsNullOrEmpty(keyPrefix) ? keyPrefix + "/" : string.Empty) + relativePath.Replace("\\", "/");
+
+                var metadata = s3client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+
+                var extension = Path.GetExtension(file.Name).ToLowerInvariant();
+                var expectedContentType = expectedContentTypes[extension];
+
+                Assert.AreEqual(expectedContentType, metadata.Headers.ContentType,
+                    $"File {file.Name} should have content type {expectedContentType} but got {metadata.Headers.ContentType}");
+            }
+        }
+
+
         public static void ConfigureProgressValidator(DirectoryProgressValidator<DownloadDirectoryProgressArgs> progressValidator)
         {
             progressValidator.Validate = (progress, lastProgress) =>

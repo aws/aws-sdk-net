@@ -31,6 +31,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the StartGameSessionPlacement operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Makes a request to start a new game session using a game session queue. When processing
     /// a placement request, Amazon GameLift Servers looks for the best possible available
     /// resource to host the game session, based on how the queue is configured to prioritize
@@ -39,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// placement request can include a list of players to create a set of player sessions.
     /// The request can also include information to pass to the new game session, such as
     /// to specify a game map or other options.
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 

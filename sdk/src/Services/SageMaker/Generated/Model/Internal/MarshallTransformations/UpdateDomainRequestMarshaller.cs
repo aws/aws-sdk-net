@@ -143,6 +143,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.TagPropagation);
             }
 
+            if(publicRequest.IsSetVpcId())
+            {
+                context.Writer.WritePropertyName("VpcId");
+                context.Writer.WriteStringValue(publicRequest.VpcId);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

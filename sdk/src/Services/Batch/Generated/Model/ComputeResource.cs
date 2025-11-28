@@ -329,7 +329,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>default_arm64</c> to choose x86 based instance types (from the <c>m6g</c>, <c>c6g</c>,
+        ///  <c>default_arm64</c> to choose ARM based instance types (from the <c>m6g</c>, <c>c6g</c>,
         /// <c>r6g</c>, and <c>c7g</c> instance families) that matches the resource demands of
         /// the job queue.
         /// </para>

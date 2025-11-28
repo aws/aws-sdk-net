@@ -34,6 +34,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class Source
     {
+        private string _connectedRouterOutputArn;
         private int? _dataTransferSubscriberFeePercent;
         private Encryption _decryption;
         private string _description;
@@ -44,12 +45,32 @@ namespace Amazon.MediaConnect.Model
         private List<MediaStreamSourceConfiguration> _mediaStreamSourceConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamSourceConfiguration>() : null;
         private string _name;
         private string _peerIpAddress;
+        private State _routerIntegrationState;
+        private FlowTransitEncryption _routerIntegrationTransitDecryption;
         private int? _senderControlPort;
         private string _senderIpAddress;
         private string _sourceArn;
         private Transport _transport;
         private string _vpcInterfaceName;
         private string _whitelistCidr;
+
+        /// <summary>
+        /// Gets and sets the property ConnectedRouterOutputArn. 
+        /// <para>
+        /// The ARN of the router output that's currently connected to this source.
+        /// </para>
+        /// </summary>
+        public string ConnectedRouterOutputArn
+        {
+            get { return this._connectedRouterOutputArn; }
+            set { this._connectedRouterOutputArn = value; }
+        }
+
+        // Check to see if ConnectedRouterOutputArn property is set
+        internal bool IsSetConnectedRouterOutputArn()
+        {
+            return this._connectedRouterOutputArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataTransferSubscriberFeePercent. 
@@ -260,6 +281,42 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetPeerIpAddress()
         {
             return this._peerIpAddress != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationState. 
+        /// <para>
+        /// Indicates if router integration is enabled or disabled on the flow source.
+        /// </para>
+        /// </summary>
+        public State RouterIntegrationState
+        {
+            get { return this._routerIntegrationState; }
+            set { this._routerIntegrationState = value; }
+        }
+
+        // Check to see if RouterIntegrationState property is set
+        internal bool IsSetRouterIntegrationState()
+        {
+            return this._routerIntegrationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RouterIntegrationTransitDecryption. 
+        /// <para>
+        /// The decryption configuration for the flow source when router integration is enabled.
+        /// </para>
+        /// </summary>
+        public FlowTransitEncryption RouterIntegrationTransitDecryption
+        {
+            get { return this._routerIntegrationTransitDecryption; }
+            set { this._routerIntegrationTransitDecryption = value; }
+        }
+
+        // Check to see if RouterIntegrationTransitDecryption property is set
+        internal bool IsSetRouterIntegrationTransitDecryption()
+        {
+            return this._routerIntegrationTransitDecryption != null;
         }
 
         /// <summary>

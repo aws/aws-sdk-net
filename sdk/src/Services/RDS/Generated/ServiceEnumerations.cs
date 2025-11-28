@@ -459,10 +459,6 @@ namespace Amazon.RDS
         /// </summary>
         public static readonly ClusterScalabilityType Limitless = new ClusterScalabilityType("limitless");
         /// <summary>
-        /// Constant Scaleout for ClusterScalabilityType
-        /// </summary>
-        public static readonly ClusterScalabilityType Scaleout = new ClusterScalabilityType("scaleout");
-        /// <summary>
         /// Constant Standard for ClusterScalabilityType
         /// </summary>
         public static readonly ClusterScalabilityType Standard = new ClusterScalabilityType("standard");
@@ -1884,6 +1880,60 @@ namespace Amazon.RDS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpgradeRolloutOrder.
+    /// </summary>
+    public class UpgradeRolloutOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant First for UpgradeRolloutOrder
+        /// </summary>
+        public static readonly UpgradeRolloutOrder First = new UpgradeRolloutOrder("first");
+        /// <summary>
+        /// Constant Last for UpgradeRolloutOrder
+        /// </summary>
+        public static readonly UpgradeRolloutOrder Last = new UpgradeRolloutOrder("last");
+        /// <summary>
+        /// Constant Second for UpgradeRolloutOrder
+        /// </summary>
+        public static readonly UpgradeRolloutOrder Second = new UpgradeRolloutOrder("second");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpgradeRolloutOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpgradeRolloutOrder FindValue(string value)
+        {
+            return FindValue<UpgradeRolloutOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpgradeRolloutOrder(string value)
         {
             return FindValue(value);
         }

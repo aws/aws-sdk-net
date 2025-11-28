@@ -68,6 +68,8 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetShareId())
                 throw new AmazonWellArchitectedException("Request object does not have required field ShareId set");
             request.AddPathResource("{ShareId}", StringUtils.FromString(publicRequest.ShareId));
+            if (string.IsNullOrEmpty(publicRequest.ClientRequestToken))
+                throw new AmazonWellArchitectedException("Request object does not have required field ClientRequestToken set");
             
             if (publicRequest.IsSetClientRequestToken())
                 request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));

@@ -612,6 +612,11 @@
     <pattern>[\d\-+]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.TelephonyChannelSubtypeParameters.RingTimeout</property>
+    <min>15</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.TelephonyOutboundConfig.ConnectContactFlowId</property>
     <min>0</min>
     <max>500</max>
@@ -620,6 +625,11 @@
     <property>Amazon.ConnectCampaignsV2.Model.TelephonyOutboundConfig.ConnectSourcePhoneNumber</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.TelephonyOutboundConfig.RingTimeout</property>
+    <min>15</min>
+    <max>60</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.TimeoutConfig.DurationInSeconds</property>

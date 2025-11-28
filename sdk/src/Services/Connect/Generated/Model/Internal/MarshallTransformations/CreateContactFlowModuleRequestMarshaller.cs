@@ -99,10 +99,27 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetExternalInvocationConfiguration())
+            {
+                context.Writer.WritePropertyName("ExternalInvocationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExternalInvocationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExternalInvocationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetSettings())
+            {
+                context.Writer.WritePropertyName("Settings");
+                context.Writer.WriteStringValue(publicRequest.Settings);
             }
 
             if(publicRequest.IsSetTags())

@@ -62,12 +62,18 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-10-28";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.App))
+                throw new AmazonSimSpaceWeaverException("Request object does not have required field App set");
             
             if (publicRequest.IsSetApp())
                 request.Parameters.Add("app", StringUtils.FromString(publicRequest.App));
+            if (string.IsNullOrEmpty(publicRequest.Domain))
+                throw new AmazonSimSpaceWeaverException("Request object does not have required field Domain set");
             
             if (publicRequest.IsSetDomain())
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));
+            if (string.IsNullOrEmpty(publicRequest.Simulation))
+                throw new AmazonSimSpaceWeaverException("Request object does not have required field Simulation set");
             
             if (publicRequest.IsSetSimulation())
                 request.Parameters.Add("simulation", StringUtils.FromString(publicRequest.Simulation));

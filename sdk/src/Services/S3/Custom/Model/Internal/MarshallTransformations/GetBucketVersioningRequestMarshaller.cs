@@ -33,7 +33,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(GetBucketVersioningRequest getBucketVersioningRequest)
         {
-            IRequest request = new DefaultRequest(getBucketVersioningRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(getBucketVersioningRequest, "Amazon.S3");
 
             request.HttpMethod = "GET";
 

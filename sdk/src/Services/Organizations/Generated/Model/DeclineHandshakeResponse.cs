@@ -39,8 +39,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Handshake. 
         /// <para>
-        /// A structure that contains details about the declined handshake. The state is updated
-        /// to show the value <c>DECLINED</c>.
+        /// A <c>Handshake</c> object. Contains details for the declined handshake.
         /// </para>
         /// </summary>
         public Handshake Handshake

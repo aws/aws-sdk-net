@@ -30,19 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// Represents the result of an audit performed by a specific auditor on a resource.
+    /// A structure that contains the result of an automated audit analysis, including the
+    /// auditor name, description of findings, additional data, and severity level.
     /// </summary>
     public partial class AuditorResult
     {
         private string _auditor;
+        private Dictionary<string, string> _data = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _description;
         private Severity _severity;
 
         /// <summary>
         /// Gets and sets the property Auditor. 
         /// <para>
-        /// The name or identifier of the auditor that performed the examination and generated
-        /// this result.
+        /// The name of the auditor algorithm that generated this result.
         /// </para>
         /// </summary>
         public string Auditor
@@ -58,10 +59,34 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// This is a string-to-string map. It contains additional data about the result of an
+        /// automated audit analysis.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Data
+        {
+            get { return this._data; }
+            set { this._data = value; }
+        }
+
+        // Check to see if Data property is set
+        internal bool IsSetData()
+        {
+            return this._data != null && (this._data.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A detailed description of what the auditor found, including any recommendations for
-        /// remediation or further investigation.
+        /// A detailed description of the audit finding, explaining what was observed and potential
+        /// implications.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10240)]
@@ -80,8 +105,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity level of the finding, such as "Critical", "High", "Medium", or "Low".
-        /// This helps prioritize remediation efforts.
+        /// The severity level of this audit finding, indicating the importance and potential
+        /// impact of the issue.
         /// </para>
         /// </summary>
         public Severity Severity

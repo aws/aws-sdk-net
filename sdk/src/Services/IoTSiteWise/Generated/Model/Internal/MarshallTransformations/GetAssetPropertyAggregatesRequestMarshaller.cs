@@ -62,12 +62,16 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "GET";
 
+            if (publicRequest.AggregateTypes == null)
+                throw new AmazonIoTSiteWiseException("Request object does not have required field AggregateTypes set");
             
             if (publicRequest.IsSetAggregateTypes())
                 request.ParameterCollection.Add("aggregateTypes", publicRequest.AggregateTypes);
             
             if (publicRequest.IsSetAssetId())
                 request.Parameters.Add("assetId", StringUtils.FromString(publicRequest.AssetId));
+            if (publicRequest.EndDate == null)
+                throw new AmazonIoTSiteWiseException("Request object does not have required field EndDate set");
             
             if (publicRequest.IsSetEndDate())
                 request.Parameters.Add("endDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDate));
@@ -86,9 +90,13 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetQualities())
                 request.ParameterCollection.Add("qualities", publicRequest.Qualities);
+            if (string.IsNullOrEmpty(publicRequest.Resolution))
+                throw new AmazonIoTSiteWiseException("Request object does not have required field Resolution set");
             
             if (publicRequest.IsSetResolution())
                 request.Parameters.Add("resolution", StringUtils.FromString(publicRequest.Resolution));
+            if (publicRequest.StartDate == null)
+                throw new AmazonIoTSiteWiseException("Request object does not have required field StartDate set");
             
             if (publicRequest.IsSetStartDate())
                 request.Parameters.Add("startDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));

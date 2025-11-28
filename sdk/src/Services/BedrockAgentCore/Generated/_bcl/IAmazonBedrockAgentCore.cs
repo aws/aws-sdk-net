@@ -32,17 +32,8 @@ namespace Amazon.BedrockAgentCore
     /// <summary>
     /// <para>Interface for accessing BedrockAgentCore</para>
     ///
-    /// <note> 
-    /// <para>
-    /// Amazon Bedrock AgentCore is in preview release and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Welcome to the Amazon Bedrock AgentCore Data Plane API reference. Data Plane actions
-    /// process and handle data or workloads within Amazon Web Services services. 
-    /// </para>
-    /// 
-    /// </para>
+    /// process and handle data or workloads within Amazon Web Services services.
     /// </summary>
     public partial interface IAmazonBedrockAgentCore : IAmazonService, IDisposable
     {
@@ -2503,6 +2494,102 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
         
+        #region  ListMemoryExtractionJobs
+
+
+        /// <summary>
+        /// Lists all long-term memory extraction jobs that are eligible to be started with optional
+        /// filtering.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryExtractionJobs</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemoryExtractionJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListMemoryExtractionJobs service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryExtractionJobs">REST API Reference for ListMemoryExtractionJobs Operation</seealso>
+        ListMemoryExtractionJobsResponse ListMemoryExtractionJobs(ListMemoryExtractionJobsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all long-term memory extraction jobs that are eligible to be started with optional
+        /// filtering.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:ListMemoryExtractionJobs</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMemoryExtractionJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMemoryExtractionJobs service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListMemoryExtractionJobs">REST API Reference for ListMemoryExtractionJobs Operation</seealso>
+        Task<ListMemoryExtractionJobsResponse> ListMemoryExtractionJobsAsync(ListMemoryExtractionJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListMemoryRecords
 
 
@@ -3126,6 +3213,106 @@ namespace Amazon.BedrockAgentCore
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartCodeInterpreterSession">REST API Reference for StartCodeInterpreterSession Operation</seealso>
         Task<StartCodeInterpreterSessionResponse> StartCodeInterpreterSessionAsync(StartCodeInterpreterSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartMemoryExtractionJob
+
+
+        /// <summary>
+        /// Starts a memory extraction job that processes events that failed extraction previously
+        /// in an AgentCore Memory resource and produces structured memory records. When earlier
+        /// extraction attempts have left events unprocessed, this job will pick up and extract
+        /// those as well. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:StartMemoryExtractionJob</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMemoryExtractionJob service method.</param>
+        /// 
+        /// <returns>The response from the StartMemoryExtractionJob service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartMemoryExtractionJob">REST API Reference for StartMemoryExtractionJob Operation</seealso>
+        StartMemoryExtractionJobResponse StartMemoryExtractionJob(StartMemoryExtractionJobRequest request);
+
+
+
+        /// <summary>
+        /// Starts a memory extraction job that processes events that failed extraction previously
+        /// in an AgentCore Memory resource and produces structured memory records. When earlier
+        /// extraction attempts have left events unprocessed, this job will pick up and extract
+        /// those as well. 
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:StartMemoryExtractionJob</c>
+        /// permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMemoryExtractionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMemoryExtractionJob service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartMemoryExtractionJob">REST API Reference for StartMemoryExtractionJob Operation</seealso>
+        Task<StartMemoryExtractionJobResponse> StartMemoryExtractionJobAsync(StartMemoryExtractionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

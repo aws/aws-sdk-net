@@ -44,7 +44,6 @@ namespace Amazon.MediaLive.Model
         /// should render on to the video stream. Leaving out this property or setting to 0 will
         /// result in rendering continuing until a deactivate action is processed.
         /// </summary>
-        [AWSProperty(Min=0, Max=86400000)]
         public long? Duration
         {
             get { return this._duration; }

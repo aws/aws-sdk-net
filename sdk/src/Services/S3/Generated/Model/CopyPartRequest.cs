@@ -170,7 +170,15 @@ namespace Amazon.S3.Model
     /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>.
     /// 
     /// </para>
-    ///  </li> <li> 
+    ///  <note> 
+    /// <para>
+    /// If you have server-side encryption with customer-provided keys (SSE-C) blocked for
+    /// your general purpose bucket, you will get an HTTP 403 Access Denied error when you
+    /// specify the SSE-C request headers while writing new data to your bucket. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/blocking-unblocking-s3-c-encryption-gpb.html">Blocking
+    /// or unblocking SSE-C for a general purpose bucket</a>.
+    /// </para>
+    ///  </note> </li> <li> 
     /// <para>
     ///  <b>Directory buckets </b> - For directory buckets, there are only two supported options
     /// for server-side encryption: server-side encryption with Amazon S3 managed keys (SSE-S3)

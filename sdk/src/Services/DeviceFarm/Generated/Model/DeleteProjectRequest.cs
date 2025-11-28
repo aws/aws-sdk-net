@@ -31,12 +31,14 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProject operation.
-    /// Deletes an AWS Device Farm project, given the project ARN.
+    /// Deletes an AWS Device Farm project, given the project ARN. You cannot delete a project
+    /// if it has an active run or session.
     /// 
-    ///  
+    ///  <important> 
     /// <para>
-    ///  Deleting this resource does not stop an in-progress run.
+    /// You cannot undo this operation.
     /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteProjectRequest : AmazonDeviceFarmRequest
     {

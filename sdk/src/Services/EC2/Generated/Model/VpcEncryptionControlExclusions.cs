@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
+    /// Describes the exclusion configurations for various resource types in VPC Encryption
+    /// Control.
     /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+    /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class VpcEncryptionControlExclusions
     {
@@ -44,7 +51,10 @@ namespace Amazon.EC2.Model
         private VpcEncryptionControlExclusion _vpcPeering;
 
         /// <summary>
-        /// Gets and sets the property EgressOnlyInternetGateway.
+        /// Gets and sets the property EgressOnlyInternetGateway. 
+        /// <para>
+        /// The exclusion configuration for egress-only internet gateway traffic.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlExclusion EgressOnlyInternetGateway
         {
@@ -59,7 +69,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ElasticFileSystem.
+        /// Gets and sets the property ElasticFileSystem. 
+        /// <para>
+        /// The exclusion configuration for Elastic File System traffic.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlExclusion ElasticFileSystem
         {
@@ -74,7 +87,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InternetGateway.
+        /// Gets and sets the property InternetGateway. 
+        /// <para>
+        /// The exclusion configuration for internet gateway traffic.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlExclusion InternetGateway
         {
@@ -89,7 +105,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Lambda.
+        /// Gets and sets the property Lambda. 
+        /// <para>
+        /// The exclusion configuration for Lambda function traffic.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlExclusion Lambda
         {
@@ -104,7 +123,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NatGateway.
+        /// Gets and sets the property NatGateway. 
+        /// <para>
+        /// The exclusion configuration for NAT gateway traffic.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlExclusion NatGateway
         {
@@ -119,7 +141,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VirtualPrivateGateway.
+        /// Gets and sets the property VirtualPrivateGateway. 
+        /// <para>
+        /// The exclusion configuration for virtual private gateway traffic.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlExclusion VirtualPrivateGateway
         {
@@ -134,7 +159,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcLattice.
+        /// Gets and sets the property VpcLattice. 
+        /// <para>
+        /// The exclusion configuration for VPC Lattice traffic.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlExclusion VpcLattice
         {
@@ -149,7 +177,10 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VpcPeering.
+        /// Gets and sets the property VpcPeering. 
+        /// <para>
+        /// The exclusion configuration for VPC peering connection traffic.
+        /// </para>
         /// </summary>
         public VpcEncryptionControlExclusion VpcPeering
         {

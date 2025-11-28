@@ -62,6 +62,8 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-01-01";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.AdminAccountId))
+                throw new AmazonMacie2Exception("Request object does not have required field AdminAccountId set");
             
             if (publicRequest.IsSetAdminAccountId())
                 request.Parameters.Add("adminAccountId", StringUtils.FromString(publicRequest.AdminAccountId));

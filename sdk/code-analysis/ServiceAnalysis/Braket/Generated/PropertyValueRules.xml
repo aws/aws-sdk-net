@@ -82,6 +82,33 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Braket.Model.CreateSpendingLimitRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CreateSpendingLimitRequest.DeviceArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CreateSpendingLimitRequest.SpendingLimit</property>
+    <min>1</min>
+    <pattern>\d+(\.\d{1,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.CreateSpendingLimitResponse.SpendingLimitArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:spending-limit/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.DeleteSpendingLimitRequest.SpendingLimitArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:spending-limit/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Braket.Model.GetDeviceRequest.DeviceArn</property>
     <min>1</min>
     <max>256</max>
@@ -147,6 +174,27 @@
     <property>Amazon.Braket.Model.SearchQuantumTasksRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.SearchSpendingLimitsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.UpdateSpendingLimitRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.UpdateSpendingLimitRequest.SpendingLimit</property>
+    <min>1</min>
+    <pattern>\d+(\.\d{1,2})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.UpdateSpendingLimitRequest.SpendingLimitArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:spending-limit/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Braket.Model.Association.Arn</property>
@@ -264,5 +312,21 @@
     <property>Amazon.Braket.Model.SearchQuantumTasksFilter.Name</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.SearchSpendingLimitsFilter.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.SpendingLimitSummary.DeviceArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Braket.Model.SpendingLimitSummary.SpendingLimitArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[a-z\-]*:braket:[a-z0-9\-]+:[0-9]{12}:spending-limit/.*</pattern>
   </property-value-rule>
 </property-value-rules>

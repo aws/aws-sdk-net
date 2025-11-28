@@ -32,30 +32,43 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
-        [Description("For region aws-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For custom endpoint with region not set and fips disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "aws-global";
+            parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://example.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
-        [Description("For region aws-global with FIPS enabled and DualStack disabled")]
-        public void For_region_awsglobal_with_FIPS_enabled_and_DualStack_disabled_Test()
+        [Description("For custom endpoint with fips enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_enabled_Test()
         {
             var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "aws-global";
+            parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-fips.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53")]
+        [Description("For custom endpoint with fips disabled and dualstack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
+        {
+            var parameters = new Route53EndpointParameters();
+            parameters["Endpoint"] = "https://example.com";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -70,7 +83,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-fips.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://route53-fips.global.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -100,7 +113,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://route53.global.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -122,11 +135,56 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
-        [Description("For region aws-cn-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awscnglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region cn-northwest-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "aws-cn-global";
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-fips.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53")]
+        [Description("For region cn-northwest-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53EndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-fips.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53")]
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new Route53EndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53.global.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53")]
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53EndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
@@ -137,165 +195,30 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "eusc-de-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
+            Assert.AreEqual("https://route53-fips.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "eusc-de-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.amazonaws.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
-        [Description("For region aws-us-gov-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsusgovglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "aws-us-gov-global";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.us-gov.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
-        [Description("For region aws-us-gov-global with FIPS enabled and DualStack disabled")]
-        public void For_region_awsusgovglobal_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "aws-us-gov-global";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.us-gov.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-fips.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.us-gov.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.us-gov.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
-        [Description("For region aws-iso-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsisoglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "aws-iso-global";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.c2s.ic.gov", endpoint.URL);
+            Assert.AreEqual("https://route53.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
@@ -310,7 +233,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+            Assert.AreEqual("https://route53-fips.c2s.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -332,21 +255,6 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
-        [Description("For region aws-iso-b-global with FIPS disabled and DualStack disabled")]
-        public void For_region_awsisobglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "aws-iso-b-global";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53.sc2s.sgov.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
         [Description("For region us-isob-east-1 with FIPS enabled and DualStack disabled")]
         public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
@@ -355,7 +263,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://route53-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+            Assert.AreEqual("https://route53-fips.sc2s.sgov.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -377,6 +285,21 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
+        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53EndpointParameters();
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-fips.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53")]
         [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
         public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
@@ -386,6 +309,21 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://route53.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53")]
+        [Description("For region us-isof-south-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53EndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53-fips.csp.hci.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -407,63 +345,60 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
-        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
+            Assert.AreEqual("https://route53.us-gov.api.aws", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
-        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new Route53EndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("Route53")]
-        [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "us-east-1";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53.us-gov.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Route53")]
-        [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new Route53EndpointParameters();
-            parameters["Region"] = "us-east-1";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53.us-gov.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Route53")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new Route53EndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonRoute53EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://route53.us-gov.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]

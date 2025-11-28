@@ -47,6 +47,10 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </summary>
         public static readonly ActionTypeEnum Forward = new ActionTypeEnum("forward");
         /// <summary>
+        /// Constant JwtValidation for ActionTypeEnum
+        /// </summary>
+        public static readonly ActionTypeEnum JwtValidation = new ActionTypeEnum("jwt-validation");
+        /// <summary>
         /// Constant Redirect for ActionTypeEnum
         /// </summary>
         public static readonly ActionTypeEnum Redirect = new ActionTypeEnum("redirect");
@@ -557,6 +561,60 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
     /// <summary>
+    /// Constants used for properties of type JwtValidationActionAdditionalClaimFormatEnum.
+    /// </summary>
+    public class JwtValidationActionAdditionalClaimFormatEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SingleString for JwtValidationActionAdditionalClaimFormatEnum
+        /// </summary>
+        public static readonly JwtValidationActionAdditionalClaimFormatEnum SingleString = new JwtValidationActionAdditionalClaimFormatEnum("single-string");
+        /// <summary>
+        /// Constant SpaceSeparatedValues for JwtValidationActionAdditionalClaimFormatEnum
+        /// </summary>
+        public static readonly JwtValidationActionAdditionalClaimFormatEnum SpaceSeparatedValues = new JwtValidationActionAdditionalClaimFormatEnum("space-separated-values");
+        /// <summary>
+        /// Constant StringArray for JwtValidationActionAdditionalClaimFormatEnum
+        /// </summary>
+        public static readonly JwtValidationActionAdditionalClaimFormatEnum StringArray = new JwtValidationActionAdditionalClaimFormatEnum("string-array");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JwtValidationActionAdditionalClaimFormatEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JwtValidationActionAdditionalClaimFormatEnum FindValue(string value)
+        {
+            return FindValue<JwtValidationActionAdditionalClaimFormatEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JwtValidationActionAdditionalClaimFormatEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LoadBalancerSchemeEnum.
     /// </summary>
     public class LoadBalancerSchemeEnum : ConstantClass
@@ -787,9 +845,17 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </summary>
         public static readonly ProtocolEnum HTTPS = new ProtocolEnum("HTTPS");
         /// <summary>
+        /// Constant QUIC for ProtocolEnum
+        /// </summary>
+        public static readonly ProtocolEnum QUIC = new ProtocolEnum("QUIC");
+        /// <summary>
         /// Constant TCP for ProtocolEnum
         /// </summary>
         public static readonly ProtocolEnum TCP = new ProtocolEnum("TCP");
+        /// <summary>
+        /// Constant TCP_QUIC for ProtocolEnum
+        /// </summary>
+        public static readonly ProtocolEnum TCP_QUIC = new ProtocolEnum("TCP_QUIC");
         /// <summary>
         /// Constant TCP_UDP for ProtocolEnum
         /// </summary>

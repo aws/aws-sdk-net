@@ -84,7 +84,6 @@ namespace Amazon.SageMaker.Model
         /// Information about the algorithm used for training, and algorithm metadata. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AlgorithmSpecification AlgorithmSpecification
         {
             get { return this._algorithmSpecification; }
@@ -655,7 +654,6 @@ namespace Amazon.SageMaker.Model
         /// for model training. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ResourceConfig ResourceConfig
         {
             get { return this._resourceConfig; }

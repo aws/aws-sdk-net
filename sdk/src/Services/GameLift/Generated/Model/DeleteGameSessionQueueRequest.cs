@@ -31,10 +31,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGameSessionQueue operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+    /// 
+    ///  
+    /// <para>
     /// Deletes a game session queue. Once a queue is successfully deleted, unfulfilled <a
     /// href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
     /// requests that reference the queue will fail. To delete a queue, specify the queue
     /// name.
+    /// </para>
     /// </summary>
     public partial class DeleteGameSessionQueueRequest : AmazonGameLiftRequest
     {

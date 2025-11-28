@@ -65,6 +65,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetBehaviorCriteriaType())
                 request.Parameters.Add("behaviorCriteriaType", StringUtils.FromString(publicRequest.BehaviorCriteriaType));
+            if (publicRequest.EndTime == null)
+                throw new AmazonIoTException("Request object does not have required field EndTime set");
             
             if (publicRequest.IsSetEndTime())
                 request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
@@ -80,6 +82,8 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSecurityProfileName())
                 request.Parameters.Add("securityProfileName", StringUtils.FromString(publicRequest.SecurityProfileName));
+            if (publicRequest.StartTime == null)
+                throw new AmazonIoTException("Request object does not have required field StartTime set");
             
             if (publicRequest.IsSetStartTime())
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));

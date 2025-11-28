@@ -1753,6 +1753,106 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type Av1SpatialAq.
+    /// </summary>
+    public class Av1SpatialAq : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Av1SpatialAq
+        /// </summary>
+        public static readonly Av1SpatialAq DISABLED = new Av1SpatialAq("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Av1SpatialAq
+        /// </summary>
+        public static readonly Av1SpatialAq ENABLED = new Av1SpatialAq("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1SpatialAq(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1SpatialAq FindValue(string value)
+        {
+            return FindValue<Av1SpatialAq>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1SpatialAq(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Av1TemporalAq.
+    /// </summary>
+    public class Av1TemporalAq : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for Av1TemporalAq
+        /// </summary>
+        public static readonly Av1TemporalAq DISABLED = new Av1TemporalAq("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for Av1TemporalAq
+        /// </summary>
+        public static readonly Av1TemporalAq ENABLED = new Av1TemporalAq("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Av1TemporalAq(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Av1TemporalAq FindValue(string value)
+        {
+            return FindValue<Av1TemporalAq>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Av1TemporalAq(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AvailBlankingState.
     /// </summary>
     public class AvailBlankingState : ConstantClass
@@ -12013,6 +12113,10 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly InputType MEDIACONNECT = new InputType("MEDIACONNECT");
         /// <summary>
+        /// Constant MEDIACONNECT_ROUTER for InputType
+        /// </summary>
+        public static readonly InputType MEDIACONNECT_ROUTER = new InputType("MEDIACONNECT_ROUTER");
+        /// <summary>
         /// Constant MP4_FILE for InputType
         /// </summary>
         public static readonly InputType MP4_FILE = new InputType("MP4_FILE");
@@ -15530,6 +15634,56 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReservationVideoQuality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RouterEncryptionType.
+    /// </summary>
+    public class RouterEncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATIC for RouterEncryptionType
+        /// </summary>
+        public static readonly RouterEncryptionType AUTOMATIC = new RouterEncryptionType("AUTOMATIC");
+        /// <summary>
+        /// Constant SECRETS_MANAGER for RouterEncryptionType
+        /// </summary>
+        public static readonly RouterEncryptionType SECRETS_MANAGER = new RouterEncryptionType("SECRETS_MANAGER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RouterEncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RouterEncryptionType FindValue(string value)
+        {
+            return FindValue<RouterEncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RouterEncryptionType(string value)
         {
             return FindValue(value);
         }

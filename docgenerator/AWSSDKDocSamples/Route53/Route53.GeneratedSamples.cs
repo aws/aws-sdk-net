@@ -456,6 +456,36 @@ namespace AWSSDKDocSamples.Amazon.Route53.Generated
 
         public void Route53ChangeResourceRecordSets()
         {
+            #region txt-record-creation-1760568065880
+
+            var client = new AmazonRoute53Client();
+            var response = client.ChangeResourceRecordSets(new ChangeResourceRecordSetsRequest 
+            {
+                ChangeBatch = new ChangeBatch { Changes = new List<Change> {
+                    new Change {
+                        Action = "CREATE",
+                        ResourceRecordSet = new ResourceRecordSet {
+                            Name = "example.com.",
+                            ResourceRecords = new List<ResourceRecord> {
+                                new ResourceRecord { Value = "\"verification_string = \\"google-site-verification=abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef\"" },
+                                new ResourceRecord { Value = "\"1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd\"" },
+                                new ResourceRecord { Value = "\"ef1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890\\"\"" }
+                            },
+                            TTL = 300,
+                            Type = "TXT"
+                        }
+                    }
+                } },
+                HostedZoneId = "/hostedzone/Z06404571DIQRB3A5ZYSP"
+            });
+
+            ChangeInfo changeInfo = response.ChangeInfo;
+
+            #endregion
+        }
+
+        public void Route53ChangeResourceRecordSets()
+        {
             #region to-create-geolocation-alias-resource-record-sets-1484612871203
 
             var client = new AmazonRoute53Client();

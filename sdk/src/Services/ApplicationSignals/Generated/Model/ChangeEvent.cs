@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// Represents a change event that occurred in the system, such as deployments, configuration
-    /// changes, or other operational events that may impact service performance.
+    /// A structure that contains information about a change event that occurred for a service,
+    /// such as a deployment or configuration change.
     /// </summary>
     public partial class ChangeEvent
     {
@@ -47,7 +47,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID where the change event occurred.
+        /// The Amazon Web Services account ID where this change event occurred.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,7 +66,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property ChangeEventType. 
         /// <para>
-        /// The type of change that occurred, such as "Deployment", "Configuration", or "Infrastructure".
+        /// The type of change event that occurred, such as <c>DEPLOYMENT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +85,58 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Entity. 
         /// <para>
-        /// The entity or resource that was changed, such as a service, deployment, or configuration.
+        /// The entity (service or resource) that was affected by this change event, including
+        /// its key attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is a string-to-string map. It can include the following fields.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Type</c> designates the type of object this is.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ResourceType</c> specifies the type of the resource. This field is used only when
+        /// the value of the <c>Type</c> field is <c>Resource</c> or <c>AWS::Resource</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Name</c> specifies the name of the object. This is used only if the value of the
+        /// <c>Type</c> field is <c>Service</c>, <c>RemoteService</c>, or <c>AWS::Service</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Identifier</c> identifies the resource objects of this resource. This is used
+        /// only if the value of the <c>Type</c> field is <c>Resource</c> or <c>AWS::Resource</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Environment</c> specifies the location where this object is hosted, or what it
+        /// belongs to.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AwsAccountId</c> specifies the account where this object is in.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Below is an example of a service.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>{ "Type": "Service", "Name": "visits-service", "Environment": "petclinic-test"
+        /// }</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Below is an example of a resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>{ "Type": "AWS::Resource", "ResourceType": "AWS::DynamoDB::Table", "Identifier":
+        /// "Customers" }</c> 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -109,7 +160,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// A unique identifier for the change event.
+        /// A unique identifier for this change event. For CloudTrail-based events, this is the
+        /// CloudTrail event id. For other events, this will be <c>Unknown</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -128,7 +180,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property EventName. 
         /// <para>
-        /// A descriptive name for the change event that provides context about what changed.
+        /// The name or description of this change event.
         /// </para>
         /// </summary>
         public string EventName
@@ -146,7 +198,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region where the change event occurred.
+        /// The Amazon Web Services region where this change event occurred.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -165,8 +217,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The timestamp when the change event occurred, expressed as the number of milliseconds
-        /// since January 1, 1970, 00:00:00 UTC.
+        /// The timestamp when this change event occurred. When used in a raw HTTP Query API,
+        /// it is formatted as epoch time in seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -185,7 +237,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user or system that initiated the change event.
+        /// The name of the user who initiated this change event, if available.
         /// </para>
         /// </summary>
         public string UserName

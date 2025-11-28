@@ -62,9 +62,13 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-17";
             request.HttpMethod = "PATCH";
 
+            if (string.IsNullOrEmpty(publicRequest.Catalog))
+                throw new AmazonMarketplaceCatalogException("Request object does not have required field Catalog set");
             
             if (publicRequest.IsSetCatalog())
                 request.Parameters.Add("catalog", StringUtils.FromString(publicRequest.Catalog));
+            if (string.IsNullOrEmpty(publicRequest.ChangeSetId))
+                throw new AmazonMarketplaceCatalogException("Request object does not have required field ChangeSetId set");
             
             if (publicRequest.IsSetChangeSetId())
                 request.Parameters.Add("changeSetId", StringUtils.FromString(publicRequest.ChangeSetId));

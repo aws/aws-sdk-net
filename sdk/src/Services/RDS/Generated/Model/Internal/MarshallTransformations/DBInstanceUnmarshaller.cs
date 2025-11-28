@@ -631,6 +631,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Timezone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("UpgradeRolloutOrder", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UpgradeRolloutOrder = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))
                     {
                         var unmarshaller = VpcSecurityGroupMembershipUnmarshaller.Instance;

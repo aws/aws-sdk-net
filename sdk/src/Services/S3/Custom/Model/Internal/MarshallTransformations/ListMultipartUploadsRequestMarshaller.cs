@@ -33,7 +33,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(ListMultipartUploadsRequest listMultipartUploadsRequest)
         {
-            IRequest request = new DefaultRequest(listMultipartUploadsRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(listMultipartUploadsRequest, "Amazon.S3");
 
             request.HttpMethod = "GET";
 

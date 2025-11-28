@@ -34,7 +34,27 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class SubscribedPrincipalInput
     {
+        private SubscribedGroupInput _group;
         private SubscribedProjectInput _project;
+        private SubscribedUserInput _user;
+
+        /// <summary>
+        /// Gets and sets the property Group. 
+        /// <para>
+        /// The subscribed group.
+        /// </para>
+        /// </summary>
+        public SubscribedGroupInput Group
+        {
+            get { return this._group; }
+            set { this._group = value; }
+        }
+
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this._group != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Project. 
@@ -52,6 +72,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetProject()
         {
             return this._project != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property User. 
+        /// <para>
+        /// The subscribed user.
+        /// </para>
+        /// </summary>
+        public SubscribedUserInput User
+        {
+            get { return this._user; }
+            set { this._user = value; }
+        }
+
+        // Check to see if User property is set
+        internal bool IsSetUser()
+        {
+            return this._user != null;
         }
 
     }

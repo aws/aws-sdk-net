@@ -61,7 +61,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property ExecutableCount. 
         /// <para>
-        /// The number of executables in a program set. This is only available for a Program Set.
+        /// The number of executables in a program set. This is only available for a program set.
         /// </para>
         /// </summary>
         public long? ExecutableCount
@@ -79,7 +79,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property ProgramCount. 
         /// <para>
-        /// The number of programs in a program set. This is only available for a Program Set.
+        /// The number of programs in a program set. This is only available for a program set.
         /// </para>
         /// </summary>
         public long? ProgramCount

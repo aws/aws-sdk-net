@@ -142,6 +142,7 @@ namespace AWSSDK.UnitTests
                     return ResponseMapper.MapPutObjectResponse(sourceResponse);
                 },
                 usesHeadersCollection: false,
+                usesResponseHeadersOverrides: false,
                 (sourceResponse) =>
                 {
                     sourceResponse.HttpStatusCode = HttpStatusCode.OK;
@@ -165,6 +166,7 @@ namespace AWSSDK.UnitTests
                     return simpleUploadCommand.ConstructRequest();
                 },
                 usesHeadersCollection: true,
+                usesResponseHeadersOverrides: false,
                 (sourceRequest) =>
                 {
                     sourceRequest.InputStream = new MemoryStream(1024);
@@ -183,6 +185,7 @@ namespace AWSSDK.UnitTests
                     return multipartUploadCommand.ConstructInitiateMultipartUploadRequest();
                 },
                 usesHeadersCollection: true,
+                usesResponseHeadersOverrides: false,
                 (sourceRequest) =>
                 {
                     sourceRequest.InputStream = new MemoryStream(1024);
@@ -207,6 +210,7 @@ namespace AWSSDK.UnitTests
                     return multipartUploadCommand.ConstructUploadPartRequest(1, 1024, initiateResponse);
                 },
                 usesHeadersCollection: false,
+                usesResponseHeadersOverrides: false,
                 (sourceRequest) =>
                 {
                     sourceRequest.InputStream = new MemoryStream(1024);
@@ -232,6 +236,7 @@ namespace AWSSDK.UnitTests
                     return multipartUploadCommand.ConstructCompleteMultipartUploadRequest(initiateResponse);
                 },
                 usesHeadersCollection: false,
+                usesResponseHeadersOverrides: false,
                 (sourceRequest) =>
                 {
                     sourceRequest.InputStream = new MemoryStream(1024);
@@ -252,6 +257,7 @@ namespace AWSSDK.UnitTests
                     return multipartUploadCommand.ConstructAbortMultipartUploadRequest("test-upload-id");
                 },
                 usesHeadersCollection: false,
+                usesResponseHeadersOverrides: false,
                 (sourceRequest) =>
                 {
                     sourceRequest.InputStream = new MemoryStream(1024);
@@ -292,6 +298,36 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("test-upload-id", result.UploadId, "UploadId should match from MultipartUpload");
             Assert.AreEqual("test-bucket-owner", result.ExpectedBucketOwner, "ExpectedBucketOwner should be set");
             Assert.AreEqual(RequestPayer.Requester, result.RequestPayer, "RequestPayer should be set");
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void Validate_DownloadRequest_ConvertToGetObjectRequest_MapsAllProperties()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityDownloadRequest, GetObjectRequest>(
+                new[] { "Definition", "DownloadRequest", "GetObjectRequest" },
+                (sourceRequest) =>
+                {
+                    var cmd = new DownloadCommand(null, sourceRequest);
+                   return cmd.ConvertToGetObjectRequest(sourceRequest);
+                },
+                usesHeadersCollection: false,
+                usesResponseHeadersOverrides: true);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void Validate_OpenStreamRequest_ConvertToGetObjectRequest_MapsAllProperties()
+        {
+            ValidateMappingTransferUtilityAndSdkRequests<TransferUtilityOpenStreamRequest, GetObjectRequest>(
+                new[] { "Definition", "DownloadRequest", "GetObjectRequest" },
+                (sourceRequest) =>
+                {
+                    var cmd = new OpenStreamCommand(null, sourceRequest);
+                    return cmd.ConvertToGetObjectRequest(sourceRequest);
+                },
+                usesHeadersCollection: false,
+                usesResponseHeadersOverrides: true);
         }
 
         [TestMethod]
@@ -410,6 +446,7 @@ namespace AWSSDK.UnitTests
             string[] mappingPath,
             Func<TSourceRequest, TTargetRequest> fetchTargetRequest,
             bool usesHeadersCollection = false,
+            bool usesResponseHeadersOverrides = false,
             Action<TSourceRequest> requestHook = null,
             Action<TSourceRequest, TTargetRequest> additionalValidations = null)
         {
@@ -438,59 +475,55 @@ namespace AWSSDK.UnitTests
                 // Resolve alias to actual property name
                 var resolvedPropertyName = ResolvePropertyName(propertyName, sourceType.Name);
                 var sourceProperty = sourceType.GetProperty(resolvedPropertyName);
-                
-                // Determine the correct property type for test value generation
-                Type propertyTypeForTestValue = sourceProperty?.PropertyType;
 
-                // If direct property doesn't exist but we use headers collection, check Headers collection property type
-                PropertyInfo sourceHeadersCollectionProperty = null;
-                if (propertyTypeForTestValue == null && usesHeadersCollection)
-                {
-                    sourceHeadersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedPropertyName);
-                    propertyTypeForTestValue = sourceHeadersCollectionProperty?.PropertyType;
-                }
-
-                // Fallback to string if still null
-                propertyTypeForTestValue ??= typeof(string);
-
-                var testValue = GenerateTestValue(propertyTypeForTestValue, propertyName);
-                
-                // Set the direct property if it exists and is writable
-                if (sourceProperty != null && sourceProperty.CanWrite)
-                {
-                    sourceProperty.SetValue(sourceRequest, testValue);
-                    testDataValues[propertyName] = testValue;
-                }
-
-                // Additionally, if usesHeadersCollection is true, also set in Headers collection
-                if (usesHeadersCollection)
+                if (usesHeadersCollection && sourceProperty is null)
                 {
                     // Check if source type has a Headers property of type HeadersCollection
                     var sourceHeadersProperty = sourceType.GetProperty("Headers");
                     if (sourceHeadersProperty != null && typeof(HeadersCollection).IsAssignableFrom(sourceHeadersProperty.PropertyType))
                     {
                         var sourceHeadersCollection = sourceHeadersProperty.GetValue(sourceRequest) as HeadersCollection;
-                        
-                        // Use the already resolved property if we found it above, otherwise look it up again
-                        if (sourceHeadersCollectionProperty == null)
-                        {
-                            sourceHeadersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedPropertyName);
-                        }
+                        var sourceHeadersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedPropertyName);
 
-                        if (sourceHeadersCollectionProperty != null && sourceHeadersCollectionProperty.CanWrite)
+                        Assert.IsNotNull(sourceHeadersCollectionProperty, $"Source property '{resolvedPropertyName}' in '{nameof(HeadersCollection)}' should not be null");
+
+                        if (sourceHeadersCollectionProperty.CanWrite == true)
                         {
+                            var testValue = GenerateTestValue(sourceHeadersCollectionProperty.PropertyType, propertyName);
                             sourceHeadersCollectionProperty.SetValue(sourceHeadersCollection, testValue);
                             testDataValues[propertyName] = testValue;
                         }
                     }
                 }
-
-                // If neither direct property nor headers collection property exists, fail the test
-                if (sourceProperty == null && (!usesHeadersCollection || 
-                    sourceType.GetProperty("Headers") == null || 
-                    sourceHeadersCollectionProperty == null))
+                else if (usesResponseHeadersOverrides && sourceProperty is null)
                 {
-                    Assert.Fail($"Source property '{propertyName}' (resolved to: {resolvedPropertyName}) not found in {sourceType.Name} or HeadersCollection");
+                    // Check if source type has a ResponseHeaderOverrides property of type ResponseHeaderOverrides
+                    var sourceHeadersProperty = sourceType.GetProperty("ResponseHeaderOverrides");
+                    if (sourceHeadersProperty != null && typeof(ResponseHeaderOverrides).IsAssignableFrom(sourceHeadersProperty.PropertyType))
+                    {
+                        var sourceHeadersCollection = sourceHeadersProperty.GetValue(sourceRequest) as ResponseHeaderOverrides;
+                        var sourceHeadersCollectionProperty = typeof(ResponseHeaderOverrides).GetProperty(resolvedPropertyName);
+
+                        Assert.IsNotNull(sourceHeadersCollectionProperty, $"Source property '{resolvedPropertyName}' in '{nameof(ResponseHeaderOverrides)}' should not be null");
+
+                        if (sourceHeadersCollectionProperty.CanWrite == true)
+                        {
+                            var testValue = GenerateTestValue(sourceHeadersCollectionProperty.PropertyType, propertyName);
+                            sourceHeadersCollectionProperty.SetValue(sourceHeadersCollection, testValue);
+                            testDataValues[propertyName] = testValue;
+                        }
+                    }
+                }
+                else
+                {
+                    Assert.IsNotNull(sourceProperty, $"Source property '{propertyName}' should not be null");
+
+                    if (sourceProperty.CanWrite == true)
+                    {
+                        var testValue = GenerateTestValue(sourceProperty.PropertyType, propertyName);
+                        sourceProperty.SetValue(sourceRequest, testValue);
+                        testDataValues[propertyName] = testValue;
+                    }
                 }
             }
 
@@ -521,33 +554,67 @@ namespace AWSSDK.UnitTests
                 }
                 else
                 {
-                    if (!usesHeadersCollection)
+                    if (usesHeadersCollection)
                     {
-                        failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
-                        continue;
-                    }
-
-                    // Check if source type has a Headers property of type HeadersCollection
-                    var sourceHeadersProperty = sourceType.GetProperty("Headers");
-                    if (sourceHeadersProperty != null && typeof(HeadersCollection).IsAssignableFrom(sourceHeadersProperty.PropertyType))
-                    {
-                        var sourceHeadersCollection = sourceHeadersProperty.GetValue(sourceRequest) as HeadersCollection;
-                        if (sourceHeadersCollection != null)
+                        // Check if source type has a Headers property of type HeadersCollection
+                        var sourceHeadersProperty = sourceType.GetProperty("Headers");
+                        if (sourceHeadersProperty != null && typeof(HeadersCollection).IsAssignableFrom(sourceHeadersProperty.PropertyType))
                         {
-                            var sourceHeadersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedSourcePropertyName);
-                            if (sourceHeadersCollectionProperty != null)
+                            var sourceHeadersCollection = sourceHeadersProperty.GetValue(sourceRequest) as HeadersCollection;
+                            if (sourceHeadersCollection != null)
                             {
-                                sourceValue = sourceHeadersCollectionProperty.GetValue(sourceHeadersCollection);
+                                var sourceHeadersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedSourcePropertyName);
+                                if (sourceHeadersCollectionProperty != null)
+                                {
+                                    sourceValue = sourceHeadersCollectionProperty.GetValue(sourceHeadersCollection);
+                                }
+                                else
+                                {
+                                    failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name} or HeadersCollection");
+                                    continue;
+                                }
                             }
                             else
                             {
-                                failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name} or HeadersCollection");
+                                failedAssertions.Add($"Source Headers collection is null in {sourceType.Name}");
                                 continue;
                             }
                         }
                         else
                         {
-                            failedAssertions.Add($"Source Headers collection is null in {sourceType.Name}");
+                            failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
+                            continue;
+                        }
+                    }
+                    else if (usesResponseHeadersOverrides)
+                    {
+                        // Check if source type has a ResponseHeaderOverrides property of type ResponseHeaderOverrides
+                        var sourceHeadersProperty = sourceType.GetProperty("ResponseHeaderOverrides");
+                        if (sourceHeadersProperty != null && typeof(ResponseHeaderOverrides).IsAssignableFrom(sourceHeadersProperty.PropertyType))
+                        {
+                            var sourceResponseHeadersOverrides = sourceHeadersProperty.GetValue(sourceRequest) as ResponseHeaderOverrides;
+                            if (sourceResponseHeadersOverrides != null)
+                            {
+                                var sourceResponseHeadersOverridesProperty = typeof(ResponseHeaderOverrides).GetProperty(resolvedSourcePropertyName);
+                                if (sourceResponseHeadersOverridesProperty != null)
+                                {
+                                    sourceValue = sourceResponseHeadersOverridesProperty.GetValue(sourceResponseHeadersOverrides);
+                                }
+                                else
+                                {
+                                    failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name} or ResponseHeaderOverrides");
+                                    continue;
+                                }
+                            }
+                            else
+                            {
+                                failedAssertions.Add($"Source Response Headers overrides is null in {sourceType.Name}");
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            failedAssertions.Add($"Source property '{propertyName}' (resolved to: {resolvedSourcePropertyName}) not found in {sourceType.Name}");
                             continue;
                         }
                     }
@@ -567,33 +634,67 @@ namespace AWSSDK.UnitTests
                 }
                 else
                 {
-                    if (!usesHeadersCollection)
+                    if (usesHeadersCollection)
                     {
-                        failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
-                        continue;
-                    }
-
-                    // Check if target type has a Headers property of type HeadersCollection
-                    var headersProperty = targetType.GetProperty("Headers");
-                    if (headersProperty != null && typeof(HeadersCollection).IsAssignableFrom(headersProperty.PropertyType))
-                    {
-                        var headersCollection = headersProperty.GetValue(mappedRequest) as HeadersCollection;
-                        if (headersCollection != null)
+                        // Check if target type has a Headers property of type HeadersCollection
+                        var headersProperty = targetType.GetProperty("Headers");
+                        if (headersProperty != null && typeof(HeadersCollection).IsAssignableFrom(headersProperty.PropertyType))
                         {
-                            var headersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedTargetPropertyName);
-                            if (headersCollectionProperty != null)
+                            var headersCollection = headersProperty.GetValue(mappedRequest) as HeadersCollection;
+                            if (headersCollection != null)
                             {
-                                targetValue = headersCollectionProperty.GetValue(headersCollection);
+                                var headersCollectionProperty = typeof(HeadersCollection).GetProperty(resolvedTargetPropertyName);
+                                if (headersCollectionProperty != null)
+                                {
+                                    targetValue = headersCollectionProperty.GetValue(headersCollection);
+                                }
+                                else
+                                {
+                                    failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name} or HeadersCollection");
+                                    continue;
+                                }
                             }
                             else
                             {
-                                failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name} or HeadersCollection");
+                                failedAssertions.Add($"Headers collection is null in {targetType.Name}");
                                 continue;
                             }
                         }
                         else
                         {
-                            failedAssertions.Add($"Headers collection is null in {targetType.Name}");
+                            failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
+                            continue;
+                        }
+                    }
+                    else if (usesResponseHeadersOverrides)
+                    {
+                        // Check if target type has a ResponseHeaderOverrides property of type ResponseHeaderOverrides
+                        var headersProperty = targetType.GetProperty("ResponseHeaderOverrides");
+                        if (headersProperty != null && typeof(ResponseHeaderOverrides).IsAssignableFrom(headersProperty.PropertyType))
+                        {
+                            var responseHeaderOverrides = headersProperty.GetValue(mappedRequest) as ResponseHeaderOverrides;
+                            if (responseHeaderOverrides != null)
+                            {
+                                var responseHeaderOverridesProperty = typeof(ResponseHeaderOverrides).GetProperty(resolvedTargetPropertyName);
+                                if (responseHeaderOverridesProperty != null)
+                                {
+                                    targetValue = responseHeaderOverridesProperty.GetValue(responseHeaderOverrides);
+                                }
+                                else
+                                {
+                                    failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name} or ResponseHeaderOverrides");
+                                    continue;
+                                }
+                            }
+                            else
+                            {
+                                failedAssertions.Add($"Response Headers overrides is null in {targetType.Name}");
+                                continue;
+                            }
+                        }
+                        else
+                        {
+                            failedAssertions.Add($"Target property '{propertyName}' (resolved to: {resolvedTargetPropertyName}) not found in {targetType.Name}");
                             continue;
                         }
                     }
@@ -640,6 +741,7 @@ namespace AWSSDK.UnitTests
                     return ResponseMapper.MapCompleteMultipartUploadResponse(sourceResponse);
                 },
                 usesHeadersCollection: false,
+                usesResponseHeadersOverrides: false,
                 (sourceResponse) =>
                 {
                     sourceResponse.HttpStatusCode = HttpStatusCode.OK;
@@ -715,10 +817,11 @@ namespace AWSSDK.UnitTests
                     return ResponseMapper.MapGetObjectResponse(sourceResponse);
                 },
                 usesHeadersCollection: true,
+                usesResponseHeadersOverrides: false,
                 (sourceResponse) =>
                 {
                     sourceResponse.HttpStatusCode = HttpStatusCode.OK;
-                    sourceResponse.ContentLength = 1024;
+                    sourceResponse.Headers.ContentLength = 1024;
                 },
                 (sourceResponse, targetResponse) =>
                 {
@@ -815,10 +918,11 @@ namespace AWSSDK.UnitTests
                     return ResponseMapper.MapGetObjectResponseToOpenStream(sourceResponse);
                 },
                 usesHeadersCollection: true,
+                usesResponseHeadersOverrides: false,
                 (sourceResponse) =>
                 {
                     sourceResponse.HttpStatusCode = HttpStatusCode.OK;
-                    sourceResponse.ContentLength = 1024;
+                    sourceResponse.Headers.ContentLength = 1024;
                     sourceResponse.ResponseStream = new MemoryStream(new byte[1024]);
                 },
                 (sourceResponse, targetResponse) =>

@@ -66,6 +66,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetJobId())
                 throw new AmazonS3ControlException("Request object does not have required field JobId set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.JobId));
+            if (publicRequest.Priority == null)
+                throw new AmazonS3ControlException("Request object does not have required field Priority set");
             
             if (publicRequest.IsSetPriority())
                 request.Parameters.Add("priority", StringUtils.FromInt(publicRequest.Priority));

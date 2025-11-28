@@ -66,6 +66,9 @@ namespace Amazon.Runtime.CredentialManagement
         private const string SsoRoleName = "sso_role_name";
         private const string SsoStartUrl = "sso_start_url";
         private const string SsoSession = "sso_session";
+
+        private const string LoginSession = "login_session";
+
         private const string EndpointUrlField = "endpoint_url";
         private const string ServicesField = "services";
         private const string IgnoreConfiguredEndpointUrlsField = "ignore_configured_endpoint_urls";
@@ -119,7 +122,8 @@ namespace Amazon.Runtime.CredentialManagement
                     { nameof(CredentialProfileOptions.SsoRegistrationScopes), SsoRegistrationScopes },
                     { nameof(CredentialProfileOptions.SsoRoleName), SsoRoleName },
                     { nameof(CredentialProfileOptions.SsoStartUrl), SsoStartUrl },
-                    { nameof(CredentialProfileOptions.SsoSession), SsoSession}
+                    { nameof(CredentialProfileOptions.SsoSession), SsoSession},
+                    { nameof(CredentialProfileOptions.LoginSession), LoginSession }
                 }
             );
 

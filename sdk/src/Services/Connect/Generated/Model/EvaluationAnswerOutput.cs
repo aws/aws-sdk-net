@@ -34,8 +34,32 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationAnswerOutput
     {
+        private List<EvaluationSuggestedAnswer> _suggestedAnswers = AWSConfigs.InitializeCollections ? new List<EvaluationSuggestedAnswer>() : null;
         private EvaluationAnswerData _systemSuggestedValue;
         private EvaluationAnswerData _value;
+
+        /// <summary>
+        /// Gets and sets the property SuggestedAnswers. 
+        /// <para>
+        /// Automation suggested answers for the questions.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<EvaluationSuggestedAnswer> SuggestedAnswers
+        {
+            get { return this._suggestedAnswers; }
+            set { this._suggestedAnswers = value; }
+        }
+
+        // Check to see if SuggestedAnswers property is set
+        internal bool IsSetSuggestedAnswers()
+        {
+            return this._suggestedAnswers != null && (this._suggestedAnswers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property SystemSuggestedValue. 

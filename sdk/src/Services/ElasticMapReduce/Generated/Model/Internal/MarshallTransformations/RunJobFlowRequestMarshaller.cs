@@ -233,6 +233,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetMonitoringConfiguration())
+            {
+                context.Writer.WritePropertyName("MonitoringConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MonitoringConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

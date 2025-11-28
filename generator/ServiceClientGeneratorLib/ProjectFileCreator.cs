@@ -301,20 +301,27 @@ namespace ServiceClientGenerator
             projectProperties.CustomRoslynAnalyzersDllDirectory = Utils.PathCombineAlt("..", "..", "..", "..", "buildtools", "CustomRoslynAnalyzers.dll");
 
             List<Dependency> dependencies;
-            List<PackageReference> references = new List<PackageReference>();
-            if (    serviceConfiguration.NugetDependencies != null &&
+            if (serviceConfiguration.NugetDependencies != null &&
                     serviceConfiguration.NugetDependencies.TryGetValue(projectFileConfiguration.Name, out dependencies))
             {
-                foreach(var dependency in dependencies)
+                List<PackageReference> references = new List<PackageReference>();
+
+                foreach (var dependency in dependencies)
                 {
                     references.Add(new PackageReference
                     {
                         Include = dependency.Name,
                         Version = dependency.Version,
+                        Condition = (dependency.Targets?.Count > 0) ? string.Join(" Or ", dependency.Targets.Select(t => $"'$(TargetFramework)'=='{t}'")) : null
                     });
                 }
 
-                projectProperties.PackageReferences = references;
+                if (references.Count > 0)
+                {
+                    // Include the NuGet package references with the existing project PackageReferences populated from _manifest.json
+                    projectProperties.PackageReferences = (projectProperties.PackageReferences != null ? projectProperties.PackageReferences.Concat(references) : references);
+                }
+                
             }
 
             var projectJsonTemplate = new VS2017ProjectFile();
@@ -360,7 +367,7 @@ namespace ServiceClientGenerator
                 var childDirectoryAlt = Utils.ConvertPathAlt(childDirectory);
                 var folder = childDirectoryAlt.Substring(coreRootFolder.Length).TrimStart('/');
 
-                if (exclusionList.Any(e => folder.Equals(e, StringComparison.InvariantCulture) ||                    
+                if (exclusionList.Any(e => folder.Equals(e, StringComparison.InvariantCulture) || 
                     folder.StartsWith(e + "/", StringComparison.InvariantCulture)))
                     continue;
 
@@ -476,6 +483,8 @@ namespace ServiceClientGenerator
             public string IncludeAssets { get; set; }
             public bool IsAnalyzer { get; set; }
             public bool HasPrivateAssets => PrivateAssets != "" && PrivateAssets != "none";
+            public string Condition { get; set; }
+
             public static PackageReference ParseJson(Json.LitJson.JsonData data)
             {
                 return new PackageReference
@@ -484,7 +493,8 @@ namespace ServiceClientGenerator
                     Version = data.SafeGetString("version"),
                     PrivateAssets = data.SafeGetString("privateAssets"),
                     IncludeAssets = data.SafeGetString("includeAssets"),
-                    IsAnalyzer = data.SafeGet("analyzer") != null ? (bool) data.SafeGet("analyzer") : false
+                    IsAnalyzer = data.SafeGet("analyzer") != null ? (bool)data.SafeGet("analyzer") : false,
+                    Condition = data.SafeGetString("condition")
                 };
             }
         }

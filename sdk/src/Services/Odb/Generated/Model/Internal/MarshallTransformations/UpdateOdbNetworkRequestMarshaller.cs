@@ -75,10 +75,44 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCrossRegionS3RestoreSourcesToDisable())
+            {
+                context.Writer.WritePropertyName("crossRegionS3RestoreSourcesToDisable");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCrossRegionS3RestoreSourcesToDisableListValue in publicRequest.CrossRegionS3RestoreSourcesToDisable)
+                {
+                        context.Writer.WriteStringValue(publicRequestCrossRegionS3RestoreSourcesToDisableListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetCrossRegionS3RestoreSourcesToEnable())
+            {
+                context.Writer.WritePropertyName("crossRegionS3RestoreSourcesToEnable");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCrossRegionS3RestoreSourcesToEnableListValue in publicRequest.CrossRegionS3RestoreSourcesToEnable)
+                {
+                        context.Writer.WriteStringValue(publicRequestCrossRegionS3RestoreSourcesToEnableListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetDisplayName())
             {
                 context.Writer.WritePropertyName("displayName");
                 context.Writer.WriteStringValue(publicRequest.DisplayName);
+            }
+
+            if(publicRequest.IsSetKmsAccess())
+            {
+                context.Writer.WritePropertyName("kmsAccess");
+                context.Writer.WriteStringValue(publicRequest.KmsAccess);
+            }
+
+            if(publicRequest.IsSetKmsPolicyDocument())
+            {
+                context.Writer.WritePropertyName("kmsPolicyDocument");
+                context.Writer.WriteStringValue(publicRequest.KmsPolicyDocument);
             }
 
             if(publicRequest.IsSetOdbNetworkId())
@@ -119,6 +153,18 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("s3PolicyDocument");
                 context.Writer.WriteStringValue(publicRequest.S3PolicyDocument);
+            }
+
+            if(publicRequest.IsSetStsAccess())
+            {
+                context.Writer.WritePropertyName("stsAccess");
+                context.Writer.WriteStringValue(publicRequest.StsAccess);
+            }
+
+            if(publicRequest.IsSetStsPolicyDocument())
+            {
+                context.Writer.WritePropertyName("stsPolicyDocument");
+                context.Writer.WriteStringValue(publicRequest.StsPolicyDocument);
             }
 
             if(publicRequest.IsSetZeroEtlAccess())

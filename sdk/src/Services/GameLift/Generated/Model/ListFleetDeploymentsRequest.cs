@@ -31,9 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFleetDeployments operation.
+    /// <b>This API works with the following fleet types:</b> Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves a collection of container fleet deployments in an Amazon Web Services Region.
     /// Use the pagination parameters to retrieve results as a set of sequential pages. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     ///  <b>Request options</b> 

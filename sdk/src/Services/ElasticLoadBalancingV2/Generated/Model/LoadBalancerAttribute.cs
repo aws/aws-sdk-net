@@ -125,6 +125,23 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>health_check_logs.s3.enabled</c> - Indicates whether health check logs are enabled.
+        /// The value is <c>true</c> or <c>false</c>. The default is <c>false</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>health_check_logs.s3.bucket</c> - The name of the S3 bucket for the health check
+        /// logs. This attribute is required if health check logs are enabled. The bucket must
+        /// exist in the same region as the load balancer and have a bucket policy that grants
+        /// Elastic Load Balancing permissions to write to the bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>health_check_logs.s3.prefix</c> - The prefix for the location in the S3 bucket
+        /// for the health check logs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>routing.http.desync_mitigation_mode</c> - Determines how the load balancer handles
         /// requests that might pose a security risk to your application. The possible values
         /// are <c>monitor</c>, <c>defensive</c>, and <c>strictest</c>. The default is <c>defensive</c>.

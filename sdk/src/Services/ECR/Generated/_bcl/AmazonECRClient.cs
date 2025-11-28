@@ -1443,6 +1443,170 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  DeleteSigningConfiguration
+
+
+        /// <summary>
+        /// Deletes the registry's signing configuration. Images pushed after deletion of the
+        /// signing configuration will no longer be automatically signed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Deleting the signing configuration does not affect existing image signatures.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSigningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SigningConfigurationNotFoundException">
+        /// The specified signing configuration was not found. This occurs when attempting to
+        /// retrieve or delete a signing configuration that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteSigningConfiguration">REST API Reference for DeleteSigningConfiguration Operation</seealso>
+        public virtual DeleteSigningConfigurationResponse DeleteSigningConfiguration(DeleteSigningConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSigningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSigningConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSigningConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the registry's signing configuration. Images pushed after deletion of the
+        /// signing configuration will no longer be automatically signed.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Deleting the signing configuration does not affect existing image signatures.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSigningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SigningConfigurationNotFoundException">
+        /// The specified signing configuration was not found. This occurs when attempting to
+        /// retrieve or delete a signing configuration that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteSigningConfiguration">REST API Reference for DeleteSigningConfiguration Operation</seealso>
+        public virtual Task<DeleteSigningConfigurationResponse> DeleteSigningConfigurationAsync(DeleteSigningConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSigningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSigningConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSigningConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterPullTimeUpdateExclusion
+
+
+        /// <summary>
+        /// Removes a principal from the pull time update exclusion list for a registry. Once
+        /// removed, Amazon ECR will resume updating the pull time if the specified principal
+        /// pulls an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPullTimeUpdateExclusion service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterPullTimeUpdateExclusion service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ExclusionNotFoundException">
+        /// The specified pull time update exclusion was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeregisterPullTimeUpdateExclusion">REST API Reference for DeregisterPullTimeUpdateExclusion Operation</seealso>
+        public virtual DeregisterPullTimeUpdateExclusionResponse DeregisterPullTimeUpdateExclusion(DeregisterPullTimeUpdateExclusionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeregisterPullTimeUpdateExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterPullTimeUpdateExclusionResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterPullTimeUpdateExclusionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a principal from the pull time update exclusion list for a registry. Once
+        /// removed, Amazon ECR will resume updating the pull time if the specified principal
+        /// pulls an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPullTimeUpdateExclusion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterPullTimeUpdateExclusion service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ExclusionNotFoundException">
+        /// The specified pull time update exclusion was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeregisterPullTimeUpdateExclusion">REST API Reference for DeregisterPullTimeUpdateExclusion Operation</seealso>
+        public virtual Task<DeregisterPullTimeUpdateExclusionResponse> DeregisterPullTimeUpdateExclusionAsync(DeregisterPullTimeUpdateExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeregisterPullTimeUpdateExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterPullTimeUpdateExclusionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterPullTimeUpdateExclusionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeImageReplicationStatus
 
 
@@ -1694,6 +1858,93 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = DescribeImageScanFindingsResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeImageScanFindingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeImageSigningStatus
+
+
+        /// <summary>
+        /// Returns the signing status for a specified image. If the image matched signing rules
+        /// that reference different signing profiles, a status is returned for each profile.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageSigningStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeImageSigningStatus service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageSigningStatus">REST API Reference for DescribeImageSigningStatus Operation</seealso>
+        public virtual DescribeImageSigningStatusResponse DescribeImageSigningStatus(DescribeImageSigningStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeImageSigningStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageSigningStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImageSigningStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the signing status for a specified image. If the image matched signing rules
+        /// that reference different signing profiles, a status is returned for each profile.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImageSigningStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeImageSigningStatus service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageSigningStatus">REST API Reference for DescribeImageSigningStatus Operation</seealso>
+        public virtual Task<DescribeImageSigningStatusResponse> DescribeImageSigningStatusAsync(DescribeImageSigningStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeImageSigningStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeImageSigningStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeImageSigningStatusResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2534,6 +2785,87 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  GetSigningConfiguration
+
+
+        /// <summary>
+        /// Retrieves the registry's signing configuration, which defines rules for automatically
+        /// signing images using Amazon Web Services Signer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SigningConfigurationNotFoundException">
+        /// The specified signing configuration was not found. This occurs when attempting to
+        /// retrieve or delete a signing configuration that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetSigningConfiguration">REST API Reference for GetSigningConfiguration Operation</seealso>
+        public virtual GetSigningConfigurationResponse GetSigningConfiguration(GetSigningConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSigningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSigningConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetSigningConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the registry's signing configuration, which defines rules for automatically
+        /// signing images using Amazon Web Services Signer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSigningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.SigningConfigurationNotFoundException">
+        /// The specified signing configuration was not found. This occurs when attempting to
+        /// retrieve or delete a signing configuration that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetSigningConfiguration">REST API Reference for GetSigningConfiguration Operation</seealso>
+        public virtual Task<GetSigningConfigurationResponse> GetSigningConfigurationAsync(GetSigningConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSigningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSigningConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSigningConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  InitiateLayerUpload
 
 
@@ -2629,6 +2961,73 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  ListImageReferrers
+
+
+        /// <summary>
+        /// Lists the artifacts associated with a specified subject image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImageReferrers service method.</param>
+        /// 
+        /// <returns>The response from the ListImageReferrers service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImageReferrers">REST API Reference for ListImageReferrers Operation</seealso>
+        public virtual ListImageReferrersResponse ListImageReferrers(ListImageReferrersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListImageReferrersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImageReferrersResponseUnmarshaller.Instance;
+
+            return Invoke<ListImageReferrersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the artifacts associated with a specified subject image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImageReferrers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImageReferrers service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImageReferrers">REST API Reference for ListImageReferrers Operation</seealso>
+        public virtual Task<ListImageReferrersResponse> ListImageReferrersAsync(ListImageReferrersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListImageReferrersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImageReferrersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListImageReferrersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListImages
 
 
@@ -2704,6 +3103,75 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = ListImagesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListImagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPullTimeUpdateExclusions
+
+
+        /// <summary>
+        /// Lists the IAM principals that are excluded from having their image pull times recorded.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPullTimeUpdateExclusions service method.</param>
+        /// 
+        /// <returns>The response from the ListPullTimeUpdateExclusions service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListPullTimeUpdateExclusions">REST API Reference for ListPullTimeUpdateExclusions Operation</seealso>
+        public virtual ListPullTimeUpdateExclusionsResponse ListPullTimeUpdateExclusions(ListPullTimeUpdateExclusionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPullTimeUpdateExclusionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPullTimeUpdateExclusionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPullTimeUpdateExclusionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the IAM principals that are excluded from having their image pull times recorded.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPullTimeUpdateExclusions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPullTimeUpdateExclusions service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListPullTimeUpdateExclusions">REST API Reference for ListPullTimeUpdateExclusions Operation</seealso>
+        public virtual Task<ListPullTimeUpdateExclusionsResponse> ListPullTimeUpdateExclusionsAsync(ListPullTimeUpdateExclusionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPullTimeUpdateExclusionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPullTimeUpdateExclusionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPullTimeUpdateExclusionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3286,6 +3754,9 @@ namespace Amazon.ECR
         /// <param name="request">Container for the necessary parameters to execute the PutRegistryScanningConfiguration service method.</param>
         /// 
         /// <returns>The response from the PutRegistryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.BlockedByOrganizationPolicyException">
+        /// The operation did not succeed because the account is managed by a organization policy.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
@@ -3315,6 +3786,9 @@ namespace Amazon.ECR
         /// </param>
         /// 
         /// <returns>The response from the PutRegistryScanningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.BlockedByOrganizationPolicyException">
+        /// The operation did not succeed because the account is managed by a organization policy.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
         /// </exception>
@@ -3425,6 +3899,170 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  PutSigningConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the registry's signing configuration, which defines rules for automatically
+        /// signing images with Amazon Web Services Signer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To successfully generate a signature, the IAM principal pushing images must have permission
+        /// to sign payloads with the Amazon Web Services Signer signing profile referenced in
+        /// the signing configuration.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSigningConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutSigningConfiguration">REST API Reference for PutSigningConfiguration Operation</seealso>
+        public virtual PutSigningConfigurationResponse PutSigningConfiguration(PutSigningConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutSigningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSigningConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutSigningConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates the registry's signing configuration, which defines rules for automatically
+        /// signing images with Amazon Web Services Signer.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/managed-signing.html">Managed
+        /// signing</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To successfully generate a signature, the IAM principal pushing images must have permission
+        /// to sign payloads with the Amazon Web Services Signer signing profile referenced in
+        /// the signing configuration.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSigningConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSigningConfiguration service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutSigningConfiguration">REST API Reference for PutSigningConfiguration Operation</seealso>
+        public virtual Task<PutSigningConfigurationResponse> PutSigningConfigurationAsync(PutSigningConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutSigningConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSigningConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutSigningConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterPullTimeUpdateExclusion
+
+
+        /// <summary>
+        /// Adds an IAM principal to the pull time update exclusion list for a registry. Amazon
+        /// ECR will not record the pull time if an excluded principal pulls an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPullTimeUpdateExclusion service method.</param>
+        /// 
+        /// <returns>The response from the RegisterPullTimeUpdateExclusion service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ExclusionAlreadyExistsException">
+        /// The specified pull time update exclusion already exists for the registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RegisterPullTimeUpdateExclusion">REST API Reference for RegisterPullTimeUpdateExclusion Operation</seealso>
+        public virtual RegisterPullTimeUpdateExclusionResponse RegisterPullTimeUpdateExclusion(RegisterPullTimeUpdateExclusionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterPullTimeUpdateExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterPullTimeUpdateExclusionResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterPullTimeUpdateExclusionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Adds an IAM principal to the pull time update exclusion list for a registry. Amazon
+        /// ECR will not record the pull time if an excluded principal pulls an image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPullTimeUpdateExclusion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterPullTimeUpdateExclusion service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ExclusionAlreadyExistsException">
+        /// The specified pull time update exclusion already exists for the registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.LimitExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon
+        /// ECR service quotas</a> in the Amazon Elastic Container Registry User Guide.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RegisterPullTimeUpdateExclusion">REST API Reference for RegisterPullTimeUpdateExclusion Operation</seealso>
+        public virtual Task<RegisterPullTimeUpdateExclusionResponse> RegisterPullTimeUpdateExclusionAsync(RegisterPullTimeUpdateExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RegisterPullTimeUpdateExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterPullTimeUpdateExclusionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterPullTimeUpdateExclusionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SetRepositoryPolicy
 
 
@@ -3508,6 +4146,9 @@ namespace Amazon.ECR
         /// <param name="request">Container for the necessary parameters to execute the StartImageScan service method.</param>
         /// 
         /// <returns>The response from the StartImageScan service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageArchivedException">
+        /// The specified image is archived and cannot be scanned.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
         /// The image requested does not exist in the specified repository.
         /// </exception>
@@ -3561,6 +4202,9 @@ namespace Amazon.ECR
         /// </param>
         /// 
         /// <returns>The response from the StartImageScan service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageArchivedException">
+        /// The specified image is archived and cannot be scanned.
+        /// </exception>
         /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
         /// The image requested does not exist in the specified repository.
         /// </exception>
@@ -3830,6 +4474,89 @@ namespace Amazon.ECR
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateImageStorageClass
+
+
+        /// <summary>
+        /// Transitions an image between storage classes. You can transition images from Amazon
+        /// ECR standard storage class to Amazon ECR archival storage class for long-term storage,
+        /// or restore archived images back to Amazon ECR standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageStorageClass service method.</param>
+        /// 
+        /// <returns>The response from the UpdateImageStorageClass service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ImageStorageClassUpdateNotSupportedException">
+        /// The requested image storage class update is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateImageStorageClass">REST API Reference for UpdateImageStorageClass Operation</seealso>
+        public virtual UpdateImageStorageClassResponse UpdateImageStorageClass(UpdateImageStorageClassRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateImageStorageClassRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageStorageClassResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateImageStorageClassResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Transitions an image between storage classes. You can transition images from Amazon
+        /// ECR standard storage class to Amazon ECR archival storage class for long-term storage,
+        /// or restore archived images back to Amazon ECR standard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateImageStorageClass service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateImageStorageClass service method, as returned by ECR.</returns>
+        /// <exception cref="Amazon.ECR.Model.ImageNotFoundException">
+        /// The image requested does not exist in the specified repository.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ImageStorageClassUpdateNotSupportedException">
+        /// The requested image storage class update is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
+        /// The specified repository could not be found. Check the spelling of the specified repository
+        /// and ensure that you are performing operations on the correct registry.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECR.Model.ValidationException">
+        /// There was an exception validating this request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdateImageStorageClass">REST API Reference for UpdateImageStorageClass Operation</seealso>
+        public virtual Task<UpdateImageStorageClassResponse> UpdateImageStorageClassAsync(UpdateImageStorageClassRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateImageStorageClassRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateImageStorageClassResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateImageStorageClassResponse>(request, options, cancellationToken);
         }
 
         #endregion

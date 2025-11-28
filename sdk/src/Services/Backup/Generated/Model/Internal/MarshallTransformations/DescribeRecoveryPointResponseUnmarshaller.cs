@@ -106,6 +106,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.EncryptionKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EncryptionKeyType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EncryptionKeyType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("IamRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -182,6 +188,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ResourceType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ScanResults", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ScanResult, ScanResultUnmarshaller>(ScanResultUnmarshaller.Instance);
+                    response.ScanResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceBackupVaultArn", targetDepth))

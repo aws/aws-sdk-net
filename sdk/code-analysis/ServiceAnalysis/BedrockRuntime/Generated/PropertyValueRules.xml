@@ -4,11 +4,11 @@
     <property>Amazon.BedrockRuntime.Model.ApplyGuardrailRequest.GuardrailIdentifier</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+    <pattern>(|([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ApplyGuardrailRequest.GuardrailVersion</property>
-    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+    <pattern>(|([1-9][0-9]{0,7})|(DRAFT))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ConverseRequest.ModelId</property>
@@ -66,11 +66,11 @@
     <property>Amazon.BedrockRuntime.Model.InvokeModelRequest.GuardrailIdentifier</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+    <pattern>(|([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.InvokeModelRequest.GuardrailVersion</property>
-    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+    <pattern>(|([1-9][0-9]{0,7})|(DRAFT))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.InvokeModelRequest.ModelId</property>
@@ -98,11 +98,11 @@
     <property>Amazon.BedrockRuntime.Model.InvokeModelWithResponseStreamRequest.GuardrailIdentifier</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+    <pattern>(|([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.InvokeModelWithResponseStreamRequest.GuardrailVersion</property>
-    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+    <pattern>(|([1-9][0-9]{0,7})|(DRAFT))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.InvokeModelWithResponseStreamRequest.ModelId</property>
@@ -144,6 +144,22 @@
     <min>1</min>
     <max>2048</max>
     <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:async-invoke/[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.AppliedGuardrailDetails.GuardrailArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.AppliedGuardrailDetails.GuardrailId</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>([a-z0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.AppliedGuardrailDetails.GuardrailVersion</property>
+    <pattern>(|([1-9][0-9]{0,7})|(DRAFT))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.AsyncInvokeS3OutputDataConfig.BucketOwner</property>
@@ -287,11 +303,11 @@
     <property>Amazon.BedrockRuntime.Model.GuardrailConfiguration.GuardrailIdentifier</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+    <pattern>(|([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.GuardrailConfiguration.GuardrailVersion</property>
-    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+    <pattern>(|([1-9][0-9]{0,7})|(DRAFT))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.GuardrailContextualGroundingFilter.Score</property>
@@ -315,11 +331,11 @@
     <property>Amazon.BedrockRuntime.Model.GuardrailStreamConfiguration.GuardrailIdentifier</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>(([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
+    <pattern>(|([a-z0-9]+)|(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.GuardrailStreamConfiguration.GuardrailVersion</property>
-    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+    <pattern>(|([1-9][0-9]{0,7})|(DRAFT))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ImageSource.Bytes</property>
@@ -380,6 +396,18 @@
     <min>1</min>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.SearchResultLocation.End</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.SearchResultLocation.SearchResultIndex</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.SearchResultLocation.Start</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.SpecificToolChoice.Name</property>

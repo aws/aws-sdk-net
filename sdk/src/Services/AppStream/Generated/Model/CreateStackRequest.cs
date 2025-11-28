@@ -53,7 +53,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property AccessEndpoints. 
         /// <para>
         /// The list of interface VPC endpoint (interface endpoint) objects. Users of the stack
-        /// can connect to AppStream 2.0 only through the specified endpoints.
+        /// can connect to WorkSpaces Applications only through the specified endpoints.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -135,9 +135,9 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property EmbedHostDomains. 
         /// <para>
-        /// The domains where AppStream 2.0 streaming sessions can be embedded in an iframe. You
-        /// must approve the domains that you want to host embedded AppStream 2.0 streaming sessions.
-        /// 
+        /// The domains where WorkSpaces Applications streaming sessions can be embedded in an
+        /// iframe. You must approve the domains that you want to host embedded WorkSpaces Applications
+        /// streaming sessions. 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -281,7 +281,7 @@ namespace Amazon.AppStream.Model
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

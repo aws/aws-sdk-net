@@ -135,6 +135,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                      int publicRequestDesiredConfigurationMixedInstancesPolicyLaunchTemplatelistValueIndex = 1;
                                      foreach(var publicRequestDesiredConfigurationMixedInstancesPolicyLaunchTemplatelistValue in publicRequest.DesiredConfiguration.MixedInstancesPolicy.LaunchTemplate.Overrides)
                                      {
+                                        if(publicRequestDesiredConfigurationMixedInstancesPolicyLaunchTemplatelistValue.IsSetImageId())
+                                        {
+                                            request.Parameters.Add("DesiredConfiguration" + "." + "MixedInstancesPolicy" + "." + "LaunchTemplate" + "." + "Overrides" + "." + "member" + "." + publicRequestDesiredConfigurationMixedInstancesPolicyLaunchTemplatelistValueIndex + "." + "ImageId", StringUtils.FromString(publicRequestDesiredConfigurationMixedInstancesPolicyLaunchTemplatelistValue.ImageId));
+                                        }
                                         if(publicRequestDesiredConfigurationMixedInstancesPolicyLaunchTemplatelistValue.IsSetInstanceRequirements())
                                         {
                                             if(publicRequestDesiredConfigurationMixedInstancesPolicyLaunchTemplatelistValue.InstanceRequirements.IsSetAcceleratorCount())

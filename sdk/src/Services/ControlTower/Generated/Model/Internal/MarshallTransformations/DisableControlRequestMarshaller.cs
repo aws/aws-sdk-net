@@ -79,6 +79,12 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ControlIdentifier);
             }
 
+            if(publicRequest.IsSetEnabledControlIdentifier())
+            {
+                context.Writer.WritePropertyName("enabledControlIdentifier");
+                context.Writer.WriteStringValue(publicRequest.EnabledControlIdentifier);
+            }
+
             if(publicRequest.IsSetTargetIdentifier())
             {
                 context.Writer.WritePropertyName("targetIdentifier");

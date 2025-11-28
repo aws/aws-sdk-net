@@ -515,7 +515,12 @@ namespace Amazon.PrometheusService
         /// a workspace. A rule groups namespace is associated with exactly one rules file. A
         /// workspace can have multiple rule groups namespaces.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// The combined length of a rule group namespace and a rule group name cannot exceed
+        /// 721 UTF-8 bytes.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Use this operation only to create new rule groups namespaces. To update an existing
         /// rule groups namespace, use <c>PutRuleGroupsNamespace</c>.
@@ -574,16 +579,18 @@ namespace Amazon.PrometheusService
 
         /// <summary>
         /// The <c>CreateScraper</c> operation creates a scraper to collect metrics. A scraper
-        /// pulls metrics from Prometheus-compatible sources within an Amazon EKS cluster, and
-        /// sends them to your Amazon Managed Service for Prometheus workspace. Scrapers are flexible,
-        /// and can be configured to control what metrics are collected, the frequency of collection,
-        /// what transformations are applied to the metrics, and more.
+        /// pulls metrics from Prometheus-compatible sources and sends them to your Amazon Managed
+        /// Service for Prometheus workspace. You can configure scrapers to collect metrics from
+        /// Amazon EKS clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based
+        /// service discovery. Scrapers are flexible, and can be configured to control what metrics
+        /// are collected, the frequency of collection, what transformations are applied to the
+        /// metrics, and more.
         /// 
         ///  
         /// <para>
         /// An IAM role will be created for you that Amazon Managed Service for Prometheus uses
-        /// to access the metrics in your cluster. You must configure this role with a policy
-        /// that allows it to scrape metrics from your cluster. For more information, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
+        /// to access the metrics in your source. You must configure this role with a policy that
+        /// allows it to scrape metrics from your source. For Amazon EKS sources, see <a href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup">Configuring
         /// your Amazon EKS cluster</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
         /// </para>
         ///  
@@ -595,8 +602,7 @@ namespace Amazon.PrometheusService
         /// <para>
         /// When creating a scraper, the service creates a <c>Network Interface</c> in each <b>Availability
         /// Zone</b> that are passed into <c>CreateScraper</c> through subnets. These network
-        /// interfaces are used to connect to the Amazon EKS cluster within the VPC for scraping
-        /// metrics.
+        /// interfaces are used to connect to your source within the VPC for scraping metrics.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2134,7 +2140,12 @@ namespace Amazon.PrometheusService
         /// is associated with exactly one rules file. A workspace can have multiple rule groups
         /// namespaces.
         /// 
-        ///  
+        ///  <important> 
+        /// <para>
+        /// The combined length of a rule group namespace and a rule group name cannot exceed
+        /// 721 UTF-8 bytes.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Use this operation only to update existing rule groups namespaces. To create a new
         /// rule groups namespace, use <c>CreateRuleGroupsNamespace</c>.

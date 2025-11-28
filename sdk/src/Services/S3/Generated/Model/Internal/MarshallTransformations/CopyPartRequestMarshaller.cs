@@ -105,9 +105,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
             if (string.IsNullOrEmpty(publicRequest.DestinationBucket))
                 throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyPartRequest.DestinationBucket");
+            if (publicRequest.PartNumber == null)
+                throw new AmazonS3Exception("Request object does not have required field PartNumber set");
             
             if (publicRequest.IsSetPartNumber())
                 request.Parameters.Add("partNumber", StringUtils.FromInt(publicRequest.PartNumber));
+            if (string.IsNullOrEmpty(publicRequest.UploadId))
+                throw new AmazonS3Exception("Request object does not have required field UploadId set");
             
             if (publicRequest.IsSetUploadId())
                 request.Parameters.Add("uploadId", StringUtils.FromString(publicRequest.UploadId));

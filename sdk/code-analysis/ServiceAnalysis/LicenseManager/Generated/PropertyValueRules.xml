@@ -104,6 +104,22 @@
     <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateLicenseAssetGroupRequest.Description</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateLicenseAssetGroupRequest.Name</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateLicenseAssetRulesetRequest.Description</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.CreateLicenseAssetRulesetRequest.Name</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManager.Model.CreateLicenseConversionTaskForResourceRequest.ResourceArn</property>
     <max>2048</max>
     <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
@@ -179,6 +195,16 @@
     <pattern>^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[ 0-3]|[0-1][0-9]):[0-5][0-9])+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LicenseManager.Model.DeleteLicenseAssetGroupRequest.LicenseAssetGroupArn</property>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.DeleteLicenseAssetRulesetRequest.LicenseAssetRulesetArn</property>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManager.Model.ExtendLicenseConsumptionResponse.Expiration</property>
     <max>50</max>
     <pattern>^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|0[1-9]|[1-2][0-9])T(2[0-3]|[0-1][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z|[+-](?:2[ 0-3]|[0-1][0-9]):[0-5][0-9])+$</pattern>
@@ -200,6 +226,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.GetLicenseRequest.LicenseArn</property>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.GetLicenseAssetGroupRequest.LicenseAssetGroupArn</property>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.GetLicenseAssetRulesetRequest.LicenseAssetRulesetArn</property>
     <max>2048</max>
     <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
@@ -284,6 +320,32 @@
     <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LicenseManager.Model.UpdateLicenseAssetGroupRequest.Description</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.UpdateLicenseAssetGroupRequest.LicenseAssetGroupArn</property>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.UpdateLicenseAssetGroupRequest.Name</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.UpdateLicenseAssetRulesetRequest.Description</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.UpdateLicenseAssetRulesetRequest.LicenseAssetRulesetArn</property>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.UpdateLicenseAssetRulesetRequest.Name</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LicenseManager.Model.UpdateLicenseManagerReportGeneratorRequest.ClientToken</property>
     <min>1</min>
     <max>36</max>
@@ -345,6 +407,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LicenseManager.Model.License.LicenseArn</property>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.LicenseAssetGroup.LicenseAssetGroupArn</property>
+    <max>2048</max>
+    <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LicenseManager.Model.LicenseAssetRuleset.LicenseAssetRulesetArn</property>
     <max>2048</max>
     <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>

@@ -179,7 +179,8 @@
                     "Filter": 
                     {
                         "skipContextTestExpressionUnmarshallingLogic" : true,
-                        "injectXmlUnmarshallCode": ["FilterCustomUnmarshall(context, unmarshalledObject);"]
+                        "injectXmlUnmarshallCode": ["FilterCustomUnmarshall(context, unmarshalledObject);"],
+                        "injectXmlMarshallCode": ["FilterCustomMarshall(publicRequestConfigurationRulesValue, xmlWriter);"]
                     }
                 }
             ]
@@ -778,6 +779,303 @@
                     }
                 }
             ]
+        },
+        "PutBucketMetricsConfigurationRequest":{
+            "modify" : [
+                {
+                    "Id" :{"emitPropertyName" :"MetricsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{
+                        "injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
+                }
+            ]
+        },
+        "MetricsConfiguration":{
+            "modify":[
+                {
+                    "Filter" : 
+                    {
+                        "emitPropertyName" : "MetricsFilter"
+                    }
+                },
+                {
+                    "MetricsFilter":{
+                        "injectXmlMarshallCode": ["MetricsFilterCustomMarshall(publicRequest, xmlWriter);"]
+                    }
+                },
+                {
+                    "Id" : {"emitPropertyName" : "MetricsId"}
+                }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "MetricsFilter" :{
+                        "predicateListUnmarshallerName" : "MetricsPredicateListFilterUnmarshaller",
+                        "filterPredicateName": "MetricsFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "GetBucketMetricsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName": "MetricsId"}
+                },
+                {
+                    "ExpectedBucketOwner" :{
+                        "injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
+                }
+            ]
+        },
+        "ListBucketMetricsConfigurationsOutput":{
+            "modify":[
+                {
+                    "ContinuationToken":{"emitPropertyName":"Token"}
+                },
+                {
+                    "Token" : {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._token);"]}
+                },
+                {
+                    "NextContinuationToken": {"emitPropertyName": "NextToken"}
+                },
+                {
+                    "NextToken": {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._nextToken);"]}
+                }
+            ]
+        },
+        "ListBucketMetricsConfigurationsRequest":{
+            "modify":[
+                {
+                    "Token": {"emitPropertyName": "ContinuationToken"}
+                },
+                {
+                     "ContinuationToken" : {"injectXmlIsSet":["return !string.IsNullOrEmpty(this._continuationToken);"]}
+                },
+                {
+                    "ExpectedBucketOwner" :{"injectXmlIsSet" :["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "DeleteBucketMetricsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName": "MetricsId"}
+                },
+                {
+                    "ExpectedBucketOwner" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "MetricsId":{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._metricsId);"]}
+                }
+            ]
+        },
+        "CreateSessionRequest":{
+            "modify" :[
+                {
+                    "ServerSideEncryption": {
+                        "injectXmlIsSet" :[
+                            "return this._serverSideEncryption != null && this._serverSideEncryption != ServerSideEncryptionMethod.None;"
+                        ]
+                    }
+                },
+                {
+                    "SSEKMSKeyId":{
+                        "injectXmlIsSet":[
+                            "return !string.IsNullOrEmpty(this._ssekmsKeyId);"
+                        ]
+                    }
+                },
+                {
+                    "SSEKMSEncryptionContext":{
+                        "injectXmlIsSet":[
+                            "return !string.IsNullOrEmpty(this._ssekmsEncryptionContext);"
+                        ]
+                    }
+                }
+            ]
+        },
+        "CreateSessionOutput":{
+            "modify" :[
+                {
+                    "ServerSideEncryption": {
+                        "injectXmlIsSet" :[
+                            "return this._serverSideEncryption != null && this._serverSideEncryption != ServerSideEncryptionMethod.None;"
+                        ]
+                    }
+                }
+            ]
+        },
+        "PutBucketAnalyticsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"AnalyticsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{
+                        "injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
+                }
+            ]
+        },
+        "AnalyticsConfiguration": {
+            "modify": [
+                {
+                    "Id":{"emitPropertyName": "AnalyticsId"}
+                },
+                {
+                    "Filter" :{"emitPropertyName": "AnalyticsFilter"}
+                },
+                {
+                    "AnalyticsFilter" :{
+                        "injectXmlMarshallCode": ["AnalyticsFilterCustomMarshall(publicRequest, xmlWriter);"]
+                    }
+                }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "AnalyticsFilter" :{
+                        "predicateListUnmarshallerName" : "AnalyticsPredicateListUnmarshaller",
+                        "filterPredicateName": "AnalyticsFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "GetBucketAnalyticsConfigurationRequest":{
+            "modify" :[
+                {
+                    "Id" :{"emitPropertyName": "AnalyticsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{
+                        "injectXmlIsSet":[
+                            "return !String.IsNullOrEmpty(this._expectedBucketOwner);"
+                        ]
+                    }
+                }
+            ]
+        },
+        "AnalyticsS3BucketDestination" : {
+            "modify":[
+                {
+                    "BucketAccountId" :{
+                        "injectXmlIsSet":["return !String.IsNullOrEmpty(this._bucketAccountId);"]
+                    }
+                },
+                {
+                    "BucketName":{
+                        "injectXmlIsSet": ["return !String.IsNullOrEmpty(this._bucketName);"]
+                    }
+                },
+                {
+                    "Prefix":{
+                         "injectXmlIsSet": ["return !String.IsNullOrEmpty(this._prefix);"]
+                    }
+                },
+                {
+                    "Format" :{
+                        "skipContextTestExpressionUnmarshallingLogic" : true,
+                        "injectXmlUnmarshallCode": ["FormatCustomUnmarshall(context, unmarshalledObject);"]
+                    }
+                }
+            ]
+        },
+        "ListBucketAnalyticsConfigurationsRequest":{
+            "modify":[
+                {
+                    "ContinuationToken":{
+                        "injectXmlIsSet":["return !string.IsNullOrEmpty(this._continuationToken);"]
+                    }
+                },
+                {
+                    "ExpectedBucketOwner" :{
+                        "injectXmlIsSet":["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]
+                    }
+                }
+            ]
+        },
+        "DeleteBucketAnalyticsConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName":"AnalyticsId"}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":[
+                        "return !String.IsNullOrEmpty(this._expectedBucketOwner);"
+                    ]}
+                }
+            ]
+        },
+        "PutBucketIntelligentTieringConfigurationRequest" : {
+            "modify" : [
+                {
+                    "Id": {"emitPropertyName": "IntelligentTieringId"}
+                }
+            ]
+        },
+        "IntelligentTieringConfiguration" : {
+            "modify": [
+                {
+                    "Id" :{"emitPropertyName":"IntelligentTieringId"}
+                },
+                {
+                    "Filter": {"emitPropertyName": "IntelligentTieringFilter"}
+                },
+                {                   
+                    "IntelligentTieringFilter" :{
+                        "injectXmlMarshallCode": ["IntelligentTieringFilterCustomMarshall(publicRequest, xmlWriter);"]
+                    }
+                }
+            ],
+            "predicateListUnmarshallers": [
+                {
+                    "IntelligentTieringFilter" :{
+                        "predicateListUnmarshallerName" : "IntelligentTieringPredicateListFilterUnmarshaller",
+                        "filterPredicateName": "IntelligentTieringFilterPredicate"
+                    }
+                }
+            ]
+        },
+        "GetBucketIntelligentTieringConfigurationRequest":{
+            "modify":[
+                {
+                    "Id" : {"emitPropertyName": "IntelligentTieringId"}
+                }
+            ]
+        },
+        "ListBucketIntelligentTieringConfigurationsRequest":{
+            "modify":[
+                {
+                    "ContinuationToken":{
+                        "injectXmlIsSet":[
+                            "return !string.IsNullOrEmpty(this._continuationToken);"
+                        ]
+                    }
+                }
+            ]
+        },
+        "ListBucketIntelligentTieringConfigurationsOutput":{
+            "modify":[
+                {
+                    "ContinuationToken":{
+                        "injectXmlIsSet":[ "return !string.IsNullOrEmpty(this._continuationToken);"]
+                    }
+                },
+                {
+                    "NextContinuationToken":{
+                        "injectXmlIsSet":["return !string.IsNullOrEmpty(this._nextContinuationToken);"]
+                    }
+                }
+            ]
+        },
+        "DeleteBucketIntelligentTieringConfigurationRequest":{
+            "modify":[
+                {
+                    "Id":{"emitPropertyName": "IntelligentTieringId"}
+                }
+            ]
         }
     },
     "operationModifiers": {
@@ -1066,6 +1364,13 @@
                 "Marshaller" : "Amazon.Util.AWSSDKUtils.Join",
                 "Unmarshaller" : "StringUnmarshaller"
             }
+        },
+        "AnalyticsS3BucketDestination":{
+            "Format":{
+                "Type": "string",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
         }
     },
     "excludeMembers":{
@@ -1141,13 +1446,12 @@
     },
     "excludeShapes":[
         "NotificationConfiguration",
-        "CopyPartResult"
-    ],
-    "implementsVisitorPattern":{
-        "LifecycleFilter":{
-            "predicateName": "LifecycleFilterPredicate",
-            "visitorName": "LifecycleFilterPredicateMarshallVisitor",
-            "visitorParam": "xmlWriter"
-        }
-    }
+        "CopyPartResult",
+        "MetricsFilter",
+        "MetricsAndOperator",
+        "AnalyticsFilter",
+        "AnalyticsAndOperator",
+        "IntelligentTieringFilter",
+        "IntelligentTieringAndOperator"
+    ]
 }

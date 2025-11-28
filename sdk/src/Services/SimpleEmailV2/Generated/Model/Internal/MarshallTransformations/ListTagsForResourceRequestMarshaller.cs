@@ -62,6 +62,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceArn))
+                throw new AmazonSimpleEmailServiceV2Exception("Request object does not have required field ResourceArn set");
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));

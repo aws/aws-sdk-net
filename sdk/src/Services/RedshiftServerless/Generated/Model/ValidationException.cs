@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
-    /// The input failed to satisfy the constraints specified by an AWS service.
+    /// The input failed to satisfy the constraints specified by an Amazon Web Services service.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

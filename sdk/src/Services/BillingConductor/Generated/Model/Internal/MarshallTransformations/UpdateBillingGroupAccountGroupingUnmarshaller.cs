@@ -62,6 +62,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoAssociate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ResponsibilityTransferArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResponsibilityTransferArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

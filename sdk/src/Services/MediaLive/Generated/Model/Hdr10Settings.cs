@@ -42,7 +42,6 @@ namespace Amazon.MediaLive.Model
         /// value defining the maximum light level, in nits,of any single pixel within an encoded
         /// HDR video stream or file.
         /// </summary>
-        [AWSProperty(Min=0, Max=32768)]
         public int? MaxCll
         {
             get { return this._maxCll; }
@@ -60,7 +59,6 @@ namespace Amazon.MediaLive.Model
         /// value defining the maximum average light level, in nits,for any single frame within
         /// an encoded HDR video stream or file.
         /// </summary>
-        [AWSProperty(Min=0, Max=32768)]
         public int? MaxFall
         {
             get { return this._maxFall; }

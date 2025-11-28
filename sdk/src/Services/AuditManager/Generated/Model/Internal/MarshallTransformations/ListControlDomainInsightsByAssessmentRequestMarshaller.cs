@@ -62,6 +62,8 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.AssessmentId))
+                throw new AmazonAuditManagerException("Request object does not have required field AssessmentId set");
             
             if (publicRequest.IsSetAssessmentId())
                 request.Parameters.Add("assessmentId", StringUtils.FromString(publicRequest.AssessmentId));

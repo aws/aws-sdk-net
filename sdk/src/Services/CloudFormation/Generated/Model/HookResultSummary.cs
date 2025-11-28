@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Describes a Hook invocation, its status, and the reason for its status.
+    /// A <c>ListHookResults</c> call returns a summary of a Hook invocation.
     /// </summary>
     public partial class HookResultSummary
     {
@@ -69,7 +69,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property HookExecutionTarget. 
         /// <para>
-        /// The ARN of the target stack or request token of the Cloud Control API operation.
+        /// The Amazon Resource Name (ARN) of the target stack or request token of the Cloud Control
+        /// API operation.
         /// </para>
         ///  
         /// <para>

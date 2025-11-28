@@ -25,6 +25,106 @@ namespace Amazon.RedshiftServerless
 {
 
     /// <summary>
+    /// Constants used for properties of type LakehouseIdcRegistration.
+    /// </summary>
+    public class LakehouseIdcRegistration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Associate for LakehouseIdcRegistration
+        /// </summary>
+        public static readonly LakehouseIdcRegistration Associate = new LakehouseIdcRegistration("Associate");
+        /// <summary>
+        /// Constant Disassociate for LakehouseIdcRegistration
+        /// </summary>
+        public static readonly LakehouseIdcRegistration Disassociate = new LakehouseIdcRegistration("Disassociate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LakehouseIdcRegistration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LakehouseIdcRegistration FindValue(string value)
+        {
+            return FindValue<LakehouseIdcRegistration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LakehouseIdcRegistration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LakehouseRegistration.
+    /// </summary>
+    public class LakehouseRegistration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Deregister for LakehouseRegistration
+        /// </summary>
+        public static readonly LakehouseRegistration Deregister = new LakehouseRegistration("Deregister");
+        /// <summary>
+        /// Constant Register for LakehouseRegistration
+        /// </summary>
+        public static readonly LakehouseRegistration Register = new LakehouseRegistration("Register");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LakehouseRegistration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LakehouseRegistration FindValue(string value)
+        {
+            return FindValue<LakehouseRegistration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LakehouseRegistration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogExport.
     /// </summary>
     public class LogExport : ConstantClass

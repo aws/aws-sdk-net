@@ -41,7 +41,10 @@ namespace Amazon.DataZone.Model
         private UserProfileType _type;
 
         /// <summary>
-        /// Gets and sets the property Details.
+        /// Gets and sets the property Details. 
+        /// <para>
+        /// The user profile details.
+        /// </para>
         /// </summary>
         public UserProfileDetails Details
         {

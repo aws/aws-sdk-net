@@ -87,6 +87,60 @@ namespace Amazon.AWSHealth
 
 
     /// <summary>
+    /// Constants used for properties of type EventActionability.
+    /// </summary>
+    public class EventActionability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTION_MAY_BE_REQUIRED for EventActionability
+        /// </summary>
+        public static readonly EventActionability ACTION_MAY_BE_REQUIRED = new EventActionability("ACTION_MAY_BE_REQUIRED");
+        /// <summary>
+        /// Constant ACTION_REQUIRED for EventActionability
+        /// </summary>
+        public static readonly EventActionability ACTION_REQUIRED = new EventActionability("ACTION_REQUIRED");
+        /// <summary>
+        /// Constant INFORMATIONAL for EventActionability
+        /// </summary>
+        public static readonly EventActionability INFORMATIONAL = new EventActionability("INFORMATIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventActionability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventActionability FindValue(string value)
+        {
+            return FindValue<EventActionability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventActionability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventAggregateField.
     /// </summary>
     public class EventAggregateField : ConstantClass
@@ -126,6 +180,60 @@ namespace Amazon.AWSHealth
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventAggregateField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventPersona.
+    /// </summary>
+    public class EventPersona : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BILLING for EventPersona
+        /// </summary>
+        public static readonly EventPersona BILLING = new EventPersona("BILLING");
+        /// <summary>
+        /// Constant OPERATIONS for EventPersona
+        /// </summary>
+        public static readonly EventPersona OPERATIONS = new EventPersona("OPERATIONS");
+        /// <summary>
+        /// Constant SECURITY for EventPersona
+        /// </summary>
+        public static readonly EventPersona SECURITY = new EventPersona("SECURITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventPersona(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventPersona FindValue(string value)
+        {
+            return FindValue<EventPersona>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventPersona(string value)
         {
             return FindValue(value);
         }
@@ -241,6 +349,60 @@ namespace Amazon.AWSHealth
 
 
     /// <summary>
+    /// Constants used for properties of type EventTypeActionability.
+    /// </summary>
+    public class EventTypeActionability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTION_MAY_BE_REQUIRED for EventTypeActionability
+        /// </summary>
+        public static readonly EventTypeActionability ACTION_MAY_BE_REQUIRED = new EventTypeActionability("ACTION_MAY_BE_REQUIRED");
+        /// <summary>
+        /// Constant ACTION_REQUIRED for EventTypeActionability
+        /// </summary>
+        public static readonly EventTypeActionability ACTION_REQUIRED = new EventTypeActionability("ACTION_REQUIRED");
+        /// <summary>
+        /// Constant INFORMATIONAL for EventTypeActionability
+        /// </summary>
+        public static readonly EventTypeActionability INFORMATIONAL = new EventTypeActionability("INFORMATIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventTypeActionability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventTypeActionability FindValue(string value)
+        {
+            return FindValue<EventTypeActionability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventTypeActionability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EventTypeCategory.
     /// </summary>
     public class EventTypeCategory : ConstantClass
@@ -292,6 +454,60 @@ namespace Amazon.AWSHealth
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventTypeCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventTypePersona.
+    /// </summary>
+    public class EventTypePersona : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BILLING for EventTypePersona
+        /// </summary>
+        public static readonly EventTypePersona BILLING = new EventTypePersona("BILLING");
+        /// <summary>
+        /// Constant OPERATIONS for EventTypePersona
+        /// </summary>
+        public static readonly EventTypePersona OPERATIONS = new EventTypePersona("OPERATIONS");
+        /// <summary>
+        /// Constant SECURITY for EventTypePersona
+        /// </summary>
+        public static readonly EventTypePersona SECURITY = new EventTypePersona("SECURITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventTypePersona(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventTypePersona FindValue(string value)
+        {
+            return FindValue<EventTypePersona>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventTypePersona(string value)
         {
             return FindValue(value);
         }

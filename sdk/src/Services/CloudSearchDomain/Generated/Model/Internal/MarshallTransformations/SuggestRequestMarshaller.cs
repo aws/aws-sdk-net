@@ -64,12 +64,16 @@ namespace Amazon.CloudSearchDomain.Model.Internal.MarshallTransformations
 
             request.AddSubResource("format", "sdk");
             request.AddSubResource("pretty", "true");
+            if (string.IsNullOrEmpty(publicRequest.Query))
+                throw new AmazonCloudSearchDomainException("Request object does not have required field Query set");
             
             if (publicRequest.IsSetQuery())
                 request.Parameters.Add("q", StringUtils.FromString(publicRequest.Query));
             
             if (publicRequest.IsSetSize())
                 request.Parameters.Add("size", StringUtils.FromLong(publicRequest.Size));
+            if (string.IsNullOrEmpty(publicRequest.Suggester))
+                throw new AmazonCloudSearchDomainException("Request object does not have required field Suggester set");
             
             if (publicRequest.IsSetSuggester())
                 request.Parameters.Add("suggester", StringUtils.FromString(publicRequest.Suggester));

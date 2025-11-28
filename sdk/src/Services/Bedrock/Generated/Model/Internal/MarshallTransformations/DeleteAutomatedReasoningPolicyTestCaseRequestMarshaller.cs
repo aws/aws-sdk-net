@@ -68,6 +68,8 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetTestCaseId())
                 throw new AmazonBedrockException("Request object does not have required field TestCaseId set");
             request.AddPathResource("{testCaseId}", StringUtils.FromString(publicRequest.TestCaseId));
+            if (publicRequest.LastUpdatedAt == null)
+                throw new AmazonBedrockException("Request object does not have required field LastUpdatedAt set");
             
             if (publicRequest.IsSetLastUpdatedAt())
                 request.Parameters.Add("updatedAt", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.LastUpdatedAt));

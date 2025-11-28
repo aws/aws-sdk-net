@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The Output data type.
+    /// The <c>Output</c> data type.
     /// </summary>
     public partial class Output
     {

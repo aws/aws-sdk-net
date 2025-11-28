@@ -40,6 +40,7 @@ namespace Amazon.DataZone.Model
         private FailureCause _failureCause;
         private DateTime? _failureTimestamp;
         private DateTime? _grantedTimestamp;
+        private Permissions _permissions;
         private SubscriptionGrantStatus _status;
         private string _targetName;
 
@@ -153,6 +154,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetGrantedTimestamp()
         {
             return this._grantedTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Permissions. 
+        /// <para>
+        /// The asset permissions.
+        /// </para>
+        /// </summary>
+        public Permissions Permissions
+        {
+            get { return this._permissions; }
+            set { this._permissions = value; }
+        }
+
+        // Check to see if Permissions property is set
+        internal bool IsSetPermissions()
+        {
+            return this._permissions != null;
         }
 
         /// <summary>

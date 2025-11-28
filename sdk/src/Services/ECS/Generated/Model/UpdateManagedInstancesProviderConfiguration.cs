@@ -36,9 +36,29 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class UpdateManagedInstancesProviderConfiguration
     {
+        private InfrastructureOptimization _infrastructureOptimization;
         private string _infrastructureRoleArn;
         private InstanceLaunchTemplateUpdate _instanceLaunchTemplate;
         private PropagateMITags _propagateTags;
+
+        /// <summary>
+        /// Gets and sets the property InfrastructureOptimization. 
+        /// <para>
+        /// The updated infrastructure optimization configuration. Changes to this setting affect
+        /// how Amazon ECS optimizes instances going forward.
+        /// </para>
+        /// </summary>
+        public InfrastructureOptimization InfrastructureOptimization
+        {
+            get { return this._infrastructureOptimization; }
+            set { this._infrastructureOptimization = value; }
+        }
+
+        // Check to see if InfrastructureOptimization property is set
+        internal bool IsSetInfrastructureOptimization()
+        {
+            return this._infrastructureOptimization != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InfrastructureRoleArn. 

@@ -112,6 +112,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.IntentConfirmationSetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("intentDisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IntentDisplayName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("intentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

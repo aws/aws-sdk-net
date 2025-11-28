@@ -68,6 +68,8 @@ namespace Amazon.EBS.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetSnapshotId())
                 throw new AmazonEBSException("Request object does not have required field SnapshotId set");
             request.AddPathResource("{snapshotId}", StringUtils.FromString(publicRequest.SnapshotId));
+            if (string.IsNullOrEmpty(publicRequest.BlockToken))
+                throw new AmazonEBSException("Request object does not have required field BlockToken set");
             
             if (publicRequest.IsSetBlockToken())
                 request.Parameters.Add("blockToken", StringUtils.FromString(publicRequest.BlockToken));

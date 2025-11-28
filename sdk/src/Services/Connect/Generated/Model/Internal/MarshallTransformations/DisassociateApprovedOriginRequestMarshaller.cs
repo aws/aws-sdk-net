@@ -71,6 +71,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             else            
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
+            if (string.IsNullOrEmpty(publicRequest.Origin))
+                throw new AmazonConnectException("Request object does not have required field Origin set");
             
             if (publicRequest.IsSetOrigin())
                 request.Parameters.Add("origin", StringUtils.FromString(publicRequest.Origin));

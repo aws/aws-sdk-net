@@ -142,6 +142,22 @@
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateExportImageTaskRequest.AmiDescription</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateExportImageTaskRequest.AmiName</property>
+    <pattern>^[a-zA-Z0-9().\-/_]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateExportImageTaskRequest.IamRoleArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateExportImageTaskRequest.ImageName</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.CreateFleetRequest.Description</property>
     <max>256</max>
   </property-value-rule>
@@ -209,6 +225,28 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateImageBuilderStreamingURLResponse.StreamingURL</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateImportedImageRequest.Description</property>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_.() -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateImportedImageRequest.DisplayName</property>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9_.() -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateImportedImageRequest.IamRoleArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateImportedImageRequest.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.CreateImportedImageRequest.SourceAmiId</property>
+    <pattern>^ami-[a-z0-9]{8,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateStackRequest.Description</property>
@@ -647,6 +685,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.GetExportImageTaskRequest.TaskId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.ListAssociatedFleetsRequest.NextToken</property>
     <min>1</min>
   </property-value-rule>
@@ -684,6 +726,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ListEntitledApplicationsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ListExportImageTasksRequest.MaxResults</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ListExportImageTasksRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ListExportImageTasksResponse.NextToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -970,6 +1025,37 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationConfig.AbsoluteAppPath</property>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationConfig.AbsoluteIconPath</property>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationConfig.AbsoluteManifestPath</property>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationConfig.DisplayName</property>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_. -]{0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationConfig.LaunchParameters</property>
+    <max>1024</max>
+    <pattern>[^\x00]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationConfig.Name</property>
+    <max>100</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ApplicationConfig.WorkingDirectory</property>
+    <max>32767</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppStream.Model.ApplicationFleetAssociation.ApplicationArn</property>
     <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
   </property-value-rule>
@@ -1028,6 +1114,30 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.ErrorDetails.ErrorMessage</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ExportImageTask.AmiDescription</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ExportImageTask.AmiId</property>
+    <pattern>^ami-[a-z0-9]{8,17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ExportImageTask.AmiName</property>
+    <pattern>^[a-zA-Z0-9().\-/_]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ExportImageTask.ImageArn</property>
+    <pattern>^arn:aws(?:\-cn|\-iso\-b|\-iso|\-us\-gov)?:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.\\-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ExportImageTask.TaskId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.Filter.Name</property>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Fleet.Arn</property>
@@ -1150,6 +1260,10 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.ResourceError.ErrorMessage</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.RuntimeValidationConfig.IntendedInstanceType</property>
+    <pattern>^[a-zA-Z0-9-]+(\.[a-z0-9-]+)+\.(small|medium|large|xlarge|\d+xlarge|metal)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.S3Location.S3Bucket</property>
