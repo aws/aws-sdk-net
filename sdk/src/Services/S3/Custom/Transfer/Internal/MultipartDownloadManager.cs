@@ -99,6 +99,7 @@ namespace Amazon.S3.Transfer.Internal
         /// <seealso cref="DownloadManagerConfiguration"/>
         /// <seealso cref="IPartDataHandler"/>
         /// <seealso cref="MultipartDownloadType"/>
+        /// <exception cref="NotSupportedException">Thrown when using S3 encryption client, which does not support multipart downloads.</exception>
         public MultipartDownloadManager(IAmazonS3 s3Client, BaseDownloadRequest request, DownloadManagerConfiguration config, IPartDataHandler dataHandler, RequestEventHandler requestEventHandler = null)
             : this(s3Client, request, config, dataHandler, requestEventHandler, null)
         {
@@ -137,12 +138,20 @@ namespace Amazon.S3.Transfer.Internal
         /// <seealso cref="MultipartDownloadType"/>
         /// <seealso cref="DiscoverDownloadStrategyAsync"/>
         /// <seealso cref="StartDownloadsAsync"/>
+        /// <exception cref="NotSupportedException">Thrown when using S3 encryption client, which does not support multipart downloads.</exception>
         public MultipartDownloadManager(IAmazonS3 s3Client, BaseDownloadRequest request, DownloadManagerConfiguration config, IPartDataHandler dataHandler, RequestEventHandler requestEventHandler, SemaphoreSlim sharedHttpThrottler)
         {
             _s3Client = s3Client ?? throw new ArgumentNullException(nameof(s3Client));
             _request = request ?? throw new ArgumentNullException(nameof(request));
             _config = config ?? throw new ArgumentNullException(nameof(config));
             _dataHandler = dataHandler ?? throw new ArgumentNullException(nameof(dataHandler));
+
+            // Validate that S3 encryption client is not being used for multipart downloads
+            if (_s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
+            {
+                throw new NotSupportedException("Multipart download is not supported when using S3 encryption client. Please use the regular S3 encryption client for multipart download.");
+            }
+
             _requestEventHandler = requestEventHandler;
             
             // Use shared throttler if provided, otherwise create our own
