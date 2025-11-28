@@ -39,7 +39,7 @@ namespace Amazon.S3.Transfer.Internal
 
             Logger.DebugFormat("OpenStreamWithResponseCommand: Configuration - ConcurrentServiceRequests={0}, MaxInMemoryParts={1}, BufferSize={2}",
                 _config.ConcurrentServiceRequests,
-                _config.MaxInMemoryParts,
+                _request.MaxInMemoryParts,
                 _s3Client.Config.BufferSize
                 );
 

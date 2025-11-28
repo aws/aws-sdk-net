@@ -91,7 +91,7 @@ namespace Amazon.S3.Transfer.Internal
             
             var config = new BufferedDownloadConfiguration(
                 transferConfig.ConcurrentServiceRequests,
-                transferConfig.MaxInMemoryParts,
+                request.MaxInMemoryParts,
                 s3Client.Config.BufferSize,
                 targetPartSize);
             

@@ -383,5 +383,142 @@ namespace AWSSDK.UnitTests
         }
 
         #endregion
+
+        #region MaxInMemoryParts Tests
+
+        [TestMethod]
+        public async Task ExecuteAsync_UsesRequestMaxInMemoryParts()
+        {
+            // Arrange
+            var customMaxParts = 256;
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(1024, "test-etag");
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            request.MaxInMemoryParts = customMaxParts;
+            
+            var config = new TransferUtilityConfig();
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.ResponseStream);
+            // Stream should be created successfully with request's MaxInMemoryParts value
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_WithDefaultMaxInMemoryParts_WorksCorrectly()
+        {
+            // Arrange - Use default MaxInMemoryParts from request (1024)
+            var mockResponse = MultipartDownloadTestHelpers.CreateSinglePartResponse(2048, "test-etag");
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client(
+                (req, ct) => Task.FromResult(mockResponse));
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            // Don't explicitly set MaxInMemoryParts - should use default of 1024
+            
+            var config = new TransferUtilityConfig();
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.ResponseStream);
+            
+            // Should work with default value
+            var buffer = new byte[1024];
+            var bytesRead = await response.ResponseStream.ReadAsync(buffer, 0, buffer.Length);
+            Assert.IsTrue(bytesRead > 0, "Should successfully read with default MaxInMemoryParts");
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        [DataTestMethod]
+        [DataRow(1, DisplayName = "Minimum (1 part)")]
+        [DataRow(128, DisplayName = "Small (128 parts)")]
+        [DataRow(1024, DisplayName = "Default (1024 parts)")]
+        [DataRow(2048, DisplayName = "Large (2048 parts)")]
+        public async Task ExecuteAsync_WithVariousMaxInMemoryParts_CreatesStreamSuccessfully(
+            int maxInMemoryParts)
+        {
+            // Arrange
+            var totalParts = 3;
+            var partSize = 8 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "test-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            request.MaxInMemoryParts = maxInMemoryParts;
+            
+            var config = new TransferUtilityConfig { ConcurrentServiceRequests = 1 };
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.ResponseStream);
+            Assert.IsInstanceOfType(response.ResponseStream, typeof(BufferedMultipartStream));
+            
+            // Verify stream works
+            var stream = (BufferedMultipartStream)response.ResponseStream;
+            Assert.IsNotNull(stream.DiscoveryResult);
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_MultipartWithCustomMaxInMemoryParts_IntegrationTest()
+        {
+            // Arrange - Larger multipart download with custom memory limit
+            var customMaxParts = 64; // Lower memory limit for this test
+            var totalParts = 10;
+            var partSize = 5 * 1024 * 1024;
+            var totalObjectSize = totalParts * partSize;
+            
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3ClientForMultipart(
+                totalParts, partSize, totalObjectSize, "multipart-etag", usePartStrategy: true);
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(partSize: partSize);
+            request.MaxInMemoryParts = customMaxParts;
+            
+            var config = new TransferUtilityConfig { ConcurrentServiceRequests = 3 };
+            var command = new OpenStreamWithResponseCommand(mockClient.Object, request, config);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.ResponseStream);
+            
+            var stream = (BufferedMultipartStream)response.ResponseStream;
+            Assert.AreEqual(totalParts, stream.DiscoveryResult.TotalParts);
+            
+            // Verify we can read from the stream with custom MaxInMemoryParts
+            var buffer = new byte[1024 * 1024]; // 1MB buffer
+            var bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
+            Assert.IsTrue(bytesRead > 0, 
+                $"Should successfully read multipart download with MaxInMemoryParts={customMaxParts}");
+            
+            // Cleanup
+            response.ResponseStream.Dispose();
+        }
+
+        #endregion
     }
 }
