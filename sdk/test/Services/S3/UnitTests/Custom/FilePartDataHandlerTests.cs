@@ -827,7 +827,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task Dispose_WithoutPrepare_DoesNotThrow()
+        public void Dispose_WithoutPrepare_DoesNotThrow()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateFileDownloadConfiguration(
