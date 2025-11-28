@@ -78,7 +78,7 @@ namespace AWSSDK.UnitTests
                 // Add part 1
                 byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
-                await manager.AddBufferAsync(partBuffer, CancellationToken.None);
+                manager.AddBuffer(partBuffer);
 
                 // Read part 1 completely
                 byte[] readBuffer = new byte[512];
@@ -134,7 +134,7 @@ namespace AWSSDK.UnitTests
                     await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                     byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                     var partBuffer = new StreamPartBuffer(i, testBuffer, 512);
-                    await manager.AddBufferAsync(partBuffer, CancellationToken.None);
+                    manager.AddBuffer(partBuffer);
                 }
 
                 // Act - Try to wait for space (should block)
@@ -169,7 +169,7 @@ namespace AWSSDK.UnitTests
                 await manager.WaitForBufferSpaceAsync(CancellationToken.None);
                 byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
-                await manager.AddBufferAsync(partBuffer, CancellationToken.None);
+                manager.AddBuffer(partBuffer);
 
                 // Release space
                 manager.ReleaseBufferSpace();
@@ -226,10 +226,10 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
-        #region AddBufferAsync Tests
+        #region AddBuffer Tests
 
         [TestMethod]
-        public async Task AddBufferAsync_CreatesBufferedDataSource()
+        public async Task AddBuffer_CreatesBufferedDataSource()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -241,7 +241,7 @@ namespace AWSSDK.UnitTests
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
 
                 // Act
-                await manager.AddBufferAsync(partBuffer, CancellationToken.None);
+                manager.AddBuffer(partBuffer);
 
                 // Assert - Should be able to read from part 1
                 byte[] readBuffer = new byte[512];
@@ -256,7 +256,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public async Task AddBufferAsync_WithNullBuffer_ThrowsArgumentNullException()
+        public void AddBuffer_WithNullBuffer_ThrowsArgumentNullException()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -265,7 +265,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 // Act
-                await manager.AddBufferAsync(null, CancellationToken.None);
+                manager.AddBuffer(null);
 
                 // Assert - ExpectedException
             }
@@ -276,7 +276,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task AddBufferAsync_SignalsPartAvailable()
+        public async Task AddBuffer_SignalsPartAvailable()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -297,7 +297,7 @@ namespace AWSSDK.UnitTests
                 // Add the part
                 byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
-                await manager.AddBufferAsync(partBuffer, CancellationToken.None);
+                manager.AddBuffer(partBuffer);
 
                 // Assert - Read should complete
                 int bytesRead = await readTask;
@@ -411,7 +411,7 @@ namespace AWSSDK.UnitTests
                 Buffer.BlockCopy(testData, 0, testBuffer, 0, 512);
                 
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
-                await manager.AddBufferAsync(partBuffer, CancellationToken.None);
+                manager.AddBuffer(partBuffer);
 
                 // Act
                 byte[] readBuffer = new byte[512];
@@ -439,7 +439,7 @@ namespace AWSSDK.UnitTests
                 // Add part 1
                 byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
-                await manager.AddBufferAsync(partBuffer, CancellationToken.None);
+                manager.AddBuffer(partBuffer);
 
                 // Read part 1 completely
                 byte[] readBuffer = new byte[512];
@@ -572,7 +572,7 @@ namespace AWSSDK.UnitTests
                 // Add the part asynchronously
                 byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
-                await manager.AddBufferAsync(partBuffer, CancellationToken.None);
+                manager.AddBuffer(partBuffer);
 
                 // Assert - Read should complete
                 int bytesRead = await readTask;
@@ -653,14 +653,14 @@ namespace AWSSDK.UnitTests
                 byte[] testBuffer1 = ArrayPool<byte>.Shared.Rent(100);
                 Buffer.BlockCopy(testData1, 0, testBuffer1, 0, 100);
                 var partBuffer1 = new StreamPartBuffer(1, testBuffer1, 100);
-                await manager.AddBufferAsync(partBuffer1, CancellationToken.None);
+                manager.AddBuffer(partBuffer1);
 
                 // Add Part 2 (100 bytes) 
                 byte[] testData2 = MultipartDownloadTestHelpers.GenerateTestData(100, 100);
                 byte[] testBuffer2 = ArrayPool<byte>.Shared.Rent(100);
                 Buffer.BlockCopy(testData2, 0, testBuffer2, 0, 100);
                 var partBuffer2 = new StreamPartBuffer(2, testBuffer2, 100);
-                await manager.AddBufferAsync(partBuffer2, CancellationToken.None);
+                manager.AddBuffer(partBuffer2);
 
                 // Act - Request 150 bytes (spans both parts)
                 byte[] readBuffer = new byte[150];
@@ -700,7 +700,7 @@ namespace AWSSDK.UnitTests
                     byte[] testBuffer = ArrayPool<byte>.Shared.Rent(50);
                     Buffer.BlockCopy(testData, 0, testBuffer, 0, 50);
                     var partBuffer = new StreamPartBuffer(i, testBuffer, 50);
-                    await manager.AddBufferAsync(partBuffer, CancellationToken.None);
+                    manager.AddBuffer(partBuffer);
                 }
 
                 // Act - Read 150 bytes (all 3 parts)
@@ -729,7 +729,7 @@ namespace AWSSDK.UnitTests
                 // Add part 1
                 byte[] testBuffer1 = ArrayPool<byte>.Shared.Rent(100);
                 var partBuffer1 = new StreamPartBuffer(1, testBuffer1, 100);
-                await manager.AddBufferAsync(partBuffer1, CancellationToken.None);
+                manager.AddBuffer(partBuffer1);
 
                 // Read part 1 completely
                 byte[] readBuffer = new byte[100];
@@ -741,7 +741,7 @@ namespace AWSSDK.UnitTests
                 // Add part 2
                 byte[] testBuffer2 = ArrayPool<byte>.Shared.Rent(100);
                 var partBuffer2 = new StreamPartBuffer(2, testBuffer2, 100);
-                await manager.AddBufferAsync(partBuffer2, CancellationToken.None);
+                manager.AddBuffer(partBuffer2);
 
                 // Read part 2
                 int bytesRead = await manager.ReadAsync(readBuffer, 0, 100, CancellationToken.None);
@@ -768,14 +768,14 @@ namespace AWSSDK.UnitTests
                 // Add empty part 1
                 byte[] testBuffer1 = ArrayPool<byte>.Shared.Rent(100);
                 var partBuffer1 = new StreamPartBuffer(1, testBuffer1, 0); // 0 bytes
-                await manager.AddBufferAsync(partBuffer1, CancellationToken.None);
+                manager.AddBuffer(partBuffer1);
 
                 // Add part 2 with data
                 byte[] testData2 = MultipartDownloadTestHelpers.GenerateTestData(100, 0);
                 byte[] testBuffer2 = ArrayPool<byte>.Shared.Rent(100);
                 Buffer.BlockCopy(testData2, 0, testBuffer2, 0, 100);
                 var partBuffer2 = new StreamPartBuffer(2, testBuffer2, 100);
-                await manager.AddBufferAsync(partBuffer2, CancellationToken.None);
+                manager.AddBuffer(partBuffer2);
 
                 // Act - Try to read 100 bytes starting from part 1
                 byte[] readBuffer = new byte[100];
@@ -945,7 +945,7 @@ namespace AWSSDK.UnitTests
             
             byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
             var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
-            manager.AddBufferAsync(partBuffer, CancellationToken.None).Wait();
+            manager.AddBuffer(partBuffer);
 
             // Act
             manager.Dispose();
@@ -963,7 +963,7 @@ namespace AWSSDK.UnitTests
             
             byte[] testBuffer = ArrayPool<byte>.Shared.Rent(512);
             var partBuffer = new StreamPartBuffer(1, testBuffer, 512);
-            manager.AddBufferAsync(partBuffer, CancellationToken.None).Wait();
+            manager.AddBuffer(partBuffer);
 
             // Act
             manager.Dispose();

@@ -78,7 +78,7 @@ namespace AWSSDK.UnitTests
 
             // Assert - should add buffer to manager
             mockBufferManager.Verify(
-                x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()),
+                x => x.AddBuffer(It.IsAny<StreamPartBuffer>()),
                 Times.Once);
         }
 
@@ -92,9 +92,8 @@ namespace AWSSDK.UnitTests
 
             StreamPartBuffer capturedBuffer = null;
             var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
-                .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedBuffer = buffer)
-                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()))
+                .Callback<StreamPartBuffer>((buffer) => capturedBuffer = buffer);
 
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -124,9 +123,8 @@ namespace AWSSDK.UnitTests
 
             StreamPartBuffer capturedBuffer = null;
             var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
-                .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedBuffer = buffer)
-                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()))
+                .Callback<StreamPartBuffer>((buffer) => capturedBuffer = buffer);
 
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -155,9 +153,8 @@ namespace AWSSDK.UnitTests
 
             StreamPartBuffer capturedBuffer = null;
             var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
-                .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedBuffer = buffer)
-                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()))
+                .Callback<StreamPartBuffer>((buffer) => capturedBuffer = buffer);
 
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -191,9 +188,8 @@ namespace AWSSDK.UnitTests
 
             StreamPartBuffer capturedBuffer = null;
             var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
-                .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedBuffer = buffer)
-                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()))
+                .Callback<StreamPartBuffer>((buffer) => capturedBuffer = buffer);
 
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -234,7 +230,7 @@ namespace AWSSDK.UnitTests
 
             // Assert - should handle empty response gracefully
             mockBufferManager.Verify(
-                x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()),
+                x => x.AddBuffer(It.IsAny<StreamPartBuffer>()),
                 Times.Once);
         }
 
@@ -301,7 +297,7 @@ namespace AWSSDK.UnitTests
 
             // Assert - should NOT have added any buffer to manager since download failed
             mockBufferManager.Verify(
-                x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()),
+                x => x.AddBuffer(It.IsAny<StreamPartBuffer>()),
                 Times.Never);
         }
 
@@ -335,17 +331,14 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public async Task ProcessPartAsync_PassesCancellationTokenToBufferManager()
+        public async Task ProcessPartAsync_CallsAddBufferOnce()
         {
             // Arrange
             var partSize = 1024;
             var partData = new byte[partSize];
 
-            CancellationToken capturedToken = default;
             var mockBufferManager = new Mock<IPartBufferManager>();
-            mockBufferManager.Setup(x => x.AddBufferAsync(It.IsAny<StreamPartBuffer>(), It.IsAny<CancellationToken>()))
-                .Callback<StreamPartBuffer, CancellationToken>((buffer, ct) => capturedToken = ct)
-                .Returns(Task.CompletedTask);
+            mockBufferManager.Setup(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()));
 
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
             var handler = new BufferedPartDataHandler(mockBufferManager.Object, config);
@@ -361,8 +354,8 @@ namespace AWSSDK.UnitTests
             // Act
             await handler.ProcessPartAsync(1, response, cts.Token);
 
-            // Assert
-            Assert.AreEqual(cts.Token, capturedToken);
+            // Assert - verify AddBuffer was called exactly once
+            mockBufferManager.Verify(x => x.AddBuffer(It.IsAny<StreamPartBuffer>()), Times.Once);
         }
 
         #endregion
