@@ -1,91 +1,100 @@
-﻿using System;
+﻿using Amazon.GameLift;
+using Amazon.GameLift.Model;
+using Amazon.S3;
+using Amazon.S3.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Amazon.GameLift;
-using Amazon.GameLift.Model;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using AWSSDK_DotNet.IntegrationTests.Tests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
+    [TestCategory("GameLift")]
     public class GameLift : TestBase<AmazonGameLiftClient>
     {
-        private static List<string> createdBuilds = new List<string>();
+        private static readonly List<string> createdBuilds = new List<string>();
 
         [ClassCleanup]
-        public static void Cleanup()
+        public static async Task Cleanup()
         {
-            foreach(var build in createdBuilds)
+            foreach (var build in createdBuilds)
             {
-                Client.DeleteBuild(build);
+                await Client.DeleteBuildAsync(build);
             }
 
             BaseClean();
         }
 
         [TestMethod]
-        [TestCategory("GameLift")]
-        public void CrudCalls()
+        public async Task CrudCalls()
         {
-            var originalBuilds = GetAllBuilds().ToList();
+            var originalBuilds = (await GetAllBuilds()).ToList();
 
             var timestamp = DateTime.UtcNow.ToFileTime().ToString();
-            var newBuild = Client.CreateBuild(new CreateBuildRequest
+            var createRespone = await Client.CreateBuildAsync(new CreateBuildRequest
             {
                 Name = "TestBuild-" + timestamp,
                 Version = timestamp,
                 OperatingSystem = Amazon.GameLift.OperatingSystem.AMAZON_LINUX_2
-            }).Build;
+            });
+
+            var newBuild = createRespone.Build;
             createdBuilds.Add(newBuild.BuildId);
 
-            var builds = GetAllBuilds().ToList();
+            var builds = (await GetAllBuilds()).ToList();
             Assert.AreNotEqual(originalBuilds.Count, builds.Count);
 
-            Client.UpdateBuild(new UpdateBuildRequest
+            await Client.UpdateBuildAsync(new UpdateBuildRequest
             {
                 BuildId = newBuild.BuildId,
                 Name = newBuild.Name + "_2",
                 Version = newBuild.Version + "_2"
             });
 
-            var uploadCreds = Client.RequestUploadCredentials(newBuild.BuildId);
+            var uploadCreds = await Client.RequestUploadCredentialsAsync(newBuild.BuildId);
             var storageLocation = uploadCreds.StorageLocation;
             var credentials = uploadCreds.UploadCredentials;
-            using(var s3client = new Amazon.S3.AmazonS3Client(credentials))
+            
+            using (var s3client = new AmazonS3Client(credentials))
             {
-                var putResponse = s3client.PutObject(new Amazon.S3.Model.PutObjectRequest
+                var putResponse = await s3client.PutObjectAsync(new PutObjectRequest
                 {
                     BucketName = storageLocation.Bucket,
                     Key = storageLocation.Key,
                     ContentBody = "test content"
                 });
-                Console.WriteLine(putResponse.ContentLength);
+                Assert.AreEqual(HttpStatusCode.OK, putResponse.HttpStatusCode);
             }
 
-            Client.DeleteBuild(newBuild.BuildId);
+            await Client.DeleteBuildAsync(newBuild.BuildId);
             createdBuilds.Remove(newBuild.BuildId);
 
-            builds = GetAllBuilds().ToList();
+            builds = (await GetAllBuilds()).ToList();
             Assert.AreEqual(originalBuilds.Count, builds.Count);
         }
 
-        private static IEnumerable<Build> GetAllBuilds(BuildStatus status = null)
+        private static async Task<IEnumerable<Build>> GetAllBuilds(BuildStatus status = null)
         {
+            var builds = new List<Build>();
             var request = new ListBuildsRequest
             {
                 Status = status
             };
+
             do
             {
-                var response = Client.ListBuilds(request);
+                var response = await Client.ListBuildsAsync(request);
                 request.NextToken = response.NextToken;
-                foreach (var build in response.Builds)
-                    yield return build;
+                
+                if (response.Builds != null)
+                {
+                    builds.AddRange(response.Builds);
+                }
             } while (!string.IsNullOrEmpty(request.NextToken));
+            return builds;
         }
     }
 }
