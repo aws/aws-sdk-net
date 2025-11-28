@@ -213,8 +213,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The Kubernetes version to update to. If no version is specified, then the Kubernetes
-        /// version of the node group does not change. You can specify the Kubernetes version
+        /// The Kubernetes version to update to. If no version is specified, then the node group
+        /// will be updated to match the cluster's current Kubernetes version, and the latest
+        /// available AMI for that version will be used. You can also specify the Kubernetes version
         /// of the cluster to update the node group to the latest AMI version of the cluster's
         /// Kubernetes version. If you specify <c>launchTemplate</c>, and your launch template
         /// uses a custom AMI, then don't specify <c>version</c>, or the node group update will

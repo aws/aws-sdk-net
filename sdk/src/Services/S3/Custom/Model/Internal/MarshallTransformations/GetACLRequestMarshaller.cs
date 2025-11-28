@@ -34,7 +34,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(GetACLRequest getObjectAclRequest)
         {
-            IRequest request = new DefaultRequest(getObjectAclRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(getObjectAclRequest, "Amazon.S3");
 
             request.HttpMethod = "GET";
 

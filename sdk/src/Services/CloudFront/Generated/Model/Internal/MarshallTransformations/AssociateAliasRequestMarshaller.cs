@@ -61,6 +61,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetTargetDistributionId())
                 throw new AmazonCloudFrontException("Request object does not have required field TargetDistributionId set");
             request.AddPathResource("{TargetDistributionId}", StringUtils.FromString(publicRequest.TargetDistributionId));
+            if (string.IsNullOrEmpty(publicRequest.Alias))
+                throw new AmazonCloudFrontException("Request object does not have required field Alias set");
             
             if (publicRequest.IsSetAlias())
                 request.Parameters.Add("Alias", StringUtils.FromString(publicRequest.Alias));

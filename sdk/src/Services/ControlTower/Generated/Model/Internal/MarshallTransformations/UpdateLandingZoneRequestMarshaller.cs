@@ -85,6 +85,17 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
                 Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Manifest);
             }
 
+            if(publicRequest.IsSetRemediationTypes())
+            {
+                context.Writer.WritePropertyName("remediationTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRemediationTypesListValue in publicRequest.RemediationTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestRemediationTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");

@@ -66,6 +66,7 @@ namespace Amazon.Lambda.Model
         private State _state;
         private string _stateReason;
         private StateReasonCode _stateReasonCode;
+        private TenancyConfig _tenancyConfig;
         private int? _timeout;
         private TracingConfigResponse _tracingConfig;
         private string _version;
@@ -725,6 +726,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetStateReasonCode()
         {
             return this._stateReasonCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenancyConfig. 
+        /// <para>
+        /// The function's tenant isolation configuration settings. Determines whether the Lambda
+        /// function runs on a shared or dedicated infrastructure per unique tenant.
+        /// </para>
+        /// </summary>
+        public TenancyConfig TenancyConfig
+        {
+            get { return this._tenancyConfig; }
+            set { this._tenancyConfig = value; }
+        }
+
+        // Check to see if TenancyConfig property is set
+        internal bool IsSetTenancyConfig()
+        {
+            return this._tenancyConfig != null;
         }
 
         /// <summary>

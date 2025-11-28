@@ -427,6 +427,76 @@ namespace Amazon.Odb
 
 
     /// <summary>
+    /// Constants used for properties of type IamRoleStatus.
+    /// </summary>
+    public class IamRoleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATING for IamRoleStatus
+        /// </summary>
+        public static readonly IamRoleStatus ASSOCIATING = new IamRoleStatus("ASSOCIATING");
+        /// <summary>
+        /// Constant CONNECTED for IamRoleStatus
+        /// </summary>
+        public static readonly IamRoleStatus CONNECTED = new IamRoleStatus("CONNECTED");
+        /// <summary>
+        /// Constant DISASSOCIATING for IamRoleStatus
+        /// </summary>
+        public static readonly IamRoleStatus DISASSOCIATING = new IamRoleStatus("DISASSOCIATING");
+        /// <summary>
+        /// Constant DISCONNECTED for IamRoleStatus
+        /// </summary>
+        public static readonly IamRoleStatus DISCONNECTED = new IamRoleStatus("DISCONNECTED");
+        /// <summary>
+        /// Constant FAILED for IamRoleStatus
+        /// </summary>
+        public static readonly IamRoleStatus FAILED = new IamRoleStatus("FAILED");
+        /// <summary>
+        /// Constant PARTIALLY_CONNECTED for IamRoleStatus
+        /// </summary>
+        public static readonly IamRoleStatus PARTIALLY_CONNECTED = new IamRoleStatus("PARTIALLY_CONNECTED");
+        /// <summary>
+        /// Constant UNKNOWN for IamRoleStatus
+        /// </summary>
+        public static readonly IamRoleStatus UNKNOWN = new IamRoleStatus("UNKNOWN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IamRoleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IamRoleStatus FindValue(string value)
+        {
+            return FindValue<IamRoleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IamRoleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IormLifecycleState.
     /// </summary>
     public class IormLifecycleState : ConstantClass
@@ -1060,6 +1130,52 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ShapeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupportedAwsIntegration.
+    /// </summary>
+    public class SupportedAwsIntegration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KmsTde for SupportedAwsIntegration
+        /// </summary>
+        public static readonly SupportedAwsIntegration KmsTde = new SupportedAwsIntegration("KmsTde");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportedAwsIntegration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportedAwsIntegration FindValue(string value)
+        {
+            return FindValue<SupportedAwsIntegration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportedAwsIntegration(string value)
         {
             return FindValue(value);
         }

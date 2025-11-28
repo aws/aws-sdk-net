@@ -31,8 +31,12 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePlayerSessions operation.
-    /// Retrieves properties for one or more player sessions. 
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
     /// 
+    ///  
+    /// <para>
+    /// Retrieves properties for one or more player sessions. 
+    /// </para>
     ///  
     /// <para>
     /// This action can be used in the following ways: 

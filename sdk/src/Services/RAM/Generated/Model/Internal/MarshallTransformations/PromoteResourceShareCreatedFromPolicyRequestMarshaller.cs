@@ -62,6 +62,8 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";
             request.HttpMethod = "POST";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceShareArn))
+                throw new AmazonRAMException("Request object does not have required field ResourceShareArn set");
             
             if (publicRequest.IsSetResourceShareArn())
                 request.Parameters.Add("resourceShareArn", StringUtils.FromString(publicRequest.ResourceShareArn));

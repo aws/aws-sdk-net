@@ -118,6 +118,16 @@ namespace Amazon.Connect.Model
         IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request);
 
         /// <summary>
+        /// Paginator for ListContactFlowModuleAliases operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListContactFlowModuleAliasesPaginator ListContactFlowModuleAliases(ListContactFlowModuleAliasesRequest request);
+
+        /// <summary>
         /// Paginator for ListContactFlowModules operation
         ///</summary>
         [AWSPaginator(
@@ -126,6 +136,16 @@ namespace Amazon.Connect.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListContactFlowModulesPaginator ListContactFlowModules(ListContactFlowModulesRequest request);
+
+        /// <summary>
+        /// Paginator for ListContactFlowModuleVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListContactFlowModuleVersionsPaginator ListContactFlowModuleVersions(ListContactFlowModuleVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListContactFlows operation

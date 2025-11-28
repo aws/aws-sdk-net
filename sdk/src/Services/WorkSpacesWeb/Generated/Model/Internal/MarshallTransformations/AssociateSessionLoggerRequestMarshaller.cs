@@ -65,6 +65,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetPortalArn())
                 throw new AmazonWorkSpacesWebException("Request object does not have required field PortalArn set");
             request.AddPathResource("{portalArn+}", StringUtils.FromString(publicRequest.PortalArn.TrimStart('/')));
+            if (string.IsNullOrEmpty(publicRequest.SessionLoggerArn))
+                throw new AmazonWorkSpacesWebException("Request object does not have required field SessionLoggerArn set");
             
             if (publicRequest.IsSetSessionLoggerArn())
                 request.Parameters.Add("sessionLoggerArn", StringUtils.FromString(publicRequest.SessionLoggerArn));

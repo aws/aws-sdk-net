@@ -65,6 +65,8 @@ namespace Amazon.Schemas.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetRegistryName())
                 throw new AmazonSchemasException("Request object does not have required field RegistryName set");
             request.AddPathResource("{registryName}", StringUtils.FromString(publicRequest.RegistryName));
+            if (string.IsNullOrEmpty(publicRequest.Keywords))
+                throw new AmazonSchemasException("Request object does not have required field Keywords set");
             
             if (publicRequest.IsSetKeywords())
                 request.Parameters.Add("keywords", StringUtils.FromString(publicRequest.Keywords));

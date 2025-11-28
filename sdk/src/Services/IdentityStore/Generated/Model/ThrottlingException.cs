@@ -37,6 +37,7 @@ namespace Amazon.IdentityStore.Model
     #endif
     public partial class ThrottlingException : AmazonIdentityStoreException
     {
+        private ThrottlingExceptionReason _reason;
         private int? _retryAfterSeconds;
 
         private RetryableDetails _retryableDetails = new RetryableDetails(true);
@@ -101,6 +102,7 @@ namespace Amazon.IdentityStore.Model
         protected ThrottlingException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.Reason = (ThrottlingExceptionReason)info.GetValue("Reason", typeof(ThrottlingExceptionReason));
             this.RequestId = (string)info.GetValue("RequestId", typeof(string));
             this.RetryAfterSeconds = (int?)info.GetValue("RetryAfterSeconds", typeof(int?));
         }
@@ -118,10 +120,30 @@ namespace Amazon.IdentityStore.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("Reason", this.Reason);
             info.AddValue("RequestId", this.RequestId);
             info.AddValue("RetryAfterSeconds", this.RetryAfterSeconds);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// Indicates the reason for the throttling error when the service is unable to access
+        /// a Customer Managed KMS key. For non-KMS permission errors, this field is not included.
+        /// </para>
+        /// </summary>
+        public ThrottlingExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RetryAfterSeconds. 

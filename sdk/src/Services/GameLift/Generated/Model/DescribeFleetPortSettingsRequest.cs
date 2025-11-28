@@ -31,11 +31,15 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleetPortSettings operation.
+    /// <b>This API works with the following fleet types:</b> EC2, Container
+    /// 
+    ///  
+    /// <para>
     /// Retrieves a fleet's inbound connection permissions. Connection permissions specify
     /// IP addresses and port settings that incoming traffic can use to access server processes
     /// in the fleet. Game server processes that are running in the fleet must use a port
     /// that falls within this range. 
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Use this operation in the following ways: 

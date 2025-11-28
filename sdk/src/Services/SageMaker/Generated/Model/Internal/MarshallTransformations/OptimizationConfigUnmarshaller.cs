@@ -74,6 +74,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelShardingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ModelSpeculativeDecodingConfig", targetDepth))
+                {
+                    var unmarshaller = ModelSpeculativeDecodingConfigUnmarshaller.Instance;
+                    unmarshalledObject.ModelSpeculativeDecodingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

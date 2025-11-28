@@ -62,6 +62,8 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2024-04-15";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ResourceArn))
+                throw new AmazonApplicationSignalsException("Request object does not have required field ResourceArn set");
             
             if (publicRequest.IsSetResourceArn())
                 request.Parameters.Add("ResourceArn", StringUtils.FromString(publicRequest.ResourceArn));

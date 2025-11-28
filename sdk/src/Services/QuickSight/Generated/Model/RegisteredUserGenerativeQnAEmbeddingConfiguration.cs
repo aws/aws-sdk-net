@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The ID of the new Q reader experience topic that you want to make the starting topic
         /// in the Generative Q&amp;A experience. You can find a topic ID by navigating to the
-        /// Topics pane in the QuickSight application and opening a topic. The ID is in the URL
+        /// Topics pane in the Quick Suite application and opening a topic. The ID is in the URL
         /// for the topic that you open.
         /// </para>
         ///  

@@ -28,6 +28,16 @@ namespace Amazon.Kafka.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeTopicPartitions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeTopicPartitionsPaginator DescribeTopicPartitions(DescribeTopicPartitionsRequest request);
+
+        /// <summary>
         /// Paginator for ListClientVpcConnections operation
         ///</summary>
         [AWSPaginator(
@@ -136,6 +146,16 @@ namespace Amazon.Kafka.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListScramSecretsPaginator ListScramSecrets(ListScramSecretsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTopics operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTopicsPaginator ListTopics(ListTopicsRequest request);
 
         /// <summary>
         /// Paginator for ListVpcConnections operation

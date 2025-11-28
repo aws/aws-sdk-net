@@ -379,6 +379,62 @@ namespace Amazon.CostOptimizationHub
         }
         #endregion
         
+        #region  ListEfficiencyMetrics
+
+        internal virtual ListEfficiencyMetricsResponse ListEfficiencyMetrics(ListEfficiencyMetricsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEfficiencyMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEfficiencyMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEfficiencyMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns cost efficiency metrics aggregated over time and optionally grouped by a specified
+        /// dimension. The metrics provide insights into your cost optimization progress by tracking
+        /// estimated savings, spending, and measures how effectively you're optimizing your Cloud
+        /// resources.
+        /// 
+        ///  
+        /// <para>
+        /// The operation supports both daily and monthly time granularities and allows grouping
+        /// results by account ID, Amazon Web Services Region. Results are returned as time-series
+        /// data, enabling you to analyze trends in your cost optimization performance over the
+        /// specified time period.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEfficiencyMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEfficiencyMetrics service method, as returned by CostOptimizationHub.</returns>
+        /// <exception cref="Amazon.CostOptimizationHub.Model.AccessDeniedException">
+        /// You are not authorized to use this operation with the given parameters.
+        /// </exception>
+        /// <exception cref="Amazon.CostOptimizationHub.Model.InternalServerException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostOptimizationHub.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CostOptimizationHub.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cost-optimization-hub-2022-07-26/ListEfficiencyMetrics">REST API Reference for ListEfficiencyMetrics Operation</seealso>
+        public virtual Task<ListEfficiencyMetricsResponse> ListEfficiencyMetricsAsync(ListEfficiencyMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEfficiencyMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEfficiencyMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEfficiencyMetricsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListEnrollmentStatuses
 
         internal virtual ListEnrollmentStatusesResponse ListEnrollmentStatuses(ListEnrollmentStatusesRequest request)
@@ -542,8 +598,8 @@ namespace Amazon.CostOptimizationHub
         /// 
         ///  
         /// <para>
-        /// If the account is a management account or delegated administrator of an organization,
-        /// this action can also be used to enroll member accounts of the organization.
+        /// If the account is a management account of an organization, this action can also be
+        /// used to enroll member accounts of the organization.
         /// </para>
         ///  
         /// <para>

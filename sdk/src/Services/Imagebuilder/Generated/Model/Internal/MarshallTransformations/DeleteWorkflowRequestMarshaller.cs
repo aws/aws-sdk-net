@@ -62,6 +62,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "DELETE";
 
+            if (string.IsNullOrEmpty(publicRequest.WorkflowBuildVersionArn))
+                throw new AmazonImagebuilderException("Request object does not have required field WorkflowBuildVersionArn set");
             
             if (publicRequest.IsSetWorkflowBuildVersionArn())
                 request.Parameters.Add("workflowBuildVersionArn", StringUtils.FromString(publicRequest.WorkflowBuildVersionArn));

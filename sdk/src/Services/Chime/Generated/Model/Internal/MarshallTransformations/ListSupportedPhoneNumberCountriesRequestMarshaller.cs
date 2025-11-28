@@ -62,6 +62,8 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-01";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ProductType))
+                throw new AmazonChimeException("Request object does not have required field ProductType set");
             
             if (publicRequest.IsSetProductType())
                 request.Parameters.Add("product-type", StringUtils.FromString(publicRequest.ProductType));

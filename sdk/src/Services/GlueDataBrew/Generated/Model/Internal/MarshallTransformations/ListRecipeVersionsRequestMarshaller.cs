@@ -65,6 +65,8 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            if (string.IsNullOrEmpty(publicRequest.Name))
+                throw new AmazonGlueDataBrewException("Request object does not have required field Name set");
             
             if (publicRequest.IsSetName())
                 request.Parameters.Add("name", StringUtils.FromString(publicRequest.Name));

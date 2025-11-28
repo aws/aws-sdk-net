@@ -43,7 +43,6 @@ namespace Amazon.MediaLive.Model
         /// Only use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage
         /// channel that uses MediaPackage v2.
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ChannelGroup
         {
             get { return this._channelGroup; }
@@ -63,7 +62,6 @@ namespace Amazon.MediaLive.Model
         /// to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must
         /// be in the same region.
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ChannelId
         {
             get { return this._channelId; }
@@ -81,7 +79,6 @@ namespace Amazon.MediaLive.Model
         /// use if you are sending CMAF Ingest output to a CMAF ingest endpoint on a MediaPackage
         /// channel that uses MediaPackage v2.
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ChannelName
         {
             get { return this._channelName; }

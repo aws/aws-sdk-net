@@ -146,7 +146,7 @@ namespace Amazon.Imagebuilder.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public List<ComponentConfiguration> Components
         {
             get { return this._components; }

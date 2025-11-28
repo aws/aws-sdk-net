@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class DescribePartnerAppRequest : AmazonSageMakerRequest
     {
         private string _arn;
+        private bool? _includeAvailableUpgrade;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -54,6 +55,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeAvailableUpgrade. 
+        /// <para>
+        /// When set to <c>TRUE</c>, the response includes available upgrade information for the
+        /// SageMaker Partner AI App. Default is <c>FALSE</c>.
+        /// </para>
+        /// </summary>
+        public bool? IncludeAvailableUpgrade
+        {
+            get { return this._includeAvailableUpgrade; }
+            set { this._includeAvailableUpgrade = value; }
+        }
+
+        // Check to see if IncludeAvailableUpgrade property is set
+        internal bool IsSetIncludeAvailableUpgrade()
+        {
+            return this._includeAvailableUpgrade.HasValue; 
         }
 
     }

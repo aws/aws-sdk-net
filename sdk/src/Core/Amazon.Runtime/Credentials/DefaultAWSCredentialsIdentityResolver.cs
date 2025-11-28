@@ -237,7 +237,7 @@ namespace Amazon.Runtime.Credentials
             throw new AmazonClientException($"Unable to find the \"{DEFAULT_PROFILE_NAME}\" profile.");
         }
 
-        internal static string GetProfileName()
+        public static string GetProfileName()
         {
             var profileName = AWSConfigs.AWSProfileName;
 

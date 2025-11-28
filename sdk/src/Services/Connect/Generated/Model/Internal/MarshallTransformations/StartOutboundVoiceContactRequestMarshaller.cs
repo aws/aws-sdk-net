@@ -187,6 +187,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RelatedContactId);
             }
 
+            if(publicRequest.IsSetRingTimeoutInSeconds())
+            {
+                context.Writer.WritePropertyName("RingTimeoutInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.RingTimeoutInSeconds.Value);
+            }
+
             if(publicRequest.IsSetSourcePhoneNumber())
             {
                 context.Writer.WritePropertyName("SourcePhoneNumber");

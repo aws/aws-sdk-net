@@ -144,8 +144,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value
-        /// is a fully specified ARN to a KMS key in the following format.
+        /// Specifies the KMS key ID that encrypts the logs and digest files delivered by CloudTrail.
+        /// The value is a fully specified ARN to a KMS key in the following format.
         /// </para>
         ///  
         /// <para>

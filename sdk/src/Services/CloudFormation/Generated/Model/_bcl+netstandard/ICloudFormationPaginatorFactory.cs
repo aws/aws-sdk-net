@@ -38,6 +38,26 @@ namespace Amazon.CloudFormation.Model
         IDescribeAccountLimitsPaginator DescribeAccountLimits(DescribeAccountLimitsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeChangeSet operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeChangeSetPaginator DescribeChangeSet(DescribeChangeSetRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeEvents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeEventsPaginator DescribeEvents(DescribeEventsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeStackEvents operation
         ///</summary>
         [AWSPaginator(

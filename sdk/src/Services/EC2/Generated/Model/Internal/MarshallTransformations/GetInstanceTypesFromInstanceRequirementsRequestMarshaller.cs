@@ -315,6 +315,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequest.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
                     }
+                    if(publicRequest.InstanceRequirements.IsSetRequireEncryptionInTransit())
+                    {
+                        request.Parameters.Add("InstanceRequirements" + "." + "RequireEncryptionInTransit", StringUtils.FromBool(publicRequest.InstanceRequirements.RequireEncryptionInTransit));
+                    }
                     if(publicRequest.InstanceRequirements.IsSetRequireHibernateSupport())
                     {
                         request.Parameters.Add("InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequest.InstanceRequirements.RequireHibernateSupport));

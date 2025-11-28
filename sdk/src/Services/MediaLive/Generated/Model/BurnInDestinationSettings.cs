@@ -95,7 +95,6 @@ namespace Amazon.MediaLive.Model
         /// rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent
         /// to setting it to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public int? BackgroundOpacity
         {
             get { return this._backgroundOpacity; }
@@ -149,7 +148,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FontOpacity. Specifies the opacity of the burned-in captions.
         /// 255 is opaque; 0 is transparent.  All burn-in and DVB-Sub font settings must match.
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public int? FontOpacity
         {
             get { return this._fontOpacity; }
@@ -166,7 +164,6 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property FontResolution. Font resolution in DPI (dots per inch);
         /// default is 96 dpi.  All burn-in and DVB-Sub font settings must match.
         /// </summary>
-        [AWSProperty(Min=96, Max=600)]
         public int? FontResolution
         {
             get { return this._fontResolution; }
@@ -220,7 +217,6 @@ namespace Amazon.MediaLive.Model
         /// These source settings are already pre-defined by the caption stream. All burn-in and
         /// DVB-Sub font settings must match.
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
         public int? OutlineSize
         {
             get { return this._outlineSize; }
@@ -254,7 +250,6 @@ namespace Amazon.MediaLive.Model
         /// is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it
         /// to 0 (transparent).  All burn-in and DVB-Sub font settings must match.
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public int? ShadowOpacity
         {
             get { return this._shadowOpacity; }
@@ -346,7 +341,6 @@ namespace Amazon.MediaLive.Model
         /// is provided, the horizontal caption position will be determined by the alignment parameter.
         ///  All burn-in and DVB-Sub font settings must match.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? XPosition
         {
             get { return this._xPosition; }
@@ -366,7 +360,6 @@ namespace Amazon.MediaLive.Model
         /// the caption will be positioned towards the bottom of the output.  All burn-in and
         /// DVB-Sub font settings must match.
         /// </summary>
-        [AWSProperty(Min=0)]
         public int? YPosition
         {
             get { return this._yPosition; }

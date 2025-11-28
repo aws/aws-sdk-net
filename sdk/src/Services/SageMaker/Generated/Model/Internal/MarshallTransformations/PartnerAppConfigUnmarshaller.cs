@@ -68,6 +68,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arguments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AssignedGroupPatterns", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AssignedGroupPatterns = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RoleGroupAssignments", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<RoleGroupAssignment, RoleGroupAssignmentUnmarshaller>(RoleGroupAssignmentUnmarshaller.Instance);
+                    unmarshalledObject.RoleGroupAssignments = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

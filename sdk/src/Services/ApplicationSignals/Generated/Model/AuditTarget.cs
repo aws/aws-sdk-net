@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// Specifies a target resource for auditing, such as a service, SLO, or operation.
+    /// A structure that specifies the target entity for audit analysis, such as a <c>service</c>,
+    /// <c>SLO</c>, <c>service_operation</c>, or <c>canary</c>.
     /// </summary>
     public partial class AuditTarget
     {
@@ -40,8 +41,7 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The specific data or entity information for the audit target, containing details needed
-        /// to identify and examine the resource.
+        /// The specific data identifying the audit target entity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +60,8 @@ namespace Amazon.ApplicationSignals.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of resource being targeted for audit, such as "Service", "SLO", "ServiceOperation",
-        /// or "Canary".
+        /// The type of entity being audited, such as <c>service</c>, <c>SLO</c>, <c>service_operation</c>,
+        /// or <c>canary</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

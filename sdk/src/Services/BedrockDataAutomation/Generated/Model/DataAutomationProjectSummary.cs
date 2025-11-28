@@ -38,6 +38,7 @@ namespace Amazon.BedrockDataAutomation.Model
         private string _projectArn;
         private string _projectName;
         private DataAutomationProjectStage _projectStage;
+        private DataAutomationProjectType _projectType;
 
         /// <summary>
         /// Gets and sets the property CreationTime.
@@ -100,6 +101,21 @@ namespace Amazon.BedrockDataAutomation.Model
         internal bool IsSetProjectStage()
         {
             return this._projectStage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProjectType.
+        /// </summary>
+        public DataAutomationProjectType ProjectType
+        {
+            get { return this._projectType; }
+            set { this._projectType = value; }
+        }
+
+        // Check to see if ProjectType property is set
+        internal bool IsSetProjectType()
+        {
+            return this._projectType != null;
         }
 
     }

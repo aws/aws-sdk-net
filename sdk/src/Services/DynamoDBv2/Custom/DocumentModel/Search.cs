@@ -64,6 +64,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         Expression FilterExpression { get; set; }
 
         /// <summary>
+        /// The projection expression that identifies the attributes to retrieve.
+        /// </summary>
+        Expression ProjectionExpression { get; set; }
+
+        /// <summary>
         /// Filter for the search operation
         /// This applies to Query and Scan operations.
         /// </summary>
@@ -232,6 +237,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public Expression FilterExpression { get; set; }
 
         /// <inheritdoc/>
+        public Expression ProjectionExpression { get; set; }
+
+        /// <inheritdoc/>
         public Filter Filter { get; internal set; }
 
         /// <inheritdoc/>
@@ -324,23 +332,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             ConsistentRead = IsConsistentRead
                         };
 
+                        if (this.Filter != null)
+                        {
+                            var scanFilter = Filter.ToConditions(SourceTable);
+                            if (scanFilter?.Count > 0)
+                                scanReq.ScanFilter = scanFilter;
+                        }
+
                         if (!string.IsNullOrEmpty(this.IndexName))
                             scanReq.IndexName = this.IndexName;
                         if (this.FilterExpression != null && this.FilterExpression.IsSet)
                             this.FilterExpression.ApplyExpression(scanReq, SourceTable);
-
-
-                        var scanFilter = Filter.ToConditions(SourceTable);
-                        if (scanFilter != null && scanFilter.Count > 0)
+                        if (scanReq.ScanFilter != null && scanReq.ScanFilter.Count > 1)
+                            scanReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
+                        if (this.AttributesToGet != null)
                         {
-                            scanReq.ScanFilter = scanFilter;
-
-                            if (scanFilter.Count > 1)
-                            {
-                                scanReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
-                            }
+                            Common.ConvertAttributesToGetToProjectionExpression(scanReq);
                         }
-                        Common.ConvertAttributesToGetToProjectionExpression(scanReq);
+
+                        if (this.ProjectionExpression != null && this.ProjectionExpression.IsSet)
+                        {
+                            this.ProjectionExpression.ApplyExpression(scanReq, SourceTable);
+                        }
 
                         if (this.TotalSegments != 0)
                         {
@@ -386,19 +399,26 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         Expression.ApplyExpression(queryReq, SourceTable, KeyExpression, FilterExpression);
 
-                        Dictionary<string, Condition> keyConditions, filterConditions;
-                        SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
-                        
-                        if (keyConditions?.Count > 0)
+                        if (Filter != null)
                         {
-                            queryReq.KeyConditions = keyConditions;
+                            SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out var keyConditions, out var filterConditions);
+                            queryReq.KeyConditions = keyConditions?.Count > 0 ? keyConditions : null;
+                            queryReq.QueryFilter = filterConditions?.Count > 0 ? filterConditions : null;
                         }
 
-                        if (filterConditions?.Count > 0)
+                        if (this.AttributesToGet != null)
                         {
-                            queryReq.QueryFilter = filterConditions;
+                            Common.ConvertAttributesToGetToProjectionExpression(queryReq);
                         }
-                        Common.ConvertAttributesToGetToProjectionExpression(queryReq);
+
+                        if (this.ProjectionExpression != null && this.ProjectionExpression.IsSet)
+                        {
+                            queryReq.ProjectionExpression = this.ProjectionExpression.ExpressionStatement;
+                            foreach (var ean in this.ProjectionExpression.ExpressionAttributeNames)
+                            {
+                                queryReq.ExpressionAttributeNames.Add(ean.Key, ean.Value);
+                            }
+                        }
 
                         if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                             queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
@@ -453,9 +473,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             ConsistentRead = IsConsistentRead
                         };
 
-                        var scanFilter = Filter.ToConditions(SourceTable);
-                        if (scanFilter?.Count > 0)
-                            scanReq.ScanFilter = scanFilter;
+                        if (this.Filter != null)
+                        {
+                            var scanFilter = Filter.ToConditions(SourceTable);
+                            if (scanFilter?.Count > 0)
+                                scanReq.ScanFilter = scanFilter;
+                        }
 
                         if (!string.IsNullOrEmpty(this.IndexName))
                             scanReq.IndexName = this.IndexName;
@@ -463,7 +486,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             this.FilterExpression.ApplyExpression(scanReq, SourceTable);
                         if (scanReq.ScanFilter != null && scanReq.ScanFilter.Count > 1)
                             scanReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
-                        Common.ConvertAttributesToGetToProjectionExpression(scanReq);
+                        if (this.AttributesToGet != null)
+                        {
+                            Common.ConvertAttributesToGetToProjectionExpression(scanReq);
+                        }
+
+                        if (this.ProjectionExpression != null && this.ProjectionExpression.IsSet)
+                        {
+                            this.ProjectionExpression.ApplyExpression(scanReq, SourceTable);
+                        }
 
                         if (this.TotalSegments != 0)
                         {
@@ -510,11 +541,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                         Expression.ApplyExpression(queryReq, SourceTable, KeyExpression, FilterExpression);
 
-                        Dictionary<string, Condition> keyConditions, filterConditions;
-                        SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
-                        queryReq.KeyConditions = keyConditions?.Count > 0 ? keyConditions : null;
-                        queryReq.QueryFilter = filterConditions?.Count > 0 ? filterConditions : null;
-                        Common.ConvertAttributesToGetToProjectionExpression(queryReq);
+                        if (Filter != null)
+                        {
+                            Dictionary<string, Condition> keyConditions, filterConditions;
+                            SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions,
+                                out filterConditions);
+                            queryReq.KeyConditions = keyConditions?.Count > 0 ? keyConditions : null;
+                            queryReq.QueryFilter = filterConditions?.Count > 0 ? filterConditions : null;
+                        }
+
+                        if (this.AttributesToGet != null)
+                        {
+                            Common.ConvertAttributesToGetToProjectionExpression(queryReq);
+                        }
+
+                        if (this.ProjectionExpression != null && this.ProjectionExpression.IsSet)
+                        {
+                            queryReq.ProjectionExpression= this.ProjectionExpression.ExpressionStatement;
+                            foreach (var ean in this.ProjectionExpression.ExpressionAttributeNames)
+                            {
+                                queryReq.ExpressionAttributeNames.Add(ean.Key,ean.Value);
+                            }
+                        }
 
                         if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                             queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);
@@ -711,10 +759,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                             };
 
                             Expression.ApplyExpression(queryReq, SourceTable, KeyExpression, FilterExpression);
-                            Dictionary<string, Condition> keyConditions, filterConditions;
-                            SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions, out filterConditions);
-                            queryReq.KeyConditions = keyConditions;
-                            queryReq.QueryFilter = filterConditions;
+
+                            if (Filter != null)
+                            {
+                                Dictionary<string, Condition> keyConditions, filterConditions;
+                                SplitQueryFilter(Filter, SourceTable, queryReq.IndexName, out keyConditions,
+                                    out filterConditions);
+                                queryReq.KeyConditions = keyConditions?.Count > 0 ? keyConditions : null;
+                                queryReq.QueryFilter = filterConditions?.Count > 0 ? filterConditions : null;
+                            }
 
                             if (queryReq.QueryFilter != null && queryReq.QueryFilter.Count > 1)
                                 queryReq.ConditionalOperator = EnumMapper.Convert(ConditionalOperator);

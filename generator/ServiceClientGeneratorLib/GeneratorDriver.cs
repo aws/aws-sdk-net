@@ -1719,7 +1719,13 @@ namespace ServiceClientGenerator
             // a dictionary of shape name to number of members that shape has
             var customUpdateShapes = new Dictionary<string, int>
             {
-                {"LifecycleFilter", 5 }
+                { "LifecycleFilter", 5 },
+                { "MetricsFilter", 4 },
+                { "AnalyticsFilter", 3 },
+                { "IntelligentTieringFilter", 3 },
+                { "MetricsAndOperator", 3 },
+                { "AnalyticsAndOperator", 2 },
+                { "IntelligentTieringAndOperator", 2}
             };
             if (customUpdateShapes.TryGetValue(shape.Name, out int membersCount))
             {

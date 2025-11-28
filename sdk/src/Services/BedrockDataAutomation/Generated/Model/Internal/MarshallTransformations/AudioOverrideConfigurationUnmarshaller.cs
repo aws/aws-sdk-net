@@ -56,10 +56,22 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("languageConfiguration", targetDepth))
+                {
+                    var unmarshaller = AudioLanguageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LanguageConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("modalityProcessing", targetDepth))
                 {
                     var unmarshaller = ModalityProcessingConfigurationUnmarshaller.Instance;
                     unmarshalledObject.ModalityProcessing = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sensitiveDataConfiguration", targetDepth))
+                {
+                    var unmarshaller = SensitiveDataConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SensitiveDataConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

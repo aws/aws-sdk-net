@@ -68,9 +68,13 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.StepGroupId))
+                throw new AmazonMigrationHubOrchestratorException("Request object does not have required field StepGroupId set");
             
             if (publicRequest.IsSetStepGroupId())
                 request.Parameters.Add("stepGroupId", StringUtils.FromString(publicRequest.StepGroupId));
+            if (string.IsNullOrEmpty(publicRequest.TemplateId))
+                throw new AmazonMigrationHubOrchestratorException("Request object does not have required field TemplateId set");
             
             if (publicRequest.IsSetTemplateId())
                 request.Parameters.Add("templateId", StringUtils.FromString(publicRequest.TemplateId));

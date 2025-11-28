@@ -141,6 +141,52 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ActiveClusterOperationName.
+    /// </summary>
+    public class ActiveClusterOperationName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Scaling for ActiveClusterOperationName
+        /// </summary>
+        public static readonly ActiveClusterOperationName Scaling = new ActiveClusterOperationName("Scaling");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActiveClusterOperationName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActiveClusterOperationName FindValue(string value)
+        {
+            return FindValue<ActiveClusterOperationName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActiveClusterOperationName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AdditionalS3DataSourceDataType.
     /// </summary>
     public class AdditionalS3DataSourceDataType : ConstantClass
@@ -3001,6 +3047,122 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type BatchRebootClusterNodesErrorCode.
+    /// </summary>
+    public class BatchRebootClusterNodesErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InstanceIdInUse for BatchRebootClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchRebootClusterNodesErrorCode InstanceIdInUse = new BatchRebootClusterNodesErrorCode("InstanceIdInUse");
+        /// <summary>
+        /// Constant InstanceIdNotFound for BatchRebootClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchRebootClusterNodesErrorCode InstanceIdNotFound = new BatchRebootClusterNodesErrorCode("InstanceIdNotFound");
+        /// <summary>
+        /// Constant InternalServerError for BatchRebootClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchRebootClusterNodesErrorCode InternalServerError = new BatchRebootClusterNodesErrorCode("InternalServerError");
+        /// <summary>
+        /// Constant InvalidInstanceStatus for BatchRebootClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchRebootClusterNodesErrorCode InvalidInstanceStatus = new BatchRebootClusterNodesErrorCode("InvalidInstanceStatus");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchRebootClusterNodesErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchRebootClusterNodesErrorCode FindValue(string value)
+        {
+            return FindValue<BatchRebootClusterNodesErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchRebootClusterNodesErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BatchReplaceClusterNodesErrorCode.
+    /// </summary>
+    public class BatchReplaceClusterNodesErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InstanceIdInUse for BatchReplaceClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchReplaceClusterNodesErrorCode InstanceIdInUse = new BatchReplaceClusterNodesErrorCode("InstanceIdInUse");
+        /// <summary>
+        /// Constant InstanceIdNotFound for BatchReplaceClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchReplaceClusterNodesErrorCode InstanceIdNotFound = new BatchReplaceClusterNodesErrorCode("InstanceIdNotFound");
+        /// <summary>
+        /// Constant InternalServerError for BatchReplaceClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchReplaceClusterNodesErrorCode InternalServerError = new BatchReplaceClusterNodesErrorCode("InternalServerError");
+        /// <summary>
+        /// Constant InvalidInstanceStatus for BatchReplaceClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchReplaceClusterNodesErrorCode InvalidInstanceStatus = new BatchReplaceClusterNodesErrorCode("InvalidInstanceStatus");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchReplaceClusterNodesErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchReplaceClusterNodesErrorCode FindValue(string value)
+        {
+            return FindValue<BatchReplaceClusterNodesErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchReplaceClusterNodesErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BatchStrategy.
     /// </summary>
     public class BatchStrategy : ConstantClass
@@ -4065,6 +4227,56 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type ClusterCapacityType.
+    /// </summary>
+    public class ClusterCapacityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OnDemand for ClusterCapacityType
+        /// </summary>
+        public static readonly ClusterCapacityType OnDemand = new ClusterCapacityType("OnDemand");
+        /// <summary>
+        /// Constant Spot for ClusterCapacityType
+        /// </summary>
+        public static readonly ClusterCapacityType Spot = new ClusterCapacityType("Spot");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterCapacityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterCapacityType FindValue(string value)
+        {
+            return FindValue<ClusterCapacityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterCapacityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterConfigMode.
     /// </summary>
     public class ClusterConfigMode : ConstantClass
@@ -4693,6 +4905,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ClusterInstanceType MlTrn1n32xlarge = new ClusterInstanceType("ml.trn1n.32xlarge");
         /// <summary>
+        /// Constant MlTrn23xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlTrn23xlarge = new ClusterInstanceType("ml.trn2.3xlarge");
+        /// <summary>
         /// Constant MlTrn248xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlTrn248xlarge = new ClusterInstanceType("ml.trn2.48xlarge");
@@ -4726,6 +4942,60 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClusterInstanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClusterKubernetesTaintEffect.
+    /// </summary>
+    public class ClusterKubernetesTaintEffect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NoExecute for ClusterKubernetesTaintEffect
+        /// </summary>
+        public static readonly ClusterKubernetesTaintEffect NoExecute = new ClusterKubernetesTaintEffect("NoExecute");
+        /// <summary>
+        /// Constant NoSchedule for ClusterKubernetesTaintEffect
+        /// </summary>
+        public static readonly ClusterKubernetesTaintEffect NoSchedule = new ClusterKubernetesTaintEffect("NoSchedule");
+        /// <summary>
+        /// Constant PreferNoSchedule for ClusterKubernetesTaintEffect
+        /// </summary>
+        public static readonly ClusterKubernetesTaintEffect PreferNoSchedule = new ClusterKubernetesTaintEffect("PreferNoSchedule");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterKubernetesTaintEffect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterKubernetesTaintEffect FindValue(string value)
+        {
+            return FindValue<ClusterKubernetesTaintEffect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterKubernetesTaintEffect(string value)
         {
             return FindValue(value);
         }
@@ -10713,6 +10983,160 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type MIGProfileType.
+    /// </summary>
+    public class MIGProfileType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mig1g10gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig1g10gb = new MIGProfileType("mig-1g.10gb");
+        /// <summary>
+        /// Constant Mig1g18gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig1g18gb = new MIGProfileType("mig-1g.18gb");
+        /// <summary>
+        /// Constant Mig1g20gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig1g20gb = new MIGProfileType("mig-1g.20gb");
+        /// <summary>
+        /// Constant Mig1g23gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig1g23gb = new MIGProfileType("mig-1g.23gb");
+        /// <summary>
+        /// Constant Mig1g35gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig1g35gb = new MIGProfileType("mig-1g.35gb");
+        /// <summary>
+        /// Constant Mig1g45gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig1g45gb = new MIGProfileType("mig-1g.45gb");
+        /// <summary>
+        /// Constant Mig1g47gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig1g47gb = new MIGProfileType("mig-1g.47gb");
+        /// <summary>
+        /// Constant Mig1g5gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig1g5gb = new MIGProfileType("mig-1g.5gb");
+        /// <summary>
+        /// Constant Mig2g10gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig2g10gb = new MIGProfileType("mig-2g.10gb");
+        /// <summary>
+        /// Constant Mig2g20gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig2g20gb = new MIGProfileType("mig-2g.20gb");
+        /// <summary>
+        /// Constant Mig2g35gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig2g35gb = new MIGProfileType("mig-2g.35gb");
+        /// <summary>
+        /// Constant Mig2g45gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig2g45gb = new MIGProfileType("mig-2g.45gb");
+        /// <summary>
+        /// Constant Mig2g47gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig2g47gb = new MIGProfileType("mig-2g.47gb");
+        /// <summary>
+        /// Constant Mig3g20gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig3g20gb = new MIGProfileType("mig-3g.20gb");
+        /// <summary>
+        /// Constant Mig3g40gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig3g40gb = new MIGProfileType("mig-3g.40gb");
+        /// <summary>
+        /// Constant Mig3g71gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig3g71gb = new MIGProfileType("mig-3g.71gb");
+        /// <summary>
+        /// Constant Mig3g90gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig3g90gb = new MIGProfileType("mig-3g.90gb");
+        /// <summary>
+        /// Constant Mig3g93gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig3g93gb = new MIGProfileType("mig-3g.93gb");
+        /// <summary>
+        /// Constant Mig4g20gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig4g20gb = new MIGProfileType("mig-4g.20gb");
+        /// <summary>
+        /// Constant Mig4g40gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig4g40gb = new MIGProfileType("mig-4g.40gb");
+        /// <summary>
+        /// Constant Mig4g71gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig4g71gb = new MIGProfileType("mig-4g.71gb");
+        /// <summary>
+        /// Constant Mig4g90gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig4g90gb = new MIGProfileType("mig-4g.90gb");
+        /// <summary>
+        /// Constant Mig4g93gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig4g93gb = new MIGProfileType("mig-4g.93gb");
+        /// <summary>
+        /// Constant Mig7g141gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig7g141gb = new MIGProfileType("mig-7g.141gb");
+        /// <summary>
+        /// Constant Mig7g180gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig7g180gb = new MIGProfileType("mig-7g.180gb");
+        /// <summary>
+        /// Constant Mig7g186gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig7g186gb = new MIGProfileType("mig-7g.186gb");
+        /// <summary>
+        /// Constant Mig7g40gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig7g40gb = new MIGProfileType("mig-7g.40gb");
+        /// <summary>
+        /// Constant Mig7g80gb for MIGProfileType
+        /// </summary>
+        public static readonly MIGProfileType Mig7g80gb = new MIGProfileType("mig-7g.80gb");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MIGProfileType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MIGProfileType FindValue(string value)
+        {
+            return FindValue<MIGProfileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MIGProfileType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MlTools.
     /// </summary>
     public class MlTools : ConstantClass
@@ -11846,6 +12270,102 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ModelSortKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModelSpeculativeDecodingS3DataType.
+    /// </summary>
+    public class ModelSpeculativeDecodingS3DataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ManifestFile for ModelSpeculativeDecodingS3DataType
+        /// </summary>
+        public static readonly ModelSpeculativeDecodingS3DataType ManifestFile = new ModelSpeculativeDecodingS3DataType("ManifestFile");
+        /// <summary>
+        /// Constant S3Prefix for ModelSpeculativeDecodingS3DataType
+        /// </summary>
+        public static readonly ModelSpeculativeDecodingS3DataType S3Prefix = new ModelSpeculativeDecodingS3DataType("S3Prefix");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelSpeculativeDecodingS3DataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelSpeculativeDecodingS3DataType FindValue(string value)
+        {
+            return FindValue<ModelSpeculativeDecodingS3DataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelSpeculativeDecodingS3DataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ModelSpeculativeDecodingTechnique.
+    /// </summary>
+    public class ModelSpeculativeDecodingTechnique : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EAGLE for ModelSpeculativeDecodingTechnique
+        /// </summary>
+        public static readonly ModelSpeculativeDecodingTechnique EAGLE = new ModelSpeculativeDecodingTechnique("EAGLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelSpeculativeDecodingTechnique(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelSpeculativeDecodingTechnique FindValue(string value)
+        {
+            return FindValue<ModelSpeculativeDecodingTechnique>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelSpeculativeDecodingTechnique(string value)
         {
             return FindValue(value);
         }
@@ -13102,6 +13622,14 @@ namespace Amazon.SageMaker
         /// Constant MlP548xlarge for OptimizationJobDeploymentInstanceType
         /// </summary>
         public static readonly OptimizationJobDeploymentInstanceType MlP548xlarge = new OptimizationJobDeploymentInstanceType("ml.p5.48xlarge");
+        /// <summary>
+        /// Constant MlP5e48xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlP5e48xlarge = new OptimizationJobDeploymentInstanceType("ml.p5e.48xlarge");
+        /// <summary>
+        /// Constant MlP5en48xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlP5en48xlarge = new OptimizationJobDeploymentInstanceType("ml.p5en.48xlarge");
         /// <summary>
         /// Constant MlTrn12xlarge for OptimizationJobDeploymentInstanceType
         /// </summary>
@@ -17631,6 +18159,10 @@ namespace Amazon.SageMaker
     {
 
         /// <summary>
+        /// Constant Endpoint for SageMakerResourceName
+        /// </summary>
+        public static readonly SageMakerResourceName Endpoint = new SageMakerResourceName("endpoint");
+        /// <summary>
         /// Constant HyperpodCluster for SageMakerResourceName
         /// </summary>
         public static readonly SageMakerResourceName HyperpodCluster = new SageMakerResourceName("hyperpod-cluster");
@@ -21712,6 +22244,38 @@ namespace Amazon.SageMaker
         /// Constant MlG5Xlarge for TransformInstanceType
         /// </summary>
         public static readonly TransformInstanceType MlG5Xlarge = new TransformInstanceType("ml.g5.xlarge");
+        /// <summary>
+        /// Constant MlG612xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG612xlarge = new TransformInstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG616xlarge = new TransformInstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG624xlarge = new TransformInstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG62xlarge = new TransformInstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG648xlarge = new TransformInstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG64xlarge = new TransformInstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG68xlarge = new TransformInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6Xlarge = new TransformInstanceType("ml.g6.xlarge");
         /// <summary>
         /// Constant MlInf224xlarge for TransformInstanceType
         /// </summary>

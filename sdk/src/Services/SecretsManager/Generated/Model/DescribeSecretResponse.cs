@@ -38,6 +38,8 @@ namespace Amazon.SecretsManager.Model
         private DateTime? _createdDate;
         private DateTime? _deletedDate;
         private string _description;
+        private List<ExternalSecretRotationMetadataItem> _externalSecretRotationMetadata = AWSConfigs.InitializeCollections ? new List<ExternalSecretRotationMetadataItem>() : null;
+        private string _externalSecretRotationRoleArn;
         private string _kmsKeyId;
         private DateTime? _lastAccessedDate;
         private DateTime? _lastChangedDate;
@@ -51,6 +53,7 @@ namespace Amazon.SecretsManager.Model
         private string _rotationLambdaARN;
         private RotationRulesType _rotationRules;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private string _type;
         private Dictionary<string, List<string>> _versionIdsToStages = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
@@ -134,6 +137,53 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalSecretRotationMetadata. 
+        /// <para>
+        /// The metadata needed to successfully rotate a managed external secret. A list of key
+        /// value pairs in JSON format specified by the partner. For more information about the
+        /// required information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-partners.html">Managed
+        /// external secrets partners</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ExternalSecretRotationMetadataItem> ExternalSecretRotationMetadata
+        {
+            get { return this._externalSecretRotationMetadata; }
+            set { this._externalSecretRotationMetadata = value; }
+        }
+
+        // Check to see if ExternalSecretRotationMetadata property is set
+        internal bool IsSetExternalSecretRotationMetadata()
+        {
+            return this._externalSecretRotationMetadata != null && (this._externalSecretRotationMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalSecretRotationRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the role that allows Secrets Manager to rotate a
+        /// secret held by a third-party partner. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/mes-security.html">Security
+        /// and permissions</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExternalSecretRotationRoleArn
+        {
+            get { return this._externalSecretRotationRoleArn; }
+            set { this._externalSecretRotationRoleArn = value; }
+        }
+
+        // Check to see if ExternalSecretRotationRoleArn property is set
+        internal bool IsSetExternalSecretRotationRoleArn()
+        {
+            return this._externalSecretRotationRoleArn != null;
         }
 
         /// <summary>
@@ -422,6 +472,27 @@ namespace Amazon.SecretsManager.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The exact string that identifies the partner that holds the external secret. For more
+        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using
+        /// Secrets Manager managed external secrets</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

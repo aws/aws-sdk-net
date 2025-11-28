@@ -75,6 +75,56 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type AttributeEntityType.
+    /// </summary>
+    public class AttributeEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSET for AttributeEntityType
+        /// </summary>
+        public static readonly AttributeEntityType ASSET = new AttributeEntityType("ASSET");
+        /// <summary>
+        /// Constant LISTING for AttributeEntityType
+        /// </summary>
+        public static readonly AttributeEntityType LISTING = new AttributeEntityType("LISTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttributeEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttributeEntityType FindValue(string value)
+        {
+            return FindValue<AttributeEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttributeEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthenticationType.
     /// </summary>
     public class AuthenticationType : ConstantClass
@@ -3745,6 +3795,10 @@ namespace Amazon.DataZone
     {
 
         /// <summary>
+        /// Constant GLOSSARY_TERM_ENFORCEMENT for RuleType
+        /// </summary>
+        public static readonly RuleType GLOSSARY_TERM_ENFORCEMENT = new RuleType("GLOSSARY_TERM_ENFORCEMENT");
+        /// <summary>
         /// Constant METADATA_FORM_ENFORCEMENT for RuleType
         /// </summary>
         public static readonly RuleType METADATA_FORM_ENFORCEMENT = new RuleType("METADATA_FORM_ENFORCEMENT");
@@ -3778,6 +3832,56 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3Permission.
+    /// </summary>
+    public class S3Permission : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READ for S3Permission
+        /// </summary>
+        public static readonly S3Permission READ = new S3Permission("READ");
+        /// <summary>
+        /// Constant WRITE for S3Permission
+        /// </summary>
+        public static readonly S3Permission WRITE = new S3Permission("WRITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3Permission(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3Permission FindValue(string value)
+        {
+            return FindValue<S3Permission>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3Permission(string value)
         {
             return FindValue(value);
         }

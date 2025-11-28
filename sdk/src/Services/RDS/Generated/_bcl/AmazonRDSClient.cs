@@ -1870,6 +1870,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         public virtual CreateDBClusterResponse CreateDBCluster(CreateDBClusterRequest request)
         {
@@ -1990,6 +1995,11 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCluster">REST API Reference for CreateDBCluster Operation</seealso>
         public virtual Task<CreateDBClusterResponse> CreateDBClusterAsync(CreateDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2441,6 +2451,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
         {
@@ -2556,6 +2571,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual Task<CreateDBInstanceResponse> CreateDBInstanceAsync(CreateDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2681,6 +2701,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         public virtual CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request)
         {
@@ -2803,6 +2828,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         public virtual Task<CreateDBInstanceReadReplicaResponse> CreateDBInstanceReadReplicaAsync(CreateDBInstanceReadReplicaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9988,6 +10018,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request)
         {
@@ -10086,6 +10121,11 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual Task<ModifyDBClusterResponse> ModifyDBClusterAsync(ModifyDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10491,6 +10531,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
         {
@@ -10586,6 +10631,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual Task<ModifyDBInstanceResponse> ModifyDBInstanceAsync(ModifyDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -13111,6 +13161,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public virtual RestoreDBClusterFromSnapshotResponse RestoreDBClusterFromSnapshot(RestoreDBClusterFromSnapshotRequest request)
         {
@@ -13230,6 +13285,11 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">REST API Reference for RestoreDBClusterFromSnapshot Operation</seealso>
         public virtual Task<RestoreDBClusterFromSnapshotResponse> RestoreDBClusterFromSnapshotAsync(RestoreDBClusterFromSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -13353,6 +13413,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         public virtual RestoreDBClusterToPointInTimeResponse RestoreDBClusterToPointInTime(RestoreDBClusterToPointInTimeRequest request)
         {
@@ -13473,6 +13538,11 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime">REST API Reference for RestoreDBClusterToPointInTime Operation</seealso>
         public virtual Task<RestoreDBClusterToPointInTimeResponse> RestoreDBClusterToPointInTimeAsync(RestoreDBClusterToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -13615,6 +13685,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         public virtual RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request)
         {
@@ -13755,6 +13830,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         public virtual Task<RestoreDBInstanceFromDBSnapshotResponse> RestoreDBInstanceFromDBSnapshotAsync(RestoreDBInstanceFromDBSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -13856,6 +13936,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
         public virtual RestoreDBInstanceFromS3Response RestoreDBInstanceFromS3(RestoreDBInstanceFromS3Request request)
         {
@@ -13955,6 +14040,11 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
         /// The specified <c>StorageType</c> can't be associated with the DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
         public virtual Task<RestoreDBInstanceFromS3Response> RestoreDBInstanceFromS3Async(RestoreDBInstanceFromS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -14084,6 +14174,11 @@ namespace Amazon.RDS
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         public virtual RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
         {
@@ -14210,6 +14305,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.TenantDatabaseQuotaExceededException">
         /// You attempted to create more tenant databases than are permitted in your Amazon Web
         /// Services account.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         public virtual Task<RestoreDBInstanceToPointInTimeResponse> RestoreDBInstanceToPointInTimeAsync(RestoreDBInstanceToPointInTimeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -14443,6 +14543,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
         public virtual StartDBClusterResponse StartDBCluster(StartDBClusterRequest request)
         {
@@ -14489,6 +14594,11 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBCluster">REST API Reference for StartDBCluster Operation</seealso>
         public virtual Task<StartDBClusterResponse> StartDBClusterAsync(StartDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -14567,6 +14677,11 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
         public virtual StartDBInstanceResponse StartDBInstance(StartDBInstanceRequest request)
         {
@@ -14642,6 +14757,11 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
         /// An error occurred accessing an Amazon Web Services KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.VpcEncryptionControlViolationException">
+        /// The operation violates VPC encryption control settings. Make sure that your DB instance
+        /// type supports the Nitro encryption-in-transit capability, or modify your VPC's encryption
+        /// controls to not enforce encryption-in-transit.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance">REST API Reference for StartDBInstance Operation</seealso>
         public virtual Task<StartDBInstanceResponse> StartDBInstanceAsync(StartDBInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

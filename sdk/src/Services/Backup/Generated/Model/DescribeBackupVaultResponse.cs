@@ -39,6 +39,7 @@ namespace Amazon.Backup.Model
         private DateTime? _creationDate;
         private string _creatorRequestId;
         private string _encryptionKeyArn;
+        private EncryptionKeyType _encryptionKeyType;
         private LatestMpaApprovalTeamUpdate _latestMpaApprovalTeamUpdate;
         private DateTime? _lockDate;
         private bool? _locked;
@@ -147,6 +148,26 @@ namespace Amazon.Backup.Model
         internal bool IsSetEncryptionKeyArn()
         {
             return this._encryptionKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKeyType. 
+        /// <para>
+        /// The type of encryption key used for the backup vault. Valid values are CUSTOMER_MANAGED_KMS_KEY
+        /// for customer-managed keys or Amazon Web Services_OWNED_KMS_KEY for Amazon Web Services-owned
+        /// keys.
+        /// </para>
+        /// </summary>
+        public EncryptionKeyType EncryptionKeyType
+        {
+            get { return this._encryptionKeyType; }
+            set { this._encryptionKeyType = value; }
+        }
+
+        // Check to see if EncryptionKeyType property is set
+        internal bool IsSetEncryptionKeyType()
+        {
+            return this._encryptionKeyType != null;
         }
 
         /// <summary>

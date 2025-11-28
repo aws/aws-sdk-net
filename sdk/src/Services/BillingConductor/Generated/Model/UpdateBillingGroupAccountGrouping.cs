@@ -35,6 +35,7 @@ namespace Amazon.BillingConductor.Model
     public partial class UpdateBillingGroupAccountGrouping
     {
         private bool? _autoAssociate;
+        private string _responsibilityTransferArn;
 
         /// <summary>
         /// Gets and sets the property AutoAssociate. 
@@ -53,6 +54,25 @@ namespace Amazon.BillingConductor.Model
         internal bool IsSetAutoAssociate()
         {
             return this._autoAssociate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponsibilityTransferArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) that identifies the transfer relationship. Note: Modifications
+        /// to the ResponsibilityTransferArn are not permitted for existing billing groups. 
+        /// </para>
+        /// </summary>
+        public string ResponsibilityTransferArn
+        {
+            get { return this._responsibilityTransferArn; }
+            set { this._responsibilityTransferArn = value; }
+        }
+
+        // Check to see if ResponsibilityTransferArn property is set
+        internal bool IsSetResponsibilityTransferArn()
+        {
+            return this._responsibilityTransferArn != null;
         }
 
     }

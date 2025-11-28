@@ -65,6 +65,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetDurationInMinutes())
                 request.Parameters.Add("durationInMinutes", StringUtils.FromLong(publicRequest.DurationInMinutes));
+            if (string.IsNullOrEmpty(publicRequest.EnvironmentId))
+                throw new AmazonFinSpaceDataException("Request object does not have required field EnvironmentId set");
             
             if (publicRequest.IsSetEnvironmentId())
                 request.Parameters.Add("environmentId", StringUtils.FromString(publicRequest.EnvironmentId));

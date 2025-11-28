@@ -107,6 +107,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Language);
             }
 
+            if(publicRequest.IsSetSourceConfiguration())
+            {
+                context.Writer.WritePropertyName("sourceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MessageTemplateSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SourceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

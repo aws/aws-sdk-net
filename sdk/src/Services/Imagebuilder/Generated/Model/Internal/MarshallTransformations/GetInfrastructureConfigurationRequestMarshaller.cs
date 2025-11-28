@@ -62,6 +62,8 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.InfrastructureConfigurationArn))
+                throw new AmazonImagebuilderException("Request object does not have required field InfrastructureConfigurationArn set");
             
             if (publicRequest.IsSetInfrastructureConfigurationArn())
                 request.Parameters.Add("infrastructureConfigurationArn", StringUtils.FromString(publicRequest.InfrastructureConfigurationArn));

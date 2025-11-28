@@ -62,6 +62,8 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-11-27";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.SessionId))
+                throw new AmazonQAppsException("Request object does not have required field SessionId set");
             
             if (publicRequest.IsSetSessionId())
                 request.Parameters.Add("sessionId", StringUtils.FromString(publicRequest.SessionId));

@@ -62,6 +62,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdditionalConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Classifications", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Classification, ClassificationUnmarshaller>(ClassificationUnmarshaller.Instance);
+                    unmarshalledObject.Classifications = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CoordinatorDpuSize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

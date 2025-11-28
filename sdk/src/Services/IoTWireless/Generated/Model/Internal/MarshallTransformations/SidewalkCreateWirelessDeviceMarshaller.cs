@@ -52,6 +52,23 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DeviceProfileId);
             }
 
+            if(requestObject.IsSetPositioning())
+            {
+                context.Writer.WritePropertyName("Positioning");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SidewalkPositioningMarshaller.Instance;
+                marshaller.Marshall(requestObject.Positioning, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSidewalkManufacturingSn())
+            {
+                context.Writer.WritePropertyName("SidewalkManufacturingSn");
+                context.Writer.WriteStringValue(requestObject.SidewalkManufacturingSn);
+            }
+
         }
 
         /// <summary>

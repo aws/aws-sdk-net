@@ -62,12 +62,16 @@ namespace Amazon.Artifact.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ReportId))
+                throw new AmazonArtifactException("Request object does not have required field ReportId set");
             
             if (publicRequest.IsSetReportId())
                 request.Parameters.Add("reportId", StringUtils.FromString(publicRequest.ReportId));
             
             if (publicRequest.IsSetReportVersion())
                 request.Parameters.Add("reportVersion", StringUtils.FromLong(publicRequest.ReportVersion));
+            if (string.IsNullOrEmpty(publicRequest.TermToken))
+                throw new AmazonArtifactException("Request object does not have required field TermToken set");
             
             if (publicRequest.IsSetTermToken())
                 request.Parameters.Add("termToken", StringUtils.FromString(publicRequest.TermToken));

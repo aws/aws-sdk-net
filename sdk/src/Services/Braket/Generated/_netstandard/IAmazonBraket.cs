@@ -274,6 +274,76 @@ namespace Amazon.Braket
 
         #endregion
                 
+        #region  CreateSpendingLimit
+
+
+
+        /// <summary>
+        /// Creates a spending limit for a specified quantum device. Spending limits help you
+        /// control costs by setting maximum amounts that can be spent on quantum computing tasks
+        /// within a specified time period. Simulators do not support spending limits.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSpendingLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSpendingLimit service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.DeviceRetiredException">
+        /// The specified device has been retired.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request failed because of an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ThrottlingException">
+        /// The API throttling rate limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input request failed to satisfy constraints expected by Amazon Braket.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CreateSpendingLimit">REST API Reference for CreateSpendingLimit Operation</seealso>
+        Task<CreateSpendingLimitResponse> CreateSpendingLimitAsync(CreateSpendingLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteSpendingLimit
+
+
+
+        /// <summary>
+        /// Deletes an existing spending limit. This operation permanently removes the spending
+        /// limit and cannot be undone. After deletion, the associated device becomes unrestricted
+        /// for spending.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSpendingLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSpendingLimit service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request failed because of an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ThrottlingException">
+        /// The API throttling rate limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input request failed to satisfy constraints expected by Amazon Braket.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/DeleteSpendingLimit">REST API Reference for DeleteSpendingLimit Operation</seealso>
+        Task<DeleteSpendingLimitResponse> DeleteSpendingLimitAsync(DeleteSpendingLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetDevice
 
 
@@ -502,6 +572,38 @@ namespace Amazon.Braket
 
         #endregion
                 
+        #region  SearchSpendingLimits
+
+
+
+        /// <summary>
+        /// Searches and lists spending limits based on specified filters. This operation supports
+        /// pagination and allows filtering by various criteria to find specific spending limits.
+        /// We recommend using pagination to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchSpendingLimits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchSpendingLimits service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request failed because of an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ThrottlingException">
+        /// The API throttling rate limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input request failed to satisfy constraints expected by Amazon Braket.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchSpendingLimits">REST API Reference for SearchSpendingLimits Operation</seealso>
+        Task<SearchSpendingLimitsResponse> SearchSpendingLimitsAsync(SearchSpendingLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  TagResource
 
 
@@ -553,6 +655,40 @@ namespace Amazon.Braket
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSpendingLimit
+
+
+
+        /// <summary>
+        /// Updates an existing spending limit. You can modify the spending amount or time period.
+        /// Changes take effect immediately.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSpendingLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSpendingLimit service method, as returned by Braket.</returns>
+        /// <exception cref="Amazon.Braket.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.InternalServiceException">
+        /// The request failed because of an unknown error.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ThrottlingException">
+        /// The API throttling rate limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Braket.Model.ValidationException">
+        /// The input request failed to satisfy constraints expected by Amazon Braket.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UpdateSpendingLimit">REST API Reference for UpdateSpendingLimit Operation</seealso>
+        Task<UpdateSpendingLimitResponse> UpdateSpendingLimitAsync(UpdateSpendingLimitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

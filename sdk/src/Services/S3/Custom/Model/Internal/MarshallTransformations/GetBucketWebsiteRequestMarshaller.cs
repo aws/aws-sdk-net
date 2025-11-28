@@ -33,7 +33,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         public IRequest Marshall(GetBucketWebsiteRequest getBucketWebsiteRequest)
         {
-            IRequest request = new DefaultRequest(getBucketWebsiteRequest, "AmazonS3");
+            IRequest request = new DefaultRequest(getBucketWebsiteRequest, "Amazon.S3");
 
             request.Suppress404Exceptions = true;
             request.HttpMethod = "GET";

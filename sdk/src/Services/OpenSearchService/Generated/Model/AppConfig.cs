@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Configuration settings for an OpenSearch application. For more information, see see
-    /// <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Using
+    /// Configuration settings for an OpenSearch application. For more information, see <a
+    /// href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html">Using
     /// the OpenSearch user interface in Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class AppConfig

@@ -114,10 +114,33 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.PolicyAction = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("PreviousDeploymentContext", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.PreviousDeploymentContext = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Replacement", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Replacement = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ResourceDriftIgnoredAttributes/member", targetDepth))
+                    {
+                        var unmarshaller = ResourceDriftIgnoredAttributeUnmarshaller.Instance;
+                        if (unmarshalledObject.ResourceDriftIgnoredAttributes == null)
+                        {
+                            unmarshalledObject.ResourceDriftIgnoredAttributes = new List<ResourceDriftIgnoredAttribute>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ResourceDriftIgnoredAttributes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ResourceDriftStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ResourceDriftStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ResourceType", targetDepth))

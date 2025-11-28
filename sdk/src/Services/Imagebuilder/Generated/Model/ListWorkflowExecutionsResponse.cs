@@ -43,8 +43,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The resource ARN of the image build version for which you requested a list of workflow
-        /// runtime details.
+        /// The resource Amazon Resource Name (ARN) of the image build version for which you requested
+        /// a list of workflow runtime details.
         /// </para>
         /// </summary>
         public string ImageBuildVersionArn

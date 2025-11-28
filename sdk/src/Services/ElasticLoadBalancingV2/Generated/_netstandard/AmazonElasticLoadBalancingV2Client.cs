@@ -65,7 +65,7 @@ namespace Amazon.ElasticLoadBalancingV2
     ///  </li> <li> 
     /// <para>
     /// Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP,
-    /// TLS, and UDP.
+    /// TLS, UDP, and QUIC.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -1578,7 +1578,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
         /// <summary>
         /// Describes the specified rules or the rules for the specified listener. You must specify
-        /// either a listener or one or more rules.
+        /// either a listener or rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRules service method.</param>
         /// <param name="cancellationToken">

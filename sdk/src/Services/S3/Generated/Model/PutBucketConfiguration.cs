@@ -138,18 +138,18 @@ namespace Amazon.S3.Model
         /// pairs of metadata used to categorize and organize your buckets, track costs, and control
         /// access. 
         /// </para>
-        ///  <note> <ul> <li> 
+        ///  <note> 
         /// <para>
         /// This parameter is only supported for S3 directory buckets. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-tagging.html">Using
         /// tags with directory buckets</a>.
         /// </para>
-        ///  </li> <li> 
+        ///  
         /// <para>
         /// You must have the <c>s3express:TagResource</c> permission to create a directory bucket
         /// with tags.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

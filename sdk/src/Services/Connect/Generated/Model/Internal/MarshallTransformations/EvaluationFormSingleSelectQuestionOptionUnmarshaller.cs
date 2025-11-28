@@ -62,6 +62,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutomaticFail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AutomaticFailConfiguration", targetDepth))
+                {
+                    var unmarshaller = AutomaticFailConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AutomaticFailConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RefId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -118,6 +118,16 @@ namespace Amazon.GuardDuty.Model
         IListIPSetsPaginator ListIPSets(ListIPSetsRequest request);
 
         /// <summary>
+        /// Paginator for ListMalwareScans operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMalwareScansPaginator ListMalwareScans(ListMalwareScansRequest request);
+
+        /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
         [AWSPaginator(

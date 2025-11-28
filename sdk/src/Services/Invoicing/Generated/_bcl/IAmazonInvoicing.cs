@@ -55,11 +55,62 @@ namespace Amazon.Invoicing
     /// </para>
     ///  
     /// <para>
+    ///  <b>Amazon Web Services Procurement Portal Preferences</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use Amazon Web Services Procurement Portal Preferences APIs to programmatically
+    /// create, update, delete, get, and list procurement portal connections and e-invoice
+    /// delivery settings. You can also programmatically fetch and modify the status of procurement
+    /// portal configurations. For example, SAP Business Network or Coupa connections, configure
+    /// e-invoice delivery and purchase order retrieval features.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use Amazon Web Services Procurement Portal Preferences to connect e-invoice
+    /// delivery to your procurement portals based on your organizational needs. By using
+    /// Amazon Web Services Procurement Portal Preferences, you can configure connections
+    /// to SAP Business Network and Coupa procurement portals that retrieve purchase orders
+    /// and deliver Amazon Web Services invoices on the same day they are generated. You can
+    /// also set up testing environments to validate invoice delivery without affecting live
+    /// transactions, and manage contact information for portal setup and support. 
+    /// </para>
+    ///  
+    /// <para>
+    /// Administrative users should understand that billing read-only policies will show all
+    /// procurement portal connection details. Review your IAM policies to ensure appropriate
+    /// access controls are in place for procurement portal preferences.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Amazon Web Services Invoice Management</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use Amazon Web Services Invoice Management APIs to programmatically list invoice
+    /// summaries and get invoice documents. You can also programmatically fetch invoice documents
+    /// with S3 pre-signed URLs.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use Amazon Web Services Invoice Management to access invoice information based
+    /// on your organizational needs. By using Amazon Web Services Invoice Management, you
+    /// can retrieve paginated lists of invoice summaries that include invoice metadata such
+    /// as invoice IDs, amounts, and currencies without downloading documents. You can also
+    /// download invoice documents in PDF format using S3 pre-signed URLs with built-in expiration.
+    /// As you manage invoices across your organization using Amazon Web Services Invoice
+    /// Management APIs, you can create invoice retrieval processes and integrate invoice
+    /// data into your financial systems.
+    /// </para>
+    ///  
+    /// <para>
     /// Service endpoint
     /// </para>
     ///  
     /// <para>
-    /// You can use the following endpoints for Amazon Web Services Invoice Configuration:
+    /// You can use the following endpoints for Amazon Web Services Invoice Configuration,
+    /// Amazon Web Services Procurement Portal Preferences, and Amazon Web Services Invoice
+    /// Management:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -188,6 +239,80 @@ namespace Amazon.Invoicing
 
         #endregion
         
+        #region  CreateProcurementPortalPreference
+
+
+        /// <summary>
+        /// Creates a procurement portal preference configuration for e-invoice delivery and purchase
+        /// order retrieval. This preference defines how invoices are delivered to a procurement
+        /// portal and how purchase orders are retrieved.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProcurementPortalPreference service method.</param>
+        /// 
+        /// <returns>The response from the CreateProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/CreateProcurementPortalPreference">REST API Reference for CreateProcurementPortalPreference Operation</seealso>
+        CreateProcurementPortalPreferenceResponse CreateProcurementPortalPreference(CreateProcurementPortalPreferenceRequest request);
+
+
+
+        /// <summary>
+        /// Creates a procurement portal preference configuration for e-invoice delivery and purchase
+        /// order retrieval. This preference defines how invoices are delivered to a procurement
+        /// portal and how purchase orders are retrieved.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProcurementPortalPreference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/CreateProcurementPortalPreference">REST API Reference for CreateProcurementPortalPreference Operation</seealso>
+        Task<CreateProcurementPortalPreferenceResponse> CreateProcurementPortalPreferenceAsync(CreateProcurementPortalPreferenceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteInvoiceUnit
 
 
@@ -246,6 +371,142 @@ namespace Amazon.Invoicing
 
         #endregion
         
+        #region  DeleteProcurementPortalPreference
+
+
+        /// <summary>
+        /// Deletes an existing procurement portal preference. This action cannot be undone. Active
+        /// e-invoice delivery and PO retrieval configurations will be terminated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProcurementPortalPreference service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/DeleteProcurementPortalPreference">REST API Reference for DeleteProcurementPortalPreference Operation</seealso>
+        DeleteProcurementPortalPreferenceResponse DeleteProcurementPortalPreference(DeleteProcurementPortalPreferenceRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an existing procurement portal preference. This action cannot be undone. Active
+        /// e-invoice delivery and PO retrieval configurations will be terminated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProcurementPortalPreference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/DeleteProcurementPortalPreference">REST API Reference for DeleteProcurementPortalPreference Operation</seealso>
+        Task<DeleteProcurementPortalPreferenceResponse> DeleteProcurementPortalPreferenceAsync(DeleteProcurementPortalPreferenceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetInvoicePDF
+
+
+        /// <summary>
+        /// Returns a URL to download the invoice document and supplemental documents associated
+        /// with an invoice. The URLs are pre-signed and have expiration time. For special cases
+        /// like Brazil, where Amazon Web Services generated invoice identifiers and government
+        /// provided identifiers do not match, use the Amazon Web Services generated invoice identifier
+        /// when making API requests. To grant IAM permission to use this operation, the caller
+        /// needs the <c>invoicing:GetInvoicePDF</c> policy action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvoicePDF service method.</param>
+        /// 
+        /// <returns>The response from the GetInvoicePDF service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoicePDF">REST API Reference for GetInvoicePDF Operation</seealso>
+        GetInvoicePDFResponse GetInvoicePDF(GetInvoicePDFRequest request);
+
+
+
+        /// <summary>
+        /// Returns a URL to download the invoice document and supplemental documents associated
+        /// with an invoice. The URLs are pre-signed and have expiration time. For special cases
+        /// like Brazil, where Amazon Web Services generated invoice identifiers and government
+        /// provided identifiers do not match, use the Amazon Web Services generated invoice identifier
+        /// when making API requests. To grant IAM permission to use this operation, the caller
+        /// needs the <c>invoicing:GetInvoicePDF</c> policy action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvoicePDF service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInvoicePDF service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoicePDF">REST API Reference for GetInvoicePDF Operation</seealso>
+        Task<GetInvoicePDFResponse> GetInvoicePDFAsync(GetInvoicePDFRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetInvoiceUnit
 
 
@@ -301,6 +562,82 @@ namespace Amazon.Invoicing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetInvoiceUnit">REST API Reference for GetInvoiceUnit Operation</seealso>
         Task<GetInvoiceUnitResponse> GetInvoiceUnitAsync(GetInvoiceUnitRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetProcurementPortalPreference
+
+
+        /// <summary>
+        /// Retrieves the details of a specific procurement portal preference configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProcurementPortalPreference service method.</param>
+        /// 
+        /// <returns>The response from the GetProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetProcurementPortalPreference">REST API Reference for GetProcurementPortalPreference Operation</seealso>
+        GetProcurementPortalPreferenceResponse GetProcurementPortalPreference(GetProcurementPortalPreferenceRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the details of a specific procurement portal preference configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProcurementPortalPreference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetProcurementPortalPreference">REST API Reference for GetProcurementPortalPreference Operation</seealso>
+        Task<GetProcurementPortalPreferenceResponse> GetProcurementPortalPreferenceAsync(GetProcurementPortalPreferenceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -416,6 +753,78 @@ namespace Amazon.Invoicing
 
         #endregion
         
+        #region  ListProcurementPortalPreferences
+
+
+        /// <summary>
+        /// Retrieves a list of procurement portal preferences associated with the Amazon Web
+        /// Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProcurementPortalPreferences service method.</param>
+        /// 
+        /// <returns>The response from the ListProcurementPortalPreferences service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListProcurementPortalPreferences">REST API Reference for ListProcurementPortalPreferences Operation</seealso>
+        ListProcurementPortalPreferencesResponse ListProcurementPortalPreferences(ListProcurementPortalPreferencesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of procurement portal preferences associated with the Amazon Web
+        /// Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProcurementPortalPreferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProcurementPortalPreferences service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListProcurementPortalPreferences">REST API Reference for ListProcurementPortalPreferences Operation</seealso>
+        Task<ListProcurementPortalPreferencesResponse> ListProcurementPortalPreferencesAsync(ListProcurementPortalPreferencesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -471,6 +880,84 @@ namespace Amazon.Invoicing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutProcurementPortalPreference
+
+
+        /// <summary>
+        /// Updates an existing procurement portal preference configuration. This operation can
+        /// modify settings for e-invoice delivery and purchase order retrieval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProcurementPortalPreference service method.</param>
+        /// 
+        /// <returns>The response from the PutProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/PutProcurementPortalPreference">REST API Reference for PutProcurementPortalPreference Operation</seealso>
+        PutProcurementPortalPreferenceResponse PutProcurementPortalPreference(PutProcurementPortalPreferenceRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing procurement portal preference configuration. This operation can
+        /// modify settings for e-invoice delivery and purchase order retrieval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProcurementPortalPreference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutProcurementPortalPreference service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/PutProcurementPortalPreference">REST API Reference for PutProcurementPortalPreference Operation</seealso>
+        Task<PutProcurementPortalPreferenceResponse> PutProcurementPortalPreferenceAsync(PutProcurementPortalPreferenceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -655,6 +1142,84 @@ namespace Amazon.Invoicing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UpdateInvoiceUnit">REST API Reference for UpdateInvoiceUnit Operation</seealso>
         Task<UpdateInvoiceUnitResponse> UpdateInvoiceUnitAsync(UpdateInvoiceUnitRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateProcurementPortalPreferenceStatus
+
+
+        /// <summary>
+        /// Updates the status of a procurement portal preference, including the activation state
+        /// of e-invoice delivery and purchase order retrieval features.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProcurementPortalPreferenceStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProcurementPortalPreferenceStatus service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UpdateProcurementPortalPreferenceStatus">REST API Reference for UpdateProcurementPortalPreferenceStatus Operation</seealso>
+        UpdateProcurementPortalPreferenceStatusResponse UpdateProcurementPortalPreferenceStatus(UpdateProcurementPortalPreferenceStatusRequest request);
+
+
+
+        /// <summary>
+        /// Updates the status of a procurement portal preference, including the activation state
+        /// of e-invoice delivery and purchase order retrieval features.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProcurementPortalPreferenceStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProcurementPortalPreferenceStatus service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UpdateProcurementPortalPreferenceStatus">REST API Reference for UpdateProcurementPortalPreferenceStatus Operation</seealso>
+        Task<UpdateProcurementPortalPreferenceStatusResponse> UpdateProcurementPortalPreferenceStatusAsync(UpdateProcurementPortalPreferenceStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -32,13 +32,14 @@ namespace Amazon.AppStream.Model
     /// <summary>
     /// Container for the parameters to the CreateUpdatedImage operation.
     /// Creates a new image with the latest Windows operating system updates, driver updates,
-    /// and AppStream 2.0 agent software.
+    /// and WorkSpaces Applications agent software.
     /// 
     ///  
     /// <para>
-    /// For more information, see the "Update an Image by Using Managed AppStream 2.0 Image
-    /// Updates" section in <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer
-    /// Your AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+    /// For more information, see the "Update an Image by Using Managed WorkSpaces Applications
+    /// Image Updates" section in <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer
+    /// Your WorkSpaces Applications Images</a>, in the <i>Amazon WorkSpaces Applications
+    /// Administration Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateUpdatedImageRequest : AmazonAppStreamRequest
@@ -53,11 +54,12 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// Indicates whether to display the status of image update availability before AppStream
-        /// 2.0 initiates the process of creating a new updated image. If this value is set to
-        /// <c>true</c>, AppStream 2.0 displays whether image updates are available. If this value
-        /// is set to <c>false</c>, AppStream 2.0 initiates the process of creating a new updated
-        /// image without displaying whether image updates are available.
+        /// Indicates whether to display the status of image update availability before WorkSpaces
+        /// Applications initiates the process of creating a new updated image. If this value
+        /// is set to <c>true</c>, WorkSpaces Applications displays whether image updates are
+        /// available. If this value is set to <c>false</c>, WorkSpaces Applications initiates
+        /// the process of creating a new updated image without displaying whether image updates
+        /// are available.
         /// </para>
         /// </summary>
         public bool? DryRun
@@ -171,7 +173,7 @@ namespace Amazon.AppStream.Model
         ///  
         /// <para>
         /// For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
-        /// Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+        /// Your Resources</a> in the <i>Amazon WorkSpaces Applications Administration Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

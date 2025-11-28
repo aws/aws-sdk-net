@@ -3689,6 +3689,61 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  DeleteIntegrationResourceProperty
+
+        internal virtual DeleteIntegrationResourcePropertyResponse DeleteIntegrationResourceProperty(DeleteIntegrationResourcePropertyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationResourcePropertyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResourcePropertyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntegrationResourcePropertyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// This API is used for deleting the <c>ResourceProperty</c> of the Glue connection (for
+        /// the source) or Glue database ARN (for the target).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResourceProperty service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegrationResourceProperty service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteIntegrationResourceProperty">REST API Reference for DeleteIntegrationResourceProperty Operation</seealso>
+        public virtual Task<DeleteIntegrationResourcePropertyResponse> DeleteIntegrationResourcePropertyAsync(DeleteIntegrationResourcePropertyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationResourcePropertyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResourcePropertyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIntegrationResourcePropertyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteIntegrationTableProperties
 
         internal virtual DeleteIntegrationTablePropertiesResponse DeleteIntegrationTableProperties(DeleteIntegrationTablePropertiesRequest request)
@@ -9248,6 +9303,61 @@ namespace Amazon.Glue
             options.ResponseUnmarshaller = ListEntitiesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEntitiesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListIntegrationResourceProperties
+
+        internal virtual ListIntegrationResourcePropertiesResponse ListIntegrationResourceProperties(ListIntegrationResourcePropertiesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIntegrationResourcePropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationResourcePropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntegrationResourcePropertiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List integration resource properties for a single customer. It supports the filters,
+        /// maxRecords and markers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrationResourceProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntegrationResourceProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIntegrationResourceProperties">REST API Reference for ListIntegrationResourceProperties Operation</seealso>
+        public virtual Task<ListIntegrationResourcePropertiesResponse> ListIntegrationResourcePropertiesAsync(ListIntegrationResourcePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIntegrationResourcePropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationResourcePropertiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIntegrationResourcePropertiesResponse>(request, options, cancellationToken);
         }
         #endregion
         

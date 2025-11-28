@@ -80,6 +80,24 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.NetworkFunctionGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PeerEdgeLocation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PeerEdgeLocation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RoutingPolicyAssociationDetails", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<RoutingPolicyAssociationDetail, RoutingPolicyAssociationDetailUnmarshaller>(RoutingPolicyAssociationDetailUnmarshaller.Instance);
+                    unmarshalledObject.RoutingPolicyAssociationDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RoutingPolicyDirection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoutingPolicyDirection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SegmentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

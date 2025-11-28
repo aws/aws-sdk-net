@@ -36,6 +36,7 @@ namespace Amazon.Transfer.Model
     {
         private string _accessEndpoint;
         private string _arn;
+        private WebAppEndpointType _endpointType;
         private string _webAppEndpoint;
         private string _webAppId;
 
@@ -77,6 +78,25 @@ namespace Amazon.Transfer.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointType. 
+        /// <para>
+        /// The type of endpoint hosting the web app. Valid values are <c>PUBLIC</c> for publicly
+        /// accessible endpoints and <c>VPC</c> for VPC-hosted endpoints.
+        /// </para>
+        /// </summary>
+        public WebAppEndpointType EndpointType
+        {
+            get { return this._endpointType; }
+            set { this._endpointType = value; }
+        }
+
+        // Check to see if EndpointType property is set
+        internal bool IsSetEndpointType()
+        {
+            return this._endpointType != null;
         }
 
         /// <summary>

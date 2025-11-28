@@ -38,6 +38,7 @@ namespace Amazon.CloudWatchRUM.Model
         private string _id;
         private string _lastModified;
         private string _name;
+        private AppMonitorPlatform _platform;
         private StateEnum _state;
 
         /// <summary>
@@ -114,6 +115,25 @@ namespace Amazon.CloudWatchRUM.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The platform type for this app monitor. Valid values are <c>Web</c> for web applications,
+        /// <c>Android</c> for Android applications, and <c>iOS</c> for IOS applications.
+        /// </para>
+        /// </summary>
+        public AppMonitorPlatform Platform
+        {
+            get { return this._platform; }
+            set { this._platform = value; }
+        }
+
+        // Check to see if Platform property is set
+        internal bool IsSetPlatform()
+        {
+            return this._platform != null;
         }
 
         /// <summary>

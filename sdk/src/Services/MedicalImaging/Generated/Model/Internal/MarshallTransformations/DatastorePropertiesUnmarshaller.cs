@@ -98,6 +98,12 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.LambdaAuthorizerArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("losslessStorageFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LosslessStorageFormat = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

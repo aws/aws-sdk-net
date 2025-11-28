@@ -247,6 +247,26 @@ namespace Amazon.Runtime.Internal.UserAgent
         public static readonly UserAgentFeatureId SSO_LOGIN_AUTH = new UserAgentFeatureId("2");
 
         /// <summary>
+        /// A call to Sign-In's CreateTokenWithOAuth2Request from a tool that implemented the Sign-In flow, using the same-device workflow.
+        /// </summary>
+        public static readonly UserAgentFeatureId LOGIN_SAME_DEVICE = new UserAgentFeatureId("AA");
+
+        /// <summary>
+        /// A call to Sign-In's CreateTokenWithOAuth2Request from a tool that implemented the Sign-In flow, using the cross-device workflow.
+        /// </summary>
+        public static readonly UserAgentFeatureId LOGIN_CROSS_DEVICE = new UserAgentFeatureId("AB");
+
+        /// <summary>
+        /// An operation called using credentials resolved from a Sign-In session in a config file.
+        /// </summary>
+        public static readonly UserAgentFeatureId CREDENTIALS_PROFILE_LOGIN = new UserAgentFeatureId("AC");
+
+        /// <summary>
+        /// An operation called using credentials resolved from a Sign-In session.
+        /// </summary>
+        public static readonly UserAgentFeatureId CREDENTIALS_LOGIN = new UserAgentFeatureId("AD");
+
+        /// <summary>
         /// An operation called using a Bearer token resolved from service-specific environment variables.
         /// </summary>
         public static readonly UserAgentFeatureId BEARER_SERVICE_ENV_VARS = new UserAgentFeatureId("3");

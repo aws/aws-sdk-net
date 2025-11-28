@@ -40,6 +40,7 @@ namespace Amazon.Braket.Model
         private string _deviceArn;
         private string _deviceParameters;
         private DateTime? _endedAt;
+        private ExperimentalCapabilities _experimentalCapabilities;
         private string _failureReason;
         private string _jobArn;
         private long? _numSuccessfulShots;
@@ -166,6 +167,24 @@ namespace Amazon.Braket.Model
         internal bool IsSetEndedAt()
         {
             return this._endedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentalCapabilities. 
+        /// <para>
+        /// Enabled experimental capabilities for the quantum task, if any.
+        /// </para>
+        /// </summary>
+        public ExperimentalCapabilities ExperimentalCapabilities
+        {
+            get { return this._experimentalCapabilities; }
+            set { this._experimentalCapabilities = value; }
+        }
+
+        // Check to see if ExperimentalCapabilities property is set
+        internal bool IsSetExperimentalCapabilities()
+        {
+            return this._experimentalCapabilities != null;
         }
 
         /// <summary>

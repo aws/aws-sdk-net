@@ -46,6 +46,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetImageStatus())
+            {
+                context.Writer.WritePropertyName("imageStatus");
+                context.Writer.WriteStringValue(requestObject.ImageStatus);
+            }
+
             if(requestObject.IsSetTagStatus())
             {
                 context.Writer.WritePropertyName("tagStatus");

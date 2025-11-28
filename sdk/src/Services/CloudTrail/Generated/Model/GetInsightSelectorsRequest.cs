@@ -33,10 +33,10 @@ namespace Amazon.CloudTrail.Model
     /// Container for the parameters to the GetInsightSelectors operation.
     /// Describes the settings for the Insights event selectors that you configured for your
     /// trail or event data store. <c>GetInsightSelectors</c> shows if CloudTrail Insights
-    /// event logging is enabled on the trail or event data store, and if it is, which Insights
-    /// types are enabled. If you run <c>GetInsightSelectors</c> on a trail or event data
-    /// store that does not have Insights events enabled, the operation throws the exception
-    /// <c>InsightNotEnabledException</c> 
+    /// logging is enabled and which Insights types are configured with corresponding event
+    /// categories. If you run <c>GetInsightSelectors</c> on a trail or event data store that
+    /// does not have Insights events enabled, the operation throws the exception <c>InsightNotEnabledException</c>
+    /// 
     /// 
     ///  
     /// <para>

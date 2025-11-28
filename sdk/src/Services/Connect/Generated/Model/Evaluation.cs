@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private DateTime? _createdTime;
         private string _evaluationArn;
         private string _evaluationId;
+        private EvaluationType _evaluationType;
         private DateTime? _lastModifiedTime;
         private EvaluationMetadata _metadata;
         private Dictionary<string, EvaluationNote> _notes = AWSConfigs.InitializeCollections ? new Dictionary<string, EvaluationNote>() : null;
@@ -124,6 +125,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetEvaluationId()
         {
             return this._evaluationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationType. 
+        /// <para>
+        /// Type of the evaluation. 
+        /// </para>
+        /// </summary>
+        public EvaluationType EvaluationType
+        {
+            get { return this._evaluationType; }
+            set { this._evaluationType = value; }
+        }
+
+        // Check to see if EvaluationType property is set
+        internal bool IsSetEvaluationType()
+        {
+            return this._evaluationType != null;
         }
 
         /// <summary>

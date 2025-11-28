@@ -1338,6 +1338,16 @@ namespace Amazon.EC2.Model
         IDescribeVpcsPaginator DescribeVpcs(DescribeVpcsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeVpnConcentrators operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeVpnConcentratorsPaginator DescribeVpnConcentrators(DescribeVpnConcentratorsRequest request);
+
+        /// <summary>
         /// Paginator for GetAssociatedIpv6PoolCidrs operation
         ///</summary>
         [AWSPaginator(

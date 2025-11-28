@@ -84,6 +84,12 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetPrivateDnsEnabled())
+            {
+                context.Writer.WritePropertyName("privateDnsEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.PrivateDnsEnabled.Value);
+            }
+
             if(publicRequest.IsSetResourceConfigurationIdentifier())
             {
                 context.Writer.WritePropertyName("resourceConfigurationIdentifier");

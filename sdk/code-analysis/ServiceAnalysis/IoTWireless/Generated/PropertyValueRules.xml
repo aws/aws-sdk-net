@@ -2000,6 +2000,10 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.SidewalkCreateWirelessDevice.SidewalkManufacturingSn</property>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkDevice.AmazonId</property>
     <max>2048</max>
   </property-value-rule>
@@ -2044,6 +2048,11 @@
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkListDevice.SidewalkManufacturingSn</property>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.SidewalkPositioning.DestinationName</property>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTWireless.Model.SidewalkSendDataToDevice.AckModeRetryDurationSecs</property>

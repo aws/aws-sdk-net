@@ -74,6 +74,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.MigrationProjectArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Progress", targetDepth))
+                {
+                    var unmarshaller = ProgressUnmarshaller.Instance;
+                    unmarshalledObject.Progress = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RequestIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

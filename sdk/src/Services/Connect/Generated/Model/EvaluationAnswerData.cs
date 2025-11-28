@@ -81,7 +81,7 @@ namespace Amazon.Connect.Model
         /// The string value for an answer in a contact evaluation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=128)]
+        [AWSProperty(Min=0, Max=300)]
         public string StringValue
         {
             get { return this._stringValue; }

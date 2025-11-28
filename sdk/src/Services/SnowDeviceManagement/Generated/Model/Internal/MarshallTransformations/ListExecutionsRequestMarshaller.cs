@@ -71,6 +71,8 @@ namespace Amazon.SnowDeviceManagement.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetState())
                 request.Parameters.Add("state", StringUtils.FromString(publicRequest.State));
+            if (string.IsNullOrEmpty(publicRequest.TaskId))
+                throw new AmazonSnowDeviceManagementException("Request object does not have required field TaskId set");
             
             if (publicRequest.IsSetTaskId())
                 request.Parameters.Add("taskId", StringUtils.FromString(publicRequest.TaskId));

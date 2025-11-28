@@ -92,6 +92,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReasoningContent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("searchResult", targetDepth))
+                {
+                    var unmarshaller = SearchResultBlockUnmarshaller.Instance;
+                    unmarshalledObject.SearchResult = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

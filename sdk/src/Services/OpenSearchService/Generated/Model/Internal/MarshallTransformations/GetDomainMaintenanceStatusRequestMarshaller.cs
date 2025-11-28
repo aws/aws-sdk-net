@@ -65,6 +65,8 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonOpenSearchServiceException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
+            if (string.IsNullOrEmpty(publicRequest.MaintenanceId))
+                throw new AmazonOpenSearchServiceException("Request object does not have required field MaintenanceId set");
             
             if (publicRequest.IsSetMaintenanceId())
                 request.Parameters.Add("maintenanceId", StringUtils.FromString(publicRequest.MaintenanceId));

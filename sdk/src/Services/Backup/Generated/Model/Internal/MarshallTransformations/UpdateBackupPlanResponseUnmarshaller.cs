@@ -76,6 +76,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     response.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ScanSettings", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ScanSetting, ScanSettingUnmarshaller>(ScanSettingUnmarshaller.Instance);
+                    response.ScanSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("VersionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

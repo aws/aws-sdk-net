@@ -31,7 +31,8 @@ namespace Amazon.NetworkFlowMonitor.Model
 {
     /// <summary>
     /// A local resource is the host where the agent is installed. Local resources can be
-    /// a a subnet, a VPC, an Availability Zone, or an Amazon Web Services service.
+    /// a a subnet, a VPC, an Availability Zone, an EKS cluster or an Amazon Web Services
+    /// Region.
     /// </summary>
     public partial class MonitorLocalResource
     {
@@ -41,10 +42,22 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The identifier of the local resource. For a VPC or subnet, this identifier is the
-        /// VPC Amazon Resource Name (ARN) or subnet ARN. For an Availability Zone, this identifier
-        /// is the AZ name, for example, us-west-2b.
+        /// The identifier of the local resource. The values you can specify are the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For a VPC, subnet or EKS cluster, this identifier is the VPC Amazon Resource Name
+        /// (ARN), subnet ARN or cluster ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an Availability Zone, this identifier is the AZ name, for example, us-west-2b.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a Region, this identifier is the Region name, for example, us-west-2.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Identifier
@@ -63,7 +76,7 @@ namespace Amazon.NetworkFlowMonitor.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of the local resource. Valid values are <c>AWS::EC2::VPC</c> <c>AWS::AvailabilityZone</c>,
-        /// <c>AWS::EC2::Subnet</c>, or <c>AWS::Region</c>.
+        /// <c>AWS::EC2::Subnet</c>, <c>AWS::EKS::Cluster</c>, or <c>AWS::Region</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -164,6 +164,23 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.RemoteId);
             }
 
+            if(requestObject.IsSetRouterIntegrationState())
+            {
+                context.Writer.WritePropertyName("routerIntegrationState");
+                context.Writer.WriteStringValue(requestObject.RouterIntegrationState);
+            }
+
+            if(requestObject.IsSetRouterIntegrationTransitEncryption())
+            {
+                context.Writer.WritePropertyName("routerIntegrationTransitEncryption");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FlowTransitEncryptionMarshaller.Instance;
+                marshaller.Marshall(requestObject.RouterIntegrationTransitEncryption, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSenderControlPort())
             {
                 context.Writer.WritePropertyName("senderControlPort");

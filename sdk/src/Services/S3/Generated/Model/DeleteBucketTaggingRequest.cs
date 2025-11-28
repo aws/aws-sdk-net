@@ -37,7 +37,18 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Deletes the tags from the bucket.
+    /// Deletes tags from the general purpose bucket if attribute based access control (ABAC)
+    /// is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+    /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+    /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+    /// instead.
+    /// </para>
+    ///  
+    /// <para>
+    /// if ABAC is not enabled for the bucket. When you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html">enable
+    /// ABAC for a general purpose bucket</a>, you can no longer use this operation for that
+    /// bucket and must use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html">UntagResource</a>
+    /// instead.
     /// </para>
     ///  
     /// <para>

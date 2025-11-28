@@ -62,6 +62,8 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-09-22";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.Domain))
+                throw new AmazonCodeArtifactException("Request object does not have required field Domain set");
             
             if (publicRequest.IsSetDomain())
                 request.Parameters.Add("domain", StringUtils.FromString(publicRequest.Domain));
@@ -74,9 +76,13 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
+            if (string.IsNullOrEmpty(publicRequest.OriginRestrictionType))
+                throw new AmazonCodeArtifactException("Request object does not have required field OriginRestrictionType set");
             
             if (publicRequest.IsSetOriginRestrictionType())
                 request.Parameters.Add("originRestrictionType", StringUtils.FromString(publicRequest.OriginRestrictionType));
+            if (string.IsNullOrEmpty(publicRequest.PackageGroup))
+                throw new AmazonCodeArtifactException("Request object does not have required field PackageGroup set");
             
             if (publicRequest.IsSetPackageGroup())
                 request.Parameters.Add("package-group", StringUtils.FromString(publicRequest.PackageGroup));

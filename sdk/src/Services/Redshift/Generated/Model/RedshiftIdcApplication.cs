@@ -34,6 +34,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class RedshiftIdcApplication
     {
+        private ApplicationType _applicationType;
         private List<AuthorizedTokenIssuer> _authorizedTokenIssuerList = AWSConfigs.InitializeCollections ? new List<AuthorizedTokenIssuer>() : null;
         private string _iamRoleArn;
         private string _idcDisplayName;
@@ -46,6 +47,25 @@ namespace Amazon.Redshift.Model
         private List<ServiceIntegrationsUnion> _serviceIntegrations = AWSConfigs.InitializeCollections ? new List<ServiceIntegrationsUnion>() : null;
         private List<string> _ssoTagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// The type of application being created. Valid values are <c>None</c> or <c>Lakehouse</c>.
+        /// Use <c>Lakehouse</c> to enable Amazon Redshift federated permissions on cluster.
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationType
+        {
+            get { return this._applicationType; }
+            set { this._applicationType = value; }
+        }
+
+        // Check to see if ApplicationType property is set
+        internal bool IsSetApplicationType()
+        {
+            return this._applicationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthorizedTokenIssuerList. 

@@ -49,7 +49,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (renameObjectRequest == null)
                 throw new ArgumentNullException(nameof(renameObjectRequest));
                 
-            var request = new DefaultRequest(renameObjectRequest, "AmazonS3");
+            var request = new DefaultRequest(renameObjectRequest, "Amazon.S3");
             request.HttpMethod = "PUT";
             string uriResourcePath = "/{Key+}";
             request.AddSubResource("renameObject");

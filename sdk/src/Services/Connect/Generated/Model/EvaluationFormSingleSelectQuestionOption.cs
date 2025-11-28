@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormSingleSelectQuestionOption
     {
         private bool? _automaticFail;
+        private AutomaticFailConfiguration _automaticFailConfiguration;
         private string _refId;
         private int? _score;
         private string _text;
@@ -56,6 +57,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetAutomaticFail()
         {
             return this._automaticFail.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomaticFailConfiguration. 
+        /// <para>
+        /// Whether automatic fail is configured on a single select question. 
+        /// </para>
+        /// </summary>
+        public AutomaticFailConfiguration AutomaticFailConfiguration
+        {
+            get { return this._automaticFailConfiguration; }
+            set { this._automaticFailConfiguration = value; }
+        }
+
+        // Check to see if AutomaticFailConfiguration property is set
+        internal bool IsSetAutomaticFailConfiguration()
+        {
+            return this._automaticFailConfiguration != null;
         }
 
         /// <summary>

@@ -62,6 +62,8 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-11-27";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.AppId))
+                throw new AmazonQAppsException("Request object does not have required field AppId set");
             
             if (publicRequest.IsSetAppId())
                 request.Parameters.Add("appId", StringUtils.FromString(publicRequest.AppId));

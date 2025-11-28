@@ -52,6 +52,7 @@ This project file should not be used as part of a release pipeline.
         <ProjectReference Include="..\..\src\Services\CloudWatch\AWSSDK.CloudWatch.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\IotData\AWSSDK.IotData.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.NetFramework.csproj" />
+        <ProjectReference Include="..\..\src\Services\Signin\AWSSDK.Signin.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\SSOOIDC\AWSSDK.SSOOIDC.NetFramework.csproj" />
         <ProjectReference Include="..\..\src\Services\SSO\AWSSDK.SSO.NetFramework.csproj" />

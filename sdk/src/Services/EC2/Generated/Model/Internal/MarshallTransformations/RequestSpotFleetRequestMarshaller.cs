@@ -439,6 +439,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
                                     }
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetRequireEncryptionInTransit())
+                                    {
+                                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "RequireEncryptionInTransit", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.RequireEncryptionInTransit));
+                                    }
                                     if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetRequireHibernateSupport())
                                     {
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "RequireHibernateSupport", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.RequireHibernateSupport));
@@ -1053,6 +1057,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                                 if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetOnDemandMaxPricePercentageOverLowestPrice())
                                                 {
                                                     request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "OnDemandMaxPricePercentageOverLowestPrice", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice));
+                                                }
+                                                if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetRequireEncryptionInTransit())
+                                                {
+                                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "RequireEncryptionInTransit", StringUtils.FromBool(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.RequireEncryptionInTransit));
                                                 }
                                                 if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetRequireHibernateSupport())
                                                 {

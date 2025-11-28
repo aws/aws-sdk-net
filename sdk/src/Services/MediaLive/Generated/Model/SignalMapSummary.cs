@@ -79,7 +79,6 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Description. A resource's optional description.
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -95,7 +94,7 @@ namespace Amazon.MediaLive.Model
         /// <summary>
         /// Gets and sets the property Id. A signal map's id.
         /// </summary>
-        [AWSProperty(Required=true, Min=7, Max=11)]
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -143,7 +142,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Name. A resource's name. Names must be unique within the
         /// scope of a resource type in a specific region.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }

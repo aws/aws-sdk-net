@@ -46,6 +46,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGroup())
+            {
+                context.Writer.WritePropertyName("group");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SubscribedGroupInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.Group, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetProject())
             {
                 context.Writer.WritePropertyName("project");
@@ -53,6 +64,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
                 var marshaller = SubscribedProjectInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.Project, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetUser())
+            {
+                context.Writer.WritePropertyName("user");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SubscribedUserInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.User, context);
 
                 context.Writer.WriteEndObject();
             }

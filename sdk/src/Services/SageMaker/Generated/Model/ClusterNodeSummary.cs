@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastSoftwareUpdateTime;
         private DateTime? _launchTime;
         private string _nodeLogicalId;
+        private string _privateDnsHostname;
         private UltraServerInfo _ultraServerInfo;
 
         /// <summary>
@@ -176,6 +177,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNodeLogicalId()
         {
             return this._nodeLogicalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsHostname. 
+        /// <para>
+        /// The private DNS hostname of the SageMaker HyperPod cluster node.
+        /// </para>
+        /// </summary>
+        public string PrivateDnsHostname
+        {
+            get { return this._privateDnsHostname; }
+            set { this._privateDnsHostname = value; }
+        }
+
+        // Check to see if PrivateDnsHostname property is set
+        internal bool IsSetPrivateDnsHostname()
+        {
+            return this._privateDnsHostname != null;
         }
 
         /// <summary>

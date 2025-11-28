@@ -40,7 +40,7 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property Track. 1-based integer value that maps to a specific audio
         /// track
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int? Track
         {
             get { return this._track; }

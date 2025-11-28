@@ -65,6 +65,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetPortalArn())
                 throw new AmazonWorkSpacesWebException("Request object does not have required field PortalArn set");
             request.AddPathResource("{portalArn+}", StringUtils.FromString(publicRequest.PortalArn.TrimStart('/')));
+            if (string.IsNullOrEmpty(publicRequest.NetworkSettingsArn))
+                throw new AmazonWorkSpacesWebException("Request object does not have required field NetworkSettingsArn set");
             
             if (publicRequest.IsSetNetworkSettingsArn())
                 request.Parameters.Add("networkSettingsArn", StringUtils.FromString(publicRequest.NetworkSettingsArn));

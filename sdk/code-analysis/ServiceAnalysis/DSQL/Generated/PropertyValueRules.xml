@@ -22,6 +22,10 @@
     <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DSQL.Model.CreateClusterResponse.Endpoint</property>
+    <pattern>[a-zA-Z0-9.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DSQL.Model.CreateClusterResponse.Identifier</property>
     <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
@@ -62,6 +66,10 @@
     <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DSQL.Model.GetClusterResponse.Endpoint</property>
+    <pattern>[a-zA-Z0-9.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DSQL.Model.GetClusterResponse.Identifier</property>
     <pattern>[a-z0-9]{26}</pattern>
   </property-value-rule>
@@ -77,6 +85,10 @@
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameRequest.Identifier</property>
     <pattern>[a-z0-9]{26}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameResponse.ClusterVpcEndpoint</property>
+    <pattern>[a-zA-Z0-9.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameResponse.ServiceName</property>

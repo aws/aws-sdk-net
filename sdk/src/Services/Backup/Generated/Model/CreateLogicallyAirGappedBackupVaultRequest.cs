@@ -50,6 +50,7 @@ namespace Amazon.Backup.Model
         private string _backupVaultName;
         private Dictionary<string, string> _backupVaultTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _creatorRequestId;
+        private string _encryptionKeyArn;
         private long? _maxRetentionDays;
         private long? _minRetentionDays;
 
@@ -119,6 +120,26 @@ namespace Amazon.Backup.Model
         internal bool IsSetCreatorRequestId()
         {
             return this._creatorRequestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKeyArn. 
+        /// <para>
+        /// The ARN of the customer-managed KMS key to use for encrypting the logically air-gapped
+        /// backup vault. If not specified, the vault will be encrypted with an Amazon Web Services-owned
+        /// key managed by Amazon Web Services Backup.
+        /// </para>
+        /// </summary>
+        public string EncryptionKeyArn
+        {
+            get { return this._encryptionKeyArn; }
+            set { this._encryptionKeyArn = value; }
+        }
+
+        // Check to see if EncryptionKeyArn property is set
+        internal bool IsSetEncryptionKeyArn()
+        {
+            return this._encryptionKeyArn != null;
         }
 
         /// <summary>

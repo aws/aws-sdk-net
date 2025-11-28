@@ -42,6 +42,12 @@ namespace Amazon.AccessAnalyzer.Model
     /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM
     /// Access Analyzer filter keys</a> in the <b>IAM User Guide</b>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// ListFindings is supported only for external access analyzers. You must use ListFindingsV2
+    /// for internal and unused access analyzers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListFindingsRequest : AmazonAccessAnalyzerRequest
     {

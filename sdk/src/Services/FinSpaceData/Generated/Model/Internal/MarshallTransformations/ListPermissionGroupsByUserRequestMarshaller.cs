@@ -65,6 +65,8 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetUserId())
                 throw new AmazonFinSpaceDataException("Request object does not have required field UserId set");
             request.AddPathResource("{userId}", StringUtils.FromString(publicRequest.UserId));
+            if (publicRequest.MaxResults == null)
+                throw new AmazonFinSpaceDataException("Request object does not have required field MaxResults set");
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

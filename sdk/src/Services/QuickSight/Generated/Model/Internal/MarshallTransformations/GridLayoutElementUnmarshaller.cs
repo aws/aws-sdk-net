@@ -56,6 +56,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("BackgroundStyle", targetDepth))
+                {
+                    var unmarshaller = GridLayoutElementBackgroundStyleUnmarshaller.Instance;
+                    unmarshalledObject.BackgroundStyle = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("BorderRadius", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BorderRadius = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("BorderStyle", targetDepth))
+                {
+                    var unmarshaller = GridLayoutElementBorderStyleUnmarshaller.Instance;
+                    unmarshalledObject.BorderStyle = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ColumnIndex", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -80,6 +98,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ElementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("LoadingAnimation", targetDepth))
+                {
+                    var unmarshaller = LoadingAnimationUnmarshaller.Instance;
+                    unmarshalledObject.LoadingAnimation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Padding", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Padding = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RowIndex", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -90,6 +120,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RowSpan = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SelectedBorderStyle", targetDepth))
+                {
+                    var unmarshaller = GridLayoutElementBorderStyleUnmarshaller.Instance;
+                    unmarshalledObject.SelectedBorderStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

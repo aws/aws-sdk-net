@@ -37,11 +37,13 @@ namespace Amazon.RedshiftServerless.Model
         private string _adminPasswordSecretArn;
         private string _adminPasswordSecretKmsKeyId;
         private string _adminUsername;
+        private string _catalogArn;
         private DateTime? _creationDate;
         private string _dbName;
         private string _defaultIamRoleArn;
         private List<string> _iamRoles = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _kmsKeyId;
+        private string _lakehouseRegistrationStatus;
         private List<string> _logExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _namespaceArn;
         private string _namespaceId;
@@ -102,6 +104,25 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetAdminUsername()
         {
             return this._adminUsername != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CatalogArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Glue Data Catalog associated with the namespace
+        /// enabled with Amazon Redshift federated permissions.
+        /// </para>
+        /// </summary>
+        public string CatalogArn
+        {
+            get { return this._catalogArn; }
+            set { this._catalogArn = value; }
+        }
+
+        // Check to see if CatalogArn property is set
+        internal bool IsSetCatalogArn()
+        {
+            return this._catalogArn != null;
         }
 
         /// <summary>
@@ -198,6 +219,25 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LakehouseRegistrationStatus. 
+        /// <para>
+        /// The status of the lakehouse registration for the namespace. Indicates whether the
+        /// namespace is successfully registered with Amazon Redshift federated permissions.
+        /// </para>
+        /// </summary>
+        public string LakehouseRegistrationStatus
+        {
+            get { return this._lakehouseRegistrationStatus; }
+            set { this._lakehouseRegistrationStatus = value; }
+        }
+
+        // Check to see if LakehouseRegistrationStatus property is set
+        internal bool IsSetLakehouseRegistrationStatus()
+        {
+            return this._lakehouseRegistrationStatus != null;
         }
 
         /// <summary>

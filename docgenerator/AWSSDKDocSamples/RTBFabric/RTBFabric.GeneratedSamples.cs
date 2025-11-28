@@ -44,7 +44,11 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             var response = client.CreateInboundExternalLink(new CreateInboundExternalLinkRequest 
             {
                 ClientToken = "randomClientToken",
-                GatewayId = "rtb-gw-12345678"
+                GatewayId = "rtb-gw-12345678",
+                LogSettings = new LinkLogSettings { ApplicationLogs = new LinkApplicationLogConfiguration { Sampling = new LinkApplicationLogSampling {
+                    ErrorLog = 100,
+                    FilterLog = 0
+                } } }
             });
 
             string domainName = response.DomainName;
@@ -89,6 +93,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             {
                 ClientToken = "12345678-1234-1234-1234-123456789012",
                 GatewayId = "rtb-gw-12345678",
+                LogSettings = new LinkLogSettings { ApplicationLogs = new LinkApplicationLogConfiguration { Sampling = new LinkApplicationLogSampling {
+                    ErrorLog = 100,
+                    FilterLog = 0
+                } } },
                 PublicEndpoint = "https://external-responder.example.com"
             });
 
