@@ -271,6 +271,34 @@ namespace Amazon.S3.Transfer
                 ExceptionDispatchInfo.Capture(e.InnerException).Throw();
             }
         }
+
+        /// <inheritdoc/>
+        public TransferUtilityDownloadResponse DownloadWithResponse(string filePath, string bucketName, string key)
+        {
+            try
+            {
+                return DownloadWithResponseAsync(filePath, bucketName, key).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
+
+        /// <inheritdoc/>
+        public TransferUtilityDownloadResponse DownloadWithResponse(TransferUtilityDownloadRequest request)
+        {
+            try
+            {
+                return DownloadWithResponseAsync(request).Result;
+            }
+            catch (AggregateException e)
+            {
+                ExceptionDispatchInfo.Capture(e.InnerException).Throw();
+                return null;
+            }
+        }
         #endregion
 
         #region DownloadDirectory
