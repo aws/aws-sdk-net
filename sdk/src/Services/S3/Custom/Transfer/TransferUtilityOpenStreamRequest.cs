@@ -46,13 +46,7 @@ namespace Amazon.S3.Transfer
         public int MaxInMemoryParts
         {
             get { return this._maxInMemoryParts; }
-            set
-            {
-                if (value < 1)
-                    value = 1;
-
-                this._maxInMemoryParts = value;
-            }
+            set { this._maxInMemoryParts = value; }
         }
     }
 }
