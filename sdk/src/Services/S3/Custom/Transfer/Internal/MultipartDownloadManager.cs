@@ -149,7 +149,7 @@ namespace Amazon.S3.Transfer.Internal
             // Validate that S3 encryption client is not being used for multipart downloads
             if (_s3Client is Amazon.S3.Internal.IAmazonS3Encryption)
             {
-                throw new NotSupportedException("Multipart download is not supported when using S3 encryption client. Please use the regular S3 encryption client for multipart download.");
+                throw new NotSupportedException("Multipart download is not supported when using Amazon.S3.Internal.IAmazonS3Encryption client. Please use the Amazon.S3.AmazonS3Client for multipart download.");
             }
 
             _requestEventHandler = requestEventHandler;
