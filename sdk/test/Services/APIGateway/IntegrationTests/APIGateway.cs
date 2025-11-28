@@ -1,29 +1,23 @@
-﻿using System;
+﻿using Amazon.APIGateway;
+using Amazon.APIGateway.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using AWSSDK_DotNet.IntegrationTests.Utils;
-
-using Amazon.AWSSupport;
-using Amazon.AWSSupport.Model;
-using Amazon;
-using System.IO;
-using System.Text;
-using Amazon.APIGateway.Model;
-using Amazon.APIGateway;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
-    public class APIGatewayTests : TestBase<Amazon.APIGateway.AmazonAPIGatewayClient>
+    [TestCategory("APIGateway")]
+    public class APIGatewayTests : TestBase<AmazonAPIGatewayClient>
     {
         [ClassCleanup]
-        public static void ClassCleanup()
+        public static async Task ClassCleanup()
         {
             if (!string.IsNullOrEmpty(restApiId))
             {
-                Client.DeleteRestApi(new DeleteRestApiRequest
+                await Client.DeleteRestApiAsync(new DeleteRestApiRequest
                 {
                     RestApiId = restApiId
                 });
@@ -38,9 +32,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static string apiDescription = "RestApi created by dotnet tests at " + timestamp;
 
         [ClassInitialize]
-        public static void ClassInitialize(TestContext testContext)
+        public static async Task ClassInitialize(TestContext testContext)
         {
-            var createRestApi = Client.CreateRestApi(new CreateRestApiRequest
+            var createRestApi = await Client.CreateRestApiAsync(new CreateRestApiRequest
             {
                 Name = apiName,
                 Description = apiDescription                    
@@ -53,36 +47,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         [TestMethod]
-        [TestCategory("APIGateWay")]
-        public void TestResources()
+        public async Task TestResources()
         {
-            var allResources = GetResources().ToList();
+            var allResources = (await GetResources()).ToList();
             var rootResource = allResources.SingleOrDefault(r => r.ParentId == null);
             Assert.IsNotNull(rootResource);
 
             var pathPart = "test";
-            var resourceId = Client.CreateResource(new CreateResourceRequest
+            var createResponse = await Client.CreateResourceAsync(new CreateResourceRequest
             {
                 RestApiId = restApiId,
                 ParentId = rootResource.Id,
                 PathPart = pathPart
-            }).Id;
-
-            var resources = GetResources().ToList();
+            });
+            
+            var resourceId = createResponse.Id;
+            var resources = (await GetResources()).ToList();
             var resource = resources.Single(r => r.Id == resourceId);
             Assert.AreEqual(pathPart, resource.PathPart);
             Assert.AreEqual(rootResource.Path + pathPart, resource.Path);
             Assert.AreEqual(2, resources.Count);
 
-            Client.PutMethod(new PutMethodRequest
+            await Client.PutMethodAsync(new PutMethodRequest
             {
                 RestApiId = restApiId,
                 ResourceId = resourceId,
                 AuthorizationType = "AWS_IAM",
                 HttpMethod = "PUT"
             });
-
-            Client.PutIntegration(new PutIntegrationRequest 
+            
+            await Client.PutIntegrationAsync(new PutIntegrationRequest 
             {
                 RestApiId = restApiId,
                 ResourceId = resourceId,
@@ -93,37 +87,43 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
         }
 
-        private IEnumerable<Resource> GetResources()
+        private async Task<IEnumerable<Resource>> GetResources()
         {
+            var resources = new List<Resource>();
             var request = new GetResourcesRequest
             {
                 RestApiId = restApiId
             };
+
             do
             {
-                var response = Client.GetResources(request);
+                var response = await Client.GetResourcesAsync(request);
                 request.Position = response.Position;
 
-                foreach (var r in response.Items)
-                    yield return r;
+                if (response.Items != null)
+                {
+                    foreach (var r in response.Items)
+                    {
+                        resources.Add(r);
+                    }
+                }
 
             } while (!string.IsNullOrEmpty(request.Position));
+            return resources;
         }
 
         [TestMethod]
-        [TestCategory("APIGateWay")]
-        public void TestRestApiCalls()
+        public async Task TestRestApiCalls()
         {
-            var apis = GetRestApis().ToList();
+            var apis = (await GetRestApis()).ToList();
             var api = apis.Single(r => string.Equals(r.Id, restApiId));
             Assert.IsNotNull(api);
 
-            AssertExtensions.ExpectException(() => Client.GetRestApi(new GetRestApiRequest
-            {
-                RestApiId = "fakeid"
-            }));
+            await Assert.ThrowsExceptionAsync<NotFoundException>(() => 
+                Client.GetRestApiAsync(new GetRestApiRequest { RestApiId = "fakeid" })
+            );
 
-            var getRestApi = Client.GetRestApi(new GetRestApiRequest
+            var getRestApi = await Client.GetRestApiAsync(new GetRestApiRequest
             {
                 RestApiId = restApiId
             });
@@ -133,7 +133,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreNotEqual(DateTime.SpecifyKind(default, DateTimeKind.Utc), getRestApi.CreatedDate);
 
             var newDescription = "New description!";
-            Client.UpdateRestApi(new UpdateRestApiRequest
+            await Client.UpdateRestApiAsync(new UpdateRestApiRequest
             {
                 RestApiId = restApiId,
                 PatchOperations = new List<PatchOperation>
@@ -147,7 +147,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
             });
 
-            getRestApi = Client.GetRestApi(new GetRestApiRequest
+            getRestApi = await Client.GetRestApiAsync(new GetRestApiRequest
             {
                 RestApiId = restApiId
             });
@@ -156,7 +156,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsFalse(string.IsNullOrEmpty(getRestApi.Id));
             Assert.AreNotEqual(DateTime.SpecifyKind(default, DateTimeKind.Utc), getRestApi.CreatedDate);
 
-            Client.UpdateRestApi(new UpdateRestApiRequest
+            await Client.UpdateRestApiAsync(new UpdateRestApiRequest
             {
                 RestApiId = restApiId,
                 PatchOperations = new List<PatchOperation>
@@ -171,32 +171,39 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
         }
 
-        private IEnumerable<RestApi> GetRestApis()
+        private async Task<IEnumerable<RestApi>> GetRestApis()
         {
+            var apis = new List<RestApi>();
             var request = new GetRestApisRequest { Limit = 1 };
             do
             {
-                var response = Client.GetRestApis(request);
+                var response = await Client.GetRestApisAsync(request);
                 request.Position = response.Position;
-                foreach (var r in response.Items)
-                    yield return r;
+
+                if (response.Items != null)
+                {
+                    foreach (var r in response.Items)
+                    {
+                        apis.Add(r);
+                    }
+                }
             } while (!string.IsNullOrEmpty(request.Position));
+            return apis;
         }
 
         [TestMethod]
-        [TestCategory("APIGateWay")]
-        public void TestOtherOperations()
+        public async Task TestOtherOperations()
         {
-            var account = Client.GetAccount(new GetAccountRequest());
+            var account = await Client.GetAccountAsync(new GetAccountRequest());
             Assert.IsNotNull(account);
             Assert.IsNotNull(account.ThrottleSettings);
             Assert.AreNotEqual(0, account.ThrottleSettings.BurstLimit);
             Assert.AreNotEqual(0, account.ThrottleSettings.RateLimit);
 
-            var allCerts = GetAllCerts().ToList();
-
+            var allCerts = (await GetAllCerts()).ToList();
             var certDescription = "something";
-            var clientCert = Client.GenerateClientCertificate(new GenerateClientCertificateRequest
+            
+            var clientCert = await Client.GenerateClientCertificateAsync(new GenerateClientCertificateRequest
             {
                 Description = certDescription
             });
@@ -208,25 +215,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.IsFalse(string.IsNullOrEmpty(clientCert.PemEncodedCertificate));
             Assert.IsFalse(string.IsNullOrEmpty(clientCert.ClientCertificateId));
 
-            var updatedCerts = GetAllCerts().ToList();
+            var updatedCerts = (await GetAllCerts()).ToList();
             Assert.AreNotEqual(allCerts.Count, updatedCerts.Count);
 
-            Client.DeleteClientCertificate(new DeleteClientCertificateRequest
+            await Client.DeleteClientCertificateAsync(new DeleteClientCertificateRequest
             {
                 ClientCertificateId = clientCert.ClientCertificateId
             });
         }
 
-        private static IEnumerable<ClientCertificate> GetAllCerts()
+        private static async Task<IEnumerable<ClientCertificate>> GetAllCerts()
         {
+            var certificates = new List<ClientCertificate>();
             var request = new GetClientCertificatesRequest();
             do
             {
-                var response = Client.GetClientCertificates(request);
+                var response = await Client.GetClientCertificatesAsync(request);
                 request.Position = response.Position;
-                foreach (var cert in response.Items)
-                    yield return cert;
+
+                if (response.Items != null)
+                {
+                    foreach (var cert in response.Items)
+                    {
+                        certificates.Add(cert);
+                    }
+                }
             } while (!string.IsNullOrEmpty(request.Position));
+            return certificates;
         }
     }
 }
