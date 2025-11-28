@@ -38,7 +38,7 @@ namespace Amazon.S3.Transfer.Internal
     internal partial class DownloadDirectoryCommand : BaseCommand<TransferUtilityDownloadDirectoryResponse>
     {
         private IFailurePolicy _failurePolicy;
-        private ConcurrentBag<Exception> _errors;
+        private ConcurrentBag<Exception> _errors = new ConcurrentBag<Exception>();
         private readonly IAmazonS3 _s3Client;
         private readonly TransferUtilityDownloadDirectoryRequest _request;
         private readonly bool _skipEncryptionInstructionFiles;
@@ -56,7 +56,6 @@ namespace Amazon.S3.Transfer.Internal
             this._s3Client = s3Client;
             this._request = request;
             this._skipEncryptionInstructionFiles = s3Client is Amazon.S3.Internal.IAmazonS3Encryption;
-            _errors = request.FailurePolicy == FailurePolicy.ContinueOnFailure ? new ConcurrentBag<Exception>() : null;
             _failurePolicy =
                 request.FailurePolicy == FailurePolicy.AbortOnFailure
                     ? new AbortOnFailurePolicy()

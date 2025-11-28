@@ -36,7 +36,6 @@ namespace Amazon.S3.Transfer
 
         /// <summary>
         /// The collection of exceptions encountered when downloading individual objects.
-        /// Only populated when the <see cref="FailurePolicy"/> is <see cref="FailurePolicy.ContinueOnFailure"/>.
         /// </summary>
         public IList<Exception> Errors { get; set; }
 

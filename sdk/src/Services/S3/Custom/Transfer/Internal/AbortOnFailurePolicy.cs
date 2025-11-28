@@ -61,7 +61,7 @@ namespace Amazon.S3.Transfer.Internal
             catch (Exception ex)
             {
                 // Cancel all pending operations before propagating the exception
-                cancellationTokenSource.Cancel();
+                cancellationTokenSource?.Cancel();
                 
                 onFailure?.Invoke(ex);
                 

@@ -94,7 +94,7 @@ namespace Amazon.S3.Transfer
         /// <param name="args">The details of the failed object download.</param>
         internal void OnRaiseObjectDownloadFailedEvent(ObjectDownloadFailedEventArgs args)
         {
-            AWSSDKUtils.InvokeInBackground(ObjectDownloadFailedEvent, args, this);
+            ObjectDownloadFailedEvent?.Invoke(this, args);
         }
 
         /// <summary>
@@ -632,17 +632,14 @@ namespace Amazon.S3.Transfer
         /// <param name="directoryRequest">The original <see cref="TransferUtilityDownloadDirectoryRequest"/> that initiated the directory download.</param>
         /// <param name="objectRequest">The <see cref="TransferUtilityDownloadRequest"/> representing the individual object download that failed.</param>
         /// <param name="exception">The <see cref="Exception"/> that caused the object download to fail.</param>
-        /// <param name="cancellationTokenSource"><see cref="CancellationTokenSource"/> associated with the failed object's operation.</param>
         internal ObjectDownloadFailedEventArgs(
             TransferUtilityDownloadDirectoryRequest directoryRequest,
             TransferUtilityDownloadRequest objectRequest,
-            Exception exception,
-            CancellationTokenSource cancellationTokenSource)
+            Exception exception)
         {
             DirectoryRequest = directoryRequest;
             ObjectRequest = objectRequest;
             Exception = exception;
-            CancellationTokenSource = cancellationTokenSource;
         }
 
         /// <summary>
@@ -671,10 +668,5 @@ namespace Amazon.S3.Transfer
         /// on the failure mode.
         /// </value>
         public Exception Exception { get; private set; }
-        
-        /// <summary>
-        /// Gets the <see cref="CancellationTokenSource"/> associated with the failed object's operation, if provided.
-        /// </summary>
-        public CancellationTokenSource CancellationTokenSource { get; private set; }
     }
 }

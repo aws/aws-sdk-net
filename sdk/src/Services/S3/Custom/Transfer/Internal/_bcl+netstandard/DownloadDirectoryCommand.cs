@@ -39,11 +39,6 @@ namespace Amazon.S3.Transfer.Internal
             : this(s3Client, request)
         {
             this._config = config;
-            this._errors = request.FailurePolicy == FailurePolicy.ContinueOnFailure ? new ConcurrentBag<Exception>() : null;
-            this._failurePolicy =
-                request.FailurePolicy == FailurePolicy.AbortOnFailure
-                    ? new AbortOnFailurePolicy()
-                    : new ContinueOnFailurePolicy(_errors);
         }
 
         public override async Task<TransferUtilityDownloadDirectoryResponse> ExecuteAsync(CancellationToken cancellationToken)
@@ -122,8 +117,7 @@ namespace Amazon.S3.Transfer.Internal
                                 new ObjectDownloadFailedEventArgs(
                                     this._request, 
                                     downloadRequest, 
-                                    ex,
-                                    internalCts));
+                                    ex));
                         };
                         
                         var isValid = await _failurePolicy.ExecuteAsync(
@@ -164,9 +158,9 @@ namespace Amazon.S3.Transfer.Internal
                 return new TransferUtilityDownloadDirectoryResponse
                 {
                     ObjectsDownloaded = _numberOfFilesDownloaded,
-                    ObjectsFailed = _errors?.Count ?? 0,
-                    Errors = _errors?.ToList(),
-                    Result = (_errors is null || _errors.Count == 0) ?
+                    ObjectsFailed = _errors.Count,
+                    Errors = _errors.ToList(),
+                    Result = _errors.Count == 0 ?
                         DirectoryResult.Success :
                         (_numberOfFilesDownloaded > 0 ?
                             DirectoryResult.PartialSuccess :

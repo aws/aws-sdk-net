@@ -197,14 +197,14 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("S3")]
-        public async Task DownloadDirectory_ObjectDownloadFailedEvent_CancelInHandler_ContinueOnFailure_PreventsFurtherDownloads()
+        public async Task DownloadDirectory_ObjectDownloadFailedEvent_CancelInHandler_ContinueOnFailure_Throws()
         {
             var keys = new[] { "prefix/file1.txt", "prefix/file2.txt", "prefix/file3.txt" };
             var mockS3 = CreateMockS3(keys, k => k.EndsWith("file2.txt", StringComparison.Ordinal));
             string localDir = CreateTempDirectory();
             try
             {
-                var config = new TransferUtilityConfig();
+                var tu = new TransferUtility(mockS3.Object);
                 var request = CreateRequest(localDir, FailurePolicy.ContinueOnFailure);
                 // Make sequential to make behavior deterministic for the test.
                 request.DownloadFilesConcurrently = false;
@@ -213,23 +213,13 @@ namespace AWSSDK.UnitTests
                 request.ObjectDownloadFailedEvent += (sender, args) =>
                 {
                     handlerInvoked = true;
-                    // Cancel the per-object CTS to stop scheduling remaining object downloads.
-                    args.CancellationTokenSource.Cancel();
+                    throw new AmazonS3Exception("Stop processing immediately");
                 };
 
-                var command = new DownloadDirectoryCommand(mockS3.Object, request, config);
-                command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
-                var response = await command.ExecuteAsync(CancellationToken.None).ConfigureAwait(false);
+                var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => tu.DownloadDirectoryAsync(request));
+                Assert.IsTrue(ex.Message.Equals("Stop processing immediately"));
 
                 Assert.IsTrue(handlerInvoked, "ObjectDownloadFailedEvent handler was not invoked.");
-                Assert.IsNotNull(response);
-                // Allow multiple failures due to race; ensure at least one failure occurred and that one of the errors refers to file2
-                Assert.IsTrue(response.ObjectsFailed >= 1, "Expected at least one failed object.");
-                Assert.IsNotNull(response.Errors);
-                Assert.IsTrue(response.Errors.Count >= 1, "Expected at least one error recorded.");
-                Assert.IsTrue(response.Errors.Any(e => e.Message.Contains("file2.txt") || e.Message.Contains("file2")), "Expected at least one error to reference file2.");
-                Assert.IsTrue(File.Exists(Path.Combine(localDir, "file1.txt")), "Expected file1 to be downloaded.");
-                Assert.IsFalse(File.Exists(Path.Combine(localDir, "file2.txt")), "Expected failed file2 not to exist on disk.");
             }
             finally
             {
@@ -252,12 +242,11 @@ namespace AWSSDK.UnitTests
 
                 request.ObjectDownloadFailedEvent += (sender, args) =>
                 {
-                    // Cancel the per-object CTS in the handler; with AbortOnFailure the overall operation should throw.
-                    args.CancellationTokenSource.Cancel();
+                    throw new AmazonS3Exception("Stop processing immediately");
                 };
 
                 var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => tu.DownloadDirectoryAsync(request));
-                Assert.IsTrue(ex.Message.Contains("second.txt") || ex.Message.Contains("Simulated failure for"));
+                Assert.IsTrue(ex.Message.Equals("Stop processing immediately"));
             }
             finally
             {
@@ -302,8 +291,6 @@ namespace AWSSDK.UnitTests
                 Assert.IsTrue(evt.ObjectRequest.Key.EndsWith("b.txt", StringComparison.Ordinal));
                 Assert.IsNotNull(evt.Exception);
                 Assert.IsTrue(evt.Exception.Message.Contains("Simulated failure for"));
-                Assert.IsNotNull(evt.CancellationTokenSource);
-                Assert.IsFalse(evt.CancellationTokenSource.IsCancellationRequested);
             }
             finally
             {
@@ -343,7 +330,6 @@ namespace AWSSDK.UnitTests
                 Assert.IsTrue(evt.ObjectRequest.Key.EndsWith("y.txt", StringComparison.Ordinal));
                 Assert.IsNotNull(evt.Exception);
                 Assert.IsTrue(evt.Exception.Message.Contains("Simulated failure for"));
-                Assert.IsNotNull(evt.CancellationTokenSource);
             }
             finally
             {
