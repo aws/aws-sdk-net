@@ -101,7 +101,7 @@ namespace AWSSDK.UnitTests
             }
             catch (NotSupportedException ex)
             {
-                Assert.IsTrue(ex.Message.Contains("Multipart download is not supported when using S3 encryption client. Please use the regular S3 encryption client for multipart download."));
+                Assert.IsTrue(ex.Message.Contains("Multipart download is not supported when using S3 encryption client. Please use the regular S3 client for multipart download."));
             }
         }
 
