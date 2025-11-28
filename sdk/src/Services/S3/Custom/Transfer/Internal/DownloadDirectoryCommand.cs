@@ -20,6 +20,7 @@
  *
  */
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -30,11 +31,14 @@ using System.Threading;
 using Amazon.S3.Util;
 using Amazon.Util.Internal;
 using Amazon.Runtime;
+using Amazon.S3.Transfer.Model;
 
 namespace Amazon.S3.Transfer.Internal
 {
     internal partial class DownloadDirectoryCommand : BaseCommand<TransferUtilityDownloadDirectoryResponse>
     {
+        private IFailurePolicy _failurePolicy;
+        private ConcurrentBag<Exception> _errors = new ConcurrentBag<Exception>();
         private readonly IAmazonS3 _s3Client;
         private readonly TransferUtilityDownloadDirectoryRequest _request;
         private readonly bool _skipEncryptionInstructionFiles;
@@ -52,6 +56,10 @@ namespace Amazon.S3.Transfer.Internal
             this._s3Client = s3Client;
             this._request = request;
             this._skipEncryptionInstructionFiles = s3Client is Amazon.S3.Internal.IAmazonS3Encryption;
+            _failurePolicy =
+                request.FailurePolicy == FailurePolicy.AbortOnFailure
+                    ? new AbortOnFailurePolicy()
+                    : new ContinueOnFailurePolicy(_errors);
         }
 
         private void downloadedProgressEventCallback(object sender, WriteObjectProgressArgs e)
@@ -106,12 +114,6 @@ namespace Amazon.S3.Transfer.Internal
             downloadRequest.IfMatch = this._request.IfMatch;
             downloadRequest.IfNoneMatch = this._request.IfNoneMatch;
             downloadRequest.ResponseHeaderOverrides = this._request.ResponseHeaderOverrides;
-
-            //Ensure the target file is a rooted within LocalDirectory. Otherwise error.
-            if(!InternalSDKUtils.IsFilePathRootedWithDirectoryPath(downloadRequest.FilePath, _request.LocalDirectory))
-            {
-                throw new AmazonClientException($"The file {downloadRequest.FilePath} is not allowed outside of the target directory {_request.LocalDirectory}.");
-            }
 
             downloadRequest.WriteObjectProgressEvent += downloadedProgressEventCallback;
 

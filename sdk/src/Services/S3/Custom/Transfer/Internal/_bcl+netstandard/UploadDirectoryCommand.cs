@@ -62,20 +62,27 @@ namespace Amazon.S3.Transfer.Internal
                 {
                     await loopThrottler.WaitAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
 
-                    cancellationToken.ThrowIfCancellationRequested();
-                    if (internalCts.IsCancellationRequested)
+                    try
                     {
-                        // Operation cancelled as one of the upload requests failed with an exception,
-                        // don't schedule any more upload tasks. 
-                        // Don't throw an OperationCanceledException here as we want to process the 
-                        // responses and throw the original exception.
-                        break;
-                    }
-                    var uploadRequest = ConstructRequest(basePath, filepath, prefix);
-                    var uploadCommand = _utility.GetUploadCommand(uploadRequest, asyncThrottler);
+                        cancellationToken.ThrowIfCancellationRequested();
+                        if (internalCts.IsCancellationRequested)
+                        {
+                            // Operation cancelled as one of the upload requests failed with an exception,
+                            // don't schedule any more upload tasks. 
+                            // Don't throw an OperationCanceledException here as we want to process the 
+                            // responses and throw the original exception.
+                            break;
+                        }
+                        var uploadRequest = ConstructRequest(basePath, filepath, prefix);
+                        var uploadCommand = _utility.GetUploadCommand(uploadRequest, asyncThrottler);
 
-                    var task = ExecuteCommandAsync(uploadCommand, internalCts, loopThrottler);
-                    pendingTasks.Add(task);
+                        var task = ExecuteCommandAsync(uploadCommand, internalCts);
+                        pendingTasks.Add(task);
+                    }
+                    finally
+                    {
+                        loopThrottler.Release();
+                    }
                 }
                 await TaskHelpers.WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);

@@ -15,19 +15,22 @@
 
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using Amazon.S3.Transfer.Model;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 namespace Amazon.S3.Transfer.Internal
 {
     internal partial class DownloadDirectoryCommand : BaseCommand<TransferUtilityDownloadDirectoryResponse>
     {
-
         TransferUtilityConfig _config;
 
         public bool DownloadFilesConcurrently { get; set; }
@@ -82,41 +85,86 @@ namespace Amazon.S3.Transfer.Internal
                     await asyncThrottler.WaitAsync(cancellationToken)
                         .ConfigureAwait(continueOnCapturedContext: false);
 
-                    cancellationToken.ThrowIfCancellationRequested();
-                    if (internalCts.IsCancellationRequested)
+                    try
                     {
-                        // Operation cancelled as one of the download requests failed with an exception,
-                        // don't schedule any more download tasks.
-                        // Don't throw an OperationCanceledException here as we want to process the 
-                        // responses and throw the original exception.
-                        break;
+                        cancellationToken.ThrowIfCancellationRequested();
+                        if (internalCts.IsCancellationRequested)
+                        {
+                            // Operation cancelled as one of the download requests failed with an exception,
+                            // don't schedule any more download tasks.
+                            // Don't throw an OperationCanceledException here as we want to process the 
+                            // responses and throw the original exception.
+                            break;
+                        }
+
+                        // Valid for serial uploads when
+                        // TransferUtilityDownloadDirectoryRequest.DownloadFilesConcurrently is set to false.
+                        int prefixLength = listRequestPrefix.Length;
+
+                        // If DisableSlashCorrection is enabled (i.e. S3Directory is a key prefix) and it doesn't end with '/' then we need the parent directory to properly construct download path.
+                        if (_request.DisableSlashCorrection && !listRequestPrefix.EndsWith("/"))
+                        {
+                            prefixLength = listRequestPrefix.LastIndexOf("/") + 1;
+                        }
+
+                        this._currentFile = s3o.Key.Substring(prefixLength);
+
+                        TransferUtilityDownloadRequest downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, prefixLength);
+
+                        Action<Exception> onFailure = (ex) =>
+                        {
+                            this._request.OnRaiseObjectDownloadFailedEvent(
+                                new ObjectDownloadFailedEventArgs(
+                                    this._request, 
+                                    downloadRequest, 
+                                    ex));
+                        };
+                        
+                        var isValid = await _failurePolicy.ExecuteAsync(
+                            () => {
+                                //Ensure the target file is a rooted within LocalDirectory. Otherwise error.
+                                if(!InternalSDKUtils.IsFilePathRootedWithDirectoryPath(downloadRequest.FilePath, _request.LocalDirectory))
+                                {
+                                    throw new AmazonClientException($"The file {downloadRequest.FilePath} is not allowed outside of the target directory {_request.LocalDirectory}.");
+                                }
+
+                                return Task.CompletedTask;
+                            },
+                            onFailure,
+                            internalCts
+                        ).ConfigureAwait(false);
+                        if (!isValid) continue;
+
+                        var task = _failurePolicy.ExecuteAsync(
+                            async () => {
+                                var command = new DownloadCommand(this._s3Client, downloadRequest);
+                                await command.ExecuteAsync(internalCts.Token)
+                                    .ConfigureAwait(false);
+                            },
+                            onFailure,
+                            internalCts
+                        );
+
+                        pendingTasks.Add(task);
                     }
-
-                    // Valid for serial uploads when
-                    // TransferUtilityDownloadDirectoryRequest.DownloadFilesConcurrently is set to false.
-                    int prefixLength = listRequestPrefix.Length;
-
-                    // If DisableSlashCorrection is enabled (i.e. S3Directory is a key prefix) and it doesn't end with '/' then we need the parent directory to properly construct download path.
-                    if (_request.DisableSlashCorrection && !listRequestPrefix.EndsWith("/"))
+                    finally
                     {
-                        prefixLength = listRequestPrefix.LastIndexOf("/") + 1;
+                        asyncThrottler.Release();
                     }
-
-                    this._currentFile = s3o.Key.Substring(prefixLength);
-
-                    var downloadRequest = ConstructTransferUtilityDownloadRequest(s3o, prefixLength);
-                    var command = new DownloadCommand(this._s3Client, downloadRequest);
-
-                    var task = ExecuteCommandAsync(command, internalCts, asyncThrottler);
-                    
-                    pendingTasks.Add(task);
                 }
                 await TaskHelpers.WhenAllOrFirstExceptionAsync(pendingTasks, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
 
                 return new TransferUtilityDownloadDirectoryResponse
                 {
-                    ObjectsDownloaded = _numberOfFilesDownloaded
+                    ObjectsDownloaded = _numberOfFilesDownloaded,
+                    ObjectsFailed = _errors.Count,
+                    Errors = _errors.ToList(),
+                    Result = _errors.Count == 0 ?
+                        DirectoryResult.Success :
+                        (_numberOfFilesDownloaded > 0 ?
+                            DirectoryResult.PartialSuccess :
+                            DirectoryResult.Failure)
                 };
             }
             finally
