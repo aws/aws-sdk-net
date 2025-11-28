@@ -463,10 +463,10 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
-        #region GenerateUniqueId Tests
+        #region GenerateRandomId Tests
 
         [TestMethod]
-        public void GenerateUniqueId_GeneratesDifferentIdsOnSuccessiveCalls()
+        public void GenerateRandomId_GeneratesDifferentIdsOnSuccessiveCalls()
         {
             // Arrange
             var handler = new AtomicFileHandler();
@@ -489,7 +489,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void GenerateUniqueId_UsesBase32CharacterSet()
+        public void GenerateRandomId_UsesBase32CharacterSet()
         {
             // Arrange
             var handler = new AtomicFileHandler();
@@ -505,7 +505,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void GenerateUniqueId_IdsAreFilesystemSafe()
+        public void GenerateRandomId_IdsAreFilesystemSafe()
         {
             // Arrange
             var handler = new AtomicFileHandler();

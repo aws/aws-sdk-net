@@ -54,7 +54,7 @@ namespace Amazon.S3.Transfer.Internal
             // Try up to 100 times to create unique file atomically
             for (int attempt = 0; attempt < 100; attempt++)
             {
-                var uniqueId = GenerateUniqueId(8);
+                var uniqueId = GenerateRandomId(8);
                 var tempPath = $"{destinationPath}.s3tmp.{uniqueId}";
                 
                 try
@@ -148,10 +148,10 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
-        /// Generates a cryptographically secure unique identifier of specified length.
+        /// Generates a cryptographically secure random  identifier of specified length.
         /// Uses base32 encoding to avoid filesystem-problematic characters.
         /// </summary>
-        private string GenerateUniqueId(int length)
+        private string GenerateRandomId(int length)
         {
             const string base32Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"; // RFC 4648 base32
             
