@@ -39,6 +39,12 @@ namespace Amazon.S3.Transfer.Internal
         Task WaitForBufferSpaceAsync(CancellationToken cancellationToken);
         
         /// <summary>
+        /// Adds a part data source and signals readers when next expected part arrives.
+        /// </summary>
+        /// <param name="dataSource">The part data source to add.</param>
+        void AddDataSource(IPartDataSource dataSource);
+        
+        /// <summary>
         /// Adds a downloaded part buffer and signals readers when next expected part arrives.
         /// </summary>
         /// <param name="buffer">The downloaded part buffer to add.</param>

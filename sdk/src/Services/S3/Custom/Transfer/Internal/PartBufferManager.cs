@@ -140,7 +140,7 @@ namespace Amazon.S3.Transfer.Internal
 
         // Signals when new parts are added or download completes.
         // Automatically resets after waking one waiting reader.
-        // Signaled by: AddDataSourceAsync when new part added, MarkDownloadComplete when finished.
+        // Signaled by: AddDataSource when new part added, MarkDownloadComplete when finished.
         // Waited on by: ReadFromCurrentPartAsync when expected part not yet available.
         // Example: Reader waits for part 4. When download task adds part 4, it signals
         // this event, immediately waking the reader to proceed with consumption.
@@ -247,8 +247,6 @@ namespace Amazon.S3.Transfer.Internal
         /// Adds a part data source to the dictionary and signals waiting consumers.
         /// </summary>
         /// <param name="dataSource">The <see cref="IPartDataSource"/> to add.</param>
-        /// <param name="cancellationToken">A token to cancel the operation.</param>
-        /// <returns>A task that completes when the data source has been added.</returns>
         /// <exception cref="ArgumentNullException">Thrown when <paramref name="dataSource"/> is null.</exception>
         /// <exception cref="InvalidOperationException">Thrown when attempting to add a duplicate part number.</exception>
         /// <remarks>
@@ -261,7 +259,7 @@ namespace Amazon.S3.Transfer.Internal
         /// - Each signals _partAvailable
         /// - Consumer waiting for part 1 wakes up when part 1 is added
         /// </remarks>
-        public Task AddDataSourceAsync(IPartDataSource dataSource, CancellationToken cancellationToken)
+        public void AddDataSource(IPartDataSource dataSource)
         {
             ThrowIfDisposed();
             
@@ -285,8 +283,6 @@ namespace Amazon.S3.Transfer.Internal
 
             // Signal that a new part is available
             _partAvailable.Set();
-            
-            return Task.CompletedTask;
         }
 
         /// <inheritdoc/>
@@ -299,7 +295,7 @@ namespace Amazon.S3.Transfer.Internal
 
             // Create a BufferedDataSource and add it
             var bufferedSource = new BufferedDataSource(buffer);
-            await AddDataSourceAsync(bufferedSource, cancellationToken).ConfigureAwait(false);
+            AddDataSource(bufferedSource);
         }
 
         /// <inheritdoc/>

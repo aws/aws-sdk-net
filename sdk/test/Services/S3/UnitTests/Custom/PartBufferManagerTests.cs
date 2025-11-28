@@ -311,10 +311,10 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
-        #region AddDataSourceAsync Tests
+        #region AddDataSource Tests
 
         [TestMethod]
-        public async Task AddDataSourceAsync_AddsToCollection()
+        public async Task AddDataSource_AddsToCollection()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -327,7 +327,7 @@ namespace AWSSDK.UnitTests
                 var dataSource = new BufferedDataSource(partBuffer);
 
                 // Act
-                await manager.AddDataSourceAsync(dataSource, CancellationToken.None);
+                manager.AddDataSource(dataSource);
 
                 // Assert - Should be able to read from part 1
                 byte[] readBuffer = new byte[512];
@@ -342,7 +342,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public async Task AddDataSourceAsync_WithNullDataSource_ThrowsArgumentNullException()
+        public void AddDataSource_WithNullDataSource_ThrowsArgumentNullException()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -351,7 +351,7 @@ namespace AWSSDK.UnitTests
             try
             {
                 // Act
-                await manager.AddDataSourceAsync(null, CancellationToken.None);
+                manager.AddDataSource(null);
 
                 // Assert - ExpectedException
             }
@@ -363,7 +363,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(InvalidOperationException))]
-        public async Task AddDataSourceAsync_WithDuplicatePartNumber_ThrowsInvalidOperationException()
+        public void AddDataSource_WithDuplicatePartNumber_ThrowsInvalidOperationException()
         {
             // Arrange
             var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
@@ -375,7 +375,7 @@ namespace AWSSDK.UnitTests
                 byte[] testBuffer1 = ArrayPool<byte>.Shared.Rent(512);
                 var partBuffer1 = new StreamPartBuffer(1, testBuffer1, 512);
                 var dataSource1 = new BufferedDataSource(partBuffer1);
-                await manager.AddDataSourceAsync(dataSource1, CancellationToken.None);
+                manager.AddDataSource(dataSource1);
 
                 // Try to add duplicate part 1
                 byte[] testBuffer2 = ArrayPool<byte>.Shared.Rent(512);
@@ -383,7 +383,7 @@ namespace AWSSDK.UnitTests
                 var dataSource2 = new BufferedDataSource(partBuffer2);
 
                 // Act
-                await manager.AddDataSourceAsync(dataSource2, CancellationToken.None);
+                manager.AddDataSource(dataSource2);
 
                 // Assert - ExpectedException
             }

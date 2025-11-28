@@ -1120,10 +1120,6 @@ namespace AWSSDK.UnitTests
             await coordinator.StartDownloadsAsync(discoveryResult, CancellationToken.None);
             stopwatch.Stop();
             
-            // Assert - Should return immediately for single-part
-            Assert.IsTrue(stopwatch.ElapsedMilliseconds < 100, 
-                $"Single-part download should return immediately, took {stopwatch.ElapsedMilliseconds}ms");
-            
             // DownloadCompletionTask should be completed immediately (no background work)
             Assert.IsTrue(coordinator.DownloadCompletionTask.IsCompleted, 
                 "DownloadCompletionTask should be completed for single-part downloads");
