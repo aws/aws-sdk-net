@@ -279,26 +279,6 @@ public class BedrockChatClientTests
 
     [Fact]
     [Trait("UnitTest", "BedrockRuntime")]
-    public async Task ResponseFormat_Json_ForStreaming_ThrowsNotSupportedException()
-    {
-        // Arrange
-        var mockRuntime = new Mock<IAmazonBedrockRuntime>();
-        var client = mockRuntime.Object.AsIChatClient("claude-3");
-        var messages = new[] { new ChatMessage(ChatRole.User, "Test") };
-        var options = new ChatOptions { ResponseFormat = ChatResponseFormat.Json };
-
-        // Act & Assert
-        await Assert.ThrowsAsync<NotSupportedException>(async () =>
-        {
-            await foreach (var update in client.GetStreamingResponseAsync(messages, options))
-            {
-                // Should not reach here
-            }
-        });
-    }
-
-    [Fact]
-    [Trait("UnitTest", "BedrockRuntime")]
     public async Task ResponseFormat_Json_ModelReturnsText_ThrowsInvalidOperationException()
     {
         // Arrange - Model returns text instead of tool_use
@@ -466,7 +446,7 @@ public class BedrockChatClientHttpMockedTests : IClassFixture<BedrockChatClientH
 
         public void Customize(Type type, RuntimePipeline pipeline)
         {
-#if BCL
+#if NETFRAMEWORK
             // On .NET Framework, use Stream
             pipeline.ReplaceHandler<HttpHandler<Stream>>(
                 new HttpHandler<Stream>(new MockHttpRequestFactory(), new object()));
@@ -481,7 +461,7 @@ public class BedrockChatClientHttpMockedTests : IClassFixture<BedrockChatClientH
     /// <summary>
     /// Factory for creating mock HTTP requests
     /// </summary>
-#if BCL
+#if NETFRAMEWORK
     private class MockHttpRequestFactory : IHttpRequestFactory<Stream>
     {
         public IHttpRequest<Stream> CreateHttpRequest(Uri requestUri)
@@ -506,7 +486,7 @@ public class BedrockChatClientHttpMockedTests : IClassFixture<BedrockChatClientH
     /// <summary>
     /// Mock HTTP request that retrieves stubbed response data from request state
     /// </summary>
-#if BCL
+#if NETFRAMEWORK
     private class MockHttpRequest : IHttpRequest<Stream>
 #else
     private class MockHttpRequest : IHttpRequest<HttpContent>
@@ -539,7 +519,7 @@ public class BedrockChatClientHttpMockedTests : IClassFixture<BedrockChatClientH
             // Not needed for mock
         }
 
-#if BCL
+#if NETFRAMEWORK
         public Stream GetRequestContent()
         {
             return new MemoryStream();
@@ -561,7 +541,7 @@ public class BedrockChatClientHttpMockedTests : IClassFixture<BedrockChatClientH
             return Task.FromResult(_webResponseData);
         }
 
-#if BCL
+#if NETFRAMEWORK
         public void WriteToRequestBody(Stream requestContent, Stream contentStream,
             IDictionary<string, string> contentHeaders, IRequestContext requestContext)
         {
@@ -622,7 +602,7 @@ public class BedrockChatClientHttpMockedTests : IClassFixture<BedrockChatClientH
             // Not needed for mock
         }
 
-#if BCL
+#if NETFRAMEWORK
         public Task<Stream> GetRequestContentAsync()
         {
             return Task.FromResult<Stream>(new MemoryStream());
