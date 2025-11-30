@@ -193,7 +193,7 @@ namespace Amazon.S3.Transfer
         /// <param name="args">DownloadInitiatedEventArgs args</param>
         internal void OnRaiseTransferInitiatedEvent(DownloadInitiatedEventArgs args)
         {
-            AWSSDKUtils.InvokeInBackground(DownloadInitiatedEvent, args, this);
+            DownloadInitiatedEvent?.Invoke(this, args);
         }
 
         /// <summary>
@@ -202,7 +202,7 @@ namespace Amazon.S3.Transfer
         /// <param name="args">DownloadCompletedEventArgs args</param>
         internal void OnRaiseTransferCompletedEvent(DownloadCompletedEventArgs args)
         {
-            AWSSDKUtils.InvokeInBackground(DownloadCompletedEvent, args, this);
+            DownloadCompletedEvent?.Invoke(this, args);
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Amazon.S3.Transfer
         /// <param name="args">DownloadFailedEventArgs args</param>
         internal void OnRaiseTransferFailedEvent(DownloadFailedEventArgs args)
         {
-            AWSSDKUtils.InvokeInBackground(DownloadFailedEvent, args, this);
+            DownloadFailedEvent?.Invoke(this, args);
         }
     }
 

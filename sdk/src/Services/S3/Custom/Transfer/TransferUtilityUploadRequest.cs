@@ -276,7 +276,7 @@ namespace Amazon.S3.Transfer
         /// <param name="args">UploadInitiatedEventArgs args</param>
         internal void OnRaiseTransferInitiatedEvent(UploadInitiatedEventArgs args)
         {
-            AWSSDKUtils.InvokeInBackground(UploadInitiatedEvent, args, this);
+            UploadInitiatedEvent?.Invoke(this, args);
         }
 
         /// <summary>
@@ -285,7 +285,7 @@ namespace Amazon.S3.Transfer
         /// <param name="args">UploadCompletedEventArgs args</param>
         internal void OnRaiseTransferCompletedEvent(UploadCompletedEventArgs args)
         {
-            AWSSDKUtils.InvokeInBackground(UploadCompletedEvent, args, this);
+            UploadCompletedEvent?.Invoke(this, args);
         }
 
         /// <summary>
@@ -294,7 +294,7 @@ namespace Amazon.S3.Transfer
         /// <param name="args">UploadFailedEventArgs args</param>
         internal void OnRaiseTransferFailedEvent(UploadFailedEventArgs args)
         {
-            AWSSDKUtils.InvokeInBackground(UploadFailedEvent, args, this);
+            UploadFailedEvent?.Invoke(this, args);
         }
 
 
