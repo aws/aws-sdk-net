@@ -108,6 +108,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isSyntheticData", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsSyntheticData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

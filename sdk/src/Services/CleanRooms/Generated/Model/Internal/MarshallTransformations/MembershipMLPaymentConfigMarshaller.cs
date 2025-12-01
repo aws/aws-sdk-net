@@ -70,6 +70,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSyntheticDataGeneration())
+            {
+                context.Writer.WritePropertyName("syntheticDataGeneration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MembershipSyntheticDataGenerationPaymentConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.SyntheticDataGeneration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

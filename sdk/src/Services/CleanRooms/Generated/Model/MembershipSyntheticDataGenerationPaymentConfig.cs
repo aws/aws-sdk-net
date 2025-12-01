@@ -30,48 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// The structure that defines the body of the analysis template.
+    /// Configuration for payment for synthetic data generation in a membership.
     /// </summary>
-    public partial class AnalysisSource
+    public partial class MembershipSyntheticDataGenerationPaymentConfig
     {
-        private AnalysisTemplateArtifacts _artifacts;
-        private string _text;
+        private bool? _isResponsible;
 
         /// <summary>
-        /// Gets and sets the property Artifacts. 
+        /// Gets and sets the property IsResponsible. 
         /// <para>
-        ///  The artifacts of the analysis source.
+        /// Indicates if this membership is responsible for paying for synthetic data generation.
         /// </para>
         /// </summary>
-        public AnalysisTemplateArtifacts Artifacts
+        [AWSProperty(Required=true)]
+        public bool IsResponsible
         {
-            get { return this._artifacts; }
-            set { this._artifacts = value; }
+            get { return this._isResponsible.GetValueOrDefault(); }
+            set { this._isResponsible = value; }
         }
 
-        // Check to see if Artifacts property is set
-        internal bool IsSetArtifacts()
+        // Check to see if IsResponsible property is set
+        internal bool IsSetIsResponsible()
         {
-            return this._artifacts != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Text. 
-        /// <para>
-        /// The query text.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=500000)]
-        public string Text
-        {
-            get { return this._text; }
-            set { this._text = value; }
-        }
-
-        // Check to see if Text property is set
-        internal bool IsSetText()
-        {
-            return this._text != null;
+            return this._isResponsible.HasValue; 
         }
 
     }

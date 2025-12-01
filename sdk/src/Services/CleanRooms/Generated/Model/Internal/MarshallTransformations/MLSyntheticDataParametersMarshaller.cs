@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MLPaymentConfig Marshaller
+    /// MLSyntheticDataParameters Marshaller
     /// </summary>
-    public class MLPaymentConfigMarshaller : IRequestMarshaller<MLPaymentConfig, JsonMarshallerContext> 
+    public class MLSyntheticDataParametersMarshaller : IRequestMarshaller<MLSyntheticDataParameters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,45 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MLPaymentConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(MLSyntheticDataParameters requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetModelInference())
+            if(requestObject.IsSetColumnClassification())
             {
-                context.Writer.WritePropertyName("modelInference");
+                context.Writer.WritePropertyName("columnClassification");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ModelInferencePaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelInference, context);
+                var marshaller = ColumnClassificationDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColumnClassification, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetModelTraining())
+            if(requestObject.IsSetEpsilon())
             {
-                context.Writer.WritePropertyName("modelTraining");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ModelTrainingPaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelTraining, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("epsilon");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Epsilon))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Epsilon));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Epsilon);
+                }
             }
 
-            if(requestObject.IsSetSyntheticDataGeneration())
+            if(requestObject.IsSetMaxMembershipInferenceAttackScore())
             {
-                context.Writer.WritePropertyName("syntheticDataGeneration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SyntheticDataGenerationPaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.SyntheticDataGeneration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("maxMembershipInferenceAttackScore");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxMembershipInferenceAttackScore))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxMembershipInferenceAttackScore));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.MaxMembershipInferenceAttackScore);
+                }
             }
 
         }
@@ -86,7 +90,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MLPaymentConfigMarshaller Instance = new MLPaymentConfigMarshaller();
+        public readonly static MLSyntheticDataParametersMarshaller Instance = new MLSyntheticDataParametersMarshaller();
 
     }
 }

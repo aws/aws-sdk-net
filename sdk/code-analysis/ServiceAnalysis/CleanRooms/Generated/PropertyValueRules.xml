@@ -1280,7 +1280,7 @@
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisSource.Text</property>
     <min>0</min>
-    <max>90000</max>
+    <max>500000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisTemplate.Arn</property>
@@ -2619,6 +2619,14 @@
     <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.MLSyntheticDataParameters.Epsilon</property>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.MLSyntheticDataParameters.MaxMembershipInferenceAttackScore</property>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.PrivacyBudgetSummary.CollaborationArn</property>
     <min>0</min>
     <max>100</max>
@@ -3017,6 +3025,12 @@
     <min>0</min>
     <max>255</max>
     <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.SyntheticDataColumnProperties.ColumnName</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>[a-z0-9_](([a-z0-9_]+-)*([a-z0-9_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.WorkerComputeConfiguration.Number</property>

@@ -259,7 +259,7 @@ namespace Amazon.CleanRooms.Model
         /// A list of initial members, not including the creator. This list is immutable.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=9)]
+        [AWSProperty(Required=true, Min=0)]
         public List<MemberSpecification> Members
         {
             get { return this._members; }

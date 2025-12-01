@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MembershipMLPaymentConfig Object
+    /// Response Unmarshaller for SyntheticDataGenerationPaymentConfig Object
     /// </summary>  
-    public class MembershipMLPaymentConfigUnmarshaller : IUnmarshaller<MembershipMLPaymentConfig, XmlUnmarshallerContext>, IUnmarshaller<MembershipMLPaymentConfig, JsonUnmarshallerContext>
+    public class SyntheticDataGenerationPaymentConfigUnmarshaller : IUnmarshaller<SyntheticDataGenerationPaymentConfig, XmlUnmarshallerContext>, IUnmarshaller<SyntheticDataGenerationPaymentConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MembershipMLPaymentConfig IUnmarshaller<MembershipMLPaymentConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SyntheticDataGenerationPaymentConfig IUnmarshaller<SyntheticDataGenerationPaymentConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MembershipMLPaymentConfig Unmarshall(JsonUnmarshallerContext context)
+        public SyntheticDataGenerationPaymentConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            MembershipMLPaymentConfig unmarshalledObject = new MembershipMLPaymentConfig();
+            SyntheticDataGenerationPaymentConfig unmarshalledObject = new SyntheticDataGenerationPaymentConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("modelInference", targetDepth))
+                if (context.TestExpression("isResponsible", targetDepth))
                 {
-                    var unmarshaller = MembershipModelInferencePaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelInference = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelTraining", targetDepth))
-                {
-                    var unmarshaller = MembershipModelTrainingPaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelTraining = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("syntheticDataGeneration", targetDepth))
-                {
-                    var unmarshaller = MembershipSyntheticDataGenerationPaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.SyntheticDataGeneration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsResponsible = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static MembershipMLPaymentConfigUnmarshaller _instance = new MembershipMLPaymentConfigUnmarshaller();        
+        private static SyntheticDataGenerationPaymentConfigUnmarshaller _instance = new SyntheticDataGenerationPaymentConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MembershipMLPaymentConfigUnmarshaller Instance
+        public static SyntheticDataGenerationPaymentConfigUnmarshaller Instance
         {
             get
             {

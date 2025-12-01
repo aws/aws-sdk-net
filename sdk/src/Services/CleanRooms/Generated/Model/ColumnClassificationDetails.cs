@@ -30,48 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// The structure that defines the body of the analysis template.
+    /// Contains classification information for data columns, including mappings that specify
+    /// how columns should be handled during synthetic data generation and privacy analysis.
     /// </summary>
-    public partial class AnalysisSource
+    public partial class ColumnClassificationDetails
     {
-        private AnalysisTemplateArtifacts _artifacts;
-        private string _text;
+        private List<SyntheticDataColumnProperties> _columnMapping = AWSConfigs.InitializeCollections ? new List<SyntheticDataColumnProperties>() : null;
 
         /// <summary>
-        /// Gets and sets the property Artifacts. 
+        /// Gets and sets the property ColumnMapping. 
         /// <para>
-        ///  The artifacts of the analysis source.
+        /// A mapping that defines the classification of data columns for synthetic data generation
+        /// and specifies how each column should be handled during the privacy-preserving data
+        /// synthesis process.
         /// </para>
         /// </summary>
-        public AnalysisTemplateArtifacts Artifacts
+        [AWSProperty(Required=true, Min=5, Max=1000)]
+        public List<SyntheticDataColumnProperties> ColumnMapping
         {
-            get { return this._artifacts; }
-            set { this._artifacts = value; }
+            get { return this._columnMapping; }
+            set { this._columnMapping = value; }
         }
 
-        // Check to see if Artifacts property is set
-        internal bool IsSetArtifacts()
+        // Check to see if ColumnMapping property is set
+        internal bool IsSetColumnMapping()
         {
-            return this._artifacts != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Text. 
-        /// <para>
-        /// The query text.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=500000)]
-        public string Text
-        {
-            get { return this._text; }
-            set { this._text = value; }
-        }
-
-        // Check to see if Text property is set
-        internal bool IsSetText()
-        {
-            return this._text != null;
+            return this._columnMapping != null && (this._columnMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

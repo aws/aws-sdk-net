@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MembershipMLPaymentConfig Object
+    /// Response Unmarshaller for SyntheticDataParameters Object
     /// </summary>  
-    public class MembershipMLPaymentConfigUnmarshaller : IUnmarshaller<MembershipMLPaymentConfig, XmlUnmarshallerContext>, IUnmarshaller<MembershipMLPaymentConfig, JsonUnmarshallerContext>
+    public class SyntheticDataParametersUnmarshaller : IUnmarshaller<SyntheticDataParameters, XmlUnmarshallerContext>, IUnmarshaller<SyntheticDataParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MembershipMLPaymentConfig IUnmarshaller<MembershipMLPaymentConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SyntheticDataParameters IUnmarshaller<SyntheticDataParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MembershipMLPaymentConfig Unmarshall(JsonUnmarshallerContext context)
+        public SyntheticDataParameters Unmarshall(JsonUnmarshallerContext context)
         {
-            MembershipMLPaymentConfig unmarshalledObject = new MembershipMLPaymentConfig();
+            SyntheticDataParameters unmarshalledObject = new SyntheticDataParameters();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("modelInference", targetDepth))
+                if (context.TestExpression("mlSyntheticDataParameters", targetDepth))
                 {
-                    var unmarshaller = MembershipModelInferencePaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelInference = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("modelTraining", targetDepth))
-                {
-                    var unmarshaller = MembershipModelTrainingPaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelTraining = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("syntheticDataGeneration", targetDepth))
-                {
-                    var unmarshaller = MembershipSyntheticDataGenerationPaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.SyntheticDataGeneration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MLSyntheticDataParametersUnmarshaller.Instance;
+                    unmarshalledObject.MlSyntheticDataParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static MembershipMLPaymentConfigUnmarshaller _instance = new MembershipMLPaymentConfigUnmarshaller();        
+        private static SyntheticDataParametersUnmarshaller _instance = new SyntheticDataParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MembershipMLPaymentConfigUnmarshaller Instance
+        public static SyntheticDataParametersUnmarshaller Instance
         {
             get
             {

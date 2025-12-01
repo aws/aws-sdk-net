@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MLPaymentConfig Marshaller
+    /// SyntheticDataColumnProperties Marshaller
     /// </summary>
-    public class MLPaymentConfigMarshaller : IRequestMarshaller<MLPaymentConfig, JsonMarshallerContext> 
+    public class SyntheticDataColumnPropertiesMarshaller : IRequestMarshaller<SyntheticDataColumnProperties, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,26 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MLPaymentConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(SyntheticDataColumnProperties requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetModelInference())
+            if(requestObject.IsSetColumnName())
             {
-                context.Writer.WritePropertyName("modelInference");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ModelInferencePaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelInference, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("columnName");
+                context.Writer.Write(requestObject.ColumnName);
             }
 
-            if(requestObject.IsSetModelTraining())
+            if(requestObject.IsSetColumnType())
             {
-                context.Writer.WritePropertyName("modelTraining");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ModelTrainingPaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelTraining, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("columnType");
+                context.Writer.Write(requestObject.ColumnType);
             }
 
-            if(requestObject.IsSetSyntheticDataGeneration())
+            if(requestObject.IsSetIsPredictiveValue())
             {
-                context.Writer.WritePropertyName("syntheticDataGeneration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SyntheticDataGenerationPaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.SyntheticDataGeneration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("isPredictiveValue");
+                context.Writer.Write(requestObject.IsPredictiveValue);
             }
 
         }
@@ -86,7 +71,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MLPaymentConfigMarshaller Instance = new MLPaymentConfigMarshaller();
+        public readonly static SyntheticDataColumnPropertiesMarshaller Instance = new SyntheticDataColumnPropertiesMarshaller();
 
     }
 }

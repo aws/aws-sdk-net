@@ -150,6 +150,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("syntheticDataParameters", targetDepth))
+                {
+                    var unmarshaller = SyntheticDataParametersUnmarshaller.Instance;
+                    unmarshalledObject.SyntheticDataParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

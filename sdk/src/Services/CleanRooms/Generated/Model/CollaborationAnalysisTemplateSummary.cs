@@ -41,6 +41,7 @@ namespace Amazon.CleanRooms.Model
         private string _creatorAccountId;
         private string _description;
         private string _id;
+        private bool? _isSyntheticData;
         private string _name;
         private DateTime? _updateTime;
 
@@ -177,6 +178,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsSyntheticData. 
+        /// <para>
+        /// Indicates if this collaboration analysis template uses synthetic data generation.
+        /// </para>
+        /// </summary>
+        public bool IsSyntheticData
+        {
+            get { return this._isSyntheticData.GetValueOrDefault(); }
+            set { this._isSyntheticData = value; }
+        }
+
+        // Check to see if IsSyntheticData property is set
+        internal bool IsSetIsSyntheticData()
+        {
+            return this._isSyntheticData.HasValue; 
         }
 
         /// <summary>

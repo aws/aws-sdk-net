@@ -37,6 +37,7 @@ namespace Amazon.CleanRooms.Model
     {
         private ModelInferencePaymentConfig _modelInference;
         private ModelTrainingPaymentConfig _modelTraining;
+        private SyntheticDataGenerationPaymentConfig _syntheticDataGeneration;
 
         /// <summary>
         /// Gets and sets the property ModelInference. 
@@ -72,6 +73,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetModelTraining()
         {
             return this._modelTraining != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyntheticDataGeneration. 
+        /// <para>
+        /// The payment configuration for machine learning synthetic data generation.
+        /// </para>
+        /// </summary>
+        public SyntheticDataGenerationPaymentConfig SyntheticDataGeneration
+        {
+            get { return this._syntheticDataGeneration; }
+            set { this._syntheticDataGeneration = value; }
+        }
+
+        // Check to see if SyntheticDataGeneration property is set
+        internal bool IsSetSyntheticDataGeneration()
+        {
+            return this._syntheticDataGeneration != null;
         }
 
     }
