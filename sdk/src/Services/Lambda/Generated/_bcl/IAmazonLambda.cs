@@ -486,6 +486,70 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  CreateCapacityProvider
+
+
+        /// <summary>
+        /// Creates a capacity provider that manages compute resources for Lambda functions
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CapacityProviderLimitExceededException">
+        /// The maximum number of capacity providers for your account has been exceeded. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
+        CreateCapacityProviderResponse CreateCapacityProvider(CreateCapacityProviderRequest request);
+
+
+
+        /// <summary>
+        /// Creates a capacity provider that manages compute resources for Lambda functions
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CapacityProviderLimitExceededException">
+        /// The maximum number of capacity providers for your account has been exceeded. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
+        Task<CreateCapacityProviderResponse> CreateCapacityProviderAsync(CreateCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateCodeSigningConfig
 
 
@@ -923,6 +987,11 @@ namespace Amazon.Lambda
         /// The code signature failed one or more of the validation checks for signature mismatch
         /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.FunctionVersionsPerCapacityProviderLimitExceededException">
+        /// The maximum number of function versions that can be associated with a single capacity
+        /// provider has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
         /// The code signature failed the integrity check. If the integrity check fails, then
         /// Lambda blocks deployment, even if the code signing policy is set to WARN.
@@ -1040,6 +1109,11 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.CodeVerificationFailedException">
         /// The code signature failed one or more of the validation checks for signature mismatch
         /// or expiry, and the code signing policy is set to ENFORCE. Lambda blocks the deployment.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.FunctionVersionsPerCapacityProviderLimitExceededException">
+        /// The maximum number of function versions that can be associated with a single capacity
+        /// provider has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidCodeSignatureException">
         /// The code signature failed the integrity check. If the integrity check fails, then
@@ -1179,6 +1253,68 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCapacityProvider
+
+
+        /// <summary>
+        /// Deletes a capacity provider. You cannot delete a capacity provider that is currently
+        /// being used by Lambda functions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
+        DeleteCapacityProviderResponse DeleteCapacityProvider(DeleteCapacityProviderRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a capacity provider. You cannot delete a capacity provider that is currently
+        /// being used by Lambda functions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
+        Task<DeleteCapacityProviderResponse> DeleteCapacityProviderAsync(DeleteCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1949,6 +2085,62 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  GetCapacityProvider
+
+
+        /// <summary>
+        /// Retrieves information about a specific capacity provider, including its configuration,
+        /// state, and associated resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCapacityProvider">REST API Reference for GetCapacityProvider Operation</seealso>
+        GetCapacityProviderResponse GetCapacityProvider(GetCapacityProviderRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a specific capacity provider, including its configuration,
+        /// state, and associated resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCapacityProvider">REST API Reference for GetCapacityProvider Operation</seealso>
+        Task<GetCapacityProviderResponse> GetCapacityProviderAsync(GetCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCodeSigningConfig
 
 
@@ -2521,6 +2713,60 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  GetFunctionScalingConfig
+
+
+        /// <summary>
+        /// Retrieves the scaling configuration for a Lambda Managed Instances function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionScalingConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetFunctionScalingConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionScalingConfig">REST API Reference for GetFunctionScalingConfig Operation</seealso>
+        GetFunctionScalingConfigResponse GetFunctionScalingConfig(GetFunctionScalingConfigRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the scaling configuration for a Lambda Managed Instances function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunctionScalingConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFunctionScalingConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionScalingConfig">REST API Reference for GetFunctionScalingConfig Operation</seealso>
+        Task<GetFunctionScalingConfigResponse> GetFunctionScalingConfigAsync(GetFunctionScalingConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetFunctionUrlConfig
 
 
@@ -3058,6 +3304,9 @@ namespace Amazon.Lambda
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.NoPublishedVersionException">
+        /// The function has no published versions available.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
         /// Lambda has detected your function being invoked in a recursive loop with other Amazon
         /// Web Services resources and stopped your function's invocation.
@@ -3078,9 +3327,7 @@ namespace Amazon.Lambda
         /// VPC connection to reestablish and try again.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
-        /// The processed request payload exceeded the <c>Invoke</c> request body size limit for
-        /// asynchronous invocations. While the event payload may be under 1 MB, the size after
-        /// internal serialization exceeds the maximum allowed size for asynchronous invocations.
+        /// The request payload exceeded the maximum allowed size for serialized request entities.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -3247,6 +3494,9 @@ namespace Amazon.Lambda
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.NoPublishedVersionException">
+        /// The function has no published versions available.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
         /// Lambda has detected your function being invoked in a recursive loop with other Amazon
         /// Web Services resources and stopped your function's invocation.
@@ -3267,9 +3517,7 @@ namespace Amazon.Lambda
         /// VPC connection to reestablish and try again.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
-        /// The processed request payload exceeded the <c>Invoke</c> request body size limit for
-        /// asynchronous invocations. While the event payload may be under 1 MB, the size after
-        /// internal serialization exceeds the maximum allowed size for asynchronous invocations.
+        /// The request payload exceeded the maximum allowed size for serialized request entities.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -3386,6 +3634,9 @@ namespace Amazon.Lambda
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.NoPublishedVersionException">
+        /// The function has no published versions available.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
         /// Lambda has detected your function being invoked in a recursive loop with other Amazon
         /// Web Services resources and stopped your function's invocation.
@@ -3406,9 +3657,7 @@ namespace Amazon.Lambda
         /// VPC connection to reestablish and try again.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
-        /// The processed request payload exceeded the <c>Invoke</c> request body size limit for
-        /// asynchronous invocations. While the event payload may be under 1 MB, the size after
-        /// internal serialization exceeds the maximum allowed size for asynchronous invocations.
+        /// The request payload exceeded the maximum allowed size for serialized request entities.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -3525,6 +3774,9 @@ namespace Amazon.Lambda
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.NoPublishedVersionException">
+        /// The function has no published versions available.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
         /// Lambda has detected your function being invoked in a recursive loop with other Amazon
         /// Web Services resources and stopped your function's invocation.
@@ -3545,9 +3797,7 @@ namespace Amazon.Lambda
         /// VPC connection to reestablish and try again.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SerializedRequestEntityTooLargeException">
-        /// The processed request payload exceeded the <c>Invoke</c> request body size limit for
-        /// asynchronous invocations. While the event payload may be under 1 MB, the size after
-        /// internal serialization exceeds the maximum allowed size for asynchronous invocations.
+        /// The request payload exceeded the maximum allowed size for serialized request entities.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The Lambda service encountered an internal error.
@@ -3632,6 +3882,54 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCapacityProviders
+
+
+        /// <summary>
+        /// Returns a list of capacity providers in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListCapacityProviders service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCapacityProviders">REST API Reference for ListCapacityProviders Operation</seealso>
+        ListCapacityProvidersResponse ListCapacityProviders(ListCapacityProvidersRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of capacity providers in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityProviders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCapacityProviders service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCapacityProviders">REST API Reference for ListCapacityProviders Operation</seealso>
+        Task<ListCapacityProvidersResponse> ListCapacityProvidersAsync(ListCapacityProvidersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4050,6 +4348,62 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListFunctionVersionsByCapacityProvider
+
+
+        /// <summary>
+        /// Returns a list of function versions that are configured to use a specific capacity
+        /// provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctionVersionsByCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the ListFunctionVersionsByCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionVersionsByCapacityProvider">REST API Reference for ListFunctionVersionsByCapacityProvider Operation</seealso>
+        ListFunctionVersionsByCapacityProviderResponse ListFunctionVersionsByCapacityProvider(ListFunctionVersionsByCapacityProviderRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of function versions that are configured to use a specific capacity
+        /// provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctionVersionsByCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFunctionVersionsByCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionVersionsByCapacityProvider">REST API Reference for ListFunctionVersionsByCapacityProvider Operation</seealso>
+        Task<ListFunctionVersionsByCapacityProviderResponse> ListFunctionVersionsByCapacityProviderAsync(ListFunctionVersionsByCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListLayers
 
 
@@ -4443,6 +4797,11 @@ namespace Amazon.Lambda
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
         /// quotas</a>.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.FunctionVersionsPerCapacityProviderLimitExceededException">
+        /// The maximum number of function versions that can be associated with a single capacity
+        /// provider has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
@@ -4505,6 +4864,11 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
         /// Your Amazon Web Services account has exceeded its maximum total code size. For more
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.FunctionVersionsPerCapacityProviderLimitExceededException">
+        /// The maximum number of function versions that can be associated with a single capacity
+        /// provider has been exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
         /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -4911,6 +5275,72 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionRecursionConfig">REST API Reference for PutFunctionRecursionConfig Operation</seealso>
         Task<PutFunctionRecursionConfigResponse> PutFunctionRecursionConfigAsync(PutFunctionRecursionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutFunctionScalingConfig
+
+
+        /// <summary>
+        /// Sets the scaling configuration for a Lambda Managed Instances function. The scaling
+        /// configuration defines the minimum and maximum number of execution environments that
+        /// can be provisioned for the function, allowing you to control scaling behavior and
+        /// resource allocation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionScalingConfig service method.</param>
+        /// 
+        /// <returns>The response from the PutFunctionScalingConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionScalingConfig">REST API Reference for PutFunctionScalingConfig Operation</seealso>
+        PutFunctionScalingConfigResponse PutFunctionScalingConfig(PutFunctionScalingConfigRequest request);
+
+
+
+        /// <summary>
+        /// Sets the scaling configuration for a Lambda Managed Instances function. The scaling
+        /// configuration defines the minimum and maximum number of execution environments that
+        /// can be provisioned for the function, allowing you to control scaling behavior and
+        /// resource allocation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFunctionScalingConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutFunctionScalingConfig service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionScalingConfig">REST API Reference for PutFunctionScalingConfig Operation</seealso>
+        Task<PutFunctionScalingConfigResponse> PutFunctionScalingConfigAsync(PutFunctionScalingConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5427,6 +5857,66 @@ namespace Amazon.Lambda
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateCapacityProvider
+
+
+        /// <summary>
+        /// Updates the configuration of an existing capacity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
+        UpdateCapacityProviderResponse UpdateCapacityProvider(UpdateCapacityProviderRequest request);
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing capacity provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCapacityProvider service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists, or another operation is in progress.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
+        Task<UpdateCapacityProviderResponse> UpdateCapacityProviderAsync(UpdateCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

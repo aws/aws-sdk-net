@@ -155,6 +155,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     return KMSNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NoPublishedVersionException"))
+                {
+                    return NoPublishedVersionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RecursiveInvocationException"))
                 {
                     return RecursiveInvocationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

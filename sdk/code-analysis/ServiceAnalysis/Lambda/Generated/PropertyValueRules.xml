@@ -41,8 +41,8 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.Principal</property>
@@ -58,7 +58,7 @@
     <property>Amazon.Lambda.Model.AddPermissionRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.SourceAccount</property>
@@ -85,13 +85,13 @@
     <property>Amazon.Lambda.Model.CreateAliasRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateAliasRequest.FunctionVersion</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(\$LATEST|[0-9]+)</pattern>
+    <pattern>(\$LATEST(\.PUBLISHED)?|[0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateAliasRequest.Name</property>
@@ -101,7 +101,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateAliasResponse.AliasArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateAliasResponse.Description</property>
@@ -121,6 +123,18 @@
     <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_]+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.CreateCapacityProviderRequest.CapacityProviderName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:aws[a-zA-Z-]*:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:capacity-provider:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.CreateCapacityProviderRequest.KmsKeyArn</property>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.CreateCodeSigningConfigRequest.Description</property>
     <min>0</min>
     <max>256</max>
@@ -137,8 +151,8 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingRequest.KMSKeyArn</property>
@@ -186,7 +200,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.KMSKeyArn</property>
@@ -232,7 +248,7 @@
     <property>Amazon.Lambda.Model.CreateFunctionRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.Handler</property>
@@ -247,7 +263,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.MemorySize</property>
     <min>128</min>
-    <max>10240</max>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionRequest.Role</property>
@@ -264,13 +280,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.Handler</property>
@@ -284,12 +302,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.MasterArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.MemorySize</property>
     <min>128</min>
-    <max>10240</max>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionResponse.Role</property>
@@ -317,17 +337,19 @@
     <property>Amazon.Lambda.Model.CreateFunctionUrlConfigRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionUrlConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(^\$LATEST$)|((?!^[0-9]+$)([a-zA-Z0-9-_]+))</pattern>
+    <pattern>((?!^\d+$)^[0-9a-zA-Z-_]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionUrlConfigResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CreateFunctionUrlConfigResponse.FunctionUrl</property>
@@ -338,13 +360,19 @@
     <property>Amazon.Lambda.Model.DeleteAliasRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteAliasRequest.Name</property>
     <min>1</min>
     <max>128</max>
     <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.DeleteCapacityProviderRequest.CapacityProviderName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:aws[a-zA-Z-]*:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:capacity-provider:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteCodeSigningConfigRequest.CodeSigningConfigArn</property>
@@ -369,7 +397,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteEventSourceMappingResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteEventSourceMappingResponse.KMSKeyArn</property>
@@ -403,50 +433,50 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionCodeSigningConfigRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionConcurrencyRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionEventInvokeConfigRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionEventInvokeConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionUrlConfigRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteFunctionUrlConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(^\$LATEST$)|((?!^[0-9]+$)([a-zA-Z0-9-_]+))</pattern>
+    <pattern>((?!^\d+$)^[0-9a-zA-Z-_]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteLayerVersionRequest.LayerName</property>
@@ -458,7 +488,7 @@
     <property>Amazon.Lambda.Model.DeleteProvisionedConcurrencyConfigRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteProvisionedConcurrencyConfigRequest.Qualifier</property>
@@ -470,7 +500,7 @@
     <property>Amazon.Lambda.Model.GetAliasRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetAliasRequest.Name</property>
@@ -480,7 +510,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetAliasResponse.AliasArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetAliasResponse.Description</property>
@@ -498,6 +530,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetCapacityProviderRequest.CapacityProviderName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:aws[a-zA-Z-]*:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:capacity-provider:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetCodeSigningConfigRequest.CodeSigningConfigArn</property>
@@ -522,7 +560,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.KMSKeyArn</property>
@@ -556,20 +596,20 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionRequest.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionCodeSigningConfigRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionCodeSigningConfigResponse.CodeSigningConfigArn</property>
@@ -581,13 +621,13 @@
     <property>Amazon.Lambda.Model.GetFunctionCodeSigningConfigResponse.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConcurrencyRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConcurrencyResponse.ReservedConcurrentExecutions</property>
@@ -596,14 +636,14 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationRequest.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.Description</property>
@@ -612,13 +652,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.Handler</property>
@@ -632,12 +674,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.MasterArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.MemorySize</property>
     <min>128</min>
-    <max>10240</max>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionConfigurationResponse.Role</property>
@@ -664,18 +708,20 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionEventInvokeConfigRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionEventInvokeConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionEventInvokeConfigResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionEventInvokeConfigResponse.MaximumEventAgeInSeconds</property>
@@ -694,20 +740,40 @@
     <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.GetFunctionScalingConfigRequest.FunctionName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetFunctionScalingConfigRequest.Qualifier</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(\$LATEST\.PUBLISHED|[0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetFunctionScalingConfigResponse.FunctionArn</property>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionUrlConfigRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionUrlConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(^\$LATEST$)|((?!^[0-9]+$)([a-zA-Z0-9-_]+))</pattern>
+    <pattern>((?!^\d+$)^[0-9a-zA-Z-_]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionUrlConfigResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetFunctionUrlConfigResponse.FunctionUrl</property>
@@ -779,20 +845,20 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetPolicyRequest.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetPolicyRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetProvisionedConcurrencyConfigRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetProvisionedConcurrencyConfigRequest.Qualifier</property>
@@ -815,18 +881,20 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigRequest.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetRuntimeManagementConfigResponse.RuntimeVersionArn</property>
@@ -837,14 +905,14 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeRequest.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeRequest.TenantId</property>
@@ -861,14 +929,14 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeWithResponseStreamRequest.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeWithResponseStreamRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeWithResponseStreamRequest.TenantId</property>
@@ -886,18 +954,23 @@
     <property>Amazon.Lambda.Model.ListAliasesRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListAliasesRequest.FunctionVersion</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(\$LATEST|[0-9]+)</pattern>
+    <pattern>(\$LATEST(\.PUBLISHED)?|[0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListAliasesRequest.MaxItems</property>
     <min>1</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ListCapacityProvidersRequest.MaxItems</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListCodeSigningConfigsRequest.MaxItems</property>
@@ -911,8 +984,8 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListEventSourceMappingsRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListEventSourceMappingsRequest.MaxItems</property>
@@ -922,8 +995,8 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListFunctionEventInvokeConfigsRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListFunctionEventInvokeConfigsRequest.MaxItems</property>
@@ -954,12 +1027,29 @@
     <property>Amazon.Lambda.Model.ListFunctionUrlConfigsRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListFunctionUrlConfigsRequest.MaxItems</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ListFunctionVersionsByCapacityProviderRequest.CapacityProviderName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:aws[a-zA-Z-]*:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:capacity-provider:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ListFunctionVersionsByCapacityProviderRequest.MaxItems</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ListFunctionVersionsByCapacityProviderResponse.CapacityProviderArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:aws[a-zA-Z-]*:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:capacity-provider:[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListLayersRequest.MaxItems</property>
@@ -981,7 +1071,7 @@
     <property>Amazon.Lambda.Model.ListProvisionedConcurrencyConfigsRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListProvisionedConcurrencyConfigsRequest.MaxItems</property>
@@ -992,13 +1082,13 @@
     <property>Amazon.Lambda.Model.ListTagsRequest.Resource</property>
     <min>1</min>
     <max>256</max>
-    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:(function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:(function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|capacity-provider:[a-zA-Z0-9-_]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListVersionsByFunctionRequest.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListVersionsByFunctionRequest.MaxItems</property>
@@ -1052,7 +1142,7 @@
     <property>Amazon.Lambda.Model.PublishVersionRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.Description</property>
@@ -1061,13 +1151,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.Handler</property>
@@ -1081,12 +1173,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.MasterArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.MemorySize</property>
     <min>128</min>
-    <max>10240</max>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionResponse.Role</property>
@@ -1119,8 +1213,8 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionCodeSigningConfigRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionCodeSigningConfigResponse.CodeSigningConfigArn</property>
@@ -1132,13 +1226,13 @@
     <property>Amazon.Lambda.Model.PutFunctionCodeSigningConfigResponse.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionConcurrencyRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionConcurrencyRequest.ReservedConcurrentExecutions</property>
@@ -1151,8 +1245,8 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionEventInvokeConfigRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionEventInvokeConfigRequest.MaximumEventAgeInSeconds</property>
@@ -1168,11 +1262,13 @@
     <property>Amazon.Lambda.Model.PutFunctionEventInvokeConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionEventInvokeConfigResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionEventInvokeConfigResponse.MaximumEventAgeInSeconds</property>
@@ -1191,10 +1287,22 @@
     <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.PutFunctionScalingConfigRequest.FunctionName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PutFunctionScalingConfigRequest.Qualifier</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(\$LATEST\.PUBLISHED|[0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.PutProvisionedConcurrencyConfigRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutProvisionedConcurrencyConfigRequest.ProvisionedConcurrentExecutions</property>
@@ -1221,14 +1329,14 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigRequest.RuntimeVersionArn</property>
@@ -1238,7 +1346,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutRuntimeManagementConfigResponse.RuntimeVersionArn</property>
@@ -1261,14 +1371,14 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.RemovePermissionRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.RemovePermissionRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.RemovePermissionRequest.StatementId</property>
@@ -1280,13 +1390,13 @@
     <property>Amazon.Lambda.Model.TagResourceRequest.Resource</property>
     <min>1</min>
     <max>256</max>
-    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:(function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:(function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|capacity-provider:[a-zA-Z0-9-_]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UntagResourceRequest.Resource</property>
     <min>1</min>
     <max>256</max>
-    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:(function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})</pattern>
+    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:(function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|capacity-provider:[a-zA-Z0-9-_]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateAliasRequest.Description</property>
@@ -1297,13 +1407,13 @@
     <property>Amazon.Lambda.Model.UpdateAliasRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateAliasRequest.FunctionVersion</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(\$LATEST|[0-9]+)</pattern>
+    <pattern>(\$LATEST(\.PUBLISHED)?|[0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateAliasRequest.Name</property>
@@ -1313,7 +1423,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateAliasResponse.AliasArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateAliasResponse.Description</property>
@@ -1331,6 +1443,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>(?!^[0-9]+$)([a-zA-Z0-9-_]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.UpdateCapacityProviderRequest.CapacityProviderName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:aws[a-zA-Z-]*:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:capacity-provider:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateCodeSigningConfigRequest.CodeSigningConfigArn</property>
@@ -1351,8 +1469,8 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingRequest.KMSKeyArn</property>
@@ -1400,7 +1518,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.KMSKeyArn</property>
@@ -1435,7 +1555,7 @@
     <property>Amazon.Lambda.Model.UpdateFunctionCodeRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeRequest.S3Bucket</property>
@@ -1464,13 +1584,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.Handler</property>
@@ -1484,12 +1606,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.MasterArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.MemorySize</property>
     <min>128</min>
-    <max>10240</max>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.Role</property>
@@ -1522,7 +1646,7 @@
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.Handler</property>
@@ -1537,7 +1661,7 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.MemorySize</property>
     <min>128</min>
-    <max>10240</max>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationRequest.Role</property>
@@ -1554,13 +1678,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.Handler</property>
@@ -1574,12 +1700,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.MasterArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.MemorySize</property>
     <min>128</min>
-    <max>10240</max>
+    <max>32768</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionConfigurationResponse.Role</property>
@@ -1606,8 +1734,8 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigRequest.FunctionName</property>
     <min>1</min>
-    <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigRequest.MaximumEventAgeInSeconds</property>
@@ -1623,11 +1751,13 @@
     <property>Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(|[a-zA-Z0-9$_-]+)</pattern>
+    <pattern>\$(LATEST(\.PUBLISHED)?)|[a-zA-Z0-9-_$]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionEventInvokeConfigResponse.MaximumEventAgeInSeconds</property>
@@ -1643,17 +1773,19 @@
     <property>Amazon.Lambda.Model.UpdateFunctionUrlConfigRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionUrlConfigRequest.Qualifier</property>
     <min>1</min>
     <max>128</max>
-    <pattern>(^\$LATEST$)|((?!^[0-9]+$)([a-zA-Z0-9-_]+))</pattern>
+    <pattern>((?!^\d+$)^[0-9a-zA-Z-_]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionUrlConfigResponse.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionUrlConfigResponse.FunctionUrl</property>
@@ -1669,6 +1801,25 @@
     <min>1</min>
     <max>200</max>
     <pattern>[a-zA-Z0-9-\/*:_+=.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.CapacityProvider.CapacityProviderArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:aws[a-zA-Z-]*:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:capacity-provider:[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.CapacityProvider.KmsKeyArn</property>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.CapacityProviderPermissionsConfig.CapacityProviderOperatorRoleArn</property>
+    <pattern>arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.CapacityProviderScalingConfig.MaxVCpuCount</property>
+    <min>2</min>
+    <max>15000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.CodeSigningConfig.CodeSigningConfigArn</property>
@@ -1762,13 +1913,31 @@
     <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.FunctionScalingConfig.MaxExecutionEnvironments</property>
+    <min>0</min>
+    <max>15000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.FunctionScalingConfig.MinExecutionEnvironments</property>
+    <min>0</min>
+    <max>15000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.FunctionUrlConfig.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.FunctionUrlConfig.FunctionUrl</property>
     <min>40</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.FunctionVersionsByCapacityProviderListItem.FunctionArn</property>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ImageConfig.WorkingDirectory</property>
@@ -1778,8 +1947,8 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.InvokeAsyncRequest.FunctionName</property>
     <min>1</min>
-    <max>170</max>
-    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <max>256</max>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_\.]+)(:(\$LATEST(\.PUBLISHED)?|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.KafkaSchemaRegistryAccessConfig.URI</property>
@@ -1790,6 +1959,22 @@
     <min>1</min>
     <max>10000</max>
     <pattern>[a-zA-Z0-9-\/*:_+=.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LambdaManagedInstancesCapacityProviderConfig.CapacityProviderArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:aws[a-zA-Z-]*:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:capacity-provider:[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LambdaManagedInstancesCapacityProviderConfig.ExecutionEnvironmentMemoryGiBPerVCpu</property>
+    <min>2</min>
+    <max>8</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LambdaManagedInstancesCapacityProviderConfig.PerExecutionEnvironmentMaxConcurrency</property>
+    <min>1</min>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.Layer.Arn</property>
@@ -1859,13 +2044,13 @@
     <property>Amazon.Lambda.Model.OnFailure.Destination</property>
     <min>0</min>
     <max>350</max>
-    <pattern>$|kafka://([^.]([a-zA-Z0-9\-_.]{0,248}))|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+    <pattern>$|kafka://([^.]([a-zA-Z0-9\-_.]{0,248}))|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.OnSuccess.Destination</property>
     <min>0</min>
     <max>350</max>
-    <pattern>$|kafka://([^.]([a-zA-Z0-9\-_.]{0,248}))|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+    <pattern>$|kafka://([^.]([a-zA-Z0-9\-_.]{0,248}))|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ProvisionedConcurrencyConfigListItem.AllocatedProvisionedConcurrentExecutions</property>
@@ -1877,7 +2062,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ProvisionedConcurrencyConfigListItem.FunctionArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ProvisionedConcurrencyConfigListItem.RequestedProvisionedConcurrentExecutions</property>
@@ -1933,5 +2120,10 @@
     <min>84</min>
     <max>1000</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.TargetTrackingScalingPolicy.TargetValue</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
 </property-value-rules>

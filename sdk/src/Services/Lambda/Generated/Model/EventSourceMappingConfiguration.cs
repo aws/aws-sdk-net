@@ -263,6 +263,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the Lambda function.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string FunctionArn
         {
             get { return this._functionArn; }

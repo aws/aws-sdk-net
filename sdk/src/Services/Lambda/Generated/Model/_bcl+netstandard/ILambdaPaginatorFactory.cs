@@ -38,6 +38,16 @@ namespace Amazon.Lambda.Model
         IListAliasesPaginator ListAliases(ListAliasesRequest request);
 
         /// <summary>
+        /// Paginator for ListCapacityProviders operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListCapacityProvidersPaginator ListCapacityProviders(ListCapacityProvidersRequest request);
+
+        /// <summary>
         /// Paginator for ListCodeSigningConfigs operation
         ///</summary>
         [AWSPaginator(
@@ -96,6 +106,16 @@ namespace Amazon.Lambda.Model
             OutputToken = new[] { "NextMarker" }
         )]
         IListFunctionUrlConfigsPaginator ListFunctionUrlConfigs(ListFunctionUrlConfigsRequest request);
+
+        /// <summary>
+        /// Paginator for ListFunctionVersionsByCapacityProvider operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListFunctionVersionsByCapacityProviderPaginator ListFunctionVersionsByCapacityProvider(ListFunctionVersionsByCapacityProviderRequest request);
 
         /// <summary>
         /// Paginator for ListLayers operation
