@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Metric. 
         /// <para>
-        /// The metric name, thresholds, and metric filters of the returned metric.
+        /// The metric name or metricId, thresholds, and metric filters of the returned metric.
         /// </para>
         /// </summary>
         public MetricV2 Metric

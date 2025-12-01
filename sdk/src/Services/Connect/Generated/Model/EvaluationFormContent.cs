@@ -40,7 +40,9 @@ namespace Amazon.Connect.Model
         private string _evaluationFormId;
         private int? _evaluationFormVersion;
         private List<EvaluationFormItem> _items = AWSConfigs.InitializeCollections ? new List<EvaluationFormItem>() : null;
+        private EvaluationFormLanguageConfiguration _languageConfiguration;
         private EvaluationFormScoringStrategy _scoringStrategy;
+        private EvaluationFormTargetConfiguration _targetConfiguration;
         private string _title;
 
         /// <summary>
@@ -67,7 +69,6 @@ namespace Amazon.Connect.Model
         /// The description of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -124,7 +125,7 @@ namespace Amazon.Connect.Model
         /// A version of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int EvaluationFormVersion
         {
             get { return this._evaluationFormVersion.GetValueOrDefault(); }
@@ -144,7 +145,7 @@ namespace Amazon.Connect.Model
         /// must not exceed 100 each. Questions must be contained in a section.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true)]
         public List<EvaluationFormItem> Items
         {
             get { return this._items; }
@@ -155,6 +156,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetItems()
         {
             return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LanguageConfiguration. 
+        /// <para>
+        /// Configuration for language settings of this evaluation form content.
+        /// </para>
+        /// </summary>
+        public EvaluationFormLanguageConfiguration LanguageConfiguration
+        {
+            get { return this._languageConfiguration; }
+            set { this._languageConfiguration = value; }
+        }
+
+        // Check to see if LanguageConfiguration property is set
+        internal bool IsSetLanguageConfiguration()
+        {
+            return this._languageConfiguration != null;
         }
 
         /// <summary>
@@ -176,12 +195,30 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TargetConfiguration. 
+        /// <para>
+        /// Configuration that specifies the target for this evaluation form content.
+        /// </para>
+        /// </summary>
+        public EvaluationFormTargetConfiguration TargetConfiguration
+        {
+            get { return this._targetConfiguration; }
+            set { this._targetConfiguration = value; }
+        }
+
+        // Check to see if TargetConfiguration property is set
+        internal bool IsSetTargetConfiguration()
+        {
+            return this._targetConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
         /// A title of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

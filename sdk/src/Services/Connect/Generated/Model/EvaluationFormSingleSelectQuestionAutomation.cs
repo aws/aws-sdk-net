@@ -65,7 +65,6 @@ namespace Amazon.Connect.Model
         /// the criteria.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=40)]
         public string DefaultOptionRefId
         {
             get { return this._defaultOptionRefId; }
@@ -84,7 +83,6 @@ namespace Amazon.Connect.Model
         /// The automation options of the single select question.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
         public List<EvaluationFormSingleSelectQuestionAutomationOption> Options
         {
             get { return this._options; }

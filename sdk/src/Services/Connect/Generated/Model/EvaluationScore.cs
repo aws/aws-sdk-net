@@ -34,9 +34,28 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationScore
     {
+        private double? _appliedWeight;
         private bool? _automaticFail;
         private bool? _notApplicable;
         private double? _percentage;
+
+        /// <summary>
+        /// Gets and sets the property AppliedWeight. 
+        /// <para>
+        /// Weight applied to this evaluation score.
+        /// </para>
+        /// </summary>
+        public double AppliedWeight
+        {
+            get { return this._appliedWeight.GetValueOrDefault(); }
+            set { this._appliedWeight = value; }
+        }
+
+        // Check to see if AppliedWeight property is set
+        internal bool IsSetAppliedWeight()
+        {
+            return this._appliedWeight.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property AutomaticFail. 

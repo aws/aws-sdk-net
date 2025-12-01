@@ -34,7 +34,26 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ContactFlowSearchFilter
     {
+        private ContactFlowAttributeFilter _flowAttributeFilter;
         private ControlPlaneTagFilter _tagFilter;
+
+        /// <summary>
+        /// Gets and sets the property FlowAttributeFilter. 
+        /// <para>
+        ///  Flow attribute filter for contact flow search operations. 
+        /// </para>
+        /// </summary>
+        public ContactFlowAttributeFilter FlowAttributeFilter
+        {
+            get { return this._flowAttributeFilter; }
+            set { this._flowAttributeFilter = value; }
+        }
+
+        // Check to see if FlowAttributeFilter property is set
+        internal bool IsSetFlowAttributeFilter()
+        {
+            return this._flowAttributeFilter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TagFilter.

@@ -62,6 +62,7 @@ namespace Amazon.Connect.Model
         private DateTime? _lastResumedTimestamp;
         private DateTime? _lastUpdateTimestamp;
         private string _name;
+        private List<NextContactEntry> _nextContacts = AWSConfigs.InitializeCollections ? new List<NextContactEntry>() : null;
         private OutboundStrategy _outboundStrategy;
         private string _previousContactId;
         private QualityMetrics _qualityMetrics;
@@ -604,6 +605,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextContacts. 
+        /// <para>
+        ///  List of next contact entries for the contact. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=24)]
+        public List<NextContactEntry> NextContacts
+        {
+            get { return this._nextContacts; }
+            set { this._nextContacts = value; }
+        }
+
+        // Check to see if NextContacts property is set
+        internal bool IsSetNextContacts()
+        {
+            return this._nextContacts != null && (this._nextContacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

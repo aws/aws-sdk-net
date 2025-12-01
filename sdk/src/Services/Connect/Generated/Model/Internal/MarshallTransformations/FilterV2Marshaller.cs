@@ -65,6 +65,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetStringCondition())
+            {
+                context.Writer.WritePropertyName("StringCondition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FilterV2StringConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.StringCondition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

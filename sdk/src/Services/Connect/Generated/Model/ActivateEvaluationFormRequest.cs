@@ -66,7 +66,7 @@ namespace Amazon.Connect.Model
         /// the latest version of the evaluation form is activated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int EvaluationFormVersion
         {
             get { return this._evaluationFormVersion.GetValueOrDefault(); }

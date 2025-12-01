@@ -101,7 +101,6 @@ namespace Amazon.Connect.Model
         /// The scoring options of the numeric question.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
         public List<EvaluationFormNumericQuestionOption> Options
         {
             get { return this._options; }

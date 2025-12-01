@@ -48,6 +48,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMultiSelect())
+            {
+                context.Writer.WritePropertyName("MultiSelect");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EvaluationFormMultiSelectQuestionPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.MultiSelect, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNumeric())
             {
                 context.Writer.WritePropertyName("Numeric");

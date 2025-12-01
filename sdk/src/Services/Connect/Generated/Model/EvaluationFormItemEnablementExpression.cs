@@ -82,7 +82,7 @@ namespace Amazon.Connect.Model
         /// A list of values from source item.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public List<EvaluationFormItemEnablementSourceValue> Values
         {
             get { return this._values; }

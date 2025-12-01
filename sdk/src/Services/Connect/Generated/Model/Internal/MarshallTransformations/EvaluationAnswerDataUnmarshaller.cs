@@ -66,6 +66,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DateTimeValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DateTimeValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NotApplicable", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -82,6 +88,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StringValues", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.StringValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

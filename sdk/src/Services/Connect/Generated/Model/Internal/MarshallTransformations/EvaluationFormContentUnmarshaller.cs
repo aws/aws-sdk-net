@@ -102,10 +102,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Items = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LanguageConfiguration", targetDepth))
+                {
+                    var unmarshaller = EvaluationFormLanguageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LanguageConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScoringStrategy", targetDepth))
                 {
                     var unmarshaller = EvaluationFormScoringStrategyUnmarshaller.Instance;
                     unmarshalledObject.ScoringStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetConfiguration", targetDepth))
+                {
+                    var unmarshaller = EvaluationFormTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TargetConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Title", targetDepth))

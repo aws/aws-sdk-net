@@ -1300,6 +1300,61 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateSecurityProfiles
+
+        internal virtual AssociateSecurityProfilesResponse AssociateSecurityProfiles(AssociateSecurityProfilesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSecurityProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associate security profiles with an Entity in an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSecurityProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityProfiles">REST API Reference for AssociateSecurityProfiles Operation</seealso>
+        public virtual Task<AssociateSecurityProfilesResponse> AssociateSecurityProfilesAsync(AssociateSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateSecurityProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateTrafficDistributionGroupUser
 
         internal virtual AssociateTrafficDistributionGroupUserResponse AssociateTrafficDistributionGroupUser(AssociateTrafficDistributionGroupUserRequest request)
@@ -1402,6 +1457,62 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateWorkspace
+
+        internal virtual AssociateWorkspaceResponse AssociateWorkspace(AssociateWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWorkspaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a workspace with one or more users or routing profiles, allowing them to
+        /// access the workspace's configured views and pages.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateWorkspace">REST API Reference for AssociateWorkspace Operation</seealso>
+        public virtual Task<AssociateWorkspaceResponse> AssociateWorkspaceAsync(AssociateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWorkspaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateWorkspaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchAssociateAnalyticsDataSet
 
         internal virtual BatchAssociateAnalyticsDataSetResponse BatchAssociateAnalyticsDataSet(BatchAssociateAnalyticsDataSetRequest request)
@@ -1448,6 +1559,188 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = BatchAssociateAnalyticsDataSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchAssociateAnalyticsDataSetResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchCreateDataTableValue
+
+        internal virtual BatchCreateDataTableValueResponse BatchCreateDataTableValue(BatchCreateDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateDataTableValueResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates values for attributes in a data table. The value may be a default or it may
+        /// be associated with a primary value. The value must pass all customer defined validation
+        /// as well as the default validation for the value type. The operation must conform to
+        /// Batch Operation API Standards. Although the standard specifies that successful and
+        /// failed entities are listed separately in the response, authorization fails if any
+        /// primary values or attributes are unauthorized. The combination of primary values and
+        /// the attribute name serve as the identifier for the individual item request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateDataTableValue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchCreateDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchCreateDataTableValue">REST API Reference for BatchCreateDataTableValue Operation</seealso>
+        public virtual Task<BatchCreateDataTableValueResponse> BatchCreateDataTableValueAsync(BatchCreateDataTableValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateDataTableValueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchCreateDataTableValueResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteDataTableValue
+
+        internal virtual BatchDeleteDataTableValueResponse BatchDeleteDataTableValue(BatchDeleteDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteDataTableValueResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes multiple values from a data table. API users may delete values at any time.
+        /// When deletion is requested from the admin website, a warning is shown alerting the
+        /// user of the most recent time the attribute and its values were accessed. System managed
+        /// values are not deletable by customers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDataTableValue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDeleteDataTableValue">REST API Reference for BatchDeleteDataTableValue Operation</seealso>
+        public virtual Task<BatchDeleteDataTableValueResponse> BatchDeleteDataTableValueAsync(BatchDeleteDataTableValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteDataTableValueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteDataTableValueResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDescribeDataTableValue
+
+        internal virtual BatchDescribeDataTableValueResponse BatchDescribeDataTableValue(BatchDescribeDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDescribeDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDescribeDataTableValueResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves multiple values from a data table without evaluating expressions. Returns
+        /// the raw stored values along with metadata such as lock versions and modification timestamps.
+        /// "Describe" is a deprecated term but is allowed to maintain consistency with existing
+        /// operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeDataTableValue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDescribeDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDescribeDataTableValue">REST API Reference for BatchDescribeDataTableValue Operation</seealso>
+        public virtual Task<BatchDescribeDataTableValueResponse> BatchDescribeDataTableValueAsync(BatchDescribeDataTableValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDescribeDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeDataTableValueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDescribeDataTableValueResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1665,6 +1958,64 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = BatchPutContactResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchPutContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateDataTableValue
+
+        internal virtual BatchUpdateDataTableValueResponse BatchUpdateDataTableValue(BatchUpdateDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateDataTableValueResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates multiple data table values using all properties from BatchCreateDataTableValue.
+        /// System managed values are not modifiable by customers. The operation requires proper
+        /// lock versions to prevent concurrent modification conflicts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateDataTableValue service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchUpdateDataTableValue">REST API Reference for BatchUpdateDataTableValue Operation</seealso>
+        public virtual Task<BatchUpdateDataTableValueResponse> BatchUpdateDataTableValueAsync(BatchUpdateDataTableValueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateDataTableValueResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchUpdateDataTableValueResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2252,6 +2603,137 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = CreateContactFlowVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateContactFlowVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDataTable
+
+        internal virtual CreateDataTableResponse CreateDataTable(CreateDataTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new data table with the specified properties. Supports the creation of all
+        /// table properties except for attributes and values. A table with no attributes and
+        /// values is a valid state for a table. The number of tables per instance is limited
+        /// to 100 per instance. Customers can request an increase by using AWS Service Quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataTable service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTable">REST API Reference for CreateDataTable Operation</seealso>
+        public virtual Task<CreateDataTableResponse> CreateDataTableAsync(CreateDataTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDataTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDataTableAttribute
+
+        internal virtual CreateDataTableAttributeResponse CreateDataTableAttribute(CreateDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataTableAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds an attribute to an existing data table. Creating a new primary attribute uses
+        /// the empty value for the specified value type for all existing records. This should
+        /// not affect uniqueness of published data tables since the existing primary values will
+        /// already be unique. Creating attributes does not create any values. System managed
+        /// tables may not allow customers to create new attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataTableAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTableAttribute">REST API Reference for CreateDataTableAttribute Operation</seealso>
+        public virtual Task<CreateDataTableAttributeResponse> CreateDataTableAttributeAsync(CreateDataTableAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDataTableAttributeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3735,6 +4217,133 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateWorkspace
+
+        internal virtual CreateWorkspaceResponse CreateWorkspace(CreateWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a workspace that defines the user experience by mapping views to pages. Workspaces
+        /// can be assigned to users or routing profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
+        public virtual Task<CreateWorkspaceResponse> CreateWorkspaceAsync(CreateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWorkspaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateWorkspacePage
+
+        internal virtual CreateWorkspacePageResponse CreateWorkspacePage(CreateWorkspacePageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspacePageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspacePageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a view with a page in a workspace, defining what users see when they navigate
+        /// to that page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspacePage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWorkspacePage service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspacePage">REST API Reference for CreateWorkspacePage Operation</seealso>
+        public virtual Task<CreateWorkspacePageResponse> CreateWorkspacePageAsync(CreateWorkspacePageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspacePageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWorkspacePageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeactivateEvaluationForm
 
         internal virtual DeactivateEvaluationFormResponse DeactivateEvaluationForm(DeactivateEvaluationFormRequest request)
@@ -4147,6 +4756,123 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeleteContactFlowVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteContactFlowVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDataTable
+
+        internal virtual DeleteDataTableResponse DeleteDataTable(DeleteDataTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a data table and all associated attributes, versions, audits, and values.
+        /// Does not update any references to the data table, even from other data tables. This
+        /// includes dynamic values and conditional validations. System managed data tables are
+        /// not deletable by customers. API users may delete the table at any time. When deletion
+        /// is requested from the admin website, a warning is shown alerting the user of the most
+        /// recent time the table and its values were accessed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataTable service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTable">REST API Reference for DeleteDataTable Operation</seealso>
+        public virtual Task<DeleteDataTableResponse> DeleteDataTableAsync(DeleteDataTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDataTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDataTableAttribute
+
+        internal virtual DeleteDataTableAttributeResponse DeleteDataTableAttribute(DeleteDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataTableAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an attribute and all its values from a data table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataTableAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTableAttribute">REST API Reference for DeleteDataTableAttribute Operation</seealso>
+        public virtual Task<DeleteDataTableAttributeResponse> DeleteDataTableAttributeAsync(DeleteDataTableAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDataTableAttributeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5368,6 +6094,163 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteWorkspace
+
+        internal virtual DeleteWorkspaceResponse DeleteWorkspace(DeleteWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a workspace and removes all associated view and resource assignments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
+        public virtual Task<DeleteWorkspaceResponse> DeleteWorkspaceAsync(DeleteWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkspaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkspaceMedia
+
+        internal virtual DeleteWorkspaceMediaResponse DeleteWorkspaceMedia(DeleteWorkspaceMediaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspaceMediaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a media asset (such as a logo) from a workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceMedia service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkspaceMedia service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspaceMedia">REST API Reference for DeleteWorkspaceMedia Operation</seealso>
+        public virtual Task<DeleteWorkspaceMediaResponse> DeleteWorkspaceMediaAsync(DeleteWorkspaceMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkspaceMediaResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkspacePage
+
+        internal virtual DeleteWorkspacePageResponse DeleteWorkspacePage(DeleteWorkspacePageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspacePageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspacePageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the association between a view and a page in a workspace. The page will display
+        /// the default view after deletion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspacePage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWorkspacePage service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspacePage">REST API Reference for DeleteWorkspacePage Operation</seealso>
+        public virtual Task<DeleteWorkspacePageResponse> DeleteWorkspacePageAsync(DeleteWorkspacePageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspacePageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkspacePageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAgentStatus
 
         internal virtual DescribeAgentStatusResponse DescribeAgentStatus(DescribeAgentStatusRequest request)
@@ -5803,6 +6686,115 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeContactFlowModuleAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeContactFlowModuleAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDataTable
+
+        internal virtual DescribeDataTableResponse DescribeDataTable(DescribeDataTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataTableResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns all properties for a data table except for attributes and values. All properties
+        /// from CreateDataTable are returned as well as properties for region replication, versioning,
+        /// and system tables. "Describe" is a deprecated term but is allowed to maintain consistency
+        /// with existing operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataTable service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataTable service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTable">REST API Reference for DescribeDataTable Operation</seealso>
+        public virtual Task<DescribeDataTableResponse> DescribeDataTableAsync(DescribeDataTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDataTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDataTableAttribute
+
+        internal virtual DescribeDataTableAttributeResponse DescribeDataTableAttribute(DescribeDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataTableAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns detailed information for a specific data table attribute including its configuration,
+        /// validation rules, and metadata. "Describe" is a deprecated term but is allowed to
+        /// maintain consistency with existing operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataTableAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTableAttribute">REST API Reference for DescribeDataTableAttribute Operation</seealso>
+        public virtual Task<DescribeDataTableAttributeResponse> DescribeDataTableAttributeAsync(DescribeDataTableAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDataTableAttributeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6932,6 +7924,58 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeWorkspace
+
+        internal virtual DescribeWorkspaceResponse DescribeWorkspace(DescribeWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves details about a workspace, including its configuration and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeWorkspace">REST API Reference for DescribeWorkspace Operation</seealso>
+        public virtual Task<DescribeWorkspaceResponse> DescribeWorkspaceAsync(DescribeWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWorkspaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateAnalyticsDataSet
 
         internal virtual DisassociateAnalyticsDataSetResponse DisassociateAnalyticsDataSet(DisassociateAnalyticsDataSetRequest request)
@@ -7688,6 +8732,62 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateSecurityProfiles
+
+        internal virtual DisassociateSecurityProfilesResponse DisassociateSecurityProfiles(DisassociateSecurityProfilesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSecurityProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates a security profile attached to a Q in Connect AI Agent Entity in an
+        /// Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSecurityProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityProfiles">REST API Reference for DisassociateSecurityProfiles Operation</seealso>
+        public virtual Task<DisassociateSecurityProfilesResponse> DisassociateSecurityProfilesAsync(DisassociateSecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateSecurityProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateTrafficDistributionGroupUser
 
         internal virtual DisassociateTrafficDistributionGroupUserResponse DisassociateTrafficDistributionGroupUser(DisassociateTrafficDistributionGroupUserRequest request)
@@ -7790,6 +8890,58 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateWorkspace
+
+        internal virtual DisassociateWorkspaceResponse DisassociateWorkspace(DisassociateWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWorkspaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the association between a workspace and one or more users or routing profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWorkspace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateWorkspace">REST API Reference for DisassociateWorkspace Operation</seealso>
+        public virtual Task<DisassociateWorkspaceResponse> DisassociateWorkspaceAsync(DisassociateWorkspaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWorkspaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateWorkspaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DismissUserContact
 
         internal virtual DismissUserContactResponse DismissUserContact(DismissUserContactRequest request)
@@ -7842,6 +8994,63 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DismissUserContactResponseUnmarshaller.Instance;
 
             return InvokeAsync<DismissUserContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EvaluateDataTableValues
+
+        internal virtual EvaluateDataTableValuesResponse EvaluateDataTableValues(EvaluateDataTableValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EvaluateDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateDataTableValuesResponseUnmarshaller.Instance;
+
+            return Invoke<EvaluateDataTableValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Evaluates values at the time of the request and returns them. It considers the request's
+        /// timezone or the table's timezone, in that order, when accessing time based tables.
+        /// When a value is accessed, the accessor's identity and the time of access are saved
+        /// alongside the value to help identify values that are actively in use. The term "Batch"
+        /// is not included in the operation name since it does not meet all the criteria for
+        /// a batch operation as specified in Batch Operations: AWS API Standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateDataTableValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EvaluateDataTableValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EvaluateDataTableValues">REST API Reference for EvaluateDataTableValues Operation</seealso>
+        public virtual Task<EvaluateDataTableValuesResponse> EvaluateDataTableValuesAsync(EvaluateDataTableValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EvaluateDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateDataTableValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EvaluateDataTableValuesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8757,6 +9966,55 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ImportWorkspaceMedia
+
+        internal virtual ImportWorkspaceMediaResponse ImportWorkspaceMedia(ImportWorkspaceMediaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ImportWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return Invoke<ImportWorkspaceMediaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Imports a media asset (such as a logo) for use in a workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceMedia service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportWorkspaceMedia service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportWorkspaceMedia">REST API Reference for ImportWorkspaceMedia Operation</seealso>
+        public virtual Task<ImportWorkspaceMediaResponse> ImportWorkspaceMediaAsync(ImportWorkspaceMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ImportWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportWorkspaceMediaResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAgentStatuses
 
         internal virtual ListAgentStatusesResponse ListAgentStatuses(ListAgentStatusesRequest request)
@@ -9490,6 +10748,221 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListDataTableAttributes
+
+        internal virtual ListDataTableAttributesResponse ListDataTableAttributes(ListDataTableAttributesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTableAttributesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns all attributes for a specified data table. A maximum of 100 attributes per
+        /// data table is allowed. Customers can request an increase by using AWS Service Quotas.
+        /// The response can be filtered by specific attribute IDs for CloudFormation integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTableAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTableAttributes service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableAttributes">REST API Reference for ListDataTableAttributes Operation</seealso>
+        public virtual Task<ListDataTableAttributesResponse> ListDataTableAttributesAsync(ListDataTableAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataTableAttributesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataTablePrimaryValues
+
+        internal virtual ListDataTablePrimaryValuesResponse ListDataTablePrimaryValues(ListDataTablePrimaryValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTablePrimaryValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all primary value combinations for a given data table. Returns the unique combinations
+        /// of primary attribute values that identify records in the table. Up to 100 records
+        /// are returned per request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTablePrimaryValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTablePrimaryValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTablePrimaryValues">REST API Reference for ListDataTablePrimaryValues Operation</seealso>
+        public virtual Task<ListDataTablePrimaryValuesResponse> ListDataTablePrimaryValuesAsync(ListDataTablePrimaryValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataTablePrimaryValuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataTables
+
+        internal virtual ListDataTablesResponse ListDataTables(ListDataTablesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTablesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all data tables for the specified Amazon Connect instance. Returns summary information
+        /// for each table including basic metadata and modification details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTables service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTables">REST API Reference for ListDataTables Operation</seealso>
+        public virtual Task<ListDataTablesResponse> ListDataTablesAsync(ListDataTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataTablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataTableValues
+
+        internal virtual ListDataTableValuesResponse ListDataTableValues(ListDataTableValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTableValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists values stored in a data table with optional filtering by record IDs or primary
+        /// attribute values. Returns the raw stored values along with metadata such as lock versions
+        /// and modification timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTableValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTableValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableValues">REST API Reference for ListDataTableValues Operation</seealso>
+        public virtual Task<ListDataTableValuesResponse> ListDataTableValuesAsync(ListDataTableValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDataTableValuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDefaultVocabularies
 
         internal virtual ListDefaultVocabulariesResponse ListDefaultVocabularies(ListDefaultVocabulariesRequest request)
@@ -9532,6 +11005,56 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListDefaultVocabulariesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDefaultVocabulariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEntitySecurityProfiles
+
+        internal virtual ListEntitySecurityProfilesResponse ListEntitySecurityProfiles(ListEntitySecurityProfilesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEntitySecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntitySecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntitySecurityProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all security profiles attached to a Q in Connect AIAgent Entity in an Amazon
+        /// Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitySecurityProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEntitySecurityProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEntitySecurityProfiles">REST API Reference for ListEntitySecurityProfiles Operation</seealso>
+        public virtual Task<ListEntitySecurityProfilesResponse> ListEntitySecurityProfilesAsync(ListEntitySecurityProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEntitySecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntitySecurityProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEntitySecurityProfilesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10897,7 +12420,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Returns a list of third-party applications in a specific security profile.
+        /// Returns a list of third-party applications or MCP Servers in a specific security profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileApplications service method.</param>
         /// <param name="cancellationToken">
@@ -10928,6 +12451,55 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListSecurityProfileApplicationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSecurityProfileApplicationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSecurityProfileFlowModules
+
+        internal virtual ListSecurityProfileFlowModulesResponse ListSecurityProfileFlowModules(ListSecurityProfileFlowModulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfileFlowModulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfileFlowModulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityProfileFlowModulesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// A list of Flow Modules an AI Agent can invoke as a tool
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileFlowModules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSecurityProfileFlowModules service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileFlowModules">REST API Reference for ListSecurityProfileFlowModules Operation</seealso>
+        public virtual Task<ListSecurityProfileFlowModulesResponse> ListSecurityProfileFlowModulesAsync(ListSecurityProfileFlowModulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfileFlowModulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfileFlowModulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSecurityProfileFlowModulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11558,6 +13130,163 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListViewVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListViewVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWorkspaceMedia
+
+        internal virtual ListWorkspaceMediaResponse ListWorkspaceMedia(ListWorkspaceMediaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspaceMediaResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists media assets (such as logos) associated with a workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaceMedia service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkspaceMedia service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaceMedia">REST API Reference for ListWorkspaceMedia Operation</seealso>
+        public virtual Task<ListWorkspaceMediaResponse> ListWorkspaceMediaAsync(ListWorkspaceMediaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorkspaceMediaResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWorkspacePages
+
+        internal virtual ListWorkspacePagesResponse ListWorkspacePages(ListWorkspacePagesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacePagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacePagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspacePagesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the page configurations in a workspace, including the views assigned to each
+        /// page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspacePages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkspacePages service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspacePages">REST API Reference for ListWorkspacePages Operation</seealso>
+        public virtual Task<ListWorkspacePagesResponse> ListWorkspacePagesAsync(ListWorkspacePagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacePagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacePagesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorkspacePagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWorkspaces
+
+        internal virtual ListWorkspacesResponse ListWorkspaces(ListWorkspacesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspacesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the workspaces in an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWorkspaces service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
+        public virtual Task<ListWorkspacesResponse> ListWorkspacesAsync(ListWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorkspacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12333,6 +14062,57 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchDataTables
+
+        internal virtual SearchDataTablesResponse SearchDataTables(SearchDataTablesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDataTablesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchDataTablesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for data tables based on the table's ID, name, and description. In the future,
+        /// this operation can support searching on attribute names and possibly primary values.
+        /// Follows other search operations closely and supports both search criteria and filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchDataTables service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchDataTables service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchDataTables">REST API Reference for SearchDataTables Operation</seealso>
+        public virtual Task<SearchDataTablesResponse> SearchDataTablesAsync(SearchDataTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDataTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchDataTablesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchEmailAddresses
 
         internal virtual SearchEmailAddressesResponse SearchEmailAddresses(SearchEmailAddressesRequest request)
@@ -13068,6 +14848,58 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchViews
+
+        internal virtual SearchViewsResponse SearchViews(SearchViewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchViewsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchViewsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches views based on name, description, or tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchViews service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchViews">REST API Reference for SearchViews Operation</seealso>
+        public virtual Task<SearchViewsResponse> SearchViewsAsync(SearchViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchViewsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchViewsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchVocabularies
 
         internal virtual SearchVocabulariesResponse SearchVocabularies(SearchVocabulariesRequest request)
@@ -13111,6 +14943,111 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = SearchVocabulariesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchVocabulariesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchWorkspaceAssociations
+
+        internal virtual SearchWorkspaceAssociationsResponse SearchWorkspaceAssociations(SearchWorkspaceAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspaceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchWorkspaceAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for workspace associations with users or routing profiles based on various
+        /// criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchWorkspaceAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchWorkspaceAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaceAssociations">REST API Reference for SearchWorkspaceAssociations Operation</seealso>
+        public virtual Task<SearchWorkspaceAssociationsResponse> SearchWorkspaceAssociationsAsync(SearchWorkspaceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspaceAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchWorkspaceAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchWorkspaces
+
+        internal virtual SearchWorkspacesResponse SearchWorkspaces(SearchWorkspacesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspacesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchWorkspacesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches workspaces based on name, description, visibility, or tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchWorkspaces service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchWorkspaces service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaces">REST API Reference for SearchWorkspaces Operation</seealso>
+        public virtual Task<SearchWorkspacesResponse> SearchWorkspacesAsync(SearchWorkspacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspacesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchWorkspacesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -13463,6 +15400,62 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = StartContactEvaluationResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartContactEvaluationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartContactMediaProcessing
+
+        internal virtual StartContactMediaProcessingResponse StartContactMediaProcessing(StartContactMediaProcessingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return Invoke<StartContactMediaProcessingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables in-flight message processing for an ongoing chat session. Message processing
+        /// will stay active for the rest of the chat, even if an individual contact segment ends.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContactMediaProcessing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartContactMediaProcessing service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactMediaProcessing">REST API Reference for StartContactMediaProcessing Operation</seealso>
+        public virtual Task<StartContactMediaProcessingResponse> StartContactMediaProcessingAsync(StartContactMediaProcessingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartContactMediaProcessingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -14185,6 +16178,58 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = StopContactResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopContactMediaProcessing
+
+        internal virtual StopContactMediaProcessingResponse StopContactMediaProcessing(StopContactMediaProcessingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return Invoke<StopContactMediaProcessingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops in-flight message processing for an ongoing chat session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopContactMediaProcessing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopContactMediaProcessing service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactMediaProcessing">REST API Reference for StopContactMediaProcessing Operation</seealso>
+        public virtual Task<StopContactMediaProcessingResponse> StopContactMediaProcessingAsync(StopContactMediaProcessingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopContactMediaProcessingResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -15466,6 +17511,193 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateContactScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateContactScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDataTableAttribute
+
+        internal virtual UpdateDataTableAttributeResponse UpdateDataTableAttribute(UpdateDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataTableAttributeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates all properties for an attribute using all properties from CreateDataTableAttribute.
+        /// There are no other granular update endpoints. It does not act as a patch operation
+        /// - all properties must be provided. System managed attributes are not mutable by customers.
+        /// Changing an attribute's validation does not invalidate existing values since validation
+        /// only runs when values are created or updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTableAttribute service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableAttribute">REST API Reference for UpdateDataTableAttribute Operation</seealso>
+        public virtual Task<UpdateDataTableAttributeResponse> UpdateDataTableAttributeAsync(UpdateDataTableAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDataTableAttributeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDataTableMetadata
+
+        internal virtual UpdateDataTableMetadataResponse UpdateDataTableMetadata(UpdateDataTableMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataTableMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the metadata properties of a data table. Accepts all fields similar to CreateDataTable,
+        /// except for fields and tags. There are no other granular update endpoints. It does
+        /// not act as a patch operation - all properties must be provided or defaults will be
+        /// used. Fields follow the same requirements as CreateDataTable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTableMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataTableMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableMetadata">REST API Reference for UpdateDataTableMetadata Operation</seealso>
+        public virtual Task<UpdateDataTableMetadataResponse> UpdateDataTableMetadataAsync(UpdateDataTableMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDataTableMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDataTablePrimaryValues
+
+        internal virtual UpdateDataTablePrimaryValuesResponse UpdateDataTablePrimaryValues(UpdateDataTablePrimaryValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataTablePrimaryValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the primary values for a record. This operation affects all existing values
+        /// that are currently associated to the record and its primary values. Users that have
+        /// restrictions on attributes and/or primary values are not authorized to use this endpoint.
+        /// The combination of new primary values must be unique within the table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTablePrimaryValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataTablePrimaryValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTablePrimaryValues">REST API Reference for UpdateDataTablePrimaryValues Operation</seealso>
+        public virtual Task<UpdateDataTablePrimaryValuesResponse> UpdateDataTablePrimaryValuesAsync(UpdateDataTablePrimaryValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDataTablePrimaryValuesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -17687,6 +19919,225 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateViewMetadataResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateViewMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspaceMetadata
+
+        internal virtual UpdateWorkspaceMetadataResponse UpdateWorkspaceMetadata(UpdateWorkspaceMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the metadata of a workspace, such as its name and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceMetadata">REST API Reference for UpdateWorkspaceMetadata Operation</seealso>
+        public virtual Task<UpdateWorkspaceMetadataResponse> UpdateWorkspaceMetadataAsync(UpdateWorkspaceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkspaceMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspacePage
+
+        internal virtual UpdateWorkspacePageResponse UpdateWorkspacePage(UpdateWorkspacePageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspacePageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspacePageResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the configuration of a page in a workspace, including the associated view
+        /// and input data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspacePage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspacePage service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspacePage">REST API Reference for UpdateWorkspacePage Operation</seealso>
+        public virtual Task<UpdateWorkspacePageResponse> UpdateWorkspacePageAsync(UpdateWorkspacePageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspacePageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkspacePageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspaceTheme
+
+        internal virtual UpdateWorkspaceThemeResponse UpdateWorkspaceTheme(UpdateWorkspaceThemeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceThemeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceThemeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the theme configuration for a workspace, including colors and styling.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceTheme service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceTheme service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceTheme">REST API Reference for UpdateWorkspaceTheme Operation</seealso>
+        public virtual Task<UpdateWorkspaceThemeResponse> UpdateWorkspaceThemeAsync(UpdateWorkspaceThemeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceThemeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkspaceThemeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspaceVisibility
+
+        internal virtual UpdateWorkspaceVisibilityResponse UpdateWorkspaceVisibility(UpdateWorkspaceVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceVisibilityResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the visibility setting of a workspace, controlling whether it is available
+        /// to all users, assigned users only, or none.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceVisibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceVisibility service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceVisibility">REST API Reference for UpdateWorkspaceVisibility Operation</seealso>
+        public virtual Task<UpdateWorkspaceVisibilityResponse> UpdateWorkspaceVisibilityAsync(UpdateWorkspaceVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceVisibilityResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkspaceVisibilityResponse>(request, options, cancellationToken);
         }
 
         #endregion

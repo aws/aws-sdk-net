@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Specify whether this routing criteria step should apply for only a limited amount
-    /// of time,&#x2028; or if it should never expire.
+    /// of time, or if it should never expire.
     /// </summary>
     public partial class RoutingCriteriaInputStepExpiry
     {
@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
         /// The number of seconds that the contact will be routed only to agents matching this
-        /// routing&#x2028; step, if expiry was configured for this routing step.
+        /// routing step, if expiry was configured for this routing step.
         /// </para>
         /// </summary>
         public int DurationInSeconds

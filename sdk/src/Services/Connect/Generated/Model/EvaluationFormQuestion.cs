@@ -67,7 +67,6 @@ namespace Amazon.Connect.Model
         /// The instructions of the section.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string Instructions
         {
             get { return this._instructions; }
@@ -143,7 +142,7 @@ namespace Amazon.Connect.Model
         /// form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=40)]
+        [AWSProperty(Required=true)]
         public string RefId
         {
             get { return this._refId; }
@@ -162,7 +161,7 @@ namespace Amazon.Connect.Model
         /// The title of the question.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=350)]
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }
@@ -181,7 +180,6 @@ namespace Amazon.Connect.Model
         /// The scoring weight of the section.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
         public double Weight
         {
             get { return this._weight.GetValueOrDefault(); }

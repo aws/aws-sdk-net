@@ -90,6 +90,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.CalibrationSessionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContactParticipant", targetDepth))
+                {
+                    var unmarshaller = EvaluationContactParticipantUnmarshaller.Instance;
+                    unmarshalledObject.ContactParticipant = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

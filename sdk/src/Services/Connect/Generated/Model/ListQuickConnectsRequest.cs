@@ -107,7 +107,7 @@ namespace Amazon.Connect.Model
         /// External (PHONE_NUMBER), or Queue (QUEUE).
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3)]
+        [AWSProperty(Max=4)]
         public List<string> QuickConnectTypes
         {
             get { return this._quickConnectTypes; }

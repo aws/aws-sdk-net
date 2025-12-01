@@ -80,7 +80,7 @@ namespace Amazon.Connect.Model
         /// The answer options of the single select question.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true)]
         public List<EvaluationFormSingleSelectQuestionOption> Options
         {
             get { return this._options; }

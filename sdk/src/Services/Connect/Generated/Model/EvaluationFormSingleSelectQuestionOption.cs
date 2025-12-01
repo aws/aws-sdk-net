@@ -83,7 +83,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the answer option. An identifier must be unique within the question.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=40)]
+        [AWSProperty(Required=true)]
         public string RefId
         {
             get { return this._refId; }
@@ -102,7 +102,6 @@ namespace Amazon.Connect.Model
         /// The score assigned to the answer option.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
         public int Score
         {
             get { return this._score.GetValueOrDefault(); }
@@ -121,7 +120,7 @@ namespace Amazon.Connect.Model
         /// The title of the answer option.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=128)]
+        [AWSProperty(Required=true)]
         public string Text
         {
             get { return this._text; }

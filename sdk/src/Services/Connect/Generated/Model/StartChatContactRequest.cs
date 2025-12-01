@@ -87,6 +87,7 @@ namespace Amazon.Connect.Model
         private string _customerId;
         private ChatMessage _initialMessage;
         private string _instanceId;
+        private ParticipantConfiguration _participantConfiguration;
         private ParticipantDetails _participantDetails;
         private PersistentChat _persistentChat;
         private string _relatedContactId;
@@ -245,6 +246,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParticipantConfiguration. 
+        /// <para>
+        ///  The configuration of the participant. 
+        /// </para>
+        /// </summary>
+        public ParticipantConfiguration ParticipantConfiguration
+        {
+            get { return this._participantConfiguration; }
+            set { this._participantConfiguration = value; }
+        }
+
+        // Check to see if ParticipantConfiguration property is set
+        internal bool IsSetParticipantConfiguration()
+        {
+            return this._participantConfiguration != null;
         }
 
         /// <summary>

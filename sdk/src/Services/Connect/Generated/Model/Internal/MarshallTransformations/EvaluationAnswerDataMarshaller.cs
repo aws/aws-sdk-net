@@ -48,6 +48,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDateTimeValue())
+            {
+                context.Writer.WritePropertyName("DateTimeValue");
+                context.Writer.Write(requestObject.DateTimeValue);
+            }
+
             if(requestObject.IsSetNotApplicable())
             {
                 context.Writer.WritePropertyName("NotApplicable");
@@ -71,6 +77,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("StringValue");
                 context.Writer.Write(requestObject.StringValue);
+            }
+
+            if(requestObject.IsSetStringValues())
+            {
+                context.Writer.WritePropertyName("StringValues");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectStringValuesListValue in requestObject.StringValues)
+                {
+                        context.Writer.Write(requestObjectStringValuesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

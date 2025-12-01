@@ -48,6 +48,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFlowAttributeFilter())
+            {
+                context.Writer.WritePropertyName("FlowAttributeFilter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ContactFlowAttributeFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.FlowAttributeFilter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTagFilter())
             {
                 context.Writer.WritePropertyName("TagFilter");

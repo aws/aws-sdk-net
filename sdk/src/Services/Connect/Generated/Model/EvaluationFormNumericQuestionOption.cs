@@ -121,7 +121,6 @@ namespace Amazon.Connect.Model
         /// The score assigned to answer values within the range option.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
         public int Score
         {
             get { return this._score.GetValueOrDefault(); }

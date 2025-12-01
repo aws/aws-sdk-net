@@ -73,6 +73,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAsDraft())
+                {
+                    context.Writer.WritePropertyName("AsDraft");
+                    context.Writer.Write(publicRequest.AsDraft);
+                }
+
                 if(publicRequest.IsSetAutoEvaluationConfiguration())
                 {
                     context.Writer.WritePropertyName("AutoEvaluationConfiguration");
@@ -129,6 +135,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetLanguageConfiguration())
+                {
+                    context.Writer.WritePropertyName("LanguageConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EvaluationFormLanguageConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LanguageConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetScoringStrategy())
                 {
                     context.Writer.WritePropertyName("ScoringStrategy");
@@ -136,6 +153,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
                     var marshaller = EvaluationFormScoringStrategyMarshaller.Instance;
                     marshaller.Marshall(publicRequest.ScoringStrategy, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTargetConfiguration())
+                {
+                    context.Writer.WritePropertyName("TargetConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EvaluationFormTargetConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TargetConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
                 }

@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
         private DateTime? _createdTime;
         private string _evaluationArn;
         private string _evaluationFormId;
+        private string _evaluationFormTitle;
         private int? _evaluationFormVersion;
         private string _evaluationId;
         private EvaluationType _evaluationType;
@@ -103,12 +104,30 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EvaluationFormTitle. 
+        /// <para>
+        /// Title of the evaluation form.
+        /// </para>
+        /// </summary>
+        public string EvaluationFormTitle
+        {
+            get { return this._evaluationFormTitle; }
+            set { this._evaluationFormTitle = value; }
+        }
+
+        // Check to see if EvaluationFormTitle property is set
+        internal bool IsSetEvaluationFormTitle()
+        {
+            return this._evaluationFormTitle != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EvaluationFormVersion. 
         /// <para>
         /// A version of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int EvaluationFormVersion
         {
             get { return this._evaluationFormVersion.GetValueOrDefault(); }

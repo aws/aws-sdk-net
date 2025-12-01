@@ -34,7 +34,26 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class WisdomInfo
     {
+        private List<AiAgentInfo> _aiAgents = AWSConfigs.InitializeCollections ? new List<AiAgentInfo>() : null;
         private string _sessionArn;
+
+        /// <summary>
+        /// Gets and sets the property AiAgents. 
+        /// <para>
+        /// The array of AI agents involved in the contact.
+        /// </para>
+        /// </summary>
+        public List<AiAgentInfo> AiAgents
+        {
+            get { return this._aiAgents; }
+            set { this._aiAgents = value; }
+        }
+
+        // Check to see if AiAgents property is set
+        internal bool IsSetAiAgents()
+        {
+            return this._aiAgents != null && (this._aiAgents.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property SessionArn. 

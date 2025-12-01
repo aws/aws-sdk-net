@@ -45,8 +45,10 @@ namespace Amazon.Connect.Model
     {
         private string _allowedAccessControlHierarchyGroupId;
         private Dictionary<string, string> _allowedAccessControlTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<FlowModule> _allowedFlowModules = AWSConfigs.InitializeCollections ? new List<FlowModule>() : null;
         private List<Application> _applications = AWSConfigs.InitializeCollections ? new List<Application>() : null;
         private string _description;
+        private GranularAccessControlConfiguration _granularAccessControlConfiguration;
         private List<string> _hierarchyRestrictedResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceId;
         private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -93,6 +95,25 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AllowedFlowModules. 
+        /// <para>
+        ///  A list of Flow Modules an AI Agent can invoke as a tool 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<FlowModule> AllowedFlowModules
+        {
+            get { return this._allowedFlowModules; }
+            set { this._allowedFlowModules = value; }
+        }
+
+        // Check to see if AllowedFlowModules property is set
+        internal bool IsSetAllowedFlowModules()
+        {
+            return this._allowedFlowModules != null && (this._allowedFlowModules.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
         /// A list of the third-party application's metadata.
@@ -128,6 +149,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GranularAccessControlConfiguration. 
+        /// <para>
+        /// The granular access control configuration for the security profile, including data
+        /// table permissions.
+        /// </para>
+        /// </summary>
+        public GranularAccessControlConfiguration GranularAccessControlConfiguration
+        {
+            get { return this._granularAccessControlConfiguration; }
+            set { this._granularAccessControlConfiguration = value; }
+        }
+
+        // Check to see if GranularAccessControlConfiguration property is set
+        internal bool IsSetGranularAccessControlConfiguration()
+        {
+            return this._granularAccessControlConfiguration != null;
         }
 
         /// <summary>

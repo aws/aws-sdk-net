@@ -1,0 +1,97 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the connect-2017-08-08.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.Connect.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
+#pragma warning disable CS0612,CS0618
+namespace Amazon.Connect.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// EvaluationFormMultiSelectQuestionAutomation Marshaller
+    /// </summary>
+    public class EvaluationFormMultiSelectQuestionAutomationMarshaller : IRequestMarshaller<EvaluationFormMultiSelectQuestionAutomation, JsonMarshallerContext> 
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public void Marshall(EvaluationFormMultiSelectQuestionAutomation requestObject, JsonMarshallerContext context)
+        {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetAnswerSource())
+            {
+                context.Writer.WritePropertyName("AnswerSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EvaluationFormQuestionAutomationAnswerSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.AnswerSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDefaultOptionRefIds())
+            {
+                context.Writer.WritePropertyName("DefaultOptionRefIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectDefaultOptionRefIdsListValue in requestObject.DefaultOptionRefIds)
+                {
+                        context.Writer.Write(requestObjectDefaultOptionRefIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetOptions())
+            {
+                context.Writer.WritePropertyName("Options");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOptionsListValue in requestObject.Options)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EvaluationFormMultiSelectQuestionAutomationOptionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectOptionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+        }
+
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>
+        public readonly static EvaluationFormMultiSelectQuestionAutomationMarshaller Instance = new EvaluationFormMultiSelectQuestionAutomationMarshaller();
+
+    }
+}

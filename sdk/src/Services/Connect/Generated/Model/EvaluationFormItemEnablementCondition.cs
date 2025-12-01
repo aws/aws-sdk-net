@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// Operands of the enablement condition.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public List<EvaluationFormItemEnablementConditionOperand> Operands
         {
             get { return this._operands; }

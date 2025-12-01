@@ -141,7 +141,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property RoutingCriteria. 
         /// <para>
         /// Updates the routing criteria on the contact. These properties can be used to change
-        /// how a&#x2028; contact is routed within the queue.
+        /// how a contact is routed within the queue.
         /// </para>
         /// </summary>
         public RoutingCriteriaInput RoutingCriteria

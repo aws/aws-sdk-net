@@ -1596,6 +1596,81 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateSecurityProfiles
+
+        /// <summary>
+        /// Associate security profiles with an Entity in an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityProfiles service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSecurityProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityProfiles">REST API Reference for AssociateSecurityProfiles Operation</seealso>
+        public virtual AssociateSecurityProfilesResponse AssociateSecurityProfiles(AssociateSecurityProfilesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSecurityProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityProfiles operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSecurityProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityProfiles">REST API Reference for AssociateSecurityProfiles Operation</seealso>
+        public virtual IAsyncResult BeginAssociateSecurityProfiles(AssociateSecurityProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSecurityProfiles.</param>
+        /// 
+        /// <returns>Returns a  AssociateSecurityProfilesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateSecurityProfiles">REST API Reference for AssociateSecurityProfiles Operation</seealso>
+        public virtual AssociateSecurityProfilesResponse EndAssociateSecurityProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateSecurityProfilesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateTrafficDistributionGroupUser
 
         /// <summary>
@@ -1738,6 +1813,82 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateWorkspace
+
+        /// <summary>
+        /// Associates a workspace with one or more users or routing profiles, allowing them to
+        /// access the workspace's configured views and pages.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWorkspace service method.</param>
+        /// 
+        /// <returns>The response from the AssociateWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateWorkspace">REST API Reference for AssociateWorkspace Operation</seealso>
+        public virtual AssociateWorkspaceResponse AssociateWorkspace(AssociateWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateWorkspaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateWorkspace operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateWorkspace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateWorkspace">REST API Reference for AssociateWorkspace Operation</seealso>
+        public virtual IAsyncResult BeginAssociateWorkspace(AssociateWorkspaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateWorkspaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateWorkspace.</param>
+        /// 
+        /// <returns>Returns a  AssociateWorkspaceResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateWorkspace">REST API Reference for AssociateWorkspace Operation</seealso>
+        public virtual AssociateWorkspaceResponse EndAssociateWorkspace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateWorkspaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchAssociateAnalyticsDataSet
 
         /// <summary>
@@ -1804,6 +1955,248 @@ namespace Amazon.Connect
         public virtual BatchAssociateAnalyticsDataSetResponse EndBatchAssociateAnalyticsDataSet(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchAssociateAnalyticsDataSetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchCreateDataTableValue
+
+        /// <summary>
+        /// Creates values for attributes in a data table. The value may be a default or it may
+        /// be associated with a primary value. The value must pass all customer defined validation
+        /// as well as the default validation for the value type. The operation must conform to
+        /// Batch Operation API Standards. Although the standard specifies that successful and
+        /// failed entities are listed separately in the response, authorization fails if any
+        /// primary values or attributes are unauthorized. The combination of primary values and
+        /// the attribute name serve as the identifier for the individual item request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateDataTableValue service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchCreateDataTableValue">REST API Reference for BatchCreateDataTableValue Operation</seealso>
+        public virtual BatchCreateDataTableValueResponse BatchCreateDataTableValue(BatchCreateDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateDataTableValueResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchCreateDataTableValue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateDataTableValue operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchCreateDataTableValue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchCreateDataTableValue">REST API Reference for BatchCreateDataTableValue Operation</seealso>
+        public virtual IAsyncResult BeginBatchCreateDataTableValue(BatchCreateDataTableValueRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateDataTableValueResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchCreateDataTableValue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchCreateDataTableValue.</param>
+        /// 
+        /// <returns>Returns a  BatchCreateDataTableValueResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchCreateDataTableValue">REST API Reference for BatchCreateDataTableValue Operation</seealso>
+        public virtual BatchCreateDataTableValueResponse EndBatchCreateDataTableValue(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchCreateDataTableValueResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteDataTableValue
+
+        /// <summary>
+        /// Deletes multiple values from a data table. API users may delete values at any time.
+        /// When deletion is requested from the admin website, a warning is shown alerting the
+        /// user of the most recent time the attribute and its values were accessed. System managed
+        /// values are not deletable by customers.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDataTableValue service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDeleteDataTableValue">REST API Reference for BatchDeleteDataTableValue Operation</seealso>
+        public virtual BatchDeleteDataTableValueResponse BatchDeleteDataTableValue(BatchDeleteDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteDataTableValueResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteDataTableValue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteDataTableValue operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteDataTableValue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDeleteDataTableValue">REST API Reference for BatchDeleteDataTableValue Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteDataTableValue(BatchDeleteDataTableValueRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteDataTableValueResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteDataTableValue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteDataTableValue.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteDataTableValueResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDeleteDataTableValue">REST API Reference for BatchDeleteDataTableValue Operation</seealso>
+        public virtual BatchDeleteDataTableValueResponse EndBatchDeleteDataTableValue(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteDataTableValueResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDescribeDataTableValue
+
+        /// <summary>
+        /// Retrieves multiple values from a data table without evaluating expressions. Returns
+        /// the raw stored values along with metadata such as lock versions and modification timestamps.
+        /// "Describe" is a deprecated term but is allowed to maintain consistency with existing
+        /// operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeDataTableValue service method.</param>
+        /// 
+        /// <returns>The response from the BatchDescribeDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDescribeDataTableValue">REST API Reference for BatchDescribeDataTableValue Operation</seealso>
+        public virtual BatchDescribeDataTableValueResponse BatchDescribeDataTableValue(BatchDescribeDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDescribeDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDescribeDataTableValueResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDescribeDataTableValue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeDataTableValue operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDescribeDataTableValue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDescribeDataTableValue">REST API Reference for BatchDescribeDataTableValue Operation</seealso>
+        public virtual IAsyncResult BeginBatchDescribeDataTableValue(BatchDescribeDataTableValueRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDescribeDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeDataTableValueResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDescribeDataTableValue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDescribeDataTableValue.</param>
+        /// 
+        /// <returns>Returns a  BatchDescribeDataTableValueResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchDescribeDataTableValue">REST API Reference for BatchDescribeDataTableValue Operation</seealso>
+        public virtual BatchDescribeDataTableValueResponse EndBatchDescribeDataTableValue(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDescribeDataTableValueResponse>(asyncResult);
         }
 
         #endregion
@@ -2101,6 +2494,84 @@ namespace Amazon.Connect
         public virtual BatchPutContactResponse EndBatchPutContact(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchPutContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateDataTableValue
+
+        /// <summary>
+        /// Updates multiple data table values using all properties from BatchCreateDataTableValue.
+        /// System managed values are not modifiable by customers. The operation requires proper
+        /// lock versions to prevent concurrent modification conflicts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateDataTableValue service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateDataTableValue service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchUpdateDataTableValue">REST API Reference for BatchUpdateDataTableValue Operation</seealso>
+        public virtual BatchUpdateDataTableValueResponse BatchUpdateDataTableValue(BatchUpdateDataTableValueRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateDataTableValueResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateDataTableValueResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateDataTableValue operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateDataTableValue operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateDataTableValue
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchUpdateDataTableValue">REST API Reference for BatchUpdateDataTableValue Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateDataTableValue(BatchUpdateDataTableValueRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateDataTableValueRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateDataTableValueResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateDataTableValue operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateDataTableValue.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateDataTableValueResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchUpdateDataTableValue">REST API Reference for BatchUpdateDataTableValue Operation</seealso>
+        public virtual BatchUpdateDataTableValueResponse EndBatchUpdateDataTableValue(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateDataTableValueResponse>(asyncResult);
         }
 
         #endregion
@@ -2868,6 +3339,177 @@ namespace Amazon.Connect
         public virtual CreateContactFlowVersionResponse EndCreateContactFlowVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateContactFlowVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateDataTable
+
+        /// <summary>
+        /// Creates a new data table with the specified properties. Supports the creation of all
+        /// table properties except for attributes and values. A table with no attributes and
+        /// values is a valid state for a table. The number of tables per instance is limited
+        /// to 100 per instance. Customers can request an increase by using AWS Service Quotas.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataTable service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataTable service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTable">REST API Reference for CreateDataTable Operation</seealso>
+        public virtual CreateDataTableResponse CreateDataTable(CreateDataTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataTable operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTable">REST API Reference for CreateDataTable Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataTable(CreateDataTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataTable.</param>
+        /// 
+        /// <returns>Returns a  CreateDataTableResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTable">REST API Reference for CreateDataTable Operation</seealso>
+        public virtual CreateDataTableResponse EndCreateDataTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateDataTableAttribute
+
+        /// <summary>
+        /// Adds an attribute to an existing data table. Creating a new primary attribute uses
+        /// the empty value for the specified value type for all existing records. This should
+        /// not affect uniqueness of published data tables since the existing primary values will
+        /// already be unique. Creating attributes does not create any values. System managed
+        /// tables may not allow customers to create new attributes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataTableAttribute service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTableAttribute">REST API Reference for CreateDataTableAttribute Operation</seealso>
+        public virtual CreateDataTableAttributeResponse CreateDataTableAttribute(CreateDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataTableAttributeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataTableAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataTableAttribute operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataTableAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTableAttribute">REST API Reference for CreateDataTableAttribute Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataTableAttribute(CreateDataTableAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataTableAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataTableAttribute.</param>
+        /// 
+        /// <returns>Returns a  CreateDataTableAttributeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateDataTableAttribute">REST API Reference for CreateDataTableAttribute Operation</seealso>
+        public virtual CreateDataTableAttributeResponse EndCreateDataTableAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataTableAttributeResponse>(asyncResult);
         }
 
         #endregion
@@ -4831,6 +5473,173 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateWorkspace
+
+        /// <summary>
+        /// Creates a workspace that defines the user experience by mapping views to pages. Workspaces
+        /// can be assigned to users or routing profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspace service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
+        public virtual CreateWorkspaceResponse CreateWorkspace(CreateWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspace operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorkspace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
+        public virtual IAsyncResult BeginCreateWorkspace(CreateWorkspaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorkspace.</param>
+        /// 
+        /// <returns>Returns a  CreateWorkspaceResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspace">REST API Reference for CreateWorkspace Operation</seealso>
+        public virtual CreateWorkspaceResponse EndCreateWorkspace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateWorkspaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateWorkspacePage
+
+        /// <summary>
+        /// Associates a view with a page in a workspace, defining what users see when they navigate
+        /// to that page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspacePage service method.</param>
+        /// 
+        /// <returns>The response from the CreateWorkspacePage service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspacePage">REST API Reference for CreateWorkspacePage Operation</seealso>
+        public virtual CreateWorkspacePageResponse CreateWorkspacePage(CreateWorkspacePageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspacePageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkspacePageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorkspacePage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkspacePage operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWorkspacePage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspacePage">REST API Reference for CreateWorkspacePage Operation</seealso>
+        public virtual IAsyncResult BeginCreateWorkspacePage(CreateWorkspacePageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWorkspacePageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWorkspacePage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWorkspacePage.</param>
+        /// 
+        /// <returns>Returns a  CreateWorkspacePageResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateWorkspacePage">REST API Reference for CreateWorkspacePage Operation</seealso>
+        public virtual CreateWorkspacePageResponse EndCreateWorkspacePage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateWorkspacePageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeactivateEvaluationForm
 
         /// <summary>
@@ -5403,6 +6212,163 @@ namespace Amazon.Connect
         public virtual DeleteContactFlowVersionResponse EndDeleteContactFlowVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteContactFlowVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDataTable
+
+        /// <summary>
+        /// Deletes a data table and all associated attributes, versions, audits, and values.
+        /// Does not update any references to the data table, even from other data tables. This
+        /// includes dynamic values and conditional validations. System managed data tables are
+        /// not deletable by customers. API users may delete the table at any time. When deletion
+        /// is requested from the admin website, a warning is shown alerting the user of the most
+        /// recent time the table and its values were accessed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataTable service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataTable service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTable">REST API Reference for DeleteDataTable Operation</seealso>
+        public virtual DeleteDataTableResponse DeleteDataTable(DeleteDataTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataTable operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTable">REST API Reference for DeleteDataTable Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataTable(DeleteDataTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataTable.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataTableResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTable">REST API Reference for DeleteDataTable Operation</seealso>
+        public virtual DeleteDataTableResponse EndDeleteDataTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDataTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDataTableAttribute
+
+        /// <summary>
+        /// Deletes an attribute and all its values from a data table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataTableAttribute service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTableAttribute">REST API Reference for DeleteDataTableAttribute Operation</seealso>
+        public virtual DeleteDataTableAttributeResponse DeleteDataTableAttribute(DeleteDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataTableAttributeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataTableAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataTableAttribute operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataTableAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTableAttribute">REST API Reference for DeleteDataTableAttribute Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataTableAttribute(DeleteDataTableAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataTableAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataTableAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataTableAttribute.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataTableAttributeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteDataTableAttribute">REST API Reference for DeleteDataTableAttribute Operation</seealso>
+        public virtual DeleteDataTableAttributeResponse EndDeleteDataTableAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDataTableAttributeResponse>(asyncResult);
         }
 
         #endregion
@@ -7064,6 +8030,223 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteWorkspace
+
+        /// <summary>
+        /// Deletes a workspace and removes all associated view and resource assignments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspace service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
+        public virtual DeleteWorkspaceResponse DeleteWorkspace(DeleteWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspace operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkspace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWorkspace(DeleteWorkspaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorkspace.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorkspaceResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspace">REST API Reference for DeleteWorkspace Operation</seealso>
+        public virtual DeleteWorkspaceResponse EndDeleteWorkspace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWorkspaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkspaceMedia
+
+        /// <summary>
+        /// Deletes a media asset (such as a logo) from a workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceMedia service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkspaceMedia service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspaceMedia">REST API Reference for DeleteWorkspaceMedia Operation</seealso>
+        public virtual DeleteWorkspaceMediaResponse DeleteWorkspaceMedia(DeleteWorkspaceMediaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspaceMediaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkspaceMedia operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceMedia operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkspaceMedia
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspaceMedia">REST API Reference for DeleteWorkspaceMedia Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWorkspaceMedia(DeleteWorkspaceMediaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorkspaceMedia operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorkspaceMedia.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorkspaceMediaResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspaceMedia">REST API Reference for DeleteWorkspaceMedia Operation</seealso>
+        public virtual DeleteWorkspaceMediaResponse EndDeleteWorkspaceMedia(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWorkspaceMediaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWorkspacePage
+
+        /// <summary>
+        /// Removes the association between a view and a page in a workspace. The page will display
+        /// the default view after deletion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspacePage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkspacePage service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspacePage">REST API Reference for DeleteWorkspacePage Operation</seealso>
+        public virtual DeleteWorkspacePageResponse DeleteWorkspacePage(DeleteWorkspacePageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspacePageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspacePageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkspacePage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspacePage operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkspacePage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspacePage">REST API Reference for DeleteWorkspacePage Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWorkspacePage(DeleteWorkspacePageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWorkspacePageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorkspacePage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorkspacePage.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorkspacePageResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteWorkspacePage">REST API Reference for DeleteWorkspacePage Operation</seealso>
+        public virtual DeleteWorkspacePageResponse EndDeleteWorkspacePage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWorkspacePageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeAgentStatus
 
         /// <summary>
@@ -7639,6 +8822,155 @@ namespace Amazon.Connect
         public virtual DescribeContactFlowModuleAliasResponse EndDescribeContactFlowModuleAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeContactFlowModuleAliasResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDataTable
+
+        /// <summary>
+        /// Returns all properties for a data table except for attributes and values. All properties
+        /// from CreateDataTable are returned as well as properties for region replication, versioning,
+        /// and system tables. "Describe" is a deprecated term but is allowed to maintain consistency
+        /// with existing operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataTable service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDataTable service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTable">REST API Reference for DescribeDataTable Operation</seealso>
+        public virtual DescribeDataTableResponse DescribeDataTable(DescribeDataTableRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataTableResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDataTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataTable operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDataTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTable">REST API Reference for DescribeDataTable Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDataTable(DescribeDataTableRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDataTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDataTable.</param>
+        /// 
+        /// <returns>Returns a  DescribeDataTableResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTable">REST API Reference for DescribeDataTable Operation</seealso>
+        public virtual DescribeDataTableResponse EndDescribeDataTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDataTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeDataTableAttribute
+
+        /// <summary>
+        /// Returns detailed information for a specific data table attribute including its configuration,
+        /// validation rules, and metadata. "Describe" is a deprecated term but is allowed to
+        /// maintain consistency with existing operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataTableAttribute service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTableAttribute">REST API Reference for DescribeDataTableAttribute Operation</seealso>
+        public virtual DescribeDataTableAttributeResponse DescribeDataTableAttribute(DescribeDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataTableAttributeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDataTableAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataTableAttribute operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDataTableAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTableAttribute">REST API Reference for DescribeDataTableAttribute Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDataTableAttribute(DescribeDataTableAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataTableAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDataTableAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDataTableAttribute.</param>
+        /// 
+        /// <returns>Returns a  DescribeDataTableAttributeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeDataTableAttribute">REST API Reference for DescribeDataTableAttribute Operation</seealso>
+        public virtual DescribeDataTableAttributeResponse EndDescribeDataTableAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDataTableAttributeResponse>(asyncResult);
         }
 
         #endregion
@@ -9188,6 +10520,78 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeWorkspace
+
+        /// <summary>
+        /// Retrieves details about a workspace, including its configuration and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspace service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeWorkspace">REST API Reference for DescribeWorkspace Operation</seealso>
+        public virtual DescribeWorkspaceResponse DescribeWorkspace(DescribeWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspace operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeWorkspace">REST API Reference for DescribeWorkspace Operation</seealso>
+        public virtual IAsyncResult BeginDescribeWorkspace(DescribeWorkspaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWorkspaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspace.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorkspaceResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeWorkspace">REST API Reference for DescribeWorkspace Operation</seealso>
+        public virtual DescribeWorkspaceResponse EndDescribeWorkspace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeWorkspaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateAnalyticsDataSet
 
         /// <summary>
@@ -10184,6 +11588,82 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateSecurityProfiles
+
+        /// <summary>
+        /// Disassociates a security profile attached to a Q in Connect AI Agent Entity in an
+        /// Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityProfiles service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSecurityProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityProfiles">REST API Reference for DisassociateSecurityProfiles Operation</seealso>
+        public virtual DisassociateSecurityProfilesResponse DisassociateSecurityProfiles(DisassociateSecurityProfilesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSecurityProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityProfiles operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSecurityProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityProfiles">REST API Reference for DisassociateSecurityProfiles Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateSecurityProfiles(DisassociateSecurityProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSecurityProfiles.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSecurityProfilesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateSecurityProfiles">REST API Reference for DisassociateSecurityProfiles Operation</seealso>
+        public virtual DisassociateSecurityProfilesResponse EndDisassociateSecurityProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateSecurityProfilesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateTrafficDistributionGroupUser
 
         /// <summary>
@@ -10326,6 +11806,78 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateWorkspace
+
+        /// <summary>
+        /// Removes the association between a workspace and one or more users or routing profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWorkspace service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateWorkspace service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateWorkspace">REST API Reference for DisassociateWorkspace Operation</seealso>
+        public virtual DisassociateWorkspaceResponse DisassociateWorkspace(DisassociateWorkspaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWorkspaceResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateWorkspaceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateWorkspace operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateWorkspace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateWorkspace">REST API Reference for DisassociateWorkspace Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateWorkspace(DisassociateWorkspaceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateWorkspaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateWorkspaceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateWorkspace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateWorkspace.</param>
+        /// 
+        /// <returns>Returns a  DisassociateWorkspaceResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateWorkspace">REST API Reference for DisassociateWorkspace Operation</seealso>
+        public virtual DisassociateWorkspaceResponse EndDisassociateWorkspace(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateWorkspaceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DismissUserContact
 
         /// <summary>
@@ -10398,6 +11950,83 @@ namespace Amazon.Connect
         public virtual DismissUserContactResponse EndDismissUserContact(IAsyncResult asyncResult)
         {
             return EndInvoke<DismissUserContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  EvaluateDataTableValues
+
+        /// <summary>
+        /// Evaluates values at the time of the request and returns them. It considers the request's
+        /// timezone or the table's timezone, in that order, when accessing time based tables.
+        /// When a value is accessed, the accessor's identity and the time of access are saved
+        /// alongside the value to help identify values that are actively in use. The term "Batch"
+        /// is not included in the operation name since it does not meet all the criteria for
+        /// a batch operation as specified in Batch Operations: AWS API Standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateDataTableValues service method.</param>
+        /// 
+        /// <returns>The response from the EvaluateDataTableValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EvaluateDataTableValues">REST API Reference for EvaluateDataTableValues Operation</seealso>
+        public virtual EvaluateDataTableValuesResponse EvaluateDataTableValues(EvaluateDataTableValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EvaluateDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateDataTableValuesResponseUnmarshaller.Instance;
+
+            return Invoke<EvaluateDataTableValuesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EvaluateDataTableValues operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EvaluateDataTableValues operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEvaluateDataTableValues
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EvaluateDataTableValues">REST API Reference for EvaluateDataTableValues Operation</seealso>
+        public virtual IAsyncResult BeginEvaluateDataTableValues(EvaluateDataTableValuesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EvaluateDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EvaluateDataTableValuesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EvaluateDataTableValues operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEvaluateDataTableValues.</param>
+        /// 
+        /// <returns>Returns a  EvaluateDataTableValuesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/EvaluateDataTableValues">REST API Reference for EvaluateDataTableValues Operation</seealso>
+        public virtual EvaluateDataTableValuesResponse EndEvaluateDataTableValues(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EvaluateDataTableValuesResponse>(asyncResult);
         }
 
         #endregion
@@ -11593,6 +13222,75 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ImportWorkspaceMedia
+
+        /// <summary>
+        /// Imports a media asset (such as a logo) for use in a workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceMedia service method.</param>
+        /// 
+        /// <returns>The response from the ImportWorkspaceMedia service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportWorkspaceMedia">REST API Reference for ImportWorkspaceMedia Operation</seealso>
+        public virtual ImportWorkspaceMediaResponse ImportWorkspaceMedia(ImportWorkspaceMediaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ImportWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return Invoke<ImportWorkspaceMediaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportWorkspaceMedia operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceMedia operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportWorkspaceMedia
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportWorkspaceMedia">REST API Reference for ImportWorkspaceMedia Operation</seealso>
+        public virtual IAsyncResult BeginImportWorkspaceMedia(ImportWorkspaceMediaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ImportWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportWorkspaceMedia operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportWorkspaceMedia.</param>
+        /// 
+        /// <returns>Returns a  ImportWorkspaceMediaResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ImportWorkspaceMedia">REST API Reference for ImportWorkspaceMedia Operation</seealso>
+        public virtual ImportWorkspaceMediaResponse EndImportWorkspaceMedia(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportWorkspaceMediaResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAgentStatuses
 
         /// <summary>
@@ -12606,6 +14304,301 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListDataTableAttributes
+
+        /// <summary>
+        /// Returns all attributes for a specified data table. A maximum of 100 attributes per
+        /// data table is allowed. Customers can request an increase by using AWS Service Quotas.
+        /// The response can be filtered by specific attribute IDs for CloudFormation integration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTableAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ListDataTableAttributes service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableAttributes">REST API Reference for ListDataTableAttributes Operation</seealso>
+        public virtual ListDataTableAttributesResponse ListDataTableAttributes(ListDataTableAttributesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTableAttributesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataTableAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTableAttributes operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataTableAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableAttributes">REST API Reference for ListDataTableAttributes Operation</seealso>
+        public virtual IAsyncResult BeginListDataTableAttributes(ListDataTableAttributesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableAttributesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataTableAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataTableAttributes.</param>
+        /// 
+        /// <returns>Returns a  ListDataTableAttributesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableAttributes">REST API Reference for ListDataTableAttributes Operation</seealso>
+        public virtual ListDataTableAttributesResponse EndListDataTableAttributes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataTableAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDataTablePrimaryValues
+
+        /// <summary>
+        /// Lists all primary value combinations for a given data table. Returns the unique combinations
+        /// of primary attribute values that identify records in the table. Up to 100 records
+        /// are returned per request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTablePrimaryValues service method.</param>
+        /// 
+        /// <returns>The response from the ListDataTablePrimaryValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTablePrimaryValues">REST API Reference for ListDataTablePrimaryValues Operation</seealso>
+        public virtual ListDataTablePrimaryValuesResponse ListDataTablePrimaryValues(ListDataTablePrimaryValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTablePrimaryValuesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataTablePrimaryValues operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTablePrimaryValues operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataTablePrimaryValues
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTablePrimaryValues">REST API Reference for ListDataTablePrimaryValues Operation</seealso>
+        public virtual IAsyncResult BeginListDataTablePrimaryValues(ListDataTablePrimaryValuesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataTablePrimaryValues operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataTablePrimaryValues.</param>
+        /// 
+        /// <returns>Returns a  ListDataTablePrimaryValuesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTablePrimaryValues">REST API Reference for ListDataTablePrimaryValues Operation</seealso>
+        public virtual ListDataTablePrimaryValuesResponse EndListDataTablePrimaryValues(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataTablePrimaryValuesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDataTables
+
+        /// <summary>
+        /// Lists all data tables for the specified Amazon Connect instance. Returns summary information
+        /// for each table including basic metadata and modification details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTables service method.</param>
+        /// 
+        /// <returns>The response from the ListDataTables service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTables">REST API Reference for ListDataTables Operation</seealso>
+        public virtual ListDataTablesResponse ListDataTables(ListDataTablesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTablesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTables operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTables">REST API Reference for ListDataTables Operation</seealso>
+        public virtual IAsyncResult BeginListDataTables(ListDataTablesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTablesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataTables.</param>
+        /// 
+        /// <returns>Returns a  ListDataTablesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTables">REST API Reference for ListDataTables Operation</seealso>
+        public virtual ListDataTablesResponse EndListDataTables(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataTablesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDataTableValues
+
+        /// <summary>
+        /// Lists values stored in a data table with optional filtering by record IDs or primary
+        /// attribute values. Returns the raw stored values along with metadata such as lock versions
+        /// and modification timestamps.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTableValues service method.</param>
+        /// 
+        /// <returns>The response from the ListDataTableValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableValues">REST API Reference for ListDataTableValues Operation</seealso>
+        public virtual ListDataTableValuesResponse ListDataTableValues(ListDataTableValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataTableValuesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataTableValues operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTableValues operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataTableValues
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableValues">REST API Reference for ListDataTableValues Operation</seealso>
+        public virtual IAsyncResult BeginListDataTableValues(ListDataTableValuesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataTableValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataTableValuesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataTableValues operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataTableValues.</param>
+        /// 
+        /// <returns>Returns a  ListDataTableValuesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDataTableValues">REST API Reference for ListDataTableValues Operation</seealso>
+        public virtual ListDataTableValuesResponse EndListDataTableValues(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataTableValuesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDefaultVocabularies
 
         /// <summary>
@@ -12668,6 +14661,76 @@ namespace Amazon.Connect
         public virtual ListDefaultVocabulariesResponse EndListDefaultVocabularies(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDefaultVocabulariesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListEntitySecurityProfiles
+
+        /// <summary>
+        /// Lists all security profiles attached to a Q in Connect AIAgent Entity in an Amazon
+        /// Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitySecurityProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListEntitySecurityProfiles service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEntitySecurityProfiles">REST API Reference for ListEntitySecurityProfiles Operation</seealso>
+        public virtual ListEntitySecurityProfilesResponse ListEntitySecurityProfiles(ListEntitySecurityProfilesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEntitySecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntitySecurityProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntitySecurityProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEntitySecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEntitySecurityProfiles operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEntitySecurityProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEntitySecurityProfiles">REST API Reference for ListEntitySecurityProfiles Operation</seealso>
+        public virtual IAsyncResult BeginListEntitySecurityProfiles(ListEntitySecurityProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEntitySecurityProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEntitySecurityProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEntitySecurityProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEntitySecurityProfiles.</param>
+        /// 
+        /// <returns>Returns a  ListEntitySecurityProfilesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEntitySecurityProfiles">REST API Reference for ListEntitySecurityProfiles Operation</seealso>
+        public virtual ListEntitySecurityProfilesResponse EndListEntitySecurityProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEntitySecurityProfilesResponse>(asyncResult);
         }
 
         #endregion
@@ -14502,7 +16565,7 @@ namespace Amazon.Connect
         #region  ListSecurityProfileApplications
 
         /// <summary>
-        /// Returns a list of third-party applications in a specific security profile.
+        /// Returns a list of third-party applications or MCP Servers in a specific security profile.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileApplications service method.</param>
         /// 
@@ -14564,6 +16627,75 @@ namespace Amazon.Connect
         public virtual ListSecurityProfileApplicationsResponse EndListSecurityProfileApplications(IAsyncResult asyncResult)
         {
             return EndInvoke<ListSecurityProfileApplicationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSecurityProfileFlowModules
+
+        /// <summary>
+        /// A list of Flow Modules an AI Agent can invoke as a tool
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileFlowModules service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityProfileFlowModules service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileFlowModules">REST API Reference for ListSecurityProfileFlowModules Operation</seealso>
+        public virtual ListSecurityProfileFlowModulesResponse ListSecurityProfileFlowModules(ListSecurityProfileFlowModulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfileFlowModulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfileFlowModulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityProfileFlowModulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityProfileFlowModules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileFlowModules operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSecurityProfileFlowModules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileFlowModules">REST API Reference for ListSecurityProfileFlowModules Operation</seealso>
+        public virtual IAsyncResult BeginListSecurityProfileFlowModules(ListSecurityProfileFlowModulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSecurityProfileFlowModulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityProfileFlowModulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSecurityProfileFlowModules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSecurityProfileFlowModules.</param>
+        /// 
+        /// <returns>Returns a  ListSecurityProfileFlowModulesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileFlowModules">REST API Reference for ListSecurityProfileFlowModules Operation</seealso>
+        public virtual ListSecurityProfileFlowModulesResponse EndListSecurityProfileFlowModules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSecurityProfileFlowModulesResponse>(asyncResult);
         }
 
         #endregion
@@ -15434,6 +17566,223 @@ namespace Amazon.Connect
         public virtual ListViewVersionsResponse EndListViewVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListViewVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListWorkspaceMedia
+
+        /// <summary>
+        /// Lists media assets (such as logos) associated with a workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaceMedia service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkspaceMedia service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaceMedia">REST API Reference for ListWorkspaceMedia Operation</seealso>
+        public virtual ListWorkspaceMediaResponse ListWorkspaceMedia(ListWorkspaceMediaRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspaceMediaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkspaceMedia operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaceMedia operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkspaceMedia
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaceMedia">REST API Reference for ListWorkspaceMedia Operation</seealso>
+        public virtual IAsyncResult BeginListWorkspaceMedia(ListWorkspaceMediaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspaceMediaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspaceMediaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorkspaceMedia operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkspaceMedia.</param>
+        /// 
+        /// <returns>Returns a  ListWorkspaceMediaResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaceMedia">REST API Reference for ListWorkspaceMedia Operation</seealso>
+        public virtual ListWorkspaceMediaResponse EndListWorkspaceMedia(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWorkspaceMediaResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListWorkspacePages
+
+        /// <summary>
+        /// Lists the page configurations in a workspace, including the views assigned to each
+        /// page.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspacePages service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkspacePages service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspacePages">REST API Reference for ListWorkspacePages Operation</seealso>
+        public virtual ListWorkspacePagesResponse ListWorkspacePages(ListWorkspacePagesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacePagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacePagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspacePagesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkspacePages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspacePages operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkspacePages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspacePages">REST API Reference for ListWorkspacePages Operation</seealso>
+        public virtual IAsyncResult BeginListWorkspacePages(ListWorkspacePagesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacePagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacePagesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorkspacePages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkspacePages.</param>
+        /// 
+        /// <returns>Returns a  ListWorkspacePagesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspacePages">REST API Reference for ListWorkspacePages Operation</seealso>
+        public virtual ListWorkspacePagesResponse EndListWorkspacePages(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWorkspacePagesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListWorkspaces
+
+        /// <summary>
+        /// Lists the workspaces in an Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaces service method.</param>
+        /// 
+        /// <returns>The response from the ListWorkspaces service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
+        public virtual ListWorkspacesResponse ListWorkspaces(ListWorkspacesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkspacesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkspaces operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWorkspaces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
+        public virtual IAsyncResult BeginListWorkspaces(ListWorkspacesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWorkspacesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWorkspaces.</param>
+        /// 
+        /// <returns>Returns a  ListWorkspacesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListWorkspaces">REST API Reference for ListWorkspaces Operation</seealso>
+        public virtual ListWorkspacesResponse EndListWorkspaces(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWorkspacesResponse>(asyncResult);
         }
 
         #endregion
@@ -16469,6 +18818,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchDataTables
+
+        /// <summary>
+        /// Searches for data tables based on the table's ID, name, and description. In the future,
+        /// this operation can support searching on attribute names and possibly primary values.
+        /// Follows other search operations closely and supports both search criteria and filters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchDataTables service method.</param>
+        /// 
+        /// <returns>The response from the SearchDataTables service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchDataTables">REST API Reference for SearchDataTables Operation</seealso>
+        public virtual SearchDataTablesResponse SearchDataTables(SearchDataTablesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDataTablesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchDataTablesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchDataTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchDataTables operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchDataTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchDataTables">REST API Reference for SearchDataTables Operation</seealso>
+        public virtual IAsyncResult BeginSearchDataTables(SearchDataTablesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchDataTablesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchDataTablesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchDataTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchDataTables.</param>
+        /// 
+        /// <returns>Returns a  SearchDataTablesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchDataTables">REST API Reference for SearchDataTables Operation</seealso>
+        public virtual SearchDataTablesResponse EndSearchDataTables(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchDataTablesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchEmailAddresses
 
         /// <summary>
@@ -17464,6 +19884,78 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchViews
+
+        /// <summary>
+        /// Searches views based on name, description, or tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchViews service method.</param>
+        /// 
+        /// <returns>The response from the SearchViews service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchViews">REST API Reference for SearchViews Operation</seealso>
+        public virtual SearchViewsResponse SearchViews(SearchViewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchViewsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchViewsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchViews operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchViews operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchViews
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchViews">REST API Reference for SearchViews Operation</seealso>
+        public virtual IAsyncResult BeginSearchViews(SearchViewsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchViewsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchViews operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchViews.</param>
+        /// 
+        /// <returns>Returns a  SearchViewsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchViews">REST API Reference for SearchViews Operation</seealso>
+        public virtual SearchViewsResponse EndSearchViews(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchViewsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchVocabularies
 
         /// <summary>
@@ -17527,6 +20019,151 @@ namespace Amazon.Connect
         public virtual SearchVocabulariesResponse EndSearchVocabularies(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchVocabulariesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchWorkspaceAssociations
+
+        /// <summary>
+        /// Searches for workspace associations with users or routing profiles based on various
+        /// criteria.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchWorkspaceAssociations service method.</param>
+        /// 
+        /// <returns>The response from the SearchWorkspaceAssociations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaceAssociations">REST API Reference for SearchWorkspaceAssociations Operation</seealso>
+        public virtual SearchWorkspaceAssociationsResponse SearchWorkspaceAssociations(SearchWorkspaceAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspaceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchWorkspaceAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchWorkspaceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchWorkspaceAssociations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchWorkspaceAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaceAssociations">REST API Reference for SearchWorkspaceAssociations Operation</seealso>
+        public virtual IAsyncResult BeginSearchWorkspaceAssociations(SearchWorkspaceAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspaceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspaceAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchWorkspaceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchWorkspaceAssociations.</param>
+        /// 
+        /// <returns>Returns a  SearchWorkspaceAssociationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaceAssociations">REST API Reference for SearchWorkspaceAssociations Operation</seealso>
+        public virtual SearchWorkspaceAssociationsResponse EndSearchWorkspaceAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchWorkspaceAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchWorkspaces
+
+        /// <summary>
+        /// Searches workspaces based on name, description, visibility, or tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchWorkspaces service method.</param>
+        /// 
+        /// <returns>The response from the SearchWorkspaces service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaces">REST API Reference for SearchWorkspaces Operation</seealso>
+        public virtual SearchWorkspacesResponse SearchWorkspaces(SearchWorkspacesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspacesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchWorkspacesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchWorkspaces operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchWorkspaces
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaces">REST API Reference for SearchWorkspaces Operation</seealso>
+        public virtual IAsyncResult BeginSearchWorkspaces(SearchWorkspacesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchWorkspacesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchWorkspacesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchWorkspaces operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchWorkspaces.</param>
+        /// 
+        /// <returns>Returns a  SearchWorkspacesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchWorkspaces">REST API Reference for SearchWorkspaces Operation</seealso>
+        public virtual SearchWorkspacesResponse EndSearchWorkspaces(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchWorkspacesResponse>(asyncResult);
         }
 
         #endregion
@@ -17979,6 +20616,82 @@ namespace Amazon.Connect
         public virtual StartContactEvaluationResponse EndStartContactEvaluation(IAsyncResult asyncResult)
         {
             return EndInvoke<StartContactEvaluationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartContactMediaProcessing
+
+        /// <summary>
+        /// Enables in-flight message processing for an ongoing chat session. Message processing
+        /// will stay active for the rest of the chat, even if an individual contact segment ends.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContactMediaProcessing service method.</param>
+        /// 
+        /// <returns>The response from the StartContactMediaProcessing service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactMediaProcessing">REST API Reference for StartContactMediaProcessing Operation</seealso>
+        public virtual StartContactMediaProcessingResponse StartContactMediaProcessing(StartContactMediaProcessingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return Invoke<StartContactMediaProcessingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartContactMediaProcessing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartContactMediaProcessing operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartContactMediaProcessing
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactMediaProcessing">REST API Reference for StartContactMediaProcessing Operation</seealso>
+        public virtual IAsyncResult BeginStartContactMediaProcessing(StartContactMediaProcessingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartContactMediaProcessing operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartContactMediaProcessing.</param>
+        /// 
+        /// <returns>Returns a  StartContactMediaProcessingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactMediaProcessing">REST API Reference for StartContactMediaProcessing Operation</seealso>
+        public virtual StartContactMediaProcessingResponse EndStartContactMediaProcessing(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartContactMediaProcessingResponse>(asyncResult);
         }
 
         #endregion
@@ -18901,6 +21614,78 @@ namespace Amazon.Connect
         public virtual StopContactResponse EndStopContact(IAsyncResult asyncResult)
         {
             return EndInvoke<StopContactResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopContactMediaProcessing
+
+        /// <summary>
+        /// Stops in-flight message processing for an ongoing chat session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopContactMediaProcessing service method.</param>
+        /// 
+        /// <returns>The response from the StopContactMediaProcessing service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactMediaProcessing">REST API Reference for StopContactMediaProcessing Operation</seealso>
+        public virtual StopContactMediaProcessingResponse StopContactMediaProcessing(StopContactMediaProcessingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return Invoke<StopContactMediaProcessingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopContactMediaProcessing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopContactMediaProcessing operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopContactMediaProcessing
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactMediaProcessing">REST API Reference for StopContactMediaProcessing Operation</seealso>
+        public virtual IAsyncResult BeginStopContactMediaProcessing(StopContactMediaProcessingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopContactMediaProcessingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopContactMediaProcessingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopContactMediaProcessing operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopContactMediaProcessing.</param>
+        /// 
+        /// <returns>Returns a  StopContactMediaProcessingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactMediaProcessing">REST API Reference for StopContactMediaProcessing Operation</seealso>
+        public virtual StopContactMediaProcessingResponse EndStopContactMediaProcessing(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopContactMediaProcessingResponse>(asyncResult);
         }
 
         #endregion
@@ -20622,6 +23407,253 @@ namespace Amazon.Connect
         public virtual UpdateContactScheduleResponse EndUpdateContactSchedule(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateContactScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDataTableAttribute
+
+        /// <summary>
+        /// Updates all properties for an attribute using all properties from CreateDataTableAttribute.
+        /// There are no other granular update endpoints. It does not act as a patch operation
+        /// - all properties must be provided. System managed attributes are not mutable by customers.
+        /// Changing an attribute's validation does not invalidate existing values since validation
+        /// only runs when values are created or updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTableAttribute service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataTableAttribute service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableAttribute">REST API Reference for UpdateDataTableAttribute Operation</seealso>
+        public virtual UpdateDataTableAttributeResponse UpdateDataTableAttribute(UpdateDataTableAttributeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataTableAttributeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataTableAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTableAttribute operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataTableAttribute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableAttribute">REST API Reference for UpdateDataTableAttribute Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataTableAttribute(UpdateDataTableAttributeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableAttributeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableAttributeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataTableAttribute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataTableAttribute.</param>
+        /// 
+        /// <returns>Returns a  UpdateDataTableAttributeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableAttribute">REST API Reference for UpdateDataTableAttribute Operation</seealso>
+        public virtual UpdateDataTableAttributeResponse EndUpdateDataTableAttribute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDataTableAttributeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDataTableMetadata
+
+        /// <summary>
+        /// Updates the metadata properties of a data table. Accepts all fields similar to CreateDataTable,
+        /// except for fields and tags. There are no other granular update endpoints. It does
+        /// not act as a patch operation - all properties must be provided or defaults will be
+        /// used. Fields follow the same requirements as CreateDataTable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTableMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataTableMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableMetadata">REST API Reference for UpdateDataTableMetadata Operation</seealso>
+        public virtual UpdateDataTableMetadataResponse UpdateDataTableMetadata(UpdateDataTableMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataTableMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataTableMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTableMetadata operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataTableMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableMetadata">REST API Reference for UpdateDataTableMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataTableMetadata(UpdateDataTableMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTableMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTableMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataTableMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataTableMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateDataTableMetadataResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTableMetadata">REST API Reference for UpdateDataTableMetadata Operation</seealso>
+        public virtual UpdateDataTableMetadataResponse EndUpdateDataTableMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDataTableMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDataTablePrimaryValues
+
+        /// <summary>
+        /// Updates the primary values for a record. This operation affects all existing values
+        /// that are currently associated to the record and its primary values. Users that have
+        /// restrictions on attributes and/or primary values are not authorized to use this endpoint.
+        /// The combination of new primary values must be unique within the table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTablePrimaryValues service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataTablePrimaryValues service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTablePrimaryValues">REST API Reference for UpdateDataTablePrimaryValues Operation</seealso>
+        public virtual UpdateDataTablePrimaryValuesResponse UpdateDataTablePrimaryValues(UpdateDataTablePrimaryValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataTablePrimaryValuesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataTablePrimaryValues operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTablePrimaryValues operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataTablePrimaryValues
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTablePrimaryValues">REST API Reference for UpdateDataTablePrimaryValues Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataTablePrimaryValues(UpdateDataTablePrimaryValuesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDataTablePrimaryValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataTablePrimaryValuesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataTablePrimaryValues operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataTablePrimaryValues.</param>
+        /// 
+        /// <returns>Returns a  UpdateDataTablePrimaryValuesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateDataTablePrimaryValues">REST API Reference for UpdateDataTablePrimaryValues Operation</seealso>
+        public virtual UpdateDataTablePrimaryValuesResponse EndUpdateDataTablePrimaryValues(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDataTablePrimaryValuesResponse>(asyncResult);
         }
 
         #endregion
@@ -23623,6 +26655,305 @@ namespace Amazon.Connect
         public virtual UpdateViewMetadataResponse EndUpdateViewMetadata(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateViewMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspaceMetadata
+
+        /// <summary>
+        /// Updates the metadata of a workspace, such as its name and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceMetadata">REST API Reference for UpdateWorkspaceMetadata Operation</seealso>
+        public virtual UpdateWorkspaceMetadataResponse UpdateWorkspaceMetadata(UpdateWorkspaceMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkspaceMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceMetadata operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWorkspaceMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceMetadata">REST API Reference for UpdateWorkspaceMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWorkspaceMetadata(UpdateWorkspaceMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWorkspaceMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWorkspaceMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateWorkspaceMetadataResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceMetadata">REST API Reference for UpdateWorkspaceMetadata Operation</seealso>
+        public virtual UpdateWorkspaceMetadataResponse EndUpdateWorkspaceMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWorkspaceMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspacePage
+
+        /// <summary>
+        /// Updates the configuration of a page in a workspace, including the associated view
+        /// and input data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspacePage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkspacePage service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspacePage">REST API Reference for UpdateWorkspacePage Operation</seealso>
+        public virtual UpdateWorkspacePageResponse UpdateWorkspacePage(UpdateWorkspacePageRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspacePageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspacePageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkspacePage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspacePage operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWorkspacePage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspacePage">REST API Reference for UpdateWorkspacePage Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWorkspacePage(UpdateWorkspacePageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspacePageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspacePageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWorkspacePage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWorkspacePage.</param>
+        /// 
+        /// <returns>Returns a  UpdateWorkspacePageResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspacePage">REST API Reference for UpdateWorkspacePage Operation</seealso>
+        public virtual UpdateWorkspacePageResponse EndUpdateWorkspacePage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWorkspacePageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspaceTheme
+
+        /// <summary>
+        /// Updates the theme configuration for a workspace, including colors and styling.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceTheme service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceTheme service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceTheme">REST API Reference for UpdateWorkspaceTheme Operation</seealso>
+        public virtual UpdateWorkspaceThemeResponse UpdateWorkspaceTheme(UpdateWorkspaceThemeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceThemeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceThemeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkspaceTheme operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceTheme operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWorkspaceTheme
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceTheme">REST API Reference for UpdateWorkspaceTheme Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWorkspaceTheme(UpdateWorkspaceThemeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceThemeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceThemeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWorkspaceTheme operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWorkspaceTheme.</param>
+        /// 
+        /// <returns>Returns a  UpdateWorkspaceThemeResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceTheme">REST API Reference for UpdateWorkspaceTheme Operation</seealso>
+        public virtual UpdateWorkspaceThemeResponse EndUpdateWorkspaceTheme(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWorkspaceThemeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkspaceVisibility
+
+        /// <summary>
+        /// Updates the visibility setting of a workspace, controlling whether it is available
+        /// to all users, assigned users only, or none.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceVisibility service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWorkspaceVisibility service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceVisibility">REST API Reference for UpdateWorkspaceVisibility Operation</seealso>
+        public virtual UpdateWorkspaceVisibilityResponse UpdateWorkspaceVisibility(UpdateWorkspaceVisibilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceVisibilityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkspaceVisibilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkspaceVisibility operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspaceVisibility operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWorkspaceVisibility
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceVisibility">REST API Reference for UpdateWorkspaceVisibility Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWorkspaceVisibility(UpdateWorkspaceVisibilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateWorkspaceVisibilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWorkspaceVisibilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWorkspaceVisibility operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWorkspaceVisibility.</param>
+        /// 
+        /// <returns>Returns a  UpdateWorkspaceVisibilityResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateWorkspaceVisibility">REST API Reference for UpdateWorkspaceVisibility Operation</seealso>
+        public virtual UpdateWorkspaceVisibilityResponse EndUpdateWorkspaceVisibility(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWorkspaceVisibilityResponse>(asyncResult);
         }
 
         #endregion

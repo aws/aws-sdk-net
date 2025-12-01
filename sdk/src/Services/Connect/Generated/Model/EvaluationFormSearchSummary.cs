@@ -36,11 +36,13 @@ namespace Amazon.Connect.Model
     {
         private int? _activeVersion;
         private bool? _autoEvaluationEnabled;
+        private ContactInteractionType _contactInteractionType;
         private string _createdBy;
         private DateTime? _createdTime;
         private string _description;
         private string _evaluationFormArn;
         private string _evaluationFormId;
+        private EvaluationFormLanguageCode _evaluationFormLanguage;
         private string _lastActivatedBy;
         private DateTime? _lastActivatedTime;
         private string _lastModifiedBy;
@@ -56,7 +58,6 @@ namespace Amazon.Connect.Model
         /// Active version of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public int ActiveVersion
         {
             get { return this._activeVersion.GetValueOrDefault(); }
@@ -85,6 +86,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetAutoEvaluationEnabled()
         {
             return this._autoEvaluationEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactInteractionType. 
+        /// <para>
+        /// The contact interaction type for this evaluation form.
+        /// </para>
+        /// </summary>
+        public ContactInteractionType ContactInteractionType
+        {
+            get { return this._contactInteractionType; }
+            set { this._contactInteractionType = value; }
+        }
+
+        // Check to see if ContactInteractionType property is set
+        internal bool IsSetContactInteractionType()
+        {
+            return this._contactInteractionType != null;
         }
 
         /// <summary>
@@ -131,7 +150,6 @@ namespace Amazon.Connect.Model
         /// The description of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -180,6 +198,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetEvaluationFormId()
         {
             return this._evaluationFormId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationFormLanguage. 
+        /// <para>
+        /// The language of the evaluation form.
+        /// </para>
+        /// </summary>
+        public EvaluationFormLanguageCode EvaluationFormLanguage
+        {
+            get { return this._evaluationFormLanguage; }
+            set { this._evaluationFormLanguage = value; }
+        }
+
+        // Check to see if EvaluationFormLanguage property is set
+        internal bool IsSetEvaluationFormLanguage()
+        {
+            return this._evaluationFormLanguage != null;
         }
 
         /// <summary>
@@ -262,7 +298,7 @@ namespace Amazon.Connect.Model
         /// Latest version of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true)]
         public int LatestVersion
         {
             get { return this._latestVersion.GetValueOrDefault(); }
@@ -320,7 +356,7 @@ namespace Amazon.Connect.Model
         /// The title of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

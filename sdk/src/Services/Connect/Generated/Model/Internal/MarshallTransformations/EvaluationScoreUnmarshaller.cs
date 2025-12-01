@@ -66,6 +66,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AppliedWeight", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.AppliedWeight = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AutomaticFail", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

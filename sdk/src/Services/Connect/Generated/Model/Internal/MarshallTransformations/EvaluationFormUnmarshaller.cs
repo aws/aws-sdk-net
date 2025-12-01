@@ -114,6 +114,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Items = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LanguageConfiguration", targetDepth))
+                {
+                    var unmarshaller = EvaluationFormLanguageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LanguageConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -148,6 +154,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetConfiguration", targetDepth))
+                {
+                    var unmarshaller = EvaluationFormTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TargetConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Title", targetDepth))

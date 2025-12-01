@@ -65,6 +65,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Namespace);
             }
 
+            if(requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.Write(requestObject.Type);
+            }
+
         }
 
         /// <summary>

@@ -126,6 +126,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UnprocessedTranscriptLocation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UnprocessedTranscriptLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

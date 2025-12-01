@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
     {
         private string _filterKey;
         private List<string> _filterValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private FilterV2StringCondition _stringCondition;
 
         /// <summary>
         /// Gets and sets the property FilterKey. 
@@ -78,6 +79,30 @@ namespace Amazon.Connect.Model
         internal bool IsSetFilterValues()
         {
             return this._filterValues != null && (this._filterValues.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StringCondition. 
+        /// <para>
+        ///  System defined filtering condition. For example, the NOT_EXISTS StringCondition returns
+        /// documents where the field specified by FilterKey does not exist in the document.
+        /// </para>
+        ///  
+        /// <para>
+        /// When the NOT_EXISTS StringCondition is added to a FilterV2 object, FilterValues must
+        /// be null or empty. 
+        /// </para>
+        /// </summary>
+        public FilterV2StringCondition StringCondition
+        {
+            get { return this._stringCondition; }
+            set { this._stringCondition = value; }
+        }
+
+        // Check to see if StringCondition property is set
+        internal bool IsSetStringCondition()
+        {
+            return this._stringCondition != null;
         }
 
     }

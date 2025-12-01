@@ -41,15 +41,17 @@ namespace Amazon.Connect.Model
     {
         private List<string> _applicationPermissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsNamespace;
+        private ApplicationType _type;
 
         /// <summary>
         /// Gets and sets the property ApplicationPermissions. 
         /// <para>
-        /// The permissions that the agent is granted on the application. Only the <c>ACCESS</c>
-        /// permission is supported.
+        /// The permissions that the agent is granted on the application. For third-party applications,
+        /// only the <c>ACCESS</c> permission is supported. For MCP Servers, the permissions are
+        /// tool Identifiers accepted by MCP Server. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=50)]
         public List<string> ApplicationPermissions
         {
             get { return this._applicationPermissions; }
@@ -79,6 +81,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  Type of Application. 
+        /// </para>
+        /// </summary>
+        public ApplicationType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

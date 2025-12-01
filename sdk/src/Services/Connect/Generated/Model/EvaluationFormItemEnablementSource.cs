@@ -43,7 +43,6 @@ namespace Amazon.Connect.Model
         /// A referenceId of the source item.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=40)]
         public string RefId
         {
             get { return this._refId; }
