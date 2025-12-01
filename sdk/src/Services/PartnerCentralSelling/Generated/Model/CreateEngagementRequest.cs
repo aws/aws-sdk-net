@@ -121,7 +121,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Provides a description of the <c>Engagement</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
+        [AWSProperty(Required=true)]
         public string Description
         {
             get { return this._description; }
@@ -140,7 +140,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Specifies the title of the <c>Engagement</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=40)]
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

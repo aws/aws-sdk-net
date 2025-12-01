@@ -46,7 +46,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// A description of the business problem the project aims to solve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=20, Max=255)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string BusinessProblem
         {
             get { return this._businessProblem; }
@@ -84,7 +84,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The title of the project.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

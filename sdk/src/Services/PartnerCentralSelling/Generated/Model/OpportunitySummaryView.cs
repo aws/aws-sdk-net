@@ -84,7 +84,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// in collaborating on an opportunity within the partner's organization. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2)]
+        [AWSProperty(Min=0, Max=10)]
         public List<Contact> OpportunityTeam
         {
             get { return this._opportunityTeam; }

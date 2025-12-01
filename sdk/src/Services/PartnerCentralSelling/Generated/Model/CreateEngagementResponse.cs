@@ -36,6 +36,7 @@ namespace Amazon.PartnerCentralSelling.Model
     {
         private string _arn;
         private string _id;
+        private DateTime? _modifiedAt;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -71,6 +72,26 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModifiedAt. 
+        /// <para>
+        /// The timestamp indicating when the engagement was last modified, in ISO 8601 format
+        /// (UTC). For newly created engagements, this value matches the creation timestamp. Example:
+        /// "2023-05-01T20:37:46Z".
+        /// </para>
+        /// </summary>
+        public DateTime ModifiedAt
+        {
+            get { return this._modifiedAt.GetValueOrDefault(); }
+            set { this._modifiedAt = value; }
+        }
+
+        // Check to see if ModifiedAt property is set
+        internal bool IsSetModifiedAt()
+        {
+            return this._modifiedAt.HasValue; 
         }
 
     }

@@ -59,6 +59,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLead())
+            {
+                context.Writer.WritePropertyName("Lead");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LeadContextMarshaller.Instance;
+                marshaller.Marshall(requestObject.Lead, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

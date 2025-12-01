@@ -97,7 +97,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The description of the engagement associated with this invitation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string EngagementDescription
         {
             get { return this._engagementDescription; }
@@ -136,7 +135,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// opportunity shared by AWS.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=40)]
         public string EngagementTitle
         {
             get { return this._engagementTitle; }
@@ -202,7 +200,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Unique identifier assigned to the engagement invitation being retrieved.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -239,7 +237,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The message sent to the invited partner when the invitation was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=255)]
+        [AWSProperty(Sensitive=true)]
         public string InvitationMessage
         {
             get { return this._invitationMessage; }
@@ -354,7 +352,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The name of the AWS organization or team that sent the engagement invitation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=120)]
         public string SenderCompanyName
         {
             get { return this._senderCompanyName; }

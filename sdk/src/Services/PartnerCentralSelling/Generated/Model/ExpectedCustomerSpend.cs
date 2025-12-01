@@ -88,7 +88,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// A URL providing additional information or context about the spend estimation.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=4, Max=255)]
+        [AWSProperty(Sensitive=true)]
         public string EstimationUrl
         {
             get { return this._estimationUrl; }
@@ -131,7 +131,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// system will automatically set it to <c>AWS</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=80)]
+        [AWSProperty(Required=true)]
         public string TargetCompany
         {
             get { return this._targetCompany; }

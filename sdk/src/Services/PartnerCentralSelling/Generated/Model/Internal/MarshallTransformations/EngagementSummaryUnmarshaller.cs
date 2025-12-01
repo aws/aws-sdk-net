@@ -72,6 +72,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContextTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ContextTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -94,6 +100,18 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.MemberCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModifiedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.ModifiedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModifiedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModifiedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Title", targetDepth))

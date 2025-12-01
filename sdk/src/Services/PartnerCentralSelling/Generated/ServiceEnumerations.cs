@@ -25,6 +25,52 @@ namespace Amazon.PartnerCentralSelling
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessDeniedExceptionErrorCode.
+    /// </summary>
+    public class AccessDeniedExceptionErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE for AccessDeniedExceptionErrorCode
+        /// </summary>
+        public static readonly AccessDeniedExceptionErrorCode INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE = new AccessDeniedExceptionErrorCode("INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessDeniedExceptionErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessDeniedExceptionErrorCode FindValue(string value)
+        {
+            return FindValue<AccessDeniedExceptionErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessDeniedExceptionErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AwsClosedLostReason.
     /// </summary>
     public class AwsClosedLostReason : ConstantClass
@@ -2638,6 +2684,10 @@ namespace Amazon.PartnerCentralSelling
         /// Constant CustomerProject for EngagementContextType
         /// </summary>
         public static readonly EngagementContextType CustomerProject = new EngagementContextType("CustomerProject");
+        /// <summary>
+        /// Constant Lead for EngagementContextType
+        /// </summary>
+        public static readonly EngagementContextType Lead = new EngagementContextType("Lead");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2680,6 +2730,10 @@ namespace Amazon.PartnerCentralSelling
     public class EngagementInvitationPayloadType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant LeadInvitation for EngagementInvitationPayloadType
+        /// </summary>
+        public static readonly EngagementInvitationPayloadType LeadInvitation = new EngagementInvitationPayloadType("LeadInvitation");
         /// <summary>
         /// Constant OpportunityInvitation for EngagementInvitationPayloadType
         /// </summary>
@@ -3905,6 +3959,68 @@ namespace Amazon.PartnerCentralSelling
 
 
     /// <summary>
+    /// Constants used for properties of type MarketSegment.
+    /// </summary>
+    public class MarketSegment : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Enterprise for MarketSegment
+        /// </summary>
+        public static readonly MarketSegment Enterprise = new MarketSegment("Enterprise");
+        /// <summary>
+        /// Constant Large for MarketSegment
+        /// </summary>
+        public static readonly MarketSegment Large = new MarketSegment("Large");
+        /// <summary>
+        /// Constant Medium for MarketSegment
+        /// </summary>
+        public static readonly MarketSegment Medium = new MarketSegment("Medium");
+        /// <summary>
+        /// Constant Micro for MarketSegment
+        /// </summary>
+        public static readonly MarketSegment Micro = new MarketSegment("Micro");
+        /// <summary>
+        /// Constant Small for MarketSegment
+        /// </summary>
+        public static readonly MarketSegment Small = new MarketSegment("Small");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MarketSegment(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MarketSegment FindValue(string value)
+        {
+            return FindValue<MarketSegment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MarketSegment(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NationalSecurity.
     /// </summary>
     public class NationalSecurity : ConstantClass
@@ -4335,6 +4451,18 @@ namespace Amazon.PartnerCentralSelling
     {
 
         /// <summary>
+        /// Constant ContextNotFound for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode ContextNotFound = new ReasonCode("ContextNotFound");
+        /// <summary>
+        /// Constant CustomerProjectContextNotPermitted for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode CustomerProjectContextNotPermitted = new ReasonCode("CustomerProjectContextNotPermitted");
+        /// <summary>
+        /// Constant DisqualifiedLeadNotPermitted for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode DisqualifiedLeadNotPermitted = new ReasonCode("DisqualifiedLeadNotPermitted");
+        /// <summary>
         /// Constant EngagementAccessDenied for ReasonCode
         /// </summary>
         public static readonly ReasonCode EngagementAccessDenied = new ReasonCode("EngagementAccessDenied");
@@ -4534,6 +4662,10 @@ namespace Amazon.PartnerCentralSelling
         /// Constant AwsMarketplaceOffers for RelatedEntityType
         /// </summary>
         public static readonly RelatedEntityType AwsMarketplaceOffers = new RelatedEntityType("AwsMarketplaceOffers");
+        /// <summary>
+        /// Constant AwsMarketplaceOfferSets for RelatedEntityType
+        /// </summary>
+        public static readonly RelatedEntityType AwsMarketplaceOfferSets = new RelatedEntityType("AwsMarketplaceOfferSets");
         /// <summary>
         /// Constant AwsProducts for RelatedEntityType
         /// </summary>
@@ -5284,6 +5416,10 @@ namespace Amazon.PartnerCentralSelling
         /// Constant INVALID_VALUE for ValidationExceptionErrorCode
         /// </summary>
         public static readonly ValidationExceptionErrorCode INVALID_VALUE = new ValidationExceptionErrorCode("INVALID_VALUE");
+        /// <summary>
+        /// Constant NOT_ENOUGH_VALUES for ValidationExceptionErrorCode
+        /// </summary>
+        public static readonly ValidationExceptionErrorCode NOT_ENOUGH_VALUES = new ValidationExceptionErrorCode("NOT_ENOUGH_VALUES");
         /// <summary>
         /// Constant REQUIRED_FIELD_MISSING for ValidationExceptionErrorCode
         /// </summary>

@@ -64,6 +64,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModifiedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.ModifiedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -94,6 +100,10 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
+                {
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {

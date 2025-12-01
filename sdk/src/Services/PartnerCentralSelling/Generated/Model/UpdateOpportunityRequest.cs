@@ -244,7 +244,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// sent back to the partner.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
         public string PartnerOpportunityIdentifier
         {
             get { return this._partnerOpportunityIdentifier; }

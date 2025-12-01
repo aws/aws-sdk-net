@@ -72,6 +72,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomerProject = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Lead", targetDepth))
+                {
+                    var unmarshaller = LeadContextUnmarshaller.Instance;
+                    unmarshalledObject.Lead = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

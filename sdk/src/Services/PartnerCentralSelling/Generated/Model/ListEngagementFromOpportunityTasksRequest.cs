@@ -123,7 +123,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// for pagination when the result set spans multiple pages. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

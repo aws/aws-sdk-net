@@ -38,8 +38,10 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class ListEngagementsRequest : AmazonPartnerCentralSellingRequest
     {
         private string _catalog;
+        private List<string> _contextTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _createdBy = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _engagementIdentifier = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _excludeContextTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _excludeCreatedBy = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
@@ -62,6 +64,27 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCatalog()
         {
             return this._catalog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContextTypes. 
+        /// <para>
+        /// Filters engagements to include only those containing the specified context types,
+        /// such as "CustomerProject" or "Lead". Use this to find engagements that have specific
+        /// types of contextual information associated with them.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<string> ContextTypes
+        {
+            get { return this._contextTypes; }
+            set { this._contextTypes = value; }
+        }
+
+        // Check to see if ContextTypes property is set
+        internal bool IsSetContextTypes()
+        {
+            return this._contextTypes != null && (this._contextTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,6 +125,27 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetEngagementIdentifier()
         {
             return this._engagementIdentifier != null && (this._engagementIdentifier.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludeContextTypes. 
+        /// <para>
+        /// Filters engagements to exclude those containing the specified context types. Use this
+        /// to find engagements that do not have certain types of contextual information, helping
+        /// to narrow results based on context exclusion criteria.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<string> ExcludeContextTypes
+        {
+            get { return this._excludeContextTypes; }
+            set { this._excludeContextTypes = value; }
+        }
+
+        // Check to see if ExcludeContextTypes property is set
+        internal bool IsSetExcludeContextTypes()
+        {
+            return this._excludeContextTypes != null && (this._excludeContextTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

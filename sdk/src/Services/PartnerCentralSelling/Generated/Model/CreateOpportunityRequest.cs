@@ -122,7 +122,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// body."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -217,7 +216,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// of this opportunity who are within the partner's organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2)]
+        [AWSProperty(Min=0, Max=10)]
         public List<Contact> OpportunityTeam
         {
             get { return this._opportunityTeam; }
@@ -306,7 +305,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// and the partner's internal systems.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
         public string PartnerOpportunityIdentifier
         {
             get { return this._partnerOpportunityIdentifier; }

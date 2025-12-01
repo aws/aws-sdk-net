@@ -48,6 +48,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetId())
+            {
+                context.Writer.WritePropertyName("Id");
+                context.Writer.Write(requestObject.Id);
+            }
+
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("Payload");

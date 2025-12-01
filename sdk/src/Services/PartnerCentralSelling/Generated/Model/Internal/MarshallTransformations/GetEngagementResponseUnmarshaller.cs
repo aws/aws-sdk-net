@@ -94,6 +94,18 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     response.MemberCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModifiedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.ModifiedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModifiedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ModifiedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Title", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -126,6 +138,10 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
+                {
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {

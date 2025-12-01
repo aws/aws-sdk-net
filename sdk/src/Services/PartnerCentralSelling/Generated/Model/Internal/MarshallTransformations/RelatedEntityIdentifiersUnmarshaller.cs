@@ -72,6 +72,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsMarketplaceOffers = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsMarketplaceOfferSets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AwsMarketplaceOfferSets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsProducts", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

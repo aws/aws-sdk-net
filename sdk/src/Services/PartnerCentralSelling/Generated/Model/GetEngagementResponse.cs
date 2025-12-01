@@ -41,6 +41,8 @@ namespace Amazon.PartnerCentralSelling.Model
         private string _description;
         private string _id;
         private int? _memberCount;
+        private DateTime? _modifiedAt;
+        private string _modifiedBy;
         private string _title;
 
         /// <summary>
@@ -128,7 +130,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// information about the engagement's purpose or scope.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -179,13 +180,52 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModifiedAt. 
+        /// <para>
+        /// The timestamp indicating when the engagement was last modified, in ISO 8601 format
+        /// (UTC). Example: "2023-05-01T20:37:46Z". This helps track the most recent changes to
+        /// the engagement.
+        /// </para>
+        /// </summary>
+        public DateTime ModifiedAt
+        {
+            get { return this._modifiedAt.GetValueOrDefault(); }
+            set { this._modifiedAt = value; }
+        }
+
+        // Check to see if ModifiedAt property is set
+        internal bool IsSetModifiedAt()
+        {
+            return this._modifiedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModifiedBy. 
+        /// <para>
+        /// The AWS account ID of the user who last modified the engagement. This field helps
+        /// track who made the most recent changes to the engagement.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string ModifiedBy
+        {
+            get { return this._modifiedBy; }
+            set { this._modifiedBy = value; }
+        }
+
+        // Check to see if ModifiedBy property is set
+        internal bool IsSetModifiedBy()
+        {
+            return this._modifiedBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
         /// The title of the engagement. It provides a brief, descriptive name for the engagement
         /// that is meaningful and easily recognizable.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=40)]
         public string Title
         {
             get { return this._title; }

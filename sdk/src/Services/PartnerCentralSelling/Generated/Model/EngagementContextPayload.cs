@@ -36,6 +36,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class EngagementContextPayload
     {
         private CustomerProjectsContext _customerProject;
+        private LeadContext _lead;
 
         /// <summary>
         /// Gets and sets the property CustomerProject. 
@@ -55,6 +56,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCustomerProject()
         {
             return this._customerProject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Lead. 
+        /// <para>
+        /// Contains detailed information about a lead when the context type is "Lead". This field
+        /// is present only when the Type in EngagementContextDetails is set to "Lead".
+        /// </para>
+        /// </summary>
+        public LeadContext Lead
+        {
+            get { return this._lead; }
+            set { this._lead = value; }
+        }
+
+        // Check to see if Lead property is set
+        internal bool IsSetLead()
+        {
+            return this._lead != null;
         }
 
     }

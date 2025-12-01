@@ -37,6 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class RelatedEntityIdentifiers
     {
         private List<string> _awsMarketplaceOffers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _awsMarketplaceOfferSets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _awsProducts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _solutions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -63,6 +64,26 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetAwsMarketplaceOffers()
         {
             return this._awsMarketplaceOffers != null && (this._awsMarketplaceOffers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsMarketplaceOfferSets. 
+        /// <para>
+        /// Enables the association of AWS Marketplace offer sets with the <c>Opportunity</c>.
+        /// Offer sets allow grouping multiple related marketplace offers together for comprehensive
+        /// solution packaging. Each value is an Amazon Resource Name (ARN) in this format: <c>arn:aws:aws-marketplace:us-east-1:999999999999:AWSMarketplace/OfferSet/offerset-sampleOfferSet32</c>.
+        /// </para>
+        /// </summary>
+        public List<string> AwsMarketplaceOfferSets
+        {
+            get { return this._awsMarketplaceOfferSets; }
+            set { this._awsMarketplaceOfferSets = value; }
+        }
+
+        // Check to see if AwsMarketplaceOfferSets property is set
+        internal bool IsSetAwsMarketplaceOfferSets()
+        {
+            return this._awsMarketplaceOfferSets != null && (this._awsMarketplaceOfferSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -47,7 +47,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// crucial for understanding the project’s goals and objectives.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=20, Max=255)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string BusinessProblem
         {
             get { return this._businessProblem; }
@@ -107,7 +107,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// understand the focus of the project.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string Title
         {
             get { return this._title; }

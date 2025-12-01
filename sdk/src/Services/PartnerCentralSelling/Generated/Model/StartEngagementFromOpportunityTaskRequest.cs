@@ -90,7 +90,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// It helps prevent the same task from being performed multiple times.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public string ClientToken
         {
             get { return this._clientToken; }

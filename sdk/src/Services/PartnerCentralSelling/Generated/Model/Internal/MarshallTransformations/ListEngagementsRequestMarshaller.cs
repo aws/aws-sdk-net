@@ -75,6 +75,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Catalog);
                 }
 
+                if(publicRequest.IsSetContextTypes())
+                {
+                    context.Writer.WritePropertyName("ContextTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestContextTypesListValue in publicRequest.ContextTypes)
+                    {
+                            context.Writer.Write(publicRequestContextTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetCreatedBy())
                 {
                     context.Writer.WritePropertyName("CreatedBy");
@@ -93,6 +104,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     foreach(var publicRequestEngagementIdentifierListValue in publicRequest.EngagementIdentifier)
                     {
                             context.Writer.Write(publicRequestEngagementIdentifierListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetExcludeContextTypes())
+                {
+                    context.Writer.WritePropertyName("ExcludeContextTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestExcludeContextTypesListValue in publicRequest.ExcludeContextTypes)
+                    {
+                            context.Writer.Write(publicRequestExcludeContextTypesListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }

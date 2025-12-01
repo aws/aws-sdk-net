@@ -72,6 +72,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LastName);
             }
 
+            if(requestObject.IsSetPhone())
+            {
+                context.Writer.WritePropertyName("Phone");
+                context.Writer.Write(requestObject.Phone);
+            }
+
         }
 
         /// <summary>

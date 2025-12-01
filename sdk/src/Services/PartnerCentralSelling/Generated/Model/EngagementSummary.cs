@@ -35,10 +35,13 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class EngagementSummary
     {
         private string _arn;
+        private List<string> _contextTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _id;
         private int? _memberCount;
+        private DateTime? _modifiedAt;
+        private string _modifiedBy;
         private string _title;
 
         /// <summary>
@@ -57,6 +60,27 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContextTypes. 
+        /// <para>
+        /// An array of context types associated with the engagement, such as "CustomerProject"
+        /// or "Lead". This provides a quick overview of the types of contexts included in the
+        /// engagement.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<string> ContextTypes
+        {
+            get { return this._contextTypes; }
+            set { this._contextTypes = value; }
+        }
+
+        // Check to see if ContextTypes property is set
+        internal bool IsSetContextTypes()
+        {
+            return this._contextTypes != null && (this._contextTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,12 +157,50 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModifiedAt. 
+        /// <para>
+        /// The timestamp indicating when the engagement was last modified, in ISO 8601 format
+        /// (UTC). Example: "2023-05-01T20:37:46Z".
+        /// </para>
+        /// </summary>
+        public DateTime ModifiedAt
+        {
+            get { return this._modifiedAt.GetValueOrDefault(); }
+            set { this._modifiedAt = value; }
+        }
+
+        // Check to see if ModifiedAt property is set
+        internal bool IsSetModifiedAt()
+        {
+            return this._modifiedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModifiedBy. 
+        /// <para>
+        /// The AWS account ID of the user who last modified the engagement. This field helps
+        /// track who made the most recent changes to the engagement.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string ModifiedBy
+        {
+            get { return this._modifiedBy; }
+            set { this._modifiedBy = value; }
+        }
+
+        // Check to see if ModifiedBy property is set
+        internal bool IsSetModifiedBy()
+        {
+            return this._modifiedBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
         /// The title of the Engagement.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=40)]
         public string Title
         {
             get { return this._title; }
