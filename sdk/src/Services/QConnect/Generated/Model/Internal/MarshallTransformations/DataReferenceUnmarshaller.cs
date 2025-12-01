@@ -68,6 +68,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.GenerativeReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("suggestedMessageReference", targetDepth))
+                {
+                    var unmarshaller = SuggestedMessageReferenceUnmarshaller.Instance;
+                    unmarshalledObject.SuggestedMessageReference = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

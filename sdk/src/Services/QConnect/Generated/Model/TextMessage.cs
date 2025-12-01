@@ -34,7 +34,50 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class TextMessage
     {
+        private AIGuardrailAssessment _aiGuardrailAssessment;
+        private List<Citation> _citations = AWSConfigs.InitializeCollections ? new List<Citation>() : null;
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property AiGuardrailAssessment. 
+        /// <para>
+        /// The AI Guardrail assessment for the text message.
+        /// </para>
+        /// </summary>
+        public AIGuardrailAssessment AiGuardrailAssessment
+        {
+            get { return this._aiGuardrailAssessment; }
+            set { this._aiGuardrailAssessment = value; }
+        }
+
+        // Check to see if AiGuardrailAssessment property is set
+        internal bool IsSetAiGuardrailAssessment()
+        {
+            return this._aiGuardrailAssessment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Citations. 
+        /// <para>
+        /// The citations associated with the text message.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Citation> Citations
+        {
+            get { return this._citations; }
+            set { this._citations = value; }
+        }
+
+        // Check to see if Citations property is set
+        internal bool IsSetCitations()
+        {
+            return this._citations != null && (this._citations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Value. 

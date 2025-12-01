@@ -188,6 +188,16 @@ namespace Amazon.QConnect.Model
         IListQuickResponsesPaginator ListQuickResponses(ListQuickResponsesRequest request);
 
         /// <summary>
+        /// Paginator for ListSpans operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSpansPaginator ListSpans(ListSpansRequest request);
+
+        /// <summary>
         /// Paginator for QueryAssistant operation
         ///</summary>
         [AWSPaginator(
