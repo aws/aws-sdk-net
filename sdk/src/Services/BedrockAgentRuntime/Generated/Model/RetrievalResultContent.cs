@@ -57,10 +57,30 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class RetrievalResultContent
     {
+        private AudioSegment _audio;
         private string _byteContent;
         private List<RetrievalResultContentColumn> _row = AWSConfigs.InitializeCollections ? new List<RetrievalResultContentColumn>() : null;
         private string _text;
         private RetrievalResultContentType _type;
+        private VideoSegment _video;
+
+        /// <summary>
+        /// Gets and sets the property Audio. 
+        /// <para>
+        /// Audio segment information when the retrieval result contains audio content.
+        /// </para>
+        /// </summary>
+        public AudioSegment Audio
+        {
+            get { return this._audio; }
+            set { this._audio = value; }
+        }
+
+        // Check to see if Audio property is set
+        internal bool IsSetAudio()
+        {
+            return this._audio != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ByteContent. 
@@ -140,6 +160,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Video. 
+        /// <para>
+        /// Video segment information when the retrieval result contains video content.
+        /// </para>
+        /// </summary>
+        public VideoSegment Video
+        {
+            get { return this._video; }
+            set { this._video = value; }
+        }
+
+        // Check to see if Video property is set
+        internal bool IsSetVideo()
+        {
+            return this._video != null;
         }
 
     }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RetrievalResultContent Object
+    /// Response Unmarshaller for VideoSegment Object
     /// </summary>  
-    public class RetrievalResultContentUnmarshaller : IJsonUnmarshaller<RetrievalResultContent, JsonUnmarshallerContext>
+    public class VideoSegmentUnmarshaller : IJsonUnmarshaller<VideoSegment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RetrievalResultContent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VideoSegment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RetrievalResultContent unmarshalledObject = new RetrievalResultContent();
+            VideoSegment unmarshalledObject = new VideoSegment();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,16 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audio", targetDepth))
-                {
-                    var unmarshaller = AudioSegmentUnmarshaller.Instance;
-                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("byteContent", targetDepth))
+                if (context.TestExpression("s3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ByteContent = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("row", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<RetrievalResultContentColumn, RetrievalResultContentColumnUnmarshaller>(RetrievalResultContentColumnUnmarshaller.Instance);
-                    unmarshalledObject.Row = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("summary", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("video", targetDepth))
-                {
-                    var unmarshaller = VideoSegmentUnmarshaller.Instance;
-                    unmarshalledObject.Video = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Summary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +73,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static RetrievalResultContentUnmarshaller _instance = new RetrievalResultContentUnmarshaller();        
+        private static VideoSegmentUnmarshaller _instance = new VideoSegmentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RetrievalResultContentUnmarshaller Instance
+        public static VideoSegmentUnmarshaller Instance
         {
             get
             {

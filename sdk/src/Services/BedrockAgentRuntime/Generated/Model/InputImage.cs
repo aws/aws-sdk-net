@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains the query made to the knowledge base.
+    /// Contains the image data for multimodal knowledge base queries, including format and
+    /// content.
     /// 
     ///  
     /// <para>
@@ -39,69 +40,51 @@ namespace Amazon.BedrockAgentRuntime.Model
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
-    /// request</a> – in the <c>retrievalQuery</c> field
+    /// request</a> – in the <c>image</c> field
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial class KnowledgeBaseQuery
+    public partial class InputImage
     {
-        private InputImage _image;
-        private string _text;
-        private KnowledgeBaseQueryType _type;
+        private InputImageFormat _format;
+        private MemoryStream _inlineContent;
 
         /// <summary>
-        /// Gets and sets the property Image. 
+        /// Gets and sets the property Format. 
         /// <para>
-        /// An image to include in the knowledge base query for multimodal retrieval.
+        /// The format of the input image. Supported formats include png, gif, jpeg, and webp.
         /// </para>
         /// </summary>
-        public InputImage Image
+        [AWSProperty(Required=true)]
+        public InputImageFormat Format
         {
-            get { return this._image; }
-            set { this._image = value; }
+            get { return this._format; }
+            set { this._format = value; }
         }
 
-        // Check to see if Image property is set
-        internal bool IsSetImage()
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
         {
-            return this._image != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Text. 
-        /// <para>
-        /// The text of the query made to the knowledge base.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=20000)]
-        public string Text
-        {
-            get { return this._text; }
-            set { this._text = value; }
-        }
-
-        // Check to see if Text property is set
-        internal bool IsSetText()
-        {
-            return this._text != null;
+            return this._format != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property InlineContent. 
         /// <para>
-        /// The type of query being performed.
+        /// The base64-encoded image data for inline image content. Maximum size is 5MB.
         /// </para>
         /// </summary>
-        public KnowledgeBaseQueryType Type
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=5242880)]
+        public MemoryStream InlineContent
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._inlineContent; }
+            set { this._inlineContent = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if InlineContent property is set
+        internal bool IsSetInlineContent()
         {
-            return this._type != null;
+            return this._inlineContent != null;
         }
 
     }
