@@ -92,6 +92,12 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetApplicationType())
+                {
+                    context.Writer.WritePropertyName("ApplicationType");
+                    context.Writer.Write(publicRequest.ApplicationType);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

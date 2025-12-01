@@ -64,6 +64,12 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     response.ApplicationSourceConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ApplicationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApplicationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

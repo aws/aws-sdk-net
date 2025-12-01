@@ -37,6 +37,7 @@ namespace Amazon.AppIntegrationsService.Model
     {
         private ApplicationConfig _applicationConfig;
         private ApplicationSourceConfig _applicationSourceConfig;
+        private ApplicationType _applicationType;
         private string _arn;
         private string _description;
         private IframeConfig _iframeConfig;
@@ -81,6 +82,24 @@ namespace Amazon.AppIntegrationsService.Model
         internal bool IsSetApplicationSourceConfig()
         {
             return this._applicationSourceConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// The type of application.
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationType
+        {
+            get { return this._applicationType; }
+            set { this._applicationType = value; }
+        }
+
+        // Check to see if ApplicationType property is set
+        internal bool IsSetApplicationType()
+        {
+            return this._applicationType != null;
         }
 
         /// <summary>
@@ -164,6 +183,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// Indicates whether the application is a service.
         /// </para>
         /// </summary>
+        [Obsolete("IsService has been deprecated in favor of ApplicationType")]
         public bool IsService
         {
             get { return this._isService.GetValueOrDefault(); }

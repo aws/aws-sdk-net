@@ -26,7 +26,7 @@
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateApplicationRequest.Namespace</property>
     <min>1</min>
-    <max>32</max>
+    <max>211</max>
     <pattern>^[a-zA-Z0-9\/\._\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -227,7 +227,7 @@
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetApplicationResponse.Namespace</property>
     <min>1</min>
-    <max>32</max>
+    <max>211</max>
     <pattern>^[a-zA-Z0-9\/\._\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -540,7 +540,7 @@
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.ApplicationSummary.Namespace</property>
     <min>1</min>
-    <max>32</max>
+    <max>211</max>
     <pattern>^[a-zA-Z0-9\/\._\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
