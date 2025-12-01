@@ -151,6 +151,45 @@ namespace AWSSDK.UnitTests
             var coordinator = new MultipartDownloadManager(client, request, config, handler);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(NotSupportedException))]
+        public void Constructor_WithEncryptionClient_ThrowsNotSupportedException()
+        {
+            // Arrange
+            var mockEncryptionClient = new Mock<IAmazonS3>();
+            mockEncryptionClient.As<Amazon.S3.Internal.IAmazonS3Encryption>();
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockDataHandler = CreateMockDataHandler();
+
+            // Act
+            var coordinator = new MultipartDownloadManager(mockEncryptionClient.Object, request, config, mockDataHandler.Object);
+        }
+
+        [TestMethod]
+        public void Constructor_WithEncryptionClient_ExceptionMessageIsDescriptive()
+        {
+            // Arrange
+            var mockEncryptionClient = new Mock<IAmazonS3>();
+            mockEncryptionClient.As<Amazon.S3.Internal.IAmazonS3Encryption>();
+            
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest();
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var mockDataHandler = CreateMockDataHandler();
+
+            // Act & Assert
+            try
+            {
+                var coordinator = new MultipartDownloadManager(mockEncryptionClient.Object, request, config, mockDataHandler.Object);
+                Assert.Fail("Expected NotSupportedException was not thrown");
+            }
+            catch (NotSupportedException ex)
+            {
+                Assert.IsTrue(ex.Message.Contains("Multipart download is not supported when using Amazon.S3.Internal.IAmazonS3Encryption client. Please use the Amazon.S3.AmazonS3Client for multipart download."));
+            }
+        }
+
         #endregion
 
         #region Property Tests
