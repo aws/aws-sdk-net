@@ -762,6 +762,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
 * [AWSSDK.Route53Domains](https://www.nuget.org/packages/AWSSDK.Route53Domains/)
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
+* [AWSSDK.Route53GlobalResolver](https://www.nuget.org/packages/AWSSDK.Route53GlobalResolver/)
+	* Add SDK for Amazon Route 53 Global Resolver, a fully managed DNS resolver service that offers broad DNS-filtering security controls.
 * [AWSSDK.Route53Profiles](https://www.nuget.org/packages/AWSSDK.Route53Profiles/)
 	* Route 53 Profiles allows you to apply a central DNS configuration across many VPCs regardless of account.
 * [AWSSDK.Route53RecoveryCluster](https://www.nuget.org/packages/AWSSDK.Route53RecoveryCluster/)
