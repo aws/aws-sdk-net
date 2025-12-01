@@ -684,6 +684,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* General availability for AWS Panorama. AWS SDK for Panorama includes APIs to manage your devices and nodes, and deploy computer vision applications to the edge. For more information, see the AWS Panorama documentation at http://docs.aws.amazon.com/panorama
 * [AWSSDK.PartnerCentralAccount](https://www.nuget.org/packages/AWSSDK.PartnerCentralAccount/)
 	* Initial GA launch of Partner Central Account
+* [AWSSDK.PartnerCentralBenefits](https://www.nuget.org/packages/AWSSDK.PartnerCentralBenefits/)
+	* Initial GA launch of Partner Central Benefits
 * [AWSSDK.PartnerCentralChannel](https://www.nuget.org/packages/AWSSDK.PartnerCentralChannel/)
 	* Initial GA launch of Partner Central Channel
 * [AWSSDK.PartnerCentralSelling](https://www.nuget.org/packages/AWSSDK.PartnerCentralSelling/)
