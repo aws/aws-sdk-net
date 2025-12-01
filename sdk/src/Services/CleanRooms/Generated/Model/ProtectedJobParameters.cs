@@ -42,7 +42,7 @@ namespace Amazon.CleanRooms.Model
         ///  The ARN of the analysis template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public string AnalysisTemplateArn
         {
             get { return this._analysisTemplateArn; }

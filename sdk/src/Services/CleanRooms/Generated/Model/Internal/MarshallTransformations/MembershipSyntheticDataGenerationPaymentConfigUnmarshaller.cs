@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MLPaymentConfig Object
+    /// Response Unmarshaller for MembershipSyntheticDataGenerationPaymentConfig Object
     /// </summary>  
-    public class MLPaymentConfigUnmarshaller : IJsonUnmarshaller<MLPaymentConfig, JsonUnmarshallerContext>
+    public class MembershipSyntheticDataGenerationPaymentConfigUnmarshaller : IJsonUnmarshaller<MembershipSyntheticDataGenerationPaymentConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MLPaymentConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MembershipSyntheticDataGenerationPaymentConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            MLPaymentConfig unmarshalledObject = new MLPaymentConfig();
+            MembershipSyntheticDataGenerationPaymentConfig unmarshalledObject = new MembershipSyntheticDataGenerationPaymentConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("modelInference", targetDepth))
+                if (context.TestExpression("isResponsible", targetDepth))
                 {
-                    var unmarshaller = ModelInferencePaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelInference = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("modelTraining", targetDepth))
-                {
-                    var unmarshaller = ModelTrainingPaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.ModelTraining = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("syntheticDataGeneration", targetDepth))
-                {
-                    var unmarshaller = SyntheticDataGenerationPaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.SyntheticDataGeneration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.IsResponsible = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static MLPaymentConfigUnmarshaller _instance = new MLPaymentConfigUnmarshaller();        
+        private static MembershipSyntheticDataGenerationPaymentConfigUnmarshaller _instance = new MembershipSyntheticDataGenerationPaymentConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MLPaymentConfigUnmarshaller Instance
+        public static MembershipSyntheticDataGenerationPaymentConfigUnmarshaller Instance
         {
             get
             {

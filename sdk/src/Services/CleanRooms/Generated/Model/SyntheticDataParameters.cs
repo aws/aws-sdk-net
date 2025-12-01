@@ -30,48 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// The structure that defines the body of the analysis template.
+    /// The parameters that control how synthetic data is generated, including privacy settings,
+    /// column classifications, and other configuration options that affect the data synthesis
+    /// process.
     /// </summary>
-    public partial class AnalysisSource
+    public partial class SyntheticDataParameters
     {
-        private AnalysisTemplateArtifacts _artifacts;
-        private string _text;
+        private MLSyntheticDataParameters _mlSyntheticDataParameters;
 
         /// <summary>
-        /// Gets and sets the property Artifacts. 
+        /// Gets and sets the property MlSyntheticDataParameters. 
         /// <para>
-        ///  The artifacts of the analysis source.
+        /// The machine learning-specific parameters for synthetic data generation.
         /// </para>
         /// </summary>
-        public AnalysisTemplateArtifacts Artifacts
+        public MLSyntheticDataParameters MlSyntheticDataParameters
         {
-            get { return this._artifacts; }
-            set { this._artifacts = value; }
+            get { return this._mlSyntheticDataParameters; }
+            set { this._mlSyntheticDataParameters = value; }
         }
 
-        // Check to see if Artifacts property is set
-        internal bool IsSetArtifacts()
+        // Check to see if MlSyntheticDataParameters property is set
+        internal bool IsSetMlSyntheticDataParameters()
         {
-            return this._artifacts != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Text. 
-        /// <para>
-        /// The query text.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=500000)]
-        public string Text
-        {
-            get { return this._text; }
-            set { this._text = value; }
-        }
-
-        // Check to see if Text property is set
-        internal bool IsSetText()
-        {
-            return this._text != null;
+            return this._mlSyntheticDataParameters != null;
         }
 
     }

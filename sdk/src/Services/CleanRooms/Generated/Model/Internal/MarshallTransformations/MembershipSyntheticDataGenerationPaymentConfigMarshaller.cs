@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MLPaymentConfig Marshaller
+    /// MembershipSyntheticDataGenerationPaymentConfig Marshaller
     /// </summary>
-    public class MLPaymentConfigMarshaller : IRequestMarshaller<MLPaymentConfig, JsonMarshallerContext> 
+    public class MembershipSyntheticDataGenerationPaymentConfigMarshaller : IRequestMarshaller<MembershipSyntheticDataGenerationPaymentConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,14 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MLPaymentConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(MembershipSyntheticDataGenerationPaymentConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetModelInference())
+            if(requestObject.IsSetIsResponsible())
             {
-                context.Writer.WritePropertyName("modelInference");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ModelInferencePaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelInference, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetModelTraining())
-            {
-                context.Writer.WritePropertyName("modelTraining");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ModelTrainingPaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelTraining, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSyntheticDataGeneration())
-            {
-                context.Writer.WritePropertyName("syntheticDataGeneration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SyntheticDataGenerationPaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.SyntheticDataGeneration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("isResponsible");
+                context.Writer.WriteBooleanValue(requestObject.IsResponsible.Value);
             }
 
         }
@@ -84,7 +57,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MLPaymentConfigMarshaller Instance = new MLPaymentConfigMarshaller();
+        public readonly static MembershipSyntheticDataGenerationPaymentConfigMarshaller Instance = new MembershipSyntheticDataGenerationPaymentConfigMarshaller();
 
     }
 }
