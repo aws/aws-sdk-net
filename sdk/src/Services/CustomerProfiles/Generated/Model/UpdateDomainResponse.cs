@@ -35,6 +35,7 @@ namespace Amazon.CustomerProfiles.Model
     public partial class UpdateDomainResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdAt;
+        private DataStoreResponse _dataStore;
         private string _deadLetterQueueUrl;
         private string _defaultEncryptionKey;
         private int? _defaultExpirationDays;
@@ -61,6 +62,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataStore. 
+        /// <para>
+        /// The data store.
+        /// </para>
+        /// </summary>
+        public DataStoreResponse DataStore
+        {
+            get { return this._dataStore; }
+            set { this._dataStore = value; }
+        }
+
+        // Check to see if DataStore property is set
+        internal bool IsSetDataStore()
+        {
+            return this._dataStore != null;
         }
 
         /// <summary>
