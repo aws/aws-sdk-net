@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Route53GlobalResolver.IAmazonRoute53GlobalResolver.CreateAccessSource(Amazon.Route53GlobalResolver.Model.CreateAccessSourceRequest)" />
+            <member name="M:Amazon.Route53GlobalResolver.AmazonRoute53GlobalResolverClient.CreateAccessSource(Amazon.Route53GlobalResolver.Model.CreateAccessSourceRequest)" />
+            <member name="T:Amazon.Route53GlobalResolver.Model.CreateAccessSourceRequest" />
+            <member name="T:Amazon.Route53GlobalResolver.Model.CreateAccessSourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="CreateAccessSource example"
+                    source=".\AWSSDKDocSamples\Route53GlobalResolver\Route53GlobalResolver.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>
