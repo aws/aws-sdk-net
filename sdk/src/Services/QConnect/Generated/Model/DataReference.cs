@@ -36,6 +36,7 @@ namespace Amazon.QConnect.Model
     {
         private ContentReference _contentReference;
         private GenerativeReference _generativeReference;
+        private SuggestedMessageReference _suggestedMessageReference;
 
         /// <summary>
         /// Gets and sets the property ContentReference.
@@ -68,6 +69,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetGenerativeReference()
         {
             return this._generativeReference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuggestedMessageReference. 
+        /// <para>
+        /// Reference information for suggested messages.
+        /// </para>
+        /// </summary>
+        public SuggestedMessageReference SuggestedMessageReference
+        {
+            get { return this._suggestedMessageReference; }
+            set { this._suggestedMessageReference = value; }
+        }
+
+        // Check to see if SuggestedMessageReference property is set
+        internal bool IsSetSuggestedMessageReference()
+        {
+            return this._suggestedMessageReference != null;
         }
 
     }

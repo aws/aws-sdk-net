@@ -108,6 +108,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("orchestratorConfigurationList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<OrchestratorConfigurationEntry, OrchestratorConfigurationEntryUnmarshaller>(OrchestratorConfigurationEntryUnmarshaller.Instance);
+                    unmarshalledObject.OrchestratorConfigurationList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serverSideEncryptionConfiguration", targetDepth))
                 {
                     var unmarshaller = ServerSideEncryptionConfigurationUnmarshaller.Instance;

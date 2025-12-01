@@ -66,6 +66,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("caseSummarizationChunkData", targetDepth))
+                {
+                    var unmarshaller = CaseSummarizationChunkDataDetailsUnmarshaller.Instance;
+                    unmarshalledObject.CaseSummarizationChunkData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("contentData", targetDepth))
                 {
                     var unmarshaller = ContentDataDetailsUnmarshaller.Instance;
@@ -108,10 +114,28 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.IntentDetectedData = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("notesChunkData", targetDepth))
+                {
+                    var unmarshaller = NotesChunkDataDetailsUnmarshaller.Instance;
+                    unmarshalledObject.NotesChunkData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("notesData", targetDepth))
+                {
+                    var unmarshaller = NotesDataDetailsUnmarshaller.Instance;
+                    unmarshalledObject.NotesData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceContentData", targetDepth))
                 {
                     var unmarshaller = SourceContentDataDetailsUnmarshaller.Instance;
                     unmarshalledObject.SourceContentData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("suggestedMessageData", targetDepth))
+                {
+                    var unmarshaller = SuggestedMessageDataDetailsUnmarshaller.Instance;
+                    unmarshalledObject.SuggestedMessageData = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

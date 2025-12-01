@@ -48,6 +48,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCaseSummarizationInputData())
+            {
+                context.Writer.WritePropertyName("caseSummarizationInputData");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CaseSummarizationInputDataMarshaller.Instance;
+                marshaller.Marshall(requestObject.CaseSummarizationInputData, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetIntentInputData())
             {
                 context.Writer.WritePropertyName("intentInputData");

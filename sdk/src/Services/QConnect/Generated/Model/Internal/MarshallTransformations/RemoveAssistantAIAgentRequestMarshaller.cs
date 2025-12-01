@@ -65,6 +65,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetAiAgentType())
                 request.Parameters.Add("aiAgentType", StringUtils.FromString(publicRequest.AiAgentType));
+            
+            if (publicRequest.IsSetOrchestratorUseCase())
+                request.Parameters.Add("orchestratorUseCase", StringUtils.FromString(publicRequest.OrchestratorUseCase));
             request.ResourcePath = "/assistants/{assistantId}/aiagentConfiguration";
             request.UseQueryString = true;
 

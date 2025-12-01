@@ -40,6 +40,7 @@ namespace Amazon.QConnect.Model
         private string _assistantArn;
         private string _assistantId;
         private string _description;
+        private AIPromptInferenceConfiguration _inferenceConfiguration;
         private string _modelId;
         private DateTime? _modifiedTime;
         private string _name;
@@ -164,6 +165,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceConfiguration. 
+        /// <para>
+        /// The configuration for inference parameters when using the AI Prompt.
+        /// </para>
+        /// </summary>
+        public AIPromptInferenceConfiguration InferenceConfiguration
+        {
+            get { return this._inferenceConfiguration; }
+            set { this._inferenceConfiguration = value; }
+        }
+
+        // Check to see if InferenceConfiguration property is set
+        internal bool IsSetInferenceConfiguration()
+        {
+            return this._inferenceConfiguration != null;
         }
 
         /// <summary>

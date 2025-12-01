@@ -102,6 +102,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueryReformulationAIPromptId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("suggestedMessages", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SuggestedMessages = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

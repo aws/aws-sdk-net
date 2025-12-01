@@ -48,6 +48,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetExternalBedrockKnowledgeBaseConfig())
+            {
+                context.Writer.WritePropertyName("externalBedrockKnowledgeBaseConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExternalBedrockKnowledgeBaseConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExternalBedrockKnowledgeBaseConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetKnowledgeBaseId())
             {
                 context.Writer.WritePropertyName("knowledgeBaseId");

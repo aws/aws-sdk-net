@@ -66,6 +66,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 throw new AmazonQConnectException("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             
+            if (publicRequest.IsSetFilter())
+                request.Parameters.Add("filter", StringUtils.FromString(publicRequest.Filter));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

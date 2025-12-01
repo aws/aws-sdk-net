@@ -73,6 +73,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAiAgentId())
+                {
+                    context.Writer.WritePropertyName("aiAgentId");
+                    context.Writer.Write(publicRequest.AiAgentId);
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -115,6 +121,26 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Message, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMetadata())
+                {
+                    context.Writer.WritePropertyName("metadata");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                    {
+                        context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
+                        var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
+
+                            context.Writer.Write(publicRequestMetadataValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOrchestratorUseCase())
+                {
+                    context.Writer.WritePropertyName("orchestratorUseCase");
+                    context.Writer.Write(publicRequest.OrchestratorUseCase);
                 }
 
                 if(publicRequest.IsSetType())

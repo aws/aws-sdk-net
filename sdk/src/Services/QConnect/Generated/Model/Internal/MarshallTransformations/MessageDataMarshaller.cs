@@ -59,6 +59,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetToolUseResult())
+            {
+                context.Writer.WritePropertyName("toolUseResult");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ToolUseResultDataMarshaller.Instance;
+                marshaller.Marshall(requestObject.ToolUseResult, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -52,6 +52,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("chunkedResponseTerminated", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.ChunkedResponseTerminated = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("conversationSessionData", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<RuntimeSessionData, RuntimeSessionDataUnmarshaller>(RuntimeSessionDataUnmarshaller.Instance);
@@ -118,6 +124,10 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnprocessableContentException"))
+                {
+                    return UnprocessableContentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {

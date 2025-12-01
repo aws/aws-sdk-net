@@ -72,6 +72,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Text = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("toolUseResult", targetDepth))
+                {
+                    var unmarshaller = ToolUseResultDataUnmarshaller.Instance;
+                    unmarshalledObject.ToolUseResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

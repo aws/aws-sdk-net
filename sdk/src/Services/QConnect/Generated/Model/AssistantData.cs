@@ -41,6 +41,7 @@ namespace Amazon.QConnect.Model
         private string _description;
         private AssistantIntegrationConfiguration _integrationConfiguration;
         private string _name;
+        private List<OrchestratorConfigurationEntry> _orchestratorConfigurationList = AWSConfigs.InitializeCollections ? new List<OrchestratorConfigurationEntry>() : null;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
         private AssistantStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -175,6 +176,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestratorConfigurationList. 
+        /// <para>
+        /// The list of orchestrator configurations for the assistant.
+        /// </para>
+        /// </summary>
+        public List<OrchestratorConfigurationEntry> OrchestratorConfigurationList
+        {
+            get { return this._orchestratorConfigurationList; }
+            set { this._orchestratorConfigurationList = value; }
+        }
+
+        // Check to see if OrchestratorConfigurationList property is set
+        internal bool IsSetOrchestratorConfigurationList()
+        {
+            return this._orchestratorConfigurationList != null && (this._orchestratorConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

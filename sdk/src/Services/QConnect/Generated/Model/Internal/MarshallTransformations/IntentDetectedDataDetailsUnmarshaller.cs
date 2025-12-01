@@ -78,6 +78,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.IntentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("relevanceLevel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RelevanceLevel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

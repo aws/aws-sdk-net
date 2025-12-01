@@ -34,12 +34,31 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class GetNextMessageResponse : AmazonWebServiceResponse
     {
+        private bool? _chunkedResponseTerminated;
         private List<RuntimeSessionData> _conversationSessionData = AWSConfigs.InitializeCollections ? new List<RuntimeSessionData>() : null;
         private ConversationState _conversationState;
         private string _nextMessageToken;
         private string _requestMessageId;
         private MessageOutput _response;
         private MessageType _type;
+
+        /// <summary>
+        /// Gets and sets the property ChunkedResponseTerminated. 
+        /// <para>
+        /// Indicates whether the chunked response has been terminated.
+        /// </para>
+        /// </summary>
+        public bool ChunkedResponseTerminated
+        {
+            get { return this._chunkedResponseTerminated.GetValueOrDefault(); }
+            set { this._chunkedResponseTerminated = value; }
+        }
+
+        // Check to see if ChunkedResponseTerminated property is set
+        internal bool IsSetChunkedResponseTerminated()
+        {
+            return this._chunkedResponseTerminated.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConversationSessionData. 

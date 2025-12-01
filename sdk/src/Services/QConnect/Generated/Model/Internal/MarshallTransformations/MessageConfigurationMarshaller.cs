@@ -48,6 +48,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGenerateChunkedMessage())
+            {
+                context.Writer.WritePropertyName("generateChunkedMessage");
+                context.Writer.Write(requestObject.GenerateChunkedMessage);
+            }
+
             if(requestObject.IsSetGenerateFillerMessage())
             {
                 context.Writer.WritePropertyName("generateFillerMessage");

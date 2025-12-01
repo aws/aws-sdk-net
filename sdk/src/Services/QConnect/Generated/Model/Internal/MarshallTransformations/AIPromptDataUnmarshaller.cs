@@ -102,6 +102,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferenceConfiguration", targetDepth))
+                {
+                    var unmarshaller = AIPromptInferenceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.InferenceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("modelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

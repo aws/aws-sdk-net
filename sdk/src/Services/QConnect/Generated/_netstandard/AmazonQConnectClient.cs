@@ -1333,8 +1333,7 @@ namespace Amazon.QConnect
         /// or mutated.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.DependencyFailedException">
-        /// An error occurred while calling a dependency. For example, calling <c>connect:DecribeContact</c>
-        /// as part of <c>CreateSession</c> with a contactArn.
+        /// The request failed because it depends on another request that failed.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -2754,6 +2753,9 @@ namespace Amazon.QConnect
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.UnprocessableContentException">
+        /// The server has a failure of processing the message
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by a service.
         /// </exception>
@@ -3658,6 +3660,50 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  ListSpans
+
+        internal virtual ListSpansResponse ListSpans(ListSpansRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSpansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSpansResponseUnmarshaller.Instance;
+
+            return Invoke<ListSpansResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves AI agent execution traces for a session, providing granular visibility into
+        /// agent orchestration flows, LLM interactions, and tool invocations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSpans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSpans service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListSpans">REST API Reference for ListSpans Operation</seealso>
+        public virtual Task<ListSpansResponse> ListSpansAsync(ListSpansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSpansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSpansResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSpansResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -3988,6 +4034,70 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  Retrieve
+
+        internal virtual RetrieveResponse Retrieve(RetrieveRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RetrieveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetrieveResponseUnmarshaller.Instance;
+
+            return Invoke<RetrieveResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves content from knowledge sources based on a query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Retrieve service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the Retrieve service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.DependencyFailedException">
+        /// The request failed because it depends on another request that failed.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.RequestTimeoutException">
+        /// The request reached the service more than 15 minutes after the date stamp on the request
+        /// or more than 15 minutes after the request expiration date (such as for pre-signed
+        /// URLs), or the date stamp on the request is more than 15 minutes in the future.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/Retrieve">REST API Reference for Retrieve Operation</seealso>
+        public virtual Task<RetrieveResponse> RetrieveAsync(RetrieveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RetrieveRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RetrieveResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RetrieveResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchContent
 
         internal virtual SearchContentResponse SearchContent(SearchContentRequest request)
@@ -4213,6 +4323,9 @@ namespace Amazon.QConnect
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.DependencyFailedException">
+        /// The request failed because it depends on another request that failed.
+        /// </exception>
         /// <exception cref="Amazon.QConnect.Model.RequestTimeoutException">
         /// The request reached the service more than 15 minutes after the date stamp on the request
         /// or more than 15 minutes after the request expiration date (such as for pre-signed
@@ -4220,6 +4333,10 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
         /// The throttling limit has been exceeded.

@@ -35,13 +35,34 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class SendMessageRequest : AmazonQConnectRequest
     {
+        private string _aiAgentId;
         private string _assistantId;
         private string _clientToken;
         private MessageConfiguration _configuration;
         private ConversationContext _conversationContext;
         private MessageInput _message;
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _orchestratorUseCase;
         private string _sessionId;
         private MessageType _type;
+
+        /// <summary>
+        /// Gets and sets the property AiAgentId. 
+        /// <para>
+        /// The identifier of the AI Agent to use for processing the message.
+        /// </para>
+        /// </summary>
+        public string AiAgentId
+        {
+            get { return this._aiAgentId; }
+            set { this._aiAgentId = value; }
+        }
+
+        // Check to see if AiAgentId property is set
+        internal bool IsSetAiAgentId()
+        {
+            return this._aiAgentId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AssistantId. 
@@ -137,6 +158,43 @@ namespace Amazon.QConnect.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Additional metadata for the message.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestratorUseCase. 
+        /// <para>
+        /// The orchestrator use case for message processing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string OrchestratorUseCase
+        {
+            get { return this._orchestratorUseCase; }
+            set { this._orchestratorUseCase = value; }
+        }
+
+        // Check to see if OrchestratorUseCase property is set
+        internal bool IsSetOrchestratorUseCase()
+        {
+            return this._orchestratorUseCase != null;
         }
 
         /// <summary>

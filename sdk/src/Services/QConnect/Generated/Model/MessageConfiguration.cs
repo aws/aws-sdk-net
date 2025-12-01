@@ -35,7 +35,26 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class MessageConfiguration
     {
+        private bool? _generateChunkedMessage;
         private bool? _generateFillerMessage;
+
+        /// <summary>
+        /// Gets and sets the property GenerateChunkedMessage. 
+        /// <para>
+        /// Configuration for generating chunked messages.
+        /// </para>
+        /// </summary>
+        public bool GenerateChunkedMessage
+        {
+            get { return this._generateChunkedMessage.GetValueOrDefault(); }
+            set { this._generateChunkedMessage = value; }
+        }
+
+        // Check to see if GenerateChunkedMessage property is set
+        internal bool IsSetGenerateChunkedMessage()
+        {
+            return this._generateChunkedMessage.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property GenerateFillerMessage. 

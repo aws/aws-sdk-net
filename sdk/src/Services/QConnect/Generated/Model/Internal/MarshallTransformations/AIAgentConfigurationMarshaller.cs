@@ -59,6 +59,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCaseSummarizationAIAgentConfiguration())
+            {
+                context.Writer.WritePropertyName("caseSummarizationAIAgentConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CaseSummarizationAIAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CaseSummarizationAIAgentConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEmailGenerativeAnswerAIAgentConfiguration())
             {
                 context.Writer.WritePropertyName("emailGenerativeAnswerAIAgentConfiguration");
@@ -99,6 +110,28 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 
                 var marshaller = ManualSearchAIAgentConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ManualSearchAIAgentConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetNoteTakingAIAgentConfiguration())
+            {
+                context.Writer.WritePropertyName("noteTakingAIAgentConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NoteTakingAIAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.NoteTakingAIAgentConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetOrchestrationAIAgentConfiguration())
+            {
+                context.Writer.WritePropertyName("orchestrationAIAgentConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OrchestrationAIAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OrchestrationAIAgentConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }

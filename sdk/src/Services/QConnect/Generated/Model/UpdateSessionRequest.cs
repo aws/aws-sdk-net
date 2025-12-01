@@ -40,6 +40,8 @@ namespace Amazon.QConnect.Model
         private Dictionary<string, AIAgentConfigurationData> _aiAgentConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, AIAgentConfigurationData>() : null;
         private string _assistantId;
         private string _description;
+        private List<OrchestratorConfigurationEntry> _orchestratorConfigurationList = AWSConfigs.InitializeCollections ? new List<OrchestratorConfigurationEntry>() : null;
+        private bool? _removeOrchestratorConfigurationList;
         private string _sessionId;
         private TagFilter _tagFilter;
 
@@ -99,6 +101,42 @@ namespace Amazon.QConnect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestratorConfigurationList. 
+        /// <para>
+        /// The updated list of orchestrator configurations for the session.
+        /// </para>
+        /// </summary>
+        public List<OrchestratorConfigurationEntry> OrchestratorConfigurationList
+        {
+            get { return this._orchestratorConfigurationList; }
+            set { this._orchestratorConfigurationList = value; }
+        }
+
+        // Check to see if OrchestratorConfigurationList property is set
+        internal bool IsSetOrchestratorConfigurationList()
+        {
+            return this._orchestratorConfigurationList != null && (this._orchestratorConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveOrchestratorConfigurationList. 
+        /// <para>
+        /// The list of orchestrator configurations to remove from the session.
+        /// </para>
+        /// </summary>
+        public bool RemoveOrchestratorConfigurationList
+        {
+            get { return this._removeOrchestratorConfigurationList.GetValueOrDefault(); }
+            set { this._removeOrchestratorConfigurationList = value; }
+        }
+
+        // Check to see if RemoveOrchestratorConfigurationList property is set
+        internal bool IsSetRemoveOrchestratorConfigurationList()
+        {
+            return this._removeOrchestratorConfigurationList.HasValue; 
         }
 
         /// <summary>

@@ -98,6 +98,28 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetOrchestratorConfigurationList())
+                {
+                    context.Writer.WritePropertyName("orchestratorConfigurationList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOrchestratorConfigurationListListValue in publicRequest.OrchestratorConfigurationList)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OrchestratorConfigurationEntryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestOrchestratorConfigurationListListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetRemoveOrchestratorConfigurationList())
+                {
+                    context.Writer.WritePropertyName("removeOrchestratorConfigurationList");
+                    context.Writer.Write(publicRequest.RemoveOrchestratorConfigurationList);
+                }
+
                 if(publicRequest.IsSetTagFilter())
                 {
                     context.Writer.WritePropertyName("tagFilter");

@@ -37,6 +37,7 @@ namespace Amazon.QConnect.Model
     {
         private string _botResponse;
         private string _inputTranscript;
+        private DateTime? _timestamp;
         private int? _turnNumber;
 
         /// <summary>
@@ -78,12 +79,29 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The timestamp of the conversation history entry.
+        /// </para>
+        /// </summary>
+        public DateTime Timestamp
+        {
+            get { return this._timestamp.GetValueOrDefault(); }
+            set { this._timestamp = value; }
+        }
+
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
+        {
+            return this._timestamp.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TurnNumber. 
         /// <para>
         /// The number of turn of the conversation history data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int TurnNumber
         {
             get { return this._turnNumber.GetValueOrDefault(); }

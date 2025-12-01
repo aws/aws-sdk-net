@@ -66,6 +66,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("externalBedrockKnowledgeBaseConfig", targetDepth))
+                {
+                    var unmarshaller = ExternalBedrockKnowledgeBaseConfigUnmarshaller.Instance;
+                    unmarshalledObject.ExternalBedrockKnowledgeBaseConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("knowledgeBaseAssociation", targetDepth))
                 {
                     var unmarshaller = KnowledgeBaseAssociationDataUnmarshaller.Instance;

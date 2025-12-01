@@ -93,6 +93,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetInferenceConfiguration())
+                {
+                    context.Writer.WritePropertyName("inferenceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AIPromptInferenceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InferenceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetModelId())
                 {
                     context.Writer.WritePropertyName("modelId");

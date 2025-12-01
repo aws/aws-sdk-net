@@ -38,6 +38,7 @@ namespace Amazon.QConnect.Model
         private AIAgentType _aiAgentType;
         private string _assistantId;
         private AIAgentConfigurationData _configuration;
+        private List<OrchestratorConfigurationEntry> _orchestratorConfigurationList = AWSConfigs.InitializeCollections ? new List<OrchestratorConfigurationEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property AiAgentType. 
@@ -97,6 +98,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestratorConfigurationList. 
+        /// <para>
+        /// The updated list of orchestrator configurations for the assistant AI Agent.
+        /// </para>
+        /// </summary>
+        public List<OrchestratorConfigurationEntry> OrchestratorConfigurationList
+        {
+            get { return this._orchestratorConfigurationList; }
+            set { this._orchestratorConfigurationList = value; }
+        }
+
+        // Check to see if OrchestratorConfigurationList property is set
+        internal bool IsSetOrchestratorConfigurationList()
+        {
+            return this._orchestratorConfigurationList != null && (this._orchestratorConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
