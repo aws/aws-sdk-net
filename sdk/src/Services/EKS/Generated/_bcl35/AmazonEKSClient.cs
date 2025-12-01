@@ -707,6 +707,105 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  CreateCapability
+
+        /// <summary>
+        /// Creates a managed capability resource for an Amazon EKS cluster.
+        /// 
+        ///  
+        /// <para>
+        /// Capabilities provide fully managed capabilities to build and scale with Kubernetes.
+        /// When you create a capability, Amazon EKSprovisions and manages the infrastructure
+        /// required to run the capability outside of your cluster. This approach reduces operational
+        /// overhead and preserves cluster resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can only create one Capability of each type on a given Amazon EKS cluster. Valid
+        /// types are Argo CD for declarative GitOps deployment, Amazon Web Services Controllers
+        /// for Kubernetes (ACK) for resource management, and Kube Resource Orchestrator (KRO)
+        /// for Kubernetes custom resource orchestration.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/capabilities.html">EKS
+        /// Capabilities</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapability service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapability service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCapability">REST API Reference for CreateCapability Operation</seealso>
+        public virtual CreateCapabilityResponse CreateCapability(CreateCapabilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapabilityResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCapabilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCapability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapability operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCapability
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCapability">REST API Reference for CreateCapability Operation</seealso>
+        public virtual IAsyncResult BeginCreateCapability(CreateCapabilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCapability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCapability.</param>
+        /// 
+        /// <returns>Returns a  CreateCapabilityResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCapability">REST API Reference for CreateCapability Operation</seealso>
+        public virtual CreateCapabilityResponse EndCreateCapability(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCapabilityResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCluster
 
         /// <summary>
@@ -1408,6 +1507,91 @@ namespace Amazon.EKS
         public virtual DeleteAddonResponse EndDeleteAddon(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAddonResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCapability
+
+        /// <summary>
+        /// Deletes a managed capability from your Amazon EKS cluster. When you delete a capability,
+        /// Amazon EKS removes the capability infrastructure but retains all resources that were
+        /// managed by the capability.
+        /// 
+        ///  
+        /// <para>
+        /// Before deleting a capability, you should delete all Kubernetes resources that were
+        /// created by the capability. After the capability is deleted, these resources become
+        /// difficult to manage because the controller that managed them is no longer available.
+        /// To delete resources before removing the capability, use <c>kubectl delete</c> or remove
+        /// them through your GitOps workflow.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapability service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCapability service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCapability">REST API Reference for DeleteCapability Operation</seealso>
+        public virtual DeleteCapabilityResponse DeleteCapability(DeleteCapabilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapabilityResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCapabilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCapability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapability operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCapability
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCapability">REST API Reference for DeleteCapability Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCapability(DeleteCapabilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCapability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCapability.</param>
+        /// 
+        /// <returns>Returns a  DeleteCapabilityResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCapability">REST API Reference for DeleteCapability Operation</seealso>
+        public virtual DeleteCapabilityResponse EndDeleteCapability(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCapabilityResponse>(asyncResult);
         }
 
         #endregion
@@ -2177,6 +2361,79 @@ namespace Amazon.EKS
         public virtual DescribeAddonVersionsResponse EndDescribeAddonVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAddonVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeCapability
+
+        /// <summary>
+        /// Returns detailed information about a specific managed capability in your Amazon EKS
+        /// cluster, including its current status, configuration, health information, and any
+        /// issues that may be affecting its operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapability service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapability service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCapability">REST API Reference for DescribeCapability Operation</seealso>
+        public virtual DescribeCapabilityResponse DescribeCapability(DescribeCapabilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapabilityResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapabilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapability operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCapability
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCapability">REST API Reference for DescribeCapability Operation</seealso>
+        public virtual IAsyncResult BeginDescribeCapability(DescribeCapabilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCapability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCapability.</param>
+        /// 
+        /// <returns>Returns a  DescribeCapabilityResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCapability">REST API Reference for DescribeCapability Operation</seealso>
+        public virtual DescribeCapabilityResponse EndDescribeCapability(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeCapabilityResponse>(asyncResult);
         }
 
         #endregion
@@ -3334,6 +3591,67 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  ListCapabilities
+
+        /// <summary>
+        /// Lists all managed capabilities in your Amazon EKS cluster. You can use this operation
+        /// to get an overview of all capabilities and their current status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapabilities service method.</param>
+        /// 
+        /// <returns>The response from the ListCapabilities service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
+        public virtual ListCapabilitiesResponse ListCapabilities(ListCapabilitiesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCapabilitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCapabilitiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCapabilitiesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCapabilities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCapabilities operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCapabilities
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
+        public virtual IAsyncResult BeginListCapabilities(ListCapabilitiesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCapabilitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCapabilitiesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCapabilities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCapabilities.</param>
+        /// 
+        /// <returns>Returns a  ListCapabilitiesResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
+        public virtual ListCapabilitiesResponse EndListCapabilities(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCapabilitiesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListClusters
 
         /// <summary>
@@ -4438,6 +4756,89 @@ namespace Amazon.EKS
         public virtual UpdateAddonResponse EndUpdateAddon(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAddonResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateCapability
+
+        /// <summary>
+        /// Updates the configuration of a managed capability in your Amazon EKS cluster. You
+        /// can update the IAM role, configuration settings, and delete propagation policy for
+        /// a capability.
+        /// 
+        ///  
+        /// <para>
+        /// When you update a capability, Amazon EKS applies the changes and may restart capability
+        /// components as needed. The capability remains available during the update process,
+        /// but some operations may be temporarily unavailable.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapability service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCapability service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateCapability">REST API Reference for UpdateCapability Operation</seealso>
+        public virtual UpdateCapabilityResponse UpdateCapability(UpdateCapabilityRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapabilityResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCapabilityResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCapability operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapability operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCapability
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateCapability">REST API Reference for UpdateCapability Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCapability(UpdateCapabilityRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCapabilityRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCapabilityResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCapability operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCapability.</param>
+        /// 
+        /// <returns>Returns a  UpdateCapabilityResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateCapability">REST API Reference for UpdateCapability Operation</seealso>
+        public virtual UpdateCapabilityResponse EndUpdateCapability(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCapabilityResponse>(asyncResult);
         }
 
         #endregion

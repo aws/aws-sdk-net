@@ -66,6 +66,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAddonName())
                 request.Parameters.Add("addonName", StringUtils.FromString(publicRequest.AddonName));
             
+            if (publicRequest.IsSetCapabilityName())
+                request.Parameters.Add("capabilityName", StringUtils.FromString(publicRequest.CapabilityName));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
