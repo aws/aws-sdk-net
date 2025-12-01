@@ -254,16 +254,6 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ROLLED_BACK</c> (Only applicable to inactive agreement revisions) – The agreement
-        /// revision has been rolled back because of an error. An earlier revision is now active.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>SUPERCEDED</c> (Only applicable to inactive agreement revisions) – The agreement
-        /// revision is no longer active and another agreement revision is now active.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>TERMINATED</c> – The agreement ended before the defined end date because of an
         /// AWS termination (for example, a payment failure).
         /// </para>
