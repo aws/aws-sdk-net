@@ -28,6 +28,16 @@ namespace Amazon.Connect.Model
     {
 
         /// <summary>
+        /// Paginator for EvaluateDataTableValues operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IEvaluateDataTableValuesPaginator EvaluateDataTableValues(EvaluateDataTableValuesRequest request);
+
+        /// <summary>
         /// Paginator for GetCurrentMetricData operation
         ///</summary>
         [AWSPaginator(
@@ -176,6 +186,46 @@ namespace Amazon.Connect.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListContactReferencesPaginator ListContactReferences(ListContactReferencesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataTableAttributes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataTableAttributesPaginator ListDataTableAttributes(ListDataTableAttributesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataTablePrimaryValues operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataTablePrimaryValuesPaginator ListDataTablePrimaryValues(ListDataTablePrimaryValuesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataTables operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataTablesPaginator ListDataTables(ListDataTablesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDataTableValues operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDataTableValuesPaginator ListDataTableValues(ListDataTableValuesRequest request);
 
         /// <summary>
         /// Paginator for ListDefaultVocabularies operation
@@ -548,6 +598,26 @@ namespace Amazon.Connect.Model
         IListViewVersionsPaginator ListViewVersions(ListViewVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListWorkspacePages operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListWorkspacePagesPaginator ListWorkspacePages(ListWorkspacePagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkspaces operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);
+
+        /// <summary>
         /// Paginator for SearchAgentStatuses operation
         ///</summary>
         [AWSPaginator(
@@ -596,6 +666,16 @@ namespace Amazon.Connect.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchContactsPaginator SearchContacts(SearchContactsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchDataTables operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchDataTablesPaginator SearchDataTables(SearchDataTablesRequest request);
 
         /// <summary>
         /// Paginator for SearchHoursOfOperationOverrides operation
@@ -708,6 +788,16 @@ namespace Amazon.Connect.Model
         ISearchUsersPaginator SearchUsers(SearchUsersRequest request);
 
         /// <summary>
+        /// Paginator for SearchViews operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchViewsPaginator SearchViews(SearchViewsRequest request);
+
+        /// <summary>
         /// Paginator for SearchVocabularies operation
         ///</summary>
         [AWSPaginator(
@@ -716,5 +806,25 @@ namespace Amazon.Connect.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchVocabulariesPaginator SearchVocabularies(SearchVocabulariesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchWorkspaceAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchWorkspaceAssociationsPaginator SearchWorkspaceAssociations(SearchWorkspaceAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchWorkspaces operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchWorkspacesPaginator SearchWorkspaces(SearchWorkspacesRequest request);
     }
 }

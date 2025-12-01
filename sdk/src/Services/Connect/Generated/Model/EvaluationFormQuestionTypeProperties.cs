@@ -35,9 +35,28 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationFormQuestionTypeProperties
     {
+        private EvaluationFormMultiSelectQuestionProperties _multiSelect;
         private EvaluationFormNumericQuestionProperties _numeric;
         private EvaluationFormSingleSelectQuestionProperties _singleSelect;
         private EvaluationFormTextQuestionProperties _text;
+
+        /// <summary>
+        /// Gets and sets the property MultiSelect. 
+        /// <para>
+        /// Properties for multi-select question types.
+        /// </para>
+        /// </summary>
+        public EvaluationFormMultiSelectQuestionProperties MultiSelect
+        {
+            get { return this._multiSelect; }
+            set { this._multiSelect = value; }
+        }
+
+        // Check to see if MultiSelect property is set
+        internal bool IsSetMultiSelect()
+        {
+            return this._multiSelect != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Numeric. 

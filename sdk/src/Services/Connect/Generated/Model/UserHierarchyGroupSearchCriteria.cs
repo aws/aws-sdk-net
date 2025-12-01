@@ -91,8 +91,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The currently supported values for <c>FieldName</c> are <c>name</c>,&#x2028;&#x2028;
-        /// <c>parentId</c>, <c>levelId</c>, and <c>resourceID</c>.
+        /// The currently supported values for <c>FieldName</c> are <c>name</c>, <c>parentId</c>,
+        /// <c>levelId</c>, and <c>resourceID</c>.
         /// </para>
         ///  </note>
         /// </summary>

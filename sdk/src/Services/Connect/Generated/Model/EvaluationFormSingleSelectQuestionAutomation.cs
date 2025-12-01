@@ -65,7 +65,6 @@ namespace Amazon.Connect.Model
         /// the criteria.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=40)]
         public string DefaultOptionRefId
         {
             get { return this._defaultOptionRefId; }
@@ -89,7 +88,6 @@ namespace Amazon.Connect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=20)]
         public List<EvaluationFormSingleSelectQuestionAutomationOption> Options
         {
             get { return this._options; }

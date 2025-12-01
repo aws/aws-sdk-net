@@ -35,9 +35,29 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationAnswerData
     {
+        private string _dateTimeValue;
         private bool? _notApplicable;
         private double? _numericValue;
         private string _stringValue;
+        private List<string> _stringValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DateTimeValue. 
+        /// <para>
+        /// Date and time value provided as an answer to an evaluation question.
+        /// </para>
+        /// </summary>
+        public string DateTimeValue
+        {
+            get { return this._dateTimeValue; }
+            set { this._dateTimeValue = value; }
+        }
+
+        // Check to see if DateTimeValue property is set
+        internal bool IsSetDateTimeValue()
+        {
+            return this._dateTimeValue != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NotApplicable. 
@@ -92,6 +112,29 @@ namespace Amazon.Connect.Model
         internal bool IsSetStringValue()
         {
             return this._stringValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StringValues. 
+        /// <para>
+        /// String values provided as answers to evaluation questions.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> StringValues
+        {
+            get { return this._stringValues; }
+            set { this._stringValues = value; }
+        }
+
+        // Check to see if StringValues property is set
+        internal bool IsSetStringValues()
+        {
+            return this._stringValues != null && (this._stringValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
