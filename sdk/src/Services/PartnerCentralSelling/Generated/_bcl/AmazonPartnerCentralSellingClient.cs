@@ -907,6 +907,16 @@ namespace Amazon.PartnerCentralSelling
         /// the request.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -990,6 +1000,16 @@ namespace Amazon.PartnerCentralSelling
         /// the request.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -1043,6 +1063,191 @@ namespace Amazon.PartnerCentralSelling
 
         #endregion
         
+        #region  CreateEngagementContext
+
+
+        /// <summary>
+        /// Creates a new context within an existing engagement. This action allows you to add
+        /// contextual information such as customer projects or documents to an engagement, providing
+        /// additional details that help facilitate collaboration between engagement members.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEngagementContext service method.</param>
+        /// 
+        /// <returns>The response from the CreateEngagementContext service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementContext">REST API Reference for CreateEngagementContext Operation</seealso>
+        public virtual CreateEngagementContextResponse CreateEngagementContext(CreateEngagementContextRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateEngagementContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEngagementContextResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEngagementContextResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new context within an existing engagement. This action allows you to add
+        /// contextual information such as customer projects or documents to an engagement, providing
+        /// additional details that help facilitate collaboration between engagement members.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEngagementContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEngagementContext service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/CreateEngagementContext">REST API Reference for CreateEngagementContext Operation</seealso>
+        public virtual Task<CreateEngagementContextResponse> CreateEngagementContextAsync(CreateEngagementContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateEngagementContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEngagementContextResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateEngagementContextResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEngagementInvitation
 
 
@@ -1069,6 +1274,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1149,6 +1364,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1453,6 +1678,16 @@ namespace Amazon.PartnerCentralSelling
         /// the request.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -1533,6 +1768,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1619,6 +1864,16 @@ namespace Amazon.PartnerCentralSelling
         /// the request.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -1700,6 +1955,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -1784,6 +2049,16 @@ namespace Amazon.PartnerCentralSelling
         /// the request.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -1852,6 +2127,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
         /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2222,6 +2507,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -2279,6 +2574,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2637,6 +2942,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -2694,6 +3009,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2756,6 +3081,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -2813,6 +3148,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2876,6 +3221,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -2934,6 +3289,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -2997,6 +3362,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -3055,6 +3430,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3118,6 +3503,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -3176,6 +3571,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3384,6 +3789,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -3444,6 +3859,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3507,6 +3932,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -3565,6 +4000,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3629,6 +4074,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -3688,6 +4143,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -3931,6 +4396,147 @@ namespace Amazon.PartnerCentralSelling
 
         #endregion
         
+        #region  ListOpportunityFromEngagementTasks
+
+
+        /// <summary>
+        /// Lists all in-progress, completed, or failed opportunity creation tasks from engagements
+        /// that were initiated by the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpportunityFromEngagementTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListOpportunityFromEngagementTasks service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityFromEngagementTasks">REST API Reference for ListOpportunityFromEngagementTasks Operation</seealso>
+        public virtual ListOpportunityFromEngagementTasksResponse ListOpportunityFromEngagementTasks(ListOpportunityFromEngagementTasksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOpportunityFromEngagementTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOpportunityFromEngagementTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListOpportunityFromEngagementTasksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all in-progress, completed, or failed opportunity creation tasks from engagements
+        /// that were initiated by the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOpportunityFromEngagementTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOpportunityFromEngagementTasks service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListOpportunityFromEngagementTasks">REST API Reference for ListOpportunityFromEngagementTasks Operation</seealso>
+        public virtual Task<ListOpportunityFromEngagementTasksResponse> ListOpportunityFromEngagementTasksAsync(ListOpportunityFromEngagementTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListOpportunityFromEngagementTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOpportunityFromEngagementTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListOpportunityFromEngagementTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListResourceSnapshotJobs
 
 
@@ -3949,6 +4555,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -4010,6 +4626,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -4095,6 +4721,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -4175,6 +4811,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -4259,6 +4905,16 @@ namespace Amazon.PartnerCentralSelling
         /// expected AWS region. Check IAM permissions for accessing the resource.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by the service or business validation
         /// rules.
@@ -4318,6 +4974,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// Suggested action: Verify that the resource ID is correct and the resource is in the
         /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
@@ -4500,6 +5166,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -4558,6 +5234,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -5147,6 +5833,191 @@ namespace Amazon.PartnerCentralSelling
 
         #endregion
         
+        #region  StartOpportunityFromEngagementTask
+
+
+        /// <summary>
+        /// This action creates an opportunity from an existing engagement context. The task is
+        /// asynchronous and orchestrates the process of converting engagement contextual information
+        /// into a structured opportunity record within the partner's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOpportunityFromEngagementTask service method.</param>
+        /// 
+        /// <returns>The response from the StartOpportunityFromEngagementTask service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartOpportunityFromEngagementTask">REST API Reference for StartOpportunityFromEngagementTask Operation</seealso>
+        public virtual StartOpportunityFromEngagementTaskResponse StartOpportunityFromEngagementTask(StartOpportunityFromEngagementTaskRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOpportunityFromEngagementTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOpportunityFromEngagementTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartOpportunityFromEngagementTaskResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This action creates an opportunity from an existing engagement context. The task is
+        /// asynchronous and orchestrates the process of converting engagement contextual information
+        /// into a structured opportunity record within the partner's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOpportunityFromEngagementTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartOpportunityFromEngagementTask service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartOpportunityFromEngagementTask">REST API Reference for StartOpportunityFromEngagementTask Operation</seealso>
+        public virtual Task<StartOpportunityFromEngagementTaskResponse> StartOpportunityFromEngagementTaskAsync(StartOpportunityFromEngagementTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartOpportunityFromEngagementTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartOpportunityFromEngagementTaskResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartOpportunityFromEngagementTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartResourceSnapshotJob
 
 
@@ -5163,6 +6034,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -5222,6 +6103,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -5284,6 +6175,16 @@ namespace Amazon.PartnerCentralSelling
         /// AWS administrator for assistance.
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
         /// This error occurs when the specified resource can't be found. The resource might not
         /// exist, or isn't visible with the current credentials.
@@ -5341,6 +6242,16 @@ namespace Amazon.PartnerCentralSelling
         /// <para>
         /// You don’t have access to this action or resource. Review IAM policies or contact your
         /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
@@ -5844,6 +6755,187 @@ namespace Amazon.PartnerCentralSelling
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEngagementContext
+
+
+        /// <summary>
+        /// Updates the context information for an existing engagement with new or modified data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEngagementContext service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEngagementContext service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateEngagementContext">REST API Reference for UpdateEngagementContext Operation</seealso>
+        public virtual UpdateEngagementContextResponse UpdateEngagementContext(UpdateEngagementContextRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateEngagementContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEngagementContextResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEngagementContextResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the context information for an existing engagement with new or modified data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEngagementContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEngagementContext service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ServiceQuotaExceededException">
+        /// This error occurs when the request would cause a service quota to be exceeded. Service
+        /// quotas represent the maximum allowed use of a specific resource, and this error indicates
+        /// that the request would surpass that limit.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/UpdateEngagementContext">REST API Reference for UpdateEngagementContext Operation</seealso>
+        public virtual Task<UpdateEngagementContextResponse> UpdateEngagementContextAsync(UpdateEngagementContextRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateEngagementContextRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEngagementContextResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateEngagementContextResponse>(request, options, cancellationToken);
         }
 
         #endregion

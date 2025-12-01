@@ -54,7 +54,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// captured in other fields.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
         public string AdditionalComments
         {
             get { return this._additionalComments; }
@@ -133,7 +132,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// and the strategic fit of the partner's solution.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=20, Max=2000)]
+        [AWSProperty(Sensitive=true)]
         public string CustomerBusinessProblem
         {
             get { return this._customerBusinessProblem; }
@@ -274,7 +273,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Only allowed when <c>CompetitorNames</c> has <c>Other</c> selected.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string OtherCompetitorNames
         {
             get { return this._otherCompetitorNames; }
@@ -294,7 +292,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// field value is <c>Other</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=255)]
+        [AWSProperty(Sensitive=true)]
         public string OtherSolutionDescription
         {
             get { return this._otherSolutionDescription; }
@@ -399,7 +397,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Specifies the <c>Opportunity</c>'s title or name.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=255)]
+        [AWSProperty(Sensitive=true)]
         public string Title
         {
             get { return this._title; }

@@ -47,7 +47,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The sender-provided contact's title (job title or role) associated with the <c>EngagementInvitation</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Sensitive=true)]
         public string BusinessTitle
         {
             get { return this._businessTitle; }
@@ -66,7 +66,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The sender-provided contact's email address associated with the <c>EngagementInvitation</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Email
         {
             get { return this._email; }
@@ -85,7 +85,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The sender-provided contact's last name associated with the <c>EngagementInvitation</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Sensitive=true)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -104,7 +104,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The sender-provided contact's first name associated with the <c>EngagementInvitation</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=80)]
+        [AWSProperty(Sensitive=true)]
         public string LastName
         {
             get { return this._lastName; }
@@ -123,7 +123,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The sender-provided contact's phone number associated with the <c>EngagementInvitation</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=40)]
+        [AWSProperty(Sensitive=true)]
         public string Phone
         {
             get { return this._phone; }

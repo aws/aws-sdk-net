@@ -85,7 +85,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Specifies the end <c>Customer</c>'s company name associated with the <c>Opportunity</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=120)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string CompanyName
         {
             get { return this._companyName; }
@@ -144,7 +144,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// when the selected value in the <c>Industry</c> field is <c>Other</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
         public string OtherIndustry
         {
             get { return this._otherIndustry; }
@@ -166,7 +165,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// security.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=4, Max=255)]
+        [AWSProperty(Sensitive=true)]
         public string WebsiteUrl
         {
             get { return this._websiteUrl; }

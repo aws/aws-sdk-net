@@ -67,7 +67,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Specifies the unique identifier for the retrieved engagement invitation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string Identifier
         {
             get { return this._identifier; }

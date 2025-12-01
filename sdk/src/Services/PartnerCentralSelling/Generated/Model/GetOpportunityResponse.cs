@@ -236,7 +236,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=2)]
+        [AWSProperty(Min=0, Max=10)]
         public List<Contact> OpportunityTeam
         {
             get { return this._opportunityTeam; }
@@ -296,7 +296,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// sent back to the partner.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
         public string PartnerOpportunityIdentifier
         {
             get { return this._partnerOpportunityIdentifier; }
