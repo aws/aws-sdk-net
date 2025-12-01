@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BedrockEmbeddingModelConfiguration Object
+    /// Response Unmarshaller for VideoConfiguration Object
     /// </summary>  
-    public class BedrockEmbeddingModelConfigurationUnmarshaller : IJsonUnmarshaller<BedrockEmbeddingModelConfiguration, JsonUnmarshallerContext>
+    public class VideoConfigurationUnmarshaller : IJsonUnmarshaller<VideoConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BedrockEmbeddingModelConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VideoConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            BedrockEmbeddingModelConfiguration unmarshalledObject = new BedrockEmbeddingModelConfiguration();
+            VideoConfiguration unmarshalledObject = new VideoConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("audio", targetDepth))
+                if (context.TestExpression("segmentationConfiguration", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<AudioConfiguration, AudioConfigurationUnmarshaller>(AudioConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("dimensions", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("embeddingDataType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmbeddingDataType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("video", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<VideoConfiguration, VideoConfigurationUnmarshaller>(VideoConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.Video = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = VideoSegmentationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SegmentationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static BedrockEmbeddingModelConfigurationUnmarshaller _instance = new BedrockEmbeddingModelConfigurationUnmarshaller();        
+        private static VideoConfigurationUnmarshaller _instance = new VideoConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BedrockEmbeddingModelConfigurationUnmarshaller Instance
+        public static VideoConfigurationUnmarshaller Instance
         {
             get
             {

@@ -30,30 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetKnowledgeBase operation.
-    /// Gets information about a knowledge base.
+    /// Configuration for segmenting video content during multimodal knowledge base ingestion.
+    /// Determines how video files are divided into chunks for processing.
     /// </summary>
-    public partial class GetKnowledgeBaseRequest : AmazonBedrockAgentRequest
+    public partial class VideoSegmentationConfiguration
     {
-        private string _knowledgeBaseId;
+        private int? _fixedLengthDuration;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId. 
+        /// Gets and sets the property FixedLengthDuration. 
         /// <para>
-        /// The unique identifier of the knowledge base you want to get information on.
+        /// The duration in seconds for each video segment. Video files will be divided into chunks
+        /// of this length for processing.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string KnowledgeBaseId
+        [AWSProperty(Required=true, Min=1, Max=30)]
+        public int? FixedLengthDuration
         {
-            get { return this._knowledgeBaseId; }
-            set { this._knowledgeBaseId = value; }
+            get { return this._fixedLengthDuration; }
+            set { this._fixedLengthDuration = value; }
         }
 
-        // Check to see if KnowledgeBaseId property is set
-        internal bool IsSetKnowledgeBaseId()
+        // Check to see if FixedLengthDuration property is set
+        internal bool IsSetFixedLengthDuration()
         {
-            return this._knowledgeBaseId != null;
+            return this._fixedLengthDuration.HasValue; 
         }
 
     }

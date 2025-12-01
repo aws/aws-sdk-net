@@ -30,30 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetKnowledgeBase operation.
-    /// Gets information about a knowledge base.
+    /// Configuration settings for processing audio content in multimodal knowledge bases.
     /// </summary>
-    public partial class GetKnowledgeBaseRequest : AmazonBedrockAgentRequest
+    public partial class AudioConfiguration
     {
-        private string _knowledgeBaseId;
+        private AudioSegmentationConfiguration _segmentationConfiguration;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId. 
+        /// Gets and sets the property SegmentationConfiguration. 
         /// <para>
-        /// The unique identifier of the knowledge base you want to get information on.
+        /// Configuration for segmenting audio content during processing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string KnowledgeBaseId
+        public AudioSegmentationConfiguration SegmentationConfiguration
         {
-            get { return this._knowledgeBaseId; }
-            set { this._knowledgeBaseId = value; }
+            get { return this._segmentationConfiguration; }
+            set { this._segmentationConfiguration = value; }
         }
 
-        // Check to see if KnowledgeBaseId property is set
-        internal bool IsSetKnowledgeBaseId()
+        // Check to see if SegmentationConfiguration property is set
+        internal bool IsSetSegmentationConfiguration()
         {
-            return this._knowledgeBaseId != null;
+            return this._segmentationConfiguration != null;
         }
 
     }
