@@ -44,6 +44,8 @@ namespace Amazon.LexModelsV2.Model
         private string _localeName;
         private double? _nluIntentConfidenceThreshold;
         private SpeechDetectionSensitivity _speechDetectionSensitivity;
+        private SpeechRecognitionSettings _speechRecognitionSettings;
+        private UnifiedSpeechSettings _unifiedSpeechSettings;
         private VoiceSettings _voiceSettings;
 
         /// <summary>
@@ -243,6 +245,42 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetSpeechDetectionSensitivity()
         {
             return this._speechDetectionSensitivity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpeechRecognitionSettings. 
+        /// <para>
+        /// The speech-to-text settings configured for the created bot locale.
+        /// </para>
+        /// </summary>
+        public SpeechRecognitionSettings SpeechRecognitionSettings
+        {
+            get { return this._speechRecognitionSettings; }
+            set { this._speechRecognitionSettings = value; }
+        }
+
+        // Check to see if SpeechRecognitionSettings property is set
+        internal bool IsSetSpeechRecognitionSettings()
+        {
+            return this._speechRecognitionSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnifiedSpeechSettings. 
+        /// <para>
+        /// The unified speech settings configured for the created bot locale.
+        /// </para>
+        /// </summary>
+        public UnifiedSpeechSettings UnifiedSpeechSettings
+        {
+            get { return this._unifiedSpeechSettings; }
+            set { this._unifiedSpeechSettings = value; }
+        }
+
+        // Check to see if UnifiedSpeechSettings property is set
+        internal bool IsSetUnifiedSpeechSettings()
+        {
+            return this._unifiedSpeechSettings != null;
         }
 
         /// <summary>

@@ -3354,6 +3354,18 @@
     <max>3</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DeepgramSpeechModelConfig.ApiTokenSecretArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[A-Za-z-]*:secretsmanager:[a-z0-9-]{1,20}:[0-9]{12}:secret:[A-Za-z0-9/_+=.@-]{1,512}-[A-Za-z0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.DeepgramSpeechModelConfig.ModelId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[A-Za-z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LexModelsV2.Model.DialogAction.SlotToElicit</property>
     <min>1</min>
     <max>100</max>
@@ -3820,6 +3832,10 @@
     <min>1</min>
     <max>25</max>
     <pattern>^((AMAZON\.)[a-zA-Z_]+?|[0-9a-zA-Z]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LexModelsV2.Model.SpeechFoundationModel.ModelArn</property>
+    <pattern>^arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}::foundation-model\/[a-z0-9-]{1,63}[.]{1}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LexModelsV2.Model.SSMLMessage.Value</property>
