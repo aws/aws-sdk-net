@@ -232,6 +232,29 @@ namespace Amazon.S3.Transfer
 
         #endregion
 
+        #region DownloadDirectory
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityDownloadDirectoryResponse> DownloadDirectoryWithResponseAsync(string bucketName, string s3Directory, string localDirectory, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var request = ConstructDownloadDirectoryRequest(bucketName, s3Directory, localDirectory);
+            return await DownloadDirectoryWithResponseAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc/>
+        public async Task<TransferUtilityDownloadDirectoryResponse> DownloadDirectoryWithResponseAsync(TransferUtilityDownloadDirectoryRequest request, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            using(CreateSpan(nameof(DownloadDirectoryWithResponseAsync), null, Amazon.Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                CheckForBlockedArn(request.BucketName, "DownloadDirectory");
+                var command = new DownloadDirectoryCommand(this._s3Client, request, this._config, true);
+                command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
+                return await command.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        #endregion
+
         internal BaseCommand<TransferUtilityUploadResponse> GetUploadCommand(TransferUtilityUploadRequest request, SemaphoreSlim asyncThrottler)
         {
             validate(request);

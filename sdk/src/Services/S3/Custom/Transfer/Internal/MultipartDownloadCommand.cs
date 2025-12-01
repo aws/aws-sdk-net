@@ -20,6 +20,7 @@
  *
  */
 using System;
+using System.Threading;
 using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
@@ -36,6 +37,7 @@ namespace Amazon.S3.Transfer.Internal
         private readonly IAmazonS3 _s3Client;
         private readonly TransferUtilityDownloadRequest _request;
         private readonly TransferUtilityConfig _config;
+        private readonly SemaphoreSlim _sharedHttpThrottler;
         
         // Track last known transferred bytes from coordinator's progress events
         private long _lastKnownTransferredBytes;
@@ -49,16 +51,29 @@ namespace Amazon.S3.Transfer.Internal
         }
 
         /// <summary>
-        /// Initializes a new instance of the MultipartDownloadCommand class.
+        /// Initializes a new instance of the MultipartDownloadCommand class for single file downloads.
         /// </summary>
         /// <param name="s3Client">The S3 client to use for downloads.</param>
         /// <param name="request">The download request containing configuration.</param>
         /// <param name="config">The TransferUtility configuration.</param>
         internal MultipartDownloadCommand(IAmazonS3 s3Client, TransferUtilityDownloadRequest request, TransferUtilityConfig config)
+            : this(s3Client, request, config, null)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the MultipartDownloadCommand class for directory downloads.
+        /// </summary>
+        /// <param name="s3Client">The S3 client to use for downloads.</param>
+        /// <param name="request">The download request containing configuration.</param>
+        /// <param name="config">The TransferUtility configuration.</param>
+        /// <param name="sharedHttpThrottler">Shared HTTP concurrency throttler for directory operations, or null for single file downloads.</param>
+        internal MultipartDownloadCommand(IAmazonS3 s3Client, TransferUtilityDownloadRequest request, TransferUtilityConfig config, SemaphoreSlim sharedHttpThrottler)
         {
             _s3Client = s3Client ?? throw new ArgumentNullException(nameof(s3Client));
             _request = request ?? throw new ArgumentNullException(nameof(request));
             _config = config ?? throw new ArgumentNullException(nameof(config));
+            _sharedHttpThrottler = sharedHttpThrottler; // Can be null for single file downloads
         }
 
         /// <summary>
