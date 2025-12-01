@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProposalSummary Object
+    /// Response Unmarshaller for VariablePaymentTermConfiguration Object
     /// </summary>  
-    public class ProposalSummaryUnmarshaller : IJsonUnmarshaller<ProposalSummary, JsonUnmarshallerContext>
+    public class VariablePaymentTermConfigurationUnmarshaller : IJsonUnmarshaller<VariablePaymentTermConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProposalSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VariablePaymentTermConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ProposalSummary unmarshalledObject = new ProposalSummary();
+            VariablePaymentTermConfiguration unmarshalledObject = new VariablePaymentTermConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("offerId", targetDepth))
+                if (context.TestExpression("expirationDuration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OfferId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ExpirationDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("offerSetId", targetDepth))
+                if (context.TestExpression("paymentRequestApprovalStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OfferSetId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("resources", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Resource, ResourceUnmarshaller>(ResourceUnmarshaller.Instance);
-                    unmarshalledObject.Resources = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.PaymentRequestApprovalStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProposalSummaryUnmarshaller _instance = new ProposalSummaryUnmarshaller();        
+        private static VariablePaymentTermConfigurationUnmarshaller _instance = new VariablePaymentTermConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProposalSummaryUnmarshaller Instance
+        public static VariablePaymentTermConfigurationUnmarshaller Instance
         {
             get
             {
