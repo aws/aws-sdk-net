@@ -48,6 +48,22 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudio())
+            {
+                context.Writer.WritePropertyName("audio");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAudioListValue in requestObject.Audio)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AudioConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAudioListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("dimensions");
@@ -58,6 +74,22 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("embeddingDataType");
                 context.Writer.Write(requestObject.EmbeddingDataType);
+            }
+
+            if(requestObject.IsSetVideo())
+            {
+                context.Writer.WritePropertyName("video");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectVideoListValue in requestObject.Video)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VideoConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectVideoListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

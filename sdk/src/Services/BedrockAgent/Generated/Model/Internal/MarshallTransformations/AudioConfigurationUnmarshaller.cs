@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BedrockEmbeddingModelConfiguration Object
+    /// Response Unmarshaller for AudioConfiguration Object
     /// </summary>  
-    public class BedrockEmbeddingModelConfigurationUnmarshaller : IUnmarshaller<BedrockEmbeddingModelConfiguration, XmlUnmarshallerContext>, IUnmarshaller<BedrockEmbeddingModelConfiguration, JsonUnmarshallerContext>
+    public class AudioConfigurationUnmarshaller : IUnmarshaller<AudioConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AudioConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BedrockEmbeddingModelConfiguration IUnmarshaller<BedrockEmbeddingModelConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AudioConfiguration IUnmarshaller<AudioConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BedrockEmbeddingModelConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AudioConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            BedrockEmbeddingModelConfiguration unmarshalledObject = new BedrockEmbeddingModelConfiguration();
+            AudioConfiguration unmarshalledObject = new AudioConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("audio", targetDepth))
+                if (context.TestExpression("segmentationConfiguration", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AudioConfiguration, AudioConfigurationUnmarshaller>(AudioConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dimensions", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("embeddingDataType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EmbeddingDataType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("video", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<VideoConfiguration, VideoConfigurationUnmarshaller>(VideoConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.Video = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AudioSegmentationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SegmentationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static BedrockEmbeddingModelConfigurationUnmarshaller _instance = new BedrockEmbeddingModelConfigurationUnmarshaller();        
+        private static AudioConfigurationUnmarshaller _instance = new AudioConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BedrockEmbeddingModelConfigurationUnmarshaller Instance
+        public static AudioConfigurationUnmarshaller Instance
         {
             get
             {

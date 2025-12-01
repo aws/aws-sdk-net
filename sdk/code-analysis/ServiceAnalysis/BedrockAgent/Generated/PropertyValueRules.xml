@@ -1900,6 +1900,11 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AudioSegmentationConfiguration.FixedLengthDuration</property>
+    <min>1</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.BedrockEmbeddingModelConfiguration.Dimensions</property>
     <min>0</min>
     <max>4096</max>
@@ -3088,6 +3093,11 @@
     <min>1</min>
     <max>2048</max>
     <pattern>(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}::foundation-model/(.*))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VideoSegmentationConfiguration.FixedLengthDuration</property>
+    <min>1</min>
+    <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.WebCrawlerConfiguration.UserAgent</property>
