@@ -847,6 +847,55 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateRecommender
+
+        internal virtual CreateRecommenderResponse CreateRecommender(CreateRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a recommender
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
+        public virtual Task<CreateRecommenderResponse> CreateRecommenderAsync(CreateRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRecommenderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSegmentDefinition
 
         internal virtual CreateSegmentDefinitionResponse CreateSegmentDefinition(CreateSegmentDefinitionRequest request)
@@ -1192,6 +1241,55 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = DeleteDomainLayoutResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDomainLayoutResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDomainObjectType
+
+        internal virtual DeleteDomainObjectTypeResponse DeleteDomainObjectType(DeleteDomainObjectTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDomainObjectTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete a DomainObjectType for the given Domain and ObjectType name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainObjectType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDomainObjectType service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainObjectType">REST API Reference for DeleteDomainObjectType Operation</seealso>
+        public virtual Task<DeleteDomainObjectTypeResponse> DeleteDomainObjectTypeAsync(DeleteDomainObjectTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDomainObjectTypeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1544,6 +1642,55 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = DeleteProfileObjectTypeResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProfileObjectTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRecommender
+
+        internal virtual DeleteRecommenderResponse DeleteRecommender(DeleteRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommender">REST API Reference for DeleteRecommender Operation</seealso>
+        public virtual Task<DeleteRecommenderResponse> DeleteRecommenderAsync(DeleteRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRecommenderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1961,6 +2108,55 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetDomainObjectType
+
+        internal virtual GetDomainObjectTypeResponse GetDomainObjectType(GetDomainObjectTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainObjectTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Return a DomainObjectType for the input Domain and ObjectType names.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainObjectType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDomainObjectType service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainObjectType">REST API Reference for GetDomainObjectType Operation</seealso>
+        public virtual Task<GetDomainObjectTypeResponse> GetDomainObjectTypeAsync(GetDomainObjectTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDomainObjectTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEventStream
 
         internal virtual GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
@@ -2279,6 +2475,75 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetObjectTypeAttributeStatistics
+
+        internal virtual GetObjectTypeAttributeStatisticsResponse GetObjectTypeAttributeStatistics(GetObjectTypeAttributeStatisticsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetObjectTypeAttributeStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectTypeAttributeStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectTypeAttributeStatisticsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The GetObjectTypeAttributeValues API delivers statistical insights about attributes
+        /// within a specific object type, but is exclusively available for domains with data
+        /// store enabled. This API performs daily calculations to provide statistical information
+        /// about your attribute values, helping you understand patterns and trends in your data.
+        /// The statistical calculations are performed once per day, providing a consistent snapshot
+        /// of your attribute data characteristics.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You'll receive null values in two scenarios: 
+        /// </para>
+        ///  
+        /// <para>
+        /// During the first period after enabling data vault (unless a calculation cycle occurs,
+        /// which happens once daily).
+        /// </para>
+        ///  
+        /// <para>
+        /// For attributes that don't contain numeric values. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTypeAttributeStatistics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetObjectTypeAttributeStatistics service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetObjectTypeAttributeStatistics">REST API Reference for GetObjectTypeAttributeStatistics Operation</seealso>
+        public virtual Task<GetObjectTypeAttributeStatisticsResponse> GetObjectTypeAttributeStatisticsAsync(GetObjectTypeAttributeStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetObjectTypeAttributeStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectTypeAttributeStatisticsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectTypeAttributeStatisticsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetProfileHistoryRecord
 
         internal virtual GetProfileHistoryRecordResponse GetProfileHistoryRecord(GetProfileHistoryRecordRequest request)
@@ -2429,6 +2694,105 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = GetProfileObjectTypeTemplateResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetProfileObjectTypeTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetProfileRecommendations
+
+        internal virtual GetProfileRecommendationsResponse GetProfileRecommendations(GetProfileRecommendationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetProfileRecommendationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Fetches the recommendations for a profile in the input Customer Profiles domain. Fetches
+        /// all the profile recommendations
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProfileRecommendations service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileRecommendations">REST API Reference for GetProfileRecommendations Operation</seealso>
+        public virtual Task<GetProfileRecommendationsResponse> GetProfileRecommendationsAsync(GetProfileRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileRecommendationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetProfileRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRecommender
+
+        internal virtual GetRecommenderResponse GetRecommender(GetRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommender">REST API Reference for GetRecommender Operation</seealso>
+        public virtual Task<GetRecommenderResponse> GetRecommenderAsync(GetRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRecommenderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3074,6 +3438,55 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  ListDomainObjectTypes
+
+        internal virtual ListDomainObjectTypesResponse ListDomainObjectTypes(ListDomainObjectTypesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDomainObjectTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainObjectTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainObjectTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List all DomainObjectType(s) in a Customer Profiles domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainObjectTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDomainObjectTypes service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainObjectTypes">REST API Reference for ListDomainObjectTypes Operation</seealso>
+        public virtual Task<ListDomainObjectTypesResponse> ListDomainObjectTypesAsync(ListDomainObjectTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDomainObjectTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainObjectTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDomainObjectTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDomains
 
         internal virtual ListDomainsResponse ListDomains(ListDomainsRequest request)
@@ -3369,6 +3782,60 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  ListObjectTypeAttributeValues
+
+        internal virtual ListObjectTypeAttributeValuesResponse ListObjectTypeAttributeValues(ListObjectTypeAttributeValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListObjectTypeAttributeValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectTypeAttributeValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListObjectTypeAttributeValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The ListObjectTypeAttributeValues API provides access to the most recent distinct
+        /// values for any specified attribute, making it valuable for real-time data validation
+        /// and consistency checks within your object types. This API works across domain, supporting
+        /// both custom and standard object types. The API accepts the object type name, attribute
+        /// name, and domain name as input parameters and returns values up to the storage limit
+        /// of approximately 350KB.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectTypeAttributeValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListObjectTypeAttributeValues service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributeValues">REST API Reference for ListObjectTypeAttributeValues Operation</seealso>
+        public virtual Task<ListObjectTypeAttributeValuesResponse> ListObjectTypeAttributeValuesAsync(ListObjectTypeAttributeValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListObjectTypeAttributeValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectTypeAttributeValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListObjectTypeAttributeValuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListProfileAttributeValues
 
         internal virtual ListProfileAttributeValuesResponse ListProfileAttributeValues(ListProfileAttributeValuesRequest request)
@@ -3610,6 +4077,101 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = ListProfileObjectTypeTemplatesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProfileObjectTypeTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRecommenderRecipes
+
+        internal virtual ListRecommenderRecipesResponse ListRecommenderRecipes(ListRecommenderRecipesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderRecipesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderRecipesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommenderRecipesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of available recommender recipes that can be used to create recommenders.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenderRecipes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommenderRecipes service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderRecipes">REST API Reference for ListRecommenderRecipes Operation</seealso>
+        public virtual Task<ListRecommenderRecipesResponse> ListRecommenderRecipesAsync(ListRecommenderRecipesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderRecipesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderRecipesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRecommenderRecipesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRecommenders
+
+        internal virtual ListRecommendersResponse ListRecommenders(ListRecommendersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommendersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendersResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommendersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of recommenders in the specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommenders service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenders">REST API Reference for ListRecommenders Operation</seealso>
+        public virtual Task<ListRecommendersResponse> ListRecommendersAsync(ListRecommendersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommendersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRecommendersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3946,6 +4508,56 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  PutDomainObjectType
+
+        internal virtual PutDomainObjectTypeResponse PutDomainObjectType(PutDomainObjectTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return Invoke<PutDomainObjectTypeResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create/Update a DomainObjectType in a Customer Profiles domain. To create a new DomainObjectType,
+        /// Data Store needs to be enabled on the Domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDomainObjectType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDomainObjectType service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutDomainObjectType">REST API Reference for PutDomainObjectType Operation</seealso>
+        public virtual Task<PutDomainObjectTypeResponse> PutDomainObjectTypeAsync(PutDomainObjectTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDomainObjectTypeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutIntegration
 
         internal virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
@@ -4187,6 +4799,56 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  StartRecommender
+
+        internal virtual StartRecommenderResponse StartRecommender(StartRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<StartRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a recommender that was previously stopped. Starting a recommender resumes its
+        /// ability to generate recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        public virtual Task<StartRecommenderResponse> StartRecommenderAsync(StartRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartRecommenderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartUploadJob
 
         internal virtual StartUploadJobResponse StartUploadJob(StartUploadJobRequest request)
@@ -4232,6 +4894,56 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = StartUploadJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartUploadJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopRecommender
+
+        internal virtual StopRecommenderResponse StopRecommender(StopRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<StopRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a recommender, suspending its ability to generate recommendations. The recommender
+        /// can be restarted later using StartRecommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        public virtual Task<StopRecommenderResponse> StopRecommenderAsync(StopRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopRecommenderResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4668,6 +5380,56 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRecommender
+
+        internal virtual UpdateRecommenderResponse UpdateRecommender(UpdateRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRecommenderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the properties of an existing recommender, allowing you to modify its configuration
+        /// and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateRecommender">REST API Reference for UpdateRecommender Operation</seealso>
+        public virtual Task<UpdateRecommenderResponse> UpdateRecommenderAsync(UpdateRecommenderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecommenderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRecommenderResponse>(request, options, cancellationToken);
         }
 
         #endregion

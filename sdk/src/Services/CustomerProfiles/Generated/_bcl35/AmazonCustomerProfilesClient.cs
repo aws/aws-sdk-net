@@ -1043,6 +1043,75 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateRecommender
+
+        /// <summary>
+        /// Creates a recommender
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommender service method.</param>
+        /// 
+        /// <returns>The response from the CreateRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
+        public virtual CreateRecommenderResponse CreateRecommender(CreateRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRecommenderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommender operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRecommender
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
+        public virtual IAsyncResult BeginCreateRecommender(CreateRecommenderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRecommender.</param>
+        /// 
+        /// <returns>Returns a  CreateRecommenderResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommender">REST API Reference for CreateRecommender Operation</seealso>
+        public virtual CreateRecommenderResponse EndCreateRecommender(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRecommenderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateSegmentDefinition
 
         /// <summary>
@@ -1528,6 +1597,75 @@ namespace Amazon.CustomerProfiles
         public virtual DeleteDomainLayoutResponse EndDeleteDomainLayout(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainLayoutResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDomainObjectType
+
+        /// <summary>
+        /// Delete a DomainObjectType for the given Domain and ObjectType name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainObjectType service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDomainObjectType service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainObjectType">REST API Reference for DeleteDomainObjectType Operation</seealso>
+        public virtual DeleteDomainObjectTypeResponse DeleteDomainObjectType(DeleteDomainObjectTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDomainObjectTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDomainObjectType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDomainObjectType operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomainObjectType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainObjectType">REST API Reference for DeleteDomainObjectType Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDomainObjectType(DeleteDomainObjectTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDomainObjectType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomainObjectType.</param>
+        /// 
+        /// <returns>Returns a  DeleteDomainObjectTypeResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteDomainObjectType">REST API Reference for DeleteDomainObjectType Operation</seealso>
+        public virtual DeleteDomainObjectTypeResponse EndDeleteDomainObjectType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDomainObjectTypeResponse>(asyncResult);
         }
 
         #endregion
@@ -2020,6 +2158,75 @@ namespace Amazon.CustomerProfiles
         public virtual DeleteProfileObjectTypeResponse EndDeleteProfileObjectType(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProfileObjectTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRecommender
+
+        /// <summary>
+        /// Deletes a recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommender service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommender">REST API Reference for DeleteRecommender Operation</seealso>
+        public virtual DeleteRecommenderResponse DeleteRecommender(DeleteRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRecommenderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommender operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRecommender
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommender">REST API Reference for DeleteRecommender Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRecommender(DeleteRecommenderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRecommender.</param>
+        /// 
+        /// <returns>Returns a  DeleteRecommenderResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommender">REST API Reference for DeleteRecommender Operation</seealso>
+        public virtual DeleteRecommenderResponse EndDeleteRecommender(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRecommenderResponse>(asyncResult);
         }
 
         #endregion
@@ -2597,6 +2804,75 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetDomainObjectType
+
+        /// <summary>
+        /// Return a DomainObjectType for the input Domain and ObjectType names.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainObjectType service method.</param>
+        /// 
+        /// <returns>The response from the GetDomainObjectType service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainObjectType">REST API Reference for GetDomainObjectType Operation</seealso>
+        public virtual GetDomainObjectTypeResponse GetDomainObjectType(GetDomainObjectTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainObjectTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainObjectType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainObjectType operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainObjectType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainObjectType">REST API Reference for GetDomainObjectType Operation</seealso>
+        public virtual IAsyncResult BeginGetDomainObjectType(GetDomainObjectTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDomainObjectType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainObjectType.</param>
+        /// 
+        /// <returns>Returns a  GetDomainObjectTypeResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetDomainObjectType">REST API Reference for GetDomainObjectType Operation</seealso>
+        public virtual GetDomainObjectTypeResponse EndGetDomainObjectType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDomainObjectTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetEventStream
 
         /// <summary>
@@ -3015,6 +3291,95 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetObjectTypeAttributeStatistics
+
+        /// <summary>
+        /// The GetObjectTypeAttributeValues API delivers statistical insights about attributes
+        /// within a specific object type, but is exclusively available for domains with data
+        /// store enabled. This API performs daily calculations to provide statistical information
+        /// about your attribute values, helping you understand patterns and trends in your data.
+        /// The statistical calculations are performed once per day, providing a consistent snapshot
+        /// of your attribute data characteristics.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You'll receive null values in two scenarios: 
+        /// </para>
+        ///  
+        /// <para>
+        /// During the first period after enabling data vault (unless a calculation cycle occurs,
+        /// which happens once daily).
+        /// </para>
+        ///  
+        /// <para>
+        /// For attributes that don't contain numeric values. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTypeAttributeStatistics service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectTypeAttributeStatistics service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetObjectTypeAttributeStatistics">REST API Reference for GetObjectTypeAttributeStatistics Operation</seealso>
+        public virtual GetObjectTypeAttributeStatisticsResponse GetObjectTypeAttributeStatistics(GetObjectTypeAttributeStatisticsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetObjectTypeAttributeStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectTypeAttributeStatisticsResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectTypeAttributeStatisticsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectTypeAttributeStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTypeAttributeStatistics operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectTypeAttributeStatistics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetObjectTypeAttributeStatistics">REST API Reference for GetObjectTypeAttributeStatistics Operation</seealso>
+        public virtual IAsyncResult BeginGetObjectTypeAttributeStatistics(GetObjectTypeAttributeStatisticsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetObjectTypeAttributeStatisticsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetObjectTypeAttributeStatisticsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetObjectTypeAttributeStatistics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectTypeAttributeStatistics.</param>
+        /// 
+        /// <returns>Returns a  GetObjectTypeAttributeStatisticsResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetObjectTypeAttributeStatistics">REST API Reference for GetObjectTypeAttributeStatistics Operation</seealso>
+        public virtual GetObjectTypeAttributeStatisticsResponse EndGetObjectTypeAttributeStatistics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetObjectTypeAttributeStatisticsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetProfileHistoryRecord
 
         /// <summary>
@@ -3225,6 +3590,145 @@ namespace Amazon.CustomerProfiles
         public virtual GetProfileObjectTypeTemplateResponse EndGetProfileObjectTypeTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetProfileObjectTypeTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetProfileRecommendations
+
+        /// <summary>
+        /// Fetches the recommendations for a profile in the input Customer Profiles domain. Fetches
+        /// all the profile recommendations
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the GetProfileRecommendations service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileRecommendations">REST API Reference for GetProfileRecommendations Operation</seealso>
+        public virtual GetProfileRecommendationsResponse GetProfileRecommendations(GetProfileRecommendationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileRecommendationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetProfileRecommendationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProfileRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileRecommendations operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProfileRecommendations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileRecommendations">REST API Reference for GetProfileRecommendations Operation</seealso>
+        public virtual IAsyncResult BeginGetProfileRecommendations(GetProfileRecommendationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetProfileRecommendationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileRecommendationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProfileRecommendations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProfileRecommendations.</param>
+        /// 
+        /// <returns>Returns a  GetProfileRecommendationsResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileRecommendations">REST API Reference for GetProfileRecommendations Operation</seealso>
+        public virtual GetProfileRecommendationsResponse EndGetProfileRecommendations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetProfileRecommendationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetRecommender
+
+        /// <summary>
+        /// Retrieves a recommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommender service method.</param>
+        /// 
+        /// <returns>The response from the GetRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommender">REST API Reference for GetRecommender Operation</seealso>
+        public virtual GetRecommenderResponse GetRecommender(GetRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommenderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommender operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecommender
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommender">REST API Reference for GetRecommender Operation</seealso>
+        public virtual IAsyncResult BeginGetRecommender(GetRecommenderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecommender.</param>
+        /// 
+        /// <returns>Returns a  GetRecommenderResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommender">REST API Reference for GetRecommender Operation</seealso>
+        public virtual GetRecommenderResponse EndGetRecommender(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRecommenderResponse>(asyncResult);
         }
 
         #endregion
@@ -4130,6 +4634,75 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  ListDomainObjectTypes
+
+        /// <summary>
+        /// List all DomainObjectType(s) in a Customer Profiles domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainObjectTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListDomainObjectTypes service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainObjectTypes">REST API Reference for ListDomainObjectTypes Operation</seealso>
+        public virtual ListDomainObjectTypesResponse ListDomainObjectTypes(ListDomainObjectTypesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDomainObjectTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainObjectTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDomainObjectTypesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDomainObjectTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDomainObjectTypes operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDomainObjectTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainObjectTypes">REST API Reference for ListDomainObjectTypes Operation</seealso>
+        public virtual IAsyncResult BeginListDomainObjectTypes(ListDomainObjectTypesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDomainObjectTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDomainObjectTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDomainObjectTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDomainObjectTypes.</param>
+        /// 
+        /// <returns>Returns a  ListDomainObjectTypesResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListDomainObjectTypes">REST API Reference for ListDomainObjectTypes Operation</seealso>
+        public virtual ListDomainObjectTypesResponse EndListDomainObjectTypes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDomainObjectTypesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDomains
 
         /// <summary>
@@ -4545,6 +5118,80 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  ListObjectTypeAttributeValues
+
+        /// <summary>
+        /// The ListObjectTypeAttributeValues API provides access to the most recent distinct
+        /// values for any specified attribute, making it valuable for real-time data validation
+        /// and consistency checks within your object types. This API works across domain, supporting
+        /// both custom and standard object types. The API accepts the object type name, attribute
+        /// name, and domain name as input parameters and returns values up to the storage limit
+        /// of approximately 350KB.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectTypeAttributeValues service method.</param>
+        /// 
+        /// <returns>The response from the ListObjectTypeAttributeValues service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributeValues">REST API Reference for ListObjectTypeAttributeValues Operation</seealso>
+        public virtual ListObjectTypeAttributeValuesResponse ListObjectTypeAttributeValues(ListObjectTypeAttributeValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListObjectTypeAttributeValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectTypeAttributeValuesResponseUnmarshaller.Instance;
+
+            return Invoke<ListObjectTypeAttributeValuesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListObjectTypeAttributeValues operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListObjectTypeAttributeValues operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListObjectTypeAttributeValues
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributeValues">REST API Reference for ListObjectTypeAttributeValues Operation</seealso>
+        public virtual IAsyncResult BeginListObjectTypeAttributeValues(ListObjectTypeAttributeValuesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListObjectTypeAttributeValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListObjectTypeAttributeValuesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListObjectTypeAttributeValues operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListObjectTypeAttributeValues.</param>
+        /// 
+        /// <returns>Returns a  ListObjectTypeAttributeValuesResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListObjectTypeAttributeValues">REST API Reference for ListObjectTypeAttributeValues Operation</seealso>
+        public virtual ListObjectTypeAttributeValuesResponse EndListObjectTypeAttributeValues(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListObjectTypeAttributeValuesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListProfileAttributeValues
 
         /// <summary>
@@ -4886,6 +5533,141 @@ namespace Amazon.CustomerProfiles
         public virtual ListProfileObjectTypeTemplatesResponse EndListProfileObjectTypeTemplates(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProfileObjectTypeTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRecommenderRecipes
+
+        /// <summary>
+        /// Returns a list of available recommender recipes that can be used to create recommenders.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenderRecipes service method.</param>
+        /// 
+        /// <returns>The response from the ListRecommenderRecipes service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderRecipes">REST API Reference for ListRecommenderRecipes Operation</seealso>
+        public virtual ListRecommenderRecipesResponse ListRecommenderRecipes(ListRecommenderRecipesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderRecipesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderRecipesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommenderRecipesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRecommenderRecipes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenderRecipes operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRecommenderRecipes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderRecipes">REST API Reference for ListRecommenderRecipes Operation</seealso>
+        public virtual IAsyncResult BeginListRecommenderRecipes(ListRecommenderRecipesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderRecipesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderRecipesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRecommenderRecipes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRecommenderRecipes.</param>
+        /// 
+        /// <returns>Returns a  ListRecommenderRecipesResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderRecipes">REST API Reference for ListRecommenderRecipes Operation</seealso>
+        public virtual ListRecommenderRecipesResponse EndListRecommenderRecipes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRecommenderRecipesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRecommenders
+
+        /// <summary>
+        /// Returns a list of recommenders in the specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenders service method.</param>
+        /// 
+        /// <returns>The response from the ListRecommenders service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenders">REST API Reference for ListRecommenders Operation</seealso>
+        public virtual ListRecommendersResponse ListRecommenders(ListRecommendersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommendersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendersResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommendersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRecommenders operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenders operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRecommenders
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenders">REST API Reference for ListRecommenders Operation</seealso>
+        public virtual IAsyncResult BeginListRecommenders(ListRecommendersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommendersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRecommenders operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRecommenders.</param>
+        /// 
+        /// <returns>Returns a  ListRecommendersResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenders">REST API Reference for ListRecommenders Operation</seealso>
+        public virtual ListRecommendersResponse EndListRecommenders(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRecommendersResponse>(asyncResult);
         }
 
         #endregion
@@ -5342,6 +6124,76 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  PutDomainObjectType
+
+        /// <summary>
+        /// Create/Update a DomainObjectType in a Customer Profiles domain. To create a new DomainObjectType,
+        /// Data Store needs to be enabled on the Domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDomainObjectType service method.</param>
+        /// 
+        /// <returns>The response from the PutDomainObjectType service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutDomainObjectType">REST API Reference for PutDomainObjectType Operation</seealso>
+        public virtual PutDomainObjectTypeResponse PutDomainObjectType(PutDomainObjectTypeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return Invoke<PutDomainObjectTypeResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDomainObjectType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDomainObjectType operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDomainObjectType
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutDomainObjectType">REST API Reference for PutDomainObjectType Operation</seealso>
+        public virtual IAsyncResult BeginPutDomainObjectType(PutDomainObjectTypeRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutDomainObjectTypeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDomainObjectTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutDomainObjectType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDomainObjectType.</param>
+        /// 
+        /// <returns>Returns a  PutDomainObjectTypeResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutDomainObjectType">REST API Reference for PutDomainObjectType Operation</seealso>
+        public virtual PutDomainObjectTypeResponse EndPutDomainObjectType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutDomainObjectTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PutIntegration
 
         /// <summary>
@@ -5663,6 +6515,76 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  StartRecommender
+
+        /// <summary>
+        /// Starts a recommender that was previously stopped. Starting a recommender resumes its
+        /// ability to generate recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommender service method.</param>
+        /// 
+        /// <returns>The response from the StartRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        public virtual StartRecommenderResponse StartRecommender(StartRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<StartRecommenderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartRecommender operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartRecommender
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        public virtual IAsyncResult BeginStartRecommender(StartRecommenderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartRecommenderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartRecommender.</param>
+        /// 
+        /// <returns>Returns a  StartRecommenderResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StartRecommender">REST API Reference for StartRecommender Operation</seealso>
+        public virtual StartRecommenderResponse EndStartRecommender(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartRecommenderResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartUploadJob
 
         /// <summary>
@@ -5728,6 +6650,76 @@ namespace Amazon.CustomerProfiles
         public virtual StartUploadJobResponse EndStartUploadJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StartUploadJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopRecommender
+
+        /// <summary>
+        /// Stops a recommender, suspending its ability to generate recommendations. The recommender
+        /// can be restarted later using StartRecommender.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopRecommender service method.</param>
+        /// 
+        /// <returns>The response from the StopRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        public virtual StopRecommenderResponse StopRecommender(StopRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<StopRecommenderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopRecommender operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopRecommender
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        public virtual IAsyncResult BeginStopRecommender(StopRecommenderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopRecommenderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopRecommender.</param>
+        /// 
+        /// <returns>Returns a  StopRecommenderResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/StopRecommender">REST API Reference for StopRecommender Operation</seealso>
+        public virtual StopRecommenderResponse EndStopRecommender(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopRecommenderResponse>(asyncResult);
         }
 
         #endregion
@@ -6324,6 +7316,76 @@ namespace Amazon.CustomerProfiles
         public virtual UpdateProfileResponse EndUpdateProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRecommender
+
+        /// <summary>
+        /// Updates the properties of an existing recommender, allowing you to modify its configuration
+        /// and description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRecommender service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateRecommender">REST API Reference for UpdateRecommender Operation</seealso>
+        public virtual UpdateRecommenderResponse UpdateRecommender(UpdateRecommenderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecommenderResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRecommenderResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRecommender
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateRecommender">REST API Reference for UpdateRecommender Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRecommender(UpdateRecommenderRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateRecommenderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRecommenderResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRecommender operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRecommender.</param>
+        /// 
+        /// <returns>Returns a  UpdateRecommenderResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateRecommender">REST API Reference for UpdateRecommender Operation</seealso>
+        public virtual UpdateRecommenderResponse EndUpdateRecommender(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRecommenderResponse>(asyncResult);
         }
 
         #endregion

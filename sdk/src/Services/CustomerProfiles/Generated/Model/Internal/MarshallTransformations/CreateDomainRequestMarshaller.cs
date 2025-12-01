@@ -70,6 +70,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDataStore())
+                {
+                    context.Writer.WritePropertyName("DataStore");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DataStoreRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DataStore, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDeadLetterQueueUrl())
                 {
                     context.Writer.WritePropertyName("DeadLetterQueueUrl");

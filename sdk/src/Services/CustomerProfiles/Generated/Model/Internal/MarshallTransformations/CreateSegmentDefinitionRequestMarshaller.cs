@@ -96,6 +96,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSegmentSqlQuery())
+                {
+                    context.Writer.WritePropertyName("SegmentSqlQuery");
+                    context.Writer.Write(publicRequest.SegmentSqlQuery);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

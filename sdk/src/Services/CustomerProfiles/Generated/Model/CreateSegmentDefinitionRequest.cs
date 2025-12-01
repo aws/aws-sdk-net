@@ -40,6 +40,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _domainName;
         private string _segmentDefinitionName;
         private SegmentGroup _segmentGroups;
+        private string _segmentSqlQuery;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.CustomerProfiles.Model
         /// The description of the segment definition.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4000)]
         public string Description
         {
             get { return this._description; }
@@ -125,7 +126,7 @@ namespace Amazon.CustomerProfiles.Model
         /// respective relationship.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Sensitive=true)]
         public SegmentGroup SegmentGroups
         {
             get { return this._segmentGroups; }
@@ -136,6 +137,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetSegmentGroups()
         {
             return this._segmentGroups != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentSqlQuery. 
+        /// <para>
+        /// The segment SQL query.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=50000)]
+        public string SegmentSqlQuery
+        {
+            get { return this._segmentSqlQuery; }
+            set { this._segmentSqlQuery = value; }
+        }
+
+        // Check to see if SegmentSqlQuery property is set
+        internal bool IsSetSegmentSqlQuery()
+        {
+            return this._segmentSqlQuery != null;
         }
 
         /// <summary>

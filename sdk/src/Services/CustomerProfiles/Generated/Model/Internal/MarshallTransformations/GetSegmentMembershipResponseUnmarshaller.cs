@@ -58,6 +58,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.Failures = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastComputedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.LastComputedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Profiles", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ProfileQueryResult, ProfileQueryResultUnmarshaller>(ProfileQueryResultUnmarshaller.Instance);

@@ -81,6 +81,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSegmentSqlQuery())
+                {
+                    context.Writer.WritePropertyName("SegmentSqlQuery");
+                    context.Writer.Write(publicRequest.SegmentSqlQuery);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

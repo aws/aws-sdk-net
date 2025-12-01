@@ -88,6 +88,18 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.SegmentGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SegmentSqlQuery", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SegmentSqlQuery = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SegmentType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SegmentType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

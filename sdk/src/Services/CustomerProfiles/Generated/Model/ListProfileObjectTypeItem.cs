@@ -82,7 +82,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The timestamp of when the domain was most recently edited.
+        /// The timestamp of when the profile object type was most recently edited.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
