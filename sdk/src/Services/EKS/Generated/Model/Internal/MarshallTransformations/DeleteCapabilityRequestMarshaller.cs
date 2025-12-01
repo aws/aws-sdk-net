@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeUpdate Request Marshaller
+    /// DeleteCapability Request Marshaller
     /// </summary>       
-    public class DescribeUpdateRequestMarshaller : IMarshaller<IRequest, DescribeUpdateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteCapabilityRequestMarshaller : IMarshaller<IRequest, DeleteCapabilityRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeUpdateRequest)input);
+            return this.Marshall((DeleteCapabilityRequest)input);
         }
 
         /// <summary>
@@ -56,35 +56,25 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeUpdateRequest publicRequest)
+        public IRequest Marshall(DeleteCapabilityRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EKS");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
 
-            if (!publicRequest.IsSetName())
-                throw new AmazonEKSException("Request object does not have required field Name set");
-            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
-            if (!publicRequest.IsSetUpdateId())
-                throw new AmazonEKSException("Request object does not have required field UpdateId set");
-            request.AddPathResource("{updateId}", StringUtils.FromString(publicRequest.UpdateId));
-            
-            if (publicRequest.IsSetAddonName())
-                request.Parameters.Add("addonName", StringUtils.FromString(publicRequest.AddonName));
-            
-            if (publicRequest.IsSetCapabilityName())
-                request.Parameters.Add("capabilityName", StringUtils.FromString(publicRequest.CapabilityName));
-            
-            if (publicRequest.IsSetNodegroupName())
-                request.Parameters.Add("nodegroupName", StringUtils.FromString(publicRequest.NodegroupName));
-            request.ResourcePath = "/clusters/{name}/updates/{updateId}";
-            request.UseQueryString = true;
+            if (!publicRequest.IsSetCapabilityName())
+                throw new AmazonEKSException("Request object does not have required field CapabilityName set");
+            request.AddPathResource("{capabilityName}", StringUtils.FromString(publicRequest.CapabilityName));
+            if (!publicRequest.IsSetClusterName())
+                throw new AmazonEKSException("Request object does not have required field ClusterName set");
+            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.ClusterName));
+            request.ResourcePath = "/clusters/{name}/capabilities/{capabilityName}";
 
             return request;
         }
-        private static DescribeUpdateRequestMarshaller _instance = new DescribeUpdateRequestMarshaller();        
+        private static DeleteCapabilityRequestMarshaller _instance = new DeleteCapabilityRequestMarshaller();        
 
-        internal static DescribeUpdateRequestMarshaller GetInstance()
+        internal static DeleteCapabilityRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -92,7 +82,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeUpdateRequestMarshaller Instance
+        public static DeleteCapabilityRequestMarshaller Instance
         {
             get
             {

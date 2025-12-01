@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeUpdate Request Marshaller
+    /// ListCapabilities Request Marshaller
     /// </summary>       
-    public class DescribeUpdateRequestMarshaller : IMarshaller<IRequest, DescribeUpdateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListCapabilitiesRequestMarshaller : IMarshaller<IRequest, ListCapabilitiesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeUpdateRequest)input);
+            return this.Marshall((ListCapabilitiesRequest)input);
         }
 
         /// <summary>
@@ -56,35 +56,29 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeUpdateRequest publicRequest)
+        public IRequest Marshall(ListCapabilitiesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EKS");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-11-01";
             request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetName())
-                throw new AmazonEKSException("Request object does not have required field Name set");
-            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
-            if (!publicRequest.IsSetUpdateId())
-                throw new AmazonEKSException("Request object does not have required field UpdateId set");
-            request.AddPathResource("{updateId}", StringUtils.FromString(publicRequest.UpdateId));
+            if (!publicRequest.IsSetClusterName())
+                throw new AmazonEKSException("Request object does not have required field ClusterName set");
+            request.AddPathResource("{name}", StringUtils.FromString(publicRequest.ClusterName));
             
-            if (publicRequest.IsSetAddonName())
-                request.Parameters.Add("addonName", StringUtils.FromString(publicRequest.AddonName));
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
-            if (publicRequest.IsSetCapabilityName())
-                request.Parameters.Add("capabilityName", StringUtils.FromString(publicRequest.CapabilityName));
-            
-            if (publicRequest.IsSetNodegroupName())
-                request.Parameters.Add("nodegroupName", StringUtils.FromString(publicRequest.NodegroupName));
-            request.ResourcePath = "/clusters/{name}/updates/{updateId}";
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            request.ResourcePath = "/clusters/{name}/capabilities";
             request.UseQueryString = true;
 
             return request;
         }
-        private static DescribeUpdateRequestMarshaller _instance = new DescribeUpdateRequestMarshaller();        
+        private static ListCapabilitiesRequestMarshaller _instance = new ListCapabilitiesRequestMarshaller();        
 
-        internal static DescribeUpdateRequestMarshaller GetInstance()
+        internal static ListCapabilitiesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -92,7 +86,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeUpdateRequestMarshaller Instance
+        public static ListCapabilitiesRequestMarshaller Instance
         {
             get
             {
