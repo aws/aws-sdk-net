@@ -78,6 +78,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.ItemExplorationConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rankingInfluence", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
+                    unmarshalledObject.RankingInfluence = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("syncWithLatestSolutionVersion", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

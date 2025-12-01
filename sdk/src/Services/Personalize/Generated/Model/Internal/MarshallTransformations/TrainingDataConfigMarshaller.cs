@@ -67,6 +67,25 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIncludedDatasetColumns())
+            {
+                context.Writer.WritePropertyName("includedDatasetColumns");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectIncludedDatasetColumnsKvp in requestObject.IncludedDatasetColumns)
+                {
+                    context.Writer.WritePropertyName(requestObjectIncludedDatasetColumnsKvp.Key);
+                    var requestObjectIncludedDatasetColumnsValue = requestObjectIncludedDatasetColumnsKvp.Value;
+
+                    context.Writer.WriteArrayStart();
+                    foreach(var requestObjectIncludedDatasetColumnsValueListValue in requestObjectIncludedDatasetColumnsValue)
+                    {
+                            context.Writer.Write(requestObjectIncludedDatasetColumnsValueListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -36,6 +36,7 @@ namespace Amazon.Personalize.Model
     public partial class TrainingDataConfig
     {
         private Dictionary<string, List<string>> _excludedDatasetColumns = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
+        private Dictionary<string, List<string>> _includedDatasetColumns = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property ExcludedDatasetColumns. 
@@ -62,6 +63,29 @@ namespace Amazon.Personalize.Model
         internal bool IsSetExcludedDatasetColumns()
         {
             return this._excludedDatasetColumns != null && (this._excludedDatasetColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludedDatasetColumns. 
+        /// <para>
+        /// A map that specifies which columns to include from each dataset during training. The
+        /// map can contain up to 3 entries, where each key is a dataset name (maximum length
+        /// of 256 characters, must contain only letters and underscores) and each value is an
+        /// array of up to 50 column names. Column names can be up to 150 characters long, must
+        /// start with a letter or underscore, and can contain only letters, numbers, and underscores.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=3)]
+        public Dictionary<string, List<string>> IncludedDatasetColumns
+        {
+            get { return this._includedDatasetColumns; }
+            set { this._includedDatasetColumns = value; }
+        }
+
+        // Check to see if IncludedDatasetColumns property is set
+        internal bool IsSetIncludedDatasetColumns()
+        {
+            return this._includedDatasetColumns != null && (this._includedDatasetColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

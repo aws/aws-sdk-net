@@ -114,6 +114,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.PerformHPO = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("performIncrementalUpdate", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.PerformIncrementalUpdate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("recipeArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
