@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Index. 
         /// <para>
-        /// The ranking of the document. The lower a number, the higher the document is ranked.
+        /// The original index of the document from the input sources array.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// KnowledgeBaseQuery Marshaller
+    /// InputImage Marshaller
     /// </summary>
-    public class KnowledgeBaseQueryMarshaller : IRequestMarshaller<KnowledgeBaseQuery, JsonMarshallerContext> 
+    public class InputImageMarshaller : IRequestMarshaller<InputImage, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,20 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(KnowledgeBaseQuery requestObject, JsonMarshallerContext context)
+        public void Marshall(InputImage requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetImage())
+            if(requestObject.IsSetFormat())
             {
-                context.Writer.WritePropertyName("image");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = InputImageMarshaller.Instance;
-                marshaller.Marshall(requestObject.Image, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("format");
+                context.Writer.Write(requestObject.Format);
             }
 
-            if(requestObject.IsSetText())
+            if(requestObject.IsSetInlineContent())
             {
-                context.Writer.WritePropertyName("text");
-                context.Writer.Write(requestObject.Text);
-            }
-
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WritePropertyName("inlineContent");
+                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.InlineContent));
             }
 
         }
@@ -76,7 +65,7 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static KnowledgeBaseQueryMarshaller Instance = new KnowledgeBaseQueryMarshaller();
+        public readonly static InputImageMarshaller Instance = new InputImageMarshaller();
 
     }
 }
