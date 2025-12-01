@@ -36,11 +36,73 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class IcebergTableUpdate
     {
+        private IcebergUpdateAction _action;
+        private IcebergEncryptedKey _encryptionKey;
+        private string _keyId;
         private string _location;
         private IcebergPartitionSpec _partitionSpec;
         private Dictionary<string, string> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private IcebergSchema _schema;
         private IcebergSortOrder _sortOrder;
+
+        /// <summary>
+        /// Gets and sets the property Action. 
+        /// <para>
+        /// The type of update action to be performed on the Iceberg table. Defines the specific
+        /// operation such as adding schema, setting current schema, adding partition spec, or
+        /// managing encryption keys.
+        /// </para>
+        /// </summary>
+        public IcebergUpdateAction Action
+        {
+            get { return this._action; }
+            set { this._action = value; }
+        }
+
+        // Check to see if Action property is set
+        internal bool IsSetAction()
+        {
+            return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionKey. 
+        /// <para>
+        /// Encryption key information associated with an Iceberg table update operation. Used
+        /// when adding or removing encryption keys from the table metadata during table evolution.
+        /// </para>
+        /// </summary>
+        public IcebergEncryptedKey EncryptionKey
+        {
+            get { return this._encryptionKey; }
+            set { this._encryptionKey = value; }
+        }
+
+        // Check to see if EncryptionKey property is set
+        internal bool IsSetEncryptionKey()
+        {
+            return this._encryptionKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KeyId. 
+        /// <para>
+        /// Identifier of the encryption key involved in an Iceberg table update operation. References
+        /// the specific key being added to or removed from the table's encryption configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2056)]
+        public string KeyId
+        {
+            get { return this._keyId; }
+            set { this._keyId = value; }
+        }
+
+        // Check to see if KeyId property is set
+        internal bool IsSetKeyId()
+        {
+            return this._keyId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Location. 

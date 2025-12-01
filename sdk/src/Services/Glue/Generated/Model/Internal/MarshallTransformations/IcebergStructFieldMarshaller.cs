@@ -58,6 +58,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Id.Value);
             }
 
+            if(requestObject.IsSetInitialDefault())
+            {
+                context.Writer.WritePropertyName("InitialDefault");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.InitialDefault);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
@@ -74,6 +80,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Type");
                 Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Type);
+            }
+
+            if(requestObject.IsSetWriteDefault())
+            {
+                context.Writer.WritePropertyName("WriteDefault");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.WriteDefault);
             }
 
         }

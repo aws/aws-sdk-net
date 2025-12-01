@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IcebergTableUpdate Marshaller
+    /// IcebergEncryptedKey Marshaller
     /// </summary>
-    public class IcebergTableUpdateMarshaller : IRequestMarshaller<IcebergTableUpdate, JsonMarshallerContext> 
+    public class IcebergEncryptedKeyMarshaller : IRequestMarshaller<IcebergEncryptedKey, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,48 +42,26 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IcebergTableUpdate requestObject, JsonMarshallerContext context)
+        public void Marshall(IcebergEncryptedKey requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAction())
+            if(requestObject.IsSetEncryptedById())
             {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStringValue(requestObject.Action);
+                context.Writer.WritePropertyName("EncryptedById");
+                context.Writer.WriteStringValue(requestObject.EncryptedById);
             }
 
-            if(requestObject.IsSetEncryptionKey())
+            if(requestObject.IsSetEncryptedKeyMetadata())
             {
-                context.Writer.WritePropertyName("EncryptionKey");
-                context.Writer.WriteStartObject();
-
-                var marshaller = IcebergEncryptedKeyMarshaller.Instance;
-                marshaller.Marshall(requestObject.EncryptionKey, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("EncryptedKeyMetadata");
+                context.Writer.WriteStringValue(requestObject.EncryptedKeyMetadata);
             }
 
             if(requestObject.IsSetKeyId())
             {
                 context.Writer.WritePropertyName("KeyId");
                 context.Writer.WriteStringValue(requestObject.KeyId);
-            }
-
-            if(requestObject.IsSetLocation())
-            {
-                context.Writer.WritePropertyName("Location");
-                context.Writer.WriteStringValue(requestObject.Location);
-            }
-
-            if(requestObject.IsSetPartitionSpec())
-            {
-                context.Writer.WritePropertyName("PartitionSpec");
-                context.Writer.WriteStartObject();
-
-                var marshaller = IcebergPartitionSpecMarshaller.Instance;
-                marshaller.Marshall(requestObject.PartitionSpec, context);
-
-                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProperties())
@@ -100,34 +78,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetSchema())
-            {
-                context.Writer.WritePropertyName("Schema");
-                context.Writer.WriteStartObject();
-
-                var marshaller = IcebergSchemaMarshaller.Instance;
-                marshaller.Marshall(requestObject.Schema, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSortOrder())
-            {
-                context.Writer.WritePropertyName("SortOrder");
-                context.Writer.WriteStartObject();
-
-                var marshaller = IcebergSortOrderMarshaller.Instance;
-                marshaller.Marshall(requestObject.SortOrder, context);
-
-                context.Writer.WriteEndObject();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IcebergTableUpdateMarshaller Instance = new IcebergTableUpdateMarshaller();
+        public readonly static IcebergEncryptedKeyMarshaller Instance = new IcebergEncryptedKeyMarshaller();
 
     }
 }
