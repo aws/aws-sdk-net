@@ -1,3 +1,52 @@
+### 4.0.143.0 (2025-12-01 01:44 UTC)
+* AppIntegrationsService (4.0.4.0)
+	* This release adds support for MCP servers via the ApplicationType field, allowing customers to register their Bedrock AgentCore gateways as third party applications.
+* BedrockAgent (4.0.7.0)
+	* Support audio and video ingestion on Bedrock Knowledge Bases.
+* BedrockAgentRuntime (4.0.8.0)
+	* Support audio and video content retrieval on Bedrock Knowledge Bases.
+* CleanRooms (4.0.11.0)
+	* AWS Clean Rooms now supports privacy-enhancing synthetic dataset generation for custom ML training.
+* CleanRoomsML (4.0.7.0)
+	* AWS Clean Rooms ML now supports privacy-enhancing synthetic dataset generation for custom ML training.
+* Connect (4.0.20.0)
+	* This is a combined re:Invent release for Amazon Connect.
+* ConnectCampaignsV2 (4.0.5.0)
+	* This release added support for new WhatsApp channel and Journey type outbound campaign
+* ConnectParticipant (4.0.4.0)
+	* Amazon Connect now supports message processing that intercepts and processes chat messages before they reach any participant.
+* CustomerProfiles (4.0.7.0)
+	* This release introduces, CRUD APIs for the DomainObjectType and Recommender resources, APIs to offer statistical insights on Object Type Attributes, Changes to SegmentDefinition APIs to support SQL queries to create Segments, and Changes to Domain APIs to support Data Store.
+* EKS (4.0.9.0)
+	* This release adds support for EKS Capabilities
+* Glue (4.0.23.0)
+	* feature: Glue: Add support for Iceberg materialized view in Glue Data Catalog, including updated CreateTable API to support materialized views and new APIs for managing data refresh for materialized views.
+feature: Glue: Add support for Iceberg table encryption keys and struct field defaults.
+* Lambda (4.0.9.0)
+	* Launching Lambda Managed Instances - a new feature to run Lambda on EC2.
+* LexModelsV2 (4.0.5.0)
+	* Adds support for speech-to-speech models for human-like, adaptive, and expressive voice interactions. Also adds support for speech model preference, allowing customers to select which speech model they want to use for speech-to-text requests.
+* MarketplaceAgreement (4.0.3.0)
+	* This release supports 1/multi-product transactions via offer sets. DescribeAgreement and SearchAgreements APIs now return offer set IDs. SearchAgreements also supports filtering by offer set ID and 2/variable payment pricing terms will be returned through GetAgreementTerms.
+* MarketplaceCatalog (4.0.4.0)
+	* This release introduces offer set entity in AWS Marketplace Catalog API to enable multi-product transaction. Offer set enables sellers to group multiple private offers into a single-click purchase experience, simplifying procurement for customers purchasing multi-product solutions.
+* PartnerCentralAccount (4.0.0.0)
+	* Initial GA launch of Partner Central Account
+* PartnerCentralBenefits (4.0.0.0)
+	* Initial GA launch of Partner Central Benefits
+* PartnerCentralSelling (4.0.5.0)
+	* New Features:
+Lead Management APIs for capturing and nurturing leads
+Lead invitation support for partner collaboration
+Lead-to-opportunity conversion operations
+AWS Marketplace OfferSets support for opportunities
+* Personalize (4.0.3.0)
+	* This release adds support for includedDatasetColumns and performIncrementalUpdate in solution APIs, and rankingInfluence in campaign and batch inference APIs.
+* QConnect (4.0.5.0)
+	* New AIAgent types: Orchestration for ModelContextProtocol tool integration, CaseSummary for Amazon Connect Case summaries, NoteTaker for Agent Assistance notes. Added ListSpans and Retrieve APIs. Enhanced Q in Connect AssistantAssociationType to support Bring Your Own Bedrock Knowledge Bases.
+* Route53GlobalResolver (4.0.0.0)
+	* Add SDK for Amazon Route 53 Global Resolver, a fully managed DNS resolver service that offers broad DNS-filtering security controls.
+
 ### 4.0.142.0 (2025-11-26 19:16 UTC)
 * BedrockRuntime (4.0.13.0)
 	* Bedrock Runtime Reserved Service Support

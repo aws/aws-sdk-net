@@ -33,7 +33,7 @@ namespace Amazon.MarketplaceAgreement
     public partial class AmazonMarketplaceAgreementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Marketplace Agreement", "4.0.2.7");
+            InternalSDKUtils.BuildUserAgentString("Marketplace Agreement", "4.0.3.0");
 
         private static readonly AmazonMarketplaceAgreementEndpointResolver EndpointResolver =
             new AmazonMarketplaceAgreementEndpointResolver();
