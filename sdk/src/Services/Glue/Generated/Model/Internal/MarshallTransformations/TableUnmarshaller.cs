@@ -102,6 +102,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.FederatedTable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsMaterializedView", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsMaterializedView = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsMultiDialectView", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -78,6 +78,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsProtected = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastRefreshType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LastRefreshType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RefreshSeconds", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.RefreshSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Representations", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ViewRepresentation, ViewRepresentationUnmarshaller>(ViewRepresentationUnmarshaller.Instance);
@@ -88,6 +100,24 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SubObjects = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SubObjectVersionIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<long, LongUnmarshaller>(LongUnmarshaller.Instance);
+                    unmarshalledObject.SubObjectVersionIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ViewVersionId", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ViewVersionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ViewVersionToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ViewVersionToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

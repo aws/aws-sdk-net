@@ -64,6 +64,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.CellFilters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsMaterializedView", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsMaterializedView = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsMultiDialectView", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

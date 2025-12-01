@@ -60,6 +60,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.IsProtected);
             }
 
+            if(requestObject.IsSetLastRefreshType())
+            {
+                context.Writer.WritePropertyName("LastRefreshType");
+                context.Writer.Write(requestObject.LastRefreshType);
+            }
+
+            if(requestObject.IsSetRefreshSeconds())
+            {
+                context.Writer.WritePropertyName("RefreshSeconds");
+                context.Writer.Write(requestObject.RefreshSeconds);
+            }
+
             if(requestObject.IsSetRepresentations())
             {
                 context.Writer.WritePropertyName("Representations");
@@ -85,6 +97,29 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectSubObjectsListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetSubObjectVersionIds())
+            {
+                context.Writer.WritePropertyName("SubObjectVersionIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSubObjectVersionIdsListValue in requestObject.SubObjectVersionIds)
+                {
+                        context.Writer.Write(requestObjectSubObjectVersionIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetViewVersionId())
+            {
+                context.Writer.WritePropertyName("ViewVersionId");
+                context.Writer.Write(requestObject.ViewVersionId);
+            }
+
+            if(requestObject.IsSetViewVersionToken())
+            {
+                context.Writer.WritePropertyName("ViewVersionToken");
+                context.Writer.Write(requestObject.ViewVersionToken);
             }
 
         }

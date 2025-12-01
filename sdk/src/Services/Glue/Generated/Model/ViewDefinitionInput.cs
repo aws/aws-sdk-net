@@ -36,8 +36,13 @@ namespace Amazon.Glue.Model
     {
         private string _definer;
         private bool? _isProtected;
+        private LastRefreshType _lastRefreshType;
+        private long? _refreshSeconds;
         private List<ViewRepresentationInput> _representations = AWSConfigs.InitializeCollections ? new List<ViewRepresentationInput>() : null;
         private List<string> _subObjects = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<long> _subObjectVersionIds = AWSConfigs.InitializeCollections ? new List<long>() : null;
+        private long? _viewVersionId;
+        private string _viewVersionToken;
 
         /// <summary>
         /// Gets and sets the property Definer. 
@@ -80,6 +85,43 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastRefreshType. 
+        /// <para>
+        /// The type of the materialized view's last refresh. Valid values: <c>Full</c>, <c>Incremental</c>.
+        /// </para>
+        /// </summary>
+        public LastRefreshType LastRefreshType
+        {
+            get { return this._lastRefreshType; }
+            set { this._lastRefreshType = value; }
+        }
+
+        // Check to see if LastRefreshType property is set
+        internal bool IsSetLastRefreshType()
+        {
+            return this._lastRefreshType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RefreshSeconds. 
+        /// <para>
+        /// Auto refresh interval in seconds for the materialized view. If not specified, the
+        /// view will not automatically refresh.
+        /// </para>
+        /// </summary>
+        public long RefreshSeconds
+        {
+            get { return this._refreshSeconds.GetValueOrDefault(); }
+            set { this._refreshSeconds = value; }
+        }
+
+        // Check to see if RefreshSeconds property is set
+        internal bool IsSetRefreshSeconds()
+        {
+            return this._refreshSeconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Representations. 
         /// <para>
         /// A list of structures that contains the dialect of the view, and the query that defines
@@ -116,6 +158,64 @@ namespace Amazon.Glue.Model
         internal bool IsSetSubObjects()
         {
             return this._subObjects != null && (this._subObjects.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubObjectVersionIds. 
+        /// <para>
+        /// List of the Apache Iceberg table versions referenced by the materialized view.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=250)]
+        public List<long> SubObjectVersionIds
+        {
+            get { return this._subObjectVersionIds; }
+            set { this._subObjectVersionIds = value; }
+        }
+
+        // Check to see if SubObjectVersionIds property is set
+        internal bool IsSetSubObjectVersionIds()
+        {
+            return this._subObjectVersionIds != null && (this._subObjectVersionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewVersionId. 
+        /// <para>
+        /// The ID value that identifies this view's version. For materialized views, the version
+        /// ID is the Apache Iceberg table's snapshot ID. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=-1)]
+        public long ViewVersionId
+        {
+            get { return this._viewVersionId.GetValueOrDefault(); }
+            set { this._viewVersionId = value; }
+        }
+
+        // Check to see if ViewVersionId property is set
+        internal bool IsSetViewVersionId()
+        {
+            return this._viewVersionId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ViewVersionToken. 
+        /// <para>
+        /// The version ID of the Apache Iceberg table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ViewVersionToken
+        {
+            get { return this._viewVersionToken; }
+            set { this._viewVersionToken = value; }
+        }
+
+        // Check to see if ViewVersionToken property is set
+        internal bool IsSetViewVersionToken()
+        {
+            return this._viewVersionToken != null;
         }
 
     }
