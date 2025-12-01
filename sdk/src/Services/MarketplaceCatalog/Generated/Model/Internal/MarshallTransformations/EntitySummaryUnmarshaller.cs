@@ -120,6 +120,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OfferSetSummary", targetDepth))
+                {
+                    var unmarshaller = OfferSetSummaryUnmarshaller.Instance;
+                    unmarshalledObject.OfferSetSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OfferSummary", targetDepth))
                 {
                     var unmarshaller = OfferSummaryUnmarshaller.Instance;

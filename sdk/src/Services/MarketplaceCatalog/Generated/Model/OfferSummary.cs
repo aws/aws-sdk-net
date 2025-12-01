@@ -37,6 +37,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _availabilityEndDate;
         private List<string> _buyerAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
+        private string _offerSetId;
         private string _productId;
         private string _releaseDate;
         private string _resaleAuthorizationId;
@@ -98,6 +99,25 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OfferSetId. 
+        /// <para>
+        /// The offer set ID of the offer.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public string OfferSetId
+        {
+            get { return this._offerSetId; }
+            set { this._offerSetId = value; }
+        }
+
+        // Check to see if OfferSetId property is set
+        internal bool IsSetOfferSetId()
+        {
+            return this._offerSetId != null;
         }
 
         /// <summary>

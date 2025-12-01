@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OfferFilters Marshaller
+    /// OfferSetFilters Marshaller
     /// </summary>
-    public class OfferFiltersMarshaller : IRequestMarshaller<OfferFilters, JsonMarshallerContext> 
+    public class OfferSetFiltersMarshaller : IRequestMarshaller<OfferSetFilters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,28 +44,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OfferFilters requestObject, JsonMarshallerContext context)
+        public void Marshall(OfferSetFilters requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAvailabilityEndDate())
+            if(requestObject.IsSetAssociatedOfferIds())
             {
-                context.Writer.WritePropertyName("AvailabilityEndDate");
+                context.Writer.WritePropertyName("AssociatedOfferIds");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = OfferAvailabilityEndDateFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.AvailabilityEndDate, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetBuyerAccounts())
-            {
-                context.Writer.WritePropertyName("BuyerAccounts");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OfferBuyerAccountsFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.BuyerAccounts, context);
+                var marshaller = OfferSetAssociatedOfferIdsFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.AssociatedOfferIds, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -75,7 +64,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("EntityId");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = OfferEntityIdFilterMarshaller.Instance;
+                var marshaller = OfferSetEntityIdFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityId, context);
 
                 context.Writer.WriteObjectEnd();
@@ -86,7 +75,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("LastModifiedDate");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = OfferLastModifiedDateFilterMarshaller.Instance;
+                var marshaller = OfferSetLastModifiedDateFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.LastModifiedDate, context);
 
                 context.Writer.WriteObjectEnd();
@@ -97,30 +86,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = OfferNameFilterMarshaller.Instance;
+                var marshaller = OfferSetNameFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Name, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetOfferSetId())
-            {
-                context.Writer.WritePropertyName("OfferSetId");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OfferSetIdFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.OfferSetId, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetProductId())
-            {
-                context.Writer.WritePropertyName("ProductId");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OfferProductIdFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.ProductId, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -130,19 +97,19 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ReleaseDate");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = OfferReleaseDateFilterMarshaller.Instance;
+                var marshaller = OfferSetReleaseDateFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReleaseDate, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetResaleAuthorizationId())
+            if(requestObject.IsSetSolutionId())
             {
-                context.Writer.WritePropertyName("ResaleAuthorizationId");
+                context.Writer.WritePropertyName("SolutionId");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = OfferResaleAuthorizationIdFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.ResaleAuthorizationId, context);
+                var marshaller = OfferSetSolutionIdFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.SolutionId, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -152,19 +119,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("State");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = OfferStateFilterMarshaller.Instance;
+                var marshaller = OfferSetStateFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.State, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTargeting())
-            {
-                context.Writer.WritePropertyName("Targeting");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = OfferTargetingFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.Targeting, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -174,7 +130,7 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OfferFiltersMarshaller Instance = new OfferFiltersMarshaller();
+        public readonly static OfferSetFiltersMarshaller Instance = new OfferSetFiltersMarshaller();
 
     }
 }

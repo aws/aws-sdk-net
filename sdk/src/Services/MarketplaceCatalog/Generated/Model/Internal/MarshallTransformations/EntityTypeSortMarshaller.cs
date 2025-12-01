@@ -92,6 +92,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOfferSetSort())
+            {
+                context.Writer.WritePropertyName("OfferSetSort");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OfferSetSortMarshaller.Instance;
+                marshaller.Marshall(requestObject.OfferSetSort, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetOfferSort())
             {
                 context.Writer.WritePropertyName("OfferSort");
