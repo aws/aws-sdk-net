@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MessageMetadata Object
+    /// Response Unmarshaller for MessageProcessingMetadata Object
     /// </summary>  
-    public class MessageMetadataUnmarshaller : IJsonUnmarshaller<MessageMetadata, JsonUnmarshallerContext>
+    public class MessageProcessingMetadataUnmarshaller : IJsonUnmarshaller<MessageProcessingMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MessageMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MessageProcessingMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            MessageMetadata unmarshalledObject = new MessageMetadata();
+            MessageProcessingMetadata unmarshalledObject = new MessageProcessingMetadata();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("MessageId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("MessageProcessingStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.MessageProcessingStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Receipts", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Receipt, ReceiptUnmarshaller>(ReceiptUnmarshaller.Instance);
-                    unmarshalledObject.Receipts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.ConnectParticipant.Model.Internal.MarshallTransformations
         }
 
 
-        private static MessageMetadataUnmarshaller _instance = new MessageMetadataUnmarshaller();        
+        private static MessageProcessingMetadataUnmarshaller _instance = new MessageProcessingMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MessageMetadataUnmarshaller Instance
+        public static MessageProcessingMetadataUnmarshaller Instance
         {
             get
             {

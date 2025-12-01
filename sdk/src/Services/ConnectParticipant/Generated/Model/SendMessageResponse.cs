@@ -36,6 +36,7 @@ namespace Amazon.ConnectParticipant.Model
     {
         private string _absoluteTime;
         private string _id;
+        private MessageProcessingMetadata _messageMetadata;
 
         /// <summary>
         /// Gets and sets the property AbsoluteTime. 
@@ -77,6 +78,24 @@ namespace Amazon.ConnectParticipant.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageMetadata. 
+        /// <para>
+        /// Contains metadata for the message.
+        /// </para>
+        /// </summary>
+        public MessageProcessingMetadata MessageMetadata
+        {
+            get { return this._messageMetadata; }
+            set { this._messageMetadata = value; }
+        }
+
+        // Check to see if MessageMetadata property is set
+        internal bool IsSetMessageMetadata()
+        {
+            return this._messageMetadata != null;
         }
 
     }
