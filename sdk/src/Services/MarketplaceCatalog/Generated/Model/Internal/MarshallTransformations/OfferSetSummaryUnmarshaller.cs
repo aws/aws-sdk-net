@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for OfferSummary Object
+    /// Response Unmarshaller for OfferSetSummary Object
     /// </summary>  
-    public class OfferSummaryUnmarshaller : IJsonUnmarshaller<OfferSummary, JsonUnmarshallerContext>
+    public class OfferSetSummaryUnmarshaller : IJsonUnmarshaller<OfferSetSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OfferSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public OfferSetSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            OfferSummary unmarshalledObject = new OfferSummary();
+            OfferSetSummary unmarshalledObject = new OfferSetSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AvailabilityEndDate", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityEndDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("BuyerAccounts", targetDepth))
+                if (context.TestExpression("AssociatedOfferIds", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.BuyerAccounts = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AssociatedOfferIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -74,28 +68,16 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("OfferSetId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OfferSetId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ProductId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProductId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("ReleaseDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ReleaseDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResaleAuthorizationId", targetDepth))
+                if (context.TestExpression("SolutionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResaleAuthorizationId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.SolutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
@@ -104,23 +86,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Targeting", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Targeting = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
             }
             return unmarshalledObject;
         }
 
 
-        private static OfferSummaryUnmarshaller _instance = new OfferSummaryUnmarshaller();        
+        private static OfferSetSummaryUnmarshaller _instance = new OfferSetSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OfferSummaryUnmarshaller Instance
+        public static OfferSetSummaryUnmarshaller Instance
         {
             get
             {

@@ -659,6 +659,122 @@ namespace Amazon.MarketplaceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type OfferSetSortBy.
+    /// </summary>
+    public class OfferSetSortBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EntityId for OfferSetSortBy
+        /// </summary>
+        public static readonly OfferSetSortBy EntityId = new OfferSetSortBy("EntityId");
+        /// <summary>
+        /// Constant LastModifiedDate for OfferSetSortBy
+        /// </summary>
+        public static readonly OfferSetSortBy LastModifiedDate = new OfferSetSortBy("LastModifiedDate");
+        /// <summary>
+        /// Constant Name for OfferSetSortBy
+        /// </summary>
+        public static readonly OfferSetSortBy Name = new OfferSetSortBy("Name");
+        /// <summary>
+        /// Constant ReleaseDate for OfferSetSortBy
+        /// </summary>
+        public static readonly OfferSetSortBy ReleaseDate = new OfferSetSortBy("ReleaseDate");
+        /// <summary>
+        /// Constant SolutionId for OfferSetSortBy
+        /// </summary>
+        public static readonly OfferSetSortBy SolutionId = new OfferSetSortBy("SolutionId");
+        /// <summary>
+        /// Constant State for OfferSetSortBy
+        /// </summary>
+        public static readonly OfferSetSortBy State = new OfferSetSortBy("State");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferSetSortBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferSetSortBy FindValue(string value)
+        {
+            return FindValue<OfferSetSortBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferSetSortBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OfferSetStateString.
+    /// </summary>
+    public class OfferSetStateString : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Draft for OfferSetStateString
+        /// </summary>
+        public static readonly OfferSetStateString Draft = new OfferSetStateString("Draft");
+        /// <summary>
+        /// Constant Released for OfferSetStateString
+        /// </summary>
+        public static readonly OfferSetStateString Released = new OfferSetStateString("Released");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferSetStateString(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferSetStateString FindValue(string value)
+        {
+            return FindValue<OfferSetStateString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferSetStateString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OfferSortBy.
     /// </summary>
     public class OfferSortBy : ConstantClass
@@ -684,6 +800,10 @@ namespace Amazon.MarketplaceCatalog
         /// Constant Name for OfferSortBy
         /// </summary>
         public static readonly OfferSortBy Name = new OfferSortBy("Name");
+        /// <summary>
+        /// Constant OfferSetId for OfferSortBy
+        /// </summary>
+        public static readonly OfferSortBy OfferSetId = new OfferSortBy("OfferSetId");
         /// <summary>
         /// Constant ProductId for OfferSortBy
         /// </summary>
