@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IntegrationIdentifier Marshaller
+    /// LambdaIntegrationConfig Marshaller
     /// </summary>
-    public class IntegrationIdentifierMarshaller : IRequestMarshaller<IntegrationIdentifier, JsonMarshallerContext> 
+    public class LambdaIntegrationConfigMarshaller : IRequestMarshaller<LambdaIntegrationConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,14 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IntegrationIdentifier requestObject, JsonMarshallerContext context)
+        public void Marshall(LambdaIntegrationConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCustomerProfiles())
+            if(requestObject.IsSetFunctionArn())
             {
-                context.Writer.WritePropertyName("customerProfiles");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CustomerProfilesIntegrationIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.CustomerProfiles, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetLambda())
-            {
-                context.Writer.WritePropertyName("lambda");
-                context.Writer.WriteStartObject();
-
-                var marshaller = LambdaIntegrationIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.Lambda, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetQConnect())
-            {
-                context.Writer.WritePropertyName("qConnect");
-                context.Writer.WriteStartObject();
-
-                var marshaller = QConnectIntegrationIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.QConnect, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("functionArn");
+                context.Writer.WriteStringValue(requestObject.FunctionArn);
             }
 
         }
@@ -84,7 +57,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IntegrationIdentifierMarshaller Instance = new IntegrationIdentifierMarshaller();
+        public readonly static LambdaIntegrationConfigMarshaller Instance = new LambdaIntegrationConfigMarshaller();
 
     }
 }

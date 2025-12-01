@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ChannelSubtypeConfig Object
+    /// Response Unmarshaller for WhatsAppOutboundConfig Object
     /// </summary>  
-    public class ChannelSubtypeConfigUnmarshaller : IJsonUnmarshaller<ChannelSubtypeConfig, JsonUnmarshallerContext>
+    public class WhatsAppOutboundConfigUnmarshaller : IJsonUnmarshaller<WhatsAppOutboundConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChannelSubtypeConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WhatsAppOutboundConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ChannelSubtypeConfig unmarshalledObject = new ChannelSubtypeConfig();
+            WhatsAppOutboundConfig unmarshalledObject = new WhatsAppOutboundConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("email", targetDepth))
+                if (context.TestExpression("connectSourcePhoneNumberArn", targetDepth))
                 {
-                    var unmarshaller = EmailChannelSubtypeConfigUnmarshaller.Instance;
-                    unmarshalledObject.Email = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectSourcePhoneNumberArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("sms", targetDepth))
+                if (context.TestExpression("wisdomTemplateArn", targetDepth))
                 {
-                    var unmarshaller = SmsChannelSubtypeConfigUnmarshaller.Instance;
-                    unmarshalledObject.Sms = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("telephony", targetDepth))
-                {
-                    var unmarshaller = TelephonyChannelSubtypeConfigUnmarshaller.Instance;
-                    unmarshalledObject.Telephony = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("whatsApp", targetDepth))
-                {
-                    var unmarshaller = WhatsAppChannelSubtypeConfigUnmarshaller.Instance;
-                    unmarshalledObject.WhatsApp = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WisdomTemplateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChannelSubtypeConfigUnmarshaller _instance = new ChannelSubtypeConfigUnmarshaller();        
+        private static WhatsAppOutboundConfigUnmarshaller _instance = new WhatsAppOutboundConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChannelSubtypeConfigUnmarshaller Instance
+        public static WhatsAppOutboundConfigUnmarshaller Instance
         {
             get
             {

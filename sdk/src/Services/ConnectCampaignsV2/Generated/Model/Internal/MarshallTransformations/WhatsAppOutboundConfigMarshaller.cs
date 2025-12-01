@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// IntegrationIdentifier Marshaller
+    /// WhatsAppOutboundConfig Marshaller
     /// </summary>
-    public class IntegrationIdentifierMarshaller : IRequestMarshaller<IntegrationIdentifier, JsonMarshallerContext> 
+    public class WhatsAppOutboundConfigMarshaller : IRequestMarshaller<WhatsAppOutboundConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,20 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IntegrationIdentifier requestObject, JsonMarshallerContext context)
+        public void Marshall(WhatsAppOutboundConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCustomerProfiles())
+            if(requestObject.IsSetConnectSourcePhoneNumberArn())
             {
-                context.Writer.WritePropertyName("customerProfiles");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CustomerProfilesIntegrationIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.CustomerProfiles, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("connectSourcePhoneNumberArn");
+                context.Writer.WriteStringValue(requestObject.ConnectSourcePhoneNumberArn);
             }
 
-            if(requestObject.IsSetLambda())
+            if(requestObject.IsSetWisdomTemplateArn())
             {
-                context.Writer.WritePropertyName("lambda");
-                context.Writer.WriteStartObject();
-
-                var marshaller = LambdaIntegrationIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.Lambda, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetQConnect())
-            {
-                context.Writer.WritePropertyName("qConnect");
-                context.Writer.WriteStartObject();
-
-                var marshaller = QConnectIntegrationIdentifierMarshaller.Instance;
-                marshaller.Marshall(requestObject.QConnect, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("wisdomTemplateArn");
+                context.Writer.WriteStringValue(requestObject.WisdomTemplateArn);
             }
 
         }
@@ -84,7 +63,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static IntegrationIdentifierMarshaller Instance = new IntegrationIdentifierMarshaller();
+        public readonly static WhatsAppOutboundConfigMarshaller Instance = new WhatsAppOutboundConfigMarshaller();
 
     }
 }

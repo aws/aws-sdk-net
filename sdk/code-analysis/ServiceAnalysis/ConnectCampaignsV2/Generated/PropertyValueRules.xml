@@ -448,6 +448,24 @@
     <pattern>[-_.a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.LambdaIntegrationConfig.FunctionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:aws[a-zA-Z-]*:lambda:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:function:([a-zA-Z0-9-_]+)(:([a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.LambdaIntegrationIdentifier.FunctionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:aws[a-zA-Z-]*:lambda:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:function:([a-zA-Z0-9-_]+)(:([a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.LambdaIntegrationSummary.FunctionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:aws[a-zA-Z-]*:lambda:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:function:([a-zA-Z0-9-_]+)(:([a-zA-Z0-9-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.LocalTimeZoneConfig.DefaultTimeZone</property>
     <min>0</min>
     <max>50</max>
@@ -643,5 +661,39 @@
   <property-value-rule>
     <property>Amazon.ConnectCampaignsV2.Model.TimeRange.StartTime</property>
     <pattern>T\d{2}:\d{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.WhatsAppChannelSubtypeConfig.Capacity</property>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.WhatsAppChannelSubtypeParameters.ConnectSourcePhoneNumberArn</property>
+    <min>20</min>
+    <max>500</max>
+    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-z]{2}-[a-z]+-\d{1,2}:[a-zA-Z0-9-]+:[^:]+(?:/[^:]+)*(?:/[^:]+)?(?:\:[^:]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.WhatsAppChannelSubtypeParameters.DestinationPhoneNumber</property>
+    <min>0</min>
+    <max>20</max>
+    <pattern>[\d\-+]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.WhatsAppChannelSubtypeParameters.TemplateArn</property>
+    <min>20</min>
+    <max>500</max>
+    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-z]{2}-[a-z]+-\d{1,2}:[a-zA-Z0-9-]+:[^:]+(?:/[^:]+)*(?:/[^:]+)?(?:\:[^:]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.WhatsAppOutboundConfig.ConnectSourcePhoneNumberArn</property>
+    <min>20</min>
+    <max>500</max>
+    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-z]{2}-[a-z]+-\d{1,2}:[a-zA-Z0-9-]+:[^:]+(?:/[^:]+)*(?:/[^:]+)?(?:\:[^:]+)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectCampaignsV2.Model.WhatsAppOutboundConfig.WisdomTemplateArn</property>
+    <min>20</min>
+    <max>500</max>
+    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-z]{2}-[a-z]+-\d{1,2}:[a-zA-Z0-9-]+:[^:]+(?:/[^:]+)*(?:/[^:]+)?(?:\:[^:]+)?</pattern>
   </property-value-rule>
 </property-value-rules>
