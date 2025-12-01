@@ -130,6 +130,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.StatusDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("syntheticDataConfiguration", targetDepth))
+                {
+                    var unmarshaller = SyntheticDataConfigurationUnmarshaller.Instance;
+                    response.SyntheticDataConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

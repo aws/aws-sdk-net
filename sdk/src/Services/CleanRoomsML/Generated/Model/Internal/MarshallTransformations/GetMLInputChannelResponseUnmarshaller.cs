@@ -154,6 +154,12 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                     response.StatusDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("syntheticDataConfiguration", targetDepth))
+                {
+                    var unmarshaller = SyntheticDataConfigurationUnmarshaller.Instance;
+                    response.SyntheticDataConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

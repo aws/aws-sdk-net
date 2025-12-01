@@ -47,6 +47,7 @@ namespace Amazon.CleanRoomsML.Model
         private int? _retentionInDays;
         private MLInputChannelStatus _status;
         private StatusDetails _statusDetails;
+        private SyntheticDataConfiguration _syntheticDataConfiguration;
         private DateTime? _updateTime;
 
         /// <summary>
@@ -291,6 +292,26 @@ namespace Amazon.CleanRoomsML.Model
         internal bool IsSetStatusDetails()
         {
             return this._statusDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyntheticDataConfiguration. 
+        /// <para>
+        /// The synthetic data configuration for this ML input channel, including parameters for
+        /// generating privacy-preserving synthetic data and evaluation scores for measuring the
+        /// privacy of the generated data.
+        /// </para>
+        /// </summary>
+        public SyntheticDataConfiguration SyntheticDataConfiguration
+        {
+            get { return this._syntheticDataConfiguration; }
+            set { this._syntheticDataConfiguration = value; }
+        }
+
+        // Check to see if SyntheticDataConfiguration property is set
+        internal bool IsSetSyntheticDataConfiguration()
+        {
+            return this._syntheticDataConfiguration != null;
         }
 
         /// <summary>
