@@ -58,6 +58,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Architectures = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CapacityProviderConfig", targetDepth))
+                {
+                    var unmarshaller = CapacityProviderConfigUnmarshaller.Instance;
+                    response.CapacityProviderConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CodeSha256", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -68,6 +74,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
                     response.CodeSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConfigSha256", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ConfigSha256 = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeadLetterConfig", targetDepth))

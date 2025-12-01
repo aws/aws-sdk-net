@@ -99,6 +99,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Publish);
                 }
 
+                if(publicRequest.IsSetPublishTo())
+                {
+                    context.Writer.WritePropertyName("PublishTo");
+                    context.Writer.Write(publicRequest.PublishTo);
+                }
+
                 if(publicRequest.IsSetRevisionId())
                 {
                     context.Writer.WritePropertyName("RevisionId");

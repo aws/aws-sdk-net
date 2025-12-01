@@ -138,7 +138,7 @@ namespace Amazon.Lambda.Model
         /// to 64 characters in length.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=140)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string FunctionName
         {
             get { return this._functionName; }
@@ -176,10 +176,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property InvokedViaFunctionUrl. 
         /// <para>
-        /// Restricts the <c>lambda:InvokeFunction</c> action to function URL calls. When specified,
-        /// this option prevents the principal from invoking the function by any means other than
-        /// the function URL. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Control
-        /// access to Lambda function URLs</a>.
+        /// Indicates whether the permission applies when the function is invoked through a function
+        /// URL. 
         /// </para>
         /// </summary>
         public bool InvokedViaFunctionUrl

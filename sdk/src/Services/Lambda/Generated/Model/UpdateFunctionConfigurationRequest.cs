@@ -59,6 +59,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class UpdateFunctionConfigurationRequest : AmazonLambdaRequest
     {
+        private CapacityProviderConfig _capacityProviderConfig;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private Environment _environment;
@@ -78,6 +79,25 @@ namespace Amazon.Lambda.Model
         private int? _timeout;
         private TracingConfig _tracingConfig;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderConfig. 
+        /// <para>
+        /// Configuration for the capacity provider that manages compute resources for Lambda
+        /// functions.
+        /// </para>
+        /// </summary>
+        public CapacityProviderConfig CapacityProviderConfig
+        {
+            get { return this._capacityProviderConfig; }
+            set { this._capacityProviderConfig = value; }
+        }
+
+        // Check to see if CapacityProviderConfig property is set
+        internal bool IsSetCapacityProviderConfig()
+        {
+            return this._capacityProviderConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeadLetterConfig. 
@@ -398,7 +418,7 @@ namespace Amazon.Lambda.Model
         /// 1 MB.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=10240)]
+        [AWSProperty(Min=128, Max=32768)]
         public int MemorySize
         {
             get { return this._memorySize.GetValueOrDefault(); }

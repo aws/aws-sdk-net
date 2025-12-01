@@ -88,6 +88,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) of the alias or version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string FunctionArn
         {
             get { return this._functionArn; }

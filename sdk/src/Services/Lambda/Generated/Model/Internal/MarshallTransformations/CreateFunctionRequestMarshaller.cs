@@ -78,6 +78,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetCapacityProviderConfig())
+                {
+                    context.Writer.WritePropertyName("CapacityProviderConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CapacityProviderConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CapacityProviderConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCode())
                 {
                     context.Writer.WritePropertyName("Code");
@@ -217,6 +228,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Publish");
                     context.Writer.Write(publicRequest.Publish);
+                }
+
+                if(publicRequest.IsSetPublishTo())
+                {
+                    context.Writer.WritePropertyName("PublishTo");
+                    context.Writer.Write(publicRequest.PublishTo);
                 }
 
                 if(publicRequest.IsSetRole())

@@ -30,9 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The processed request payload exceeded the <c>Invoke</c> request body size limit for
-    /// asynchronous invocations. While the event payload may be under 1 MB, the size after
-    /// internal serialization exceeds the maximum allowed size for asynchronous invocations.
+    /// The request payload exceeded the maximum allowed size for serialized request entities.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

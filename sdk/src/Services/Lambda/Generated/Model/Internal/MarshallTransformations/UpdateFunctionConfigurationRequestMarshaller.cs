@@ -70,6 +70,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCapacityProviderConfig())
+                {
+                    context.Writer.WritePropertyName("CapacityProviderConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CapacityProviderConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CapacityProviderConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDeadLetterConfig())
                 {
                     context.Writer.WritePropertyName("DeadLetterConfig");

@@ -48,6 +48,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         {
             DeleteFunctionResponse response = new DeleteFunctionResponse();
 
+            response.StatusCode = (int)context.ResponseData.StatusCode;
 
             return response;
         }
