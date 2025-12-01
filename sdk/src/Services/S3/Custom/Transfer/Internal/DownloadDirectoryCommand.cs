@@ -48,6 +48,39 @@ namespace Amazon.S3.Transfer.Internal
         long _transferredBytes;        
         string _currentFile;
 
+        #region Event Firing Methods
+
+        private void FireTransferInitiatedEvent()
+        {
+            var transferInitiatedEventArgs = new DownloadDirectoryInitiatedEventArgs(_request);
+            _request.OnRaiseDownloadDirectoryInitiatedEvent(transferInitiatedEventArgs);
+        }
+
+        private void FireTransferCompletedEvent(TransferUtilityDownloadDirectoryResponse response)
+        {
+            var transferCompletedEventArgs = new DownloadDirectoryCompletedEventArgs(
+                _request, 
+                response, 
+                Interlocked.Read(ref _transferredBytes), 
+                _totalBytes, 
+                _numberOfFilesDownloaded, 
+                _totalNumberOfFilesToDownload);
+            _request.OnRaiseDownloadDirectoryCompletedEvent(transferCompletedEventArgs);
+        }
+
+        private void FireTransferFailedEvent()
+        {
+            var eventArgs = new DownloadDirectoryFailedEventArgs(
+                _request, 
+                Interlocked.Read(ref _transferredBytes), 
+                _totalBytes, 
+                _numberOfFilesDownloaded, 
+                _totalNumberOfFilesToDownload);
+            _request.OnRaiseDownloadDirectoryFailedEvent(eventArgs);
+        }
+
+        #endregion
+
         internal DownloadDirectoryCommand(IAmazonS3 s3Client, TransferUtilityDownloadDirectoryRequest request, TransferUtilityConfig config, bool useMultipartDownload)
         {
             if (s3Client == null)

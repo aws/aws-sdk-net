@@ -97,6 +97,97 @@ namespace Amazon.S3.Transfer
         }
 
         /// <summary>
+        /// Occurs when the download directory operation is initiated.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The DownloadDirectoryInitiatedEvent is fired when the download directory operation begins.
+        /// The DownloadDirectoryInitiatedEventArgs contains the original request information.
+        /// </para>
+        /// <para>
+        /// Attach event handlers to this event if you are interested in receiving
+        /// DownloadDirectoryInitiatedEvent notifications.
+        /// </para>
+        /// </remarks>
+        /// <example>
+        /// private void downloadStarted(object sender, DownloadDirectoryInitiatedEventArgs args)
+        /// {
+        ///     Console.WriteLine("Download directory started for bucket {0}", args.Request.BucketName);
+        /// }
+        /// </example>
+        public event EventHandler<DownloadDirectoryInitiatedEventArgs> DownloadDirectoryInitiatedEvent;
+
+        /// <summary>
+        /// Occurs when the download directory operation is completed.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The DownloadDirectoryCompletedEvent is fired when the download directory operation is completed successfully.
+        /// The DownloadDirectoryCompletedEventArgs contains a snapshot of the transfer state at completion.
+        /// </para>
+        /// <para>
+        /// Attach event handlers to this event if you are interested in receiving
+        /// DownloadDirectoryCompletedEvent notifications.
+        /// </para>
+        /// </remarks>
+        /// <example>
+        /// private void downloadCompleted(object sender, DownloadDirectoryCompletedEventArgs args)
+        /// {
+        ///     Console.WriteLine("Download directory completed with {0} files downloaded", args.TransferredFiles);
+        /// }
+        /// </example>
+        public event EventHandler<DownloadDirectoryCompletedEventArgs> DownloadDirectoryCompletedEvent;
+
+        /// <summary>
+        /// Occurs when the download directory operation fails.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// The DownloadDirectoryFailedEvent is fired when the download directory operation fails.
+        /// The DownloadDirectoryFailedEventArgs contains a snapshot of the transfer state at failure.
+        /// </para>
+        /// <para>
+        /// Attach event handlers to this event if you are interested in receiving
+        /// DownloadDirectoryFailedEvent notifications.
+        /// </para>
+        /// </remarks>
+        /// <example>
+        /// private void downloadFailed(object sender, DownloadDirectoryFailedEventArgs args)
+        /// {
+        ///     Console.WriteLine("Download directory failed with {0} files downloaded out of {1} total", 
+        ///                       args.TransferredFiles, args.TotalFiles);
+        /// }
+        /// </example>
+        public event EventHandler<DownloadDirectoryFailedEventArgs> DownloadDirectoryFailedEvent;
+
+        /// <summary>
+        /// Raises the DownloadDirectoryInitiatedEvent.
+        /// </summary>
+        /// <param name="args">DownloadDirectoryInitiatedEventArgs args</param>
+        internal void OnRaiseDownloadDirectoryInitiatedEvent(DownloadDirectoryInitiatedEventArgs args)
+        {
+            DownloadDirectoryInitiatedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Raises the DownloadDirectoryCompletedEvent.
+        /// </summary>
+        /// <param name="args">DownloadDirectoryCompletedEventArgs args</param>
+        internal void OnRaiseDownloadDirectoryCompletedEvent(DownloadDirectoryCompletedEventArgs args)
+        {
+            DownloadDirectoryCompletedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
+        /// Raises the DownloadDirectoryFailedEvent.
+        /// </summary>
+        /// <param name="args">DownloadDirectoryFailedEventArgs args</param>
+        internal void OnRaiseDownloadDirectoryFailedEvent(DownloadDirectoryFailedEventArgs args)
+        {
+            DownloadDirectoryFailedEvent?.Invoke(this, args);
+        }
+
+        /// <summary>
         /// 	Gets or sets the name of the bucket.
         /// </summary>
         /// <value>
@@ -667,5 +758,134 @@ namespace Amazon.S3.Transfer
         /// on the failure mode.
         /// </value>
         public Exception Exception { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityDownloadDirectoryRequest.DownloadDirectoryInitiatedEvent"/>
+    /// which is raised when a download directory operation is initiated.
+    /// </summary>
+    public class DownloadDirectoryInitiatedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the DownloadDirectoryInitiatedEventArgs class.
+        /// </summary>
+        /// <param name="request">The transfer request</param>
+        internal DownloadDirectoryInitiatedEventArgs(TransferUtilityDownloadDirectoryRequest request)
+        {
+            Request = request;
+        }
+
+        /// <summary>
+        /// Gets the request associated with this transfer operation.
+        /// </summary>
+        public TransferUtilityDownloadDirectoryRequest Request { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityDownloadDirectoryRequest.DownloadDirectoryCompletedEvent"/>
+    /// which is raised when a download directory operation is completed successfully.
+    /// </summary>
+    public class DownloadDirectoryCompletedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the DownloadDirectoryCompletedEventArgs class.
+        /// </summary>
+        /// <param name="request">The transfer request</param>
+        /// <param name="response">The transfer response</param>
+        /// <param name="transferredBytes">The total number of bytes that have been transferred so far</param>
+        /// <param name="totalBytes">The total size for all objects</param>
+        /// <param name="transferredFiles">The total number of files that have been transferred so far</param>
+        /// <param name="totalFiles">The total number of files</param>
+        internal DownloadDirectoryCompletedEventArgs(TransferUtilityDownloadDirectoryRequest request, 
+            TransferUtilityDownloadDirectoryResponse response, long transferredBytes, long totalBytes, 
+            long transferredFiles, long totalFiles)
+        {
+            Request = request;
+            Response = response;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+            TransferredFiles = transferredFiles;
+            TotalFiles = totalFiles;
+        }
+
+        /// <summary>
+        /// Gets the request associated with this transfer operation.
+        /// </summary>
+        public TransferUtilityDownloadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the response from the transfer operation.
+        /// </summary>
+        public TransferUtilityDownloadDirectoryResponse Response { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes that have been transferred so far.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total size for all objects. Returns -1 if unknown.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files that have been transferred so far.
+        /// </summary>
+        public long TransferredFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files. Returns -1 if unknown.
+        /// </summary>
+        public long TotalFiles { get; private set; }
+    }
+
+    /// <summary>
+    /// Provides data for <see cref="TransferUtilityDownloadDirectoryRequest.DownloadDirectoryFailedEvent"/>
+    /// which is raised when a download directory operation fails.
+    /// </summary>
+    public class DownloadDirectoryFailedEventArgs : EventArgs
+    {
+        /// <summary>
+        /// Initializes a new instance of the DownloadDirectoryFailedEventArgs class.
+        /// </summary>
+        /// <param name="request">The transfer request</param>
+        /// <param name="transferredBytes">The total number of bytes that have been transferred so far</param>
+        /// <param name="totalBytes">The total size for all objects</param>
+        /// <param name="transferredFiles">The total number of files that have been transferred so far</param>
+        /// <param name="totalFiles">The total number of files</param>
+        internal DownloadDirectoryFailedEventArgs(TransferUtilityDownloadDirectoryRequest request, 
+            long transferredBytes, long totalBytes, long transferredFiles, long totalFiles)
+        {
+            Request = request;
+            TransferredBytes = transferredBytes;
+            TotalBytes = totalBytes;
+            TransferredFiles = transferredFiles;
+            TotalFiles = totalFiles;
+        }
+
+        /// <summary>
+        /// Gets the request associated with this transfer operation.
+        /// </summary>
+        public TransferUtilityDownloadDirectoryRequest Request { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of bytes that have been transferred so far.
+        /// </summary>
+        public long TransferredBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total size for all objects. Returns -1 if unknown.
+        /// </summary>
+        public long TotalBytes { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files that have been transferred so far.
+        /// </summary>
+        public long TransferredFiles { get; private set; }
+
+        /// <summary>
+        /// Gets the total number of files. Returns -1 if unknown.
+        /// </summary>
+        public long TotalFiles { get; private set; }
     }
 }

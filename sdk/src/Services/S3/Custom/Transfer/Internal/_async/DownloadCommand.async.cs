@@ -32,10 +32,10 @@ namespace Amazon.S3.Transfer.Internal
     {
         public override async Task<TransferUtilityDownloadResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
-            ValidateRequest();
-            
             FireTransferInitiatedEvent();
-            
+
+            ValidateRequest();
+                        
             GetObjectRequest getRequest = ConvertToGetObjectRequest(this._request);
 
             var maxRetries = _s3Client.Config.MaxErrorRetry;

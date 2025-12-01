@@ -48,40 +48,52 @@ namespace Amazon.S3.Transfer.Internal
 
         public override async Task<TransferUtilityDownloadDirectoryResponse> ExecuteAsync(CancellationToken cancellationToken)
         {
-            Logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Starting - DownloadFilesConcurrently={0}, UseMultipartDownload={1}, ConcurrentServiceRequests={2}",
-                DownloadFilesConcurrently, this._useMultipartDownload, this._config.ConcurrentServiceRequests);
-
-            // Step 1: Validate and setup
-            ValidateRequest();
-            EnsureDirectoryExists(new DirectoryInfo(this._request.LocalDirectory));
-
-            // Step 2: List S3 objects
-            var (s3Objects, prefixLength) = await ListS3ObjectsAsync(cancellationToken)
-                .ConfigureAwait(false);
-
-            this._totalNumberOfFilesToDownload = s3Objects.Count;
-            Logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Found {0} total objects, TotalBytes={1}",
-                s3Objects.Count, this._totalBytes);
-
-            // Step 3: Filter to actual files (exclude directory markers)
-            var objectsToDownload = FilterObjectsToDownload(s3Objects);
-
-            // Step 4: Setup resources and execute downloads
-            using (var resources = CreateDownloadResources(cancellationToken))
+            try
             {
-                await ExecuteParallelDownloadsAsync(
-                    objectsToDownload,
-                    prefixLength,
-                    resources,
-                    cancellationToken)
-                .ConfigureAwait(false);
+                FireTransferInitiatedEvent();
+
+                Logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Starting - DownloadFilesConcurrently={0}, UseMultipartDownload={1}, ConcurrentServiceRequests={2}",
+                    DownloadFilesConcurrently, this._useMultipartDownload, this._config.ConcurrentServiceRequests);
+
+                // Step 1: Validate and setup
+                ValidateRequest();
+                EnsureDirectoryExists(new DirectoryInfo(this._request.LocalDirectory));
+
+                // Step 2: List S3 objects
+                var (s3Objects, prefixLength) = await ListS3ObjectsAsync(cancellationToken)
+                    .ConfigureAwait(false);
+
+                this._totalNumberOfFilesToDownload = s3Objects.Count;
+                Logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Found {0} total objects, TotalBytes={1}",
+                    s3Objects.Count, this._totalBytes);
+
+                // Step 3: Filter to actual files (exclude directory markers)
+                var objectsToDownload = FilterObjectsToDownload(s3Objects);
+
+                // Step 4: Setup resources and execute downloads
+                using (var resources = CreateDownloadResources(cancellationToken))
+                {
+                    await ExecuteParallelDownloadsAsync(
+                        objectsToDownload,
+                        prefixLength,
+                        resources,
+                        cancellationToken)
+                    .ConfigureAwait(false);
+                }
+
+                // Step 5: Build response
+                Logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Completed - ObjectsDownloaded={0}, ObjectsFailed={1}",
+                    _numberOfFilesDownloaded, _errors.Count);
+
+                var response = BuildResponse();
+                FireTransferCompletedEvent(response);
+                return response;
             }
-
-            // Step 5: Build response
-            Logger.DebugFormat("DownloadDirectoryCommand.ExecuteAsync: Completed - ObjectsDownloaded={0}, ObjectsFailed={1}",
-                _numberOfFilesDownloaded, _errors.Count);
-
-            return BuildResponse();
+            catch
+            {
+                FireTransferFailedEvent();
+                throw;
+            }
         }
 
         /// <summary>
