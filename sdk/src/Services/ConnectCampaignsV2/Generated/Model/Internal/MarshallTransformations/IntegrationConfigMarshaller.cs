@@ -59,6 +59,17 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLambda())
+            {
+                context.Writer.WritePropertyName("lambda");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LambdaIntegrationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.Lambda, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQConnect())
             {
                 context.Writer.WritePropertyName("qConnect");

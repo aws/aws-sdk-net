@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ChannelSubtypeConfig Marshaller
+    /// WhatsAppChannelSubtypeConfig Marshaller
     /// </summary>
-    public class ChannelSubtypeConfigMarshaller : IRequestMarshaller<ChannelSubtypeConfig, JsonMarshallerContext> 
+    public class WhatsAppChannelSubtypeConfigMarshaller : IRequestMarshaller<WhatsAppChannelSubtypeConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,50 +44,41 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ChannelSubtypeConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(WhatsAppChannelSubtypeConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEmail())
+            if(requestObject.IsSetCapacity())
             {
-                context.Writer.WritePropertyName("email");
+                context.Writer.WritePropertyName("capacity");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Capacity))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Capacity));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Capacity);
+                }
+            }
+
+            if(requestObject.IsSetDefaultOutboundConfig())
+            {
+                context.Writer.WritePropertyName("defaultOutboundConfig");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = EmailChannelSubtypeConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Email, context);
+                var marshaller = WhatsAppOutboundConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultOutboundConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetSms())
+            if(requestObject.IsSetOutboundMode())
             {
-                context.Writer.WritePropertyName("sms");
+                context.Writer.WritePropertyName("outboundMode");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = SmsChannelSubtypeConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Sms, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetTelephony())
-            {
-                context.Writer.WritePropertyName("telephony");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TelephonyChannelSubtypeConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Telephony, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetWhatsApp())
-            {
-                context.Writer.WritePropertyName("whatsApp");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = WhatsAppChannelSubtypeConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.WhatsApp, context);
+                var marshaller = WhatsAppOutboundModeMarshaller.Instance;
+                marshaller.Marshall(requestObject.OutboundMode, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -97,7 +88,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ChannelSubtypeConfigMarshaller Instance = new ChannelSubtypeConfigMarshaller();
+        public readonly static WhatsAppChannelSubtypeConfigMarshaller Instance = new WhatsAppChannelSubtypeConfigMarshaller();
 
     }
 }

@@ -92,6 +92,17 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetWhatsApp())
+            {
+                context.Writer.WritePropertyName("whatsApp");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TimeWindowMarshaller.Instance;
+                marshaller.Marshall(requestObject.WhatsApp, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

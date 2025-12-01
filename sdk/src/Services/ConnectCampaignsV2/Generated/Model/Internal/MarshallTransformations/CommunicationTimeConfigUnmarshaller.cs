@@ -90,6 +90,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Telephony = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("whatsApp", targetDepth))
+                {
+                    var unmarshaller = TimeWindowUnmarshaller.Instance;
+                    unmarshalledObject.WhatsApp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

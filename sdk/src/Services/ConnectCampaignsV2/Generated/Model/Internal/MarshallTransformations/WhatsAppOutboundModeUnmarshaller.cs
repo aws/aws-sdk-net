@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ChannelSubtypeConfig Object
+    /// Response Unmarshaller for WhatsAppOutboundMode Object
     /// </summary>  
-    public class ChannelSubtypeConfigUnmarshaller : IUnmarshaller<ChannelSubtypeConfig, XmlUnmarshallerContext>, IUnmarshaller<ChannelSubtypeConfig, JsonUnmarshallerContext>
+    public class WhatsAppOutboundModeUnmarshaller : IUnmarshaller<WhatsAppOutboundMode, XmlUnmarshallerContext>, IUnmarshaller<WhatsAppOutboundMode, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ChannelSubtypeConfig IUnmarshaller<ChannelSubtypeConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        WhatsAppOutboundMode IUnmarshaller<WhatsAppOutboundMode, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChannelSubtypeConfig Unmarshall(JsonUnmarshallerContext context)
+        public WhatsAppOutboundMode Unmarshall(JsonUnmarshallerContext context)
         {
-            ChannelSubtypeConfig unmarshalledObject = new ChannelSubtypeConfig();
+            WhatsAppOutboundMode unmarshalledObject = new WhatsAppOutboundMode();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("email", targetDepth))
+                if (context.TestExpression("agentless", targetDepth))
                 {
-                    var unmarshaller = EmailChannelSubtypeConfigUnmarshaller.Instance;
-                    unmarshalledObject.Email = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sms", targetDepth))
-                {
-                    var unmarshaller = SmsChannelSubtypeConfigUnmarshaller.Instance;
-                    unmarshalledObject.Sms = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("telephony", targetDepth))
-                {
-                    var unmarshaller = TelephonyChannelSubtypeConfigUnmarshaller.Instance;
-                    unmarshalledObject.Telephony = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("whatsApp", targetDepth))
-                {
-                    var unmarshaller = WhatsAppChannelSubtypeConfigUnmarshaller.Instance;
-                    unmarshalledObject.WhatsApp = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AgentlessConfigUnmarshaller.Instance;
+                    unmarshalledObject.Agentless = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ChannelSubtypeConfigUnmarshaller _instance = new ChannelSubtypeConfigUnmarshaller();        
+        private static WhatsAppOutboundModeUnmarshaller _instance = new WhatsAppOutboundModeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ChannelSubtypeConfigUnmarshaller Instance
+        public static WhatsAppOutboundModeUnmarshaller Instance
         {
             get
             {
