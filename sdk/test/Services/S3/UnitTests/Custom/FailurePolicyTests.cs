@@ -2,6 +2,7 @@
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Amazon.S3.Transfer.Internal;
+using Amazon.Runtime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
@@ -624,5 +625,381 @@ namespace AWSSDK.UnitTests
                 try { Directory.Delete(localDir, true); } catch { }
             }
         }
+
+        #region Path Validation Failure Tests
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task DownloadDirectory_PathTraversalAttack_ContinueOnFailure_SkipsInvalidPath()
+        {
+            // Test path traversal attack with ContinueOnFailure
+            // Malicious S3 key attempts to write outside target directory
+            var keys = new[] { 
+                "prefix/valid1.txt", 
+                "prefix/../../etc/passwd",  // Path traversal attempt
+                "prefix/valid2.txt" 
+            };
+            var mockS3 = CreateMockS3(keys, k => false); // All downloads would succeed if allowed
+            string localDir = CreateTempDirectory();
+            try
+            {
+                var config = new TransferUtilityConfig();
+                var request = CreateRequest(localDir, FailurePolicy.ContinueOnFailure);
+                var captured = new List<ObjectDownloadFailedEventArgs>();
+                
+                request.ObjectDownloadFailedEvent += (sender, args) =>
+                {
+                    captured.Add(args);
+                };
+
+                var command = new DownloadDirectoryCommand(mockS3.Object, request, config);
+                command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
+                var response = await command.ExecuteAsync(CancellationToken.None).ConfigureAwait(false);
+
+                // Assert: Path validation failure should be counted, valid files downloaded
+                Assert.IsNotNull(response);
+                Assert.AreEqual(2, response.ObjectsDownloaded, "Should download 2 valid files");
+                Assert.AreEqual(1, response.ObjectsFailed, "Should have 1 path validation failure");
+                Assert.AreEqual(DirectoryResult.PartialSuccess, response.Result);
+                Assert.AreEqual(1, response.Errors.Count);
+                
+                // Verify the error is an AmazonClientException (path validation error)
+                Assert.IsInstanceOfType(response.Errors[0], typeof(AmazonClientException));
+                Assert.IsTrue(response.Errors[0].Message.Contains("not allowed outside"));
+
+                // Verify valid files were downloaded
+                Assert.IsTrue(File.Exists(Path.Combine(localDir, "valid1.txt")));
+                Assert.IsTrue(File.Exists(Path.Combine(localDir, "valid2.txt")));
+                
+                // Verify ObjectDownloadFailedEvent was raised for path validation failure
+                Assert.AreEqual(1, captured.Count);
+                Assert.IsInstanceOfType(captured[0].Exception, typeof(AmazonClientException));
+            }
+            finally
+            {
+                try { Directory.Delete(localDir, true); } catch { }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task DownloadDirectory_PathTraversalAttack_AbortOnFailure_ThrowsOnValidationFailure()
+        {
+            // Test path traversal attack with AbortOnFailure
+            var keys = new[] { 
+                "prefix/file1.txt", 
+                "prefix/../../../secrets.txt"  // Path traversal attempt
+            };
+            var mockS3 = CreateMockS3(keys, k => false);
+            string localDir = CreateTempDirectory();
+            try
+            {
+                var tu = new TransferUtility(mockS3.Object);
+                var request = CreateRequest(localDir, FailurePolicy.AbortOnFailure);
+
+                // Should throw on path validation failure
+                var ex = await Assert.ThrowsExceptionAsync<AmazonClientException>(
+                    () => tu.DownloadDirectoryAsync(request));
+                Assert.IsTrue(ex.Message.Contains("not allowed outside"));
+            }
+            finally
+            {
+                try { Directory.Delete(localDir, true); } catch { }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task DownloadDirectory_MixedValidationAndDownloadFailures_ContinueOnFailure_TracksAllFailures()
+        {
+            // Test mixed path validation failures + download failures
+            var keys = new[] { 
+                "prefix/good.txt",                    // Should succeed
+                "prefix/../../bad-path.txt",          // Path validation failure
+                "prefix/download-fail.txt",           // Download failure
+                "prefix/another-good.txt"             // Should succeed
+            };
+            
+            var mockS3 = CreateMockS3(keys, k => k.EndsWith("download-fail.txt", StringComparison.Ordinal));
+            string localDir = CreateTempDirectory();
+            try
+            {
+                var config = new TransferUtilityConfig();
+                var request = CreateRequest(localDir, FailurePolicy.ContinueOnFailure);
+                var captured = new List<ObjectDownloadFailedEventArgs>();
+                
+                request.ObjectDownloadFailedEvent += (sender, args) =>
+                {
+                    captured.Add(args);
+                };
+
+                var command = new DownloadDirectoryCommand(mockS3.Object, request, config);
+                command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
+                var response = await command.ExecuteAsync(CancellationToken.None).ConfigureAwait(false);
+
+                // Assert: Both failure types should be tracked
+                Assert.IsNotNull(response);
+                Assert.AreEqual(2, response.ObjectsDownloaded, "Should download 2 valid files");
+                Assert.AreEqual(2, response.ObjectsFailed, "Should have 2 failures (1 validation + 1 download)");
+                Assert.AreEqual(DirectoryResult.PartialSuccess, response.Result);
+                Assert.AreEqual(2, response.Errors.Count);
+                
+                // Verify both error types are present
+                var hasClientException = response.Errors.Any(e => e is AmazonClientException && e.Message.Contains("not allowed outside"));
+                var hasS3Exception = response.Errors.Any(e => e is AmazonS3Exception);
+                Assert.IsTrue(hasClientException, "Should have path validation error");
+                Assert.IsTrue(hasS3Exception, "Should have download failure error");
+
+                // Verify events were raised for both failures
+                Assert.AreEqual(2, captured.Count);
+            }
+            finally
+            {
+                try { Directory.Delete(localDir, true); } catch { }
+            }
+        }
+
+        #endregion
+
+        #region Sequential Mode Tests
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task DownloadDirectory_SequentialMode_MultipleFailures_ContinueOnFailure()
+        {
+            // Test sequential download mode with multiple failures
+            var keys = new[] { 
+                "prefix/file1.txt",  // Success
+                "prefix/file2.txt",  // Failure
+                "prefix/file3.txt",  // Success
+                "prefix/file4.txt",  // Failure
+                "prefix/file5.txt"   // Success
+            };
+            var mockS3 = CreateMockS3(keys, k => k.Contains("file2") || k.Contains("file4"));
+            string localDir = CreateTempDirectory();
+            try
+            {
+                var config = new TransferUtilityConfig();
+                var request = CreateRequest(localDir, FailurePolicy.ContinueOnFailure);
+                request.DownloadFilesConcurrently = false; // Sequential mode
+                
+                var command = new DownloadDirectoryCommand(mockS3.Object, request, config);
+                command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
+                var response = await command.ExecuteAsync(CancellationToken.None).ConfigureAwait(false);
+
+                Assert.IsNotNull(response);
+                Assert.AreEqual(3, response.ObjectsDownloaded, "Should download 3 files successfully");
+                Assert.AreEqual(2, response.ObjectsFailed, "Should have 2 failures");
+                Assert.AreEqual(DirectoryResult.PartialSuccess, response.Result);
+                
+                // Verify correct files were downloaded
+                Assert.IsTrue(File.Exists(Path.Combine(localDir, "file1.txt")));
+                Assert.IsTrue(File.Exists(Path.Combine(localDir, "file3.txt")));
+                Assert.IsTrue(File.Exists(Path.Combine(localDir, "file5.txt")));
+                Assert.IsFalse(File.Exists(Path.Combine(localDir, "file2.txt")));
+                Assert.IsFalse(File.Exists(Path.Combine(localDir, "file4.txt")));
+            }
+            finally
+            {
+                try { Directory.Delete(localDir, true); } catch { }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task DownloadDirectory_SequentialMode_FirstFileFailure_AbortOnFailure()
+        {
+            // Test AbortOnFailure in sequential mode when first file fails
+            var keys = new[] { 
+                "prefix/fail-first.txt",
+                "prefix/should-not-download1.txt",
+                "prefix/should-not-download2.txt"
+            };
+            var mockS3 = CreateMockS3(keys, k => k.Contains("fail-first"));
+            string localDir = CreateTempDirectory();
+            try
+            {
+                var tu = new TransferUtility(mockS3.Object);
+                var request = CreateRequest(localDir, FailurePolicy.AbortOnFailure);
+                request.DownloadFilesConcurrently = false; // Sequential mode
+
+                var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(
+                    () => tu.DownloadDirectoryAsync(request));
+                Assert.IsTrue(ex.Message.Contains("fail-first"));
+                
+                // Should not have downloaded any other files
+                Assert.AreEqual(0, Directory.GetFiles(localDir).Length);
+            }
+            finally
+            {
+                try { Directory.Delete(localDir, true); } catch { }
+            }
+        }
+
+        #endregion
+
+        #region Concurrency Control Under Failure Tests
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task DownloadDirectory_LimitedConcurrency_MultipleFailures_ContinueOnFailure()
+        {
+            // Test that failures are properly handled with limited concurrency
+            var keys = new[] { 
+                "prefix/file1.txt",
+                "prefix/file2.txt",
+                "prefix/file3.txt",
+                "prefix/file4.txt",
+                "prefix/file5.txt",
+                "prefix/file6.txt"
+            };
+            
+            // Make files 2, 4, and 6 fail
+            var mockS3 = CreateMockS3(keys, k => k.Contains("file2") || k.Contains("file4") || k.Contains("file6"));
+            string localDir = CreateTempDirectory();
+            try
+            {
+                var config = new TransferUtilityConfig
+                {
+                    ConcurrentServiceRequests = 2  // Limit to 2 concurrent downloads
+                };
+                var request = CreateRequest(localDir, FailurePolicy.ContinueOnFailure);
+                
+                var command = new DownloadDirectoryCommand(mockS3.Object, request, config);
+                command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
+                var response = await command.ExecuteAsync(CancellationToken.None).ConfigureAwait(false);
+
+                Assert.IsNotNull(response);
+                Assert.AreEqual(3, response.ObjectsDownloaded, "Should download 3 files successfully");
+                Assert.AreEqual(3, response.ObjectsFailed, "Should have 3 failures");
+                Assert.AreEqual(DirectoryResult.PartialSuccess, response.Result);
+                Assert.AreEqual(3, response.Errors.Count);
+            }
+            finally
+            {
+                try { Directory.Delete(localDir, true); } catch { }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task DownloadDirectory_LimitedConcurrency_EarlyFailure_AbortOnFailure()
+        {
+            // Test that AbortOnFailure cancels pending tasks with limited concurrency
+            var keys = new[] { 
+                "prefix/file1.txt",
+                "prefix/file2-fail.txt",  // This will fail
+                "prefix/file3.txt",
+                "prefix/file4.txt",
+                "prefix/file5.txt"
+            };
+            
+            var mockS3 = CreateMockS3(keys, k => k.Contains("file2-fail"));
+            string localDir = CreateTempDirectory();
+            try
+            {
+                var config = new TransferUtilityConfig
+                {
+                    ConcurrentServiceRequests = 2
+                };
+                var tu = new TransferUtility(mockS3.Object);
+                var request = CreateRequest(localDir, FailurePolicy.AbortOnFailure);
+
+                var ex = await Assert.ThrowsExceptionAsync<AmazonS3Exception>(
+                    () => tu.DownloadDirectoryAsync(request));
+                Assert.IsTrue(ex.Message.Contains("file2-fail"));
+                
+                // Some files may have downloaded before the failure, but not all
+                Assert.IsTrue(Directory.GetFiles(localDir).Length < keys.Length);
+            }
+            finally
+            {
+                try { Directory.Delete(localDir, true); } catch { }
+            }
+        }
+
+        #endregion
+
+        #region Validation Phase Failure with AbortOnFailure
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task DownloadDirectory_ValidationPhaseFailure_AbortOnFailure_StopsImmediately()
+        {
+            // Test that AbortOnFailure stops on validation failure (before download phase)
+            var keys = new[] { 
+                "prefix/file1.txt",
+                "prefix/../../../escape.txt",  // Path validation will fail
+                "prefix/file2.txt"
+            };
+            
+            var mockS3 = CreateMockS3(keys, k => false);
+            string localDir = CreateTempDirectory();
+            try
+            {
+                var captured = new List<ObjectDownloadFailedEventArgs>();
+                var tu = new TransferUtility(mockS3.Object);
+                var request = CreateRequest(localDir, FailurePolicy.AbortOnFailure);
+                
+                request.ObjectDownloadFailedEvent += (sender, args) =>
+                {
+                    captured.Add(args);
+                };
+
+                var ex = await Assert.ThrowsExceptionAsync<AmazonClientException>(
+                    () => tu.DownloadDirectoryAsync(request));
+                Assert.IsTrue(ex.Message.Contains("not allowed outside"));
+                
+                // Verify event was raised for validation failure
+                Assert.AreEqual(1, captured.Count);
+                Assert.IsInstanceOfType(captured[0].Exception, typeof(AmazonClientException));
+            }
+            finally
+            {
+                try { Directory.Delete(localDir, true); } catch { }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task DownloadDirectory_MultipleValidationFailures_ContinueOnFailure_SkipsAllInvalid()
+        {
+            // Test that multiple path validation failures are all handled correctly
+            var keys = new[] { 
+                "prefix/good1.txt",
+                "prefix/../../bad1.txt",
+                "prefix/good2.txt",
+                "prefix/../../../bad2.txt",
+                "prefix/good3.txt",
+                "prefix/../../../../bad3.txt"
+            };
+            
+            var mockS3 = CreateMockS3(keys, k => false);
+            string localDir = CreateTempDirectory();
+            try
+            {
+                var config = new TransferUtilityConfig();
+                var request = CreateRequest(localDir, FailurePolicy.ContinueOnFailure);
+                
+                var command = new DownloadDirectoryCommand(mockS3.Object, request, config);
+                command.DownloadFilesConcurrently = request.DownloadFilesConcurrently;
+                var response = await command.ExecuteAsync(CancellationToken.None).ConfigureAwait(false);
+
+                Assert.IsNotNull(response);
+                Assert.AreEqual(3, response.ObjectsDownloaded, "Should download 3 valid files");
+                Assert.AreEqual(3, response.ObjectsFailed, "Should have 3 path validation failures");
+                Assert.AreEqual(DirectoryResult.PartialSuccess, response.Result);
+                
+                // All errors should be AmazonClientException
+                Assert.IsTrue(response.Errors.All(e => e is AmazonClientException));
+                Assert.IsTrue(response.Errors.All(e => e.Message.Contains("not allowed outside")));
+            }
+            finally
+            {
+                try { Directory.Delete(localDir, true); } catch { }
+            }
+        }
+
+        #endregion
     }
 }
