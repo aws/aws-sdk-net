@@ -14,6 +14,7 @@ using Amazon.Util;
 using System.Net.Mime;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
+using Amazon.S3.Transfer.Model;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -2569,6 +2570,130 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                     else { throw new NotSupportedException(); }
                 }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task UploadDirectoryFailurePolicy_ContinueOnFailure_AllFailures()
+        {
+            var nonExistentBucket = "non-existent-" + Guid.NewGuid().ToString("N");
+            var directory = CreateTestDirectory(1 * KILO_SIZE, numberOfTestFiles: 3);
+
+            try
+            {
+                using (var transferUtility = new TransferUtility(Client))
+                {
+                    var request = new TransferUtilityUploadDirectoryRequest
+                    {
+                        BucketName = nonExistentBucket,
+                        Directory = directory.FullName,
+                        SearchPattern = "*",
+                        SearchOption = SearchOption.AllDirectories,
+                        FailurePolicy = Amazon.S3.Transfer.Model.FailurePolicy.ContinueOnFailure,
+                        UploadFilesConcurrently = true
+                    };
+
+                    // ContinueOnFailure should not throw even if all uploads fail
+                    var config = new TransferUtilityConfig();
+                    var command = new Amazon.S3.Transfer.Internal.UploadDirectoryCommand(transferUtility, config, request);
+                    command.UploadFilesConcurrently = request.UploadFilesConcurrently;
+                    var response = await command.ExecuteAsync(CancellationToken.None).ConfigureAwait(false);
+
+                    Assert.IsNotNull(response);
+                    Assert.AreEqual(0, response.ObjectsUploaded);
+                    Assert.AreEqual(3, response.ObjectsFailed);
+                    Assert.AreEqual(DirectoryResult.Failure, response.Result);
+                }
+            }
+            finally
+            {
+                try { Directory.Delete(directory.FullName, true); } catch { }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task UploadDirectoryFailurePolicy_ContinueOnFailure_AllSuccess()
+        {
+            var directory = CreateTestDirectory(1 * KILO_SIZE, numberOfTestFiles: 3);
+            try
+            {
+                using (var transferUtility = new TransferUtility(Client))
+                {
+                    var request = new TransferUtilityUploadDirectoryRequest
+                    {
+                        BucketName = bucketName,
+                        Directory = directory.FullName,
+                        KeyPrefix = directory.Name,
+                        SearchPattern = "*",
+                        SearchOption = SearchOption.AllDirectories,
+                        FailurePolicy = Amazon.S3.Transfer.Model.FailurePolicy.ContinueOnFailure,
+                        UploadFilesConcurrently = true
+                    };
+
+                    var config = new TransferUtilityConfig();
+                    var command = new Amazon.S3.Transfer.Internal.UploadDirectoryCommand(transferUtility, config, request);
+                    command.UploadFilesConcurrently = request.UploadFilesConcurrently;
+                    var response = await command.ExecuteAsync(CancellationToken.None).ConfigureAwait(false);
+
+                    Assert.IsNotNull(response);
+                    Assert.AreEqual(3, response.ObjectsUploaded);
+                    Assert.AreEqual(0, response.ObjectsFailed);
+                    Assert.AreEqual(DirectoryResult.Success, response.Result);
+
+                    // Validate uploaded contents
+                    ValidateDirectoryContents(Client, bucketName, directory.Name, directory, plainTextContentType);
+                }
+            }
+            finally
+            {
+                // Cleanup uploaded objects
+                try
+                {
+                    var files = directory.GetFiles("*", SearchOption.AllDirectories);
+                    foreach (var file in files)
+                    {
+                        var rel = file.FullName.Substring(directory.FullName.Length + 1).Replace("\\", "/");
+                        var key = directory.Name + "/" + rel;
+                        Client.DeleteObject(new DeleteObjectRequest { BucketName = bucketName, Key = key });
+                    }
+                }
+                catch { }
+                try { Directory.Delete(directory.FullName, true); } catch { }
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task UploadDirectoryFailurePolicy_AbortOnFailure_Throws()
+        {
+            var nonExistentBucket = "non-existent-" + Guid.NewGuid().ToString("N");
+            var directory = CreateTestDirectory(1 * KILO_SIZE, numberOfTestFiles: 2);
+
+            try
+            {
+                using (var transferUtility = new TransferUtility(Client))
+                {
+                    var request = new TransferUtilityUploadDirectoryRequest
+                    {
+                        BucketName = nonExistentBucket,
+                        Directory = directory.FullName,
+                        SearchPattern = "*",
+                        SearchOption = SearchOption.AllDirectories,
+                        FailurePolicy = Amazon.S3.Transfer.Model.FailurePolicy.AbortOnFailure,
+                        UploadFilesConcurrently = true
+                    };
+
+                    var config = new TransferUtilityConfig();
+                    var command = new Amazon.S3.Transfer.Internal.UploadDirectoryCommand(transferUtility, config, request);
+                    command.UploadFilesConcurrently = request.UploadFilesConcurrently;
+                    await Assert.ThrowsExceptionAsync<AmazonS3Exception>(() => command.ExecuteAsync(CancellationToken.None));
+                }
+            }
+            finally
+            {
+                try { Directory.Delete(directory.FullName, true); } catch { }
             }
         }
     }

@@ -20,11 +20,13 @@
  *
  */
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Amazon.Runtime;
 using System.Threading;
+using Amazon.S3.Transfer.Model;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -34,12 +36,15 @@ namespace Amazon.S3.Transfer.Internal
     /// </summary>
     internal partial class UploadDirectoryCommand : BaseCommand<TransferUtilityUploadDirectoryResponse>
     {
+        private IFailurePolicy _failurePolicy;
+        private ConcurrentBag<Exception> _errors = new ConcurrentBag<Exception>();
         TransferUtilityUploadDirectoryRequest _request;
         TransferUtility _utility;
         TransferUtilityConfig _config;
 
         int _totalNumberOfFiles;
         int _numberOfFilesUploaded;
+        int _numberOfFilesSuccessfullyUploaded;
         long _totalBytes;
         long _transferredBytes;        
 
@@ -48,6 +53,10 @@ namespace Amazon.S3.Transfer.Internal
             this._utility = utility;
             this._request = request;
             this._config = config;
+            _failurePolicy =
+                request.FailurePolicy == FailurePolicy.AbortOnFailure
+                    ? new AbortOnFailurePolicy()
+                    : new ContinueOnFailurePolicy(_errors);
         }
 
         internal TransferUtilityUploadRequest ConstructRequest(string basePath, string filepath, string prefix)

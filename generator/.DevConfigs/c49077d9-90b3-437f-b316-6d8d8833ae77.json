@@ -1,0 +1,12 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "minor",
+      "changeLogMessages": [
+        "Add FailurePolicy property to TransferUtilityUploadDirectoryRequest to allow configuration of failure handling behavior during directory uploads. The default behavior is set to abort on failure. Users can now choose to either abort the entire operation or continue uploading remaining files when a failure occurs.",
+        "Add ObjectUploadFailedEvent event to TransferUtilityUploadDirectoryRequest to notify users when an individual file upload fails during a directory upload operation. This event provides details about the failed upload, including the original request, the specific file request and the exception encountered."
+      ]
+    }
+  ]
+}

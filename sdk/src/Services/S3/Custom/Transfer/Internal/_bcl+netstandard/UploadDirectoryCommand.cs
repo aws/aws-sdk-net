@@ -20,6 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.S3.Transfer.Model;
 
 namespace Amazon.S3.Transfer.Internal
 {
@@ -87,10 +88,29 @@ namespace Amazon.S3.Transfer.Internal
                             // responses and throw the original exception.
                             break;
                         }
+                        
                         var uploadRequest = ConstructRequest(basePath, filepath, prefix);
-                        var uploadCommand = _utility.GetUploadCommand(uploadRequest, sharedHttpRequestThrottler);
-
-                        var task = ExecuteCommandAsync(uploadCommand, internalCts);
+                        
+                        Action<Exception> onFailure = (ex) =>
+                        {
+                            this._request.OnRaiseObjectUploadFailedEvent(
+                                new ObjectUploadFailedEventArgs(
+                                    this._request, 
+                                    uploadRequest, 
+                                    ex));
+                        };
+                        
+                        var task = _failurePolicy.ExecuteAsync(
+                            async () => {
+                                var command = _utility.GetUploadCommand(uploadRequest, sharedHttpRequestThrottler);
+                                await command.ExecuteAsync(internalCts.Token)
+                                    .ConfigureAwait(false);
+                                Interlocked.Increment(ref _numberOfFilesSuccessfullyUploaded);
+                            },
+                            onFailure,
+                            internalCts
+                        );
+                        
                         pendingTasks.Add(task);
                     }
                     finally
@@ -108,7 +128,17 @@ namespace Amazon.S3.Transfer.Internal
                 sharedHttpRequestThrottler?.Dispose();
             }
 
-            return new TransferUtilityUploadDirectoryResponse();
+            return new TransferUtilityUploadDirectoryResponse
+            {
+                ObjectsUploaded = _numberOfFilesSuccessfullyUploaded,
+                ObjectsFailed = _errors.Count,
+                Errors = _errors.ToList(),
+                Result = _errors.Count == 0 ?
+                    DirectoryResult.Success :
+                    (_numberOfFilesSuccessfullyUploaded > 0 ?
+                        DirectoryResult.PartialSuccess :
+                        DirectoryResult.Failure)
+            };
         }
 
         private Task<string[]> GetFiles(string path, string searchPattern, SearchOption searchOption, CancellationToken cancellationToken)
