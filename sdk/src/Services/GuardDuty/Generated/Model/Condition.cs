@@ -44,8 +44,10 @@ namespace Amazon.GuardDuty.Model
         private long? _lessThanOrEqual;
         private int? _lt;
         private int? _lte;
+        private List<string> _matches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _neq = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _notEquals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notMatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Eq. 
@@ -243,6 +245,32 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Matches. 
+        /// <para>
+        /// Represents the <i>match</i> condition to be applied to a single field when querying
+        /// for findings. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  The <i>matches</i> condition is available only for create-filter and update-filter
+        /// APIs. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> Matches
+        {
+            get { return this._matches; }
+            set { this._matches = value; }
+        }
+
+        // Check to see if Matches property is set
+        internal bool IsSetMatches()
+        {
+            return this._matches != null && (this._matches.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Neq. 
         /// <para>
         /// Represents the <i>not equal</i> condition to be applied to a single field when querying
@@ -279,6 +307,32 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetNotEquals()
         {
             return this._notEquals != null && (this._notEquals.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotMatches. 
+        /// <para>
+        /// Represents the <i>not match</i> condition to be applied to a single field when querying
+        /// for findings. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  The <i>not-matches</i> condition is available only for create-filter and update-filter
+        /// APIs. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> NotMatches
+        {
+            get { return this._notMatches; }
+            set { this._notMatches = value; }
+        }
+
+        // Check to see if NotMatches property is set
+        internal bool IsSetNotMatches()
+        {
+            return this._notMatches != null && (this._notMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

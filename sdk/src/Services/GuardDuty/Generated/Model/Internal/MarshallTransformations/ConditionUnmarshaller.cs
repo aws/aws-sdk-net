@@ -126,6 +126,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Lte = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("matches", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Matches = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("neq", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -136,6 +142,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.NotEquals = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("notMatches", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.NotMatches = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

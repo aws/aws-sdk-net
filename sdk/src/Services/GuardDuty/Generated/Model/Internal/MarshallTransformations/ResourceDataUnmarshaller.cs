@@ -72,10 +72,28 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessKey = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoscalingAutoScalingGroup", targetDepth))
+                {
+                    var unmarshaller = AutoscalingAutoScalingGroupUnmarshaller.Instance;
+                    unmarshalledObject.AutoscalingAutoScalingGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cloudformationStack", targetDepth))
+                {
+                    var unmarshaller = CloudformationStackUnmarshaller.Instance;
+                    unmarshalledObject.CloudformationStack = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("container", targetDepth))
                 {
                     var unmarshaller = ContainerFindingResourceUnmarshaller.Instance;
                     unmarshalledObject.Container = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ec2Image", targetDepth))
+                {
+                    var unmarshaller = Ec2ImageUnmarshaller.Instance;
+                    unmarshalledObject.Ec2Image = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ec2Instance", targetDepth))
@@ -84,16 +102,46 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ec2Instance = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ec2LaunchTemplate", targetDepth))
+                {
+                    var unmarshaller = Ec2LaunchTemplateUnmarshaller.Instance;
+                    unmarshalledObject.Ec2LaunchTemplate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ec2NetworkInterface", targetDepth))
                 {
                     var unmarshaller = Ec2NetworkInterfaceUnmarshaller.Instance;
                     unmarshalledObject.Ec2NetworkInterface = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ec2Vpc", targetDepth))
+                {
+                    var unmarshaller = Ec2VpcUnmarshaller.Instance;
+                    unmarshalledObject.Ec2Vpc = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ecsCluster", targetDepth))
+                {
+                    var unmarshaller = EcsClusterUnmarshaller.Instance;
+                    unmarshalledObject.EcsCluster = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ecsTask", targetDepth))
+                {
+                    var unmarshaller = EcsTaskUnmarshaller.Instance;
+                    unmarshalledObject.EcsTask = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("eksCluster", targetDepth))
                 {
                     var unmarshaller = EksClusterUnmarshaller.Instance;
                     unmarshalledObject.EksCluster = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("iamInstanceProfile", targetDepth))
+                {
+                    var unmarshaller = IamInstanceProfileV2Unmarshaller.Instance;
+                    unmarshalledObject.IamInstanceProfile = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("kubernetesWorkload", targetDepth))

@@ -993,6 +993,118 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type EcsClusterStatus.
+    /// </summary>
+    public class EcsClusterStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for EcsClusterStatus
+        /// </summary>
+        public static readonly EcsClusterStatus ACTIVE = new EcsClusterStatus("ACTIVE");
+        /// <summary>
+        /// Constant DEPROVISIONING for EcsClusterStatus
+        /// </summary>
+        public static readonly EcsClusterStatus DEPROVISIONING = new EcsClusterStatus("DEPROVISIONING");
+        /// <summary>
+        /// Constant FAILED for EcsClusterStatus
+        /// </summary>
+        public static readonly EcsClusterStatus FAILED = new EcsClusterStatus("FAILED");
+        /// <summary>
+        /// Constant INACTIVE for EcsClusterStatus
+        /// </summary>
+        public static readonly EcsClusterStatus INACTIVE = new EcsClusterStatus("INACTIVE");
+        /// <summary>
+        /// Constant PROVISIONING for EcsClusterStatus
+        /// </summary>
+        public static readonly EcsClusterStatus PROVISIONING = new EcsClusterStatus("PROVISIONING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EcsClusterStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EcsClusterStatus FindValue(string value)
+        {
+            return FindValue<EcsClusterStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EcsClusterStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EcsLaunchType.
+    /// </summary>
+    public class EcsLaunchType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC2 for EcsLaunchType
+        /// </summary>
+        public static readonly EcsLaunchType EC2 = new EcsLaunchType("EC2");
+        /// <summary>
+        /// Constant FARGATE for EcsLaunchType
+        /// </summary>
+        public static readonly EcsLaunchType FARGATE = new EcsLaunchType("FARGATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EcsLaunchType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EcsLaunchType FindValue(string value)
+        {
+            return FindValue<EcsLaunchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EcsLaunchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FeatureAdditionalConfiguration.
     /// </summary>
     public class FeatureAdditionalConfiguration : ConstantClass
@@ -1261,21 +1373,53 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly FindingResourceType ACCESS_KEY = new FindingResourceType("ACCESS_KEY");
         /// <summary>
+        /// Constant AUTOSCALING_AUTO_SCALING_GROUP for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType AUTOSCALING_AUTO_SCALING_GROUP = new FindingResourceType("AUTOSCALING_AUTO_SCALING_GROUP");
+        /// <summary>
+        /// Constant CLOUDFORMATION_STACK for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType CLOUDFORMATION_STACK = new FindingResourceType("CLOUDFORMATION_STACK");
+        /// <summary>
         /// Constant CONTAINER for FindingResourceType
         /// </summary>
         public static readonly FindingResourceType CONTAINER = new FindingResourceType("CONTAINER");
+        /// <summary>
+        /// Constant EC2_IMAGE for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType EC2_IMAGE = new FindingResourceType("EC2_IMAGE");
         /// <summary>
         /// Constant EC2_INSTANCE for FindingResourceType
         /// </summary>
         public static readonly FindingResourceType EC2_INSTANCE = new FindingResourceType("EC2_INSTANCE");
         /// <summary>
+        /// Constant EC2_LAUNCH_TEMPLATE for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType EC2_LAUNCH_TEMPLATE = new FindingResourceType("EC2_LAUNCH_TEMPLATE");
+        /// <summary>
         /// Constant EC2_NETWORK_INTERFACE for FindingResourceType
         /// </summary>
         public static readonly FindingResourceType EC2_NETWORK_INTERFACE = new FindingResourceType("EC2_NETWORK_INTERFACE");
         /// <summary>
+        /// Constant EC2_VPC for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType EC2_VPC = new FindingResourceType("EC2_VPC");
+        /// <summary>
+        /// Constant ECS_CLUSTER for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType ECS_CLUSTER = new FindingResourceType("ECS_CLUSTER");
+        /// <summary>
+        /// Constant ECS_TASK for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType ECS_TASK = new FindingResourceType("ECS_TASK");
+        /// <summary>
         /// Constant EKS_CLUSTER for FindingResourceType
         /// </summary>
         public static readonly FindingResourceType EKS_CLUSTER = new FindingResourceType("EKS_CLUSTER");
+        /// <summary>
+        /// Constant IAM_INSTANCE_PROFILE for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType IAM_INSTANCE_PROFILE = new FindingResourceType("IAM_INSTANCE_PROFILE");
         /// <summary>
         /// Constant KUBERNETES_WORKLOAD for FindingResourceType
         /// </summary>

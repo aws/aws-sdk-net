@@ -118,6 +118,17 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Lte);
             }
 
+            if(requestObject.IsSetMatches())
+            {
+                context.Writer.WritePropertyName("matches");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMatchesListValue in requestObject.Matches)
+                {
+                        context.Writer.Write(requestObjectMatchesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetNeq())
             {
                 context.Writer.WritePropertyName("neq");
@@ -136,6 +147,17 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 foreach(var requestObjectNotEqualsListValue in requestObject.NotEquals)
                 {
                         context.Writer.Write(requestObjectNotEqualsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetNotMatches())
+            {
+                context.Writer.WritePropertyName("notMatches");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNotMatchesListValue in requestObject.NotMatches)
+                {
+                        context.Writer.Write(requestObjectNotMatchesListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }
