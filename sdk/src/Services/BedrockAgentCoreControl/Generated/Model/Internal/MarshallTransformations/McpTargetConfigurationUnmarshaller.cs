@@ -66,6 +66,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("apiGateway", targetDepth))
+                {
+                    var unmarshaller = ApiGatewayTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ApiGateway = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lambda", targetDepth))
                 {
                     var unmarshaller = McpLambdaTargetConfigurationUnmarshaller.Instance;

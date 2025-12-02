@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private DateTime? _createdAt;
         private string _description;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _failureReason;
         private DateTime? _lastUpdatedAt;
         private LifecycleConfiguration _lifecycleConfiguration;
         private NetworkConfiguration _networkConfiguration;
@@ -219,6 +220,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEnvironmentVariables()
         {
             return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason for failure if the AgentCore Runtime is in a failed state.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>

@@ -50,6 +50,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private List<GatewayInterceptorConfiguration> _interceptorConfigurations = AWSConfigs.InitializeCollections ? new List<GatewayInterceptorConfiguration>() : null;
         private string _kmsKeyArn;
         private string _name;
+        private GatewayPolicyEngineConfiguration _policyEngineConfiguration;
         private GatewayProtocolConfiguration _protocolConfiguration;
         private GatewayProtocolType _protocolType;
         private string _roleArn;
@@ -233,6 +234,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyEngineConfiguration. 
+        /// <para>
+        /// The policy engine configuration for the gateway. A policy engine is a collection of
+        /// policies that evaluates and authorizes agent tool calls. When associated with a gateway,
+        /// the policy engine intercepts all agent requests and determines whether to allow or
+        /// deny each action based on the defined policies.
+        /// </para>
+        /// </summary>
+        public GatewayPolicyEngineConfiguration PolicyEngineConfiguration
+        {
+            get { return this._policyEngineConfiguration; }
+            set { this._policyEngineConfiguration = value; }
+        }
+
+        // Check to see if PolicyEngineConfiguration property is set
+        internal bool IsSetPolicyEngineConfiguration()
+        {
+            return this._policyEngineConfiguration != null;
         }
 
         /// <summary>

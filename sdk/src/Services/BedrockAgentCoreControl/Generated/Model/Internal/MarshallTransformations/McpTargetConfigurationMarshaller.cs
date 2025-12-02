@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetApiGateway())
+            {
+                context.Writer.WritePropertyName("apiGateway");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ApiGatewayTargetConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ApiGateway, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLambda())
             {
                 context.Writer.WritePropertyName("lambda");

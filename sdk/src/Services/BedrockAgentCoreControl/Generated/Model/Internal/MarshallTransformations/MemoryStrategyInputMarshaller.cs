@@ -59,6 +59,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEpisodicMemoryStrategy())
+            {
+                context.Writer.WritePropertyName("episodicMemoryStrategy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EpisodicMemoryStrategyInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.EpisodicMemoryStrategy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSemanticMemoryStrategy())
             {
                 context.Writer.WritePropertyName("semanticMemoryStrategy");

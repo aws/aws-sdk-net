@@ -108,7 +108,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The duration after which memory events expire. Specified as an ISO 8601 duration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=7, Max=365)]
+        [AWSProperty(Required=true, Min=3, Max=365)]
         public int EventExpiryDuration
         {
             get { return this._eventExpiryDuration.GetValueOrDefault(); }

@@ -355,6 +355,66 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  CreateEvaluator
+
+
+        /// <summary>
+        /// Creates a custom evaluator for agent quality assessment. Custom evaluators use LLM-as-a-Judge
+        /// configurations with user-defined prompts, rating scales, and model settings to evaluate
+        /// agent performance at tool call, trace, or session levels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEvaluator service method.</param>
+        /// 
+        /// <returns>The response from the CreateEvaluator service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateEvaluator">REST API Reference for CreateEvaluator Operation</seealso>
+        CreateEvaluatorResponse CreateEvaluator(CreateEvaluatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEvaluator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEvaluator operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEvaluator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateEvaluator">REST API Reference for CreateEvaluator Operation</seealso>
+        IAsyncResult BeginCreateEvaluator(CreateEvaluatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEvaluator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEvaluator.</param>
+        /// 
+        /// <returns>Returns a  CreateEvaluatorResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateEvaluator">REST API Reference for CreateEvaluator Operation</seealso>
+        CreateEvaluatorResponse EndCreateEvaluator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateGateway
 
 
@@ -614,6 +674,199 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>Returns a  CreateOauth2CredentialProviderResult from BedrockAgentCoreControl.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateOauth2CredentialProvider">REST API Reference for CreateOauth2CredentialProvider Operation</seealso>
         CreateOauth2CredentialProviderResponse EndCreateOauth2CredentialProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateOnlineEvaluationConfig
+
+
+        /// <summary>
+        /// Creates an online evaluation configuration for continuous monitoring of agent performance.
+        /// Online evaluation automatically samples live traffic from CloudWatch logs at specified
+        /// rates and applies evaluators to assess agent quality in production.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOnlineEvaluationConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateOnlineEvaluationConfig service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateOnlineEvaluationConfig">REST API Reference for CreateOnlineEvaluationConfig Operation</seealso>
+        CreateOnlineEvaluationConfigResponse CreateOnlineEvaluationConfig(CreateOnlineEvaluationConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateOnlineEvaluationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateOnlineEvaluationConfig operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateOnlineEvaluationConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateOnlineEvaluationConfig">REST API Reference for CreateOnlineEvaluationConfig Operation</seealso>
+        IAsyncResult BeginCreateOnlineEvaluationConfig(CreateOnlineEvaluationConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateOnlineEvaluationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateOnlineEvaluationConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateOnlineEvaluationConfigResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateOnlineEvaluationConfig">REST API Reference for CreateOnlineEvaluationConfig Operation</seealso>
+        CreateOnlineEvaluationConfigResponse EndCreateOnlineEvaluationConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreatePolicy
+
+
+        /// <summary>
+        /// Creates a policy within the AgentCore Policy system. Policies provide real-time, deterministic
+        /// control over agentic interactions with AgentCore Gateway. Using the Cedar policy language,
+        /// you can define fine-grained policies that specify which interactions with Gateway
+        /// tools are permitted based on input parameters and OAuth claims, ensuring agents operate
+        /// within defined boundaries and business rules. The policy is validated during creation
+        /// against the Cedar schema generated from the Gateway's tools' input schemas, which
+        /// defines the available tools, their parameters, and expected data types. This is an
+        /// asynchronous operation. Use the <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_GetPolicy.html">GetPolicy</a>
+        /// operation to poll the <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
+        /// 
+        /// <returns>The response from the CreatePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
+        CreatePolicyResponse CreatePolicy(CreatePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicy operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
+        IAsyncResult BeginCreatePolicy(CreatePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePolicy.</param>
+        /// 
+        /// <returns>Returns a  CreatePolicyResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
+        CreatePolicyResponse EndCreatePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreatePolicyEngine
+
+
+        /// <summary>
+        /// Creates a new policy engine within the AgentCore Policy system. A policy engine is
+        /// a collection of policies that evaluates and authorizes agent tool calls. When associated
+        /// with Gateways (each Gateway can be associated with at most one policy engine, but
+        /// multiple Gateways can be associated with the same engine), the policy engine intercepts
+        /// all agent requests and determines whether to allow or deny each action based on the
+        /// defined policies. This is an asynchronous operation. Use the <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/API_GetPolicyEngine.html">GetPolicyEngine</a>
+        /// operation to poll the <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicyEngine service method.</param>
+        /// 
+        /// <returns>The response from the CreatePolicyEngine service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePolicyEngine">REST API Reference for CreatePolicyEngine Operation</seealso>
+        CreatePolicyEngineResponse CreatePolicyEngine(CreatePolicyEngineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePolicyEngine operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePolicyEngine operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePolicyEngine
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePolicyEngine">REST API Reference for CreatePolicyEngine Operation</seealso>
+        IAsyncResult BeginCreatePolicyEngine(CreatePolicyEngineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePolicyEngine operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePolicyEngine.</param>
+        /// 
+        /// <returns>Returns a  CreatePolicyEngineResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePolicyEngine">REST API Reference for CreatePolicyEngine Operation</seealso>
+        CreatePolicyEngineResponse EndCreatePolicyEngine(IAsyncResult asyncResult);
 
         #endregion
         
@@ -967,6 +1220,65 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  DeleteEvaluator
+
+
+        /// <summary>
+        /// Deletes a custom evaluator. Builtin evaluators cannot be deleted. The evaluator must
+        /// not be referenced by any active online evaluation configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluator service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEvaluator service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteEvaluator">REST API Reference for DeleteEvaluator Operation</seealso>
+        DeleteEvaluatorResponse DeleteEvaluator(DeleteEvaluatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEvaluator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluator operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEvaluator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteEvaluator">REST API Reference for DeleteEvaluator Operation</seealso>
+        IAsyncResult BeginDeleteEvaluator(DeleteEvaluatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEvaluator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEvaluator.</param>
+        /// 
+        /// <returns>Returns a  DeleteEvaluatorResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteEvaluator">REST API Reference for DeleteEvaluator Operation</seealso>
+        DeleteEvaluatorResponse EndDeleteEvaluator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteGateway
 
 
@@ -1095,6 +1407,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
         /// This exception is thrown when a request is denied per access permissions
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
         /// This exception is thrown when a resource referenced by the operation does not exist
         /// </exception>
@@ -1194,6 +1509,249 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>Returns a  DeleteOauth2CredentialProviderResult from BedrockAgentCoreControl.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteOauth2CredentialProvider">REST API Reference for DeleteOauth2CredentialProvider Operation</seealso>
         DeleteOauth2CredentialProviderResponse EndDeleteOauth2CredentialProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteOnlineEvaluationConfig
+
+
+        /// <summary>
+        /// Deletes an online evaluation configuration and stops any ongoing evaluation processes
+        /// associated with it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOnlineEvaluationConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteOnlineEvaluationConfig service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteOnlineEvaluationConfig">REST API Reference for DeleteOnlineEvaluationConfig Operation</seealso>
+        DeleteOnlineEvaluationConfigResponse DeleteOnlineEvaluationConfig(DeleteOnlineEvaluationConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteOnlineEvaluationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteOnlineEvaluationConfig operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteOnlineEvaluationConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteOnlineEvaluationConfig">REST API Reference for DeleteOnlineEvaluationConfig Operation</seealso>
+        IAsyncResult BeginDeleteOnlineEvaluationConfig(DeleteOnlineEvaluationConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteOnlineEvaluationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteOnlineEvaluationConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteOnlineEvaluationConfigResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteOnlineEvaluationConfig">REST API Reference for DeleteOnlineEvaluationConfig Operation</seealso>
+        DeleteOnlineEvaluationConfigResponse EndDeleteOnlineEvaluationConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePolicy
+
+
+        /// <summary>
+        /// Deletes an existing policy from the AgentCore Policy system. Once deleted, the policy
+        /// can no longer be used for agent behavior control and all references to it become invalid.
+        /// This is an asynchronous operation. Use the <c>GetPolicy</c> operation to poll the
+        /// <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeletePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
+        DeletePolicyResponse DeletePolicy(DeletePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicy operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
+        IAsyncResult BeginDeletePolicy(DeletePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeletePolicyResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
+        DeletePolicyResponse EndDeletePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePolicyEngine
+
+
+        /// <summary>
+        /// Deletes an existing policy engine from the AgentCore Policy system. The policy engine
+        /// must not have any associated policies before deletion. Once deleted, the policy engine
+        /// and all its configurations become unavailable for policy management and evaluation.
+        /// This is an asynchronous operation. Use the <c>GetPolicyEngine</c> operation to poll
+        /// the <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyEngine service method.</param>
+        /// 
+        /// <returns>The response from the DeletePolicyEngine service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePolicyEngine">REST API Reference for DeletePolicyEngine Operation</seealso>
+        DeletePolicyEngineResponse DeletePolicyEngine(DeletePolicyEngineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePolicyEngine operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePolicyEngine operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePolicyEngine
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePolicyEngine">REST API Reference for DeletePolicyEngine Operation</seealso>
+        IAsyncResult BeginDeletePolicyEngine(DeletePolicyEngineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePolicyEngine operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePolicyEngine.</param>
+        /// 
+        /// <returns>Returns a  DeletePolicyEngineResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePolicyEngine">REST API Reference for DeletePolicyEngine Operation</seealso>
+        DeletePolicyEngineResponse EndDeletePolicyEngine(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+
+        /// <summary>
+        /// Deletes the resource-based policy for a specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime and Gateway.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        IAsyncResult BeginDeleteResourcePolicy(DeleteResourcePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteResourcePolicyResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        DeleteResourcePolicyResponse EndDeleteResourcePolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1538,6 +2096,62 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  GetEvaluator
+
+
+        /// <summary>
+        /// Retrieves detailed information about an evaluator, including its configuration, status,
+        /// and metadata. Works with both built-in and custom evaluators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEvaluator service method.</param>
+        /// 
+        /// <returns>The response from the GetEvaluator service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetEvaluator">REST API Reference for GetEvaluator Operation</seealso>
+        GetEvaluatorResponse GetEvaluator(GetEvaluatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEvaluator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEvaluator operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEvaluator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetEvaluator">REST API Reference for GetEvaluator Operation</seealso>
+        IAsyncResult BeginGetEvaluator(GetEvaluatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEvaluator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEvaluator.</param>
+        /// 
+        /// <returns>Returns a  GetEvaluatorResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetEvaluator">REST API Reference for GetEvaluator Operation</seealso>
+        GetEvaluatorResponse EndGetEvaluator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetGateway
 
 
@@ -1762,6 +2376,294 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>Returns a  GetOauth2CredentialProviderResult from BedrockAgentCoreControl.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetOauth2CredentialProvider">REST API Reference for GetOauth2CredentialProvider Operation</seealso>
         GetOauth2CredentialProviderResponse EndGetOauth2CredentialProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetOnlineEvaluationConfig
+
+
+        /// <summary>
+        /// Retrieves detailed information about an online evaluation configuration, including
+        /// its rules, data sources, evaluators, and execution status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOnlineEvaluationConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetOnlineEvaluationConfig service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetOnlineEvaluationConfig">REST API Reference for GetOnlineEvaluationConfig Operation</seealso>
+        GetOnlineEvaluationConfigResponse GetOnlineEvaluationConfig(GetOnlineEvaluationConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetOnlineEvaluationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetOnlineEvaluationConfig operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOnlineEvaluationConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetOnlineEvaluationConfig">REST API Reference for GetOnlineEvaluationConfig Operation</seealso>
+        IAsyncResult BeginGetOnlineEvaluationConfig(GetOnlineEvaluationConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetOnlineEvaluationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOnlineEvaluationConfig.</param>
+        /// 
+        /// <returns>Returns a  GetOnlineEvaluationConfigResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetOnlineEvaluationConfig">REST API Reference for GetOnlineEvaluationConfig Operation</seealso>
+        GetOnlineEvaluationConfigResponse EndGetOnlineEvaluationConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPolicy
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific policy within the AgentCore Policy
+        /// system. This operation returns the complete policy definition, metadata, and current
+        /// status, allowing administrators to review and manage policy configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        GetPolicyResponse GetPolicy(GetPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetPolicyResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPolicyEngine
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific policy engine within the AgentCore
+        /// Policy system. This operation returns the complete policy engine configuration, metadata,
+        /// and current status, allowing administrators to review and manage policy engine settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyEngine service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicyEngine service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyEngine">REST API Reference for GetPolicyEngine Operation</seealso>
+        GetPolicyEngineResponse GetPolicyEngine(GetPolicyEngineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicyEngine operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyEngine operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicyEngine
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyEngine">REST API Reference for GetPolicyEngine Operation</seealso>
+        IAsyncResult BeginGetPolicyEngine(GetPolicyEngineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPolicyEngine operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicyEngine.</param>
+        /// 
+        /// <returns>Returns a  GetPolicyEngineResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyEngine">REST API Reference for GetPolicyEngine Operation</seealso>
+        GetPolicyEngineResponse EndGetPolicyEngine(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPolicyGeneration
+
+
+        /// <summary>
+        /// Retrieves information about a policy generation request within the AgentCore Policy
+        /// system. Policy generation converts natural language descriptions into Cedar policy
+        /// statements using AI-powered translation, enabling non-technical users to create policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyGeneration service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicyGeneration service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyGeneration">REST API Reference for GetPolicyGeneration Operation</seealso>
+        GetPolicyGenerationResponse GetPolicyGeneration(GetPolicyGenerationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicyGeneration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicyGeneration operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicyGeneration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyGeneration">REST API Reference for GetPolicyGeneration Operation</seealso>
+        IAsyncResult BeginGetPolicyGeneration(GetPolicyGenerationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPolicyGeneration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicyGeneration.</param>
+        /// 
+        /// <returns>Returns a  GetPolicyGenerationResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPolicyGeneration">REST API Reference for GetPolicyGeneration Operation</seealso>
+        GetPolicyGenerationResponse EndGetPolicyGeneration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetResourcePolicy
+
+
+        /// <summary>
+        /// Retrieves the resource-based policy for a specified resource.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime and Gateway.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        IAsyncResult BeginGetResourcePolicy(GetResourcePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  GetResourcePolicyResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        GetResourcePolicyResponse EndGetResourcePolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2205,6 +3107,59 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  ListEvaluators
+
+
+        /// <summary>
+        /// Lists all available evaluators, including both builtin evaluators provided by the
+        /// service and custom evaluators created by the user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluators service method.</param>
+        /// 
+        /// <returns>The response from the ListEvaluators service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListEvaluators">REST API Reference for ListEvaluators Operation</seealso>
+        ListEvaluatorsResponse ListEvaluators(ListEvaluatorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEvaluators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluators operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEvaluators
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListEvaluators">REST API Reference for ListEvaluators Operation</seealso>
+        IAsyncResult BeginListEvaluators(ListEvaluatorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEvaluators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEvaluators.</param>
+        /// 
+        /// <returns>Returns a  ListEvaluatorsResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListEvaluators">REST API Reference for ListEvaluators Operation</seealso>
+        ListEvaluatorsResponse EndListEvaluators(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListGateways
 
 
@@ -2424,6 +3379,285 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  ListOnlineEvaluationConfigs
+
+
+        /// <summary>
+        /// Lists all online evaluation configurations in the account, providing summary information
+        /// about each configuration's status and settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOnlineEvaluationConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListOnlineEvaluationConfigs service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListOnlineEvaluationConfigs">REST API Reference for ListOnlineEvaluationConfigs Operation</seealso>
+        ListOnlineEvaluationConfigsResponse ListOnlineEvaluationConfigs(ListOnlineEvaluationConfigsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOnlineEvaluationConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOnlineEvaluationConfigs operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOnlineEvaluationConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListOnlineEvaluationConfigs">REST API Reference for ListOnlineEvaluationConfigs Operation</seealso>
+        IAsyncResult BeginListOnlineEvaluationConfigs(ListOnlineEvaluationConfigsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOnlineEvaluationConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOnlineEvaluationConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListOnlineEvaluationConfigsResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListOnlineEvaluationConfigs">REST API Reference for ListOnlineEvaluationConfigs Operation</seealso>
+        ListOnlineEvaluationConfigsResponse EndListOnlineEvaluationConfigs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListPolicies
+
+
+        /// <summary>
+        /// Retrieves a list of policies within the AgentCore Policy engine. This operation supports
+        /// pagination and filtering to help administrators manage and discover policies across
+        /// policy engines. Results can be filtered by policy engine or resource associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicies service method.</param>
+        /// 
+        /// <returns>The response from the ListPolicies service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
+        ListPoliciesResponse ListPolicies(ListPoliciesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicies operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicies
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
+        IAsyncResult BeginListPolicies(ListPoliciesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPolicies operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicies.</param>
+        /// 
+        /// <returns>Returns a  ListPoliciesResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
+        ListPoliciesResponse EndListPolicies(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListPolicyEngines
+
+
+        /// <summary>
+        /// Retrieves a list of policy engines within the AgentCore Policy system. This operation
+        /// supports pagination to help administrators discover and manage policy engines across
+        /// their account. Each policy engine serves as a container for related policies.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyEngines service method.</param>
+        /// 
+        /// <returns>The response from the ListPolicyEngines service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyEngines">REST API Reference for ListPolicyEngines Operation</seealso>
+        ListPolicyEnginesResponse ListPolicyEngines(ListPolicyEnginesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicyEngines operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyEngines operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyEngines
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyEngines">REST API Reference for ListPolicyEngines Operation</seealso>
+        IAsyncResult BeginListPolicyEngines(ListPolicyEnginesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPolicyEngines operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicyEngines.</param>
+        /// 
+        /// <returns>Returns a  ListPolicyEnginesResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyEngines">REST API Reference for ListPolicyEngines Operation</seealso>
+        ListPolicyEnginesResponse EndListPolicyEngines(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListPolicyGenerationAssets
+
+
+        /// <summary>
+        /// Retrieves a list of generated policy assets from a policy generation request within
+        /// the AgentCore Policy system. This operation returns the actual Cedar policies and
+        /// related artifacts produced by the AI-powered policy generation process, allowing users
+        /// to review and select from multiple generated policy options.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGenerationAssets service method.</param>
+        /// 
+        /// <returns>The response from the ListPolicyGenerationAssets service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyGenerationAssets">REST API Reference for ListPolicyGenerationAssets Operation</seealso>
+        ListPolicyGenerationAssetsResponse ListPolicyGenerationAssets(ListPolicyGenerationAssetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicyGenerationAssets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGenerationAssets operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyGenerationAssets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyGenerationAssets">REST API Reference for ListPolicyGenerationAssets Operation</seealso>
+        IAsyncResult BeginListPolicyGenerationAssets(ListPolicyGenerationAssetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPolicyGenerationAssets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicyGenerationAssets.</param>
+        /// 
+        /// <returns>Returns a  ListPolicyGenerationAssetsResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyGenerationAssets">REST API Reference for ListPolicyGenerationAssets Operation</seealso>
+        ListPolicyGenerationAssetsResponse EndListPolicyGenerationAssets(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListPolicyGenerations
+
+
+        /// <summary>
+        /// Retrieves a list of policy generation requests within the AgentCore Policy system.
+        /// This operation supports pagination and filtering to help track and manage AI-powered
+        /// policy generation operations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGenerations service method.</param>
+        /// 
+        /// <returns>The response from the ListPolicyGenerations service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyGenerations">REST API Reference for ListPolicyGenerations Operation</seealso>
+        ListPolicyGenerationsResponse ListPolicyGenerations(ListPolicyGenerationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPolicyGenerations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyGenerations operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPolicyGenerations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyGenerations">REST API Reference for ListPolicyGenerations Operation</seealso>
+        IAsyncResult BeginListPolicyGenerations(ListPolicyGenerationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPolicyGenerations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPolicyGenerations.</param>
+        /// 
+        /// <returns>Returns a  ListPolicyGenerationsResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPolicyGenerations">REST API Reference for ListPolicyGenerations Operation</seealso>
+        ListPolicyGenerationsResponse EndListPolicyGenerations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -2545,6 +3779,67 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  PutResourcePolicy
+
+
+        /// <summary>
+        /// Creates or updates a resource-based policy for a resource with the specified resourceArn.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This feature is currently available only for AgentCore Runtime and Gateway.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutResourcePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        IAsyncResult BeginPutResourcePolicy(PutResourcePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutResourcePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutResourcePolicy.</param>
+        /// 
+        /// <returns>Returns a  PutResourcePolicyResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        PutResourcePolicyResponse EndPutResourcePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SetTokenVaultCMK
 
 
@@ -2604,6 +3899,78 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>Returns a  SetTokenVaultCMKResult from BedrockAgentCoreControl.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/SetTokenVaultCMK">REST API Reference for SetTokenVaultCMK Operation</seealso>
         SetTokenVaultCMKResponse EndSetTokenVaultCMK(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartPolicyGeneration
+
+
+        /// <summary>
+        /// Initiates the AI-powered generation of Cedar policies from natural language descriptions
+        /// within the AgentCore Policy system. This feature enables both technical and non-technical
+        /// users to create policies by describing their authorization requirements in plain English,
+        /// which is then automatically translated into formal Cedar policy statements. The generation
+        /// process analyzes the natural language input along with the Gateway's tool context
+        /// to produce validated policy options. Generated policy assets are automatically deleted
+        /// after 7 days, so you should review and create policies from the generated assets within
+        /// this timeframe. Once created, policies are permanent and not subject to this expiration.
+        /// Generated policies should be reviewed and tested in log-only mode before deploying
+        /// to production. Use this when you want to describe policy intent naturally rather than
+        /// learning Cedar syntax, though generated policies may require refinement for complex
+        /// scenarios.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartPolicyGeneration service method.</param>
+        /// 
+        /// <returns>The response from the StartPolicyGeneration service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/StartPolicyGeneration">REST API Reference for StartPolicyGeneration Operation</seealso>
+        StartPolicyGenerationResponse StartPolicyGeneration(StartPolicyGenerationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartPolicyGeneration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartPolicyGeneration operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartPolicyGeneration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/StartPolicyGeneration">REST API Reference for StartPolicyGeneration Operation</seealso>
+        IAsyncResult BeginStartPolicyGeneration(StartPolicyGenerationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartPolicyGeneration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartPolicyGeneration.</param>
+        /// 
+        /// <returns>Returns a  StartPolicyGenerationResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/StartPolicyGeneration">REST API Reference for StartPolicyGeneration Operation</seealso>
+        StartPolicyGenerationResponse EndStartPolicyGeneration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2990,6 +4357,68 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  UpdateEvaluator
+
+
+        /// <summary>
+        /// Updates a custom evaluator's configuration, description, or evaluation level. Built-in
+        /// evaluators cannot be updated. The evaluator must not be locked for modification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEvaluator service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEvaluator service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateEvaluator">REST API Reference for UpdateEvaluator Operation</seealso>
+        UpdateEvaluatorResponse UpdateEvaluator(UpdateEvaluatorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEvaluator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEvaluator operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEvaluator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateEvaluator">REST API Reference for UpdateEvaluator Operation</seealso>
+        IAsyncResult BeginUpdateEvaluator(UpdateEvaluatorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEvaluator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEvaluator.</param>
+        /// 
+        /// <returns>Returns a  UpdateEvaluatorResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateEvaluator">REST API Reference for UpdateEvaluator Operation</seealso>
+        UpdateEvaluatorResponse EndUpdateEvaluator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateGateway
 
 
@@ -3241,6 +4670,191 @@ namespace Amazon.BedrockAgentCoreControl
         /// <returns>Returns a  UpdateOauth2CredentialProviderResult from BedrockAgentCoreControl.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateOauth2CredentialProvider">REST API Reference for UpdateOauth2CredentialProvider Operation</seealso>
         UpdateOauth2CredentialProviderResponse EndUpdateOauth2CredentialProvider(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateOnlineEvaluationConfig
+
+
+        /// <summary>
+        /// Updates an online evaluation configuration's settings, including rules, data sources,
+        /// evaluators, and execution status. Changes take effect immediately for ongoing evaluations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOnlineEvaluationConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOnlineEvaluationConfig service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateOnlineEvaluationConfig">REST API Reference for UpdateOnlineEvaluationConfig Operation</seealso>
+        UpdateOnlineEvaluationConfigResponse UpdateOnlineEvaluationConfig(UpdateOnlineEvaluationConfigRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateOnlineEvaluationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOnlineEvaluationConfig operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateOnlineEvaluationConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateOnlineEvaluationConfig">REST API Reference for UpdateOnlineEvaluationConfig Operation</seealso>
+        IAsyncResult BeginUpdateOnlineEvaluationConfig(UpdateOnlineEvaluationConfigRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateOnlineEvaluationConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateOnlineEvaluationConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateOnlineEvaluationConfigResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateOnlineEvaluationConfig">REST API Reference for UpdateOnlineEvaluationConfig Operation</seealso>
+        UpdateOnlineEvaluationConfigResponse EndUpdateOnlineEvaluationConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePolicy
+
+
+        /// <summary>
+        /// Updates an existing policy within the AgentCore Policy system. This operation allows
+        /// modification of the policy description and definition while maintaining the policy's
+        /// identity. The updated policy is validated against the Cedar schema before being applied.
+        /// This is an asynchronous operation. Use the <c>GetPolicy</c> operation to poll the
+        /// <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePolicy service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePolicy service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePolicy">REST API Reference for UpdatePolicy Operation</seealso>
+        UpdatePolicyResponse UpdatePolicy(UpdatePolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePolicy operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePolicy">REST API Reference for UpdatePolicy Operation</seealso>
+        IAsyncResult BeginUpdatePolicy(UpdatePolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePolicy.</param>
+        /// 
+        /// <returns>Returns a  UpdatePolicyResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePolicy">REST API Reference for UpdatePolicy Operation</seealso>
+        UpdatePolicyResponse EndUpdatePolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePolicyEngine
+
+
+        /// <summary>
+        /// Updates an existing policy engine within the AgentCore Policy system. This operation
+        /// allows modification of the policy engine description while maintaining its identity.
+        /// This is an asynchronous operation. Use the <c>GetPolicyEngine</c> operation to poll
+        /// the <c>status</c> field to track completion.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePolicyEngine service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePolicyEngine service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePolicyEngine">REST API Reference for UpdatePolicyEngine Operation</seealso>
+        UpdatePolicyEngineResponse UpdatePolicyEngine(UpdatePolicyEngineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePolicyEngine operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePolicyEngine operation on AmazonBedrockAgentCoreControlClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePolicyEngine
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePolicyEngine">REST API Reference for UpdatePolicyEngine Operation</seealso>
+        IAsyncResult BeginUpdatePolicyEngine(UpdatePolicyEngineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePolicyEngine operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePolicyEngine.</param>
+        /// 
+        /// <returns>Returns a  UpdatePolicyEngineResult from BedrockAgentCoreControl.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePolicyEngine">REST API Reference for UpdatePolicyEngine Operation</seealso>
+        UpdatePolicyEngineResponse EndUpdatePolicyEngine(IAsyncResult asyncResult);
 
         #endregion
         

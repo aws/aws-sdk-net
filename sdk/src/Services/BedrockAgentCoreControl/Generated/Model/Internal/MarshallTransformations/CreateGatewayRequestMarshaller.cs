@@ -135,6 +135,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPolicyEngineConfiguration())
+                {
+                    context.Writer.WritePropertyName("policyEngineConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GatewayPolicyEngineConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PolicyEngineConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetProtocolConfiguration())
                 {
                     context.Writer.WritePropertyName("protocolConfiguration");

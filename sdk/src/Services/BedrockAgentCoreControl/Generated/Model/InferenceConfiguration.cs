@@ -1,0 +1,124 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the bedrock-agentcore-control-2023-06-05.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.BedrockAgentCoreControl.Model
+{
+    /// <summary>
+    /// The configuration parameters that control how the foundation model behaves during
+    /// evaluation, including response generation settings.
+    /// </summary>
+    public partial class InferenceConfiguration
+    {
+        private int? _maxTokens;
+        private List<string> _stopSequences = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private float? _temperature;
+        private float? _topp;
+
+        /// <summary>
+        /// Gets and sets the property MaxTokens. 
+        /// <para>
+        ///  The maximum number of tokens to generate in the model response during evaluation.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int MaxTokens
+        {
+            get { return this._maxTokens.GetValueOrDefault(); }
+            set { this._maxTokens = value; }
+        }
+
+        // Check to see if MaxTokens property is set
+        internal bool IsSetMaxTokens()
+        {
+            return this._maxTokens.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopSequences. 
+        /// <para>
+        ///  The list of sequences that will cause the model to stop generating tokens when encountered.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2500)]
+        public List<string> StopSequences
+        {
+            get { return this._stopSequences; }
+            set { this._stopSequences = value; }
+        }
+
+        // Check to see if StopSequences property is set
+        internal bool IsSetStopSequences()
+        {
+            return this._stopSequences != null && (this._stopSequences.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Temperature. 
+        /// <para>
+        ///  The temperature value that controls randomness in the model's responses. Lower values
+        /// produce more deterministic outputs. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public float Temperature
+        {
+            get { return this._temperature.GetValueOrDefault(); }
+            set { this._temperature = value; }
+        }
+
+        // Check to see if Temperature property is set
+        internal bool IsSetTemperature()
+        {
+            return this._temperature.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopP. 
+        /// <para>
+        ///  The top-p sampling parameter that controls the diversity of the model's responses
+        /// by limiting the cumulative probability of token choices. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public float TopP
+        {
+            get { return this._topp.GetValueOrDefault(); }
+            set { this._topp = value; }
+        }
+
+        // Check to see if TopP property is set
+        internal bool IsSetTopP()
+        {
+            return this._topp.HasValue; 
+        }
+
+    }
+}

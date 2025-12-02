@@ -34,9 +34,29 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CustomConsolidationConfiguration
     {
+        private EpisodicConsolidationOverride _episodicConsolidationOverride;
         private SemanticConsolidationOverride _semanticConsolidationOverride;
         private SummaryConsolidationOverride _summaryConsolidationOverride;
         private UserPreferenceConsolidationOverride _userPreferenceConsolidationOverride;
+
+        /// <summary>
+        /// Gets and sets the property EpisodicConsolidationOverride. 
+        /// <para>
+        /// The configurations to override the default consolidation step for the episodic memory
+        /// strategy.
+        /// </para>
+        /// </summary>
+        public EpisodicConsolidationOverride EpisodicConsolidationOverride
+        {
+            get { return this._episodicConsolidationOverride; }
+            set { this._episodicConsolidationOverride = value; }
+        }
+
+        // Check to see if EpisodicConsolidationOverride property is set
+        internal bool IsSetEpisodicConsolidationOverride()
+        {
+            return this._episodicConsolidationOverride != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SemanticConsolidationOverride. 

@@ -66,6 +66,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("episodicExtractionOverride", targetDepth))
+                {
+                    var unmarshaller = EpisodicExtractionOverrideUnmarshaller.Instance;
+                    unmarshalledObject.EpisodicExtractionOverride = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("semanticExtractionOverride", targetDepth))
                 {
                     var unmarshaller = SemanticExtractionOverrideUnmarshaller.Instance;

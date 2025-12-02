@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEpisodicExtractionOverride())
+            {
+                context.Writer.WritePropertyName("episodicExtractionOverride");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EpisodicOverrideExtractionConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.EpisodicExtractionOverride, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSemanticExtractionOverride())
             {
                 context.Writer.WritePropertyName("semanticExtractionOverride");
