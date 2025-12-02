@@ -42,6 +42,7 @@ namespace Amazon.OpenSearchServerless.Model
         private StandbyReplicas _standbyReplicas;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private CollectionType _type;
+        private VectorOptions _vectorOptions;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -154,6 +155,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorOptions. 
+        /// <para>
+        /// Configuration options for vector search capabilities in the collection.
+        /// </para>
+        /// </summary>
+        public VectorOptions VectorOptions
+        {
+            get { return this._vectorOptions; }
+            set { this._vectorOptions = value; }
+        }
+
+        // Check to see if VectorOptions property is set
+        internal bool IsSetVectorOptions()
+        {
+            return this._vectorOptions != null;
         }
 
     }

@@ -120,6 +120,17 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Type);
                 }
 
+                if(publicRequest.IsSetVectorOptions())
+                {
+                    context.Writer.WritePropertyName("vectorOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VectorOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VectorOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

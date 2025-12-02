@@ -2559,6 +2559,10 @@ namespace Amazon.OpenSearchServerless
         /// <exception cref="Amazon.OpenSearchServerless.Model.InternalServerException">
         /// Thrown when an error internal to the service occurs while processing a request.
         /// </exception>
+        /// <exception cref="Amazon.OpenSearchServerless.Model.ServiceQuotaExceededException">
+        /// Thrown when you attempt to create more resources than the service allows based on
+        /// service quotas.
+        /// </exception>
         /// <exception cref="Amazon.OpenSearchServerless.Model.ValidationException">
         /// Thrown when the HTTP request contains invalid input or is missing required input.
         /// </exception>
