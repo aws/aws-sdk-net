@@ -94,6 +94,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DurableConfig", targetDepth))
+                {
+                    var unmarshaller = DurableConfigUnmarshaller.Instance;
+                    response.DurableConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Environment", targetDepth))
                 {
                     var unmarshaller = EnvironmentResponseUnmarshaller.Instance;

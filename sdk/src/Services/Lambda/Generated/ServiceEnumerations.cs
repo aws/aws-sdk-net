@@ -491,6 +491,206 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type EventType.
+    /// </summary>
+    public class EventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CallbackFailed for EventType
+        /// </summary>
+        public static readonly EventType CallbackFailed = new EventType("CallbackFailed");
+        /// <summary>
+        /// Constant CallbackStarted for EventType
+        /// </summary>
+        public static readonly EventType CallbackStarted = new EventType("CallbackStarted");
+        /// <summary>
+        /// Constant CallbackSucceeded for EventType
+        /// </summary>
+        public static readonly EventType CallbackSucceeded = new EventType("CallbackSucceeded");
+        /// <summary>
+        /// Constant CallbackTimedOut for EventType
+        /// </summary>
+        public static readonly EventType CallbackTimedOut = new EventType("CallbackTimedOut");
+        /// <summary>
+        /// Constant ChainedInvokeFailed for EventType
+        /// </summary>
+        public static readonly EventType ChainedInvokeFailed = new EventType("ChainedInvokeFailed");
+        /// <summary>
+        /// Constant ChainedInvokeStarted for EventType
+        /// </summary>
+        public static readonly EventType ChainedInvokeStarted = new EventType("ChainedInvokeStarted");
+        /// <summary>
+        /// Constant ChainedInvokeStopped for EventType
+        /// </summary>
+        public static readonly EventType ChainedInvokeStopped = new EventType("ChainedInvokeStopped");
+        /// <summary>
+        /// Constant ChainedInvokeSucceeded for EventType
+        /// </summary>
+        public static readonly EventType ChainedInvokeSucceeded = new EventType("ChainedInvokeSucceeded");
+        /// <summary>
+        /// Constant ChainedInvokeTimedOut for EventType
+        /// </summary>
+        public static readonly EventType ChainedInvokeTimedOut = new EventType("ChainedInvokeTimedOut");
+        /// <summary>
+        /// Constant ContextFailed for EventType
+        /// </summary>
+        public static readonly EventType ContextFailed = new EventType("ContextFailed");
+        /// <summary>
+        /// Constant ContextStarted for EventType
+        /// </summary>
+        public static readonly EventType ContextStarted = new EventType("ContextStarted");
+        /// <summary>
+        /// Constant ContextSucceeded for EventType
+        /// </summary>
+        public static readonly EventType ContextSucceeded = new EventType("ContextSucceeded");
+        /// <summary>
+        /// Constant ExecutionFailed for EventType
+        /// </summary>
+        public static readonly EventType ExecutionFailed = new EventType("ExecutionFailed");
+        /// <summary>
+        /// Constant ExecutionStarted for EventType
+        /// </summary>
+        public static readonly EventType ExecutionStarted = new EventType("ExecutionStarted");
+        /// <summary>
+        /// Constant ExecutionStopped for EventType
+        /// </summary>
+        public static readonly EventType ExecutionStopped = new EventType("ExecutionStopped");
+        /// <summary>
+        /// Constant ExecutionSucceeded for EventType
+        /// </summary>
+        public static readonly EventType ExecutionSucceeded = new EventType("ExecutionSucceeded");
+        /// <summary>
+        /// Constant ExecutionTimedOut for EventType
+        /// </summary>
+        public static readonly EventType ExecutionTimedOut = new EventType("ExecutionTimedOut");
+        /// <summary>
+        /// Constant InvocationCompleted for EventType
+        /// </summary>
+        public static readonly EventType InvocationCompleted = new EventType("InvocationCompleted");
+        /// <summary>
+        /// Constant StepFailed for EventType
+        /// </summary>
+        public static readonly EventType StepFailed = new EventType("StepFailed");
+        /// <summary>
+        /// Constant StepStarted for EventType
+        /// </summary>
+        public static readonly EventType StepStarted = new EventType("StepStarted");
+        /// <summary>
+        /// Constant StepSucceeded for EventType
+        /// </summary>
+        public static readonly EventType StepSucceeded = new EventType("StepSucceeded");
+        /// <summary>
+        /// Constant WaitCancelled for EventType
+        /// </summary>
+        public static readonly EventType WaitCancelled = new EventType("WaitCancelled");
+        /// <summary>
+        /// Constant WaitStarted for EventType
+        /// </summary>
+        public static readonly EventType WaitStarted = new EventType("WaitStarted");
+        /// <summary>
+        /// Constant WaitSucceeded for EventType
+        /// </summary>
+        public static readonly EventType WaitSucceeded = new EventType("WaitSucceeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventType FindValue(string value)
+        {
+            return FindValue<EventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExecutionStatus.
+    /// </summary>
+    public class ExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus FAILED = new ExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus RUNNING = new ExecutionStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus STOPPED = new ExecutionStatus("STOPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus SUCCEEDED = new ExecutionStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant TIMED_OUT for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus TIMED_OUT = new ExecutionStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionStatus FindValue(string value)
+        {
+            return FindValue<ExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FullDocument.
     /// </summary>
     public class FullDocument : ConstantClass
@@ -1265,6 +1465,208 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type OperationAction.
+    /// </summary>
+    public class OperationAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCEL for OperationAction
+        /// </summary>
+        public static readonly OperationAction CANCEL = new OperationAction("CANCEL");
+        /// <summary>
+        /// Constant FAIL for OperationAction
+        /// </summary>
+        public static readonly OperationAction FAIL = new OperationAction("FAIL");
+        /// <summary>
+        /// Constant RETRY for OperationAction
+        /// </summary>
+        public static readonly OperationAction RETRY = new OperationAction("RETRY");
+        /// <summary>
+        /// Constant START for OperationAction
+        /// </summary>
+        public static readonly OperationAction START = new OperationAction("START");
+        /// <summary>
+        /// Constant SUCCEED for OperationAction
+        /// </summary>
+        public static readonly OperationAction SUCCEED = new OperationAction("SUCCEED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationAction FindValue(string value)
+        {
+            return FindValue<OperationAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperationStatus.
+    /// </summary>
+    public class OperationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus CANCELLED = new OperationStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus FAILED = new OperationStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus PENDING = new OperationStatus("PENDING");
+        /// <summary>
+        /// Constant READY for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus READY = new OperationStatus("READY");
+        /// <summary>
+        /// Constant STARTED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus STARTED = new OperationStatus("STARTED");
+        /// <summary>
+        /// Constant STOPPED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus STOPPED = new OperationStatus("STOPPED");
+        /// <summary>
+        /// Constant SUCCEEDED for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus SUCCEEDED = new OperationStatus("SUCCEEDED");
+        /// <summary>
+        /// Constant TIMED_OUT for OperationStatus
+        /// </summary>
+        public static readonly OperationStatus TIMED_OUT = new OperationStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationStatus FindValue(string value)
+        {
+            return FindValue<OperationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperationType.
+    /// </summary>
+    public class OperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CALLBACK for OperationType
+        /// </summary>
+        public static readonly OperationType CALLBACK = new OperationType("CALLBACK");
+        /// <summary>
+        /// Constant CHAINED_INVOKE for OperationType
+        /// </summary>
+        public static readonly OperationType CHAINED_INVOKE = new OperationType("CHAINED_INVOKE");
+        /// <summary>
+        /// Constant CONTEXT for OperationType
+        /// </summary>
+        public static readonly OperationType CONTEXT = new OperationType("CONTEXT");
+        /// <summary>
+        /// Constant EXECUTION for OperationType
+        /// </summary>
+        public static readonly OperationType EXECUTION = new OperationType("EXECUTION");
+        /// <summary>
+        /// Constant STEP for OperationType
+        /// </summary>
+        public static readonly OperationType STEP = new OperationType("STEP");
+        /// <summary>
+        /// Constant WAIT for OperationType
+        /// </summary>
+        public static readonly OperationType WAIT = new OperationType("WAIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperationType FindValue(string value)
+        {
+            return FindValue<OperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PackageType.
     /// </summary>
     public class PackageType : ConstantClass
@@ -2002,6 +2404,10 @@ namespace Amazon.Lambda
         /// Constant DisabledKMSKey for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode DisabledKMSKey = new StateReasonCode("DisabledKMSKey");
+        /// <summary>
+        /// Constant DrainingDurableExecutions for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode DrainingDurableExecutions = new StateReasonCode("DrainingDurableExecutions");
         /// <summary>
         /// Constant EC2RequestLimitExceeded for StateReasonCode
         /// </summary>

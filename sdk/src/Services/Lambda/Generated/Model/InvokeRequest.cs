@@ -96,6 +96,7 @@ namespace Amazon.Lambda.Model
     public partial class InvokeRequest : AmazonLambdaRequest
     {
         private string _clientContextBase64;
+        private string _durableExecutionName;
         private string _functionName;
         private InvocationType _invocationType;
         private LogType _logType;
@@ -121,6 +122,27 @@ namespace Amazon.Lambda.Model
         internal bool IsSetClientContextBase64()
         {
             return this._clientContextBase64 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DurableExecutionName. 
+        /// <para>
+        /// Optional unique name for the durable execution. When you start your special function,
+        /// you can give it a unique name to identify this specific execution. It's like giving
+        /// a nickname to a task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string DurableExecutionName
+        {
+            get { return this._durableExecutionName; }
+            set { this._durableExecutionName = value; }
+        }
+
+        // Check to see if DurableExecutionName property is set
+        internal bool IsSetDurableExecutionName()
+        {
+            return this._durableExecutionName != null;
         }
 
         /// <summary>
