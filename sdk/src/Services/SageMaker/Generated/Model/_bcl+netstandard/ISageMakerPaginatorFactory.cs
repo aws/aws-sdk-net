@@ -428,6 +428,16 @@ namespace Amazon.SageMaker.Model
         IListLineageGroupsPaginator ListLineageGroups(ListLineageGroupsRequest request);
 
         /// <summary>
+        /// Paginator for ListMlflowApps operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMlflowAppsPaginator ListMlflowApps(ListMlflowAppsRequest request);
+
+        /// <summary>
         /// Paginator for ListMlflowTrackingServers operation
         ///</summary>
         [AWSPaginator(

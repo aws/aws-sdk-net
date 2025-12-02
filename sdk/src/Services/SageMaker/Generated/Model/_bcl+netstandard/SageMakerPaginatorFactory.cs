@@ -357,6 +357,14 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Paginator for ListMlflowApps operation
+        ///</summary>
+        public IListMlflowAppsPaginator ListMlflowApps(ListMlflowAppsRequest request) 
+        {
+            return new ListMlflowAppsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMlflowTrackingServers operation
         ///</summary>
         public IListMlflowTrackingServersPaginator ListMlflowTrackingServers(ListMlflowTrackingServersRequest request) 

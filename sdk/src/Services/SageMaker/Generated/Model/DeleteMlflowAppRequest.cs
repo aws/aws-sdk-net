@@ -30,28 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The type of orchestrator used for the SageMaker HyperPod cluster.
+    /// Container for the parameters to the DeleteMlflowApp operation.
+    /// Deletes an MLflow App.
     /// </summary>
-    public partial class ClusterOrchestrator
+    public partial class DeleteMlflowAppRequest : AmazonSageMakerRequest
     {
-        private ClusterOrchestratorEksConfig _eks;
+        private string _arn;
 
         /// <summary>
-        /// Gets and sets the property Eks. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod cluster.
+        /// The ARN of the MLflow App to delete.
         /// </para>
         /// </summary>
-        public ClusterOrchestratorEksConfig Eks
+        [AWSProperty(Required=true, Min=1, Max=128)]
+        public string Arn
         {
-            get { return this._eks; }
-            set { this._eks = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if Eks property is set
-        internal bool IsSetEks()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._eks != null;
+            return this._arn != null;
         }
 
     }
