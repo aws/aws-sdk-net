@@ -851,6 +851,12 @@ namespace Amazon.S3
         /// The Amazon FSx for OpenZFS is a fully managed file storage service built on the OpenZFS file system.
         /// </summary>
         public static readonly S3StorageClass FSX_OPENZFS = new S3StorageClass("FSX_OPENZFS");
+        
+        /// <summary>
+        /// The Amazon FSx for NetApp ONTAP is a fully managed file storage service built on the NetApp ONTAP file system.
+        /// </summary>
+        public static readonly S3StorageClass FSX_ONTAP = new S3StorageClass("FSX_ONTAP");
+
         /// <summary>
         /// Construct an instance of S3StorageClass.
         /// </summary>
