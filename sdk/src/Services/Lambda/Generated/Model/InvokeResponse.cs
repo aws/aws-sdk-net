@@ -34,11 +34,32 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class InvokeResponse : AmazonWebServiceResponse
     {
+        private string _durableExecutionArn;
         private string _executedVersion;
         private string _functionError;
         private string _logResult;
         private MemoryStream _payload;
         private int? _statusCode;
+
+        /// <summary>
+        /// Gets and sets the property DurableExecutionArn. 
+        /// <para>
+        /// The ARN of the durable execution that was started. This is returned when invoking
+        /// a durable function and provides a unique identifier for tracking the execution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string DurableExecutionArn
+        {
+            get { return this._durableExecutionArn; }
+            set { this._durableExecutionArn = value; }
+        }
+
+        // Check to see if DurableExecutionArn property is set
+        internal bool IsSetDurableExecutionArn()
+        {
+            return !string.IsNullOrEmpty(this._durableExecutionArn);
+        }
 
         /// <summary>
         /// Gets and sets the property ExecutedVersion. 

@@ -37,6 +37,22 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Paginator for GetDurableExecutionHistory operation
+        ///</summary>
+        public IGetDurableExecutionHistoryPaginator GetDurableExecutionHistory(GetDurableExecutionHistoryRequest request) 
+        {
+            return new GetDurableExecutionHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetDurableExecutionState operation
+        ///</summary>
+        public IGetDurableExecutionStatePaginator GetDurableExecutionState(GetDurableExecutionStateRequest request) 
+        {
+            return new GetDurableExecutionStatePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAliases operation
         ///</summary>
         public IListAliasesPaginator ListAliases(ListAliasesRequest request) 
@@ -58,6 +74,14 @@ namespace Amazon.Lambda.Model
         public IListCodeSigningConfigsPaginator ListCodeSigningConfigs(ListCodeSigningConfigsRequest request) 
         {
             return new ListCodeSigningConfigsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDurableExecutionsByFunction operation
+        ///</summary>
+        public IListDurableExecutionsByFunctionPaginator ListDurableExecutionsByFunction(ListDurableExecutionsByFunctionRequest request) 
+        {
+            return new ListDurableExecutionsByFunctionPaginator(this.client, request);
         }
 
         /// <summary>

@@ -28,6 +28,26 @@ namespace Amazon.Lambda.Model
     {
 
         /// <summary>
+        /// Paginator for GetDurableExecutionHistory operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IGetDurableExecutionHistoryPaginator GetDurableExecutionHistory(GetDurableExecutionHistoryRequest request);
+
+        /// <summary>
+        /// Paginator for GetDurableExecutionState operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IGetDurableExecutionStatePaginator GetDurableExecutionState(GetDurableExecutionStateRequest request);
+
+        /// <summary>
         /// Paginator for ListAliases operation
         ///</summary>
         [AWSPaginator(
@@ -56,6 +76,16 @@ namespace Amazon.Lambda.Model
             OutputToken = new[] { "NextMarker" }
         )]
         IListCodeSigningConfigsPaginator ListCodeSigningConfigs(ListCodeSigningConfigsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDurableExecutionsByFunction operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextMarker" }
+        )]
+        IListDurableExecutionsByFunctionPaginator ListDurableExecutionsByFunction(ListDurableExecutionsByFunctionRequest request);
 
         /// <summary>
         /// Paginator for ListEventSourceMappings operation

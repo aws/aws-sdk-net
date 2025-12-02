@@ -126,6 +126,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
                     S3Key = "function.zip"
                 },
                 Description = "Process image objects from Amazon S3.",
+                DurableConfig = new DurableConfig {
+                    ExecutionTimeout = 31622400,
+                    RetentionPeriodInDays = 30
+                },
                 Environment = new Environment { Variables = new Dictionary<string, string> {
                     { "BUCKET", "my-bucket-1xpuxmplzrlbh" },
                     { "PREFIX", "inbound" }
@@ -147,6 +151,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             string codeSha256 = response.CodeSha256;
             long codeSize = response.CodeSize;
             string description = response.Description;
+            DurableConfig durableConfig = response.DurableConfig;
             EnvironmentResponse environment = response.Environment;
             string functionArn = response.FunctionArn;
             string functionName = response.FunctionName;
@@ -384,6 +389,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             string codeSha256 = response.CodeSha256;
             long codeSize = response.CodeSize;
             string description = response.Description;
+            DurableConfig durableConfig = response.DurableConfig;
             EnvironmentResponse environment = response.Environment;
             string functionArn = response.FunctionArn;
             string functionName = response.FunctionName;
@@ -531,7 +537,9 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             var client = new AmazonLambdaClient();
             var response = client.Invoke(new InvokeRequest 
             {
+                DurableExecutionName = "myExecution",
                 FunctionName = "my-function",
+                InvocationType = "Event",
                 Qualifier = "1"
             });
 
@@ -985,6 +993,10 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             var client = new AmazonLambdaClient();
             var response = client.UpdateFunctionConfiguration(new UpdateFunctionConfigurationRequest 
             {
+                DurableConfig = new DurableConfig {
+                    ExecutionTimeout = 3600,
+                    RetentionPeriodInDays = 45
+                },
                 FunctionName = "my-function",
                 MemorySize = 256
             });
@@ -992,6 +1004,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
             string codeSha256 = response.CodeSha256;
             long codeSize = response.CodeSize;
             string description = response.Description;
+            DurableConfig durableConfig = response.DurableConfig;
             string functionArn = response.FunctionArn;
             string functionName = response.FunctionName;
             string handler = response.Handler;

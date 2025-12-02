@@ -113,6 +113,7 @@ namespace Amazon.Lambda.Model
         private string _codeSigningConfigArn;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
+        private DurableConfig _durableConfig;
         private Environment _environment;
         private EphemeralStorage _ephemeralStorage;
         private List<FileSystemConfig> _fileSystemConfigs = AWSConfigs.InitializeCollections ? new List<FileSystemConfig>() : null;
@@ -251,6 +252,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DurableConfig. 
+        /// <para>
+        /// Configuration settings for durable functions. Enables creating functions with durability
+        /// that can remember their state and continue execution even after interruptions.
+        /// </para>
+        /// </summary>
+        public DurableConfig DurableConfig
+        {
+            get { return this._durableConfig; }
+            set { this._durableConfig = value; }
+        }
+
+        // Check to see if DurableConfig property is set
+        internal bool IsSetDurableConfig()
+        {
+            return this._durableConfig != null;
         }
 
         /// <summary>

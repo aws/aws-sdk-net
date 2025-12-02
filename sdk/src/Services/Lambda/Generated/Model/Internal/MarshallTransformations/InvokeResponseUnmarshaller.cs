@@ -52,6 +52,8 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
             response.Payload = ms;
+            if (context.ResponseData.IsHeaderPresent("X-Amz-Durable-Execution-Arn"))
+                response.DurableExecutionArn = context.ResponseData.GetHeaderValue("X-Amz-Durable-Execution-Arn");
             if (context.ResponseData.IsHeaderPresent("X-Amz-Executed-Version"))
                 response.ExecutedVersion = context.ResponseData.GetHeaderValue("X-Amz-Executed-Version");
             if (context.ResponseData.IsHeaderPresent("X-Amz-Function-Error"))
@@ -81,6 +83,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DurableExecutionAlreadyStartedException"))
+                {
+                    return DurableExecutionAlreadyStartedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EC2AccessDeniedException"))
                 {
                     return EC2AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

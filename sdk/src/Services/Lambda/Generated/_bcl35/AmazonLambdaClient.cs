@@ -576,6 +576,80 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  CheckpointDurableExecution
+
+        /// <summary>
+        /// Saves the progress of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// function</a> execution during runtime. This API is used by the Lambda durable functions
+        /// SDK to checkpoint completed steps and schedule asynchronous operations. You typically
+        /// don't need to call this API directly as the SDK handles checkpointing automatically.
+        /// 
+        ///  
+        /// <para>
+        /// Each checkpoint operation consumes the current checkpoint token and returns a new
+        /// one for the next checkpoint. This ensures that checkpoints are applied in the correct
+        /// order and prevents duplicate or out-of-order state updates.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckpointDurableExecution service method.</param>
+        /// 
+        /// <returns>The response from the CheckpointDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CheckpointDurableExecution">REST API Reference for CheckpointDurableExecution Operation</seealso>
+        public virtual CheckpointDurableExecutionResponse CheckpointDurableExecution(CheckpointDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CheckpointDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckpointDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<CheckpointDurableExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CheckpointDurableExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CheckpointDurableExecution operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCheckpointDurableExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CheckpointDurableExecution">REST API Reference for CheckpointDurableExecution Operation</seealso>
+        public virtual IAsyncResult BeginCheckpointDurableExecution(CheckpointDurableExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CheckpointDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CheckpointDurableExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CheckpointDurableExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCheckpointDurableExecution.</param>
+        /// 
+        /// <returns>Returns a  CheckpointDurableExecutionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CheckpointDurableExecution">REST API Reference for CheckpointDurableExecution Operation</seealso>
+        public virtual CheckpointDurableExecutionResponse EndCheckpointDurableExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CheckpointDurableExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAlias
 
         /// <summary>
@@ -2310,6 +2384,225 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  GetDurableExecution
+
+        /// <summary>
+        /// Retrieves detailed information about a specific <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a>, including its current status, input payload, result or error information,
+        /// and execution metadata such as start time and usage statistics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDurableExecution service method.</param>
+        /// 
+        /// <returns>The response from the GetDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecution">REST API Reference for GetDurableExecution Operation</seealso>
+        public virtual GetDurableExecutionResponse GetDurableExecution(GetDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<GetDurableExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDurableExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDurableExecution operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDurableExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecution">REST API Reference for GetDurableExecution Operation</seealso>
+        public virtual IAsyncResult BeginGetDurableExecution(GetDurableExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDurableExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDurableExecution.</param>
+        /// 
+        /// <returns>Returns a  GetDurableExecutionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecution">REST API Reference for GetDurableExecution Operation</seealso>
+        public virtual GetDurableExecutionResponse EndGetDurableExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDurableExecutionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDurableExecutionHistory
+
+        /// <summary>
+        /// Retrieves the execution history for a <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a>, showing all the steps, callbacks, and events that occurred during the
+        /// execution. This provides a detailed audit trail of the execution's progress over time.
+        /// 
+        ///  
+        /// <para>
+        /// The history is available while the execution is running and for a retention period
+        /// after it completes (1-90 days, default 30 days). You can control whether to include
+        /// execution data such as step results and callback payloads.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDurableExecutionHistory service method.</param>
+        /// 
+        /// <returns>The response from the GetDurableExecutionHistory service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecutionHistory">REST API Reference for GetDurableExecutionHistory Operation</seealso>
+        public virtual GetDurableExecutionHistoryResponse GetDurableExecutionHistory(GetDurableExecutionHistoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetDurableExecutionHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDurableExecutionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDurableExecutionHistory operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDurableExecutionHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecutionHistory">REST API Reference for GetDurableExecutionHistory Operation</seealso>
+        public virtual IAsyncResult BeginGetDurableExecutionHistory(GetDurableExecutionHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDurableExecutionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDurableExecutionHistory.</param>
+        /// 
+        /// <returns>Returns a  GetDurableExecutionHistoryResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecutionHistory">REST API Reference for GetDurableExecutionHistory Operation</seealso>
+        public virtual GetDurableExecutionHistoryResponse EndGetDurableExecutionHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDurableExecutionHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDurableExecutionState
+
+        /// <summary>
+        /// Retrieves the current execution state required for the replay process during <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// function</a> execution. This API is used by the Lambda durable functions SDK to get
+        /// state information needed for replay. You typically don't need to call this API directly
+        /// as the SDK handles state management automatically.
+        /// 
+        ///  
+        /// <para>
+        /// The response contains operations ordered by start sequence number in ascending order.
+        /// Completed operations with children don't include child operation details since they
+        /// don't need to be replayed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDurableExecutionState service method.</param>
+        /// 
+        /// <returns>The response from the GetDurableExecutionState service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecutionState">REST API Reference for GetDurableExecutionState Operation</seealso>
+        public virtual GetDurableExecutionStateResponse GetDurableExecutionState(GetDurableExecutionStateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionStateResponseUnmarshaller.Instance;
+
+            return Invoke<GetDurableExecutionStateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDurableExecutionState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDurableExecutionState operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDurableExecutionState
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecutionState">REST API Reference for GetDurableExecutionState Operation</seealso>
+        public virtual IAsyncResult BeginGetDurableExecutionState(GetDurableExecutionStateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDurableExecutionStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDurableExecutionStateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDurableExecutionState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDurableExecutionState.</param>
+        /// 
+        /// <returns>Returns a  GetDurableExecutionStateResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetDurableExecutionState">REST API Reference for GetDurableExecutionState Operation</seealso>
+        public virtual GetDurableExecutionStateResponse EndGetDurableExecutionState(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDurableExecutionStateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetEventSourceMapping
 
         /// <summary>
@@ -3478,6 +3771,11 @@ namespace Amazon.Lambda
         /// <param name="request">Container for the necessary parameters to execute the Invoke service method.</param>
         /// 
         /// <returns>The response from the Invoke service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.DurableExecutionAlreadyStartedException">
+        /// The durable execution with the specified name has already been started. Each durable
+        /// execution name must be unique within the function. Use a different name or check the
+        /// status of the existing execution.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.EC2AccessDeniedException">
         /// Need additional permissions to configure VPC settings.
         /// </exception>
@@ -4102,6 +4400,76 @@ namespace Amazon.Lambda
         public virtual ListCodeSigningConfigsResponse EndListCodeSigningConfigs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCodeSigningConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDurableExecutionsByFunction
+
+        /// <summary>
+        /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// executions</a> for a specified Lambda function. You can filter the results by execution
+        /// name, status, and start time range. This API supports pagination for large result
+        /// sets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDurableExecutionsByFunction service method.</param>
+        /// 
+        /// <returns>The response from the ListDurableExecutionsByFunction service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListDurableExecutionsByFunction">REST API Reference for ListDurableExecutionsByFunction Operation</seealso>
+        public virtual ListDurableExecutionsByFunctionResponse ListDurableExecutionsByFunction(ListDurableExecutionsByFunctionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDurableExecutionsByFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDurableExecutionsByFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<ListDurableExecutionsByFunctionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDurableExecutionsByFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDurableExecutionsByFunction operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDurableExecutionsByFunction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListDurableExecutionsByFunction">REST API Reference for ListDurableExecutionsByFunction Operation</seealso>
+        public virtual IAsyncResult BeginListDurableExecutionsByFunction(ListDurableExecutionsByFunctionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDurableExecutionsByFunctionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDurableExecutionsByFunctionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDurableExecutionsByFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDurableExecutionsByFunction.</param>
+        /// 
+        /// <returns>Returns a  ListDurableExecutionsByFunctionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListDurableExecutionsByFunction">REST API Reference for ListDurableExecutionsByFunction Operation</seealso>
+        public virtual ListDurableExecutionsByFunctionResponse EndListDurableExecutionsByFunction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDurableExecutionsByFunctionResponse>(asyncResult);
         }
 
         #endregion
@@ -5819,6 +6187,283 @@ namespace Amazon.Lambda
         public virtual RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult)
         {
             return EndInvoke<RemovePermissionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SendDurableExecutionCallbackFailure
+
+        /// <summary>
+        /// Sends a failure response for a callback operation in a durable execution. Use this
+        /// API when an external system cannot complete a callback operation successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDurableExecutionCallbackFailure service method.</param>
+        /// 
+        /// <returns>The response from the SendDurableExecutionCallbackFailure service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CallbackTimeoutException">
+        /// The callback ID token has either expired or the callback associated with the token
+        /// has already been closed.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackFailure">REST API Reference for SendDurableExecutionCallbackFailure Operation</seealso>
+        public virtual SendDurableExecutionCallbackFailureResponse SendDurableExecutionCallbackFailure(SendDurableExecutionCallbackFailureRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackFailureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackFailureResponseUnmarshaller.Instance;
+
+            return Invoke<SendDurableExecutionCallbackFailureResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendDurableExecutionCallbackFailure operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendDurableExecutionCallbackFailure operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendDurableExecutionCallbackFailure
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackFailure">REST API Reference for SendDurableExecutionCallbackFailure Operation</seealso>
+        public virtual IAsyncResult BeginSendDurableExecutionCallbackFailure(SendDurableExecutionCallbackFailureRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackFailureRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackFailureResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendDurableExecutionCallbackFailure operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendDurableExecutionCallbackFailure.</param>
+        /// 
+        /// <returns>Returns a  SendDurableExecutionCallbackFailureResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackFailure">REST API Reference for SendDurableExecutionCallbackFailure Operation</seealso>
+        public virtual SendDurableExecutionCallbackFailureResponse EndSendDurableExecutionCallbackFailure(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendDurableExecutionCallbackFailureResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SendDurableExecutionCallbackHeartbeat
+
+        /// <summary>
+        /// Sends a heartbeat signal for a long-running callback operation to prevent timeout.
+        /// Use this API to extend the callback timeout period while the external operation is
+        /// still in progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDurableExecutionCallbackHeartbeat service method.</param>
+        /// 
+        /// <returns>The response from the SendDurableExecutionCallbackHeartbeat service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CallbackTimeoutException">
+        /// The callback ID token has either expired or the callback associated with the token
+        /// has already been closed.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackHeartbeat">REST API Reference for SendDurableExecutionCallbackHeartbeat Operation</seealso>
+        public virtual SendDurableExecutionCallbackHeartbeatResponse SendDurableExecutionCallbackHeartbeat(SendDurableExecutionCallbackHeartbeatRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackHeartbeatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackHeartbeatResponseUnmarshaller.Instance;
+
+            return Invoke<SendDurableExecutionCallbackHeartbeatResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendDurableExecutionCallbackHeartbeat operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendDurableExecutionCallbackHeartbeat operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendDurableExecutionCallbackHeartbeat
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackHeartbeat">REST API Reference for SendDurableExecutionCallbackHeartbeat Operation</seealso>
+        public virtual IAsyncResult BeginSendDurableExecutionCallbackHeartbeat(SendDurableExecutionCallbackHeartbeatRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackHeartbeatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackHeartbeatResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendDurableExecutionCallbackHeartbeat operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendDurableExecutionCallbackHeartbeat.</param>
+        /// 
+        /// <returns>Returns a  SendDurableExecutionCallbackHeartbeatResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackHeartbeat">REST API Reference for SendDurableExecutionCallbackHeartbeat Operation</seealso>
+        public virtual SendDurableExecutionCallbackHeartbeatResponse EndSendDurableExecutionCallbackHeartbeat(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendDurableExecutionCallbackHeartbeatResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SendDurableExecutionCallbackSuccess
+
+        /// <summary>
+        /// Sends a successful completion response for a callback operation in a durable execution.
+        /// Use this API when an external system has successfully completed a callback operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendDurableExecutionCallbackSuccess service method.</param>
+        /// 
+        /// <returns>The response from the SendDurableExecutionCallbackSuccess service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CallbackTimeoutException">
+        /// The callback ID token has either expired or the callback associated with the token
+        /// has already been closed.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackSuccess">REST API Reference for SendDurableExecutionCallbackSuccess Operation</seealso>
+        public virtual SendDurableExecutionCallbackSuccessResponse SendDurableExecutionCallbackSuccess(SendDurableExecutionCallbackSuccessRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackSuccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackSuccessResponseUnmarshaller.Instance;
+
+            return Invoke<SendDurableExecutionCallbackSuccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SendDurableExecutionCallbackSuccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SendDurableExecutionCallbackSuccess operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendDurableExecutionCallbackSuccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackSuccess">REST API Reference for SendDurableExecutionCallbackSuccess Operation</seealso>
+        public virtual IAsyncResult BeginSendDurableExecutionCallbackSuccess(SendDurableExecutionCallbackSuccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendDurableExecutionCallbackSuccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendDurableExecutionCallbackSuccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SendDurableExecutionCallbackSuccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendDurableExecutionCallbackSuccess.</param>
+        /// 
+        /// <returns>Returns a  SendDurableExecutionCallbackSuccessResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SendDurableExecutionCallbackSuccess">REST API Reference for SendDurableExecutionCallbackSuccess Operation</seealso>
+        public virtual SendDurableExecutionCallbackSuccessResponse EndSendDurableExecutionCallbackSuccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SendDurableExecutionCallbackSuccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopDurableExecution
+
+        /// <summary>
+        /// Stops a running <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable
+        /// execution</a>. The execution transitions to STOPPED status and cannot be resumed.
+        /// Any in-progress operations are terminated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDurableExecution service method.</param>
+        /// 
+        /// <returns>The response from the StopDurableExecution service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+        /// quotas</a>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/StopDurableExecution">REST API Reference for StopDurableExecution Operation</seealso>
+        public virtual StopDurableExecutionResponse StopDurableExecution(StopDurableExecutionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDurableExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StopDurableExecutionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDurableExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDurableExecution operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDurableExecution
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/StopDurableExecution">REST API Reference for StopDurableExecution Operation</seealso>
+        public virtual IAsyncResult BeginStopDurableExecution(StopDurableExecutionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopDurableExecutionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopDurableExecutionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopDurableExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDurableExecution.</param>
+        /// 
+        /// <returns>Returns a  StopDurableExecutionResult from Lambda.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/StopDurableExecution">REST API Reference for StopDurableExecution Operation</seealso>
+        public virtual StopDurableExecutionResponse EndStopDurableExecution(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopDurableExecutionResponse>(asyncResult);
         }
 
         #endregion

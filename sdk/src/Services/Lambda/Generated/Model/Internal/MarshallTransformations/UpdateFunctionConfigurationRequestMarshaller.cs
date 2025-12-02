@@ -98,6 +98,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDurableConfig())
+                {
+                    context.Writer.WritePropertyName("DurableConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DurableConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DurableConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEnvironment())
                 {
                     context.Writer.WritePropertyName("Environment");
