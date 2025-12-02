@@ -20,7 +20,9 @@
  *
  */
 
-using Amazon.Runtime;
+using System;
+using System.Collections.Generic;
+using Amazon.S3.Transfer.Model;
 
 namespace Amazon.S3.Transfer
 {
@@ -30,6 +32,24 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public class TransferUtilityUploadDirectoryResponse
     {
-        // Empty placeholder class - properties will be added in future iterations
+        /// <summary>
+        /// The number of objects that have been successfully uploaded.
+        /// </summary>
+        public long ObjectsUploaded { get; set; }
+
+        /// <summary>
+        /// The number of objects that failed to upload. Zero if all succeeded.
+        /// </summary>
+        public long ObjectsFailed { get; set; }
+
+        /// <summary>
+        /// The collection of exceptions encountered when uploading individual objects.
+        /// </summary>
+        public IList<Exception> Errors { get; set; }
+
+        /// <summary>
+        /// Overall result of the directory upload operation.
+        /// </summary>
+        public DirectoryResult Result { get; set; }
     }
 }
