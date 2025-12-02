@@ -855,9 +855,10 @@ namespace AWSSDK.UnitTests
             var partSize = 8 * 1024 * 1024;
             var totalObjectSize = totalParts * partSize;
             
-            var capacityAcquisitions = new List<DateTime>();
-            var taskCreations = new List<DateTime>();
+            // Track operation order with sequential counter
+            var operationOrder = new List<(string operation, int partNum, int sequence)>();
             var lockObject = new object();
+            var operationCounter = 0;
             
             var mockDataHandler = new Mock<IPartDataHandler>();
             
@@ -867,18 +868,19 @@ namespace AWSSDK.UnitTests
                 {
                     lock (lockObject)
                     {
-                        capacityAcquisitions.Add(DateTime.UtcNow);
+                        var partNum = operationOrder.Count(o => o.operation == "capacity") + 2; // Parts 2, 3
+                        operationOrder.Add(("capacity", partNum, operationCounter++));
                     }
                     return Task.CompletedTask;
                 });
             
             mockDataHandler
                 .Setup(x => x.ProcessPartAsync(It.IsAny<int>(), It.IsAny<GetObjectResponse>(), It.IsAny<CancellationToken>()))
-                .Returns(() =>
+                .Returns<int, GetObjectResponse, CancellationToken>((partNum, response, ct) =>
                 {
                     lock (lockObject)
                     {
-                        taskCreations.Add(DateTime.UtcNow);
+                        operationOrder.Add(("task", partNum, operationCounter++));
                     }
                     return Task.CompletedTask;
                 });
@@ -903,18 +905,30 @@ namespace AWSSDK.UnitTests
             // Assert
             lock (lockObject)
             {
-                Assert.AreEqual(2, capacityAcquisitions.Count, "Should acquire capacity for parts 2-3");
-                Assert.AreEqual(3, taskCreations.Count, "Should create tasks for parts 1-3");
+                var capacityOps = operationOrder.Where(o => o.operation == "capacity").ToList();
+                var taskOps = operationOrder.Where(o => o.operation == "task").ToList();
                 
-                // Verify all capacity acquisitions happened before task creations
-                // (excluding Part 1 which doesn't need capacity acquisition)
-                var lastCapacityTime = capacityAcquisitions.Max();
-                var firstTaskTime = taskCreations.Min();
+                Assert.AreEqual(2, capacityOps.Count, "Should acquire capacity for parts 2-3");
+                Assert.AreEqual(3, taskOps.Count, "Should create tasks for parts 1-3");
                 
-                // Allow small timing variance due to test execution
-                var timeDifference = (firstTaskTime - lastCapacityTime).TotalMilliseconds;
-                Assert.IsTrue(timeDifference >= -50, 
-                    $"All capacity should be acquired before tasks start. Difference: {timeDifference}ms");
+                // Verify all capacity acquisitions happened before any task creation
+                // Find the highest sequence number among capacity operations
+                var lastCapacitySequence = capacityOps.Max(o => o.sequence);
+                
+                // Find the lowest sequence number among task operations
+                var firstTaskSequence = taskOps.Min(o => o.sequence);
+                
+                // All capacity must be acquired (have lower sequence numbers) before tasks start
+                Assert.IsTrue(lastCapacitySequence < firstTaskSequence,
+                    $"All capacity acquisitions must complete before task creation. " +
+                    $"Last capacity sequence: {lastCapacitySequence}, First task sequence: {firstTaskSequence}. " +
+                    $"Operations: {string.Join(", ", operationOrder.Select(o => $"{o.operation}({o.partNum})={o.sequence}"))}");
+                
+                // Additional verification: Part 1 should be first task (processed during StartDownloadsAsync)
+                var part1Task = taskOps.FirstOrDefault(o => o.partNum == 1);
+                Assert.IsNotNull(part1Task, "Part 1 should be processed");
+                Assert.IsTrue(part1Task.sequence < lastCapacitySequence,
+                    "Part 1 should be processed before capacity acquisition for background parts");
             }
         }
 
