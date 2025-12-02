@@ -2267,6 +2267,10 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly SupportedSavingsPlansType COMPUTE_SP = new SupportedSavingsPlansType("COMPUTE_SP");
         /// <summary>
+        /// Constant DATABASE_SP for SupportedSavingsPlansType
+        /// </summary>
+        public static readonly SupportedSavingsPlansType DATABASE_SP = new SupportedSavingsPlansType("DATABASE_SP");
+        /// <summary>
         /// Constant EC2_INSTANCE_SP for SupportedSavingsPlansType
         /// </summary>
         public static readonly SupportedSavingsPlansType EC2_INSTANCE_SP = new SupportedSavingsPlansType("EC2_INSTANCE_SP");
