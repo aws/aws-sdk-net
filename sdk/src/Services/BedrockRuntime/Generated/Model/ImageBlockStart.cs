@@ -30,37 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Image content for a message.
+    /// The initial event in a streaming image block that indicates the start of image content.
     /// </summary>
-    public partial class ImageBlock
+    public partial class ImageBlockStart
     {
-        private ErrorBlock _error;
         private ImageFormat _format;
-        private ImageSource _source;
-
-        /// <summary>
-        /// Gets and sets the property Error. 
-        /// <para>
-        /// Error information if the image block could not be processed or contains invalid data.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public ErrorBlock Error
-        {
-            get { return this._error; }
-            set { this._error = value; }
-        }
-
-        // Check to see if Error property is set
-        internal bool IsSetError()
-        {
-            return this._error != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The format of the image.
+        /// The format of the image data that will be streamed in subsequent delta events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -74,25 +53,6 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetFormat()
         {
             return this._format != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Source. 
-        /// <para>
-        /// The source for the image.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
-        public ImageSource Source
-        {
-            get { return this._source; }
-            set { this._source = value; }
-        }
-
-        // Check to see if Source property is set
-        internal bool IsSetSource()
-        {
-            return this._source != null;
         }
 
     }

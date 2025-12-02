@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ImageBlock Marshaller
+    /// ErrorBlock Marshaller
     /// </summary>
-    public class ImageBlockMarshaller : IRequestMarshaller<ImageBlock, JsonMarshallerContext> 
+    public class ErrorBlockMarshaller : IRequestMarshaller<ErrorBlock, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,14 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ImageBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(ErrorBlock requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetError())
+            if(requestObject.IsSetMessage())
             {
-                context.Writer.WritePropertyName("error");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ErrorBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.Error, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetFormat())
-            {
-                context.Writer.WritePropertyName("format");
-                context.Writer.Write(requestObject.Format);
-            }
-
-            if(requestObject.IsSetSource())
-            {
-                context.Writer.WritePropertyName("source");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ImageSourceMarshaller.Instance;
-                marshaller.Marshall(requestObject.Source, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("message");
+                context.Writer.Write(requestObject.Message);
             }
 
         }
@@ -81,7 +59,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ImageBlockMarshaller Instance = new ImageBlockMarshaller();
+        public readonly static ErrorBlockMarshaller Instance = new ErrorBlockMarshaller();
 
     }
 }

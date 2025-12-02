@@ -30,18 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// Image content for a message.
+    /// A streaming delta event that contains incremental image data during streaming responses.
     /// </summary>
-    public partial class ImageBlock
+    public partial class ImageBlockDelta
     {
         private ErrorBlock _error;
-        private ImageFormat _format;
         private ImageSource _source;
 
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Error information if the image block could not be processed or contains invalid data.
+        /// Error information if this image delta could not be processed.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -58,31 +57,12 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Format. 
-        /// <para>
-        /// The format of the image.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ImageFormat Format
-        {
-            get { return this._format; }
-            set { this._format = value; }
-        }
-
-        // Check to see if Format property is set
-        internal bool IsSetFormat()
-        {
-            return this._format != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source for the image.
+        /// The incremental image source data for this delta event.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Sensitive=true)]
         public ImageSource Source
         {
             get { return this._source; }

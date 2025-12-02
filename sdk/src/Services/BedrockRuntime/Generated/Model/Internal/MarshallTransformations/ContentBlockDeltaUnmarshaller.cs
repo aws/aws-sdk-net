@@ -72,6 +72,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Citation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("image", targetDepth))
+                {
+                    var unmarshaller = ImageBlockDeltaUnmarshaller.Instance;
+                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("reasoningContent", targetDepth))
                 {
                     var unmarshaller = ReasoningContentBlockDeltaUnmarshaller.Instance;
