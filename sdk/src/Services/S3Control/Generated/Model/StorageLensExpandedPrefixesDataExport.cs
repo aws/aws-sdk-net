@@ -30,44 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// A container to specify the properties of your S3 Storage Lens metrics export, including
-    /// the destination, schema, and format.
+    /// A container for your S3 Storage Lens expanded prefix metrics report configuration.
+    /// Unlike the default Storage Lens metrics report, the enhanced prefix metrics report
+    /// includes all S3 Storage Lens storage and activity data related to the full list of
+    /// prefixes in your Storage Lens configuration.
     /// </summary>
-    public partial class StorageLensDataExport
+    public partial class StorageLensExpandedPrefixesDataExport
     {
-        private CloudWatchMetrics _cloudWatchMetrics;
         private S3BucketDestination _s3BucketDestination;
         private StorageLensTableDestination _storageLensTableDestination;
 
         /// <summary>
-        /// Gets and sets the property CloudWatchMetrics. 
-        /// <para>
-        /// A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics.
-        /// </para>
-        /// </summary>
-        public CloudWatchMetrics CloudWatchMetrics
-        {
-            get { return this._cloudWatchMetrics; }
-            set { this._cloudWatchMetrics = value; }
-        }
-
-        // Check to see if CloudWatchMetrics property is set
-        internal bool IsSetCloudWatchMetrics()
-        {
-            return this._cloudWatchMetrics != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3BucketDestination. 
-        /// <para>
-        /// A container for the bucket where the S3 Storage Lens metrics export will be located.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This bucket must be located in the same Region as the storage lens configuration.
-        /// 
-        /// </para>
-        ///  </note>
+        /// Gets and sets the property S3BucketDestination.
         /// </summary>
         public S3BucketDestination S3BucketDestination
         {
@@ -84,7 +58,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property StorageLensTableDestination. 
         /// <para>
-        /// A container for configuring S3 Storage Lens data exports to read-only S3 table buckets.
+        /// A container for the bucket where the S3 Storage Lens metric export files are located.
+        /// At least one export destination must be specified.
         /// </para>
         /// </summary>
         public StorageLensTableDestination StorageLensTableDestination

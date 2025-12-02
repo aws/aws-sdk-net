@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Directs the specified job to invoke the <c>ComputeObjectChecksum</c> operation on
-    /// every object listed in the job's manifest.
+    /// Directs the specified job to invoke the ComputeObjectChecksum operation on every object
+    /// listed in the job's manifest.
     /// </summary>
     public partial class S3ComputeObjectChecksumOperation
     {
@@ -43,7 +43,7 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// Indicates the algorithm that you want Amazon S3 to use to create the checksum. For
         /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
-        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// object integrity</a> in the Amazon S3 User Guide.
         /// </para>
         /// </summary>
         public ComputeObjectChecksumAlgorithm ChecksumAlgorithm
@@ -61,9 +61,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ChecksumType. 
         /// <para>
-        /// Indicates the checksum type that you want Amazon S3 to use to calculate the object’s
+        /// Indicates the checksum type that you want Amazon S3 to use to calculate the object's
         /// checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
-        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// object integrity</a> in the Amazon S3 User Guide.
         /// </para>
         /// </summary>
         public ComputeObjectChecksumType ChecksumType

@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StorageLensDataExport Object
+    /// Response Unmarshaller for StorageLensTableDestination Object
     /// </summary>  
-    public partial class StorageLensDataExportUnmarshaller : IXmlUnmarshaller<StorageLensDataExport, XmlUnmarshallerContext>
+    public partial class StorageLensTableDestinationUnmarshaller : IXmlUnmarshaller<StorageLensTableDestination, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StorageLensDataExport Unmarshall(XmlUnmarshallerContext context)
+        public StorageLensTableDestination Unmarshall(XmlUnmarshallerContext context)
         {
-            StorageLensDataExport unmarshalledObject = new StorageLensDataExport();
+            StorageLensTableDestination unmarshalledObject = new StorageLensTableDestination();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,22 +56,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("CloudWatchMetrics", targetDepth))
+                    if (context.TestExpression("Encryption", targetDepth))
                     {
-                        var unmarshaller = CloudWatchMetricsUnmarshaller.Instance;
-                        unmarshalledObject.CloudWatchMetrics = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StorageLensDataExportEncryptionUnmarshaller.Instance;
+                        unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("S3BucketDestination", targetDepth))
+                    if (context.TestExpression("IsEnabled", targetDepth))
                     {
-                        var unmarshaller = S3BucketDestinationUnmarshaller.Instance;
-                        unmarshalledObject.S3BucketDestination = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StorageLensTableDestination", targetDepth))
-                    {
-                        var unmarshaller = StorageLensTableDestinationUnmarshaller.Instance;
-                        unmarshalledObject.StorageLensTableDestination = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.IsEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
 
@@ -85,14 +79,14 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StorageLensDataExport unmarshalledObject, int targetDepth);
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StorageLensTableDestination unmarshalledObject, int targetDepth);
 
-        private static StorageLensDataExportUnmarshaller _instance = new StorageLensDataExportUnmarshaller();        
+        private static StorageLensTableDestinationUnmarshaller _instance = new StorageLensTableDestinationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StorageLensDataExportUnmarshaller Instance
+        public static StorageLensTableDestinationUnmarshaller Instance
         {
             get
             {

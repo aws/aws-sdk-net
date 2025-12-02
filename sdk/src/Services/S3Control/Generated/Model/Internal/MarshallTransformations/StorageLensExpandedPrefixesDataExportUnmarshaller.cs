@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StorageLensDataExport Object
+    /// Response Unmarshaller for StorageLensExpandedPrefixesDataExport Object
     /// </summary>  
-    public partial class StorageLensDataExportUnmarshaller : IXmlUnmarshaller<StorageLensDataExport, XmlUnmarshallerContext>
+    public partial class StorageLensExpandedPrefixesDataExportUnmarshaller : IXmlUnmarshaller<StorageLensExpandedPrefixesDataExport, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public StorageLensDataExport Unmarshall(XmlUnmarshallerContext context)
+        public StorageLensExpandedPrefixesDataExport Unmarshall(XmlUnmarshallerContext context)
         {
-            StorageLensDataExport unmarshalledObject = new StorageLensDataExport();
+            StorageLensExpandedPrefixesDataExport unmarshalledObject = new StorageLensExpandedPrefixesDataExport();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,12 +56,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("CloudWatchMetrics", targetDepth))
-                    {
-                        var unmarshaller = CloudWatchMetricsUnmarshaller.Instance;
-                        unmarshalledObject.CloudWatchMetrics = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("S3BucketDestination", targetDepth))
                     {
                         var unmarshaller = S3BucketDestinationUnmarshaller.Instance;
@@ -85,14 +79,14 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StorageLensDataExport unmarshalledObject, int targetDepth);
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, StorageLensExpandedPrefixesDataExport unmarshalledObject, int targetDepth);
 
-        private static StorageLensDataExportUnmarshaller _instance = new StorageLensDataExportUnmarshaller();        
+        private static StorageLensExpandedPrefixesDataExportUnmarshaller _instance = new StorageLensExpandedPrefixesDataExportUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StorageLensDataExportUnmarshaller Instance
+        public static StorageLensExpandedPrefixesDataExportUnmarshaller Instance
         {
             get
             {

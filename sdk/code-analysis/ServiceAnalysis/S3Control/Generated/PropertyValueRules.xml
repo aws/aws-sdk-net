@@ -2049,6 +2049,10 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.StorageLensConfiguration.PrefixDelimiter</property>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.StorageLensConfiguration.StorageLensArn</property>
     <min>1</min>
     <max>1024</max>
