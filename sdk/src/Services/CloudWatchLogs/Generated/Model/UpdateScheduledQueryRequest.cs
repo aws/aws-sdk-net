@@ -31,8 +31,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateScheduledQuery operation.
-    /// Updates the configuration of an existing scheduled query. This operation follows PUT
-    /// semantics, replacing the existing configuration with the provided values.
+    /// Updates an existing scheduled query with new configuration. This operation uses PUT
+    /// semantics, allowing modification of query parameters, schedule, and destinations.
     /// </summary>
     public partial class UpdateScheduledQueryRequest : AmazonCloudWatchLogsRequest
     {
@@ -53,7 +53,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Updated description for the scheduled query.
+        /// An updated description for the scheduled query.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -72,7 +72,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationConfiguration. 
         /// <para>
-        /// Updated configuration for destinations where the query results will be delivered.
+        /// The updated configuration for where to deliver query results.
         /// </para>
         /// </summary>
         public DestinationConfiguration DestinationConfiguration
@@ -90,8 +90,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// Updated ARN of the IAM role that CloudWatch Logs will assume to execute the scheduled
-        /// query.
+        /// The updated ARN of the IAM role that grants permissions to execute the query and deliver
+        /// results.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -110,7 +110,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The name or ARN of the scheduled query to update.
+        /// The ARN or name of the scheduled query to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -129,7 +129,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupIdentifiers. 
         /// <para>
-        /// Updated log group identifiers to query.
+        /// The updated array of log group names or ARNs to query.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -148,7 +148,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property QueryLanguage. 
         /// <para>
-        /// Updated query language to use (LogsQL, PPL, or SQL).
+        /// The updated query language for the scheduled query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -167,7 +167,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// Updated CloudWatch Logs Insights query string to execute.
+        /// The updated query string to execute.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]
@@ -186,7 +186,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduleEndTime. 
         /// <para>
-        /// Updated end time for the query schedule in Unix epoch time.
+        /// The updated end time for the scheduled query in Unix epoch format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -205,7 +205,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// Updated cron expression that defines when the scheduled query runs.
+        /// The updated cron expression that defines when the scheduled query runs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -224,7 +224,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduleStartTime. 
         /// <para>
-        /// Updated start time for the query schedule in Unix epoch time.
+        /// The updated start time for the scheduled query in Unix epoch format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -243,8 +243,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTimeOffset. 
         /// <para>
-        /// Updated time offset in seconds from the execution time for the start of the query
-        /// time range.
+        /// The updated time offset in seconds that defines the lookback period for the query.
         /// </para>
         /// </summary>
         public long StartTimeOffset
@@ -262,7 +261,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Updated state of the scheduled query (ENABLED or DISABLED).
+        /// The updated state of the scheduled query.
         /// </para>
         /// </summary>
         public ScheduledQueryState State
@@ -280,7 +279,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// Updated timezone in which the schedule expression is evaluated.
+        /// The updated timezone for evaluating the schedule expression.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

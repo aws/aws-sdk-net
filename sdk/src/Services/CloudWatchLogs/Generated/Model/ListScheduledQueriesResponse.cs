@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduledQueries. 
         /// <para>
-        /// The list of scheduled queries with summary information.
+        /// An array of scheduled query summary information.
         /// </para>
         /// </summary>
         public List<ScheduledQuerySummary> ScheduledQueries

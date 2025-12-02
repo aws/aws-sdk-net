@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// An internal server error occurred while processing the request. This is typically
-    /// a temporary issue and the request can be retried.
+    /// An internal server error occurred while processing the request. This exception is
+    /// returned when the service encounters an unexpected condition that prevents it from
+    /// fulfilling the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

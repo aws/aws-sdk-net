@@ -31,8 +31,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the GetScheduledQuery operation.
-    /// Returns detailed information about a specified scheduled query, including its configuration,
-    /// current state, and execution history.
+    /// Retrieves details about a specific scheduled query, including its configuration, execution
+    /// status, and metadata.
     /// </summary>
     public partial class GetScheduledQueryRequest : AmazonCloudWatchLogsRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The name or ARN of the scheduled query to retrieve.
+        /// The ARN or name of the scheduled query to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

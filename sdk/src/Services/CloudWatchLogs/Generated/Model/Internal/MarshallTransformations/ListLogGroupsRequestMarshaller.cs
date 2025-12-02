@@ -80,6 +80,33 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetDataSources())
+                {
+                    context.Writer.WritePropertyName("dataSources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDataSourcesListValue in publicRequest.DataSources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataSourceFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDataSourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetFieldIndexNames())
+                {
+                    context.Writer.WritePropertyName("fieldIndexNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFieldIndexNamesListValue in publicRequest.FieldIndexNames)
+                    {
+                            context.Writer.Write(publicRequestFieldIndexNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetIncludeLinkedAccounts())
                 {
                     context.Writer.WritePropertyName("includeLinkedAccounts");

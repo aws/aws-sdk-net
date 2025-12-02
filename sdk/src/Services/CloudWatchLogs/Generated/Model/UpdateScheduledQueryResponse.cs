@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The creation time of the updated scheduled query.
+        /// The timestamp when the scheduled query was originally created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -131,8 +131,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LastExecutionStatus. 
         /// <para>
-        /// The status of the last execution of the updated scheduled query (Running, Complete,
-        /// Failed, Timeout, or InvalidQuery).
+        /// The status of the most recent execution of the updated scheduled query.
         /// </para>
         /// </summary>
         public ExecutionStatus LastExecutionStatus
@@ -150,7 +149,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LastTriggeredTime. 
         /// <para>
-        /// The time when the updated scheduled query was last executed.
+        /// The timestamp when the updated scheduled query was last executed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -169,7 +168,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The last updated time of the scheduled query.
+        /// The timestamp when the scheduled query was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -188,7 +187,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupIdentifiers. 
         /// <para>
-        /// The log group identifiers of the updated scheduled query.
+        /// The log groups queried by the updated scheduled query.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -226,7 +225,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property QueryLanguage. 
         /// <para>
-        /// The query language used by the updated scheduled query.
+        /// The query language of the updated scheduled query.
         /// </para>
         /// </summary>
         public QueryLanguage QueryLanguage
@@ -281,7 +280,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduleEndTime. 
         /// <para>
-        /// The schedule end time of the updated scheduled query.
+        /// The end time of the updated scheduled query.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -300,7 +299,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// The schedule expression of the updated scheduled query.
+        /// The cron expression of the updated scheduled query.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -319,7 +318,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ScheduleStartTime. 
         /// <para>
-        /// The schedule start time of the updated scheduled query.
+        /// The start time of the updated scheduled query.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -338,7 +337,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTimeOffset. 
         /// <para>
-        /// The start time offset of the updated scheduled query.
+        /// The time offset of the updated scheduled query.
         /// </para>
         /// </summary>
         public long StartTimeOffset

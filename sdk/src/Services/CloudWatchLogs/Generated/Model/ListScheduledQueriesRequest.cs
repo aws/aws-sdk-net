@@ -31,8 +31,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the ListScheduledQueries operation.
-    /// Lists all scheduled queries in the current AWS account and region with optional filtering
-    /// by state.
+    /// Lists all scheduled queries in your account and region. You can filter results by
+    /// state to show only enabled or disabled queries.
     /// </summary>
     public partial class ListScheduledQueriesRequest : AmazonCloudWatchLogsRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of scheduled queries to return in a single call.
+        /// The maximum number of scheduled queries to return. Valid range is 1 to 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -78,7 +78,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Filter results by the state of scheduled queries (ENABLED or DISABLED).
+        /// Filter scheduled queries by state. Valid values are <c>ENABLED</c> and <c>DISABLED</c>.
+        /// If not specified, all scheduled queries are returned.
         /// </para>
         /// </summary>
         public ScheduledQueryState State

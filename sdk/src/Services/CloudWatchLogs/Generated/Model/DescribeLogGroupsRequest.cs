@@ -31,8 +31,9 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLogGroups operation.
-    /// Returns information about log groups. You can return all your log groups or filter
-    /// the results by prefix. The results are ASCII-sorted by log group name.
+    /// Returns information about log groups, including data sources that ingest into each
+    /// log group. You can return all your log groups or filter the results by prefix. The
+    /// results are ASCII-sorted by log group name.
     /// 
     ///  
     /// <para>
