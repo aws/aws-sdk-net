@@ -44,8 +44,7 @@ namespace Amazon.S3Control.Model
         /// Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
         /// server-side encryption using Amazon Web Services Key Management Service (Amazon Web
         /// Services KMS) keys (SSE-KMS). If specified, will filter SSE-KMS encrypted objects
-        /// by S3 Bucket Key status. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">Reducing
-        /// the cost of SSE-KMS with Amazon S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
+        /// by S3 Bucket Key status.
         /// </para>
         /// </summary>
         public bool BucketKeyEnabled
@@ -64,17 +63,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the customer managed KMS key to use for the filter
-        /// to return objects that are encrypted by the specified key. For best performance, we
-        /// recommend using the <c>KMSKeyArn</c> filter in conjunction with other object metadata
-        /// filters, like <c>MatchAnyPrefix</c>, <c>CreatedAfter</c>, or <c>MatchAnyStorageClass</c>.
+        /// to return objects that are encrypted by the specified key. For best performance, use
+        /// keys in the same Region as the S3 Batch Operations job.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You must provide the full KMS Key ARN. You can't use an alias name or alias ARN. For
-        /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">
-        /// KMS keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
         public string KmsKeyArn

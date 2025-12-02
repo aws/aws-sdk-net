@@ -38,7 +38,8 @@ namespace Amazon.S3Control.Model
     ///  </note> 
     /// <para>
     /// Retrieves the <c>PublicAccessBlock</c> configuration for an Amazon Web Services account.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
+    /// This operation returns the effective account-level configuration, which may inherit
+    /// from organization-level policies. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
     /// Using Amazon S3 block public access</a>.
     /// </para>
     ///  
@@ -55,13 +56,7 @@ namespace Amazon.S3Control.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html">PutPublicAccessBlock</a>
     /// 
     /// </para>
-    ///  </li> </ul> <important> 
-    /// <para>
-    /// You must URL encode any signed header values that contain spaces. For example, if
-    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
-    /// must URL encode this value to <c>my%20%20file.txt</c>.
-    /// </para>
-    ///  </important>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetPublicAccessBlockRequest : AmazonS3ControlRequest
     {

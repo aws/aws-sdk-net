@@ -126,9 +126,6 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// If provided, the generated object list includes only source bucket objects with the
         /// indicated server-side encryption type (SSE-S3, SSE-KMS, DSSE-KMS, SSE-C, or NOT-SSE).
-        /// If you select SSE-KMS or DSSE-KMS, you can optionally further filter your results
-        /// by specifying a specific KMS Key ARN. If you select SSE-KMS, you can also optionally
-        /// further filter your results by Bucket Key enabled status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

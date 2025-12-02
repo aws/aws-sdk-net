@@ -41,6 +41,11 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html">General
+    /// purpose buckets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-db-tagging.html">Access
     /// Points for directory buckets</a> 
     /// </para>
@@ -56,8 +61,8 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">Storage
-    /// Lens groups</a> 
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-lens-groups.html">S3
+    /// Storage Lens groups</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -66,19 +71,15 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// For Storage Lens groups and S3 Access Grants, you must have the <c>s3:ListTagsForResource</c>
-    /// permission to use this operation. 
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information about the required Storage Lens Groups permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
-    /// account permissions to use S3 Storage Lens groups</a>.
+    /// For general purpose buckets, access points for general purpose buckets, Storage Lens
+    /// groups, and S3 Access Grants, you must have the <c>s3:ListTagsForResource</c> permission
+    /// to use this operation. 
     /// </para>
     ///  </dd> <dt>Directory bucket permissions</dt> <dd> 
     /// <para>
-    /// For directory buckets and access points for directory buckets, you must have the <c>s3express:ListTagsForResource</c>
-    /// permission to use this operation. For more information about directory buckets policies
-    /// and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
+    /// For directory buckets, you must have the <c>s3express:ListTagsForResource</c> permission
+    /// to use this operation. For more information about directory buckets policies and permissions,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-permissions.html">Identity
     /// and Access Management (IAM) for S3 Express One Zone</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
@@ -90,13 +91,6 @@ namespace Amazon.S3Control.Model
     /// For information about S3 Tagging errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#S3TaggingErrorCodeList">List
     /// of Amazon S3 Tagging error codes</a>.
     /// </para>
-    ///  <important> 
-    /// <para>
-    /// You must URL encode any signed header values that contain spaces. For example, if
-    /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you
-    /// must URL encode this value to <c>my%20%20file.txt</c>.
-    /// </para>
-    ///  </important>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonS3ControlRequest
     {
