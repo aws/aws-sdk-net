@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Tables.Model
 {
     /// <summary>
-    /// Contains the values that define a maintenance configuration for a table.
+    /// The values that define a maintenance configuration for a table.
     /// </summary>
     public partial class TableMaintenanceConfigurationValue
     {
