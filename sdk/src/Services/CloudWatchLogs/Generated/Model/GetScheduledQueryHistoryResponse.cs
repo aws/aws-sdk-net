@@ -95,7 +95,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property TriggerHistory. 
         /// <para>
-        /// The list of execution history records for the scheduled query.
+        /// An array of execution history records for the scheduled query.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// A record of a scheduled query execution, including its status and destination processing
-    /// information.
+    /// A record of a scheduled query execution, including execution status, timestamp, and
+    /// destination processing results.
     /// </summary>
     public partial class TriggerHistoryRecord
     {
@@ -44,8 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// The list of destinations where the scheduled query results were delivered for this
-        /// execution. This includes S3 buckets configured for the scheduled query.
+        /// Information about destination processing for this query execution.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -68,8 +67,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The error message if the scheduled query execution failed. This field is only populated
-        /// when the execution status indicates a failure.
+        /// Error message if the query execution failed.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -87,7 +85,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property ExecutionStatus. 
         /// <para>
-        /// The status of the query execution (Running, Complete, Failed, Timeout, or InvalidQuery).
+        /// The execution status of the scheduled query run.
         /// </para>
         /// </summary>
         public ExecutionStatus ExecutionStatus
@@ -105,7 +103,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The unique identifier for the query execution.
+        /// The unique identifier for this query execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -124,7 +122,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property TriggeredTimestamp. 
         /// <para>
-        /// The time when the scheduled query was triggered, in Unix epoch time.
+        /// The timestamp when the scheduled query execution was triggered.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -163,5 +163,13 @@ namespace Amazon.CloudWatchLogs.Model
         {
             return new ListScheduledQueriesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSourcesForS3TableIntegration operation
+        ///</summary>
+        public IListSourcesForS3TableIntegrationPaginator ListSourcesForS3TableIntegration(ListSourcesForS3TableIntegrationRequest request) 
+        {
+            return new ListSourcesForS3TableIntegrationPaginator(this.client, request);
+        }
     }
 }
