@@ -365,6 +365,23 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Status of the last software udpate request.
         /// </para>
+        ///  
+        /// <para>
+        /// Status transitions follow these possible sequences:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Pending -&gt; InProgress -&gt; Succeeded
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; RollbackComplete
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending -&gt; InProgress -&gt; RollbackInProgress -&gt; Failed
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public SoftwareUpdateStatus SoftwareUpdateStatus
         {
@@ -445,8 +462,25 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TargetStateCount. 
         /// <para>
-        /// The number of nodes running a specific image ID since the last software update request.
+        /// Represents the number of running nodes using the desired Image ID.
         /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        ///  <b>During software update operations:</b> This count shows the number of nodes running
+        /// on the desired Image ID. If a rollback occurs, the current image ID and desired image
+        /// ID (both included in the describe cluster response) swap values. The TargetStateCount
+        /// then shows the number of nodes running on the newly designated desired image ID (which
+        /// was previously the current image ID).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>During simultaneous scaling and software update operations:</b> This count shows
+        /// the number of instances running on the desired image ID, including any new instances
+        /// created as part of the scaling request. New nodes are always created using the desired
+        /// image ID, so TargetStateCount reflects the total count of nodes running on the desired
+        /// image ID, even during rollback scenarios.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         [AWSProperty(Min=0, Max=6758)]
         public int TargetStateCount

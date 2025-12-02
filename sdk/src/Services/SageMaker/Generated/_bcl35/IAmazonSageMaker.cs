@@ -1015,10 +1015,10 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Creates a SageMaker HyperPod cluster. SageMaker HyperPod is a capability of SageMaker
-        /// for creating and managing persistent clusters for developing large machine learning
-        /// models, such as large language models (LLMs) and diffusion models. To learn more,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
+        /// Creates an Amazon SageMaker HyperPod cluster. SageMaker HyperPod is a capability of
+        /// SageMaker for creating and managing persistent clusters for developing large machine
+        /// learning models, such as large language models (LLMs) and diffusion models. To learn
+        /// more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod.html">Amazon
         /// SageMaker HyperPod</a> in the <i>Amazon SageMaker Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
@@ -2744,6 +2744,51 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateMlflowApp
+
+
+        /// <summary>
+        /// Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as the
+        /// artifact store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMlflowApp service method.</param>
+        /// 
+        /// <returns>The response from the CreateMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowApp">REST API Reference for CreateMlflowApp Operation</seealso>
+        CreateMlflowAppResponse CreateMlflowApp(CreateMlflowAppRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMlflowApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMlflowApp operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMlflowApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowApp">REST API Reference for CreateMlflowApp Operation</seealso>
+        IAsyncResult BeginCreateMlflowApp(CreateMlflowAppRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMlflowApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMlflowApp.</param>
+        /// 
+        /// <returns>Returns a  CreateMlflowAppResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMlflowApp">REST API Reference for CreateMlflowApp Operation</seealso>
+        CreateMlflowAppResponse EndCreateMlflowApp(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateMlflowTrackingServer
 
 
@@ -3716,6 +3761,51 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  CreatePresignedDomainUrlResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">REST API Reference for CreatePresignedDomainUrl Operation</seealso>
         CreatePresignedDomainUrlResponse EndCreatePresignedDomainUrl(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreatePresignedMlflowAppUrl
+
+
+        /// <summary>
+        /// Returns a presigned URL that you can use to connect to the MLflow UI attached to your
+        /// MLflow App. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/mlflow-launch-ui.html">Launch
+        /// the MLflow UI using a presigned URL</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedMlflowAppUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreatePresignedMlflowAppUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowAppUrl">REST API Reference for CreatePresignedMlflowAppUrl Operation</seealso>
+        CreatePresignedMlflowAppUrlResponse CreatePresignedMlflowAppUrl(CreatePresignedMlflowAppUrlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePresignedMlflowAppUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedMlflowAppUrl operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePresignedMlflowAppUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowAppUrl">REST API Reference for CreatePresignedMlflowAppUrl Operation</seealso>
+        IAsyncResult BeginCreatePresignedMlflowAppUrl(CreatePresignedMlflowAppUrlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePresignedMlflowAppUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePresignedMlflowAppUrl.</param>
+        /// 
+        /// <returns>Returns a  CreatePresignedMlflowAppUrlResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedMlflowAppUrl">REST API Reference for CreatePresignedMlflowAppUrl Operation</seealso>
+        CreatePresignedMlflowAppUrlResponse EndCreatePresignedMlflowAppUrl(IAsyncResult asyncResult);
 
         #endregion
         
@@ -6096,6 +6186,49 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  DeleteInferenceExperimentResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment">REST API Reference for DeleteInferenceExperiment Operation</seealso>
         DeleteInferenceExperimentResponse EndDeleteInferenceExperiment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteMlflowApp
+
+
+        /// <summary>
+        /// Deletes an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMlflowApp service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowApp">REST API Reference for DeleteMlflowApp Operation</seealso>
+        DeleteMlflowAppResponse DeleteMlflowApp(DeleteMlflowAppRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMlflowApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMlflowApp operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMlflowApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowApp">REST API Reference for DeleteMlflowApp Operation</seealso>
+        IAsyncResult BeginDeleteMlflowApp(DeleteMlflowAppRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMlflowApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMlflowApp.</param>
+        /// 
+        /// <returns>Returns a  DeleteMlflowAppResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMlflowApp">REST API Reference for DeleteMlflowApp Operation</seealso>
+        DeleteMlflowAppResponse EndDeleteMlflowApp(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8989,6 +9122,49 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  DescribeLineageGroupResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLineageGroup">REST API Reference for DescribeLineageGroup Operation</seealso>
         DescribeLineageGroupResponse EndDescribeLineageGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeMlflowApp
+
+
+        /// <summary>
+        /// Returns information about an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMlflowApp service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowApp">REST API Reference for DescribeMlflowApp Operation</seealso>
+        DescribeMlflowAppResponse DescribeMlflowApp(DescribeMlflowAppRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMlflowApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMlflowApp operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMlflowApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowApp">REST API Reference for DescribeMlflowApp Operation</seealso>
+        IAsyncResult BeginDescribeMlflowApp(DescribeMlflowAppRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMlflowApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMlflowApp.</param>
+        /// 
+        /// <returns>Returns a  DescribeMlflowAppResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMlflowApp">REST API Reference for DescribeMlflowApp Operation</seealso>
+        DescribeMlflowAppResponse EndDescribeMlflowApp(IAsyncResult asyncResult);
 
         #endregion
         
@@ -12574,6 +12750,46 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  ListLineageGroupsResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLineageGroups">REST API Reference for ListLineageGroups Operation</seealso>
         ListLineageGroupsResponse EndListLineageGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListMlflowApps
+
+
+        /// <summary>
+        /// Lists all MLflow Apps
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMlflowApps service method.</param>
+        /// 
+        /// <returns>The response from the ListMlflowApps service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowApps">REST API Reference for ListMlflowApps Operation</seealso>
+        ListMlflowAppsResponse ListMlflowApps(ListMlflowAppsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMlflowApps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMlflowApps operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMlflowApps
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowApps">REST API Reference for ListMlflowApps Operation</seealso>
+        IAsyncResult BeginListMlflowApps(ListMlflowAppsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMlflowApps operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMlflowApps.</param>
+        /// 
+        /// <returns>Returns a  ListMlflowAppsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMlflowApps">REST API Reference for ListMlflowApps Operation</seealso>
+        ListMlflowAppsResponse EndListMlflowApps(IAsyncResult asyncResult);
 
         #endregion
         
@@ -17182,6 +17398,53 @@ namespace Amazon.SageMaker
         /// <returns>Returns a  UpdateInferenceExperimentResult from SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment">REST API Reference for UpdateInferenceExperiment Operation</seealso>
         UpdateInferenceExperimentResponse EndUpdateInferenceExperiment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateMlflowApp
+
+
+        /// <summary>
+        /// Updates an MLflow App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMlflowApp service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMlflowApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowApp">REST API Reference for UpdateMlflowApp Operation</seealso>
+        UpdateMlflowAppResponse UpdateMlflowApp(UpdateMlflowAppRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMlflowApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMlflowApp operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMlflowApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowApp">REST API Reference for UpdateMlflowApp Operation</seealso>
+        IAsyncResult BeginUpdateMlflowApp(UpdateMlflowAppRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMlflowApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMlflowApp.</param>
+        /// 
+        /// <returns>Returns a  UpdateMlflowAppResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMlflowApp">REST API Reference for UpdateMlflowApp Operation</seealso>
+        UpdateMlflowAppResponse EndUpdateMlflowApp(IAsyncResult asyncResult);
 
         #endregion
         

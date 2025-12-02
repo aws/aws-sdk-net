@@ -215,7 +215,7 @@ namespace Amazon.SageMaker.Model
         /// type, associated containers, scripts, and more.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=65535)]
+        [AWSProperty(Required=true, Min=0, Max=170391)]
         public string HubContentDocument
         {
             get { return this._hubContentDocument; }
@@ -235,7 +235,7 @@ namespace Amazon.SageMaker.Model
         /// tables, and standard markdown formating.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=65535)]
+        [AWSProperty(Min=0, Max=170391)]
         public string HubContentMarkdown
         {
             get { return this._hubContentMarkdown; }

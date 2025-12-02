@@ -30,28 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The type of orchestrator used for the SageMaker HyperPod cluster.
+    /// This is the response object from the CreatePresignedMlflowAppUrl operation.
     /// </summary>
-    public partial class ClusterOrchestrator
+    public partial class CreatePresignedMlflowAppUrlResponse : AmazonWebServiceResponse
     {
-        private ClusterOrchestratorEksConfig _eks;
+        private string _authorizedUrl;
 
         /// <summary>
-        /// Gets and sets the property Eks. 
+        /// Gets and sets the property AuthorizedUrl. 
         /// <para>
-        /// The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod cluster.
+        /// A presigned URL with an authorization token.
         /// </para>
         /// </summary>
-        public ClusterOrchestratorEksConfig Eks
+        [AWSProperty(Min=0, Max=2048)]
+        public string AuthorizedUrl
         {
-            get { return this._eks; }
-            set { this._eks = value; }
+            get { return this._authorizedUrl; }
+            set { this._authorizedUrl = value; }
         }
 
-        // Check to see if Eks property is set
-        internal bool IsSetEks()
+        // Check to see if AuthorizedUrl property is set
+        internal bool IsSetAuthorizedUrl()
         {
-            return this._eks != null;
+            return this._authorizedUrl != null;
         }
 
     }
