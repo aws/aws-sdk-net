@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCore.Model
         private DateTime? _createdAt;
         private string _memoryRecordId;
         private string _memoryStrategyId;
+        private Dictionary<string, MetadataValue> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, MetadataValue>() : null;
         private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _score;
 
@@ -115,6 +116,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetMemoryStrategyId()
         {
             return this._memoryStrategyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// A map of metadata key-value pairs associated with a memory record.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public Dictionary<string, MetadataValue> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

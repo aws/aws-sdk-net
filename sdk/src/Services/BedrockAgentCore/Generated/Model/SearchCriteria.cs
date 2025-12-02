@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class SearchCriteria
     {
         private string _memoryStrategyId;
+        private List<MemoryMetadataFilterExpression> _metadataFilters = AWSConfigs.InitializeCollections ? new List<MemoryMetadataFilterExpression>() : null;
         private string _searchQuery;
         private int? _topk;
 
@@ -55,6 +56,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetMemoryStrategyId()
         {
             return this._memoryStrategyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataFilters. 
+        /// <para>
+        /// Filters to apply to metadata associated with a memory.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<MemoryMetadataFilterExpression> MetadataFilters
+        {
+            get { return this._metadataFilters; }
+            set { this._metadataFilters = value; }
+        }
+
+        // Check to see if MetadataFilters property is set
+        internal bool IsSetMetadataFilters()
+        {
+            return this._metadataFilters != null && (this._metadataFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

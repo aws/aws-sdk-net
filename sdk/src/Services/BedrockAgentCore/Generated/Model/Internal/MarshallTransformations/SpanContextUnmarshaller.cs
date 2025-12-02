@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MemoryRecord Object
+    /// Response Unmarshaller for SpanContext Object
     /// </summary>  
-    public class MemoryRecordUnmarshaller : IUnmarshaller<MemoryRecord, XmlUnmarshallerContext>, IUnmarshaller<MemoryRecord, JsonUnmarshallerContext>
+    public class SpanContextUnmarshaller : IUnmarshaller<SpanContext, XmlUnmarshallerContext>, IUnmarshaller<SpanContext, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MemoryRecord IUnmarshaller<MemoryRecord, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SpanContext IUnmarshaller<SpanContext, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MemoryRecord Unmarshall(JsonUnmarshallerContext context)
+        public SpanContext Unmarshall(JsonUnmarshallerContext context)
         {
-            MemoryRecord unmarshalledObject = new MemoryRecord();
+            SpanContext unmarshalledObject = new SpanContext();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("content", targetDepth))
-                {
-                    var unmarshaller = MemoryContentUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("createdAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("memoryRecordId", targetDepth))
+                if (context.TestExpression("sessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MemoryRecordId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SessionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("memoryStrategyId", targetDepth))
+                if (context.TestExpression("spanId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MemoryStrategyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpanId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("metadata", targetDepth))
+                if (context.TestExpression("traceId", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, MetadataValue, StringUnmarshaller, MetadataValueUnmarshaller>(StringUnmarshaller.Instance, MetadataValueUnmarshaller.Instance);
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("namespaces", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Namespaces = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TraceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +89,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         }
 
 
-        private static MemoryRecordUnmarshaller _instance = new MemoryRecordUnmarshaller();        
+        private static SpanContextUnmarshaller _instance = new SpanContextUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MemoryRecordUnmarshaller Instance
+        public static SpanContextUnmarshaller Instance
         {
             get
             {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MemoryRecord Object
+    /// Response Unmarshaller for TokenUsage Object
     /// </summary>  
-    public class MemoryRecordUnmarshaller : IUnmarshaller<MemoryRecord, XmlUnmarshallerContext>, IUnmarshaller<MemoryRecord, JsonUnmarshallerContext>
+    public class TokenUsageUnmarshaller : IUnmarshaller<TokenUsage, XmlUnmarshallerContext>, IUnmarshaller<TokenUsage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MemoryRecord IUnmarshaller<MemoryRecord, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TokenUsage IUnmarshaller<TokenUsage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MemoryRecord Unmarshall(JsonUnmarshallerContext context)
+        public TokenUsage Unmarshall(JsonUnmarshallerContext context)
         {
-            MemoryRecord unmarshalledObject = new MemoryRecord();
+            TokenUsage unmarshalledObject = new TokenUsage();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("content", targetDepth))
+                if (context.TestExpression("inputTokens", targetDepth))
                 {
-                    var unmarshaller = MemoryContentUnmarshaller.Instance;
-                    unmarshalledObject.Content = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.InputTokens = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("outputTokens", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.OutputTokens = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("memoryRecordId", targetDepth))
+                if (context.TestExpression("totalTokens", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MemoryRecordId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("memoryStrategyId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MemoryStrategyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("metadata", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, MetadataValue, StringUnmarshaller, MetadataValueUnmarshaller>(StringUnmarshaller.Instance, MetadataValueUnmarshaller.Instance);
-                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("namespaces", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Namespaces = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalTokens = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +89,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         }
 
 
-        private static MemoryRecordUnmarshaller _instance = new MemoryRecordUnmarshaller();        
+        private static TokenUsageUnmarshaller _instance = new TokenUsageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MemoryRecordUnmarshaller Instance
+        public static TokenUsageUnmarshaller Instance
         {
             get
             {
