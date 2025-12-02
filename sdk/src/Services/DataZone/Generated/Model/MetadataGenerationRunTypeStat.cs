@@ -30,78 +30,58 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetMetadataGenerationRun operation.
-    /// Gets a metadata generation run in Amazon DataZone.
-    /// 
-    ///  
-    /// <para>
-    /// Prerequisites:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Valid domain and run identifier. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The metadata generation run must exist.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// User must have read access to the metadata run.
-    /// </para>
-    ///  </li> </ul>
+    /// The statistics of the metadata generation run type.
     /// </summary>
-    public partial class GetMetadataGenerationRunRequest : AmazonDataZoneRequest
+    public partial class MetadataGenerationRunTypeStat
     {
-        private string _domainIdentifier;
-        private string _identifier;
+        private string _errorMessage;
+        private MetadataGenerationRunStatus _status;
         private MetadataGenerationRunType _type;
 
         /// <summary>
-        /// Gets and sets the property DomainIdentifier. 
+        /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The ID of the Amazon DataZone domain the metadata generation run of which you want
-        /// to get.
+        /// The error message displayed if the action fails to run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DomainIdentifier
+        public string ErrorMessage
         {
-            get { return this._domainIdentifier; }
-            set { this._domainIdentifier = value; }
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
         }
 
-        // Check to see if DomainIdentifier property is set
-        internal bool IsSetDomainIdentifier()
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
         {
-            return this._domainIdentifier != null;
+            return this._errorMessage != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Identifier. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The identifier of the metadata generation run.
+        /// The status of the metadata generation run type statistics.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Identifier
+        public MetadataGenerationRunStatus Status
         {
-            get { return this._identifier; }
-            set { this._identifier = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Identifier property is set
-        internal bool IsSetIdentifier()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._identifier != null;
+            return this._status != null;
         }
 
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the metadata generation run.
+        /// The type of the metadata generation run type statistics.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public MetadataGenerationRunType Type
         {
             get { return this._type; }

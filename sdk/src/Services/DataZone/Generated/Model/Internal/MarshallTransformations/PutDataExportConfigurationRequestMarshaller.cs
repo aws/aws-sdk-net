@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartMetadataGenerationRun Request Marshaller
+    /// PutDataExportConfiguration Request Marshaller
     /// </summary>       
-    public class StartMetadataGenerationRunRequestMarshaller : IMarshaller<IRequest, StartMetadataGenerationRunRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutDataExportConfigurationRequestMarshaller : IMarshaller<IRequest, PutDataExportConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartMetadataGenerationRunRequest)input);
+            return this.Marshall((PutDataExportConfigurationRequest)input);
         }
 
         /// <summary>
@@ -56,17 +56,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartMetadataGenerationRunRequest publicRequest)
+        public IRequest Marshall(PutDataExportConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DataZone");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
             if (!publicRequest.IsSetDomainIdentifier())
                 throw new AmazonDataZoneException("Request object does not have required field DomainIdentifier set");
             request.AddPathResource("{domainIdentifier}", StringUtils.FromString(publicRequest.DomainIdentifier));
-            request.ResourcePath = "/v2/domains/{domainIdentifier}/metadata-generation-runs";
+            request.ResourcePath = "/v2/domains/{domainIdentifier}/data-export-configuration";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -87,38 +87,21 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-            if(publicRequest.IsSetOwningProjectIdentifier())
+            if(publicRequest.IsSetEnableExport())
             {
-                context.Writer.WritePropertyName("owningProjectIdentifier");
-                context.Writer.WriteStringValue(publicRequest.OwningProjectIdentifier);
+                context.Writer.WritePropertyName("enableExport");
+                context.Writer.WriteBooleanValue(publicRequest.EnableExport.Value);
             }
 
-            if(publicRequest.IsSetTarget())
+            if(publicRequest.IsSetEncryptionConfiguration())
             {
-                context.Writer.WritePropertyName("target");
+                context.Writer.WritePropertyName("encryptionConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = MetadataGenerationRunTargetMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Target, context);
+                var marshaller = EncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
 
                 context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(publicRequest.Type);
-            }
-
-            if(publicRequest.IsSetTypes())
-            {
-                context.Writer.WritePropertyName("types");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTypesListValue in publicRequest.Types)
-                {
-                        context.Writer.WriteStringValue(publicRequestTypesListValue);
-                }
-                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();
@@ -134,9 +117,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartMetadataGenerationRunRequestMarshaller _instance = new StartMetadataGenerationRunRequestMarshaller();        
+        private static PutDataExportConfigurationRequestMarshaller _instance = new PutDataExportConfigurationRequestMarshaller();        
 
-        internal static StartMetadataGenerationRunRequestMarshaller GetInstance()
+        internal static PutDataExportConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -144,7 +127,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartMetadataGenerationRunRequestMarshaller Instance
+        public static PutDataExportConfigurationRequestMarshaller Instance
         {
             get
             {
