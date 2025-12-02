@@ -66,6 +66,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("audioDataDeliveryEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AudioDataDeliveryEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("cloudWatchConfig", targetDepth))
                 {
                     var unmarshaller = CloudWatchConfigUnmarshaller.Instance;

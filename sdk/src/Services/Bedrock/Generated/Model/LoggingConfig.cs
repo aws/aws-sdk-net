@@ -34,12 +34,31 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class LoggingConfig
     {
+        private bool? _audioDataDeliveryEnabled;
         private CloudWatchConfig _cloudWatchConfig;
         private bool? _embeddingDataDeliveryEnabled;
         private bool? _imageDataDeliveryEnabled;
         private S3Config _s3Config;
         private bool? _textDataDeliveryEnabled;
         private bool? _videoDataDeliveryEnabled;
+
+        /// <summary>
+        /// Gets and sets the property AudioDataDeliveryEnabled. 
+        /// <para>
+        /// Set to include audio data in the log delivery.
+        /// </para>
+        /// </summary>
+        public bool AudioDataDeliveryEnabled
+        {
+            get { return this._audioDataDeliveryEnabled.GetValueOrDefault(); }
+            set { this._audioDataDeliveryEnabled = value; }
+        }
+
+        // Check to see if AudioDataDeliveryEnabled property is set
+        internal bool IsSetAudioDataDeliveryEnabled()
+        {
+            return this._audioDataDeliveryEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CloudWatchConfig. 

@@ -48,6 +48,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudioDataDeliveryEnabled())
+            {
+                context.Writer.WritePropertyName("audioDataDeliveryEnabled");
+                context.Writer.Write(requestObject.AudioDataDeliveryEnabled);
+            }
+
             if(requestObject.IsSetCloudWatchConfig())
             {
                 context.Writer.WritePropertyName("cloudWatchConfig");
