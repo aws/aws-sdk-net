@@ -1,3 +1,51 @@
+### 4.0.144.0 (2025-12-02 16:43 UTC)
+* Bedrock (4.0.16.0)
+	* Adds the audioDataDeliveryEnabled boolean field to the Model Invocation Logging Configuration.
+* BedrockAgentCore (4.0.8.0)
+	* Support for AgentCore Evaluations and Episodic memory strategy for AgentCore Memory.
+* BedrockAgentCoreControl (4.0.12.0)
+	* Supports AgentCore Evaluations, Policy, Episodic Memory Strategy, Resource Based Policy for Runtime and Gateway APIs, API Gateway Rest API Targets and enhances JWT authorizer.
+* BedrockRuntime (4.0.14.0)
+	* Adds support for Audio Blocks and Streaming Image Output plus new Stop Reasons of malformed_model_output and malformed_tool_use.
+* CloudWatchLogs (4.0.13.0)
+	* CloudWatch Logs adds managed S3 Tables integration to access logs using other analytical tools, as well as facets and field indexing to simplify log analytics in CloudWatch Logs Insights.
+* CostExplorer (4.0.9.0)
+	* This release updates existing Savings Plans Purchase Analyzer and Recommendations APIs to support Database Savings Plans.
+* DataZone (4.0.17.0)
+	* Amazon DataZone now supports exporting Catalog datasets as Amazon S3 tables, and provides automatic business glossary term suggestions for data assets.
+* FSx (4.0.9.0)
+	* S3 Access Points support for FSx for NetApp ONTAP
+* GuardDuty (4.0.12.0)
+	* Adding support for extended threat detection for Amazon EC2 and Amazon ECS. Adding support for wild card suppression rules.
+* Lambda (4.0.10.0)
+	* Launching Lambda durable functions - a new feature to build reliable multi-step applications and AI workflows natively within the Lambda developer experience.
+* NovaAct (4.0.0.0)
+	* Initial release of Nova Act SDK. The Nova Act service enables customers to build and manage fleets of agents for automating production UI workflows with high reliability, fastest time-to-value, and ease of implementation at scale.
+* ObservabilityAdmin (4.0.5.0)
+	* CloudWatch Observability Admin adds pipelines configuration for third party log ingestion and transformation of all logs ingested, integration of CloudWatch logs with S3 Tables, and AWS account or organization level enablement for 7 AWS services.
+* OpenSearchServerless (4.0.5.0)
+	* GPU-acceleration helps you build large-scale vector databases faster and more efficiently. You can enable this feature on new OpenSearch domains and OpenSearch Serverless collections. This feature uses GPU-acceleration to reduce the time needed to index data into vector indexes.
+* OpenSearchService (4.0.7.0)
+	* GPU-acceleration helps you build large-scale vector databases faster and more efficiently. You can enable this feature on new OpenSearch domains and OpenSearch Serverless collections. This feature uses GPU-acceleration to reduce the time needed to index data into vector indexes.
+* RDS (4.0.14.0)
+	* RDS Oracle and SQL Server: Add support for adding, modifying, and removing additional storage volumes, offering up to 256TiB storage; RDS SQL Server: Support Developer Edition via custom engine versions for development and testing purposes; M7i/R7i instances with Optimize CPU for cost savings.
+* S3 (4.0.14.0)
+	* New S3 Storage Class FSX_ONTAP
+* S3Control (4.0.8.0)
+	* Add support for S3 Storage Lens Advanced Performance Metrics, Expanded Prefixes metrics report, and export to S3 Tables.
+* S3Tables (4.0.8.0)
+	* Add storage class, replication, and table record expiration features to S3 Tables.
+* S3Vectors (4.0.4.0)
+	* Amazon S3 Vectors provides cost-effective, elastic, and durable vector storage for queries based on semantic meaning and similarity.
+* SageMaker (4.0.37.0)
+	* Added support for serverless MLflow Apps.
+
+Added support for new HubContentTypes (DataSet and JsonDoc) in Private Hub for AI model customization assets, enabling tracking and management of training datasets and evaluators (reward functions/prompts) throughout the ML lifecycle.
+* SavingsPlans (4.0.4.0)
+	* Added support for Amazon Database Savings Plans
+* SecurityHub (4.0.7.0)
+	* ITSM enhancements: DRYRUN mode for testing ticket creation, ServiceNow now uses AWS Secrets Manager for credentials, ConnectorRegistrationsV2 renamed to RegisterConnectorV2, added ServiceQuotaExceededException error, and ConnectorStatus visibility in CreateConnectorV2.
+
 ### 4.0.143.0 (2025-12-01 01:44 UTC)
 * AppIntegrationsService (4.0.4.0)
 	* This release adds support for MCP servers via the ApplicationType field, allowing customers to register their Bedrock AgentCore gateways as third party applications.
