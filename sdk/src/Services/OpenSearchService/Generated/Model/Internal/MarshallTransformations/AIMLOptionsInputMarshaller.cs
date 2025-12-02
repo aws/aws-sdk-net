@@ -70,6 +70,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetServerlessVectorAcceleration())
+            {
+                context.Writer.WritePropertyName("ServerlessVectorAcceleration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ServerlessVectorAccelerationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServerlessVectorAcceleration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

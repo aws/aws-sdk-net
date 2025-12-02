@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AIMLOptionsOutput Object
+    /// Response Unmarshaller for ServerlessVectorAcceleration Object
     /// </summary>  
-    public class AIMLOptionsOutputUnmarshaller : IUnmarshaller<AIMLOptionsOutput, XmlUnmarshallerContext>, IUnmarshaller<AIMLOptionsOutput, JsonUnmarshallerContext>
+    public class ServerlessVectorAccelerationUnmarshaller : IUnmarshaller<ServerlessVectorAcceleration, XmlUnmarshallerContext>, IUnmarshaller<ServerlessVectorAcceleration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AIMLOptionsOutput IUnmarshaller<AIMLOptionsOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ServerlessVectorAcceleration IUnmarshaller<ServerlessVectorAcceleration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AIMLOptionsOutput Unmarshall(JsonUnmarshallerContext context)
+        public ServerlessVectorAcceleration Unmarshall(JsonUnmarshallerContext context)
         {
-            AIMLOptionsOutput unmarshalledObject = new AIMLOptionsOutput();
+            ServerlessVectorAcceleration unmarshalledObject = new ServerlessVectorAcceleration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("NaturalLanguageQueryGenerationOptions", targetDepth))
+                if (context.TestExpression("Enabled", targetDepth))
                 {
-                    var unmarshaller = NaturalLanguageQueryGenerationOptionsOutputUnmarshaller.Instance;
-                    unmarshalledObject.NaturalLanguageQueryGenerationOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3VectorsEngine", targetDepth))
-                {
-                    var unmarshaller = S3VectorsEngineUnmarshaller.Instance;
-                    unmarshalledObject.S3VectorsEngine = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ServerlessVectorAcceleration", targetDepth))
-                {
-                    var unmarshaller = ServerlessVectorAccelerationUnmarshaller.Instance;
-                    unmarshalledObject.ServerlessVectorAcceleration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static AIMLOptionsOutputUnmarshaller _instance = new AIMLOptionsOutputUnmarshaller();        
+        private static ServerlessVectorAccelerationUnmarshaller _instance = new ServerlessVectorAccelerationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AIMLOptionsOutputUnmarshaller Instance
+        public static ServerlessVectorAccelerationUnmarshaller Instance
         {
             get
             {
