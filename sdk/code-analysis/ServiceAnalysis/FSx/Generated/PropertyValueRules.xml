@@ -988,6 +988,12 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.CreateAndAttachS3AccessPointOntapConfiguration.VolumeId</property>
+    <min>23</min>
+    <max>23</max>
+    <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.CreateAndAttachS3AccessPointOpenZFSConfiguration.VolumeId</property>
     <min>23</min>
     <max>23</max>
@@ -1736,6 +1742,12 @@
     <pattern>^[1-7]:([01]\d|2[0-3]):?([0-5]\d)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FSx.Model.OntapUnixFileSystemUser.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FSx.Model.OntapVolumeConfiguration.JunctionPath</property>
     <min>1</min>
     <max>255</max>
@@ -1766,6 +1778,12 @@
     <property>Amazon.FSx.Model.OntapVolumeConfiguration.UUID</property>
     <max>36</max>
     <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.OntapWindowsFileSystemUser.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\u0000\u0085\u2028\u2029\r\n]{1,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.OpenZFSClientConfiguration.Clients</property>
@@ -1945,6 +1963,12 @@
     <min>3</min>
     <max>50</max>
     <pattern>^(?=[a-z0-9])[a-z0-9-]{1,48}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FSx.Model.S3AccessPointOntapConfiguration.VolumeId</property>
+    <min>23</min>
+    <max>23</max>
+    <pattern>^(fsvol-[0-9a-f]{17,})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.S3AccessPointOpenZFSConfiguration.VolumeId</property>
