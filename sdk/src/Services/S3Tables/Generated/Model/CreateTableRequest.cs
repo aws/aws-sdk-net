@@ -51,8 +51,13 @@ namespace Amazon.S3Tables.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You must have the <c>s3tables:TagResource</c> permission in addition to <c>s3tables:CreateTable</c>
-    /// permission to create a table with tags.
+    /// If you use this operation with the <c>storageClassConfiguration</c> request parameter,
+    /// you must have the <c>s3tables:PutTableStorageClass</c> permission.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// To create a table with tags, you must have the <c>s3tables:TagResource</c> permission
+    /// in addition to <c>s3tables:CreateTable</c> permission.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
@@ -69,6 +74,7 @@ namespace Amazon.S3Tables.Model
         private TableMetadata _metadata;
         private string _name;
         private string _awsNamespace;
+        private StorageClassConfiguration _storageClassConfiguration;
         private string _tableBucketARN;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -172,6 +178,26 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageClassConfiguration. 
+        /// <para>
+        /// The storage class configuration for the table. If not specified, the table inherits
+        /// the storage class configuration from its table bucket. Specify this parameter to override
+        /// the bucket's default storage class for this table.
+        /// </para>
+        /// </summary>
+        public StorageClassConfiguration StorageClassConfiguration
+        {
+            get { return this._storageClassConfiguration; }
+            set { this._storageClassConfiguration = value; }
+        }
+
+        // Check to see if StorageClassConfiguration property is set
+        internal bool IsSetStorageClassConfiguration()
+        {
+            return this._storageClassConfiguration != null;
         }
 
         /// <summary>

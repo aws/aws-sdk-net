@@ -76,6 +76,12 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                     response.ManagedByService = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("managedTableInformation", targetDepth))
+                {
+                    var unmarshaller = ManagedTableInformationUnmarshaller.Instance;
+                    response.ManagedTableInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("metadataLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

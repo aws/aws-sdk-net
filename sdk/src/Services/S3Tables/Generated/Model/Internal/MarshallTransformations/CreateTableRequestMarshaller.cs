@@ -107,6 +107,17 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetStorageClassConfiguration())
+                {
+                    context.Writer.WritePropertyName("storageClassConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StorageClassConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StorageClassConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

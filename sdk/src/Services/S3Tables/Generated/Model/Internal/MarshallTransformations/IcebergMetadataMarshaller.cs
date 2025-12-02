@@ -48,6 +48,20 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetProperties())
+            {
+                context.Writer.WritePropertyName("properties");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectPropertiesKvp in requestObject.Properties)
+                {
+                    context.Writer.WritePropertyName(requestObjectPropertiesKvp.Key);
+                    var requestObjectPropertiesValue = requestObjectPropertiesKvp.Value;
+
+                        context.Writer.Write(requestObjectPropertiesValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSchema())
             {
                 context.Writer.WritePropertyName("schema");
