@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBSnapshot
     {
+        private List<AdditionalStorageVolume> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<AdditionalStorageVolume>() : null;
         private int? _allocatedStorage;
         private string _availabilityZone;
         private string _dbInstanceIdentifier;
@@ -76,6 +77,25 @@ namespace Amazon.RDS.Model
         private string _tdeCredentialArn;
         private string _timezone;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// The additional storage volumes associated with the DB snapshot. RDS supports additional
+        /// storage volumes for RDS for Oracle and RDS for SQL Server.
+        /// </para>
+        /// </summary>
+        public List<AdditionalStorageVolume> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 

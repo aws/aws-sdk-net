@@ -38,6 +38,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ModifyDBInstanceRequest : AmazonRDSRequest
     {
+        private List<ModifyAdditionalStorageVolume> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<ModifyAdditionalStorageVolume>() : null;
         private int? _allocatedStorage;
         private bool? _allowMajorVersionUpgrade;
         private bool? _applyImmediately;
@@ -113,6 +114,26 @@ namespace Amazon.RDS.Model
         public ModifyDBInstanceRequest(string dbInstanceIdentifier)
         {
             _dbInstanceIdentifier = dbInstanceIdentifier;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// A list of additional storage volumes to modify or delete for the DB instance. You
+        /// can create up to 3 additional storage volumes. Additional storage volumes are supported
+        /// for RDS for Oracle and RDS for SQL Server DB instances only.
+        /// </para>
+        /// </summary>
+        public List<ModifyAdditionalStorageVolume> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

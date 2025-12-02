@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ValidDBInstanceModificationsMessage Object
+    /// Response Unmarshaller for AdditionalStorageVolumeOutput Object
     /// </summary>  
-    public class ValidDBInstanceModificationsMessageUnmarshaller : IUnmarshaller<ValidDBInstanceModificationsMessage, XmlUnmarshallerContext>, IUnmarshaller<ValidDBInstanceModificationsMessage, JsonUnmarshallerContext>
+    public class AdditionalStorageVolumeOutputUnmarshaller : IUnmarshaller<AdditionalStorageVolumeOutput, XmlUnmarshallerContext>, IUnmarshaller<AdditionalStorageVolumeOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidDBInstanceModificationsMessage Unmarshall(XmlUnmarshallerContext context)
+        public AdditionalStorageVolumeOutput Unmarshall(XmlUnmarshallerContext context)
         {
-            ValidDBInstanceModificationsMessage unmarshalledObject = new ValidDBInstanceModificationsMessage();
+            AdditionalStorageVolumeOutput unmarshalledObject = new AdditionalStorageVolumeOutput();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,38 +55,46 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("AdditionalStorage", targetDepth))
+                    if (context.TestExpression("AllocatedStorage", targetDepth))
                     {
-                        var unmarshaller = ValidAdditionalStorageOptionsUnmarshaller.Instance;
-                        unmarshalledObject.AdditionalStorage = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Storage/ValidStorageOptions", targetDepth))
+                    if (context.TestExpression("IOPS", targetDepth))
                     {
-                        var unmarshaller = ValidStorageOptionsUnmarshaller.Instance;
-                        if (unmarshalledObject.Storage == null)
-                        {
-                            unmarshalledObject.Storage = new List<ValidStorageOptions>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Storage.Add(item);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.IOPS = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SupportsDedicatedLogVolume", targetDepth))
+                    if (context.TestExpression("MaxAllocatedStorage", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.SupportsDedicatedLogVolume = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.MaxAllocatedStorage = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ValidProcessorFeatures/AvailableProcessorFeature", targetDepth))
+                    if (context.TestExpression("StorageThroughput", targetDepth))
                     {
-                        var unmarshaller = AvailableProcessorFeatureUnmarshaller.Instance;
-                        if (unmarshalledObject.ValidProcessorFeatures == null)
-                        {
-                            unmarshalledObject.ValidProcessorFeatures = new List<AvailableProcessorFeature>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ValidProcessorFeatures.Add(item);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.StorageThroughput = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageVolumeStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageVolumeStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("VolumeName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VolumeName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -104,18 +112,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ValidDBInstanceModificationsMessage Unmarshall(JsonUnmarshallerContext context)
+        public AdditionalStorageVolumeOutput Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ValidDBInstanceModificationsMessageUnmarshaller _instance = new ValidDBInstanceModificationsMessageUnmarshaller();        
+        private static AdditionalStorageVolumeOutputUnmarshaller _instance = new AdditionalStorageVolumeOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ValidDBInstanceModificationsMessageUnmarshaller Instance
+        public static AdditionalStorageVolumeOutputUnmarshaller Instance
         {
             get
             {

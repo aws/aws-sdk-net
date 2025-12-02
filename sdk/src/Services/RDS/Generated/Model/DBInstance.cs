@@ -49,6 +49,7 @@ namespace Amazon.RDS.Model
         private ActivityStreamMode _activityStreamMode;
         private ActivityStreamPolicyStatus _activityStreamPolicyStatus;
         private ActivityStreamStatus _activityStreamStatus;
+        private List<AdditionalStorageVolumeOutput> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<AdditionalStorageVolumeOutput>() : null;
         private int? _allocatedStorage;
         private List<DBInstanceRole> _associatedRoles = AWSConfigs.InitializeCollections ? new List<DBInstanceRole>() : null;
         private DateTime? _automaticRestartTime;
@@ -126,6 +127,7 @@ namespace Amazon.RDS.Model
         private bool? _storageEncrypted;
         private int? _storageThroughput;
         private string _storageType;
+        private string _storageVolumeStatus;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tdeCredentialArn;
         private string _timezone;
@@ -242,6 +244,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetActivityStreamStatus()
         {
             return this._activityStreamStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// The additional storage volumes associated with the DB instance. RDS supports additional
+        /// storage volumes for RDS for Oracle and RDS for SQL Server.
+        /// </para>
+        /// </summary>
+        public List<AdditionalStorageVolumeOutput> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1848,6 +1869,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageType()
         {
             return this._storageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageVolumeStatus. 
+        /// <para>
+        /// The detailed status information for storage volumes associated with the DB instance.
+        /// This information helps identify which specific volume is causing the instance to be
+        /// in a storage-full state.
+        /// </para>
+        /// </summary>
+        public string StorageVolumeStatus
+        {
+            get { return this._storageVolumeStatus; }
+            set { this._storageVolumeStatus = value; }
+        }
+
+        // Check to see if StorageVolumeStatus property is set
+        internal bool IsSetStorageVolumeStatus()
+        {
+            return this._storageVolumeStatus != null;
         }
 
         /// <summary>

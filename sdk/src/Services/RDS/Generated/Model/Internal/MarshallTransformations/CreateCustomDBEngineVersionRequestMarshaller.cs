@@ -59,6 +59,15 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetDatabaseInstallationFiles())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.DatabaseInstallationFiles)
+                    {
+                        request.Parameters.Add("DatabaseInstallationFiles" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetDatabaseInstallationFilesS3BucketName())
                 {
                     request.Parameters.Add("DatabaseInstallationFilesS3BucketName", StringUtils.FromString(publicRequest.DatabaseInstallationFilesS3BucketName));

@@ -72,6 +72,17 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("AvailableAdditionalStorageVolumesOptions/AvailableAdditionalStorageVolumesOption", targetDepth))
+                    {
+                        var unmarshaller = AvailableAdditionalStorageVolumesOptionUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailableAdditionalStorageVolumesOptions == null)
+                        {
+                            unmarshalledObject.AvailableAdditionalStorageVolumesOptions = new List<AvailableAdditionalStorageVolumesOption>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailableAdditionalStorageVolumesOptions.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("AvailableProcessorFeatures/AvailableProcessorFeature", targetDepth))
                     {
                         var unmarshaller = AvailableProcessorFeatureUnmarshaller.Instance;
@@ -222,6 +233,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedNetworkTypes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("SupportsAdditionalStorageVolumes", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.SupportsAdditionalStorageVolumes = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SupportsClusters", targetDepth))

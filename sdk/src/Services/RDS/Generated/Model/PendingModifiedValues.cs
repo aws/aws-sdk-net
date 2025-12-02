@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class PendingModifiedValues
     {
+        private List<AdditionalStorageVolume> _additionalStorageVolumes = AWSConfigs.InitializeCollections ? new List<AdditionalStorageVolume>() : null;
         private int? _allocatedStorage;
         private AutomationMode _automationMode;
         private int? _backupRetentionPeriod;
@@ -62,6 +63,24 @@ namespace Amazon.RDS.Model
         /// Empty constructor used to set  properties independently even when a simple constructor is available
         /// </summary>
         public PendingModifiedValues() { }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalStorageVolumes. 
+        /// <para>
+        /// The additional storage volume modifications that are pending for the DB instance.
+        /// </para>
+        /// </summary>
+        public List<AdditionalStorageVolume> AdditionalStorageVolumes
+        {
+            get { return this._additionalStorageVolumes; }
+            set { this._additionalStorageVolumes = value; }
+        }
+
+        // Check to see if AdditionalStorageVolumes property is set
+        internal bool IsSetAdditionalStorageVolumes()
+        {
+            return this._additionalStorageVolumes != null && (this._additionalStorageVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 

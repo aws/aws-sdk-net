@@ -36,6 +36,7 @@ namespace Amazon.RDS.Model
     {
         private DateTime? _createTime;
         private string _customDBEngineVersionManifest;
+        private List<string> _databaseInstallationFiles = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _databaseInstallationFilesS3BucketName;
         private string _databaseInstallationFilesS3Prefix;
         private string _dbEngineDescription;
@@ -47,6 +48,7 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private List<string> _exportableLogTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _failureReason;
         private CustomDBEngineVersionAMI _image;
         private string _kmsKeyId;
         private string _majorEngineVersion;
@@ -115,6 +117,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetCustomDBEngineVersionManifest()
         {
             return this._customDBEngineVersionManifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInstallationFiles. 
+        /// <para>
+        /// The database installation files (ISO and EXE) uploaded to Amazon S3 for your database
+        /// engine version to import to Amazon RDS. Required for <c>sqlserver-dev-ee</c>.
+        /// </para>
+        /// </summary>
+        public List<string> DatabaseInstallationFiles
+        {
+            get { return this._databaseInstallationFiles; }
+            set { this._databaseInstallationFiles = value; }
+        }
+
+        // Check to see if DatabaseInstallationFiles property is set
+        internal bool IsSetDatabaseInstallationFiles()
+        {
+            return this._databaseInstallationFiles != null && (this._databaseInstallationFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -317,6 +338,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetExportableLogTypes()
         {
             return this._exportableLogTypes != null && (this._exportableLogTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason that the custom engine version creation for <c>sqlserver-dev-ee</c> failed
+        /// with an <c>incompatible-installation-media</c> status.
+        /// </para>
+        /// </summary>
+        public string FailureReason
+        {
+            get { return this._failureReason; }
+            set { this._failureReason = value; }
+        }
+
+        // Check to see if FailureReason property is set
+        internal bool IsSetFailureReason()
+        {
+            return this._failureReason != null;
         }
 
         /// <summary>
