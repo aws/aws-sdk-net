@@ -124,6 +124,138 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
         
+        #region  CreateS3TableIntegration
+
+
+        /// <summary>
+        /// Creates an integration between CloudWatch and S3 Tables for analytics. This integration
+        /// enables querying CloudWatch telemetry data using analytics engines like Amazon Athena,
+        /// Amazon Redshift, and Apache Spark.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateS3TableIntegration service method.</param>
+        /// 
+        /// <returns>The response from the CreateS3TableIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateS3TableIntegration">REST API Reference for CreateS3TableIntegration Operation</seealso>
+        CreateS3TableIntegrationResponse CreateS3TableIntegration(CreateS3TableIntegrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateS3TableIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateS3TableIntegration operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateS3TableIntegration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateS3TableIntegration">REST API Reference for CreateS3TableIntegration Operation</seealso>
+        IAsyncResult BeginCreateS3TableIntegration(CreateS3TableIntegrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateS3TableIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateS3TableIntegration.</param>
+        /// 
+        /// <returns>Returns a  CreateS3TableIntegrationResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateS3TableIntegration">REST API Reference for CreateS3TableIntegration Operation</seealso>
+        CreateS3TableIntegrationResponse EndCreateS3TableIntegration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateTelemetryPipeline
+
+
+        /// <summary>
+        /// Creates a telemetry pipeline for processing and transforming telemetry data. The pipeline
+        /// defines how data flows from sources through processors to destinations, enabling data
+        /// transformation and delivering capabilities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTelemetryPipeline service method.</param>
+        /// 
+        /// <returns>The response from the CreateTelemetryPipeline service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryPipeline">REST API Reference for CreateTelemetryPipeline Operation</seealso>
+        CreateTelemetryPipelineResponse CreateTelemetryPipeline(CreateTelemetryPipelineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTelemetryPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTelemetryPipeline operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTelemetryPipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryPipeline">REST API Reference for CreateTelemetryPipeline Operation</seealso>
+        IAsyncResult BeginCreateTelemetryPipeline(CreateTelemetryPipelineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTelemetryPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTelemetryPipeline.</param>
+        /// 
+        /// <returns>Returns a  CreateTelemetryPipelineResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateTelemetryPipeline">REST API Reference for CreateTelemetryPipeline Operation</seealso>
+        CreateTelemetryPipelineResponse EndCreateTelemetryPipeline(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateTelemetryRule
 
 
@@ -317,6 +449,135 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
         
+        #region  DeleteS3TableIntegration
+
+
+        /// <summary>
+        /// Deletes an S3 Table integration and its associated data. This operation removes the
+        /// connection between CloudWatch Observability Admin and S3 Tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteS3TableIntegration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteS3TableIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InvalidStateException">
+        /// The requested operation cannot be completed on the specified resource in the current
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ServiceQuotaExceededException">
+        /// The requested operation would exceed the allowed quota for the specified resource
+        /// type.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteS3TableIntegration">REST API Reference for DeleteS3TableIntegration Operation</seealso>
+        DeleteS3TableIntegrationResponse DeleteS3TableIntegration(DeleteS3TableIntegrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteS3TableIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteS3TableIntegration operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteS3TableIntegration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteS3TableIntegration">REST API Reference for DeleteS3TableIntegration Operation</seealso>
+        IAsyncResult BeginDeleteS3TableIntegration(DeleteS3TableIntegrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteS3TableIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteS3TableIntegration.</param>
+        /// 
+        /// <returns>Returns a  DeleteS3TableIntegrationResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteS3TableIntegration">REST API Reference for DeleteS3TableIntegration Operation</seealso>
+        DeleteS3TableIntegrationResponse EndDeleteS3TableIntegration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTelemetryPipeline
+
+
+        /// <summary>
+        /// Deletes a telemetry pipeline and its associated resources. This operation stops data
+        /// processing and removes the pipeline configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTelemetryPipeline service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTelemetryPipeline service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryPipeline">REST API Reference for DeleteTelemetryPipeline Operation</seealso>
+        DeleteTelemetryPipelineResponse DeleteTelemetryPipeline(DeleteTelemetryPipelineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTelemetryPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTelemetryPipeline operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTelemetryPipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryPipeline">REST API Reference for DeleteTelemetryPipeline Operation</seealso>
+        IAsyncResult BeginDeleteTelemetryPipeline(DeleteTelemetryPipelineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTelemetryPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTelemetryPipeline.</param>
+        /// 
+        /// <returns>Returns a  DeleteTelemetryPipelineResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteTelemetryPipeline">REST API Reference for DeleteTelemetryPipeline Operation</seealso>
+        DeleteTelemetryPipelineResponse EndDeleteTelemetryPipeline(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteTelemetryRule
 
 
@@ -498,13 +759,72 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
         
+        #region  GetS3TableIntegration
+
+
+        /// <summary>
+        /// Retrieves information about a specific S3 Table integration, including its configuration,
+        /// status, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetS3TableIntegration service method.</param>
+        /// 
+        /// <returns>The response from the GetS3TableIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetS3TableIntegration">REST API Reference for GetS3TableIntegration Operation</seealso>
+        GetS3TableIntegrationResponse GetS3TableIntegration(GetS3TableIntegrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetS3TableIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetS3TableIntegration operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetS3TableIntegration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetS3TableIntegration">REST API Reference for GetS3TableIntegration Operation</seealso>
+        IAsyncResult BeginGetS3TableIntegration(GetS3TableIntegrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetS3TableIntegration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetS3TableIntegration.</param>
+        /// 
+        /// <returns>Returns a  GetS3TableIntegrationResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetS3TableIntegration">REST API Reference for GetS3TableIntegration Operation</seealso>
+        GetS3TableIntegrationResponse EndGetS3TableIntegration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetTelemetryEnrichmentStatus
 
 
         /// <summary>
         /// Returns the current status of the resource tags for telemetry feature, which enhances
-        /// telemetry data with additional resource metadata from Amazon Web Services Resource
-        /// Explorer.
+        /// telemetry data with additional resource metadata from Resource Explorer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTelemetryEnrichmentStatus service method.</param>
         /// 
@@ -666,6 +986,66 @@ namespace Amazon.ObservabilityAdmin
         /// <returns>Returns a  GetTelemetryEvaluationStatusForOrganizationResult from ObservabilityAdmin.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryEvaluationStatusForOrganization">REST API Reference for GetTelemetryEvaluationStatusForOrganization Operation</seealso>
         GetTelemetryEvaluationStatusForOrganizationResponse EndGetTelemetryEvaluationStatusForOrganization(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTelemetryPipeline
+
+
+        /// <summary>
+        /// Retrieves information about a specific telemetry pipeline, including its configuration,
+        /// status, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryPipeline service method.</param>
+        /// 
+        /// <returns>The response from the GetTelemetryPipeline service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryPipeline">REST API Reference for GetTelemetryPipeline Operation</seealso>
+        GetTelemetryPipelineResponse GetTelemetryPipeline(GetTelemetryPipelineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTelemetryPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTelemetryPipeline operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTelemetryPipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryPipeline">REST API Reference for GetTelemetryPipeline Operation</seealso>
+        IAsyncResult BeginGetTelemetryPipeline(GetTelemetryPipelineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTelemetryPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTelemetryPipeline.</param>
+        /// 
+        /// <returns>Returns a  GetTelemetryPipelineResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetTelemetryPipeline">REST API Reference for GetTelemetryPipeline Operation</seealso>
+        GetTelemetryPipelineResponse EndGetTelemetryPipeline(IAsyncResult asyncResult);
 
         #endregion
         
@@ -961,11 +1341,69 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
         
+        #region  ListS3TableIntegrations
+
+
+        /// <summary>
+        /// Lists all S3 Table integrations in your account. We recommend using pagination to
+        /// ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListS3TableIntegrations service method.</param>
+        /// 
+        /// <returns>The response from the ListS3TableIntegrations service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListS3TableIntegrations">REST API Reference for ListS3TableIntegrations Operation</seealso>
+        ListS3TableIntegrationsResponse ListS3TableIntegrations(ListS3TableIntegrationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListS3TableIntegrations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListS3TableIntegrations operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListS3TableIntegrations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListS3TableIntegrations">REST API Reference for ListS3TableIntegrations Operation</seealso>
+        IAsyncResult BeginListS3TableIntegrations(ListS3TableIntegrationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListS3TableIntegrations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListS3TableIntegrations.</param>
+        /// 
+        /// <returns>Returns a  ListS3TableIntegrationsResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListS3TableIntegrations">REST API Reference for ListS3TableIntegrations Operation</seealso>
+        ListS3TableIntegrationsResponse EndListS3TableIntegrations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
         /// <summary>
-        /// Lists all tags attached to the specified telemetry rule resource.
+        /// Lists all tags attached to the specified resource. Supports telemetry rule resources
+        /// and telemetry pipeline resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1017,6 +1455,64 @@ namespace Amazon.ObservabilityAdmin
         /// <returns>Returns a  ListTagsForResourceResult from ObservabilityAdmin.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTelemetryPipelines
+
+
+        /// <summary>
+        /// Returns a list of telemetry pipelines in your account. Returns up to 100 results.
+        /// If more than 100 telemetry pipelines exist, include the <c>NextToken</c> value from
+        /// the response to retrieve the next set of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTelemetryPipelines service method.</param>
+        /// 
+        /// <returns>The response from the ListTelemetryPipelines service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryPipelines">REST API Reference for ListTelemetryPipelines Operation</seealso>
+        ListTelemetryPipelinesResponse ListTelemetryPipelines(ListTelemetryPipelinesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTelemetryPipelines operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTelemetryPipelines operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTelemetryPipelines
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryPipelines">REST API Reference for ListTelemetryPipelines Operation</seealso>
+        IAsyncResult BeginListTelemetryPipelines(ListTelemetryPipelinesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTelemetryPipelines operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTelemetryPipelines.</param>
+        /// 
+        /// <returns>Returns a  ListTelemetryPipelinesResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListTelemetryPipelines">REST API Reference for ListTelemetryPipelines Operation</seealso>
+        ListTelemetryPipelinesResponse EndListTelemetryPipelines(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1139,8 +1635,8 @@ namespace Amazon.ObservabilityAdmin
 
         /// <summary>
         /// Enables the resource tags for telemetry feature for your account, which enhances
-        /// telemetry data with additional resource metadata from Amazon Web Services Resource
-        /// Explorer to provide richer context for monitoring and observability.
+        /// telemetry data with additional resource metadata from Resource Explorer to provide
+        /// richer context for monitoring and observability.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTelemetryEnrichment service method.</param>
         /// 
@@ -1483,7 +1979,8 @@ namespace Amazon.ObservabilityAdmin
 
 
         /// <summary>
-        /// Adds or updates tags for a telemetry rule resource.
+        /// Adds or updates tags for a resource. Supports telemetry rule resources and telemetry
+        /// pipeline resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -1542,11 +2039,69 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
         
+        #region  TestTelemetryPipeline
+
+
+        /// <summary>
+        /// Tests a pipeline configuration with sample records to validate data processing before
+        /// deployment. This operation helps ensure your pipeline configuration works as expected.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestTelemetryPipeline service method.</param>
+        /// 
+        /// <returns>The response from the TestTelemetryPipeline service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TestTelemetryPipeline">REST API Reference for TestTelemetryPipeline Operation</seealso>
+        TestTelemetryPipelineResponse TestTelemetryPipeline(TestTelemetryPipelineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestTelemetryPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestTelemetryPipeline operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestTelemetryPipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TestTelemetryPipeline">REST API Reference for TestTelemetryPipeline Operation</seealso>
+        IAsyncResult BeginTestTelemetryPipeline(TestTelemetryPipelineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestTelemetryPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestTelemetryPipeline.</param>
+        /// 
+        /// <returns>Returns a  TestTelemetryPipelineResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/TestTelemetryPipeline">REST API Reference for TestTelemetryPipeline Operation</seealso>
+        TestTelemetryPipelineResponse EndTestTelemetryPipeline(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UntagResource
 
 
         /// <summary>
-        /// Removes tags from a telemetry rule resource.
+        /// Removes tags from a resource. Supports telemetry rule resources and telemetry pipeline
+        /// resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1666,11 +2221,150 @@ namespace Amazon.ObservabilityAdmin
 
         #endregion
         
+        #region  UpdateTelemetryPipeline
+
+
+        /// <summary>
+        /// Updates the configuration of an existing telemetry pipeline.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The following attributes cannot be updated after pipeline creation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Pipeline name</b> - The pipeline name is immutable
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Pipeline ARN</b> - The ARN is automatically generated and cannot be changed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Source type</b> - Once a pipeline is created with a specific source type (such
+        /// as S3, CloudWatch Logs, GitHub, or third-party sources), it cannot be changed to a
+        /// different source type
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Processors can be added, removed, or modified. However, some processors are not supported
+        /// for third-party pipelines and cannot be added through updates.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>Source-Specific Update Rules</b> 
+        /// </para>
+        ///  <dl> <dt>CloudWatch Logs Sources (Vended and Custom)</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> <c>sts_role_arn</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Fixed:</b> <c>data_source_name</c>, <c>data_source_type</c>, sink (must remain
+        /// <c>@original</c>)
+        /// </para>
+        ///  </dd> <dt>S3 Sources (Crowdstrike, Zscaler, SentinelOne, Custom)</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All SQS configuration parameters, <c>sts_role_arn</c>, codec settings,
+        /// compression type, bucket ownership settings, sink log group
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Fixed:</b> <c>notification_type</c>, <c>aws.region</c> 
+        /// </para>
+        ///  </dd> <dt>GitHub Audit Logs</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>scope</c>
+        /// (can switch between ORGANIZATION/ENTERPRISE), <c>organization</c> or <c>enterprise</c>
+        /// name, <c>range</c>, authentication credentials (PAT or GitHub App)
+        /// </para>
+        ///  </dd> <dt>Microsoft Sources (Entra ID, Office365, Windows)</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>tenant_id</c>,
+        /// <c>workspace_id</c> (Windows only), OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// </para>
+        ///  </dd> <dt>Okta Sources (SSO, Auth0)</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>domain</c>,
+        /// <c>range</c> (SSO only), OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// </para>
+        ///  </dd> <dt>Palo Alto Networks</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>hostname</c>,
+        /// basic authentication credentials (<c>username</c>, <c>password</c>)
+        /// </para>
+        ///  </dd> <dt>ServiceNow CMDB</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>instance_url</c>,
+        /// <c>range</c>, OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// </para>
+        ///  </dd> <dt>Wiz CNAPP</dt> <dd> 
+        /// <para>
+        ///  <b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <c>region</c>,
+        /// <c>range</c>, OAuth2 credentials (<c>client_id</c>, <c>client_secret</c>)
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTelemetryPipeline service method.</param>
+        /// 
+        /// <returns>The response from the UpdateTelemetryPipeline service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryPipeline">REST API Reference for UpdateTelemetryPipeline Operation</seealso>
+        UpdateTelemetryPipelineResponse UpdateTelemetryPipeline(UpdateTelemetryPipelineRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateTelemetryPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTelemetryPipeline operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTelemetryPipeline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryPipeline">REST API Reference for UpdateTelemetryPipeline Operation</seealso>
+        IAsyncResult BeginUpdateTelemetryPipeline(UpdateTelemetryPipelineRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateTelemetryPipeline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTelemetryPipeline.</param>
+        /// 
+        /// <returns>Returns a  UpdateTelemetryPipelineResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryPipeline">REST API Reference for UpdateTelemetryPipeline Operation</seealso>
+        UpdateTelemetryPipelineResponse EndUpdateTelemetryPipeline(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateTelemetryRule
 
 
         /// <summary>
-        /// Updates an existing telemetry rule in your account.
+        /// Updates an existing telemetry rule in your account. If multiple users attempt to
+        /// modify the same telemetry rule simultaneously, a ConflictException is returned to
+        /// provide specific error information for concurrent modification scenarios.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTelemetryRule service method.</param>
         /// 
@@ -1680,6 +2374,10 @@ namespace Amazon.ObservabilityAdmin
         /// or role that is making the request must have at least one IAM permissions policy attached
         /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
         /// </exception>
         /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
         /// Indicates the request has failed to process because of an unknown server error, exception,
@@ -1791,6 +2489,63 @@ namespace Amazon.ObservabilityAdmin
         /// <returns>Returns a  UpdateTelemetryRuleForOrganizationResult from ObservabilityAdmin.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateTelemetryRuleForOrganization">REST API Reference for UpdateTelemetryRuleForOrganization Operation</seealso>
         UpdateTelemetryRuleForOrganizationResponse EndUpdateTelemetryRuleForOrganization(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ValidateTelemetryPipelineConfiguration
+
+
+        /// <summary>
+        /// Validates a pipeline configuration without creating the pipeline. This operation checks
+        /// the configuration for syntax errors and compatibility issues.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateTelemetryPipelineConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ValidateTelemetryPipelineConfiguration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ValidateTelemetryPipelineConfiguration">REST API Reference for ValidateTelemetryPipelineConfiguration Operation</seealso>
+        ValidateTelemetryPipelineConfigurationResponse ValidateTelemetryPipelineConfiguration(ValidateTelemetryPipelineConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ValidateTelemetryPipelineConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ValidateTelemetryPipelineConfiguration operation on AmazonObservabilityAdminClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidateTelemetryPipelineConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ValidateTelemetryPipelineConfiguration">REST API Reference for ValidateTelemetryPipelineConfiguration Operation</seealso>
+        IAsyncResult BeginValidateTelemetryPipelineConfiguration(ValidateTelemetryPipelineConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ValidateTelemetryPipelineConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginValidateTelemetryPipelineConfiguration.</param>
+        /// 
+        /// <returns>Returns a  ValidateTelemetryPipelineConfigurationResult from ObservabilityAdmin.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ValidateTelemetryPipelineConfiguration">REST API Reference for ValidateTelemetryPipelineConfiguration Operation</seealso>
+        ValidateTelemetryPipelineConfigurationResponse EndValidateTelemetryPipelineConfiguration(IAsyncResult asyncResult);
 
         #endregion
                 

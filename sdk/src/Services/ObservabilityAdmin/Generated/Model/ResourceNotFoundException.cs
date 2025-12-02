@@ -37,6 +37,8 @@ namespace Amazon.ObservabilityAdmin.Model
     #endif
     public partial class ResourceNotFoundException : AmazonObservabilityAdminException
     {
+        private string _resourceId;
+        private string _resourceType;
 
         /// <summary>
         /// Constructs a new ResourceNotFoundException with the specified error
@@ -98,6 +100,8 @@ namespace Amazon.ObservabilityAdmin.Model
         protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
+            this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
         }
 
         /// <summary>
@@ -118,8 +122,46 @@ namespace Amazon.ObservabilityAdmin.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ResourceId", this.ResourceId);
+            info.AddValue("ResourceType", this.ResourceType);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        ///  The identifier of the resource which could not be found. 
+        /// </para>
+        /// </summary>
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        ///  The type of the resource which could not be found. 
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
 
     }
 }

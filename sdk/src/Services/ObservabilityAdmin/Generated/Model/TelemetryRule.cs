@@ -38,6 +38,7 @@ namespace Amazon.ObservabilityAdmin.Model
         private ResourceType _resourceType;
         private string _scope;
         private string _selectionCriteria;
+        private List<string> _telemetrySourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TelemetryType _telemetryType;
 
         /// <summary>
@@ -61,8 +62,8 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC").
-        /// 
+        ///  The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC",
+        /// "AWS::EKS::Cluster", "AWS::WAFv2::WebACL"). 
         /// </para>
         /// </summary>
         public ResourceType ResourceType
@@ -113,6 +114,26 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetSelectionCriteria()
         {
             return this._selectionCriteria != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TelemetrySourceTypes. 
+        /// <para>
+        ///  The specific telemetry source types to configure for the resource, such as VPC_FLOW_LOGS
+        /// or EKS_AUDIT_LOGS. TelemetrySourceTypes must be correlated with the specific resource
+        /// type. 
+        /// </para>
+        /// </summary>
+        public List<string> TelemetrySourceTypes
+        {
+            get { return this._telemetrySourceTypes; }
+            set { this._telemetrySourceTypes = value; }
+        }
+
+        // Check to see if TelemetrySourceTypes property is set
+        internal bool IsSetTelemetrySourceTypes()
+        {
+            return this._telemetrySourceTypes != null && (this._telemetrySourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

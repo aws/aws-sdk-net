@@ -39,6 +39,7 @@ namespace Amazon.ObservabilityAdmin.Model
         private ResourceType _resourceType;
         private string _ruleArn;
         private string _ruleName;
+        private List<string> _telemetrySourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TelemetryType _telemetryType;
 
         /// <summary>
@@ -131,6 +132,26 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetRuleName()
         {
             return this._ruleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TelemetrySourceTypes. 
+        /// <para>
+        ///  The types of telemetry sources configured for this rule, such as VPC Flow Logs or
+        /// EKS audit logs. TelemetrySourceTypes must be correlated with the specific resource
+        /// type. 
+        /// </para>
+        /// </summary>
+        public List<string> TelemetrySourceTypes
+        {
+            get { return this._telemetrySourceTypes; }
+            set { this._telemetrySourceTypes = value; }
+        }
+
+        // Check to see if TelemetrySourceTypes property is set
+        internal bool IsSetTelemetrySourceTypes()
+        {
+            return this._telemetrySourceTypes != null && (this._telemetrySourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

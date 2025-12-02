@@ -96,6 +96,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.RuleName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TelemetrySourceTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TelemetrySourceTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TelemetryType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

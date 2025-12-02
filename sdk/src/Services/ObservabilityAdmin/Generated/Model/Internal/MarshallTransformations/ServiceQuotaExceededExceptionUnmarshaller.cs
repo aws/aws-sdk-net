@@ -71,6 +71,30 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmznErrorType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("QuotaCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.QuotaCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

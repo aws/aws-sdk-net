@@ -66,6 +66,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CloudtrailParameters", targetDepth))
+                {
+                    var unmarshaller = CloudtrailParametersUnmarshaller.Instance;
+                    unmarshalledObject.CloudtrailParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DestinationPattern", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -78,6 +84,18 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.DestinationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ELBLoadBalancerLoggingParameters", targetDepth))
+                {
+                    var unmarshaller = ELBLoadBalancerLoggingParametersUnmarshaller.Instance;
+                    unmarshalledObject.ELBLoadBalancerLoggingParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogDeliveryParameters", targetDepth))
+                {
+                    var unmarshaller = LogDeliveryParametersUnmarshaller.Instance;
+                    unmarshalledObject.LogDeliveryParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RetentionInDays", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -88,6 +106,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = VPCFlowLogParametersUnmarshaller.Instance;
                     unmarshalledObject.VPCFlowLogParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WAFLoggingParameters", targetDepth))
+                {
+                    var unmarshaller = WAFLoggingParametersUnmarshaller.Instance;
+                    unmarshalledObject.WAFLoggingParameters = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

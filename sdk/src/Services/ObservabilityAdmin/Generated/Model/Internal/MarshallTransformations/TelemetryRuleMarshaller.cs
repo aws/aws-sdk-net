@@ -77,6 +77,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SelectionCriteria);
             }
 
+            if(requestObject.IsSetTelemetrySourceTypes())
+            {
+                context.Writer.WritePropertyName("TelemetrySourceTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTelemetrySourceTypesListValue in requestObject.TelemetrySourceTypes)
+                {
+                        context.Writer.Write(requestObjectTelemetrySourceTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTelemetryType())
             {
                 context.Writer.WritePropertyName("TelemetryType");

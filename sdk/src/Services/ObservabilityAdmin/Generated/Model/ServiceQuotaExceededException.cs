@@ -39,6 +39,10 @@ namespace Amazon.ObservabilityAdmin.Model
     public partial class ServiceQuotaExceededException : AmazonObservabilityAdminException
     {
         private string _amznErrorType;
+        private string _quotaCode;
+        private string _resourceId;
+        private string _resourceType;
+        private string _serviceCode;
 
         /// <summary>
         /// Constructs a new ServiceQuotaExceededException with the specified error
@@ -101,6 +105,10 @@ namespace Amazon.ObservabilityAdmin.Model
             : base(info, context)
         {
             this.AmznErrorType = (string)info.GetValue("AmznErrorType", typeof(string));
+            this.QuotaCode = (string)info.GetValue("QuotaCode", typeof(string));
+            this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
+            this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
+            this.ServiceCode = (string)info.GetValue("ServiceCode", typeof(string));
         }
 
         /// <summary>
@@ -122,6 +130,10 @@ namespace Amazon.ObservabilityAdmin.Model
         {
             base.GetObjectData(info, context);
             info.AddValue("AmznErrorType", this.AmznErrorType);
+            info.AddValue("QuotaCode", this.QuotaCode);
+            info.AddValue("ResourceId", this.ResourceId);
+            info.AddValue("ResourceType", this.ResourceType);
+            info.AddValue("ServiceCode", this.ServiceCode);
         }
 #endif
 
@@ -141,6 +153,78 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetAmznErrorType()
         {
             return !string.IsNullOrEmpty(this._amznErrorType);
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuotaCode. 
+        /// <para>
+        ///  The code for the exceeded service quota. 
+        /// </para>
+        /// </summary>
+        public string QuotaCode
+        {
+            get { return this._quotaCode; }
+            set { this._quotaCode = value; }
+        }
+
+        // Check to see if QuotaCode property is set
+        internal bool IsSetQuotaCode()
+        {
+            return this._quotaCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        ///  The identifier of the resource which exceeds the service quota. 
+        /// </para>
+        /// </summary>
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        ///  The type of the resource which exceeds the service quota. 
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceCode. 
+        /// <para>
+        ///  The code for the service of the exceeded quota. 
+        /// </para>
+        /// </summary>
+        public string ServiceCode
+        {
+            get { return this._serviceCode; }
+            set { this._serviceCode = value; }
+        }
+
+        // Check to see if ServiceCode property is set
+        internal bool IsSetServiceCode()
+        {
+            return this._serviceCode != null;
         }
 
     }

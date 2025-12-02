@@ -40,7 +40,7 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// KMS Key arn belonging to the primary destination account and backup region, to encrypt
+        /// KMS Key ARN belonging to the primary destination account and backup region, to encrypt
         /// newly created central log groups in the backup destination.
         /// </para>
         /// </summary>

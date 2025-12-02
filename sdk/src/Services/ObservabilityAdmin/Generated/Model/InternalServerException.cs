@@ -39,6 +39,7 @@ namespace Amazon.ObservabilityAdmin.Model
     public partial class InternalServerException : AmazonObservabilityAdminException
     {
         private string _amznErrorType;
+        private int? _retryAfterSeconds;
 
         /// <summary>
         /// Constructs a new InternalServerException with the specified error
@@ -101,6 +102,7 @@ namespace Amazon.ObservabilityAdmin.Model
             : base(info, context)
         {
             this.AmznErrorType = (string)info.GetValue("AmznErrorType", typeof(string));
+            this.RetryAfterSeconds = (int)info.GetValue("RetryAfterSeconds", typeof(int));
         }
 
         /// <summary>
@@ -122,6 +124,7 @@ namespace Amazon.ObservabilityAdmin.Model
         {
             base.GetObjectData(info, context);
             info.AddValue("AmznErrorType", this.AmznErrorType);
+            info.AddValue("RetryAfterSeconds", this.RetryAfterSeconds);
         }
 #endif
 
@@ -141,6 +144,24 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetAmznErrorType()
         {
             return !string.IsNullOrEmpty(this._amznErrorType);
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryAfterSeconds. 
+        /// <para>
+        /// The number of seconds to wait before retrying the request.
+        /// </para>
+        /// </summary>
+        public int RetryAfterSeconds
+        {
+            get { return this._retryAfterSeconds.GetValueOrDefault(); }
+            set { this._retryAfterSeconds = value; }
+        }
+
+        // Check to see if RetryAfterSeconds property is set
+        internal bool IsSetRetryAfterSeconds()
+        {
+            return this._retryAfterSeconds.HasValue; 
         }
 
     }

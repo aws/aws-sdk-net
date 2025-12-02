@@ -71,6 +71,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmznErrorType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Retry-After", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.RetryAfterSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
