@@ -32,8 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the GetFindingsTrendsV2 operation.
     /// Returns findings trend data based on the specified criteria. This operation helps
-    /// you analyze patterns and changes in findings over time. This API is in public preview
-    /// and subject to change.
+    /// you analyze patterns and changes in findings over time.
     /// </summary>
     public partial class GetFindingsTrendsV2Request : AmazonSecurityHubRequest
     {

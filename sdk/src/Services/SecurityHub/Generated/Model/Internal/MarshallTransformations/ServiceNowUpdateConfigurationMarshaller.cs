@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProviderUpdateConfiguration Marshaller
+    /// ServiceNowUpdateConfiguration Marshaller
     /// </summary>
-    public class ProviderUpdateConfigurationMarshaller : IRequestMarshaller<ProviderUpdateConfiguration, JsonMarshallerContext> 
+    public class ServiceNowUpdateConfigurationMarshaller : IRequestMarshaller<ServiceNowUpdateConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProviderUpdateConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ServiceNowUpdateConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetJiraCloud())
+            if(requestObject.IsSetSecretArn())
             {
-                context.Writer.WritePropertyName("JiraCloud");
-                context.Writer.WriteStartObject();
-
-                var marshaller = JiraCloudUpdateConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.JiraCloud, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetServiceNow())
-            {
-                context.Writer.WritePropertyName("ServiceNow");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ServiceNowUpdateConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ServiceNow, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("SecretArn");
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
         }
@@ -73,7 +57,7 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProviderUpdateConfigurationMarshaller Instance = new ProviderUpdateConfigurationMarshaller();
+        public readonly static ServiceNowUpdateConfigurationMarshaller Instance = new ServiceNowUpdateConfigurationMarshaller();
 
     }
 }

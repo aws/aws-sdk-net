@@ -31,8 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSecurityHubV2 operation.
-    /// Returns details about the service resource in your account. This API is in public
-    /// preview and subject to change.
+    /// Returns details about the service resource in your account.
     /// </summary>
     public partial class DescribeSecurityHubV2Request : AmazonSecurityHubRequest
     {

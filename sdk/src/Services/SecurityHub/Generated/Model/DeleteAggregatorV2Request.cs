@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAggregatorV2 operation.
-    /// Deletes the Aggregator V2. This API is in public preview and subject to change.
+    /// Deletes the Aggregator V2.
     /// </summary>
     public partial class DeleteAggregatorV2Request : AmazonSecurityHubRequest
     {

@@ -33,8 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// Container for the parameters to the GetFindingStatisticsV2 operation.
     /// Returns aggregated statistical data about findings. <c>GetFindingStatisticsV2</c>
     /// use <c>securityhub:GetAdhocInsightResults</c> in the <c>Action</c> element of an IAM
-    /// policy statement. You must have permission to perform the <c>s</c> action. This API
-    /// is in public preview and subject to change.
+    /// policy statement. You must have permission to perform the <c>s</c> action.
     /// </summary>
     public partial class GetFindingStatisticsV2Request : AmazonSecurityHubRequest
     {

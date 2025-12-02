@@ -1281,6 +1281,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly GroupByField Finding_infoAnalyticName = new GroupByField("finding_info.analytic.name");
         /// <summary>
+        /// Constant Finding_infoRelated_eventsTraitsCategory for GroupByField
+        /// </summary>
+        public static readonly GroupByField Finding_infoRelated_eventsTraitsCategory = new GroupByField("finding_info.related_events.traits.category");
+        /// <summary>
         /// Constant Finding_infoTitle for GroupByField
         /// </summary>
         public static readonly GroupByField Finding_infoTitle = new GroupByField("finding_info.title");
@@ -1312,6 +1316,10 @@ namespace Amazon.SecurityHub
         /// Constant Status for GroupByField
         /// </summary>
         public static readonly GroupByField Status = new GroupByField("status");
+        /// <summary>
+        /// Constant Vendor_attributesSeverity for GroupByField
+        /// </summary>
+        public static readonly GroupByField Vendor_attributesSeverity = new GroupByField("vendor_attributes.severity");
         /// <summary>
         /// Constant VulnerabilitiesAffected_packagesName for GroupByField
         /// </summary>
@@ -2014,6 +2022,14 @@ namespace Amazon.SecurityHub
         /// Constant Status_id for OcsfNumberField
         /// </summary>
         public static readonly OcsfNumberField Status_id = new OcsfNumberField("status_id");
+        /// <summary>
+        /// Constant Vendor_attributesSeverity_id for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Vendor_attributesSeverity_id = new OcsfNumberField("vendor_attributes.severity_id");
+        /// <summary>
+        /// Constant VulnerabilitiesCveCvssBase_score for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField VulnerabilitiesCveCvssBase_score = new OcsfNumberField("vulnerabilities.cve.cvss.base_score");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2185,6 +2201,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly OcsfStringField Finding_infoRelated_eventsTitle = new OcsfStringField("finding_info.related_events.title");
         /// <summary>
+        /// Constant Finding_infoRelated_eventsTraitsCategory for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoRelated_eventsTraitsCategory = new OcsfStringField("finding_info.related_events.traits.category");
+        /// <summary>
         /// Constant Finding_infoRelated_eventsUid for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField Finding_infoRelated_eventsUid = new OcsfStringField("finding_info.related_events.uid");
@@ -2308,6 +2328,10 @@ namespace Amazon.SecurityHub
         /// Constant Status for OcsfStringField
         /// </summary>
         public static readonly OcsfStringField Status = new OcsfStringField("status");
+        /// <summary>
+        /// Constant Vendor_attributesSeverity for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Vendor_attributesSeverity = new OcsfStringField("vendor_attributes.severity");
         /// <summary>
         /// Constant VulnerabilitiesAffected_codeFilePath for OcsfStringField
         /// </summary>
@@ -3928,6 +3952,52 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ThreatIntelIndicatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TicketCreationMode.
+    /// </summary>
+    public class TicketCreationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DRYRUN for TicketCreationMode
+        /// </summary>
+        public static readonly TicketCreationMode DRYRUN = new TicketCreationMode("DRYRUN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TicketCreationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TicketCreationMode FindValue(string value)
+        {
+            return FindValue<TicketCreationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TicketCreationMode(string value)
         {
             return FindValue(value);
         }

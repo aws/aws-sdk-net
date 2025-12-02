@@ -30,50 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Information about a ServiceNow ITSM integration.
+    /// The parameters used to modify an existing ServiceNow integration.
     /// </summary>
-    public partial class ServiceNowDetail
+    public partial class ServiceNowUpdateConfiguration
     {
-        private ConnectorAuthStatus _authStatus;
-        private string _instanceName;
         private string _secretArn;
-
-        /// <summary>
-        /// Gets and sets the property AuthStatus. 
-        /// <para>
-        /// The status of the authorization between ServiceNow and the service.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ConnectorAuthStatus AuthStatus
-        {
-            get { return this._authStatus; }
-            set { this._authStatus = value; }
-        }
-
-        // Check to see if AuthStatus property is set
-        internal bool IsSetAuthStatus()
-        {
-            return this._authStatus != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceName. 
-        /// <para>
-        /// The instanceName of ServiceNow ITSM.
-        /// </para>
-        /// </summary>
-        public string InstanceName
-        {
-            get { return this._instanceName; }
-            set { this._instanceName = value; }
-        }
-
-        // Check to see if InstanceName property is set
-        internal bool IsSetInstanceName()
-        {
-            return this._instanceName != null;
-        }
 
         /// <summary>
         /// Gets and sets the property SecretArn. 
@@ -82,7 +43,6 @@ namespace Amazon.SecurityHub.Model
         /// contains the ServiceNow credentials.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SecretArn
         {
             get { return this._secretArn; }
