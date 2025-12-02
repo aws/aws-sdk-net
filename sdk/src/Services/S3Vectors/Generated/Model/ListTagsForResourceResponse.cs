@@ -30,22 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Vectors.Model
 {
     /// <summary>
-    /// The metadata configuration for a vector index.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class MetadataConfiguration
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private List<string> _nonFilterableMetadataKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property NonFilterableMetadataKeys. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// Non-filterable metadata keys allow you to enrich vectors with additional context during
-        /// storage and retrieval. Unlike default metadata keys, these keys can’t be used as query
-        /// filters. Non-filterable metadata keys can be retrieved but can’t be searched, queried,
-        /// or filtered. You can access non-filterable metadata keys of your vectors after finding
-        /// the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a>
-        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations
-        /// and restrictions</a> in the <i>Amazon S3 User Guide</i>. 
+        /// The user-defined tags that are applied to the S3 Vectors resource. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging
+        /// for cost allocation or attribute-based access control (ABAC)</a>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -53,17 +49,17 @@ namespace Amazon.S3Vectors.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public List<string> NonFilterableMetadataKeys
+        [AWSProperty(Required=true)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._nonFilterableMetadataKeys; }
-            set { this._nonFilterableMetadataKeys = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if NonFilterableMetadataKeys property is set
-        internal bool IsSetNonFilterableMetadataKeys()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._nonFilterableMetadataKeys != null && (this._nonFilterableMetadataKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

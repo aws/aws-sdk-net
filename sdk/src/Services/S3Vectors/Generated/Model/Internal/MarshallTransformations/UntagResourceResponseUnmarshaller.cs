@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteVectorBucket operation
+    /// Response Unmarshaller for UntagResource operation
     /// </summary>  
-    public class DeleteVectorBucketResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UntagResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteVectorBucketResponse response = new DeleteVectorBucketResponse();
+            UntagResourceResponse response = new UntagResourceResponse();
 
             return response;
         }
@@ -107,9 +107,9 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             return new AmazonS3VectorsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteVectorBucketResponseUnmarshaller _instance = new DeleteVectorBucketResponseUnmarshaller();        
+        private static UntagResourceResponseUnmarshaller _instance = new UntagResourceResponseUnmarshaller();        
 
-        internal static DeleteVectorBucketResponseUnmarshaller GetInstance()
+        internal static UntagResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +117,7 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteVectorBucketResponseUnmarshaller Instance
+        public static UntagResourceResponseUnmarshaller Instance
         {
             get
             {

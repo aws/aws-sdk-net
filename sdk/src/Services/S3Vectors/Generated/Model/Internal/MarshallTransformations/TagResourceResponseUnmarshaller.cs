@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteVectorBucket operation
+    /// Response Unmarshaller for TagResource operation
     /// </summary>  
-    public class DeleteVectorBucketResponseUnmarshaller : JsonResponseUnmarshaller
+    public class TagResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteVectorBucketResponse response = new DeleteVectorBucketResponse();
+            TagResourceResponse response = new TagResourceResponse();
 
             return response;
         }
@@ -107,9 +107,9 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             return new AmazonS3VectorsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteVectorBucketResponseUnmarshaller _instance = new DeleteVectorBucketResponseUnmarshaller();        
+        private static TagResourceResponseUnmarshaller _instance = new TagResourceResponseUnmarshaller();        
 
-        internal static DeleteVectorBucketResponseUnmarshaller GetInstance()
+        internal static TagResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +117,7 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteVectorBucketResponseUnmarshaller Instance
+        public static TagResourceResponseUnmarshaller Instance
         {
             get
             {
