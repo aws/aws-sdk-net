@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateIndex Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateIndexRequestMarshaller : IMarshaller<IRequest, CreateIndexRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateIndexRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -53,66 +53,23 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateIndexRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.S3Vectors");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2025-07-15";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/CreateIndex";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonS3VectorsException("Request object does not have required field ResourceArn set");
+            request.AddPathResource("{resourceArn}", StringUtils.FromString(publicRequest.ResourceArn));
+            request.ResourcePath = "/tags/{resourceArn}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataType())
-                {
-                    context.Writer.WritePropertyName("dataType");
-                    context.Writer.Write(publicRequest.DataType);
-                }
-
-                if(publicRequest.IsSetDimension())
-                {
-                    context.Writer.WritePropertyName("dimension");
-                    context.Writer.Write(publicRequest.Dimension);
-                }
-
-                if(publicRequest.IsSetDistanceMetric())
-                {
-                    context.Writer.WritePropertyName("distanceMetric");
-                    context.Writer.Write(publicRequest.DistanceMetric);
-                }
-
-                if(publicRequest.IsSetEncryptionConfiguration())
-                {
-                    context.Writer.WritePropertyName("encryptionConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EncryptionConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIndexName())
-                {
-                    context.Writer.WritePropertyName("indexName");
-                    context.Writer.Write(publicRequest.IndexName);
-                }
-
-                if(publicRequest.IsSetMetadataConfiguration())
-                {
-                    context.Writer.WritePropertyName("metadataConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MetadataConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MetadataConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -127,18 +84,6 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVectorBucketArn())
-                {
-                    context.Writer.WritePropertyName("vectorBucketArn");
-                    context.Writer.Write(publicRequest.VectorBucketArn);
-                }
-
-                if(publicRequest.IsSetVectorBucketName())
-                {
-                    context.Writer.WritePropertyName("vectorBucketName");
-                    context.Writer.Write(publicRequest.VectorBucketName);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -147,9 +92,9 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateIndexRequestMarshaller _instance = new CreateIndexRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateIndexRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -157,7 +102,7 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateIndexRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

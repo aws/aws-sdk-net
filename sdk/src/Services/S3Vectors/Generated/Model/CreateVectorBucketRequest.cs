@@ -31,26 +31,25 @@ namespace Amazon.S3Vectors.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVectorBucket operation.
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// Creates a vector bucket in the Amazon Web Services Region that you want your bucket
     /// to be in. 
-    /// </para>
+    /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// You must have the <c>s3vectors:CreateVectorBucket</c> permission to use this operation.
     /// 
     /// </para>
-    ///  </dd> </dl>
+    ///  
+    /// <para>
+    /// You must have the <c>s3vectors:TagResource</c> permission in addition to <c>s3vectors:CreateVectorBucket</c>
+    /// permission to create a vector bucket with tags.
     /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class CreateVectorBucketRequest : AmazonS3VectorsRequest
     {
         private EncryptionConfiguration _encryptionConfiguration;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _vectorBucketName;
 
         /// <summary>
@@ -71,6 +70,34 @@ namespace Amazon.S3Vectors.Model
         internal bool IsSetEncryptionConfiguration()
         {
             return this._encryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An array of user-defined tags that you would like to apply to the vector bucket that
+        /// you are creating. A tag is a key-value pair that you apply to your resources. Tags
+        /// can help you organize and control access to resources. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging
+        /// for cost allocation or attribute-based access control (ABAC)</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You must have the <c>s3vectors:TagResource</c> permission in addition to <c>s3vectors:CreateVectorBucket</c>
+        /// permission to create a vector bucket with tags.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

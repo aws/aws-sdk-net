@@ -30,30 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Vectors.Model
 {
     /// <summary>
-    /// The vector data in different formats.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class VectorData
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private List<float> _float32 = AWSConfigs.InitializeCollections ? new List<float>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Float32. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The vector data as 32-bit floating point numbers. The number of elements in this array
-        /// must exactly match the dimension of the vector index where the operation is being
-        /// performed.
+        /// The user-defined tags that are applied to the S3 Vectors resource. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html">Tagging
+        /// for cost allocation or attribute-based access control (ABAC)</a>.
         /// </para>
         /// </summary>
-        public List<float> Float32
+        [AWSProperty(Required=true)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._float32; }
-            set { this._float32 = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Float32 property is set
-        internal bool IsSetFloat32()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._float32 != null && (this._float32.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

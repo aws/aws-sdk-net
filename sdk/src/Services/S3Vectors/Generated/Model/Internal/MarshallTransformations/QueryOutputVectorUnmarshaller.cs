@@ -66,12 +66,6 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("data", targetDepth))
-                {
-                    var unmarshaller = VectorDataUnmarshaller.Instance;
-                    unmarshalledObject.Data = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("distance", targetDepth))
                 {
                     var unmarshaller = FloatUnmarshaller.Instance;

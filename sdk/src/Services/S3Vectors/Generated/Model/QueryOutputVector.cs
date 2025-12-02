@@ -30,41 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Vectors.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// Amazon S3 Vectors is in preview release for Amazon S3 and is subject to change.
-    /// 
-    ///  </note> 
-    /// <para>
     /// The attributes of a vector in the approximate nearest neighbor search.
-    /// </para>
-    /// 
-    /// </para>
     /// </summary>
     public partial class QueryOutputVector
     {
-        private VectorData _data;
         private float? _distance;
         private string _key;
         private Amazon.Runtime.Documents.Document _metadata;
-
-        /// <summary>
-        /// Gets and sets the property Data. 
-        /// <para>
-        /// The vector data associated with the vector, if requested. 
-        /// </para>
-        /// </summary>
-        public VectorData Data
-        {
-            get { return this._data; }
-            set { this._data = value; }
-        }
-
-        // Check to see if Data property is set
-        internal bool IsSetData()
-        {
-            return this._data != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Distance. 
