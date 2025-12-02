@@ -86,6 +86,17 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOntapConfiguration())
+                {
+                    context.Writer.WritePropertyName("OntapConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CreateAndAttachS3AccessPointOntapConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OntapConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOpenZFSConfiguration())
                 {
                     context.Writer.WritePropertyName("OpenZFSConfiguration");
