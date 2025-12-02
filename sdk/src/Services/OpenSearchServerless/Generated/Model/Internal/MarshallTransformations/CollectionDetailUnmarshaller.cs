@@ -146,6 +146,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("vectorOptions", targetDepth))
+                {
+                    var unmarshaller = VectorOptionsUnmarshaller.Instance;
+                    unmarshalledObject.VectorOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
