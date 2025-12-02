@@ -32,7 +32,7 @@ namespace Amazon.Appflow
     public partial class AmazonAppflowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Appflow", "3.7.501.9");
+            InternalSDKUtils.BuildUserAgentString("Appflow", "3.7.501.10");
 
         private string _userAgent = UserAgentString;
         ///<summary>
